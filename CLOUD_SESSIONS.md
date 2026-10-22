@@ -19,5 +19,6 @@ Launched from this Mac with /tmp/wl/cloudlaunch.sh (a `script` wrapper; the fold
 | | Continue l-abroad (handed off from local) | claude/w45-l-abroad | https://claude.ai/code/session_01GshYAxb5mvBtJsXUZXd4HS | running |
 | | Continue g-people (handed off from local) | claude/w45-g-people | https://claude.ai/code/session_01PU3MiVQaNGzQwYh5KpzVwb | running |
 | | Continue n-biology (handed off from local) | claude/w45-n-biology | https://claude.ai/code/session_01Jo6Q349BGoFzqF2zHSjemB | running |
+| | Fix the Galway Docks soft-lock (story bot) | claude/fix-galway-softlock | https://claude.ai/code/session_01LCcPPY6X43uCnJAEdieKH2 | running |
 
 Earlier work (3.2 to 4.3 waves) ran as Routines via the API, which bill to the plan, not the credit. No more Routines.
