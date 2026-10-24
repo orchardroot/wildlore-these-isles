@@ -23,7 +23,7 @@ func test_deed_till_is_suggested_when_worth_collecting() -> void:
 func test_an_empty_till_is_not_nagged() -> void:
 	var d := GameStateData.new()
 	d.set_flag("deed_" + str(Deeds.all()[0].id), {"owned": true, "till": 0})
-	assert_eq(_lines(d, {"story": false}), [])
+	assert_eq(_lines(d, {"story": false, "fest": []}), [])
 
 func test_a_basket_about_to_hatch() -> void:
 	var d := GameStateData.new()
