@@ -18,31 +18,43 @@ richer.
   visual fixes.
 - **3.3 Overseas**: RAF Brize Norton and 18 overseas destinations, Jersey, Guernsey and Sark, real currencies; the game
   renamed Wildlore: These Isles.
+- **3.4 Market Day**: place-set prices, 25 real market halls, the Building Society, Trades, fishing, Windows and Linux
+  builds, report-a-bug, CONTRIBUTING.
+- **3.5 Open for Business**: Deeds (a chippy, a B&B, a boat, a stall), rates and the HMRC envelope, twelve Regulars,
+  darts, crabbing, the allotment show and sheepdog trials.
+- **3.6 Good Stock**: real genetics and breeding, hybrids where they happen, the Roslin Institute, the Stud Book.
+- **3.7 Behind Doors**: examine spots, locked doors and hidden rooms, Deep Places (Blue John first), the Casebook,
+  guilds, the lead creature lending a hand, bells and walling.
+- **3.8 and 3.9 The Long Game and Long Roads**: the Enclosure leases, a long arc for each nation, the quiz league,
+  Highland games, hurling and shinty, shanties, conkers, NPC routines, the Year in the Isles epilogue.
+- **4.1 Voices of the Isles**: the local language where it's spoken, regional music, accessibility (text sizes, the
+  readable font, easier minigames), postcards and the weekly challenge.
+- **4.2 Far and Wide**: local time abroad, regional forms of creatures, more overseas places.
+- **4.3 Deeper**: four more Deep Places, four more Casebook mysteries, nine more festivals.
+- **4.4 Settling In**: the Almanac, Where next?, gentle hints, fairer market money, tidier settings; save fixtures from
+  every released version load in the current build.
+- **4.5 Learn as You Go**: smoother creature art, optional lessons in Welsh, Gaelic, Irish and Scots, 33 evolutions,
+  biology challenges, People of these isles, how these isles work (politics, economics, borders, invention).
 
-## Next: 3.4 Market Day (the economy's floor)
-- **Trade Ledger**: place-set prices for materials, dishes and regional items, gluts, perishables, a pannier; the Money
-  Box on the wireless and a Monday market report.
-- **Market Halls**: 25 real halls as rooms with a stall-holder, a price board and a sell flow.
-- **The Building Society**: loans with honest compound interest, letters, Mum's sub.
-- **Trades**: the player's own progression (Rambler, Trader, Cook and more) read off the stats you already earn, with
-  small perks.
-- **Fishing**: on water tiles, rods, fish as items, creatures only found on a line.
+## Now: 4.6 Dressed for the Weather (docs/briefs/wave46.md)
+- **Your own character**: male or female, skin tone, hair style and colour, chosen at the start and changed at the
+  mirror at home or in the Wardrobe; clothes of these isles bought in fourteen boutiques (Harris Tweed, Fair Isle,
+  Aran, Welsh wool, flat caps, kilts, wellies and more) and worn in the world, on the VS card and in photos.
+- **Male and female creatures** shown wherever a creature is named, above all on the summary screen and when
+  breeding; real dimorphism in the art for forty-odd species.
+- **Seven more minigames** at the places they really happen: crown green bowls, stone skimming at Easdale, the
+  seaside arcade (2p pusher, claw, penny falls), cheese rolling at Cooper's Hill, bog snorkelling at Llanwrtyd Wells,
+  welly wanging, curling, and Cumberland and Westmorland wrestling at Grasmere.
+- The approved Welsh lessons and wave 45 facts go live; the Dee Valley fuzz failure is fixed.
 
-## Then
-- **3.5 Open for Business**: Deeds you buy, supply, upgrade and pay rates on (a chippy, a B&B, a boat, a market stall,
-  an allotment), twelve recurring characters who remember you, the HMRC envelope, darts, crabbing, the allotment show and
-  sheepdog trials.
-- **3.6 Behind Doors**: examine spots and hidden rooms, Deep Places (puzzle caves and mines, Blue John first), the
-  Casebook of mysteries, guilds with one real choice, your lead creature doing a job in the overworld, bell ringing and
-  drystone walling.
-- **3.7 The Long Game**: the Enclosure leases (buying back fenced land after the story opens new small zones), a pub
-  quiz league, Highland games, hurling and shinty, sea shanties, NPC routines, a long arc for each nation, a Year in the
-  Isles epilogue.
-
-## Alongside, whenever there's room
-- Windows and Linux builds checked in the Release workflow, and an in-game "report a bug" button.
-- A fresh-eyes audit of the first hour for new players, and a scan for anything too close to Pokémon.
-- Contributor docs: CONTRIBUTING.md, issue templates, "good first issue" labels.
+## Then (candidates, in no fixed order)
+- **More of the Isles to wear and own**: outfits as rewards from quests and festivals, a few haircuts only a
+  particular barber does, NPCs who remember what you wore.
+- **Minigame leagues**: the darts league pattern for bowls and curling, and a fete circuit through the summer.
+- **Localised building styles** for the towns 3.1 didn't reach, regional items and local curiosities.
+- **A fresh first-hour audit** with the character creator in it, and the periodic scan for anything too close to
+  Pokémon.
+- **Android**, once touch controls and a small-screen UI pass exist (see Parked).
 
 ## Parked
 - **Android**: Godot exports it easily, but it needs touch controls and a UI pass for small screens first.
