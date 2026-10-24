@@ -1,7 +1,7 @@
 # Wildlore: These Isles 4.6, wave 46: "Dressed for the Weather"
 
 The owner's direction (2026-10-25): more minigames, and real character customisation in the spirit of the newer
-Pokémon games: choose who you are (a man, a woman, or neither), skin tone, hair, and buy clothes in shops round the
+Pokémon games: choose who you are (a man or a woman), skin tone, hair, and buy clothes in shops round the
 Isles to wear in the world. Male and female creatures should also be obvious at a glance. The owner has approved
 every held-back Welsh lesson and every held-back wave 45 fact.
 
@@ -37,8 +37,8 @@ files your part needs. Be token-efficient: grep and `sed -n` over whole-file rea
   of the flag `player_sprite` (player_a or player_b) so nothing changes for existing players).
 - `static func recipe(data: GameStateData) -> Dictionary`: the full recipe to render, = base look + worn items.
 - `static func base(data) -> Dictionary` has keys `build` ("slight" = the old child build, "adult"), `skin` (index
-  into data/looks.json "skins"), `hair` (style id), `hair_colour` (index into "hair_colours"), `pronouns`
-  ("he", "she", "they"; letters use Mr / Ms / Mx), and `wearing: {slot: item_id}`.
+  into data/looks.json "skins"), `hair` (style id), `hair_colour` (index into "hair_colours"), `sex`
+  ("m" or "f"; letters use Mr / Ms), and `wearing: {slot: item_id}`.
 - Wear items are data/items/wear.json entries `{"id","name","kind":"wear","slot","price","desc","look":{...}}` with
   slot one of `hat, top, bottom, shoes, coat, neck, face, hands, back`, and `look` a recipe delta: palette keys to set
   (`"palette": {"top": "#..."}`), scalar keys to set (`"hat": "flat_cap"`, `"bottom_style": "kilt"`,
@@ -46,7 +46,8 @@ files your part needs. Be token-efficient: grep and `sed -n` over whole-file rea
   `bottom, shoes, top, coat, neck, back, hands, face, hat` (later wins), accessories are unioned.
 - `static func valid_delta(d: Dictionary) -> bool` checks a delta against the vocabulary in character.gd (hats,
   hair, bottom styles, accessories); tools/validate.gd runs it over every wear item (A adds that check).
-- `static func pronoun(data, form: String) -> String` with forms `they, them, their, theirs, Mx, person`.
+- `static func pronoun(data, form: String) -> String` with forms `he, him, his, Mr, man` returning the he/she,
+  him/her, his/her, Mr/Ms, man/woman word for the player's sex.
 Session B authors wear items and shops to this contract and may stub `core/looks.gd` with these signatures in ONE
 commit whose message starts "STUB looks.gd", for the integrator to drop.
 
@@ -64,14 +65,14 @@ sex file when it exists. Coats (ui/coat_art.gd) still apply on top.
   painter is already in the export, tools/spritegen.gd is not). Use the look everywhere the player is drawn:
   world/overworld.gd, ui/battle_intro.gd (VS card), world/journey.gd / ui/journey_scene.gd, ui/photo_mode.gd if it
   draws the player, the follower code if it reads the player sprite. Character creation: extend ui/name_entry.gd
-  (new game) into a proper creator: body, skin, hair, hair colour, pronouns, starting top colour, a Randomise
+  (new game) into a proper creator: sex (male or female), body, skin, hair, hair colour, starting top colour, a Randomise
   button, a live 4-direction preview, pad and keyboard friendly. A **Wardrobe** screen (ui/wardrobe_screen.gd,
   `--menu=wardrobe`) opened from the pause menu and from a mirror in Mum's house (macc_home; add a prop + a
   dialogue command `wardrobe`): change hair style and colour (free at the mirror), choose what to wear per slot
   from owned wear items (Bag kind "wear"), with a live preview and "Take off". The shop screen shows a try-on
-  preview when the highlighted item is kind "wear" (ui/shop_screen.gd, small edit). Pronouns: add a `pron`
-  dialogue substitution so NPCs can say "{they}" etc. (story/commands.gd `_sub`), and make the letters that address
-  the player (post box, Building Society, HMRC) use `Looks.pronoun(data, "Mx")`. Mum: one line that fits whichever
+  preview when the highlighted item is kind "wear" (ui/shop_screen.gd, small edit). Pronouns: add a
+  dialogue substitution so NPCs can say "{he}", "{him}", "{his}" etc. (story/commands.gd `_sub`), and make the letters that address
+  the player (post box, Building Society, HMRC) use `Looks.pronoun(data, "Mr")`. Mum: one line that fits whichever
   you picked. Keep `player_sprite` flag working. Tests: recipe merge order, defaults for old saves, valid_delta,
   pronoun forms, cache hit. Screenshots of the creator, the Wardrobe, and the VS card.
 - **B. The boutiques (clothes to buy)**: data/items/wear.json, 60+ items that are of these isles, each with a
