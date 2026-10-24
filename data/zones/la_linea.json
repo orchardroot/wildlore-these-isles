@@ -512,14 +512,14 @@
    "y": 21,
    "plaque": "la_linea_name",
    "title": "Why 'the Line'",
-   "text": "La Línea takes its name from a line: the Línea de Contravalación, a row of Spanish forts and walls built across the isthmus in the 1730s to hem in British Gibraltar. 'De la Concepción' is for the Immaculate Conception, the town's patron. The forts were blown up in 1810, during the war against Napoleon, so the French could not use them against the Rock."
+   "text": "La Línea takes its name from a line: the Línea de Contravalación, a row of Spanish forts and walls built across the isthmus in the 1730s to hem in British Gibraltar. 'De la Concepción' is for the Immaculate Conception, the town's patron. The forts were blown up in 1810, during the war against Napoleon, so the French could not use them against the Rock. The town grew up around them and became a municipality in its own right in 1870, separate from San Roque. Its football club, Real Balompédica Linense, was founded in 1912."
   },
   {
    "x": 24,
    "y": 46,
    "plaque": "la_linea_closure",
    "title": "The Closed Frontier",
-   "text": "In June 1969 General Franco's government shut the frontier. For thirteen years families on either side could only wave and shout across the fence, and the way to Gibraltar was a ferry to Tangier, in Morocco, and another one back. The gate opened to people on foot in December 1982, and to everything in February 1985."
+   "text": "In June 1969 General Franco's government shut the frontier. For thirteen years families on either side could only wave and shout across the fence (the British fence on the isthmus went up in 1908 to 1909), and the way to Gibraltar was a ferry to Tangier, in Morocco, and another one back. The gate opened to people on foot in December 1982, and to everything in February 1985."
   },
   {
    "x": 22,
@@ -533,7 +533,7 @@
    "y": 47,
    "plaque": "la_linea_workers",
    "title": "The Frontier Workers",
-   "text": "Every working day, thousands of people walk, ride or drive from La Línea and the towns round the bay to jobs on the Rock: shops, building sites, hotels, care homes and the port. Gibraltar leans on their work, and La Línea's high street leans on their wages. The queue is the town's tide: out at dawn, back at dusk."
+   "text": "Every working day, about fifteen thousand people walk, ride or drive from La Línea and the towns round the bay to jobs on the Rock: shops, building sites, hotels, care homes and the port. Gibraltar leans on their work, and La Línea's high street leans on their wages. The queue is the town's tide: out at dawn, back at dusk."
   },
   {
    "x": 30,
@@ -582,7 +582,7 @@
    "y": 49,
    "plaque": "la_linea_brexit",
    "title": "After Brexit",
-   "text": "In the 2016 referendum Gibraltar voted 96 per cent to stay in the European Union, more than anywhere else that voted. The UK left anyway, in 2020, and since then Britain, Spain and the EU have had to work out how this frontier should run. Ask anyone in the queue for their view. Then allow an hour."
+   "text": "In the 2016 referendum Gibraltar voted 96 per cent to stay in the European Union, more than anywhere else that voted. The UK left anyway, in 2020, and since then Britain, Spain and the EU have had to work out how this frontier should run. In June 2025 the three announced a political agreement on it. Ask anyone in the queue for their view. Then allow an hour."
   }
  ],
  "spawn": [

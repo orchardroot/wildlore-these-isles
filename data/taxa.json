@@ -549,6 +549,15 @@
   }
  },
  "families": {
+  "Phasianidae": {
+   "pairs": [
+    [
+     "Tetrao",
+     "Lagopus"
+    ]
+   ],
+   "fact": "Game birds of different genera do sometimes cross. Capercaillie and willow grouse young are on record in Scandinavia, and they are rare and sterile."
+  },
   "Bovidae": {
    "pairs": [
     [

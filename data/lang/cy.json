@@ -77,7 +77,14 @@
      "local": "Shwmae",
      "english": "Hello",
      "say": "shoo-MY",
-     "note": "Friendly and everyday, all over Wales."
+     "note": "Friendly and everyday, and understood all over Wales. It began as the southern greeting."
+    },
+    {
+     "id": "sut_mae",
+     "local": "Sut mae",
+     "english": "Hello (the northern way)",
+     "say": "sit MY",
+     "note": "Literally 'how is it?'. Shwmae is the southern squashing-together of the same two words."
     },
     {
      "id": "bore_da",
