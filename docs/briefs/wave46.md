@@ -93,7 +93,12 @@ sex file when it exists. Coats (ui/coat_art.gd) still apply on top.
   that fire on a worn slot (`"if_wearing": "hat"` or a specific item id: add a small condition to story/commands.gd
   if there isn't one). Tests: every wear item valid (Looks.valid_delta), every boutique stock id exists, prices
   sensible (120 to 2400). Screenshots of two boutiques.
-- **C. Male and female creatures**: show sex everywhere a creature is named: party screen, summary, battle HUD (both
+- **C. Male and female creatures**: the owner's words: "it's not even obvious what gender a monster is from their
+  summary, and to breed it obviously needs to be m with f". So, first: the **summary screen** shows the sex next to
+  the name as the glyph AND the word (Male / Female), on the first page, impossible to miss; the **pairing screen**
+  and any breeding talk say plainly that a pair needs one male and one female, name the sex of each creature as you
+  pick it, and explain in one line when a pick can't pair (same sex, or a kindred that doesn't breed) instead of
+  silently refusing. Then show sex everywhere a creature is named: party screen, summary, battle HUD (both
   sides), catch/nickname flow, Fieldbook entry, pairing (already has chips), the Stud Book: a small ♂ (blue-ish) /
   ♀ (rose) glyph via a `UIKit.sex_mark(c)` helper (check the UI font has U+2642/U+2640; if not, draw it with
   Line2D/polygons). Dimorphism art for 40+ species whose real animal differs (mallard, pheasant, red deer stag
