@@ -95,6 +95,7 @@ func load_zone(zone_id: String, pos: Vector2i, facing: String) -> void:
 	_spawn_npcs()
 	if pos.x < 0:
 		pos = zone.spawn
+	pos = zone.landing_near(pos, FieldMoves.abilities(Game.data))  # never set down on a fence the overlays just raised
 	player.place(pos, facing, ground_y(pos))
 	var arriving := arrival_scene
 	arrival_scene = ""
