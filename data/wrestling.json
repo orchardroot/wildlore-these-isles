@@ -1,0 +1,33 @@
+{
+ "venues": {
+  "grasmere": {
+   "name": "Grasmere Sports wrestling ring",
+   "rivals": [
+    {
+     "who": "Alan, a farmer's lad from Ambleside",
+     "window": 1.6,
+     "feint": 0,
+     "prize": 15,
+     "intro": "Alan is built like a gatepost and apologises before every throw. He still throws.",
+     "beaten": "Alan brushes the grass off you and says you've a grand hold on you for a beginner."
+    },
+    {
+     "who": "Big Rob from Egremont",
+     "window": 1.3,
+     "feint": 25,
+     "prize": 25,
+     "intro": "Rob has wrestled since he could walk and sulks only when he loses, which is rarely. He will try to fool you once or twice.",
+     "beaten": "Rob stares at the sky for a bit, then laughs, and tells half the field about it."
+    },
+    {
+     "who": "Cyril, slate merchant from Keswick",
+     "window": 1.05,
+     "feint": 45,
+     "prize": 40,
+     "intro": "Cyril is sixty and has not been thrown since 1998. He feints like a card sharp.",
+     "beaten": "Cyril sits down on the grass, which is not a fall, he says, as he did it on purpose."
+    }
+   ]
+  }
+ }
+}

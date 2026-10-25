@@ -18,6 +18,7 @@ const MENUS := {
 	"wardrobe": "res://ui/wardrobe_screen.tscn",
 	"arcade": "res://ui/arcade_screen.tscn",
 	"fete": "res://ui/fete_screen.tscn",
+	"curling": "res://ui/curling_screen.tscn", "wrestling": "res://ui/wrestling_screen.tscn",
 	"invention": "res://ui/invention_screen.tscn", "science": "res://ui/science_fair_screen.tscn", "economist": "res://ui/economist_screen.tscn", "forecasting": "res://ui/forecasting_screen.tscn",
 }
 

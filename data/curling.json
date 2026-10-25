@@ -1,0 +1,36 @@
+{
+ "rinks": {
+  "inverness_rink": {
+   "name": "The Inverness Rink Club Ladder",
+   "skips": [
+    {
+     "who": "Morag, club skip",
+     "sigma_w": 0.9,
+     "sigma_l": 0.38,
+     "hit": 40,
+     "prize": 15,
+     "intro": "Morag has skipped the Tuesday rink since before the roof was fixed. She brooms like she is angry at the ice. She is not; it is just how she brooms.",
+     "beaten": "Morag salutes you with her broom. In curling that is a handshake, and it counts."
+    },
+    {
+     "who": "Dougal, retired joiner",
+     "sigma_w": 0.7,
+     "sigma_l": 0.3,
+     "hit": 60,
+     "prize": 25,
+     "intro": "Dougal has made his own stone handles for thirty years and never once been asked. He will tell you about the grain.",
+     "beaten": "Dougal says that was a lovely bit of draw weight and that he would have done it differently."
+    },
+    {
+     "who": "Mrs Fraser, skip for forty winters",
+     "sigma_w": 0.5,
+     "sigma_l": 0.22,
+     "hit": 75,
+     "prize": 40,
+     "intro": "Mrs Fraser hasn't missed a Tuesday since the Callander years. She can hear a stone's weight from the car park.",
+     "beaten": "Mrs Fraser nods once. From her, that is a standing ovation and a medal."
+    }
+   ]
+  }
+ }
+}

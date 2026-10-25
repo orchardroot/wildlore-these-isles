@@ -6,7 +6,7 @@ extends RefCounted
 const COUNTERS := ["steps", "wins_wild", "wins_trainer", "caught", "train_trips", "ferry_trips", "flights",
 	"rail_miles", "money_earned", "teas", "rained_on", "fish_caught",
 	"goods_sold", "dishes_cooked", "darts_won", "crabs_caught", "show_rosettes", "sheepdog_trials", "rows_rung", "walls_built", "games_won", "pulls_sung", "conkers_won",
-	"bowls_ends_won", "skims_best", "lessons_taken", "words_reviewed", "say_it_right", "lang_certs", "arcade_toys", "fete_won"]
+	"bowls_ends_won", "skims_best", "lessons_taken", "words_reviewed", "say_it_right", "lang_certs", "arcade_toys", "fete_won", "curling_won", "wrestling_won"]
 const TEA_ITEMS := ["cup_of_tea", "flask_of_tea", "cream_tea"]
 const MILES_PER_MAP_UNIT := 0.45   # the world map is 1000 x 1300 for roughly 450 x 600 miles of Britain
 
@@ -94,6 +94,10 @@ static func lines(data: GameStateData) -> Array:
 	]
 	if c.call("darts_won") > 0:
 		out.append(["Darts legs won", _n(c.call("darts_won"))])
+	if c.call("curling_won") > 0:
+		out.append(["Curling ends won", _n(c.call("curling_won"))])
+	if c.call("wrestling_won") > 0:
+		out.append(["Wrestling bouts won", _n(c.call("wrestling_won"))])
 	if c.call("crabs_caught") > 0:
 		out.append(["Crabs caught and released", _n(c.call("crabs_caught"))])
 	if c.call("rows_rung") > 0:
