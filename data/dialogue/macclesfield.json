@@ -433,7 +433,7 @@
    "text": "Pop in to see Professor Garside. She's by the east end, in the Field Station."
   }
  ],
- "potteries_gate":[
+ "potteries_gate": [
   {
    "do": "say",
    "who": "Farmer",
@@ -448,6 +448,18 @@
    "do": "say",
    "who": "Mum's Neighbour",
    "text": "Get a creature from Professor Garside and show that Kit what for at the Field Station first. The lane'll be clear by then, and the Roaches aren't going anywhere."
+  }
+ ],
+ "macc_bowler": [
+  {
+   "do": "say",
+   "who": "Club Captain",
+   "text": "Welcome to the club. Flat shoes only, and the kettle is for members. You can be a member for the afternoon."
+  },
+  {
+   "do": "bowls",
+   "venue": "cheshire",
+   "who": "Club Captain"
   }
  ]
 }

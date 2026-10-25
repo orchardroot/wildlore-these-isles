@@ -316,5 +316,17 @@
    "who": "Night Nurse",
    "text": "Get to bed, love. If you need me later, I'll be the one with the tea."
   }
+ ],
+ "sheffield_bowler": [
+  {
+   "do": "say",
+   "who": "Park Keeper",
+   "text": "I cut it twice a week and people still say it's slow. It is not slow. They are just not very good."
+  },
+  {
+   "do": "bowls",
+   "venue": "yorkshire",
+   "who": "Park Keeper"
+  }
  ]
 }

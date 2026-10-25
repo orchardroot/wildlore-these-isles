@@ -218,6 +218,10 @@ func _exec(c: Dictionary) -> void:
 			await PubSportRun.new(self).darts(c)
 		"crab_comp":
 			await PubSportRun.new(self).crab_comp(c)
+		"bowls":
+			await GreenRun.new(self).bowls(c)
+		"skim":
+			await GreenRun.new(self).skim(c)
 		"ring":
 			await RingingRun.new(self).ring(c)
 		"wall":

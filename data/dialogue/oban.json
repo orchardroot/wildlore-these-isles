@@ -310,5 +310,17 @@
     "tug"
    ]
   }
+ ],
+ "oban_skimmer": [
+  {
+   "do": "say",
+   "who": "Skimmer",
+   "text": "Flat stones, flat water, flat calm. Three out of three is a good morning in Oban, and I mean the weather."
+  },
+  {
+   "do": "skim",
+   "venue": "easdale",
+   "who": "Skimmer"
+  }
  ]
 }

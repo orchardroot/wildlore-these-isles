@@ -522,7 +522,10 @@
    "facing": "down",
    "move": "pace",
    "script": "silk_fan",
-   "path": ["left", "left"]
+   "path": [
+    "left",
+    "left"
+   ]
   },
   {
    "id": "steps_man",
@@ -532,7 +535,10 @@
    "facing": "right",
    "move": "pace",
    "script": "steps_man",
-   "path": ["left", "left"]
+   "path": [
+    "left",
+    "left"
+   ]
   },
   {
    "id": "pigeon_lady",
@@ -542,7 +548,10 @@
    "facing": "down",
    "move": "wander",
    "script": "pigeon_lady",
-   "times": ["day", "dusk"]
+   "times": [
+    "day",
+    "dusk"
+   ]
   },
   {
    "id": "weather_man",
@@ -552,7 +561,10 @@
    "facing": "up",
    "move": "pace",
    "script": "weather_man",
-   "path": ["left", "left"]
+   "path": [
+    "left",
+    "left"
+   ]
   },
   {
    "id": "jogger_flav",
@@ -562,7 +574,10 @@
    "facing": "right",
    "move": "wander",
    "script": "jogger_flav",
-   "times": ["day", "dusk"]
+   "times": [
+    "day",
+    "dusk"
+   ]
   },
   {
    "id": "hiker_flav",
@@ -636,6 +651,16 @@
    "script": "potteries_gate",
    "name": "Mum's Neighbour",
    "hide_if": "kit1_fought"
+  },
+  {
+   "id": "macc_bowler",
+   "sprite": "shopkeeper",
+   "x": 46,
+   "y": 11,
+   "facing": "down",
+   "move": "still",
+   "script": "macc_bowler",
+   "name": "Club Captain"
   }
  ],
  "encounters": {},

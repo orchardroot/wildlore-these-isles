@@ -892,7 +892,7 @@
    "y": 24,
    "facing": "down",
    "script": "bp_compere",
-   "name": "Comp\u00e8re",
+   "name": "Compère",
    "hide_if": "q_lancashire_lights_done",
    "move": "still"
   },
@@ -902,7 +902,7 @@
    "x": 16,
    "y": 24,
    "facing": "down",
-   "name": "Comp\u00e8re",
+   "name": "Compère",
    "show_if": "q_lancashire_lights_done",
    "text": "Best switch-on in years, that. The papers have already called it 'Mr or Ms Nobody Lights Up Blackpool'. Very catchy.",
    "move": "still"
@@ -938,6 +938,16 @@
    "script": "bp_donkey_jack",
    "name": "Donkey Man Jack",
    "move": "still"
+  },
+  {
+   "id": "blackpool_bowler",
+   "sprite": "fisherman_north",
+   "x": 70,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "blackpool_bowler",
+   "name": "Bowler"
   }
  ],
  "encounters": {
@@ -1112,6 +1122,13 @@
    "x": 31,
    "y": 63,
    "text": "SOUTH: Lytham St Annes and the coast road to Southport. Mind the donkey crossing."
+  },
+  {
+   "x": 72,
+   "y": 28,
+   "plaque": "lancashire_crown_green_bowls",
+   "title": "Crown Green Bowls",
+   "text": "CROWN GREEN BOWLS. A crown green is not flat: it rises to a hump in the middle, the crown, and the woods are lopsided, so they curve in as they slow. The jack can be rolled in any direction, so every end is a different puzzle. It is a game of the North and the Midlands, and the Waterloo Hotel in Blackpool hosts the Waterloo Handicap, one of its best-known tournaments, every summer."
   }
  ],
  "spawn": [

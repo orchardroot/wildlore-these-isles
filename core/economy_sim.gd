@@ -98,7 +98,8 @@ static func stud_pay(badges: int) -> float:
 ## Everything that pays once a real day without a stake, per real day.
 static func dailies(badges: int) -> Dictionary:
 	return {"jobs": jobs_pay(badges), "quiz": quiz_pay(), "crossword": float(Crossword.PRIZE), "novice_race": novice_pay(badges),
-		"stud": stud_pay(badges), "shows": show_pay(), "darts": float(DARTS_PUBS * Darts.DAILY_PURSE)}
+		"stud": stud_pay(badges), "shows": show_pay(), "darts": float(DARTS_PUBS * Darts.DAILY_PURSE),
+		"bowls": float(Bowls.DAILY_PURSE), "skims": float(Skimming.DAILY_PURSE)}
 
 ## Once-only lumps: the Gazetteer's milestones, the Visitors' Book, the quiz league. Paid as the badges come in.
 static func lump_total() -> float:

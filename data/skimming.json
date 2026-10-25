@@ -1,0 +1,63 @@
+{
+ "stones": [
+  {
+   "id": "slate_thin",
+   "name": "A thin slate",
+   "grip": 0.92,
+   "drag": 0.0,
+   "desc": "Flat, thin and smooth-edged. The Easdale kind."
+  },
+  {
+   "id": "slate_chip",
+   "name": "A chipped slate",
+   "grip": 0.8,
+   "drag": 0.01,
+   "desc": "A bit rough at one edge, still flat."
+  },
+  {
+   "id": "pebble",
+   "name": "A beach pebble",
+   "grip": 0.7,
+   "drag": 0.02,
+   "desc": "Oval and honest, a little thick."
+  },
+  {
+   "id": "round",
+   "name": "A round lump",
+   "grip": 0.5,
+   "drag": 0.06,
+   "desc": "Satisfying to hold. Dreadful to skim."
+  }
+ ],
+ "venues": {
+  "easdale": {
+   "name": "Easdale",
+   "prize": 12,
+   "rival": {
+    "who": "Fiona, three-time Easdale finalist",
+    "stone": "slate_thin",
+    "angle": 19.0,
+    "angle_spread": 4.0,
+    "power": 0.75,
+    "intro": "Fiona has a pocket full of slate and a wrist that has done this since she could walk.",
+    "beaten": "Fiona looks at the water, then at you, and asks if you have done this before. You haven't. She is not sure that is allowed."
+   },
+   "real": "The real thing is the World Stone Skimming Championships on Easdale Island, off Seil, south of Oban. It is held in September, with the island's own slate and nothing bigger than three inches across."
+  },
+  "padarn": {
+   "name": "Llyn Padarn",
+   "prize": 12,
+   "rival": {
+    "who": "Gethin, quarryman's grandson",
+    "stone": "slate_chip",
+    "angle": 20.0,
+    "angle_spread": 3.5,
+    "power": 0.8,
+    "intro": "Gethin grew up among slate and says the best skimmers are the ones that were once a roof.",
+    "beaten": "Gethin shakes his head and mutters something in Welsh that sounds respectful, or about the weather."
+   },
+   "real": "The real thing is any lakeside with a calm morning. Llyn Padarn has slate for the picking, and the quarries above Llanberis are why."
+  }
+ },
+ "how": "Pick a stone, then set the angle and the power. About 20 degrees to the water is the sweet spot: steeper and it digs in, flatter and it skids. Three throws, and your best count of skips is your score."
+}

@@ -900,6 +900,16 @@
    "move": "still",
    "script": "obn_steward",
    "name": "Games Steward"
+  },
+  {
+   "id": "oban_skimmer",
+   "sprite": "fisher",
+   "x": 15,
+   "y": 34,
+   "facing": "left",
+   "move": "still",
+   "script": "oban_skimmer",
+   "name": "Skimmer"
   }
  ],
  "encounters": {
@@ -1144,6 +1154,13 @@
    "y": 13,
    "plaque": "obn_station",
    "title": "Oban Station"
+  },
+  {
+   "x": 14,
+   "y": 37,
+   "plaque": "skimming_easdale",
+   "title": "Stone Skimming",
+   "text": "STONE SKIMMING. The World Stone Skimming Championships are held on Easdale Island, south of Oban, in September. Competitors throw natural slate, no more than three inches across, into a flooded slate quarry. The island's slate is thin, flat and smooth, and the best angle to skim at is about twenty degrees."
   }
  ],
  "spawn": [

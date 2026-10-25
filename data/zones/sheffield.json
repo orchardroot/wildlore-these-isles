@@ -847,6 +847,16 @@
    "times": [
     "night"
    ]
+  },
+  {
+   "id": "sheffield_bowler",
+   "sprite": "fisherman_north",
+   "x": 30,
+   "y": 38,
+   "facing": "down",
+   "move": "still",
+   "script": "sheffield_bowler",
+   "name": "Park Keeper"
   }
  ],
  "encounters": {

@@ -741,6 +741,16 @@
    "facing": "up",
    "move": "still",
    "trainer": "stoke_wilf"
+  },
+  {
+   "id": "stoke_bowler",
+   "sprite": "shopkeeper",
+   "x": 41,
+   "y": 23,
+   "facing": "down",
+   "move": "still",
+   "script": "stoke_bowler",
+   "name": "Landlady"
   }
  ],
  "encounters": {
