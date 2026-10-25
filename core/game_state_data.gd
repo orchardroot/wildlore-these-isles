@@ -30,6 +30,7 @@ var weather := ""          # the outdoor weather right now ("" = roll it at the 
 var weather_region := ""   # the region it was rolled for
 var weather_until := 0     # world minute (see world_minutes) it lasts until
 var stats: Dictionary = TrainerStats.fresh()  # lifetime tallies for the Stats page (see TrainerStats)
+var look: Dictionary = {}  # the player's look (see Looks); {} on saves from before 4.6, which keep their player_sprite flag
 ## While a County Show or the Open Moot is on, `party` holds exhibition copies (TournamentRun) and this holds the
 ## real team; a save written then (never saved itself) writes the real team, so it can never keep the copies.
 var real_party: Array = []
@@ -48,6 +49,7 @@ static func default_sanctuary() -> Dictionary:
 func add_creature(c: Creature) -> String:
 	mark_seen(c.species.id)
 	mark_caught(c.species.id)
+	Sexes.record_seen(self, c)
 	if party.size() < PARTY_MAX:
 		party.append(c)
 		return "party"
@@ -84,6 +86,7 @@ func add_creature_swapping(c: Creature, slot: int) -> String:
 		return add_creature(c)
 	mark_seen(c.species.id)
 	mark_caught(c.species.id)
+	Sexes.record_seen(self, c)
 	ark.append(party[slot])
 	party[slot] = c
 	return "party"
@@ -177,6 +180,7 @@ func to_dict() -> Dictionary:
 		"last_sanctuary": last_sanctuary.duplicate(true), "rng_seed": rng_seed,
 		"weather": weather, "weather_region": weather_region, "weather_until": weather_until,
 		"stats": stats.duplicate(), "euros": euros, "purses": purses.duplicate(), "markets": markets.duplicate(true),
+		"look": look.duplicate(true),
 	}
 
 static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
@@ -216,6 +220,7 @@ static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
 	s.euros = maxi(0, int(d.get("euros", 0)))
 	s.purses = Wallet.sanitise_purses(d.get("purses"))
 	s.markets = Markets.sanitise(d.get("markets"))
+	s.look = Looks.sanitise(d.get("look"))
 	if not d.has("euros"):
 		Wallet.welcome_old_save(s)  # a save from before euros, made in Ireland: a friendly one-off conversion
 	return s

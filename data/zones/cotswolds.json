@@ -1161,6 +1161,16 @@
    "script": "cw_raf_police",
    "name": "RAF Police",
    "hide_if": "champion"
+  },
+  {
+   "id": "fete_cheese_steward",
+   "sprite": "farmer",
+   "x": 4,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "fete_cheese_steward",
+   "name": "Hill Steward"
   }
  ],
  "encounters": {

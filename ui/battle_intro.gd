@@ -43,7 +43,7 @@ var _built := false
 var _slammed := false
 # the VS splash
 var _trainer: Dictionary = {}
-var _you_sprite := "player_a"
+var _you_sprite: Variant = "player_a"  # a sheet id, or the player's look recipe (Looks) painted through LookArt
 var _you_name := "You"
 var _region := ""
 var _stripe: Polygon2D
@@ -102,7 +102,7 @@ static func play(host: Node, opts: Dictionary, ctx: Dictionary) -> void:
 	await t.run()
 	if wants_vs(opts):
 		var v := BattleIntro.new()
-		v.setup_vs(opts.trainer, str(Game.data.flags.get("player_sprite", "player_a")), Game.data.player_name, str(ctx.get("region", "")))
+		v.setup_vs(opts.trainer, Looks.recipe(Game.data, Game.items), Game.data.player_name, str(ctx.get("region", "")))
 		host.add_child(v)
 		t.queue_free()
 		await v.run()
@@ -115,7 +115,7 @@ static func dev_show(host: Node, ow: Node, arg: String, at: float) -> void:
 	var ctx: Dictionary = ow.battle_context() if ow else {}
 	var t := BattleIntro.new()
 	if arg.begins_with("vs:"):
-		t.setup_vs(StoryData.trainer(arg.substr(3)), str(Game.data.flags.get("player_sprite", "player_a")), Game.data.player_name, str(ctx.get("region", "")))
+		t.setup_vs(StoryData.trainer(arg.substr(3)), Looks.recipe(Game.data, Game.items), Game.data.player_name, str(ctx.get("region", "")))
 	else:
 		t.setup_transition(arg, ctx.get("centre", Vector2(0.5, 0.55)), 1.0, Settings.reduce_flashing)
 	t.hold_at = clampf(at, 0.0, 1.0)
@@ -128,7 +128,8 @@ func setup_transition(s: String, centre_uv: Vector2, speed: float, reduce_flashi
 	duration = seconds_for(s, speed)
 	reduce = reduce_flashing
 
-func setup_vs(trainer: Dictionary, you_sprite: String, you_name: String, region: String) -> void:
+## `you_sprite` is a sprite id (a sheet in art/sprites/chars) or the player's recipe Dictionary (see Looks).
+func setup_vs(trainer: Dictionary, you_sprite: Variant, you_name: String, region: String) -> void:
 	style = ""
 	_trainer = trainer
 	_you_sprite = you_sprite
@@ -256,13 +257,18 @@ func _build_vs() -> void:
 	_root.add_child(hint)
 	_pose_vs()
 
-func _portrait(node_name: String, sprite_id: String, facing: String, k: float) -> TextureRect:
+func _portrait(node_name: String, sprite_id: Variant, facing: String, k: float) -> TextureRect:
 	var tr := TextureRect.new()
 	tr.name = node_name
 	tr.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	tr.stretch_mode = TextureRect.STRETCH_SCALE
 	tr.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var path := "res://art/sprites/chars/%s.png" % sprite_id
+	if sprite_id is Dictionary:  # the player's look (4.6)
+		tr.texture = LookArt.frame(sprite_id, facing)
+		tr.size = Vector2(32, 48) * 6.0 * k
+		_root.add_child(tr)
+		return tr
+	var path := "res://art/sprites/chars/%s.png" % str(sprite_id)
 	if not ResourceLoader.exists(path):
 		path = "res://art/sprites/chars/_placeholder.png"
 	if ResourceLoader.exists(path):

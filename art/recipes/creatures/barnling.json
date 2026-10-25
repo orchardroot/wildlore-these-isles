@@ -16,5 +16,6 @@
  ],
  "eyes": [
   {"at": [40, 43], "r": 5.2, "colour": "#1d1822", "mirror": true}
- ]
+ ],
+ "dimorph": {"m": {"add_layers": [{"shape": "ellipse", "at": [48, 74], "size": [30, 28], "colour": "#ffffff", "front_only": true, "rim": false}]}, "f": {"add_layers": [{"shape": "ellipse", "at": [48, 74], "size": [30, 28], "colour": "#fff0dc", "front_only": true, "rim": false, "pattern": "speckle", "pcolour": "#9a6a38", "density": 26}]}}
 }

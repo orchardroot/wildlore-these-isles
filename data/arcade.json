@@ -1,0 +1,17 @@
+{
+ "towns": {
+  "blackpool": {
+   "name": "Golden Mile Amusements",
+   "counter": "Change Counter",
+   "toys": ["toy_donkey", "toy_tower_bear"],
+   "blurb": "The Golden Mile is the seafront strip of Blackpool's arcades, rides and chip shops, and it has been taking people's coppers for well over a century."
+  },
+  "brighton": {
+   "name": "Palace Pier Arcade",
+   "counter": "Arcade Attendant",
+   "toys": ["toy_pier_gull", "toy_pebble"],
+   "blurb": "Palace Pier opened in 1899, and its arcade is every bit as loud as you would hope."
+  }
+ },
+ "category_d": "Penny falls, coin pushers and claw grabbers are Category D gaming machines in Britain, the lowest tier, with small stakes and prizes. That is why children are allowed to play them."
+}

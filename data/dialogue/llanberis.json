@@ -282,5 +282,17 @@
    "do": "rewild",
    "site": "coed_padarn"
   }
+ ],
+ "llan_skimmer": [
+  {
+   "do": "say",
+   "who": "Skimmer",
+   "text": "Llyn Padarn is the best stone-skimming lake in Wales, and I will fight anyone who says Bala. Carreg is a stone, by the way. Cerrig, plural. You will need plenty."
+  },
+  {
+   "do": "skim",
+   "venue": "padarn",
+   "who": "Skimmer"
+  }
  ]
 }

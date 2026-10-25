@@ -1,0 +1,1273 @@
+[
+ {
+  "id": "flat_cap_yorkshire",
+  "name": "Yorkshire flat cap",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 280,
+  "desc": "Flat caps took over the mill and pit towns of the North because a square of cloth made one cheaply.",
+  "look": {
+   "hat": "flat_cap",
+   "palette": {
+    "hat": "#6a5a40",
+    "accent2": "#4a3c28"
+   }
+  }
+ },
+ {
+  "id": "donegal_tweed_cap",
+  "name": "Donegal tweed cap",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 340,
+  "desc": "Donegal tweed is known for the bright flecks, called neps, spun into the yarn.",
+  "look": {
+   "hat": "flat_cap",
+   "palette": {
+    "hat": "#7a7a5e",
+    "accent2": "#c86a3a"
+   }
+  }
+ },
+ {
+  "id": "luton_boater",
+  "name": "Luton straw boater",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 450,
+  "desc": "Luton made hats for so long that its football club is still nicknamed the Hatters.",
+  "look": {
+   "hat": "boater",
+   "palette": {
+    "hat": "#e0c88a",
+    "accent2": "#2a3a6a"
+   }
+  }
+ },
+ {
+  "id": "panama_hat",
+  "name": "Panama hat",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 620,
+  "desc": "Panama hats come from Ecuador, not Panama; the name stuck after workers on the canal wore them.",
+  "look": {
+   "hat": "panama",
+   "palette": {
+    "hat": "#eadcb0",
+    "accent2": "#3a3a3a"
+   }
+  }
+ },
+ {
+  "id": "bobble_hat_red",
+  "name": "Red bobble hat",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 150,
+  "desc": "Wool traps air in its crimped fibres, so a knitted hat stays warm even when it gets damp.",
+  "look": {
+   "hat": "bobble_hat",
+   "palette": {
+    "hat": "#c83a3a",
+    "accent2": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "bobble_hat_green",
+  "name": "Green bobble hat",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 150,
+  "desc": "The knit-and-purl stitches in a hat make it stretch, which is why one size fits most heads.",
+  "look": {
+   "hat": "bobble_hat",
+   "palette": {
+    "hat": "#2f6a3a",
+    "accent2": "#e8e0d0"
+   }
+  }
+ },
+ {
+  "id": "bucket_hat_manc",
+  "name": "Bucket hat",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 220,
+  "desc": "The bucket hat became the badge of Manchester's late 1980s and 1990s music scene.",
+  "look": {
+   "hat": "bucket",
+   "palette": {
+    "hat": "#3a6a8a",
+    "accent2": "#e8c040"
+   }
+  }
+ },
+ {
+  "id": "sou_wester_yellow",
+  "name": "Sou'wester",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 360,
+  "desc": "Its long back brim sheds rain off your neck; the name comes from the south-westerly gales.",
+  "look": {
+   "hat": "sou_wester",
+   "palette": {
+    "hat": "#e8c030",
+    "accent2": "#2a2a2a"
+   }
+  }
+ },
+ {
+  "id": "burns_tam",
+  "name": "Tam o' shanter",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 520,
+  "desc": "The tam o' shanter is named for the hero of Robert Burns's poem of 1790, who rode home past Alloway Kirk.",
+  "look": {
+   "hat": "tam",
+   "palette": {
+    "hat": "#2a3a5a",
+    "accent2": "#8a2a2a"
+   }
+  }
+ },
+ {
+  "id": "deerstalker_tweed",
+  "name": "Deerstalker",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 480,
+  "desc": "The deerstalker has two peaks and flaps to tie up, made for stalking in Scottish weather.",
+  "look": {
+   "hat": "deerstalker",
+   "palette": {
+    "hat": "#7a6a48",
+    "accent2": "#4a3c28"
+   }
+  }
+ },
+ {
+  "id": "hard_hat_yellow",
+  "name": "Hard hat",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 260,
+  "desc": "A hard hat has a webbing cradle inside, so a blow spreads across the whole head.",
+  "look": {
+   "hat": "hard_hat",
+   "palette": {
+    "hat": "#e8c030"
+   }
+  }
+ },
+ {
+  "id": "headscarf_tartan",
+  "name": "Headscarf",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 190,
+  "desc": "A silk headscarf was the style of the Queen's country walks and of every 1960s film star.",
+  "look": {
+   "hat": "headscarf",
+   "palette": {
+    "hat": "#c8a06a",
+    "accent2": "#2a3a5a"
+   }
+  }
+ },
+ {
+  "id": "sunhat_straw",
+  "name": "Straw sunhat",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 330,
+  "desc": "Straw plait was made across Bedfordshire and Hertfordshire for centuries, mostly by women and children at home.",
+  "look": {
+   "hat": "sunhat",
+   "palette": {
+    "hat": "#e8d090",
+    "accent2": "#d86a5a"
+   }
+  }
+ },
+ {
+  "id": "fair_isle_jumper",
+  "name": "Fair Isle jumper",
+  "kind": "wear",
+  "slot": "top",
+  "price": 1400,
+  "desc": "Fair Isle knitting comes from a tiny island between Orkney and Shetland and uses no more than two colours in a row.",
+  "look": {
+   "accessories": [
+    "aran"
+   ],
+   "palette": {
+    "top": "#b04a3a",
+    "accent": "#e8e0d0",
+    "accent2": "#2a3a5a"
+   }
+  }
+ },
+ {
+  "id": "aran_jumper",
+  "name": "Aran jumper",
+  "kind": "wear",
+  "slot": "top",
+  "price": 1200,
+  "desc": "Aran jumpers are named for the Aran Islands off Galway Bay, and the cables are knitted into thick undyed wool.",
+  "look": {
+   "accessories": [
+    "aran"
+   ],
+   "palette": {
+    "top": "#e8e0d0"
+   }
+  }
+ },
+ {
+  "id": "guernsey_jumper",
+  "name": "Guernsey jumper",
+  "kind": "wear",
+  "slot": "top",
+  "price": 950,
+  "desc": "The guernsey is a tightly knitted wool jumper, traditionally navy, made for fishermen of the Channel Islands.",
+  "look": {
+   "palette": {
+    "top": "#1f2f4f"
+   }
+  }
+ },
+ {
+  "id": "jersey_jumper",
+  "name": "Jersey jumper",
+  "kind": "wear",
+  "slot": "top",
+  "price": 900,
+  "desc": "Jersey the cloth is named for the island, where knitters made hardwearing woollen jerseys for fishermen.",
+  "look": {
+   "palette": {
+    "top": "#8a2a2a"
+   }
+  }
+ },
+ {
+  "id": "derry_shirt",
+  "name": "Derry shirt",
+  "kind": "wear",
+  "slot": "top",
+  "price": 700,
+  "desc": "In the nineteenth century Derry became a great shirt-making city, with factories along the Foyle.",
+  "look": {
+   "sleeves": "long",
+   "palette": {
+    "top": "#e8e8f0"
+   }
+  }
+ },
+ {
+  "id": "belfast_linen_shirt",
+  "name": "Belfast linen shirt",
+  "kind": "wear",
+  "slot": "top",
+  "price": 800,
+  "desc": "Belfast was nicknamed Linenopolis in the nineteenth century for its linen mills.",
+  "look": {
+   "palette": {
+    "top": "#d8d4c0"
+   }
+  }
+ },
+ {
+  "id": "manx_tshirt",
+  "name": "Three-legs T-shirt",
+  "kind": "wear",
+  "slot": "top",
+  "price": 350,
+  "desc": "The three legs of Man have been the island's emblem since the thirteenth century.",
+  "look": {
+   "sleeves": "short",
+   "palette": {
+    "top": "#c83a3a",
+    "accent": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "cornish_smock",
+  "name": "Fisherman's smock",
+  "kind": "wear",
+  "slot": "top",
+  "price": 820,
+  "desc": "Cornish fishing crews wore loose canvas frocks over their ganseys to keep the spray off.",
+  "look": {
+   "accessories": [
+    "smock"
+   ],
+   "palette": {
+    "accent": "#8a9ab0",
+    "accent2": "#d8c8a0"
+   }
+  }
+ },
+ {
+  "id": "plain_tee_white",
+  "name": "White T-shirt",
+  "kind": "wear",
+  "slot": "top",
+  "price": 120,
+  "desc": "A T-shirt is named for its shape, and a white one is the quickest way to find out what you have spilled.",
+  "look": {
+   "sleeves": "short",
+   "palette": {
+    "top": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "plain_tee_navy",
+  "name": "Navy T-shirt",
+  "kind": "wear",
+  "slot": "top",
+  "price": 120,
+  "desc": "Navy dye was once made from woad and indigo; this one is made in a laundry-friendly way instead.",
+  "look": {
+   "sleeves": "short",
+   "palette": {
+    "top": "#1f2f4f"
+   }
+  }
+ },
+ {
+  "id": "hoodie_grey",
+  "name": "Grey hoodie",
+  "kind": "wear",
+  "slot": "top",
+  "price": 450,
+  "desc": "Hooded sweatshirts date from the 1930s, when they were made to keep warehouse workers warm.",
+  "look": {
+   "accessories": [
+    "hoodie"
+   ],
+   "palette": {
+    "top": "#7a7e86"
+   }
+  }
+ },
+ {
+  "id": "hoodie_green",
+  "name": "Green hoodie",
+  "kind": "wear",
+  "slot": "top",
+  "price": 450,
+  "desc": "Hoodies were first sold in the 1930s as workwear for American cold-store workers.",
+  "look": {
+   "accessories": [
+    "hoodie"
+   ],
+   "palette": {
+    "top": "#3a6a4a"
+   }
+  }
+ },
+ {
+  "id": "breton_top",
+  "name": "Striped Breton top",
+  "kind": "wear",
+  "slot": "top",
+  "price": 520,
+  "desc": "The striped Breton top was a French navy uniform, and the stripes made someone overboard easier to spot.",
+  "look": {
+   "sleeves": "long",
+   "palette": {
+    "top": "#f2f0ea",
+    "accent": "#1f2f4f"
+   }
+  }
+ },
+ {
+  "id": "cardigan_mustard",
+  "name": "Mustard cardigan",
+  "kind": "wear",
+  "slot": "top",
+  "price": 640,
+  "desc": "A cardigan is named for the seventh Earl of Cardigan, who led the Charge of the Light Brigade.",
+  "look": {
+   "palette": {
+    "top": "#c8a030"
+   }
+  }
+ },
+ {
+  "id": "rugby_shirt_hoops",
+  "name": "Hooped rugby shirt",
+  "kind": "wear",
+  "slot": "top",
+  "price": 600,
+  "desc": "Rugby is named for Rugby School in Warwickshire, where the game is said to have begun in 1823.",
+  "look": {
+   "sleeves": "long",
+   "palette": {
+    "top": "#2f6a3a",
+    "accent": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "lab_coat",
+  "name": "Lab coat",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 600,
+  "desc": "A lab coat is cut long to cover the clothes underneath, which is entirely the point.",
+  "look": {
+   "accessories": [
+    "labcoat"
+   ],
+   "palette": {
+    "accent": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "harris_tweed_jacket",
+  "name": "Harris Tweed jacket",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 2200,
+  "desc": "Only cloth handwoven by islanders in their own homes in the Outer Hebrides may carry the Orb mark.",
+  "look": {
+   "accessories": [
+    "tweed_jacket"
+   ],
+   "palette": {
+    "accent": "#6a6a4a",
+    "accent2": "#c86a3a"
+   }
+  }
+ },
+ {
+  "id": "tweed_jacket_grey",
+  "name": "Herringbone tweed jacket",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 1500,
+  "desc": "Herringbone weave zigzags like the bones of a herring, and it is the commonest tweed pattern.",
+  "look": {
+   "accessories": [
+    "tweed_jacket"
+   ],
+   "palette": {
+    "accent": "#5a5e68",
+    "accent2": "#a8a8a0"
+   }
+  }
+ },
+ {
+  "id": "waxed_jacket_green",
+  "name": "Waxed jacket",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 1500,
+  "desc": "A waxed cotton jacket sheds rain because the wax fills the weave; it needs rewaxing every year.",
+  "look": {
+   "accessories": [
+    "waxed_jacket"
+   ],
+   "palette": {
+    "accent": "#3a4a2a",
+    "accent2": "#d8c8a0"
+   }
+  }
+ },
+ {
+  "id": "waxed_jacket_navy",
+  "name": "Navy waxed jacket",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 1500,
+  "desc": "Waxed cotton took over from oilskin for coastal and country wear in the twentieth century.",
+  "look": {
+   "accessories": [
+    "waxed_jacket"
+   ],
+   "palette": {
+    "accent": "#1f2f4f",
+    "accent2": "#d8c8a0"
+   }
+  }
+ },
+ {
+  "id": "oilskin_coat",
+  "name": "Oilskin coat",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 1300,
+  "desc": "Oilskins were once cotton treated with linseed oil, and they smelled exactly as you would imagine.",
+  "look": {
+   "accessories": [
+    "oilskin"
+   ],
+   "palette": {
+    "accent": "#e8c030",
+    "accent2": "#2a2a2a"
+   }
+  }
+ },
+ {
+  "id": "welsh_tapestry_coat",
+  "name": "Welsh tapestry coat",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 2400,
+  "desc": "Welsh tapestry is a double cloth, so the same pattern appears on the back in opposite colours.",
+  "look": {
+   "accessories": [
+    "cape"
+   ],
+   "palette": {
+    "accent": "#8a2a3a",
+    "accent2": "#2a5a6a"
+   }
+  }
+ },
+ {
+  "id": "hi_vis_vest",
+  "name": "Hi-vis vest",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 450,
+  "desc": "Fluorescent yellow-green sits where the human eye is most sensitive, which is why roadworkers wear it.",
+  "look": {
+   "accessories": [
+    "hi_vis"
+   ],
+   "palette": {
+    "accent": "#c8e030",
+    "accent2": "#d8d8d8"
+   }
+  }
+ },
+ {
+  "id": "gilet_quilted",
+  "name": "Quilted gilet",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 780,
+  "desc": "Gilet is simply the French word for waistcoat.",
+  "look": {
+   "accessories": [
+    "gilet"
+   ],
+   "palette": {
+    "accent": "#3a5a7a"
+   }
+  }
+ },
+ {
+  "id": "apron_butcher",
+  "name": "Striped apron",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 350,
+  "desc": "Blue-and-white stripe is the traditional cloth of the butcher's apron.",
+  "look": {
+   "accessories": [
+    "apron"
+   ],
+   "palette": {
+    "accent": "#f2f0ea",
+    "accent2": "#3a5a9a"
+   }
+  }
+ },
+ {
+  "id": "overalls_denim",
+  "name": "Dungarees",
+  "kind": "wear",
+  "slot": "coat",
+  "price": 640,
+  "desc": "Dungaree is a coarse cotton cloth, named for a district of Mumbai.",
+  "look": {
+   "accessories": [
+    "overalls"
+   ],
+   "palette": {
+    "bottom": "#3a4a7a"
+   }
+  }
+ },
+ {
+  "id": "jeans_blue",
+  "name": "Indigo jeans",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 450,
+  "desc": "Denim was woven in Nimes, in France; the word comes from de Nimes.",
+  "look": {
+   "bottom_style": "trousers",
+   "palette": {
+    "bottom": "#26335a"
+   }
+  }
+ },
+ {
+  "id": "chinos_stone",
+  "name": "Stone chinos",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 520,
+  "desc": "Chinos got their name from the cotton twill first woven in China for army uniforms.",
+  "look": {
+   "bottom_style": "trousers",
+   "palette": {
+    "bottom": "#b8a888"
+   }
+  }
+ },
+ {
+  "id": "cord_trousers",
+  "name": "Cord trousers",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 580,
+  "desc": "Corduroy ridges are called wales, and a thick-wale cord is the sound of every university seminar.",
+  "look": {
+   "bottom_style": "trousers",
+   "palette": {
+    "bottom": "#7a5a3a"
+   }
+  }
+ },
+ {
+  "id": "shorts_khaki",
+  "name": "Khaki shorts",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 300,
+  "desc": "Khaki is the Urdu word for dusty, and the army colour of the same name hid in dry ground.",
+  "look": {
+   "bottom_style": "shorts",
+   "palette": {
+    "bottom": "#a89a6a"
+   }
+  }
+ },
+ {
+  "id": "pleated_skirt",
+  "name": "Pleated skirt",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 480,
+  "desc": "A pleated skirt keeps its folds only if you leave it alone, which is why it is a school staple.",
+  "look": {
+   "bottom_style": "skirt",
+   "palette": {
+    "bottom": "#3a3a5a"
+   }
+  }
+ },
+ {
+  "id": "tartan_skirt",
+  "name": "Tartan skirt",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 620,
+  "desc": "Tartan was banned by law in Scotland after 1746 and legal again in 1782.",
+  "look": {
+   "bottom_style": "skirt",
+   "palette": {
+    "bottom": "#4a2a3a",
+    "accent": "#2a5a3a"
+   }
+  }
+ },
+ {
+  "id": "black_watch_kilt",
+  "name": "Black Watch kilt",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 1500,
+  "desc": "Black Watch tartan began as the pattern of the Highland companies raised in the 1720s to keep watch on the Highlands.",
+  "look": {
+   "bottom_style": "kilt",
+   "palette": {
+    "bottom": "#1f3a3a",
+    "accent": "#1a2a1a",
+    "accent2": "#d8d4c0"
+   }
+  }
+ },
+ {
+  "id": "royal_stewart_kilt",
+  "name": "Royal Stewart kilt",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 1600,
+  "desc": "Royal Stewart is the sovereign's personal tartan, and anyone is welcome to wear it.",
+  "look": {
+   "bottom_style": "kilt",
+   "palette": {
+    "bottom": "#b02a2a",
+    "accent": "#1f3a5a",
+    "accent2": "#d8d4c0"
+   }
+  }
+ },
+ {
+  "id": "hunting_stewart_kilt",
+  "name": "Hunting Stewart kilt",
+  "kind": "wear",
+  "slot": "bottom",
+  "price": 1500,
+  "desc": "A hunting tartan is the muted version of a clan's cloth, meant for the hills rather than the ballroom.",
+  "look": {
+   "bottom_style": "kilt",
+   "palette": {
+    "bottom": "#2a4a3a",
+    "accent": "#1f2f5a",
+    "accent2": "#d8d4c0"
+   }
+  }
+ },
+ {
+  "id": "northampton_brogues",
+  "name": "Northampton brogues",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 1100,
+  "desc": "The holes in a brogue were once there to let water out of boots that crossed Irish and Scottish bogs.",
+  "look": {
+   "palette": {
+    "shoes": "#6a3a22"
+   }
+  }
+ },
+ {
+  "id": "cherry_red_boots",
+  "name": "Cherry-red boots",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 900,
+  "desc": "Northampton shoemakers have supplied boots to armies since the English Civil War.",
+  "look": {
+   "palette": {
+    "shoes": "#a82a2a"
+   }
+  }
+ },
+ {
+  "id": "wellies_red",
+  "name": "Red wellies",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 400,
+  "desc": "The Wellington boot is named for the first Duke of Wellington, who asked for a hardier version of the Hessian boot.",
+  "look": {
+   "accessories": [
+    "wellies"
+   ],
+   "palette": {
+    "shoes": "#c83a3a"
+   }
+  }
+ },
+ {
+  "id": "wellies_green",
+  "name": "Green wellies",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 400,
+  "desc": "Rubber wellies were first made in Britain in Edinburgh, at the North British Rubber Company, in the 1850s.",
+  "look": {
+   "accessories": [
+    "wellies"
+   ],
+   "palette": {
+    "shoes": "#2f5a2f"
+   }
+  }
+ },
+ {
+  "id": "wellies_yellow",
+  "name": "Yellow wellies",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 400,
+  "desc": "Bright yellow is the old oilskin colour of the fishing fleets, easy to spot against a grey sea.",
+  "look": {
+   "accessories": [
+    "wellies"
+   ],
+   "palette": {
+    "shoes": "#e8c030"
+   }
+  }
+ },
+ {
+  "id": "wellies_navy",
+  "name": "Navy wellies",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 400,
+  "desc": "Millions of pairs of wellingtons were made for the soldiers of the First World War.",
+  "look": {
+   "accessories": [
+    "wellies"
+   ],
+   "palette": {
+    "shoes": "#1f2f5a"
+   }
+  }
+ },
+ {
+  "id": "plain_trainers",
+  "name": "Black trainers",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 350,
+  "desc": "Plimsolls got their name because the line round the sole looks like a ship's Plimsoll line.",
+  "look": {
+   "palette": {
+    "shoes": "#2a2a30"
+   }
+  }
+ },
+ {
+  "id": "black_shoes",
+  "name": "Black school shoes",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 320,
+  "desc": "Leather shoes last longer if you rest them a day between wears, because the leather needs to dry.",
+  "look": {
+   "palette": {
+    "shoes": "#1a1a1e"
+   }
+  }
+ },
+ {
+  "id": "hiking_boots",
+  "name": "Hiking boots",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 880,
+  "desc": "The Lake District fells are ground out by boots like these: the Pennine Way alone is 268 miles.",
+  "look": {
+   "palette": {
+    "shoes": "#6a4a2a"
+   }
+  }
+ },
+ {
+  "id": "lancashire_clogs",
+  "name": "Lancashire clogs",
+  "kind": "wear",
+  "slot": "shoes",
+  "price": 420,
+  "desc": "Wooden-soled clogs were mill-floor wear in Lancashire, and clog dancing grew from their rhythms.",
+  "look": {
+   "palette": {
+    "shoes": "#7a4a22"
+   }
+  }
+ },
+ {
+  "id": "welsh_wool_shawl",
+  "name": "Welsh wool shawl",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 950,
+  "desc": "Newtown in Powys was once called the Leeds of Wales for its flannel mills.",
+  "look": {
+   "accessories": [
+    "shawl"
+   ],
+   "palette": {
+    "accent": "#8a2a3a",
+    "accent2": "#2a5a6a"
+   }
+  }
+ },
+ {
+  "id": "shetland_lace_shawl",
+  "name": "Shetland lace shawl",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 1100,
+  "desc": "A good Shetland lace shawl is knitted so fine that it can be drawn through a wedding ring.",
+  "look": {
+   "accessories": [
+    "shawl"
+   ],
+   "palette": {
+    "accent": "#f2f0ea",
+    "accent2": "#d8d4c0"
+   }
+  }
+ },
+ {
+  "id": "nottingham_lace_collar",
+  "name": "Nottingham lace collar",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 600,
+  "desc": "Nottingham's Lace Market was the centre of English machine-made lace in the nineteenth century.",
+  "look": {
+   "accessories": [
+    "scarf"
+   ],
+   "palette": {
+    "accent": "#f2f0ea",
+    "accent2": "#d8d4c0"
+   }
+  }
+ },
+ {
+  "id": "paisley_scarf",
+  "name": "Paisley scarf",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 700,
+  "desc": "The Paisley pattern is named for the Scottish town that wove imitation Kashmir shawls in the nineteenth century.",
+  "look": {
+   "accessories": [
+    "scarf"
+   ],
+   "palette": {
+    "accent": "#6a2a5a",
+    "accent2": "#e8c030"
+   }
+  }
+ },
+ {
+  "id": "scarf_red",
+  "name": "Red football scarf",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 260,
+  "desc": "Supporters wore knitted scarves in team colours from the early twentieth century.",
+  "look": {
+   "accessories": [
+    "scarf"
+   ],
+   "palette": {
+    "accent": "#c83a3a",
+    "accent2": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "scarf_blue",
+  "name": "Blue football scarf",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 260,
+  "desc": "A football scarf is knitted long enough to hold up at the anthem, and short enough not to trip on.",
+  "look": {
+   "accessories": [
+    "scarf"
+   ],
+   "palette": {
+    "accent": "#2a4a9a",
+    "accent2": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "scarf_stripes",
+  "name": "Black and white scarf",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 260,
+  "desc": "Stripes in a scarf come from joining different wool colours as the row changes.",
+  "look": {
+   "accessories": [
+    "scarf"
+   ],
+   "palette": {
+    "accent": "#1a1a1e",
+    "accent2": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "morris_sash",
+  "name": "Morris sash",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 480,
+  "desc": "Morris dancing was recorded in England by the fifteenth century.",
+  "look": {
+   "accessories": [
+    "scarf"
+   ],
+   "palette": {
+    "accent": "#c83a3a",
+    "accent2": "#f2f0ea"
+   }
+  }
+ },
+ {
+  "id": "cheese_rosette",
+  "name": "Cheshire cheese rosette",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 300,
+  "desc": "Cheshire is one of the oldest named English cheeses, said to appear in the Domesday Book.",
+  "look": {
+   "accessories": [
+    "pin"
+   ],
+   "palette": {
+    "pin": "#e8a030"
+   }
+  }
+ },
+ {
+  "id": "lanyard_badge",
+  "name": "Conference lanyard",
+  "kind": "wear",
+  "slot": "neck",
+  "price": 180,
+  "desc": "The lanyard is a sailor's word for a cord, and now hangs round the necks of every committee in Britain.",
+  "look": {
+   "accessories": [
+    "lanyard"
+   ],
+   "palette": {
+    "accent2": "#3a5a9a"
+   }
+  }
+ },
+ {
+  "id": "round_glasses",
+  "name": "Round glasses",
+  "kind": "wear",
+  "slot": "face",
+  "price": 350,
+  "desc": "Spectacles were invented in Italy in the thirteenth century and reached England soon after.",
+  "look": {
+   "accessories": [
+    "glasses"
+   ],
+   "palette": {
+    "glasses": "#5a4a58"
+   }
+  }
+ },
+ {
+  "id": "tortoise_glasses",
+  "name": "Tortoiseshell glasses",
+  "kind": "wear",
+  "slot": "face",
+  "price": 420,
+  "desc": "Real tortoiseshell was long ago replaced by plastic, to the great relief of the tortoises.",
+  "look": {
+   "accessories": [
+    "glasses"
+   ],
+   "palette": {
+    "glasses": "#7a4a2a"
+   }
+  }
+ },
+ {
+  "id": "handlebar_moustache",
+  "name": "Handlebar moustache",
+  "kind": "wear",
+  "slot": "face",
+  "price": 150,
+  "desc": "The Handlebar Club of Britain was founded in 1947 and has strict rules about the curl.",
+  "look": {
+   "accessories": [
+    "moustache"
+   ],
+   "palette": {
+    "beard": "#4a2e22"
+   }
+  }
+ },
+ {
+  "id": "festival_glitter",
+  "name": "Festival glitter",
+  "kind": "wear",
+  "slot": "face",
+  "price": 120,
+  "desc": "Glastonbury began in 1970 at Worthy Farm, and the first ticket included free milk.",
+  "look": {
+   "accessories": [
+    "glitter"
+   ]
+  }
+ },
+ {
+  "id": "black_brolly",
+  "name": "Black umbrella",
+  "kind": "wear",
+  "slot": "hands",
+  "price": 400,
+  "desc": "Jonas Hanway is said to have been the first Londoner to carry an umbrella daily, in the 1750s.",
+  "look": {
+   "accessories": [
+    "umbrella"
+   ],
+   "palette": {
+    "prop": "#1a1a2a"
+   }
+  }
+ },
+ {
+  "id": "hurley_ash",
+  "name": "Hurley",
+  "kind": "wear",
+  "slot": "hands",
+  "price": 700,
+  "desc": "Hurling is often called the fastest field game in the world, and its ball is a sliotar.",
+  "look": {
+   "accessories": [
+    "hurley"
+   ],
+   "palette": {
+    "prop": "#c8a060"
+   }
+  }
+ },
+ {
+  "id": "shinty_caman",
+  "name": "Shinty caman",
+  "kind": "wear",
+  "slot": "hands",
+  "price": 700,
+  "desc": "Shinty is played with a stick called a caman, and is closely related to Irish hurling.",
+  "look": {
+   "accessories": [
+    "shinty_stick"
+   ],
+   "palette": {
+    "prop": "#c8a060"
+   }
+  }
+ },
+ {
+  "id": "shepherds_staff",
+  "name": "Shepherd's staff",
+  "kind": "wear",
+  "slot": "hands",
+  "price": 480,
+  "desc": "A shepherd's crook hooks a sheep by the leg, which is a lot easier than chasing it.",
+  "look": {
+   "accessories": [
+    "staff"
+   ],
+   "palette": {
+    "prop": "#8a6a3a"
+   }
+  }
+ },
+ {
+  "id": "fiddle_shetland",
+  "name": "Fiddle",
+  "kind": "wear",
+  "slot": "hands",
+  "price": 1500,
+  "desc": "Shetland has a famous fiddle tradition, with a style of its own.",
+  "look": {
+   "accessories": [
+    "fiddle"
+   ],
+   "palette": {
+    "prop": "#8a4a22"
+   }
+  }
+ },
+ {
+  "id": "hurricane_lantern",
+  "name": "Hurricane lantern",
+  "kind": "wear",
+  "slot": "hands",
+  "price": 560,
+  "desc": "A hurricane lantern has a glass chimney, so the flame stays lit in a gale.",
+  "look": {
+   "accessories": [
+    "lantern"
+   ],
+   "palette": {
+    "light": "#ffd860"
+   }
+  }
+ },
+ {
+  "id": "field_notebook",
+  "name": "Field notebook",
+  "kind": "wear",
+  "slot": "hands",
+  "price": 180,
+  "desc": "Gilbert White's 1789 Natural History of Selborne grew from a lifetime of notes on one Hampshire village.",
+  "look": {
+   "accessories": [
+    "notebook"
+   ]
+  }
+ },
+ {
+  "id": "rucksack_red",
+  "name": "Red rucksack",
+  "kind": "wear",
+  "slot": "back",
+  "price": 520,
+  "desc": "A good rucksack carries its weight on the hips, not the shoulders.",
+  "look": {
+   "accessories": [
+    "backpack"
+   ],
+   "palette": {
+    "accent": "#b02a2a"
+   }
+  }
+ },
+ {
+  "id": "highland_pipes",
+  "name": "Bagpipes",
+  "kind": "wear",
+  "slot": "back",
+  "price": 1800,
+  "desc": "The Great Highland bagpipe has three drones and a chanter.",
+  "look": {
+   "accessories": [
+    "bagpipes"
+   ],
+   "palette": {
+    "prop": "#2a3a2a"
+   }
+  }
+ },
+ {
+  "id": "rod_over_shoulder",
+  "name": "Salmon rod",
+  "kind": "wear",
+  "slot": "back",
+  "price": 540,
+  "desc": "Atlantic salmon return to the river where they hatched, sometimes after thousands of miles at sea.",
+  "look": {
+   "accessories": [
+    "rod"
+   ]
+  }
+ },
+ {
+  "id": "binoculars_strap",
+  "name": "Binoculars",
+  "kind": "wear",
+  "slot": "back",
+  "price": 900,
+  "desc": "Binoculars marked 8x42 magnify eight times, and let in a lot of light for dusk birds.",
+  "look": {
+   "accessories": [
+    "binoculars"
+   ]
+  }
+ }
+]

@@ -16,6 +16,17 @@
  ],
  "rugby_fan": [
   {
+   "do": "if",
+   "if_wearing": "rugby_shirt_hoops",
+   "then": [
+    {
+     "do": "say",
+     "who": "Rugby Fan",
+     "text": "Lovely hooped shirt. You either know your rugby or you know your mud."
+    }
+   ]
+  },
+  {
    "do": "when",
    "cond": "st_davids",
    "chat": true,
@@ -23,7 +34,7 @@
     {
      "do": "say",
      "who": "Rugby Fan",
-     "text": "Dydd G\u0175yl Dewi Hapus! Happy St David's Day. Daffodil in the lapel, leek in the bag, Welsh cakes in the gob."
+     "text": "Dydd Gŵyl Dewi Hapus! Happy St David's Day. Daffodil in the lapel, leek in the bag, Welsh cakes in the gob."
     }
    ],
    "else": [

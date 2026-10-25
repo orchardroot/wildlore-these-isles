@@ -1,0 +1,42 @@
+[
+ {
+  "id": "toy_donkey",
+  "name": "Beach Donkey Plush",
+  "one": "a plush beach donkey",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": false,
+  "desc": "A soft grey donkey with a hat, won from a claw machine on the Golden Mile. It has no cash value whatsoever, which is the whole point of a prize."
+ },
+ {
+  "id": "toy_tower_bear",
+  "name": "Tower Teddy",
+  "one": "a Tower teddy",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": false,
+  "desc": "A small bear in a tiny Blackpool Tower jumper. Won on the seafront, which is where bears with jumpers belong."
+ },
+ {
+  "id": "toy_pier_gull",
+  "name": "Pier Gull Plush",
+  "one": "a plush pier gull",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": false,
+  "desc": "A plush seagull with a stitched chip in its beak. Far better behaved than the real thing, and it won't take yours."
+ },
+ {
+  "id": "toy_pebble",
+  "name": "Pebble Pal",
+  "one": "a Pebble Pal",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": false,
+  "desc": "A soft toy shaped like a Brighton beach pebble, with a face. Comfier than the real beach, and nobody has ever said otherwise."
+ }
+]

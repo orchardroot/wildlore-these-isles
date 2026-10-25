@@ -1,0 +1,53 @@
+{
+ "venues": {
+  "waterloo": {
+   "name": "The Waterloo Hotel green, Blackpool",
+   "prize": 14,
+   "rival": {
+    "who": "Dennis, retired tram driver",
+    "side": 0.032,
+    "weight": 0.075,
+    "intro": "Dennis has bowled here since the trams ran the full length of the front. He talks to his woods, and they mostly listen.",
+    "beaten": "Dennis lifts his cap to you, which on this green is practically a knighthood."
+   },
+   "real": "The real thing is the Waterloo Handicap, played every year at the Waterloo Hotel in Blackpool. Summer, if you fancy entering."
+  },
+  "potteries": {
+   "name": "the pub green behind the Leopard, Stoke",
+   "prize": 14,
+   "rival": {
+    "who": "Pat, landlady and former county player",
+    "side": 0.026,
+    "weight": 0.065,
+    "intro": "Pat pulls a pint with one hand and reads the green with the other. Nobody has ever got a short wood past her.",
+    "beaten": "Pat pours you a half on the house and says the green owes you an apology."
+   },
+   "real": "The real thing is every pub green across Staffordshire and Cheshire on a summer evening. Crown green is a northern and Midlands game. Ask nicely and they'll lend you a wood."
+  },
+  "yorkshire": {
+   "name": "the park green, Sheffield",
+   "prize": 16,
+   "rival": {
+    "who": "Mr Ahmed, park keeper",
+    "side": 0.021,
+    "weight": 0.055,
+    "intro": "Mr Ahmed mows this green himself, and he knows exactly where every bump is, because he put some of them there.",
+    "beaten": "Mr Ahmed concedes with grace and then asks you to keep your boots off the crown."
+   },
+   "real": "The real thing is any council park with a green and a hut. Ask at the hut. Bring flat shoes, because heels ruin the surface."
+  },
+  "cheshire": {
+   "name": "the bowling club green, Macclesfield",
+   "prize": 18,
+   "rival": {
+    "who": "Margaret, club captain",
+    "side": 0.017,
+    "weight": 0.05,
+    "intro": "Margaret has the club blazer, the club tie and a wrist like a metronome. She is very polite about winning.",
+    "beaten": "Margaret writes your name in the club book in her best handwriting. It is the highest compliment she has."
+   },
+   "real": "The real thing is the club season, April to September, on club greens across Cheshire and Lancashire. Visitors are welcome if they are tidy."
+  }
+ },
+ "how": "Crown green bowls: the green has a hump in the middle, the crown, and the woods are lopsided, so they curve in as they slow. The jack goes wherever the setter likes. Two woods each, and each wood of yours nearer the jack than the other side's nearest scores a shot. Three ends, most shots wins."
+}

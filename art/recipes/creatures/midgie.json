@@ -20,5 +20,6 @@
  ],
  "eyes": [{"at": [38, 42], "r": 6.5, "colour": "ink", "mirror": true}],
  "anim": "shift",
- "bob": 3
+ "bob": 3,
+ "dimorph": {"f": {"drop": [8], "set": {"7": {"width": 1.0, "colour": "b2"}}}}
 }

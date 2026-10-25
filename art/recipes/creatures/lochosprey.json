@@ -24,5 +24,6 @@
  ],
  "eyes": [{"at": [38, 27], "r": 3.5, "colour": "yel", "pupil": [2, 2], "mirror": true}],
  "anim": "shift",
- "bob": 3
+ "bob": 3,
+ "dimorph": {"f": {"add_layers": [{"shape": "ellipse", "at": [48, 47], "size": [26, 8], "colour": "br", "pattern": "speckle", "pcolour": "w", "density": 30, "front_only": true, "rim": false}]}}
 }

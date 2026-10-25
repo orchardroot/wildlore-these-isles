@@ -1,0 +1,88 @@
+{
+ "glasgow_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Clothier",
+   "text": "How's it going? Take a look about. The Merchant City was built on tobacco, but we sell better things."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Clothier",
+     "text": "That {worn_coat} has class. Glasgow folk notice a good coat. We have to, with the weather."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Clothier",
+       "text": "The {worn_hat} suits you. I'd buy it off you if it wasn't so obviously yours."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Clothier",
+         "text": "That {worn_top} is a smart wee thing."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Clothier",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Clothier",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Clothier",
+             "text": "Come on, there's a wardrobe in here with your name on it. Possibly a kilt."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_glasgow"
+  },
+  {
+   "do": "say",
+   "who": "Clothier",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

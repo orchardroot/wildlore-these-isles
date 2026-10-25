@@ -13,6 +13,21 @@ extends RefCounted
 ## Extra hats: witch_hat, panama, hard_hat, flat_cap, helmet, flower_crown, holly_crown, headscarf, turban. Extra hair: windswept.
 ## Added in plan 6: hats top_hat, tudor_bonnet; accessories hi_vis (vest, accent + accent2 stripes), staff (prop colour).
 ## Optional palette keys: hat, beard, prop, pin, light (lamp / lantern glow), leaf.
+## 4.6 (the player's look, core/looks.gd): hair also afro, braids, locs, undercut, mohawk, buzz. The vocabulary
+## below (HAIRS, HATS, BOTTOMS, SLEEVES, ACCESSORIES) is what Looks.valid_delta checks wear items against.
+
+const HAIRS := ["short", "long", "bob", "bun", "pony", "curly", "spiky", "bald", "side", "windswept",
+	"afro", "braids", "locs", "undercut", "mohawk", "buzz"]
+const HATS := ["none", "cap", "beanie", "swimcap", "sunhat", "bucket", "headband", "welding_visor", "bobble_hat", "deerstalker",
+	"witch_hat", "panama", "hard_hat", "flat_cap", "helmet", "flower_crown", "holly_crown", "headscarf", "turban", "top_hat", "tudor_bonnet",
+	"sou_wester", "tam", "boater"]
+const BOTTOMS := ["trousers", "shorts", "skirt", "kilt"]
+const SLEEVES := ["long", "short"]
+const ACCESSORIES := ["labcoat", "glasses", "hoodie", "gilet", "scarf", "backpack", "cape", "apron", "phone", "binoculars", "rod", "badge",
+	"aran", "oilskin", "overalls", "shawl", "lanyard", "pin", "beard", "moustache", "grin", "glitter", "wellies",
+	"lantern", "hurley", "umbrella", "fiddle", "notebook", "waxed_jacket", "bagpipes", "curling_broom", "shinty_stick", "clipboard",
+	"hi_vis", "staff", "lamp_pole", "telescope", "tweed_jacket", "smock"]
+const VOCAB := {"hair": HAIRS, "hat": HATS, "bottom_style": BOTTOMS, "sleeves": SLEEVES}
 
 const Canvas = preload("res://tools/spritegen/canvas.gd")
 
@@ -299,6 +314,25 @@ static func _torso(cv, c: Dictionary) -> void:
 			_rect(cv, 19.5, wy + 5, 4, 3, _tn(c, "accent", 0.2), 0, true)
 			for k in range(3):
 				cv.px(15, int(ttop + 5 + bob + k * 3), _col(c, "accent2"))
+	if _has(c, "tweed_jacket"):
+		var tw_ := _tn(c, "accent")
+		var ty_: float = tcy + 0.5
+		_rect(cv, 16.0 + (0.5 if dir == "left" else 0.0), ty_, tw + 2.0, th + 2.0, tw_, 2, true, true)
+		if dir == "down":
+			_rect(cv, 16, ty_ + 1, 1, th, _tn(c, "accent", 0.35), 0, false)
+			_poly(cv, [Vector2(16, ttop + 1 + bob), Vector2(12, ttop + 1 + bob), Vector2(15, ttop + 8 + bob)], _tn(c, "accent", 0.2), false)
+			_poly(cv, [Vector2(16, ttop + 1 + bob), Vector2(20, ttop + 1 + bob), Vector2(17, ttop + 8 + bob)], _tn(c, "accent", 0.2), false)
+			cv.px(15, int(ttop + 10 + bob), _col(c, "accent2"))
+			cv.px(15, int(ttop + 13 + bob), _col(c, "accent2"))
+		else:
+			_rect(cv, 16.5, ty_ + 4.0, 3, 3, _tn(c, "accent2"), 0, false)  # elbow patch
+	if _has(c, "smock"):
+		var sm_ := _tn(c, "accent")
+		_rect(cv, 16.0 + (0.5 if dir == "left" else 0.0), tcy + 3.0, tw + 3.0, th + 5.0, sm_, 3, true, true)
+		if dir == "down":
+			_rect(cv, 16, ttop + 5 + bob, tw - 2, 4, _tn(c, "accent2"), 0, false)  # the smocked yoke
+			cv.px(14, int(ttop + 5 + bob), _col(c, "accent"))
+			cv.px(18, int(ttop + 7 + bob), _col(c, "accent"))
 	if _has(c, "shawl") and dir != "up":
 		var sh := _tn(c, "accent")
 		var shs := {"pattern": "stripes", "pcol": _tn(c, "accent2"), "period": 4, "angle": 0}
@@ -538,8 +572,23 @@ static func _head(cv, c: Dictionary) -> void:
 		if dir == "down":
 			_ell(cv, cx - hw * 0.5, cy + 2, 2.5, 3.5, _tn(c, "skin", 0.1), true)
 			_ell(cv, cx + hw * 0.5, cy + 2, 2.5, 3.5, _tn(c, "skin", 0.1), true)
+	var capped := not style in ["bald", "mohawk"]  # a hair cap over the skull (mohawk and shaved heads show skin)
 	if dir == "up":
+		if style == "afro":
+			_ell(cv, cx, cy - 1.5, hw + 7, hh + 5, hair, true, false)
 		_ell(cv, cx, cy, hw, hh, hair, true, false)
+		if style in ["mohawk", "undercut"]:
+			_ell(cv, cx, cy, hw, hh, skin, true, false, 0.0, SKIN)
+			if style == "mohawk":
+				_rect(cv, cx, cy - 1, 4, hh * 0.9, hair, 1, true)
+			else:
+				_ell(cv, cx, cy - 1, hw * 0.72, hh * 0.8, hair, true, false)
+		elif style == "braids":
+			for k in [-1, 1]:
+				_rect(cv, cx + k * hw * 0.3, cy + hh * 0.5 + 3, 2.5, 10, hair, 1, true)
+		elif style == "locs":
+			for k in [-1.5, -0.5, 0.5, 1.5]:
+				_rect(cv, cx + k * hw * 0.22, cy + hh * 0.5 + 3, 1.8, 9, hair, 0.8, true)
 		if style == "long":
 			_rect(cv, cx, cy + hh * 0.5 + 3, hw, 10, hair, 3, true)
 		elif style == "bob":
@@ -552,13 +601,35 @@ static func _head(cv, c: Dictionary) -> void:
 			_ell(cv, cx, cy, hw, hh, skin, true, false, 0.0, SKIN)
 			_ell(cv, cx, cy + 3, hw - 1, hh * 0.5, hair, true, false)
 	else:
+		if style == "afro":
+			_ell(cv, cx + (0.5 if dir == "left" else 0.0), cy - 1.5, hw + 7, hh + 5, hair, true, false)
 		_ell(cv, cx, cy, hw, hh, skin, true, false, 0.0, SKIN)
 		if dir == "left":
 			_ell(cv, cx - hw * 0.5, cy + hh * 0.22, 2, 2, skin, false)
-			if style != "bald":
+			if capped and style != "undercut":
 				_ell(cv, cx + hw * 0.2, cy - 0.5, hw * 0.65, hh * 0.9, hair, true, false)
-		if style != "bald":
+		if style == "mohawk":
+			if dir == "down":
+				_rect(cv, cx, cy - hh * 0.5 - 1.0, 4, 7, hair, 1, true)
+			else:
+				_rect(cv, cx + 0.5, cy - hh * 0.5 + 0.5, hw * 0.8, 5, hair, 1.5, true)
+		elif style == "undercut":
+			_poly(cv, _hair_cap(cx, cy - 0.5, hw * 0.72, hh * 0.85, fringe - 1.0, dir == "left"), hair, true)
+		elif style == "buzz":
+			_poly(cv, _hair_cap(cx, cy, hw + (1 if dir == "down" else 0.5), hh + 0.5, 1.5, dir == "left"), hair, false)
+		elif capped:
 			_poly(cv, _hair_cap(cx, cy, hw + (1 if dir == "down" else 0.5), hh + 0.5, fringe - (0.5 if dir == "left" else 0.0), dir == "left"), hair, true)
+		if style == "braids":
+			var bx := [cx - hw * 0.5 - 0.5, cx + hw * 0.5 + 0.5] if dir == "down" else [cx + hw * 0.5 + 0.5]
+			for x in bx:
+				_rect(cv, x, cy + hh * 0.3 + 2, 2.5, hh * 0.9, hair, 1, true, false, 0.0, {"pattern": "stripes", "pcol": _tn(c, "hair", 0.25), "period": 2, "angle": 90})
+		elif style == "locs":
+			if dir == "down":
+				for k in [-2, -1, 1, 2]:
+					_rect(cv, cx + k * hw * 0.3, cy + hh * 0.35 + absi(k), 1.8, hh * 0.7, _tn(c, "hair", 0.08 * absi(k)), 0.8, true)
+			else:
+				for k in 3:
+					_rect(cv, cx + hw * 0.5 + 1 - k * 1.5, cy + hh * 0.4 + k * 0.5, 1.8, hh * 0.7, _tn(c, "hair", 0.1 * k), 0.8, true)
 		if style == "long" or style == "bob":
 			var ln := 6.0 if style == "long" else 3.0
 			if dir == "down":
@@ -751,6 +822,25 @@ static func _hat(cv, c: Dictionary, cx: float, cy: float, hw: float, hh: float, 
 			_ell(cv, ub, top + 4.0, hw + 5, 5, col, true, true)
 			_ell(cv, ub, top + 1.5, hw + 1, 6, _tn(c, hk, -0.05), true, true)
 			_rect(cv, ub, top + 3.5, hw + 1, 1.5, _tn(c, "accent"), 0, false)
+		"sou_wester":
+			var qx := cx + (1.0 if side else 0.0)
+			_ell(cv, qx, top + 3.5, hw + 2, 9, col, true, true)
+			if dir == "up":
+				_rect(cv, qx, top + 8.5, hw + 5, 5, _tn(c, hk, 0.05), 2, true, true)  # the long brim down the neck
+			elif dir == "down":
+				_rect(cv, cx, top + 6.5, hw + 3, 2, _tn(c, hk, 0.2), 1, true, true)
+			else:
+				_rect(cv, cx + 3, top + 8, hw - 2, 4, _tn(c, hk, 0.05), 1, true, true)
+		"tam":
+			var mx2 := cx + (1.0 if side else 0.0)
+			_ell(cv, mx2, top + 3.0, hw + 4, 8, col, true, true)
+			_rect(cv, mx2, top + 6.0, hw + 1, 2, _tn(c, "accent2"), 0, false)
+			_ell(cv, mx2, top - 1.0, 3, 3, Canvas.tones(Color("#c83a3a")), true)  # the toorie
+		"boater":
+			var bx := cx + (1.0 if side else 0.0)
+			_ell(cv, bx, top + 5, hw + 7, 4, col, true, true)
+			_rect(cv, bx, top + 1.5, hw - 2, 7, _tn(c, hk, -0.05), 1, true, true)
+			_rect(cv, bx, top + 4.0, hw - 2, 2, _tn(c, "accent2"), 0, false)
 		"flat_cap":
 			var fx := cx + (1.0 if side else 0.0)
 			_ell(cv, fx, top + 3.5, hw + 3, 7, col, true, true)

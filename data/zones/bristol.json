@@ -578,6 +578,14 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 68,
+   "y": 47,
+   "to": "bristol_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "edges": {

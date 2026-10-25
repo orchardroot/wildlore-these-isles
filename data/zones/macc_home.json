@@ -72,6 +72,12 @@
    "type": "plaque_board",
    "x": 2,
    "y": 1
+  },
+  {
+   "type": "mirror",
+   "x": 9,
+   "y": 3,
+   "rot": -90
   }
  ],
  "warps": [

@@ -1,0 +1,88 @@
+{
+ "cardiff_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Arcade Shopkeeper",
+   "text": "Shw mae! The arcades are Victorian and the shops are older than my patience. Have a look."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Arcade Shopkeeper",
+     "text": "That {worn_coat}. Proper. You'd see off a Cardiff drizzle with that."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Arcade Shopkeeper",
+       "text": "I like your {worn_hat}. It's got a whiff of Saturday at the Millennium Stadium."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Arcade Shopkeeper",
+         "text": "That {worn_top} suits you. Now, what goes with it?"
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Arcade Shopkeeper",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Arcade Shopkeeper",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Arcade Shopkeeper",
+             "text": "No hat, no coat, nothing special. Bit of a blank canvas, aren't you, cariad?"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_cardiff"
+  },
+  {
+   "do": "say",
+   "who": "Arcade Shopkeeper",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

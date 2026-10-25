@@ -1,10 +1,10 @@
 {
- "_doc": "The post for Deeds (core/deeds.gd): placeholders {deed} {amount} {day}. Real facts: the UK tax year ends on 5 April, online self assessment returns are due by 31 January, there is a personal allowance before any tax, and a late return costs a fixed 100 pound penalty. Game money is scaled down, which the letters admit.",
+ "_doc": "The post for Deeds (core/deeds.gd): placeholders {deed} {amount} {day} {mx} {player} (Mr / Ms and your name, see Looks). Real facts: the UK tax year ends on 5 April, online self assessment returns are due by 31 January, there is a personal allowance before any tax, and a late return costs a fixed 100 pound penalty. Game money is scaled down, which the letters admit.",
  "letters": {
   "rates": {
    "from": "the Borough Council, Business Rates Department",
    "text": [
-    "Dear Proprietor of {deed}. We are delighted to write with this week's business rates: {amount} now outstanding.",
+    "Dear {mx} {player}, Proprietor of {deed}. We are delighted to write with this week's business rates: {amount} now outstanding.",
     "It is taken from your till when you next collect, so there is no need to do anything at all. Our records show a lot of people do nothing very well.",
     "Your rates help to fund the bins, the bandstand and the lamp post that nobody will admit to hitting. Yours sincerely, a Council Officer who is very proud of the bandstand."
    ]
@@ -32,7 +32,7 @@
   "tax": {
    "from": "His Majesty's Revenue and Creatures",
    "text": [
-    "Self assessment. The tax year ended on 5 April and so, regrettably, has the fun. On last year's takings, after a personal allowance everybody gets, you owe {amount}.",
+    "Dear {mx} {player}. Self assessment. The tax year ended on 5 April and so, regrettably, has the fun. On last year's takings, after a personal allowance everybody gets, you owe {amount}.",
     "In real life the online return is due by 31 January and a late one costs a flat 100 pounds. We've done it for you, because we are lovely, and the money here is a tenth the size so it only half stings.",
     "Settled from your purse as you open this. Thank you for your custom, and for your honesty, which we appreciate and shall never mention again."
    ]

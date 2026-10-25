@@ -66,5 +66,91 @@
     }
    ]
   }
+ ],
+ "stornoway_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Weaver's Daughter",
+   "text": "Halo! Real Harris Tweed, woven by hand at home on the island. Look for the Orb. If it hasn't got an Orb, it isn't."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Weaver's Daughter",
+     "text": "That {worn_coat}: good, but not Harris Tweed. We can fix that."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Weaver's Daughter",
+       "text": "A {worn_hat}. It'll do. It's no tweed cap, mind."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Weaver's Daughter",
+         "text": "That {worn_top} is a good thing to put under a tweed jacket."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Weaver's Daughter",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Weaver's Daughter",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Weaver's Daughter",
+             "text": "Come and see the tweed. It's been woven here for generations."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_stornoway"
+  },
+  {
+   "do": "say",
+   "who": "Weaver's Daughter",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
  ]
 }

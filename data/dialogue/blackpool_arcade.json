@@ -1,0 +1,9 @@
+{
+ "blackpool_arcade_change": [
+  {
+   "do": "arcade",
+   "town": "blackpool",
+   "who": "Change Counter"
+  }
+ ]
+}

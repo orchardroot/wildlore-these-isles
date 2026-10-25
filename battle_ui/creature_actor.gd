@@ -59,8 +59,9 @@ static func _blob_texture() -> GradientTexture2D:
 	return _blob
 
 func show_creature(c: Creature, is_back: bool) -> void:
-	var base_tex := FormArt.texture(CreatureArt.texture(c.species, is_back), "%s/%s" % [c.species.id, is_back], str(c.species.id), c.form)
-	sprite.texture = CoatArt.texture(base_tex, "%s/%s#%s" % [c.species.id, is_back, c.form], c.variant)
+	var stem := Sexes.art_id(str(c.species.get("sprite", c.species.id)), "back" if is_back else "front", c.sex)  # the sheet for its sex, if any
+	var base_tex := FormArt.texture(CreatureArt.texture(c.species, is_back, c.sex), "%s/%s" % [stem, is_back], str(c.species.id), c.form)
+	sprite.texture = CoatArt.texture(base_tex, "%s/%s#%s" % [stem, is_back, c.form], c.variant)
 	fit_sheet()
 	coat = c.variant
 	sprite.visible = true

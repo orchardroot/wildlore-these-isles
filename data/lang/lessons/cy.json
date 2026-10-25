@@ -72,11 +72,11 @@
    {"id": "caer", "local": "caer", "english": "fort", "say": "KYE-r",
     "note": "Caerdydd is Cardiff. Holyhead is Caergybi, Cybi's fort."},
    {"id": "tre", "local": "tre / tref", "english": "town, homestead", "say": "TREH, or TREV",
-    "note": "Treorci (Treorchy), up the Rhondda."},
+    "note": "Treorci (Treorchy), up the Rhondda. Careful: not every Tre- is a town. Trefor, in the Dee valley, is a personal name."},
    {"id": "nant", "local": "nant", "english": "stream, small valley", "say": "NANT",
     "note": "Nant Ffrancon, the valley below Ogwen."},
    {"id": "pont", "local": "pont", "english": "bridge", "say": "PONT",
-    "note": "Pontypridd grew up around its old stone bridge over the Taf."},
+    "note": "Pontypridd grew up around its old stone bridge over the Taf. Pontcysyllte, the aqueduct near Trevor, is pont + cysyllte, 'the joining'. Pont y Borth (also Pont Grog y Borth) is the Menai Suspension Bridge to Anglesey."},
    {"id": "coed", "local": "coed", "english": "wood, trees", "say": "KOYD",
     "note": "Betws-y-Coed: the prayer house in the wood."}
   ],

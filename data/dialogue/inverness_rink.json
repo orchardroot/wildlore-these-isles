@@ -164,5 +164,22 @@
     }
    ]
   }
+ ],
+ "rink_clubskip": [
+  {
+   "do": "say",
+   "who": "Club Skip",
+   "text": "Tuesday rink. The skip stands in the house and calls the shots, the rest sweep and try not to be told off. You, I'm afraid, are throwing."
+  },
+  {
+   "do": "say",
+   "who": "Club Skip",
+   "text": "The rings are the house, and the middle is the button. Your stone has to get past the far red line, the hog line, or it comes off. Closest to the button scores."
+  },
+  {
+   "do": "curling",
+   "rink": "inverness_rink",
+   "who": "Club Skip"
+  }
  ]
 }

@@ -255,6 +255,16 @@
    "move": "still",
    "text": "That was a proper end. Shot rock and all. I'll stand you a hot chocolate at the bar.",
    "show_if": "trainer_keeper_isla"
+  },
+  {
+   "id": "rink_clubskip",
+   "name": "Club Skip",
+   "sprite": "villager_6",
+   "x": 4,
+   "y": 9,
+   "facing": "right",
+   "move": "still",
+   "script": "rink_clubskip"
   }
  ],
  "encounters": {},
@@ -263,6 +273,13 @@
    "x": 6,
    "y": 12,
    "text": "INVERNESS ICE RINK. Keeper Isla, Frost Stone. Sweepers sweep, skips shout, and everyone else keeps off the sheet in their outdoor shoes."
+  },
+  {
+   "x": 10,
+   "y": 12,
+   "plaque": "curling_scottish_roots",
+   "title": "The Roaring Game",
+   "text": "CURLING. Scotland's roaring game, named for the sound of the stones on the ice. The oldest curling stone known, found at Dunblane, is dated 1511. The Royal Caledonian Curling Club, the sport's mother club, was founded in 1838. The Grand Match, north against south, was played on the frozen Lake of Menteith whenever the ice was thick enough to hold hundreds of players, last in 1979. And in 2002 Rhona Martin's Great Britain women's rink won Olympic gold at Salt Lake City, with the very last stone of the final."
   }
  ],
  "spawn": [

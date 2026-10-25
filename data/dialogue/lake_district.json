@@ -151,5 +151,27 @@
    "who": "Volunteer",
    "text": "He walked about 175,000 miles in his life, they reckon, composing out loud as he went. The neighbours thought he was talking to himself. He was, in a sense, but it rhymed."
   }
+ ],
+ "ld_wrestling": [
+  {
+   "do": "say",
+   "who": "Ring Steward",
+   "text": "Cumberland and Westmorland wrestling. Chest to chest, hold locked behind the back, and the first to touch the grass with anything but a boot has lost the fall."
+  },
+  {
+   "do": "say",
+   "who": "Ring Steward",
+   "text": "Mind the trunks. Embroidered velvet over long johns, and the wrestlers will tell you the costume wins falls. I've yet to see a pair of trunks throw anyone."
+  },
+  {
+   "do": "say",
+   "who": "Ring Steward",
+   "text": "The real thing is Grasmere Sports, every August. Today it's just us and the grass, and it's every bit as damp."
+  },
+  {
+   "do": "wrestling",
+   "venue": "grasmere",
+   "who": "Ring Steward"
+  }
  ]
 }

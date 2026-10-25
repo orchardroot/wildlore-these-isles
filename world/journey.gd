@@ -77,6 +77,7 @@ static func depart(ow: Node, kind: String, info: Dictionary) -> bool:
 	var w = ow.get("weather")
 	js.weather = str(w) if w != null else "clear"
 	js.sprite_id = str(Game.data.flags.get("player_sprite", "player_a")) if Game.data else "player_a"
+	js.look = Looks.recipe(Game.data, Game.items) if Game.data else {}  # the look you chose (4.6)
 	Router.add_child(js)
 	if kind == "train" and m == "on":
 		await _board(ow, js)

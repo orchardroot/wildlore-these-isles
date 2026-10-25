@@ -462,5 +462,27 @@
    "who": "RAF Police",
    "text": "Come back when you are the Champion of the Open Moot. The paperwork says Champions may use the Airbridge, and it says nothing at all about anybody else."
   }
+ ],
+ "fete_cheese_steward": [
+  {
+   "do": "say",
+   "who": "Hill Steward",
+   "text": "A Double Gloucester is sent bowling down the hill and you chase it. Press left or right to match each lurch of the slope as the arrow shows, or you stumble."
+  },
+  {
+   "do": "say",
+   "who": "Hill Steward",
+   "text": "Hold Confirm for the last stretch to throw yourself over the line. First down wins the cheese."
+  },
+  {
+   "do": "say",
+   "who": "Hill Steward",
+   "text": "The real thing: Spring Bank Holiday Monday, the last Monday of May. Any other day I run it for pocket money."
+  },
+  {
+   "do": "fete",
+   "event": "cheese",
+   "who": "Hill Steward"
+  }
  ]
 }

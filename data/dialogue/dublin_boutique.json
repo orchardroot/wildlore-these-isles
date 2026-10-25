@@ -1,0 +1,88 @@
+{
+ "dublin_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Outfitter",
+   "text": "Well now, how are you? Grafton Street has buskers and the prices have opinions. Take your time."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Outfitter",
+     "text": "That {worn_coat} is class. Yer man at the door will think you own the place."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Outfitter",
+       "text": "A grand {worn_hat}. You'd get a nod off any publican in the country."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Outfitter",
+         "text": "That {worn_top} is lovely, so it is."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Outfitter",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Outfitter",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Outfitter",
+             "text": "Ah, you're dressed very plain. Not a bother. We'll sort you out."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_dublin"
+  },
+  {
+   "do": "say",
+   "who": "Outfitter",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

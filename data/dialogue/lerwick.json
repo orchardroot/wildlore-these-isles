@@ -26,7 +26,7 @@
   {
    "do": "say",
    "who": "Local Woman",
-   "text": "Shetland dialect is half Scots and half Norse. A 'peerie' thing is a small thing. A 'voe' is a sea inlet, from the Norse. A 'b\u00f6d' is an old fishing store. A 'ness' is a headland. If you hear 'da' it means 'the', and you're to nod."
+   "text": "Shetland dialect is half Scots and half Norse. A 'peerie' thing is a small thing. A 'voe' is a sea inlet, from the Norse. A 'böd' is an old fishing store. A 'ness' is a headland. If you hear 'da' it means 'the', and you're to nod."
   },
   {
    "do": "say",
@@ -35,6 +35,17 @@
   }
  ],
  "ls_knitter": [
+  {
+   "do": "if",
+   "if_wearing": "fair_isle_jumper",
+   "then": [
+    {
+     "do": "say",
+     "who": "Knitter",
+     "text": "Is that a Fair Isle? Properly done, too. Who knitted it? Hand it here, I'll check the steeks."
+    }
+   ]
+  },
   {
    "do": "say",
    "who": "Knitter",
@@ -70,5 +81,16 @@
    "text": "My da's in the Jarl Squad this year. He's grown a beard for it. Mum wants it gone. They've been to counselling."
   }
  ],
- "arc_guizer": [{"do": "say", "who": "Gathering Guizer", "text": "The squads have added a verse for the Roll of the Isles. We do it at the Town Hall after the Jarl's address, and the galley burns as ever. Nobody told the galley about the new verse."}, {"do": "say", "who": "Gathering Guizer", "text": "We will be at the Douglas Gathering in July, mind. The torches are staying home. The Manx have a bylaw."}]
+ "arc_guizer": [
+  {
+   "do": "say",
+   "who": "Gathering Guizer",
+   "text": "The squads have added a verse for the Roll of the Isles. We do it at the Town Hall after the Jarl's address, and the galley burns as ever. Nobody told the galley about the new verse."
+  },
+  {
+   "do": "say",
+   "who": "Gathering Guizer",
+   "text": "We will be at the Douglas Gathering in July, mind. The torches are staying home. The Manx have a bylaw."
+  }
+ ]
 }

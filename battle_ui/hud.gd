@@ -334,6 +334,8 @@ class Plate extends PanelContainer:
 	var level_l: Label
 	var chip: Label
 	var caught: CaughtMark
+	var sex_m: SexMark
+	var sex_px := 20
 	var hp_bar: Bar
 	var hp_text: Label
 	var stage_row: StageRow
@@ -368,6 +370,9 @@ class Plate extends PanelContainer:
 		caught = CaughtMark.new(20.0 * k)
 		caught.visible = false
 		top.add_child(caught)
+		sex_px = int(22 * k)
+		sex_m = SexMark.make("", sex_px)  # male or female sign before the name, nothing for a kindred without sexes
+		top.add_child(sex_m)
 		name_l = Label.new()
 		name_l.add_theme_font_size_override("font_size", int(28 * k))
 		name_l.clip_text = compact
@@ -430,6 +435,7 @@ class Plate extends PanelContainer:
 	func set_creature(c: Creature) -> void:
 		creature = c
 		name_l.text = c.display_name()
+		sex_m.set_sex(c.sex, sex_px)
 		level_l.text = "Lv %d" % c.level
 		hp_max = float(c.max_hp())
 		hp_shown = float(c.hp)

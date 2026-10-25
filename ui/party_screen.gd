@@ -94,7 +94,7 @@ func _slot_button(c: Creature, i: int) -> Button:
 	h.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	b.add_child(h)
 	var icon := AnimSprite.new()
-	icon.show_species(c.species.id, "icon", 2, false, c.variant, c.form)
+	icon.show_species(c.species.id, "icon", 2, false, c.variant, c.form, c.sex)
 	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	if c.is_fainted():
@@ -108,6 +108,7 @@ func _slot_button(c: Creature, i: int) -> Button:
 	h.add_child(mid)
 	var top := HBoxContainer.new()
 	top.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	top.add_child(UIKit.sex_mark(c, 24))
 	var name_l := UIKit.label(c.display_name(), 28, Color("e9998c") if c.is_fainted() else UIKit.CREAM)
 	top.add_child(name_l)
 	top.add_theme_constant_override("separation", 14)
@@ -139,12 +140,20 @@ func _slot_button(c: Creature, i: int) -> Button:
 func _show_preview(c: Creature) -> void:
 	UIKit.clear(_preview)
 	var s := AnimSprite.new()
-	s.show_species(c.species.id, "front", 2, false, c.variant, c.form)
+	s.show_species(c.species.id, "front", 2, false, c.variant, c.form, c.sex)
 	s.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	_preview.add_child(s)
 	var n := UIKit.label(c.display_name(), 36)
 	n.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_preview.add_child(n)
+	if Sexes.valid(c.sex):
+		var nr := HBoxContainer.new()
+		nr.alignment = BoxContainer.ALIGNMENT_CENTER
+		nr.add_theme_constant_override("separation", 10)
+		nr.add_child(UIKit.sex_mark(c, 30))
+		nr.add_child(n)
+		_preview.add_child(nr)
+	else:
+		_preview.add_child(n)
 	var tr := UIKit.types_row(c.types())
 	tr.alignment = BoxContainer.ALIGNMENT_CENTER
 	_preview.add_child(tr)

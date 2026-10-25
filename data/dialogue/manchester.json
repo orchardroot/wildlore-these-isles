@@ -256,6 +256,17 @@
  ],
  "tram_fan": [
   {
+   "do": "if",
+   "if_wearing": "hi_vis_vest",
+   "then": [
+    {
+     "do": "say",
+     "who": "Tram Spotter",
+     "text": "Hi-vis. Excellent. You may stand near the tram line. Not on it."
+    }
+   ]
+  },
+  {
    "do": "when",
    "cond": "christmas",
    "chat": true,
@@ -383,6 +394,17 @@
   }
  ],
  "busker": [
+  {
+   "do": "if",
+   "if_wearing": "bucket_hat_manc",
+   "then": [
+    {
+     "do": "say",
+     "who": "Busker",
+     "text": "Is that a bucket hat? Respect. Nineteen ninety-one called, and it wants its vibe back."
+    }
+   ]
+  },
   {
    "do": "when",
    "cond": "halloween",

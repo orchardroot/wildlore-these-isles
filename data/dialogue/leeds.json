@@ -28,6 +28,17 @@
  ],
  "leeds_loiner": [
   {
+   "do": "if",
+   "if_wearing": "flat_cap_yorkshire",
+   "then": [
+    {
+     "do": "say",
+     "who": "Loiner",
+     "text": "Now that's a proper flat cap. You're nearly one of us."
+    }
+   ]
+  },
+  {
    "do": "say",
    "who": "Loiner",
    "text": "{greeting} A Loiner, that's what you call someone from Leeds. Nobody's sure why. Something about loins, or loaning, or loitering. I'm loitering, so it fits."

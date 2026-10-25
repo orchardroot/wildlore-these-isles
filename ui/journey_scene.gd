@@ -47,6 +47,7 @@ var mode := "on"
 var phase := "day"          # GameClock phase, for the light
 var weather := "clear"
 var sprite_id := "player_a"
+var look: Dictionary = {}  # the player's recipe (Looks); painted through LookArt when set
 var duration := 3.0
 var elapsed := 0.0
 var playing := false
@@ -705,6 +706,8 @@ func _boat_texture() -> Texture2D:
 	return vp.get_texture()
 
 func _char_tex() -> Texture2D:
+	if not look.is_empty():
+		return LookArt.texture(look)
 	var path := "res://art/sprites/chars/%s.png" % sprite_id
 	if not ResourceLoader.exists(path):
 		path = "res://art/sprites/chars/player_a.png"

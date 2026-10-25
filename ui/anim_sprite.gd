@@ -15,8 +15,9 @@ var _frame := 0
 var _t := 0.0
 var _px := 96
 
-## kind: "front" (96 px frames, animated) or "icon" (32 px). `variant`: an uncommon coat (see CoatArt), "" for none; `form`: a regional form (see FormArt).
-func show_species(id: String, kind := "front", scale_factor := 2, as_silhouette := false, variant := "", form := "") -> void:
+## kind: "front" (96 px frames, animated) or "icon" (32 px). `variant`: an uncommon coat (see CoatArt), "" for none; `form`: a regional form (see FormArt);
+## `sex`: "m" or "f", for the sheet of a species whose sexes differ (see Sexes), else the usual one.
+func show_species(id: String, kind := "front", scale_factor := 2, as_silhouette := false, variant := "", form := "", sex := "") -> void:
 	species_id = id
 	silhouette = as_silhouette
 	expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -26,10 +27,11 @@ func show_species(id: String, kind := "front", scale_factor := 2, as_silhouette 
 	size = custom_minimum_size
 	modulate = Color.BLACK if as_silhouette else Color.WHITE
 	_frames = []
-	var base_sheet := load_sheet(id, kind)
+	var stem := Sexes.art_id(id, kind, sex)
+	var base_sheet := load_sheet(id, kind, sex)
 	if form != "" and not as_silhouette:  # a regional form first (see FormArt), then any coat over it
-		base_sheet = FormArt.texture(base_sheet, id + "_" + kind, id, form)
-	var sheet := CoatArt.texture(base_sheet, id + "_" + kind + "#" + form, "" if as_silhouette else variant)
+		base_sheet = FormArt.texture(base_sheet, stem + "_" + kind, id, form)
+	var sheet := CoatArt.texture(base_sheet, stem + "_" + kind + "#" + form, "" if as_silhouette else variant)
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	if kind == "front":
 		var fp := maxi(1, sheet.get_height())  # frames are square: as wide as the sheet is tall
@@ -55,12 +57,12 @@ func _process(delta: float) -> void:
 		texture = _frames[_frame]
 
 ## The sprite sheet for a species, a placeholder file, or a runtime "?" if both are missing.
-static func load_sheet(id: String, kind: String) -> Texture2D:
+static func load_sheet(id: String, kind: String, sex := "") -> Texture2D:
 	if Crossbreeds.is_id(id):  # no file: blended from its parents (ui/crossbreed_art.gd)
 		var xt := CrossbreedArt.texture(Crossbreeds.lookup(id), kind)
 		if xt != null:
 			return xt
-	var path := "res://art/sprites/creatures/%s_%s.png" % [id, kind]
+	var path := Sexes.sheet_path(id, kind, sex)
 	if id != "" and ResourceLoader.exists(path):
 		var t = load(path)
 		if t is Texture2D:

@@ -2,7 +2,7 @@ extends MenuBase
 ## Bag: tabs by item kind, use on a party member via Bag.use_on. With arg "for:<n>" it targets party member n directly;
 ## "hold:<n>" shows only charms, to give party member n one to hold. Food is shared (it heals and they like you more).
 
-const KIND_ORDER := ["heal", "meal", "cure", "revive", "pp", "snare", "repel", "evo", "charm", "material", "fish", "produce", "key"]
+const KIND_ORDER := ["heal", "meal", "cure", "revive", "pp", "snare", "repel", "evo", "charm", "material", "fish", "produce", "wear", "key"]
 const USABLE := ["heal", "cure", "revive", "pp", "evo"]
 
 var _bag: Bag
@@ -260,9 +260,10 @@ func _open_picker(focus := 0) -> void:
 		h.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		h.add_theme_constant_override("separation", 10)
 		var ic := AnimSprite.new()
-		ic.show_species(c.species.id, "icon", 1, false, c.variant, c.form)
+		ic.show_species(c.species.id, "icon", 1, false, c.variant, c.form, c.sex)
 		ic.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		h.add_child(ic)
+		h.add_child(UIKit.sex_mark(c, 20))
 		h.add_child(UIKit.label(c.display_name(), 24))
 		h.add_child(UIKit.fill())
 		var hp := UIKit.hp_bar(c.hp, c.max_hp(), 90, 10)

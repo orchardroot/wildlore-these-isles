@@ -1,0 +1,103 @@
+{
+ "id": "birmingham_boutique",
+ "name": "Digbeth Vintage",
+ "region": "",
+ "kind": "interior",
+ "music": "",
+ "weather": {},
+ "props": [
+  {
+   "type": "display_case",
+   "x": 1,
+   "y": 3
+  },
+  {
+   "type": "display_case",
+   "x": 11,
+   "y": 3
+  },
+  {
+   "type": "display_case",
+   "x": 1,
+   "y": 5
+  },
+  {
+   "type": "display_case",
+   "x": 11,
+   "y": 5
+  },
+  {
+   "type": "clock",
+   "x": 5,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 8,
+   "y": 1,
+   "walk": true,
+   "variant": 1
+  },
+  {
+   "type": "rug",
+   "x": 5,
+   "y": 5,
+   "w": 2,
+   "h": 2,
+   "variant": 2,
+   "walk": true
+  },
+  {
+   "type": "potted_plant",
+   "x": 1,
+   "y": 7
+  },
+  {
+   "type": "potted_plant",
+   "x": 11,
+   "y": 7
+  }
+ ],
+ "warps": [
+  {
+   "x": 6,
+   "y": 8,
+   "to": "birmingham",
+   "tx": 45,
+   "ty": 7,
+   "facing": "down"
+  }
+ ],
+ "edges": {},
+ "npcs": [
+  {
+   "id": "birmingham_boutique_keeper",
+   "sprite": "isles_hussain",
+   "x": 6,
+   "y": 3,
+   "facing": "down",
+   "move": "still",
+   "script": "birmingham_boutique_keeper",
+   "name": "Dealer"
+  }
+ ],
+ "encounters": {},
+ "signs": [],
+ "spawn": [
+  6,
+  7
+ ],
+ "rows": [
+  "xxxxxxxxxxxxx",
+  "x|||||||||||x",
+  "x|CCCCCCCCC|x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||D|||||x",
+  "xxxxxxxxxxxxx"
+ ]
+}

@@ -3,7 +3,7 @@ extends RefCounted
 ## Checks dialogue scripts, trainers and the NPCs that use them against the rest of the data.
 
 const COMMANDS := ["say", "choice", "if", "set", "give_item", "give_creature", "heal", "battle", "move", "face",
-	"face_player", "wait", "warp", "shop", "starter", "fade_out", "fade_in", "music", "sfx", "badge", "end", "whiteout", "ark", "rail", "ferry", "legend", "gauntlet", "credits", "daily", "when", "relearn", "sachet_worn", "quiz", "craft", "recipe", "fieldbook_news", "rewild", "standing", "overseas", "overseas_home", "tournament", "bureau", "exchange", "market", "crypto", "casino", "society", "deed", "lease", "regular", "darts", "crab_comp", "breed", "evidence", "casebook", "guild", "ring", "wall", "crossword", "games", "sing", "conkers", "lesson", "say_it", "science", "forecast"]
+	"face_player", "wait", "warp", "shop", "starter", "fade_out", "fade_in", "music", "sfx", "badge", "end", "whiteout", "ark", "rail", "ferry", "legend", "gauntlet", "credits", "daily", "when", "relearn", "sachet_worn", "quiz", "craft", "recipe", "fieldbook_news", "rewild", "standing", "overseas", "overseas_home", "tournament", "bureau", "exchange", "market", "crypto", "casino", "society", "deed", "lease", "regular", "darts", "bowls", "skim", "crab_comp", "breed", "evidence", "casebook", "guild", "ring", "wall", "crossword", "games", "sing", "conkers", "lesson", "say_it", "science", "forecast", "wardrobe", "arcade", "fete", "curling", "wrestling"]
 const CONDITIONS := ["dawn", "day", "dusk", "night", "rain", "fog", "gale", "frost", "sunshine", "caught_all",
 	"caught_25", "caught_50", "caught_100", "caught_150", "caught_200",
 	"spring", "summer", "autumn", "winter", "halloween", "bonfire_night", "christmas", "st_patricks", "st_davids", "burns_night"]
@@ -149,7 +149,7 @@ static func validate_commands(cmds: Array, tag: String, dex: Dex, items: ItemDB,
 				if c.get("options", []).size() < 2:
 					errors.append("%s: choice needs at least two options" % tag)
 			"if":
-				if str(c.get("flag", "")) == "":
+				if str(c.get("flag", "")) == "" and not c.has("if_wearing"):
 					errors.append("%s: if with no flag" % tag)
 				errors.append_array(validate_commands(c.get("then", []), tag, dex, items, zones))
 				errors.append_array(validate_commands(c.get("else", []), tag, dex, items, zones))
@@ -226,6 +226,18 @@ static func validate_commands(cmds: Array, tag: String, dex: Dex, items: ItemDB,
 			"darts":
 				if Darts.league(str(c.get("nation", ""))).is_empty():
 					errors.append("%s: darts with no league for nation '%s'" % [tag, c.get("nation", "")])
+			"bowls":
+				if Bowls.venue(str(c.get("venue", ""))).is_empty():
+					errors.append("%s: bowls with no venue '%s'" % [tag, c.get("venue", "")])
+			"skim":
+				if Skimming.venue(str(c.get("venue", ""))).is_empty():
+					errors.append("%s: skim with no venue '%s'" % [tag, c.get("venue", "")])
+			"curling":
+				if Curling.rink(str(c.get("rink", ""))).is_empty():
+					errors.append("%s: curling with no rink '%s'" % [tag, c.get("rink", "")])
+			"wrestling":
+				if Wrestling.venue(str(c.get("venue", ""))).is_empty():
+					errors.append("%s: wrestling with no venue '%s'" % [tag, c.get("venue", "")])
 			"crab_comp":
 				if not Crabbing.is_spot(str(c.get("harbour", ""))):
 					errors.append("%s: crab_comp at '%s', which is not a crabbing spot" % [tag, c.get("harbour", "")])
@@ -233,6 +245,9 @@ static func validate_commands(cmds: Array, tag: String, dex: Dex, items: ItemDB,
 				for ev in c.get("events", []):
 					if Games.event(str(ev)).is_empty():
 						errors.append("%s: games with unknown event '%s'" % [tag, ev])
+			"fete":
+				if Fete.event(str(c.get("event", ""))).is_empty():
+					errors.append("%s: fete with unknown event '%s'" % [tag, c.get("event", "")])
 			"wall":
 				if not Walling.SIZES.has(str(c.get("level", "normal"))):
 					errors.append("%s: wall with unknown level '%s'" % [tag, c.get("level", "")])

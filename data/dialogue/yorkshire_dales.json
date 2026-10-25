@@ -80,5 +80,27 @@
    "flag": "landsky_karst",
    "value": true
   }
+ ],
+ "fete_welly_steward": [
+  {
+   "do": "say",
+   "who": "Fete Steward",
+   "text": "Throw a wellington boot as far as you can. Stop the power meter, then the angle, and mind the wind shown on the flag."
+  },
+  {
+   "do": "say",
+   "who": "Fete Steward",
+   "text": "Three throws, and the best one counts. About forty five degrees is the old advice."
+  },
+  {
+   "do": "say",
+   "who": "Fete Steward",
+   "text": "The real thing: fete season, any Saturday from June to August. Any other day I run it for pocket money."
+  },
+  {
+   "do": "fete",
+   "event": "welly",
+   "who": "Fete Steward"
+  }
  ]
 }

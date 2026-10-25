@@ -739,6 +739,14 @@
    "tx": 5,
    "ty": 6,
    "facing": "up"
+  },
+  {
+   "x": 51,
+   "y": 22,
+   "to": "london_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "edges": {

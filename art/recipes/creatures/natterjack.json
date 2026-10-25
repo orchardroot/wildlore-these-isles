@@ -18,5 +18,6 @@
   {"shape": "line", "points": [[22, 52], [32, 56], [48, 58], [64, 56], [74, 52]], "width": 2, "colour": "mouth", "shade": false},
   {"shape": "ellipse", "at": [45, 46], "size": [2, 2], "colour": "mouth", "shade": false, "mirror": true}
  ],
- "eyes": [{"at": [32, 32], "r": 5.5, "colour": "gold", "pupil": [8, 2.5], "mirror": true}]
+ "eyes": [{"at": [32, 32], "r": 5.5, "colour": "gold", "pupil": [8, 2.5], "mirror": true}],
+ "dimorph": {"m": {"add_layers": [{"shape": "ellipse", "at": [48, 60], "size": [24, 15], "colour": "#e6d8a0", "front_only": true}]}}
 }

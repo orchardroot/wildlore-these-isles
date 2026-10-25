@@ -392,6 +392,16 @@
    "facing": "left",
    "move": "still",
    "trainer": "carys"
+  },
+  {
+   "id": "fete_bog_steward",
+   "sprite": "farmer",
+   "x": 11,
+   "y": 17,
+   "facing": "down",
+   "move": "still",
+   "script": "fete_bog_steward",
+   "name": "Bog Marshal"
   }
  ],
  "encounters": {

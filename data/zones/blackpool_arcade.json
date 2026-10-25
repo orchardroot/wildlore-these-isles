@@ -1,0 +1,122 @@
+{
+ "id": "blackpool_arcade",
+ "name": "Golden Mile Amusements",
+ "region": "",
+ "kind": "interior",
+ "music": "",
+ "weather": {},
+ "props": [
+  {
+   "type": "display_case",
+   "x": 2,
+   "y": 1
+  },
+  {
+   "type": "display_case",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "menu_board",
+   "x": 6,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "clock",
+   "x": 4,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 8,
+   "y": 1,
+   "walk": true,
+   "variant": 1
+  },
+  {
+   "type": "wall_picture",
+   "x": 10,
+   "y": 1,
+   "walk": true,
+   "variant": 2
+  },
+  {
+   "type": "rug",
+   "x": 6,
+   "y": 5
+  },
+  {
+   "type": "potted_plant",
+   "x": 1,
+   "y": 7
+  },
+  {
+   "type": "potted_plant",
+   "x": 11,
+   "y": 7
+  },
+  {
+   "type": "bench",
+   "x": 9,
+   "y": 5
+  },
+  {
+   "type": "bench",
+   "x": 10,
+   "y": 5
+  }
+ ],
+ "warps": [
+  {
+   "x": 6,
+   "y": 8,
+   "to": "blackpool",
+   "tx": 55,
+   "ty": 36,
+   "facing": "down"
+  }
+ ],
+ "edges": {},
+ "npcs": [
+  {
+   "id": "bp_arcade_change",
+   "sprite": "shopkeeper",
+   "x": 3,
+   "y": 3,
+   "facing": "down",
+   "move": "still",
+   "script": "blackpool_arcade_change",
+   "name": "Change Counter"
+  },
+  {
+   "id": "bp_arcade_punter",
+   "sprite": "villager_2",
+   "x": 9,
+   "y": 3,
+   "facing": "left",
+   "move": "still",
+   "name": "Regular",
+   "text": "Penny falls at the Golden Mile since I was nine. The trick is there is no trick. I do it anyway."
+  }
+ ],
+ "encounters": {},
+ "signs": [],
+ "spawn": [
+  6,
+  7
+ ],
+ "rows": [
+  "xxxxxxxxxxxxx",
+  "x|||||||||||x",
+  "x|CCCC||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||D|||||x",
+  "xxxxxxxxxxxxx"
+ ]
+}

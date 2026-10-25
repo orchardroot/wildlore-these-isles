@@ -1,0 +1,103 @@
+{
+ "id": "belfast_boutique",
+ "name": "Linen Quarter Outfitters",
+ "region": "",
+ "kind": "interior",
+ "music": "",
+ "weather": {},
+ "props": [
+  {
+   "type": "display_case",
+   "x": 1,
+   "y": 3
+  },
+  {
+   "type": "display_case",
+   "x": 11,
+   "y": 3
+  },
+  {
+   "type": "display_case",
+   "x": 1,
+   "y": 5
+  },
+  {
+   "type": "display_case",
+   "x": 11,
+   "y": 5
+  },
+  {
+   "type": "clock",
+   "x": 5,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 8,
+   "y": 1,
+   "walk": true,
+   "variant": 1
+  },
+  {
+   "type": "rug",
+   "x": 5,
+   "y": 5,
+   "w": 2,
+   "h": 2,
+   "variant": 2,
+   "walk": true
+  },
+  {
+   "type": "potted_plant",
+   "x": 1,
+   "y": 7
+  },
+  {
+   "type": "potted_plant",
+   "x": 11,
+   "y": 7
+  }
+ ],
+ "warps": [
+  {
+   "x": 6,
+   "y": 8,
+   "to": "belfast",
+   "tx": 10,
+   "ty": 40,
+   "facing": "down"
+  }
+ ],
+ "edges": {},
+ "npcs": [
+  {
+   "id": "belfast_boutique_keeper",
+   "sprite": "villager_4",
+   "x": 6,
+   "y": 3,
+   "facing": "down",
+   "move": "still",
+   "script": "belfast_boutique_keeper",
+   "name": "Outfitter"
+  }
+ ],
+ "encounters": {},
+ "signs": [],
+ "spawn": [
+  6,
+  7
+ ],
+ "rows": [
+  "xxxxxxxxxxxxx",
+  "x|||||||||||x",
+  "x|CCCCCCCCC|x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||||||||x",
+  "x|||||D|||||x",
+  "xxxxxxxxxxxxx"
+ ]
+}

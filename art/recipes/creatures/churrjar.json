@@ -20,5 +20,6 @@
   {"shape": "line", "points": [[32, 52], [64, 52]], "width": 1.2, "colour": "bristle", "shade": false},
   {"shape": "ellipse", "at": [28, 42], "size": [4, 3], "colour": "white", "shade": false, "rim": false, "mirror": true}
  ],
- "eyes": [{"at": [38, 40], "r": 5.6, "colour": "ink", "mirror": true, "pupil": null}]
+ "eyes": [{"at": [38, 40], "r": 5.6, "colour": "ink", "mirror": true, "pupil": null}],
+ "dimorph": {"f": {"drop": [6]}, "m": {"add_layers": [{"shape": "ellipse", "at": [20, 74], "size": [8, 5], "colour": "#f6f2e8", "mirror": true}]}}
 }

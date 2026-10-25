@@ -8,13 +8,13 @@ func test_row_height_shares_the_panel_and_stays_in_bounds() -> void:
 	assert_eq(MenuLogic.row_height(560, 5, 8, 44, 66), 66, "a short list keeps its tall rows")
 	assert_eq(MenuLogic.row_height(300, 9, 8, 44, 66), 44, "never smaller than a readable row")
 	assert_eq(MenuLogic.row_height(560, 0, 8, 44, 66), 66, "an empty list is harmless")
-	for n in range(1, 10):
-		var h := MenuLogic.row_height(531, n, 8, 44, 66)
-		assert_true(h * n + 8 * (n - 1) <= 531, "%d rows fit" % n)
+	for n in range(1, 12):  # up to eleven rows (Wardrobe and Ark both in), at the pause menu's gap and minimum
+		var h := MenuLogic.row_height(531, n, 4, 42, 66)
+		assert_true(h * n + 4 * (n - 1) <= 531, "%d rows fit" % n)
 
 func test_pause_entries_always_end_with_close() -> void:
-	assert_eq(MenuLogic.pause_entries(false), ["Team", "Fieldbook", "Bag", "Journal", "Almanac", "Map", "Save", "Settings", "Close"])
-	assert_eq(MenuLogic.pause_entries(true), ["Team", "Fieldbook", "Bag", "Ark", "Journal", "Almanac", "Map", "Save", "Settings", "Close"])
+	assert_eq(MenuLogic.pause_entries(false), ["Team", "Fieldbook", "Bag", "Wardrobe", "Journal", "Almanac", "Map", "Save", "Settings", "Close"])
+	assert_eq(MenuLogic.pause_entries(true), ["Team", "Fieldbook", "Bag", "Wardrobe", "Ark", "Journal", "Almanac", "Map", "Save", "Settings", "Close"])
 
 func test_fit_size_shrinks_long_text_only() -> void:
 	assert_eq(UIKit.fit_size("Spikkin", 300, 38, 24), 38)

@@ -135,14 +135,15 @@ func _creature_button(c: Creature, wide: bool) -> Button:
 	box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	b.add_child(box)
 	var s := AnimSprite.new()
-	s.show_species(c.species.id, "icon", 2, false, c.variant, c.form)
+	s.show_species(c.species.id, "icon", 2, false, c.variant, c.form, c.sex)
 	if c.is_fainted():
 		s.modulate = Color(0.5, 0.5, 0.5)
 	if wide:  # the team list: icon, name, and the level lined up on the right
 		box.add_theme_constant_override("separation", 10)
 		s.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		box.add_child(s)
-		var nm := UIKit.label(c.display_name(), UIKit.fit_size(c.display_name(), 262, 26, 20))  # long names shrink a little first
+		box.add_child(UIKit.sex_mark(c, 22))
+		var nm := UIKit.label(c.display_name(), UIKit.fit_size(c.display_name(), 240, 26, 20))  # long names shrink a little first
 		nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		nm.clip_text = true
 		nm.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS

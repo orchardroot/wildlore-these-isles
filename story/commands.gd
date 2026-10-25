@@ -155,6 +155,8 @@ func _exec(c: Dictionary) -> void:
 			await host.warp(str(c.get("zone", "")), int(c.get("x", 0)), int(c.get("y", 0)), str(c.get("facing", "down")))
 		"shop":
 			await host.open_menu("shop:" + str(c.get("id", "")))
+		"wardrobe":  # the Wardrobe (ui/wardrobe_screen.gd); {"mirror": true} at a mirror, where hair is free to change
+			await host.open_menu("wardrobe" + (":mirror" if c.get("mirror", false) else ""))
 		"bureau":
 			# a bureau de change (see Forex); "currency" names the local money when the zone doesn't (e.g. "usd")
 			await host.open_menu("bureau" + ((":" + str(c.currency)) if str(c.get("currency", "")) != "" else ""))
@@ -216,8 +218,18 @@ func _exec(c: Dictionary) -> void:
 			await _crossword(c)
 		"darts":
 			await PubSportRun.new(self).darts(c)
+		"arcade":
+			await ArcadeRun.new(self).run(c)
+		"curling":
+			await LadderSportRun.new(self).curling(c)
+		"wrestling":
+			await LadderSportRun.new(self).wrestling(c)
 		"crab_comp":
 			await PubSportRun.new(self).crab_comp(c)
+		"bowls":
+			await GreenRun.new(self).bowls(c)
+		"skim":
+			await GreenRun.new(self).skim(c)
 		"ring":
 			await RingingRun.new(self).ring(c)
 		"wall":
@@ -226,6 +238,8 @@ func _exec(c: Dictionary) -> void:
 			await GamesRun.new(self).play(c)
 		"sing":
 			await ShantyRun.new(self).sing(c)
+		"fete":
+			await FeteRun.new(self).play(c)
 		"conkers":
 			await ShantyRun.new(self).conkers(c)
 		"forecast":
@@ -742,6 +756,8 @@ func _weather() -> String:
 	return w if w != "" else "clear"
 
 func _test(c: Dictionary) -> bool:
+	if c.has("if_wearing"):  # {"do":"if","if_wearing":"hat"|"<item id>"|[...]}: the player has that slot filled / that item on
+		return wearing(host.data, c.if_wearing)
 	var v: Variant = host.data.flag(str(c.get("flag", "")))
 	if c.has("eq"):
 		return _loose_eq(v, c.eq)
@@ -768,12 +784,34 @@ func _set_flag(key: String, value: Variant) -> void:
 	if host.has_method("on_flag"):
 		host.on_flag(key, value)
 
+## True when any of `spec` (a wear slot such as "hat", an item id, or an array of either) is being worn.
+static func wearing(data: GameStateData, spec: Variant) -> bool:
+	var worn: Dictionary = Looks.base(data).wearing
+	for w in (spec if typeof(spec) == TYPE_ARRAY else [spec]):
+		var k := str(w)
+		if Looks.SLOTS.has(k):
+			if str(worn.get(k, "")) != "":
+				return true
+		elif k in worn.values():
+			return true
+	return false
+
+## {worn_hat} {worn_coat} ...: the name of what the player has on in that slot (a boutique keeper's line).
+func _sub_worn(s: String) -> String:
+	for slot in Looks.SLOTS:
+		var tag := "{worn_%s}" % slot
+		if tag in s:
+			s = s.replace(tag, Looks.worn_name(host.data, slot, host.items))
+	return s
+
 func _sub(s: String) -> String:
+	if "{worn_" in s:
+		s = _sub_worn(s)
 	var total: int = host.dex.core_ids().size()  # the Fieldbook proper: the appendix is a bonus
 	var got: int = FieldbookGoals.caught_count(host.data)
-	return s.replace("{player}", host.data.player_name).replace("{rival}", host.data.rival_name) \
+	return Looks.sub(host.data, s.replace("{player}", host.data.player_name).replace("{rival}", host.data.rival_name) \
 		.replace("{caught}", str(got)).replace("{left}", str(maxi(0, total - got))).replace("{total}", str(total)) \
-		.replace("{greeting}", _greeting() if "{greeting}" in s else "")
+		.replace("{greeting}", _greeting() if "{greeting}" in s else ""))  # and {he} {him} {his} {Mr} {man}
 
 ## {greeting}: the local hello, and once you're a Pillar of the Community here, a word about what you sorted out.
 func _greeting() -> String:

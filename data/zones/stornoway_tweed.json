@@ -81,6 +81,16 @@
    "move": "still",
    "script": "sw_inspector",
    "name": "Inspector"
+  },
+  {
+   "id": "stornoway_boutique_keeper",
+   "sprite": "isles_sigrid",
+   "x": 8,
+   "y": 5,
+   "facing": "down",
+   "move": "still",
+   "script": "stornoway_boutique_keeper",
+   "name": "Weaver's Daughter"
   }
  ],
  "encounters": {},

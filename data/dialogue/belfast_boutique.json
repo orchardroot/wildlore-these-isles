@@ -1,0 +1,88 @@
+{
+ "belfast_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Outfitter",
+   "text": "Well, how's it going? They called this place Linenopolis once. We keep the tradition going, with fewer looms."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Outfitter",
+     "text": "Is that your {worn_coat}? Dead on. It'll see you through a Belfast shower."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Outfitter",
+       "text": "Good {worn_hat}. Very Linenhall. I'd wear that to the shipyard, if they still let me."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Outfitter",
+         "text": "That {worn_top} is class. Linen next, do you think?"
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Outfitter",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Outfitter",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Outfitter",
+             "text": "Dressed for the rain and not much else. Have a look about."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_belfast"
+  },
+  {
+   "do": "say",
+   "who": "Outfitter",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

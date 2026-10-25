@@ -145,6 +145,14 @@ static func chip(text: String, bg: Color, fg := Color("f8f1dc"), size := 20, gly
 	p.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 	return p
 
+## The male or female sign for a creature (see ui/sex_mark.gd); an invisible nothing for a kindred without sexes.
+static func sex_mark(c: Creature, size := 22) -> SexMark:
+	return SexMark.make(c.sex if c != null else "", size)
+
+## "Male" / "Female" / "" for a creature, for words beside the sign.
+static func sex_word(c: Creature) -> String:
+	return Sexes.word_of(c) if c != null else ""
+
 static func type_chip(t: String, size := 20) -> PanelContainer:
 	return chip(t, TypeColours.colour(t), TypeColours.text_colour(t), size, t)
 
@@ -221,7 +229,7 @@ static func clear(node: Node) -> void:
 
 static func kind_name(kind: String) -> String:
 	return {"heal": "Healing", "meal": "Dishes", "cure": "Remedies", "revive": "Revivals", "pp": "Pudding", "snare": "Snares",
-		"repel": "Sachets", "evo": "Curios", "charm": "Charms", "key": "Key Items", "material": "Materials", "fish": "Fish", "produce": "Produce"}.get(kind, kind.capitalize())
+		"repel": "Sachets", "evo": "Curios", "charm": "Charms", "key": "Key Items", "material": "Materials", "fish": "Fish", "produce": "Produce", "wear": "Clothes"}.get(kind, kind.capitalize())
 
 ## "£1,234", or in euros with cur "eur" (see Wallet).
 static func money_text(n: int, cur := "gbp") -> String:

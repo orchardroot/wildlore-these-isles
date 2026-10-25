@@ -1295,6 +1295,16 @@
    "facing": "down",
    "move": "still",
    "script": "arts_dove_cottage"
+  },
+  {
+   "id": "ld_wrestling_steward",
+   "name": "Ring Steward",
+   "sprite": "farmer",
+   "x": 46,
+   "y": 39,
+   "facing": "down",
+   "move": "still",
+   "script": "ld_wrestling"
   }
  ],
  "encounters": {
@@ -1526,6 +1536,13 @@
    "theme": "arts",
    "title": "Beatrix Potter",
    "text": "Beatrix Potter bought Hill Top farm at Near Sawrey in 1905 with the money from The Tale of Peter Rabbit, published in 1902. She painted the lanes and gardens into her books, bred prize Herdwick sheep, and bought up fell farms as they came on the market. When she died in 1943 she left fifteen farms and more than four thousand acres to the National Trust, with the Herdwicks to stay on them. Mr McGregor's garden is not open to the public."
+  },
+  {
+   "x": 48,
+   "y": 40,
+   "plaque": "lake_district_wrestling",
+   "title": "Grasmere Sports",
+   "text": "GRASMERE SPORTS. Held every August since 1852, with fell races, hound trails and Cumberland and Westmorland wrestling. Wrestlers start chest to chest, arms locked round each other's backs. You lose by touching the ground with anything but your feet, or by letting go of the hold. The throws have names like the hipe, the buttock and the cross-buttock, and the wrestlers wear embroidered trunks over long johns."
   }
  ],
  "spawn": [

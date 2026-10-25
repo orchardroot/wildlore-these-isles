@@ -21,6 +21,38 @@ It started life as a monster-catching game. It's turned into something closer to
 
 Whatever's newest is below; older notes are further down.
 
+## What's new in 4.6: Dressed for the Weather
+
+Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things
+to play at the places they really happen.
+
+- **Who's setting off?** A new game now asks who you are: male or female, build, skin tone, hair style and colour,
+  and the colour of your top, with a Randomise button and a live preview. Old saves keep the look they had.
+- **The Wardrobe.** Change your hair in the mirror at Mum's, and dress from what you own in the Wardrobe (pause
+  menu). Shops show you trying things on before you buy. What you wear shows in the world, on the VS card and on
+  your journeys, and letters now get your title right.
+- **Boutiques.** Fourteen clothes shops round the Isles stocking what the place is known for: Harris Tweed in
+  Stornoway, Fair Isle in Lerwick, Aran jumpers in Galway, Welsh wool, Donegal tweed caps, a Derry shirt, Northampton
+  brogues, kilts in public tartans, wellies in colours, a sou'wester for Whitby weather. Shopkeepers and a few
+  passers-by notice what you've got on.
+- **Male and female creatures.** The summary page says it plainly, the sign sits beside every creature's name (Team,
+  battle, Ark, Fieldbook), and pairing tells you straight out that it takes one male and one female, and why a pick
+  won't do. Forty-two species now look different by sex, as the real animals do, with a line about it in the
+  Fieldbook and a tick for seeing both.
+- **Crown green bowls** at the Waterloo in Blackpool and greens in the Potteries, Sheffield and Macclesfield, with the
+  crown and the bias doing what they do. **Stone skimming** at Oban (for Easdale, home of the World Championships) and
+  on Llyn Padarn.
+- **The seaside arcade** on Blackpool's Golden Mile and Brighton's Palace Pier: a 2p pusher, a claw with honest
+  weakness and penny falls, change from the counter, a daily limit, and soft toys to win. It is also honest about
+  what the machines keep.
+- **The village fete:** cheese rolling down a Cooper's Hill, bog snorkelling (Llanwrtyd Wells' idea, 1985) and welly
+  wanging, any day for a small prize and bigger on the real date.
+- **Curling** at Inverness rink, taught by doing (the house, the button, the hog line, sweeping), and **Cumberland
+  and Westmorland wrestling** at Grasmere Sports: read the hipe, the buttock and the cross-buttock, best of three
+  falls, embroidered drawers and all.
+- The approved Welsh lessons (Sut mae, Pontcysyllte, Trefor) and the remaining wave 45 facts are in, and the Nightly
+  fuzz no longer sets you down on a lease fence.
+
 ## What's new in 4.5.1
 
 - Fixed two places you could get stuck: a new plaque blocked the only path to Yr Wyddfa's summit, and arriving at Galway Docks could box you in beside the door.

@@ -49,6 +49,17 @@
  ],
  "sw_pudding_fan": [
   {
+   "do": "if",
+   "if_wearing": "harris_tweed_jacket",
+   "then": [
+    {
+     "do": "say",
+     "who": "Pudding Fan",
+     "text": "Is that Harris Tweed? I can almost see the Orb on it from here."
+    }
+   ]
+  },
+  {
    "do": "say",
    "who": "Pudding Fan",
    "text": "Stornoway black pudding. It's got protected status, like Champagne. If you make a black pudding in Glasgow you can call it a black pudding, but you can't call it a Stornoway one. And you wouldn't want to. It's just not the same."

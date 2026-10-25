@@ -40,6 +40,17 @@
  ],
  "square_student": [
   {
+   "do": "if",
+   "if_wearing": "aran_jumper",
+   "then": [
+    {
+     "do": "say",
+     "who": "University Student",
+     "text": "Grand Aran. My nan says the cables hold the heat. My nan is generally right."
+    }
+   ]
+  },
+  {
    "do": "when",
    "cond": "rain",
    "chat": true,

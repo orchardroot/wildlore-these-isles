@@ -26,5 +26,6 @@
  ],
  "eyes": [
   {"at": [30.4, 25.8], "r": 6.05, "colour": "gold", "pupil": [8, 2.5], "mirror": true}
- ]
+ ],
+ "dimorph": {"m": {"add_layers": [{"shape": "ellipse", "at": [48, 58], "size": [26, 16], "colour": "#e6d8a0", "front_only": true}]}}
 }

@@ -4,6 +4,7 @@ extends RefCounted
 ## kin they are. Genetics.can_pair has the rules of species and sex; this adds fondness and the one-a-day limit.
 
 const FOND_HEARTS := 2  # "Fond", the second bond tier
+const RULE := "A pair needs one male and one female."
 
 static func is_fond(c: Creature) -> bool:
 	return Bond.hearts(c.friendship) >= FOND_HEARTS
@@ -39,13 +40,16 @@ static func kinship_words(k: float) -> String:
 ## screen lets the player pick two and sorts them); null means that slot is still empty.
 static func verdict(data: GameStateData, zone_id: String, a: Creature, b: Creature) -> Dictionary:
 	if a == null or b == null:
-		return {"ok": false, "why": "Pick two.", "kind": "", "kin": 0.0, "kin_words": ""}
+		var one: Creature = a if a != null else b
+		return {"ok": false, "why": pick_prompt(one), "kind": "", "kin": 0.0, "kin_words": ""}
 	var sire := a
 	var dam := b
 	if a.sex == "f" and b.sex == "m":
 		sire = b
 		dam = a
 	var v := Genetics.can_pair(sire, dam)
+	if not v.ok and str(v.why).begins_with("It takes a male and a female"):  # the generic refusal, said plainly
+		v.why = sex_refusal(sire, dam)
 	var kin := Genetics.kinship(sire, dam)
 	v["kin"] = kin
 	v["kin_words"] = kinship_words(kin)
@@ -64,6 +68,29 @@ static func verdict(data: GameStateData, zone_id: String, a: Creature, b: Creatu
 			v.ok = false
 			v.why = "Three baskets on the go is plenty. Walk some off first."
 	return v
+
+## "male", "female" or "no sex" in a sentence.
+static func sex_desc(c: Creature) -> String:
+	return Sexes.word(c.sex).to_lower() if Sexes.valid(c.sex) else "no sex"
+
+## What to say with nobody or one creature picked: the rule, and what the first pick still needs.
+static func pick_prompt(first: Creature) -> String:
+	if first == null:
+		return "Pick two. " + RULE
+	if first.sex == "m":
+		return "%s is a male. Pick a female to go with him. %s" % [_name(first), RULE]
+	if first.sex == "f":
+		return "%s is a female. Pick a male to go with her. %s" % [_name(first), RULE]
+	return "%s has no male or female side, so it can't be paired. %s" % [_name(first), RULE]
+
+## Why two picks fail on sex alone, naming each, or "" when sex is not the trouble.
+static func sex_refusal(a: Creature, b: Creature) -> String:
+	if Sexes.valid(a.sex) and Sexes.valid(b.sex):
+		if a.sex == b.sex:
+			return "%s and %s are both %s. %s" % [_name(a), _name(b), sex_desc(a), RULE]
+		return ""
+	var bare: Creature = a if not Sexes.valid(a.sex) else b
+	return "%s has no male or female side, so it can't be paired. %s" % [_name(bare), RULE]
 
 ## Dot's line for a verdict that is fine.
 static func fine_line(v: Dictionary) -> String:

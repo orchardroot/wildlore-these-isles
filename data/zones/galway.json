@@ -1341,6 +1341,14 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 8,
+   "y": 30,
+   "to": "galway_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "weather": {

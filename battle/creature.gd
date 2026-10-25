@@ -79,6 +79,7 @@ static func from_dict(d: Dictionary, dex: Dex) -> Creature:
 		c.genome = made.genome
 		if c.sex == "":
 			c.sex = made.sex
+	Sexes.ensure(c)  # a save from before sexes (or a hand-built creature) gets its own, the same every time
 	c.reset_stages()
 	c.hp = mini(c.hp, c.max_hp())  # base stats can change between versions; never above the (new) max
 	return c

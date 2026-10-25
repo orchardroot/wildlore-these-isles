@@ -51,7 +51,7 @@ static func look_of(c: Creature) -> Dictionary:
 	var face := str(spec.get("face", ""))
 	return {
 		"stock": stock, "spec": spec, "variant": variant, "scale": scale, "mark": mark, "hue": hue,
-		"key": "%s|%s|%s|%s|%d|%d|%s" % [str(c.species.get("sprite", c.species.get("id", ""))), body, face,
+		"key": "%s|%s|%s|%s|%d|%d|%s" % [Sexes.art_id(str(c.species.get("sprite", c.species.get("id", ""))), "front", c.sex), body, face,
 			str(spec.get("palette", "")), mark, frame, "%s|%s" % [variant, hue]],
 	}
 
@@ -154,8 +154,8 @@ static func _scaled(img: Image, s: float, kind: String) -> Image:
 
 static func _stock(c: Creature, kind: String) -> Texture2D:
 	if kind == "icon":
-		return CreatureArt.icon(c.species)
-	return CreatureArt.texture(c.species, kind == "back")
+		return CreatureArt.icon(c.species, c.sex)
+	return CreatureArt.texture(c.species, kind == "back", c.sex)
 
 static func _remember(key: String, set: Dictionary) -> void:
 	_cache[key] = set

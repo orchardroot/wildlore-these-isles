@@ -161,6 +161,17 @@
  ],
  "black_taxi": [
   {
+   "do": "if",
+   "if_wearing": "derry_shirt",
+   "then": [
+    {
+     "do": "say",
+     "who": "Taxi Driver",
+     "text": "That's a fair shirt. Derry made them by the million, you know."
+    }
+   ]
+  },
+  {
    "do": "when",
    "cond": "st_patricks",
    "chat": true,

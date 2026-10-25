@@ -8,18 +8,20 @@ const FRAME := 96
 
 static var _cache := {}
 
-static func texture(species: Dictionary, back: bool) -> Texture2D:
+## `sex` ("m" or "f") picks the sheet drawn for that sex when the species has one (see Sexes).
+static func texture(species: Dictionary, back: bool, sex := "") -> Texture2D:
 	var id := str(species.get("sprite", species.get("id", "")))
-	var key := "%s/%s" % [id, "back" if back else "front"]
+	var side := "back" if back else "front"
+	var stem := Sexes.art_id(id, side, sex)
+	var key := "%s/%s" % [stem, side]
 	if _cache.has(key):
 		return _cache[key]
-	var side := "back" if back else "front"
 	if Crossbreeds.is_id(id):  # blended at runtime from its parents (ui/crossbreed_art.gd)
 		var xt := CrossbreedArt.texture(species if species.has("crossbreed") else Crossbreeds.lookup(id), side)
 		if xt != null:
 			_cache[key] = xt
 			return xt
-	var tex: Texture2D = _load("%s%s_%s.png" % [DIR, id, side])
+	var tex: Texture2D = _load(Sexes.sheet_path(id, side, sex))
 	if tex == null:
 		tex = _load("%s_placeholder_%s.png" % [DIR, side])
 	if tex == null:
@@ -28,13 +30,13 @@ static func texture(species: Dictionary, back: bool) -> Texture2D:
 	_cache[key] = tex
 	return tex
 
-static func icon(species: Dictionary) -> Texture2D:
+static func icon(species: Dictionary, sex := "") -> Texture2D:
 	var id := str(species.get("sprite", species.get("id", "")))
 	if Crossbreeds.is_id(id):
 		var xt := CrossbreedArt.texture(species if species.has("crossbreed") else Crossbreeds.lookup(id), "icon")
 		if xt != null:
 			return xt
-	var tex: Texture2D = _load("%s%s_icon.png" % [DIR, id])
+	var tex: Texture2D = _load(Sexes.sheet_path(id, "icon", sex))
 	if tex == null:
 		tex = _load("%s_placeholder_icon.png" % DIR)
 	if tex == null:

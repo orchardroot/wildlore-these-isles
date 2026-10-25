@@ -3,6 +3,9 @@ extends RefCounted
 ## Dev switch `--menu=<name>[:arg]`: boots a new game with a sample party and bag, then opens that menu.
 ## Used for screenshots (see docs/screens/t9-*.png). Called from Game._dev_boot.
 
+## Real wear items (data/items/wear.json) a dev Wardrobe or boutique screenshot starts with: bought, the first five worn (cap, jumper, kilt, jacket, wellies).
+const DEMO_WEAR := ["flat_cap_yorkshire", "aran_jumper", "black_watch_kilt", "waxed_jacket_green", "wellies_red", "paisley_scarf", "round_glasses"]
+
 static func arg(cmdline: PackedStringArray) -> String:
 	for a in cmdline:
 		if a.begins_with("--menu="):
@@ -169,6 +172,13 @@ static func boot(game: Node, menu: String) -> void:
 			d.set_flag(Postcards.flag_key(str(pc.id)), "2026-10-%02d" % (2 + Postcards.card_index(str(pc.id))))
 	if menu.begins_with("shop") and not menu.contains(":"):
 		menu = "shop:macc_corner_shop"
+	if menu.begins_with("shop:looks_demo"):  # kept as an alias: the Edinburgh boutique, mid-wardrobe
+		menu = "shop:boutique_edinburgh"
+	if menu.begins_with("wardrobe") or menu.begins_with("shop:boutique"):  # `--menu=wardrobe[:mirror]`, `--menu=shop:boutique_<city>`: a few bought clothes, the cap on
+		for id in DEMO_WEAR:
+			d.bag[id] = 1
+		for id in DEMO_WEAR.slice(0, 5):
+			Looks.wear(d, id, game.items)
 	if menu.begins_with("society"):  # `--menu=society:<zone>[:loan]`: a few Stones in, Mum's sub paid out; `:loan` adds a loan, savings and a missed month
 		d.day_count = 120
 		d.money = 1840

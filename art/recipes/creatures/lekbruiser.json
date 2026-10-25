@@ -236,5 +236,6 @@
    "rim": false,
    "under": true
   }
- ]
+ ],
+ "dimorph": {"f": {"palette": {"body": "#8c6c4a", "body2": "#b09474", "breast": "#c8803c", "tail": "#5c4432", "tail2": "#d8c4a0"}, "drop": [7]}}
 }

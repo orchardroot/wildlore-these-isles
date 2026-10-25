@@ -181,6 +181,22 @@ func walkable(p: Vector2i, from_dir := Vector2i.ZERO, abilities: Array = []) -> 
 			return false
 	return true
 
+## Where to set the player down for an arrival at p. Overlays applied on load (a lease's fence across the anchor's
+## gap, a closed Deep Place gate on a warp's landing tile) can leave p unstandable; this is the nearest tile that
+## is, searching outward ring by ring (ties go to the first found, scanning up then left). p itself if it will do.
+func landing_near(p: Vector2i, abilities: Array = [], max_ring := 8) -> Vector2i:
+	if not in_bounds(p) or walkable(p, Vector2i.ZERO, abilities) or tile_at(p) == "ledge_south":
+		return p
+	for r in range(1, max_ring + 1):
+		for dy in range(-r, r + 1):
+			for dx in range(-r, r + 1):
+				if maxi(absi(dx), absi(dy)) != r:
+					continue
+				var q := p + Vector2i(dx, dy)
+				if walkable(q, Vector2i.ZERO, abilities):
+					return q
+	return p
+
 ## Hedge-lay: the bramble at p becomes grass (the overworld re-applies cut flags on load).
 func cut(p: Vector2i) -> void:
 	if tile_at(p) == "bramble":

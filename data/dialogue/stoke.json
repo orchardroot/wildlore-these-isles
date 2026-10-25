@@ -502,5 +502,17 @@
   {
    "do": "rail"
   }
+ ],
+ "stoke_bowler": [
+  {
+   "do": "say",
+   "who": "Landlady",
+   "text": "The green is round the back, between the beer garden and the bins. Don't tell the brewery we call it a green."
+  },
+  {
+   "do": "bowls",
+   "venue": "potteries",
+   "who": "Landlady"
+  }
  ]
 }

@@ -1,0 +1,63 @@
+{
+ "_doc": "The player's look (core/looks.gd): skin tones from very fair to very dark, hair styles the painter (tools/spritegen/character.gd) knows, hair colours, builds and the starting top colours. Indexes into skins / hair_colours / tops are what a save holds, so only ever append.",
+ "skins": [
+  {"id": "porcelain", "name": "Porcelain", "hex": "#fbe3d2"},
+  {"id": "fair", "name": "Fair", "hex": "#f2c9a0"},
+  {"id": "light", "name": "Light", "hex": "#e8b98a"},
+  {"id": "warm", "name": "Warm", "hex": "#d8a074"},
+  {"id": "olive", "name": "Olive", "hex": "#c4895a"},
+  {"id": "tan", "name": "Tan", "hex": "#b07448"},
+  {"id": "brown", "name": "Brown", "hex": "#8e5a36"},
+  {"id": "deep", "name": "Deep brown", "hex": "#6e4228"},
+  {"id": "dark", "name": "Dark", "hex": "#4e2e1c"},
+  {"id": "ebony", "name": "Ebony", "hex": "#332016"}
+ ],
+ "hair": [
+  {"id": "short", "name": "Short"},
+  {"id": "long", "name": "Long"},
+  {"id": "bob", "name": "Bob"},
+  {"id": "bun", "name": "Bun"},
+  {"id": "pony", "name": "Ponytail"},
+  {"id": "curly", "name": "Curly"},
+  {"id": "spiky", "name": "Spiky"},
+  {"id": "windswept", "name": "Windswept"},
+  {"id": "afro", "name": "Afro"},
+  {"id": "braids", "name": "Braids"},
+  {"id": "locs", "name": "Locs"},
+  {"id": "undercut", "name": "Undercut"},
+  {"id": "mohawk", "name": "Mohawk"},
+  {"id": "buzz", "name": "Buzz cut"},
+  {"id": "bald", "name": "Shaved"}
+ ],
+ "hair_colours": [
+  {"id": "black", "name": "Black", "hex": "#1a1612"},
+  {"id": "dark_brown", "name": "Dark brown", "hex": "#4a2e22"},
+  {"id": "brown", "name": "Brown", "hex": "#6a4a32"},
+  {"id": "light_brown", "name": "Light brown", "hex": "#8a6a48"},
+  {"id": "auburn", "name": "Auburn", "hex": "#8a3a1e"},
+  {"id": "ginger", "name": "Ginger", "hex": "#c8622a"},
+  {"id": "blonde", "name": "Blonde", "hex": "#d9b46a"},
+  {"id": "platinum", "name": "Platinum", "hex": "#ece0c0"},
+  {"id": "grey", "name": "Grey", "hex": "#9a9a98"},
+  {"id": "white", "name": "White", "hex": "#e8e6e0"},
+  {"id": "teal", "name": "Dyed teal", "hex": "#2a9aa0", "dyed": true},
+  {"id": "violet", "name": "Dyed violet", "hex": "#8a4ab0", "dyed": true}
+ ],
+ "builds": [
+  {"id": "slight", "name": "Slight", "paint": "child"},
+  {"id": "adult", "name": "Grown", "paint": "adult"}
+ ],
+ "tops": [
+  {"id": "teal", "name": "Teal", "hex": "#2f8c9a"},
+  {"id": "mustard", "name": "Mustard", "hex": "#eab12c"},
+  {"id": "red", "name": "Red", "hex": "#c83a3a"},
+  {"id": "forest", "name": "Forest green", "hex": "#3a7a4a"},
+  {"id": "navy", "name": "Navy", "hex": "#2c3a6a"},
+  {"id": "plum", "name": "Plum", "hex": "#7a3a6a"},
+  {"id": "cream", "name": "Cream", "hex": "#e8e0d0"},
+  {"id": "orange", "name": "Orange", "hex": "#e8863a"},
+  {"id": "sky", "name": "Sky blue", "hex": "#6aa8d8"},
+  {"id": "charcoal", "name": "Charcoal", "hex": "#3a3a40"}
+ ],
+ "defaults": {"bottom": "#3a4a7a", "shoes": "#f2f0ea", "accent2": "#e8863a"}
+}

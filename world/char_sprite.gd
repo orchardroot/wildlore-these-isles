@@ -70,6 +70,12 @@ func setup(sprite_id: String) -> void:
 	add_to_group(GROUP)
 	set_crisp(crisp)
 
+## The player, painted from a look recipe (see Looks and LookArt) instead of a sheet on disk. Cached per recipe.
+func setup_recipe(recipe: Dictionary) -> void:
+	setup("_placeholder")
+	texture = LookArt.texture(recipe)
+	set_crisp(crisp)  # the readable-look shader keeps its own copy of the texture
+
 ## Every character in the tree switches to (or from) the readable look at once: the quality setting changed.
 static func set_crisp_all(tree: SceneTree, on: bool) -> void:
 	crisp = on

@@ -101,7 +101,7 @@
   {
    "do": "say",
    "who": "Gallery Guide",
-   "text": "There's a Spitfire in the ceiling, a Dal\u00ed of Christ on a cross seen from above, and a great pipe organ that plays most days. The gallery's free, so don't get any ideas about paying."
+   "text": "There's a Spitfire in the ceiling, a Dalí of Christ on a cross seen from above, and a great pipe organ that plays most days. The gallery's free, so don't get any ideas about paying."
   }
  ],
  "glw_riveter": [
@@ -209,6 +209,17 @@
   }
  ],
  "glw_artstudent": [
+  {
+   "do": "if",
+   "if_wearing": "paisley_scarf",
+   "then": [
+    {
+     "do": "say",
+     "who": "Art Student",
+     "text": "A paisley scarf. Pattern on pattern. Mackintosh would have wept, then redesigned it."
+    }
+   ]
+  },
   {
    "do": "when",
    "cond": "rain",

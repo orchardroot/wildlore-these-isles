@@ -32,5 +32,6 @@
  "face_layers": [
   {"shape": "line", "points": [[40, 30], [56, 30]], "width": 1, "colour": "d2", "shade": false}
  ],
- "eyes": [{"at": [40, 27], "r": 4, "mirror": true}]
+ "eyes": [{"at": [40, 27], "r": 4, "mirror": true}],
+ "dimorph": {"f": {"palette": {"d": "#8c6c4a", "d2": "#5c4432", "grn": "#c8803c", "grn2": "#e0a45c", "fth": "#b09474"}, "drop": [24]}}
 }

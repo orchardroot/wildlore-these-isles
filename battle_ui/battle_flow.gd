@@ -137,6 +137,7 @@ func run() -> Dictionary:
 		data.mark_seen(c.species.id)
 		Coats.record_seen(data, c)
 		Forms.record_seen(data, c)
+		Sexes.record_seen(data, c)
 	await ui.intro(self)
 	if foe != null and not battle.over:
 		await _say(_intro_lines())
@@ -340,6 +341,7 @@ func _replace_foe(pos := 0) -> void:
 		if not party[i].is_fainted() and i not in battle.active[Battle.FOE]:
 			var ev := battle.force_switch(Battle.FOE, i, pos)
 			data.mark_seen(party[i].species.id)
+			Sexes.record_seen(data, party[i])
 			await _play(ev)
 			return
 

@@ -193,12 +193,12 @@
      "then": [
       {
        "do": "say",
-       "who": "Comp\u00e8re",
+       "who": "Compère",
        "text": "Ladies and gentlemen, boys and girls, hen dos and stag dos! Our celebrity is stuck on the M55, so tonight, please welcome a very special stand-in..."
       },
       {
        "do": "say",
-       "who": "Comp\u00e8re",
+       "who": "Compère",
        "text": "...{player}! Ten! Nine! Eight! Oh, they've done it early. Never mind!"
       },
       {
@@ -250,7 +250,7 @@
      "else": [
       {
        "do": "say",
-       "who": "Comp\u00e8re",
+       "who": "Compère",
        "text": "Not yet, love! You can't switch on the Illuminations in broad daylight. Come back at dusk, when the sky goes purple over the Irish Sea."
       }
      ]
@@ -259,12 +259,12 @@
    "else": [
     {
      "do": "say",
-     "who": "Comp\u00e8re",
+     "who": "Compère",
      "text": "Testing, testing. One, two. Is this thing on? It's the switch-on soon, and the celebrity's been held up on the motorway. Again."
     },
     {
      "do": "say",
-     "who": "Comp\u00e8re",
+     "who": "Compère",
      "text": "Doreen at the depot's running about like a headless chicken. You could do worse than ask her what she needs."
     }
    ]
@@ -362,6 +362,18 @@
      ]
     }
    ]
+  }
+ ],
+ "blackpool_bowler": [
+  {
+   "do": "say",
+   "who": "Bowler",
+   "text": "Mind the crown. It has seen off better bowlers than you, and a few worse ones who thought they knew better."
+  },
+  {
+   "do": "bowls",
+   "venue": "waterloo",
+   "who": "Bowler"
   }
  ]
 }
