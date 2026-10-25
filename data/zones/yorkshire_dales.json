@@ -1065,6 +1065,16 @@
    "facing": "down",
    "move": "still",
    "script": "landsky_karst"
+  },
+  {
+   "id": "fete_welly_steward",
+   "sprite": "farmer",
+   "x": 42,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "fete_welly_steward",
+   "name": "Fete Steward"
   }
  ],
  "encounters": {

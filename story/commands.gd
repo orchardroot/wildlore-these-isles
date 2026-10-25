@@ -234,6 +234,8 @@ func _exec(c: Dictionary) -> void:
 			await GamesRun.new(self).play(c)
 		"sing":
 			await ShantyRun.new(self).sing(c)
+		"fete":
+			await FeteRun.new(self).play(c)
 		"conkers":
 			await ShantyRun.new(self).conkers(c)
 		"forecast":

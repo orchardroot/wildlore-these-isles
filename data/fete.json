@@ -1,0 +1,25 @@
+{
+ "events": {
+  "cheese": {
+   "name": "Cheese rolling", "zone": "cotswolds", "npc": "fete_cheese_steward", "who": "Hill Steward", "prize": 3, "real_prize": 12,
+   "when": "Spring Bank Holiday Monday, the last Monday of May",
+   "rules": ["A Double Gloucester is sent bowling down the hill and you chase it. Press left or right to match each lurch of the slope as the arrow shows, or you stumble.", "Hold Confirm for the last stretch to throw yourself over the line. First down wins the cheese."],
+   "won": "First over the line, and the cheese is yours. The ambulance crew look almost disappointed.",
+   "plaque": {"title": "Cooper's Hill", "text": "Cheese rolling happens on Cooper's Hill near Brockworth, Gloucestershire, on the Spring Bank Holiday Monday. A round of Double Gloucester is rolled down a very steep slope and the runners chase it. The first person over the bottom line wins the cheese. It has been written about since the early 1800s, and locals say it is far older. Brockworth is not in this game, so the Cotswolds stand in for it."}
+  },
+  "bog": {
+   "name": "Bog snorkelling", "zone": "beacons", "npc": "fete_bog_steward", "who": "Bog Marshal", "prize": 3, "real_prize": 12,
+   "when": "the August bank holiday weekend, Saturday to Monday",
+   "rules": ["Flippers, mask and snorkel, along a trench cut through a peat bog, there and back. Press Confirm to kick on the beat, and Up when a breath is marked.", "No swimming strokes are allowed, only the flippers. Keep it tidy and keep it under the time."],
+   "won": "Under the time, and brown from the neck down. The marshal hands you a towel with real respect.",
+   "plaque": {"title": "Bog Snorkelling", "text": "The World Bog Snorkelling Championships are held at Llanwrtyd Wells, Powys, on the August bank holiday weekend. Competitors swim two lengths of a trench cut through a peat bog at Waen Rhydd, in flippers and a snorkel, using no conventional strokes. The idea was dreamed up in a pub, the Neuadd Arms, in 1985. Llanwrtyd is not in this game, so the Brecon Beacons stand in for it."}
+  },
+  "welly": {
+   "name": "Welly wanging", "zone": "yorkshire_dales", "npc": "fete_welly_steward", "who": "Fete Steward", "prize": 3, "real_prize": 12,
+   "when": "fete season, any Saturday from June to August",
+   "rules": ["Throw a wellington boot as far as you can. Stop the power meter, then the angle, and mind the wind shown on the flag.", "Three throws, and the best one counts. About forty five degrees is the old advice."],
+   "won": "A proper wang. The tombola stall stops to applaud, which is rare.",
+   "plaque": {"title": "Welly Wanging", "text": "To wang is Northern dialect for to throw, and boot throwing is a village fete staple across Britain. Upper Thong near Holmfirth in West Yorkshire is known for its welly wanging championship. Fetes are mostly summer Saturdays, with a tombola, a cake stall and someone's dog in a rosette."}
+  }
+ }
+}

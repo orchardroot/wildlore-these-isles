@@ -58,5 +58,27 @@
    "who": "Lost Walker",
    "text": "I've been on this path three hours. It's about forty metres long. I'm very thorough."
   }
+ ],
+ "fete_bog_steward": [
+  {
+   "do": "say",
+   "who": "Bog Marshal",
+   "text": "Flippers, mask and snorkel, along a trench cut through a peat bog, there and back. Press Confirm to kick on the beat, and Up when a breath is marked."
+  },
+  {
+   "do": "say",
+   "who": "Bog Marshal",
+   "text": "No swimming strokes are allowed, only the flippers. Keep it tidy and keep it under the time."
+  },
+  {
+   "do": "say",
+   "who": "Bog Marshal",
+   "text": "The real thing: the August bank holiday weekend, Saturday to Monday. Any other day I run it for pocket money."
+  },
+  {
+   "do": "fete",
+   "event": "bog",
+   "who": "Bog Marshal"
+  }
  ]
 }

@@ -6,7 +6,7 @@ extends RefCounted
 const COUNTERS := ["steps", "wins_wild", "wins_trainer", "caught", "train_trips", "ferry_trips", "flights",
 	"rail_miles", "money_earned", "teas", "rained_on", "fish_caught",
 	"goods_sold", "dishes_cooked", "darts_won", "crabs_caught", "show_rosettes", "sheepdog_trials", "rows_rung", "walls_built", "games_won", "pulls_sung", "conkers_won",
-	"bowls_ends_won", "skims_best", "lessons_taken", "words_reviewed", "say_it_right", "lang_certs", "arcade_toys"]
+	"bowls_ends_won", "skims_best", "lessons_taken", "words_reviewed", "say_it_right", "lang_certs", "arcade_toys", "fete_won"]
 const TEA_ITEMS := ["cup_of_tea", "flask_of_tea", "cream_tea"]
 const MILES_PER_MAP_UNIT := 0.45   # the world map is 1000 x 1300 for roughly 450 x 600 miles of Britain
 
