@@ -20,5 +20,6 @@
   {"shape": "line", "points": [[48, 53], [51, 56]], "width": 1, "colour": "tongue", "shade": false},
   {"shape": "ellipse", "at": [33, 43], "size": [6, 4], "colour": "blush", "shade": false, "mirror": true}
  ],
- "eyes": [{"at": [38, 36], "r": 4, "colour": "eye", "pupil": [1.5, 5], "mirror": true}]
+ "eyes": [{"at": [38, 36], "r": 4, "colour": "eye", "pupil": [1.5, 5], "mirror": true}],
+ "dimorph": {"m": {"palette": {"skin": "#a6adb0", "skin2": "#7c8488", "zig": "#16120e", "belly": "#d8d8cc"}}, "f": {"palette": {"skin": "#a8743c", "skin2": "#7a4e26", "zig": "#4a2c18"}}}
 }

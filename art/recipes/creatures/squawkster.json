@@ -22,5 +22,6 @@
   {"shape": "circle", "at": [46, 47], "r": 1.1, "colour": "ink", "shade": false, "mirror": true},
   {"shape": "line", "points": [[28, 32], [38, 35]], "width": 2, "colour": "g2", "shade": false, "mirror": true}
  ],
- "eyes": [{"at": [36, 38], "r": 4.2, "colour": "yellow", "mirror": true, "pupil": [2.2, 2.2]}]
+ "eyes": [{"at": [36, 38], "r": 4.2, "colour": "yellow", "mirror": true, "pupil": [2.2, 2.2]}],
+ "dimorph": {"f": {"drop": [10, 11]}}
 }

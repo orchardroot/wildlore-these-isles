@@ -13,6 +13,8 @@ extends RefCounted
 ## eyes, outline, anim ("squash" default or "shift"), bob, icon_box.
 ## Back view (see back_layers): derived from `layers` seen from behind, tuned with back_over,
 ## back_hide, back_marks and back_auto.
+## Sexes: "dimorph": {"f": {...}, "m": {...}} lists how each sex differs from the base recipe (see apply_dimorph);
+## tools/spritegen.gd renders <id>_f.png, <id>_f_back.png and <id>_f_icon.png (and _m) beside the usual files.
 
 const Canvas = preload("res://tools/spritegen/canvas.gd")
 const SmoothCanvas = preload("res://tools/spritegen/smooth_canvas.gd")
@@ -26,6 +28,67 @@ static func render(recipe: Dictionary, scale := SCALE) -> Dictionary:
 	var back := _sheet(recipe, true, scale)
 	var icon := _icon(recipe)
 	return {"front": front, "back": back, "icon": icon}
+
+const DIMORPH_KEYS := ["palette", "drop", "drop_face", "set", "add_layers", "add_face_layers", "add_back_marks"]
+
+## The recipe for one sex ("m" or "f"): the base recipe with its dimorph overrides for that sex applied, or {} if
+## the recipe has none for it. Override keys: palette (colours merged in), drop (layer indices removed),
+## drop_face (face_layers indices removed), set ({"7": {"colour": ...}}: fields changed on a layer by index),
+## add_layers / add_face_layers / add_back_marks (appended), and any other recipe key, which replaces the base one.
+## Indices always refer to the base recipe's lists, so overrides read against the file.
+static func apply_dimorph(recipe: Dictionary, sex: String) -> Dictionary:
+	var all: Dictionary = recipe.get("dimorph", {})
+	if not all.has(sex) or not (all[sex] is Dictionary):
+		return {}
+	var ov: Dictionary = all[sex]
+	var r: Dictionary = recipe.duplicate(true)
+	r.erase("dimorph")
+	var pal: Dictionary = r.get("palette", {})
+	for k in ov.get("palette", {}):
+		pal[k] = ov["palette"][k]
+	if not pal.is_empty():
+		r["palette"] = pal
+	var set_: Dictionary = ov.get("set", {})
+	var layers: Array = r.get("layers", [])
+	for key in set_:
+		var i := int(key)
+		if i >= 0 and i < layers.size():
+			for f in set_[key]:
+				layers[i][f] = set_[key][f]
+	var drop := _ints(ov.get("drop", []))
+	var kept: Array = []
+	var remap := {}  # base index -> index once the dropped layers are gone
+	for i in layers.size():
+		if i in drop:
+			continue
+		remap[i] = kept.size()
+		kept.append(layers[i])
+	kept.append_array(ov.get("add_layers", []))
+	r["layers"] = kept
+	for key in ["back_over", "back_hide"]:  # index lists must follow the layers they name
+		if r.has(key):
+			var moved: Array = []
+			for i in _ints(r[key]):
+				if remap.has(i):
+					moved.append(remap[i])
+			r[key] = moved
+	var faces: Array = []
+	var drop_face := _ints(ov.get("drop_face", []))
+	var base_faces: Array = r.get("face_layers", [])
+	for i in base_faces.size():
+		if not (i in drop_face):
+			faces.append(base_faces[i])
+	faces.append_array(ov.get("add_face_layers", []))
+	if not faces.is_empty():
+		r["face_layers"] = faces
+	var marks: Array = r.get("back_marks", [])
+	marks.append_array(ov.get("add_back_marks", []))
+	if not marks.is_empty():
+		r["back_marks"] = marks
+	for k in ov:
+		if not (k in DIMORPH_KEYS):
+			r[k] = ov[k]
+	return r
 
 static func _palette(recipe: Dictionary, darken: float) -> Dictionary:
 	var pal := {}

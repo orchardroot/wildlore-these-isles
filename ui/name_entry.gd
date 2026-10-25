@@ -89,10 +89,18 @@ func setup(arg: String) -> void:
 	for b in _looks:
 		b.visible = false
 	var icon := AnimSprite.new()
-	icon.show_species(_nick.species.id, "front", 2, false, _nick.variant, _nick.form)
+	icon.show_species(_nick.species.id, "front", 2, false, _nick.variant, _nick.form, _nick.sex)
 	icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	_look_row.add_child(icon)
 	_look_row.move_child(icon, 0)
+	if Sexes.valid(_nick.sex):  # "Female", with her sign, beside the picture
+		var sx := HBoxContainer.new()
+		sx.add_theme_constant_override("separation", 6)
+		sx.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		sx.add_child(UIKit.sex_mark(_nick, 26))
+		sx.add_child(UIKit.label(UIKit.sex_word(_nick), 24, Sexes.colour(_nick.sex)))
+		_look_row.add_child(sx)
+		_look_row.move_child(sx, 1)
 	_refresh()
 
 ## The creature a "nickname:<i>" / "nickname:ark:<i>" argument points at, or null.

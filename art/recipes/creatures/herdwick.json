@@ -28,5 +28,6 @@
   {"shape": "ellipse", "at": [35, 56], "size": [6, 4], "colour": "pink", "shade": false, "mirror": true},
   {"shape": "line", "points": [[32, 38], [41, 41]], "width": 1.6, "colour": "w2", "shade": false, "mirror": true}
  ],
- "eyes": [{"at": [39, 46], "r": 3.4, "colour": "ink", "mirror": true}]
+ "eyes": [{"at": [39, 46], "r": 3.4, "colour": "ink", "mirror": true}],
+ "dimorph": {"f": {"drop": [8]}}
 }

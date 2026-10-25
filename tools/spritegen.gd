@@ -53,6 +53,15 @@ func _initialize() -> void:
 		_save(r.front, "%s/%s_front.png" % [CREATURE_OUT, id])
 		_save(r.back, "%s/%s_back.png" % [CREATURE_OUT, id])
 		_save(r.icon, "%s/%s_icon.png" % [CREATURE_OUT, id])
+		var recipe := load_recipe(CREATURE_RECIPES, id)
+		for sex in ["m", "f"]:  # the sheets for each sex of a dimorphic species (see Creature.apply_dimorph)
+			var sr := Creature.apply_dimorph(recipe, sex)
+			if sr.is_empty():
+				continue
+			var d := Creature.render(sr)
+			_save(d.front, "%s/%s_%s.png" % [CREATURE_OUT, id, sex])
+			_save(d.back, "%s/%s_%s_back.png" % [CREATURE_OUT, id, sex])
+			_save(d.icon, "%s/%s_%s_icon.png" % [CREATURE_OUT, id, sex])
 		count += 1
 	for id in list_recipes(CHAR_RECIPES):
 		if ids.size() > 0 and not (id in ids):

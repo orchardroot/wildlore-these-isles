@@ -88,7 +88,7 @@ func _show_pick() -> void:
 		var b := make_button("", _enter.bind(cr), 520)
 		b.custom_minimum_size = Vector2(520, 64)
 		var icon := AnimSprite.new()
-		icon.show_species(str(cr.species.id), "icon", 2, false, cr.variant, cr.form)
+		icon.show_species(str(cr.species.id), "icon", 2, false, cr.variant, cr.form, cr.sex)
 		icon.position = Vector2(8, 0)
 		b.add_child(icon)
 		b.text = "            %s   Lv %d     Pace %d   Stamina %d" % [cr.display_name(), cr.level, cr.calc_stat("spd"), cr.max_hp()]

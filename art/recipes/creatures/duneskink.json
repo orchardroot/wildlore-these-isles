@@ -27,5 +27,6 @@
   {"shape": "line", "points": [[6, 66], [14, 68], [24, 66]], "width": 1, "colour": "ink", "shade": false},
   {"shape": "ellipse", "at": [8, 62], "size": [2, 2], "colour": "ink", "shade": false}
  ],
- "eyes": [{"at": [27, 54], "r": 4.5, "colour": "#d8903a", "pupil": [2, 4]}]
+ "eyes": [{"at": [27, 54], "r": 4.5, "colour": "#d8903a", "pupil": [2, 4]}],
+ "dimorph": {"f": {"palette": {"green": "#b89a68", "green2": "#8a6a40"}}}
 }

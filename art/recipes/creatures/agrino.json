@@ -232,5 +232,6 @@
    "mirror": true
   }
  ],
- "id": "agrino"
+ "id": "agrino",
+ "dimorph": {"f": {"set": {"10": {"points": [[44, 28], [39, 24], [35, 29]], "width": 4}}}}
 }

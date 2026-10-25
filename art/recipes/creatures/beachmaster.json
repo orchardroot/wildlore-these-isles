@@ -16,5 +16,6 @@
   {"shape": "poly", "points": [[18, 66], [22, 60], [26, 66], [22, 72]], "colour": "snow", "shade": false},
   {"shape": "poly", "points": [[72, 70], [75, 65], [78, 70], [75, 75]], "colour": "snow", "shade": false}
  ],
- "eyes": [{"at": [40, 33], "r": 3.6, "colour": "eye", "mirror": true}]
+ "eyes": [{"at": [40, 33], "r": 3.6, "colour": "eye", "mirror": true}],
+ "dimorph": {"f": {"drop_face": [0], "palette": {"hide": "#9a9080", "hide2": "#b6ac9a"}}}
 }

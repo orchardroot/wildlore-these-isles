@@ -30,6 +30,9 @@ func _build() -> void:
 	var lcol := VBoxContainer.new()
 	lp.add_child(lcol)
 	lcol.add_child(UIKit.label("Your creatures", 24, UIKit.MUTED))
+	var rule := UIKit.label(PairingLogic.RULE, 18, UIKit.GOLD)
+	rule.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	lcol.add_child(rule)
 	var sc := ScrollContainer.new()
 	sc.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -90,11 +93,11 @@ func _fill_list() -> void:
 		h.add_theme_constant_override("separation", 10)
 		h.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var c: Creature = _cands[i].c
-		var sex := UIKit.chip(c.sex.to_upper() if c.sex != "" else "-", UIKit.HEATHER.darkened(0.2) if c.sex == "m" else Color("8f5a7a"), UIKit.CREAM, 18)
+		var sex := UIKit.sex_mark(c, 24)
 		sex.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		h.add_child(sex)
 		var ic := AnimSprite.new()
-		ic.show_species(c.species.id, "icon", 1, false, c.variant, c.form)
+		ic.show_species(c.species.id, "icon", 1, false, c.variant, c.form, c.sex)
 		ic.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		h.add_child(ic)
 		var nm := UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 220, 24, 16)
@@ -103,7 +106,7 @@ func _fill_list() -> void:
 		h.add_child(nm)
 		h.add_child(UIKit.fill())
 		var tag := "Ark" if _cands[i].where == "ark" else "Team"
-		var note := UIKit.label("%s%s" % [tag, "  fond" if PairingLogic.is_fond(c) else ""], 18, UIKit.MUTED if not PairingLogic.is_fond(c) else Color("8fd48f"))
+		var note := UIKit.label("%s, %s%s" % [UIKit.sex_word(c).to_lower() if c.sex != "" else "no sex", tag.to_lower(), "  fond" if PairingLogic.is_fond(c) else ""], 18, UIKit.MUTED if not PairingLogic.is_fond(c) else Color("8fd48f"))
 		note.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		h.add_child(note)
 		b.add_child(h)
@@ -165,11 +168,14 @@ func _refresh() -> void:
 		var c: Creature = pair[0]
 		if c != null:
 			var s := AnimSprite.new()
-			s.show_species(c.species.id, "front", 1, false, c.variant, c.form)
+			s.show_species(c.species.id, "front", 1, false, c.variant, c.form, c.sex)
 			col.add_child(s)
-			var fl := UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 220, 24, 16)
-			col.add_child(fl)
-			col.add_child(UIKit.label(pair[1], 18, UIKit.MUTED))
+			var nrow := HBoxContainer.new()
+			nrow.add_theme_constant_override("separation", 6)
+			nrow.add_child(UIKit.sex_mark(c, 22))
+			nrow.add_child(UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 190, 24, 16))
+			col.add_child(nrow)
+			col.add_child(UIKit.label("%s, %s" % [pair[1], PairingLogic.sex_desc(c)], 18, UIKit.MUTED))
 		else:
 			col.add_child(UIKit.label("(pick)", 24, UIKit.MUTED))
 		faces.add_child(col)

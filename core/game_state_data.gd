@@ -48,6 +48,7 @@ static func default_sanctuary() -> Dictionary:
 func add_creature(c: Creature) -> String:
 	mark_seen(c.species.id)
 	mark_caught(c.species.id)
+	Sexes.record_seen(self, c)
 	if party.size() < PARTY_MAX:
 		party.append(c)
 		return "party"
@@ -84,6 +85,7 @@ func add_creature_swapping(c: Creature, slot: int) -> String:
 		return add_creature(c)
 	mark_seen(c.species.id)
 	mark_caught(c.species.id)
+	Sexes.record_seen(self, c)
 	ark.append(party[slot])
 	party[slot] = c
 	return "party"

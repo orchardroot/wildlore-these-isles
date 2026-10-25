@@ -391,6 +391,7 @@ func _show(id: String) -> void:
 		UIKit.add_words(words, "Did you know?", -1, UIKit.GOLD)
 		UIKit.add_words(words, str(dex.get("fact", "")), -2, FACT_INK)
 		add_real_life(words, sp)
+		add_sexes(words, Game.data, id)
 		if Crossbreeds.is_id(id):
 			UIKit.add_words(words, Crossbreeds.LESSON, -3, UIKit.MUTED)
 	else:
@@ -413,6 +414,28 @@ static func add_real_life(words: VBoxContainer, sp: Dictionary) -> Array:
 		nl.tooltip_text = MenuLogic.NAMES_SEP.join(Langs.CREATURE_NAME_CODES.map(func(c): return str(Langs.NAMES.get(c, c))))
 		nl.mouse_filter = Control.MOUSE_FILTER_PASS
 		added.append(nl)
+	return added
+
+## "Males and females": one true line on how the sexes of a species differ, with the two signs lit for the ones
+## you have met ("Seen both" when you have). Nothing for a species that has no note. Returns the controls added.
+static func add_sexes(words: VBoxContainer, data: GameStateData, id: String) -> Array:
+	var added := []
+	var note := Sexes.note(id)
+	if note == "":
+		return added
+	added.append(UIKit.add_words(words, "Males and females", -1, UIKit.GOLD))
+	added.append(UIKit.add_words(words, note, -2, FACT_INK))
+	var met := Sexes.seen_sexes(data, id)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 8)
+	for sx in ["m", "f"]:
+		var mk := SexMark.make(sx, 22)
+		mk.modulate = Color.WHITE if sx in met else Color(1, 1, 1, 0.25)
+		row.add_child(mk)
+	var status := "Seen both" if met == "mf" else ("Seen the male, not yet the female" if met == "m" else ("Seen the female, not yet the male" if met == "f" else "Neither met yet"))
+	row.add_child(UIKit.label(status, 18, UIKit.GOLD if met == "mf" else UIKit.MUTED))
+	words.add_child(row)
+	added.append(row)
 	return added
 
 ## "Found in: Dee Valley, Ogwen and 2 more": the first few of a species' habitat labels (the rest are on the map).

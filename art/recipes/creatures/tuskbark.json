@@ -29,5 +29,6 @@
  ],
  "eyes": [
   {"at": [36.1, 43.2], "r": 4.1, "colour": "ink", "mirror": true}
- ]
+ ],
+ "dimorph": {"f": {"drop": [7, 8, 13], "drop_face": [3]}}
 }

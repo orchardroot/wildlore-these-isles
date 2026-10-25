@@ -14,5 +14,6 @@
   {"shape": "line", "points": [[42, 48], [54, 48]], "width": 1, "colour": "d2", "shade": false},
   {"shape": "ellipse", "at": [32, 50], "size": [6, 4], "colour": "blush", "shade": false, "mirror": true}
  ],
- "eyes": [{"at": [38, 41], "r": 4.5, "mirror": true}]
+ "eyes": [{"at": [38, 41], "r": 4.5, "mirror": true}],
+ "dimorph": {"f": {"palette": {"d": "#8c6c4a", "d2": "#5c4432", "grn": "#c8803c", "grn2": "#e0a45c", "fth": "#b09474"}, "drop": [6]}}
 }

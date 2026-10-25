@@ -230,5 +230,6 @@
    "mirror": true,
    "colour": "#ffe880"
   }
- ]
+ ],
+ "dimorph": {"f": {"palette": {"bk": "#6e7c3a", "bk2": "#8a9648", "y": "#d8d04a", "y2": "#e8e68a"}}}
 }

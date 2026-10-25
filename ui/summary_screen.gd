@@ -152,7 +152,7 @@ func _left(c: Creature) -> Control:
 	holder.custom_minimum_size = Vector2(288, 262)
 	holder.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	var s := AnimSprite.new()
-	s.show_species(c.species.id, "front", 3, false, c.variant, c.form)
+	s.show_species(c.species.id, "front", 3, false, c.variant, c.form, c.sex)
 	s.position = Vector2(0, -18)
 	holder.add_child(s)
 	v.add_child(holder)
@@ -164,6 +164,13 @@ func _left(c: Creature) -> Control:
 		var sp := UIKit.label(c.species.name, 22, UIKit.MUTED)
 		sp.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		v.add_child(sp)
+	if Sexes.valid(c.sex):  # page one says it plainly: the sign and the word
+		var sx_row := HBoxContainer.new()
+		sx_row.alignment = BoxContainer.ALIGNMENT_CENTER
+		sx_row.add_theme_constant_override("separation", 8)
+		sx_row.add_child(UIKit.sex_mark(c, 26))
+		sx_row.add_child(UIKit.label(UIKit.sex_word(c), 24, Sexes.colour(c.sex)))
+		v.add_child(sx_row)
 	var lv_row := HBoxContainer.new()  # "Level 12", with a single type beside it
 	lv_row.alignment = BoxContainer.ALIGNMENT_CENTER
 	lv_row.add_theme_constant_override("separation", 14)

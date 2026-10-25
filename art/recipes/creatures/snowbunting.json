@@ -19,5 +19,6 @@
  "face_layers": [
   {"shape": "ellipse", "at": [33, 44], "size": [6, 4], "colour": "blush", "shade": false, "mirror": true}
  ],
- "eyes": [{"at": [39, 37], "r": 4.5, "mirror": true}]
+ "eyes": [{"at": [39, 37], "r": 4.5, "mirror": true}],
+ "dimorph": {"f": {"palette": {"blk": "#6c5a4c", "br": "#9c8870"}}}
 }

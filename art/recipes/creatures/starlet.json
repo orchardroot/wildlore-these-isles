@@ -14,5 +14,6 @@
  "face_layers": [
   {"shape": "poly", "points": [[42, 38], [54, 38], [48, 48]], "colour": "bill", "shade": false}
  ],
- "eyes": [{"at": [38, 33], "r": 3.5, "mirror": true}]
+ "eyes": [{"at": [38, 33], "r": 3.5, "mirror": true}],
+ "dimorph": {"m": {"add_face_layers": [{"shape": "poly", "points": [[43, 38], [53, 38], [51, 41], [45, 41]], "colour": "#8fb0d8"}]}, "f": {"add_face_layers": [{"shape": "poly", "points": [[43, 38], [53, 38], [51, 41], [45, 41]], "colour": "#e8a4a0"}]}}
 }

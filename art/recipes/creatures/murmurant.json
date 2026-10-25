@@ -23,5 +23,6 @@
   {"shape": "poly", "points": [[42, 32], [54, 32], [48, 46]], "colour": "bill", "shade": false},
   {"shape": "line", "points": [[30, 22], [42, 27]], "width": 2, "colour": "dark", "shade": false, "mirror": true}
  ],
- "eyes": [{"at": [39, 28], "r": 3.5, "colour": "#f2e8a0", "pupil": [2, 2], "mirror": true}]
+ "eyes": [{"at": [39, 28], "r": 3.5, "colour": "#f2e8a0", "pupil": [2, 2], "mirror": true}],
+ "dimorph": {"m": {"add_face_layers": [{"shape": "poly", "points": [[43, 32], [53, 32], [51, 36], [45, 36]], "colour": "#8fb0d8"}]}, "f": {"add_face_layers": [{"shape": "poly", "points": [[43, 32], [53, 32], [51, 36], [45, 36]], "colour": "#e8a4a0"}]}}
 }
