@@ -17,5 +17,12 @@
    "who": "Mechanical Fortune Teller",
    "text": "INSERT COIN. You will... meet a tall dark stranger. Or a gull. Probably a gull."
   }
+ ],
+ "pier_change": [
+  {
+   "do": "arcade",
+   "town": "brighton",
+   "who": "Change Counter"
+  }
  ]
 }

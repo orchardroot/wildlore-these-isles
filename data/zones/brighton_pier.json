@@ -175,6 +175,16 @@
    "move": "still",
    "script": "pier_fortune",
    "name": "Mechanical Fortune Teller"
+  },
+  {
+   "id": "pier_change",
+   "sprite": "shopkeeper",
+   "x": 8,
+   "y": 2,
+   "facing": "down",
+   "move": "still",
+   "script": "pier_change",
+   "name": "Change Counter"
   }
  ],
  "encounters": {},

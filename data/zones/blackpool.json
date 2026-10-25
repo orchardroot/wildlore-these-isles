@@ -233,7 +233,7 @@
    "y": 31,
    "w": 9,
    "h": 5,
-   "show_label": false
+   "label": "Golden Mile Amusements"
   },
   {
    "type": "building",
@@ -725,6 +725,14 @@
    "tx": 8,
    "ty": 10,
    "facing": "up"
+  },
+  {
+   "x": 55,
+   "y": 35,
+   "to": "blackpool_arcade",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "edges": {
@@ -1178,7 +1186,7 @@
   "$:::::::::::::::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:TT",
   "$$$$$FFFFFFFFF::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:TT",
   "$$$$$$$wssssss::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:TT",
-  "$$$$$$$wssssss::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:TT",
+  "$$$$$$$wssssss::::==::::::::::::::::==::BBBBBBBBB::BBBBDBBBB::==:BBBBBBBB:TT",
   "$$$$$$$wssssss::::==::::::::::::::::==::::::::::::::::::::::::==::::::::::TT",
   "$$$$$$$wssssss::::==::::::::::::::::==::::::::::::::::::::::::==::::::::::TT",
   "$$$$$$$wssssss::::==::::::::::::::::==::::::::::::::::::::::::==::::::::::TT",
