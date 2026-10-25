@@ -756,6 +756,8 @@ func _weather() -> String:
 	return w if w != "" else "clear"
 
 func _test(c: Dictionary) -> bool:
+	if c.has("if_wearing"):  # {"do":"if","if_wearing":"hat"|"<item id>"|[...]}: the player has that slot filled / that item on
+		return wearing(host.data, c.if_wearing)
 	var v: Variant = host.data.flag(str(c.get("flag", "")))
 	if c.has("eq"):
 		return _loose_eq(v, c.eq)
@@ -782,7 +784,29 @@ func _set_flag(key: String, value: Variant) -> void:
 	if host.has_method("on_flag"):
 		host.on_flag(key, value)
 
+## True when any of `spec` (a wear slot such as "hat", an item id, or an array of either) is being worn.
+static func wearing(data: GameStateData, spec: Variant) -> bool:
+	var worn: Dictionary = Looks.base(data).wearing
+	for w in (spec if typeof(spec) == TYPE_ARRAY else [spec]):
+		var k := str(w)
+		if Looks.SLOTS.has(k):
+			if str(worn.get(k, "")) != "":
+				return true
+		elif k in worn.values():
+			return true
+	return false
+
+## {worn_hat} {worn_coat} ...: the name of what the player has on in that slot (a boutique keeper's line).
+func _sub_worn(s: String) -> String:
+	for slot in Looks.SLOTS:
+		var tag := "{worn_%s}" % slot
+		if tag in s:
+			s = s.replace(tag, Looks.worn_name(host.data, slot, host.items))
+	return s
+
 func _sub(s: String) -> String:
+	if "{worn_" in s:
+		s = _sub_worn(s)
 	var total: int = host.dex.core_ids().size()  # the Fieldbook proper: the appendix is a bonus
 	var got: int = FieldbookGoals.caught_count(host.data)
 	return Looks.sub(host.data, s.replace("{player}", host.data.player_name).replace("{rival}", host.data.rival_name) \

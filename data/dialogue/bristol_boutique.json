@@ -1,0 +1,88 @@
+{
+ "bristol_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Vintage Dealer",
+   "text": "Cheers, my lover! Everything's second-hand and first-class, mostly. Have a poke around."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Vintage Dealer",
+     "text": "Lush {worn_coat}. You look like you've sailed from Avonmouth."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Vintage Dealer",
+       "text": "Love the {worn_hat}. Very harbourside."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Vintage Dealer",
+         "text": "That {worn_top} is gert lush."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Vintage Dealer",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Vintage Dealer",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Vintage Dealer",
+             "text": "Plain today? That's alright, we'll find you something with a bit of salt on it."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_bristol"
+  },
+  {
+   "do": "say",
+   "who": "Vintage Dealer",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

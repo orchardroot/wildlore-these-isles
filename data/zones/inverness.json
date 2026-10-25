@@ -1217,6 +1217,14 @@
    "tx": 5,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 45,
+   "y": 37,
+   "to": "inverness_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "weather": {

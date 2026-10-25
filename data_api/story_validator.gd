@@ -149,7 +149,7 @@ static func validate_commands(cmds: Array, tag: String, dex: Dex, items: ItemDB,
 				if c.get("options", []).size() < 2:
 					errors.append("%s: choice needs at least two options" % tag)
 			"if":
-				if str(c.get("flag", "")) == "":
+				if str(c.get("flag", "")) == "" and not c.has("if_wearing"):
 					errors.append("%s: if with no flag" % tag)
 				errors.append_array(validate_commands(c.get("then", []), tag, dex, items, zones))
 				errors.append_array(validate_commands(c.get("else", []), tag, dex, items, zones))

@@ -146,6 +146,21 @@
  ],
  "market_trader": [
   {
+   "do": "if",
+   "if_wearing": [
+    "black_watch_kilt",
+    "royal_stewart_kilt",
+    "hunting_stewart_kilt"
+   ],
+   "then": [
+    {
+     "do": "say",
+     "who": "Market Trader",
+     "text": "That's a fine kilt. Wear it with a straight back and nobody will mention the draught."
+    }
+   ]
+  },
+  {
    "do": "when",
    "cond": "rain",
    "chat": true,
@@ -330,7 +345,7 @@
   {
    "do": "say",
    "who": "Local Dad",
-   "text": "F\u00e0ilte to Inverness! We say 'Inbhir Nis' in Gaelic. It means 'mouth of the Ness', which tells you where to look if you're lost: downhill, towards the sea."
+   "text": "Fàilte to Inverness! We say 'Inbhir Nis' in Gaelic. It means 'mouth of the Ness', which tells you where to look if you're lost: downhill, towards the sea."
   },
   {
    "do": "say",

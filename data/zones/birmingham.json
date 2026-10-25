@@ -849,6 +849,14 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 45,
+   "y": 6,
+   "to": "birmingham_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "edges": {

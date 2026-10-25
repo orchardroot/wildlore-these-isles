@@ -1,0 +1,88 @@
+{
+ "galway_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Knitwear Seller",
+   "text": "Ah, hello there! Come in out of that. We've jumpers that outlast the weather and the weather's had a very long run."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Knitwear Seller",
+     "text": "That {worn_coat} looks grand, so it does. Salthill would not stand a chance against it."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Knitwear Seller",
+       "text": "The {worn_hat}: lovely. You'd pass for a local, if you walked a bit slower."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Knitwear Seller",
+         "text": "A fine {worn_top}. Now there's an Aran that would make it blush."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Knitwear Seller",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Knitwear Seller",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Knitwear Seller",
+             "text": "You're not wearing much that'd keep the wind out. Let's sort that."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_galway"
+  },
+  {
+   "do": "say",
+   "who": "Knitwear Seller",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

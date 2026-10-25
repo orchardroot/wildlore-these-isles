@@ -90,6 +90,16 @@
    "move": "still",
    "script": "ls_wool_dyer",
    "name": "Dyer"
+  },
+  {
+   "id": "lerwick_boutique_keeper",
+   "sprite": "isles_gill",
+   "x": 8,
+   "y": 5,
+   "facing": "down",
+   "move": "still",
+   "script": "lerwick_boutique_keeper",
+   "name": "Knitter's Cousin"
   }
  ],
  "encounters": {},

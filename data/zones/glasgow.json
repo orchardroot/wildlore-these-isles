@@ -1179,6 +1179,14 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 54,
+   "y": 13,
+   "to": "glasgow_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "weather": {

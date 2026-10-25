@@ -1,0 +1,88 @@
+{
+ "edinburgh_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Outfitter",
+   "text": "Come in, come in. Kilts on the left, tweed on the right, regret in the middle."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Outfitter",
+     "text": "That {worn_coat} would stand up to an Edinburgh August. That's a high bar, mind."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Outfitter",
+       "text": "A {worn_hat} on the Grassmarket. They hanged people here once, so cheer up, you've done well."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Outfitter",
+         "text": "That {worn_top} is decent. Now, a kilt would finish it. Ask me how I know."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Outfitter",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Outfitter",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Outfitter",
+             "text": "Plain as porridge, today. We've lots of cures."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_edinburgh"
+  },
+  {
+   "do": "say",
+   "who": "Outfitter",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

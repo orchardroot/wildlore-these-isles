@@ -1219,6 +1219,14 @@
    "tx": 5,
    "ty": 5,
    "facing": "up"
+  },
+  {
+   "x": 43,
+   "y": 39,
+   "to": "manchester_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "edges": {

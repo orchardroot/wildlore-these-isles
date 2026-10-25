@@ -1,0 +1,88 @@
+{
+ "manchester_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Vintage Dealer",
+   "text": "Alright? Everything in here has lived a life. Some of it has lived two."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Vintage Dealer",
+     "text": "That {worn_coat}? You've got taste. Don't let it near the dryer."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Vintage Dealer",
+       "text": "Nice {worn_hat}. Half the Quarter is wearing one, but you're doing it properly."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Vintage Dealer",
+         "text": "That {worn_top} is a good start. Let's see what you can put over it."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Vintage Dealer",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Vintage Dealer",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Vintage Dealer",
+             "text": "You're in the plain stuff today. Brave, in this city. Have a rummage."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_manchester"
+  },
+  {
+   "do": "say",
+   "who": "Vintage Dealer",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

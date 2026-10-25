@@ -1189,7 +1189,15 @@
   "needs": "q_arc_ni_hands_open",
   "line": "The mill gates are chained. A card in the window says THE HANDS MILL: OPENING WHEN THE STORIES ARE IN. Nuala Orr's handwriting, by the look."
  }
-}
+},
+  {
+   "x": 10,
+   "y": 39,
+   "to": "belfast_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
+  }
 ],
  "weather": {
   "clear": 20.0,

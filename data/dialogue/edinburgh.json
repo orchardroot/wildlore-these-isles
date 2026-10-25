@@ -184,6 +184,17 @@
  ],
  "edi_fringe": [
   {
+   "do": "if",
+   "if_wearing": "hat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Fringe Performer",
+     "text": "Good hat. I'd put you on a poster. Terms and conditions apply."
+    }
+   ]
+  },
+  {
    "do": "when",
    "cond": "burns_night",
    "chat": true,

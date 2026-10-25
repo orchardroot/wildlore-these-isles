@@ -1209,6 +1209,14 @@
    "tx": 5,
    "ty": 5,
    "facing": "up"
+  },
+  {
+   "x": 40,
+   "y": 5,
+   "to": "dublin_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "weather": {

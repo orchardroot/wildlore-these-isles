@@ -1,0 +1,88 @@
+{
+ "birmingham_boutique_keeper": [
+  {
+   "do": "say",
+   "who": "Dealer",
+   "text": "Alright, bab? Brum has more canals than Venice and more coat racks than anywhere. Have a wander."
+  },
+  {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Dealer",
+     "text": "That {worn_coat}: tidy. Very tidy."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "if_wearing": "hat",
+     "then": [
+      {
+       "do": "say",
+       "who": "Dealer",
+       "text": "The {worn_hat} looks right on you. Mind how you go through the Bullring."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "if_wearing": "top",
+       "then": [
+        {
+         "do": "say",
+         "who": "Dealer",
+         "text": "Nice {worn_top}. You've got an eye."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "if_wearing": "neck",
+         "then": [
+          {
+           "do": "say",
+           "who": "Dealer",
+           "text": "That {worn_neck} sits well on you. A good thing at your throat saves a lot of grumbling."
+          }
+         ],
+         "else": [
+          {
+           "do": "if",
+           "if_wearing": "shoes",
+           "then": [
+            {
+             "do": "say",
+             "who": "Dealer",
+             "text": "And those {worn_shoes}: you can tell a lot from a person's feet. Good things."
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Dealer",
+             "text": "Nothing special on, is there? Well, let's give you a story."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "do": "shop",
+   "id": "boutique_birmingham"
+  },
+  {
+   "do": "say",
+   "who": "Dealer",
+   "text": "Come back when you want something else. We don't close, we just get sleepier."
+  }
+ ]
+}

@@ -101,6 +101,17 @@
  ],
  "bridge_busker": [
   {
+   "do": "if",
+   "if_wearing": "coat",
+   "then": [
+    {
+     "do": "say",
+     "who": "Bridge Busker",
+     "text": "Nice coat. You look like you're about to be in a film where it rains."
+    }
+   ]
+  },
+  {
    "do": "when",
    "cond": "st_patricks",
    "chat": true,
@@ -117,10 +128,25 @@
      "cond": "halloween",
      "chat": true,
      "then": [
-      {"do": "say", "who": "Bridge Busker", "text": "Halloween started here, you know. Samhain. We've been dressing up and scaring the neighbours for two thousand years."}
+      {
+       "do": "say",
+       "who": "Bridge Busker",
+       "text": "Halloween started here, you know. Samhain. We've been dressing up and scaring the neighbours for two thousand years."
+      }
      ],
      "else": [
-      {"do": "when", "cond": "christmas", "chat": true, "then": [{"do": "say", "who": "Bridge Busker", "text": "Christmas Eve, the famous ones come out to busk on Grafton Street. I stand nearby looking famous."}]}
+      {
+       "do": "when",
+       "cond": "christmas",
+       "chat": true,
+       "then": [
+        {
+         "do": "say",
+         "who": "Bridge Busker",
+         "text": "Christmas Eve, the famous ones come out to busk on Grafton Street. I stand nearby looking famous."
+        }
+       ]
+      }
      ]
     }
    ]
@@ -142,10 +168,25 @@
      "cond": "sunshine",
      "chat": true,
      "then": [
-      {"do": "say", "who": "Bridge Busker", "text": "Sun on the Liffey! The whole city's in a good mood. Tips are up, so's the tempo."}
+      {
+       "do": "say",
+       "who": "Bridge Busker",
+       "text": "Sun on the Liffey! The whole city's in a good mood. Tips are up, so's the tempo."
+      }
      ],
      "else": [
-      {"do": "when", "cond": "dusk", "chat": true, "then": [{"do": "say", "who": "Bridge Busker", "text": "Dusk is the best time on the bridge. The lamps come on and everyone goes soft."}]}
+      {
+       "do": "when",
+       "cond": "dusk",
+       "chat": true,
+       "then": [
+        {
+         "do": "say",
+         "who": "Bridge Busker",
+         "text": "Dusk is the best time on the bridge. The lamps come on and everyone goes soft."
+        }
+       ]
+      }
      ]
     }
    ]
@@ -179,7 +220,11 @@
      "cond": "dawn",
      "chat": true,
      "then": [
-      {"do": "say", "who": "Library Guide", "text": "You're up early! The queue for the Book of Kells hasn't even woken up yet."}
+      {
+       "do": "say",
+       "who": "Library Guide",
+       "text": "You're up early! The queue for the Book of Kells hasn't even woken up yet."
+      }
      ]
     }
    ]
@@ -213,7 +258,11 @@
      "cond": "dawn",
      "chat": true,
      "then": [
-      {"do": "say", "who": "Duck Feeder", "text": "Early breakfast for the ducks. They're very punctual. I'm the one in my slippers."}
+      {
+       "do": "say",
+       "who": "Duck Feeder",
+       "text": "Early breakfast for the ducks. They're very punctual. I'm the one in my slippers."
+      }
      ]
     }
    ]
@@ -247,10 +296,25 @@
      "cond": "christmas",
      "chat": true,
      "then": [
-      {"do": "say", "who": "Pub Regular", "text": "Twelve pubs of Christmas. I'm on pub four. Pub four is also pub one."}
+      {
+       "do": "say",
+       "who": "Pub Regular",
+       "text": "Twelve pubs of Christmas. I'm on pub four. Pub four is also pub one."
+      }
      ],
      "else": [
-      {"do": "when", "cond": "autumn", "chat": true, "then": [{"do": "say", "who": "Pub Regular", "text": "Autumn. Dark at six, raining by seven, pub by half past. Grand."}]}
+      {
+       "do": "when",
+       "cond": "autumn",
+       "chat": true,
+       "then": [
+        {
+         "do": "say",
+         "who": "Pub Regular",
+         "text": "Autumn. Dark at six, raining by seven, pub by half past. Grand."
+        }
+       ]
+      }
      ]
     }
    ]
@@ -296,7 +360,11 @@
      "cond": "gale",
      "chat": true,
      "then": [
-      {"do": "say", "who": "Park Walker", "text": "Windy one. The deer are all huddled under the trees, giving out about it."}
+      {
+       "do": "say",
+       "who": "Park Walker",
+       "text": "Windy one. The deer are all huddled under the trees, giving out about it."
+      }
      ]
     }
    ]
@@ -418,13 +486,112 @@
      "do": "if",
      "flag": "q_isles_famine_started",
      "then": [
-      {"do": "if", "flag": "plaque_dublin_famine_figures", "then": [{"do": "if", "flag": "plaque_liverpool_1847", "then": [{"do": "if", "flag": "plaque_cork_annie_moore", "then": [{"do": "say", "who": "Maura", "text": "You went all that way? Then you've done more than most of my cousins."}, {"do": "say", "who": "Maura", "text": "Here. A copy of a steerage ticket, Liverpool to New York, from a museum shop. Not hers. But it could have been."}, {"do": "give_item", "item": "isles_steerage_ticket"}, {"do": "standing", "nation": "ireland", "amount": 3}, {"do": "set", "flag": "q_isles_famine_done"}], "else": [{"do": "say", "who": "Maura", "text": "The Famine Figures here, Black '47 in Liverpool, and Annie Moore in Cork. Take your time. She did."}]}], "else": [{"do": "say", "who": "Maura", "text": "The Famine Figures here, Black '47 in Liverpool, and Annie Moore in Cork. Take your time. She did."}]}], "else": [{"do": "say", "who": "Maura", "text": "The Famine Figures here, Black '47 in Liverpool, and Annie Moore in Cork. Take your time. She did."}]}
+      {
+       "do": "if",
+       "flag": "plaque_dublin_famine_figures",
+       "then": [
+        {
+         "do": "if",
+         "flag": "plaque_liverpool_1847",
+         "then": [
+          {
+           "do": "if",
+           "flag": "plaque_cork_annie_moore",
+           "then": [
+            {
+             "do": "say",
+             "who": "Maura",
+             "text": "You went all that way? Then you've done more than most of my cousins."
+            },
+            {
+             "do": "say",
+             "who": "Maura",
+             "text": "Here. A copy of a steerage ticket, Liverpool to New York, from a museum shop. Not hers. But it could have been."
+            },
+            {
+             "do": "give_item",
+             "item": "isles_steerage_ticket"
+            },
+            {
+             "do": "standing",
+             "nation": "ireland",
+             "amount": 3
+            },
+            {
+             "do": "set",
+             "flag": "q_isles_famine_done"
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Maura",
+             "text": "The Famine Figures here, Black '47 in Liverpool, and Annie Moore in Cork. Take your time. She did."
+            }
+           ]
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Maura",
+           "text": "The Famine Figures here, Black '47 in Liverpool, and Annie Moore in Cork. Take your time. She did."
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Maura",
+         "text": "The Famine Figures here, Black '47 in Liverpool, and Annie Moore in Cork. Take your time. She did."
+        }
+       ]
+      }
      ],
      "else": [
-      {"do": "say", "who": "Maura", "text": "{greeting} I'm Maura. My great-great-grandmother walked out of Mayo in 1847 with two children, took the boat from Dublin to Liverpool and never came home. Her sister went on to New York."},
-      {"do": "say", "who": "Maura", "text": "Nobody wrote it down. You learn it from the gaps in the family, the names that stop."},
-      {"do": "choice", "text": "Walk the emigrants' road for Maura?", "options": ["Yes, of course", "Maybe later"], "set": "_t_isles_famine"},
-      {"do": "if", "flag": "_t_isles_famine", "eq": 0, "then": [{"do": "say", "who": "Maura", "text": "Read the Famine Figures on the quay here, then the plaque in Liverpool for the year she landed. And in Cork they remember Annie Moore, the first through Ellis Island. Then come back and tell me."}, {"do": "set", "flag": "q_isles_famine_started"}], "else": [{"do": "say", "who": "Maura", "text": "No bother. I'll be here."}]}
+      {
+       "do": "say",
+       "who": "Maura",
+       "text": "{greeting} I'm Maura. My great-great-grandmother walked out of Mayo in 1847 with two children, took the boat from Dublin to Liverpool and never came home. Her sister went on to New York."
+      },
+      {
+       "do": "say",
+       "who": "Maura",
+       "text": "Nobody wrote it down. You learn it from the gaps in the family, the names that stop."
+      },
+      {
+       "do": "choice",
+       "text": "Walk the emigrants' road for Maura?",
+       "options": [
+        "Yes, of course",
+        "Maybe later"
+       ],
+       "set": "_t_isles_famine"
+      },
+      {
+       "do": "if",
+       "flag": "_t_isles_famine",
+       "eq": 0,
+       "then": [
+        {
+         "do": "say",
+         "who": "Maura",
+         "text": "Read the Famine Figures on the quay here, then the plaque in Liverpool for the year she landed. And in Cork they remember Annie Moore, the first through Ellis Island. Then come back and tell me."
+        },
+        {
+         "do": "set",
+         "flag": "q_isles_famine_started"
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Maura",
+         "text": "No bother. I'll be here."
+        }
+       ]
+      }
      ]
     }
    ]
@@ -451,13 +618,84 @@
      "do": "if",
      "flag": "q_arts_ireland_started",
      "then": [
-      {"do": "if", "flag": "q_arts_ireland_soap", "then": [{"do": "if", "flag": "q_arts_ireland_sandwich", "then": [{"do": "set", "flag": "q_arts_ireland_done", "value": true}, {"do": "say", "who": "Joycean", "text": "Lemon soap and a gorgonzola sandwich! Sweny's and Davy Byrne's, the two holiest shops in literature. Bloom bought the soap in the morning and the sandwich at one; you have done it in better time and with less to carry in your head."}, {"do": "say", "who": "Joycean", "text": "The boater is yours, and keep the soap; it will see you through to Finnegans Wake. Yes, I said yes, I will, yes."}, {"do": "give_item", "item": "straw_boater", "n": 1}, {"do": "give_item", "item": "gorgonzola_sandwich", "n": 2}, {"do": "standing", "nation": "ireland", "amount": 5}], "else": [{"do": "say", "who": "Joycean", "text": "The soap, grand. Now the sandwich. Davy Byrne's is on Duke Street, by the Green; the barman knows what to do. Gorgonzola, mustard, a glass of burgundy. Leave the burgundy."}]}], "else": [{"do": "say", "who": "Joycean", "text": "The chemist first. Sweny's, Lincoln Place, lemon soap, fourpence in 1904. The chemist is outside the shop there; the inside is mostly books now."}]}
+      {
+       "do": "if",
+       "flag": "q_arts_ireland_soap",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_arts_ireland_sandwich",
+         "then": [
+          {
+           "do": "set",
+           "flag": "q_arts_ireland_done",
+           "value": true
+          },
+          {
+           "do": "say",
+           "who": "Joycean",
+           "text": "Lemon soap and a gorgonzola sandwich! Sweny's and Davy Byrne's, the two holiest shops in literature. Bloom bought the soap in the morning and the sandwich at one; you have done it in better time and with less to carry in your head."
+          },
+          {
+           "do": "say",
+           "who": "Joycean",
+           "text": "The boater is yours, and keep the soap; it will see you through to Finnegans Wake. Yes, I said yes, I will, yes."
+          },
+          {
+           "do": "give_item",
+           "item": "straw_boater",
+           "n": 1
+          },
+          {
+           "do": "give_item",
+           "item": "gorgonzola_sandwich",
+           "n": 2
+          },
+          {
+           "do": "standing",
+           "nation": "ireland",
+           "amount": 5
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Joycean",
+           "text": "The soap, grand. Now the sandwich. Davy Byrne's is on Duke Street, by the Green; the barman knows what to do. Gorgonzola, mustard, a glass of burgundy. Leave the burgundy."
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Joycean",
+         "text": "The chemist first. Sweny's, Lincoln Place, lemon soap, fourpence in 1904. The chemist is outside the shop there; the inside is mostly books now."
+        }
+       ]
+      }
      ],
      "else": [
-      {"do": "say", "who": "Joycean", "text": "{greeting} Bloomsday! Or it will be, on 16 June, and I am rehearsing. Leopold Bloom walks Dublin for eighteen hours in Ulysses and I follow him every year in this boater, which was my father's, and his father's, and is beginning to show it."},
-      {"do": "say", "who": "Joycean", "text": "Two errands make a Bloomsday. Bloom buys a cake of lemon soap at Sweny's chemist and carries it in his pocket all day, and at lunch he has a gorgonzola sandwich and a glass of burgundy at Davy Byrne's, because the other pub was full of men eating like animals."},
-      {"do": "say", "who": "Joycean", "text": "Fetch me both, the soap and the sandwich, and I will give you a boater of your own. The first Bloomsday was 1954, fifty years on, and the pilgrims got drunk by the second stop. Try to do better."},
-      {"do": "set", "flag": "q_arts_ireland_started", "value": true}
+      {
+       "do": "say",
+       "who": "Joycean",
+       "text": "{greeting} Bloomsday! Or it will be, on 16 June, and I am rehearsing. Leopold Bloom walks Dublin for eighteen hours in Ulysses and I follow him every year in this boater, which was my father's, and his father's, and is beginning to show it."
+      },
+      {
+       "do": "say",
+       "who": "Joycean",
+       "text": "Two errands make a Bloomsday. Bloom buys a cake of lemon soap at Sweny's chemist and carries it in his pocket all day, and at lunch he has a gorgonzola sandwich and a glass of burgundy at Davy Byrne's, because the other pub was full of men eating like animals."
+      },
+      {
+       "do": "say",
+       "who": "Joycean",
+       "text": "Fetch me both, the soap and the sandwich, and I will give you a boater of your own. The first Bloomsday was 1954, fifty years on, and the pilgrims got drunk by the second stop. Try to do better."
+      },
+      {
+       "do": "set",
+       "flag": "q_arts_ireland_started",
+       "value": true
+      }
      ]
     }
    ]
@@ -479,13 +717,33 @@
      "do": "if",
      "flag": "q_arts_ireland_started",
      "then": [
-      {"do": "say", "who": "Chemist", "text": "Sweny's, Lincoln Place, chemist since 1847 and never once redecorated. Bloom came in on page whatever for a cake of lemon soap, fourpence, and we have been selling it ever since."},
-      {"do": "say", "who": "Chemist", "text": "For the Joycean in the boater? Of course. One cake of lemon soap. Smell it. Go on. That is 1904, that is."},
-      {"do": "give_item", "item": "lemon_soap", "n": 1},
-      {"do": "set", "flag": "q_arts_ireland_soap", "value": true}
+      {
+       "do": "say",
+       "who": "Chemist",
+       "text": "Sweny's, Lincoln Place, chemist since 1847 and never once redecorated. Bloom came in on page whatever for a cake of lemon soap, fourpence, and we have been selling it ever since."
+      },
+      {
+       "do": "say",
+       "who": "Chemist",
+       "text": "For the Joycean in the boater? Of course. One cake of lemon soap. Smell it. Go on. That is 1904, that is."
+      },
+      {
+       "do": "give_item",
+       "item": "lemon_soap",
+       "n": 1
+      },
+      {
+       "do": "set",
+       "flag": "q_arts_ireland_soap",
+       "value": true
+      }
      ],
      "else": [
-      {"do": "say", "who": "Chemist", "text": "{greeting} Sweny's. The chemist shop from Ulysses, kept just as it was, mahogany, bottles and all. Mostly we sell lemon soap and read the book aloud, a page at a time, to whoever comes in."}
+      {
+       "do": "say",
+       "who": "Chemist",
+       "text": "{greeting} Sweny's. The chemist shop from Ulysses, kept just as it was, mahogany, bottles and all. Mostly we sell lemon soap and read the book aloud, a page at a time, to whoever comes in."
+      }
      ]
     }
    ]
@@ -507,13 +765,33 @@
      "do": "if",
      "flag": "q_arts_ireland_started",
      "then": [
-      {"do": "say", "who": "Barman", "text": "Davy Byrne's, Duke Street, 'the moral pub', Bloom calls it, because the landlord did not let the talk get rough. Bloom has a gorgonzola sandwich and a glass of burgundy here and watches the flies on the window."},
-      {"do": "say", "who": "Barman", "text": "For the man in the boater? Gorgonzola, mustard, a bit of bread you could stand a plate on. The burgundy stays here. Rules."},
-      {"do": "give_item", "item": "gorgonzola_sandwich", "n": 1},
-      {"do": "set", "flag": "q_arts_ireland_sandwich", "value": true}
+      {
+       "do": "say",
+       "who": "Barman",
+       "text": "Davy Byrne's, Duke Street, 'the moral pub', Bloom calls it, because the landlord did not let the talk get rough. Bloom has a gorgonzola sandwich and a glass of burgundy here and watches the flies on the window."
+      },
+      {
+       "do": "say",
+       "who": "Barman",
+       "text": "For the man in the boater? Gorgonzola, mustard, a bit of bread you could stand a plate on. The burgundy stays here. Rules."
+      },
+      {
+       "do": "give_item",
+       "item": "gorgonzola_sandwich",
+       "n": 1
+      },
+      {
+       "do": "set",
+       "flag": "q_arts_ireland_sandwich",
+       "value": true
+      }
      ],
      "else": [
-      {"do": "say", "who": "Barman", "text": "{greeting} Davy Byrne's. We have been serving the same sandwich since 1904, or since 1922, depending on how literal you are feeling."}
+      {
+       "do": "say",
+       "who": "Barman",
+       "text": "{greeting} Davy Byrne's. We have been serving the same sandwich since 1904, or since 1922, depending on how literal you are feeling."
+      }
      ]
     }
    ]

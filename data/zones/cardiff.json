@@ -977,6 +977,14 @@
    "tx": 5,
    "ty": 5,
    "facing": "up"
+  },
+  {
+   "x": 7,
+   "y": 24,
+   "to": "cardiff_boutique",
+   "tx": 6,
+   "ty": 7,
+   "facing": "up"
   }
  ],
  "weather": {
