@@ -1,9 +1,9 @@
 extends MenuBase
-## Pause menu: Team, Fieldbook, Bag, Ark (once you've met a Sanctuary nurse), Journal, Almanac (every page of the book, Stats included), Map, Save, Settings and Close,
+## Pause menu: Team, Fieldbook, Bag, Wardrobe, Ark (once you've met a Sanctuary nurse), Journal, Almanac (every page of the book, Stats included), Map, Save, Settings and Close,
 ## with the Keeper card, the time and weather, and "Where next?" beside it.
 
-const ROW_GAP := 6
-const ROW_MIN := 44  # a 32px label still sits comfortably in this
+const ROW_GAP := 4
+const ROW_MIN := 42  # eleven rows (Wardrobe and Ark both in) still fit the panel; the label shrinks to 30px then
 const ROW_MAX := 66
 
 static var _last_entry := "Team"  # reopens on the entry you left it on (this session only)
@@ -27,7 +27,7 @@ func _build() -> void:
 	var menu := VBoxContainer.new()
 	menu.add_theme_constant_override("separation", ROW_GAP)
 	left.add_child(menu)
-	var actions := {"Team": _open_team, "Fieldbook": _open_pedia, "Bag": _open_bag, "Ark": _open_ark, "Journal": _open_journal, "Almanac": _open_almanac, "Map": _open_map,
+	var actions := {"Team": _open_team, "Fieldbook": _open_pedia, "Bag": _open_bag, "Wardrobe": _open_wardrobe, "Ark": _open_ark, "Journal": _open_journal, "Almanac": _open_almanac, "Map": _open_map,
 		"Save": _save, "Settings": _open_settings, "Close": func(): close(null)}
 	for nm in MenuLogic.pause_entries(MenuLogic.ark_unlocked(Game.data)):
 		var b := make_button(nm, actions[nm])
@@ -75,6 +75,7 @@ func _size_rows(menu: VBoxContainer) -> void:
 	var h := MenuLogic.row_height(menu.size.y, _buttons.size(), ROW_GAP, ROW_MIN, ROW_MAX)
 	for b in _buttons:
 		b.custom_minimum_size.y = h
+		b.add_theme_font_size_override("font_size", 32 if h >= 46 else 30)
 
 func _button(nm: String) -> Button:
 	var i := _names.find(nm)
@@ -181,6 +182,10 @@ func _open_pedia() -> void:
 func _open_bag() -> void:
 	await open_child("bag")
 	_after_child("Bag")
+
+func _open_wardrobe() -> void:
+	await open_child("wardrobe")
+	_after_child("Wardrobe")
 
 func _open_ark() -> void:
 	await open_child("ark")

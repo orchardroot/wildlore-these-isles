@@ -15,6 +15,7 @@ const MENUS := {
 	"bureau": "res://ui/bureau_screen.tscn", "exchange": "res://ui/exchange_screen.tscn", "crypto": "res://ui/crypto_screen.tscn",
 	"cage": "res://ui/cage_screen.tscn", "fruit": "res://ui/fruit_screen.tscn", "blackjack": "res://ui/blackjack_screen.tscn",
 	"roulette": "res://ui/roulette_screen.tscn", "hilo": "res://ui/hilo_screen.tscn", "races": "res://ui/race_screen.tscn", "market": "res://ui/market_hall_screen.tscn", "society": "res://ui/society_screen.tscn", "deed": "res://ui/deed_screen.tscn", "lease": "res://ui/lease_screen.tscn", "darts": "res://ui/darts_screen.tscn", "crabbing": "res://ui/crabbing_screen.tscn", "bowls": "res://ui/bowls_screen.tscn", "skim": "res://ui/skimming_screen.tscn", "ringing": "res://ui/ringing_screen.tscn", "walling": "res://ui/walling_screen.tscn", "pairing": "res://ui/pairing_screen.tscn", "summary": "res://ui/summary_screen.tscn", "crossword": "res://ui/crossword_screen.tscn", "games": "res://ui/games_screen.tscn", "shanty": "res://ui/shanty_screen.tscn", "conkers": "res://ui/conker_screen.tscn", "almanac": "res://ui/almanac_screen.tscn", "lang": "res://ui/lang_screen.tscn", "biology": "res://ui/biology_screen.tscn", "selection": "res://ui/selection_screen.tscn",
+	"wardrobe": "res://ui/wardrobe_screen.tscn",
 	"invention": "res://ui/invention_screen.tscn", "science": "res://ui/science_fair_screen.tscn", "economist": "res://ui/economist_screen.tscn", "forecasting": "res://ui/forecasting_screen.tscn",
 }
 

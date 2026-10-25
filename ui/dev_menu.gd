@@ -3,6 +3,14 @@ extends RefCounted
 ## Dev switch `--menu=<name>[:arg]`: boots a new game with a sample party and bag, then opens that menu.
 ## Used for screenshots (see docs/screens/t9-*.png). Called from Game._dev_boot.
 
+const DEMO_WEAR := [
+	{"id": "demo_flat_cap", "name": "Flat cap", "kind": "wear", "slot": "hat", "price": 300, "desc": "A sample for the Wardrobe.", "look": {"hat": "flat_cap", "palette": {"hat": "#6a5a40"}}},
+	{"id": "demo_aran", "name": "Aran jumper", "kind": "wear", "slot": "top", "price": 900, "desc": "A sample for the Wardrobe.", "look": {"palette": {"top": "#e8e0d0"}, "accessories": ["aran"]}},
+	{"id": "demo_kilt", "name": "Kilt", "kind": "wear", "slot": "bottom", "price": 1500, "desc": "A sample for the Wardrobe.", "look": {"bottom_style": "kilt", "palette": {"bottom": "#2a3a5a", "accent": "#8a2a2a"}}},
+	{"id": "demo_wax", "name": "Waxed jacket", "kind": "wear", "slot": "coat", "price": 1200, "desc": "A sample for the try-on.", "look": {"palette": {"top": "#3a4a2a"}, "accessories": ["waxed_jacket"]}},
+	{"id": "demo_wellies", "name": "Red wellies", "kind": "wear", "slot": "shoes", "price": 400, "desc": "A sample for the try-on.", "look": {"palette": {"shoes": "#c83a3a"}, "accessories": ["wellies"]}},
+]
+
 static func arg(cmdline: PackedStringArray) -> String:
 	for a in cmdline:
 		if a.begins_with("--menu="):
@@ -169,6 +177,14 @@ static func boot(game: Node, menu: String) -> void:
 			d.set_flag(Postcards.flag_key(str(pc.id)), "2026-10-%02d" % (2 + Postcards.card_index(str(pc.id))))
 	if menu.begins_with("shop") and not menu.contains(":"):
 		menu = "shop:macc_corner_shop"
+	if menu.begins_with("wardrobe") or menu.begins_with("shop:looks_demo"):  # `--menu=wardrobe[:mirror]`, `--menu=shop:looks_demo`: a few clothes to try, until wear.json lands
+		for it in DEMO_WEAR:
+			if not game.items.has(it.id):
+				game.items._add(ItemDB.normalise(it))
+		game.items.shops["looks_demo"] = {"id": "looks_demo", "name": "Try-on Corner", "stock": DEMO_WEAR.map(func(it): return it.id)}
+		for it in DEMO_WEAR.slice(0, 3):
+			d.bag[it.id] = 1
+		Looks.wear(d, "demo_flat_cap", game.items)
 	if menu.begins_with("society"):  # `--menu=society:<zone>[:loan]`: a few Stones in, Mum's sub paid out; `:loan` adds a loan, savings and a missed month
 		d.day_count = 120
 		d.money = 1840

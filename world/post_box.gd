@@ -57,7 +57,7 @@ static func interact(ow: Node, p: Vector2i) -> bool:
 	if not mail.is_empty():
 		Audio.sfx("item")
 		for id in mail:
-			await ow.say(BuildingSociety.letter_lines(str(id)))
+			await ow.say(BuildingSociety.letter_lines(str(id), Game.data))
 		if Postcards.waiting(Game.data).is_empty():
 			show_waiting(ow._zone_node, false)
 			return true

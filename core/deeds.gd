@@ -451,7 +451,7 @@ static func letter_lines(_data: GameStateData, m: Dictionary) -> Array:
 	var name := str(get_deed(str(m.get("d", ""))).get("name", "your business"))
 	var out := ["A letter from %s." % _fill(str(l.get("from", "")), m, name)]
 	for t in l.get("text", []):
-		out.append(_fill(str(t), m, name))
+		out.append(_fill(str(t), m, name).replace("{mx}", Looks.pronoun(_data, "Mx")).replace("{player}", _data.player_name))  # Mr / Ms / Mx (see Looks)
 	return out
 
 # --- the taxman -------------------------------------------------------------------------

@@ -194,6 +194,20 @@ func _describe(id: String) -> void:
 	var note := Trade.price_note(Game.data, id, str(Game.data.zone_id))
 	if note != "":
 		_desc.add_child(UIKit.label("Here: %s" % note, 24, UIKit.GOLD))
+	if str(it.get("kind", "")) == "wear":  # a try-on: you, in it, from the front and the side (4.6, see Looks)
+		var tryon := HBoxContainer.new()
+		tryon.add_theme_constant_override("separation", 16)
+		var r := Looks.preview(Game.data, id, Game.items)
+		tryon.add_child(LookArt.frame_rect(r, "down", 3.0))
+		tryon.add_child(LookArt.frame_rect(r, "right", 3.0))
+		var worn := Looks.worn_name(Game.data, str(it.get("slot", "")), Game.items)
+		var how := "Trying it on." if worn == "" else "Trying it on, in place of your %s." % worn.to_lower()
+		var tl := UIKit.label(how + "\nWear it from the Wardrobe (pause menu) once it's yours.", 22, UIKit.MUTED)
+		tl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		tl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		tl.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		tryon.add_child(tl)
+		_desc.add_child(tryon)
 	_desc.add_child(UIKit.fill())
 	_desc.add_child(UIKit.label("You have %d" % _bag.count(id), 24, UIKit.MUTED))
 

@@ -47,12 +47,13 @@ static func letter_ids() -> Array:
 static func letter(id: String) -> Dictionary:
 	return db().get("letters", {}).get(id, {})
 
-## What a letter says, as lines for the textbox.
-static func letter_lines(id: String) -> Array:
+## What a letter says, as lines for the textbox. With `data`, the envelope carries your name and title (Mr / Ms / Mx,
+## see Looks.pronoun).
+static func letter_lines(id: String, data: GameStateData = null) -> Array:
 	var l := letter(id)
 	if l.is_empty():
 		return []
-	var out := ["A letter from %s." % str(l.get("from", ""))]
+	var out := ["A letter from %s." % str(l.get("from", "")) if data == null else "A letter from %s, addressed to %s %s." % [str(l.get("from", "")), Looks.pronoun(data, "Mx"), data.player_name]]
 	for t in l.get("text", []):
 		out.append(str(t))
 	return out

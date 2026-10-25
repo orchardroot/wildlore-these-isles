@@ -32,6 +32,7 @@ func _ready() -> void:
 	player.name = "Player"
 	add_child(player)
 	player.setup(self, Game.data.flags.get("player_sprite", "player_a"))
+	player.sprite.setup_recipe(Looks.recipe(Game.data, Game.items))  # the look you chose, and what you're wearing (4.6)
 	player.step_finished.connect(_on_step)
 	rig = CameraRig.new()
 	add_child(rig)
@@ -479,6 +480,8 @@ func interact(p: Vector2i) -> void:
 	if await CrabbingScene.interact(self, p):  # a harbour wall and a crabbing kit
 		return
 	if await ExamineScene.interact(self, p):  # a look-closer spot in a room
+		return
+	if await LooksMirror.interact(self, p):  # a mirror: the Wardrobe, hair included
 		return
 	var s := zone.sign_at(p)
 	if not s.is_empty():

@@ -155,6 +155,8 @@ func _exec(c: Dictionary) -> void:
 			await host.warp(str(c.get("zone", "")), int(c.get("x", 0)), int(c.get("y", 0)), str(c.get("facing", "down")))
 		"shop":
 			await host.open_menu("shop:" + str(c.get("id", "")))
+		"wardrobe":  # the Wardrobe (ui/wardrobe_screen.gd); {"mirror": true} at a mirror, where hair is free to change
+			await host.open_menu("wardrobe" + (":mirror" if c.get("mirror", false) else ""))
 		"bureau":
 			# a bureau de change (see Forex); "currency" names the local money when the zone doesn't (e.g. "usd")
 			await host.open_menu("bureau" + ((":" + str(c.currency)) if str(c.get("currency", "")) != "" else ""))
@@ -775,9 +777,9 @@ func _set_flag(key: String, value: Variant) -> void:
 func _sub(s: String) -> String:
 	var total: int = host.dex.core_ids().size()  # the Fieldbook proper: the appendix is a bonus
 	var got: int = FieldbookGoals.caught_count(host.data)
-	return s.replace("{player}", host.data.player_name).replace("{rival}", host.data.rival_name) \
+	return Looks.sub(host.data, s.replace("{player}", host.data.player_name).replace("{rival}", host.data.rival_name) \
 		.replace("{caught}", str(got)).replace("{left}", str(maxi(0, total - got))).replace("{total}", str(total)) \
-		.replace("{greeting}", _greeting() if "{greeting}" in s else "")
+		.replace("{greeting}", _greeting() if "{greeting}" in s else ""))  # and {they} {them} {their} {Mx} {person}
 
 ## {greeting}: the local hello, and once you're a Pillar of the Community here, a word about what you sorted out.
 func _greeting() -> String:

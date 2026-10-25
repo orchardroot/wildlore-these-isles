@@ -116,6 +116,8 @@ func _on_new() -> void:
 	if who is Dictionary:
 		Game.data.player_name = str(who.name)
 		Game.data.set_flag("player_sprite", str(who.sprite))
+		if who.get("look") is Dictionary:
+			Game.data.look = who.look
 	if Game.data.zone_id == "macc_home":
 		ColdOpen.then_morning(Router, Game.data)  # the moor at night, then good morning from Mum (ui/cold_open.gd)
 	else:

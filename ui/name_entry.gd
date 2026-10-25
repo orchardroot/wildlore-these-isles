@@ -1,5 +1,7 @@
 extends MenuBase
-## New game: pick a look and type a name (keyboard or the on-screen letters). Closes with {name, sprite}.
+## New game: make yourself (body, skin, hair, hair colour, pronouns, top colour, or Randomise; see Looks) and type a
+## name (keyboard or the on-screen letters), with you shown from all four sides as you go. Closes with
+## {name, sprite, look}: `look` is the base look the save keeps, `sprite` the old player_a flag for the fallback path.
 ## Nickname mode (Router.open_menu("name:nickname:<party index>") or "name:nickname:ark:<ark index>"): text only,
 ## names that creature in place and closes with the new nickname ("" means back to its species name),
 ## or null if backed out without typing anything.
@@ -7,10 +9,17 @@ extends MenuBase
 const MAX_LEN := 10
 const ROWS := ["ABCDEFGHIJKLM", "NOPQRSTUVWXYZ", "abcdefghijklm", "nopqrstuvwxyz"]
 
+const CHOOSERS := [["build", "Body"], ["skin", "Skin"], ["hair", "Hair"], ["hair_colour", "Hair colour"], ["pronouns", "Pronouns"], ["top", "Top"]]
+const PRONOUN_NAMES := {"he": "he / him", "she": "she / her", "they": "they / them"}
+const PREVIEW_SCALE := 2.5
+
 var _name := "Sam"
 var _sprite := "player_a"
+var _base: Dictionary = Looks.default_base()
 var _shown: Label
-var _looks: Array = []
+var _looks: Array = []       # the creator's controls (hidden in nickname mode)
+var _choosers: Array = []    # [{key, button}]
+var _frames: Dictionary = {} # facing -> TextureRect
 var _look_row: HBoxContainer
 var _label: Label
 var _nick: Creature = null  # the creature being nicknamed, in nickname mode
@@ -21,32 +30,44 @@ func _build() -> void:
 		["=Pick letters", "", "pad"], ["confirm", "Choose", "pad"], ["cancel", "Delete", "pad"]])
 	var col := VBoxContainer.new()
 	col.set_anchors_preset(Control.PRESET_FULL_RECT)
-	col.add_theme_constant_override("separation", 14)
+	col.add_theme_constant_override("separation", 10)
 	content.add_child(col)
 	var top := HBoxContainer.new()
 	top.add_theme_constant_override("separation", 24)
 	col.add_child(top)
 	_look_row = top
-	for id in ["player_a", "player_b"]:
-		var b := make_button("", func(): _pick_look(id), 150)
-		b.custom_minimum_size = Vector2(150, 150)
-		var tex := AtlasTexture.new()
-		tex.atlas = load("res://art/sprites/chars/%s.png" % id)
-		tex.region = Rect2(0, 0, 32, 48)  # facing down, standing
-		var s := TextureRect.new()
-		s.texture = tex
-		s.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-		s.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		s.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		s.set_anchors_preset(Control.PRESET_FULL_RECT)
-		s.offset_left = 10
-		s.offset_top = 10
-		s.offset_right = -10
-		s.offset_bottom = -10
-		s.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		b.add_child(s)
-		top.add_child(b)
-		_looks.append(b)
+	# you, from all four sides, painted live from the look (LookArt)
+	var pv := UIKit.panel(Color("1d2230f0"), 10)
+	top.add_child(pv)
+	_looks.append(pv)
+	var pg := GridContainer.new()
+	pg.columns = 2
+	pg.add_theme_constant_override("h_separation", 10)
+	pg.add_theme_constant_override("v_separation", 6)
+	pv.add_child(pg)
+	for facing in ["down", "left", "right", "up"]:
+		var tr := LookArt.frame_rect(Looks.from_base(_base), facing, PREVIEW_SCALE)
+		pg.add_child(tr)
+		_frames[facing] = tr
+	# the choosers: Left / Right or Confirm cycles each one
+	var ch_col := VBoxContainer.new()
+	ch_col.add_theme_constant_override("separation", 4)
+	ch_col.custom_minimum_size = Vector2(330, 0)
+	top.add_child(ch_col)
+	_looks.append(ch_col)
+	for pair in CHOOSERS:
+		var key: String = pair[0]
+		var b := make_button("", func(): _cycle(key, 1))
+		b.add_theme_font_size_override("font_size", 24)
+		b.set_meta("row_name", pair[1])
+		ch_col.add_child(b)
+		_slim(b, 36)
+		_choosers.append({"key": key, "button": b})
+	var rnd := make_button("Randomise", _randomise)
+	rnd.add_theme_font_size_override("font_size", 24)
+	ch_col.add_child(rnd)
+	_slim(rnd, 36)
+	_choosers.append({"key": "", "button": rnd})
 	var nm := VBoxContainer.new()
 	nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	top.add_child(nm)
@@ -64,9 +85,10 @@ func _build() -> void:
 	for row in ROWS:
 		for ch in row:
 			var b := make_button(ch, func(): _type(ch), 64)
-			b.custom_minimum_size = Vector2(84, 52)  # thirteen across the frame, each letter centred in its key
+			b.custom_minimum_size = Vector2(84, 40)  # thirteen across the frame, each letter centred in its key
 			b.alignment = HORIZONTAL_ALIGNMENT_CENTER
 			grid.add_child(b)
+			_slim(b, 40)
 			keys.append(b)
 	var bottom := HBoxContainer.new()
 	bottom.add_theme_constant_override("separation", 12)
@@ -74,8 +96,9 @@ func _build() -> void:
 	for pair in [["Space", func(): _type(" ")], ["Delete", _delete], ["Done", _done_pressed]]:
 		var b := make_button(pair[0], pair[1], 200)
 		bottom.add_child(b)
+		_slim(b, 44)
 	_refresh()
-	UIKit.focus_later(keys[0])
+	UIKit.focus_later(_choosers[0].button)
 
 func setup(arg: String) -> void:
 	_nick = nickname_target(Game.data, arg)
@@ -122,8 +145,71 @@ static func apply_nickname(c: Creature, text: String) -> void:
 	var n := clean(text)
 	c.nickname = "" if n == "" or n == str(c.species.name) else n
 
-func _pick_look(id: String) -> void:
-	_sprite = id
+## A button `h` px tall: the theme's top and bottom padding go, so the creator and the keyboard share one screen.
+## Once the button is in the tree, so it sees the theme's boxes (the pause menu does the same).
+static func _slim(b: Button, h: int) -> void:
+	for state in ["normal", "hover", "focus", "pressed", "hover_pressed", "disabled"]:
+		var sb := b.get_theme_stylebox(state)
+		if sb == null:
+			continue
+		sb = sb.duplicate()
+		sb.content_margin_top = 0
+		sb.content_margin_bottom = 0
+		b.add_theme_stylebox_override(state, sb)
+	b.custom_minimum_size.y = h
+
+## The values a chooser cycles through, as [value, shown name] pairs.
+static func choices(key: String) -> Array:
+	match key:
+		"build":
+			return Looks.builds().map(func(b): return [str(b.id), str(b.name)])
+		"skin":
+			return _indexed(Looks.skins())
+		"hair":
+			return Looks.hair_styles().map(func(h): return [str(h.id), str(h.name)])
+		"hair_colour":
+			return _indexed(Looks.hair_colours())
+		"pronouns":
+			return Looks.PRONOUNS.map(func(p): return [p, PRONOUN_NAMES[p]])
+		"top":
+			return _indexed(Looks.tops())
+	return []
+
+static func _indexed(list: Array) -> Array:
+	var out := []
+	for i in list.size():
+		out.append([i, str(list[i].name)])
+	return out
+
+## The base look with chooser `key` moved `dir` steps round its choices (wrapping).
+static func cycled(base: Dictionary, key: String, dir: int) -> Dictionary:
+	var ch := choices(key)
+	if ch.is_empty():
+		return base
+	var i := 0
+	for k in ch.size():
+		if ch[k][0] == base.get(key):
+			i = k
+	var out := base.duplicate(true)
+	out[key] = ch[posmod(i + dir, ch.size())][0]
+	return out
+
+## A random base look (every chooser rolled).
+static func random_base(rng: RandomNumberGenerator) -> Dictionary:
+	var out := Looks.default_base()
+	for pair in CHOOSERS:
+		var ch := choices(pair[0])
+		out[pair[0]] = ch[rng.randi_range(0, ch.size() - 1)][0]
+	return out
+
+func _cycle(key: String, dir: int) -> void:
+	_base = cycled(_base, key, dir)
+	_refresh()
+
+func _randomise() -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	_base = random_base(rng)
 	_refresh()
 
 func _type(ch: String) -> void:
@@ -146,7 +232,7 @@ func _done_pressed() -> void:
 	if n == "":
 		Audio.sfx("bump")
 		return
-	close({"name": n, "sprite": _sprite})
+	close({"name": n, "sprite": _sprite, "look": _base})
 
 func _on_cancel() -> void:
 	if _nick != null and _name == "":
@@ -157,6 +243,19 @@ func _on_cancel() -> void:
 ## Keyboard typing comes first here: letters (Z and X included) and space type, Backspace deletes,
 ## Enter finishes. Arrows still move round the on-screen letters, and the pad works as everywhere else.
 func _input(event: InputEvent) -> void:
+	if _nick == null and not _locked and not _done:  # Left / Right on a chooser cycles it (pad and keyboard alike)
+		var dir := 0
+		if event.is_action_pressed("move_right"):
+			dir = 1
+		elif event.is_action_pressed("move_left"):
+			dir = -1
+		if dir != 0:
+			var f := get_viewport().gui_get_focus_owner()
+			for c in _choosers:
+				if c.button == f and str(c.key) != "":
+					get_viewport().set_input_as_handled()
+					_cycle(str(c.key), dir)
+					return
 	var k := event as InputEventKey
 	if k != null and k.pressed and not _locked and not _done:
 		var ch := typed_char(k)
@@ -185,8 +284,19 @@ static func typed_char(k: InputEventKey) -> String:
 
 func _refresh() -> void:
 	_shown.text = _name + ("_" if _name.length() < MAX_LEN else "")
-	for i in _looks.size():
-		_looks[i].modulate = Color.WHITE if ["player_a", "player_b"][i] == _sprite else Color(1, 1, 1, 0.45)
+	if _nick != null:
+		return
+	var r := Looks.from_base(_base)
+	for facing in _frames:
+		_frames[facing].texture = LookArt.frame(r, facing)
+	for c in _choosers:
+		if str(c.key) == "":
+			continue
+		var shown := ""
+		for ch in choices(str(c.key)):
+			if ch[0] == _base.get(str(c.key)):
+				shown = str(ch[1])
+		c.button.text = "%s:  %s" % [str(c.button.get_meta("row_name")), shown]
 
 ## Trims spaces, collapses doubles, caps the length. Empty means "pick something".
 static func clean(s: String) -> String:
