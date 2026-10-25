@@ -1,5 +1,5 @@
 {
- "_doc": "Letters from the Enclosure's solicitors (Leases). {lease}, {amount}, {stage}, {day}, {mx} {player} (Mr / Ms / Mx and your name) are filled in; one letter of each kind per lease waits at a time.",
+ "_doc": "Letters from the Enclosure's solicitors (Leases). {lease}, {amount}, {stage}, {day}, {mx} {player} (Mr / Ms and your name) are filled in; one letter of each kind per lease waits at a time.",
  "talk": {
   "hello": "Lots from the Enclosure's estate. All real land, all previously fenced, all now someone else's problem. May I offer you a biscuit?",
   "lot": "Take a look. Do ask if you want anything explained. Do not ask what happened to the previous tenant.",

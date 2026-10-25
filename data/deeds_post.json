@@ -1,5 +1,5 @@
 {
- "_doc": "The post for Deeds (core/deeds.gd): placeholders {deed} {amount} {day} {mx} {player} (Mr / Ms / Mx and your name, see Looks). Real facts: the UK tax year ends on 5 April, online self assessment returns are due by 31 January, there is a personal allowance before any tax, and a late return costs a fixed 100 pound penalty. Game money is scaled down, which the letters admit.",
+ "_doc": "The post for Deeds (core/deeds.gd): placeholders {deed} {amount} {day} {mx} {player} (Mr / Ms and your name, see Looks). Real facts: the UK tax year ends on 5 April, online self assessment returns are due by 31 January, there is a personal allowance before any tax, and a late return costs a fixed 100 pound penalty. Game money is scaled down, which the letters admit.",
  "letters": {
   "rates": {
    "from": "the Borough Council, Business Rates Department",

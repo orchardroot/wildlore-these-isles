@@ -779,7 +779,7 @@ func _sub(s: String) -> String:
 	var got: int = FieldbookGoals.caught_count(host.data)
 	return Looks.sub(host.data, s.replace("{player}", host.data.player_name).replace("{rival}", host.data.rival_name) \
 		.replace("{caught}", str(got)).replace("{left}", str(maxi(0, total - got))).replace("{total}", str(total)) \
-		.replace("{greeting}", _greeting() if "{greeting}" in s else ""))  # and {they} {them} {their} {Mx} {person}
+		.replace("{greeting}", _greeting() if "{greeting}" in s else ""))  # and {he} {him} {his} {Mr} {man}
 
 ## {greeting}: the local hello, and once you're a Pillar of the Community here, a word about what you sorted out.
 func _greeting() -> String:

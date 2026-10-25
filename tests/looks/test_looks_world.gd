@@ -8,17 +8,18 @@ func test_creator_choices_cover_the_data() -> void:
 	assert_eq(NameEntry.choices("skin").size(), Looks.skins().size())
 	assert_eq(NameEntry.choices("hair").size(), Looks.hair_styles().size())
 	assert_eq(NameEntry.choices("hair_colour").size(), 12)
-	assert_eq(NameEntry.choices("pronouns").map(func(c): return c[0]), ["he", "she", "they"])
+	assert_eq(NameEntry.choices("sex").map(func(c): return c[0]), ["m", "f"], "two options, no third")
+	assert_eq(NameEntry.choices("pronouns"), [], "pronouns are not a chooser")
 	assert_eq(NameEntry.choices("build").map(func(c): return c[0]), ["slight", "adult"])
 	assert_eq(NameEntry.choices("top").size(), Looks.tops().size())
 	assert_eq(NameEntry.choices("nonsense"), [])
 
 func test_creator_cycles_and_wraps() -> void:
 	var b := Looks.default_base()
-	b = NameEntry.cycled(b, "pronouns", 1)
-	assert_eq(b.pronouns, "he", "they wraps round to he")
-	b = NameEntry.cycled(b, "pronouns", -1)
-	assert_eq(b.pronouns, "they")
+	b = NameEntry.cycled(b, "sex", 1)
+	assert_eq(b.sex, "f")
+	b = NameEntry.cycled(b, "sex", 1)
+	assert_eq(b.sex, "m", "wraps round")
 	b = NameEntry.cycled(b, "skin", -1)
 	assert_eq(b.skin, 0)
 	b = NameEntry.cycled(b, "skin", -1)
@@ -31,18 +32,18 @@ func test_random_base_is_always_drawable() -> void:
 	rng.seed = 7
 	for i in 30:
 		var b := NameEntry.random_base(rng)
-		assert_true(b.pronouns in Looks.PRONOUNS)
+		assert_true(b.sex in Looks.SEXES)
 		assert_true(Looks.valid_recipe(Looks.from_base(b)), str(b))
 		assert_eq(b.wearing, {})
 
 func test_dialogue_substitutes_pronouns() -> void:
 	var h := FakeStoryHost.new()
 	var b := Looks.default_base()
-	b.pronouns = "she"
+	b.sex = "f"
 	h.data.look = b
 	h.data.player_name = "Nia"
-	await Commands.new(h).run([{"do": "say", "who": "Mum", "text": "{player}? {They} went out. Ask {Mx} {player} {themself}."}])
-	assert_eq(h.said, [["Mum", "Nia? She went out. Ask Ms Nia {themself}."]], "known forms swap, unknown braces stay")
+	await Commands.new(h).run([{"do": "say", "who": "Mum", "text": "{player}? {He} went out. Ask {Mr} {player} {herself}."}])
+	assert_eq(h.said, [["Mum", "Nia? She went out. Ask Ms Nia {herself}."]], "known forms swap, unknown braces stay")
 
 func test_wardrobe_command_opens_the_menu() -> void:
 	var h := FakeStoryHost.new()
@@ -62,14 +63,14 @@ func test_mums_house_has_a_mirror_and_a_script() -> void:
 
 func test_mum_has_a_line_for_whoever_you_are() -> void:
 	var text := JSON.stringify(StoryData.script("macc_home", "mum"))
-	assert_true("{person}" in text, "Mum's line uses {person}")
+	assert_true("{man}" in text, "Mum's line uses {man}")
 	assert_false("\u2014" in text, "no em-dashes")
 
 func test_letters_address_mr_ms_mx() -> void:
 	var d := GameStateData.new()
 	d.player_name = "Nia"
 	var b := Looks.default_base()
-	b.pronouns = "she"
+	b.sex = "f"
 	d.look = b
 	var lines := BuildingSociety.letter_lines(BuildingSociety.letter_ids()[0], d)
 	assert_true(str(lines[0]).contains("addressed to Ms Nia"), lines[0])

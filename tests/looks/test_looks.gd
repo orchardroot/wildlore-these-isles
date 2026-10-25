@@ -32,7 +32,11 @@ func test_base_of_old_save_matches_its_sprite() -> void:
 	var b := Looks.base(d)
 	assert_eq(b.build, "slight")
 	assert_eq(b.hair, "pony")
-	assert_eq(b.pronouns, "they", "old saves never picked, so they")
+	assert_eq(b.sex, "f", "player_b was always her")
+	var him := _data()
+	him.set_flag("player_sprite", "player_a")
+	assert_eq(Looks.base(him).sex, "m", "player_a was always him")
+	assert_eq(Looks.sex(GameStateData.new()), "m", "no flag at all: player_a")
 	assert_eq(b.wearing, {})
 	assert_eq(Looks.skins()[int(b.skin)].hex, "#d8a074", "the skin index points at player_b's tone")
 	assert_eq(Looks.hair_colours()[int(b.hair_colour)].hex, "#8a3a1e")
@@ -48,7 +52,7 @@ func test_new_look_builds_a_recipe() -> void:
 	var b := Looks.default_base()
 	b.build = "adult"
 	b.hair = "afro"
-	b.pronouns = "she"
+	b.sex = "f"
 	var d := _data(b)
 	var r := Looks.recipe(d)
 	assert_eq(r.build, "adult")
@@ -122,24 +126,44 @@ func test_looks_data_shape() -> void:
 	assert_eq(Looks.check(bad).size(), 2, "a bad slot and a bad delta are two errors")
 
 func test_pronoun_forms() -> void:
-	var tbl := {"he": ["he", "him", "his", "his", "Mr", "man"], "she": ["she", "her", "her", "hers", "Ms", "woman"], "they": ["they", "them", "their", "theirs", "Mx", "person"]}
-	for p in tbl:
+	var tbl := {"m": ["he", "him", "his", "Mr", "man"], "f": ["she", "her", "her", "Ms", "woman"]}
+	for sx in tbl:
 		var b := Looks.default_base()
-		b.pronouns = p
+		b.sex = sx
 		var d := _data(b)
-		var forms := ["they", "them", "their", "theirs", "Mx", "person"]
+		var forms := ["he", "him", "his", "Mr", "man"]
 		for i in forms.size():
-			assert_eq(Looks.pronoun(d, forms[i]), tbl[p][i], "%s / %s" % [p, forms[i]])
-		assert_eq(Looks.pronoun(d, "They"), str(tbl[p][0]).capitalize(), "a capital form capitalises")
-	assert_eq(Looks.pronoun(_data(), "Mx"), "Mx", "old saves are Mx")
+			assert_eq(Looks.pronoun(d, forms[i]), tbl[sx][i], "%s / %s" % [sx, forms[i]])
+		assert_eq(Looks.pronoun(d, "He"), str(tbl[sx][0]).capitalize(), "a capital form capitalises")
+		assert_eq(Looks.pronoun(d, "Man"), str(tbl[sx][4]).capitalize())
+	var old := _data()
+	old.set_flag("player_sprite", "player_b")
+	assert_eq(Looks.pronoun(old, "Mr"), "Ms", "an old player_b save is Ms")
+	assert_eq(Looks.pronoun(_data(), "Mr"), "Mr", "an old player_a save is Mr")
 	assert_eq(Looks.pronoun(_data(), "nonsense"), "", "an unknown form is blank, never a crash")
+	var junk := Looks.default_base()
+	junk.sex = "x"
+	assert_eq(Looks.sex(_data(junk)), "m", "junk in the save reads as him, never a crash")
 
 func test_pron_sub_in_dialogue() -> void:
 	var b := Looks.default_base()
-	b.pronouns = "he"
+	b.sex = "f"
 	var d := _data(b)
-	assert_eq(Looks.sub(d, "{They} said {their} hat was {theirs}, so give it {them}, {Mx} Sam. A fine {person}."), "He said his hat was his, so give it him, Mr Sam. A fine man.")
+	assert_eq(Looks.sub(d, "{He} said {his} hat was lost, so give it {him}, {Mr} Sam. A fine {man}. {Man} indeed."), "She said her hat was lost, so give it her, Ms Sam. A fine woman. Woman indeed.")
 	assert_eq(Looks.sub(d, "no braces here"), "no braces here")
+	assert_eq(Looks.sub(d, "{they} stays"), "{they} stays", "there is no third form")
+
+func test_starter_looks_are_the_old_two() -> void:
+	var m := Looks.starter("m")
+	var f := Looks.starter("f")
+	assert_eq(m.sex, "m")
+	assert_eq(f.sex, "f")
+	assert_eq(f.hair, "pony")
+	for sx in ["m", "f"]:
+		var r := Looks.from_base(Looks.starter(sx))
+		var legacy: Dictionary = JsonUtil.read(Looks.LEGACY[Looks.LEGACY_BY_SEX[sx]])
+		assert_eq(r.palette, legacy.palette, sx + " paints the old sprite's colours")
+		assert_eq(r.hair, legacy.hair)
 
 func test_save_round_trip_and_old_save_default() -> void:
 	var dex := Dex.load_default()

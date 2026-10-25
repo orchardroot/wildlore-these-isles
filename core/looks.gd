@@ -3,9 +3,9 @@ extends RefCounted
 ## The player's look (4.6): who you are and what you're wearing, as a character recipe for the painter in
 ## tools/spritegen/character.gd. Pure logic (the validator loads it): no autoloads.
 ##
-## `GameStateData.look` is the base look: {"build": "slight"|"adult", "skin": <index into data/looks.json skins>,
-## "hair": <style id>, "hair_colour": <index into hair_colours>, "pronouns": "he"|"she"|"they", "top": <index into
-## tops>, "wearing": {slot: item_id}} plus optional "colours": {bottom, shoes, accent2} hex overrides (an old save's
+## `GameStateData.look` is the base look: {"sex": "m"|"f", "build": "slight"|"adult", "skin": <index into
+## data/looks.json skins>, "hair": <style id>, "hair_colour": <index into hair_colours>, "top": <index into tops>,
+## "wearing": {slot: item_id}} plus optional "colours": {bottom, shoes, accent2} hex overrides (an old save's
 ## sprite converted). Empty on saves from before 4.6: then the `player_sprite` flag (player_a / player_b) rules and
 ## nothing changes for them until they visit the mirror or a boutique, when `ensure` converts it losslessly.
 ##
@@ -17,14 +17,15 @@ const Character = preload("res://tools/spritegen/character.gd")
 const DATA_PATH := "res://data/looks.json"
 const SLOTS := ["hat", "top", "bottom", "shoes", "coat", "neck", "face", "hands", "back"]
 const SLOT_ORDER := ["bottom", "shoes", "top", "coat", "neck", "back", "hands", "face", "hat"]
-const PRONOUNS := ["he", "she", "they"]
-const FORMS := ["they", "them", "their", "theirs", "Mx", "person"]
+const SEXES := ["m", "f"]
+const SEX_NAMES := {"m": "Male", "f": "Female"}
+const FORMS := ["he", "him", "his", "Mr", "man"]
 const PRONOUN_TABLE := {
-	"he": ["he", "him", "his", "his", "Mr", "man"],
-	"she": ["she", "her", "her", "hers", "Ms", "woman"],
-	"they": ["they", "them", "their", "theirs", "Mx", "person"],
+	"m": ["he", "him", "his", "Mr", "man"],
+	"f": ["she", "her", "her", "Ms", "woman"],
 }
 const LEGACY := {"player_a": "res://art/recipes/chars/player_a.json", "player_b": "res://art/recipes/chars/player_b.json"}
+const LEGACY_BY_SEX := {"m": "player_a", "f": "player_b"}  # the two old sprites: him and her
 const PALETTE_KEYS := ["skin", "hair", "top", "bottom", "shoes", "accent", "accent2", "glasses", "hat", "beard", "prop", "pin", "light", "leaf"]
 
 static var _db: Dictionary = {}
@@ -50,9 +51,13 @@ static func builds() -> Array:
 static func tops() -> Array:
 	return db().get("tops", [])
 
-## A fresh base look: slight, fair, short dark hair, they, a teal top.
+## A fresh base look: male, slight, fair, short dark hair, a teal top.
 static func default_base() -> Dictionary:
-	return {"build": "slight", "skin": 1, "hair": "short", "hair_colour": 1, "pronouns": "they", "top": 0, "wearing": {}}
+	return {"sex": "m", "build": "slight", "skin": 1, "hair": "short", "hair_colour": 1, "top": 0, "wearing": {}}
+
+## The creator's starting look for a sex: the old player_a for him, player_b for her (every slider free after).
+static func starter(sex: String) -> Dictionary:
+	return _legacy_base(str(LEGACY_BY_SEX.get(sex, "player_a")))
 
 static func _legacy_recipe(sprite: String) -> Dictionary:
 	if not LEGACY.has(sprite):
@@ -75,6 +80,7 @@ static func _legacy_base(sprite: String) -> Dictionary:
 	var r := _legacy_recipe(sprite)
 	var pal: Dictionary = r.get("palette", {})
 	var b := default_base()
+	b.sex = "f" if sprite == "player_b" else "m"
 	b.build = "slight"
 	b.skin = _index_of(skins(), str(pal.get("skin", "")), 1)
 	b.hair = str(r.get("hair", "short"))
@@ -91,6 +97,8 @@ static func base(data: GameStateData) -> Dictionary:
 	b.merge(data.look, true)
 	if typeof(b.wearing) != TYPE_DICTIONARY:
 		b.wearing = {}
+	if not str(b.sex) in SEXES:
+		b.sex = "m"
 	return b
 
 ## Materialises the base on an old save, so the Wardrobe and the boutiques have something to write into.
@@ -268,21 +276,27 @@ static func sanitise(v) -> Dictionary:
 			out[k] = int(out[k])
 	if typeof(out.get("wearing", {})) != TYPE_DICTIONARY:
 		out["wearing"] = {}
+	if out.has("sex") and not str(out.sex) in SEXES:
+		out.erase("sex")
 	return out
 
-## A pronoun form for the player: they, them, their, theirs, Mx (Mr / Ms / Mx) or person (man / woman / person).
-## A capitalised form (They, Their) capitalises the word. Unknown forms are "".
+## The player's sex, "m" or "f" (old saves: player_a is him, player_b is her).
+static func sex(data: GameStateData) -> String:
+	return str(base(data).sex)
+
+## A word for the player's sex: forms he (he / she), him (him / her), his (his / her), Mr (Mr / Ms) and man
+## (man / woman). A capitalised form (He, His, Man) capitalises the word. Unknown forms are "".
 static func pronoun(data: GameStateData, form: String) -> String:
-	var row: Array = PRONOUN_TABLE.get(str(base(data).get("pronouns", "they")), PRONOUN_TABLE.they)
+	var row: Array = PRONOUN_TABLE[sex(data)]
 	var i := FORMS.find(form)
 	if i >= 0:
 		return str(row[i])
 	i = FORMS.find(form.to_lower())
-	if i < 0 or form == "":
+	if i < 0 or form == "" or form == "mr":
 		return ""
 	return str(row[i]).capitalize()
 
-## Dialogue substitution: {they} {them} {their} {theirs} {Mx} {person} and the capitalised {They} {Them} {Their} {Theirs} {Person}.
+## Dialogue substitution: {he} {him} {his} {Mr} {man} and the capitalised {He} {Him} {His} {Man}.
 static func sub(data: GameStateData, s: String) -> String:
 	if not "{" in s:
 		return s
@@ -290,7 +304,7 @@ static func sub(data: GameStateData, s: String) -> String:
 		var tag := "{%s}" % f
 		if tag in s:
 			s = s.replace(tag, pronoun(data, f))
-		if f != "Mx":
+		if f != "Mr":
 			var cap := "{%s}" % f.capitalize()
 			if cap in s:
 				s = s.replace(cap, pronoun(data, f.capitalize()))

@@ -1,5 +1,5 @@
 extends MenuBase
-## New game: make yourself (body, skin, hair, hair colour, pronouns, top colour, or Randomise; see Looks) and type a
+## New game: make yourself (male or female, body, skin, hair, hair colour, top colour, or Randomise; see Looks) and type a
 ## name (keyboard or the on-screen letters), with you shown from all four sides as you go. Closes with
 ## {name, sprite, look}: `look` is the base look the save keeps, `sprite` the old player_a flag for the fallback path.
 ## Nickname mode (Router.open_menu("name:nickname:<party index>") or "name:nickname:ark:<ark index>"): text only,
@@ -9,13 +9,13 @@ extends MenuBase
 const MAX_LEN := 10
 const ROWS := ["ABCDEFGHIJKLM", "NOPQRSTUVWXYZ", "abcdefghijklm", "nopqrstuvwxyz"]
 
-const CHOOSERS := [["build", "Body"], ["skin", "Skin"], ["hair", "Hair"], ["hair_colour", "Hair colour"], ["pronouns", "Pronouns"], ["top", "Top"]]
-const PRONOUN_NAMES := {"he": "he / him", "she": "she / her", "they": "they / them"}
+const CHOOSERS := [["sex", "You"], ["build", "Body"], ["skin", "Skin"], ["hair", "Hair"], ["hair_colour", "Hair colour"], ["top", "Top"]]
 const PREVIEW_SCALE := 2.5
 
 var _name := "Sam"
 var _sprite := "player_a"
-var _base: Dictionary = Looks.default_base()
+var _base: Dictionary = Looks.starter("m")
+var _touched := false  # once any other slider has moved, switching sex keeps your choices (else it follows the sex's starter)
 var _shown: Label
 var _looks: Array = []       # the creator's controls (hidden in nickname mode)
 var _choosers: Array = []    # [{key, button}]
@@ -161,6 +161,8 @@ static func _slim(b: Button, h: int) -> void:
 ## The values a chooser cycles through, as [value, shown name] pairs.
 static func choices(key: String) -> Array:
 	match key:
+		"sex":
+			return Looks.SEXES.map(func(x): return [x, Looks.SEX_NAMES[x]])
 		"build":
 			return Looks.builds().map(func(b): return [str(b.id), str(b.name)])
 		"skin":
@@ -169,8 +171,6 @@ static func choices(key: String) -> Array:
 			return Looks.hair_styles().map(func(h): return [str(h.id), str(h.name)])
 		"hair_colour":
 			return _indexed(Looks.hair_colours())
-		"pronouns":
-			return Looks.PRONOUNS.map(func(p): return [p, PRONOUN_NAMES[p]])
 		"top":
 			return _indexed(Looks.tops())
 	return []
@@ -203,13 +203,18 @@ static func random_base(rng: RandomNumberGenerator) -> Dictionary:
 	return out
 
 func _cycle(key: String, dir: int) -> void:
-	_base = cycled(_base, key, dir)
+	if key == "sex" and not _touched:  # the starting look follows the sex until you've moved something yourself
+		_base = Looks.starter(str(cycled(_base, key, dir).sex))
+	else:
+		_base = cycled(_base, key, dir)
+		_touched = _touched or key != "sex"
 	_refresh()
 
 func _randomise() -> void:
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 	_base = random_base(rng)
+	_touched = true
 	_refresh()
 
 func _type(ch: String) -> void:

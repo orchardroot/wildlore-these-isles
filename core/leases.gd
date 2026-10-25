@@ -414,7 +414,7 @@ static func collect_letters(data: GameStateData) -> Array:
 		out.append_array(letter_lines(m, data))
 	return out
 
-## `data` fills {mx} {player} (Mr / Ms / Mx and your name, see Looks); without it the solicitors write to Sir or Madam.
+## `data` fills {mx} {player} (Mr / Ms and your name, see Looks); without it the solicitors write to Sir or Madam.
 static func letter_lines(m: Dictionary, data: GameStateData = null) -> Array:
 	var t: Dictionary = post_text().get("letters", {}).get(str(m.k), {})
 	if t.is_empty():
@@ -424,7 +424,7 @@ static func letter_lines(m: Dictionary, data: GameStateData = null) -> Array:
 	var fill := func(s: String) -> String:
 		return s.replace("{lease}", str(l.get("name", "the land"))).replace("{amount}", Wallet.fmt(int(m.get("a", 0)), cur)) \
 			.replace("{stage}", Rewild.stage_name(int(m.get("a", 0)))).replace("{day}", str(int(m.get("day", 0)))) \
-			.replace("{mx} {player}", "Sir or Madam" if data == null else "%s %s" % [Looks.pronoun(data, "Mx"), data.player_name])
+			.replace("{mx} {player}", "Sir or Madam" if data == null else "%s %s" % [Looks.pronoun(data, "Mr"), data.player_name])
 	var out := ["A letter from %s." % fill.call(str(t.get("from", "")))]
 	for s in t.get("text", []):
 		out.append(fill.call(str(s)))
