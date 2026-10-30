@@ -1,0 +1,119 @@
+{
+ "pois": [
+  {
+   "id": "poi_staithe_marshes_stone",
+   "zone": "staithe_marshes",
+   "near": [
+    19,
+    19
+   ],
+   "kind": "stone",
+   "at": "the_broads",
+   "stat": "ward",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is Seahenge, at Holme-next-the-Sea in Norfolk: a ring of oak posts found on the beach in 1999, now in a museum in King's Lynn."
+   ]
+  },
+  {
+   "id": "poi_the_broads_cache",
+   "zone": "the_broads",
+   "near": [
+    19,
+    24
+   ],
+   "kind": "cache",
+   "at": "the_broads",
+   "item": "miners_lamp",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox."
+  },
+  {
+   "id": "poi_the_broads_camp",
+   "zone": "the_broads",
+   "near": [
+    6,
+    21
+   ],
+   "kind": "camp",
+   "at": "the_broads",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "mustling",
+    "minkshade",
+    "volet"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 4140,
+   "item": "water_snare"
+  },
+  {
+   "id": "poi_the_fens_camp",
+   "zone": "the_fens",
+   "near": [
+    46,
+    49
+   ],
+   "kind": "camp",
+   "at": "the_fens",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "pollanet",
+    "volet",
+    "kitelet"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 4140,
+   "item": "night_snare"
+  },
+  {
+   "id": "poi_the_fens_den",
+   "zone": "the_fens",
+   "near": [
+    23,
+    50
+   ],
+   "kind": "den",
+   "at": "the_fens",
+   "species": "turfmere"
+  },
+  {
+   "id": "poi_the_fens_cache",
+   "zone": "the_fens",
+   "near": [
+    54,
+    56
+   ],
+   "kind": "cache",
+   "at": "the_fens",
+   "item": "iron_snare",
+   "line": "Someone's hiding place, and not as hidden as they hoped.",
+   "curio": true,
+   "mentioned_by": {
+    "zone": "cambridge",
+    "npc": "cam_marketeer"
+   }
+  }
+ ]
+}

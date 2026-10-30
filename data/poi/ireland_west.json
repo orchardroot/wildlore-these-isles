@@ -1,0 +1,255 @@
+{
+ "pois": [
+  {
+   "id": "poi_burren_cache",
+   "zone": "burren",
+   "near": [
+    30,
+    34
+   ],
+   "kind": "cache",
+   "at": "burren",
+   "item": "burns_tam",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes."
+  },
+  {
+   "id": "poi_burren_den",
+   "zone": "burren",
+   "near": [
+    53,
+    12
+   ],
+   "kind": "den",
+   "at": "burren",
+   "species": "leveret"
+  },
+  {
+   "id": "poi_connemara_den",
+   "zone": "connemara",
+   "near": [
+    47,
+    17
+   ],
+   "kind": "den",
+   "at": "connemara",
+   "species": "gentlet",
+   "mentioned_by": {
+    "zone": "galway",
+    "npc": "hooker_skipper"
+   }
+  },
+  {
+   "id": "poi_connemara_stone",
+   "zone": "connemara",
+   "near": [
+    24,
+    40
+   ],
+   "kind": "stone",
+   "at": "connemara",
+   "stat": "def",
+   "lore": [
+    "It leans, slightly, like it has heard all this before.",
+    "The real thing is Poulnabrone, in the Burren, Co. Clare: a dolmen on bare limestone, with a capstone like a table."
+   ]
+  },
+  {
+   "id": "poi_glenveagh_den",
+   "zone": "glenveagh",
+   "near": [
+    10,
+    46
+   ],
+   "kind": "den",
+   "at": "glenveagh",
+   "species": "crexling"
+  },
+  {
+   "id": "poi_glenveagh_cache",
+   "zone": "glenveagh",
+   "near": [
+    17,
+    30
+   ],
+   "kind": "cache",
+   "at": "glenveagh",
+   "item": "horseshoe",
+   "line": "A hollow tree has been used as a post box by someone with no postman.",
+   "mentioned_by": {
+    "zone": "derry",
+    "npc": "der_bernie"
+   }
+  },
+  {
+   "id": "poi_lease_clonbeg_cache",
+   "zone": "lease_clonbeg",
+   "near": [
+    11,
+    29
+   ],
+   "kind": "cache",
+   "at": "lough_gur",
+   "item": "iron_snare",
+   "line": "A hollow in the old tree, and something wrapped in oilcloth."
+  },
+  {
+   "id": "poi_lease_clonbeg_stone",
+   "zone": "lease_clonbeg",
+   "near": [
+    34,
+    6
+   ],
+   "kind": "stone",
+   "at": "lough_gur",
+   "stat": "ward",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is Carrowmore, in Co. Sligo: one of the biggest cemeteries of megalithic tombs in Ireland."
+   ]
+  },
+  {
+   "id": "poi_lough_gur_cache",
+   "zone": "lough_gur",
+   "near": [
+    30,
+    36
+   ],
+   "kind": "cache",
+   "at": "lough_gur",
+   "item": "cream_tea",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine."
+  },
+  {
+   "id": "poi_lough_gur_stone",
+   "zone": "lough_gur",
+   "near": [
+    20,
+    3
+   ],
+   "kind": "stone",
+   "at": "lough_gur",
+   "stat": "spd",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is Poulnabrone, in the Burren, Co. Clare: a dolmen on bare limestone, with a capstone like a table."
+   ],
+   "mentioned_by": {
+    "zone": "limerick",
+    "npc": "lim_treaty_guide"
+   }
+  },
+  {
+   "id": "poi_ring_of_kerry_camp",
+   "zone": "ring_of_kerry",
+   "near": [
+    57,
+    18
+   ],
+   "kind": "camp",
+   "at": "ring_of_kerry",
+   "names": [
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "pooka",
+    "corncrake",
+    "pooka"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 2500,
+   "item": "silver_snare"
+  },
+  {
+   "id": "poi_ring_of_kerry_cache",
+   "zone": "ring_of_kerry",
+   "near": [
+    40,
+    14
+   ],
+   "kind": "cache",
+   "at": "ring_of_kerry",
+   "item": "kendal_mint_cake",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes."
+  },
+  {
+   "id": "poi_shannon_estuary_camp",
+   "zone": "shannon_estuary",
+   "near": [
+    37,
+    48
+   ],
+   "kind": "camp",
+   "at": "shannon_estuary",
+   "names": [
+    [
+     "Trapper Moira",
+     "Trapper"
+    ],
+    [
+     "Lamper Ged",
+     "Lamper"
+    ]
+   ],
+   "party": [
+    "plungebeak",
+    "bradan",
+    "rooklet"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 2660,
+   "item": "night_snare"
+  },
+  {
+   "id": "poi_shannon_estuary_cache",
+   "zone": "shannon_estuary",
+   "near": [
+    5,
+    36
+   ],
+   "kind": "cache",
+   "at": "shannon_estuary",
+   "item": "kendal_mint_cake",
+   "line": "A hollow tree has been used as a post box by someone with no postman."
+  },
+  {
+   "id": "poi_tory_island_stone",
+   "zone": "tory_island",
+   "near": [
+    8,
+    10
+   ],
+   "kind": "stone",
+   "at": "tory_island",
+   "stat": "ward",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is Carrowmore, in Co. Sligo: one of the biggest cemeteries of megalithic tombs in Ireland."
+   ]
+  },
+  {
+   "id": "poi_tory_island_cache",
+   "zone": "tory_island",
+   "near": [
+    34,
+    10
+   ],
+   "kind": "cache",
+   "at": "tory_island",
+   "item": "night_snare",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine.",
+   "paper": "A note, in careful capitals: 'FINDERS KEEPERS. SIGNED, THE MOORSIDE GANG, AGED NINE.'",
+   "curio": true
+  }
+ ]
+}

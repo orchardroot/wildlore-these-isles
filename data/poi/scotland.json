@@ -1,0 +1,644 @@
+{
+ "pois": [
+  {
+   "id": "poi_cairngorms_stone",
+   "zone": "cairngorms",
+   "near": [
+    31,
+    15
+   ],
+   "kind": "stone",
+   "at": "cairngorms",
+   "stat": "ward",
+   "lore": [
+    "It is cold, and it hums very faintly, the way a fridge does.",
+    "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
+   ]
+  },
+  {
+   "id": "poi_cairngorms_camp",
+   "zone": "cairngorms",
+   "near": [
+    63,
+    24
+   ],
+   "kind": "camp",
+   "at": "cairngorms",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "heilan",
+    "rillotter",
+    "snowbunting"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 3420,
+   "item": "rowan_sprig"
+  },
+  {
+   "id": "poi_central_belt_camp",
+   "zone": "central_belt",
+   "near": [
+    39,
+    24
+   ],
+   "kind": "camp",
+   "at": "central_belt",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "pierlord",
+    "heronarch",
+    "bobbin"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 3100,
+   "item": "silver_snare"
+  },
+  {
+   "id": "poi_central_belt_stone",
+   "zone": "central_belt",
+   "near": [
+    39,
+    38
+   ],
+   "kind": "stone",
+   "at": "central_belt",
+   "stat": "def",
+   "lore": [
+    "It leans, slightly, like it has heard all this before.",
+    "The real thing is Machrie Moor, on the Isle of Arran: a moor full of rings, one with a tall granite slab."
+   ]
+  },
+  {
+   "id": "poi_faerie_glen_cache",
+   "zone": "faerie_glen",
+   "near": [
+    7,
+    14
+   ],
+   "kind": "cache",
+   "at": "skye",
+   "item": "lucky_chip",
+   "line": "A hollow in the old tree, and something wrapped in oilcloth."
+  },
+  {
+   "id": "poi_flow_country_cache",
+   "zone": "flow_country",
+   "near": [
+    56,
+    7
+   ],
+   "kind": "cache",
+   "at": "flow_country",
+   "item": "hard_hat_yellow",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox.",
+   "mentioned_by": {
+    "zone": "inverness",
+    "npc": "inverness_east_c"
+   }
+  },
+  {
+   "id": "poi_flow_country_den",
+   "zone": "flow_country",
+   "near": [
+    33,
+    60
+   ],
+   "kind": "den",
+   "at": "flow_country",
+   "species": "ratty",
+   "mentioned_by": {
+    "zone": "inverness",
+    "npc": "inverness_east_c"
+   }
+  },
+  {
+   "id": "poi_forth_bridges_cache",
+   "zone": "forth_bridges",
+   "near": [
+    29,
+    51
+   ],
+   "kind": "cache",
+   "at": "forth_bridges",
+   "item": "water_snare",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox.",
+   "curio": true,
+   "mentioned_by": {
+    "zone": "edinburgh",
+    "npc": "edinburgh_lamplighter"
+   }
+  },
+  {
+   "id": "poi_forth_bridges_camp",
+   "zone": "forth_bridges",
+   "near": [
+    55,
+    68
+   ],
+   "kind": "camp",
+   "at": "forth_bridges",
+   "names": [
+    [
+     "Trapper Moira",
+     "Trapper"
+    ],
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "dolphlet",
+    "haarling",
+    "selklet"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3100,
+   "item": "hag_stone"
+  },
+  {
+   "id": "poi_forth_bridges_den",
+   "zone": "forth_bridges",
+   "near": [
+    37,
+    8
+   ],
+   "kind": "den",
+   "at": "forth_bridges",
+   "species": "minkshade"
+  },
+  {
+   "id": "poi_galloway_cache",
+   "zone": "galloway",
+   "near": [
+    30,
+    4
+   ],
+   "kind": "cache",
+   "at": "galloway",
+   "item": "miners_lamp",
+   "line": "A hollow in the old tree, and something wrapped in oilcloth.",
+   "paper": "Scrawled inside the lid: 'If found, you may keep it. If you are Gareth, put it back.'",
+   "mentioned_by": {
+    "zone": "cairnryan",
+    "npc": "cai_oyster"
+   }
+  },
+  {
+   "id": "poi_galloway_camp",
+   "zone": "galloway",
+   "near": [
+    8,
+    31
+   ],
+   "kind": "camp",
+   "at": "galloway",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "natterjack",
+    "heronarch",
+    "dipling"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3060,
+   "item": "water_snare",
+   "mentioned_by": {
+    "zone": "cairnryan",
+    "npc": "cai_oyster"
+   }
+  },
+  {
+   "id": "poi_galloway_dark_cache",
+   "zone": "galloway_dark",
+   "near": [
+    9,
+    7
+   ],
+   "kind": "cache",
+   "at": "galloway",
+   "item": "miners_lamp",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine.",
+   "curio": true
+  },
+  {
+   "id": "poi_great_glen_stone",
+   "zone": "great_glen",
+   "near": [
+    39,
+    38
+   ],
+   "kind": "stone",
+   "at": "great_glen",
+   "stat": "lore",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is the Clava Cairns, near Inverness: ring cairns inside circles of standing stones, among old beeches."
+   ]
+  },
+  {
+   "id": "poi_great_glen_cache",
+   "zone": "great_glen",
+   "near": [
+    51,
+    47
+   ],
+   "kind": "cache",
+   "at": "great_glen",
+   "item": "bobble_hat_red",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine.",
+   "paper": "A note says: 'Gone to the chippy. Back never.'",
+   "curio": true
+  },
+  {
+   "id": "poi_harris_stone",
+   "zone": "harris",
+   "near": [
+    49,
+    4
+   ],
+   "kind": "stone",
+   "at": "harris",
+   "stat": "atk",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is the Clava Cairns, near Inverness: ring cairns inside circles of standing stones, among old beeches."
+   ]
+  },
+  {
+   "id": "poi_harris_camp",
+   "zone": "harris",
+   "near": [
+    15,
+    40
+   ],
+   "kind": "camp",
+   "at": "harris",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "hushwing",
+    "crexling",
+    "shieldbiter"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3300,
+   "item": "hag_stone"
+  },
+  {
+   "id": "poi_harris_cache",
+   "zone": "harris",
+   "near": [
+    9,
+    30
+   ],
+   "kind": "cache",
+   "at": "harris",
+   "item": "rowan_sprig",
+   "line": "A hollow tree has been used as a post box by someone with no postman.",
+   "mentioned_by": {
+    "zone": "stornoway",
+    "npc": "sw_pudding_fan"
+   }
+  },
+  {
+   "id": "poi_lease_dubh_lochan_stone",
+   "zone": "lease_dubh_lochan",
+   "near": [
+    23,
+    7
+   ],
+   "kind": "stone",
+   "at": "flow_country",
+   "stat": "atk",
+   "lore": [
+    "Lichen has been at it for a few thousand years and has barely got started.",
+    "The real thing is the Clava Cairns, near Inverness: ring cairns inside circles of standing stones, among old beeches."
+   ]
+  },
+  {
+   "id": "poi_lease_dubh_lochan_camp",
+   "zone": "lease_dubh_lochan",
+   "near": [
+    29,
+    38
+   ],
+   "kind": "camp",
+   "at": "flow_country",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "peatmonarch",
+    "crakeling",
+    "goldeneyrie"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 3380,
+   "item": "iron_snare"
+  },
+  {
+   "id": "poi_loch_lomond_cache",
+   "zone": "loch_lomond",
+   "near": [
+    57,
+    52
+   ],
+   "kind": "cache",
+   "at": "loch_lomond",
+   "item": "hard_hat_yellow",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes.",
+   "mentioned_by": {
+    "zone": "glasgow",
+    "npc": "glw_riveter"
+   }
+  },
+  {
+   "id": "poi_loch_lomond_camp",
+   "zone": "loch_lomond",
+   "near": [
+    22,
+    30
+   ],
+   "kind": "camp",
+   "at": "loch_lomond",
+   "names": [
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ]
+   ],
+   "party": [
+    "caperling",
+    "fawnlet",
+    "dipling"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 3100,
+   "item": "hag_stone",
+   "mentioned_by": {
+    "zone": "glasgow",
+    "npc": "glw_riveter"
+   }
+  },
+  {
+   "id": "poi_loch_ness_den",
+   "zone": "loch_ness",
+   "near": [
+    51,
+    21
+   ],
+   "kind": "den",
+   "at": "loch_ness",
+   "species": "chipgull"
+  },
+  {
+   "id": "poi_loch_ness_camp",
+   "zone": "loch_ness",
+   "near": [
+    27,
+    14
+   ],
+   "kind": "camp",
+   "at": "loch_ness",
+   "names": [
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "midgeswarm",
+    "kelpie",
+    "heilan"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 3260,
+   "item": "rowan_sprig"
+  },
+  {
+   "id": "poi_pentland_coast_cache",
+   "zone": "pentland_coast",
+   "near": [
+    5,
+    37
+   ],
+   "kind": "cache",
+   "at": "pentland_coast",
+   "item": "horseshoe",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine.",
+   "paper": "A note says: 'Gone to the chippy. Back never.'",
+   "mentioned_by": {
+    "zone": "thurso",
+    "npc": "th_runner"
+   }
+  },
+  {
+   "id": "poi_pentland_coast_camp",
+   "zone": "pentland_coast",
+   "near": [
+    24,
+    36
+   ],
+   "kind": "camp",
+   "at": "pentland_coast",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "orcalet",
+    "herdlet",
+    "hootlet"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3420,
+   "item": "flask_of_tea",
+   "mentioned_by": {
+    "zone": "thurso",
+    "npc": "th_runner"
+   }
+  },
+  {
+   "id": "poi_scottish_borders_cache",
+   "zone": "scottish_borders",
+   "near": [
+    24,
+    23
+   ],
+   "kind": "cache",
+   "at": "scottish_borders",
+   "item": "deerstalker_tweed",
+   "line": "Someone's hiding place, and not as hidden as they hoped.",
+   "mentioned_by": {
+    "zone": "edinburgh",
+    "npc": "rail_guard"
+   }
+  },
+  {
+   "id": "poi_scottish_borders_stone",
+   "zone": "scottish_borders",
+   "near": [
+    58,
+    13
+   ],
+   "kind": "stone",
+   "at": "scottish_borders",
+   "stat": "hp",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones, about 5,000 years old."
+   ]
+  },
+  {
+   "id": "poi_shetland_mainland_stone",
+   "zone": "shetland_mainland",
+   "near": [
+    22,
+    38
+   ],
+   "kind": "stone",
+   "at": "shetland_mainland",
+   "stat": "def",
+   "lore": [
+    "It is cold, and it hums very faintly, the way a fridge does.",
+    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones, about 5,000 years old."
+   ],
+   "mentioned_by": {
+    "zone": "lerwick",
+    "npc": "ls_pier_kid"
+   }
+  },
+  {
+   "id": "poi_shetland_mainland_camp",
+   "zone": "shetland_mainland",
+   "near": [
+    10,
+    31
+   ],
+   "kind": "camp",
+   "at": "shetland_mainland",
+   "names": [
+    [
+     "Trapper Moira",
+     "Trapper"
+    ],
+    [
+     "Lamper Ged",
+     "Lamper"
+    ]
+   ],
+   "party": [
+    "orcaird",
+    "dolphlet",
+    "dolphlet"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 3540,
+   "item": "rowan_sprig",
+   "mentioned_by": {
+    "zone": "lerwick",
+    "npc": "ls_pier_kid"
+   }
+  },
+  {
+   "id": "poi_skye_cache",
+   "zone": "skye",
+   "near": [
+    71,
+    40
+   ],
+   "kind": "cache",
+   "at": "skye",
+   "item": "miners_lamp",
+   "line": "A hollow in the old tree, and something wrapped in oilcloth.",
+   "paper": "There is a scrap of paper too: 'Hid this in 1987. Hope the sheep were kind.'"
+  },
+  {
+   "id": "poi_skye_stone",
+   "zone": "skye",
+   "near": [
+    26,
+    16
+   ],
+   "kind": "stone",
+   "at": "skye",
+   "stat": "def",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones, about 5,000 years old."
+   ]
+  }
+ ]
+}

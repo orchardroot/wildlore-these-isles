@@ -1,0 +1,133 @@
+{
+ "pois": [
+  {
+   "id": "poi_cat_and_fiddle_camp",
+   "zone": "cat_and_fiddle",
+   "near": [
+    42,
+    28
+   ],
+   "kind": "camp",
+   "at": "cat_and_fiddle",
+   "names": [
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "crumblet",
+    "scuttlet",
+    "snowhare"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 700,
+   "item": "night_snare",
+   "mentioned_by": {
+    "zone": "buxton",
+    "npc": "buxton_goyt_guide"
+   }
+  },
+  {
+   "id": "poi_cat_and_fiddle_stone",
+   "zone": "cat_and_fiddle",
+   "near": [
+    20,
+    12
+   ],
+   "kind": "stone",
+   "at": "cat_and_fiddle",
+   "stat": "ward",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is Arbor Low, in the Derbyshire Peak District: a henge of fallen limestone slabs, shaped like a dropped clock face."
+   ],
+   "mentioned_by": {
+    "zone": "buxton",
+    "npc": "buxton_goyt_guide"
+   }
+  },
+  {
+   "id": "poi_goyt_valley_cache",
+   "zone": "goyt_valley",
+   "near": [
+    34,
+    48
+   ],
+   "kind": "cache",
+   "at": "goyt_valley",
+   "item": "hag_stone",
+   "line": "A hollow in the old tree, and something wrapped in oilcloth.",
+   "mentioned_by": {
+    "zone": "buxton",
+    "npc": "crescent_fan"
+   }
+  },
+  {
+   "id": "poi_goyt_valley_den",
+   "zone": "goyt_valley",
+   "near": [
+    10,
+    56
+   ],
+   "kind": "den",
+   "at": "goyt_valley",
+   "species": "elverlet"
+  },
+  {
+   "id": "poi_the_roaches_camp",
+   "zone": "the_roaches",
+   "near": [
+    21,
+    42
+   ],
+   "kind": "camp",
+   "at": "the_roaches",
+   "names": [
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ],
+    [
+     "Lamper Ged",
+     "Lamper"
+    ]
+   ],
+   "party": [
+    "dipling",
+    "pipkin",
+    "kitelet"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 740,
+   "item": "rowan_sprig"
+  },
+  {
+   "id": "poi_the_roaches_stone",
+   "zone": "the_roaches",
+   "near": [
+    17,
+    18
+   ],
+   "kind": "stone",
+   "at": "the_roaches",
+   "stat": "def",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is Arbor Low, in the Derbyshire Peak District: a henge of fallen limestone slabs, shaped like a dropped clock face."
+   ],
+   "mentioned_by": {
+    "zone": "macclesfield",
+    "npc": "gate_b"
+   }
+  }
+ ]
+}

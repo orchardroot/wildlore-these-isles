@@ -23,6 +23,7 @@ Newest first. The README is the front page; this is the long memory.
 - Fourteen chapmen stand by market stalls from Macclesfield to Galway (Buxton, Manchester, Chester, Shrewsbury, Cardiff,
   Bristol, York, Newcastle, Edinburgh, Inverness, Belfast, Dublin), each with four staples and regional books, three of
   which are out of stock in any given week. Collecting the full set means walking the whole map.
+- **Question marks on the map.** Around 170 places on the routes now wait to be found: a creature den (three wild fights, then something unusual living at the back), a poachers' camp with a strongbox, a standing stone that trains your lead and tells you about a real one, and hidden caches. Walk within six tiles, or hear a resident mention one, and a "?" appears on the map; finish it and it becomes a little picture of what it was.
 
 ## What's new in 4.6: Dressed for the Weather
 

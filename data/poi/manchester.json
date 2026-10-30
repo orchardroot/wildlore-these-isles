@@ -1,0 +1,51 @@
+{
+ "pois": [
+  {
+   "id": "poi_chat_moss_camp",
+   "zone": "chat_moss",
+   "near": [
+    43,
+    4
+   ],
+   "kind": "camp",
+   "at": "chat_moss",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "hootlet",
+    "grinalkin",
+    "croakle"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 1020,
+   "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_chat_moss_stone",
+   "zone": "chat_moss",
+   "near": [
+    58,
+    25
+   ],
+   "kind": "stone",
+   "at": "chat_moss",
+   "stat": "spd",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is Arbor Low, in the Derbyshire Peak District: a henge of fallen limestone slabs."
+   ],
+   "mentioned_by": {
+    "zone": "manchester",
+    "npc": "manchester_night_nurse"
+   }
+  }
+ ]
+}

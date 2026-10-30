@@ -1,0 +1,46 @@
+{
+ "pois": [
+  {
+   "id": "poi_cambrian_coast_den",
+   "zone": "cambrian_coast",
+   "near": [
+    16,
+    13
+   ],
+   "kind": "den",
+   "at": "cambrian_coast",
+   "species": "kidgruff"
+  },
+  {
+   "id": "poi_cambrian_coast_cache",
+   "zone": "cambrian_coast",
+   "near": [
+    24,
+    46
+   ],
+   "kind": "cache",
+   "at": "cambrian_coast",
+   "item": "kendal_mint_cake",
+   "line": "Someone's hiding place, and not as hidden as they hoped.",
+   "mentioned_by": {
+    "zone": "llanberis",
+    "npc": "cambrian_gate_c"
+   }
+  },
+  {
+   "id": "poi_hafod_cwm_stone",
+   "zone": "hafod_cwm",
+   "near": [
+    40,
+    21
+   ],
+   "kind": "stone",
+   "at": "beacons",
+   "stat": "def",
+   "lore": [
+    "It is cold, and it hums very faintly, the way a fridge does.",
+    "The real thing is Pentre Ifan, in Pembrokeshire, a good day south: a dolmen with a capstone big enough to shelter a cow."
+   ]
+  }
+ ]
+}

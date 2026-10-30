@@ -1,0 +1,49 @@
+{
+ "pois": [
+  {
+   "id": "poi_tintagel_cache",
+   "zone": "tintagel",
+   "near": [
+    42,
+    14
+   ],
+   "kind": "cache",
+   "at": "tintagel",
+   "item": "headscarf_tartan",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes.",
+   "paper": "A note says: 'Gone to the chippy. Back never.'",
+   "mentioned_by": {
+    "zone": "penzance",
+    "npc": "e2e_cornish"
+   }
+  },
+  {
+   "id": "poi_tintagel_camp",
+   "zone": "tintagel",
+   "near": [
+    49,
+    32
+   ],
+   "kind": "camp",
+   "at": "tintagel",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "polartern",
+    "wispet",
+    "clawcastle"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 2140,
+   "item": "kendal_mint_cake"
+  }
+ ]
+}

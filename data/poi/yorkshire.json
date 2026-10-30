@@ -1,0 +1,190 @@
+{
+ "pois": [
+  {
+   "id": "poi_north_york_moors_camp",
+   "zone": "north_york_moors",
+   "near": [
+    53,
+    10
+   ],
+   "kind": "camp",
+   "at": "newcastle",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ]
+   ],
+   "party": [
+    "stalklet",
+    "elverlet",
+    "jetling"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 3620,
+   "item": "cream_tea"
+  },
+  {
+   "id": "poi_north_york_moors_den",
+   "zone": "north_york_moors",
+   "near": [
+    29,
+    19
+   ],
+   "kind": "den",
+   "at": "newcastle",
+   "species": "tootlet"
+  },
+  {
+   "id": "poi_north_york_moors_cache",
+   "zone": "north_york_moors",
+   "near": [
+    66,
+    28
+   ],
+   "kind": "cache",
+   "at": "newcastle",
+   "item": "flat_cap_yorkshire",
+   "line": "A hollow in the old tree, and something wrapped in oilcloth."
+  },
+  {
+   "id": "poi_pennine_grouse_moor_camp",
+   "zone": "pennine_grouse_moor",
+   "near": [
+    13,
+    19
+   ],
+   "kind": "camp",
+   "at": "saddleworth_moor",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "kidgruff",
+    "starlet",
+    "dipling"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 3740,
+   "item": "night_snare"
+  },
+  {
+   "id": "poi_saddleworth_moor_stone",
+   "zone": "saddleworth_moor",
+   "near": [
+    27,
+    34
+   ],
+   "kind": "stone",
+   "at": "saddleworth_moor",
+   "stat": "lore",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is the Devil's Arrows, at Boroughbridge in North Yorkshire: three tall gritstone stones in a line beside the A1."
+   ]
+  },
+  {
+   "id": "poi_saddleworth_moor_den",
+   "zone": "saddleworth_moor",
+   "near": [
+    57,
+    14
+   ],
+   "kind": "den",
+   "at": "saddleworth_moor",
+   "species": "minkshade",
+   "mentioned_by": {
+    "zone": "manchester",
+    "npc": "manc_tram"
+   }
+  },
+  {
+   "id": "poi_yorkshire_dales_den",
+   "zone": "yorkshire_dales",
+   "near": [
+    63,
+    33
+   ],
+   "kind": "den",
+   "at": "york",
+   "species": "wispet",
+   "mentioned_by": {
+    "zone": "york",
+    "npc": "york_lamplighter"
+   }
+  },
+  {
+   "id": "poi_yorkshire_dales_camp",
+   "zone": "yorkshire_dales",
+   "near": [
+    54,
+    7
+   ],
+   "kind": "camp",
+   "at": "york",
+   "names": [
+    [
+     "Trapper Moira",
+     "Trapper"
+    ],
+    [
+     "Lamper Ged",
+     "Lamper"
+    ]
+   ],
+   "party": [
+    "zigzlet",
+    "zigzlet",
+    "kitelet"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3740,
+   "item": "water_snare",
+   "mentioned_by": {
+    "zone": "york",
+    "npc": "york_lamplighter"
+   }
+  },
+  {
+   "id": "poi_yorkshire_wolds_stone",
+   "zone": "yorkshire_wolds",
+   "near": [
+    17,
+    35
+   ],
+   "kind": "stone",
+   "at": "yorkshire_wolds",
+   "stat": "def",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is the Devil's Arrows, at Boroughbridge in North Yorkshire: three tall gritstone stones in a line beside the A1."
+   ]
+  },
+  {
+   "id": "poi_yorkshire_wolds_den",
+   "zone": "yorkshire_wolds",
+   "near": [
+    56,
+    13
+   ],
+   "kind": "den",
+   "at": "yorkshire_wolds",
+   "species": "brockling"
+  }
+ ]
+}

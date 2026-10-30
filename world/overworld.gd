@@ -234,6 +234,7 @@ func _build_zone_node() -> void:
 	Seasonal.dress(zone, _zone_node, player)  # festivals and falling leaves from the real date
 	Viaduct.dress(zone, _zone_node)  # railway viaducts striding across (Castlefield)
 	OccluderFade.dress(zone, _zone_node, player)  # buildings between the camera and you go see-through
+	PoiScene.dress(zone, _zone_node, Game.data, self)  # question marks: dens, camps, stones, caches
 	Forage.dress(zone, _zone_node, Game.data)  # hedgerow pickings and crafting benches
 	TrailsScene.dress(zone, _zone_node, Game.data)  # a paper on the table, a dig spot where a trail ends
 	CreatureJobsScene.dress(zone, _zone_node, Game.data)  # spots where your lead creature can do a job
@@ -486,6 +487,8 @@ func interact(p: Vector2i) -> void:
 	if await ExamineScene.interact(self, p):  # a look-closer spot in a room
 		return
 	if await LooksMirror.interact(self, p):  # a mirror: the Wardrobe, hair included
+		return
+	if await PoiScene.interact(self, p):  # a den, camp, stone or cache on a route
 		return
 	var s := zone.sign_at(p)
 	if not s.is_empty():
