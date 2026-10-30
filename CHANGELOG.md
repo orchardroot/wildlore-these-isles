@@ -2,6 +2,11 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+- **Trumps.** Mum finds your gran's old cards (a creature on each, five numbers underneath), and around half the homes, pubs and inns of the isles will play you after a natter. Pick a stat, higher number wins, and the winner pockets both cards. Beat someone and their card is yours, plus a few quid once a day.
+- **The album.** A Trumps cards page in the Almanac lays out every region's set, silhouettes for the ones you're missing, and a prize (a coat or a chapbook) for finishing a region.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things

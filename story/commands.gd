@@ -218,6 +218,8 @@ func _exec(c: Dictionary) -> void:
 			await _crossword(c)
 		"darts":
 			await PubSportRun.new(self).darts(c)
+		"trumps":
+			await TrumpsRun.new(self).run(c)
 		"arcade":
 			await ArcadeRun.new(self).run(c)
 		"curling":

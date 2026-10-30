@@ -54,6 +54,18 @@ static func boot(game: Node, menu: String) -> void:
 	c.held = "oak_acorn"
 	d.party = [a, b, c, e, f]
 	d.ark = [mk.call("croakle", 6), mk.call("pipkin", 4), mk.call("dipling", 9)]
+	if menu == "cards" or menu.begins_with("trumps"):  # `--menu=cards`: an album part filled (Cheshire done, the Peak half); `--menu=trumps:dev`: a game under way
+		Trumps.use_dex(game.dex)
+		Trumps.give_starter(d)
+		var tz := ZoneIndex.get_index()
+		for s in Trumps.region_set("cheshire", tz):
+			Trumps.give(d, str(s))
+		for k in Trumps.region_set("peak", tz).size() / 2:
+			Trumps.give(d, str(Trumps.region_set("peak", tz)[k * 2]))
+		for k in 9:
+			Trumps.give(d, str(Trumps.region_set("south_wales", tz)[k % maxi(1, Trumps.region_set("south_wales", tz).size())]))
+		d.trumps["wins"] = 7
+		d.trumps["losses"] = 3
 	if menu.begins_with("lang") or menu in ["pedia:words", "pause:words"]:  # two Welsh lessons learnt, in Cardiff, a day on
 		d.zone_id = "cardiff"
 		for l in ["cy_01", "cy_02"]:
