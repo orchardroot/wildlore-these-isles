@@ -2,7 +2,7 @@ extends MenuBase
 ## Bag: tabs by item kind, use on a party member via Bag.use_on. With arg "for:<n>" it targets party member n directly;
 ## "hold:<n>" shows only charms, to give party member n one to hold. Food is shared (it heals and they like you more).
 
-const KIND_ORDER := ["heal", "meal", "cure", "revive", "pp", "snare", "repel", "evo", "charm", "material", "fish", "produce", "wear", "key"]
+const KIND_ORDER := ["heal", "meal", "cure", "revive", "pp", "snare", "repel", "evo", "charm", "curio", "material", "fish", "produce", "wear", "key"]
 const USABLE := ["heal", "cure", "revive", "pp", "evo"]
 
 var _bag: Bag

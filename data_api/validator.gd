@@ -147,7 +147,7 @@ static func _check_teaching(sp: Dictionary) -> Array:
 
 const EM_DASH := char(0x2014)  # the em-dash: the house style has none, in data or in prose
 
-const ITEM_KINDS := ["heal", "meal", "cure", "revive", "pp", "snare", "evo", "charm", "repel", "key", "material", "fish", "produce", "wear"]
+const ITEM_KINDS := ["heal", "meal", "cure", "revive", "pp", "snare", "evo", "charm", "repel", "key", "material", "fish", "produce", "wear", "curio"]
 const EXTRA_SNARES := ["night", "water", "fae", "hazel", "creel"]
 
 static func _check_items(db: ItemDB, dex: Dex) -> Array:

@@ -2,6 +2,16 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+Every door in the isles now has a reason to be opened.
+
+- **Behind every door.** Bookshelves, dressers, display cases, beds, sofas, fireplaces, pianos and clocks in every
+  room can be rummaged. You might find a snack, some loose change, or just socks; the same drawer restocks a week
+  later, and the resident will have a wry word if they catch you at it.
+- **Curios.** Sixty small bits of real British and Irish bric-a-brac (a Toby jug, a Wade Whimsie, a Bakelite radio) turn
+  up in the odd drawer. They only sell, but the new Curios page in the Almanac keeps the set.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things

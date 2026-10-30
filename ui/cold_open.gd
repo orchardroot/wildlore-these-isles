@@ -341,6 +341,9 @@ class Host extends RefCounted:
 		_view = view
 		data = d if d != null else GameStateData.new()
 
+	func zone_id() -> String:  # ScriptHooks.wrap asks every host (no zone in a cold open)
+		return ""
+
 	func say(_who: String, text: String) -> void:
 		if skipped:
 			return
