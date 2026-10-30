@@ -25,6 +25,7 @@ var zoom := 1.8             # around `centre` (map units); 1.0 shows all the isl
 var centre := Vector2(-1, -1)
 var cursor := ""            # town id the map cursor sits on ("" for none)
 var named_unvisited: Array = []  # unvisited towns that still get a name (the "Where next?" town)
+var route := PackedVector2Array()  # map units: the "Route here" polyline, drawn dotted
 var marks: Array = []       # MapLogic.marks: rewilding, the show, side stories, the post
 var framed := false         # the pause-menu map: a frame, a vignette and a compass
 var compass_left := false   # the compass goes top left (the info panel is on the right)
@@ -285,6 +286,10 @@ func _draw() -> void:
 	for r in s.rail:
 		_dashed(_ps(r, xf), Color("5b4636", 0.5), 1.3, 4.0, 4.0)
 	var boats := _draw_ferries(m, s, xf, d)
+	if route.size() >= 2:
+		var rp := _ps(route, xf)
+		_dashed(rp, Color(0, 0, 0, 0.6), 7.0, 3.0, 7.0)
+		_dashed(rp, LIT, 4.5, 3.0, 7.0)
 	if objective.x >= 0:  # under the town dots and names, so it never hides a label
 		var op := _p(objective.x, objective.y, xf)
 		draw_arc(op, 16.0, 0, TAU, 28, Color(0, 0, 0, 0.5), 7.0)

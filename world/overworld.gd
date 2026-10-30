@@ -42,6 +42,7 @@ func _ready() -> void:
 	ambient = AmbientLife.new()
 	add_child(ambient)
 	add_child(ZoneCard.new())
+	add_child(RouteChip.new())  # the Map's "Route here" breadcrumb
 	add_child(PlaceIndicator.new())  # the name of the building whose door you stand at
 	var layer := CanvasLayer.new()
 	layer.layer = 1

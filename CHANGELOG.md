@@ -8,6 +8,8 @@ Newest first. The README is the front page; this is the long memory.
   or dresser of rooms across every region. Read one once; the Almanac's new Papers page keeps them to read again.
 - **Treasure trails.** Forty-odd papers hide a clue. Read one and a "?" appears on the world map, and a patch of
   disturbed earth turns up outdoors for you to dig. Mind where the old folk buried things.
+- **Click a town, get a route.** On the Map, press Shift (X on a pad) on any town to draw a dotted route there, with the zone count and how you go ("3 zones on foot, then the train from Stoke-on-Trent"). Press it again to clear it.
+- **A breadcrumb in the overworld.** A small chip says "To York  ·  3 to go" with an arrow toward the way out of this zone. It re-routes if you wander off, hides indoors, and chimes when you arrive.
 
 ## What's new in 4.6: Dressed for the Weather
 

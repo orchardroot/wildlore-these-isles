@@ -451,37 +451,11 @@ func _visit_sanctuary(near_zone: String) -> void:
 ## Zone adjacency (edges and warps, both ways) for hop counts. Gates are ignored: it is only an estimate.
 func _zone_adj() -> Dictionary:
 	if _adj.is_empty():
-		var zones := _routing_zones()
-		for zid in zones:
-			if not _adj.has(zid):
-				_adj[zid] = {}
-			var z: ZoneData = zones[zid]
-			var nexts := []
-			for side in z.edges:
-				nexts.append(str(z.edges[side].get("to", "")))
-			for w in z.warps:
-				nexts.append(str(w.get("to", "")))
-			for n in nexts:
-				if zones.has(n):
-					_adj[zid][n] = true
-					if not _adj.has(n):
-						_adj[n] = {}
-					_adj[n][zid] = true
+		_adj = ZoneGraph.walk_adj(_routing_zones())
 	return _adj
 
 func _hops_from(zid: String) -> Dictionary:
-	var adj := _zone_adj()
-	var dist := {zid: 0}
-	var queue := [zid]
-	var i := 0
-	while i < queue.size():
-		var a: String = queue[i]
-		i += 1
-		for b in adj.get(a, {}):
-			if not dist.has(b):
-				dist[b] = dist[a] + 1
-				queue.append(b)
-	return dist
+	return ZoneGraph.hops(_zone_adj(), zid)
 
 ## Across the sea (say after a whiteout lands on the wrong island): take the nearest ferry that gets there.
 func _maybe_ferry(dest_zone: String) -> void:
