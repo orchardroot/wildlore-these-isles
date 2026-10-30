@@ -12,6 +12,7 @@ var _lines_label: Label
 var _ask_label: Label
 var _objective_town := ""
 var _route_label: Label
+var _objective_panel: Control  # the "Where next?" strip along the bottom; the town panel stays above it
 
 func _build() -> void:
 	set_title("The Isles")
@@ -123,7 +124,11 @@ func _place_panel() -> void:
 	var sp := view.screen_pos(Vector2(float(t.x), float(t.y)))
 	_panel.reset_size()
 	var left := sp.x > view.size.x * 0.5
-	_panel.position = Vector2(20 if left else view.size.x - _panel.size.x - 20, 96)
+	var y := 96.0
+	if _objective_panel != null and _panel.get_parent() == _objective_panel.get_parent():
+		var strip_top: float = _panel.get_parent().size.y - 12.0 - _objective_panel.get_combined_minimum_size().y
+		y = minf(y, strip_top - _panel.size.y - 8.0)
+	_panel.position = Vector2(20 if left else view.size.x - _panel.size.x - 20, y)
 	view.compass_left = not left
 
 ## Rings the "Where next?" town (or spot) in gold and says what it is along the bottom.
@@ -144,6 +149,8 @@ func _show_objective() -> void:
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	p.add_child(l)
 	content.add_child(p)
+	_objective_panel = p
+	_place_panel.call_deferred()
 
 ## The Journal's "Show on map": the current step's place ringed in gold, the map centred on it, the step below.
 func _show_quest(id: String) -> void:

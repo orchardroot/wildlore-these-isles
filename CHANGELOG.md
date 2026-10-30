@@ -4,41 +4,61 @@ Newest first. The README is the front page; this is the long memory.
 
 ## What's new in 5.0: Every Door
 
-- **Papers on the tables.** About 230 letters, diary pages, shopping lists, telegrams and wills now lie on the first table
-  or dresser of rooms across every region. Read one once; the Almanac's new Papers page keeps them to read again.
-- **Treasure trails.** Forty-odd papers hide a clue. Read one and a "?" appears on the world map, and a patch of
-  disturbed earth turns up outdoors for you to dig. Mind where the old folk buried things.
-- **Click a town, get a route.** On the Map, press Shift (X on a pad) on any town to draw a dotted route there, with the zone count and how you go ("3 zones on foot, then the train from Stoke-on-Trent"). Press it again to clear it.
-- **A breadcrumb in the overworld.** A small chip says "To York  ·  3 to go" with an arrow toward the way out of this zone. It re-routes if you wander off, hides indoors, and chimes when you arrive.
-- **Chapbooks and curios in the swaps.** A dozen residents now trade a chapbook for the right curio, plenty more will take or give a curio, and the six front-room peddlers sell chapbooks instead of just charms. Poachers' camps have their crew loitering by the tent until you beat them. A resident only ever makes one offer per chat.
-- **Trumps.** Mum finds your gran's old cards (a creature on each, five numbers underneath), and around half the homes, pubs and inns of the isles will play you after a natter. Pick a stat, higher number wins, and the winner pockets both cards. Beat someone and their card is yours, plus a few quid once a day.
-- **The album.** A Trumps cards page in the Almanac lays out every region's set, silhouettes for the ones you're missing, and a prize (a coat or a chapbook) for finishing a region.
-- Moves look like themselves: every move now has a shape (bolt, volley, beam, slash, pounce, burst, cloud, rain, quake, wave, self, song, bite, wing) painted in its type's colours, and the hit flash takes the colour too. Sixteen signature moves, one per type, have their own little choreography. All under 1.2 seconds, and gentler with Reduce Flashing on.
-- **Know your Keeper.** Each of the ten Keepers now has a briefing: the hall's sign tells you what they lean on and
-  which types bite, their neighbours will gossip about their teams (four residents each, one team member revealed per
-  word), and a new Keepers page in the Almanac keeps the lot, with silhouettes for the creatures you haven't met.
-- **Straight talk before the fight.** The VS splash shows the Keeper's types and the ones that bite in gold, and if
-  nothing in your party can bite it says so in amber, before you've walked in unprepared.
-- Chapbooks: sixty cheap ballad sheets that teach a creature a move, the game's answer to TMs. Use one from the Bag and
-  the picker tells you who "Can learn", who "Knows it" and who "Can't". They are books you keep, so one teaches the lot.
-- Fourteen chapmen stand by market stalls from Macclesfield to Galway (Buxton, Manchester, Chester, Shrewsbury, Cardiff,
-  Bristol, York, Newcastle, Edinburgh, Inverness, Belfast, Dublin), each with four staples and regional books, three of
-  which are out of stock in any given week. Collecting the full set means walking the whole map.
-- **Question marks on the map.** Around 170 places on the routes now wait to be found: a creature den (three wild fights, then something unusual living at the back), a poachers' camp with a strongbox, a standing stone that trains your lead and tells you about a real one, and hidden caches. Walk within six tiles, or hear a resident mention one, and a "?" appears on the map; finish it and it becomes a little picture of what it was.
-- **Residents want things.** About 150 people in homes across every region will swap you something for something: two
-  Bilberries for a teapot, a salmon for an iron snare. Talk to them with the goods in your bag and they offer the swap.
-  They ask once a day, so they don't nag.
-- **Errands.** Nearly forty small two and three step errands: a parcel to a sister in the next town, a cat gone to the
-  Sanctuary, whether the road is open or just has a sheep on it. They appear in the Quest Log.
-- **Front-room shops.** Forty-odd homes double as informal shops once you have chatted: jam, eggs off the back step,
-  knitwear, fly-tyers, a secondhand charm dealer, a man with rocks.
-Every door in the isles now has a reason to be opened.
+Every door in the isles now has a reason to be opened. Rummage the furniture, read what people leave on the table,
+trade with the folk who live there, play them at cards, and find out who the Keeper is before you walk into the hall.
 
+**Indoors**
 - **Behind every door.** Bookshelves, dressers, display cases, beds, sofas, fireplaces, pianos and clocks in every
   room can be rummaged. You might find a snack, some loose change, or just socks; the same drawer restocks a week
   later, and the resident will have a wry word if they catch you at it.
-- **Curios.** Sixty small bits of real British and Irish bric-a-brac (a Toby jug, a Wade Whimsie, a Bakelite radio) turn
-  up in the odd drawer. They only sell, but the new Curios page in the Almanac keeps the set.
+- **Curios.** Sixty small bits of real British and Irish bric-a-brac (a Toby jug, a Wade Whimsie, a Bakelite radio)
+  turn up in the odd drawer. They only sell, but the new Curios page in the Almanac keeps the set.
+- **Papers on the tables.** About 230 letters, diary pages, shopping lists, telegrams and wills lie on tables and
+  dressers in every region. Read one once; the Almanac's new Papers page keeps them to read again.
+- **Treasure trails.** Forty-odd papers hide a clue. Read one and a "?" appears on the world map, and a patch of
+  disturbed earth turns up outdoors for you to dig. Mind where the old folk buried things.
+- **Residents want things.** About 150 people will swap you something for something: two Bilberries for a teapot, a
+  salmon for an iron snare, a chapbook for the right curio. They ask once a day, so they don't nag, and nobody makes
+  more than one offer per chat.
+- **Errands.** Nearly forty small two and three step errands: a parcel to a sister in the next town, a cat gone to
+  the Sanctuary, whether the road is open or just has a sheep on it. They appear in the Quest Log.
+- **Front-room shops.** Forty-odd homes double as informal shops once you've chatted: jam, eggs off the back step,
+  knitwear, fly-tyers, a secondhand charm dealer, a man with rocks, and six peddlers with chapbooks under the counter.
+
+**Trumps**
+- **A card in every pocket.** Mum finds your gran's old cards (a creature on each, five numbers underneath), and around
+  half the homes, pubs and inns of the isles will play you after a natter. Pick a stat, higher number wins, and the
+  winner pockets both cards. Beat someone and their card is yours, plus a few quid once a day.
+- **The album.** A Trumps page in the Almanac lays out every region's set, silhouettes for the ones you're missing,
+  and a prize (a coat or a chapbook) for finishing a region.
+
+**Moves and Keepers**
+- **Chapbooks.** Sixty cheap ballad sheets that teach a creature a move, the game's answer to TMs. Use one from the
+  Bag and the picker tells you who "Can learn", who "Knows it" and who "Can't". They're books you keep, so one
+  teaches the lot.
+- **The chapmen.** Fourteen of them stand by market stalls from Macclesfield to Galway, each with four staples and
+  their own regional books, three of which are out of stock in any given week. The full set means walking the map.
+- **Moves look like themselves.** Every move has a shape (bolt, volley, beam, slash, pounce, burst, cloud, rain,
+  quake, wave, self, song, bite, wing) painted in its type's colours, and the hit flash takes the colour too. Sixteen
+  signature moves, one per type, have their own little choreography. Gentler with Reduce Flashing on.
+- **Know your Keeper.** The hall's sign says what each Keeper leans on and which types bite, their neighbours gossip
+  about their teams (each word reveals one creature), and a Keepers page in the Almanac keeps the lot.
+- **Straight talk before the fight.** The VS splash shows the Keeper's types with the ones that bite in gold, and if
+  nothing in your party can bite it says so in amber, before you've walked in unprepared.
+
+**Out on the roads**
+- **Question marks on the map.** Around 170 places on the routes wait to be found: a creature den (three wild fights,
+  then something unusual living at the back), a poachers' camp with a strongbox, a standing stone that trains your
+  lead and tells you about a real one, and hidden caches. Walk near one, or hear a resident mention it, and a "?"
+  appears on the map; finish it and it becomes a little picture of what it was.
+- **Click a town, get a route.** On the Map, press Shift (X on a pad) on any town to draw a dotted route there, with
+  the zone count and how you go ("3 zones on foot, then the train from Stoke-on-Trent"). Press it again to clear it.
+- **A breadcrumb.** A small chip says "To York · 3 to go" with an arrow toward the way out of this zone. It re-routes
+  if you wander off, hides indoors, and chimes when you arrive.
+
+**Fixes**
+- The HP bar on a creature's Summary now shows its health (it was measuring the HP stat against the other stats).
+- A battle plate no longer carries on draining the last creature's HP after a new one comes in.
 
 ## What's new in 4.6: Dressed for the Weather
 

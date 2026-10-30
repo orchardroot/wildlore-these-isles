@@ -42,6 +42,10 @@ update; they always have.
 - **Be someone there.** Pick who you are and what you look like, then dress from fourteen boutiques: Harris Tweed,
   Fair Isle, Aran, Welsh wool, a flat cap, a kilt in a public tartan, wellies in a colour of your choosing. Shopkeepers
   notice. Buy a chippy, run a B&B, work the markets, borrow from the Building Society and regret it honestly.
+- **Open every door.** Rummage the drawers for curios and loose change, read the letters left on the table (some
+  of them lead somewhere), swap things with the people who live there, run their errands, buy jam out of their front
+  rooms, and play them at Trumps for the card in their pocket. Chapmen at the market sell chapbooks that teach your
+  creatures new moves, and the neighbours will tell you what the Keeper keeps, if you ask.
 - **Play what the locals play.** Darts leagues, crown green bowls, curling, the caber, hurling and shinty, sea
   shanties, conkers, crabbing, cheese rolling, bog snorkelling, a seaside arcade and a pub quiz. All at the places
   they really happen, all explained by someone who's been doing it for years.
@@ -51,6 +55,7 @@ update; they always have.
 
 | | |
 |---|---|
+| ![Trumps in a front room](docs/screens/r50-trumps.png) | ![Know your Keeper](docs/screens/r50-keepers.png) |
 | ![Who's setting off?](docs/screens/r46-creator.png) | ![Grassmarket Outfitters, Edinburgh](docs/screens/r46-boutique.png) |
 
 ## Controls
@@ -72,8 +77,9 @@ for every timing minigame are under Settings, Accessibility.
 
 ## What's new
 
-4.6 "Dressed for the Weather": your own character, clothes of these isles, creatures whose sex you can see, and
-seven new minigames. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
+5.0 "Every Door": every house worth walking into. Furniture to rummage, letters and treasure trails, residents who
+trade and run front-room shops, a card game against half the isles, chapbooks (TMs) from the chapmen, Keeper briefings,
+moves that look like their type, "?" places on the routes, and a route planner on the map. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
 
 ## How it's made
 
