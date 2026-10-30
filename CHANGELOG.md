@@ -13,6 +13,11 @@ Newest first. The README is the front page; this is the long memory.
 - **Trumps.** Mum finds your gran's old cards (a creature on each, five numbers underneath), and around half the homes, pubs and inns of the isles will play you after a natter. Pick a stat, higher number wins, and the winner pockets both cards. Beat someone and their card is yours, plus a few quid once a day.
 - **The album.** A Trumps cards page in the Almanac lays out every region's set, silhouettes for the ones you're missing, and a prize (a coat or a chapbook) for finishing a region.
 - Moves look like themselves: every move now has a shape (bolt, volley, beam, slash, pounce, burst, cloud, rain, quake, wave, self, song, bite, wing) painted in its type's colours, and the hit flash takes the colour too. Sixteen signature moves, one per type, have their own little choreography. All under 1.2 seconds, and gentler with Reduce Flashing on.
+- **Know your Keeper.** Each of the ten Keepers now has a briefing: the hall's sign tells you what they lean on and
+  which types bite, their neighbours will gossip about their teams (four residents each, one team member revealed per
+  word), and a new Keepers page in the Almanac keeps the lot, with silhouettes for the creatures you haven't met.
+- **Straight talk before the fight.** The VS splash shows the Keeper's types and the ones that bite in gold, and if
+  nothing in your party can bite it says so in amber, before you've walked in unprepared.
 
 ## What's new in 4.6: Dressed for the Weather
 

@@ -500,7 +500,7 @@ func interact(p: Vector2i) -> void:
 			if str(s.get("theme", "")) == PoetsCorner.THEME:  # a plaque on the arts counts for Poets' Corner too (4.5)
 				Game.quest_news.poets_corner(PoetsCorner.record(Game.data, str(s.plaque)))
 		else:
-			await say(_sign_lines(s))
+			await say(_sign_lines(s) + KeeperIntel.door_line(str(zone.id), Game.data, str(s.get("text", "")), Game.chart))
 		return
 	var n := npc_at(p)
 	if n == null and zone.tile_at(p) == "counter":

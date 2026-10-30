@@ -9,4 +9,5 @@ static func wrap(zone_id: String, npc_id: String, commands: Array, data: GameSta
 	var out := commands
 	# wave 47 sessions add one line each here, e.g. out = Trades.hook(zone_id, npc_id, out, data)
 	out = Trumps.hook(zone_id, npc_id, out, data)
+	out = KeeperIntel.hook(zone_id, npc_id, out, data)
 	return out

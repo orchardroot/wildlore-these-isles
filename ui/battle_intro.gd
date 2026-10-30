@@ -52,6 +52,8 @@ var _you: TextureRect
 var _them_name: Label
 var _you_name_label: Label
 var _vs: Label
+var _intel: Dictionary = {}   # a Keeper's {types, beats, warn}: chips under the name, an amber warning along the bottom
+var _chips: Control
 
 # --- choosing ------------------------------------------------------------------------------------------------
 
@@ -102,7 +104,7 @@ static func play(host: Node, opts: Dictionary, ctx: Dictionary) -> void:
 	await t.run()
 	if wants_vs(opts):
 		var v := BattleIntro.new()
-		v.setup_vs(opts.trainer, Looks.recipe(Game.data, Game.items), Game.data.player_name, str(ctx.get("region", "")))
+		v.setup_vs(opts.trainer, Looks.recipe(Game.data, Game.items), Game.data.player_name, str(ctx.get("region", "")), keeper_intel(opts.trainer))
 		host.add_child(v)
 		t.queue_free()
 		await v.run()
@@ -110,12 +112,28 @@ static func play(host: Node, opts: Dictionary, ctx: Dictionary) -> void:
 	else:
 		t.queue_free()
 
+## A Keeper's chips for the splash (wave 47): {"types", "beats", "warn"}; {} for anyone else. `warn` is true when no
+## damaging move in the party is of a type that bites (see KeeperIntel).
+static func keeper_intel(trainer: Dictionary) -> Dictionary:
+	var k := KeeperIntel.id_of_trainer(str(trainer.get("id", "")))
+	if k == "":
+		return {}
+	var b := KeeperIntel.beats(k, Game.chart)
+	var mts := []
+	for c in Game.data.party:
+		for m in c.moves:
+			var mv: Dictionary = Game.moves.get_move(str(m.get("id", "")))
+			if int(mv.get("power", 0)) > 0:
+				mts.append(str(mv.get("type", "")))
+	return {"types": KeeperIntel.types(k), "beats": b, "warn": not KeeperIntel.has_bite(mts, b)}
+
 ## Dev switch `--intro=<style|vs:trainer>` (with --boot): that transition or splash, held `at` (0..1) of the way.
 static func dev_show(host: Node, ow: Node, arg: String, at: float) -> void:
 	var ctx: Dictionary = ow.battle_context() if ow else {}
 	var t := BattleIntro.new()
 	if arg.begins_with("vs:"):
-		t.setup_vs(StoryData.trainer(arg.substr(3)), Looks.recipe(Game.data, Game.items), Game.data.player_name, str(ctx.get("region", "")))
+		var tr := StoryData.trainer(arg.substr(3))
+		t.setup_vs(tr, Looks.recipe(Game.data, Game.items), Game.data.player_name, str(ctx.get("region", "")), keeper_intel(tr))
 	else:
 		t.setup_transition(arg, ctx.get("centre", Vector2(0.5, 0.55)), 1.0, Settings.reduce_flashing)
 	t.hold_at = clampf(at, 0.0, 1.0)
@@ -129,8 +147,9 @@ func setup_transition(s: String, centre_uv: Vector2, speed: float, reduce_flashi
 	reduce = reduce_flashing
 
 ## `you_sprite` is a sprite id (a sheet in art/sprites/chars) or the player's recipe Dictionary (see Looks).
-func setup_vs(trainer: Dictionary, you_sprite: Variant, you_name: String, region: String) -> void:
+func setup_vs(trainer: Dictionary, you_sprite: Variant, you_name: String, region: String, intel := {}) -> void:
 	style = ""
+	_intel = intel
 	_trainer = trainer
 	_you_sprite = you_sprite
 	_you_name = you_name if you_name != "" else "You"
@@ -250,12 +269,42 @@ func _build_vs() -> void:
 	_vs.pivot_offset = _vs.size * 0.5
 	_vs.position = Vector2(W * 0.5, H * 0.5) - _vs.size * 0.5
 	_root.add_child(_vs)
+	if not _intel.is_empty():
+		_build_chips(k)
 	var hint := UIKit.label(UIKit.hint([["confirm", "Skip"]]), int(18 * k), UIKit.MUTED)
 	hint.position = Vector2(W - 180 * k, H - 36 * k)
 	hint.size = Vector2(160 * k, 28 * k)
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	_root.add_child(hint)
 	_pose_vs()
+
+func _build_chips(k: float) -> void:
+	_chips = VBoxContainer.new()
+	_chips.name = "Chips"
+	_chips.add_theme_constant_override("separation", int(6 * k))
+	_chips.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for row in [["LEANS ON", _intel.get("types", []), false], ["BITES", _intel.get("beats", []), true]]:
+		var h := HBoxContainer.new()
+		h.add_theme_constant_override("separation", int(6 * k))
+		h.alignment = BoxContainer.ALIGNMENT_CENTER
+		h.add_child(UIKit.label(str(row[0]), int(18 * k), UIKit.GOLD if row[2] else UIKit.MUTED))
+		for t in row[1]:
+			var c := UIKit.type_chip(str(t), int(18 * k))
+			if row[2]:  # the types that bite wear a gold edge
+				c.add_theme_stylebox_override("panel", UIKit.box(TypeColours.colour(str(t)), UIKit.GOLD, 3, 10, 5))
+			h.add_child(c)
+		_chips.add_child(h)
+	_chips.size = Vector2(520, 90) * k
+	_root.add_child(_chips)
+	if bool(_intel.get("warn", false)):
+		var w := UIKit.label("Nothing in your bag bites. Chapbooks and the Sanctuary are a walk away.", int(22 * k), Color("f0a830"))
+		w.name = "Warning"
+		w.add_theme_color_override("font_outline_color", Color("1d2230"))
+		w.add_theme_constant_override("outline_size", int(8 * k))
+		w.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		w.size = Vector2(_size.x, 32 * k)
+		w.position = Vector2(0, _size.y - 82 * k)
+		_root.add_child(w)
 
 func _portrait(node_name: String, sprite_id: Variant, facing: String, k: float) -> TextureRect:
 	var tr := TextureRect.new()
@@ -309,6 +358,8 @@ func _pose_vs() -> void:
 	_you.position = Vector2(you_x - W * 0.5 * (1.0 - e.call(0.1, 0.4)), py)
 	_them_name.position = Vector2(them_x + _them.size.x * 0.5 - _them_name.size.x * 0.5 + W * 0.5 * (1.0 - e.call(0.2, 0.5)), py + _them.size.y + 4)
 	_you_name_label.position = Vector2(you_x + _you.size.x * 0.5 - _you_name_label.size.x * 0.5 - W * 0.5 * (1.0 - e.call(0.2, 0.5)), py + _you.size.y + 4)
+	if _chips != null:
+		_chips.position = Vector2(them_x + _them.size.x * 0.5 - _chips.size.x * 0.5 + W * 0.5 * (1.0 - e.call(0.2, 0.5)), py + _them.size.y + 4 + 48 * H / 720.0)
 	var v: float = e.call(0.35, 0.55)
 	_vs.modulate.a = v
 	_vs.scale = Vector2.ONE * lerpf(2.2, 1.0, v)
