@@ -1,0 +1,42 @@
+{
+ "quests": [
+  {
+   "id": "w47_parcel_manchester",
+   "title": "A Parcel for Dad's House",
+   "region": "manchester",
+   "town": "manchester",
+   "giver": "a resident of Chadwick's House",
+   "summary": "Carry a brown-paper parcel to a relative in Dad's House, then bring word back to Chadwick's House.",
+   "start_flag": "q_manchester_w47_parcel_manchester_started",
+   "steps": [
+    {
+     "flag": "q_manchester_w47_parcel_manchester_1",
+     "text": "Take the parcel to Dad's House.",
+     "zone": "manchester_h2",
+     "npc": "manchester_h2_0",
+     "line": "Oh, from Chadwick's House? That'll be my sister's doing. A cardigan, again. Tell her I'm wearing the last one."
+    },
+    {
+     "flag": "q_manchester_w47_parcel_manchester_2",
+     "text": "Take the word back to Chadwick's House.",
+     "zone": "manchester_h1",
+     "npc": "manchester_h1_0",
+     "line": "Oh, you've been! And she's wearing it? Well. That's me told, and a tea owed to you."
+    }
+   ],
+   "done_flag": "q_manchester_w47_parcel_manchester_done",
+   "reward": "Water Snare and £200.",
+   "reward_item": {
+    "item": "water_snare",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "manchester_h1",
+    "npc": "manchester_h1_0",
+    "ask": "Listen, mate, would you do me a kindness? There's a parcel here for my sister in Dad's House. It's only a cardigan and a lot of string.",
+    "accept": "Marvellous. Mind the string, it's load-bearing."
+   }
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "quests": [
+  {
+   "id": "w47_seeds_douglas",
+   "title": "Seeds for Old Tom's House",
+   "region": "man",
+   "town": "douglas",
+   "giver": "a resident of Mrs Quayle's House",
+   "summary": "A resident of Mrs Quayle's House has saved seed for a gardener in Old Tom's House. Take it over and bring back the news.",
+   "start_flag": "q_man_w47_seeds_douglas_started",
+   "steps": [
+    {
+     "flag": "q_man_w47_seeds_douglas_1",
+     "text": "Deliver the seed to Old Tom's House.",
+     "zone": "douglas_home2",
+     "npc": "dou_home2_tom",
+     "line": "Ah, her beans! I've been waiting all winter. Tell her I've a bed ready and a very smug cat."
+    },
+    {
+     "flag": "q_man_w47_seeds_douglas_2",
+     "text": "Take the thanks back to Mrs Quayle's House.",
+     "zone": "douglas_home1",
+     "npc": "dou_home1_quayle",
+     "line": "Pleased as punch, was she? Good. Now I'll not have to carry them myself next year."
+    }
+   ],
+   "done_flag": "q_man_w47_seeds_douglas_done",
+   "reward": "Chippy Tea and £150.",
+   "reward_item": {
+    "item": "chippy_tea",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "douglas_home1",
+    "npc": "dou_home1_quayle",
+    "ask": "Moghrey mie, I've saved a twist of seed for a fellow gardener in Old Tom's House. It's no weight at all. Would you carry it?",
+    "accept": "Keep it dry. They're the best beans in the county, and I'll hear nothing against them."
+   }
+  }
+ ]
+}

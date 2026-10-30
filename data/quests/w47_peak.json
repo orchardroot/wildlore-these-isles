@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_card_buxton",
+   "title": "A Card by Hand",
+   "region": "peak",
+   "town": "buxton",
+   "giver": "a resident of Wragg's House",
+   "summary": "Take a birthday card to Grandad's House in time, since the post is no use, and hear how it landed.",
+   "start_flag": "q_peak_w47_card_buxton_started",
+   "steps": [
+    {
+     "flag": "q_peak_w47_card_buxton_1",
+     "text": "Deliver the card in Grandad's House.",
+     "zone": "buxton_h2",
+     "npc": "buxton_h2_0",
+     "line": "A card! In this weather! Tell them I'm touched, and that they still can't spell my name."
+    },
+    {
+     "flag": "q_peak_w47_card_buxton_2",
+     "text": "Take the reply back to Wragg's House.",
+     "zone": "buxton_h1",
+     "npc": "buxton_h1_0",
+     "line": "She said that? Ha. Right, I'll write back. Meanwhile, this is for you."
+    }
+   ],
+   "done_flag": "q_peak_w47_card_buxton_done",
+   "reward": "Havercake and £300.",
+   "reward_item": {
+    "item": "havercake",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "buxton_h1",
+    "npc": "buxton_h1_0",
+    "ask": "Ey up, it's a birthday card for my old mate in Grandad's House, and the post would take a fortnight. Would you hand it over?",
+    "accept": "Tell her it's from the best-looking person in Wragg's House. She'll know it's me."
+   }
+  },
+  {
+   "id": "w47_cat_buxton",
+   "title": "Where's the Cat Gone?",
+   "region": "peak",
+   "town": "buxton",
+   "giver": "a resident of Grandad's House",
+   "summary": "A cat has gone missing near Grandad's House. Ask at the Sanctuary, then bring word home.",
+   "start_flag": "q_peak_w47_cat_buxton_started",
+   "steps": [
+    {
+     "flag": "q_peak_w47_cat_buxton_1",
+     "text": "Ask at the Sanctuary in Grandad's House.",
+     "zone": "buxton_sanctuary",
+     "npc": "nurse",
+     "line": "A cat with a cough? Yes, a tabby came in on Tuesday, fat as butter, eating the Keepers' biscuits. I'd say she's fine."
+    },
+    {
+     "flag": "q_peak_w47_cat_buxton_2",
+     "text": "Take the word back to Grandad's House.",
+     "zone": "buxton_h2",
+     "npc": "buxton_h2_0",
+     "line": "She's at the Sanctuary? The cheek of her. She's got a bed at home. Thank you, truly."
+    }
+   ],
+   "done_flag": "q_peak_w47_cat_buxton_done",
+   "reward": "Havercake and £300.",
+   "reward_item": {
+    "item": "havercake",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "buxton_h2",
+    "npc": "buxton_h2_0",
+    "ask": "Ey up, my cat's gone off again, and she's got a cough. Would you ask at the Sanctuary if anyone's seen her?",
+    "accept": "Bless you. She answers to Tibs, and to the sound of a tin opening."
+   }
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_card_sheffield",
+   "title": "A Card by Hand",
+   "region": "yorkshire",
+   "town": "sheffield",
+   "giver": "a resident of Sheffield",
+   "summary": "Take a birthday card to Whitby in time, since the post is no use, and hear how it landed.",
+   "start_flag": "q_yorkshire_w47_card_sheffield_started",
+   "steps": [
+    {
+     "flag": "q_yorkshire_w47_card_sheffield_1",
+     "text": "Deliver the card in Whitby.",
+     "zone": "whitby_flowergate",
+     "npc": "flowergate_lass",
+     "line": "A card! In this weather! Tell them I'm touched, and that they still can't spell my name."
+    },
+    {
+     "flag": "q_yorkshire_w47_card_sheffield_2",
+     "text": "Take the reply back to Sheffield.",
+     "zone": "sheffield_home_ahmed",
+     "npc": "shfhome_ahmed",
+     "line": "She said that? Ha. Right, I'll write back. Meanwhile, this is for you."
+    }
+   ],
+   "done_flag": "q_yorkshire_w47_card_sheffield_done",
+   "reward": "Water Snare and £150.",
+   "reward_item": {
+    "item": "water_snare",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "sheffield_home_ahmed",
+    "npc": "shfhome_ahmed",
+    "ask": "Now then, it's a birthday card for my old mate in Whitby, and the post would take a fortnight. Would you hand it over?",
+    "accept": "Tell her it's from the best-looking person in Sheffield. She'll know it's me."
+   }
+  },
+  {
+   "id": "w47_cat_whitby",
+   "title": "Where's the Cat Gone?",
+   "region": "yorkshire",
+   "town": "whitby",
+   "giver": "a resident of Whitby",
+   "summary": "A cat has gone missing near Whitby. Ask at the Sanctuary, then bring word home.",
+   "start_flag": "q_yorkshire_w47_cat_whitby_started",
+   "steps": [
+    {
+     "flag": "q_yorkshire_w47_cat_whitby_1",
+     "text": "Ask at the Sanctuary in Whitby.",
+     "zone": "whitby_sanctuary",
+     "npc": "nurse",
+     "line": "A cat with a cough? Yes, a tabby came in on Tuesday, fat as butter, eating the Keepers' biscuits. I'd say she's fine."
+    },
+    {
+     "flag": "q_yorkshire_w47_cat_whitby_2",
+     "text": "Take the word back to Whitby.",
+     "zone": "whitby_flowergate",
+     "npc": "flowergate_lass",
+     "line": "She's at the Sanctuary? The cheek of her. She's got a bed at home. Thank you, truly."
+    }
+   ],
+   "done_flag": "q_yorkshire_w47_cat_whitby_done",
+   "reward": "Turned Coat and £300.",
+   "reward_item": {
+    "item": "turned_coat",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "whitby_flowergate",
+    "npc": "flowergate_lass",
+    "ask": "Now then, my cat's gone off again, and she's got a cough. Would you ask at the Sanctuary if anyone's seen her?",
+    "accept": "Bless you. She answers to Tibs, and to the sound of a tin opening."
+   }
+  }
+ ]
+}

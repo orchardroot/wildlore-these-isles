@@ -1,0 +1,35 @@
+{
+ "trades": [
+  {
+   "id": "tr_gibraltar_castle_honeycomb",
+   "zone": "gibraltar_castle",
+   "npc": "gib_castle_guide",
+   "wants": {
+    "item": "honeycomb",
+    "n": 3
+   },
+   "gives": {
+    "item": "scarf_blue",
+    "n": 1
+   },
+   "ask": "Well, I've had a notion for Honeycomb, three of them all week. A Blue football scarf says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_gibraltar_cathedral_lancashire_hotpot",
+   "zone": "gibraltar_cathedral",
+   "npc": "gib_priest",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "money": 430
+   },
+   "ask": "Now then, I'm after Lancashire Hotpot, just the one. £430, if you can find it. I won't ask where you got it.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  }
+ ]
+}

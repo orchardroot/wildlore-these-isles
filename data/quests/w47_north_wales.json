@@ -1,0 +1,87 @@
+{
+ "quests": [
+  {
+   "id": "w47_recipe_holyhead",
+   "title": "The Secret Ingredient",
+   "region": "north_wales",
+   "town": "holyhead",
+   "giver": "a resident of Holyhead",
+   "summary": "Find out what Llanberis's best cook puts in the gravy, and report back to Holyhead.",
+   "start_flag": "q_north_wales_w47_recipe_holyhead_started",
+   "steps": [
+    {
+     "flag": "q_north_wales_w47_recipe_holyhead_1",
+     "text": "Ask the cook in Llanberis.",
+     "zone": "llanberis_home1",
+     "npc": "lh1_mam",
+     "line": "The gravy? A spoon of the strong tea, love. Don't tell anyone, they'll all be at it."
+    },
+    {
+     "flag": "q_north_wales_w47_recipe_holyhead_2",
+     "text": "Take the secret back to Holyhead.",
+     "zone": "holyhead_home3",
+     "npc": "hh3_lad",
+     "line": "Tea! In gravy! That's outrageous and it makes complete sense. Take this for your honesty."
+    }
+   ],
+   "done_flag": "q_north_wales_w47_recipe_holyhead_done",
+   "reward": "Fair Isle jumper and £300.",
+   "reward_item": {
+    "item": "fair_isle_jumper",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "holyhead_home3",
+    "npc": "hh3_lad",
+    "ask": "Duw, I've been trying to copy a gravy from Llanberis for a year. Would you ask the cook what's in it? Do it casually.",
+    "accept": "Casually. Right. Don't mention my name."
+   }
+  },
+  {
+   "id": "w47_gossip_llanberis",
+   "title": "Three Houses and a Rumour",
+   "region": "north_wales",
+   "town": "llanberis",
+   "giver": "a resident of Llanberis",
+   "summary": "Pass a rumour from Llanberis to Holyhead, hear what Llangollen makes of it, and report back.",
+   "start_flag": "q_north_wales_w47_gossip_llanberis_started",
+   "steps": [
+    {
+     "flag": "q_north_wales_w47_gossip_llanberis_1",
+     "text": "Ask in Holyhead.",
+     "zone": "holyhead_home3",
+     "npc": "hh3_lad",
+     "line": "That old tale? It's true, but half of it, and the dull half. Ask over in Llangollen, they'll tell you the rest."
+    },
+    {
+     "flag": "q_north_wales_w47_gossip_llanberis_2",
+     "text": "Ask in Llangollen.",
+     "zone": "llangollen_home1",
+     "npc": "llh1_mam",
+     "line": "Oh, that. It was a swan, in the end. It's always a swan. Tell them it was a swan."
+    },
+    {
+     "flag": "q_north_wales_w47_gossip_llanberis_3",
+     "text": "Tell Llanberis the news.",
+     "zone": "llanberis_home1",
+     "npc": "lh1_mam",
+     "line": "A swan! I said it was a swan! Nobody listens. Here, you listened."
+    }
+   ],
+   "done_flag": "q_north_wales_w47_gossip_llanberis_done",
+   "reward": "Welsh Cake and £200.",
+   "reward_item": {
+    "item": "welsh_cake",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "llanberis_home1",
+    "npc": "lh1_mam",
+    "ask": "Duw, I've heard something about Holyhead, but I'd like it confirmed. Would you ask round? Pass it on gently.",
+    "accept": "Lovely. Whatever they say, I knew it already."
+   }
+  }
+ ]
+}

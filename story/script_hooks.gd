@@ -11,4 +11,6 @@ static func wrap(zone_id: String, npc_id: String, commands: Array, data: GameSta
 	out = Trumps.hook(zone_id, npc_id, out, data)
 	out = KeeperIntel.hook(zone_id, npc_id, out, data)
 	out = Poi.hook(zone_id, npc_id, out, data)  # wave 47 H: a resident mentions a place on the map
+	out = Wants.hook(zone_id, npc_id, out, data)  # w47 C: a resident's trade and front-room shop
+	out = Errands.hook(zone_id, npc_id, out, data)  # w47 C: errands
 	return out

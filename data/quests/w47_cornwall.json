@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_seeds_penzance",
+   "title": "Seeds for Trevenna's Cottage",
+   "region": "cornwall",
+   "town": "penzance",
+   "giver": "a resident of Engine House",
+   "summary": "A resident of Engine House has saved seed for a gardener in Trevenna's Cottage. Take it over and bring back the news.",
+   "start_flag": "q_cornwall_w47_seeds_penzance_started",
+   "steps": [
+    {
+     "flag": "q_cornwall_w47_seeds_penzance_1",
+     "text": "Deliver the seed to Trevenna's Cottage.",
+     "zone": "penzance_home1",
+     "npc": "penz_home1_mum",
+     "line": "Ah, her beans! I've been waiting all winter. Tell her I've a bed ready and a very smug cat."
+    },
+    {
+     "flag": "q_cornwall_w47_seeds_penzance_2",
+     "text": "Take the thanks back to Engine House.",
+     "zone": "penzance_engine",
+     "npc": "engine_keeper",
+     "line": "Pleased as punch, was she? Good. Now I'll not have to carry them myself next year."
+    }
+   ],
+   "done_flag": "q_cornwall_w47_seeds_penzance_done",
+   "reward": "Chippy Tea and £150.",
+   "reward_item": {
+    "item": "chippy_tea",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "penzance_engine",
+    "npc": "engine_keeper",
+    "ask": "Now then, I've saved a twist of seed for a fellow gardener in Trevenna's Cottage. It's no weight at all. Would you carry it?",
+    "accept": "Keep it dry. They're the best beans in the county, and I'll hear nothing against them."
+   }
+  },
+  {
+   "id": "w47_tune_penzance",
+   "title": "The Tune from Old Jory's Cottage",
+   "region": "cornwall",
+   "town": "penzance",
+   "giver": "a resident of Trevenna's Cottage",
+   "summary": "A resident of Trevenna's Cottage half remembers a tune. Find someone in Old Jory's Cottage who knows how it ends.",
+   "start_flag": "q_cornwall_w47_tune_penzance_started",
+   "steps": [
+    {
+     "flag": "q_cornwall_w47_tune_penzance_1",
+     "text": "Hum the tune in Old Jory's Cottage.",
+     "zone": "penzance_home3",
+     "npc": "penz_home3_jory",
+     "line": "Dum-de-dum-dum... oh, that's 'The Cobbler's Wife'. It ends on the same note it starts. Tell them."
+    },
+    {
+     "flag": "q_cornwall_w47_tune_penzance_2",
+     "text": "Take the ending back to Trevenna's Cottage.",
+     "zone": "penzance_home1",
+     "npc": "penz_home1_mum",
+     "line": "The same note! Of course it does! Thirty years I've been waiting. Thank you."
+    }
+   ],
+   "done_flag": "q_cornwall_w47_tune_penzance_done",
+   "reward": "Night Snare and £200.",
+   "reward_item": {
+    "item": "night_snare",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "penzance_home1",
+    "npc": "penz_home1_mum",
+    "ask": "Now then, I've a tune that stops halfway and it's driving me mad. Would you hum it to someone in Old Jory's Cottage? Someone musical.",
+    "accept": "Dum-de-dum-dum. That's it. That's all I've got."
+   }
+  }
+ ]
+}

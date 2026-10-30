@@ -1,0 +1,19 @@
+{
+ "trades": [
+  {
+   "id": "tr_st_helena_castle_seaweed",
+   "zone": "st_helena_castle",
+   "npc": "sth_secretary",
+   "wants": {
+    "item": "seaweed",
+    "n": 3
+   },
+   "gives": {
+    "money": 350
+   },
+   "ask": "Well, I've had a notion for Seaweed, three of them all week. £350 says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": true
+  }
+ ]
+}

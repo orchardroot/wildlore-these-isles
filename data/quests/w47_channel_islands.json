@@ -1,0 +1,42 @@
+{
+ "quests": [
+  {
+   "id": "w47_parcel_st_peter_port",
+   "title": "A Parcel for Sark",
+   "region": "channel_islands",
+   "town": "st_peter_port",
+   "giver": "a resident of St Peter Port",
+   "summary": "Carry a brown-paper parcel to a relative in Sark, then bring word back to St Peter Port.",
+   "start_flag": "q_channel_islands_w47_parcel_st_peter_port_started",
+   "steps": [
+    {
+     "flag": "q_channel_islands_w47_parcel_st_peter_port_1",
+     "text": "Take the parcel to Sark.",
+     "zone": "sark_prison",
+     "npc": "srk_constable",
+     "line": "Oh, from St Peter Port? That'll be my sister's doing. A cardigan, again. Tell her I'm wearing the last one."
+    },
+    {
+     "flag": "q_channel_islands_w47_parcel_st_peter_port_2",
+     "text": "Take the word back to St Peter Port.",
+     "zone": "st_peter_port_hauteville",
+     "npc": "spp_hugo_guide",
+     "line": "Oh, you've been! And she's wearing it? Well. That's me told, and a tea owed to you."
+    }
+   ],
+   "done_flag": "q_channel_islands_w47_parcel_st_peter_port_done",
+   "reward": "Northampton brogues and £150.",
+   "reward_item": {
+    "item": "northampton_brogues",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "st_peter_port_hauteville",
+    "npc": "spp_hugo_guide",
+    "ask": "Well, would you do me a kindness? There's a parcel here for my sister in Sark. It's only a cardigan and a lot of string.",
+    "accept": "Marvellous. Mind the string, it's load-bearing."
+   }
+  }
+ ]
+}

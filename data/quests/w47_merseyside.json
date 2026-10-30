@@ -1,0 +1,42 @@
+{
+ "quests": [
+  {
+   "id": "w47_parcel_liverpool",
+   "title": "A Parcel for Sailor's House",
+   "region": "merseyside",
+   "town": "liverpool",
+   "giver": "a resident of Scouse House",
+   "summary": "Carry a brown-paper parcel to a relative in Sailor's House, then bring word back to Scouse House.",
+   "start_flag": "q_merseyside_w47_parcel_liverpool_started",
+   "steps": [
+    {
+     "flag": "q_merseyside_w47_parcel_liverpool_1",
+     "text": "Take the parcel to Sailor's House.",
+     "zone": "liverpool_h2",
+     "npc": "liverpool_h2_0",
+     "line": "Oh, from Scouse House? That'll be my sister's doing. A cardigan, again. Tell her I'm wearing the last one."
+    },
+    {
+     "flag": "q_merseyside_w47_parcel_liverpool_2",
+     "text": "Take the word back to Scouse House.",
+     "zone": "liverpool_h1",
+     "npc": "liverpool_h1_0",
+     "line": "Oh, you've been! And she's wearing it? Well. That's me told, and a tea owed to you."
+    }
+   ],
+   "done_flag": "q_merseyside_w47_parcel_liverpool_done",
+   "reward": "Grey hoodie and £200.",
+   "reward_item": {
+    "item": "hoodie_grey",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "liverpool_h1",
+    "npc": "liverpool_h1_0",
+    "ask": "Alright, la, would you do me a kindness? There's a parcel here for my sister in Sailor's House. It's only a cardigan and a lot of string.",
+    "accept": "Marvellous. Mind the string, it's load-bearing."
+   }
+  }
+ ]
+}

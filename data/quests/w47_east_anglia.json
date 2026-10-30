@@ -1,0 +1,87 @@
+{
+ "quests": [
+  {
+   "id": "w47_recipe_cambridge",
+   "title": "The Secret Ingredient",
+   "region": "east_anglia",
+   "town": "cambridge",
+   "giver": "a resident of Cambridge",
+   "summary": "Find out what Norwich's best cook puts in the gravy, and report back to Cambridge.",
+   "start_flag": "q_east_anglia_w47_recipe_cambridge_started",
+   "steps": [
+    {
+     "flag": "q_east_anglia_w47_recipe_cambridge_1",
+     "text": "Ask the cook in Norwich.",
+     "zone": "norwich_carrow",
+     "npc": "carrow_kitman",
+     "line": "The gravy? A spoon of the strong tea, love. Don't tell anyone, they'll all be at it."
+    },
+    {
+     "flag": "q_east_anglia_w47_recipe_cambridge_2",
+     "text": "Take the secret back to Cambridge.",
+     "zone": "cambridge_home_a",
+     "npc": "cam_landlady",
+     "line": "Tea! In gravy! That's outrageous and it makes complete sense. Take this for your honesty."
+    }
+   ],
+   "done_flag": "q_east_anglia_w47_recipe_cambridge_done",
+   "reward": "Silver Snare and £150.",
+   "reward_item": {
+    "item": "silver_snare",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "cambridge_home_a",
+    "npc": "cam_landlady",
+    "ask": "Hello, I've been trying to copy a gravy from Norwich for a year. Would you ask the cook what's in it? Do it casually.",
+    "accept": "Casually. Right. Don't mention my name."
+   }
+  },
+  {
+   "id": "w47_gossip_norwich",
+   "title": "Three Houses and a Rumour",
+   "region": "east_anglia",
+   "town": "norwich",
+   "giver": "a resident of Norwich",
+   "summary": "Pass a rumour from Norwich to Cambridge, hear what Cambridge makes of it, and report back.",
+   "start_flag": "q_east_anglia_w47_gossip_norwich_started",
+   "steps": [
+    {
+     "flag": "q_east_anglia_w47_gossip_norwich_1",
+     "text": "Ask in Cambridge.",
+     "zone": "cambridge_home_a",
+     "npc": "cam_landlady",
+     "line": "That old tale? It's true, but half of it, and the dull half. Ask over in Cambridge, they'll tell you the rest."
+    },
+    {
+     "flag": "q_east_anglia_w47_gossip_norwich_2",
+     "text": "Ask in Cambridge.",
+     "zone": "cambridge_home_a",
+     "npc": "cam_landlady",
+     "line": "Oh, that. It was a swan, in the end. It's always a swan. Tell them it was a swan."
+    },
+    {
+     "flag": "q_east_anglia_w47_gossip_norwich_3",
+     "text": "Tell Norwich the news.",
+     "zone": "norwich_carrow",
+     "npc": "carrow_kitman",
+     "line": "A swan! I said it was a swan! Nobody listens. Here, you listened."
+    }
+   ],
+   "done_flag": "q_east_anglia_w47_gossip_norwich_done",
+   "reward": "Fid's Woolly Hat and £200.",
+   "reward_item": {
+    "item": "fids_hat",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "norwich_carrow",
+    "npc": "carrow_kitman",
+    "ask": "Hello, I've heard something about Cambridge, but I'd like it confirmed. Would you ask round? Pass it on gently.",
+    "accept": "Lovely. Whatever they say, I knew it already."
+   }
+  }
+ ]
+}

@@ -140,6 +140,13 @@ func load_zone(zone_id: String, pos: Vector2i, facing: String) -> void:
 ## Dev switch `--talk=radio[:n]`: the wireless reads Today's Walk as soon as the zone is ready, from line n (screenshots).
 func _dev_radio() -> void:
 	for a in DevArgs.user_args():
+		if a.begins_with("--talk=npc:"):  # `--talk=npc:<id>[:<item>=<n>]`: what the hooks add to a resident's chat, with some of an item in the bag
+			await get_tree().create_timer(0.8).timeout
+			var parts := a.split(":")
+			if parts.size() > 2:
+				Game.data.bag[parts[2].get_slice("=", 0)] = int(parts[2].get_slice("=", 1))
+			ScriptRunner.start(self, [], parts[1])  # no chat of their own: just what the hooks add
+			return
 		if a.begins_with("--talk=radio"):
 			await get_tree().create_timer(0.6).timeout
 			var lines := TodaysWalk.radio_lines(Game.data, Game.dex, Game.items)

@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_ferry_belfast",
+   "title": "Does the Cork Route Still Run?",
+   "region": "ireland",
+   "town": "belfast",
+   "giver": "a resident of Belfast",
+   "summary": "A resident of Belfast wants to know if the way to Cork is still open, and has not bothered to check.",
+   "start_flag": "q_ireland_w47_ferry_belfast_started",
+   "steps": [
+    {
+     "flag": "q_ireland_w47_ferry_belfast_1",
+     "text": "Ask a local in Cork about the road.",
+     "zone": "cork_home1",
+     "npc": "kelleher_nan",
+     "line": "Shut? Never. There was a sheep on it for a week, that's all. Tell them to come on up."
+    },
+    {
+     "flag": "q_ireland_w47_ferry_belfast_2",
+     "text": "Report back to Belfast.",
+     "zone": "belfast_home_lisburn",
+     "npc": "bel_home_mairead",
+     "line": "Open! And only a sheep. I'll ring round. Thank you, there's a little something for you."
+    }
+   ],
+   "done_flag": "q_ireland_w47_ferry_belfast_done",
+   "reward": "Night Snare and £300.",
+   "reward_item": {
+    "item": "night_snare",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "belfast_home_lisburn",
+    "npc": "bel_home_mairead",
+    "ask": "Look, someone said the way through to Cork is shut. I've a cousin there and I'd like to know. Could you look in?",
+    "accept": "You're a star. I'll put the kettle on for when you're back."
+   }
+  },
+  {
+   "id": "w47_weather_cork",
+   "title": "What's It Doing in Dublin?",
+   "region": "ireland",
+   "town": "cork",
+   "giver": "a resident of Cork",
+   "summary": "A resident of Cork is planning a trip and wants a straight answer on the weather in Dublin.",
+   "start_flag": "q_ireland_w47_weather_cork_started",
+   "steps": [
+    {
+     "flag": "q_ireland_w47_weather_cork_1",
+     "text": "Check the weather in Dublin.",
+     "zone": "dublin_home_green",
+     "npc": "dub_home_student",
+     "line": "The weather? Oh, it's four seasons before lunch. Tell them to bring a coat and a sense of humour."
+    },
+    {
+     "flag": "q_ireland_w47_weather_cork_2",
+     "text": "Report back to Cork.",
+     "zone": "cork_home1",
+     "npc": "kelleher_nan",
+     "line": "A coat and a sense of humour. I'll take both. That's the most useful forecast I've had all year."
+    }
+   ],
+   "done_flag": "q_ireland_w47_weather_cork_done",
+   "reward": "Limerick Ham and £150.",
+   "reward_item": {
+    "item": "limerick_ham",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "cork_home1",
+    "npc": "kelleher_nan",
+    "ask": "Look, I'm thinking of a day trip to Dublin but I don't trust the forecast. Would you go and look at the sky for me?",
+    "accept": "Look up. Report honestly. I'll dress accordingly."
+   }
+  }
+ ]
+}

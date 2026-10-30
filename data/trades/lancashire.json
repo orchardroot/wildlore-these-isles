@@ -1,0 +1,66 @@
+{
+ "trades": [
+  {
+   "id": "tr_blackpool_arcade_lancashire_hotpot",
+   "zone": "blackpool_arcade",
+   "npc": "bp_arcade_change",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "item": "paisley_scarf",
+    "n": 1
+   },
+   "ask": "Now then, I've had a notion for Lancashire Hotpot, just the one all week. A Paisley scarf says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_blackpool_bloomfield_whiting",
+   "zone": "blackpool_bloomfield",
+   "npc": "bfr_fan",
+   "wants": {
+    "item": "whiting",
+    "n": 2
+   },
+   "gives": {
+    "item": "sou_wester_yellow",
+    "n": 1
+   },
+   "ask": "Now then, my cupboard wants Whiting, two of them. I'll swap you a Sou'wester.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_blackpool_ballroom_leeks",
+   "zone": "blackpool_ballroom",
+   "npc": "ball_mc",
+   "wants": {
+    "item": "leeks",
+    "n": 2
+   },
+   "gives": {
+    "money": 250
+   },
+   "ask": "Hiya, Leeks, two of them, that's my whole wish list. £250 for your trouble.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_blackpool_chippy_nettles",
+   "zone": "blackpool_chippy",
+   "npc": "chippy_fryer",
+   "wants": {
+    "item": "nettles",
+    "n": 3
+   },
+   "gives": {
+    "money": 610
+   },
+   "ask": "Now then, bring me Nettles, three of them and £610 is yours. Fair's fair.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": false
+  }
+ ]
+}

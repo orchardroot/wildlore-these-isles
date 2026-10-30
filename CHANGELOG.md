@@ -24,6 +24,13 @@ Newest first. The README is the front page; this is the long memory.
   Bristol, York, Newcastle, Edinburgh, Inverness, Belfast, Dublin), each with four staples and regional books, three of
   which are out of stock in any given week. Collecting the full set means walking the whole map.
 - **Question marks on the map.** Around 170 places on the routes now wait to be found: a creature den (three wild fights, then something unusual living at the back), a poachers' camp with a strongbox, a standing stone that trains your lead and tells you about a real one, and hidden caches. Walk within six tiles, or hear a resident mention one, and a "?" appears on the map; finish it and it becomes a little picture of what it was.
+- **Residents want things.** About 150 people in homes across every region will swap you something for something: two
+  Bilberries for a teapot, a salmon for an iron snare. Talk to them with the goods in your bag and they offer the swap.
+  They ask once a day, so they don't nag.
+- **Errands.** Nearly forty small two and three step errands: a parcel to a sister in the next town, a cat gone to the
+  Sanctuary, whether the road is open or just has a sheep on it. They appear in the Quest Log.
+- **Front-room shops.** Forty-odd homes double as informal shops once you have chatted: jam, eggs off the back step,
+  knitwear, fly-tyers, a secondhand charm dealer, a man with rocks.
 
 ## What's new in 4.6: Dressed for the Weather
 

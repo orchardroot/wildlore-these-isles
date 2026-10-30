@@ -1,0 +1,65 @@
+{
+ "trades": [
+  {
+   "id": "tr_newgrange_home_cottage_onions",
+   "zone": "newgrange_home_cottage",
+   "npc": "ng_home_siobhan",
+   "wants": {
+    "item": "onions",
+    "n": 2
+   },
+   "gives": {
+    "money": 100
+   },
+   "ask": "Sure look, I'm after Onions, two of them. £100, if you can find it. I won't ask where you got it.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_boyne_mellifont_blackberries",
+   "zone": "boyne_mellifont",
+   "npc": "mellifont_warden",
+   "wants": {
+    "item": "blackberries",
+    "n": 2
+   },
+   "gives": {
+    "money": 240
+   },
+   "ask": "Ah now, it's Blackberries, two of them I'm short of. Help me out and £240 is yours.",
+   "thanks": "You're a love. Here.",
+   "repeat": true
+  },
+  {
+   "id": "tr_newgrange_home_dig_dublin_coddle",
+   "zone": "newgrange_home_dig",
+   "npc": "ng_home_digger",
+   "wants": {
+    "item": "dublin_coddle",
+    "n": 1
+   },
+   "gives": {
+    "money": 820
+   },
+   "ask": "Sure look, Dublin Coddle, just the one, that's my whole wish list. £820 for your trouble.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_newgrange_home_farm_pike",
+   "zone": "newgrange_home_farm",
+   "npc": "ng_home_farmer",
+   "wants": {
+    "item": "pike",
+    "n": 1
+   },
+   "gives": {
+    "item": "water_snare",
+    "n": 1
+   },
+   "ask": "Ah now, it's Pike, just the one I'm short of. Help me out and a Water Snare is yours.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  }
+ ]
+}

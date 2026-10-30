@@ -1,0 +1,129 @@
+{
+ "trades": [
+  {
+   "id": "tr_anglesey_cottage_sea_trout",
+   "zone": "anglesey_cottage",
+   "npc": "angcottage_nain",
+   "wants": {
+    "item": "sea_trout",
+    "n": 2
+   },
+   "gives": {
+    "item": "welsh_wool_shawl",
+    "n": 1
+   },
+   "ask": "Duw, I've had a notion for Sea Trout, two of them all week. A Welsh wool shawl says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_dee_lockkeeper_beetroot",
+   "zone": "dee_lockkeeper",
+   "npc": "lockkeeper_home",
+   "wants": {
+    "item": "beetroot",
+    "n": 4
+   },
+   "gives": {
+    "item": "shorts_khaki",
+    "n": 1
+   },
+   "ask": "Wel, do you happen to have Beetroot, four of them? I'll part with a pair of khaki shorts.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_holyhead_home3_nettles",
+   "zone": "holyhead_home3",
+   "npc": "hh3_lad",
+   "wants": {
+    "item": "nettles",
+    "n": 3
+   },
+   "gives": {
+    "money": 540
+   },
+   "ask": "Duw, I'd give £540 for Nettles, three of them.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_llanberis_home1_home_cawl",
+   "zone": "llanberis_home1",
+   "npc": "lh1_mam",
+   "wants": {
+    "item": "home_cawl",
+    "n": 1
+   },
+   "gives": {
+    "money": 440
+   },
+   "ask": "Wel, Home-made Cawl, just the one, that's my whole wish list. £440 for your trouble.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_llangollen_home1_sea_trout",
+   "zone": "llangollen_home1",
+   "npc": "llh1_mam",
+   "wants": {
+    "item": "sea_trout",
+    "n": 1
+   },
+   "gives": {
+    "item": "pleated_skirt",
+    "n": 1
+   },
+   "ask": "Wel, it's Sea Trout, just the one I'm short of. Help me out and a Pleated skirt is yours.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_ogwen_idwal_blackberries",
+   "zone": "ogwen_idwal",
+   "npc": "idwal_warden",
+   "wants": {
+    "item": "blackberries",
+    "n": 4
+   },
+   "gives": {
+    "item": "wellies_red",
+    "n": 1
+   },
+   "ask": "Duw, I've had a notion for Blackberries, four of them all week. A pair of red wellies says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_llanberis_home2_bobble_hat_red",
+   "zone": "llanberis_home2",
+   "npc": "lh2_dad",
+   "wants": {
+    "item": "bobble_hat_red",
+    "n": 1
+   },
+   "gives": {
+    "money": 190
+   },
+   "ask": "Duw, my cupboard wants Red bobble hat, just the one. I'll swap you £190.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_llangollen_home2_nettles",
+   "zone": "llangollen_home2",
+   "npc": "llh2_dad",
+   "wants": {
+    "item": "nettles",
+    "n": 5
+   },
+   "gives": {
+    "item": "tortoise_glasses",
+    "n": 1
+   },
+   "ask": "Duw, do you happen to have Nettles, five of them? I'll part with a pair of tortoiseshell glasses.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": false
+  }
+ ]
+}

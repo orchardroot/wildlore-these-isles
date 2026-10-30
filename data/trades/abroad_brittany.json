@@ -1,0 +1,20 @@
+{
+ "trades": [
+  {
+   "id": "tr_roscoff_church_sardine",
+   "zone": "roscoff_church",
+   "npc": "ros_sacristan",
+   "wants": {
+    "item": "sardine",
+    "n": 1
+   },
+   "gives": {
+    "item": "lanyard_badge",
+    "n": 1
+   },
+   "ask": "Now then, Sardine, just the one, that's my whole wish list. A Conference lanyard for your trouble.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_seeds_chester",
+   "title": "Seeds for Macclesfield",
+   "region": "cheshire",
+   "town": "chester",
+   "giver": "a resident of Chester",
+   "summary": "A resident of Chester has saved seed for a gardener in Macclesfield. Take it over and bring back the news.",
+   "start_flag": "q_cheshire_w47_seeds_chester_started",
+   "steps": [
+    {
+     "flag": "q_cheshire_w47_seeds_chester_1",
+     "text": "Deliver the seed to Macclesfield.",
+     "zone": "macc_h1",
+     "npc": "macc_h1_0",
+     "line": "Ah, her beans! I've been waiting all winter. Tell her I've a bed ready and a very smug cat."
+    },
+    {
+     "flag": "q_cheshire_w47_seeds_chester_2",
+     "text": "Take the thanks back to Chester.",
+     "zone": "chester_h1",
+     "npc": "chester_h1_0",
+     "line": "Pleased as punch, was she? Good. Now I'll not have to carry them myself next year."
+    }
+   ],
+   "done_flag": "q_cheshire_w47_seeds_chester_done",
+   "reward": "Lincoln Imp Pin and £300.",
+   "reward_item": {
+    "item": "lincoln_imp_pin",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "chester_h1",
+    "npc": "chester_h1_0",
+    "ask": "Ey up, I've saved a twist of seed for a fellow gardener in Macclesfield. It's no weight at all. Would you carry it?",
+    "accept": "Keep it dry. They're the best beans in the county, and I'll hear nothing against them."
+   }
+  },
+  {
+   "id": "w47_tune_macclesfield",
+   "title": "The Tune from Chester",
+   "region": "cheshire",
+   "town": "macclesfield",
+   "giver": "a resident of Macclesfield",
+   "summary": "A resident of Macclesfield half remembers a tune. Find someone in Chester who knows how it ends.",
+   "start_flag": "q_cheshire_w47_tune_macclesfield_started",
+   "steps": [
+    {
+     "flag": "q_cheshire_w47_tune_macclesfield_1",
+     "text": "Hum the tune in Chester.",
+     "zone": "chester_h1",
+     "npc": "chester_h1_0",
+     "line": "Dum-de-dum-dum... oh, that's 'The Cobbler's Wife'. It ends on the same note it starts. Tell them."
+    },
+    {
+     "flag": "q_cheshire_w47_tune_macclesfield_2",
+     "text": "Take the ending back to Macclesfield.",
+     "zone": "macc_h1",
+     "npc": "macc_h1_0",
+     "line": "The same note! Of course it does! Thirty years I've been waiting. Thank you."
+    }
+   ],
+   "done_flag": "q_cheshire_w47_tune_macclesfield_done",
+   "reward": "Chippy Tea and £300.",
+   "reward_item": {
+    "item": "chippy_tea",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "macc_h1",
+    "npc": "macc_h1_0",
+    "ask": "Ey up, I've a tune that stops halfway and it's driving me mad. Would you hum it to someone in Chester? Someone musical.",
+    "accept": "Dum-de-dum-dum. That's it. That's all I've got."
+   }
+  }
+ ]
+}

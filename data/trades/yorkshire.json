@@ -1,0 +1,128 @@
+{
+ "trades": [
+  {
+   "id": "tr_sheffield_home_ahmed_field_mushrooms",
+   "zone": "sheffield_home_ahmed",
+   "npc": "shfhome_ahmed",
+   "wants": {
+    "item": "field_mushrooms",
+    "n": 2
+   },
+   "gives": {
+    "item": "tortoise_glasses",
+    "n": 1
+   },
+   "ask": "Now then, I'd give a pair of tortoiseshell glasses for Field Mushrooms, two of them.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_whitby_flowergate_home_yorkshire_pudding",
+   "zone": "whitby_flowergate",
+   "npc": "flowergate_lass",
+   "wants": {
+    "item": "home_yorkshire_pudding",
+    "n": 1
+   },
+   "gives": {
+    "item": "apron_butcher",
+    "n": 1
+   },
+   "ask": "Now then, I'd give a Striped apron for Home-made Yorkshire Pudding, just the one.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_york_house_a_haddock",
+   "zone": "york_house_a",
+   "npc": "house_a_resident",
+   "wants": {
+    "item": "haddock",
+    "n": 2
+   },
+   "gives": {
+    "money": 730
+   },
+   "ask": "Eh up, it's Haddock, two of them I'm short of. Help me out and £730 is yours.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_sheffield_home_doreen_parsnips",
+   "zone": "sheffield_home_doreen",
+   "npc": "shfhome_doreen",
+   "wants": {
+    "item": "parsnips",
+    "n": 2
+   },
+   "gives": {
+    "item": "field_notebook",
+    "n": 1
+   },
+   "ask": "Now then, I'd give a Field notebook for Parsnips, two of them.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_whitby_henrietta_rhubarb",
+   "zone": "whitby_henrietta",
+   "npc": "henrietta_resident",
+   "wants": {
+    "item": "rhubarb",
+    "n": 3
+   },
+   "gives": {
+    "money": 460
+   },
+   "ask": "Eh up, it's Rhubarb, three of them I'm short of. Help me out and £460 is yours.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": true
+  },
+  {
+   "id": "tr_york_house_b_home_yorkshire_pudding",
+   "zone": "york_house_b",
+   "npc": "house_b_resident",
+   "wants": {
+    "item": "home_yorkshire_pudding",
+    "n": 1
+   },
+   "gives": {
+    "money": 370
+   },
+   "ask": "Eh up, do you happen to have Home-made Yorkshire Pudding, just the one? I'll part with £370.",
+   "thanks": "Champion. That's exactly the thing.",
+   "repeat": false
+  },
+  {
+   "id": "tr_sheffield_home_eze_cod",
+   "zone": "sheffield_home_eze",
+   "npc": "shfhome_eze",
+   "wants": {
+    "item": "cod",
+    "n": 1
+   },
+   "gives": {
+    "item": "wellies_navy",
+    "n": 1
+   },
+   "ask": "Eh up, I've had a notion for Cod, just the one all week. A pair of navy wellies says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_york_house_c_wolds_flint",
+   "zone": "york_house_c",
+   "npc": "house_c_resident",
+   "wants": {
+    "item": "wolds_flint",
+    "n": 3
+   },
+   "gives": {
+    "money": 380
+   },
+   "ask": "Eh up, my cupboard wants Wolds Flint, three of them. I'll swap you £380.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": true
+  }
+ ]
+}

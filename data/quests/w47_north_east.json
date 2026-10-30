@@ -1,0 +1,42 @@
+{
+ "quests": [
+  {
+   "id": "w47_parcel_newcastle",
+   "title": "A Parcel for Bigg Market Deli",
+   "region": "north_east",
+   "town": "newcastle",
+   "giver": "a resident of BALTIC Centre for Contemporary Art",
+   "summary": "Carry a brown-paper parcel to a relative in Bigg Market Deli, then bring word back to BALTIC Centre for Contemporary Art.",
+   "start_flag": "q_north_east_w47_parcel_newcastle_started",
+   "steps": [
+    {
+     "flag": "q_north_east_w47_parcel_newcastle_1",
+     "text": "Take the parcel to Bigg Market Deli.",
+     "zone": "newcastle_bigg",
+     "npc": "bigg_baker",
+     "line": "Oh, from BALTIC Centre for Contemporary Art? That'll be my sister's doing. A cardigan, again. Tell her I'm wearing the last one."
+    },
+    {
+     "flag": "q_north_east_w47_parcel_newcastle_2",
+     "text": "Take the word back to BALTIC Centre for Contemporary Art.",
+     "zone": "newcastle_baltic",
+     "npc": "gallery_host",
+     "line": "Oh, you've been! And she's wearing it? Well. That's me told, and a tea owed to you."
+    }
+   ],
+   "done_flag": "q_north_east_w47_parcel_newcastle_done",
+   "reward": "Cord trousers and £100.",
+   "reward_item": {
+    "item": "cord_trousers",
+    "n": 1
+   },
+   "reward_money": 100,
+   "start": {
+    "zone": "newcastle_baltic",
+    "npc": "gallery_host",
+    "ask": "Alright pet, would you do me a kindness? There's a parcel here for my sister in Bigg Market Deli. It's only a cardigan and a lot of string.",
+    "accept": "Marvellous. Mind the string, it's load-bearing."
+   }
+  }
+ ]
+}

@@ -1,0 +1,156 @@
+{
+ "quests": [
+  {
+   "id": "w47_weather_aberdeen",
+   "title": "What's It Doing in Cairnryan?",
+   "region": "scotland",
+   "town": "aberdeen",
+   "giver": "a resident of Aberdeen",
+   "summary": "A resident of Aberdeen is planning a trip and wants a straight answer on the weather in Cairnryan.",
+   "start_flag": "q_scotland_w47_weather_aberdeen_started",
+   "steps": [
+    {
+     "flag": "q_scotland_w47_weather_aberdeen_1",
+     "text": "Check the weather in Cairnryan.",
+     "zone": "cairnryan_home_a",
+     "npc": "cairnryan_home_a_morag",
+     "line": "The weather? Oh, it's four seasons before lunch. Tell them to bring a coat and a sense of humour."
+    },
+    {
+     "flag": "q_scotland_w47_weather_aberdeen_2",
+     "text": "Report back to Aberdeen.",
+     "zone": "aberdeen_home_a",
+     "npc": "abdn_home_a_quine",
+     "line": "A coat and a sense of humour. I'll take both. That's the most useful forecast I've had all year."
+    }
+   ],
+   "done_flag": "q_scotland_w47_weather_aberdeen_done",
+   "reward": "Ceilidh Shortbread and £150.",
+   "reward_item": {
+    "item": "ceilidh_shortbread",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "aberdeen_home_a",
+    "npc": "abdn_home_a_quine",
+    "ask": "Aye, I'm thinking of a day trip to Cairnryan but I don't trust the forecast. Would you go and look at the sky for me?",
+    "accept": "Look up. Report honestly. I'll dress accordingly."
+   }
+  },
+  {
+   "id": "w47_parcel_cairnryan",
+   "title": "A Parcel for Fort William",
+   "region": "scotland",
+   "town": "cairnryan",
+   "giver": "a resident of Cairnryan",
+   "summary": "Carry a brown-paper parcel to a relative in Fort William, then bring word back to Cairnryan.",
+   "start_flag": "q_scotland_w47_parcel_cairnryan_started",
+   "steps": [
+    {
+     "flag": "q_scotland_w47_parcel_cairnryan_1",
+     "text": "Take the parcel to Fort William.",
+     "zone": "fw_home_a",
+     "npc": "fw_home_a_woman",
+     "line": "Oh, from Cairnryan? That'll be my sister's doing. A cardigan, again. Tell her I'm wearing the last one."
+    },
+    {
+     "flag": "q_scotland_w47_parcel_cairnryan_2",
+     "text": "Take the word back to Cairnryan.",
+     "zone": "cairnryan_home_a",
+     "npc": "cairnryan_home_a_morag",
+     "line": "Oh, you've been! And she's wearing it? Well. That's me told, and a tea owed to you."
+    }
+   ],
+   "done_flag": "q_scotland_w47_parcel_cairnryan_done",
+   "reward": "Iron Snare and £300.",
+   "reward_item": {
+    "item": "iron_snare",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "cairnryan_home_a",
+    "npc": "cairnryan_home_a_morag",
+    "ask": "Aye, would you do me a kindness? There's a parcel here for my sister in Fort William. It's only a cardigan and a lot of string.",
+    "accept": "Marvellous. Mind the string, it's load-bearing."
+   }
+  },
+  {
+   "id": "w47_book_edinburgh",
+   "title": "An Overdue Book",
+   "region": "scotland",
+   "town": "edinburgh",
+   "giver": "a resident of Edinburgh",
+   "summary": "Return a library book that has wandered a long way, and tell the owner in Edinburgh it has gone home.",
+   "start_flag": "q_scotland_w47_book_edinburgh_started",
+   "steps": [
+    {
+     "flag": "q_scotland_w47_book_edinburgh_1",
+     "text": "Return the book in Inverness.",
+     "zone": "inverness_home_a",
+     "npc": "inv_home_a_mum",
+     "line": "Eleven years! We'd given it up for the Great Fire. There's no fine, but there is a look."
+    },
+    {
+     "flag": "q_scotland_w47_book_edinburgh_2",
+     "text": "Tell Edinburgh it has gone back.",
+     "zone": "edinburgh_home_a",
+     "npc": "edinburgh_home_a_mrshenderson",
+     "line": "Gone back, and no fine? I'll leave the house with my head up. Here, for your trouble."
+    }
+   ],
+   "done_flag": "q_scotland_w47_book_edinburgh_done",
+   "reward": "Deerstalker and £300.",
+   "reward_item": {
+    "item": "deerstalker_tweed",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "edinburgh_home_a",
+    "npc": "edinburgh_home_a_mrshenderson",
+    "ask": "Aye, this book is eleven years overdue and I've gone off the idea of walking it back. Could you take it to Inverness?",
+    "accept": "Say it's from a friend. Say it was lost in a flood. Say anything."
+   }
+  },
+  {
+   "id": "w47_seeds_fort_william",
+   "title": "Seeds for Lerwick",
+   "region": "scotland",
+   "town": "fort_william",
+   "giver": "a resident of Fort William",
+   "summary": "A resident of Fort William has saved seed for a gardener in Lerwick. Take it over and bring back the news.",
+   "start_flag": "q_scotland_w47_seeds_fort_william_started",
+   "steps": [
+    {
+     "flag": "q_scotland_w47_seeds_fort_william_1",
+     "text": "Deliver the seed to Lerwick.",
+     "zone": "lerwick_home_a",
+     "npc": "ls_fiddler_home",
+     "line": "Ah, her beans! I've been waiting all winter. Tell her I've a bed ready and a very smug cat."
+    },
+    {
+     "flag": "q_scotland_w47_seeds_fort_william_2",
+     "text": "Take the thanks back to Fort William.",
+     "zone": "fw_home_a",
+     "npc": "fw_home_a_woman",
+     "line": "Pleased as punch, was she? Good. Now I'll not have to carry them myself next year."
+    }
+   ],
+   "done_flag": "q_scotland_w47_seeds_fort_william_done",
+   "reward": "Groatie Buckie and £150.",
+   "reward_item": {
+    "item": "groatie_buckie",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "fw_home_a",
+    "npc": "fw_home_a_woman",
+    "ask": "Aye, I've saved a twist of seed for a fellow gardener in Lerwick. It's no weight at all. Would you carry it?",
+    "accept": "Keep it dry. They're the best beans in the county, and I'll hear nothing against them."
+   }
+  }
+ ]
+}
