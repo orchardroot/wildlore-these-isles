@@ -438,6 +438,8 @@ class Plate extends PanelContainer:
 		sex_m.set_sex(c.sex, sex_px)
 		level_l.text = "Lv %d" % c.level
 		hp_max = float(c.max_hp())
+		if _hp_tween and _hp_tween.is_valid():
+			_hp_tween.kill()  # a drain still running for the creature that left would overwrite the new one's HP
 		hp_shown = float(c.hp)
 		_sync_hp()
 		set_status(c.status)
