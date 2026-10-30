@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_ferry_dingle",
+   "title": "Does the Galway Route Still Run?",
+   "region": "ireland_west",
+   "town": "dingle",
+   "giver": "a resident of Dingle",
+   "summary": "A resident of Dingle wants to know if the way to Galway is still open, and has not bothered to check.",
+   "start_flag": "q_ireland_west_w47_ferry_dingle_started",
+   "steps": [
+    {
+     "flag": "q_ireland_west_w47_ferry_dingle_1",
+     "text": "Ask a local in Galway about the road.",
+     "zone": "galway_home_arch",
+     "npc": "home_arch_dad",
+     "line": "Shut? Never. There was a sheep on it for a week, that's all. Tell them to come on up."
+    },
+    {
+     "flag": "q_ireland_west_w47_ferry_dingle_2",
+     "text": "Report back to Dingle.",
+     "zone": "dingle_home1",
+     "npc": "osullivan_ma",
+     "line": "Open! And only a sheep. I'll ring round. Thank you, there's a little something for you."
+    }
+   ],
+   "done_flag": "q_ireland_west_w47_ferry_dingle_done",
+   "reward": "Limerick Ham and £200.",
+   "reward_item": {
+    "item": "limerick_ham",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "dingle_home1",
+    "npc": "osullivan_ma",
+    "ask": "Ah sure, someone said the way through to Galway is shut. I've a cousin there and I'd like to know. Could you look in?",
+    "accept": "You're a star. I'll put the kettle on for when you're back."
+   }
+  },
+  {
+   "id": "w47_weather_galway",
+   "title": "What's It Doing in Sligo?",
+   "region": "ireland_west",
+   "town": "galway",
+   "giver": "a resident of Galway",
+   "summary": "A resident of Galway is planning a trip and wants a straight answer on the weather in Sligo.",
+   "start_flag": "q_ireland_west_w47_weather_galway_started",
+   "steps": [
+    {
+     "flag": "q_ireland_west_w47_weather_galway_1",
+     "text": "Check the weather in Sligo.",
+     "zone": "sligo_home_strand",
+     "npc": "home_sligo_nana",
+     "line": "The weather? Oh, it's four seasons before lunch. Tell them to bring a coat and a sense of humour."
+    },
+    {
+     "flag": "q_ireland_west_w47_weather_galway_2",
+     "text": "Report back to Galway.",
+     "zone": "galway_home_arch",
+     "npc": "home_arch_dad",
+     "line": "A coat and a sense of humour. I'll take both. That's the most useful forecast I've had all year."
+    }
+   ],
+   "done_flag": "q_ireland_west_w47_weather_galway_done",
+   "reward": "Belfast linen shirt and £200.",
+   "reward_item": {
+    "item": "belfast_linen_shirt",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "galway_home_arch",
+    "npc": "home_arch_dad",
+    "ask": "Ah sure, I'm thinking of a day trip to Sligo but I don't trust the forecast. Would you go and look at the sky for me?",
+    "accept": "Look up. Report honestly. I'll dress accordingly."
+   }
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "quests": [
+  {
+   "id": "w47_card_aberystwyth",
+   "title": "A Card by Hand",
+   "region": "mid_wales",
+   "town": "aberystwyth",
+   "giver": "a resident of Student Digs",
+   "summary": "Take a birthday card to Pier Street House in time, since the post is no use, and hear how it landed.",
+   "start_flag": "q_mid_wales_w47_card_aberystwyth_started",
+   "steps": [
+    {
+     "flag": "q_mid_wales_w47_card_aberystwyth_1",
+     "text": "Deliver the card in Pier Street House.",
+     "zone": "aberystwyth_home_pier",
+     "npc": "pierst_nain",
+     "line": "A card! In this weather! Tell them I'm touched, and that they still can't spell my name."
+    },
+    {
+     "flag": "q_mid_wales_w47_card_aberystwyth_2",
+     "text": "Take the reply back to Student Digs.",
+     "zone": "aberystwyth_home_digs",
+     "npc": "digs_student",
+     "line": "She said that? Ha. Right, I'll write back. Meanwhile, this is for you."
+    }
+   ],
+   "done_flag": "q_mid_wales_w47_card_aberystwyth_done",
+   "reward": "Iron Snare and £150.",
+   "reward_item": {
+    "item": "iron_snare",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "aberystwyth_home_digs",
+    "npc": "digs_student",
+    "ask": "Wel, it's a birthday card for my old mate in Pier Street House, and the post would take a fortnight. Would you hand it over?",
+    "accept": "Tell her it's from the best-looking person in Student Digs. She'll know it's me."
+   }
+  }
+ ]
+}

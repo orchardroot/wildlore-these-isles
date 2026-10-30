@@ -46,6 +46,8 @@ func _initialize() -> void:
 	errors.append_array(Timezones.validate(func(r): return regions.has(r)))  # data/timezones.json: zones and regions line up
 	errors.append_array(Leases.problems(zones, dex))  # data/leases: anchors, cul-de-sac zones, rewild blocks, letters
 	errors.append_array(Looks.check(items_db))  # data/items/wear.json deltas the painter can draw; data/looks.json
+	errors.append_array(Wants.check(zones, items_db))  # w47 C: data/trades residents, wants, front-room shops
+	errors.append_array(Errands.check(zones, items_db))  # w47 C: errand npcs and rewards
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
 	for e in errors:

@@ -1,0 +1,19 @@
+{
+ "trades": [
+  {
+   "id": "tr_bermuda_caves_seaweed",
+   "zone": "bermuda_caves",
+   "npc": "bm_caver",
+   "wants": {
+    "item": "seaweed",
+    "n": 3
+   },
+   "gives": {
+    "money": 310
+   },
+   "ask": "Now then, my cupboard wants Seaweed, three of them. I'll swap you £310.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  }
+ ]
+}

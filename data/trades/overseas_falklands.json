@@ -1,0 +1,20 @@
+{
+ "trades": [
+  {
+   "id": "tr_falklands_cathedral_seaweed",
+   "zone": "falklands_cathedral",
+   "npc": "fal_verger",
+   "wants": {
+    "item": "seaweed",
+    "n": 4
+   },
+   "gives": {
+    "item": "wellies_navy",
+    "n": 1
+   },
+   "ask": "Now then, one day I'll stop running out of seaweed. Until then, a pair of navy wellies for Seaweed, four of them.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": false
+  }
+ ]
+}

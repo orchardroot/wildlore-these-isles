@@ -220,6 +220,7 @@ static func all_settable() -> Dictionary:
 			for r in s.get("rewards", []):
 				if r is Array:
 					extra.append(r)
+	extra.append(Errands.settable_commands())  # w47 C: errand flags are set in code
 	return settable_flags(StoryData.all_dialogue(), raw_zones(), extra)
 
 ## Flags something in the data sets: `set`, a choice's or relearn's or quiz's `set`, a legend's or gauntlet's

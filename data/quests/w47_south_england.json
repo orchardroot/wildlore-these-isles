@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_seeds_bath",
+   "title": "Seeds for Bristol",
+   "region": "south_england",
+   "town": "bath",
+   "giver": "a resident of Bath",
+   "summary": "A resident of Bath has saved seed for a gardener in Bristol. Take it over and bring back the news.",
+   "start_flag": "q_south_england_w47_seeds_bath_started",
+   "steps": [
+    {
+     "flag": "q_south_england_w47_seeds_bath_1",
+     "text": "Deliver the seed to Bristol.",
+     "zone": "bristol_trow",
+     "npc": "trow_landlord",
+     "line": "Ah, her beans! I've been waiting all winter. Tell her I've a bed ready and a very smug cat."
+    },
+    {
+     "flag": "q_south_england_w47_seeds_bath_2",
+     "text": "Take the thanks back to Bath.",
+     "zone": "bath_home2",
+     "npc": "bath_home2_stargazer",
+     "line": "Pleased as punch, was she? Good. Now I'll not have to carry them myself next year."
+    }
+   ],
+   "done_flag": "q_south_england_w47_seeds_bath_done",
+   "reward": "Somerset Cider and £300.",
+   "reward_item": {
+    "item": "bristol_cider",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "bath_home2",
+    "npc": "bath_home2_stargazer",
+    "ask": "Right, I've saved a twist of seed for a fellow gardener in Bristol. It's no weight at all. Would you carry it?",
+    "accept": "Keep it dry. They're the best beans in the county, and I'll hear nothing against them."
+   }
+  },
+  {
+   "id": "w47_tune_bristol",
+   "title": "The Tune from Glastonbury",
+   "region": "south_england",
+   "town": "bristol",
+   "giver": "a resident of Bristol",
+   "summary": "A resident of Bristol half remembers a tune. Find someone in Glastonbury who knows how it ends.",
+   "start_flag": "q_south_england_w47_tune_bristol_started",
+   "steps": [
+    {
+     "flag": "q_south_england_w47_tune_bristol_1",
+     "text": "Hum the tune in Glastonbury.",
+     "zone": "glastonbury_home1",
+     "npc": "glaston_home1_gran",
+     "line": "Dum-de-dum-dum... oh, that's 'The Cobbler's Wife'. It ends on the same note it starts. Tell them."
+    },
+    {
+     "flag": "q_south_england_w47_tune_bristol_2",
+     "text": "Take the ending back to Bristol.",
+     "zone": "bristol_trow",
+     "npc": "trow_landlord",
+     "line": "The same note! Of course it does! Thirty years I've been waiting. Thank you."
+    }
+   ],
+   "done_flag": "q_south_england_w47_tune_bristol_done",
+   "reward": "Water Snare and £100.",
+   "reward_item": {
+    "item": "water_snare",
+    "n": 1
+   },
+   "reward_money": 100,
+   "start": {
+    "zone": "bristol_trow",
+    "npc": "trow_landlord",
+    "ask": "Right, I've a tune that stops halfway and it's driving me mad. Would you hum it to someone in Glastonbury? Someone musical.",
+    "accept": "Dum-de-dum-dum. That's it. That's all I've got."
+   }
+  }
+ ]
+}

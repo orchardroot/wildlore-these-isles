@@ -1,0 +1,131 @@
+{
+ "trades": [
+  {
+   "id": "tr_chester_h1_lanyard_badge",
+   "zone": "chester_h1",
+   "npc": "chester_h1_0",
+   "wants": {
+    "item": "lanyard_badge",
+    "n": 1
+   },
+   "gives": {
+    "item": "headscarf_tartan",
+    "n": 1
+   },
+   "ask": "Ey up, I'd give a Headscarf for Conference lanyard, just the one.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_macc_h1_potatoes",
+   "zone": "macc_h1",
+   "npc": "macc_h1_0",
+   "wants": {
+    "item": "potatoes",
+    "n": 4
+   },
+   "gives": {
+    "money": 100
+   },
+   "ask": "Now then, I'd give £100 for Potatoes, four of them.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_wirral_boathouse_lancashire_hotpot",
+   "zone": "wirral_boathouse",
+   "npc": "wirral_boathouse_0",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "item": "iron_snare",
+    "n": 1
+   },
+   "ask": "Ey up, I'm after Lancashire Hotpot, just the one. An Iron Snare, if you can find it. I won't ask where you got it.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_chester_h2_brown_trout",
+   "zone": "chester_h2",
+   "npc": "chester_h2_0",
+   "wants": {
+    "item": "brown_trout",
+    "n": 1
+   },
+   "gives": {
+    "item": "cheese_rosette",
+    "n": 1
+   },
+   "ask": "Ey up, one day I'll stop running out of brown trout. Until then, a Cheshire cheese rosette for Brown Trout, just the one.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_macc_h2_parsnips",
+   "zone": "macc_h2",
+   "npc": "macc_h2_0",
+   "wants": {
+    "item": "parsnips",
+    "n": 3
+   },
+   "gives": {
+    "item": "scarf_blue",
+    "n": 1
+   },
+   "ask": "Now then, one day I'll stop running out of parsnips. Until then, a Blue football scarf for Parsnips, three of them.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": false
+  },
+  {
+   "id": "tr_wirral_h1_field_mushrooms",
+   "zone": "wirral_h1",
+   "npc": "wirral_h1_0",
+   "wants": {
+    "item": "field_mushrooms",
+    "n": 3
+   },
+   "gives": {
+    "item": "hard_hat_yellow",
+    "n": 1
+   },
+   "ask": "Now then, Field Mushrooms, three of them, that's my whole wish list. A Hard hat for your trouble.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_chester_h3_lancashire_hotpot",
+   "zone": "chester_h3",
+   "npc": "chester_h3_0",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "item": "round_glasses",
+    "n": 1
+   },
+   "ask": "Ey up, it's Lancashire Hotpot, just the one I'm short of. Help me out and a pair of round glasses is yours.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_macc_h3_roach",
+   "zone": "macc_h3",
+   "npc": "macc_h3_0",
+   "wants": {
+    "item": "roach",
+    "n": 2
+   },
+   "gives": {
+    "item": "lancashire_clogs",
+    "n": 1
+   },
+   "ask": "Now then, it's Roach, two of them I'm short of. Help me out and a pair of lancashire clogs is yours.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  }
+ ]
+}

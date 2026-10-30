@@ -1,0 +1,112 @@
+{
+ "trades": [
+  {
+   "id": "tr_carlisle_home_armstrong_blackberries",
+   "zone": "carlisle_home_armstrong",
+   "npc": "arm_mum",
+   "wants": {
+    "item": "blackberries",
+    "n": 3
+   },
+   "gives": {
+    "money": 320
+   },
+   "ask": "Aye, my cupboard wants Blackberries, three of them. I'll swap you £320.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": true
+  },
+  {
+   "id": "tr_keswick_home_armstrong_headscarf_tartan",
+   "zone": "keswick_home_armstrong",
+   "npc": "keshome_armstrong",
+   "wants": {
+    "item": "headscarf_tartan",
+    "n": 1
+   },
+   "gives": {
+    "money": 430
+   },
+   "ask": "Now then, bring me Headscarf, just the one and £430 is yours. Fair's fair.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_lancaster_home_birkett_sheep_wool",
+   "zone": "lancaster_home_birkett",
+   "npc": "lanhome_birkett",
+   "wants": {
+    "item": "sheep_wool",
+    "n": 3
+   },
+   "gives": {
+    "item": "scarf_blue",
+    "n": 1
+   },
+   "ask": "Aye, it's Sheep Wool, three of them I'm short of. Help me out and a Blue football scarf is yours.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_carlisle_home_graham_home_cumberland_sausage",
+   "zone": "carlisle_home_graham",
+   "npc": "gra_dad",
+   "wants": {
+    "item": "home_cumberland_sausage",
+    "n": 1
+   },
+   "gives": {
+    "item": "lancashire_clogs",
+    "n": 1
+   },
+   "ask": "Aye, one day I'll stop running out of home-made cumberland sausage. Until then, a pair of lancashire clogs for Home-made Cumberland Sausage, just the one.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_keswick_home_nicholson_brown_trout",
+   "zone": "keswick_home_nicholson",
+   "npc": "keshome_nicholson",
+   "wants": {
+    "item": "brown_trout",
+    "n": 1
+   },
+   "gives": {
+    "money": 300
+   },
+   "ask": "Now then, Brown Trout, just the one, that's my whole wish list. £300 for your trouble.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_lancaster_home_dewhurst_parsnips",
+   "zone": "lancaster_home_dewhurst",
+   "npc": "lanhome_dewhurst",
+   "wants": {
+    "item": "parsnips",
+    "n": 4
+   },
+   "gives": {
+    "money": 330
+   },
+   "ask": "Now then, it's Parsnips, four of them I'm short of. Help me out and £330 is yours.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_keswick_home_tyson_hawthorn_berry",
+   "zone": "keswick_home_tyson",
+   "npc": "keshome_tyson",
+   "wants": {
+    "item": "hawthorn_berry",
+    "n": 5
+   },
+   "gives": {
+    "item": "water_snare",
+    "n": 1
+   },
+   "ask": "Now then, I've had a notion for Hawthorn Berries, five of them all week. A Water Snare says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  }
+ ]
+}

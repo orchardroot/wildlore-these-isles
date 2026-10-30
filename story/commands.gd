@@ -153,6 +153,11 @@ func _exec(c: Dictionary) -> void:
 			await host.wait(float(c.get("seconds", 0.5)))
 		"warp":
 			await host.warp(str(c.get("zone", "")), int(c.get("x", 0)), int(c.get("y", 0)), str(c.get("facing", "down")))
+		"trade":  # w47 C: a resident's swap or an errand's reward (core/wants.gd)
+			var tl := Wants.apply(data, c)
+			if tl != "":
+				await host.sfx("item")
+				await host.say("", tl)
 		"shop":
 			await host.open_menu("shop:" + str(c.get("id", "")))
 		"wardrobe":  # the Wardrobe (ui/wardrobe_screen.gd); {"mirror": true} at a mirror, where hair is free to change

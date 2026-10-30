@@ -1,0 +1,67 @@
+{
+ "trades": [
+  {
+   "id": "tr_douglas_home1_rhubarb",
+   "zone": "douglas_home1",
+   "npc": "dou_home1_quayle",
+   "wants": {
+    "item": "rhubarb",
+    "n": 4
+   },
+   "gives": {
+    "item": "chippy_tea",
+    "n": 1
+   },
+   "ask": "Well, my cupboard wants Rhubarb, four of them. I'll swap you a Chippy Tea.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_douglas_home2_seaweed",
+   "zone": "douglas_home2",
+   "npc": "dou_home2_tom",
+   "wants": {
+    "item": "seaweed",
+    "n": 5
+   },
+   "gives": {
+    "item": "black_brolly",
+    "n": 1
+   },
+   "ask": "Well, I've had a notion for Seaweed, five of them all week. A Black umbrella says you'll oblige.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_douglas_home3_lancashire_hotpot",
+   "zone": "douglas_home3",
+   "npc": "dou_home3_jo",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "item": "black_shoes",
+    "n": 1
+   },
+   "ask": "Well, one day I'll stop running out of lancashire hotpot. Until then, a pair of black school shoes for Lancashire Hotpot, just the one.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_douglas_gaiety_mackerel",
+   "zone": "douglas_gaiety",
+   "npc": "keeper",
+   "wants": {
+    "item": "mackerel",
+    "n": 2
+   },
+   "gives": {
+    "money": 270
+   },
+   "ask": "Moghrey mie, my cupboard wants Mackerel, two of them. I'll swap you £270.",
+   "thanks": "Champion. That's exactly the thing.",
+   "repeat": false
+  }
+ ]
+}

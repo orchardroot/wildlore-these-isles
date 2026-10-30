@@ -1,0 +1,87 @@
+{
+ "quests": [
+  {
+   "id": "w47_gossip_carlisle",
+   "title": "Three Houses and a Rumour",
+   "region": "cumbria",
+   "town": "carlisle",
+   "giver": "a resident of Carlisle",
+   "summary": "Pass a rumour from Carlisle to Keswick, hear what Lancaster makes of it, and report back.",
+   "start_flag": "q_cumbria_w47_gossip_carlisle_started",
+   "steps": [
+    {
+     "flag": "q_cumbria_w47_gossip_carlisle_1",
+     "text": "Ask in Keswick.",
+     "zone": "keswick_home_armstrong",
+     "npc": "keshome_armstrong",
+     "line": "That old tale? It's true, but half of it, and the dull half. Ask over in Lancaster, they'll tell you the rest."
+    },
+    {
+     "flag": "q_cumbria_w47_gossip_carlisle_2",
+     "text": "Ask in Lancaster.",
+     "zone": "lancaster_home_birkett",
+     "npc": "lanhome_birkett",
+     "line": "Oh, that. It was a swan, in the end. It's always a swan. Tell them it was a swan."
+    },
+    {
+     "flag": "q_cumbria_w47_gossip_carlisle_3",
+     "text": "Tell Carlisle the news.",
+     "zone": "carlisle_home_armstrong",
+     "npc": "arm_mum",
+     "line": "A swan! I said it was a swan! Nobody listens. Here, you listened."
+    }
+   ],
+   "done_flag": "q_cumbria_w47_gossip_carlisle_done",
+   "reward": "St Nick's Pie and £150.",
+   "reward_item": {
+    "item": "market_pie",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "carlisle_home_armstrong",
+    "npc": "arm_mum",
+    "ask": "Aye, I've heard something about Keswick, but I'd like it confirmed. Would you ask round? Pass it on gently.",
+    "accept": "Lovely. Whatever they say, I knew it already."
+   }
+  },
+  {
+   "id": "w47_card_keswick",
+   "title": "A Card by Hand",
+   "region": "cumbria",
+   "town": "keswick",
+   "giver": "a resident of Keswick",
+   "summary": "Take a birthday card to Carlisle in time, since the post is no use, and hear how it landed.",
+   "start_flag": "q_cumbria_w47_card_keswick_started",
+   "steps": [
+    {
+     "flag": "q_cumbria_w47_card_keswick_1",
+     "text": "Deliver the card in Carlisle.",
+     "zone": "carlisle_home_armstrong",
+     "npc": "arm_mum",
+     "line": "A card! In this weather! Tell them I'm touched, and that they still can't spell my name."
+    },
+    {
+     "flag": "q_cumbria_w47_card_keswick_2",
+     "text": "Take the reply back to Keswick.",
+     "zone": "keswick_home_armstrong",
+     "npc": "keshome_armstrong",
+     "line": "She said that? Ha. Right, I'll write back. Meanwhile, this is for you."
+    }
+   ],
+   "done_flag": "q_cumbria_w47_card_keswick_done",
+   "reward": "Yellow wellies and £100.",
+   "reward_item": {
+    "item": "wellies_yellow",
+    "n": 1
+   },
+   "reward_money": 100,
+   "start": {
+    "zone": "keswick_home_armstrong",
+    "npc": "keshome_armstrong",
+    "ask": "Aye, it's a birthday card for my old mate in Carlisle, and the post would take a fortnight. Would you hand it over?",
+    "accept": "Tell her it's from the best-looking person in Keswick. She'll know it's me."
+   }
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "trades": [
+  {
+   "id": "tr_manchester_h1_lancashire_hotpot",
+   "zone": "manchester_h1",
+   "npc": "manchester_h1_0",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "money": 400
+   },
+   "ask": "Listen, mate, my cupboard wants Lancashire Hotpot, just the one. I'll swap you £400.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_manchester_h2_tench",
+   "zone": "manchester_h2",
+   "npc": "manchester_h2_0",
+   "wants": {
+    "item": "tench",
+    "n": 1
+   },
+   "gives": {
+    "item": "field_notebook",
+    "n": 1
+   },
+   "ask": "Listen, mate, I've had a notion for Tench, just the one all week. A Field notebook says you'll oblige.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_manchester_h3_beetroot",
+   "zone": "manchester_h3",
+   "npc": "manchester_h3_0",
+   "wants": {
+    "item": "beetroot",
+    "n": 2
+   },
+   "gives": {
+    "item": "bobble_hat_red",
+    "n": 1
+   },
+   "ask": "Listen, mate, one day I'll stop running out of beetroot. Until then, a Red bobble hat for Beetroot, two of them.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_manchester_h4_blackberries",
+   "zone": "manchester_h4",
+   "npc": "manchester_h4_0",
+   "wants": {
+    "item": "blackberries",
+    "n": 4
+   },
+   "gives": {
+    "money": 670
+   },
+   "ask": "Listen, mate, I'm after Blackberries, four of them. £670, if you can find it. I won't ask where you got it.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_manchester_h5_lancashire_hotpot",
+   "zone": "manchester_h5",
+   "npc": "manchester_h5_0",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "money": 360
+   },
+   "ask": "Listen, mate, bring me Lancashire Hotpot, just the one and £360 is yours. Fair's fair.",
+   "thanks": "Champion. That's exactly the thing.",
+   "repeat": false
+  },
+  {
+   "id": "tr_manchester_h6_perch",
+   "zone": "manchester_h6",
+   "npc": "manchester_h6_0",
+   "wants": {
+    "item": "perch",
+    "n": 1
+   },
+   "gives": {
+    "item": "field_notebook",
+    "n": 1
+   },
+   "ask": "Listen, mate, it's Perch, just the one I'm short of. Help me out and a Field notebook is yours.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  }
+ ]
+}

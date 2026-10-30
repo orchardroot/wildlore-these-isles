@@ -1,0 +1,262 @@
+{
+ "traders": [
+  {
+   "zone": "chester_h4",
+   "npc": "chester_h4_0",
+   "shop": "home_chester_h4",
+   "line": "Eggs and veg off the back step, if you fancy a look."
+  },
+  {
+   "zone": "macc_h4",
+   "npc": "macc_h4_0",
+   "shop": "home_macc_h4",
+   "line": "There's a tray in the back. Want to see what's come out?"
+  },
+  {
+   "zone": "wirral_h3",
+   "npc": "wirral_h3_0",
+   "shop": "home_wirral_h3",
+   "line": "I do a bit of jam, if you're buying."
+  },
+  {
+   "zone": "chester_h5",
+   "npc": "chester_h5_0",
+   "shop": "home_chester_h5",
+   "line": "Eggs and veg off the back step, if you fancy a look."
+  },
+  {
+   "zone": "aberdeen_home_b",
+   "npc": "abdn_home_b_dad",
+   "shop": "home_aberdeen_home_b",
+   "line": "I deal a bit in charms. Secondhand, but they've kept their luck."
+  },
+  {
+   "zone": "cairnryan_home_b",
+   "npc": "cairnryan_home_b_sandy",
+   "shop": "home_cairnryan_home_b",
+   "line": "I do a bit of jam, if you're buying."
+  },
+  {
+   "zone": "edinburgh_home_c",
+   "npc": "edinburgh_home_c_murray",
+   "shop": "home_edinburgh_home_c",
+   "line": "Fossils, flints and bits of cave. All of it genuinely old."
+  },
+  {
+   "zone": "fw_home_c",
+   "npc": "fw_home_c_man",
+   "shop": "home_fw_home_c",
+   "line": "I knit. Too much, frankly. Take a look at what's on the line."
+  },
+  {
+   "zone": "glasgow_home_b",
+   "npc": "glasgow_home_b_gillespie",
+   "shop": "home_glasgow_home_b",
+   "line": "I deal a bit in charms. Secondhand, but they've kept their luck."
+  },
+  {
+   "zone": "harris_weaver",
+   "npc": "hw_seonag",
+   "shop": "home_harris_weaver",
+   "line": "I carry a pack of charms for the road. Want to rummage?"
+  },
+  {
+   "zone": "inverness_home_b",
+   "npc": "inv_home_b_grandad",
+   "shop": "home_inverness_home_b",
+   "line": "My late husband's flies and snares, tied by me now. Have a look?"
+  },
+  {
+   "zone": "belfast_palmhouse",
+   "npc": "bel_palm_gardener",
+   "shop": "home_belfast_palmhouse",
+   "line": "Fossils, flints and bits of cave. All of it genuinely old."
+  },
+  {
+   "zone": "cork_home3",
+   "npc": "lynch_mrs",
+   "shop": "home_cork_home3",
+   "line": "I knit. Too much, frankly. Take a look at what's on the line."
+  },
+  {
+   "zone": "derry_home_walls",
+   "npc": "derry_home_wains",
+   "shop": "home_derry_home_walls",
+   "line": "I deal a bit in charms. Secondhand, but they've kept their luck."
+  },
+  {
+   "zone": "dingle_home3",
+   "npc": "moriarty_da",
+   "shop": "home_dingle_home3",
+   "line": "There's a tray in the back. Want to see what's come out?"
+  },
+  {
+   "zone": "galway_home_bad",
+   "npc": "home_bad_kid",
+   "shop": "home_galway_home_bad",
+   "line": "I carry a pack of charms for the road. Want to rummage?"
+  },
+  {
+   "zone": "kerry_muckross",
+   "npc": "muckross_guide",
+   "shop": "home_kerry_muckross",
+   "line": "I carry a pack of charms for the road. Want to rummage?"
+  },
+  {
+   "zone": "llanberis_home3",
+   "npc": "lh3_gran",
+   "shop": "home_llanberis_home3",
+   "line": "I do a bit of jam, if you're buying."
+  },
+  {
+   "zone": "llanberis_home4",
+   "npc": "lh4_lad",
+   "shop": "home_llanberis_home4",
+   "line": "I knit. Too much, frankly. Take a look at what's on the line."
+  },
+  {
+   "zone": "llanberis_home_eglwys",
+   "npc": "eglwys_quarryman",
+   "shop": "home_llanberis_home_eglwys",
+   "line": "I do a bit of jam, if you're buying."
+  },
+  {
+   "zone": "cardiff_home_roath",
+   "npc": "roath_dad",
+   "shop": "home_cardiff_home_roath",
+   "line": "I knit. Too much, frankly. Take a look at what's on the line."
+  },
+  {
+   "zone": "stdavids_home_hollow",
+   "npc": "hollow_mam",
+   "shop": "home_stdavids_home_hollow",
+   "line": "Fossils, flints and bits of cave. All of it genuinely old."
+  },
+  {
+   "zone": "sheffield_home_platt",
+   "npc": "shfhome_platt",
+   "shop": "home_sheffield_home_platt",
+   "line": "There's a tray in the back. Want to see what's come out?"
+  },
+  {
+   "zone": "york_micklegate",
+   "npc": "micklegate_resident",
+   "shop": "home_york_micklegate",
+   "line": "Eggs and veg off the back step, if you fancy a look."
+  },
+  {
+   "zone": "birmingham_home3",
+   "npc": "brum_home3_mia",
+   "shop": "home_birmingham_home3",
+   "line": "I carry a pack of charms for the road. Want to rummage?"
+  },
+  {
+   "zone": "nottingham_home2",
+   "npc": "not_home2_ken",
+   "shop": "home_nottingham_home2",
+   "line": "Seed swaps, mostly. You can have a look in the tin."
+  },
+  {
+   "zone": "stoke_h2",
+   "npc": "h2_dad",
+   "shop": "home_stoke_h2",
+   "line": "There's a tray in the back. Want to see what's come out?"
+  },
+  {
+   "zone": "birmingham_home4",
+   "npc": "brum_home4_driver",
+   "shop": "home_birmingham_home4",
+   "line": "I deal a bit in charms. Secondhand, but they've kept their luck."
+  },
+  {
+   "zone": "bath_home4",
+   "npc": "bath_home4_student",
+   "shop": "home_bath_home4",
+   "line": "I carry a pack of charms for the road. Want to rummage?"
+  },
+  {
+   "zone": "glastonbury_home2",
+   "npc": "glaston_home2_farmer",
+   "shop": "home_glastonbury_home2",
+   "line": "My late husband's flies and snares, tied by me now. Have a look?"
+  },
+  {
+   "zone": "glastonbury_home3",
+   "npc": "glaston_home3_student",
+   "shop": "home_glastonbury_home3",
+   "line": "I carry a pack of charms for the road. Want to rummage?"
+  },
+  {
+   "zone": "lancaster_home_procter",
+   "npc": "lanhome_procter",
+   "shop": "home_lancaster_home_procter",
+   "line": "I knit. Too much, frankly. Take a look at what's on the line."
+  },
+  {
+   "zone": "lancaster_home_rigby",
+   "npc": "lanhome_rigby",
+   "shop": "home_lancaster_home_rigby",
+   "line": "I deal a bit in charms. Secondhand, but they've kept their luck."
+  },
+  {
+   "zone": "manchester_h7",
+   "npc": "manchester_h7_0",
+   "shop": "home_manchester_h7",
+   "line": "I knit. Too much, frankly. Take a look at what's on the line."
+  },
+  {
+   "zone": "manchester_h8",
+   "npc": "manchester_h8_0",
+   "shop": "home_manchester_h8",
+   "line": "Seed swaps, mostly. You can have a look in the tin."
+  },
+  {
+   "zone": "buxton_h6",
+   "npc": "buxton_h6_0",
+   "shop": "home_buxton_h6",
+   "line": "Eggs and veg off the back step, if you fancy a look."
+  },
+  {
+   "zone": "penzance_benbow",
+   "npc": "benbow_host",
+   "shop": "home_penzance_benbow",
+   "line": "Seed swaps, mostly. You can have a look in the tin."
+  },
+  {
+   "zone": "penzance_mount",
+   "npc": "mount_guide",
+   "shop": "home_penzance_mount",
+   "line": "Eggs and veg off the back step, if you fancy a look."
+  },
+  {
+   "zone": "liverpool_h5",
+   "npc": "liverpool_h5_0",
+   "shop": "home_liverpool_h5",
+   "line": "Fossils, flints and bits of cave. All of it genuinely old."
+  },
+  {
+   "zone": "fens_eelhut",
+   "npc": "ely_eelcatcher",
+   "shop": "home_fens_eelhut",
+   "line": "My late husband's flies and snares, tied by me now. Have a look?"
+  },
+  {
+   "zone": "norwich_home_a",
+   "npc": "nor_dialect",
+   "shop": "home_norwich_home_a",
+   "line": "I do a bit of jam, if you're buying."
+  },
+  {
+   "zone": "aberystwyth_camera",
+   "npc": "camera_guide",
+   "shop": "home_aberystwyth_camera",
+   "line": "I do a bit of jam, if you're buying."
+  },
+  {
+   "zone": "douglas_kippers",
+   "npc": "keeper",
+   "shop": "home_douglas_kippers",
+   "line": "My late husband's flies and snares, tied by me now. Have a look?"
+  }
+ ]
+}

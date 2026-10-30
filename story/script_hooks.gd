@@ -8,4 +8,6 @@ extends RefCounted
 static func wrap(zone_id: String, npc_id: String, commands: Array, data: GameStateData) -> Array:
 	var out := commands
 	# wave 47 sessions add one line each here, e.g. out = Trades.hook(zone_id, npc_id, out, data)
+	out = Wants.hook(zone_id, npc_id, out, data)  # w47 C: a resident's trade and front-room shop
+	out = Errands.hook(zone_id, npc_id, out, data)  # w47 C: errands
 	return out

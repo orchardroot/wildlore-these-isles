@@ -1,0 +1,42 @@
+{
+ "quests": [
+  {
+   "id": "w47_parcel_blackpool",
+   "title": "A Parcel for Bloomfield Road",
+   "region": "lancashire",
+   "town": "blackpool",
+   "giver": "a resident of Golden Mile Amusements",
+   "summary": "Carry a brown-paper parcel to a relative in Bloomfield Road, then bring word back to Golden Mile Amusements.",
+   "start_flag": "q_lancashire_w47_parcel_blackpool_started",
+   "steps": [
+    {
+     "flag": "q_lancashire_w47_parcel_blackpool_1",
+     "text": "Take the parcel to Bloomfield Road.",
+     "zone": "blackpool_bloomfield",
+     "npc": "bfr_fan",
+     "line": "Oh, from Golden Mile Amusements? That'll be my sister's doing. A cardigan, again. Tell her I'm wearing the last one."
+    },
+    {
+     "flag": "q_lancashire_w47_parcel_blackpool_2",
+     "text": "Take the word back to Golden Mile Amusements.",
+     "zone": "blackpool_arcade",
+     "npc": "bp_arcade_change",
+     "line": "Oh, you've been! And she's wearing it? Well. That's me told, and a tea owed to you."
+    }
+   ],
+   "done_flag": "q_lancashire_w47_parcel_blackpool_done",
+   "reward": "Night Snare and £300.",
+   "reward_item": {
+    "item": "night_snare",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "blackpool_arcade",
+    "npc": "bp_arcade_change",
+    "ask": "Hiya, would you do me a kindness? There's a parcel here for my sister in Bloomfield Road. It's only a cardigan and a lot of string.",
+    "accept": "Marvellous. Mind the string, it's load-bearing."
+   }
+  }
+ ]
+}

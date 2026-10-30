@@ -2,6 +2,16 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+- **Residents want things.** About 150 people in homes across every region will swap you something for something: two
+  Bilberries for a teapot, a salmon for an iron snare. Talk to them with the goods in your bag and they offer the swap.
+  They ask once a day, so they don't nag.
+- **Errands.** Nearly forty small two and three step errands: a parcel to a sister in the next town, a cat gone to the
+  Sanctuary, whether the road is open or just has a sheep on it. They appear in the Quest Log.
+- **Front-room shops.** Forty-odd homes double as informal shops once you have chatted: jam, eggs off the back step,
+  knitwear, fly-tyers, a secondhand charm dealer, a man with rocks.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things

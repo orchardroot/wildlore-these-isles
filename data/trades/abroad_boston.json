@@ -1,0 +1,20 @@
+{
+ "trades": [
+  {
+   "id": "tr_boston_church_hazelnuts",
+   "zone": "boston_church",
+   "npc": "bos_priest",
+   "wants": {
+    "item": "hazelnuts",
+    "n": 3
+   },
+   "gives": {
+    "item": "shorts_khaki",
+    "n": 1
+   },
+   "ask": "Well, my cupboard wants Hazelnuts, three of them. I'll swap you a pair of khaki shorts.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  }
+ ]
+}

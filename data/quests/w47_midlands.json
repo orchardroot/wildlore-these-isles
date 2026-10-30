@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_seeds_birmingham",
+   "title": "Seeds for Lincoln",
+   "region": "midlands",
+   "town": "birmingham",
+   "giver": "a resident of Birmingham",
+   "summary": "A resident of Birmingham has saved seed for a gardener in Lincoln. Take it over and bring back the news.",
+   "start_flag": "q_midlands_w47_seeds_birmingham_started",
+   "steps": [
+    {
+     "flag": "q_midlands_w47_seeds_birmingham_1",
+     "text": "Deliver the seed to Lincoln.",
+     "zone": "lincoln_jewshouse",
+     "npc": "lin_historian",
+     "line": "Ah, her beans! I've been waiting all winter. Tell her I've a bed ready and a very smug cat."
+    },
+    {
+     "flag": "q_midlands_w47_seeds_birmingham_2",
+     "text": "Take the thanks back to Birmingham.",
+     "zone": "birmingham_home1",
+     "npc": "brum_home1_nan",
+     "line": "Pleased as punch, was she? Good. Now I'll not have to carry them myself next year."
+    }
+   ],
+   "done_flag": "q_midlands_w47_seeds_birmingham_done",
+   "reward": "Lincolnshire Sausage and £150.",
+   "reward_item": {
+    "item": "lincolnshire_sausage",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "birmingham_home1",
+    "npc": "brum_home1_nan",
+    "ask": "Listen, I've saved a twist of seed for a fellow gardener in Lincoln. It's no weight at all. Would you carry it?",
+    "accept": "Keep it dry. They're the best beans in the county, and I'll hear nothing against them."
+   }
+  },
+  {
+   "id": "w47_tune_lincoln",
+   "title": "The Tune from Stoke-on-Trent",
+   "region": "midlands",
+   "town": "lincoln",
+   "giver": "a resident of Lincoln",
+   "summary": "A resident of Lincoln half remembers a tune. Find someone in Stoke-on-Trent who knows how it ends.",
+   "start_flag": "q_midlands_w47_tune_lincoln_started",
+   "steps": [
+    {
+     "flag": "q_midlands_w47_tune_lincoln_1",
+     "text": "Hum the tune in Stoke-on-Trent.",
+     "zone": "stoke_h1",
+     "npc": "h1_nan",
+     "line": "Dum-de-dum-dum... oh, that's 'The Cobbler's Wife'. It ends on the same note it starts. Tell them."
+    },
+    {
+     "flag": "q_midlands_w47_tune_lincoln_2",
+     "text": "Take the ending back to Lincoln.",
+     "zone": "lincoln_jewshouse",
+     "npc": "lin_historian",
+     "line": "The same note! Of course it does! Thirty years I've been waiting. Thank you."
+    }
+   ],
+   "done_flag": "q_midlands_w47_tune_lincoln_done",
+   "reward": "Dungarees and £150.",
+   "reward_item": {
+    "item": "overalls_denim",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "lincoln_jewshouse",
+    "npc": "lin_historian",
+    "ask": "Listen, I've a tune that stops halfway and it's driving me mad. Would you hum it to someone in Stoke-on-Trent? Someone musical.",
+    "accept": "Dum-de-dum-dum. That's it. That's all I've got."
+   }
+  }
+ ]
+}
