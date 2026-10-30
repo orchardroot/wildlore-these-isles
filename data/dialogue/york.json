@@ -1,4 +1,15 @@
 {
+ "chapman_york": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, as sold on these streets since before the Vikings ran out of patience."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_york"
+  }
+ ],
  "rail_guard": [
   {
    "do": "say",

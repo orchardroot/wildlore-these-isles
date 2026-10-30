@@ -14,6 +14,12 @@
  },
  "props": [
   {
+   "type": "market_stall",
+   "x": 23,
+   "y": 23,
+   "variant": 1
+  },
+  {
    "type": "building",
    "style": "flax_mill",
    "x": 3,
@@ -605,6 +611,15 @@
   }
  },
  "npcs": [
+  {
+   "id": "chapman_shrewsbury",
+   "sprite": "shopkeeper",
+   "x": 23,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_shrewsbury"
+  },
   {
    "id": "rail_guard",
    "sprite": "rail_guard",

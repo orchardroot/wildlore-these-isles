@@ -1,4 +1,15 @@
 {
+ "chapman_newcastle": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Howay, chapbooks! Verse on one side, a move on the other. Canny value."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_newcastle"
+  }
+ ],
  "rail_guard": [
   {
    "do": "say",

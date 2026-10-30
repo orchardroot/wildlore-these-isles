@@ -1,0 +1,90 @@
+{
+ "papers": [
+  {
+   "id": "ltr_pump_room",
+   "zone": "bath_pulteneytea",
+   "title": "Visitor's diary",
+   "lines": [
+    "Took the waters, which taste of warm pennies. Danced at the Assembly. Trod on a Lord.",
+    "He was very civil about it, and his foot has since recovered."
+   ]
+  },
+  {
+   "id": "ltr_cider_barn",
+   "zone": "severn_home_ferry",
+   "title": "Barn door note",
+   "lines": [
+    "The cider is in the third barrel, not the second, whatever Pete tells you.",
+    "The second barrel is for the pigs. They love it. They sing."
+   ]
+  },
+  {
+   "id": "ltr_dartmoor_pony",
+   "zone": "plymouth_smeaton",
+   "title": "Farmer's letter",
+   "lines": [
+    "The ponies are out on the moor and will not be told. They have been on Dartmoor since before there were farmers.",
+    "If a grey one follows you home, feed her. She'll stay till she gets bored."
+   ],
+   "trail": {
+    "zone": "avon_gorge",
+    "near": [
+     26,
+     17
+    ],
+    "clue": "A farmer hid a coin purse near the old oak on the moor, 'where the ponies won't dig'.",
+    "reward": {
+     "money": 1400
+    }
+   }
+  },
+  {
+   "id": "ltr_brunel_ship",
+   "zone": "bristol_aerospace",
+   "title": "Shipwright's note",
+   "lines": [
+    "The great iron ship is to be launched on the tide. Nobody believes she will float. Nobody dares say it aloud.",
+    "The Captain has bet a week's pay she will. He has also hidden a spare week in the lining of his hat."
+   ]
+  },
+  {
+   "id": "ltr_avalon_tor",
+   "zone": "glastonbury_abbeymuseum",
+   "title": "Pilgrim's card",
+   "lines": [
+    "Climbed the Tor in the dawn. Saw mist, a crow, and a man in a cloak with a tin whistle.",
+    "Whether he is a druid or on his way to a fete, I did not ask."
+   ],
+   "trail": {
+    "zone": "dartmoor",
+    "near": [
+     47,
+     33
+    ],
+    "clue": "A pilgrim left a charm in the grass near the big rock, as pilgrims do.",
+    "reward": {
+     "item": "rowan_sprig",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_press_gang",
+   "zone": "exeter_customs",
+   "title": "Notice to mariners",
+   "lines": [
+    "All able seamen are requested to attend the Admiral's table. Attendance is required. Refusal is discouraged.",
+    "Rum will be served. There is no further reason to attend."
+   ]
+  },
+  {
+   "id": "ltr_cream_first",
+   "zone": "exeter_library",
+   "title": "Tearoom argument",
+   "lines": [
+    "The cream goes on the jam, not the jam on the cream. This is the Devon way and it is not up for discussion.",
+    "A note below, in Cornish handwriting: 'We shall see about that.'"
+   ]
+  }
+ ]
+}

@@ -42,6 +42,7 @@ func _ready() -> void:
 	ambient = AmbientLife.new()
 	add_child(ambient)
 	add_child(ZoneCard.new())
+	add_child(RouteChip.new())  # the Map's "Route here" breadcrumb
 	add_child(PlaceIndicator.new())  # the name of the building whose door you stand at
 	var layer := CanvasLayer.new()
 	layer.layer = 1
@@ -139,10 +140,21 @@ func load_zone(zone_id: String, pos: Vector2i, facing: String) -> void:
 ## Dev switch `--talk=radio[:n]`: the wireless reads Today's Walk as soon as the zone is ready, from line n (screenshots).
 func _dev_radio() -> void:
 	for a in DevArgs.user_args():
+		if a.begins_with("--talk=npc:"):  # `--talk=npc:<id>[:<item>=<n>]`: what the hooks add to a resident's chat, with some of an item in the bag
+			await get_tree().create_timer(0.8).timeout
+			var parts := a.split(":")
+			if parts.size() > 2:
+				Game.data.bag[parts[2].get_slice("=", 0)] = int(parts[2].get_slice("=", 1))
+			ScriptRunner.start(self, [], parts[1])  # no chat of their own: just what the hooks add
+			return
 		if a.begins_with("--talk=radio"):
 			await get_tree().create_timer(0.6).timeout
 			var lines := TodaysWalk.radio_lines(Game.data, Game.dex, Game.items)
 			await say(lines.slice(clampi(int(a.get_slice(":", 1)), 0, lines.size() - 1)))
+			return
+		if a.begins_with("--search="):  # dev: `--search=x,y` rummages that tile at once (screenshots of a find)
+			await get_tree().create_timer(0.6).timeout
+			await SearchScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
 			return
 
 ## Dark caves: keep the light circle on the player (and faint glows on every exit) each frame.
@@ -233,7 +245,9 @@ func _build_zone_node() -> void:
 	Seasonal.dress(zone, _zone_node, player)  # festivals and falling leaves from the real date
 	Viaduct.dress(zone, _zone_node)  # railway viaducts striding across (Castlefield)
 	OccluderFade.dress(zone, _zone_node, player)  # buildings between the camera and you go see-through
+	PoiScene.dress(zone, _zone_node, Game.data, self)  # question marks: dens, camps, stones, caches
 	Forage.dress(zone, _zone_node, Game.data)  # hedgerow pickings and crafting benches
+	TrailsScene.dress(zone, _zone_node, Game.data)  # a paper on the table, a dig spot where a trail ends
 	CreatureJobsScene.dress(zone, _zone_node, Game.data)  # spots where your lead creature can do a job
 	HomeBase.dress(zone, _zone_node, Game.data)  # Mum's trophy shelf, the garden and its visitors
 	HomeExtrasScene.dress(zone, _zone_node, Game.data)  # souvenir shelves, plaque boards, bird table, bug hotel, pond
@@ -479,9 +493,15 @@ func interact(p: Vector2i) -> void:
 		return
 	if await CrabbingScene.interact(self, p):  # a harbour wall and a crabbing kit
 		return
+	if await TrailsScene.interact(self, p):  # a paper on a table, a trail's dig spot
+		return
 	if await ExamineScene.interact(self, p):  # a look-closer spot in a room
 		return
 	if await LooksMirror.interact(self, p):  # a mirror: the Wardrobe, hair included
+		return
+	if await PoiScene.interact(self, p):  # a den, camp, stone or cache on a route
+		return
+	if await SearchScene.interact(self, p):  # furniture in a room: go through it (wave 47)
 		return
 	var s := zone.sign_at(p)
 	if not s.is_empty():
@@ -496,7 +516,7 @@ func interact(p: Vector2i) -> void:
 			if str(s.get("theme", "")) == PoetsCorner.THEME:  # a plaque on the arts counts for Poets' Corner too (4.5)
 				Game.quest_news.poets_corner(PoetsCorner.record(Game.data, str(s.plaque)))
 		else:
-			await say(_sign_lines(s))
+			await say(_sign_lines(s) + KeeperIntel.door_line(str(zone.id), Game.data, str(s.get("text", "")), Game.chart))
 		return
 	var n := npc_at(p)
 	if n == null and zone.tile_at(p) == "counter":

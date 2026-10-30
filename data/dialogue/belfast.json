@@ -1,4 +1,15 @@
 {
+ "chapman_belfast": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, love! Boats built, books bound. Take your time, but not too much."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_belfast"
+  }
+ ],
  "rail_guard": [
   {
    "do": "say",

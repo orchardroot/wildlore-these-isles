@@ -54,6 +54,24 @@ static func boot(game: Node, menu: String) -> void:
 	c.held = "oak_acorn"
 	d.party = [a, b, c, e, f]
 	d.ark = [mk.call("croakle", 6), mk.call("pipkin", 4), mk.call("dipling", 9)]
+	if menu == "papers":  # `--menu=papers`: the Almanac's Papers page with 8 read, 2 of them trails still open
+		var plain := Letters.all().filter(func(q): return not Letters.has_trail(q)).slice(0, 6)
+		var trails := Letters.all().filter(func(q): return Letters.has_trail(q)).slice(0, 2)
+		for q in plain + trails:
+			d.set_flag(Letters.read_flag(str(q.id)), true)
+		menu = "almanac:ledger:papers"
+	if menu == "cards" or menu.begins_with("trumps"):  # `--menu=cards`: an album part filled (Cheshire done, the Peak half); `--menu=trumps:dev`: a game under way
+		Trumps.use_dex(game.dex)
+		Trumps.give_starter(d)
+		var tz := ZoneIndex.get_index()
+		for s in Trumps.region_set("cheshire", tz):
+			Trumps.give(d, str(s))
+		for k in Trumps.region_set("peak", tz).size() / 2:
+			Trumps.give(d, str(Trumps.region_set("peak", tz)[k * 2]))
+		for k in 9:
+			Trumps.give(d, str(Trumps.region_set("south_wales", tz)[k % maxi(1, Trumps.region_set("south_wales", tz).size())]))
+		d.trumps["wins"] = 7
+		d.trumps["losses"] = 3
 	if menu.begins_with("lang") or menu in ["pedia:words", "pause:words"]:  # two Welsh lessons learnt, in Cardiff, a day on
 		d.zone_id = "cardiff"
 		for l in ["cy_01", "cy_02"]:
@@ -111,6 +129,8 @@ static func boot(game: Node, menu: String) -> void:
 	d.bag["rail_pass"] = 1
 	if menu.begins_with("pedia:") and (Dex.in_appendix(menu.substr(6)) or Dex.is_hybrid(menu.substr(6)) or Crossbreeds.is_id(menu.substr(6)) or game.dex.has(menu.substr(6))):  # `--menu=pedia:flyling` (any species or a hybrid): that entry, caught
 		d.mark_caught(menu.substr(6))
+	if menu == "bag:chapbook":  # `--menu=bag:chapbook`: chapbooks in the bag, the picker up on Haymaker
+		d.bag = {"chapbook_haymaker": 1, "chapbook_glare": 1, "chapbook_kindle": 1, "chapbook_swoop": 1, "cup_of_tea": 2}
 	if menu == "bag:first":  # `--menu=bag:first`: a first-hour bag (tea, snares, the map and the Fieldbook)
 		d.bag = {"cup_of_tea": 3, "wicker_snare": 5, "map": 1, "fieldbook": 1}
 	if menu == "map:post":  # `--menu=map:post`: the whole map visited, Champion, every Stone
@@ -122,6 +142,13 @@ static func boot(game: Node, menu: String) -> void:
 		d.set_flag("champion")
 		d.set_flag("game_complete")
 		d.set_flag("last_town", "york")
+	if menu == "map:route":  # `--menu=map:route`: the whole map visited and a route from Macclesfield stored
+		for t in Travel.world_map().get("towns", {}):
+			d.set_flag("visited_" + t)
+			d.set_flag("station_" + t)
+		d.zone_id = "macclesfield"
+		d.set_flag("last_town", "macclesfield")
+		d.set_flag("route_to", "york")
 	if menu.begins_with("craft") or menu.contains("material"):  # a forager's bag and Mum's recipes, plus a few more
 		d.bag.merge({"blackberries": 6, "hazelnuts": 3, "nettles": 5, "sloes": 2, "elderflower": 1, "wild_garlic": 2,
 			"sheep_wool": 1, "rowan_berry": 1, "heather_honey": 1, "sea_glass": 1}, true)
@@ -229,6 +256,21 @@ static func boot(game: Node, menu: String) -> void:
 			d.day_count += 14
 			Deeds.tick(d, d.day_count)
 			menu = menu.trim_suffix(":owned")
+	if menu.begins_with("vs:"):  # `--menu=vs:keeper_morwen[:bare]`: that VS splash held at the end (ours has only a Kin starter, so it warns)
+		if menu.ends_with(":bare"):  # a lone lead that knows only Scrap
+			d.party = d.party.slice(0, 1)
+			d.party[0].moves = [{"id": "scrap", "pp": 35, "max_pp": 35}]
+		BattleIntro.dev_show(game.get_node("/root/Router"), null, menu.get_slice(":", 0) + ":" + menu.get_slice(":", 1), 1.0)
+		return
+	if menu == "keepers":  # `--menu=keepers`: Maud beaten, four towns visited, a few lines of gossip heard
+		d.set_flag("trainer_keeper_maud", true)
+		for t in ["buxton", "liverpool", "llanberis", "glastonbury"]:
+			d.set_flag("visited_" + t)
+		for kg in ["kg_maud_0", "kg_maud_2", "kg_morwen_1", "kg_ray_0", "kg_ray_1"]:
+			d.set_flag(kg, true)
+	if menu == "curios":  # `--menu=curios`: twelve curios found
+		for id in Search.curio_ids().slice(0, 12):
+			d.set_flag(Search.FOUND_PREFIX + str(id), true)
 	if menu == "economist":  # `--menu=economist`: most of the notebook met, a Deed and a lease among them
 		d.money = 5000
 		for i in Economist.ideas():

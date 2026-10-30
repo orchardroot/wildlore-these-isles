@@ -1,0 +1,20 @@
+{
+ "trades": [
+  {
+   "id": "tr_tristan_church_seaweed",
+   "zone": "tristan_church",
+   "npc": "tri_priest",
+   "wants": {
+    "item": "seaweed",
+    "n": 3
+   },
+   "gives": {
+    "item": "rugby_shirt_hoops",
+    "n": 1
+   },
+   "ask": "Well, Seaweed, three of them, that's my whole wish list. A Hooped rugby shirt for your trouble.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  }
+ ]
+}

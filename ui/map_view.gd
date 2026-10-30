@@ -25,6 +25,7 @@ var zoom := 1.8             # around `centre` (map units); 1.0 shows all the isl
 var centre := Vector2(-1, -1)
 var cursor := ""            # town id the map cursor sits on ("" for none)
 var named_unvisited: Array = []  # unvisited towns that still get a name (the "Where next?" town)
+var route := PackedVector2Array()  # map units: the "Route here" polyline, drawn dotted
 var marks: Array = []       # MapLogic.marks: rewilding, the show, side stories, the post
 var framed := false         # the pause-menu map: a frame, a vignette and a compass
 var compass_left := false   # the compass goes top left (the info panel is on the right)
@@ -285,6 +286,10 @@ func _draw() -> void:
 	for r in s.rail:
 		_dashed(_ps(r, xf), Color("5b4636", 0.5), 1.3, 4.0, 4.0)
 	var boats := _draw_ferries(m, s, xf, d)
+	if route.size() >= 2:
+		var rp := _ps(route, xf)
+		_dashed(rp, Color(0, 0, 0, 0.6), 7.0, 3.0, 7.0)
+		_dashed(rp, LIT, 4.5, 3.0, 7.0)
 	if objective.x >= 0:  # under the town dots and names, so it never hides a label
 		var op := _p(objective.x, objective.y, xf)
 		draw_arc(op, 16.0, 0, TAU, 28, Color(0, 0, 0, 0.5), 7.0)
@@ -470,6 +475,25 @@ func _icon(mk: Dictionary, c: Vector2) -> void:
 			draw_rect(r, Color(INK, 0.9), false, 1.4)
 			for i in 3:
 				draw_circle(c + Vector2(-4.5 + i * 4.5, -0.5), 1.4, INK)
+		"trail":  # a gold-ringed "?", where a treasure trail ends
+			draw_circle(c, 9.5, Color(INK, 0.9))
+			draw_circle(c, 8.0, LIT)
+			draw_string(ThemeDB.fallback_font, c + Vector2(-4.5, 6.0), "?", HORIZONTAL_ALIGNMENT_LEFT, -1, 17, INK)
+		"poi":  # a question mark on a ring; done, the little picture of what it was
+			draw_circle(c, 9.0, Color(INK, 0.9))
+			draw_circle(c, 7.6, PAPER)
+			if not mk.done:
+				draw_string(font, c + Vector2(-4.2, 5.4), "?", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, INK)
+			else:
+				match str(mk.poi):
+					"den":
+						draw_colored_polygon(PackedVector2Array([c + Vector2(-5, 4), c + Vector2(-3, -2), c + Vector2(0, -4), c + Vector2(3, -2), c + Vector2(5, 4)]), INK)
+					"camp":
+						draw_colored_polygon(PackedVector2Array([c + Vector2(-5, 4), c + Vector2(0, -5), c + Vector2(5, 4)]), INK)
+					"stone":
+						draw_rect(Rect2(c + Vector2(-2.5, -5), Vector2(5, 10)), INK)
+					_:
+						draw_rect(Rect2(c + Vector2(-4, -2), Vector2(8, 6)), INK)
 		"post":  # an envelope with a red seal
 			var r := Rect2(c - Vector2(9, 6), Vector2(18, 12))
 			draw_rect(r, PAPER)

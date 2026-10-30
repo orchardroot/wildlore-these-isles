@@ -1,0 +1,42 @@
+{
+ "quests": [
+  {
+   "id": "w47_ferry_newgrange",
+   "title": "Does the Archaeologist's House Route Still Run?",
+   "region": "ireland_east",
+   "town": "newgrange",
+   "giver": "a resident of Boyne Cottage",
+   "summary": "A resident of Boyne Cottage wants to know if the way to Archaeologist's House is still open, and has not bothered to check.",
+   "start_flag": "q_ireland_east_w47_ferry_newgrange_started",
+   "steps": [
+    {
+     "flag": "q_ireland_east_w47_ferry_newgrange_1",
+     "text": "Ask a local in Archaeologist's House about the road.",
+     "zone": "newgrange_home_dig",
+     "npc": "ng_home_digger",
+     "line": "Shut? Never. There was a sheep on it for a week, that's all. Tell them to come on up."
+    },
+    {
+     "flag": "q_ireland_east_w47_ferry_newgrange_2",
+     "text": "Report back to Boyne Cottage.",
+     "zone": "newgrange_home_cottage",
+     "npc": "ng_home_siobhan",
+     "line": "Open! And only a sheep. I'll ring round. Thank you, there's a little something for you."
+    }
+   ],
+   "done_flag": "q_ireland_east_w47_ferry_newgrange_done",
+   "reward": "Limerick Ham and £200.",
+   "reward_item": {
+    "item": "limerick_ham",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "newgrange_home_cottage",
+    "npc": "ng_home_siobhan",
+    "ask": "Sure look, someone said the way through to Archaeologist's House is shut. I've a cousin there and I'd like to know. Could you look in?",
+    "accept": "You're a star. I'll put the kettle on for when you're back."
+   }
+  }
+ ]
+}

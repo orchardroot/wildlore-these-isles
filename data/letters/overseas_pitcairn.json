@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_bounty_log",
+   "zone": "pit_boathouse",
+   "title": "Page from a log",
+   "lines": [
+    "The Bounty is burned. The island is ours, and so are its troubles.",
+    "We have a stream, a garden and a lookout. The lookout has seen nothing, which is as it should be."
+   ]
+  },
+  {
+   "id": "ltr_honey_pit",
+   "zone": "pit_clinic",
+   "title": "Beekeeper's note",
+   "lines": [
+    "The Pitcairn honey is some of the finest in the world, because the bees have never met a disease.",
+    "They have, however, met a very opinionated visitor. We are on good terms with both."
+   ]
+  },
+  {
+   "id": "ltr_supply_ship",
+   "zone": "pit_hall",
+   "title": "Supply ship manifest",
+   "lines": [
+    "The ship comes every three months. Everything is checked: flour, fuel, post, tinned peaches, a goat.",
+    "If the ship is late, we make do. If the ship is very late, we make do with less."
+   ]
+  },
+  {
+   "id": "ltr_stamp_order",
+   "zone": "pit_honey",
+   "title": "Stamp order",
+   "lines": [
+    "Pitcairn stamps are collected the world over. The island sends a sheet of new ones every year.",
+    "The post office is a table, a book and a very organised woman."
+   ]
+  }
+ ]
+}

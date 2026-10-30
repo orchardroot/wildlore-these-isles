@@ -1,0 +1,82 @@
+{
+ "trades": [
+  {
+   "id": "tr_canterbury_crooked_bakewell_pudding",
+   "zone": "canterbury_crooked",
+   "npc": "ck_bookseller",
+   "wants": {
+    "item": "dinky_bus",
+    "n": 1
+   },
+   "gives": {
+    "money": 1200
+   },
+   "ask": "I collect these. I'd give £1200 for a Dinky Toy Bus, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
+   "repeat": false
+  },
+  {
+   "id": "tr_dover_painted_house_plaice",
+   "zone": "dover_painted_house",
+   "npc": "ph_guide",
+   "wants": {
+    "item": "plaice",
+    "n": 2
+   },
+   "gives": {
+    "item": "iron_snare",
+    "n": 1
+   },
+   "ask": "Right, I'm after Plaice, two of them. An Iron Snare, if you can find it. I won't ask where you got it.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_bletchley_hut8_runner_beans",
+   "zone": "bletchley_hut8",
+   "npc": "bp_codebreaker",
+   "wants": {
+    "item": "runner_beans",
+    "n": 4
+   },
+   "gives": {
+    "item": "luton_boater",
+    "n": 1
+   },
+   "ask": "Right, I'd give a Luton straw boater for Runner Beans, four of them.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_brighton_antiques_kentish_hops",
+   "zone": "brighton_antiques",
+   "npc": "ant_dealer",
+   "wants": {
+    "item": "kentish_hops",
+    "n": 3
+   },
+   "gives": {
+    "item": "chelsea_bun",
+    "n": 1
+   },
+   "ask": "Oh, I've had a notion for Kentish Hops, three of them all week. A Chelsea Bun says you'll oblige.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_kent_oast_bakewell_pudding",
+   "zone": "kent_oast",
+   "npc": "oast_dryer",
+   "wants": {
+    "item": "bakewell_pudding",
+    "n": 1
+   },
+   "gives": {
+    "money": 380
+   },
+   "ask": "Right, if you come across Bakewell Pudding, just the one, there is £380 in it for you.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  }
+ ]
+}

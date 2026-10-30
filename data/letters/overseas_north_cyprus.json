@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_buyuk_han",
+   "zone": "nicosia_buyuk_han",
+   "title": "Caravanserai note",
+   "lines": [
+    "The Büyük Han was built for merchants, with rooms around a courtyard and a mosque in the middle.",
+    "Now it holds craftsmen and cafes. The coffee is better than the camels."
+   ]
+  },
+  {
+   "id": "ltr_lefkosa_walls",
+   "zone": "nicosia_north_sanctuary",
+   "title": "Walls guide's note",
+   "lines": [
+    "The walls of Nicosia are a Venetian star with eleven points. The city is split along its middle.",
+    "The guide pointed and said: this is the north, this is the south, this is the bit where we agree."
+   ]
+  },
+  {
+   "id": "ltr_pistachio_post",
+   "zone": "macc_h3",
+   "title": "Postcard from northern Nicosia",
+   "lines": [
+    "The coffee is thick, the baklava is thicker, and the sun has cheerfully ignored my sunscreen.",
+    "Thinking of home. Mostly the rain."
+   ]
+  },
+  {
+   "id": "ltr_simit_note",
+   "zone": "liverpool_cunard",
+   "title": "Note on a bag",
+   "lines": [
+    "Simit: sesame ring bread, still warm, from a barrow at dawn. Eat on the walk, not at the table.",
+    "The bag also contained a postcard. The postcard said: 'Glad you came.'"
+   ]
+  }
+ ]
+}

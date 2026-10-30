@@ -1,0 +1,19 @@
+{
+ "trades": [
+  {
+   "id": "tr_nicosia_church_european_bass",
+   "zone": "nicosia_church",
+   "npc": "ns_priest",
+   "wants": {
+    "item": "european_bass",
+    "n": 1
+   },
+   "gives": {
+    "money": 540
+   },
+   "ask": "Well, European Sea Bass, just the one, that's my whole wish list. £540 for your trouble.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  }
+ ]
+}

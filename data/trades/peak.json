@@ -1,0 +1,99 @@
+{
+ "trades": [
+  {
+   "id": "tr_buxton_h1_nettles",
+   "zone": "buxton_h1",
+   "npc": "buxton_h1_0",
+   "wants": {
+    "item": "nettles",
+    "n": 3
+   },
+   "gives": {
+    "item": "goss_pot_buxton",
+    "n": 1
+   },
+   "ask": "I'll swap you a Goss Crested China Jug for 3 Nettles. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
+   "repeat": false
+  },
+  {
+   "id": "tr_blue_john_entry_bakewell_pudding",
+   "zone": "blue_john_entry",
+   "npc": "bj_guide",
+   "wants": {
+    "item": "brass_miners_lamp",
+    "n": 1
+   },
+   "gives": {
+    "item": "chapbook_hard_hat",
+    "n": 1
+   },
+   "ask": "Bring me a Brass Miner's Lamp and I'll swap you Chapbook: Hard Hat for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
+   "repeat": false
+  },
+  {
+   "id": "tr_goyt_shrine_brown_trout",
+   "zone": "goyt_shrine",
+   "npc": "goyt_shrine_0",
+   "wants": {
+    "item": "brown_trout",
+    "n": 1
+   },
+   "gives": {
+    "item": "wicker_snare",
+    "n": 1
+   },
+   "ask": "Now then, do you happen to have Brown Trout, just the one? I'll part with a Wicker Snare.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_buxton_h2_blue_john_chip",
+   "zone": "buxton_h2",
+   "npc": "buxton_h2_0",
+   "wants": {
+    "item": "blue_john_chip",
+    "n": 5
+   },
+   "gives": {
+    "money": 1370
+   },
+   "ask": "Now then, it's Blue John Chip, five of them I'm short of. Help me out and £1370 is yours.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_buxton_h3_bobble_hat_red",
+   "zone": "buxton_h3",
+   "npc": "buxton_h3_0",
+   "wants": {
+    "item": "bobble_hat_red",
+    "n": 1
+   },
+   "gives": {
+    "item": "havercake",
+    "n": 1
+   },
+   "ask": "Ey up, if you come across Red bobble hat, just the one, there is a Havercake in it for you.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_buxton_h5_field_mushrooms",
+   "zone": "buxton_h5",
+   "npc": "buxton_h5_0",
+   "wants": {
+    "item": "field_mushrooms",
+    "n": 3
+   },
+   "gives": {
+    "item": "headscarf_tartan",
+    "n": 1
+   },
+   "ask": "Ey up, Field Mushrooms, three of them, that's my whole wish list. A Headscarf for your trouble.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  }
+ ]
+}

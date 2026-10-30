@@ -1,0 +1,61 @@
+{
+ "papers": [
+  {
+   "id": "ltr_dons_dinner",
+   "zone": "oxford_eagle",
+   "title": "Dinner invitation",
+   "lines": [
+    "The Warden requests the pleasure of your company at High Table. Gowns will be worn.",
+    "Wine will be taken. Conversation will be had, mostly about conversation."
+   ]
+  },
+  {
+   "id": "ltr_pier_postcard",
+   "zone": "brighton_scootercafe",
+   "title": "Seaside postcard",
+   "lines": [
+    "Having a lovely time. The sea is wet. The pier is long. The ice cream was stolen by a gull.",
+    "Wish you were here to guard the ice cream."
+   ]
+  },
+  {
+   "id": "ltr_pilgrim_badge",
+   "zone": "canterbury_beaney",
+   "title": "Pilgrim's lead badge note",
+   "lines": [
+    "Bought at the shrine for a farthing. It will protect me on the road home.",
+    "So far it has protected me from nothing, but the road is long and the inn has a roof."
+   ]
+  },
+  {
+   "id": "ltr_white_cliffs",
+   "zone": "dover_castle",
+   "title": "Ferry passenger's postcard",
+   "lines": [
+    "Left France at dawn. England appeared as a long chalk line, as promised in the guidebook.",
+    "The customs man asked if I had anything to declare. I said: a deep, abiding love of tea."
+   ],
+   "trail": {
+    "zone": "bletchley_park",
+    "near": [
+     9,
+     6
+    ],
+    "clue": "A traveller buried a tin of sweets near the old oak in the eighties. 'For luck on the way back.'",
+    "reward": {
+     "item": "cream_tea",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_hop_picking",
+   "zone": "canterbury_cathedral",
+   "title": "Hop-picking tally",
+   "lines": [
+    "Six bushels today. Mum did eight, but she cheats and talks fast.",
+    "We camp in the huts. The men sing in the evening. It smells of hops and woodsmoke and the best week of the year."
+   ]
+  }
+ ]
+}

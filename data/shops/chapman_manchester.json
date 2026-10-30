@@ -1,0 +1,20 @@
+{
+ "id": "chapman_manchester",
+ "name": "Manchester Chapman",
+ "stock": [
+  "chapbook_glare",
+  "chapbook_hunker",
+  "chapbook_barge",
+  "chapbook_sheepdog_herd",
+  "chapbook_dirty_look",
+  "chapbook_kerb_crunch",
+  "chapbook_gridlock",
+  "chapbook_galvanise",
+  "chapbook_forge_hammer",
+  "chapbook_blast_furnace",
+  "chapbook_storm_front",
+  "chapbook_thunderclap",
+  "chapbook_ball_lightning",
+  "chapbook_static_snap"
+ ]
+}

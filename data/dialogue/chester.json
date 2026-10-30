@@ -1,4 +1,15 @@
 {
+ "chapman_chester": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, hot off the Rows. Roman ones are extra. They are not Roman. I just say that."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_chester"
+  }
+ ],
  "pryce_chester": [
   {
    "do": "if",

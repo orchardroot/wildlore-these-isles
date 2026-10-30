@@ -1,0 +1,87 @@
+{
+ "quests": [
+  {
+   "id": "w47_recipe_blaenavon",
+   "title": "The Secret Ingredient",
+   "region": "south_wales",
+   "town": "blaenavon",
+   "giver": "a resident of Blaenavon",
+   "summary": "Find out what Cardiff's best cook puts in the gravy, and report back to Blaenavon.",
+   "start_flag": "q_south_wales_w47_recipe_blaenavon_started",
+   "steps": [
+    {
+     "flag": "q_south_wales_w47_recipe_blaenavon_1",
+     "text": "Ask the cook in Cardiff.",
+     "zone": "cardiff_home_bute",
+     "npc": "bute_oldman",
+     "line": "The gravy? A spoon of the strong tea, love. Don't tell anyone, they'll all be at it."
+    },
+    {
+     "flag": "q_south_wales_w47_recipe_blaenavon_2",
+     "text": "Take the secret back to Blaenavon.",
+     "zone": "blaenavon_stacksq",
+     "npc": "bla_ironwife",
+     "line": "Tea! In gravy! That's outrageous and it makes complete sense. Take this for your honesty."
+    }
+   ],
+   "done_flag": "q_south_wales_w47_recipe_blaenavon_done",
+   "reward": "Kiss-Me-Quick Hat and £200.",
+   "reward_item": {
+    "item": "kiss_me_quick_hat",
+    "n": 1
+   },
+   "reward_money": 200,
+   "start": {
+    "zone": "blaenavon_stacksq",
+    "npc": "bla_ironwife",
+    "ask": "Now then, butt, I've been trying to copy a gravy from Cardiff for a year. Would you ask the cook what's in it? Do it casually.",
+    "accept": "Casually. Right. Don't mention my name."
+   }
+  },
+  {
+   "id": "w47_gossip_cardiff",
+   "title": "Three Houses and a Rumour",
+   "region": "south_wales",
+   "town": "cardiff",
+   "giver": "a resident of Cardiff",
+   "summary": "Pass a rumour from Cardiff to St Davids, hear what Blaenavon makes of it, and report back.",
+   "start_flag": "q_south_wales_w47_gossip_cardiff_started",
+   "steps": [
+    {
+     "flag": "q_south_wales_w47_gossip_cardiff_1",
+     "text": "Ask in St Davids.",
+     "zone": "stdavids_home_close",
+     "npc": "close_gran",
+     "line": "That old tale? It's true, but half of it, and the dull half. Ask over in Blaenavon, they'll tell you the rest."
+    },
+    {
+     "flag": "q_south_wales_w47_gossip_cardiff_2",
+     "text": "Ask in Blaenavon.",
+     "zone": "blaenavon_stacksq",
+     "npc": "bla_ironwife",
+     "line": "Oh, that. It was a swan, in the end. It's always a swan. Tell them it was a swan."
+    },
+    {
+     "flag": "q_south_wales_w47_gossip_cardiff_3",
+     "text": "Tell Cardiff the news.",
+     "zone": "cardiff_home_bute",
+     "npc": "bute_oldman",
+     "line": "A swan! I said it was a swan! Nobody listens. Here, you listened."
+    }
+   ],
+   "done_flag": "q_south_wales_w47_gossip_cardiff_done",
+   "reward": "Iron Snare and £100.",
+   "reward_item": {
+    "item": "iron_snare",
+    "n": 1
+   },
+   "reward_money": 100,
+   "start": {
+    "zone": "cardiff_home_bute",
+    "npc": "bute_oldman",
+    "ask": "Now then, butt, I've heard something about St Davids, but I'd like it confirmed. Would you ask round? Pass it on gently.",
+    "accept": "Lovely. Whatever they say, I knew it already."
+   }
+  }
+ ]
+}

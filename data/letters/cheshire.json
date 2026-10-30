@@ -1,0 +1,72 @@
+{
+ "papers": [
+  {
+   "id": "ltr_nell_pears",
+   "zone": "wirral_h1",
+   "title": "Letter from Aunt Nell",
+   "lines": [
+    "Dear Jo, I am sending the good teaspoons because you will only fight over them later.",
+    "The tin is under the pear tree at the back, where your Uncle Alf hid his pools winnings in 1971.",
+    "He swore it was a flowerpot. Do mind the roots."
+   ],
+   "trail": {
+    "zone": "macc_forest",
+    "near": [
+     47,
+     6
+    ],
+    "clue": "Aunt Nell's tin lies in the ground where a pear tree stood. The nearest thing to remember it by is the open ground.",
+    "reward": {
+     "money": 1500
+    }
+   }
+  },
+  {
+   "id": "ltr_silk_ledger",
+   "zone": "macc_silkmuseum",
+   "title": "Page from a silk ledger",
+   "lines": [
+    "Received of Mr Barlow, eleven yards of figured twill, one yard short.",
+    "Entered as a loss. The yard was found in the cat's basket on Thursday.",
+    "Entered as a gain. The cat has not been charged rent."
+   ]
+  },
+  {
+   "id": "ltr_bellringers",
+   "zone": "chester_cathedral",
+   "title": "Bellringers' notice",
+   "lines": [
+    "Practice is Thursday at half past seven. Tea is NOT provided, whatever Derek says.",
+    "New ringers welcome. You will be given a rope, a stern look and a biscuit, in that order."
+   ]
+  },
+  {
+   "id": "ltr_canal_toll",
+   "zone": "chester_rows",
+   "title": "Toll receipt, 1824",
+   "lines": [
+    "Received of Josiah Heap, for one boat of salt, forty hundredweight, passing the lock at Marbury.",
+    "Signed with a cross, as the toll keeper had mislaid his pen and his temper."
+   ]
+  },
+  {
+   "id": "ltr_rows_bet",
+   "zone": "chester_h1",
+   "title": "Folded betting slip",
+   "lines": [
+    "Chester Races, 2.30. Nelly's Pride, each way, two shillings.",
+    "On the back: 'If this comes in, I am buying the hat in the window at Browns. If it does not, I never saw this.'"
+   ]
+  },
+  {
+   "id": "ltr_land_girl",
+   "zone": "wirral_hillfarm",
+   "title": "Note from a Land Girl",
+   "lines": [
+    "Dear Mrs Pickford, I have left the eggs in the blue bowl and the ferret in the box.",
+    "Please do not confuse the two. I did once, and the less said the better.",
+    "Back for the milking at five. Yours, Edie."
+   ]
+  }
+ ]
+}

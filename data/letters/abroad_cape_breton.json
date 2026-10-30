@@ -1,0 +1,52 @@
+{
+ "papers": [
+  {
+   "id": "ltr_gaelic_frolic",
+   "zone": "baddeck_bell",
+   "title": "Frolic invitation",
+   "lines": [
+    "A frolic at the Hall on Saturday. Fiddles, stepdancing, a milling table and tea.",
+    "Bring your own cup. Bring a plate for the supper. Bring a cousin, because we are short on cousins."
+   ]
+  },
+  {
+   "id": "ltr_hydrofoil",
+   "zone": "baddeck_class",
+   "title": "Inventor's note",
+   "lines": [
+    "The HD-4 boat flew over the lake on its fins at over seventy miles an hour, which is faster than a horse.",
+    "We let the horse know. The horse was unmoved."
+   ],
+   "trail": {
+    "zone": "baddeck",
+    "near": [
+     29,
+     24
+    ],
+    "clue": "A tinkerer left a small toolbox near the lamp post, 'for the next man with a mad idea'.",
+    "reward": {
+     "item": "water_snare",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_coal_ceilidh",
+   "zone": "baddeck_hall",
+   "title": "Miner's song sheet",
+   "lines": [
+    "We dig the black coal in the dark, and sing the old songs in the light.",
+    "Come up for the Gaelic, stay down for the wages."
+   ]
+  },
+  {
+   "id": "ltr_moose_notice",
+   "zone": "baddeck_sanctuary",
+   "title": "Road notice",
+   "lines": [
+    "Moose on road. Moose may not read this sign. Moose will not slow down.",
+    "Drivers are therefore reminded to be sensible, whatever the moose decides."
+   ]
+  }
+ ]
+}

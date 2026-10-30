@@ -147,6 +147,15 @@
  "name": "Belfast",
  "npcs": [
   {
+   "id": "chapman_belfast",
+   "sprite": "shopkeeper",
+   "x": 49,
+   "y": 27,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_belfast"
+  },
+  {
    "facing": "right",
    "id": "rail_guard",
    "move": "still",

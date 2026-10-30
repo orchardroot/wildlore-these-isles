@@ -1,12 +1,12 @@
 [
-  {"id": "bin_clang", "name": "Bin Lid Clang", "type": "urban", "category": "physical", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}},
-  {"id": "dirty_look", "name": "Dirty Look", "type": "urban", "category": "status", "power": 0, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "spd", "stages": -1}},
-  {"id": "kerb_crunch", "name": "Kerb Crunch", "type": "urban", "category": "physical", "power": 80, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 20}},
-  {"id": "bin_lid_bash", "name": "Bin Lid Bash", "type": "urban", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}},
-  {"id": "rush_hour", "name": "Rush Hour", "type": "urban", "category": "physical", "power": 110, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "recoil", "frac": 33}},
-  {"id": "tannoy_squeal", "name": "Tannoy Squeal", "type": "urban", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "flinch", "chance": 10}},
-  {"id": "chip_shop_sizzle", "name": "Chip Shop Sizzle", "type": "urban", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 10}},
-  {"id": "gridlock", "name": "Gridlock", "type": "urban", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "muddled", "chance": 20}},
-  {"id": "tube_rush", "name": "Tube Rush", "type": "urban", "category": "physical", "power": 85, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "recoil", "frac": 25}},
-  {"id": "parking_ticket", "name": "Parking Ticket", "type": "urban", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "def", "stages": -1}}
+  {"id": "bin_clang", "name": "Bin Lid Clang", "type": "urban", "category": "physical", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "quake"}},
+  {"id": "dirty_look", "name": "Dirty Look", "type": "urban", "category": "status", "power": 0, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "spd", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "kerb_crunch", "name": "Kerb Crunch", "type": "urban", "category": "physical", "power": 80, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "quake"}},
+  {"id": "bin_lid_bash", "name": "Bin Lid Bash", "type": "urban", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "quake"}},
+  {"id": "rush_hour", "name": "Rush Hour", "type": "urban", "category": "physical", "power": 110, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "recoil", "frac": 33}, "fx": {"shape": "wave"}},
+  {"id": "tannoy_squeal", "name": "Tannoy Squeal", "type": "urban", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "flinch", "chance": 10}, "fx": {"shape": "song"}},
+  {"id": "chip_shop_sizzle", "name": "Chip Shop Sizzle", "type": "urban", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 10}, "fx": {"shape": "rain"}},
+  {"id": "gridlock", "name": "Gridlock", "type": "urban", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "muddled", "chance": 20}, "fx": {"shape": "quake"}},
+  {"id": "tube_rush", "name": "Tube Rush", "type": "urban", "category": "physical", "power": 85, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "recoil", "frac": 25}, "fx": {"shape": "wave"}},
+  {"id": "parking_ticket", "name": "Parking Ticket", "type": "urban", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "def", "stages": -1}, "fx": {"shape": "cloud"}}
 ]

@@ -1,0 +1,222 @@
+{
+ "maud": [
+  {
+   "zone": "buxton_h2",
+   "npc": "buxton_h2_0",
+   "line": "Keeper Maud's lot are mostly Brook, with a Bog frog and a Night creature mixed in. Water, mainly."
+  },
+  {
+   "zone": "buxton_h3",
+   "npc": "buxton_h3_0",
+   "line": "Walking boots won't help you at the spa. Bring Storm or Frost moves, they get through a Brook creature's guard."
+  },
+  {
+   "zone": "buxton_h4",
+   "npc": "buxton_h4_0",
+   "line": "She keeps a little otter-ish thing in the baths. Rillotter, I think. Quick, slippery, fond of the warm water."
+  },
+  {
+   "zone": "buxton_h6",
+   "npc": "buxton_h6_0",
+   "line": "I jog past the Crescent every morning and I hear her train. Bog moves bite too, if you've got one going spare."
+  }
+ ],
+ "ray": [
+  {
+   "zone": "liverpool_h1",
+   "npc": "liverpool_h1_0",
+   "line": "Ray plays the Cavern with Urban creatures, three of the four of them. Pavement, pigeons and a fox."
+  },
+  {
+   "zone": "liverpool_h2",
+   "npc": "liverpool_h2_0",
+   "line": "On the docks they say Spirit moves go through an Urban creature like a draught. Worth a try."
+  },
+  {
+   "zone": "liverpool_h3",
+   "npc": "liverpool_h3_0",
+   "line": "He's got a pier-lord thing on his side. Big, proud, and not as quick as it looks. Brawn will rattle it."
+  },
+  {
+   "zone": "liverpool_h4",
+   "npc": "liverpool_h4_0",
+   "line": "Storm moves bite as well, love. Bring a proper charged-up one, and the band will sound all the louder."
+  }
+ ],
+ "eluned": [
+  {
+   "zone": "llanberis_home1",
+   "npc": "lh1_mam",
+   "line": "Eluned works the top terrace of the quarry, and her creatures are all Stone, near enough."
+  },
+  {
+   "zone": "llanberis_home2",
+   "npc": "lh2_dad",
+   "line": "Stone creatures don't like a soaking. Brook and Tide moves, bach, that's what you want up there."
+  },
+  {
+   "zone": "llanberis_home3",
+   "npc": "lh3_gran",
+   "line": "Her little grit-thing leads, then a big goat. Billgruff, they call it. Stubborn, like my late husband."
+  },
+  {
+   "zone": "llanberis_home4",
+   "npc": "lh4_lad",
+   "line": "Brawn hits Stone hard as well. I ran past her gallery last week and every pebble on the path was shaking."
+  }
+ ],
+ "rhys": [
+  {
+   "zone": "cardiff_home_bute",
+   "npc": "bute_oldman",
+   "line": "Rhys fights with Storm creatures, nearly all of them. Sparks and thunder over the arena."
+  },
+  {
+   "zone": "cardiff_home_grange",
+   "npc": "grange_mamgu",
+   "line": "Storm is no match for a Stone creature, cariad. They don't conduct, see. Ground you right out."
+  },
+  {
+   "zone": "cardiff_home_roath",
+   "npc": "roath_dad",
+   "line": "He's got a frog in the team, a Natterjack, and a petrel as well. Frost moves would shiver the lot."
+  },
+  {
+   "zone": "cardiff_norwegian",
+   "npc": "norwegian_host",
+   "line": "Hedgerow bites too, so I'm told. Grass for the lightning rod. Don't tell Rhys I said."
+  }
+ ],
+ "morwen": [
+  {
+   "zone": "glastonbury_cauldron",
+   "npc": "cauldron_cook",
+   "line": "Morwen's creatures are Fae, every one, with a touch of Hedgerow. Properly eerie."
+  },
+  {
+   "zone": "glastonbury_george",
+   "npc": "george_host",
+   "line": "Fae can't stand cold iron, can they? Bog and Iron moves work well, and Night moves a bit as well."
+  },
+  {
+   "zone": "glastonbury_home1",
+   "npc": "glaston_home1_gran",
+   "line": "The last one she sends out is a lantern thing. Lanternis. Leads you off the path, then it's the morning."
+  },
+  {
+   "zone": "glastonbury_home2",
+   "npc": "glaston_home2_farmer",
+   "line": "I took a Bog creature up that Tor once and the pixies went very quiet. Make of that what you will."
+  }
+ ],
+ "declan": [
+  {
+   "zone": "dublin_home_park",
+   "npc": "dub_home_hurler",
+   "line": "Declan fights with Kin creatures, mostly. Plain old Irish animals, hares and stags."
+  },
+  {
+   "zone": "dublin_home_green",
+   "npc": "dub_home_student",
+   "line": "Kin has few weaknesses on paper, but Brawn moves land hard on that lot. Big shoulders."
+  },
+  {
+   "zone": "dublin_home_terrace",
+   "npc": "dub_home_orla",
+   "line": "There's a stag in his team, and a pony from Connemara. Neither likes being pushed about."
+  },
+  {
+   "zone": "dublin_templebar",
+   "npc": "dub_templebar_fiddler",
+   "line": "Urban moves are the answer, if you ask the lads at the bar. Pavement beats the hills, apparently."
+  }
+ ],
+ "nuala": [
+  {
+   "zone": "galway_home_arch",
+   "npc": "home_arch_dad",
+   "line": "Nuala's whole team is Tide, with a bit of Fae in the selkie and the merrow."
+  },
+  {
+   "zone": "galway_home_claddagh",
+   "npc": "home_claddagh_fisher",
+   "line": "Storm moves, every time. Salt water and lightning do not get on, and she has five of them out there."
+  },
+  {
+   "zone": "galway_home_prom",
+   "npc": "home_prom_gran",
+   "line": "Mind the salmon. Bradan, it's called, and it jumps higher than you think it will."
+  },
+  {
+   "zone": "galway_tighn",
+   "npc": "tighn_host",
+   "line": "Hedgerow bites as well, and Night. The sea creatures have no idea what to do about a hedge."
+  }
+ ],
+ "ruairi": [
+  {
+   "zone": "belfast_home_riveter",
+   "npc": "bel_home_riveter",
+   "line": "Ruairi's got Iron creatures, rail and rivet and cog. Four of his five are made of the stuff."
+  },
+  {
+   "zone": "belfast_home_lisburn",
+   "npc": "bel_home_mairead",
+   "line": "Brawn goes through Iron like a hammer through a pie. Bring something strong."
+  },
+  {
+   "zone": "belfast_home_wain",
+   "npc": "bel_home_family",
+   "line": "He has a causeway-warden at the back. Big, stony, and tidal. Tide and Hearth work on the rest."
+  },
+  {
+   "zone": "belfast_palmhouse",
+   "npc": "bel_palm_gardener",
+   "line": "Hearth moves soften up the metal nicely. A bit of fire, a bit of patience. Same as the yard."
+  }
+ ],
+ "isla": [
+  {
+   "zone": "inverness_home_a",
+   "npc": "inv_home_a_mum",
+   "line": "Isla's team is Frost, almost all of it. Six out of six, near enough."
+  },
+  {
+   "zone": "inverness_home_b",
+   "npc": "inv_home_b_grandad",
+   "line": "Stone, Hearth and Iron moves make a mess of a Frost creature. Fire, mostly, if you can find it."
+  },
+  {
+   "zone": "inverness_home_c",
+   "npc": "inv_home_c_mum",
+   "line": "There's a reindeer on the team. And a ptarmigan. They look lovely and hit like a bus."
+  },
+  {
+   "zone": "inverness_home_d",
+   "npc": "inv_home_d_man",
+   "line": "Brawn is fine too. Take a thick jumper to the rink, mind. Even the Keeper wears one."
+  }
+ ],
+ "hester": [
+  {
+   "zone": "york_house_a",
+   "npc": "house_a_resident",
+   "line": "Hester's creatures are mostly Spirit. The Minster crypt is no place for the faint-hearted."
+  },
+  {
+   "zone": "york_house_b",
+   "npc": "house_b_resident",
+   "line": "Spirit bites Spirit. And Fae moves go through them like a ghost through a wall. Funny, that."
+  },
+  {
+   "zone": "york_house_c",
+   "npc": "house_c_resident",
+   "line": "There's a Roman soldier in her team, Centurion. Still marching, still disapproving."
+  },
+  {
+   "zone": "york_bettys",
+   "npc": "york_baker",
+   "line": "Night moves are good against Spirit, I've heard. Bring a lantern and a tea-cake."
+  }
+ ]
+}

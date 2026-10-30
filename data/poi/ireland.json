@@ -1,0 +1,220 @@
+{
+ "pois": [
+  {
+   "id": "poi_antrim_coast_den",
+   "zone": "antrim_coast",
+   "near": [
+    48,
+    38
+   ],
+   "kind": "den",
+   "at": "antrim_coast",
+   "species": "pollanet"
+  },
+  {
+   "id": "poi_antrim_coast_stone",
+   "zone": "antrim_coast",
+   "near": [
+    15,
+    14
+   ],
+   "kind": "stone",
+   "at": "antrim_coast",
+   "stat": "def",
+   "lore": [
+    "It leans, slightly, like it has heard all this before.",
+    "The real thing is Beaghmore, in Co. Tyrone: a field of small circles and rows of stones coming up out of the bog."
+   ],
+   "mentioned_by": {
+    "zone": "belfast",
+    "npc": "belfast_astronomer"
+   }
+  },
+  {
+   "id": "poi_causeway_cache",
+   "zone": "causeway",
+   "near": [
+    9,
+    19
+   ],
+   "kind": "cache",
+   "at": "causeway",
+   "item": "silver_snare",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes."
+  },
+  {
+   "id": "poi_causeway_den",
+   "zone": "causeway",
+   "near": [
+    19,
+    33
+   ],
+   "kind": "den",
+   "at": "causeway",
+   "species": "finnmacool"
+  },
+  {
+   "id": "poi_comeraghs_den",
+   "zone": "comeraghs",
+   "near": [
+    3,
+    36
+   ],
+   "kind": "den",
+   "at": "comeraghs",
+   "species": "hootlet"
+  },
+  {
+   "id": "poi_comeraghs_camp",
+   "zone": "comeraghs",
+   "near": [
+    28,
+    35
+   ],
+   "kind": "camp",
+   "at": "comeraghs",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "leveret",
+    "leveret",
+    "polartern"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 2420,
+   "item": "flask_of_tea",
+   "mentioned_by": {
+    "zone": "kilkenny",
+    "npc": "pub_singer"
+   }
+  },
+  {
+   "id": "poi_lease_glenashen_cache",
+   "zone": "lease_glenashen",
+   "near": [
+    36,
+    8
+   ],
+   "kind": "cache",
+   "at": "antrim_coast",
+   "item": "headscarf_tartan",
+   "line": "Someone's hiding place, and not as hidden as they hoped.",
+   "paper": "A note, in careful capitals: 'FINDERS KEEPERS. SIGNED, THE MOORSIDE GANG, AGED NINE.'"
+  },
+  {
+   "id": "poi_lease_glenashen_den",
+   "zone": "lease_glenashen",
+   "near": [
+    28,
+    19
+   ],
+   "kind": "den",
+   "at": "antrim_coast",
+   "species": "polartern"
+  },
+  {
+   "id": "poi_lough_neagh_camp",
+   "zone": "lough_neagh",
+   "near": [
+    50,
+    29
+   ],
+   "kind": "camp",
+   "at": "lough_neagh",
+   "names": [
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "rillotter",
+    "hootlet",
+    "pollanet"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 2940,
+   "item": "silver_snare"
+  },
+  {
+   "id": "poi_lough_neagh_den",
+   "zone": "lough_neagh",
+   "near": [
+    5,
+    36
+   ],
+   "kind": "den",
+   "at": "lough_neagh",
+   "species": "dextera"
+  },
+  {
+   "id": "poi_mournes_den",
+   "zone": "mournes",
+   "near": [
+    10,
+    37
+   ],
+   "kind": "den",
+   "at": "mournes",
+   "species": "pooka"
+  },
+  {
+   "id": "poi_mournes_stone",
+   "zone": "mournes",
+   "near": [
+    19,
+    19
+   ],
+   "kind": "stone",
+   "at": "mournes",
+   "stat": "ward",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is Drombeg, near Glandore in Co. Cork: a ring of 17 stones with a recumbent stone pointing at the midwinter sunset."
+   ]
+  },
+  {
+   "id": "poi_wicklow_den",
+   "zone": "wicklow",
+   "near": [
+    27,
+    16
+   ],
+   "kind": "den",
+   "at": "wicklow",
+   "species": "bayrunner"
+  },
+  {
+   "id": "poi_wicklow_cache",
+   "zone": "wicklow",
+   "near": [
+    58,
+    37
+   ],
+   "kind": "cache",
+   "at": "wicklow",
+   "item": "rowan_sprig",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes.",
+   "mentioned_by": {
+    "zone": "dublin",
+    "npc": "kells_guide"
+   }
+  }
+ ]
+}

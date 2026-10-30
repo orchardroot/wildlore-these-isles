@@ -88,6 +88,7 @@ func setup(arg: String) -> void:
 	var parts := arg.split(":")  # "<shop_id>" or "<shop_id>:buy|sell" (jump straight to a list, handy for screenshots)
 	arg = parts[0]
 	_shop = Game.items.shops.get(arg, {}) if Game.items != null else {}
+	_shop = Chapbooks.shop_for_week(_shop, Chapbooks.week_of(Calendar.today_key()))  # a chapman rotates three books a week
 	if _shop.is_empty():
 		_say.text = "Shut for stocktaking. Back soon."
 		set_title("Shop")

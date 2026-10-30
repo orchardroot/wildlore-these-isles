@@ -1,4 +1,15 @@
 {
+ "chapman_edinburgh": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, twelve to the dozen. Printed upstairs, read downstairs, learned on the High Street."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_edinburgh"
+  }
+ ],
  "rail_guard": [
   {
    "do": "say",

@@ -1,0 +1,20 @@
+{
+ "id": "chapman_cardiff",
+ "name": "Cardiff Chapman",
+ "stock": [
+  "chapbook_glare",
+  "chapbook_hunker",
+  "chapbook_barge",
+  "chapbook_sheepdog_herd",
+  "chapbook_barnacle_glue",
+  "chapbook_rip_current",
+  "chapbook_moon_pull",
+  "chapbook_galvanise",
+  "chapbook_forge_hammer",
+  "chapbook_blast_furnace",
+  "chapbook_kindle",
+  "chapbook_blaze_dash",
+  "chapbook_aga_roast",
+  "chapbook_snug_as_a_bug"
+ ]
+}

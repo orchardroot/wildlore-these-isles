@@ -1,0 +1,19 @@
+{
+ "trades": [
+  {
+   "id": "tr_gaiman_chapel_sheep_wool",
+   "zone": "gaiman_chapel",
+   "npc": "gai_minister",
+   "wants": {
+    "item": "sheep_wool",
+    "n": 5
+   },
+   "gives": {
+    "money": 510
+   },
+   "ask": "Well, my cupboard wants Sheep Wool, five of them. I'll swap you £510.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  }
+ ]
+}

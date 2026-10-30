@@ -304,13 +304,18 @@ func _middle(c: Creature) -> Control:
 		name_l.custom_minimum_size = Vector2(118, 0)
 		row.add_child(name_l)
 		var val := c.max_hp() if s == "hp" else c.calc_stat(s)
-		var bar := ProgressBar.new()
-		bar.show_percentage = false
-		bar.max_value = 130
-		bar.value = val
-		bar.custom_minimum_size = Vector2(124, 14)
+		# HP reads "22 / 33", so its bar is the health bar (current over max); the others show the stat's size
+		var bar: ProgressBar
+		if s == "hp":
+			bar = UIKit.hp_bar(c.hp, val, 124, 14)
+		else:
+			bar = ProgressBar.new()
+			bar.show_percentage = false
+			bar.max_value = 130
+			bar.value = val
+			bar.custom_minimum_size = Vector2(124, 14)
+			bar.add_theme_stylebox_override("fill", UIKit.box(UIKit.HEATHER, Color(0, 0, 0, 0), 0, 3, 0))
 		bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		bar.add_theme_stylebox_override("fill", UIKit.box(UIKit.HEATHER, Color(0, 0, 0, 0), 0, 3, 0))
 		row.add_child(bar)
 		var txt := "%d / %d" % [c.hp, val] if s == "hp" else str(val)
 		var vl := UIKit.label(txt, 24)

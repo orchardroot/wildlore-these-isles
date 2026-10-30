@@ -1,0 +1,67 @@
+{
+ "trades": [
+  {
+   "id": "tr_blackpool_arcade_lancashire_hotpot",
+   "zone": "blackpool_arcade",
+   "npc": "bp_arcade_change",
+   "wants": {
+    "item": "fairground_horse",
+    "n": 1
+   },
+   "gives": {
+    "item": "chapbook_gust_nudge",
+    "n": 1
+   },
+   "ask": "Bring me a Gallopers Horse and I'll swap you Chapbook: Gust Nudge for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
+   "repeat": false
+  },
+  {
+   "id": "tr_blackpool_bloomfield_whiting",
+   "zone": "blackpool_bloomfield",
+   "npc": "bfr_fan",
+   "wants": {
+    "item": "whiting",
+    "n": 2
+   },
+   "gives": {
+    "item": "sou_wester_yellow",
+    "n": 1
+   },
+   "ask": "Now then, my cupboard wants Whiting, two of them. I'll swap you a Sou'wester.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_blackpool_ballroom_leeks",
+   "zone": "blackpool_ballroom",
+   "npc": "ball_mc",
+   "wants": {
+    "item": "leeks",
+    "n": 2
+   },
+   "gives": {
+    "item": "seaside_rock",
+    "n": 1
+   },
+   "ask": "I'll swap you a Stick of Rock for 2 Leeks. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
+   "repeat": false
+  },
+  {
+   "id": "tr_blackpool_chippy_nettles",
+   "zone": "blackpool_chippy",
+   "npc": "chippy_fryer",
+   "wants": {
+    "item": "nettles",
+    "n": 3
+   },
+   "gives": {
+    "money": 610
+   },
+   "ask": "Now then, bring me Nettles, three of them and £610 is yours. Fair's fair.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": false
+  }
+ ]
+}

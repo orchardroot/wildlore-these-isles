@@ -849,6 +849,15 @@
  },
  "npcs": [
   {
+   "id": "chapman_newcastle",
+   "sprite": "shopkeeper",
+   "x": 29,
+   "y": 12,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_newcastle"
+  },
+  {
    "id": "rail_guard",
    "sprite": "rail_guard",
    "x": 16,

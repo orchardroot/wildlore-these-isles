@@ -1,0 +1,114 @@
+{
+ "trades": [
+  {
+   "id": "tr_dingle_home1_rhubarb",
+   "zone": "dingle_home1",
+   "npc": "osullivan_ma",
+   "wants": {
+    "item": "claddagh_ring",
+    "n": 1
+   },
+   "gives": {
+    "item": "chapbook_fairy_ring",
+    "n": 1
+   },
+   "ask": "Bring me a Claddagh Ring and I'll swap you Chapbook: Fairy Ring for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
+   "repeat": false
+  },
+  {
+   "id": "tr_galway_home_arch_limerick_lace",
+   "zone": "galway_home_arch",
+   "npc": "home_arch_dad",
+   "wants": {
+    "item": "limerick_lace",
+    "n": 3
+   },
+   "gives": {
+    "item": "turned_coat",
+    "n": 1
+   },
+   "ask": "Well now, one day I'll stop running out of limerick lace. Until then, a Turned Coat for Limerick Lace, three of them.",
+   "thanks": "Champion. That's exactly the thing.",
+   "repeat": false
+  },
+  {
+   "id": "tr_kerry_cottage_irish_stew",
+   "zone": "kerry_cottage",
+   "npc": "kerry_cottager",
+   "wants": {
+    "item": "irish_stew",
+    "n": 1
+   },
+   "gives": {
+    "item": "scarf_red",
+    "n": 1
+   },
+   "ask": "Ah sure, one day I'll stop running out of irish stew. Until then, a Red football scarf for Irish Stew, just the one.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_limerick_home_pery_atlantic_salmon",
+   "zone": "limerick_home_pery",
+   "npc": "pery_owner",
+   "wants": {
+    "item": "atlantic_salmon",
+    "n": 2
+   },
+   "gives": {
+    "item": "silver_snare",
+    "n": 1
+   },
+   "ask": "Well now, do you happen to have Atlantic Salmon, two of them? I'll part with a Silver Snare.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_shannon_cottage_sheep_wool",
+   "zone": "shannon_cottage",
+   "npc": "bean_an_ti",
+   "wants": {
+    "item": "sheep_wool",
+    "n": 4
+   },
+   "gives": {
+    "money": 470
+   },
+   "ask": "Well now, do you happen to have Sheep Wool, four of them? I'll part with £470.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": true
+  },
+  {
+   "id": "tr_sligo_home_strand_scarf_red",
+   "zone": "sligo_home_strand",
+   "npc": "home_sligo_nana",
+   "wants": {
+    "item": "scarf_red",
+    "n": 1
+   },
+   "gives": {
+    "item": "sunhat_straw",
+    "n": 1
+   },
+   "ask": "Well now, I'm after Red football scarf, just the one. A Straw sunhat, if you can find it. I won't ask where you got it.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_dingle_home2_potatoes",
+   "zone": "dingle_home2",
+   "npc": "kennedy_nan",
+   "wants": {
+    "item": "potatoes",
+    "n": 3
+   },
+   "gives": {
+    "money": 100
+   },
+   "ask": "Well now, I'd give £100 for Potatoes, three of them.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": true
+  }
+ ]
+}

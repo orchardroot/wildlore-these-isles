@@ -1,0 +1,185 @@
+{
+ "pois": [
+  {
+   "id": "poi_hadrians_wall_den",
+   "zone": "hadrians_wall",
+   "near": [
+    45,
+    4
+   ],
+   "kind": "den",
+   "at": "newcastle",
+   "species": "pupplash",
+   "mentioned_by": {
+    "zone": "newcastle",
+    "npc": "rail_guard"
+   }
+  },
+  {
+   "id": "poi_hadrians_wall_camp",
+   "zone": "hadrians_wall",
+   "near": [
+    35,
+    18
+   ],
+   "kind": "camp",
+   "at": "newcastle",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ]
+   ],
+   "party": [
+    "slatelet",
+    "flittermouse",
+    "rooklet"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 3500,
+   "item": "cream_tea",
+   "mentioned_by": {
+    "zone": "newcastle",
+    "npc": "rail_guard"
+   }
+  },
+  {
+   "id": "poi_hadrians_wall_cache",
+   "zone": "hadrians_wall",
+   "near": [
+    7,
+    20
+   ],
+   "kind": "cache",
+   "at": "newcastle",
+   "item": "hag_stone",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox."
+  },
+  {
+   "id": "poi_northumberland_coast_camp",
+   "zone": "northumberland_coast",
+   "near": [
+    23,
+    21
+   ],
+   "kind": "camp",
+   "at": "aberdeen",
+   "names": [
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "zigzlet",
+    "puffling",
+    "puffling"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 3500,
+   "item": "kendal_mint_cake"
+  },
+  {
+   "id": "poi_northumberland_coast_stone",
+   "zone": "northumberland_coast",
+   "near": [
+    33,
+    53
+   ],
+   "kind": "stone",
+   "at": "aberdeen",
+   "stat": "def",
+   "lore": [
+    "Someone has left a single conker on top. Sensible.",
+    "The real thing is Duddo Five Stones, in Northumberland: five weathered stones, grooved by the rain."
+   ],
+   "mentioned_by": {
+    "zone": "aberdeen",
+    "npc": "oil_engineer"
+   }
+  },
+  {
+   "id": "poi_northumberland_coast_cache",
+   "zone": "northumberland_coast",
+   "near": [
+    7,
+    42
+   ],
+   "kind": "cache",
+   "at": "aberdeen",
+   "item": "sunhat_straw",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox.",
+   "mentioned_by": {
+    "zone": "aberdeen",
+    "npc": "oil_engineer"
+   }
+  },
+  {
+   "id": "poi_penshaw_camp",
+   "zone": "penshaw",
+   "near": [
+    3,
+    19
+   ],
+   "kind": "camp",
+   "at": "newcastle",
+   "names": [
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "bufomire",
+    "thistlet",
+    "croakle"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 3540,
+   "item": "hag_stone",
+   "mentioned_by": {
+    "zone": "newcastle",
+    "npc": "rail_guard"
+   }
+  },
+  {
+   "id": "poi_penshaw_stone",
+   "zone": "penshaw",
+   "near": [
+    32,
+    28
+   ],
+   "kind": "stone",
+   "at": "newcastle",
+   "stat": "hp",
+   "lore": [
+    "It leans, slightly, like it has heard all this before.",
+    "The real thing is Duddo Five Stones, in Northumberland: five weathered stones, grooved by the rain."
+   ]
+  }
+ ]
+}

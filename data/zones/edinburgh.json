@@ -199,6 +199,15 @@
  "name": "Edinburgh",
  "npcs": [
   {
+   "id": "chapman_edinburgh",
+   "sprite": "shopkeeper",
+   "x": 39,
+   "y": 42,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_edinburgh"
+  },
+  {
    "facing": "left",
    "id": "rail_guard",
    "move": "still",

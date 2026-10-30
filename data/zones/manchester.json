@@ -1245,6 +1245,15 @@
  },
  "npcs": [
   {
+   "id": "chapman_manchester",
+   "sprite": "shopkeeper",
+   "x": 33,
+   "y": 29,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_manchester"
+  },
+  {
    "facing": "down",
    "id": "isles_kasia",
    "move": "still",

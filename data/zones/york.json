@@ -910,6 +910,15 @@
  },
  "npcs": [
   {
+   "id": "chapman_york",
+   "sprite": "shopkeeper",
+   "x": 36,
+   "y": 42,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_york"
+  },
+  {
    "facing": "down",
    "id": "isles_sigrid",
    "move": "still",

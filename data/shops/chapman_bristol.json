@@ -1,0 +1,20 @@
+{
+ "id": "chapman_bristol",
+ "name": "Bristol Chapman",
+ "stock": [
+  "chapbook_glare",
+  "chapbook_hunker",
+  "chapbook_barge",
+  "chapbook_sheepdog_herd",
+  "chapbook_barnacle_glue",
+  "chapbook_rip_current",
+  "chapbook_moon_pull",
+  "chapbook_dirty_look",
+  "chapbook_kerb_crunch",
+  "chapbook_gridlock",
+  "chapbook_bluster",
+  "chapbook_swoop",
+  "chapbook_gale_force",
+  "chapbook_gust_nudge"
+ ]
+}

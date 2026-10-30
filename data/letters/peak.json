@@ -1,0 +1,65 @@
+{
+ "papers": [
+  {
+   "id": "ltr_well_water",
+   "zone": "buxton_crescent",
+   "title": "Letter to the Pump Room",
+   "lines": [
+    "Dear Sirs, I took the waters faithfully for a fortnight as advised.",
+    "I am now wonderfully regular, and quite alarmingly cheerful.",
+    "I enclose a cheque and a request for a bigger bottle."
+   ]
+  },
+  {
+   "id": "ltr_blue_john",
+   "zone": "blue_john_entry",
+   "title": "Miner's note",
+   "lines": [
+    "Found a vein of the purple stuff behind the old timbers.",
+    "Told nobody but the dog. The dog has told nobody either, but he looks smug.",
+    "I have marked the place with a pit prop and a pile of three stones."
+   ],
+   "trail": {
+    "zone": "goyt_valley",
+    "near": [
+     11,
+     54
+    ],
+    "clue": "A miner's pile of stones near the big rock. Dig where three stones once sat together.",
+    "reward": {
+     "item": "hag_stone",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_fell_race",
+   "zone": "cat_and_fiddle_inn",
+   "title": "Fell race entry form",
+   "lines": [
+    "Name: Gwen. Club: none, I run alone. Experience: I once chased a bus up Axe Edge.",
+    "Next of kin: the bus driver.",
+    "Estimated finish: before the pub shuts."
+   ]
+  },
+  {
+   "id": "ltr_wake_card",
+   "zone": "buxton_h1",
+   "title": "Well-dressing card",
+   "lines": [
+    "This year's picture is to be done in petals, seeds and moss. No glitter. Not again, Marjorie.",
+    "Clay is ready in the shed. Bring a bucket, a sharp knife and a kind word."
+   ]
+  },
+  {
+   "id": "ltr_sheepdog_trial",
+   "zone": "buxton_h2",
+   "title": "Trial scorecard",
+   "lines": [
+    "Fly, the collie. Outrun: good. Lift: good. Fetch: sat down and looked at the judge.",
+    "Drive: good. Pen: she shut the gate and then the judge in.",
+    "Total: 71 out of 100. Judge's comment: 'I admire her.'"
+   ]
+  }
+ ]
+}

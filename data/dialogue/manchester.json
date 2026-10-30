@@ -1,4 +1,15 @@
 {
+ "chapman_manchester": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, cheap as chips and twice as filling. I print in the back of a van. Don't ask."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_manchester"
+  }
+ ],
  "inv_howells": [
   {
    "do": "if",

@@ -1,4 +1,15 @@
 {
+ "chapman_shrewsbury": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, friend. Darwin bought one here, I'm fairly sure. Could have been a pie."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_shrewsbury"
+  }
+ ],
  "rail_guard": [
   {
    "do": "say",

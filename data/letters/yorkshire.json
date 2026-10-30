@@ -1,0 +1,91 @@
+{
+ "papers": [
+  {
+   "id": "ltr_pudding_rule",
+   "zone": "sheffield_forge",
+   "title": "Recipe card",
+   "lines": [
+    "Yorkshire pudding: equal cups of flour, egg and milk. Hot fat. Do not open the oven.",
+    "Written underneath in a firmer hand: 'DO NOT OPEN THE OVEN.'"
+   ]
+  },
+  {
+   "id": "ltr_pit_closure",
+   "zone": "sheffield_home_ahmed",
+   "title": "Last shift note",
+   "lines": [
+    "Sixty-one years down, man and boy. Left my lamp on the hook, as a courtesy.",
+    "Whoever has it next, keep it lit. Yours, a proud Barnsley lad, forty-seven pounds heavier than at the start."
+   ],
+   "trail": {
+    "zone": "saddleworth_moor",
+    "near": [
+     30,
+     36
+    ],
+    "clue": "The old lamp man hid his spare behind the big rock. Go and look.",
+    "reward": {
+     "item": "miners_lamp",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_railway_ticket",
+   "zone": "sheffield_home_doreen",
+   "title": "Third-class ticket",
+   "lines": [
+    "York to Scarborough, return, for a day by the sea.",
+    "Underneath, in a child's writing: 'It was cold. I had the best chips of my life.'"
+   ]
+  },
+  {
+   "id": "ltr_whitby_kipper",
+   "zone": "hull_chippy",
+   "title": "Fisherman's letter",
+   "lines": [
+    "Dear Mary, we shall be in on the tide, God and the engine willing.",
+    "Put the kettle on at four. Put another on at five in case I am slow.",
+    "If I am very slow, send the dog."
+   ]
+  },
+  {
+   "id": "ltr_moor_walkers",
+   "zone": "sheffield_home_eze",
+   "title": "Hand-drawn map",
+   "lines": [
+    "A rough sketch of the moor: 'Stone with a hole in it.' 'The wet bit.' 'Where Colin fell in.' 'Pub, hopefully.'",
+    "An X marks a spot the author says is 'a surprise'. The ink has run in the rain."
+   ],
+   "trail": {
+    "zone": "haworth",
+    "near": [
+     23,
+     40
+    ],
+    "clue": "Someone wrote 'a surprise' at an X near the lamp post. It seems worth digging.",
+    "reward": {
+     "money": 2000
+    }
+   }
+  },
+  {
+   "id": "ltr_steel_cutlery",
+   "zone": "sheffield_cafe",
+   "title": "Maker's mark card",
+   "lines": [
+    "Every knife from this works has a stamp: a crowned S and my initials.",
+    "Bad knives get 'MADE IN SHEFFIELD' crossed out and sent to Rotherham."
+   ]
+  },
+  {
+   "id": "ltr_hay_meadow",
+   "zone": "hull_corsair",
+   "title": "Meadow notice",
+   "lines": [
+    "The hay is not to be cut before the orchids have seeded. Signed, Miss Thwaite, and the orchids.",
+    "Anyone who disagrees can take it up with her in person at the gate, at a time of her choosing."
+   ]
+  }
+ ]
+}

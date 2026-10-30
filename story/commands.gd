@@ -30,7 +30,8 @@ func run(commands: Array) -> void:
 	_ended = false
 	_badge_won = false
 	_legend_caught = false
-	await _run_list(_nurse_visit(commands))
+	var zid: String = host.zone_id() if host.has_method("zone_id") else ""  # test and cold-open hosts may have no zone
+	await _run_list(ScriptHooks.wrap(zid, npc_id, _nurse_visit(commands), host.data))
 	if is_nurse_script(commands) and not _ended:
 		await _nurse_bounty()
 	# autosave once the whole scene has played, so the save has everything the Keeper's script did after the badge
@@ -153,6 +154,11 @@ func _exec(c: Dictionary) -> void:
 			await host.wait(float(c.get("seconds", 0.5)))
 		"warp":
 			await host.warp(str(c.get("zone", "")), int(c.get("x", 0)), int(c.get("y", 0)), str(c.get("facing", "down")))
+		"trade":  # w47 C: a resident's swap or an errand's reward (core/wants.gd)
+			var tl := Wants.apply(data, c)
+			if tl != "":
+				await host.sfx("item")
+				await host.say("", tl)
 		"shop":
 			await host.open_menu("shop:" + str(c.get("id", "")))
 		"wardrobe":  # the Wardrobe (ui/wardrobe_screen.gd); {"mirror": true} at a mirror, where hair is free to change
@@ -218,6 +224,8 @@ func _exec(c: Dictionary) -> void:
 			await _crossword(c)
 		"darts":
 			await PubSportRun.new(self).darts(c)
+		"trumps":
+			await TrumpsRun.new(self).run(c)
 		"arcade":
 			await ArcadeRun.new(self).run(c)
 		"curling":

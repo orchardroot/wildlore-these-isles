@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_onion_johnny",
+   "zone": "roscoff_church",
+   "title": "Onion Johnny's note",
+   "lines": [
+    "Three hundred strings of pink onions on the bicycle, and a beret, and a boat to Plymouth.",
+    "The English call me Johnny. I call them madame. We understand each other perfectly."
+   ]
+  },
+  {
+   "id": "ltr_breton_flag",
+   "zone": "roscoff_creperie",
+   "title": "Flag-maker's card",
+   "lines": [
+    "The Breton flag has nine black and white stripes and a field of ermine. Nobody can remember why, but everybody loves it.",
+    "Mind the ermine. They have a way of looking indignant."
+   ]
+  },
+  {
+   "id": "ltr_cider_bolee",
+   "zone": "roscoff_johnnies",
+   "title": "Crêperie scrap",
+   "lines": [
+    "A galette of buckwheat, ham, egg and cheese, with cider in a bowl.",
+    "Ask for a bolée. A glass would be a polite insult."
+   ]
+  },
+  {
+   "id": "ltr_lighthouse_log",
+   "zone": "roscoff_sanctuary",
+   "title": "Lighthouse log",
+   "lines": [
+    "Fog all night. The horn blew every two minutes and the gulls lodged a complaint.",
+    "At dawn the fog lifted and a Breton fishing boat was ten feet away. We waved. They waved. Neither will mention it."
+   ]
+  }
+ ]
+}

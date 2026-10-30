@@ -884,6 +884,15 @@
  },
  "npcs": [
   {
+   "id": "chapman_chester",
+   "sprite": "shopkeeper",
+   "x": 60,
+   "y": 25,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_chester"
+  },
+  {
    "id": "pryce",
    "sprite": "pryce",
    "x": 30,

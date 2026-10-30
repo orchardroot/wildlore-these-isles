@@ -1,0 +1,131 @@
+{
+ "trades": [
+  {
+   "id": "tr_birmingham_home1_headscarf_tartan",
+   "zone": "birmingham_home1",
+   "npc": "brum_home1_nan",
+   "wants": {
+    "item": "headscarf_tartan",
+    "n": 1
+   },
+   "gives": {
+    "item": "wicker_snare",
+    "n": 1
+   },
+   "ask": "Listen, I've had a notion for Headscarf, just the one all week. A Wicker Snare says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_cotswolds_woolhouse_conker",
+   "zone": "cotswolds_woolhouse",
+   "npc": "cw_woolman",
+   "wants": {
+    "item": "pocket_watch",
+    "n": 1
+   },
+   "gives": {
+    "money": 2800
+   },
+   "ask": "I collect these. I'd give £2800 for a Silver Pocket Watch, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
+   "repeat": false
+  },
+  {
+   "id": "tr_ironbridge_tollhouse_lancashire_hotpot",
+   "zone": "ironbridge_tollhouse",
+   "npc": "ib_tollkeeper",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "item": "scarf_blue",
+    "n": 1
+   },
+   "ask": "Listen, I've had a notion for Lancashire Hotpot, just the one all week. A Blue football scarf says you'll oblige.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_lincoln_jewshouse_roach",
+   "zone": "lincoln_jewshouse",
+   "npc": "lin_historian",
+   "wants": {
+    "item": "roach",
+    "n": 2
+   },
+   "gives": {
+    "item": "donegal_tweed_cap",
+    "n": 1
+   },
+   "ask": "Listen, I've had a notion for Roach, two of them all week. A Donegal tweed cap says you'll oblige.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_nottingham_council_carrots",
+   "zone": "nottingham_council",
+   "npc": "hall_keeper",
+   "wants": {
+    "item": "carrots",
+    "n": 3
+   },
+   "gives": {
+    "item": "headscarf_tartan",
+    "n": 1
+   },
+   "ask": "Listen, I'd give a Headscarf for Carrots, three of them.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_stoke_h1_elderflower",
+   "zone": "stoke_h1",
+   "npc": "h1_nan",
+   "wants": {
+    "item": "elderflower",
+    "n": 2
+   },
+   "gives": {
+    "item": "wicker_snare",
+    "n": 1
+   },
+   "ask": "Ay up, my cupboard wants Elderflower, two of them. I'll swap you a Wicker Snare.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_birmingham_home2_lancashire_hotpot",
+   "zone": "birmingham_home2",
+   "npc": "brum_home2_gramps",
+   "wants": {
+    "item": "lancashire_hotpot",
+    "n": 1
+   },
+   "gives": {
+    "item": "banbury_cake",
+    "n": 1
+   },
+   "ask": "Listen, Lancashire Hotpot, just the one, that's my whole wish list. A Banbury Cake for your trouble.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_nottingham_home1_perch",
+   "zone": "nottingham_home1",
+   "npc": "not_home1_nanna",
+   "wants": {
+    "item": "perch",
+    "n": 1
+   },
+   "gives": {
+    "item": "hard_hat_yellow",
+    "n": 1
+   },
+   "ask": "Listen, do you happen to have Perch, just the one? I'll part with a Hard hat.",
+   "thanks": "Perfect. I'll not forget this.",
+   "repeat": false
+  }
+ ]
+}

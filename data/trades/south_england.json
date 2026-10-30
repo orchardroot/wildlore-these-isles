@@ -1,0 +1,128 @@
+{
+ "trades": [
+  {
+   "id": "tr_bath_home2_hazelnuts",
+   "zone": "bath_home2",
+   "npc": "bath_home2_stargazer",
+   "wants": {
+    "item": "hazelnuts",
+    "n": 2
+   },
+   "gives": {
+    "item": "field_notebook",
+    "n": 1
+   },
+   "ask": "Right, I'd give a Field notebook for Hazelnuts, two of them.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_bristol_trow_bakewell_pudding",
+   "zone": "bristol_trow",
+   "npc": "trow_landlord",
+   "wants": {
+    "item": "bakewell_pudding",
+    "n": 1
+   },
+   "gives": {
+    "item": "wellies_red",
+    "n": 1
+   },
+   "ask": "Oh, bring me Bakewell Pudding, just the one and a pair of red wellies is yours. Fair's fair.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_exeter_customs_european_bass",
+   "zone": "exeter_customs",
+   "npc": "customs_officer",
+   "wants": {
+    "item": "tea_caddy",
+    "n": 1
+   },
+   "gives": {
+    "money": 2720
+   },
+   "ask": "I collect these. I'd give £2720 for a Victorian Tea Caddy, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
+   "repeat": false
+  },
+  {
+   "id": "tr_glastonbury_home1_elderflower",
+   "zone": "glastonbury_home1",
+   "npc": "glaston_home1_gran",
+   "wants": {
+    "item": "elderflower",
+    "n": 2
+   },
+   "gives": {
+    "item": "sixpence",
+    "n": 1
+   },
+   "ask": "I'll swap you a Lucky Sixpence for 2 Elderflower. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
+   "repeat": false
+  },
+  {
+   "id": "tr_plymouth_elizabethan_wellies_green",
+   "zone": "plymouth_elizabethan",
+   "npc": "eh_curator",
+   "wants": {
+    "item": "wellies_green",
+    "n": 1
+   },
+   "gives": {
+    "item": "apron_butcher",
+    "n": 1
+   },
+   "ask": "Right, I'm after Green wellies, just the one. A Striped apron, if you can find it. I won't ask where you got it.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_poole_customs_hazelnuts",
+   "zone": "poole_customs",
+   "npc": "poo_customs_off",
+   "wants": {
+    "item": "hazelnuts",
+    "n": 3
+   },
+   "gives": {
+    "money": 270
+   },
+   "ask": "Right, it's Hazelnuts, three of them I'm short of. Help me out and £270 is yours.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_severn_home_keeper_bakewell_pudding",
+   "zone": "severn_home_keeper",
+   "npc": "bridgekeeper_mum",
+   "wants": {
+    "item": "bakewell_pudding",
+    "n": 1
+   },
+   "gives": {
+    "money": 470
+   },
+   "ask": "Oh, I've had a notion for Bakewell Pudding, just the one all week. £470 says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_bath_home3_mackerel",
+   "zone": "bath_home3",
+   "npc": "bath_home3_nan",
+   "wants": {
+    "item": "mackerel",
+    "n": 1
+   },
+   "gives": {
+    "money": 260
+   },
+   "ask": "Oh, if you come across Mackerel, just the one, there is £260 in it for you.",
+   "thanks": "Champion. That's exactly the thing.",
+   "repeat": false
+  }
+ ]
+}

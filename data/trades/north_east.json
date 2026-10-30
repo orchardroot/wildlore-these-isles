@@ -1,0 +1,83 @@
+{
+ "trades": [
+  {
+   "id": "tr_nc_elwick_stottie_cake",
+   "zone": "nc_elwick",
+   "npc": "elwick_fisher",
+   "wants": {
+    "item": "stottie_cake",
+    "n": 1
+   },
+   "gives": {
+    "item": "chippy_tea",
+    "n": 1
+   },
+   "ask": "Alright pet, one day I'll stop running out of stottie cake. Until then, a Chippy Tea for Stottie Cake, just the one.",
+   "thanks": "Champion. That's exactly the thing.",
+   "repeat": false
+  },
+  {
+   "id": "tr_hw_barracks_haddock",
+   "zone": "hw_barracks",
+   "npc": "barracks_soldier",
+   "wants": {
+    "item": "haddock",
+    "n": 2
+   },
+   "gives": {
+    "item": "cardigan_mustard",
+    "n": 1
+   },
+   "ask": "Alright pet, Haddock, two of them, that's my whole wish list. A Mustard cardigan for your trouble.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_newcastle_baltic_rhubarb",
+   "zone": "newcastle_baltic",
+   "npc": "gallery_host",
+   "wants": {
+    "item": "rhubarb",
+    "n": 4
+   },
+   "gives": {
+    "item": "hoodie_green",
+    "n": 1
+   },
+   "ask": "Howay, I'm after Rhubarb, four of them. A Green hoodie, if you can find it. I won't ask where you got it.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_nc_budle_hawthorn_berry",
+   "zone": "nc_budle",
+   "npc": "budle_farmer",
+   "wants": {
+    "item": "pit_checks",
+    "n": 1
+   },
+   "gives": {
+    "money": 360
+   },
+   "ask": "I collect these. I'd give £360 for a Colliery Check Tag, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
+   "repeat": false
+  },
+  {
+   "id": "tr_hw_granary_queenie_scallops",
+   "zone": "hw_granary",
+   "npc": "granary_curator",
+   "wants": {
+    "item": "queenie_scallops",
+    "n": 1
+   },
+   "gives": {
+    "item": "flat_cap_yorkshire",
+    "n": 1
+   },
+   "ask": "Alright pet, I'm after Queenie Scallops, just the one. A Yorkshire flat cap, if you can find it. I won't ask where you got it.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  }
+ ]
+}

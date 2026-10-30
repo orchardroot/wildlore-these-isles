@@ -211,9 +211,11 @@ static func marks(data: GameStateData, show: Dictionary) -> Array:
 	for s in SideStories.sides():
 		if SideStories.waiting(data, s):
 			out.append({"kind": "side", "at": str(s.zone), "who": str(s.get("who", ""))})
+	out.append_array(Letters.marks(data))  # "?" where a treasure trail ends
 	var here = data.flag("last_town")
 	if here and not Postcards.waiting(data).is_empty():
 		out.append({"kind": "post", "at": str(here)})
+	out.append_array(Poi.marks(data))  # the question marks on the routes
 	return out
 
 ## Where a mark sits on the map (map units), or (-1, -1) if its town or place isn't drawn.
@@ -222,3 +224,12 @@ static func mark_point(mark: Dictionary) -> Vector2:
 	var at := str(mark.get("at", ""))
 	var src: Dictionary = m.get("towns", {}).get(at, m.get("places", {}).get(at, {}))
 	return Vector2(float(src.x), float(src.y)) if not src.is_empty() else Vector2(-1, -1)
+
+## The map points a route passes through (zones with a spot on the map, in order, repeats dropped).
+static func route_points(path: Array, zones: Dictionary) -> PackedVector2Array:
+	var out := PackedVector2Array()
+	for zid in path:
+		var pos: Vector2 = zones.get(str(zid), {}).get("pos", Vector2(-1, -1))
+		if pos.x >= 0 and (out.is_empty() or out[out.size() - 1] != pos):
+			out.append(pos)
+	return out

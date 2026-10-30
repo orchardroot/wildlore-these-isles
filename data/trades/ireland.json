@@ -1,0 +1,130 @@
+{
+ "trades": [
+  {
+   "id": "tr_belfast_home_lisburn_elderflower",
+   "zone": "belfast_home_lisburn",
+   "npc": "bel_home_mairead",
+   "wants": {
+    "item": "elderflower",
+    "n": 4
+   },
+   "gives": {
+    "item": "luton_boater",
+    "n": 1
+   },
+   "ask": "Look, I'd give a Luton straw boater for Elderflower, four of them.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_comeraghs_bothy_scarf_red",
+   "zone": "comeraghs_bothy",
+   "npc": "bothy_keeper",
+   "wants": {
+    "item": "scarf_red",
+    "n": 1
+   },
+   "gives": {
+    "item": "black_shoes",
+    "n": 1
+   },
+   "ask": "Ah sure, it's Red football scarf, just the one I'm short of. Help me out and a pair of black school shoes is yours.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_cork_home1_peat",
+   "zone": "cork_home1",
+   "npc": "kelleher_nan",
+   "wants": {
+    "item": "peat",
+    "n": 3
+   },
+   "gives": {
+    "item": "tortoise_glasses",
+    "n": 1
+   },
+   "ask": "Look, I've had a notion for Peat, three of them all week. A pair of tortoiseshell glasses says you'll oblige.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_derry_home_flats_home_soda_bread",
+   "zone": "derry_home_flats",
+   "npc": "derry_home_flat",
+   "wants": {
+    "item": "home_soda_bread",
+    "n": 1
+   },
+   "gives": {
+    "item": "irish_coffee",
+    "n": 1
+   },
+   "ask": "Ah sure, bring me Home-made Soda Bread, just the one and an Irish Coffee is yours. Fair's fair.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": false
+  },
+  {
+   "id": "tr_dublin_home_green_pike",
+   "zone": "dublin_home_green",
+   "npc": "dub_home_student",
+   "wants": {
+    "item": "pike",
+    "n": 1
+   },
+   "gives": {
+    "item": "burns_tam",
+    "n": 1
+   },
+   "ask": "Look, one day I'll stop running out of pike. Until then, a Tam o' shanter for Pike, just the one.",
+   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_enniskillen_boxty_parsnips",
+   "zone": "enniskillen_boxty",
+   "npc": "en_boxty_cook",
+   "wants": {
+    "item": "harp_brooch",
+    "n": 1
+   },
+   "gives": {
+    "money": 2080
+   },
+   "ask": "I collect these. I'd give £2080 for a Tara Brooch Copy, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
+   "repeat": false
+  },
+  {
+   "id": "tr_kilkenny_home1_sheep_wool",
+   "zone": "kilkenny_home1",
+   "npc": "brennan_da",
+   "wants": {
+    "item": "sheep_wool",
+    "n": 2
+   },
+   "gives": {
+    "item": "irish_coffee",
+    "n": 1
+   },
+   "ask": "Ah sure, I'm after Sheep Wool, two of them. An Irish Coffee, if you can find it. I won't ask where you got it.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  },
+  {
+   "id": "tr_belfast_home_riveter_home_boxty",
+   "zone": "belfast_home_riveter",
+   "npc": "bel_home_riveter",
+   "wants": {
+    "item": "home_boxty",
+    "n": 1
+   },
+   "gives": {
+    "money": 430
+   },
+   "ask": "Ah sure, if you come across Home-made Boxty, just the one, there is £430 in it for you.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": false
+  }
+ ]
+}

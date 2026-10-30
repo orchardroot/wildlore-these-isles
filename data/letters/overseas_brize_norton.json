@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_raf_airman",
+   "zone": "brize_norton_terminal",
+   "title": "Airman's letter",
+   "lines": [
+    "The Voyager carried us half the night. We landed where the sun was in the wrong place.",
+    "The padre says to write home. The padre has no idea what to put in a letter."
+   ]
+  },
+  {
+   "id": "ltr_mess_menu",
+   "zone": "brize_norton_mess",
+   "title": "Mess menu",
+   "lines": [
+    "Monday: stew. Tuesday: stew with a hat on. Wednesday: stew, surprised.",
+    "Thursday: curry. Friday: fish. Saturday: lunch cancelled by ancient decree."
+   ]
+  },
+  {
+   "id": "ltr_runway_geese",
+   "zone": "brize_norton_tower",
+   "title": "Control tower log",
+   "lines": [
+    "The geese were on the runway again. We offered them a lift and they declined.",
+    "Delay: nineteen minutes. Reason: tradition."
+   ]
+  },
+  {
+   "id": "ltr_airbridge",
+   "zone": "brize_norton_airbridge",
+   "title": "Airbridge ticket",
+   "lines": [
+    "Seat 12C, middle of the aircraft, next to a man who has packed an entire kitchen.",
+    "He offers me a biscuit. It is the best biscuit of the flight, and the flight is very long."
+   ]
+  }
+ ]
+}

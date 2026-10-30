@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_peat_stack",
+   "zone": "falklands_farmhouse",
+   "title": "Camp letter",
+   "lines": [
+    "Dear Alice, we are cutting peat for the winter. The wind has taken my hat to Chile.",
+    "The sheep are shorn, the shearing shed is warm and the smoko is the best part of the day."
+   ],
+   "trail": {
+    "zone": "falklands_camp",
+    "near": [
+     41,
+     49
+    ],
+    "clue": "A shepherd hid a tobacco tin of coins near the big rock, 'where the wind can't read'.",
+    "reward": {
+     "money": 1500
+    }
+   }
+  },
+  {
+   "id": "ltr_penguin_colony",
+   "zone": "falklands_museum",
+   "title": "Visitor's postcard",
+   "lines": [
+    "Gentoo and Magellanic and rockhopper, all in one place and all in a hurry.",
+    "One came and sat on my foot for an hour. I think he was waiting for a bus."
+   ]
+  },
+  {
+   "id": "ltr_whalebone_arch",
+   "zone": "falklands_cathedral",
+   "title": "Cathedral card",
+   "lines": [
+    "The cathedral in Stanley has an arch of whale jawbones outside. They have stood for nearly a century.",
+    "The vicar says they remind him to be humble. The sheep say nothing."
+   ]
+  },
+  {
+   "id": "ltr_smoko",
+   "zone": "falklands_globe",
+   "title": "Smoko note",
+   "lines": [
+    "Smoko at ten: tea, scones, and gossip about the other farm.",
+    "The other farm is thirty miles away, and the gossip takes three days to arrive."
+   ]
+  }
+ ]
+}

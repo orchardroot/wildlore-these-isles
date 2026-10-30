@@ -1,0 +1,83 @@
+{
+ "trades": [
+  {
+   "id": "tr_cambridge_home_a_plaice",
+   "zone": "cambridge_home_a",
+   "npc": "cam_landlady",
+   "wants": {
+    "item": "plaice",
+    "n": 1
+   },
+   "gives": {
+    "item": "plain_trainers",
+    "n": 1
+   },
+   "ask": "Right then, I've had a notion for Plaice, just the one all week. A pair of black trainers says you'll oblige.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_fens_cromwell_broad_beans",
+   "zone": "fens_cromwell",
+   "npc": "crom_guide",
+   "wants": {
+    "item": "broad_beans",
+    "n": 4
+   },
+   "gives": {
+    "item": "black_shoes",
+    "n": 1
+   },
+   "ask": "Hello, I've had a notion for Broad Beans, four of them all week. A pair of black school shoes says you'll oblige.",
+   "thanks": "Grand. That's the very one.",
+   "repeat": false
+  },
+  {
+   "id": "tr_norwich_carrow_blackberries",
+   "zone": "norwich_carrow",
+   "npc": "carrow_kitman",
+   "wants": {
+    "item": "blackberries",
+    "n": 2
+   },
+   "gives": {
+    "item": "wicker_snare",
+    "n": 1
+   },
+   "ask": "Hello, I'd give a Wicker Snare for Blackberries, two of them.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_broads_reedcutter_bakewell_pudding",
+   "zone": "broads_reedcutter",
+   "npc": "broads_reedcutter",
+   "wants": {
+    "item": "barometer",
+    "n": 1
+   },
+   "gives": {
+    "money": 2640
+   },
+   "ask": "I collect these. I'd give £2640 for an Aneroid Barometer, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
+   "repeat": false
+  },
+  {
+   "id": "tr_cambridge_home_b_plaice",
+   "zone": "cambridge_home_b",
+   "npc": "cam_maths",
+   "wants": {
+    "item": "plaice",
+    "n": 2
+   },
+   "gives": {
+    "item": "nottingham_lace_collar",
+    "n": 1
+   },
+   "ask": "Right then, it's Plaice, two of them I'm short of. Help me out and a Nottingham lace collar is yours.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  }
+ ]
+}

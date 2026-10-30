@@ -1,0 +1,80 @@
+{
+ "quests": [
+  {
+   "id": "w47_parcel_canterbury",
+   "title": "A Parcel for Dover",
+   "region": "south_east",
+   "town": "canterbury",
+   "giver": "a resident of Canterbury",
+   "summary": "Carry a brown-paper parcel to a relative in Dover, then bring word back to Canterbury.",
+   "start_flag": "q_south_east_w47_parcel_canterbury_started",
+   "steps": [
+    {
+     "flag": "q_south_east_w47_parcel_canterbury_1",
+     "text": "Take the parcel to Dover.",
+     "zone": "dover_painted_house",
+     "npc": "ph_guide",
+     "line": "Oh, from Canterbury? That'll be my sister's doing. A cardigan, again. Tell her I'm wearing the last one."
+    },
+    {
+     "flag": "q_south_east_w47_parcel_canterbury_2",
+     "text": "Take the word back to Canterbury.",
+     "zone": "canterbury_crooked",
+     "npc": "ck_bookseller",
+     "line": "Oh, you've been! And she's wearing it? Well. That's me told, and a tea owed to you."
+    }
+   ],
+   "done_flag": "q_south_east_w47_parcel_canterbury_done",
+   "reward": "Night Snare and £150.",
+   "reward_item": {
+    "item": "night_snare",
+    "n": 1
+   },
+   "reward_money": 150,
+   "start": {
+    "zone": "canterbury_crooked",
+    "npc": "ck_bookseller",
+    "ask": "Oh, would you do me a kindness? There's a parcel here for my sister in Dover. It's only a cardigan and a lot of string.",
+    "accept": "Marvellous. Mind the string, it's load-bearing."
+   }
+  },
+  {
+   "id": "w47_book_dover",
+   "title": "An Overdue Book",
+   "region": "south_east",
+   "town": "dover",
+   "giver": "a resident of Dover",
+   "summary": "Return a library book that has wandered a long way, and tell the owner in Dover it has gone home.",
+   "start_flag": "q_south_east_w47_book_dover_started",
+   "steps": [
+    {
+     "flag": "q_south_east_w47_book_dover_1",
+     "text": "Return the book in Oxford.",
+     "zone": "oxford_camera",
+     "npc": "ox_camera_clerk",
+     "line": "Eleven years! We'd given it up for the Great Fire. There's no fine, but there is a look."
+    },
+    {
+     "flag": "q_south_east_w47_book_dover_2",
+     "text": "Tell Dover it has gone back.",
+     "zone": "dover_painted_house",
+     "npc": "ph_guide",
+     "line": "Gone back, and no fine? I'll leave the house with my head up. Here, for your trouble."
+    }
+   ],
+   "done_flag": "q_south_east_w47_book_dover_done",
+   "reward": "Deerstalker and £300.",
+   "reward_item": {
+    "item": "deerstalker_tweed",
+    "n": 1
+   },
+   "reward_money": 300,
+   "start": {
+    "zone": "dover_painted_house",
+    "npc": "ph_guide",
+    "ask": "Oh, this book is eleven years overdue and I've gone off the idea of walking it back. Could you take it to Oxford?",
+    "accept": "Say it's from a friend. Say it was lost in a flood. Say anything."
+   }
+  }
+ ]
+}

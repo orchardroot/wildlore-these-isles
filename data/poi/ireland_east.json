@@ -1,0 +1,36 @@
+{
+ "pois": [
+  {
+   "id": "poi_boyne_valley_cache",
+   "zone": "boyne_valley",
+   "near": [
+    45,
+    16
+   ],
+   "kind": "cache",
+   "at": "boyne_valley",
+   "item": "silver_snare",
+   "line": "A hollow tree has been used as a post box by someone with no postman.",
+   "curio": true
+  },
+  {
+   "id": "poi_boyne_valley_stone",
+   "zone": "boyne_valley",
+   "near": [
+    61,
+    6
+   ],
+   "kind": "stone",
+   "at": "boyne_valley",
+   "stat": "atk",
+   "lore": [
+    "Someone has left a single conker on top. Sensible.",
+    "The real thing is the Lia Fail, on the Hill of Tara in Co. Meath: a standing stone where the High Kings were said to be crowned."
+   ],
+   "mentioned_by": {
+    "zone": "sligo",
+    "npc": "rail_guard"
+   }
+  }
+ ]
+}

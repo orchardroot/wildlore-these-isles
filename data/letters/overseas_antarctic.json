@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_penguin_post",
+   "zone": "port_lockroy_museum",
+   "title": "Post office slip",
+   "lines": [
+    "The Penguin Post Office at Port Lockroy sends postcards worldwide. Each is hand-stamped by a woman in thick gloves.",
+    "The penguins supervise. They are very strict."
+   ]
+  },
+  {
+   "id": "ltr_ice_core",
+   "zone": "rothera_lab",
+   "title": "Researcher's note",
+   "lines": [
+    "The ice core is a tube of frozen time. The top is last winter. The bottom is older than our species.",
+    "Held it in my hands this morning. Warm hands, very old ice."
+   ]
+  },
+  {
+   "id": "ltr_midwinter_card",
+   "zone": "rothera_hangar",
+   "title": "Midwinter card",
+   "lines": [
+    "Midwinter's Day: a meal, a toast, and a film everyone has seen eleven times.",
+    "No sun for weeks. We make our own. It is called a dinner."
+   ]
+  },
+  {
+   "id": "ltr_treaty_note",
+   "zone": "brunt_hub",
+   "title": "Station note",
+   "lines": [
+    "Under the Antarctic Treaty, the continent is for peace and science. We take it seriously.",
+    "We also take our boots seriously. The hut has twenty pairs and none that fit."
+   ]
+  }
+ ]
+}

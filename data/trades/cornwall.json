@@ -1,0 +1,98 @@
+{
+ "trades": [
+  {
+   "id": "tr_penzance_engine_round_glasses",
+   "zone": "penzance_engine",
+   "npc": "engine_keeper",
+   "wants": {
+    "item": "lighthouse_lens",
+    "n": 1
+   },
+   "gives": {
+    "item": "chapbook_undertow",
+    "n": 1
+   },
+   "ask": "Bring me a Fresnel Prism and I'll swap you Chapbook: Undertow for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
+   "repeat": false
+  },
+  {
+   "id": "tr_tintagel_materiana_seaweed",
+   "zone": "tintagel_materiana",
+   "npc": "materiana_warden",
+   "wants": {
+    "item": "seaweed",
+    "n": 2
+   },
+   "gives": {
+    "money": 240
+   },
+   "ask": "My lover, if you come across Seaweed, two of them, there is £240 in it for you.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": false
+  },
+  {
+   "id": "tr_penzance_home1_queenie_scallops",
+   "zone": "penzance_home1",
+   "npc": "penz_home1_mum",
+   "wants": {
+    "item": "queenie_scallops",
+    "n": 1
+   },
+   "gives": {
+    "money": 380
+   },
+   "ask": "My lover, I'd give £380 for Queenie Scallops, just the one.",
+   "thanks": "You're a love. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_penzance_home2_mackerel",
+   "zone": "penzance_home2",
+   "npc": "penz_home2_fisher",
+   "wants": {
+    "item": "mackerel",
+    "n": 2
+   },
+   "gives": {
+    "item": "scarf_blue",
+    "n": 1
+   },
+   "ask": "My lover, my cupboard wants Mackerel, two of them. I'll swap you a Blue football scarf.",
+   "thanks": "Champion. That's exactly the thing.",
+   "repeat": false
+  },
+  {
+   "id": "tr_penzance_home3_broad_beans",
+   "zone": "penzance_home3",
+   "npc": "penz_home3_jory",
+   "wants": {
+    "item": "broad_beans",
+    "n": 2
+   },
+   "gives": {
+    "item": "bobble_hat_red",
+    "n": 1
+   },
+   "ask": "My lover, I've had a notion for Broad Beans, two of them all week. A Red bobble hat says you'll oblige.",
+   "thanks": "Well, that's made my week. Take this.",
+   "repeat": false
+  },
+  {
+   "id": "tr_penzance_home4_sea_glass",
+   "zone": "penzance_home4",
+   "npc": "penz_home4_meryn",
+   "wants": {
+    "item": "sea_glass",
+    "n": 3
+   },
+   "gives": {
+    "item": "plain_trainers",
+    "n": 1
+   },
+   "ask": "My lover, one day I'll stop running out of sea glass. Until then, a pair of black trainers for Sea Glass, three of them.",
+   "thanks": "Lovely. A deal's a deal.",
+   "repeat": false
+  }
+ ]
+}

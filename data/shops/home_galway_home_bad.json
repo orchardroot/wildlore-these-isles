@@ -1,0 +1,14 @@
+{
+ "id": "home_galway_home_bad",
+ "name": "Galway Peddler's Pack",
+ "stock": [
+  "chapbook_drench",
+  "chapbook_spate_surge",
+  "chapbook_undertow",
+  "chapbook_bluster",
+  "chapbook_banshee_shriek",
+  "chapbook_fairy_ring",
+  "chapbook_murky_gaze",
+  "naomhog_oar"
+ ]
+}

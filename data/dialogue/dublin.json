@@ -1,4 +1,15 @@
 {
+ "chapman_dublin": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, chapbooks! Sure there's a ballad for everything. Mind the pigeons."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_dublin"
+  }
+ ],
  "rail_guard": [
   {
    "do": "say",

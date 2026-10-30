@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_conch_fest",
+   "zone": "tci_conch",
+   "title": "Conch fest flyer",
+   "lines": [
+    "Conch salad, conch fritters, conch chowder. The conch themselves are not on the guest list.",
+    "Music from 4pm. Dancing from 5pm. Regrets from Monday."
+   ]
+  },
+  {
+   "id": "ltr_ripsaw",
+   "zone": "tci_ripsaw",
+   "title": "Ripsaw band card",
+   "lines": [
+    "Ripsaw is played on a carpenter's saw with a screwdriver, with a drum and an accordion.",
+    "Do not try this at home. Do try it on the beach, at a safe distance from the crowd."
+   ],
+   "trail": {
+    "zone": "turks_caicos",
+    "near": [
+     45,
+     36
+    ],
+    "clue": "A band left its takings in a conch shell near the windpump. 'Find the shell, find the money.'",
+    "reward": {
+     "money": 1400
+    }
+   }
+  },
+  {
+   "id": "ltr_salt_rakers",
+   "zone": "tci_sanctuary",
+   "title": "Salt-raker's note",
+   "lines": [
+    "Salt was the island's treasure. Raked in the pans, dried in the sun, shipped to the world.",
+    "The pans are quiet now, and the flamingos have taken over."
+   ]
+  },
+  {
+   "id": "ltr_tci_letter",
+   "zone": "manchester_dukesmill",
+   "title": "Letter from a cousin",
+   "lines": [
+    "Dear Pat, I am writing from a beach so white that I need two sets of sunglasses.",
+    "The work is hard, the sun is hot and the people are kind. I may stay. Tell Mam I have a hat."
+   ]
+  }
+ ]
+}

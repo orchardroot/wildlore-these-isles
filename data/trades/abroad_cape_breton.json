@@ -1,0 +1,20 @@
+{
+ "trades": [
+  {
+   "id": "tr_baddeck_bell_seaweed",
+   "zone": "baddeck_bell",
+   "npc": "bad_curator",
+   "wants": {
+    "item": "seaweed",
+    "n": 3
+   },
+   "gives": {
+    "item": "sunhat_straw",
+    "n": 1
+   },
+   "ask": "Now then, I'm after Seaweed, three of them. A Straw sunhat, if you can find it. I won't ask where you got it.",
+   "thanks": "There you go. Don't spend it all at once.",
+   "repeat": false
+  }
+ ]
+}

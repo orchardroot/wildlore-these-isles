@@ -1,15 +1,15 @@
 [
-  {"id": "kindle", "name": "Kindle", "type": "hearth", "category": "special", "power": 40, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}},
-  {"id": "smoulder", "name": "Smoulder", "type": "hearth", "category": "special", "power": 60, "accuracy": 100, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 10}},
-  {"id": "blaze_dash", "name": "Blaze Dash", "type": "hearth", "category": "physical", "power": 80, "accuracy": 95, "pp": 10, "priority": 0, "effect": {"id": "none"}},
-  {"id": "poker_prod", "name": "Poker Prod", "type": "hearth", "category": "physical", "power": 40, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "none"}},
-  {"id": "coal_chuck", "name": "Coal Chuck", "type": "hearth", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "none"}},
-  {"id": "chimney_crash", "name": "Chimney Crash", "type": "hearth", "category": "physical", "power": 110, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "recoil", "frac": 33}},
-  {"id": "aga_roast", "name": "Aga Roast", "type": "hearth", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "weather_bonus": {"weather": ["sunshine"], "sure_hit": true}, "effect": {"id": "none"}},
-  {"id": "snug_as_a_bug", "name": "Snug as a Bug", "type": "hearth", "category": "status", "power": 0, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}},
-  {"id": "smoke_alarm", "name": "Smoke Alarm", "type": "hearth", "category": "status", "power": 0, "accuracy": 90, "pp": 15, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}},
-  {"id": "kettle_scald", "name": "Kettle Scald", "type": "hearth", "category": "special", "power": 45, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}},
-  {"id": "hob_sizzle", "name": "Hob Sizzle", "type": "hearth", "category": "special", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 15}},
-  {"id": "hot_conker", "name": "Hot Conker", "type": "hearth", "category": "physical", "power": 40, "accuracy": 100, "pp": 30, "priority": 1, "desc": "Lobs a conker straight out of the embers before anyone else has moved. Nearly always goes first.", "effect": {"id": "none"}},
-  {"id": "burnt_cakes", "name": "Burnt Cakes", "type": "hearth", "category": "special", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 20}}
+  {"id": "kindle", "name": "Kindle", "type": "hearth", "category": "special", "power": 40, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "bolt"}},
+  {"id": "smoulder", "name": "Smoulder", "type": "hearth", "category": "special", "power": 60, "accuracy": 100, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 10}, "fx": {"shape": "burst"}},
+  {"id": "blaze_dash", "name": "Blaze Dash", "type": "hearth", "category": "physical", "power": 80, "accuracy": 95, "pp": 10, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "pounce"}},
+  {"id": "poker_prod", "name": "Poker Prod", "type": "hearth", "category": "physical", "power": 40, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "slash"}},
+  {"id": "coal_chuck", "name": "Coal Chuck", "type": "hearth", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "volley"}},
+  {"id": "chimney_crash", "name": "Chimney Crash", "type": "hearth", "category": "physical", "power": 110, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "recoil", "frac": 33}, "fx": {"shape": "quake"}},
+  {"id": "aga_roast", "name": "Aga Roast", "type": "hearth", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "weather_bonus": {"weather": ["sunshine"], "sure_hit": true}, "effect": {"id": "none"}, "fx": {"shape": "bolt"}},
+  {"id": "snug_as_a_bug", "name": "Snug as a Bug", "type": "hearth", "category": "status", "power": 0, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}, "fx": {"shape": "self"}},
+  {"id": "smoke_alarm", "name": "Smoke Alarm", "type": "hearth", "category": "status", "power": 0, "accuracy": 90, "pp": 15, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "kettle_scald", "name": "Kettle Scald", "type": "hearth", "category": "special", "power": 45, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "rain"}},
+  {"id": "hob_sizzle", "name": "Hob Sizzle", "type": "hearth", "category": "special", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 15}, "fx": {"shape": "rain"}},
+  {"id": "hot_conker", "name": "Hot Conker", "type": "hearth", "category": "physical", "power": 40, "accuracy": 100, "pp": 30, "priority": 1, "desc": "Lobs a conker straight out of the embers before anyone else has moved. Nearly always goes first.", "effect": {"id": "none"}, "fx": {"shape": "volley"}},
+  {"id": "burnt_cakes", "name": "Burnt Cakes", "type": "hearth", "category": "special", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 20}, "fx": {"shape": "bolt"}}
 ]

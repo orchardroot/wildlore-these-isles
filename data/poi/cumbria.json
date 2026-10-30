@@ -1,0 +1,78 @@
+{
+ "pois": [
+  {
+   "id": "poi_armboth_forest_den",
+   "zone": "armboth_forest",
+   "near": [
+    16,
+    21
+   ],
+   "kind": "den",
+   "at": "lancaster",
+   "species": "midgie"
+  },
+  {
+   "id": "poi_lake_district_camp",
+   "zone": "lake_district",
+   "near": [
+    33,
+    33
+   ],
+   "kind": "camp",
+   "at": "lancaster",
+   "names": [
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "kitelet",
+    "elverlet",
+    "elverlet"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 3820,
+   "item": "rowan_sprig",
+   "mentioned_by": {
+    "zone": "lancaster",
+    "npc": "lan_guide"
+   }
+  },
+  {
+   "id": "poi_lake_district_stone",
+   "zone": "lake_district",
+   "near": [
+    13,
+    16
+   ],
+   "kind": "stone",
+   "at": "lancaster",
+   "stat": "def",
+   "lore": [
+    "It leans, slightly, like it has heard all this before.",
+    "The real thing is Castlerigg, near Keswick: a ring of 38 stones with mountains all the way round, and arguably the best view of any circle."
+   ],
+   "mentioned_by": {
+    "zone": "lancaster",
+    "npc": "lan_guide"
+   }
+  },
+  {
+   "id": "poi_lake_district_cache",
+   "zone": "lake_district",
+   "near": [
+    51,
+    38
+   ],
+   "kind": "cache",
+   "at": "lancaster",
+   "item": "headscarf_tartan",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine."
+  }
+ ]
+}
