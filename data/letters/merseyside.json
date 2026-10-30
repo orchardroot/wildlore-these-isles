@@ -1,0 +1,52 @@
+{
+ "papers": [
+  {
+   "id": "ltr_dock_card",
+   "zone": "liverpool_h1",
+   "title": "Docker's tally card",
+   "lines": [
+    "Call-on at the stands, seven sharp. Two hours' work, if you're lucky and your face fits.",
+    "Written below in biro: 'Our Paul got on the ship. Gone to Montreal. Mam says he'll be back for his tea.'"
+   ]
+  },
+  {
+   "id": "ltr_grand_national",
+   "zone": "crosby_coastguard",
+   "title": "Racing ticket",
+   "lines": [
+    "Aintree, Saturday. Stand tickets, two. One for me, one for the horse's owner, who is a very good friend of mine.",
+    "The horse is called Wishful Thinking. We have both put money on it."
+   ]
+  },
+  {
+   "id": "ltr_skiffle",
+   "zone": "liverpool_cathedral",
+   "title": "Gig poster, handwritten",
+   "lines": [
+    "The Cavern is NOT where we are playing. We are playing the church hall behind the chippy.",
+    "Doors seven, music half past, tea and a toasted teacake at the interval. Bring your own sandwiches."
+   ]
+  },
+  {
+   "id": "ltr_emigrant_trunk",
+   "zone": "liverpool_h2",
+   "title": "Label on a trunk",
+   "lines": [
+    "To: Mrs M. Doyle, Sydney, New South Wales. From: her sister Kathleen, who is not coming after all.",
+    "Inside: three good towels, a rosary, and a note: 'You'll like it. The sun is free.'"
+   ],
+   "trail": {
+    "zone": "sefton_coast",
+    "near": [
+     15,
+     5
+    ],
+    "clue": "Kathleen buried her own keepsake near the lamp post, 'where the ships can't see'.",
+    "reward": {
+     "item": "four_leaf_clover",
+     "n": 1
+    }
+   }
+  }
+ ]
+}

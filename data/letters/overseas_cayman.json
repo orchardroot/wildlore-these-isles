@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_turtle_farm",
+   "zone": "cayman_dive",
+   "title": "Turtle farm note",
+   "lines": [
+    "The green turtles were hunted for centuries by sailors who named the islands after them.",
+    "Now they swim in tanks and out to sea, in a plan nobody expected to work and is working."
+   ]
+  },
+  {
+   "id": "ltr_stingray_city",
+   "zone": "cayman_pedro",
+   "title": "Dive-boat log",
+   "lines": [
+    "Stingray City: waist-deep water, a sandbar, a hundred friendly rays like wet velvet pancakes.",
+    "They know the sound of the boat engine. They are waiting. They want squid."
+   ]
+  },
+  {
+   "id": "ltr_bank_letter",
+   "zone": "liverpool_beatles",
+   "title": "Letter from a cousin in Grand Cayman",
+   "lines": [
+    "Dear Mam, the sun here is the same sun as at home, but louder. I work in an office with air conditioning.",
+    "The sea is warm and the beer is cold. I miss the rain, a little. Do not tell anyone."
+   ]
+  },
+  {
+   "id": "ltr_pirate_rum",
+   "zone": "macc_h1",
+   "title": "Postcard from Grand Cayman",
+   "lines": [
+    "Greetings from a pirate island. Nobody here is a pirate any more. They are mostly accountants.",
+    "The rum is still excellent. I brought you a bottle, which I drank on the flight."
+   ]
+  }
+ ]
+}

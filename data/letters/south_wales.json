@@ -1,0 +1,70 @@
+{
+ "papers": [
+  {
+   "id": "ltr_coal_exchange",
+   "zone": "cardiff_pierhead",
+   "title": "Coal Exchange chit",
+   "lines": [
+    "A million pounds' worth of coal sold in a morning, on a handshake.",
+    "The first one-million-pound cheque, the legend says, was written in this very room. Nobody has found the carbon copy."
+   ]
+  },
+  {
+   "id": "ltr_bevin_boy",
+   "zone": "blaenavon_bigpit",
+   "title": "Letter from a Bevin Boy, 1947",
+   "lines": [
+    "Dear Mam, they have sent me down the pit instead of into the Army. I asked for the Navy.",
+    "The foreman says the coal does not care where I wanted to go. He is right, but I still think it is unfair.",
+    "Send socks. Send bara brith. Send a cheerful letter that does not mention Dad's temper."
+   ]
+  },
+  {
+   "id": "ltr_chapel_minute",
+   "zone": "pembroke_lhcottage",
+   "title": "Chapel minute book",
+   "lines": [
+    "Minuted: the roof leaks over the harmonium. The harmonium has been moved. The leak has followed it.",
+    "Resolved: to pray for fair weather and to buy a bucket, in that order."
+   ],
+   "trail": {
+    "zone": "beacons",
+    "near": [
+     64,
+     18
+    ],
+    "clue": "The chapel treasurer buried the building fund near the hedge during a flood in 1927. He died before he could say where, apparently.",
+    "reward": {
+     "money": 2200
+    }
+   }
+  },
+  {
+   "id": "ltr_rugby_programme",
+   "zone": "cardiff_arcade",
+   "title": "Match programme",
+   "lines": [
+    "Wales v The Rest. The Rest are not expected to win. They have not been asked their opinion.",
+    "Hymns will be sung before the kick-off, during it, and afterwards, regardless of the result."
+   ]
+  },
+  {
+   "id": "ltr_cheese_and_leek",
+   "zone": "blaenavon_cheese",
+   "title": "Welsh rarebit scrap",
+   "lines": [
+    "Toast, cheese, ale, mustard. Do not call it rabbit, whatever the English say.",
+    "Under it, in smaller type: 'The leek is the national emblem. It is also the national garnish.'"
+   ]
+  },
+  {
+   "id": "ltr_cwm_to_the_sea",
+   "zone": "beacons_storeyarms",
+   "title": "Postcard from the sea",
+   "lines": [
+    "Took the train from the valleys to the sea. First time. My daughter said 'it goes on forever'.",
+    "I said yes. She said, 'can we keep it?' I did not have an answer."
+   ]
+  }
+ ]
+}

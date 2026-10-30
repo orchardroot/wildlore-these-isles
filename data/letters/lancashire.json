@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_blackpool_rock",
+   "zone": "blackpool_chippy",
+   "title": "Order for rock",
+   "lines": [
+    "Please send two gross of rock, 'A Present From Blackpool', to the seafront stall by Friday.",
+    "Spell it right this time. Last year's batch said 'A Prezent From Black Pool' and caused a stir."
+   ]
+  },
+  {
+   "id": "ltr_tower_ballroom",
+   "zone": "blackpool_depot",
+   "title": "Dance card",
+   "lines": [
+    "First dance: the Gay Gordons. Partner: a young man with ears.",
+    "Second dance: also him. Third dance: he trod on my foot. Fourth dance: I said yes."
+   ]
+  },
+  {
+   "id": "ltr_lamp_switch",
+   "zone": "blackpool_pub",
+   "title": "Illuminations memo",
+   "lines": [
+    "Lights on at dusk, first Friday of the season. Switch to be thrown by someone famous or someone's mother.",
+    "Bulbs are to be counted, not stolen. This means you, Terry."
+   ],
+   "trail": {
+    "zone": "blackpool",
+    "near": [
+     11,
+     19
+    ],
+    "clue": "A spare bulb box was put out of sight near the lamp post. 'Mind the cable.'",
+    "reward": {
+     "money": 1200
+    }
+   }
+  },
+  {
+   "id": "ltr_donkey_ride",
+   "zone": "blackpool_rockfactory",
+   "title": "Donkey rota",
+   "lines": [
+    "Monday: Neddy and Mavis. Tuesday: Neddy and Mavis. Wednesday: Mavis, because Neddy has a headache.",
+    "Please do not ask what a donkey headache looks like. You will know."
+   ]
+  }
+ ]
+}

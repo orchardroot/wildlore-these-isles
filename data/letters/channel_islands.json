@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_german_occupation",
+   "zone": "guernsey_occupation",
+   "title": "Occupation diary",
+   "lines": [
+    "Fourth year. The radio has been hidden under the hen house. The hens complain.",
+    "We share news in whispers. The soldiers are bored, and some are kind, and some are neither."
+   ]
+  },
+  {
+   "id": "ltr_jersey_royal",
+   "zone": "jersey_farm",
+   "title": "Seed potato note",
+   "lines": [
+    "The Royals must be planted on the steep slopes, near the sea, by hand, with seaweed.",
+    "Say a word over each row, or the potatoes will turn sour."
+   ],
+   "trail": {
+    "zone": "guernsey_country",
+    "near": [
+     28,
+     35
+    ],
+    "clue": "A spade is stuck in the earth near the old oak. Under it, a tin of coins from the 1950s.",
+    "reward": {
+     "money": 1700
+    }
+   }
+  },
+  {
+   "id": "ltr_gerald_zoo",
+   "zone": "jersey_durrell",
+   "title": "Zookeeper's note",
+   "lines": [
+    "The dodo are not to be mentioned to the visitors. Not out of shame but because they cannot be found.",
+    "If the goat escapes again, do not tell the Board. Just return the goat."
+   ]
+  },
+  {
+   "id": "ltr_sark_seigneur",
+   "zone": "sark_prison",
+   "title": "Seigneur's notice",
+   "lines": [
+    "No motor cars on Sark. Tractors permitted for farm use. Bicycles encouraged.",
+    "The right to keep pigeons belongs to the Seigneur, under a law older than the tractor."
+   ]
+  }
+ ]
+}

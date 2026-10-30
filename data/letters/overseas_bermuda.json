@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_gombey",
+   "zone": "bermuda_club",
+   "title": "Gombey dancer's note",
+   "lines": [
+    "The Gombeys dance at Christmas in masks and bright tassels, to drums and whistles.",
+    "Nobody is quite sure of the story. Everybody knows the steps."
+   ]
+  },
+  {
+   "id": "ltr_fish_chowder",
+   "zone": "bermuda_chowder",
+   "title": "Chowder recipe",
+   "lines": [
+    "Bermuda fish chowder: fish, tomato, onion, a good dark rum and a splash of sherry peppers.",
+    "Add the rum at the table, not the pot. Then add a second one, for the cook."
+   ],
+   "trail": {
+    "zone": "bermuda",
+    "near": [
+     5,
+     12
+    ],
+    "clue": "A cook's tin of takings lies in the soft earth near the lobster pots. 'Under the oleander.'",
+    "reward": {
+     "money": 1700
+    }
+   }
+  },
+  {
+   "id": "ltr_triangle_note",
+   "zone": "bermuda_sessions",
+   "title": "Captain's letter",
+   "lines": [
+    "The Triangle is full of shipwrecks, which is simply because there are a great many ships.",
+    "I have never lost anything there but a hat and a sandwich. Both were stolen by gulls."
+   ]
+  },
+  {
+   "id": "ltr_moongate",
+   "zone": "bermuda_sanctuary",
+   "title": "Moongate postcard",
+   "lines": [
+    "Walk through a Bermuda moongate with your sweetheart for luck, said the sailors.",
+    "I walked through with my cousin, who hates me. The luck is mixed."
+   ]
+  }
+ ]
+}

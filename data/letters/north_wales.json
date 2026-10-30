@@ -1,0 +1,81 @@
+{
+ "papers": [
+  {
+   "id": "ltr_slate_quarry",
+   "zone": "llanberis_capelcoch",
+   "title": "Quarryman's note",
+   "lines": [
+    "The Penrhyn men were out for three years. The children went hungry, and they did not give in.",
+    "Whatever else, we held on. Tell them it was not for nothing."
+   ]
+  },
+  {
+   "id": "ltr_eisteddfod",
+   "zone": "llangollen_bethel",
+   "title": "Eisteddfod entry slip",
+   "lines": [
+    "Choir: eight tenors, nine sopranos, one man who is merely moving his lips.",
+    "Piece: 'Calon Lan', by arrangement, with feeling. Expected result: tears and a medal."
+   ],
+   "trail": {
+    "zone": "anglesey",
+    "near": [
+     29,
+     3
+    ],
+    "clue": "The choir's old prize cup is hidden near the big rock. The chairman says it is 'in a safe place'.",
+    "reward": {
+     "item": "shamrock_pin",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_ferry_ticket",
+   "zone": "anglesey_bridge",
+   "title": "Ferry ticket, 1963",
+   "lines": [
+    "Holyhead to Dun Laoghaire, single. A child's ticket, and a note on the back:",
+    "'Going to see Nain in Dublin. Mam says be good. I am.'"
+   ]
+  },
+  {
+   "id": "ltr_hafod_summer",
+   "zone": "llanberis_dolbadarn",
+   "title": "Hafod note",
+   "lines": [
+    "We drive the sheep up for summer, and live in the hut, and sing to keep the weather off.",
+    "Come at Michaelmas and bring bread. The dog will eat it unless you mention hunger first."
+   ]
+  },
+  {
+   "id": "ltr_longest_name",
+   "zone": "anglesey_cottage",
+   "title": "Postcard from Llanfair",
+   "lines": [
+    "I am writing from the village with the longest railway-station name in Europe.",
+    "It took four postcards to write the address. I have run out of stamps and breath."
+   ]
+  },
+  {
+   "id": "ltr_cymraeg_lesson",
+   "zone": "holyhead_chippy",
+   "title": "Welsh lesson note",
+   "lines": [
+    "Bore da is good morning. Nos da is good night. Diolch is thank you, and you will need it often.",
+    "Practice on the nearest sheep, who will not correct you."
+   ],
+   "trail": {
+    "zone": "dee_valley",
+    "near": [
+     19,
+     19
+    ],
+    "clue": "A language teacher left a tin of tea-money near the hedge, 'for the next learner'.",
+    "reward": {
+     "money": 1000
+    }
+   }
+  }
+ ]
+}

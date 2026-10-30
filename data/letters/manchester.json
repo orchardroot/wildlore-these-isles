@@ -1,0 +1,52 @@
+{
+ "papers": [
+  {
+   "id": "ltr_mill_wages",
+   "zone": "manchester_knottmill",
+   "title": "Wage packet, 1911",
+   "lines": [
+    "Sixteen shillings, less the fine for talking at the loom, one and tuppence.",
+    "Overheard at the gate: 'If they fined us for what we thought, they'd owe us money.'"
+   ]
+  },
+  {
+   "id": "ltr_football_stub",
+   "zone": "manchester_h1",
+   "title": "Match programme",
+   "lines": [
+    "Saturday, three o'clock. Admission sixpence, tea a penny, hope free.",
+    "Someone has written on it in pencil: 'Dad took me. We lost. Best day of the year.'"
+   ],
+   "trail": {
+    "zone": "chat_moss",
+    "near": [
+     59,
+     25
+    ],
+    "clue": "A boy's lucky halfpenny is buried near the big rock. He marked the spot on the back of a ticket.",
+    "reward": {
+     "money": 800
+    }
+   }
+  },
+  {
+   "id": "ltr_fish_supper",
+   "zone": "manchester_h2",
+   "title": "Shopping list",
+   "lines": [
+    "Two pounds of potatoes. A tin of peas. Black pudding if it looks honest.",
+    "Something for the cat that is not the black pudding.",
+    "Bus fare. Do not tell our Brenda about the bus fare."
+   ]
+  },
+  {
+   "id": "ltr_cotton_telegram",
+   "zone": "chatmoss_hermit",
+   "title": "Telegram",
+   "lines": [
+    "PRICES UP STOP SHIPMENT DELAYED AT LIVERPOOL STOP DO NOT PANIC STOP",
+    "PANIC ONLY IF I TELEGRAM AGAIN STOP"
+   ]
+  }
+ ]
+}

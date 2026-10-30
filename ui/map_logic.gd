@@ -211,6 +211,7 @@ static func marks(data: GameStateData, show: Dictionary) -> Array:
 	for s in SideStories.sides():
 		if SideStories.waiting(data, s):
 			out.append({"kind": "side", "at": str(s.zone), "who": str(s.get("who", ""))})
+	out.append_array(Letters.marks(data))  # "?" where a treasure trail ends
 	var here = data.flag("last_town")
 	if here and not Postcards.waiting(data).is_empty():
 		out.append({"kind": "post", "at": str(here)})

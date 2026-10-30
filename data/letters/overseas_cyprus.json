@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_kafeneio_backgammon",
+   "zone": "nicosia_taverna",
+   "title": "Kafeneio scrap",
+   "lines": [
+    "Tavli, the backgammon, in the shade of the coffee house. Greek coffee, black and thick.",
+    "The loser buys the coffee. The winner talks about it for a week."
+   ]
+  },
+  {
+   "id": "ltr_green_line",
+   "zone": "pyla_kafeneio",
+   "title": "Buffer-zone note",
+   "lines": [
+    "The Green Line runs through the middle of the island. In places it is a wall, in places a field.",
+    "At Pyla the villagers share a street. They share a coffee too, quietly."
+   ]
+  },
+  {
+   "id": "ltr_halloumi_note",
+   "zone": "pyla_kahvehane",
+   "title": "Halloumi note",
+   "lines": [
+    "Halloumi: sheep's and goat's milk, folded with mint, fried until squeaky.",
+    "Cooked on a grill, it sings. Raw, it gossips. In a sandwich, it wins."
+   ]
+  },
+  {
+   "id": "ltr_carob_note",
+   "zone": "nicosia_south_sanctuary",
+   "title": "Carob grower's note",
+   "lines": [
+    "The carob pod was the 'locust bean', and the old weight of a carat came from its seeds.",
+    "So the gold you wear was once measured against a seed in a pod."
+   ]
+  }
+ ]
+}

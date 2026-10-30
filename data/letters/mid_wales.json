@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_harlech_castle",
+   "zone": "cambrian_harlech",
+   "title": "Castle visitor's book",
+   "lines": [
+    "Visited with the children. They fought the dragons and lost. The dragons won on points.",
+    "The view is of the sea and the mountains and, below, a very small train."
+   ],
+   "trail": {
+    "zone": "cambrian_coast",
+    "near": [
+     9,
+     7
+    ],
+    "clue": "A guide hid his tips near the big rock. 'For the day it rains on the whole of Wales.'",
+    "reward": {
+     "money": 1300
+    }
+   }
+  },
+  {
+   "id": "ltr_pier_dance",
+   "zone": "aberystwyth_camera",
+   "title": "Dance card, 1952",
+   "lines": [
+    "Seafront dance, seven till eleven. Last waltz for those with someone to walk home.",
+    "I kept it in my pocket for forty years. He did walk me home. He still does."
+   ]
+  },
+  {
+   "id": "ltr_coastal_ghost",
+   "zone": "aberystwyth_castle",
+   "title": "Lifeboat log",
+   "lines": [
+    "Launch at 2.14 in a Force 9. Crew of seven. Returned 5.40 with two fishermen and a goat.",
+    "The goat was not on the shout list. The goat was not asked."
+   ]
+  },
+  {
+   "id": "ltr_cliff_railway",
+   "zone": "aberystwyth_chippy",
+   "title": "Railway ticket",
+   "lines": [
+    "One ticket to the top of Constitution Hill, in a car the shape of a shoebox.",
+    "From the top you can see Cardigan Bay, and, on a clear day, the next ticket."
+   ]
+  }
+ ]
+}

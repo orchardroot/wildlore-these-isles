@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_macaque",
+   "zone": "gibraltar_museum",
+   "title": "Notice to visitors",
+   "lines": [
+    "The Barbary macaques will take your sandwich, your sunglasses and your sense of dignity.",
+    "Do not feed them. Do not look them in the eye. Do not leave your bag."
+   ]
+  },
+  {
+   "id": "ltr_closed_border",
+   "zone": "gibraltar_terminal",
+   "title": "Border crossing diary",
+   "lines": [
+    "Dear sister, they closed the border in 1969 and it is still shut. I have not seen you across the line in years.",
+    "We wave across the fence. We shout the football results. It is not much, but it is a start."
+   ]
+  },
+  {
+   "id": "ltr_tunnels_note",
+   "zone": "gibraltar_tunnels",
+   "title": "Tunnel-digger's note",
+   "lines": [
+    "Fifty kilometres of tunnels inside the Rock, dug by soldiers with drills and a tremendous tolerance for dust.",
+    "Some of them are still not on the map. Some of them are still not on the plan."
+   ]
+  },
+  {
+   "id": "ltr_gib_siege",
+   "zone": "gibraltar_castle",
+   "title": "Great Siege letter",
+   "lines": [
+    "Dear wife, the siege continues. We are eating what we can find and dreaming of tea.",
+    "If I live I shall bring you a Gibraltar rock, a good deal heavier than a jewel."
+   ]
+  }
+ ]
+}

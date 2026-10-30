@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_boat_racing",
+   "zone": "anguilla_bar",
+   "title": "Boat-racing programme",
+   "lines": [
+    "Anguillan sloops race on holidays, sails wild and crews wilder. Each boat is named for a sweetheart, a saint or a boast.",
+    "Whoever wins, the party goes on till the rum is gone and then continues without it."
+   ]
+  },
+  {
+   "id": "ltr_salt_pond",
+   "zone": "anguilla_wallblake",
+   "title": "Salt pond note",
+   "lines": [
+    "Salt pond at Sandy Ground: the old work of the island, now a quiet pink pool and a dozen birds.",
+    "I sat and counted them. The count was the same as last year. The birds seemed to approve."
+   ],
+   "trail": {
+    "zone": "anguilla",
+    "near": [
+     89,
+     23
+    ],
+    "clue": "A fisherman's catch tin of coins lies near the open ground, 'out of the wind'.",
+    "reward": {
+     "money": 1300
+    }
+   }
+  },
+  {
+   "id": "ltr_anguilla_postcard",
+   "zone": "liverpool_h3",
+   "title": "Postcard from Anguilla",
+   "lines": [
+    "Greetings from a thirty-mile coral island with sea the colour of a toothpaste advert.",
+    "I have eaten lobster on the beach. I have eaten lobster at the bar. I have lobster-based plans."
+   ]
+  },
+  {
+   "id": "ltr_anguilla_letter",
+   "zone": "manchester_exchange",
+   "title": "Letter from a nephew",
+   "lines": [
+    "Dear Auntie, the sun is fierce and the music is sweeter. I am learning to sail a sloop and to lose a race gracefully.",
+    "Send biscuits. The humidity ate mine."
+   ]
+  }
+ ]
+}

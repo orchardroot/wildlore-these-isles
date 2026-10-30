@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_soufriere",
+   "zone": "montserrat_mvo",
+   "title": "Evacuee's diary",
+   "lines": [
+    "The volcano grumbled for two years before it spoke. Then it covered the capital in ash.",
+    "We left the south and moved north. Some went to England. We remember Plymouth as it was."
+   ]
+  },
+  {
+   "id": "ltr_emerald_isle",
+   "zone": "montserrat_pub",
+   "title": "Postcard home",
+   "lines": [
+    "They call it the Emerald Isle of the Caribbean, and the Irish saints day is a public holiday.",
+    "I wore green and danced to a steel band. I have not been so happy since Dublin."
+   ],
+   "trail": {
+    "zone": "montserrat",
+    "near": [
+     32,
+     25
+    ],
+    "clue": "A farmer buried a small tin of EC dollars near the open ground in the nineties, 'in case of ash'.",
+    "reward": {
+     "money": 1900
+    }
+   }
+  },
+  {
+   "id": "ltr_mvo_log",
+   "zone": "montserrat_studio",
+   "title": "Observatory log",
+   "lines": [
+    "Dome growth continues. Pyroclastic flow at 14.03. We watch with cups of tea and caution.",
+    "The mountain does not care. We care for the mountain, with sensors, patience and the occasional prayer."
+   ]
+  },
+  {
+   "id": "ltr_goat_water",
+   "zone": "montserrat_sanctuary",
+   "title": "Goat water recipe",
+   "lines": [
+    "Goat water is the national dish: stewed goat, cloves, breadfruit, dumplings, a splash of the volcano's good humour.",
+    "Eat it hot. Eat it with friends. Do not tell the goat."
+   ]
+  }
+ ]
+}

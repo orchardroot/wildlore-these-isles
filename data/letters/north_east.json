@@ -1,0 +1,60 @@
+{
+ "papers": [
+  {
+   "id": "ltr_keel_song",
+   "zone": "newcastle_quays",
+   "title": "Keelman's verse",
+   "lines": [
+    "Weigh, hey, the keel row. Written out in a careful hand for a child who could not yet read.",
+    "In the margin: 'Sing it to your lass, even if you cannot sing. Especially if you cannot sing.'"
+   ]
+  },
+  {
+   "id": "ltr_toon_match",
+   "zone": "newcastle_stjames",
+   "title": "Season ticket stub",
+   "lines": [
+    "Gallowgate End. Saturday, three o'clock. Third generation of us.",
+    "Dad said: 'Never leave before the whistle.' We have not, in fact, left before it in forty years."
+   ]
+  },
+  {
+   "id": "ltr_hadrian_tablet",
+   "zone": "hw_barracks",
+   "title": "Vindolanda-style note",
+   "lines": [
+    "A copy of a wooden writing tablet from Vindolanda: a parcel for a soldier on the Wall.",
+    "Socks, sandals and two pairs of underpants. The museum card notes that nobody has improved on this in nineteen centuries."
+   ]
+  },
+  {
+   "id": "ltr_pit_pony",
+   "zone": "nc_budle",
+   "title": "Pony's retirement card",
+   "lines": [
+    "After eleven years underground, Blackie is to be brought to grass.",
+    "The pit lads lined up to see him blink in the sun. Nobody was crying. It was the dust."
+   ],
+   "trail": {
+    "zone": "newcastle",
+    "near": [
+     27,
+     49
+    ],
+    "clue": "A pit pony is buried under a stone near the lamp post. The lads left a tin of coins at his feet.",
+    "reward": {
+     "money": 1800
+    }
+   }
+  },
+  {
+   "id": "ltr_wall_walker",
+   "zone": "hw_granary",
+   "title": "Hiker's postcard",
+   "lines": [
+    "Walked the whole wall in a week. Fell in a bog on day two, got over it by day three.",
+    "The sheep have opinions. The views have opinions too, and they are better ones."
+   ]
+  }
+ ]
+}

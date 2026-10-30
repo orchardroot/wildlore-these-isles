@@ -48,6 +48,7 @@ func _initialize() -> void:
 	errors.append_array(Looks.check(items_db))  # data/items/wear.json deltas the painter can draw; data/looks.json
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
+	errors.append_array(Letters.errors(zones, items_db))  # papers on tables and their treasure trails
 	for e in errors:
 		printerr("DATA: " + e)
 	print("validate: %d error(s)" % errors.size())

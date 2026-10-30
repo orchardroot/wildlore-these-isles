@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_sevillanas",
+   "zone": "la_linea_pena",
+   "title": "Dance teacher's note",
+   "lines": [
+    "Sevillanas: four parts, four steps, four sets of flirtation. It looks easy and it is not.",
+    "Lesson one is the skirt. Lesson two is the wrist. Lesson three is not looking at your feet."
+   ]
+  },
+  {
+   "id": "ltr_frontier_worker",
+   "zone": "la_linea_tapas",
+   "title": "Frontier worker's note",
+   "lines": [
+    "Every day I cross the border to work in Gibraltar and every night I cross back to sleep in Spain.",
+    "I carry two passports in two pockets. I say hello in two languages. I am home in both."
+   ]
+  },
+  {
+   "id": "ltr_tapas_menu",
+   "zone": "liverpool_bold",
+   "title": "Tapas menu from a Spanish holiday",
+   "lines": [
+    "Tortilla, croquetas, jamón, padron peppers, all delivered at once and all gone in minutes.",
+    "The waiter laughed at our order. He brought extra, free, because we looked hungry."
+   ]
+  },
+  {
+   "id": "ltr_postcard_spain",
+   "zone": "macc_h2",
+   "title": "Postcard from La Línea",
+   "lines": [
+    "Hello from the edge of Spain. The Rock is just across the bay and looks like a sleeping lion.",
+    "I have been told it is a very fine Rock. I have not been told how to cross to see it."
+   ]
+  }
+ ]
+}

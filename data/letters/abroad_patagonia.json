@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_mimosa",
+   "zone": "gaiman_chapel",
+   "title": "Settler's letter",
+   "lines": [
+    "We sailed from Liverpool in the Mimosa in 1865. We were promised green fields. We found a desert.",
+    "Then a river, and a future. We planted wheat. We are still here, and we still sing."
+   ]
+  },
+  {
+   "id": "ltr_tea_room",
+   "zone": "gaiman_first",
+   "title": "Tea room menu",
+   "lines": [
+    "Welsh tea in Gaiman: cakes, scones, bara brith, and a pot of tea large enough to float a ship.",
+    "Served in Welsh and Spanish and a language of its own, known as Eating."
+   ],
+   "trail": {
+    "zone": "gaiman",
+    "near": [
+     30,
+     33
+    ],
+    "clue": "A tea-room owner buried her takings near the open ground during a flood. 'The river will tell you.'",
+    "reward": {
+     "money": 1600
+    }
+   }
+  },
+  {
+   "id": "ltr_eisteddfod_gaiman",
+   "zone": "gaiman_museum",
+   "title": "Eisteddfod programme",
+   "lines": [
+    "The Eisteddfod in Gaiman has been held since 1875. Children recite in Welsh, in a country of Spanish.",
+    "The adjudicator says 'it is not the language, it is the love'. He is mostly right."
+   ]
+  },
+  {
+   "id": "ltr_penguin_coast",
+   "zone": "gaiman_tea",
+   "title": "Letter from the coast",
+   "lines": [
+    "The penguins at Punta Tombo walk about as though they own the coast, which they do.",
+    "I, in my hat, was allowed to stand and watch, provided I looked humble."
+   ]
+  }
+ ]
+}

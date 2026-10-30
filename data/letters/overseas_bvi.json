@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_soggy_dollar",
+   "zone": "bvi_soggy",
+   "title": "Beach bar tab",
+   "lines": [
+    "The Soggy Dollar Bar: you swim ashore with your cash, and the notes are hung out to dry.",
+    "The Painkiller, they say, was invented here. I had three. I stand by that."
+   ]
+  },
+  {
+   "id": "ltr_sailing_charter",
+   "zone": "bvi_sanctuary",
+   "title": "Charter logbook",
+   "lines": [
+    "Day one: anchored at a cove. Day two: anchored at a different cove. Day three: reanchored for no reason.",
+    "The crew says it is the best week of their lives. The skipper says it is Tuesday."
+   ],
+   "trail": {
+    "zone": "bvi",
+    "near": [
+     77,
+     34
+    ],
+    "clue": "A skipper hid a coin purse near the open ground 'in case the rum runs out'.",
+    "reward": {
+     "money": 1800
+    }
+   }
+  },
+  {
+   "id": "ltr_hurricane_note",
+   "zone": "bvi_fungi",
+   "title": "After-the-storm note",
+   "lines": [
+    "The roof went, the boat went, the neighbours came. Everybody shared what was left.",
+    "We rebuilt. We always rebuild. The coconut tree was the first to grow back."
+   ]
+  },
+  {
+   "id": "ltr_pirate_legend",
+   "zone": "bvi_pub",
+   "title": "Pirate legend",
+   "lines": [
+    "Blackbeard marooned fifteen men on a rock, with a bottle of rum each. Hence the rhyme.",
+    "The rhyme is not accurate. The rock is very real. The rum has long since gone."
+   ]
+  }
+ ]
+}
