@@ -1,14 +1,14 @@
 [
-  {"id": "hail_pelt", "name": "Hail Pelt", "type": "storm", "category": "physical", "power": 12, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}},
-  {"id": "wind_shear", "name": "Wind Shear", "type": "storm", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "none"}},
-  {"id": "bolt_from_the_blue", "name": "Bolt from the Blue", "type": "storm", "category": "physical", "power": 110, "accuracy": 80, "pp": 8, "priority": 0, "weather_bonus": {"weather": ["downpour"], "sure_hit": true}, "effect": {"id": "recoil", "frac": 33}},
-  {"id": "static_snap", "name": "Static Snap", "type": "storm", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}},
-  {"id": "thunderclap", "name": "Thunderclap", "type": "storm", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "target": "all_foes", "effect": {"id": "none"}},
-  {"id": "ball_lightning", "name": "Ball Lightning", "type": "storm", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 20}},
-  {"id": "storm_front", "name": "Storm Front", "type": "storm", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "spd", "stages": 1}},
-  {"id": "static_cling", "name": "Static Cling", "type": "storm", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "spd", "stages": -1}},
-  {"id": "minch_squall", "name": "Minch Squall", "type": "storm", "category": "special", "power": 85, "accuracy": 90, "pp": 10, "priority": 0, "target": "all_foes", "weather_bonus": {"weather": ["drizzle", "downpour"], "sure_hit": true}, "effect": {"id": "none"}},
-  {"id": "stornoway_gale", "name": "Stornoway Gale", "type": "storm", "category": "physical", "power": 80, "accuracy": 90, "pp": 15, "priority": 0, "effect": {"id": "none"}},
-  {"id": "gull_scream", "name": "Gull Scream", "type": "storm", "category": "special", "power": 50, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "lore", "stages": -1}},
-  {"id": "wrack_bolt", "name": "Wrack Bolt", "type": "storm", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 15}}
+  {"id": "hail_pelt", "name": "Hail Pelt", "type": "storm", "category": "physical", "power": 12, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}, "fx": {"shape": "slash"}},
+  {"id": "wind_shear", "name": "Wind Shear", "type": "storm", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "bolt_from_the_blue", "name": "Bolt from the Blue", "type": "storm", "category": "physical", "power": 110, "accuracy": 80, "pp": 8, "priority": 0, "weather_bonus": {"weather": ["downpour"], "sure_hit": true}, "effect": {"id": "recoil", "frac": 33}, "fx": {"shape": "pounce"}},
+  {"id": "static_snap", "name": "Static Snap", "type": "storm", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "bite"}},
+  {"id": "thunderclap", "name": "Thunderclap", "type": "storm", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "target": "all_foes", "effect": {"id": "none"}, "fx": {"shape": "quake"}},
+  {"id": "ball_lightning", "name": "Ball Lightning", "type": "storm", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 20}, "fx": {"shape": "burst"}},
+  {"id": "storm_front", "name": "Storm Front", "type": "storm", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "spd", "stages": 1}, "fx": {"shape": "self"}},
+  {"id": "static_cling", "name": "Static Cling", "type": "storm", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "spd", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "minch_squall", "name": "Minch Squall", "type": "storm", "category": "special", "power": 85, "accuracy": 90, "pp": 10, "priority": 0, "target": "all_foes", "weather_bonus": {"weather": ["drizzle", "downpour"], "sure_hit": true}, "effect": {"id": "none"}, "fx": {"shape": "rain"}},
+  {"id": "stornoway_gale", "name": "Stornoway Gale", "type": "storm", "category": "physical", "power": 80, "accuracy": 90, "pp": 15, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "gull_scream", "name": "Gull Scream", "type": "storm", "category": "special", "power": 50, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "lore", "stages": -1}, "fx": {"shape": "song"}},
+  {"id": "wrack_bolt", "name": "Wrack Bolt", "type": "storm", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 15}, "fx": {"shape": "beam"}}
 ]

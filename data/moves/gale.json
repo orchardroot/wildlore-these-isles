@@ -1,12 +1,12 @@
 [
-  {"id": "updraught", "name": "Updraught", "type": "gale", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "weather_bonus": {"weather": ["gale"], "mult": 1.5}, "effect": {"id": "none"}},
-  {"id": "bluster", "name": "Bluster", "type": "gale", "category": "status", "power": 0, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}},
-  {"id": "swoop", "name": "Swoop", "type": "gale", "category": "physical", "power": 80, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 20}},
-  {"id": "gust_nudge", "name": "Gust Nudge", "type": "gale", "category": "physical", "power": 40, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "none"}},
-  {"id": "kestrel_dive", "name": "Kestrel Dive", "type": "gale", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}},
-  {"id": "peregrine_plunge", "name": "Peregrine Plunge", "type": "gale", "category": "physical", "power": 95, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "flinch", "chance": 30}},
-  {"id": "murmuration", "name": "Murmuration", "type": "gale", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "target": "all_foes", "effect": {"id": "none"}},
-  {"id": "gale_force", "name": "Gale Force", "type": "gale", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "target": "all_foes", "weather_bonus": {"weather": ["gale"], "sure_hit": true}, "effect": {"id": "none"}},
-  {"id": "fell_run", "name": "Fell Run", "type": "gale", "category": "physical", "power": 65, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}},
-  {"id": "ravens_watch", "name": "Raven's Watch", "type": "gale", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1, "chance": 30}}
+  {"id": "updraught", "name": "Updraught", "type": "gale", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "weather_bonus": {"weather": ["gale"], "mult": 1.5}, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "bluster", "name": "Bluster", "type": "gale", "category": "status", "power": 0, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "swoop", "name": "Swoop", "type": "gale", "category": "physical", "power": 80, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 20}, "fx": {"shape": "wing"}},
+  {"id": "gust_nudge", "name": "Gust Nudge", "type": "gale", "category": "physical", "power": 40, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "slash"}},
+  {"id": "kestrel_dive", "name": "Kestrel Dive", "type": "gale", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "wing"}},
+  {"id": "peregrine_plunge", "name": "Peregrine Plunge", "type": "gale", "category": "physical", "power": 95, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "flinch", "chance": 30}, "fx": {"shape": "wing"}},
+  {"id": "murmuration", "name": "Murmuration", "type": "gale", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "target": "all_foes", "effect": {"id": "none"}, "fx": {"shape": "wing"}},
+  {"id": "gale_force", "name": "Gale Force", "type": "gale", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "target": "all_foes", "weather_bonus": {"weather": ["gale"], "sure_hit": true}, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "fell_run", "name": "Fell Run", "type": "gale", "category": "physical", "power": 65, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "ravens_watch", "name": "Raven's Watch", "type": "gale", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1, "chance": 30}, "fx": {"shape": "song"}}
 ]

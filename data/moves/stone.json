@@ -1,12 +1,12 @@
 [
-  {"id": "pebble_flick", "name": "Pebble Flick", "type": "stone", "category": "physical", "power": 12, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}},
-  {"id": "grit_in_eye", "name": "Grit in the Eye", "type": "stone", "category": "status", "power": 0, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}},
-  {"id": "millstone_drop", "name": "Millstone Drop", "type": "stone", "category": "physical", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "none"}},
-  {"id": "boulder_bump", "name": "Boulder Bump", "type": "stone", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}},
-  {"id": "flint_flick", "name": "Flint Flick", "type": "stone", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}},
-  {"id": "quarry_blast", "name": "Quarry Blast", "type": "stone", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "none"}},
-  {"id": "megalith_mutter", "name": "Megalith Mutter", "type": "stone", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "none"}},
-  {"id": "hard_hat", "name": "Hard Hat", "type": "stone", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}},
-  {"id": "slate_slide", "name": "Slate Slide", "type": "stone", "category": "physical", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "none"}},
-  {"id": "cairn_stack", "name": "Cairn Stack", "type": "stone", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "ward", "stages": 1}}
+  {"id": "pebble_flick", "name": "Pebble Flick", "type": "stone", "category": "physical", "power": 12, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}, "fx": {"shape": "slash"}},
+  {"id": "grit_in_eye", "name": "Grit in the Eye", "type": "stone", "category": "status", "power": 0, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "millstone_drop", "name": "Millstone Drop", "type": "stone", "category": "physical", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "quake"}},
+  {"id": "boulder_bump", "name": "Boulder Bump", "type": "stone", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "quake"}},
+  {"id": "flint_flick", "name": "Flint Flick", "type": "stone", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "volley"}},
+  {"id": "quarry_blast", "name": "Quarry Blast", "type": "stone", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "quake"}},
+  {"id": "megalith_mutter", "name": "Megalith Mutter", "type": "stone", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "song"}},
+  {"id": "hard_hat", "name": "Hard Hat", "type": "stone", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}, "fx": {"shape": "self"}},
+  {"id": "slate_slide", "name": "Slate Slide", "type": "stone", "category": "physical", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "slash"}},
+  {"id": "cairn_stack", "name": "Cairn Stack", "type": "stone", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "ward", "stages": 1}, "fx": {"shape": "self"}}
 ]

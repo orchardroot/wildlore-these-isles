@@ -2,6 +2,10 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+- Moves look like themselves: every move now has a shape (bolt, volley, beam, slash, pounce, burst, cloud, rain, quake, wave, self, song, bite, wing) painted in its type's colours, and the hit flash takes the colour too. Sixteen signature moves, one per type, have their own little choreography. All under 1.2 seconds, and gentler with Reduce Flashing on.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things
