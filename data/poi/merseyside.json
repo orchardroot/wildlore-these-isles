@@ -1,0 +1,62 @@
+{
+ "pois": [
+  {
+   "id": "poi_sefton_coast_camp",
+   "zone": "sefton_coast",
+   "near": [
+    18,
+    90
+   ],
+   "kind": "camp",
+   "at": "sefton_coast",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "weedjen",
+    "pupplash",
+    "puffkin"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 1140,
+   "item": "night_snare"
+  },
+  {
+   "id": "poi_sefton_coast_den",
+   "zone": "sefton_coast",
+   "near": [
+    48,
+    76
+   ],
+   "kind": "den",
+   "at": "sefton_coast",
+   "species": "cooplet"
+  },
+  {
+   "id": "poi_sefton_coast_stone",
+   "zone": "sefton_coast",
+   "near": [
+    20,
+    42
+   ],
+   "kind": "stone",
+   "at": "sefton_coast",
+   "stat": "hp",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is the Bridestones, near Congleton in Cheshire: a Neolithic burial chamber."
+   ],
+   "mentioned_by": {
+    "zone": "liverpool",
+    "npc": "wirral_gate_b"
+   }
+  }
+ ]
+}

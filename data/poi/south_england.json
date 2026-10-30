@@ -1,0 +1,234 @@
+{
+ "pois": [
+  {
+   "id": "poi_avon_gorge_camp",
+   "zone": "avon_gorge",
+   "near": [
+    9,
+    52
+   ],
+   "kind": "camp",
+   "at": "avon_gorge",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ]
+   ],
+   "party": [
+    "starlet",
+    "peregrin",
+    "dipling"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 1900,
+   "item": "kendal_mint_cake"
+  },
+  {
+   "id": "poi_avon_gorge_cache",
+   "zone": "avon_gorge",
+   "near": [
+    21,
+    55
+   ],
+   "kind": "cache",
+   "at": "avon_gorge",
+   "item": "silver_snare",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine.",
+   "mentioned_by": {
+    "zone": "bath",
+    "npc": "rail_guard"
+   }
+  },
+  {
+   "id": "poi_dartmoor_camp",
+   "zone": "dartmoor",
+   "near": [
+    60,
+    41
+   ],
+   "kind": "camp",
+   "at": "dartmoor",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "pincray",
+    "peatmonarch",
+    "horselet"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 2100,
+   "item": "hag_stone"
+  },
+  {
+   "id": "poi_dartmoor_stone",
+   "zone": "dartmoor",
+   "near": [
+    51,
+    23
+   ],
+   "kind": "stone",
+   "at": "dartmoor",
+   "stat": "spd",
+   "lore": [
+    "Someone has left a single conker on top. Sensible.",
+    "The real thing is Stonehenge, on Salisbury Plain: the famous one, with lintels."
+   ],
+   "mentioned_by": {
+    "zone": "plymouth",
+    "npc": "ply_oldsalt"
+   }
+  },
+  {
+   "id": "poi_exe_estuary_stone",
+   "zone": "exe_estuary",
+   "near": [
+    17,
+    34
+   ],
+   "kind": "stone",
+   "at": "exe_estuary",
+   "stat": "def",
+   "lore": [
+    "Someone has left a single conker on top. Sensible.",
+    "The real thing is Stonehenge, on Salisbury Plain: the famous one, with lintels."
+   ]
+  },
+  {
+   "id": "poi_exe_estuary_cache",
+   "zone": "exe_estuary",
+   "near": [
+    18,
+    13
+   ],
+   "kind": "cache",
+   "at": "exe_estuary",
+   "item": "iron_snare",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox."
+  },
+  {
+   "id": "poi_lee_moor_stone",
+   "zone": "lee_moor",
+   "near": [
+    16,
+    3
+   ],
+   "kind": "stone",
+   "at": "plymouth",
+   "stat": "spd",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is Stonehenge, on Salisbury Plain: the famous one, with lintels."
+   ]
+  },
+  {
+   "id": "poi_mendips_cache",
+   "zone": "mendips",
+   "near": [
+    62,
+    6
+   ],
+   "kind": "cache",
+   "at": "mendips",
+   "item": "lucky_chip",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes.",
+   "mentioned_by": {
+    "zone": "bath",
+    "npc": "rail_guard"
+   }
+  },
+  {
+   "id": "poi_mendips_den",
+   "zone": "mendips",
+   "near": [
+    52,
+    3
+   ],
+   "kind": "den",
+   "at": "mendips",
+   "species": "pepperling"
+  },
+  {
+   "id": "poi_severn_crossing_camp",
+   "zone": "severn_crossing",
+   "near": [
+    65,
+    24
+   ],
+   "kind": "camp",
+   "at": "severn_crossing",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "bayrunner",
+    "severnshock",
+    "wessexwyrm"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 1900,
+   "item": "iron_snare",
+   "mentioned_by": {
+    "zone": "cardiff",
+    "npc": "isles_saleh"
+   }
+  },
+  {
+   "id": "poi_severn_crossing_stone",
+   "zone": "severn_crossing",
+   "near": [
+    6,
+    29
+   ],
+   "kind": "stone",
+   "at": "severn_crossing",
+   "stat": "lore",
+   "lore": [
+    "It is cold, and it hums very faintly, the way a fridge does.",
+    "The real thing is Avebury, in Wiltshire: the largest stone circle in Britain, with a village built through the middle of it."
+   ]
+  },
+  {
+   "id": "poi_somerset_levels_den",
+   "zone": "somerset_levels",
+   "near": [
+    38,
+    5
+   ],
+   "kind": "den",
+   "at": "somerset_levels",
+   "species": "volet"
+  }
+ ]
+}

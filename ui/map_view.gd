@@ -470,6 +470,21 @@ func _icon(mk: Dictionary, c: Vector2) -> void:
 			draw_rect(r, Color(INK, 0.9), false, 1.4)
 			for i in 3:
 				draw_circle(c + Vector2(-4.5 + i * 4.5, -0.5), 1.4, INK)
+		"poi":  # a question mark on a ring; done, the little picture of what it was
+			draw_circle(c, 9.0, Color(INK, 0.9))
+			draw_circle(c, 7.6, PAPER)
+			if not mk.done:
+				draw_string(font, c + Vector2(-4.2, 5.4), "?", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, INK)
+			else:
+				match str(mk.poi):
+					"den":
+						draw_colored_polygon(PackedVector2Array([c + Vector2(-5, 4), c + Vector2(-3, -2), c + Vector2(0, -4), c + Vector2(3, -2), c + Vector2(5, 4)]), INK)
+					"camp":
+						draw_colored_polygon(PackedVector2Array([c + Vector2(-5, 4), c + Vector2(0, -5), c + Vector2(5, 4)]), INK)
+					"stone":
+						draw_rect(Rect2(c + Vector2(-2.5, -5), Vector2(5, 10)), INK)
+					_:
+						draw_rect(Rect2(c + Vector2(-4, -2), Vector2(8, 6)), INK)
 		"post":  # an envelope with a red seal
 			var r := Rect2(c - Vector2(9, 6), Vector2(18, 12))
 			draw_rect(r, PAPER)

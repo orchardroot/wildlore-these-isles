@@ -1,0 +1,95 @@
+{
+ "pois": [
+  {
+   "id": "poi_macc_forest_stone",
+   "zone": "macc_forest",
+   "near": [
+    31,
+    20
+   ],
+   "kind": "stone",
+   "at": "macc_forest",
+   "stat": "lore",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is the Bridestones, near Congleton, on the Cheshire and Staffordshire border: a Neolithic burial chamber that has lost most of its mound."
+   ]
+  },
+  {
+   "id": "poi_macc_forest_cache",
+   "zone": "macc_forest",
+   "near": [
+    52,
+    30
+   ],
+   "kind": "cache",
+   "at": "macc_forest",
+   "item": "deerstalker_tweed",
+   "line": "A hollow in the old tree, and something wrapped in oilcloth.",
+   "mentioned_by": {
+    "zone": "macclesfield",
+    "npc": "bank_ducks"
+   }
+  },
+  {
+   "id": "poi_wirral_way_stone",
+   "zone": "wirral_way",
+   "near": [
+    23,
+    24
+   ],
+   "kind": "stone",
+   "at": "wirral_way",
+   "stat": "hp",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is the Bridestones, near Congleton, on the Cheshire and Staffordshire border: a Neolithic burial chamber that has lost most of its mound."
+   ],
+   "mentioned_by": {
+    "zone": "liverpool",
+    "npc": "liv_birdman"
+   }
+  },
+  {
+   "id": "poi_wirral_way_camp",
+   "zone": "wirral_way",
+   "near": [
+    11,
+    44
+   ],
+   "kind": "camp",
+   "at": "wirral_way",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "hootlet",
+    "pinchkin",
+    "dockling"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 1220,
+   "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_wirral_way_cache",
+   "zone": "wirral_way",
+   "near": [
+    53,
+    11
+   ],
+   "kind": "cache",
+   "at": "wirral_way",
+   "item": "oak_acorn",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine.",
+   "curio": true
+  }
+ ]
+}

@@ -1,0 +1,304 @@
+{
+ "pois": [
+  {
+   "id": "poi_cotswolds_cache",
+   "zone": "cotswolds",
+   "near": [
+    34,
+    61
+   ],
+   "kind": "cache",
+   "at": "cotswolds",
+   "item": "horseshoe",
+   "line": "Someone's hiding place, and not as hidden as they hoped.",
+   "mentioned_by": {
+    "zone": "birmingham",
+    "npc": "brum_student"
+   }
+  },
+  {
+   "id": "poi_cotswolds_camp",
+   "zone": "cotswolds",
+   "near": [
+    8,
+    8
+   ],
+   "kind": "camp",
+   "at": "cotswolds",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ]
+   ],
+   "party": [
+    "dipling",
+    "gloucelet",
+    "pixling"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3980,
+   "item": "iron_snare",
+   "mentioned_by": {
+    "zone": "birmingham",
+    "npc": "brum_student"
+   }
+  },
+  {
+   "id": "poi_cotswolds_stone",
+   "zone": "cotswolds",
+   "near": [
+    17,
+    3
+   ],
+   "kind": "stone",
+   "at": "cotswolds",
+   "stat": "atk",
+   "lore": [
+    "Lichen has been at it for a few thousand years and has barely got started.",
+    "The real thing is the Rollright Stones, on the Oxfordshire and Warwickshire border: a circle called the King's Men, with the King's Stone across the road."
+   ]
+  },
+  {
+   "id": "poi_ironbridge_gorge_den",
+   "zone": "ironbridge_gorge",
+   "near": [
+    26,
+    29
+   ],
+   "kind": "den",
+   "at": "ironbridge_gorge",
+   "species": "grandpuff"
+  },
+  {
+   "id": "poi_ironbridge_gorge_stone",
+   "zone": "ironbridge_gorge",
+   "near": [
+    11,
+    18
+   ],
+   "kind": "stone",
+   "at": "ironbridge_gorge",
+   "stat": "atk",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is the Rollright Stones, on the Oxfordshire and Warwickshire border: a circle called the King's Men, with the King's Stone across the road."
+   ]
+  },
+  {
+   "id": "poi_ironbridge_gorge_camp",
+   "zone": "ironbridge_gorge",
+   "near": [
+    53,
+    31
+   ],
+   "kind": "camp",
+   "at": "ironbridge_gorge",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ]
+   ],
+   "party": [
+    "starlet",
+    "hootlet",
+    "fawnlet"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 1220,
+   "item": "water_snare",
+   "mentioned_by": {
+    "zone": "shrewsbury",
+    "npc": "shr_drover"
+   }
+  },
+  {
+   "id": "poi_salisbury_plain_stone",
+   "zone": "salisbury_plain",
+   "near": [
+    31,
+    39
+   ],
+   "kind": "stone",
+   "at": "birmingham",
+   "stat": "lore",
+   "lore": [
+    "It leans, slightly, like it has heard all this before.",
+    "The real thing is the Rollright Stones, on the Oxfordshire and Warwickshire border: a circle called the King's Men, with the King's Stone across the road."
+   ]
+  },
+  {
+   "id": "poi_salisbury_plain_camp",
+   "zone": "salisbury_plain",
+   "near": [
+    32,
+    55
+   ],
+   "kind": "camp",
+   "at": "birmingham",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "moldiwarp",
+    "grandpuff",
+    "forkwing"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3940,
+   "item": "kendal_mint_cake"
+  },
+  {
+   "id": "poi_salisbury_plain_den",
+   "zone": "salisbury_plain",
+   "near": [
+    50,
+    17
+   ],
+   "kind": "den",
+   "at": "birmingham",
+   "species": "flaxling"
+  },
+  {
+   "id": "poi_sherwood_camp",
+   "zone": "sherwood",
+   "near": [
+    35,
+    25
+   ],
+   "kind": "camp",
+   "at": "sheffield",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "dozelet",
+    "glowmite",
+    "thistlet"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 3860,
+   "item": "cream_tea"
+  },
+  {
+   "id": "poi_sherwood_cache",
+   "zone": "sherwood",
+   "near": [
+    49,
+    51
+   ],
+   "kind": "cache",
+   "at": "sheffield",
+   "item": "water_snare",
+   "line": "A hollow tree has been used as a post box by someone with no postman.",
+   "mentioned_by": {
+    "zone": "sheffield",
+    "npc": "sheffield_bowler"
+   }
+  },
+  {
+   "id": "poi_shropshire_hills_den",
+   "zone": "shropshire_hills",
+   "near": [
+    41,
+    56
+   ],
+   "kind": "den",
+   "at": "shropshire_hills",
+   "species": "rillotter"
+  },
+  {
+   "id": "poi_shropshire_hills_stone",
+   "zone": "shropshire_hills",
+   "near": [
+    28,
+    33
+   ],
+   "kind": "stone",
+   "at": "shropshire_hills",
+   "stat": "hp",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is the Rollright Stones, on the Oxfordshire and Warwickshire border: a circle called the King's Men, with the King's Stone across the road."
+   ]
+  },
+  {
+   "id": "poi_stonehenge_stone",
+   "zone": "stonehenge",
+   "near": [
+    22,
+    50
+   ],
+   "kind": "stone",
+   "at": "london",
+   "stat": "def",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is the Rollright Stones, on the Oxfordshire and Warwickshire border: a circle called the King's Men, with the King's Stone across the road."
+   ]
+  },
+  {
+   "id": "poi_stonehenge_camp",
+   "zone": "stonehenge",
+   "near": [
+    26,
+    29
+   ],
+   "kind": "camp",
+   "at": "london",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "megalorn",
+    "wispet",
+    "barkdeer"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 4060,
+   "item": "hag_stone"
+  }
+ ]
+}

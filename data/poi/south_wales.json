@@ -1,0 +1,156 @@
+{
+ "pois": [
+  {
+   "id": "poi_beacons_stone",
+   "zone": "beacons",
+   "near": [
+    39,
+    6
+   ],
+   "kind": "stone",
+   "at": "beacons",
+   "stat": "spd",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is Pentre Ifan, in Pembrokeshire: a dolmen with a capstone big enough to shelter a cow."
+   ]
+  },
+  {
+   "id": "poi_beacons_den",
+   "zone": "beacons",
+   "near": [
+    63,
+    17
+   ],
+   "kind": "den",
+   "at": "beacons",
+   "species": "penydarren",
+   "mentioned_by": {
+    "zone": "st_davids",
+    "npc": "tea_lady"
+   }
+  },
+  {
+   "id": "poi_gower_camp",
+   "zone": "gower",
+   "near": [
+    80,
+    41
+   ],
+   "kind": "camp",
+   "at": "gower",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "hootlet",
+    "marilwyd",
+    "kitelet"
+   ],
+   "line": "The lamping's good here. Was good here.",
+   "money": 1780,
+   "item": "water_snare",
+   "mentioned_by": {
+    "zone": "swansea",
+    "npc": "swa_jack_walker"
+   }
+  },
+  {
+   "id": "poi_gower_cache",
+   "zone": "gower",
+   "near": [
+    51,
+    32
+   ],
+   "kind": "cache",
+   "at": "gower",
+   "item": "kendal_mint_cake",
+   "line": "Someone's hiding place, and not as hidden as they hoped.",
+   "paper": "Scrawled inside the lid: 'If found, you may keep it. If you are Gareth, put it back.'"
+  },
+  {
+   "id": "poi_pembroke_coast_stone",
+   "zone": "pembroke_coast",
+   "near": [
+    18,
+    25
+   ],
+   "kind": "stone",
+   "at": "pembroke_coast",
+   "stat": "ward",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is Gors Fawr, in the Preseli Hills: a ring of 16 small stones, with two big ones outside."
+   ]
+  },
+  {
+   "id": "poi_pembroke_coast_den",
+   "zone": "pembroke_coast",
+   "near": [
+    14,
+    13
+   ],
+   "kind": "den",
+   "at": "pembroke_coast",
+   "species": "steamlet",
+   "mentioned_by": {
+    "zone": "aberystwyth",
+    "npc": "ice_cream"
+   }
+  },
+  {
+   "id": "poi_rhondda_cache",
+   "zone": "rhondda",
+   "near": [
+    36,
+    3
+   ],
+   "kind": "cache",
+   "at": "rhondda",
+   "item": "lucky_chip",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox.",
+   "paper": "A pencilled card: 'To whoever is nosy enough, well done.'"
+  },
+  {
+   "id": "poi_rhondda_den",
+   "zone": "rhondda",
+   "near": [
+    9,
+    50
+   ],
+   "kind": "den",
+   "at": "rhondda",
+   "species": "ormwyrm",
+   "mentioned_by": {
+    "zone": "cardiff",
+    "npc": "castle_guide2"
+   }
+  },
+  {
+   "id": "poi_rhondda_stone",
+   "zone": "rhondda",
+   "near": [
+    33,
+    37
+   ],
+   "kind": "stone",
+   "at": "rhondda",
+   "stat": "spd",
+   "lore": [
+    "It is cold, and it hums very faintly, the way a fridge does.",
+    "The real thing is Pentre Ifan, in Pembrokeshire: a dolmen with a capstone big enough to shelter a cow."
+   ],
+   "mentioned_by": {
+    "zone": "cardiff",
+    "npc": "castle_guide2"
+   }
+  }
+ ]
+}

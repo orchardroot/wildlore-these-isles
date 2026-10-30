@@ -2,6 +2,10 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+- **Question marks on the map.** Around 170 places on the routes now wait to be found: a creature den (three wild fights, then something unusual living at the back), a poachers' camp with a strongbox, a standing stone that trains your lead and tells you about a real one, and hidden caches. Walk within six tiles, or hear a resident mention one, and a "?" appears on the map; finish it and it becomes a little picture of what it was.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things

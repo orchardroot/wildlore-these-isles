@@ -1,0 +1,95 @@
+{
+ "pois": [
+  {
+   "id": "poi_kent_downs_cache",
+   "zone": "kent_downs",
+   "near": [
+    52,
+    14
+   ],
+   "kind": "cache",
+   "at": "kent_downs",
+   "item": "hag_stone",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine."
+  },
+  {
+   "id": "poi_kent_downs_camp",
+   "zone": "kent_downs",
+   "near": [
+    28,
+    17
+   ],
+   "kind": "camp",
+   "at": "kent_downs",
+   "names": [
+    [
+     "Trapper Moira",
+     "Trapper"
+    ],
+    [
+     "Lamper Ged",
+     "Lamper"
+    ]
+   ],
+   "party": [
+    "puffkin",
+    "hoplet",
+    "hoplet"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 4140,
+   "item": "night_snare"
+  },
+  {
+   "id": "poi_south_downs_camp",
+   "zone": "south_downs",
+   "near": [
+    3,
+    32
+   ],
+   "kind": "camp",
+   "at": "south_downs",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "gannetling",
+    "rooklet",
+    "puffkin"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 4140,
+   "item": "hag_stone",
+   "mentioned_by": {
+    "zone": "london",
+    "npc": "isles_marcia"
+   }
+  },
+  {
+   "id": "poi_south_downs_stone",
+   "zone": "south_downs",
+   "near": [
+    35,
+    9
+   ],
+   "kind": "stone",
+   "at": "south_downs",
+   "stat": "def",
+   "lore": [
+    "Lichen has been at it for a few thousand years and has barely got started.",
+    "The real thing is Kit's Coty House, near Aylesford in Kent: a Neolithic burial chamber, three uprights and a capstone."
+   ],
+   "mentioned_by": {
+    "zone": "london",
+    "npc": "isles_marcia"
+   }
+  }
+ ]
+}

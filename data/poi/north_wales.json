@@ -1,0 +1,164 @@
+{
+ "pois": [
+  {
+   "id": "poi_anglesey_den",
+   "zone": "anglesey",
+   "near": [
+    66,
+    35
+   ],
+   "kind": "den",
+   "at": "anglesey",
+   "species": "pipkin"
+  },
+  {
+   "id": "poi_anglesey_stone",
+   "zone": "anglesey",
+   "near": [
+    21,
+    22
+   ],
+   "kind": "stone",
+   "at": "anglesey",
+   "stat": "hp",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is the Druids' Circle, above Penmaenmawr: a small ring on the hillside above the sea."
+   ],
+   "mentioned_by": {
+    "zone": "llanberis",
+    "npc": "llan_skimmer"
+   }
+  },
+  {
+   "id": "poi_dee_valley_camp",
+   "zone": "dee_valley",
+   "near": [
+    23,
+    13
+   ],
+   "kind": "camp",
+   "at": "dee_valley",
+   "names": [
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "martling",
+    "afanc",
+    "brockling"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 1300,
+   "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_dee_valley_stone",
+   "zone": "dee_valley",
+   "near": [
+    59,
+    23
+   ],
+   "kind": "stone",
+   "at": "dee_valley",
+   "stat": "atk",
+   "lore": [
+    "Someone has left a single conker on top. Sensible.",
+    "The real thing is the Druids' Circle, above Penmaenmawr: a small ring on the hillside above the sea."
+   ]
+  },
+  {
+   "id": "poi_ogwen_stone",
+   "zone": "ogwen",
+   "near": [
+    34,
+    16
+   ],
+   "kind": "stone",
+   "at": "ogwen",
+   "stat": "spd",
+   "lore": [
+    "It leans, slightly, like it has heard all this before.",
+    "The real thing is the Druids' Circle, above Penmaenmawr: a small ring on the hillside above the sea."
+   ]
+  },
+  {
+   "id": "poi_ogwen_cache",
+   "zone": "ogwen",
+   "near": [
+    51,
+    29
+   ],
+   "kind": "cache",
+   "at": "ogwen",
+   "item": "night_snare",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes."
+  },
+  {
+   "id": "poi_welsh_conifer_plantation_den",
+   "zone": "welsh_conifer_plantation",
+   "near": [
+    38,
+    29
+   ],
+   "kind": "den",
+   "at": "dee_valley",
+   "species": "cragchough"
+  },
+  {
+   "id": "poi_welsh_conifer_plantation_cache",
+   "zone": "welsh_conifer_plantation",
+   "near": [
+    25,
+    18
+   ],
+   "kind": "cache",
+   "at": "dee_valley",
+   "item": "rowan_sprig",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox."
+  },
+  {
+   "id": "poi_yr_wyddfa_cache",
+   "zone": "yr_wyddfa",
+   "near": [
+    6,
+    19
+   ],
+   "kind": "cache",
+   "at": "yr_wyddfa",
+   "item": "lucky_chip",
+   "line": "A hollow tree has been used as a post box by someone with no postman.",
+   "paper": "There is a scrap of paper too: 'Hid this in 1987. Hope the sheep were kind.'",
+   "curio": true,
+   "mentioned_by": {
+    "zone": "llanberis",
+    "npc": "cambrian_gate_c"
+   }
+  },
+  {
+   "id": "poi_yr_wyddfa_stone",
+   "zone": "yr_wyddfa",
+   "near": [
+    21,
+    4
+   ],
+   "kind": "stone",
+   "at": "yr_wyddfa",
+   "stat": "ward",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is Bryn Celli Ddu, on Anglesey: a passage tomb that lights up at the summer solstice."
+   ],
+   "mentioned_by": {
+    "zone": "llanberis",
+    "npc": "cambrian_gate_c"
+   }
+  }
+ ]
+}

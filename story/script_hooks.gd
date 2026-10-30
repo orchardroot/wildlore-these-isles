@@ -8,4 +8,5 @@ extends RefCounted
 static func wrap(zone_id: String, npc_id: String, commands: Array, data: GameStateData) -> Array:
 	var out := commands
 	# wave 47 sessions add one line each here, e.g. out = Trades.hook(zone_id, npc_id, out, data)
+	out = Poi.hook(zone_id, npc_id, out, data)  # wave 47 H: a resident mentions a place on the map
 	return out

@@ -1,0 +1,79 @@
+{
+ "pois": [
+  {
+   "id": "poi_guernsey_country_camp",
+   "zone": "guernsey_country",
+   "near": [
+    55,
+    34
+   ],
+   "kind": "camp",
+   "at": "guernsey_country",
+   "names": [
+    [
+     "Poacher Seamus",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ],
+    [
+     "Lamper Ged",
+     "Lamper"
+    ]
+   ],
+   "party": [
+    "crockling",
+    "herdlet",
+    "crockling"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 2020,
+   "item": "night_snare"
+  },
+  {
+   "id": "poi_guernsey_country_cache",
+   "zone": "guernsey_country",
+   "near": [
+    28,
+    28
+   ],
+   "kind": "cache",
+   "at": "guernsey_country",
+   "item": "kendal_mint_cake",
+   "line": "Someone's hiding place, and not as hidden as they hoped."
+  },
+  {
+   "id": "poi_jersey_country_cache",
+   "zone": "jersey_country",
+   "near": [
+    43,
+    6
+   ],
+   "kind": "cache",
+   "at": "jersey_country",
+   "item": "hard_hat_yellow",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox.",
+   "mentioned_by": {
+    "zone": "st_helier",
+    "npc": "st_helier_bureau"
+   }
+  },
+  {
+   "id": "poi_jersey_country_den",
+   "zone": "jersey_country",
+   "near": [
+    42,
+    35
+   ],
+   "kind": "den",
+   "at": "jersey_country",
+   "species": "pepperling",
+   "mentioned_by": {
+    "zone": "st_helier",
+    "npc": "st_helier_bureau"
+   }
+  }
+ ]
+}
