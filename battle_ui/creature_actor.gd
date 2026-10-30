@@ -145,7 +145,7 @@ func cast() -> void:
 	_tween.parallel().tween_property(self, "position", home, 0.22).set_ease(Tween.EASE_IN)
 	await _tween.finished
 
-func hit(strength := "normal") -> void:
+func hit(strength := "normal", tint := Color.WHITE) -> void:
 	_kill()
 	var k := 0.35 if strength == "strong" else (0.12 if strength == "weak" else 0.22)
 	var gentle := Settings.reduce_flashing  # one soft tint and a slow wobble instead of six rapid white flashes
@@ -157,6 +157,8 @@ func hit(strength := "normal") -> void:
 		var step := 0.14 if gentle else 0.05
 		_tween.tween_property(self, "position:x", home.x + s * k * (1.0 - i / 6.0), step)
 		var flash := Color(1.35, 1.15, 1.15) if gentle else Color(3.0, 1.6, 1.6)
+		if tint != Color.WHITE:  # the move's type colour tints the flash (one bright channel mix, same peak brightness)
+			flash = Color(1.0 + tint.r * (0.3 if gentle else 1.8), 1.0 + tint.g * (0.3 if gentle else 1.8), 1.0 + tint.b * (0.3 if gentle else 1.8))
 		_tween.parallel().tween_property(sprite, "modulate", flash if i % 2 == 0 else Color(1.12, 1.12, 1.12), step)
 	_tween.tween_property(self, "position", home, 0.04)
 	_tween.tween_property(sprite, "modulate", Color(1.12, 1.12, 1.12), 0.02)

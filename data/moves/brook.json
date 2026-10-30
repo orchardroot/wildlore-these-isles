@@ -1,14 +1,14 @@
 [
-  {"id": "rill_shot", "name": "Rill Shot", "type": "brook", "category": "special", "power": 40, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}},
-  {"id": "drench", "name": "Drench", "type": "brook", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "status", "status": "soaked"}},
-  {"id": "spate_surge", "name": "Spate Surge", "type": "brook", "category": "special", "power": 80, "accuracy": 100, "pp": 10, "priority": 0, "effect": {"id": "none"}},
-  {"id": "paddle_poke", "name": "Paddle Poke", "type": "brook", "category": "physical", "power": 40, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "none"}},
-  {"id": "weir_shove", "name": "Weir Shove", "type": "brook", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "none"}},
-  {"id": "flash_flood", "name": "Flash Flood", "type": "brook", "category": "physical", "power": 95, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "none"}},
-  {"id": "eddy_ripple", "name": "Eddy Ripple", "type": "brook", "category": "special", "power": 65, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "drain", "frac": 50}},
-  {"id": "undertow", "name": "Undertow", "type": "brook", "category": "special", "power": 90, "accuracy": 90, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "soaked", "chance": 20}},
-  {"id": "loch_deep", "name": "Loch Deep", "type": "brook", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "none"}},
-  {"id": "dales_drizzle", "name": "Dales Drizzle", "type": "brook", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "target": "all_foes", "weather_bonus": {"weather": ["drizzle", "downpour"], "mult": 2.0}, "effect": {"id": "none"}},
-  {"id": "beck_bounce", "name": "Beck Bounce", "type": "brook", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "status", "status": "chilled", "chance": 10}},
-  {"id": "fish_supper", "name": "Fish Supper", "type": "brook", "category": "special", "power": 50, "accuracy": 100, "pp": 20, "priority": 0, "desc": "Helps itself to whatever is in the river. A special hit that heals it by half the damage dealt.", "effect": {"id": "drain", "frac": 50}}
+  {"id": "rill_shot", "name": "Rill Shot", "type": "brook", "category": "special", "power": 40, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "bolt"}},
+  {"id": "drench", "name": "Drench", "type": "brook", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "status", "status": "soaked"}, "fx": {"shape": "cloud"}},
+  {"id": "spate_surge", "name": "Spate Surge", "type": "brook", "category": "special", "power": 80, "accuracy": 100, "pp": 10, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "paddle_poke", "name": "Paddle Poke", "type": "brook", "category": "physical", "power": 40, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "slash"}},
+  {"id": "weir_shove", "name": "Weir Shove", "type": "brook", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "quake"}},
+  {"id": "flash_flood", "name": "Flash Flood", "type": "brook", "category": "physical", "power": 95, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "eddy_ripple", "name": "Eddy Ripple", "type": "brook", "category": "special", "power": 65, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "drain", "frac": 50}, "fx": {"shape": "wave"}},
+  {"id": "undertow", "name": "Undertow", "type": "brook", "category": "special", "power": 90, "accuracy": 90, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "soaked", "chance": 20}, "fx": {"shape": "wave"}},
+  {"id": "loch_deep", "name": "Loch Deep", "type": "brook", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "bolt"}},
+  {"id": "dales_drizzle", "name": "Dales Drizzle", "type": "brook", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "target": "all_foes", "weather_bonus": {"weather": ["drizzle", "downpour"], "mult": 2.0}, "effect": {"id": "none"}, "fx": {"shape": "rain"}},
+  {"id": "beck_bounce", "name": "Beck Bounce", "type": "brook", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "status", "status": "chilled", "chance": 10}, "fx": {"shape": "pounce"}},
+  {"id": "fish_supper", "name": "Fish Supper", "type": "brook", "category": "special", "power": 50, "accuracy": 100, "pp": 20, "priority": 0, "desc": "Helps itself to whatever is in the river. A special hit that heals it by half the damage dealt.", "effect": {"id": "drain", "frac": 50}, "fx": {"shape": "wave"}}
 ]

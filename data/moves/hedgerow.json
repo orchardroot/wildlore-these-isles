@@ -1,15 +1,15 @@
 [
-  {"id": "bramble_lash", "name": "Bramble Lash", "type": "hedgerow", "category": "physical", "power": 45, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}},
-  {"id": "spore_puff", "name": "Spore Puff", "type": "hedgerow", "category": "status", "power": 0, "accuracy": 75, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "asleep"}},
-  {"id": "thorn_volley", "name": "Thorn Volley", "type": "hedgerow", "category": "physical", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 20}},
-  {"id": "hawthorn_hammer", "name": "Hawthorn Hammer", "type": "hedgerow", "category": "physical", "power": 95, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "flinch", "chance": 20}},
-  {"id": "nettle_sting", "name": "Nettle Sting", "type": "hedgerow", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}},
-  {"id": "sloe_splash", "name": "Sloe Splash", "type": "hedgerow", "category": "special", "power": 60, "accuracy": 100, "pp": 15, "priority": 0, "effect": {"id": "drain", "frac": 50}},
-  {"id": "elder_hex", "name": "Elder Hex", "type": "hedgerow", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 25}},
-  {"id": "ivy_tangle", "name": "Ivy Tangle", "type": "hedgerow", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "spd", "stages": -1}},
-  {"id": "wild_hunt_bloom", "name": "Wild Hunt Bloom", "type": "hedgerow", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "none"}},
-  {"id": "badger_bite", "name": "Badger Bite", "type": "hedgerow", "category": "physical", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 30}},
-  {"id": "hedgehog_curl", "name": "Hedgehog Curl", "type": "hedgerow", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}},
-  {"id": "bristle_up", "name": "Bristle Up", "type": "hedgerow", "category": "status", "power": 0, "accuracy": 100, "pp": 10, "priority": 3, "desc": "Rolls into a prickly ball and waits for trouble to get bored. Nothing gets through this turn.", "effect": {"id": "protect", "target": "self"}},
-  {"id": "bracket_slam", "name": "Bracket Slam", "type": "hedgerow", "category": "physical", "power": 80, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 20}}
+  {"id": "bramble_lash", "name": "Bramble Lash", "type": "hedgerow", "category": "physical", "power": 45, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "slash"}},
+  {"id": "spore_puff", "name": "Spore Puff", "type": "hedgerow", "category": "status", "power": 0, "accuracy": 75, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "asleep"}, "fx": {"shape": "cloud"}},
+  {"id": "thorn_volley", "name": "Thorn Volley", "type": "hedgerow", "category": "physical", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "stung", "chance": 20}, "fx": {"shape": "volley"}},
+  {"id": "hawthorn_hammer", "name": "Hawthorn Hammer", "type": "hedgerow", "category": "physical", "power": 95, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "quake"}},
+  {"id": "nettle_sting", "name": "Nettle Sting", "type": "hedgerow", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "bite"}},
+  {"id": "sloe_splash", "name": "Sloe Splash", "type": "hedgerow", "category": "special", "power": 60, "accuracy": 100, "pp": 15, "priority": 0, "effect": {"id": "drain", "frac": 50}, "fx": {"shape": "wave"}},
+  {"id": "elder_hex", "name": "Elder Hex", "type": "hedgerow", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 25}, "fx": {"shape": "bolt"}},
+  {"id": "ivy_tangle", "name": "Ivy Tangle", "type": "hedgerow", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "spd", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "wild_hunt_bloom", "name": "Wild Hunt Bloom", "type": "hedgerow", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "bolt"}},
+  {"id": "badger_bite", "name": "Badger Bite", "type": "hedgerow", "category": "physical", "power": 75, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 30}, "fx": {"shape": "bite"}},
+  {"id": "hedgehog_curl", "name": "Hedgehog Curl", "type": "hedgerow", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}, "fx": {"shape": "self"}},
+  {"id": "bristle_up", "name": "Bristle Up", "type": "hedgerow", "category": "status", "power": 0, "accuracy": 100, "pp": 10, "priority": 3, "desc": "Rolls into a prickly ball and waits for trouble to get bored. Nothing gets through this turn.", "effect": {"id": "protect", "target": "self"}, "fx": {"shape": "self"}},
+  {"id": "bracket_slam", "name": "Bracket Slam", "type": "hedgerow", "category": "physical", "power": 80, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "quake"}}
 ]

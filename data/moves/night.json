@@ -1,12 +1,12 @@
 [
-  {"id": "shadow_nip", "name": "Shadow Nip", "type": "night", "category": "physical", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}},
-  {"id": "hoot_lullaby", "name": "Hoot Lullaby", "type": "night", "category": "status", "power": 0, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "status", "status": "asleep"}},
-  {"id": "moonlit_pounce", "name": "Moonlit Pounce", "type": "night", "category": "physical", "power": 85, "accuracy": 95, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 15}},
-  {"id": "owl_swoop", "name": "Owl Swoop", "type": "night", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}},
-  {"id": "moth_dust", "name": "Moth Dust", "type": "night", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}},
-  {"id": "vixen_scream", "name": "Vixen Scream", "type": "night", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 20}},
-  {"id": "dark_of_the_moon", "name": "Dark of the Moon", "type": "night", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 20}},
-  {"id": "pitch_black", "name": "Pitch Black", "type": "night", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}},
-  {"id": "battle_crow", "name": "Battle Crow", "type": "night", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 20}},
-  {"id": "hellhound_howl", "name": "Hellhound Howl", "type": "night", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 30}}
+  {"id": "shadow_nip", "name": "Shadow Nip", "type": "night", "category": "physical", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "bite"}},
+  {"id": "hoot_lullaby", "name": "Hoot Lullaby", "type": "night", "category": "status", "power": 0, "accuracy": 100, "pp": 25, "priority": 0, "effect": {"id": "status", "status": "asleep"}, "fx": {"shape": "song"}},
+  {"id": "moonlit_pounce", "name": "Moonlit Pounce", "type": "night", "category": "physical", "power": 85, "accuracy": 95, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 15}, "fx": {"shape": "pounce"}},
+  {"id": "owl_swoop", "name": "Owl Swoop", "type": "night", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "wing"}},
+  {"id": "moth_dust", "name": "Moth Dust", "type": "night", "category": "special", "power": 40, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "beam"}},
+  {"id": "vixen_scream", "name": "Vixen Scream", "type": "night", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "song"}},
+  {"id": "dark_of_the_moon", "name": "Dark of the Moon", "type": "night", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 20}, "fx": {"shape": "beam"}},
+  {"id": "pitch_black", "name": "Pitch Black", "type": "night", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "battle_crow", "name": "Battle Crow", "type": "night", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 20}, "fx": {"shape": "wing"}},
+  {"id": "hellhound_howl", "name": "Hellhound Howl", "type": "night", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 30}, "fx": {"shape": "song"}}
 ]

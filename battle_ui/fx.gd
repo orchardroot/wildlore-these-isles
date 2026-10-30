@@ -27,6 +27,21 @@ func _actor(side: int, pos := 0) -> CreatureActor:
 const POOL_MAX := 240
 ## Special moves of these types fire a beam; the rest throw a projectile.
 const BEAM_TYPES := ["storm", "frost", "fae", "spirit", "night", "iron"]
+## The 14 move shapes (data/moves "fx": {"shape"}); every move plays one of them in its type's palette.
+const SHAPES := ["bolt", "volley", "beam", "slash", "pounce", "burst", "cloud", "rain", "quake", "wave", "self", "song", "bite", "wing"]
+## Particle textures (index into PARTICLE_TEX): 0 soft glow, 1 ring, 2 star, 3 shard, 4 drop, 5 note, 6 leaf.
+const TEX_N := 7
+## One look per type: [core, highlight, particle texture index].
+const PALETTE := {
+	"kin": [Color("c9b48a"), Color("f6ead0"), 2], "hedgerow": [Color("5fae4a"), Color("c8f09a"), 6],
+	"brook": [Color("4a94dc"), Color("bfe6ff"), 4], "tide": [Color("2f72b8"), Color("a8e0f0"), 4],
+	"hearth": [Color("f0701f"), Color("ffe08a"), 0], "gale": [Color("a8cce6"), Color("f2fbff"), 6],
+	"storm": [Color("8070e0"), Color("fff8a8"), 3], "frost": [Color("86d8e8"), Color("f4feff"), 3],
+	"stone": [Color("a08a68"), Color("e2d2b0"), 3], "bog": [Color("708a36"), Color("c4d86a"), 4],
+	"iron": [Color("98a2b0"), Color("ffcf7a"), 3], "urban": [Color("8a8c9a"), Color("e8e6f4"), 2],
+	"fae": [Color("e888d0"), Color("fff0fa"), 2], "spirit": [Color("9070cc"), Color("e8dcff"), 1],
+	"brawn": [Color("d04a3a"), Color("ffd8b0"), 2], "night": [Color("4a4a8a"), Color("b8b0ff"), 1],
+}
 ## Weather calls: [flash colour, the tint the battle sky keeps while it lasts].
 const WEATHER_LOOK := {
 	"drizzle": [Color("d6e4f5"), Color(0.8, 0.85, 0.92)],
@@ -41,6 +56,9 @@ enum { FREE, FLY, PATH, HANG }
 
 var _quad: QuadMesh
 var _soft: Texture2D
+var _tex: Array[Texture2D] = []
+var _hit_tint := Color.WHITE  # the type colour of the attack in flight: the hit flash and burst take it
+var _sigs: FXSignatures
 var _sparks: Array[MeshInstance3D] = []
 var _mats: Array[StandardMaterial3D] = []
 var _mode := PackedInt32Array()
@@ -76,13 +94,55 @@ static func template_for(move: Dictionary) -> String:
 			return "cloud"
 	return "lunge"
 
+## The shape a move plays: its data "fx" shape, or one derived from the old template for moves without one.
+static func shape_for(move: Dictionary) -> String:
+	var sh := str(move.get("fx", {}).get("shape", ""))
+	if sh in SHAPES:
+		return sh
+	return {"projectile": "bolt", "beam": "beam", "cloud": "cloud", "aura": "self", "weather": "cloud"}.get(template_for(move), "pounce")
+
+## [core, highlight, texture index] for a type, with the move's own optional "fx.colour" overriding the core.
+static func palette_for(type_id: String, move := {}) -> Array:
+	var p: Array = PALETTE.get(type_id, [Color("f4ecd8"), Color.WHITE, 0]).duplicate()
+	var c := str(move.get("fx", {}).get("colour", ""))
+	if c != "":
+		p[0] = Color(c)
+	return p
+
+## Particle count scaled down when "reduce flashing" is on.
+func _n(count: int) -> int:
+	return maxi(4, int(count * Settings.flash_scale(0.5)))
+
+## Generates the 32x32 particle textures once (ring, star, shard, drop, note, leaf); index 0 is the soft glow.
+func _textures() -> void:
+	if not _tex.is_empty():
+		return
+	_tex.resize(TEX_N)
+	_tex[0] = _soft
+	for k in range(1, TEX_N):
+		var img := Image.create(32, 32, false, Image.FORMAT_RGBA8)
+		for y in 32:
+			for x in 32:
+				var u := (x - 15.5) / 15.5
+				var v := (y - 15.5) / 15.5
+				var a := 0.0
+				match k:
+					1: a = clampf(1.0 - absf(sqrt(u * u + v * v) - 0.78) * 7.0, 0.0, 1.0)
+					2: a = clampf(1.0 - (minf(absf(u), absf(v)) * 5.0 + sqrt(u * u + v * v) * 0.6), 0.0, 1.0)
+					3: a = clampf((1.0 - (absf(u) * 2.4 + absf(v) * 0.8)) * 3.0, 0.0, 1.0)
+					4: a = 1.0 if (sqrt(u * u + (v - 0.3) * (v - 0.3)) < 0.6 or (v < 0.3 and v > -1.0 and absf(u) < (v + 1.0) * 0.46)) else 0.0
+					5: a = 1.0 if (sqrt((u + 0.25) * (u + 0.25) + (v - 0.55) * (v - 0.55)) < 0.4 or (absf(u - 0.1) < 0.12 and v < 0.55 and v > -0.8) or (v < -0.6 and v > -0.85 and u > 0.0 and u < 0.7)) else 0.0
+					6: a = 1.0 if (u * u * 3.0 + v * v * 0.6 < 0.5) else 0.0
+				img.set_pixel(x, y, Color(1, 1, 1, clampf(a, 0.0, 1.0)))
+		_tex[k] = ImageTexture.create_from_image(img)
+
 ## A puff of little billboard sparks thrown out from `pos` (world space), falling under `gravity` and fading.
 ## Hand-animated quads rather than a particle node, so they always appear exactly where they are aimed.
-func burst(pos: Vector3, colour: Color, amount := 16, speed := 3.5, size := 0.16, life := 0.6, gravity := -4.0, up := Vector3.UP) -> void:
+func burst(pos: Vector3, colour: Color, amount := 16, speed := 3.5, size := 0.16, life := 0.6, gravity := -4.0, up := Vector3.UP, tex := 0) -> void:
 	var cone := 1.0 if up == Vector3.UP else 0.35
 	for i in amount:
 		var dir := (up + Vector3(_rng.randf_range(-1, 1), _rng.randf_range(-1, 1), _rng.randf_range(-1, 1)) * cone).normalized()
-		_spawn(pos, dir * _rng.randf_range(speed * 0.5, speed), colour.lightened(_rng.randf_range(0.0, 0.35)), size, life, gravity)
+		_spawn(pos, dir * _rng.randf_range(speed * 0.5, speed), colour.lightened(_rng.randf_range(0.0, 0.35)), size, life, gravity, FLY, 0.0, Vector3.ZERO, 0.0, false, 1.0, tex)
 
 ## How many pool sparks are alive (tests, and a sanity check on the pool).
 func live_sparks() -> int:
@@ -92,7 +152,7 @@ func pool_size() -> int:
 	return _sparks.size()
 
 func _spawn(pos: Vector3, vel: Vector3, col: Color, size: float, life: float, grav := 0.0, mode := FLY, delay := 0.0,
-		to := Vector3.ZERO, arc := 0.0, soft := false, stretch := 1.0) -> void:
+		to := Vector3.ZERO, arc := 0.0, soft := false, stretch := 1.0, tex := 0) -> void:
 	var i := _slot()
 	var m := _sparks[i]
 	var mat := _mats[i]
@@ -108,7 +168,7 @@ func _spawn(pos: Vector3, vel: Vector3, col: Color, size: float, life: float, gr
 	_arc[i] = arc
 	_alpha[i] = col.a
 	mat.albedo_color = Color(col.r, col.g, col.b, col.a if mode != HANG else 0.0)
-	mat.albedo_texture = _soft if soft else null
+	mat.albedo_texture = (_tex[tex] if tex > 0 and tex < _tex.size() else _soft) if (soft or tex > 0) else null
 	m.scale = Vector3(size, size * stretch, 1.0)
 	m.global_position = pos
 	m.visible = delay <= 0.0
@@ -133,6 +193,7 @@ func _grow() -> void:
 		_quad = QuadMesh.new()
 		_quad.size = Vector2.ONE
 		_soft = SkyAndLight._soft_texture()
+		_textures()
 	var mat := StandardMaterial3D.new()
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	mat.billboard_mode = BaseMaterial3D.BILLBOARD_ENABLED
@@ -193,6 +254,7 @@ func play(cue: Dictionary, battle: Battle) -> void:
 	var side := int(cue.get("side", 0))
 	var pos := int(cue.get("pos", 0))
 	if str(cue.cue) not in ["hit", "attack", "none"]:
+		_hit_tint = Color.WHITE
 		_multi = false  # the multi-hit's blows are over: a later recoil or status hit gets the full burst
 	for a in DevArgs.user_args():  # --fx-freeze=<cue>:<secs> stops time that long into the first such cue (screenshots)
 		if a.begins_with("--fx-freeze=") and a.get_slice("=", 1).get_slice(":", 0) == str(cue.cue) and not has_meta("froze"):
@@ -271,12 +333,15 @@ func play(cue: Dictionary, battle: Battle) -> void:
 func _attack(side: int, type_id: String, pos := 0, t_side := -1, t_pos := 0, spread := false, move := {}) -> void:
 	var other := 1 - side if t_side < 0 else t_side
 	var tpl := template_for(move)
+	var shape := shape_for(move)
 	var eff := str(move.get("effect", {}).get("id", ""))
 	_multi = eff == "multi_hit"
-	var col := TypeColours.of(type_id) if type_id != "" else Color("f4ecd8")
+	var pal := palette_for(type_id, move)
+	var col: Color = pal[0] if type_id != "" else Color("f4ecd8")
+	_hit_tint = (pal[1] as Color).lerp(col, 0.4) if type_id != "" else Color.WHITE
 	var actor := _actor(side, pos)
 	var hit_pos := [0, 1] if spread else [t_pos]
-	if tpl == "aura":
+	if tpl == "aura" or shape == "self":
 		dio.swoop_to_target(side, pos)
 	elif tpl == "weather":
 		dio.swoop_home(0.45)
@@ -284,62 +349,207 @@ func _attack(side: int, type_id: String, pos := 0, t_side := -1, t_pos := 0, spr
 		dio.swoop_to_attacker(side, pos, t_pos)
 	await _wait(0.4)
 	var voice := AudioIds.attack_sfx(type_id)
-	if tpl in ["cloud", "aura", "weather"]:
+	if shape in ["cloud", "self", "song"] or tpl == "weather":
 		Audio.sfx_at(voice, -5.0, 1.15)  # status moves: a lighter touch of the type's voice
 	else:
 		Audio.sfx(voice)
-	match tpl:
-		"projectile", "beam":
-			actor.cast()
-			burst(_chest(side, pos), col, 8, 1.6, 0.12, 0.4, 0.0)
-			await _wait(0.16)
-			for p in hit_pos:
-				if tpl == "beam":
-					_beam(_chest(side, pos), _chest(other, p), col)
-				else:
-					_projectile(_chest(side, pos), _chest(other, p), col)
-			await _wait(0.42 if tpl == "projectile" else 0.3)
-			if not _multi:
-				for p in hit_pos:
-					burst(_chest(other, p), col, 22, 4.5, 0.2, 0.55)
-		"cloud":
-			actor.cast()
-			await _wait(0.12)
-			for p in hit_pos:
-				_cloud(_chest(other, p) + Vector3(0, 0.9, 0), col)
-			await _wait(0.7)
-		"aura":
-			actor.cast()
-			_aura(actor.global_position, col)
-			await _wait(0.6)
-		"weather":
-			actor.cast()
-			_plume(actor.global_position + Vector3(0, 1.2, 0), col)
-			await _wait(0.5)
-		_:
-			burst(actor.global_position + Vector3(0, 1.0, 0), col, 10, 2.0, 0.14, 0.5, -1.0)
-			if not _multi:
-				get_tree().create_timer(0.2).timeout.connect(func():
-					for p in hit_pos:
-						burst(_chest(other, p), col, 22, 4.5, 0.2, 0.55))
-			if eff == "recoil":
-				get_tree().create_timer(0.24).timeout.connect(func(): burst(_chest(side, pos), Color("ffb070"), 16, 3.0, 0.17, 0.45, -3.0))
-			var aim := _actor(other, t_pos).home
-			if spread:
-				aim = _actor(other, 0).home.lerp(_actor(other, 1).home, 0.5)
-			await actor.lunge(aim)
+	if tpl == "weather":
+		actor.cast()
+		_plume(actor.global_position + Vector3(0, 1.2, 0), col)
+		await _wait(0.5)
+	else:
+		if _sigs == null:
+			_sigs = FXSignatures.new()
+			_sigs.fx = self
+		if _sigs.has_move(str(move.get("id", ""))):
+			await _sigs.play(str(move.id), side, pos, other, hit_pos, t_pos, pal, col)
+		else:
+			await play_shape(shape, side, pos, other, hit_pos, t_pos, spread, pal, col)
+		if eff == "recoil":
+			get_tree().create_timer(0.24).timeout.connect(func(): burst(_chest(side, pos), Color("ffb070"), 16, 3.0, 0.17, 0.45, -3.0))
 	if eff == "drain":  # life drawn back along a thread while the hit lands
 		var back := col.lerp(Color("9ff09a"), 0.5)
 		get_tree().create_timer(0.35).timeout.connect(func():
 			for p in hit_pos:
 				_thread(_chest(other, p), _chest(side, pos), back))
 
+## The aim point of a lunge: the target's home (or the middle of both foes for a spread move).
+func _aim(other: int, t_pos: int, spread: bool) -> Vector3:
+	if spread:
+		return _actor(other, 0).home.lerp(_actor(other, 1).home, 0.5)
+	return _actor(other, t_pos).home
+
+## The sparks where a move lands: type-flavoured, skipped for a multi-hit (each blow has its own small burst).
+func _impact(other: int, hit_pos: Array, pal: Array, n := 22, delay := 0.0) -> void:
+	if _multi:
+		return
+	var go := func():
+		for p in hit_pos:
+			var at := _chest(other, p)
+			burst(at, pal[0], _n(n), 4.5, 0.2, 0.5, -4.0, Vector3.UP, int(pal[2]))
+			burst(at, pal[1], _n(n / 3), 3.0, 0.14, 0.4, -2.0)
+	if delay <= 0.0:
+		go.call()
+	else:
+		get_tree().create_timer(delay).timeout.connect(go)
+
+## Dust thrown flat along the ground from a creature's feet.
+func _dust(feet: Vector3, col: Color) -> void:
+	for i in _n(14):
+		var ang := TAU * i / 14.0
+		_spawn(feet + Vector3(0, 0.12, 0), Vector3(cos(ang) * 2.4, 0.6, sin(ang) * 1.5), col.lerp(Color("c8b898"), 0.5), _rng.randf_range(0.3, 0.5), 0.5, -1.0, FLY, 0.0, Vector3.ZERO, 0.0, true)
+
+## Plays one move shape from `side` at `other` (see SHAPES). Every shape ends within about 0.7 s.
+func play_shape(shape: String, side: int, pos: int, other: int, hit_pos: Array, t_pos: int, spread: bool, pal: Array, col: Color) -> void:
+	var actor := _actor(side, pos)
+	var hi: Color = pal[1]
+	var tx: int = pal[2]
+	var u := _chest(side, pos)
+	match shape:
+		"bolt":
+			actor.cast()
+			burst(u, col, _n(8), 1.6, 0.12, 0.4, 0.0, Vector3.UP, tx)
+			await _wait(0.16)
+			for p in hit_pos:
+				_projectile(u, _chest(other, p), col, tx)
+			await _wait(0.42)
+			_impact(other, hit_pos, pal)
+		"volley":
+			actor.cast()
+			await _wait(0.1)
+			for i in 4:
+				for p in hit_pos:
+					var tp := _chest(other, p) + Vector3(_rng.randf_range(-0.4, 0.4), _rng.randf_range(-0.3, 0.4), 0)
+					_spawn(u, Vector3.ZERO, col.lightened(0.2), 0.34, 0.3, 0.0, PATH, 0.09 * i, tp, 0.25 + 0.1 * i, true, 1.0, tx)
+					_spawn(u, Vector3.ZERO, Color.WHITE, 0.14, 0.3, 0.0, PATH, 0.09 * i, tp, 0.25 + 0.1 * i, true)
+				get_tree().create_timer(0.09 * i + 0.3).timeout.connect(func():
+					for p in hit_pos:
+						burst(_chest(other, p), col, _n(8), 3.0, 0.14, 0.35, -3.0, Vector3.UP, tx))
+			await _wait(0.65)
+		"beam":
+			actor.cast()
+			burst(u, col, _n(8), 1.6, 0.12, 0.4, 0.0, Vector3.UP, tx)
+			await _wait(0.16)
+			for p in hit_pos:
+				_beam(u, _chest(other, p), col)
+			await _wait(0.3)
+			_impact(other, hit_pos, pal)
+		"slash":
+			actor.lunge(_aim(other, t_pos, spread))
+			await _wait(0.14)
+			for p in hit_pos:
+				_slash(_chest(other, p), hi, col, tx)
+			await _wait(0.34)
+			_impact(other, hit_pos, pal, 14)
+		"pounce":
+			burst(actor.global_position + Vector3(0, 0.2, 0), col, _n(8), 2.0, 0.14, 0.5, -1.0, Vector3.UP, tx)
+			_impact(other, hit_pos, pal, 22, 0.2)
+			await actor.lunge(_aim(other, t_pos, spread))
+		"burst":
+			actor.cast()
+			await _wait(0.14)
+			for p in hit_pos:
+				_ring(_chest(other, p), col, hi, tx)
+			await _wait(0.5)
+		"cloud":
+			actor.cast()
+			await _wait(0.12)
+			for p in hit_pos:
+				_cloud(_chest(other, p) + Vector3(0, 0.9, 0), col)
+			await _wait(0.7)
+		"rain":
+			actor.cast()
+			await _wait(0.1)
+			for p in hit_pos:
+				var tp := _chest(other, p)
+				for i in _n(16):
+					_spawn(tp + Vector3(_rng.randf_range(-0.8, 0.8), 2.6 + _rng.randf_range(0.0, 0.5), _rng.randf_range(-0.3, 0.3)), Vector3(0, -11.0, 0), col.lightened(_rng.randf_range(0.0, 0.4)), 0.22, 0.28, 0.0, FLY, _rng.randf() * 0.3, Vector3.ZERO, 0.0, false, 2.2, 4 if tx != 3 else 3)
+			_impact(other, hit_pos, pal, 20, 0.4)
+			await _wait(0.7)
+		"quake":
+			actor.cast()
+			await _wait(0.12)
+			dio.shake = 0.5 * Settings.flash_scale(0.2)
+			_dust(actor.global_position, col)
+			for p in hit_pos:
+				var feet := _actor(other, p).global_position
+				_dust(feet, col)
+				burst(feet + Vector3(0, 0.2, 0), col.lerp(hi, 0.3), _n(8), 3.5, 0.2, 0.55, -9.0, Vector3.UP, 3)
+			await _wait(0.55)
+		"wave":
+			actor.cast()
+			await _wait(0.1)
+			for p in hit_pos:
+				var tp := _chest(other, p)
+				var across := (tp - u).cross(Vector3.UP).normalized()
+				for i in _n(14):
+					var c := col.lerp(hi, _rng.randf_range(0.0, 0.5))
+					_spawn(u, across * sin(i * 1.7) * 1.1, c, _rng.randf_range(0.2, 0.38), 0.4, 0.0, PATH, 0.03 * i, tp, 0.4 + 0.3 * sin(i * 0.9), true, 1.0, tx)
+			await _wait(0.5)
+			_impact(other, hit_pos, pal, 18)
+			await _wait(0.1)
+		"self":
+			actor.cast()
+			_aura(actor.global_position, col, tx)
+			await _wait(0.6)
+		"song":
+			actor.cast()
+			await _wait(0.1)
+			for p in hit_pos:
+				var tp := _chest(other, p) + Vector3(0, 0.4, 0)
+				var across := (tp - u).cross(Vector3.UP).normalized()
+				for i in 7:
+					_spawn(u + Vector3(0, 0.8, 0), across * sin(i * 2.1) * 0.8, col.lerp(hi, 0.5 * (i % 2)), 0.34, 0.6, 0.0, PATH, 0.07 * i, tp, 0.6 + 0.12 * i, true, 1.0, 5)
+				get_tree().create_timer(0.55).timeout.connect(func():
+					burst(tp, hi, _n(10), 2.0, 0.22, 0.4, 1.0, Vector3.UP, 2))
+			await _wait(0.7)
+		"bite":
+			actor.lunge(_aim(other, t_pos, spread))
+			await _wait(0.12)
+			for p in hit_pos:
+				var tp := _chest(other, p)
+				for i in 5:
+					var x := (i - 2) * 0.22
+					_spawn(tp + Vector3(x, 0.9, 0.2), Vector3.ZERO, hi, 0.3, 0.16, 0.0, PATH, 0.0, tp + Vector3(x, 0.12, 0.2), 0.0, true, 1.0, 3)
+					_spawn(tp + Vector3(x, -0.8, 0.2), Vector3.ZERO, hi, 0.3, 0.16, 0.0, PATH, 0.0, tp + Vector3(x, -0.12, 0.2), 0.0, true, 1.0, 3)
+			await _wait(0.2)
+			_impact(other, hit_pos, pal, 16)
+			await _wait(0.2)
+		"wing":
+			actor.lunge(_aim(other, t_pos, spread))
+			for i in _n(10):
+				_spawn(u, Vector3(_rng.randf_range(-1, 1), _rng.randf_range(0.3, 1.2), _rng.randf_range(-0.5, 0.5)), hi, 0.22, 0.5, -0.5, FLY, 0.02 * i, Vector3.ZERO, 0.0, false, 1.0, 6)
+			await _wait(0.2)
+			for p in hit_pos:
+				_slash(_chest(other, p), hi, col, 6, true)
+			await _wait(0.3)
+			_impact(other, hit_pos, pal, 14)
+		_:
+			await actor.lunge(_aim(other, t_pos, spread))
+
+## A curved streak across a target (a claw or a blade), drawn as a fan of stretched sparks. `wide` for a wing sweep.
+func _slash(at: Vector3, hi: Color, col: Color, tx := 3, wide := false) -> void:
+	var span := 1.2 if wide else 0.9
+	for i in _n(14):
+		var k := float(i) / 13.0
+		var p := at + Vector3(lerpf(-span, span, k), lerpf(span, -span, k) * 0.9 + sin(k * PI) * 0.3, 0.3)
+		_spawn(p, Vector3.ZERO, (hi if i % 2 == 0 else col).lightened(0.2), 0.42 if not wide else 0.3, 0.3, 0.0, HANG, k * 0.12, Vector3.ZERO, 0.0, true, 1.0, tx)
+		_spawn(p, Vector3.ZERO, Color.WHITE, 0.14, 0.22, 0.0, HANG, k * 0.12, Vector3.ZERO, 0.0, true)
+
+## An expanding ring of light on a target, a second ring close behind it.
+func _ring(at: Vector3, col: Color, hi: Color, tx := 0) -> void:
+	_spawn(at, Vector3.ZERO, Color(hi.r, hi.g, hi.b, 0.7), 1.8, 0.25, 0.0, HANG, 0.0, Vector3.ZERO, 0.0, true)
+	for wave in 2:
+		for i in _n(18):
+			var ang := TAU * i / 18.0
+			_spawn(at, Vector3(cos(ang), sin(ang) * 0.8, 0.0) * (4.2 - wave * 1.2), (col if wave == 0 else hi).lightened(0.15), 0.2 if tx == 0 else 0.3, 0.42, 0.0, FLY, 0.1 * wave, Vector3.ZERO, 0.0, false, 1.0, tx)
+
 ## An orb of sparks (a bright core and a trail) arcing from `a` to `b`.
-func _projectile(a: Vector3, b: Vector3, col: Color) -> void:
+func _projectile(a: Vector3, b: Vector3, col: Color, tx := 0) -> void:
 	a = a.lerp(b, 0.12)  # leave from just in front, so the orb is not huge right under the camera
 	var arc := clampf(a.distance_to(b) * 0.12, 0.3, 1.0)
 	_spawn(a, Vector3.ZERO, Color(col.r, col.g, col.b, 0.85), 1.1, 0.42, 0.0, PATH, 0.0, b, arc, true)
-	_spawn(a, Vector3.ZERO, col.lightened(0.6), 0.55, 0.42, 0.0, PATH, 0.0, b, arc, true)
+	_spawn(a, Vector3.ZERO, col.lightened(0.6), 0.55 if tx == 0 else 0.7, 0.42, 0.0, PATH, 0.0, b, arc, true, 1.0, tx)
 	_spawn(a, Vector3.ZERO, Color(1, 1, 1, 0.95), 0.28, 0.42, 0.0, PATH, 0.0, b, arc, true)
 	for i in 18:
 		var jit := Vector3(_rng.randf_range(-0.6, 0.6), _rng.randf_range(-0.6, 0.6), _rng.randf_range(-0.6, 0.6))
@@ -372,11 +582,11 @@ func _cloud(at: Vector3, col: Color) -> void:
 		_spawn(at + off, Vector3(0, -0.5, 0), col.lightened(0.45), 0.12, 0.9, -2.5, FLY, 0.25 + 0.035 * i)
 
 ## A rising ring of light around a creature buffing or healing itself.
-func _aura(feet: Vector3, col: Color) -> void:
+func _aura(feet: Vector3, col: Color, tex := 0) -> void:
 	for i in 18:
 		var ang := TAU * i / 18.0
 		var r := Vector3(cos(ang), 0, sin(ang)) * 0.9
-		_spawn(feet + r + Vector3(0, 0.15, 0), Vector3(0, _rng.randf_range(1.4, 2.4), 0) - r * 0.2, col.lightened(0.3), 0.15, 0.85, 0.5, FLY, 0.015 * i)
+		_spawn(feet + r + Vector3(0, 0.15, 0), Vector3(0, _rng.randf_range(1.4, 2.4), 0) - r * 0.2, col.lightened(0.3), 0.15 if tex == 0 else 0.26, 0.85, 0.5, FLY, 0.015 * i, Vector3.ZERO, 0.0, false, 1.0, tex)
 	_spawn(feet + Vector3(0, 1.0, 0), Vector3(0, 0.3, 0), Color(col.r, col.g, col.b, 0.55), 2.4, 0.8, 0.0, HANG, 0.0, Vector3.ZERO, 0.0, true)
 
 ## Sparks thrown up at the sky by a weather caller.
@@ -466,11 +676,12 @@ func _hit(side: int, hp: int, strength: String, pos := 0) -> void:
 	dio.shake = {"strong": 1.0, "normal": 0.55, "weak": 0.25}.get(strength, 0.5) * Settings.flash_scale(0.25) * (0.5 if small else 1.0)
 	var a := _actor(side, pos)
 	var n := 12 if strength == "weak" else 24
-	burst(_chest(side, pos), Color("fff2d0") if strength != "strong" else Color("ffd070"), n / 2 if small else n, 3.0 if small else 4.0, 0.15 if small else 0.2, 0.4)
+	var base := Color("fff2d0") if strength != "strong" else Color("ffd070")
+	burst(_chest(side, pos), base.lerp(_hit_tint, 0.55), _n(n / 2 if small else n), 3.0 if small else 4.0, 0.15 if small else 0.2, 0.4)
 	var before := hud.shown_hp(side, pos)
 	var frac := absf(before - hp) / maxf(1.0, hud.max_hp(side, pos))
 	hud.tween_hp(side, hp, clampf(0.35 + frac * 1.4, 0.35, 1.4), pos)
-	await a.hit(strength)
+	await a.hit(strength, _hit_tint)
 	await _wait(maxf(0.0, clampf(0.35 + frac * 1.4, 0.35, 1.4) - 0.45))
 
 func _switch(side: int, c: Creature, pos := 0) -> void:

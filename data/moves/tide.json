@@ -1,13 +1,13 @@
 [
-  {"id": "crab_pinch", "name": "Crab Pinch", "type": "tide", "category": "physical", "power": 40, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "flinch", "chance": 10}},
-  {"id": "rip_current", "name": "Rip Current", "type": "tide", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "none"}},
-  {"id": "spring_tide", "name": "Spring Tide", "type": "tide", "category": "physical", "power": 95, "accuracy": 80, "pp": 8, "priority": 0, "target": "all_foes", "effect": {"id": "none"}},
-  {"id": "brine_spray", "name": "Brine Spray", "type": "tide", "category": "special", "power": 12, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}},
-  {"id": "tidal_surge", "name": "Tidal Surge", "type": "tide", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "none"}},
-  {"id": "moon_pull", "name": "Moon Pull", "type": "tide", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "soaked", "chance": 25}},
-  {"id": "barnacle_glue", "name": "Barnacle Glue", "type": "tide", "category": "status", "power": 0, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "spd", "stages": -1}},
-  {"id": "sea_fret", "name": "Sea Fret", "type": "tide", "category": "status", "power": 0, "accuracy": 90, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "soaked"}},
-  {"id": "wave_sweeper", "name": "Wave Sweeper", "type": "tide", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "none"}},
-  {"id": "seal_slap", "name": "Seal Slap", "type": "tide", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 30}},
-  {"id": "tide_tables", "name": "Tide Tables", "type": "tide", "category": "status", "power": 0, "accuracy": 90, "pp": 15, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "lore", "stages": 1}}
+  {"id": "crab_pinch", "name": "Crab Pinch", "type": "tide", "category": "physical", "power": 40, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "flinch", "chance": 10}, "fx": {"shape": "bite"}},
+  {"id": "rip_current", "name": "Rip Current", "type": "tide", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "spring_tide", "name": "Spring Tide", "type": "tide", "category": "physical", "power": 95, "accuracy": 80, "pp": 8, "priority": 0, "target": "all_foes", "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "brine_spray", "name": "Brine Spray", "type": "tide", "category": "special", "power": 12, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}, "fx": {"shape": "volley"}},
+  {"id": "tidal_surge", "name": "Tidal Surge", "type": "tide", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "moon_pull", "name": "Moon Pull", "type": "tide", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "soaked", "chance": 25}, "fx": {"shape": "bolt"}},
+  {"id": "barnacle_glue", "name": "Barnacle Glue", "type": "tide", "category": "status", "power": 0, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "spd", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "sea_fret", "name": "Sea Fret", "type": "tide", "category": "status", "power": 0, "accuracy": 90, "pp": 15, "priority": 0, "effect": {"id": "status", "status": "soaked"}, "fx": {"shape": "cloud"}},
+  {"id": "wave_sweeper", "name": "Wave Sweeper", "type": "tide", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "wave"}},
+  {"id": "seal_slap", "name": "Seal Slap", "type": "tide", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 30}, "fx": {"shape": "pounce"}},
+  {"id": "tide_tables", "name": "Tide Tables", "type": "tide", "category": "status", "power": 0, "accuracy": 90, "pp": 15, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "lore", "stages": 1}, "fx": {"shape": "self"}}
 ]

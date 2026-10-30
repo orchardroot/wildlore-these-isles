@@ -1,15 +1,15 @@
 [
-  {"id": "rivet", "name": "Rivet", "type": "iron", "category": "physical", "power": 22, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "multi_hit", "hits": 2}},
-  {"id": "forge_hammer", "name": "Forge Hammer", "type": "iron", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}},
-  {"id": "girder_drop", "name": "Girder Drop", "type": "iron", "category": "physical", "power": 110, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "recoil", "frac": 33}},
-  {"id": "spark_shower", "name": "Spark Shower", "type": "iron", "category": "special", "power": 12, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}},
-  {"id": "molten_pour", "name": "Molten Pour", "type": "iron", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "none"}},
-  {"id": "blast_furnace", "name": "Blast Furnace", "type": "iron", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "none"}},
-  {"id": "galvanise", "name": "Galvanise", "type": "iron", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}},
-  {"id": "rust_bucket", "name": "Rust Bucket", "type": "iron", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "def", "stages": -1}},
-  {"id": "shipyard_rivet", "name": "Shipyard Rivet", "type": "iron", "category": "physical", "power": 25, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}},
-  {"id": "crane_swing", "name": "Crane Swing", "type": "iron", "category": "physical", "power": 100, "accuracy": 80, "pp": 10, "priority": 0, "effect": {"id": "none"}},
-  {"id": "hull_clang", "name": "Hull Clang", "type": "iron", "category": "special", "power": 65, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "ward", "stages": -1}},
-  {"id": "riveters_brace", "name": "Riveter's Brace", "type": "iron", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}},
-  {"id": "girder_sweep", "name": "Girder Sweep", "type": "iron", "category": "physical", "power": 60, "accuracy": 95, "pp": 15, "priority": 0, "target": "all_foes", "effect": {"id": "none"}}
+  {"id": "rivet", "name": "Rivet", "type": "iron", "category": "physical", "power": 22, "accuracy": 100, "pp": 35, "priority": 0, "effect": {"id": "multi_hit", "hits": 2}, "fx": {"shape": "slash"}},
+  {"id": "forge_hammer", "name": "Forge Hammer", "type": "iron", "category": "physical", "power": 70, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "quake"}},
+  {"id": "girder_drop", "name": "Girder Drop", "type": "iron", "category": "physical", "power": 110, "accuracy": 80, "pp": 8, "priority": 0, "effect": {"id": "recoil", "frac": 33}, "fx": {"shape": "quake"}},
+  {"id": "spark_shower", "name": "Spark Shower", "type": "iron", "category": "special", "power": 12, "accuracy": 100, "pp": 30, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}, "fx": {"shape": "volley"}},
+  {"id": "molten_pour", "name": "Molten Pour", "type": "iron", "category": "special", "power": 70, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "rain"}},
+  {"id": "blast_furnace", "name": "Blast Furnace", "type": "iron", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "burst"}},
+  {"id": "galvanise", "name": "Galvanise", "type": "iron", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}, "fx": {"shape": "self"}},
+  {"id": "rust_bucket", "name": "Rust Bucket", "type": "iron", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "def", "stages": -1}, "fx": {"shape": "cloud"}},
+  {"id": "shipyard_rivet", "name": "Shipyard Rivet", "type": "iron", "category": "physical", "power": 25, "accuracy": 95, "pp": 15, "priority": 0, "effect": {"id": "multi_hit", "min": 2, "max": 5}, "fx": {"shape": "slash"}},
+  {"id": "crane_swing", "name": "Crane Swing", "type": "iron", "category": "physical", "power": 100, "accuracy": 80, "pp": 10, "priority": 0, "effect": {"id": "none"}, "fx": {"shape": "slash"}},
+  {"id": "hull_clang", "name": "Hull Clang", "type": "iron", "category": "special", "power": 65, "accuracy": 95, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "ward", "stages": -1}, "fx": {"shape": "quake"}},
+  {"id": "riveters_brace", "name": "Riveter's Brace", "type": "iron", "category": "status", "power": 0, "accuracy": 100, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "self", "stat": "def", "stages": 1}, "fx": {"shape": "self"}},
+  {"id": "girder_sweep", "name": "Girder Sweep", "type": "iron", "category": "physical", "power": 60, "accuracy": 95, "pp": 15, "priority": 0, "target": "all_foes", "effect": {"id": "none"}, "fx": {"shape": "slash"}}
 ]

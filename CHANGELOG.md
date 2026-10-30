@@ -12,6 +12,7 @@ Newest first. The README is the front page; this is the long memory.
 - **A breadcrumb in the overworld.** A small chip says "To York  ·  3 to go" with an arrow toward the way out of this zone. It re-routes if you wander off, hides indoors, and chimes when you arrive.
 - **Trumps.** Mum finds your gran's old cards (a creature on each, five numbers underneath), and around half the homes, pubs and inns of the isles will play you after a natter. Pick a stat, higher number wins, and the winner pockets both cards. Beat someone and their card is yours, plus a few quid once a day.
 - **The album.** A Trumps cards page in the Almanac lays out every region's set, silhouettes for the ones you're missing, and a prize (a coat or a chapbook) for finishing a region.
+- Moves look like themselves: every move now has a shape (bolt, volley, beam, slash, pounce, burst, cloud, rain, quake, wave, self, song, bite, wing) painted in its type's colours, and the hit flash takes the colour too. Sixteen signature moves, one per type, have their own little choreography. All under 1.2 seconds, and gentler with Reduce Flashing on.
 
 ## What's new in 4.6: Dressed for the Weather
 
