@@ -30,7 +30,8 @@ func run(commands: Array) -> void:
 	_ended = false
 	_badge_won = false
 	_legend_caught = false
-	await _run_list(ScriptHooks.wrap(host.zone_id(), npc_id, _nurse_visit(commands), host.data))
+	var zid: String = host.zone_id() if host.has_method("zone_id") else ""  # test and cold-open hosts may have no zone
+	await _run_list(ScriptHooks.wrap(zid, npc_id, _nurse_visit(commands), host.data))
 	if is_nurse_script(commands) and not _ended:
 		await _nurse_bounty()
 	# autosave once the whole scene has played, so the save has everything the Keeper's script did after the badge
