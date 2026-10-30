@@ -268,6 +268,9 @@ static func boot(game: Node, menu: String) -> void:
 			d.set_flag("visited_" + t)
 		for kg in ["kg_maud_0", "kg_maud_2", "kg_morwen_1", "kg_ray_0", "kg_ray_1"]:
 			d.set_flag(kg, true)
+	if menu == "curios":  # `--menu=curios`: twelve curios found
+		for id in Search.curio_ids().slice(0, 12):
+			d.set_flag(Search.FOUND_PREFIX + str(id), true)
 	if menu == "economist":  # `--menu=economist`: most of the notebook met, a Deed and a lease among them
 		d.money = 5000
 		for i in Economist.ideas():

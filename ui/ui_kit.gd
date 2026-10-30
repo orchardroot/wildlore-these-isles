@@ -229,7 +229,7 @@ static func clear(node: Node) -> void:
 
 static func kind_name(kind: String) -> String:
 	return {"heal": "Healing", "meal": "Dishes", "cure": "Remedies", "revive": "Revivals", "pp": "Pudding", "snare": "Snares",
-		"repel": "Sachets", "evo": "Curios", "charm": "Charms", "key": "Key Items", "material": "Materials", "fish": "Fish", "produce": "Produce", "wear": "Clothes", "chapbook": "Chapbooks"}.get(kind, kind.capitalize())
+		"repel": "Sachets", "evo": "Curios", "curio": "Bric-a-brac", "charm": "Charms", "key": "Key Items", "material": "Materials", "fish": "Fish", "produce": "Produce", "wear": "Clothes", "chapbook": "Chapbooks"}.get(kind, kind.capitalize())
 
 ## "£1,234", or in euros with cur "eur" (see Wallet).
 static func money_text(n: int, cur := "gbp") -> String:

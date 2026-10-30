@@ -1,0 +1,602 @@
+[
+ {
+  "id": "toby_jug",
+  "name": "Toby Jug",
+  "one": "a Toby Jug",
+  "kind": "curio",
+  "price": 900,
+  "battle": false,
+  "field": false,
+  "desc": "A jug shaped like a stout man in a tricorn hat, a Staffordshire favourite since the 1700s. Somebody's nan had four."
+ },
+ {
+  "id": "staffs_flatback",
+  "name": "Staffordshire Flatback",
+  "one": "a Staffordshire Flatback",
+  "kind": "curio",
+  "price": 1800,
+  "battle": false,
+  "field": false,
+  "desc": "A pottery figure with no back, because it was made to stand on a mantelpiece and be admired from the front."
+ },
+ {
+  "id": "goss_pot_macc",
+  "name": "Goss Crested China Pot",
+  "one": "a Goss Crested China Pot",
+  "kind": "curio",
+  "price": 350,
+  "battle": false,
+  "field": false,
+  "desc": "A tiny white pot with a town crest on it, bought by seaside visitors by the thousand. This one has Macclesfield's."
+ },
+ {
+  "id": "goss_pot_buxton",
+  "name": "Goss Crested China Jug",
+  "one": "a Goss Crested China Jug",
+  "kind": "curio",
+  "price": 350,
+  "battle": false,
+  "field": false,
+  "desc": "A thimble-sized jug with Buxton's crest. Buxton water was the thing, and the souvenir was the next best."
+ },
+ {
+  "id": "goss_pot_conwy",
+  "name": "Goss Crested China Urn",
+  "one": "a Goss Crested China Urn",
+  "kind": "curio",
+  "price": 400,
+  "battle": false,
+  "field": false,
+  "desc": "A small urn with a Conwy crest, from the days when every day-tripper came home with a shelf of these."
+ },
+ {
+  "id": "bakelite_radio",
+  "name": "Bakelite Radio",
+  "one": "a Bakelite Radio",
+  "kind": "curio",
+  "price": 3200,
+  "battle": false,
+  "field": false,
+  "desc": "A brown wireless the size of a bread bin. It still smells faintly of warm dust and the Home Service."
+ },
+ {
+  "id": "brass_miners_lamp",
+  "name": "Brass Miner's Lamp",
+  "one": "a Brass Miner's Lamp",
+  "kind": "curio",
+  "price": 2200,
+  "battle": false,
+  "field": false,
+  "desc": "A lamp that went down the pit on a hundred shifts and came up again every time."
+ },
+ {
+  "id": "clarice_saucer",
+  "name": "Clarice Cliff Saucer",
+  "one": "a Clarice Cliff Saucer",
+  "kind": "curio",
+  "price": 2800,
+  "battle": false,
+  "field": false,
+  "desc": "Bold orange and yellow stripes from the Potteries in the 1930s. The cup went years ago."
+ },
+ {
+  "id": "wade_whimsie",
+  "name": "Wade Whimsie",
+  "one": "a Wade Whimsie",
+  "kind": "curio",
+  "price": 300,
+  "battle": false,
+  "field": false,
+  "desc": "A tiny glazed animal made in Burslem. They came in boxes of five and everyone wanted the one they hadn't got."
+ },
+ {
+  "id": "stereoscope_card",
+  "name": "Stereoscope Card",
+  "one": "a Stereoscope Card",
+  "kind": "curio",
+  "price": 600,
+  "battle": false,
+  "field": false,
+  "desc": "Two nearly identical photographs of a Victorian pier. Through the viewer, the pier leaps out at you."
+ },
+ {
+  "id": "dinky_bus",
+  "name": "Dinky Toy Bus",
+  "one": "a Dinky Toy Bus",
+  "kind": "curio",
+  "price": 1500,
+  "battle": false,
+  "field": false,
+  "desc": "A die-cast double-decker with most of its paint. Made in Liverpool, played with on the lino."
+ },
+ {
+  "id": "penny_black_fake",
+  "name": "Penny Black (Fake)",
+  "one": "a Penny Black (Fake)",
+  "kind": "curio",
+  "price": 100,
+  "battle": false,
+  "field": false,
+  "desc": "The first adhesive stamp, 1840, or a very hopeful copy of one. The perforations are too good, which gives it away."
+ },
+ {
+  "id": "ration_book",
+  "name": "Ration Book",
+  "one": "a Ration Book",
+  "kind": "curio",
+  "price": 500,
+  "battle": false,
+  "field": false,
+  "desc": "A buff little book of coupons from the war years, with someone's careful signature in the front."
+ },
+ {
+  "id": "ticket_1966",
+  "name": "1966 Final Ticket",
+  "one": "a 1966 Final Ticket",
+  "kind": "curio",
+  "price": 3900,
+  "battle": false,
+  "field": false,
+  "desc": "A stub from the 1966 World Cup final at Wembley. Whether it is real is a matter for the pub to settle."
+ },
+ {
+  "id": "tin_bath",
+  "name": "Miniature Tin Bath",
+  "one": "a Miniature Tin Bath",
+  "kind": "curio",
+  "price": 450,
+  "battle": false,
+  "field": false,
+  "desc": "A toy-sized zinc bath, a nod to Friday nights in front of the fire before indoor plumbing."
+ },
+ {
+  "id": "brass_horse",
+  "name": "Horse Brass",
+  "one": "a Horse Brass",
+  "kind": "curio",
+  "price": 700,
+  "battle": false,
+  "field": false,
+  "desc": "A polished brass disc that once hung from a carthorse's harness, and now from a pub beam."
+ },
+ {
+  "id": "thimble_collection",
+  "name": "Souvenir Thimble",
+  "one": "a Souvenir Thimble",
+  "kind": "curio",
+  "price": 250,
+  "battle": false,
+  "field": false,
+  "desc": "A silver-coloured thimble with a view of Blackpool Tower. Never used for sewing."
+ },
+ {
+  "id": "penny_farthing_toy",
+  "name": "Tin Penny-Farthing",
+  "one": "a Tin Penny-Farthing",
+  "kind": "curio",
+  "price": 800,
+  "battle": false,
+  "field": false,
+  "desc": "A clockwork tin cyclist with a very large front wheel and a very small ambition."
+ },
+ {
+  "id": "fairground_horse",
+  "name": "Gallopers Horse",
+  "one": "a Gallopers Horse",
+  "kind": "curio",
+  "price": 3600,
+  "battle": false,
+  "field": false,
+  "desc": "A carved wooden horse from a fairground roundabout, with a bright eye and a chipped ear."
+ },
+ {
+  "id": "cut_glass_decanter",
+  "name": "Cut-glass Decanter",
+  "one": "a Cut-glass Decanter",
+  "kind": "curio",
+  "price": 1900,
+  "battle": false,
+  "field": false,
+  "desc": "Heavy, sparkly and for best. The sherry in it is older than you are."
+ },
+ {
+  "id": "pocket_watch",
+  "name": "Silver Pocket Watch",
+  "one": "a Silver Pocket Watch",
+  "kind": "curio",
+  "price": 3500,
+  "battle": false,
+  "field": false,
+  "desc": "It ticks, loses four minutes a day, and has a dent where someone sat on it in 1952."
+ },
+ {
+  "id": "cigarette_card",
+  "name": "Cigarette Card Set",
+  "one": "a Cigarette Card Set",
+  "kind": "curio",
+  "price": 650,
+  "battle": false,
+  "field": false,
+  "desc": "Twenty-five little cards of British birds, collected one packet at a time, with a gap where the wren should be."
+ },
+ {
+  "id": "bus_ticket_machine",
+  "name": "Bell Punch Ticket Machine",
+  "one": "a Bell Punch Ticket Machine",
+  "kind": "curio",
+  "price": 2400,
+  "battle": false,
+  "field": false,
+  "desc": "A conductor's ticket machine that goes ting. Cheaper than a bus fare and just as noisy."
+ },
+ {
+  "id": "jubilee_mug",
+  "name": "Jubilee Mug",
+  "one": "a Jubilee Mug",
+  "kind": "curio",
+  "price": 400,
+  "battle": false,
+  "field": false,
+  "desc": "A commemorative mug from a street party, with bunting on one side and a crown on the other."
+ },
+ {
+  "id": "coronation_tin",
+  "name": "Coronation Biscuit Tin",
+  "one": "a Coronation Biscuit Tin",
+  "kind": "curio",
+  "price": 800,
+  "battle": false,
+  "field": false,
+  "desc": "A tin from 1953. Whatever is in there now is not biscuits, but buttons."
+ },
+ {
+  "id": "lakeland_slate",
+  "name": "Engraved Slate Coaster",
+  "one": "an Engraved Slate Coaster",
+  "kind": "curio",
+  "price": 350,
+  "battle": false,
+  "field": false,
+  "desc": "A slate coaster with a hill on it. Welsh slate roofed half the country and now it holds your tea."
+ },
+ {
+  "id": "welsh_lovespoon",
+  "name": "Welsh Lovespoon",
+  "one": "a Welsh Lovespoon",
+  "kind": "curio",
+  "price": 1400,
+  "battle": false,
+  "field": false,
+  "desc": "A carved wooden spoon, a courting gift in Wales for centuries. Every symbol on the handle means something, and some of it is a hint."
+ },
+ {
+  "id": "claddagh_ring",
+  "name": "Claddagh Ring",
+  "one": "a Claddagh Ring",
+  "kind": "curio",
+  "price": 3000,
+  "battle": false,
+  "field": false,
+  "desc": "Two hands holding a crowned heart, from Galway. Which way round you wear it tells everyone your business."
+ },
+ {
+  "id": "quaich",
+  "name": "Silver Quaich",
+  "one": "a Silver Quaich",
+  "kind": "curio",
+  "price": 3800,
+  "battle": false,
+  "field": false,
+  "desc": "A two-handled Scottish drinking cup, passed round for welcome and farewell."
+ },
+ {
+  "id": "tartan_tin",
+  "name": "Shortbread Tin",
+  "one": "a Shortbread Tin",
+  "kind": "curio",
+  "price": 300,
+  "battle": false,
+  "field": false,
+  "desc": "A tartan tin with a stag on the lid. It holds sewing things now and has done since 1987."
+ },
+ {
+  "id": "bog_oak_carving",
+  "name": "Bog Oak Carving",
+  "one": "a Bog Oak Carving",
+  "kind": "curio",
+  "price": 1700,
+  "battle": false,
+  "field": false,
+  "desc": "A Celtic cross carved from wood that lay in an Irish bog for thousands of years. Black as coal and very smooth."
+ },
+ {
+  "id": "blarney_pebble",
+  "name": "Blarney Pebble",
+  "one": "a Blarney Pebble",
+  "kind": "curio",
+  "price": 150,
+  "battle": false,
+  "field": false,
+  "desc": "A pebble from Cork, sold as a bit of the famous stone. It is a pebble. It is lucky anyway."
+ },
+ {
+  "id": "harp_brooch",
+  "name": "Tara Brooch Copy",
+  "one": "a Tara Brooch Copy",
+  "kind": "curio",
+  "price": 2600,
+  "battle": false,
+  "field": false,
+  "desc": "A copy of the great Irish brooch from the 700s, small enough to lose in a coat."
+ },
+ {
+  "id": "shetland_shawl",
+  "name": "Fine Lace Shawl",
+  "one": "a Fine Lace Shawl",
+  "kind": "curio",
+  "price": 3700,
+  "battle": false,
+  "field": false,
+  "desc": "A shawl so fine that, they say, you can pull it through a wedding ring."
+ },
+ {
+  "id": "lighthouse_lens",
+  "name": "Fresnel Prism",
+  "one": "a Fresnel Prism",
+  "kind": "curio",
+  "price": 2900,
+  "battle": false,
+  "field": false,
+  "desc": "A glass prism from a lighthouse lamp. Held to the window, it throws small rainbows at the lino."
+ },
+ {
+  "id": "pit_checks",
+  "name": "Colliery Check Tag",
+  "one": "a Colliery Check Tag",
+  "kind": "curio",
+  "price": 450,
+  "battle": false,
+  "field": false,
+  "desc": "A numbered brass tag. Every man took one down the pit and handed it back at the top, so they knew who was out."
+ },
+ {
+  "id": "mill_bobbin",
+  "name": "Mill Bobbin",
+  "one": "a Mill Bobbin",
+  "kind": "curio",
+  "price": 200,
+  "battle": false,
+  "field": false,
+  "desc": "A wooden bobbin from a Lancashire cotton mill, worn smooth by a lot of small hands."
+ },
+ {
+  "id": "clog_irons",
+  "name": "Pair of Clog Irons",
+  "one": "a Pair of Clog Irons",
+  "kind": "curio",
+  "price": 350,
+  "battle": false,
+  "field": false,
+  "desc": "Metal soles for clogs, once the sound of every northern street at half past seven in the morning."
+ },
+ {
+  "id": "whippet_trophy",
+  "name": "Whippet Racing Trophy",
+  "one": "a Whippet Racing Trophy",
+  "kind": "curio",
+  "price": 1100,
+  "battle": false,
+  "field": false,
+  "desc": "A small silver cup for a dog that never stopped running, and a man that never stopped saying so."
+ },
+ {
+  "id": "cricket_ball",
+  "name": "Signed Cricket Ball",
+  "one": "a Signed Cricket Ball",
+  "kind": "curio",
+  "price": 2300,
+  "battle": false,
+  "field": false,
+  "desc": "Red leather, a faded signature, and a story about who it was that nobody can agree on."
+ },
+ {
+  "id": "fa_cup_programme",
+  "name": "Cup Tie Programme",
+  "one": "a Cup Tie Programme",
+  "kind": "curio",
+  "price": 1300,
+  "battle": false,
+  "field": false,
+  "desc": "A programme from a muddy cup tie in a January long ago. Team changes in pencil."
+ },
+ {
+  "id": "rugby_cap",
+  "name": "Velvet Rugby Cap",
+  "one": "a Velvet Rugby Cap",
+  "kind": "curio",
+  "price": 3100,
+  "battle": false,
+  "field": false,
+  "desc": "A tasselled cap, given once per international in the days before the shirts were this big."
+ },
+ {
+  "id": "hurley",
+  "name": "Child's Hurley",
+  "one": "a Child's Hurley",
+  "kind": "curio",
+  "price": 600,
+  "battle": false,
+  "field": false,
+  "desc": "A small ash hurling stick, scuffed from many a back-garden final."
+ },
+ {
+  "id": "dartboard_elm",
+  "name": "Old Elm Dartboard",
+  "one": "an Old Elm Dartboard",
+  "kind": "curio",
+  "price": 1200,
+  "battle": false,
+  "field": false,
+  "desc": "A dartboard pocked with a thousand small holes. Wire-bound, and the 20 is rather worn."
+ },
+ {
+  "id": "pub_ashtray",
+  "name": "Brewery Ashtray",
+  "one": "a Brewery Ashtray",
+  "kind": "curio",
+  "price": 250,
+  "battle": false,
+  "field": false,
+  "desc": "A heavy glass ashtray with a brewery's name on it, borrowed from a pub in around 1974."
+ },
+ {
+  "id": "telegram",
+  "name": "Yellowing Telegram",
+  "one": "a Yellowing Telegram",
+  "kind": "curio",
+  "price": 550,
+  "battle": false,
+  "field": false,
+  "desc": "Four words, no stops, and a good deal of feeling: ARRIVING TUESDAY. BOIL KETTLE."
+ },
+ {
+  "id": "sixpence",
+  "name": "Lucky Sixpence",
+  "one": "a Lucky Sixpence",
+  "kind": "curio",
+  "price": 300,
+  "battle": false,
+  "field": false,
+  "desc": "A silver sixpence, once baked into the Christmas pudding. Nobody swallowed it, which is a good sign."
+ },
+ {
+  "id": "tuppence_jar",
+  "name": "Jar of Old Pennies",
+  "one": "a Jar of Old Pennies",
+  "kind": "curio",
+  "price": 800,
+  "battle": false,
+  "field": false,
+  "desc": "Big brown pennies from before decimal, in a jam jar. Heavier than they look."
+ },
+ {
+  "id": "vinyl_single",
+  "name": "Seven-inch Single",
+  "one": "a Seven-inch Single",
+  "kind": "curio",
+  "price": 1000,
+  "battle": false,
+  "field": false,
+  "desc": "A scratched single in a paper sleeve. It skips at the chorus, which is also when it is best."
+ },
+ {
+  "id": "transistor",
+  "name": "Pocket Transistor Radio",
+  "one": "a Pocket Transistor Radio",
+  "kind": "curio",
+  "price": 2000,
+  "battle": false,
+  "field": false,
+  "desc": "It picks up one station faintly and, on a good night, Luxembourg."
+ },
+ {
+  "id": "typewriter_key",
+  "name": "Typewriter Key",
+  "one": "a Typewriter Key",
+  "kind": "curio",
+  "price": 150,
+  "battle": false,
+  "field": false,
+  "desc": "A single round key marked R, off a machine that typed a thousand letters home."
+ },
+ {
+  "id": "lantern_magic",
+  "name": "Magic Lantern Slide",
+  "one": "a Magic Lantern Slide",
+  "kind": "curio",
+  "price": 950,
+  "battle": false,
+  "field": false,
+  "desc": "A hand-painted glass slide of a sailing ship, to be projected on the parlour wall on a winter night."
+ },
+ {
+  "id": "barometer",
+  "name": "Aneroid Barometer",
+  "one": "an Aneroid Barometer",
+  "kind": "curio",
+  "price": 3300,
+  "battle": false,
+  "field": false,
+  "desc": "Tap the glass and the needle moves. 'Change' is written on it, which is the most honest thing on the dial."
+ },
+ {
+  "id": "sampler",
+  "name": "Embroidered Sampler",
+  "one": "an Embroidered Sampler",
+  "kind": "curio",
+  "price": 1600,
+  "battle": false,
+  "field": false,
+  "desc": "A girl's alphabet in cross-stitch, finished in 1887 and signed, with a little house and a robin."
+ },
+ {
+  "id": "pressed_flowers",
+  "name": "Pressed Flowers",
+  "one": "Some Pressed Flowers",
+  "kind": "curio",
+  "price": 200,
+  "battle": false,
+  "field": false,
+  "desc": "Harebells in a book, brown now, from a walk somebody did not forget."
+ },
+ {
+  "id": "seaside_rock",
+  "name": "Stick of Rock",
+  "one": "a Stick of Rock",
+  "kind": "curio",
+  "price": 100,
+  "battle": false,
+  "field": false,
+  "desc": "A pink stick with a name through the middle, and the name is not yours. Do not eat it."
+ },
+ {
+  "id": "donkey_bell",
+  "name": "Donkey Bell",
+  "one": "a Donkey Bell",
+  "kind": "curio",
+  "price": 500,
+  "battle": false,
+  "field": false,
+  "desc": "A brass bell from a beach donkey who knew exactly how much work he was prepared to do."
+ },
+ {
+  "id": "canal_castle_jug",
+  "name": "Roses and Castles Jug",
+  "one": "a Roses and Castles Jug",
+  "kind": "curio",
+  "price": 2100,
+  "battle": false,
+  "field": false,
+  "desc": "Narrowboat folk art: roses, a castle, and enough painted flowers to make a whole bank holiday."
+ },
+ {
+  "id": "tea_caddy",
+  "name": "Victorian Tea Caddy",
+  "one": "a Victorian Tea Caddy",
+  "kind": "curio",
+  "price": 3400,
+  "battle": false,
+  "field": false,
+  "desc": "A lockable wooden box for tea, from the days when tea was dear enough to need a key."
+ },
+ {
+  "id": "sheepdog_whistle",
+  "name": "Sheepdog Whistle",
+  "one": "a Sheepdog Whistle",
+  "kind": "curio",
+  "price": 250,
+  "battle": false,
+  "field": false,
+  "desc": "A hand-carved whistle from a shepherd. Dogs hear it for miles. People, mostly, do not."
+ }
+]

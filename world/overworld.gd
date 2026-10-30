@@ -152,6 +152,10 @@ func _dev_radio() -> void:
 			var lines := TodaysWalk.radio_lines(Game.data, Game.dex, Game.items)
 			await say(lines.slice(clampi(int(a.get_slice(":", 1)), 0, lines.size() - 1)))
 			return
+		if a.begins_with("--search="):  # dev: `--search=x,y` rummages that tile at once (screenshots of a find)
+			await get_tree().create_timer(0.6).timeout
+			await SearchScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
+			return
 
 ## Dark caves: keep the light circle on the player (and faint glows on every exit) each frame.
 func _process(_delta: float) -> void:
@@ -496,6 +500,8 @@ func interact(p: Vector2i) -> void:
 	if await LooksMirror.interact(self, p):  # a mirror: the Wardrobe, hair included
 		return
 	if await PoiScene.interact(self, p):  # a den, camp, stone or cache on a route
+		return
+	if await SearchScene.interact(self, p):  # furniture in a room: go through it (wave 47)
 		return
 	var s := zone.sign_at(p)
 	if not s.is_empty():
