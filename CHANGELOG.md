@@ -10,6 +10,8 @@ Newest first. The README is the front page; this is the long memory.
   disturbed earth turns up outdoors for you to dig. Mind where the old folk buried things.
 - **Click a town, get a route.** On the Map, press Shift (X on a pad) on any town to draw a dotted route there, with the zone count and how you go ("3 zones on foot, then the train from Stoke-on-Trent"). Press it again to clear it.
 - **A breadcrumb in the overworld.** A small chip says "To York  ·  3 to go" with an arrow toward the way out of this zone. It re-routes if you wander off, hides indoors, and chimes when you arrive.
+- **Trumps.** Mum finds your gran's old cards (a creature on each, five numbers underneath), and around half the homes, pubs and inns of the isles will play you after a natter. Pick a stat, higher number wins, and the winner pockets both cards. Beat someone and their card is yours, plus a few quid once a day.
+- **The album.** A Trumps cards page in the Almanac lays out every region's set, silhouettes for the ones you're missing, and a prize (a coat or a chapbook) for finishing a region.
 
 ## What's new in 4.6: Dressed for the Weather
 
