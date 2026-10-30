@@ -229,6 +229,18 @@ static func boot(game: Node, menu: String) -> void:
 			d.day_count += 14
 			Deeds.tick(d, d.day_count)
 			menu = menu.trim_suffix(":owned")
+	if menu.begins_with("vs:"):  # `--menu=vs:keeper_morwen[:bare]`: that VS splash held at the end (ours has only a Kin starter, so it warns)
+		if menu.ends_with(":bare"):  # a lone lead that knows only Scrap
+			d.party = d.party.slice(0, 1)
+			d.party[0].moves = [{"id": "scrap", "pp": 35, "max_pp": 35}]
+		BattleIntro.dev_show(game.get_node("/root/Router"), null, menu.get_slice(":", 0) + ":" + menu.get_slice(":", 1), 1.0)
+		return
+	if menu == "keepers":  # `--menu=keepers`: Maud beaten, four towns visited, a few lines of gossip heard
+		d.set_flag("trainer_keeper_maud", true)
+		for t in ["buxton", "liverpool", "llanberis", "glastonbury"]:
+			d.set_flag("visited_" + t)
+		for kg in ["kg_maud_0", "kg_maud_2", "kg_morwen_1", "kg_ray_0", "kg_ray_1"]:
+			d.set_flag(kg, true)
 	if menu == "economist":  # `--menu=economist`: most of the notebook met, a Deed and a lease among them
 		d.money = 5000
 		for i in Economist.ideas():

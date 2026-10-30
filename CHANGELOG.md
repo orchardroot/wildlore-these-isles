@@ -2,6 +2,14 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+- **Know your Keeper.** Each of the ten Keepers now has a briefing: the hall's sign tells you what they lean on and
+  which types bite, their neighbours will gossip about their teams (four residents each, one team member revealed per
+  word), and a new Keepers page in the Almanac keeps the lot, with silhouettes for the creatures you haven't met.
+- **Straight talk before the fight.** The VS splash shows the Keeper's types and the ones that bite in gold, and if
+  nothing in your party can bite it says so in amber, before you've walked in unprepared.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things
