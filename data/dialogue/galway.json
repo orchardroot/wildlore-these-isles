@@ -1,4 +1,15 @@
 {
+ "chapman_galway": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks! The sea's in the paper, so it is. Have a look, no pressure."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_galway"
+  }
+ ],
  "rail_guard": [
   {
    "do": "say",

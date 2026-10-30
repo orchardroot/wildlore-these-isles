@@ -1,7 +1,7 @@
 {
   "line": "wispet",
   "species": [
-    {"id": "wispet", "real": "The wisp has a cast of local names, from jack-o'-lantern to hob-lantern, and a Latin one too: ignis fatuus, 'foolish fire'.", "names": {}, "name": "Wispet", "types": ["fae", "spirit"],
+    {"id": "wispet", "chapbooks": ["murky_gaze"], "real": "The wisp has a cast of local names, from jack-o'-lantern to hob-lantern, and a Latin one too: ignis fatuus, 'foolish fire'.", "names": {}, "name": "Wispet", "types": ["fae", "spirit"],
      "base": {"hp": 50, "atk": 35, "def": 45, "lore": 130, "ward": 105, "spd": 95},
      "growth": "medium", "catch_rate": 45, "base_xp": 150,
      "learnset": [[1, "scrap"], [1, "pixie_prick"], [5, "eerie_wail"], [9, "glamour"], [11, "mizzle"], [14, "rap_on_pane"], [17, "hill_fog"], [20, "poltergeist"], [26, "changeling_charm"]],

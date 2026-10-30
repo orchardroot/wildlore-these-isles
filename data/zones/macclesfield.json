@@ -515,6 +515,15 @@
  },
  "npcs": [
   {
+   "id": "chapman_macclesfield",
+   "sprite": "shopkeeper",
+   "x": 21,
+   "y": 17,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_macclesfield"
+  },
+  {
    "id": "silk_fan",
    "sprite": "villager_1",
    "x": 14,

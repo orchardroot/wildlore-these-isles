@@ -74,6 +74,15 @@
  "name": "Cardiff",
  "npcs": [
   {
+   "id": "chapman_cardiff",
+   "sprite": "shopkeeper",
+   "x": 34,
+   "y": 16,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_cardiff"
+  },
+  {
    "facing": "down",
    "id": "isles_amina",
    "move": "still",
@@ -223,6 +232,12 @@
   }
  ],
  "props": [
+  {
+   "type": "market_stall",
+   "x": 34,
+   "y": 15,
+   "variant": 1
+  },
   {
    "type": "lamp_post",
    "x": 6.0,

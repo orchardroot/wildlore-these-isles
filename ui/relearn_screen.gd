@@ -6,6 +6,7 @@ extends MenuBase
 
 var _mode := "party"         # party | moves | forget
 var _who := 0                # party index being taught
+var _teaching := false       # a chapbook from the Bag: backing out of the forget step leaves altogether
 var _new_move := ""          # move id waiting for a slot
 var _list_col: VBoxContainer
 var _side: VBoxContainer
@@ -50,6 +51,11 @@ func setup(arg: String) -> void:
 	if arg == "":
 		return
 	var parts := arg.split(":")
+	if parts[0] == "teach" and parts.size() == 3 and parts[1].is_valid_int() and int(parts[1]) < party().size():  # from the Bag: a chapbook for one creature, all slots full
+		_who = int(parts[1])
+		_teaching = true
+		_pick_move(parts[2])
+		return
 	if not parts[0].is_valid_int() or int(parts[0]) < 0 or int(parts[0]) >= party().size():
 		return
 	_party_cursor = int(parts[0])
@@ -226,6 +232,9 @@ func _on_cancel() -> void:
 	match _mode:
 		"forget":
 			Audio.sfx("cancel")
+			if _teaching:
+				close(null)
+				return
 			_show_moves()
 		"moves":
 			Audio.sfx("cancel")

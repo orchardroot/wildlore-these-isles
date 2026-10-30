@@ -112,6 +112,15 @@
  ],
  "npcs": [
   {
+   "id": "chapman_inverness",
+   "sprite": "shopkeeper",
+   "x": 48,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_inverness"
+  },
+  {
    "id": "case_gillian",
    "sprite": "villager_5",
    "x": 50,

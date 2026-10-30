@@ -1,4 +1,15 @@
 {
+ "chapman_macclesfield": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, a penny the verse and a bit more for the good ones. Silk town, so the paper's cut fine."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_macclesfield"
+  }
+ ],
  "silk_fan": [
   {
    "do": "when",

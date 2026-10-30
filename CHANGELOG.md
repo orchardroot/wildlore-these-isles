@@ -2,6 +2,14 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+- Chapbooks: sixty cheap ballad sheets that teach a creature a move, the game's answer to TMs. Use one from the Bag and
+  the picker tells you who "Can learn", who "Knows it" and who "Can't". They are books you keep, so one teaches the lot.
+- Fourteen chapmen stand by market stalls from Macclesfield to Galway (Buxton, Manchester, Chester, Shrewsbury, Cardiff,
+  Bristol, York, Newcastle, Edinburgh, Inverness, Belfast, Dublin), each with four staples and regional books, three of
+  which are out of stock in any given week. Collecting the full set means walking the whole map.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things

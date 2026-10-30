@@ -2,8 +2,8 @@ extends MenuBase
 ## Bag: tabs by item kind, use on a party member via Bag.use_on. With arg "for:<n>" it targets party member n directly;
 ## "hold:<n>" shows only charms, to give party member n one to hold. Food is shared (it heals and they like you more).
 
-const KIND_ORDER := ["heal", "meal", "cure", "revive", "pp", "snare", "repel", "evo", "charm", "material", "fish", "produce", "wear", "key"]
-const USABLE := ["heal", "cure", "revive", "pp", "evo"]
+const KIND_ORDER := ["heal", "meal", "cure", "revive", "pp", "snare", "repel", "evo", "chapbook", "charm", "material", "fish", "produce", "wear", "key"]
+const USABLE := ["heal", "cure", "revive", "pp", "evo", "chapbook"]
 
 var _bag: Bag
 var _kinds: Array = []
@@ -67,6 +67,12 @@ func _build() -> void:
 	_rebuild()
 
 func setup(arg: String) -> void:
+	if arg == "chapbook":  # `--menu=bag:chapbook`: a chapbook pending with the picker up (screenshots)
+		_tab = maxi(0, _kinds.find("chapbook"))
+		_rebuild()
+		_pending = "chapbook_kindle"
+		_mode = "pick"
+		_open_picker()
 	if arg.begins_with("tab:"):  # open on one kind's tab (screenshots)
 		_tab = maxi(0, _kinds.find(arg.substr(4)))
 		_rebuild()
@@ -173,6 +179,10 @@ func _show_desc(id: String) -> void:
 	var d := UIKit.label(str(it.get("desc", "")), 26)
 	d.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_desc.add_child(d)
+	if Chapbooks.move_of(it) != "":  # what the book teaches: type, power, accuracy
+		var mt := UIKit.label(MoveText.describe(Game.moves.get_move(Chapbooks.move_of(it))), 22, UIKit.GOLD)
+		mt.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_desc.add_child(mt)
 	if str(it.get("effect_text", "")) != "":
 		var fx := UIKit.label(str(it.effect_text), 22, UIKit.GOLD)
 		fx.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -266,6 +276,10 @@ func _open_picker(focus := 0) -> void:
 		h.add_child(UIKit.sex_mark(c, 20))
 		h.add_child(UIKit.label(c.display_name(), 24))
 		h.add_child(UIKit.fill())
+		var pm := Chapbooks.move_of(Game.items.get_item(_pending))
+		if pm != "":  # a chapbook is pending: say who can be taught it
+			var st := Chapbooks.status(c, pm, Game.moves)
+			h.add_child(UIKit.label(Chapbooks.label(st), 22, {Chapbooks.CAN: UIKit.GOLD, Chapbooks.KNOWS: UIKit.CREAM}.get(st, UIKit.MUTED)))
 		var hp := UIKit.hp_bar(c.hp, c.max_hp(), 90, 10)
 		hp.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		h.add_child(hp)
@@ -277,19 +291,27 @@ func _open_picker(focus := 0) -> void:
 		_pick_buttons.append(b)
 	UIKit.wrap_focus(_pick_buttons)
 	_picker_panel.visible = true
+	var teach := Chapbooks.move_of(Game.items.get_item(_pending))
+	if teach != "":  # the picker needs the room, so the book's blurb steps aside
+		_desc.get_parent().visible = false
+		_note.text = "Teach %s to whom?" % str(Game.moves.get_move(teach).get("name", teach))
 	UIKit.focus_later(_pick_buttons[clampi(focus, 0, _pick_buttons.size() - 1)])
 	_set_hint()
 
 func _close_picker() -> void:
 	_mode = "list"
 	_picker_panel.visible = false
+	_desc.get_parent().visible = true
 	_set_hint()
 	if not _item_buttons.is_empty():
 		_item_buttons[clampi(_last_item, 0, _item_buttons.size() - 1)].grab_focus()
 
 func _use(id: String, idx: int) -> void:
 	var c: Creature = party()[idx]
-	var r := _bag.give_charm(id, c) if Charms.is_charm(id) else _bag.use_on(id, c, Game.items)
+	var r := _bag.give_charm(id, c) if Charms.is_charm(id) else _bag.use_on(id, c, Game.items, Game.moves)
+	if r.has("learn"):
+		await _teach(c, idx, str(r.learn))
+		return
 	if r.has("evolve_to"):
 		var old_name := c.display_name()
 		var to_sp: Dictionary = Game.dex.get_species(str(r.evolve_to))
@@ -324,6 +346,27 @@ func _use(id: String, idx: int) -> void:
 	else:
 		_note.text += " That was the last one."
 		_close_picker()
+
+## A chapbook: straight in if there is a free slot, else the relearner's "which one makes way?" step.
+func _teach(c: Creature, idx: int, move_id: String) -> void:
+	var mname := str(Game.moves.get_move(move_id).get("name", move_id))
+	if c.moves.size() < Rules.MAX_MOVES:
+		Progression.relearn(c, move_id, 0, Game.moves)
+		Audio.sfx("heal")
+		_note.text = "%s learned %s!" % [c.display_name(), mname]
+	else:
+		var res = await open_child("relearn:teach:%d:%s" % [idx, move_id])
+		if res is Dictionary:
+			_note.text = "%s forgot %s and learned %s!" % [c.display_name(), res.get("forgot", "a move"), mname]
+		else:
+			_note.text = "%s did not learn %s." % [c.display_name(), mname]
+	if _target >= 0:
+		_rebuild()
+		return
+	if _mode == "pick":
+		var said := _note.text
+		_open_picker(idx)  # redraw the marks: "Knows it" now; stay put to teach the next one
+		_note.text = said
 
 func _rebuild_keep_note() -> void:
 	var n := _note.text

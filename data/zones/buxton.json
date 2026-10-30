@@ -366,6 +366,15 @@
  },
  "npcs": [
   {
+   "id": "chapman_buxton",
+   "sprite": "shopkeeper",
+   "x": 22,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_buxton"
+  },
+  {
    "id": "crescent_fan",
    "sprite": "villager_1",
    "x": 15,
