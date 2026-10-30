@@ -124,31 +124,43 @@ static func _want_text(t: Dictionary) -> String:
 static func _say(text: String) -> Dictionary:
 	return {"do": "say", "who": WHO, "text": text}
 
-## ScriptHooks entry: the resident's trade, then their front-room shop. Cheap: a dictionary lookup.
+## The resident's offers split by kind: {"trade": [first swap they could make now], "asks": [unmet asks, daily],
+## "shop": [front-room line and choice]}. ScriptHooks picks at most one prompt from these and the other hooks.
+static func parts(zone_id: String, npc_id: String, data: GameStateData) -> Dictionary:
+	var key := "%s|%s" % [zone_id, npc_id]
+	if not _loaded:
+		_load()
+	var res: Dictionary = {"trade": [], "asks": [], "shop": []}
+	if not _by_npc.has(key) and not _traders.has(key):
+		return res
+	for t in _by_npc.get(key, []):
+		if not is_open(data, t):
+			continue
+		var id := str(t.get("id", ""))
+		if can_pay(data, t) and has_room(data, t):
+			if res.trade.is_empty():
+				var what := _want_text(t)
+				res.trade.append(_say(str(t.get("ask", ""))))
+				res.trade.append({"do": "choice", "text": "Give them %s?" % what, "options": ["Give them %s" % what, "Not now"], "set": PICK})
+				res.trade.append({"do": "if", "flag": PICK, "eq": 0, "then": [_say(str(t.get("thanks", "Thank you."))), {"do": "trade", "op": "swap", "id": id}]})
+		else:
+			res.asks.append({"do": "daily", "key": "tr_%s_ask" % id, "then": [_say(str(t.get("ask", "")))]})
+	var tr: Dictionary = _traders.get(key, {})
+	if not tr.is_empty():
+		res.shop.append(_say(str(tr.get("line", "I sell a few bits."))))
+		res.shop.append({"do": "choice", "text": "Have a look?", "options": ["Have a look", "Maybe later"], "set": PICK})
+		res.shop.append({"do": "if", "flag": PICK, "eq": 0, "then": [{"do": "shop", "id": str(tr.get("shop", ""))}]})
+	return res
+
+## ScriptHooks entry (all parts, uncapped; ScriptHooks.wrap itself uses `parts` to offer only one prompt per talk).
 static func hook(zone_id: String, npc_id: String, commands: Array, data: GameStateData) -> Array:
 	var key := "%s|%s" % [zone_id, npc_id]
 	if not _loaded:
 		_load()
 	if not _by_npc.has(key) and not _traders.has(key):
 		return commands
-	var out := commands.duplicate()
-	for t in _by_npc.get(key, []):
-		if not is_open(data, t):
-			continue
-		var id := str(t.get("id", ""))
-		if can_pay(data, t) and has_room(data, t):
-			var what := _want_text(t)
-			out.append(_say(str(t.get("ask", ""))))
-			out.append({"do": "choice", "text": "Give them %s?" % what, "options": ["Give them %s" % what, "Not now"], "set": PICK})
-			out.append({"do": "if", "flag": PICK, "eq": 0, "then": [_say(str(t.get("thanks", "Thank you."))), {"do": "trade", "op": "swap", "id": id}]})
-		else:
-			out.append({"do": "daily", "key": "tr_%s_ask" % id, "then": [_say(str(t.get("ask", "")))]})
-	var tr: Dictionary = _traders.get(key, {})
-	if not tr.is_empty():
-		out.append(_say(str(tr.get("line", "I sell a few bits."))))
-		out.append({"do": "choice", "text": "Have a look?", "options": ["Have a look", "Maybe later"], "set": PICK})
-		out.append({"do": "if", "flag": PICK, "eq": 0, "then": [{"do": "shop", "id": str(tr.get("shop", ""))}]})
-	return out
+	var p: Dictionary = parts(zone_id, npc_id, data)
+	return commands + p.asks + p.trade + p.shop
 
 ## The "trade" story command: {"op": "swap", "id": trade} or {"op": "errand", "id": quest}. Returns the line to show.
 static func apply(data: GameStateData, c: Dictionary) -> String:

@@ -9,25 +9,27 @@
     "n": 3
    },
    "gives": {
-    "money": 320
+    "item": "lakeland_slate",
+    "n": 1
    },
-   "ask": "Aye, my cupboard wants Blackberries, three of them. I'll swap you £320.",
-   "thanks": "Perfect. I'll not forget this.",
-   "repeat": true
+   "ask": "I'll swap you an Engraved Slate Coaster for 3 Blackberries. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
+   "repeat": false
   },
   {
    "id": "tr_keswick_home_armstrong_headscarf_tartan",
    "zone": "keswick_home_armstrong",
    "npc": "keshome_armstrong",
    "wants": {
-    "item": "headscarf_tartan",
+    "item": "cut_glass_decanter",
     "n": 1
    },
    "gives": {
-    "money": 430
+    "item": "chapbook_sheepdog_herd",
+    "n": 1
    },
-   "ask": "Now then, bring me Headscarf, just the one and £430 is yours. Fair's fair.",
-   "thanks": "Perfect. I'll not forget this.",
+   "ask": "Bring me a Cut-glass Decanter and I'll swap you Chapbook: Sheepdog Herd for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {

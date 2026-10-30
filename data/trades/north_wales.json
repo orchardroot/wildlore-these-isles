@@ -5,15 +5,15 @@
    "zone": "anglesey_cottage",
    "npc": "angcottage_nain",
    "wants": {
-    "item": "sea_trout",
-    "n": 2
-   },
-   "gives": {
-    "item": "welsh_wool_shawl",
+    "item": "welsh_lovespoon",
     "n": 1
    },
-   "ask": "Duw, I've had a notion for Sea Trout, two of them all week. A Welsh wool shawl says you'll oblige.",
-   "thanks": "You're a love. Here.",
+   "gives": {
+    "item": "chapbook_rime_breath",
+    "n": 1
+   },
+   "ask": "Bring me a Welsh Lovespoon and I'll swap you Chapbook: Rime Breath for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {
@@ -41,10 +41,11 @@
     "n": 3
    },
    "gives": {
-    "money": 540
+    "item": "goss_pot_conwy",
+    "n": 1
    },
-   "ask": "Duw, I'd give £540 for Nettles, three of them.",
-   "thanks": "You're a love. Here.",
+   "ask": "I'll swap you a Goss Crested China Urn for 3 Nettles. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {

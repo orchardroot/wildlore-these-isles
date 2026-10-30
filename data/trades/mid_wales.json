@@ -41,10 +41,11 @@
     "n": 1
    },
    "gives": {
-    "money": 320
+    "item": "thimble_collection",
+    "n": 1
    },
-   "ask": "Wel, do you happen to have Brown Trout, just the one? I'll part with £320.",
-   "thanks": "Perfect. I'll not forget this.",
+   "ask": "I'll swap you a Souvenir Thimble for Brown Trout. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {

@@ -5,15 +5,15 @@
    "zone": "sheffield_home_ahmed",
    "npc": "shfhome_ahmed",
    "wants": {
-    "item": "field_mushrooms",
-    "n": 2
-   },
-   "gives": {
-    "item": "tortoise_glasses",
+    "item": "whippet_trophy",
     "n": 1
    },
-   "ask": "Now then, I'd give a pair of tortoiseshell glasses for Field Mushrooms, two of them.",
-   "thanks": "There you go. Don't spend it all at once.",
+   "gives": {
+    "item": "chapbook_galvanise",
+    "n": 1
+   },
+   "ask": "Bring me a Whippet Racing Trophy and I'll swap you Chapbook: Galvanise for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {
@@ -41,10 +41,11 @@
     "n": 2
    },
    "gives": {
-    "money": 730
+    "item": "mill_bobbin",
+    "n": 1
    },
-   "ask": "Eh up, it's Haddock, two of them I'm short of. Help me out and £730 is yours.",
-   "thanks": "Grand. That's the very one.",
+   "ask": "I'll swap you a Mill Bobbin for 2 Haddock. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {

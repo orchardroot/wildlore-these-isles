@@ -5,15 +5,15 @@
    "zone": "chester_h1",
    "npc": "chester_h1_0",
    "wants": {
-    "item": "lanyard_badge",
+    "item": "toby_jug",
     "n": 1
    },
    "gives": {
-    "item": "headscarf_tartan",
+    "item": "chapbook_morris_caper",
     "n": 1
    },
-   "ask": "Ey up, I'd give a Headscarf for Conference lanyard, just the one.",
-   "thanks": "Well, that's made my week. Take this.",
+   "ask": "Bring me a Toby Jug and I'll swap you Chapbook: Morris Caper for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {
@@ -40,11 +40,11 @@
     "n": 1
    },
    "gives": {
-    "item": "iron_snare",
+    "item": "goss_pot_macc",
     "n": 1
    },
-   "ask": "Ey up, I'm after Lancashire Hotpot, just the one. An Iron Snare, if you can find it. I won't ask where you got it.",
-   "thanks": "Well, that's made my week. Take this.",
+   "ask": "I'll swap you a Goss Crested China Pot for Lancashire Hotpot. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {

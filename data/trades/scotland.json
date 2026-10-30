@@ -5,15 +5,15 @@
    "zone": "aberdeen_home_a",
    "npc": "abdn_home_a_quine",
    "wants": {
-    "item": "wellies_green",
+    "item": "quaich",
     "n": 1
    },
    "gives": {
-    "item": "hoodie_grey",
+    "item": "chapbook_caber_toss",
     "n": 1
    },
-   "ask": "Aye, bring me Green wellies, just the one and a Grey hoodie is yours. Fair's fair.",
-   "thanks": "Perfect. I'll not forget this.",
+   "ask": "Bring me a Silver Quaich and I'll swap you Chapbook: Caber Toss for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {
@@ -21,15 +21,15 @@
    "zone": "borders_bakehouse",
    "npc": "ma_haig",
    "wants": {
-    "item": "heather_honey",
-    "n": 3
+    "item": "shetland_shawl",
+    "n": 1
    },
    "gives": {
-    "money": 270
+    "money": 2960
    },
-   "ask": "Aye, I'd give £270 for Heather Honey, three of them.",
-   "thanks": "Well, that's made my week. Take this.",
-   "repeat": true
+   "ask": "I collect these. I'd give £2960 for a Fine Lace Shawl, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
+   "repeat": false
   },
   {
    "id": "tr_cairn_bothy_clootie_dumpling",
@@ -40,10 +40,11 @@
     "n": 1
    },
    "gives": {
-    "money": 410
+    "item": "tartan_tin",
+    "n": 1
    },
-   "ask": "Aye, do you happen to have Clootie Dumpling, just the one? I'll part with £410.",
-   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "ask": "I'll swap you a Shortbread Tin for Clootie Dumpling. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {

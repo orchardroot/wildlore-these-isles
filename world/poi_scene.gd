@@ -33,6 +33,8 @@ static func dress(z: ZoneData, zone_node: Node3D, data: GameStateData, ow: Node)
 		sp.position = Vector3(t.x + 0.5, ZoneBuilder.ground_y(z, t) + 1.3, t.y + 0.5)
 		sp.visible = not Poi.done(data, p)
 		root.add_child(sp)
+		if str(p.kind) == "camp" and not Poi.done(data, p):
+			_camp_crew(z, root, t, p)
 	z.set_meta("poi_tiles", spots)
 	var timer := Timer.new()  # twice a second is plenty to notice a place nearby
 	timer.wait_time = 0.5
@@ -45,6 +47,30 @@ static func dress(z: ZoneData, zone_node: Node3D, data: GameStateData, ow: Node)
 			var p: Dictionary = spots[t]
 			if not Poi.known(data, p) and Poi.close_enough(ow.player.grid_pos, t):
 				data.set_flag(Poi.seen_key(p), true))
+
+const CREW_SPRITES := ["warden_grunt", "hiker", "farmer"]
+const CREW_SPOTS := [Vector2i(1, 1), Vector2i(-1, 1), Vector2i(2, 0), Vector2i(-2, 0), Vector2i(1, -1), Vector2i(0, 2), Vector2i(-1, -1)]
+
+## Two or three poachers loitering by the tent: scenery only (the fight is the camp's `interact`), gone once beaten.
+static func _camp_crew(z: ZoneData, root: Node3D, t: Vector2i, p: Dictionary) -> void:
+	var crew := Node3D.new()
+	crew.name = "C_%d_%d" % [t.x, t.y]
+	root.add_child(crew)
+	var want := clampi(p.get("names", []).size() + 1, 2, 3)
+	var i := absi(hash(str(p.id))) % CREW_SPOTS.size()
+	var tries := 0
+	while crew.get_child_count() < want and tries < CREW_SPOTS.size():
+		var at: Vector2i = t + CREW_SPOTS[(i + tries) % CREW_SPOTS.size()]
+		tries += 1
+		if not z.in_bounds(at) or not z.walkable(at) or z.blocked.has(at):
+			continue
+		var cs := CharSprite.new()
+		var holder := Node3D.new()
+		holder.add_child(cs)
+		crew.add_child(holder)
+		cs.setup(CREW_SPRITES[crew.get_child_count() % CREW_SPRITES.size()])
+		cs.set_facing("left" if at.x > t.x else ("right" if at.x < t.x else "up"))
+		holder.position = Vector3(at.x + 0.5, ZoneBuilder.ground_y(z, at), at.y + 0.5)
 
 static func _mesh(kind: String) -> ArrayMesh:
 	if _mesh_cache.has(kind):
@@ -93,6 +119,10 @@ static func _refresh(ow: Node, p: Vector2i, poi: Dictionary) -> void:
 	var sp: Node = ow._zone_node.get_node_or_null("Poi/S_%d_%d" % [p.x, p.y]) if ow._zone_node else null
 	if sp:
 		sp.visible = not Poi.done(Game.data, poi)
+	if Poi.done(Game.data, poi):
+		var crew: Node = ow._zone_node.get_node_or_null("Poi/C_%d_%d" % [p.x, p.y]) if ow._zone_node else null
+		if crew:
+			crew.queue_free()
 
 static func _ask(ow: Node, text: String, yes: String, no: String) -> bool:
 	await ScriptRunner.start(ow, [{"do": "choice", "text": text, "options": [yes, no], "set": "poi_ask"}])

@@ -1,1 +1,14 @@
-{"id": "home_glastonbury_home3", "name": "Glastonbury Peddler's Pack", "stock": ["copper_sheathing", "fen_runners", "guernsey_gansey", "lincoln_imp_pin"]}
+{
+ "id": "home_glastonbury_home3",
+ "name": "Glastonbury Peddler's Pack",
+ "stock": [
+  "chapbook_glamour",
+  "chapbook_changeling_charm",
+  "chapbook_fairy_ring",
+  "chapbook_hollow_hill_hammer",
+  "chapbook_poltergeist",
+  "chapbook_eerie_wail",
+  "hag_stone",
+  "lincoln_imp_pin"
+ ]
+}

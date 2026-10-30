@@ -5,14 +5,15 @@
    "zone": "manchester_h1",
    "npc": "manchester_h1_0",
    "wants": {
-    "item": "lancashire_hotpot",
+    "item": "transistor",
     "n": 1
    },
    "gives": {
-    "money": 400
+    "item": "chapbook_static_snap",
+    "n": 1
    },
-   "ask": "Listen, mate, my cupboard wants Lancashire Hotpot, just the one. I'll swap you £400.",
-   "thanks": "Oh, you've saved me a trip. Here you are.",
+   "ask": "Bring me a Pocket Transistor Radio and I'll swap you Chapbook: Static Snap for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {
@@ -56,10 +57,11 @@
     "n": 4
    },
    "gives": {
-    "money": 670
+    "item": "clog_irons",
+    "n": 1
    },
-   "ask": "Listen, mate, I'm after Blackberries, four of them. £670, if you can find it. I won't ask where you got it.",
-   "thanks": "You're a love. Here.",
+   "ask": "I'll swap you a Pair of Clog Irons for 4 Blackberries. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {

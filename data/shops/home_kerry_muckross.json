@@ -1,1 +1,14 @@
-{"id": "home_kerry_muckross", "name": "Ring of Kerry Peddler's Pack", "stock": ["tweed_cap", "fair_isle_tammy", "hag_stone", "fen_runners", "naomhog_oar", "guernsey_gansey"]}
+{
+ "id": "home_kerry_muckross",
+ "name": "Ring of Kerry Peddler's Pack",
+ "stock": [
+  "chapbook_bog_drag",
+  "chapbook_mire_stomp",
+  "chapbook_will_o_wisp",
+  "chapbook_megalith_mutter",
+  "chapbook_spore_puff",
+  "chapbook_changeling_charm",
+  "tweed_cap",
+  "hag_stone"
+ ]
+}

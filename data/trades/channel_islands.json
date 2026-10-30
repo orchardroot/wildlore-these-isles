@@ -5,14 +5,14 @@
    "zone": "st_peter_port_hauteville",
    "npc": "spp_hugo_guide",
    "wants": {
-    "item": "ballan_wrasse",
+    "item": "pressed_flowers",
     "n": 1
    },
    "gives": {
-    "money": 260
+    "money": 160
    },
-   "ask": "Well, Ballan Wrasse, just the one, that's my whole wish list. £260 for your trouble.",
-   "thanks": "You're a love. Here.",
+   "ask": "I collect these. I'd give £160 for Some Pressed Flowers, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
    "repeat": false
   },
   {

@@ -5,15 +5,15 @@
    "zone": "liverpool_h1",
    "npc": "liverpool_h1_0",
    "wants": {
-    "item": "lancashire_hotpot",
+    "item": "fa_cup_programme",
     "n": 1
    },
    "gives": {
-    "item": "overalls_denim",
+    "item": "chapbook_barnacle_glue",
     "n": 1
    },
-   "ask": "Alright, la, I'm after Lancashire Hotpot, just the one. A Dungarees, if you can find it. I won't ask where you got it.",
-   "thanks": "There you go. Don't spend it all at once.",
+   "ask": "Bring me a Cup Tie Programme and I'll swap you Chapbook: Barnacle Glue for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {
@@ -56,11 +56,12 @@
     "n": 5
    },
    "gives": {
-    "money": 610
+    "item": "cigarette_card",
+    "n": 1
    },
-   "ask": "Listen, la, if you come across Seaweed, five of them, there is £610 in it for you.",
-   "thanks": "Perfect. I'll not forget this.",
-   "repeat": true
+   "ask": "I'll swap you a Cigarette Card Set for 5 Seaweed. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
+   "repeat": false
   },
   {
    "id": "tr_liverpool_h4_lancashire_hotpot",

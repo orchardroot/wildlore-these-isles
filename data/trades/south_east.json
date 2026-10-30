@@ -5,14 +5,14 @@
    "zone": "canterbury_crooked",
    "npc": "ck_bookseller",
    "wants": {
-    "item": "bakewell_pudding",
+    "item": "dinky_bus",
     "n": 1
    },
    "gives": {
-    "money": 420
+    "money": 1200
    },
-   "ask": "Oh, it's Bakewell Pudding, just the one I'm short of. Help me out and £420 is yours.",
-   "thanks": "Well, that's made my week. Take this.",
+   "ask": "I collect these. I'd give £1200 for a Dinky Toy Bus, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
    "repeat": false
   },
   {

@@ -5,15 +5,15 @@
    "zone": "blackpool_arcade",
    "npc": "bp_arcade_change",
    "wants": {
-    "item": "lancashire_hotpot",
+    "item": "fairground_horse",
     "n": 1
    },
    "gives": {
-    "item": "paisley_scarf",
+    "item": "chapbook_gust_nudge",
     "n": 1
    },
-   "ask": "Now then, I've had a notion for Lancashire Hotpot, just the one all week. A Paisley scarf says you'll oblige.",
-   "thanks": "You're a love. Here.",
+   "ask": "Bring me a Gallopers Horse and I'll swap you Chapbook: Gust Nudge for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {
@@ -41,10 +41,11 @@
     "n": 2
    },
    "gives": {
-    "money": 250
+    "item": "seaside_rock",
+    "n": 1
    },
-   "ask": "Hiya, Leeks, two of them, that's my whole wish list. £250 for your trouble.",
-   "thanks": "There you go. Don't spend it all at once.",
+   "ask": "I'll swap you a Stick of Rock for 2 Leeks. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {

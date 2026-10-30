@@ -5,15 +5,15 @@
    "zone": "penzance_engine",
    "npc": "engine_keeper",
    "wants": {
-    "item": "round_glasses",
+    "item": "lighthouse_lens",
     "n": 1
    },
    "gives": {
-    "item": "wellies_green",
+    "item": "chapbook_undertow",
     "n": 1
    },
-   "ask": "Now then, bring me Round glasses, just the one and a pair of green wellies is yours. Fair's fair.",
-   "thanks": "Perfect. I'll not forget this.",
+   "ask": "Bring me a Fresnel Prism and I'll swap you Chapbook: Undertow for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {

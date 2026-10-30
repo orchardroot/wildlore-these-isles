@@ -5,14 +5,15 @@
    "zone": "blaenavon_stacksq",
    "npc": "bla_ironwife",
    "wants": {
-    "item": "sea_trout",
+    "item": "rugby_cap",
     "n": 1
    },
    "gives": {
-    "money": 750
+    "item": "chapbook_scrum_push",
+    "n": 1
    },
-   "ask": "Duw, do you happen to have Sea Trout, just the one? I'll part with £750.",
-   "thanks": "Champion. That's exactly the thing.",
+   "ask": "Bring me a Velvet Rugby Cap and I'll swap you Chapbook: Scrum Push for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {

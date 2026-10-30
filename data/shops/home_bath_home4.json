@@ -1,1 +1,14 @@
-{"id": "home_bath_home4", "name": "Bath Peddler's Pack", "stock": ["naomhog_oar", "hag_stone", "fen_runners", "guernsey_gansey", "lincoln_imp_pin", "tweed_cap"]}
+{
+ "id": "home_bath_home4",
+ "name": "Bath Peddler's Pack",
+ "stock": [
+  "chapbook_kindle",
+  "chapbook_aga_roast",
+  "chapbook_snug_as_a_bug",
+  "chapbook_hoot_lullaby",
+  "chapbook_morris_caper",
+  "chapbook_mums_look",
+  "fen_runners",
+  "hag_stone"
+ ]
+}

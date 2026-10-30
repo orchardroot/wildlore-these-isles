@@ -9,10 +9,11 @@
     "n": 2
    },
    "gives": {
-    "money": 100
+    "item": "blarney_pebble",
+    "n": 1
    },
-   "ask": "Sure look, I'm after Onions, two of them. £100, if you can find it. I won't ask where you got it.",
-   "thanks": "Grand. That's the very one.",
+   "ask": "I'll swap you a Blarney Pebble for 2 Onions. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {

@@ -9,26 +9,27 @@
     "n": 3
    },
    "gives": {
-    "money": 320
+    "item": "goss_pot_buxton",
+    "n": 1
    },
-   "ask": "Now then, one day I'll stop running out of nettles. Until then, £320 for Nettles, three of them.",
-   "thanks": "Champion. That's exactly the thing.",
-   "repeat": true
+   "ask": "I'll swap you a Goss Crested China Jug for 3 Nettles. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
+   "repeat": false
   },
   {
    "id": "tr_blue_john_entry_bakewell_pudding",
    "zone": "blue_john_entry",
    "npc": "bj_guide",
    "wants": {
-    "item": "bakewell_pudding",
+    "item": "brass_miners_lamp",
     "n": 1
    },
    "gives": {
-    "item": "jeans_blue",
+    "item": "chapbook_hard_hat",
     "n": 1
    },
-   "ask": "Now then, it's Bakewell Pudding, just the one I'm short of. Help me out and a pair of indigo jeans is yours.",
-   "thanks": "You're a love. Here.",
+   "ask": "Bring me a Brass Miner's Lamp and I'll swap you Chapbook: Hard Hat for it. I've read it twice and my knees have had enough.",
+   "thanks": "Lovely. That'll look grand on the sideboard. The pamphlet's yours, mind how you go.",
    "repeat": false
   },
   {

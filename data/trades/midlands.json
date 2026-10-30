@@ -21,14 +21,14 @@
    "zone": "cotswolds_woolhouse",
    "npc": "cw_woolman",
    "wants": {
-    "item": "conker",
-    "n": 3
+    "item": "pocket_watch",
+    "n": 1
    },
    "gives": {
-    "money": 320
+    "money": 2800
    },
-   "ask": "Listen, I'm after Conker, three of them. £320, if you can find it. I won't ask where you got it.",
-   "thanks": "There you go. Don't spend it all at once.",
+   "ask": "I collect these. I'd give £2800 for a Silver Pocket Watch, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
    "repeat": false
   },
   {

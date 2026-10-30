@@ -1,1 +1,15 @@
-{"id": "home_birmingham_home3", "name": "Birmingham Peddler's Pack", "stock": ["hag_stone", "guernsey_gansey", "copper_sheathing", "lincoln_imp_pin", "naomhog_oar", "fen_runners"]}
+{
+ "id": "home_birmingham_home3",
+ "name": "Birmingham Peddler's Pack",
+ "stock": [
+  "chapbook_forge_hammer",
+  "chapbook_blast_furnace",
+  "chapbook_galvanise",
+  "chapbook_kerb_crunch",
+  "chapbook_gridlock",
+  "chapbook_dirty_look",
+  "chapbook_static_snap",
+  "copper_sheathing",
+  "lincoln_imp_pin"
+ ]
+}

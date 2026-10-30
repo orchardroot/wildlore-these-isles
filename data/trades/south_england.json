@@ -37,14 +37,14 @@
    "zone": "exeter_customs",
    "npc": "customs_officer",
    "wants": {
-    "item": "european_bass",
-    "n": 2
+    "item": "tea_caddy",
+    "n": 1
    },
    "gives": {
-    "money": 2300
+    "money": 2720
    },
-   "ask": "Right, I'd give £2300 for European Sea Bass, two of them.",
-   "thanks": "You're a love. Here.",
+   "ask": "I collect these. I'd give £2720 for a Victorian Tea Caddy, no questions asked.",
+   "thanks": "Oh, you beauty. It's going straight on the shelf. Here's your money.",
    "repeat": false
   },
   {
@@ -56,10 +56,11 @@
     "n": 2
    },
    "gives": {
-    "money": 220
+    "item": "sixpence",
+    "n": 1
    },
-   "ask": "Oh, I've had a notion for Elderflower, two of them all week. £220 says you'll oblige.",
-   "thanks": "There you go. Don't spend it all at once.",
+   "ask": "I'll swap you a Lucky Sixpence for 2 Elderflower. It's been on the mantelpiece long enough.",
+   "thanks": "Go on then, it's yours. Look after it.",
    "repeat": false
   },
   {
