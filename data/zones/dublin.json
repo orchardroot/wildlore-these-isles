@@ -43,6 +43,15 @@
  "name": "Dublin",
  "npcs": [
   {
+   "id": "chapman_dublin",
+   "sprite": "shopkeeper",
+   "x": 28,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_dublin"
+  },
+  {
    "facing": "down",
    "id": "isles_anju",
    "move": "still",
@@ -292,6 +301,12 @@
   }
  ],
  "props": [
+  {
+   "type": "market_stall",
+   "x": 28,
+   "y": 18,
+   "variant": 1
+  },
   {
    "type": "lamp_post",
    "x": 17.0,

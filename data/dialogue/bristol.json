@@ -1,4 +1,15 @@
 {
+ "chapman_bristol": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks, shipshape and a little bit damp. Pay up, I run a tight ship. Like, a ship."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_bristol"
+  }
+ ],
  "bristol_l": [
   {
    "do": "say",

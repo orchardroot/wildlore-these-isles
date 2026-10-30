@@ -37,7 +37,7 @@ func items_of_kind(kind: String, item_db: ItemDB) -> Array:
 			out.append(id)
 	return out
 
-func use_on(id: String, c: Creature, item_db: ItemDB) -> Dictionary:
+func use_on(id: String, c: Creature, item_db: ItemDB, move_db: MoveDB = null) -> Dictionary:
 	var item := item_db.get_item(id)
 	if item.is_empty() or count(id) < 1:
 		return {"ok": false, "text": "You don't have any."}
@@ -48,6 +48,12 @@ func use_on(id: String, c: Creature, item_db: ItemDB) -> Dictionary:
 			return {"ok": false, "text": "%s doesn't react to it." % c.display_name()}
 		remove(id)
 		return {"ok": true, "text": "", "evolve_to": to}
+	if str(item.get("kind", "")) == Chapbooks.KIND:  # a book you keep: the caller runs the learn/forget prompt
+		var mv := Chapbooks.move_of(item)
+		var st := Chapbooks.status(c, mv, move_db if move_db != null else MoveDB.load_default())
+		if st != Chapbooks.CAN:
+			return {"ok": false, "text": "%s already knows it." % c.display_name() if st == Chapbooks.KNOWS else "%s can't learn that." % c.display_name()}
+		return {"ok": true, "text": "", "learn": mv, "keep": true}
 	var r := ItemEffects.apply(item, c)
 	if r.ok:
 		remove(id)

@@ -131,6 +131,15 @@
  "name": "Galway",
  "npcs": [
   {
+   "id": "chapman_galway",
+   "sprite": "shopkeeper",
+   "x": 38,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_galway"
+  },
+  {
    "facing": "down",
    "id": "isles_bridget",
    "move": "still",
@@ -299,6 +308,12 @@
   }
  ],
  "props": [
+  {
+   "type": "market_stall",
+   "x": 38,
+   "y": 21,
+   "variant": 1
+  },
   {
    "type": "oak",
    "variant": 1.0,

@@ -596,6 +596,15 @@
  },
  "npcs": [
   {
+   "id": "chapman_bristol",
+   "sprite": "shopkeeper",
+   "x": 48,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "chapman_bristol"
+  },
+  {
    "id": "bristol_l",
    "sprite": "poet",
    "x": 7,

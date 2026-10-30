@@ -18,6 +18,11 @@ Newest first. The README is the front page; this is the long memory.
   word), and a new Keepers page in the Almanac keeps the lot, with silhouettes for the creatures you haven't met.
 - **Straight talk before the fight.** The VS splash shows the Keeper's types and the ones that bite in gold, and if
   nothing in your party can bite it says so in amber, before you've walked in unprepared.
+- Chapbooks: sixty cheap ballad sheets that teach a creature a move, the game's answer to TMs. Use one from the Bag and
+  the picker tells you who "Can learn", who "Knows it" and who "Can't". They are books you keep, so one teaches the lot.
+- Fourteen chapmen stand by market stalls from Macclesfield to Galway (Buxton, Manchester, Chester, Shrewsbury, Cardiff,
+  Bristol, York, Newcastle, Edinburgh, Inverness, Belfast, Dublin), each with four staples and regional books, three of
+  which are out of stock in any given week. Collecting the full set means walking the whole map.
 
 ## What's new in 4.6: Dressed for the Weather
 

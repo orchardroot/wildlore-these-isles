@@ -1,4 +1,15 @@
 {
+ "chapman_buxton": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks! Taught a Hedgerow lad a trick off this one. He still won't stop doing it."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_buxton"
+  }
+ ],
  "crescent_fan": [
   {
    "do": "if",

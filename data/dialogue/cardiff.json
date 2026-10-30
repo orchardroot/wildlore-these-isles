@@ -1,4 +1,15 @@
 {
+ "chapman_cardiff": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks! Bilingual on request, shouty on Saturdays. Which move are you after?"
+  },
+  {
+   "do": "shop",
+   "id": "chapman_cardiff"
+  }
+ ],
  "rail_guard": [
   {
    "do": "say",

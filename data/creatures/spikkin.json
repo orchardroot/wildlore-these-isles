@@ -1,7 +1,7 @@
 {
   "line": "spikkin",
   "species": [
-    {"id": "spikkin", "real": "The name means what it says: it lives in hedges and grunts like a pig while it hunts.", "names": {"cy": "draenog", "ga": "gráinneog", "gd": "gràineag"}, "name": "Spikkin", "types": ["hedgerow"],
+    {"id": "spikkin", "chapbooks": ["boulder_bump"], "real": "The name means what it says: it lives in hedges and grunts like a pig while it hunts.", "names": {"cy": "draenog", "ga": "gráinneog", "gd": "gràineag"}, "name": "Spikkin", "types": ["hedgerow"],
      "base": {"hp": 45, "atk": 55, "def": 62, "lore": 45, "ward": 55, "spd": 48},
      "growth": "medium", "catch_rate": 45, "base_xp": 62,
      "learnset": [[1, "scrap"], [1, "glare"], [5, "bramble_lash"], [9, "bristle_up"], [11, "hunker"], [13, "spore_puff"], [14, "scrum_push"], [18, "thorn_volley"], [21, "green_fingers"], [24, "barge"], [34, "lavender_bag"]],
@@ -9,7 +9,7 @@
      "dex": {"text": "Snuffles along hedge bottoms at dusk, grumbling to itself. Rolls into a prickly ball and waits for trouble to get bored.",
              "fact": "A hedgehog has around 5,000 to 7,000 spines. Each one is a hollow hair made stiff with keratin, the same stuff as your fingernails."},
      "sprite": "spikkin"},
-    {"id": "bramblehog", "real": "Hedgehogs sometimes chew something strong-smelling into a froth and lick it all over their spines. It is called self-anointing, and nobody is sure why they do it.", "names": {"cy": "draenog", "ga": "gráinneog", "gd": "gràineag"}, "name": "Bramblehog", "types": ["hedgerow", "brawn"],
+    {"id": "bramblehog", "chapbooks": ["boulder_bump"], "real": "Hedgehogs sometimes chew something strong-smelling into a froth and lick it all over their spines. It is called self-anointing, and nobody is sure why they do it.", "names": {"cy": "draenog", "ga": "gráinneog", "gd": "gràineag"}, "name": "Bramblehog", "types": ["hedgerow", "brawn"],
      "base": {"hp": 64, "atk": 76, "def": 87, "lore": 62, "ward": 74, "spd": 67},
      "growth": "medium", "catch_rate": 45, "base_xp": 142,
      "learnset": [[1, "scrap"], [1, "glare"], [5, "bramble_lash"], [9, "bristle_up"], [11, "hunker"], [13, "spore_puff"], [14, "scrum_push"], [18, "thorn_volley"], [21, "green_fingers"], [24, "barge"], [34, "lavender_bag"]],

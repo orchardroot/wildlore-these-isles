@@ -14,6 +14,7 @@ static func validate(chart: TypeChart, dex: Dex, moves: MoveDB, items: ItemDB = 
 		errors.append_array(_check_species(dex.get_species(id), chart, dex, moves, items))
 	if items != null:
 		errors.append_array(_check_items(items, dex))
+		errors.append_array(Chapbooks.problems(items, moves))
 	return errors
 
 static func _check_move(m: Dictionary, chart: TypeChart) -> Array:
@@ -77,6 +78,9 @@ static func _check_species(sp: Dictionary, chart: TypeChart, dex: Dex, moves: Mo
 		e.append("species %s: catch_rate %d is legend territory, so mark it \"legend\": true" % [id, sp.catch_rate])
 	if sp.base_xp < 1:
 		e.append("species %s: base_xp must be positive" % id)
+	for cb in sp.get("chapbooks", []):
+		if not moves.has(str(cb)):
+			e.append("species %s: chapbooks move '%s' does not exist" % [id, cb])
 	if sp.learnset.is_empty():
 		e.append("species %s: empty learnset" % id)
 	if int(sp.get("malformed_learnset", 0)) > 0:
@@ -147,7 +151,7 @@ static func _check_teaching(sp: Dictionary) -> Array:
 
 const EM_DASH := char(0x2014)  # the em-dash: the house style has none, in data or in prose
 
-const ITEM_KINDS := ["heal", "meal", "cure", "revive", "pp", "snare", "evo", "charm", "repel", "key", "material", "fish", "produce", "wear"]
+const ITEM_KINDS := ["heal", "meal", "cure", "revive", "pp", "snare", "evo", "charm", "repel", "key", "material", "fish", "produce", "wear", "chapbook"]
 const EXTRA_SNARES := ["night", "water", "fae", "hazel", "creel"]
 
 static func _check_items(db: ItemDB, dex: Dex) -> Array:

@@ -129,6 +129,8 @@ static func boot(game: Node, menu: String) -> void:
 	d.bag["rail_pass"] = 1
 	if menu.begins_with("pedia:") and (Dex.in_appendix(menu.substr(6)) or Dex.is_hybrid(menu.substr(6)) or Crossbreeds.is_id(menu.substr(6)) or game.dex.has(menu.substr(6))):  # `--menu=pedia:flyling` (any species or a hybrid): that entry, caught
 		d.mark_caught(menu.substr(6))
+	if menu == "bag:chapbook":  # `--menu=bag:chapbook`: chapbooks in the bag, the picker up on Haymaker
+		d.bag = {"chapbook_haymaker": 1, "chapbook_glare": 1, "chapbook_kindle": 1, "chapbook_swoop": 1, "cup_of_tea": 2}
 	if menu == "bag:first":  # `--menu=bag:first`: a first-hour bag (tea, snares, the map and the Fieldbook)
 		d.bag = {"cup_of_tea": 3, "wicker_snare": 5, "map": 1, "fieldbook": 1}
 	if menu == "map:post":  # `--menu=map:post`: the whole map visited, Champion, every Stone

@@ -1,4 +1,15 @@
 {
+ "chapman_inverness": [
+  {
+   "do": "say",
+   "who": "Chapman",
+   "text": "Chapbooks. Bit of a draught here by the river, so make your mind up quickly."
+  },
+  {
+   "do": "shop",
+   "id": "chapman_inverness"
+  }
+ ],
  "case_gillian": [
   {
    "do": "if",
