@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_potato_patches",
+   "zone": "tristan_school",
+   "title": "Islander's note",
+   "lines": [
+    "The Potato Patches are a half-day walk on the volcano's skirt. We farm them in common.",
+    "The cows are known by name and so is the weather. Both are unpredictable."
+   ]
+  },
+  {
+   "id": "ltr_volcano_1961",
+   "zone": "tristan_post",
+   "title": "Evacuation diary, 1961",
+   "lines": [
+    "We were taken off the island in the night, by boat, with what we could carry.",
+    "In England we saw trains and buses. We did not like them. We went home as soon as we were asked."
+   ]
+  },
+  {
+   "id": "ltr_crawfish",
+   "zone": "tristan_factory",
+   "title": "Crawfish note",
+   "lines": [
+    "The Tristan rock lobster is the island's living. We catch it, pack it, ship it, and eat the leftover tails.",
+    "Anyone who says 'crayfish' is corrected, gently. It is a crawfish, and it knows it."
+   ]
+  },
+  {
+   "id": "ltr_knit_hat",
+   "zone": "tristan_church",
+   "title": "Knitter's pattern",
+   "lines": [
+    "The islanders' woollen hats are knitted in the evenings by the fire, from island wool.",
+    "One rule: a bobble of defiant size."
+   ]
+  }
+ ]
+}

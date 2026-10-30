@@ -1,0 +1,52 @@
+{
+ "papers": [
+  {
+   "id": "ltr_pasty_rule",
+   "zone": "penzance_pastyco",
+   "title": "Pasty rule card",
+   "lines": [
+    "A true pasty has a crimp on the side, not the top. Beef, potato, swede and onion. Never carrot.",
+    "The initial of the owner goes on one end, so they know which half to eat first."
+   ]
+  },
+  {
+   "id": "ltr_tin_mine",
+   "zone": "penzance_benbow",
+   "title": "Miner's letter",
+   "lines": [
+    "Dear Jenny, a hundred fathoms down the sea is over our heads. You can hear it, on a quiet day.",
+    "We call the knockers by name and leave them a bit of pasty crust. No accidents yet. Do not tell the mine captain."
+   ]
+  },
+  {
+   "id": "ltr_wrecker_note",
+   "zone": "penzance_books",
+   "title": "Scrap of paper",
+   "lines": [
+    "Signal lamp: three flashes, wait, three flashes. Nobody is to light the beacon without a pilot.",
+    "In fainter ink, centuries earlier: 'If the ship strikes, all is lost. If it strikes in daylight, some is found.'"
+   ],
+   "trail": {
+    "zone": "tintagel",
+    "near": [
+     44,
+     40
+    ],
+    "clue": "A wrecker's chest was said to be buried near the big rock. The note is signed with a scratched anchor.",
+    "reward": {
+     "item": "selkie_pearl",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_surf_note",
+   "zone": "penzance_engine",
+   "title": "Surf school note",
+   "lines": [
+    "Lesson one: standing up. Lesson two: standing up again.",
+    "Lesson three: the sea is large and you are small. Be kind to it."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "papers": [
+  {
+   "id": "ltr_jewellery_quarter",
+   "zone": "birmingham_home1",
+   "title": "Bench note",
+   "lines": [
+    "Three hundred brooches to finish by Friday. Pins in the left tin, springs in the right tin, tea in the cracked cup.",
+    "The cat is not to sit on the gold leaf. She knows this. She does it anyway."
+   ]
+  },
+  {
+   "id": "ltr_lace_pattern",
+   "zone": "nottingham_laceworks",
+   "title": "Pattern card",
+   "lines": [
+    "A lace pattern of oak leaves and acorns, punched on card for the Leavers loom.",
+    "In the margin: 'Do not let Brian near this. He has opinions about acorns.'"
+   ],
+   "trail": {
+    "zone": "cotswolds",
+    "near": [
+     18,
+     33
+    ],
+    "clue": "The pattern-maker's acorn is buried near the hedge. Dig where it would sit.",
+    "reward": {
+     "item": "oak_acorn",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_bomber_county",
+   "zone": "lincoln_strugglers",
+   "title": "Airman's letter",
+   "lines": [
+    "Dear Mam, we go tonight. Do not worry. The cook has promised bacon on our return.",
+    "If I do not write for a while it is because the post is slow. It is not because anything has happened. Love, Ron."
+   ]
+  },
+  {
+   "id": "ltr_wool_church",
+   "zone": "cotswolds_woolhouse",
+   "title": "Wool merchant's will",
+   "lines": [
+    "I leave my best fleece to the church, my second best to my brother, and my third to the first man who tells me my wool is overpriced.",
+    "Witnessed this day by the vicar and a very large sheep."
+   ],
+   "trail": {
+    "zone": "ironbridge_gorge",
+    "near": [
+     33,
+     25
+    ],
+    "clue": "A merchant's strongbox lies where wool was once weighed, near the old oak.",
+    "reward": {
+     "money": 3000
+    }
+   }
+  },
+  {
+   "id": "ltr_potbank",
+   "zone": "stoke_gladstone",
+   "title": "Potter's mark sheet",
+   "lines": [
+    "Fired this week: sixty-two plates, one gravy boat, a teapot with an opinion.",
+    "The teapot came out of the kiln with a crack the shape of Wales. We are calling it the Welsh teapot and selling it at a premium."
+   ]
+  },
+  {
+   "id": "ltr_iron_bridge",
+   "zone": "ironbridge_tollhouse",
+   "title": "Ironmaster's receipt",
+   "lines": [
+    "For the iron to build the bridge over the Severn, an odd and daring thing.",
+    "The old men say iron will sink. The young men say it will float. The river has not yet been consulted."
+   ]
+  },
+  {
+   "id": "ltr_tube_map",
+   "zone": "london_towerbridge",
+   "title": "Pencilled directions",
+   "lines": [
+    "Take the Northern line to the stop with the funny name. Change at the one with the stairs.",
+    "Do NOT stand on the left. Do not speak to anyone. If a man in a bowler says hello, he is probably lost too."
+   ]
+  }
+ ]
+}

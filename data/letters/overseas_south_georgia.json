@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_whaling_station",
+   "zone": "grytviken_factory",
+   "title": "Whaler's note",
+   "lines": [
+    "Grytviken: a harbour, a church, a factory, and a smell I will take to my grave.",
+    "They say the whales are gone. They are not gone, they are in the water, and they are listening."
+   ]
+  },
+  {
+   "id": "ltr_elephant_seal",
+   "zone": "grytviken_lab",
+   "title": "Seal-counter's note",
+   "lines": [
+    "Counted three hundred elephant seals on the beach, none of them in a good mood.",
+    "Retreated to the hut. The one who followed has opinions and a very large nose."
+   ]
+  },
+  {
+   "id": "ltr_shackleton_grave",
+   "zone": "salisbury_hut",
+   "title": "Visitor's note",
+   "lines": [
+    "At the whalers' cemetery we raised a glass to the explorer buried there, and poured a little on the grave.",
+    "It is the tradition. The wind took the rest."
+   ]
+  },
+  {
+   "id": "ltr_rat_free",
+   "zone": "grytviken_sanctuary",
+   "title": "Rat-eradication note",
+   "lines": [
+    "South Georgia was declared rat-free after years of work by people and dogs and helicopters.",
+    "The pipits came back to the island, and now they sing at breakfast."
+   ]
+  }
+ ]
+}

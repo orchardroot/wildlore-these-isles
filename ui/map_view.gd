@@ -470,6 +470,10 @@ func _icon(mk: Dictionary, c: Vector2) -> void:
 			draw_rect(r, Color(INK, 0.9), false, 1.4)
 			for i in 3:
 				draw_circle(c + Vector2(-4.5 + i * 4.5, -0.5), 1.4, INK)
+		"trail":  # a gold-ringed "?", where a treasure trail ends
+			draw_circle(c, 9.5, Color(INK, 0.9))
+			draw_circle(c, 8.0, LIT)
+			draw_string(ThemeDB.fallback_font, c + Vector2(-4.5, 6.0), "?", HORIZONTAL_ALIGNMENT_LEFT, -1, 17, INK)
 		"post":  # an envelope with a red seal
 			var r := Rect2(c - Vector2(9, 6), Vector2(18, 12))
 			draw_rect(r, PAPER)

@@ -1,0 +1,119 @@
+{
+ "papers": [
+  {
+   "id": "ltr_shipyard_whistle",
+   "zone": "belfast_home_riveter",
+   "title": "Shipyard pass",
+   "lines": [
+    "Harland and Wolff, Queen's Island. Clock number 4417. In by half seven, out by five, tea at ten.",
+    "Written below: 'Da said you could hear the whistle in every street. Now you hear it in your head instead.'"
+   ]
+  },
+  {
+   "id": "ltr_school_letter",
+   "zone": "belfast_home_wain",
+   "title": "Letter home from school, 1981",
+   "lines": [
+    "Dear parents, the bus to the swimming baths will go a longer way round on Thursday. There is no cause for worry.",
+    "Children are to bring their trunks, a towel and a sandwich. The teachers will bring the good humour.",
+    "Children from both schools will share the pool. Mrs Henderson says it is the only place anyone is allowed to shout."
+   ]
+  },
+  {
+   "id": "ltr_emigrant_letter",
+   "zone": "cork_home2",
+   "title": "Letter from America, 1912",
+   "lines": [
+    "Dear Mam, I am writing from a place called Boston, which is not unlike Cork except nobody knows me.",
+    "I have a job, a bed and a coat. I have everything except you. Send the rosary. I will send the money.",
+    "Tell Daddy I did not forget the garden."
+   ],
+   "trail": {
+    "zone": "antrim_coast",
+    "near": [
+     31,
+     3
+    ],
+    "clue": "A promise of twenty dollars sent home was never claimed. It is said to rest near the hedge.",
+    "reward": {
+     "money": 2000
+    }
+   }
+  },
+  {
+   "id": "ltr_jacobs_biscuit",
+   "zone": "dublin_home_park",
+   "title": "Factory note",
+   "lines": [
+    "The Jacob's girls are on strike again, so the biscuits are late.",
+    "The Lord Mayor has promised a delegation, a cup of tea and a stern talking-to. The girls have promised nothing."
+   ]
+  },
+  {
+   "id": "ltr_giant_causeway",
+   "zone": "causeway_centre",
+   "title": "Visitor's note",
+   "lines": [
+    "The giant Finn built it to reach Scotland. The rival giant came the other way. A tale for tourists and for children.",
+    "Geologists say lava. The giant says rubbish. The giant has the better stories."
+   ],
+   "trail": {
+    "zone": "causeway",
+    "near": [
+     8,
+     14
+    ],
+    "clue": "A guide's lucky horseshoe is buried near the big rock. 'I leave it for you, whoever you are.'",
+    "reward": {
+     "item": "horseshoe",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_hurling_programme",
+   "zone": "kilkenny_hurling",
+   "title": "Hurling programme",
+   "lines": [
+    "The ball flies faster than the eye. The lads play hard and shake hands after.",
+    "Whoever wins, the match is not over until the tea is."
+   ]
+  },
+  {
+   "id": "ltr_pub_snug",
+   "zone": "derry_waterloo",
+   "title": "Snug rules",
+   "lines": [
+    "In the snug: the priest, the doctor, and anyone else who wishes to say something unwise.",
+    "No politics. No fighting. No remarks about the football. No exceptions, save on Sunday afternoons."
+   ]
+  },
+  {
+   "id": "ltr_bushmills_still",
+   "zone": "bushmills_craftshop",
+   "title": "Distiller's log",
+   "lines": [
+    "Water from St Columb's Rill. Barley dried in a kiln, not in a peat fire. This is why ours is smooth and others are ... smokier.",
+    "The cat who keeps the warehouse mouse-free has been paid in cream for eleven years."
+   ]
+  },
+  {
+   "id": "ltr_titanic_ticket",
+   "zone": "belfast_albertclock",
+   "title": "Maiden voyage ticket",
+   "lines": [
+    "Third class, Southampton to New York. A little cheaper than the rest, a little less glamorous, a lot more hopeful.",
+    "Written on the back in an unsteady hand: 'It is said she cannot sink. We shall see.' It is signed with a small drawing of a fish."
+   ]
+  },
+  {
+   "id": "ltr_famine_road",
+   "zone": "cork_books",
+   "title": "Relief works note",
+   "lines": [
+    "The relief works paid hungry men a few pennies to build roads that led nowhere. Some are still there, going straight on into the middle of a field.",
+    "Walk one slowly. Someone put their back into it, and they were not paid enough."
+   ]
+  }
+ ]
+}

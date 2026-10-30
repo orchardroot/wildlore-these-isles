@@ -54,6 +54,12 @@ static func boot(game: Node, menu: String) -> void:
 	c.held = "oak_acorn"
 	d.party = [a, b, c, e, f]
 	d.ark = [mk.call("croakle", 6), mk.call("pipkin", 4), mk.call("dipling", 9)]
+	if menu == "papers":  # `--menu=papers`: the Almanac's Papers page with 8 read, 2 of them trails still open
+		var plain := Letters.all().filter(func(q): return not Letters.has_trail(q)).slice(0, 6)
+		var trails := Letters.all().filter(func(q): return Letters.has_trail(q)).slice(0, 2)
+		for q in plain + trails:
+			d.set_flag(Letters.read_flag(str(q.id)), true)
+		menu = "almanac:ledger:papers"
 	if menu.begins_with("lang") or menu in ["pedia:words", "pause:words"]:  # two Welsh lessons learnt, in Cardiff, a day on
 		d.zone_id = "cardiff"
 		for l in ["cy_01", "cy_02"]:

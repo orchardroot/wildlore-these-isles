@@ -82,6 +82,9 @@ func _show_ledger(kind: String) -> void:
 	col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	col.add_theme_constant_override("separation", 8)
 	card.add_child(col)
+	if kind == "papers":  # a list with the paper beside it (ui/papers_tab.gd)
+		PapersTab.new(self).build(col)
+		return
 	for r in Almanac.ledger(Game.data, kind):
 		var h := HBoxContainer.new()
 		h.size_flags_horizontal = Control.SIZE_EXPAND_FILL

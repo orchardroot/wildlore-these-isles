@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_irish_famine",
+   "zone": "boston_church",
+   "title": "Passenger's ledger",
+   "lines": [
+    "Arrived in Boston in 1847 with the clothes I wore and a fiddle. Landed hungry, left hungrier, and found work by Thursday.",
+    "My granddaughter will be a nurse. My great-grandson will be mayor. Neither will know I played."
+   ]
+  },
+  {
+   "id": "ltr_tea_party",
+   "zone": "boston_heritage",
+   "title": "Tea-party flyer",
+   "lines": [
+    "Boston, December 1773. Three ships, three hundred and forty-two chests of tea, and a lot of people who had had enough.",
+    "Nobody was hurt, save the tea. The cold-water harbour has never been the same since."
+   ],
+   "trail": {
+    "zone": "boston",
+    "near": [
+     34,
+     31
+    ],
+    "clue": "A tea-chest lid is said to lie near the statue, where someone hid a pocketful of coin.",
+    "reward": {
+     "money": 1500
+    }
+   }
+  },
+  {
+   "id": "ltr_beans_note",
+   "zone": "boston_pub",
+   "title": "Recipe note",
+   "lines": [
+    "Boston baked beans: navy beans, salt pork, molasses, patience. Eight hours in a slow oven.",
+    "A Saturday supper, a Sunday breakfast, and a Monday argument with the cat."
+   ]
+  },
+  {
+   "id": "ltr_freedom_trail",
+   "zone": "boston_sanctuary",
+   "title": "Walking tour card",
+   "lines": [
+    "Follow the red line on the pavement. It leads from church to churchyard to a ship with a good name.",
+    "Do not stop at the first bar. There are at least four better ones further on."
+   ]
+  }
+ ]
+}

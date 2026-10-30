@@ -1,0 +1,52 @@
+{
+ "papers": [
+  {
+   "id": "ltr_coconut_crab",
+   "zone": "biot_hut",
+   "title": "Sailor's letter",
+   "lines": [
+    "The coconut crab climbs palms and steals the fruit. It is the size of a spaniel and twice as rude.",
+    "They told us to leave our sandwiches indoors. They did not say why. Now I know."
+   ]
+  },
+  {
+   "id": "ltr_old_plantation",
+   "zone": "biot_copra",
+   "title": "Marker stone note",
+   "lines": [
+    "Someone planted these palms. Someone lived here first. Both of these are true and neither is a joke.",
+    "Walk gently, speak quietly, and leave the island kinder than you found it."
+   ]
+  },
+  {
+   "id": "ltr_atoll_tide",
+   "zone": "biot_marina",
+   "title": "Lagoon survey note",
+   "lines": [
+    "The lagoon is the colour of a swimming pool in a postcard, and the reef is the colour of a very good argument.",
+    "Fish counted: too many to count. Divers counted: three. We are in the way."
+   ],
+   "trail": {
+    "zone": "diego_garcia",
+    "near": [
+     9,
+     38
+    ],
+    "clue": "A surveyor's tin lies near the open ground. 'For the next survey, in a better mood.'",
+    "reward": {
+     "item": "sea_glass",
+     "n": 2
+    }
+   }
+  },
+  {
+   "id": "ltr_navy_cook",
+   "zone": "biot_galley",
+   "title": "Galley note",
+   "lines": [
+    "Tonight: curry. Tomorrow: curry. Wednesday: it is a surprise, but it is also curry.",
+    "The cook insists that his curry is different each night. We are not convinced. We are not complaining."
+   ]
+  }
+ ]
+}

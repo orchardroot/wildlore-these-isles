@@ -1,0 +1,62 @@
+{
+ "papers": [
+  {
+   "id": "ltr_pencil_graphite",
+   "zone": "carlisle_home_armstrong",
+   "title": "Letter from the Seathwaite men",
+   "lines": [
+    "Sirs, the graphite has been smuggled again. Three men were seen on the fell with full pockets.",
+    "The mine is guarded now. The guard sleeps on a sack of the stuff and says he is just resting."
+   ]
+  },
+  {
+   "id": "ltr_herdwick",
+   "zone": "carlisle_home_graham",
+   "title": "Shepherd's note",
+   "lines": [
+    "Counted forty-one on the fell this morning. Had forty-two on Tuesday.",
+    "The missing one is not missing, she is sitting in the gorse sulking.",
+    "Gone up with a flask. Back for tea. Probably."
+   ]
+  },
+  {
+   "id": "ltr_postman_fell",
+   "zone": "keswick_home_armstrong",
+   "title": "Postie's slip",
+   "lines": [
+    "Parcel for Mr Rigg, High Dale. Fell route, four miles, no road, no signal, one bull.",
+    "Left under the stone by the gate. The bull has seen me. I have left."
+   ],
+   "trail": {
+    "zone": "carlisle",
+    "near": [
+     31,
+     11
+    ],
+    "clue": "The Post Office stone is a flat slab near the statue. A parcel was left beneath it and never collected.",
+    "reward": {
+     "item": "kendal_mint_cake",
+     "n": 2
+    }
+   }
+  },
+  {
+   "id": "ltr_wordsworth_daff",
+   "zone": "keswick_home_lowther",
+   "title": "Pressed flower",
+   "lines": [
+    "Pressed between the pages of an old hymnbook, a daffodil, brown as tea.",
+    "Pencilled: 'Gathered at Ullswater, April, by a woman who had never read the poem and found it beautiful all the same.'"
+   ]
+  },
+  {
+   "id": "ltr_rush_bearing",
+   "zone": "carlisle_statepub",
+   "title": "Rushbearing programme",
+   "lines": [
+    "The procession leaves the church at two, carrying the rush crosses.",
+    "Then the gingerbread, handed out by the vicar, who gets quite fierce about it."
+   ]
+  }
+ ]
+}

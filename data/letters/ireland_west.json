@@ -1,0 +1,90 @@
+{
+ "papers": [
+  {
+   "id": "ltr_galway_hooker",
+   "zone": "galway_home_claddagh",
+   "title": "Boatbuilder's note",
+   "lines": [
+    "Hooker, thirty-two foot, black hull, brown sails. Sound as a bell and twice as loud when she goes about.",
+    "The first mate has been drinking since Thursday. The second mate is the dog."
+   ]
+  },
+  {
+   "id": "ltr_yeats_country",
+   "zone": "donegal_books",
+   "title": "Poetry-lover's postcard",
+   "lines": [
+    "I stood on the shore where the poet stood, and I thought a great thought, and it blew away.",
+    "A man with a flask told me this is the usual result. He gave me tea and a second chance."
+   ]
+  },
+  {
+   "id": "ltr_limerick_form",
+   "zone": "limerick_poets",
+   "title": "Limerick on a beermat",
+   "lines": [
+    "There once was a poet from Limerick, / who wrote verses that went on for ... a while.",
+    "(The rest is on the other beermat. We lost it. It was better.)"
+   ]
+  },
+  {
+   "id": "ltr_aran_jumper",
+   "zone": "donegal_pub",
+   "title": "Knitter's pattern",
+   "lines": [
+    "Every family has its own stitch, they say, so a drowned man can be named by his sleeve.",
+    "I do not believe it, but I knit my brother's with a very clear pattern, just in case."
+   ],
+   "trail": {
+    "zone": "burren",
+    "near": [
+     21,
+     16
+    ],
+    "clue": "A knitter's tin of coins lies under a flat stone near the hedge.",
+    "reward": {
+     "money": 1500
+    }
+   }
+  },
+  {
+   "id": "ltr_ceili_band",
+   "zone": "dingle_home2",
+   "title": "Ceili band booking",
+   "lines": [
+    "Seven musicians, a bodhrán and an accordion with a grudge. Fee: three pounds, a ham sandwich and a lift home.",
+    "Please do not ask for 'Whiskey in the Jar'. Please do not ask twice."
+   ]
+  },
+  {
+   "id": "ltr_dingle_dolphin",
+   "zone": "dingle_bakery",
+   "title": "Boatman's tally",
+   "lines": [
+    "Funghi the dolphin came by twice. Both times the tourists cheered and then asked if he was real.",
+    "I told them he was. He bowed. Everyone clapped, including the gulls."
+   ],
+   "trail": {
+    "zone": "connemara",
+    "near": [
+     15,
+     14
+    ],
+    "clue": "A boat tour left behind a small treasure near the big rock, 'for whoever is looking'.",
+    "reward": {
+     "item": "selkie_pearl",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_irish_class",
+   "zone": "dingle_books",
+   "title": "Irish lesson note",
+   "lines": [
+    "Dia duit: God to you. Dia is Muire duit: God and Mary to you. A greeting that answers itself.",
+    "Slán abhaile: safe home. We say it to everyone, even the man who stole the milk bottles."
+   ]
+  }
+ ]
+}

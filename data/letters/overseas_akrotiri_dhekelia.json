@@ -1,0 +1,40 @@
+{
+ "papers": [
+  {
+   "id": "ltr_flamingo_lake",
+   "zone": "akrotiri_centre",
+   "title": "Birdwatcher's note",
+   "lines": [
+    "Flamingos on the salt lake at Akrotiri each winter, a cloud of pink, a blur of leg.",
+    "I counted four hundred before the wind got up and I lost count."
+   ]
+  },
+  {
+   "id": "ltr_turtle_nest",
+   "zone": "akrotiri_cats",
+   "title": "Beach warden's slip",
+   "lines": [
+    "Loggerhead turtle nest marked, with a cage against the foxes and a sign against the rest of us.",
+    "If you see a hatchling, do not pick it up. Do not name it. Do not follow it to the sea."
+   ]
+  },
+  {
+   "id": "ltr_ancient_theatre",
+   "zone": "akrotiri_eustolios",
+   "title": "Archaeologist's note",
+   "lines": [
+    "The Roman theatre at Kourion seats thousands. The view of the sea is better than the plays were.",
+    "Standing on the stage, I said a line. The stones did not applaud, but they listened."
+   ]
+  },
+  {
+   "id": "ltr_tea_dance",
+   "zone": "akrotiri_church",
+   "title": "Station notice",
+   "lines": [
+    "The Saturday tea dance resumes in the Hall. Biscuits provided. Medals optional.",
+    "This notice is a reminder that the band is the same band. They are very good. They are older."
+   ]
+  }
+ ]
+}

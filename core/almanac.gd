@@ -6,9 +6,9 @@ extends RefCounted
 ## appears once its system has something to show, so old saves need nothing.
 
 ## The menus behind each page, in tab order. "ledger:<kind>" opens the Almanac's own read-only ledger.
-const ORDER := ["journal", "fieldbook", "gazetteer", "poets", "casebook", "studbook", "biology", "words", "invention", "rumours", "trades", "standing", "stats", "guilds", "deeds", "society", "landsky", "economist", "worth"]
-const NAMES := {"journal": "Quest log", "fieldbook": "Fieldbook", "gazetteer": "Gazetteer", "poets": "Poets' Corner", "casebook": "Casebook", "studbook": "Stud Book", "biology": "Biology", "words": "Words of the Isles", "invention": "Timeline of Invention", "rumours": "Rumours", "trades": "Trades", "standing": "Standing", "stats": "Tallies", "guilds": "Guilds", "deeds": "Deeds", "society": "Building Society", "landsky": "Land and Sky", "economist": "Economist's notebook", "worth": "Things worth knowing"}
-const MENUS := {"journal": "quests", "fieldbook": "pedia", "gazetteer": "quests:gazetteer", "poets": "ledger:poets", "casebook": "pedia:casebook", "studbook": "pedia:studbook", "biology": "biology", "words": "pedia:words", "invention": "invention", "rumours": "pedia:rumours", "trades": "stats:trades", "standing": "stats:standing", "stats": "stats", "guilds": "ledger:guilds", "deeds": "ledger:deeds", "society": "ledger:society", "landsky": "ledger:landsky", "economist": "economist", "worth": "ledger:worth"}
+const ORDER := ["journal", "fieldbook", "gazetteer", "poets", "casebook", "studbook", "biology", "words", "invention", "rumours", "trades", "standing", "stats", "guilds", "deeds", "society", "landsky", "economist", "worth", "papers"]
+const NAMES := {"journal": "Quest log", "fieldbook": "Fieldbook", "gazetteer": "Gazetteer", "poets": "Poets' Corner", "casebook": "Casebook", "studbook": "Stud Book", "biology": "Biology", "words": "Words of the Isles", "invention": "Timeline of Invention", "rumours": "Rumours", "trades": "Trades", "standing": "Standing", "stats": "Tallies", "guilds": "Guilds", "deeds": "Deeds", "society": "Building Society", "landsky": "Land and Sky", "economist": "Economist's notebook", "worth": "Things worth knowing", "papers": "Papers"}
+const MENUS := {"journal": "quests", "fieldbook": "pedia", "gazetteer": "quests:gazetteer", "poets": "ledger:poets", "casebook": "pedia:casebook", "studbook": "pedia:studbook", "biology": "biology", "words": "pedia:words", "invention": "invention", "rumours": "pedia:rumours", "trades": "stats:trades", "standing": "stats:standing", "stats": "stats", "guilds": "ledger:guilds", "deeds": "ledger:deeds", "society": "ledger:society", "landsky": "ledger:landsky", "economist": "economist", "worth": "ledger:worth", "papers": "ledger:papers"}
 
 static func sprouted(d: GameStateData, id: String) -> bool:
 	match id:
@@ -34,6 +34,8 @@ static func sprouted(d: GameStateData, id: String) -> bool:
 			return society_active(d)
 		"worth":
 			return LifeLessons.count(d) > 0
+		"papers":
+			return Letters.read_count(d) > 0
 		"economist":
 			return Economist.count(d) > 0
 		"landsky":
@@ -61,6 +63,8 @@ static func pages(d: GameStateData) -> Array:
 
 static func blurb(d: GameStateData, id: String) -> String:
 	match id:
+		"papers":
+			return Letters.blurb(d)
 		"journal":
 			return "%d under way, %d done" % [Quests.active(d).size(), Quests.done(d).size()]
 		"fieldbook":

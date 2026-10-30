@@ -1,0 +1,60 @@
+{
+ "papers": [
+  {
+   "id": "ltr_tripos",
+   "zone": "cambridge_queens",
+   "title": "Exam candidate's note",
+   "lines": [
+    "Mathematical Tripos, third paper. Question four: I have written 'see me afterwards' and a drawing of a cow.",
+    "Candidates are reminded that cows are not on the syllabus."
+   ]
+  },
+  {
+   "id": "ltr_punt_hire",
+   "zone": "cambridge_cycles",
+   "title": "Punt hire slip",
+   "lines": [
+    "One punt, one hour, one pole. Gentlemen are reminded not to fall in. Ladies are reminded that the gentlemen will.",
+    "Deposit returned if the pole is. The pole is not always."
+   ]
+  },
+  {
+   "id": "ltr_eel_catcher",
+   "zone": "broads_inn",
+   "title": "Eel-catcher's note",
+   "lines": [
+    "Set the grigs on the dyke. Back before the mist lifts, which on these fens is when God allows it.",
+    "If the wherry goes by, wave. If it doesn't, wave anyway. There is nobody else to talk to."
+   ],
+   "trail": {
+    "zone": "the_fens",
+    "near": [
+     53,
+     55
+    ],
+    "clue": "An eel-catcher's cache of coin lies near the windpump, in a biscuit tin.",
+    "reward": {
+     "money": 1100
+    }
+   }
+  },
+  {
+   "id": "ltr_windmill_drainage",
+   "zone": "broads_reedcutter",
+   "title": "Drainage board minute",
+   "lines": [
+    "Resolved: that the windmill be repaired, the dyke be dug, and the board be fed.",
+    "The last item was carried unanimously and with some enthusiasm."
+   ]
+  },
+  {
+   "id": "ltr_blue_plaque",
+   "zone": "cambridge_home_a",
+   "title": "Draft plaque wording",
+   "lines": [
+    "'A man of science lived here, 1887 to 1934.' This is the entire plaque. Nobody could think of anything else.",
+    "Suggested addition: 'He kept bees.' Rejected as unreliable."
+   ]
+  }
+ ]
+}

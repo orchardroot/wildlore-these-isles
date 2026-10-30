@@ -234,6 +234,7 @@ func _build_zone_node() -> void:
 	Viaduct.dress(zone, _zone_node)  # railway viaducts striding across (Castlefield)
 	OccluderFade.dress(zone, _zone_node, player)  # buildings between the camera and you go see-through
 	Forage.dress(zone, _zone_node, Game.data)  # hedgerow pickings and crafting benches
+	TrailsScene.dress(zone, _zone_node, Game.data)  # a paper on the table, a dig spot where a trail ends
 	CreatureJobsScene.dress(zone, _zone_node, Game.data)  # spots where your lead creature can do a job
 	HomeBase.dress(zone, _zone_node, Game.data)  # Mum's trophy shelf, the garden and its visitors
 	HomeExtrasScene.dress(zone, _zone_node, Game.data)  # souvenir shelves, plaque boards, bird table, bug hotel, pond
@@ -478,6 +479,8 @@ func interact(p: Vector2i) -> void:
 	if await FishingScene.interact(self, p):  # open water and a rod
 		return
 	if await CrabbingScene.interact(self, p):  # a harbour wall and a crabbing kit
+		return
+	if await TrailsScene.interact(self, p):  # a paper on a table, a trail's dig spot
 		return
 	if await ExamineScene.interact(self, p):  # a look-closer spot in a room
 		return

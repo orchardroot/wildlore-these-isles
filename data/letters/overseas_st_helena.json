@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_jacobs_ladder",
+   "zone": "st_helena_castle",
+   "title": "Postcard from Jamestown",
+   "lines": [
+    "Jacob's Ladder has 699 steps, and I have counted them with my knees.",
+    "At the top there is a view, a kettle and a man who asks if I'd like to go down again."
+   ]
+  },
+  {
+   "id": "ltr_coffee_note",
+   "zone": "st_helena_plantation_house",
+   "title": "Coffee grower's note",
+   "lines": [
+    "The Green Tipped Bourbon grows in the high gardens, one of the world's rarest beans.",
+    "Roasted in small batches. Drunk in smaller ones. Spoken of in whispers, mostly by me."
+   ],
+   "trail": {
+    "zone": "st_helena_jamestown",
+    "near": [
+     49,
+     7
+    ],
+    "clue": "A planter hid a tin of coffee money near the beached boat. 'Under the oldest bush, as always.'",
+    "reward": {
+     "money": 2100
+    }
+   }
+  },
+  {
+   "id": "ltr_longwood_gardener",
+   "zone": "st_helena_longwood",
+   "title": "Gardener's report",
+   "lines": [
+    "The exile in the big house was a great man once. Now he complains about the damp and the roof.",
+    "I plant roses. He criticises them. Roses outlive everyone."
+   ]
+  },
+  {
+   "id": "ltr_rms_ship",
+   "zone": "st_helena_hotel",
+   "title": "Passenger's diary",
+   "lines": [
+    "Five days from Cape Town, six if the sea wished. Land arrives in the morning as a grey shape and then a green one.",
+    "The ship is called the island's lifeline. The island is called nothing, because it is too busy being itself."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_tt_rider",
+   "zone": "douglas_home1",
+   "title": "Rider's pass",
+   "lines": [
+    "Practice: Monday, 5.30. Hot tea in the pits. Race: Saturday. Do not wave at the crowd, wave at the road.",
+    "Under it, in pencil: 'My father rode this. I'll ride it too. Don't tell Mum.'"
+   ]
+  },
+  {
+   "id": "ltr_kipper_smoke",
+   "zone": "douglas_home2",
+   "title": "Smokehouse note",
+   "lines": [
+    "Herring split, brined, hung in the oak smoke for sixteen hours.",
+    "The oak is from an old tree on the headland. The herring will not say how it feels about this."
+   ]
+  },
+  {
+   "id": "ltr_manx_cat",
+   "zone": "douglas_home3",
+   "title": "Cat show certificate",
+   "lines": [
+    "Best Manx Cat in Show: no tail, plenty of attitude.",
+    "The judges wish it noted that the winner bit three of them."
+   ],
+   "trail": {
+    "zone": "douglas",
+    "near": [
+     49,
+     35
+    ],
+    "clue": "A prize rosette was lost and buried near the lighthouse by a tail-less cat. Go and see.",
+    "reward": {
+     "money": 900
+    }
+   }
+  },
+  {
+   "id": "ltr_horse_tram",
+   "zone": "douglas_kippers",
+   "title": "Tram timetable",
+   "lines": [
+    "The horse tram runs every few minutes in summer, powered by one horse who has seen it all.",
+    "Fares: a penny to the end, tuppence to the end and back. Horse tips: carrots."
+   ]
+  }
+ ]
+}

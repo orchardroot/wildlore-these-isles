@@ -1,0 +1,52 @@
+{
+ "papers": [
+  {
+   "id": "ltr_green_turtle",
+   "zone": "ascension_sanctuary",
+   "title": "Turtle watcher's note",
+   "lines": [
+    "The turtles come up the beach at night, heavy, patient, three hundred pounds of bad temper.",
+    "They dig, they lay, they weep, they return. Do not use a torch. Do not offer advice."
+   ]
+  },
+  {
+   "id": "ltr_cable_station",
+   "zone": "ascension_post",
+   "title": "Cable station log",
+   "lines": [
+    "The undersea cable runs from here to Cape Town and to Britain. We pass the news, we do not read it.",
+    "Sometimes the dots and dashes spell something rude. We keep that to ourselves."
+   ]
+  },
+  {
+   "id": "ltr_green_mountain",
+   "zone": "ascension_fort",
+   "title": "Gardener's note",
+   "lines": [
+    "Green Mountain is a cloud forest in the middle of a desert, planted by hand by sailors and botanists.",
+    "They brought the first seeds in a ship in the 1800s. Now it drips."
+   ]
+  },
+  {
+   "id": "ltr_wideawake",
+   "zone": "ascension_church",
+   "title": "Airfield memo",
+   "lines": [
+    "The terns on the airfield are called Wideawake, from the noise they make at night.",
+    "They are right to be. There are a great many of them, and one runway."
+   ],
+   "trail": {
+    "zone": "ascension",
+    "near": [
+     12,
+     22
+    ],
+    "clue": "An engineer buried a flask near the big rock 'for the day the terns leave'.",
+    "reward": {
+     "item": "irn_tonic",
+     "n": 1
+    }
+   }
+  }
+ ]
+}

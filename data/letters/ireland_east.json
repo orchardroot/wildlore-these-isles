@@ -1,0 +1,52 @@
+{
+ "papers": [
+  {
+   "id": "ltr_winter_solstice",
+   "zone": "newgrange_cafe",
+   "title": "Visitor's note",
+   "lines": [
+    "On the shortest day the sun shines down the passage and lights the chamber for a few minutes.",
+    "Five thousand years ago someone planned that. I stood in the dark and held my breath."
+   ],
+   "trail": {
+    "zone": "boyne_valley",
+    "near": [
+     20,
+     9
+    ],
+    "clue": "A visitor left a keepsake near the standing stone. 'Where the sun finds the door.'",
+    "reward": {
+     "item": "brigid_cross",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_passage_tomb",
+   "zone": "newgrange_home_cottage",
+   "title": "Archaeologist's note",
+   "lines": [
+    "Dated the passage tomb at about 3200 BC. Older than the Pyramids, older than Stonehenge.",
+    "The builders left no writing and rather a lot of spirals. We are working on it."
+   ]
+  },
+  {
+   "id": "ltr_boyne_ford",
+   "zone": "newgrange_home_dig",
+   "title": "Battle brochure",
+   "lines": [
+    "The Battle of the Boyne, 1690. Two kings, two armies, one river, a great deal of paperwork.",
+    "The battle was a day. The arguments about it have gone on rather longer."
+   ]
+  },
+  {
+   "id": "ltr_hill_of_tara",
+   "zone": "newgrange_home_farm",
+   "title": "Farmer's field note",
+   "lines": [
+    "The Hill of Tara is where the High Kings were crowned, say the books.",
+    "My cows graze on it. They do not mind. They have also been crowned, in a manner of speaking, with daisies."
+   ]
+  }
+ ]
+}

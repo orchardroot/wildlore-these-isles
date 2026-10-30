@@ -1,0 +1,51 @@
+{
+ "papers": [
+  {
+   "id": "ltr_carter_session",
+   "zone": "bristol_tn_church",
+   "title": "Recording-session scrap",
+   "lines": [
+    "A hotel on State Street, one microphone and a summer of 1927 when everybody sang into it.",
+    "A woman sang with her sister-in-law. A man sang about a train. America learned its own tune."
+   ]
+  },
+  {
+   "id": "ltr_porch_banjo",
+   "zone": "bristol_tn_museum",
+   "title": "Note on a banjo case",
+   "lines": [
+    "My grandfather's banjo came over from Africa, said the tale, as a gourd with strings.",
+    "My grandmother's tune came from Ulster. Together they made something not either, but both."
+   ],
+   "trail": {
+    "zone": "bristol_tn",
+    "near": [
+     30,
+     37
+    ],
+    "clue": "A pickers' tin of coins is said to lie near the old oak, 'where we met after the concert'.",
+    "reward": {
+     "money": 1200
+    }
+   }
+  },
+  {
+   "id": "ltr_border_street",
+   "zone": "bristol_tn_store",
+   "title": "Town notice",
+   "lines": [
+    "State Street runs down the middle of town, and the state line runs down the middle of State Street.",
+    "You can eat in Virginia and pay in Tennessee, and nobody has ever been arrested for it."
+   ]
+  },
+  {
+   "id": "ltr_ballad_sheet",
+   "zone": "bristol_tn_sanctuary",
+   "title": "Ballad sheet",
+   "lines": [
+    "Barbara Allen, six verses in a Scottish accent, on a sheet printed in London in the 1700s.",
+    "Sung on a porch in the mountains, in the 1900s, by someone who had never been to Scotland."
+   ]
+  }
+ ]
+}

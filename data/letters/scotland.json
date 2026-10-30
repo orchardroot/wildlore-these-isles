@@ -1,0 +1,194 @@
+{
+ "papers": [
+  {
+   "id": "ltr_tenement_close",
+   "zone": "glasgow_home_b",
+   "title": "Close notice",
+   "lines": [
+    "The close is to be washed on Tuesdays by the top floor, Wednesdays by the middle floor, Thursdays by the ground floor.",
+    "Friday is for arguing about it."
+   ]
+  },
+  {
+   "id": "ltr_up_helly_aa",
+   "zone": "lerwick_pub",
+   "title": "Up Helly Aa squad list",
+   "lines": [
+    "Jarl's squad: forty-one men, all in horned helmets, all in good spirits, mostly in good order.",
+    "The galley will be burned at dusk. The after-party will be burned at dawn."
+   ]
+  },
+  {
+   "id": "ltr_golf_scorecard",
+   "zone": "st_andrews_golf_museum",
+   "title": "Scorecard",
+   "lines": [
+    "Old Course, the Road Hole. Score: nine. Excuses: seven.",
+    "Caddie's comment: 'I am sure you have other talents, sir.'"
+   ]
+  },
+  {
+   "id": "ltr_whisky_warehouse",
+   "zone": "oban_inn",
+   "title": "Distiller's note",
+   "lines": [
+    "The angels' share took another two per cent this year. We are not pleased.",
+    "We have told the angels. They have not replied."
+   ],
+   "trail": {
+    "zone": "cairngorms",
+    "near": [
+     58,
+     25
+    ],
+    "clue": "A distiller buried a hip flask near the big rock to leave for a rainy day.",
+    "reward": {
+     "item": "irn_tonic",
+     "n": 1
+    }
+   }
+  },
+  {
+   "id": "ltr_tramcar",
+   "zone": "edinburgh_home_b",
+   "title": "Tram conductor's note",
+   "lines": [
+    "Last tram on the line tonight. People are crying, which is silly. It was only a tram.",
+    "I punched a few extra tickets as keepsakes. Nobody will mind. The company is not what it was."
+   ]
+  },
+  {
+   "id": "ltr_calmac_ticket",
+   "zone": "oban_seafood",
+   "title": "Ferry ticket",
+   "lines": [
+    "Mallaig to Armadale, return. Bring a coat. The ferry will say it is not rough. The ferry is a liar.",
+    "On the back: 'Sea-sick. Worth it.'"
+   ],
+   "trail": {
+    "zone": "central_belt",
+    "near": [
+     36,
+     29
+    ],
+    "clue": "A fellow traveller buried a flask of tea near the old oak, 'for the next soaked soul'.",
+    "reward": {
+     "item": "flask_of_tea",
+     "n": 2
+    }
+   }
+  },
+  {
+   "id": "ltr_festival_flyer",
+   "zone": "edinburgh_camera",
+   "title": "Fringe flyer",
+   "lines": [
+    "Come and see a one-man show about a one-man show about a man who was once in a show.",
+    "Tickets: seven pounds. Refunds: not a concept."
+   ]
+  },
+  {
+   "id": "ltr_nessie_log",
+   "zone": "inverness_castle",
+   "title": "Boatman's log",
+   "lines": [
+    "Tuesday: saw a log. Wednesday: saw a different log. Thursday: saw a visitor who thought the log was a monster.",
+    "I did not correct him. He tipped well."
+   ],
+   "trail": {
+    "zone": "forth_bridges",
+    "near": [
+     20,
+     64
+    ],
+    "clue": "A boatman's tip jar lies buried near the old oak, 'where the monster won't look'.",
+    "reward": {
+     "money": 1600
+    }
+   }
+  },
+  {
+   "id": "ltr_granite_city",
+   "zone": "aberdeen_home_a",
+   "title": "Mason's tally",
+   "lines": [
+    "Forty blocks of granite for the new bank. Each weighs as much as a small cow.",
+    "The mason would like it noted that he has been doing this since the Boer War and nobody has yet said thank you."
+   ]
+  },
+  {
+   "id": "ltr_croft_letter",
+   "zone": "portree_home_a",
+   "title": "Letter from the croft",
+   "lines": [
+    "Dear Calum, the potatoes are in and the weather is not. The cow has a cold.",
+    "Come home when the herring come. The ceilidh will be on, and your mother has been baking."
+   ]
+  },
+  {
+   "id": "ltr_ferry_sheep",
+   "zone": "oban_distillery",
+   "title": "Ferry crossing slip",
+   "lines": [
+    "Oban to Mull, one car, one van, forty-two sheep, two dogs and a man with a harp.",
+    "The harp has right of way. The sheep have strong opinions."
+   ]
+  },
+  {
+   "id": "ltr_harris_tweed",
+   "zone": "harris_blackhouse",
+   "title": "Weaver's order",
+   "lines": [
+    "Orb stamped, three hundred yards of tweed for the London shop. Must be woven in the weaver's own home, as the law says.",
+    "The weaver sings Gaelic waulking songs while treadling. The customers are never told."
+   ],
+   "trail": {
+    "zone": "galloway",
+    "near": [
+     16,
+     35
+    ],
+    "clue": "A weaver's spare shuttle and some coin lie near the big rock. 'For the day the loom is silent.'",
+    "reward": {
+     "money": 1900
+    }
+   }
+  },
+  {
+   "id": "ltr_jute_jam",
+   "zone": "dundee_courier",
+   "title": "Dundee mill note",
+   "lines": [
+    "Jute, jam and journalism: that is what we make here, and we do all three badly on Mondays.",
+    "The marmalade is a point of civic pride. The jute is a point of civic regret."
+   ]
+  },
+  {
+   "id": "ltr_ceilidh_card",
+   "zone": "kirkwall_cathedral",
+   "title": "Ceilidh card",
+   "lines": [
+    "Strip the Willow, Dashing White Sergeant, Gay Gordons, Eightsome Reel, and a slow waltz at the end.",
+    "If you are not out of breath, you have not been trying."
+   ]
+  },
+  {
+   "id": "ltr_rope_bridge",
+   "zone": "fw_home_a",
+   "title": "Mountain rescue card",
+   "lines": [
+    "If lost: stay still, stay warm, blow three blasts on your whistle, and wait for a man with a flask.",
+    "If found by the wrong man, apologise anyway."
+   ]
+  },
+  {
+   "id": "ltr_selkie_story",
+   "zone": "kirkwall_home_a",
+   "title": "Handwritten tale",
+   "lines": [
+    "There was a fisherman who took a sealskin from a rock. He kept a wife for seven years.",
+    "In the eighth she found the skin. The tale says she went home. The tale does not say what she told the neighbours."
+   ]
+  }
+ ]
+}

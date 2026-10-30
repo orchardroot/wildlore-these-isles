@@ -2,6 +2,13 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+- **Papers on the tables.** About 230 letters, diary pages, shopping lists, telegrams and wills now lie on the first table
+  or dresser of rooms across every region. Read one once; the Almanac's new Papers page keeps them to read again.
+- **Treasure trails.** Forty-odd papers hide a clue. Read one and a "?" appears on the world map, and a patch of
+  disturbed earth turns up outdoors for you to dig. Mind where the old folk buried things.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things
