@@ -222,3 +222,12 @@ static func mark_point(mark: Dictionary) -> Vector2:
 	var at := str(mark.get("at", ""))
 	var src: Dictionary = m.get("towns", {}).get(at, m.get("places", {}).get(at, {}))
 	return Vector2(float(src.x), float(src.y)) if not src.is_empty() else Vector2(-1, -1)
+
+## The map points a route passes through (zones with a spot on the map, in order, repeats dropped).
+static func route_points(path: Array, zones: Dictionary) -> PackedVector2Array:
+	var out := PackedVector2Array()
+	for zid in path:
+		var pos: Vector2 = zones.get(str(zid), {}).get("pos", Vector2(-1, -1))
+		if pos.x >= 0 and (out.is_empty() or out[out.size() - 1] != pos):
+			out.append(pos)
+	return out

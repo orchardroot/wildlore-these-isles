@@ -11,6 +11,7 @@ var _name_label: Label
 var _lines_label: Label
 var _ask_label: Label
 var _objective_town := ""
+var _route_label: Label
 
 func _build() -> void:
 	set_title("The Isles")
@@ -42,6 +43,7 @@ func setup(arg: String) -> void:
 		_show_objective()
 		_build_panel()
 		_select(MapLogic.start_town(Game.data))
+		_show_route()
 		view.resized.connect(_place_panel)
 		if _can_fly:
 			var fly := make_button("Fly", _fly)
@@ -63,6 +65,10 @@ func _build_panel() -> void:
 	_lines_label.custom_minimum_size = Vector2(372, 0)
 	_lines_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	col.add_child(_lines_label)
+	_route_label = UIKit.label("", 20, UIKit.GOLD)
+	_route_label.custom_minimum_size = Vector2(372, 0)
+	_route_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	col.add_child(_route_label)
 	_ask_label = UIKit.label("Fly here?", 26, UIKit.HEATHER)
 	col.add_child(_ask_label)
 	content.add_child(_panel)
@@ -103,6 +109,8 @@ func _refresh_ask() -> void:
 			hints.append(["confirm", "Fly here"])
 		if _can_fly:
 			hints.append(["fly", "Fly list"])
+		if _routable(view.cursor):
+			hints.append(["run", "Clear route" if _routed(view.cursor) else "Route"])
 		hints.append(["cancel", "Back"])
 	_ask_label.visible = _asking
 	set_hints(hints)
@@ -175,6 +183,10 @@ static func objective_point(o: Dictionary) -> Vector2:
 func _unhandled_input(event: InputEvent) -> void:
 	if _locked or _panel == null:
 		return
+	if event.is_action_pressed("run") and _routable(view.cursor):
+		get_viewport().set_input_as_handled()
+		_toggle_route(view.cursor)
+		return
 	if _can_fly and event.is_action_pressed("fly"):
 		get_viewport().set_input_as_handled()
 		_fly()
@@ -211,6 +223,40 @@ func _on_cancel() -> void:
 		_refresh_ask()
 		return
 	close(null)
+
+## You can route to any town but the one you stand in.
+func _routable(town: String) -> bool:
+	return town != "" and town != _here() and _asking == false
+
+func _routed(town: String) -> bool:
+	return str(Game.data.flag("route_to")) == town
+
+## "Route here": store the destination, draw the way; the same town again clears it.
+func _toggle_route(town: String) -> void:
+	if _routed(town):
+		Game.data.flags.erase("route_to")
+		Audio.sfx("cancel")
+	else:
+		Game.data.set_flag("route_to", town)
+		Audio.sfx("confirm")
+	_show_route()
+	_refresh_ask()
+
+## Draws the stored route (if any) and says how long it is and how you go, in the panel.
+func _show_route() -> void:
+	var to := str(Game.data.flag("route_to")) if Game.data.flag("route_to") else ""
+	var path: Array = ZoneGraph.route(ZoneGraph.shared(), Game.data.zone_id, to, Game.data) if to != "" else []
+	view.route = MapLogic.route_points(path, ZoneIndex.get_index().zones)
+	view.queue_redraw()
+	if _route_label == null:
+		return
+	if to == "":
+		_route_label.text = ""
+	elif path.is_empty():
+		_route_label.text = "No way to %s from here yet." % Travel.town_name(to)
+	else:
+		_route_label.text = "To %s, %d zone%s: %s." % [Travel.town_name(to), path.size() - 1, "" if path.size() == 2 else "s", ZoneGraph.summary(ZoneGraph.shared(), path)]
+	_place_panel()
 
 func _fly() -> void:
 	if _locked:

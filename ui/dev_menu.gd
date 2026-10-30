@@ -122,6 +122,13 @@ static func boot(game: Node, menu: String) -> void:
 		d.set_flag("champion")
 		d.set_flag("game_complete")
 		d.set_flag("last_town", "york")
+	if menu == "map:route":  # `--menu=map:route`: the whole map visited and a route from Macclesfield stored
+		for t in Travel.world_map().get("towns", {}):
+			d.set_flag("visited_" + t)
+			d.set_flag("station_" + t)
+		d.zone_id = "macclesfield"
+		d.set_flag("last_town", "macclesfield")
+		d.set_flag("route_to", "york")
 	if menu.begins_with("craft") or menu.contains("material"):  # a forager's bag and Mum's recipes, plus a few more
 		d.bag.merge({"blackberries": 6, "hazelnuts": 3, "nettles": 5, "sloes": 2, "elderflower": 1, "wild_garlic": 2,
 			"sheep_wool": 1, "rowan_berry": 1, "heather_honey": 1, "sea_glass": 1}, true)

@@ -2,6 +2,11 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.0: Every Door
+
+- **Click a town, get a route.** On the Map, press Shift (X on a pad) on any town to draw a dotted route there, with the zone count and how you go ("3 zones on foot, then the train from Stoke-on-Trent"). Press it again to clear it.
+- **A breadcrumb in the overworld.** A small chip says "To York  ·  3 to go" with an arrow toward the way out of this zone. It re-routes if you wander off, hides indoors, and chimes when you arrive.
+
 ## What's new in 4.6: Dressed for the Weather
 
 Your own character, clothes of these isles to wear, creatures whose sex you can actually see, and seven more things
