@@ -1,0 +1,164 @@
+{
+ "line": "moonbell",
+ "species": [
+  {
+   "id": "moonbell",
+   "appendix": true,
+   "name": "Moonbell",
+   "types": [
+    "tide",
+    "night"
+   ],
+   "base": {
+    "hp": 50,
+    "atk": 30,
+    "def": 40,
+    "lore": 60,
+    "ward": 70,
+    "spd": 55
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "brine_spray"
+    ],
+    [
+     1,
+     "barnacle_glue"
+    ],
+    [
+     4,
+     "moth_dust"
+    ],
+    [
+     8,
+     "sea_fret"
+    ],
+    [
+     12,
+     "shadow_nip"
+    ],
+    [
+     16,
+     "tide_tables"
+    ],
+    [
+     20,
+     "hoot_lullaby"
+    ],
+    [
+     26,
+     "tidal_surge"
+    ]
+   ],
+   "evolves": {
+    "to": "aurelian",
+    "level": 30
+   },
+   "habitat": [
+    "sefton_coast",
+    "cambrian_coast",
+    "pembroke_coast",
+    "antrim_coast",
+    "northumberland_coast"
+   ],
+   "dex": {
+    "text": "A pale bell that drifts wherever the tide drifts it, with four lilac rings in the middle like a very calm clover. Not in the slightest bit hurried.",
+    "fact": "A moon jellyfish has no brain, no heart and no bones, and the four rings in its bell are its reproductive organs."
+   },
+   "sprite": "moonbell",
+   "real": "A moon jellyfish is about 95 per cent water, and its sting is too mild for most people to feel.",
+   "names": {
+    "cy": "slefren fôr",
+    "ga": "smugairle róin",
+    "gd": "smugairle-ròin"
+   }
+  },
+  {
+   "id": "aurelian",
+   "appendix": true,
+   "name": "Aurelian",
+   "types": [
+    "tide",
+    "night"
+   ],
+   "base": {
+    "hp": 80,
+    "atk": 50,
+    "def": 60,
+    "lore": 95,
+    "ward": 115,
+    "spd": 80
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 155,
+   "learnset": [
+    [
+     1,
+     "brine_spray"
+    ],
+    [
+     1,
+     "barnacle_glue"
+    ],
+    [
+     4,
+     "moth_dust"
+    ],
+    [
+     8,
+     "sea_fret"
+    ],
+    [
+     12,
+     "shadow_nip"
+    ],
+    [
+     16,
+     "tide_tables"
+    ],
+    [
+     20,
+     "hoot_lullaby"
+    ],
+    [
+     26,
+     "tidal_surge"
+    ],
+    [
+     30,
+     "dark_of_the_moon"
+    ],
+    [
+     34,
+     "pitch_black"
+    ],
+    [
+     38,
+     "moon_pull"
+    ],
+    [
+     44,
+     "wave_sweeper"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "Glows faintly at night and trails four frilled arms the colour of spilt wine. It looks like a chandelier that has decided to go to sea.",
+    "fact": "Moon jellyfish are one of the commonest jellyfish around British coasts, and they pulse gently to swim and to push food towards their mouth."
+   },
+   "sprite": "aurelian",
+   "real": "The scientific name of the moon jellyfish, Aurelia aurita, means 'eared golden one', after the lobes around its rim.",
+   "names": {
+    "cy": "slefren fôr",
+    "ga": "smugairle róin",
+    "gd": "smugairle-ròin"
+   }
+  }
+ ]
+}

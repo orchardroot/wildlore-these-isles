@@ -590,7 +590,9 @@
      "downpour",
      "gale"
     ]
-   }
+   },
+   {"species": "moonbell", "min": 32, "max": 34, "weight": 10, "season": ["summer", "autumn"]},
+   {"species": "dishfin", "min": 32, "max": 34, "weight": 6, "season": ["summer"]}
   ]
  },
  "signs": [

@@ -442,7 +442,8 @@
     "max": 96,
     "weight": 2,
     "weather": ["fog"]
-   }
+   },
+   {"species": "sailet", "min": 94, "max": 96, "weight": 10, "weather": ["gale", "clear"]}
   ],
   "water": [
    {

@@ -1,0 +1,163 @@
+{
+ "line": "gawplet",
+ "species": [
+  {
+   "id": "gawplet",
+   "appendix": true,
+   "name": "Gawplet",
+   "types": [
+    "fae",
+    "gale"
+   ],
+   "base": {
+    "hp": 45,
+    "atk": 35,
+    "def": 45,
+    "lore": 55,
+    "ward": 55,
+    "spd": 75
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     1,
+     "pixie_prick"
+    ],
+    [
+     4,
+     "glamour"
+    ],
+    [
+     8,
+     "updraught"
+    ],
+    [
+     12,
+     "fairy_pinch"
+    ],
+    [
+     16,
+     "thistledown_trick"
+    ],
+    [
+     20,
+     "fog_lure"
+    ],
+    [
+     24,
+     "sidhe_shimmer"
+    ]
+   ],
+   "evolves": {
+    "to": "argusine",
+    "level": 28
+   },
+   "habitat": [
+    "chester",
+    "shrewsbury",
+    "bath",
+    "kent_downs"
+   ],
+   "dex": {
+    "text": "Four enormous eyespots and a very small body. It is not looking at you, but the wings certainly are, and that is just as unsettling.",
+    "fact": "A peacock butterfly flashes its eyespots at a bird and hisses by rubbing its wings together, which is startling enough to save its life."
+   },
+   "sprite": "gawplet",
+   "real": "The caterpillars of the peacock butterfly are black and spiny and feed in groups on nettles.",
+   "names": {
+    "cy": "glöyn byw",
+    "ga": "féileacán",
+    "gd": "dealan-dè"
+   }
+  },
+  {
+   "id": "argusine",
+   "appendix": true,
+   "name": "Argusine",
+   "types": [
+    "fae",
+    "gale"
+   ],
+   "base": {
+    "hp": 65,
+    "atk": 55,
+    "def": 70,
+    "lore": 100,
+    "ward": 85,
+    "spd": 110
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 155,
+   "learnset": [
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     1,
+     "pixie_prick"
+    ],
+    [
+     4,
+     "glamour"
+    ],
+    [
+     8,
+     "updraught"
+    ],
+    [
+     12,
+     "fairy_pinch"
+    ],
+    [
+     16,
+     "thistledown_trick"
+    ],
+    [
+     20,
+     "fog_lure"
+    ],
+    [
+     24,
+     "sidhe_shimmer"
+    ],
+    [
+     30,
+     "bewitching_hour"
+    ],
+    [
+     34,
+     "gale_force"
+    ],
+    [
+     38,
+     "swoop"
+    ],
+    [
+     44,
+     "fairy_ring"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "More eyes than wing now, in all the colours of a very expensive bruise. In Greek myth Argus had a hundred eyes, and this one is keeping count.",
+    "fact": "Peacock butterflies spend the winter as adults, tucked away in sheds and hollow trees, and are some of the first butterflies seen in spring."
+   },
+   "sprite": "argusine",
+   "real": "The eyespots on a peacock butterfly are on the upper wings only; with the wings shut, it looks like a dead leaf.",
+   "names": {
+    "cy": "glöyn byw",
+    "ga": "féileacán",
+    "gd": "dealan-dè"
+   }
+  }
+ ]
+}

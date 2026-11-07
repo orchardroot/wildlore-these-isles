@@ -1,0 +1,232 @@
+{
+ "line": "clocklet",
+ "species": [
+  {
+   "id": "clocklet",
+   "appendix": true,
+   "name": "Clocklet",
+   "types": [
+    "hedgerow",
+    "gale"
+   ],
+   "base": {
+    "hp": 50,
+    "atk": 50,
+    "def": 45,
+    "lore": 55,
+    "ward": 55,
+    "spd": 55
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 62,
+   "learnset": [
+    [
+     1,
+     "nettle_sting"
+    ],
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     4,
+     "spore_puff"
+    ],
+    [
+     7,
+     "updraught"
+    ],
+    [
+     10,
+     "ivy_tangle"
+    ],
+    [
+     13,
+     "sloe_splash"
+    ]
+   ],
+   "evolves": {
+    "to": "dandylion",
+    "level": 14
+   },
+   "habitat": [
+    "macc_forest",
+    "cat_and_fiddle",
+    "luds_church"
+   ],
+   "dex": {
+    "text": "A sunny little bud among toothed leaves, up at dawn and shut by dusk. It grows in the cracks in a pavement and rather enjoys it.",
+    "fact": "Dandelion flowers open in the morning and close at night and in dull weather."
+   },
+   "sprite": "clocklet",
+   "real": "The name dandelion comes from the French dent de lion, meaning lion's tooth, after the jagged leaves.",
+   "names": {
+    "cy": "dant y llew",
+    "ga": "caisearbhán",
+    "gd": "bearnan-brìde"
+   }
+  },
+  {
+   "id": "dandylion",
+   "appendix": true,
+   "name": "Dandylion",
+   "types": [
+    "hedgerow",
+    "gale"
+   ],
+   "base": {
+    "hp": 70,
+    "atk": 85,
+    "def": 65,
+    "lore": 75,
+    "ward": 70,
+    "spd": 65
+   },
+   "growth": "medium",
+   "catch_rate": 90,
+   "base_xp": 142,
+   "learnset": [
+    [
+     1,
+     "nettle_sting"
+    ],
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     4,
+     "spore_puff"
+    ],
+    [
+     7,
+     "updraught"
+    ],
+    [
+     10,
+     "ivy_tangle"
+    ],
+    [
+     13,
+     "sloe_splash"
+    ],
+    [
+     16,
+     "scrap"
+    ],
+    [
+     20,
+     "bracket_slam"
+    ],
+    [
+     24,
+     "bluster"
+    ]
+   ],
+   "evolves": {
+    "to": "clockmaster",
+    "level": 30
+   },
+   "habitat": [],
+   "dex": {
+    "text": "A golden mane, a leafy tail and a loud opinion of every lawn in the parish. It is not a flower you can easily pull up.",
+    "fact": "A dandelion has a long taproot, which is why digging one out and leaving a scrap behind just means another one grows."
+   },
+   "sprite": "dandylion",
+   "real": "The yellow dandelion head is not one flower but a cluster of many tiny flowers, called florets.",
+   "names": {
+    "cy": "dant y llew",
+    "ga": "caisearbhán",
+    "gd": "bearnan-brìde"
+   }
+  },
+  {
+   "id": "clockmaster",
+   "appendix": true,
+   "name": "Clockmaster",
+   "types": [
+    "hedgerow",
+    "gale"
+   ],
+   "base": {
+    "hp": 85,
+    "atk": 60,
+    "def": 85,
+    "lore": 115,
+    "ward": 115,
+    "spd": 70
+   },
+   "growth": "medium",
+   "catch_rate": 45,
+   "base_xp": 236,
+   "learnset": [
+    [
+     1,
+     "nettle_sting"
+    ],
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     4,
+     "spore_puff"
+    ],
+    [
+     7,
+     "updraught"
+    ],
+    [
+     10,
+     "ivy_tangle"
+    ],
+    [
+     13,
+     "sloe_splash"
+    ],
+    [
+     16,
+     "scrap"
+    ],
+    [
+     20,
+     "bracket_slam"
+    ],
+    [
+     24,
+     "bluster"
+    ],
+    [
+     30,
+     "murmuration"
+    ],
+    [
+     34,
+     "thistledown_trick"
+    ],
+    [
+     38,
+     "gale_force"
+    ],
+    [
+     44,
+     "wild_hunt_bloom"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "A white puff with a clock face in it, correct twice a day and whenever you do not need it. Blow on it and it will tell you the time, with feeling.",
+    "fact": "Each seed of a dandelion clock has a tiny parachute of hairs, and the wind can carry it many miles."
+   },
+   "sprite": "clockmaster",
+   "real": "Children have blown on dandelion clocks to tell the time for generations, counting the puffs it takes to blow all the seeds away.",
+   "names": {
+    "cy": "dant y llew",
+    "ga": "caisearbhán",
+    "gd": "bearnan-brìde"
+   }
+  }
+ ]
+}

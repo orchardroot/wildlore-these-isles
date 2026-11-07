@@ -1,0 +1,151 @@
+{
+ "line": "dishfin",
+ "species": [
+  {
+   "id": "dishfin",
+   "appendix": true,
+   "name": "Dishfin",
+   "types": [
+    "tide",
+    "gale"
+   ],
+   "base": {
+    "hp": 75,
+    "atk": 45,
+    "def": 60,
+    "lore": 40,
+    "ward": 55,
+    "spd": 45
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 65,
+   "learnset": [
+    [
+     1,
+     "brine_spray"
+    ],
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     4,
+     "barnacle_glue"
+    ],
+    [
+     8,
+     "seal_slap"
+    ],
+    [
+     12,
+     "updraught"
+    ],
+    [
+     16,
+     "tide_tables"
+    ],
+    [
+     20,
+     "rip_current"
+    ],
+    [
+     26,
+     "tidal_surge"
+    ]
+   ],
+   "evolves": {
+    "to": "moladisc",
+    "level": 44
+   },
+   "habitat": [
+    "pembroke_coast",
+    "tintagel",
+    "penzance",
+    "dingle"
+   ],
+   "dex": {
+    "text": "A big flat dish with a face on it and a tiny mouth, floating on its side in the sun. It looks like the front half of a fish and has not ordered the rest.",
+    "fact": "The ocean sunfish is often seen basking at the surface off Cornwall and Wales in summer, lying on its side to warm up."
+   },
+   "sprite": "dishfin",
+   "real": "A sunfish has no real tail; it steers with a rounded rudder-like fin called a clavus.",
+   "names": {}
+  },
+  {
+   "id": "moladisc",
+   "appendix": true,
+   "name": "Moladisc",
+   "types": [
+    "tide",
+    "gale"
+   ],
+   "base": {
+    "hp": 130,
+    "atk": 60,
+    "def": 95,
+    "lore": 60,
+    "ward": 90,
+    "spd": 65
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 165,
+   "learnset": [
+    [
+     1,
+     "brine_spray"
+    ],
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     4,
+     "barnacle_glue"
+    ],
+    [
+     8,
+     "seal_slap"
+    ],
+    [
+     12,
+     "updraught"
+    ],
+    [
+     16,
+     "tide_tables"
+    ],
+    [
+     20,
+     "rip_current"
+    ],
+    [
+     26,
+     "tidal_surge"
+    ],
+    [
+     34,
+     "spring_tide"
+    ],
+    [
+     40,
+     "gale_force"
+    ],
+    [
+     46,
+     "wave_sweeper"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "A huge, flat, blotchy disc with a gull on its back, who is doing the cleaning and the sightseeing. It floats about as though the sea owed it a favour.",
+    "fact": "The ocean sunfish is the heaviest bony fish in the world, and big ones can weigh more than a tonne."
+   },
+   "sprite": "moladisc",
+   "real": "A female ocean sunfish can produce hundreds of millions of eggs at once, more than any other known vertebrate.",
+   "names": {}
+  }
+ ]
+}

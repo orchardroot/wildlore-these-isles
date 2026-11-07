@@ -550,7 +550,8 @@
     "season": [
      "summer"
     ]
-   }
+   },
+   {"species": "sailet", "min": 94, "max": 96, "weight": 10, "weather": ["gale", "clear"]}
   ],
   "water": [
    {
@@ -597,7 +598,8 @@
     "time": [
      "night"
     ]
-   }
+   },
+   {"species": "raftlet", "min": 94, "max": 96, "weight": 8}
   ]
  },
  "signs": [

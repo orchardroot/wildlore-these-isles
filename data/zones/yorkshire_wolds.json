@@ -545,7 +545,8 @@
      "dusk",
      "dawn"
     ]
-   }
+   },
+   {"species": "tattybogle", "min": 84, "max": 86, "weight": 8, "time": ["dusk", "night"]}
   ],
   "water": [
    {

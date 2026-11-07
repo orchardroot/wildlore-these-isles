@@ -1,0 +1,154 @@
+{
+ "line": "dishwight",
+ "species": [
+  {
+   "id": "dishwight",
+   "appendix": true,
+   "name": "Dishwight",
+   "types": [
+    "spirit",
+    "hearth"
+   ],
+   "base": {
+    "hp": 50,
+    "atk": 45,
+    "def": 60,
+    "lore": 55,
+    "ward": 60,
+    "spd": 40
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "rap_on_pane"
+    ],
+    [
+     1,
+     "poker_prod"
+    ],
+    [
+     5,
+     "whisper"
+    ],
+    [
+     9,
+     "kettle_scald"
+    ],
+    [
+     13,
+     "snug_as_a_bug"
+    ],
+    [
+     17,
+     "chain_rattle"
+    ],
+    [
+     21,
+     "poltergeist"
+    ],
+    [
+     26,
+     "smoke_alarm"
+    ]
+   ],
+   "evolves": {
+    "to": "dresserwight",
+    "level": 26
+   },
+   "habitat": [
+    "haworth",
+    "saddleworth_moor",
+    "yorkshire_dales"
+   ],
+   "dex": {
+    "text": "A boggart that has moved into a kitchen dresser, and is responsible for every missing spoon. Its eyes are the two best plates.",
+    "fact": "A boggart is a household spirit of northern English folklore, blamed for sour milk, missing things and bumps in the night."
+   },
+   "sprite": "dishwight",
+   "real": "A Welsh dresser has open shelves built to show off the household's best plates, so a boggart has a ready-made hiding place and an audience.",
+   "names": {}
+  },
+  {
+   "id": "dresserwight",
+   "appendix": true,
+   "name": "Dresserwight",
+   "types": [
+    "spirit",
+    "hearth"
+   ],
+   "base": {
+    "hp": 80,
+    "atk": 70,
+    "def": 95,
+    "lore": 80,
+    "ward": 105,
+    "spd": 60
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 155,
+   "learnset": [
+    [
+     1,
+     "rap_on_pane"
+    ],
+    [
+     1,
+     "poker_prod"
+    ],
+    [
+     5,
+     "whisper"
+    ],
+    [
+     9,
+     "kettle_scald"
+    ],
+    [
+     13,
+     "snug_as_a_bug"
+    ],
+    [
+     17,
+     "chain_rattle"
+    ],
+    [
+     21,
+     "poltergeist"
+    ],
+    [
+     26,
+     "smoke_alarm"
+    ],
+    [
+     30,
+     "ectoplasm_splat"
+    ],
+    [
+     34,
+     "burnt_cakes"
+    ],
+    [
+     38,
+     "aga_roast"
+    ],
+    [
+     44,
+     "banshee_shriek"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "A grand old dresser, hung with cups, with three eyes and a drawer that opens by itself. It rattles when it is cross and tinkles when it is not.",
+    "fact": "Boggarts are said to turn nasty if you name them or thank them, so the sensible householder leaves out a little something and says nothing."
+   },
+   "sprite": "dresserwight",
+   "real": "Dressers were a main piece of kitchen furniture in farmhouses across Wales and northern England, and the best china sat on show.",
+   "names": {}
+  }
+ ]
+}

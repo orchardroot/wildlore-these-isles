@@ -1,0 +1,25 @@
+{"id": "brownbetty",
+ "palette": {"glaze": "#9a4a22", "glaze2": "#6a3014", "cosy": "#2c9088", "cosy2": "#f0e4b8", "pom": "#d8403a", "steam": "#e8f0f4"},
+ "layers": [
+  {"shape": "ellipse", "at": [30, 92], "size": [20, 9], "colour": "glaze2", "mirror": true, "rim": false},
+  {"shape": "line", "points": [[18.0, 86.0], [15.2, 85.5], [12.5, 84.1], [10.1, 81.9], [8.0, 78.9], [6.5, 75.2], [5.4, 71.2], [5.0, 66.9], [5.2, 62.5], [6.0, 58.3], [7.4, 54.5], [9.2, 51.3], [11.5, 48.7], [14.1, 46.9], [16.9, 46.1], [19.7, 46.2], [22.4, 47.2]], "width": 7, "colour": "glaze"},
+  {"shape": "poly", "points": [[70, 68], [80, 44], [88, 32], [93, 36], [88, 48], [82, 74]], "colour": "glaze"},
+  {"shape": "circle", "at": [46, 64], "r": 30, "colour": "glaze"},
+  {"shape": "ellipse", "at": [36, 52], "size": [16, 8], "colour": "#d89860", "shade": false, "rim": false, "angle": -30},
+  {"shape": "line", "points": [[16, 78], [76, 78]], "width": 3, "colour": "glaze2", "shade": false},
+  {"shape": "poly", "points": [[18.0, 52.0], [18.7, 45.3], [20.8, 39.0], [24.1, 33.3], [28.5, 28.5], [33.9, 25.0], [39.8, 22.8], [46.0, 22.0], [52.2, 22.8], [58.1, 25.0], [63.5, 28.5], [67.9, 33.3], [71.2, 39.0], [73.3, 45.3], [74.0, 52.0], [74.0, 52], [70.5, 55], [67.0, 52], [63.5, 55], [60.0, 52], [56.5, 55], [53.0, 52], [49.5, 55], [46.0, 52], [42.5, 55], [39.0, 52], [35.5, 55], [32.0, 52], [28.5, 55], [25.0, 52], [21.5, 55], [18.0, 52]], "colour": "cosy", "pattern": "stripes", "pcolour": "cosy2", "period": 6, "pangle": 90},
+  {"shape": "circle", "at": [46, 18], "r": 5, "colour": "pom"}
+ ],
+ "face_layers": [
+  {"shape": "line", "points": [[42, 68], [46, 71], [50, 68]], "width": 1.4, "colour": "#2a1408", "shade": false},
+  {"shape": "circle", "at": [32, 68], "r": 3.2, "colour": "#e8806a", "shade": false, "rim": false},
+  {"shape": "circle", "at": [60, 68], "r": 3.2, "colour": "#e8806a", "shade": false, "rim": false},
+  {"shape": "circle", "at": [90, 24], "r": 3, "colour": "steam", "shade": false, "rim": false},
+  {"shape": "circle", "at": [86, 12], "r": 3.6, "colour": "steam", "shade": false, "rim": false},
+  {"shape": "circle", "at": [90, 3], "r": 2.4, "colour": "steam", "shade": false, "rim": false}
+ ],
+ "eyes": [
+  {"at": [38, 62], "r": 4.4, "colour": "#f4e8d0"},
+  {"at": [54, 62], "r": 4.4, "colour": "#f4e8d0"}
+ ]
+}

@@ -1,0 +1,161 @@
+{
+ "line": "brewlet",
+ "species": [
+  {
+   "id": "brewlet",
+   "appendix": true,
+   "name": "Brewlet",
+   "types": [
+    "hearth",
+    "stone"
+   ],
+   "base": {
+    "hp": 55,
+    "atk": 40,
+    "def": 65,
+    "lore": 55,
+    "ward": 55,
+    "spd": 40
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "kindle"
+    ],
+    [
+     1,
+     "pebble_flick"
+    ],
+    [
+     5,
+     "kettle_scald"
+    ],
+    [
+     9,
+     "grit_in_eye"
+    ],
+    [
+     13,
+     "snug_as_a_bug"
+    ],
+    [
+     17,
+     "smoulder"
+    ],
+    [
+     21,
+     "boulder_bump"
+    ],
+    [
+     26,
+     "hob_sizzle"
+    ]
+   ],
+   "evolves": {
+    "to": "brownbetty",
+    "level": 24
+   },
+   "habitat": [
+    "stoke",
+    "ironbridge_gorge"
+   ],
+   "dex": {
+    "text": "A china teapot that has become, against all odds, a person. It steams politely when it is happy and boils over when it is not.",
+    "fact": "The Potteries, six towns around Stoke-on-Trent, became the centre of English ceramics, home to names such as Wedgwood, Spode and Minton."
+   },
+   "sprite": "brewlet",
+   "real": "Bone china, made with ash from animal bones, was perfected in Staffordshire in the late 1700s and is surprisingly tough for something so delicate.",
+   "names": {
+    "cy": "tebot",
+    "ga": "taephota",
+    "gd": "taephot"
+   }
+  },
+  {
+   "id": "brownbetty",
+   "appendix": true,
+   "name": "Brownbetty",
+   "types": [
+    "hearth",
+    "stone"
+   ],
+   "base": {
+    "hp": 85,
+    "atk": 60,
+    "def": 100,
+    "lore": 85,
+    "ward": 95,
+    "spd": 60
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 155,
+   "learnset": [
+    [
+     1,
+     "kindle"
+    ],
+    [
+     1,
+     "pebble_flick"
+    ],
+    [
+     5,
+     "kettle_scald"
+    ],
+    [
+     9,
+     "grit_in_eye"
+    ],
+    [
+     13,
+     "snug_as_a_bug"
+    ],
+    [
+     17,
+     "smoulder"
+    ],
+    [
+     21,
+     "boulder_bump"
+    ],
+    [
+     26,
+     "hob_sizzle"
+    ],
+    [
+     30,
+     "aga_roast"
+    ],
+    [
+     34,
+     "slate_slide"
+    ],
+    [
+     40,
+     "burnt_cakes"
+    ],
+    [
+     46,
+     "chimney_crash"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "A great round pot in a knitted cosy, and the only golem in the Isles who will ask whether you take milk. Do not say no.",
+    "fact": "The Brown Betty is a round brown teapot long made in Staffordshire from local red clay, and plenty of tea drinkers swear by it."
+   },
+   "sprite": "brownbetty",
+   "real": "Britain drinks about a hundred million cups of tea a day, and a fair few of them go cold while someone is talking.",
+   "names": {
+    "cy": "tebot",
+    "ga": "taephota",
+    "gd": "taephot"
+   }
+  }
+ ]
+}

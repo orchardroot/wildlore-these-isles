@@ -521,7 +521,8 @@
      "dawn",
      "dusk"
     ]
-   }
+   },
+   {"species": "moonbell", "min": 30, "max": 32, "weight": 10, "season": ["summer", "autumn"]}
   ]
  },
  "signs": [

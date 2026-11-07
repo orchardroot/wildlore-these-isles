@@ -1,0 +1,161 @@
+{
+ "line": "brammel",
+ "species": [
+  {
+   "id": "brammel",
+   "appendix": true,
+   "name": "Brammel",
+   "types": [
+    "hedgerow",
+    "spirit"
+   ],
+   "base": {
+    "hp": 40,
+    "atk": 55,
+    "def": 50,
+    "lore": 50,
+    "ward": 50,
+    "spd": 60
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "bramble_lash"
+    ],
+    [
+     1,
+     "rap_on_pane"
+    ],
+    [
+     4,
+     "nettle_sting"
+    ],
+    [
+     8,
+     "whisper"
+    ],
+    [
+     12,
+     "ivy_tangle"
+    ],
+    [
+     16,
+     "thorn_volley"
+    ],
+    [
+     20,
+     "sloe_splash"
+    ],
+    [
+     24,
+     "ghost_light"
+    ]
+   ],
+   "evolves": {
+    "to": "bramblemaw",
+    "level": 22
+   },
+   "habitat": [
+    "luds_church",
+    "haworth",
+    "shropshire_hills",
+    "dee_valley"
+   ],
+   "dex": {
+    "text": "A tangle of canes with two eyes in the dark middle. Nobody has ever been grabbed by it. A good many people have simply been caught.",
+    "fact": "Folklore says not to pick blackberries after Michaelmas, 29 September, because the Devil has been at them."
+   },
+   "sprite": "brammel",
+   "real": "A bramble plant can root wherever the tip of an arching cane touches the ground, which is how one plant sprawls across a whole hedge.",
+   "names": {
+    "cy": "mwyar duon",
+    "ga": "sméar dhubh"
+   }
+  },
+  {
+   "id": "bramblemaw",
+   "appendix": true,
+   "name": "Bramblemaw",
+   "types": [
+    "hedgerow",
+    "spirit"
+   ],
+   "base": {
+    "hp": 70,
+    "atk": 100,
+    "def": 70,
+    "lore": 70,
+    "ward": 70,
+    "spd": 100
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 155,
+   "learnset": [
+    [
+     1,
+     "bramble_lash"
+    ],
+    [
+     1,
+     "rap_on_pane"
+    ],
+    [
+     4,
+     "nettle_sting"
+    ],
+    [
+     8,
+     "whisper"
+    ],
+    [
+     12,
+     "ivy_tangle"
+    ],
+    [
+     16,
+     "thorn_volley"
+    ],
+    [
+     20,
+     "sloe_splash"
+    ],
+    [
+     24,
+     "ghost_light"
+    ],
+    [
+     30,
+     "elder_hex"
+    ],
+    [
+     34,
+     "poltergeist"
+    ],
+    [
+     38,
+     "hawthorn_hammer"
+    ],
+    [
+     46,
+     "wild_hunt_bloom"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "Has eaten the whole hedge and is now looking at the fence. Its mouth is a ring of thorns, and it is wearing its blackberries as eyes.",
+    "fact": "A blackberry is not a single berry but a cluster of tiny fruits, each with its own seed, called drupelets."
+   },
+   "sprite": "bramblemaw",
+   "real": "Blackberries are a hedgerow favourite for birds, mice and people alike, and the plant has been eaten in Britain since prehistoric times.",
+   "names": {
+    "cy": "mwyar duon",
+    "ga": "sméar dhubh"
+   }
+  }
+ ]
+}

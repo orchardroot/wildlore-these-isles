@@ -1,0 +1,22 @@
+{"id": "clocklet",
+ "palette": {"leaf": "#5aa832", "leaf2": "#3a7a22", "sun": "#f6c830", "sun2": "#e89a18"},
+ "layers": [
+  {"shape": "poly", "points": [[48, 78], [33.1, 67.6], [14.2, 68.5], [29.0, 78.9]], "colour": "leaf2"},
+  {"shape": "poly", "points": [[48, 78], [39.5, 65.0], [22.5, 60.4], [31.0, 73.5]], "colour": "leaf"},
+  {"shape": "poly", "points": [[48, 78], [47.5, 64.6], [35.7, 55.3], [36.2, 68.7]], "colour": "leaf2"},
+  {"shape": "poly", "points": [[48, 78], [59.8, 68.7], [60.3, 55.3], [48.5, 64.6]], "colour": "leaf2"},
+  {"shape": "poly", "points": [[48, 78], [65.0, 73.5], [73.5, 60.4], [56.5, 65.0]], "colour": "leaf"},
+  {"shape": "poly", "points": [[48, 78], [67.0, 78.9], [81.8, 68.5], [62.9, 67.6]], "colour": "leaf2"},
+  {"shape": "line", "points": [[48, 80], [48, 60]], "width": 6, "colour": "leaf"},
+  {"shape": "spikes", "at": [48, 48], "size": [44, 40], "colour": "sun2", "count": 14, "len": 8, "seed": 3, "from": 0, "to": 360},
+  {"shape": "circle", "at": [48, 48], "r": 17, "colour": "sun"}
+ ],
+ "face_layers": [
+  {"shape": "line", "points": [[44, 53], [48, 56], [52, 53]], "width": 1.4, "colour": "#6a3a08", "shade": false},
+  {"shape": "circle", "at": [37, 52], "r": 2.8, "colour": "#f08a50", "shade": false, "rim": false},
+  {"shape": "circle", "at": [59, 52], "r": 2.8, "colour": "#f08a50", "shade": false, "rim": false}
+ ],
+ "eyes": [
+  {"at": [42, 45], "r": 4, "mirror": true}
+ ]
+}

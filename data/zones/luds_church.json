@@ -117,7 +117,9 @@
     "min": 8,
     "max": 10,
     "weight": 8
-   }
+   },
+   {"species": "brammel", "min": 8, "max": 10, "weight": 12, "season": ["summer", "autumn"]},
+   {"species": "clocklet", "min": 8, "max": 10, "weight": 12, "time": ["dawn", "day"], "season": ["spring", "summer"]}
   ]
  },
  "signs": [

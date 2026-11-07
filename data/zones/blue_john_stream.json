@@ -76,7 +76,8 @@
      "night",
      "dusk"
     ]
-   }
+   },
+   {"species": "leatherjack", "min": 9, "max": 11, "weight": 12}
   ]
  },
  "signs": [

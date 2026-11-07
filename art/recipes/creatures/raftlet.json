@@ -1,0 +1,25 @@
+{"id": "raftlet",
+ "palette": {"body": "#6a5a2c", "body2": "#4a3e1c", "stripe": "#f2e4ac", "pad": "#3e8a3e", "pad2": "#2e6a30", "water": "#7cc8d8", "leg": "#4a3e1c", "log": "#7a5a38"},
+ "layers": [
+  {"shape": "ellipse", "at": [48, 90], "size": [94, 10], "colour": "water", "shade": false},
+  {"shape": "ellipse", "at": [48, 84], "size": [62, 12], "colour": "pad"},
+  {"shape": "circle", "at": [30, 82], "r": 5, "colour": "pad2", "rim": false},
+  {"shape": "line", "points": [[40, 50], [22, 32], [6, 46], [4, 74]], "width": 2.8, "colour": "leg", "mirror": true, "shade": false},
+  {"shape": "line", "points": [[42, 56], [16, 52], [2, 66], [4, 86]], "width": 2.8, "colour": "leg", "mirror": true, "shade": false},
+  {"shape": "line", "points": [[42, 62], [14, 70], [8, 84], [12, 92]], "width": 2.8, "colour": "leg", "mirror": true, "shade": false},
+  {"shape": "line", "points": [[44, 46], [34, 26], [24, 14], [10, 16]], "width": 2.8, "colour": "leg", "mirror": true, "shade": false},
+  {"shape": "ellipse", "at": [48, 66], "size": [30, 34], "colour": "body", "pattern": "speckle", "pcolour": "body2", "density": 12},
+  {"shape": "line", "points": [[34, 58], [32, 70], [38, 80]], "width": 2.6, "colour": "stripe", "mirror": true, "shade": false},
+  {"shape": "ellipse", "at": [48, 46], "size": [24, 20], "colour": "body"},
+  {"shape": "poly", "points": [[43, 54], [45, 58], [47, 54]], "colour": "stripe", "rim": false, "shade": false}
+ ],
+ "face_layers": [
+  {"shape": "line", "points": [[45, 53], [48, 55], [51, 53]], "width": 1, "colour": "#2a1e10", "shade": false},
+  {"shape": "circle", "at": [44, 42], "r": 1.3, "colour": "#f8ec9a", "shade": false, "rim": false},
+  {"shape": "circle", "at": [52, 42], "r": 1.3, "colour": "#f8ec9a", "shade": false, "rim": false}
+ ],
+ "eyes": [
+  {"at": [42, 46], "r": 4, "mirror": true, "colour": "#f2e4ac", "pupil": [2, 2]}
+ ],
+ "dimorph": {"f": {"palette": {}}, "m": {"set": {"7": {"size": [22, 26]}}, "palette": {"body": "#6a5426"}}}
+}

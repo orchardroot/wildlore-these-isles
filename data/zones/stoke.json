@@ -830,7 +830,8 @@
      "drizzle",
      "downpour"
     ]
-   }
+   },
+   {"species": "brewlet", "min": 8, "max": 10, "weight": 10}
   ],
   "water": [
    {

@@ -839,7 +839,9 @@
      "drizzle",
      "downpour"
     ]
-   }
+   },
+   {"species": "moonbell", "min": 64, "max": 66, "weight": 10, "season": ["summer", "autumn"]},
+   {"species": "barnaclet", "min": 64, "max": 66, "weight": 10}
   ]
  },
  "signs": [

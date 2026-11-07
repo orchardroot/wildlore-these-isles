@@ -208,7 +208,9 @@
     "min": 7,
     "max": 9,
     "weight": 16
-   }
+   },
+   {"species": "leatherjack", "min": 6, "max": 8, "weight": 12},
+   {"species": "clocklet", "min": 6, "max": 8, "weight": 12, "time": ["dawn", "day"], "season": ["spring", "summer"]}
   ]
  },
  "signs": [

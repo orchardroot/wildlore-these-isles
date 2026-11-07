@@ -1015,7 +1015,8 @@
     "time": [
      "dawn"
     ]
-   }
+   },
+   {"species": "slipknot", "min": 75, "max": 77, "weight": 8, "time": ["night"]}
   ]
  },
  "signs": [

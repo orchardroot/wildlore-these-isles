@@ -971,7 +971,8 @@
     "min": 21,
     "max": 22,
     "weight": 8
-   }
+   },
+   {"species": "brewlet", "min": 21, "max": 23, "weight": 10}
   ],
   "water": [
    {

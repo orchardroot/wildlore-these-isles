@@ -851,7 +851,8 @@
     "min": 18,
     "max": 20,
     "weight": 8
-   }
+   },
+   {"species": "moonbell", "min": 18, "max": 20, "weight": 10, "season": ["summer", "autumn"]}
   ]
  },
  "signs": [

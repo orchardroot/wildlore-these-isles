@@ -1,0 +1,21 @@
+{"id": "dishfin",
+ "palette": {"body": "#a4bccc", "body2": "#728ea4", "belly": "#dce8f0", "fin": "#7e98b0", "pink": "#e8a0a8"},
+ "layers": [
+  {"shape": "poly", "points": [[38, 22], [52, 0], [64, 26]], "colour": "fin"},
+  {"shape": "poly", "points": [[38, 78], [52, 98], [64, 74]], "colour": "fin"},
+  {"shape": "ellipse", "at": [88, 50], "size": [14, 50], "colour": "fin", "pattern": "stripes", "pcolour": "body2", "period": 4, "pangle": 90},
+  {"shape": "ellipse", "at": [46, 50], "size": [76, 70], "colour": "body", "pattern": "speckle", "pcolour": "body2", "density": 14},
+  {"shape": "ellipse", "at": [42, 66], "size": [48, 24], "colour": "belly", "rim": false, "shade": false, "angle": 10},
+  {"shape": "ellipse", "at": [52, 60], "size": [16, 10], "colour": "fin", "angle": 30},
+  {"shape": "circle", "at": [14, 56], "r": 4.5, "colour": "pink"}
+ ],
+ "face_layers": [
+  {"shape": "circle", "at": [14, 56], "r": 1.6, "colour": "#7a3a48", "shade": false, "rim": false},
+  {"shape": "circle", "at": [22, 60], "r": 3, "colour": "#f4a0a0", "shade": false, "rim": false}
+ ],
+ "eyes": [
+  {"at": [26, 44], "r": 5}
+ ],
+ "anim": "shift",
+ "bob": 2.5
+}
