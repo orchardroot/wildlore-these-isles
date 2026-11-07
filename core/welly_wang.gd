@@ -110,3 +110,9 @@ static func finish(data: GameStateData, venue_id: String, my_best: float, won: b
 		return {"first": false, "money": 0, "line": "", "record": record}
 	data.set_flag(FLAG_DAY + venue_id, DailyKey.stamp(data))
 	return {"first": false, "money": DAILY_PURSE, "line": "", "record": record}
+
+## Easier minigames: the release is pulled 40% of the way towards the ideal elevation, and the gap shown is wider.
+static func assist(swing: float, easy: bool) -> float:
+	if not easy or swing > 90.0:
+		return swing
+	return IDEAL + (swing - IDEAL) * 0.6
