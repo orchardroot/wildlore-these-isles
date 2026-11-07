@@ -209,7 +209,8 @@ static func check(zones: Dictionary, items: ItemDB) -> Array:
 					ok = true
 			if not ok:
 				for o in by_zone[zid]:
-					if is_hop(o) and reach.has(Vector2i(int(o.reward.hop[0]), int(o.reward.hop[1]))) == false and t.distance_to(Vector2(int(o.reward.hop[0]), int(o.reward.hop[1]))) <= 1.5:
+					var ho := Vector2(int(o.reward.hop[0]), int(o.reward.hop[1])) if is_hop(o) else Vector2(-99, -99)
+					if Vector2(t).distance_to(ho) <= 1.5:
 						ok = true
 			if not ok:
 				errs.append("field spot %s: cannot be reached from the spawn in %s" % [s.id, zid])

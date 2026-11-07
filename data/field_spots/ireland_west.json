@@ -315,5 +315,39 @@
   },
   "flag": "field_tory_island_charm",
   "at": "tory_island"
+ },
+ {
+  "id": "fs_ring_of_kerry_topple_x1",
+  "zone": "ring_of_kerry",
+  "x": 49,
+  "y": 8,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+  "reward": {
+   "hop": [
+    52,
+    8
+   ]
+  },
+  "flag": "field_ring_of_kerry_topple_a",
+  "at": "ring_of_kerry"
+ },
+ {
+  "id": "fs_ring_of_kerry_topple_x2",
+  "zone": "ring_of_kerry",
+  "x": 51,
+  "y": 8,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
+  "reward": {
+   "hop": [
+    48,
+    8
+   ]
+  },
+  "flag": "field_ring_of_kerry_topple_b",
+  "at": "ring_of_kerry"
  }
 ]

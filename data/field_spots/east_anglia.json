@@ -129,5 +129,39 @@
   },
   "flag": "field_the_fens_skim",
   "at": "the_fens"
+ },
+ {
+  "id": "fs_the_fens_topple_x1",
+  "zone": "the_fens",
+  "x": 61,
+  "y": 52,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+  "reward": {
+   "hop": [
+    64,
+    52
+   ]
+  },
+  "flag": "field_the_fens_topple_a",
+  "at": "the_fens"
+ },
+ {
+  "id": "fs_the_fens_topple_x2",
+  "zone": "the_fens",
+  "x": 63,
+  "y": 52,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
+  "reward": {
+   "hop": [
+    60,
+    52
+   ]
+  },
+  "flag": "field_the_fens_topple_b",
+  "at": "the_fens"
  }
 ]
