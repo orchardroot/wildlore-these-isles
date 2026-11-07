@@ -30,6 +30,7 @@ var rng_seed := 0
 var weather := ""          # the outdoor weather right now ("" = roll it at the next outdoor zone)
 var weather_region := ""   # the region it was rolled for
 var weather_until := 0     # world minute (see world_minutes) it lasts until
+var pieces: Dictionary = {}   # party pieces: {game_id: {best, plays, rosette}} (see PartyPieces)
 var stats: Dictionary = TrainerStats.fresh()  # lifetime tallies for the Stats page (see TrainerStats)
 var look: Dictionary = {}  # the player's look (see Looks); {} on saves from before 4.6, which keep their player_sprite flag
 ## While a County Show or the Open Moot is on, `party` holds exhibition copies (TournamentRun) and this holds the
@@ -181,7 +182,7 @@ func to_dict() -> Dictionary:
 		"last_sanctuary": last_sanctuary.duplicate(true), "rng_seed": rng_seed,
 		"weather": weather, "weather_region": weather_region, "weather_until": weather_until,
 		"stats": stats.duplicate(), "euros": euros, "purses": purses.duplicate(), "markets": markets.duplicate(true),
-		"look": look.duplicate(true), "trumps": trumps.duplicate(true),
+		"look": look.duplicate(true), "trumps": trumps.duplicate(true), "pieces": pieces.duplicate(true),
 	}
 
 static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
@@ -218,6 +219,7 @@ static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
 	s.weather_region = str(d.get("weather_region", ""))
 	s.weather_until = int(d.get("weather_until", 0))
 	s.stats = TrainerStats.sanitise(d.get("stats"))
+	s.pieces = d.get("pieces", {}).duplicate(true) if d.get("pieces") is Dictionary else {}
 	s.euros = maxi(0, int(d.get("euros", 0)))
 	s.purses = Wallet.sanitise_purses(d.get("purses"))
 	s.markets = Markets.sanitise(d.get("markets"))
