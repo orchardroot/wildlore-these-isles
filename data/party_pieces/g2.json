@@ -1,1 +1,12 @@
-{}
+{
+  "cheese": {
+    "name": "Cheese rolling", "move": "coopers_roll", "types": ["stone", "brawn"], "zone": "cotswolds",
+    "where": "Cooper's Hill, in the Cotswolds", "good": 70, "master": 115, "lower_better": false, "unit": "points",
+    "master_name": "the Gloucestershire champion", "field": "roll"
+  },
+  "pancake": {
+    "name": "Pancake race", "move": "shrove_toss", "types": ["hearth", "kin"], "zone": "oxford",
+    "where": "the High Street at Olney (the pan is kept in Oxford)", "good": 52.0, "master": 42.0, "lower_better": true, "unit": "seconds",
+    "master_name": "the Olney champion", "field": ""
+  }
+}

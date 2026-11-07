@@ -1,0 +1,30 @@
+{
+ "cw_hill_marshal": [
+  {
+   "do": "face_player"
+  },
+  {
+   "do": "say",
+   "who": "Race Starter",
+   "text": "Welcome to the foot of Cooper's Hill. The top is up there, behind the sky. Mind the nettles, mind the cameras, and mind your own knees."
+  },
+  {
+   "do": "cheese",
+   "who": "Race Starter"
+  }
+ ],
+ "ox_pancake_marshal": [
+  {
+   "do": "face_player"
+  },
+  {
+   "do": "say",
+   "who": "Pancake Marshal",
+   "text": "Frying pan, apron, headscarf. That is the whole kit list, and the headscarf is not optional. The vicar is very firm."
+  },
+  {
+   "do": "pancake",
+   "who": "Pancake Marshal"
+  }
+ ]
+}

@@ -238,6 +238,10 @@ func _exec(c: Dictionary) -> void:
 			await GreenRun.new(self).bowls(c)
 		"skim":
 			await GreenRun.new(self).skim(c)
+		"cheese":
+			await FolkRaceRun.new(self).cheese(c)
+		"pancake":
+			await FolkRaceRun.new(self).pancake(c)
 		"ring":
 			await RingingRun.new(self).ring(c)
 		"wall":
