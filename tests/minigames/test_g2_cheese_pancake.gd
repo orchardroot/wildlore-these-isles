@@ -160,3 +160,23 @@ func test_pieces_state_round_trips() -> void:
 	d.pieces["cheese"] = {"best": 110.0, "plays": 2, "rosette": 2}
 	var back := GameStateData.from_dict(d.to_dict(), Dex.load_default())
 	assert_eq(int(back.pieces.cheese.rosette), 2)
+
+# ---- party pieces (against the contract; the stub or P's real one)
+
+func test_g2_party_pieces_are_well_formed() -> void:
+	var db := MoveDB.load_default()
+	for id in ["cheese", "pancake"]:
+		assert_true(PartyPieces.entries().has(id), id)
+	assert_eq(PartyPieces.problems(db), [])
+	assert_eq(str(db.get_move("coopers_roll").piece), "cheese")
+	assert_eq(str(db.get_move("shrove_toss").piece), "pancake")
+
+func test_g2_rosettes_follow_the_score_both_ways_round() -> void:
+	var d := GameStateData.new()
+	assert_eq(PartyPieces.record(d, "cheese", 40.0).rosette, 1)
+	assert_true(not PartyPieces.unlocked(d, "cheese"))
+	var r := PartyPieces.record(d, "cheese", 80.0)
+	assert_true(r.unlocked and r.rosette == 2)
+	assert_eq(PartyPieces.record(d, "cheese", 125.0).rosette, 3)
+	assert_eq(PartyPieces.record(d, "pancake", 51.0).rosette, 2)   # lower is better: 51 s is silver
+	assert_eq(PartyPieces.record(d, "pancake", 41.0).rosette, 3)

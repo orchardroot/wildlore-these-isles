@@ -5,13 +5,12 @@ extends MenuBase
 ## rules live in Pancake. Closes with {"won": bool, "time": float, "champion": float} (null if you walk out).
 ## setup arg: "<seed>" or "dev" (dev: a race well under way with a flip about to be due).
 
-const STAGE := Vector2(1090, 392)
+const STAGE := Vector2(900, 392)
 const WPY := 13.0            # world pixels per yard
 const RUN_X := 250.0
 const FOOT_Y := 336.0
 const ROAD_Y := 268.0
 const BUILD_Y := 244.0
-const PAN := Vector2(930, 108)    # the close-up of the pan
 
 var _seed := 1
 var _g: Pancake
@@ -173,8 +172,11 @@ func _refresh() -> void:
 
 # ---- drawing
 
+func _sw() -> float:
+	return maxf(_stage.size.x, 600.0) if _stage != null else STAGE.x
+
 func _draw_stage() -> void:
-	var w := STAGE.x
+	var w := _sw()
 	var camx := _g.y * WPY - RUN_X
 	var off := Vector2.ZERO
 	if _shake > 0.0:
@@ -211,7 +213,7 @@ func _draw_stage() -> void:
 		_stage.draw_circle(Vector2(40 + (w - 80) * clampf(_g.t / _champ, 0.0, 1.0), by + 3), 5.0, Color("ffd27a"))
 
 func _draw_street(camx: float) -> void:
-	var w := STAGE.x
+	var w := _sw()
 	# a terrace of Georgian-ish fronts, a second row behind, parallax half speed
 	var span := 168.0
 	var par := camx * 0.55
@@ -267,7 +269,7 @@ func _draw_street(camx: float) -> void:
 func _draw_flags(camx: float) -> void:
 	for i in range(0, Pancake.STATIONS + 1):
 		var x := Pancake.station_y(i) * WPY - camx
-		if x < -40.0 or x > STAGE.x + 40.0:
+		if x < -40.0 or x > _sw() + 40.0:
 			continue
 		var next := i == _g.next_station and _state == "run"
 		_stage.draw_rect(Rect2(x - 2, ROAD_Y - 110, 4, 112), Color("e8e0cc"))
@@ -282,7 +284,7 @@ func _draw_flags(camx: float) -> void:
 
 func _draw_finish(camx: float) -> void:
 	var fx := Pancake.LENGTH * WPY - camx
-	if fx > STAGE.x + 700.0:
+	if fx > _sw() + 700.0:
 		return
 	# the church: tower, nave, spire, door, with the verger and the prayer book at the finish
 	var cx := fx + 260.0
@@ -311,7 +313,7 @@ func _draw_champion(camx: float) -> void:
 		return
 	var cy := minf(Pancake.LENGTH * _g.t / _champ, Pancake.LENGTH)
 	var x := cy * WPY - camx
-	if x < -60.0 or x > STAGE.x + 60.0:
+	if x < -60.0 or x > _sw() + 60.0:
 		return
 	_draw_woman(Vector2(x, ROAD_Y + 52.0), 120.0, cy * 0.9, 3, false, 0.0)
 	_stage.draw_string(ThemeDB.fallback_font, Vector2(x - 40, ROAD_Y + 52.0 - 128.0), "Champion", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("fff8e0", 0.85))
@@ -321,7 +323,9 @@ func _draw_woman(foot: Vector2, s: float, phase: float, idx: int, with_pan: bool
 	var dress: Color = FolkArt.COATS[idx % FolkArt.COATS.size()]
 	var skin: Color = FolkArt.SKIN[idx % FolkArt.SKIN.size()]
 	var sw := sin(phase) * s * 0.2
-	_stage.draw_circle(foot + Vector2(0, 2), s * 0.26, Color(0, 0, 0, 0.18))
+	_stage.draw_set_transform(foot + Vector2(0, 2), 0.0, Vector2(1.0, 0.25))
+	_stage.draw_circle(Vector2.ZERO, s * 0.3, Color(0, 0, 0, 0.22))
+	_stage.draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 	_stage.draw_line(foot + Vector2(0, -s * 0.42), foot + Vector2(sw, 0), Color("33353f"), maxf(3.0, s * 0.09))
 	_stage.draw_line(foot + Vector2(0, -s * 0.42), foot + Vector2(-sw, 0), Color("4a4d58"), maxf(3.0, s * 0.09))
 	_stage.draw_colored_polygon(PackedVector2Array([foot + Vector2(-s * 0.15, -s * 0.8), foot + Vector2(s * 0.15, -s * 0.8), foot + Vector2(s * 0.2, -s * 0.36), foot + Vector2(-s * 0.2, -s * 0.36)]), dress)
@@ -354,6 +358,9 @@ func _draw_player() -> void:
 	if _g.stopped <= 0.0:
 		var hand := foot + Vector2(150.0 * 0.42, -150.0 * 0.58)
 		var pan_c := hand + Vector2(150.0 * 0.38, -3)
+		_stage.draw_set_transform(pan_c + Vector2(0, 2), _g.lean * 0.3, Vector2(1.0, 0.22))
+		_stage.draw_circle(Vector2.ZERO, 27.0, Color("3a3d46"))
+		_stage.draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 		if _g.air > 0.0:
 			var u := 1.0 - _g.air / Pancake.FLIP_AIR
 			var hgt := sin(u * PI) * 120.0
@@ -366,45 +373,42 @@ func _draw_player() -> void:
 			_stage.draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 
 func _draw_pan_inset() -> void:
-	var c := PAN
-	_stage.draw_rect(Rect2(c.x - 140, c.y - 82, 280, 178), Color(0.06, 0.07, 0.1, 0.55))
-	_stage.draw_rect(Rect2(c.x - 140, c.y - 82, 280, 178), Color("f0e8cc", 0.35), false, 2.0)
-	var tilt := _g.lean * 0.35
-	var pc := c + Vector2(0, 38)
-	# warm/cold rim zones so the danger is readable
+	var c := Vector2(_sw() - 150.0, 0.0)
+	_stage.draw_rect(Rect2(c.x - 128, 12, 256, 196), Color(0.06, 0.07, 0.1, 0.6))
+	_stage.draw_rect(Rect2(c.x - 128, 12, 256, 196), Color("f0e8cc", 0.35), false, 2.0)
+	var tilt := _g.lean * 0.3
+	var pc := Vector2(c.x - 14.0, 158.0)
 	var edge := absf(_g.p)
 	var rim_col := Color("e8d8b8").lerp(Color("ff5a4a"), clampf((edge - 0.55) / 0.4, 0.0, 1.0))
+	# the pan, tilting with your lean: a dark dish with a rim at each end and a handle
 	_stage.draw_set_transform(pc, tilt, Vector2.ONE)
-	_stage.draw_rect(Rect2(-100, -4, 200, 8), Color("3a3d46"))
-	_stage.draw_rect(Rect2(-104, -16, 8, 20), rim_col)
-	_stage.draw_rect(Rect2(96, -16, 8, 20), rim_col)
-	_stage.draw_rect(Rect2(100, -4, 70, 7), Color("2c2a28"))   # the handle
+	_stage.draw_rect(Rect2(-72, -3, 144, 7), Color("3a3d46"))
+	_stage.draw_rect(Rect2(-76, -14, 7, 17), rim_col)
+	_stage.draw_rect(Rect2(69, -14, 7, 17), rim_col)
+	_stage.draw_rect(Rect2(76, -3, 44, 6), Color("2c2a28"))
 	if _g.air > 0.0:
-		_stage.draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 		var u := 1.0 - _g.air / Pancake.FLIP_AIR
-		_stage.draw_set_transform(pc + Vector2(0, -sin(u * PI) * 66.0 - 14.0), 0.0, Vector2(1.0, absf(cos(u * TAU)) * 0.8 + 0.12))
-		_stage.draw_circle(Vector2.ZERO, 30.0, Color("e0b168") if u < 0.5 else Color("c98a3e"))
+		_stage.draw_set_transform(pc + Vector2(0, -sin(u * PI) * 60.0 - 16.0), 0.0, Vector2(1.0, absf(cos(u * TAU)) * 0.8 + 0.12))
+		_stage.draw_circle(Vector2.ZERO, 24.0, Color("e0b168") if u < 0.5 else Color("c98a3e"))
 	else:
-		_stage.draw_set_transform(pc + Vector2(0, 0), tilt, Vector2.ONE)
-		_stage.draw_set_transform(pc, tilt, Vector2.ONE)
-		var pp := Vector2(_g.p * 70.0, -11.0)
-		_stage.draw_set_transform(pc + Vector2(cos(tilt), sin(tilt)) * pp.x + Vector2(sin(tilt), -cos(tilt)) * 11.0, tilt, Vector2(1.0, 0.36))
-		_stage.draw_circle(Vector2.ZERO, 32.0, Color("e0b168"))
-		_stage.draw_circle(Vector2(-8, -3), 5.0, Color("c98a3e"))
-		_stage.draw_circle(Vector2(10, 6), 4.0, Color("c98a3e"))
+		_stage.draw_set_transform(Vector2.ZERO, tilt, Vector2.ONE)
+		var local := Vector2(_g.p * 52.0, -9.0)
+		_stage.draw_set_transform(pc + local.rotated(tilt), tilt, Vector2(1.0, 0.36))
+		_stage.draw_circle(Vector2.ZERO, 24.0, Color("e0b168"))
+		_stage.draw_circle(Vector2(-6, -3), 4.0, Color("c98a3e"))
+		_stage.draw_circle(Vector2(8, 5), 3.0, Color("c98a3e"))
 	_stage.draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
-	# the flip ring: it closes on the pan as the flag arrives
+	# the flip ring: it closes on the target as the flag arrives
 	var pr := _g.prompt() if _state == "run" else -1.0
-	var ring_c := c + Vector2(0, -22)
+	var rc := Vector2(c.x, 84.0)
 	if pr >= 0.0:
-		var r := lerpf(66.0, 24.0, clampf(pr, 0.0, 1.0)) if pr <= 1.0 else 24.0 - (pr - 1.0) * 8.0
-		var win: Dictionary = _g.windows()
-		var good := absf(pr - 1.0) < 0.2
-		_stage.draw_arc(ring_c, 24.0, 0.0, TAU, 28, Color("c8f0a0") if good else Color("f0e8cc", 0.8), 4.0)
-		_stage.draw_arc(ring_c, maxf(r, 6.0), 0.0, TAU, 28, Color("ffd27a"), 3.0)
-		_stage.draw_string(ThemeDB.fallback_font, ring_c + Vector2(-30, -74), "FLIP!", HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("ffe27a") if good else Color("f0e8cc"))
-		if win.is_empty():
-			pass
+		var r := lerpf(56.0, 20.0, clampf(pr, 0.0, 1.0)) if pr <= 1.0 else 20.0 - (pr - 1.0) * 10.0
+		var good := absf(pr - 1.0) < 0.25
+		_stage.draw_arc(rc, 20.0, 0.0, TAU, 28, Color("c8f0a0") if good else Color("f0e8cc", 0.8), 4.0)
+		_stage.draw_arc(rc, maxf(r, 5.0), 0.0, TAU, 28, Color("ffd27a"), 3.0)
+		_stage.draw_string(ThemeDB.fallback_font, Vector2(c.x - 28, 44), "FLIP!", HORIZONTAL_ALIGNMENT_LEFT, -1, 26, Color("ffe27a") if good else Color("f0e8cc"))
 	elif _last_grade_t < 0.8 and _last_grade != "":
-		_stage.draw_string(ThemeDB.fallback_font, ring_c + Vector2(-44, -70), _last_grade.to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, 22, Color("ffe27a"))
-	_stage.draw_string(ThemeDB.fallback_font, c + Vector2(-130, 88), "keep it off the rim", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("f0e8cc", 0.75))
+		_stage.draw_string(ThemeDB.fallback_font, Vector2(c.x - 50, 90), _last_grade.to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("ffe27a"))
+	elif _state == "run":
+		_stage.draw_string(ThemeDB.fallback_font, Vector2(c.x - 100, 90), "lean to balance", HORIZONTAL_ALIGNMENT_LEFT, -1, 20, Color("f0e8cc", 0.8))
+	_stage.draw_string(ThemeDB.fallback_font, Vector2(c.x - 116, 200), "keep it off the rim", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color("f0e8cc", 0.7))

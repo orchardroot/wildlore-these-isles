@@ -5,7 +5,7 @@ extends MenuBase
 ## {"won": bool, "best": int, "places": Array} (null if you walk out before the first race ends).
 ## setup arg: "<seed>" or "dev" (dev: a race part way down the slope, mid-tumble).
 
-const STAGE := Vector2(1090, 392)
+const STAGE := Vector2(900, 392)
 const HORIZON := 96.0
 const RUN_Y := 318.0
 const HALF := 330.0          # pixels from the middle to a lane edge at the runner
@@ -140,7 +140,7 @@ func _run(delta: float) -> void:
 		_finish_heat()
 
 func _event(e: String, _was: bool) -> void:
-	var at := Vector2(STAGE.x * 0.5 + _g.x * 120.0, RUN_Y - 100.0)
+	var at := Vector2(_sw() * 0.5 + _g.x * 120.0, RUN_Y - 100.0)
 	match e:
 		"trip:tussock":
 			_shake = 0.35
@@ -169,7 +169,7 @@ func _event(e: String, _was: bool) -> void:
 		_:
 			if e.begins_with("rival_trip:"):
 				Audio.sfx("hit_weak")
-				_pops.append({"text": "%s goes over!" % e.substr(11), "pos": Vector2(STAGE.x * 0.5, 130.0), "t": 0.0, "col": Color("f0e8cc")})
+				_pops.append({"text": "%s goes over!" % e.substr(11), "pos": Vector2(_sw() * 0.5, 130.0), "t": 0.0, "col": Color("f0e8cc")})
 
 func _finish_heat() -> void:
 	_places.append(_g.place)
@@ -220,12 +220,15 @@ func _place_now() -> String:
 
 # ---- drawing
 
+func _sw() -> float:
+	return maxf(_stage.size.x, 600.0) if _stage != null else STAGE.x
+
 ## Screen position and scale of a spot `d` yards ahead and `lane` across the slope.
 func _pt(d: float, lane: float) -> Vector3:
-	var dd := maxf(d, -4.0)
+	var dd := maxf(d, -1.6)
 	var s := 6.0 / (dd + 6.0)
 	var cam := _g.x * 0.55
-	return Vector3(STAGE.x * 0.5 + (lane - cam) * HALF * s, HORIZON + (RUN_Y - HORIZON) * s, s)
+	return Vector3(_sw() * 0.5 + (lane - cam) * HALF * s, HORIZON + (RUN_Y - HORIZON) * s, s)
 
 func _quad(d0: float, d1: float, l0: float, l1: float, col: Color) -> void:
 	var a := _pt(d0, l0)
@@ -235,7 +238,7 @@ func _quad(d0: float, d1: float, l0: float, l1: float, col: Color) -> void:
 	_stage.draw_colored_polygon(PackedVector2Array([Vector2(a.x, a.y), Vector2(b.x, b.y), Vector2(c.x, c.y), Vector2(d.x, d.y)]), col)
 
 func _draw_stage() -> void:
-	var w := STAGE.x
+	var w := _sw()
 	var off := Vector2.ZERO
 	if _shake > 0.0:
 		off = Vector2(sin(_shake * 90.0), cos(_shake * 70.0)) * 5.0 * (_shake / 0.35)
@@ -273,7 +276,7 @@ func _draw_stage() -> void:
 	var first := floorf(along / 6.0) * 6.0
 	for k in range(14, -1, -1):
 		var dd := first + k * 6.0 - along
-		if dd < -3.0 or dd > CheeseRoll.SEE:
+		if dd < -1.6 or dd > CheeseRoll.SEE:
 			continue
 		for side in [-1.0, 1.0]:
 			for row in 2:
@@ -282,7 +285,7 @@ func _draw_stage() -> void:
 				FolkArt.spectator(_stage, Vector2(a.x, a.y), 62.0 * a.z, idx, _cheer if (_g.done or _g.caught) else 0.0)
 			var p := _pt(dd, side * 1.2)
 			_stage.draw_rect(Rect2(p.x - 2.0 * p.z, p.y - 30.0 * p.z, 4.0 * p.z, 30.0 * p.z), Color("4d3b27"))
-		if k % 2 == 0:
+		if k % 2 == 0 and dd > 5.0:
 			var pa := _pt(dd, -1.2)
 			var pb := _pt(dd, 1.2)
 			FolkArt.bunting(_stage, Vector2(pa.x, pa.y - 30.0 * pa.z), Vector2(pb.x, pb.y - 30.0 * pb.z), 14.0 * pa.z)
@@ -290,7 +293,7 @@ func _draw_stage() -> void:
 	var things: Array = []
 	for o in _g.obstacles:
 		var d: float = float(o.y) - _g.y
-		if d > -3.0 and d < CheeseRoll.SEE:
+		if d > -1.6 and d < CheeseRoll.SEE:
 			things.append({"d": d, "kind": "o", "o": o})
 	things.append({"d": float(_g.cheese.y) - _g.y, "kind": "c"})
 	for r in _g.rivals:
@@ -298,7 +301,7 @@ func _draw_stage() -> void:
 	things.sort_custom(func(a, b): return float(a.d) > float(b.d))
 	for th in things:
 		var d: float = th.d
-		if d < -3.0 or d > CheeseRoll.SEE + 30.0:
+		if d < -1.6 or d > CheeseRoll.SEE + 30.0:
 			continue
 		match th.kind:
 			"o":
@@ -367,6 +370,7 @@ func _draw_runner(foot: Vector2, s: float, mode: int, idx: int, phase: float, ro
 	_stage.draw_line(c + Vector2(-s * 0.18, -s * 0.62), c + Vector2(-s * (0.36 + flail), -s * (0.5 + flail * 0.5) + sw), skin, maxf(2.0, s * 0.08))
 	_stage.draw_line(c + Vector2(s * 0.18, -s * 0.62), c + Vector2(s * (0.36 + flail), -s * (0.5 + flail * 0.5) - sw), skin, maxf(2.0, s * 0.08))
 	_stage.draw_circle(c + Vector2(0, -s * 0.8), s * 0.16, skin.darkened(0.15))
+	_stage.draw_circle(c + Vector2(0, -s * 0.84), s * 0.15, Color("4a3424") if idx % 2 == 0 else Color("c8a060"))   # hair, from behind
 	_stage.draw_set_transform(off_xf(), 0.0, Vector2.ONE)
 
 func off_xf() -> Vector2:
@@ -377,7 +381,9 @@ func off_xf() -> Vector2:
 func _draw_player() -> void:
 	var a := _pt(0.0, _g.x)
 	var foot := Vector2(a.x, RUN_Y + 40.0)
-	_stage.draw_circle(foot + Vector2(0, 4), 34.0, Color(0, 0, 0, 0.2))
+	_stage.draw_set_transform(foot + Vector2(0, 4), 0.0, Vector2(1.0, 0.25))
+	_stage.draw_circle(Vector2.ZERO, 40.0, Color(0, 0, 0, 0.22))
+	_stage.draw_set_transform(off_xf(), 0.0, Vector2.ONE)
 	if _g.tumble > 0.0:
 		var spin := (1.2 - _g.tumble) * 9.0
 		_draw_runner(foot + Vector2(0, -20), 130.0, 2, 1, 0.0, spin)
@@ -390,7 +396,7 @@ func _draw_player() -> void:
 	var cam := _g.camber(_g.y + 6.0)
 	if absf(cam) > 0.06 and _state == "run":
 		var dir := signf(cam)
-		var base := Vector2(STAGE.x * 0.5, STAGE.y - 18.0)
+		var base := Vector2(_sw() * 0.5 + 330.0, STAGE.y - 24.0)
 		_stage.draw_line(base - Vector2(dir * 40.0, 0), base + Vector2(dir * 40.0 * clampf(absf(cam) * 3.0, 0.4, 1.0), 0), Color("fff2c4", 0.8), 4.0)
 		_stage.draw_string(ThemeDB.fallback_font, base + Vector2(-60, -8), "the slope leans", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("fff2c4", 0.8))
 	if _state == "run" and _g.brace:
@@ -398,7 +404,7 @@ func _draw_player() -> void:
 
 func _draw_hud() -> void:
 	# a strip down the right: the hill from top to bottom with everyone on it
-	var x := STAGE.x - 34.0
+	var x := _sw() - 34.0
 	var top := 40.0
 	var h := 250.0
 	_stage.draw_rect(Rect2(x - 7, top - 8, 22, h + 16), Color(0.05, 0.07, 0.1, 0.5))
