@@ -219,5 +219,17 @@
     }
    ]
   }
+ ],
+ "g3_coracle_racer": [
+  {
+   "do": "say",
+   "who": "Coracle Racer",
+   "text": "A coracle has no keel and no opinions about where you want to go. It only wants to be round. Eight gates down the river, under the bridge, and try not to spin."
+  },
+  {
+   "do": "coracle",
+   "venue": "ironbridge",
+   "who": "Coracle Racer"
+  }
  ]
 }

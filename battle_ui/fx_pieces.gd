@@ -11,7 +11,9 @@ const KIND := {
 	"conkers": "swing", "wrestling": "whirl", "ringing": "notes", "bell_ringing": "notes", "shanty": "notes", "singing": "notes",
 	"walling": "wall", "dry_stone": "wall", "crabbing": "hook", "fishing": "hook", "tug": "cheer", "tug_of_war": "cheer",
 	"hurling": "swing", "shinty": "swing", "arcade": "flip", "quiz": "flip", "crossword": "flip", "trumps": "flip",
-	"forecasting": "whirl", "races": "slide",
+	"forecasting": "whirl", "races": "slide", "science": "flip",
+	"sheepdog_trials": "whirl", "worms": "notes", "cheese": "tumble", "pancake": "flip", "snorkel": "skip", "coracle": "whirl",
+	"fete_cheese": "tumble", "fete_bog": "skip", "fete_welly": "tumble",
 }
 
 var fx: BattleFX

@@ -311,7 +311,7 @@
  },
  "fete_bog": {
   "name": "Bog snorkelling",
-  "move": "peat_plunge",
+  "move": "trench_wallow",
   "types": [
    "bog",
    "brook",
@@ -329,7 +329,7 @@
  },
  "fete_welly": {
   "name": "Welly wanging",
-  "move": "welly_wang",
+  "move": "gumboot_fling",
   "types": [
    "gale",
    "storm",
