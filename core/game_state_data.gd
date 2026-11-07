@@ -14,6 +14,7 @@ var euros := 0            # the Republic of Ireland's money (see Wallet)
 var purses := {}          # the overseas territories' own money: {currency code: whole units}, only non-zero ones
 var markets: Dictionary = Markets.fresh()  # shares, Doggerel and the days the markets noticed things (see Markets)
 var flags: Dictionary = {}
+var pieces: Dictionary = {}  # party pieces: {game_id: {best, plays, rosette}} (w48 P)
 var trumps: Dictionary = {}  # Trumps cards {cards: {species: n}, wins, losses, streak}; see Trumps (wave 47)
 var zone_id := "macclesfield"
 var pos := Vector2i(0, 0)
@@ -174,7 +175,7 @@ func to_dict() -> Dictionary:
 		"player_name": player_name, "rival_name": rival_name,
 		"party": (real_party if not real_party.is_empty() else party).map(func(c): return c.to_dict()),
 		"ark": ark.map(func(c): return c.to_dict()),
-		"bag": bag.duplicate(), "money": money, "flags": flags.duplicate(true),
+		"bag": bag.duplicate(), "money": money, "flags": flags.duplicate(true), "pieces": pieces.duplicate(true),
 		"zone_id": zone_id, "pos": [pos.x, pos.y], "facing": facing,
 		"seen": seen.duplicate(), "caught": caught.duplicate(), "badges": badges.duplicate(),
 		"play_seconds": play_seconds, "clock_minutes": clock_minutes, "day_count": day_count,
@@ -197,6 +198,7 @@ static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
 		s.bag[k] = int(bag_in[k])
 	s.money = int(d.get("money", 0))
 	s.flags = d.get("flags", {}).duplicate(true)
+	s.pieces = d.get("pieces", {}).duplicate(true)
 	for k in s.flags:
 		if typeof(s.flags[k]) == TYPE_FLOAT and s.flags[k] == floorf(s.flags[k]):
 			s.flags[k] = int(s.flags[k])
