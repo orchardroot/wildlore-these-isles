@@ -238,6 +238,10 @@ func _exec(c: Dictionary) -> void:
 			await GreenRun.new(self).bowls(c)
 		"skim":
 			await GreenRun.new(self).skim(c)
+		"snorkel":
+			await BogRun.new(self).snorkel(c)
+		"coracle":
+			await BogRun.new(self).coracle(c)
 		"ring":
 			await RingingRun.new(self).ring(c)
 		"wall":

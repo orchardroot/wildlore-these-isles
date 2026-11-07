@@ -1,0 +1,4 @@
+[
+  {"id": "peat_plunge", "name": "Peat Plunge", "type": "bog", "category": "physical", "power": 75, "accuracy": 100, "pp": 15, "priority": 0, "piece": "snorkel", "effect": {"id": "drain", "frac": 33}, "fx": {"shape": "pounce"}},
+  {"id": "coracle_spin", "name": "Coracle Spin", "type": "brook", "category": "physical", "power": 65, "accuracy": 95, "pp": 15, "priority": 0, "piece": "coracle", "effect": {"id": "flinch", "chance": 30}, "fx": {"shape": "wave"}}
+]

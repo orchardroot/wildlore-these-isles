@@ -267,6 +267,37 @@
    "h": 3,
    "label": "Dan yr Ogof Show Caves",
    "kind": "hall"
+  },
+  {
+   "type": "bunting",
+   "x": 55,
+   "y": 28,
+   "variant": 0,
+   "walk": true
+  },
+  {
+   "type": "bunting",
+   "x": 57,
+   "y": 28,
+   "variant": 2,
+   "walk": true
+  },
+  {
+   "type": "bunting",
+   "x": 59,
+   "y": 28,
+   "variant": 4,
+   "walk": true
+  },
+  {
+   "type": "flagpole",
+   "x": 53,
+   "y": 28
+  },
+  {
+   "type": "noticeboard",
+   "x": 63,
+   "y": 31
   }
  ],
  "warps": [
@@ -402,6 +433,15 @@
    "move": "still",
    "script": "fete_bog_steward",
    "name": "Bog Marshal"
+  },
+  {
+   "id": "g3_bog_marshal",
+   "sprite": "surfer",
+   "x": 62,
+   "y": 30,
+   "facing": "left",
+   "move": "still",
+   "script": "g3_bog_marshal"
   }
  ],
  "encounters": {
@@ -577,6 +617,11 @@
    "x": 4,
    "y": 15,
    "text": "DAN YR OGOF SHOW CAVES. Cathedral Cave, the Bone Cave and a river that rather fancies itself. Hard hats not provided. Sense of wonder, free."
+  },
+  {
+   "x": 61,
+   "y": 34,
+   "text": "BOG SNORKELLING. Two lengths of the peat trench, flippers only. The real championships are at Waen Rhydd bog near Llanwrtyd Wells, every August bank holiday. This is the practice pond. Do talk to the marshal before getting in."
   }
  ],
  "spawn": [

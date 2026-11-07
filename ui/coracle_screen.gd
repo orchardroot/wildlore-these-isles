@@ -79,8 +79,6 @@ func setup(arg: String) -> void:
 	_refresh()
 
 func _load(id: String) -> void:
-	if _venue_id != id and not _s.is_empty():
-		return
 	_venue = Coracle.venue(id)
 	_course = _venue.course
 	_rival = _venue.rival
