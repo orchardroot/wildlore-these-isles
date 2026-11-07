@@ -52,7 +52,7 @@ func test_steady_beats_sloppy_by_a_mile() -> void:
 func test_a_steady_charmer_lands_near_the_local_and_a_master_can_beat_it() -> void:
 	var steady := _total("steady")
 	var rival := float(WormCharming.venue("willaston").rival.worms)
-	assert_true(steady >= int(rival * 0.9) and steady <= int(rival * 2.0), "steady %d against a champion on %d" % [steady, int(rival)])
+	assert_true(steady >= int(rival) and steady <= int(rival * 2.5), "steady %d against a champion on %d" % [steady, int(rival)])
 
 func test_birds_cost_worms_when_not_shooed() -> void:
 	var shooed := _total("steady")

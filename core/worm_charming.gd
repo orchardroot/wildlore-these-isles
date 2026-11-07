@@ -79,7 +79,7 @@ static func tap(st: Dictionary, t: float) -> String:
 			continue
 		var w := 1.0 if dx + dy == 0 else 0.4
 		var dens: float = st.cells[i]
-		var expect := q * w * dens * (0.35 + 1.15 * float(st.meter)) * 1.5
+		var expect := q * w * dens * (0.35 + 1.15 * float(st.meter)) * 0.22
 		var n := int(expect)
 		if rng.roll() < expect - float(n):
 			n += 1

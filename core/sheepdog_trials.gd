@@ -55,9 +55,9 @@ static func start(v: Dictionary, easy: bool, rng: Rng) -> Dictionary:
 	var n := int(v.get("sheep", 7))
 	var gates: Array = v.get("gates", [])
 	var gx := float(gates[0].x) if not gates.is_empty() else 40.0
-	var x0 := (gx + FIELD.x) * 0.5 + 6.0   # the flock starts beyond the first gate, in the open
+	var x0 := minf(gx + 14.0, FIELD.x - 22.0)   # the flock starts beyond the first gate, in the open
 	for i in n:
-		sheep.append({"p": Vector2(x0 + rng.roll() * 12.0, 8.0 + rng.roll() * 24.0), "v": Vector2.ZERO, "penned": false, "through": 0, "scare": 0.0})
+		sheep.append({"p": Vector2(x0 + rng.roll() * 14.0, 8.0 + rng.roll() * 24.0), "v": Vector2.ZERO, "penned": false, "through": 0, "scare": 0.0})
 	var limit := float(v.get("limit", 150))
 	return {"sheep": sheep, "dog": Vector2(FIELD.x - 4.0, 20.0), "lying": false, "running": false, "t": 0.0,
 		"limit": limit * (1.35 if easy else 1.0), "penned": 0, "through": 0, "easy": easy, "rng": rng,
@@ -122,8 +122,8 @@ static func _sub(st: Dictionary, dt: float, move: Vector2, dash: bool, lie: bool
 		else:
 			s.scare = maxf(0.0, float(s.scare) - dt * 0.5)
 		var toward: Vector2 = centre - s.p
-		if toward.length() > 7.0:
-			acc += toward.normalized() * 1.1
+		if toward.length() > 5.0:
+			acc += toward.normalized() * 1.6
 		for o in live:
 			if o != s:
 				var dd: Vector2 = s.p - o.p
@@ -131,6 +131,29 @@ static func _sub(st: Dictionary, dt: float, move: Vector2, dash: bool, lie: bool
 				if l < 2.4 and l > 0.001:
 					acc += dd / l * (2.4 - l) * 4.0
 		acc += Vector2(rng.roll() - 0.5, rng.roll() - 0.5) * 3.0   # grazing
+		# a sheep that is being walked on sees the open gap and tends to take it (a nudge, so the game stays fair)
+		if float(s.scare) > 0.05:
+			var lure := Vector2.ZERO
+			var gj := 0
+			for g in st.gates:
+				var gxx := float(g.x)
+				if int(s.through) <= gj and s.p.x > gxx and s.p.x - gxx < 18.0:
+					lure = Vector2(gxx - 2.0, float(g.y))
+				gj += 1
+			if lure == Vector2.ZERO and int(s.through) >= st.gates.size() and s.p.x > PEN.end.x and s.p.x < PEN.end.x + 20.0:
+				lure = Vector2(PEN.end.x - 3.0, PEN.get_center().y)
+			if lure != Vector2.ZERO:
+				acc += (lure - s.p).normalized() * (4.0 if st.easy else 2.6)
+		for w in st.walls:   # ...and from the fences, so nobody sticks to one
+			var wr: Rect2 = w
+			var nearest := Vector2(clampf(s.p.x, wr.position.x, wr.end.x), clampf(s.p.y, wr.position.y, wr.end.y))
+			var off: Vector2 = s.p - nearest
+			var od := off.length()
+			if od < 3.0 and od > 0.001:
+				acc += off / od * (3.0 - od) * 3.0
+		acc.y += (FIELD.y * 0.5 - s.p.y) * 0.3   # the middle of the field looks safer than the edges
+		# they shy from the edge of the field, so nobody gets pinned to the wall
+		acc += Vector2(clampf(5.0 - s.p.x, 0.0, 5.0) - clampf(s.p.x - (FIELD.x - 5.0), 0.0, 5.0), clampf(4.0 - s.p.y, 0.0, 4.0) - clampf(s.p.y - (FIELD.y - 4.0), 0.0, 4.0)) * 2.5
 		s.v = (s.v + acc * dt) * exp(-2.4 * dt)
 		s.v = (s.v as Vector2).limit_length(MAX_SPEED)
 		var before: Vector2 = s.p
@@ -166,7 +189,7 @@ static func local_score(rival: Dictionary, rng: Rng) -> float:
 	return float(clampi(roundi(n), 0, 7)) + rng.roll() * 0.5
 
 static func advice(st: Dictionary) -> String:
-	var left := st.sheep.size() - int(st.penned)
+	var left: int = st.sheep.size() - int(st.penned)
 	if left == 0:
 		return "The lot, penned, with %d seconds to spare. Lovely." % int(float(st.limit) - float(st.t))
 	if int(st.through) == 0:

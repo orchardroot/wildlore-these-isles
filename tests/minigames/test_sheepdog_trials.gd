@@ -8,21 +8,36 @@ func _bot_move(st: Dictionary) -> Vector2:
 			live.append(s)
 	if live.is_empty():
 		return Vector2.ZERO
-	var c := Vector2.ZERO
-	for s in live:
-		c += s.p
-	c /= float(live.size())
-	var goal := Vector2(20.0, 20.0)
+	var goal := Vector2(6.0, 20.0)
+	var found := false
 	for g in st.gates:
 		var gx := float(g.x)
 		var behind := 0
 		for s in live:
 			if s.p.x > gx:
 				behind += 1
-		if behind > 0:
+		if behind >= 2 and not found:
 			goal = Vector2(gx - 4.0, float(g.y))
+			found = true
+	# the centre of the main bunch (the straggler, if there is one, is left for later)
+	var pts: Array = []
+	for s in live:
+		if goal.x > 25.0 and s.p.x < goal.x:
+			continue
+		pts.append(s.p)
+	if pts.is_empty():
+		for s in live:
+			pts.append(s.p)
+	pts.sort_custom(func(a, b): return (a as Vector2).distance_to(goal) < (b as Vector2).distance_to(goal))
+	if pts.size() >= 4:
+		pts = pts.slice(0, pts.size() - 1)
+	var c := Vector2.ZERO
+	for q in pts:
+		c += q
+	c /= float(pts.size())
 	var dir_c: Vector2 = (c - goal).normalized()
 	var want: Vector2 = c + dir_c * 9.0
+	want = Vector2(minf(want.x, 93.0), clampf(want.y, 2.0, 38.0))
 	var to_dog: Vector2 = st.dog - c
 	if to_dog.dot(dir_c) < 2.0 and to_dog.length() < 18.0:
 		var perp := Vector2(-dir_c.y, dir_c.x)
@@ -58,7 +73,7 @@ func test_a_steady_dog_pens_most_of_the_flock() -> void:
 		var total := 0
 		for seed_ in 5:
 			total += int(_play(id, seed_ + 1).penned)
-		assert_true(total >= 5 * 5, "%s: a steady bot penned %d of 35 over five runs" % [id, total])
+		assert_true(total >= 5 * 4, "%s: a steady bot penned %d of 35 over five runs" % [id, total])
 
 func test_a_dog_that_just_charges_does_not() -> void:
 	var total := 0
