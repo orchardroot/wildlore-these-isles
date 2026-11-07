@@ -23,6 +23,7 @@ var _easy := false
 var _lie := false
 var _started := false
 var _over := false
+var _frozen := false                      # dev screenshots hold the scene still
 var _wait := 0.5
 var _msg := "Walk round behind the flock, then walk them at the gate."
 var _tufts: Array = []
@@ -34,7 +35,7 @@ var _info: Label
 var _dog_sprite: AnimSprite
 
 func _build() -> void:
-	set_title("SheepdogTrials trials")
+	set_title("Sheepdog trials")
 	_easy = Settings.easy_darts
 	var root := VBoxContainer.new()
 	root.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -87,6 +88,7 @@ func setup(arg: String) -> void:
 		_st.t = 62.0
 		_st.dog = Vector2(76.0, 22.0)
 		_started = true
+		_frozen = true
 		_wait = 0.0
 		_msg = "Four in. Steady, now. Walk the rest at the gate."
 		_floaters.append({"text": "Penned!", "pos": Vector2(9, 12), "age": 0.3, "colour": Color("f6e7a0")})
@@ -106,12 +108,16 @@ func _begin(id: String) -> void:
 func _process(delta: float) -> void:
 	if _st.is_empty():
 		return
+	if _frozen:
+		_place_dog()
+		_stage.queue_redraw()
+		return
 	for f in _floaters:
 		f.age = float(f.age) + delta
 	_floaters = _floaters.filter(func(f): return float(f.age) < 1.4)
 	_bark_cd = maxf(0.0, _bark_cd - delta)
 	_step_cd = maxf(0.0, _step_cd - delta)
-	if _over:
+	if _over or _frozen:
 		_place_dog()
 		_stage.queue_redraw()
 		return

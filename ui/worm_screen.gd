@@ -19,6 +19,7 @@ var _easy := false
 var _clock := -4.0 * 0.625            # negative during the count-in; beats fall on multiples of the period
 var _last_beat := -1
 var _over := false
+var _frozen := false                  # dev screenshots hold the scene still
 var _msg := "Tap Confirm on every beat. Steady does it."
 var _verdict := ""
 var _verdict_age := 9.0
@@ -64,6 +65,7 @@ func setup(arg: String) -> void:
 		for k in 7:
 			_st.worms.append({"cell": [1, 3, 4, 4, 5, 7, 4][k], "age": 0.2 + 0.2 * float(k % 4), "off": Vector2(float(k % 3) * 0.3 - 0.3, float(k % 2) * 0.3 - 0.15)})
 		_st.bird = {"cell": 6, "eta": 0.7}
+		_frozen = true
 		_verdict = "perfect"
 		_verdict_age = 0.1
 		_msg = "Perfect. The ground is humming."
@@ -80,13 +82,16 @@ func _begin(id: String) -> void:
 func _process(delta: float) -> void:
 	if _st.is_empty():
 		return
+	if _frozen:
+		_stage.queue_redraw()
+		return
 	_pulse += delta
 	_verdict_age += delta
 	_fork_shake = maxf(0.0, _fork_shake - delta * 5.0)
 	for f in _floaters:
 		f.age = float(f.age) + delta
 	_floaters = _floaters.filter(func(f): return float(f.age) < 1.2)
-	if _over:
+	if _over or _frozen:
 		_stage.queue_redraw()
 		return
 	_clock += delta
@@ -290,9 +295,9 @@ func _draw_beat(d: Control) -> void:
 		d.draw_string(ThemeDB.fallback_font, Vector2(PLOT_ORIGIN.x, 52), "Get ready... %d" % n, HORIZONTAL_ALIGNMENT_LEFT, -1, 30, UIKit.CREAM)
 
 func _draw_hud(d: Control) -> void:
-	d.draw_rect(Rect2(20, 300, 260, 6), Color(0, 0, 0, 0.4))
-	d.draw_rect(Rect2(20, 300, 260.0 * float(_st.meter), 6), Color("f6e7a0") if float(_st.meter) < 0.9 else Color("9fd36a"))
-	d.draw_string(ThemeDB.fallback_font, Vector2(20, 294), "Rhythm", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.CREAM)
+	d.draw_rect(Rect2(20, 268, 260, 6), Color(0, 0, 0, 0.4))
+	d.draw_rect(Rect2(20, 268, 260.0 * float(_st.meter), 6), Color("f6e7a0") if float(_st.meter) < 0.9 else Color("9fd36a"))
+	d.draw_string(ThemeDB.fallback_font, Vector2(20, 262), "Rhythm", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.CREAM)
 	d.draw_rect(Rect2(700, 300, 280, 100), Color(0.05, 0.07, 0.1, 0.55))
 	d.draw_string(ThemeDB.fallback_font, Vector2(716, 340), "In the bucket: %d" % int(_st.bucket), HORIZONTAL_ALIGNMENT_LEFT, -1, 26, UIKit.CREAM)
 	d.draw_string(ThemeDB.fallback_font, Vector2(716, 376), "Lost to birds: %d" % int(_st.stolen), HORIZONTAL_ALIGNMENT_LEFT, -1, 22, UIKit.MUTED)
