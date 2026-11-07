@@ -1,0 +1,4 @@
+{
+ "sheepdog": {"name": "Sheepdog trials", "move": "round_up", "types": ["kin", "hedgerow"], "zone": "macc_forest", "where": "Macclesfield Forest, the trials steward in the meadow", "good": 4, "master": 7, "lower_better": false, "unit": "sheep penned", "master_name": "Roy, Peak District shepherd", "field": "round_up"},
+ "worms": {"name": "Worm charming", "move": "charm_the_worms", "types": ["bog", "hedgerow"], "zone": "macclesfield", "where": "Macclesfield, the plot judge south of the river", "good": 22, "master": 42, "lower_better": false, "unit": "worms", "master_name": "Pat, three-time plot champion", "field": "charm"}
+}

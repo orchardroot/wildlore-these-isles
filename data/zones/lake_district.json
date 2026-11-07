@@ -1305,6 +1305,16 @@
    "facing": "down",
    "move": "still",
    "script": "ld_wrestling"
+  },
+  {
+   "id": "ld_trials_steward",
+   "sprite": "farmer",
+   "x": 50,
+   "y": 45,
+   "facing": "down",
+   "move": "still",
+   "script": "ld_trials_steward",
+   "name": "Fell Steward"
   }
  ],
  "encounters": {

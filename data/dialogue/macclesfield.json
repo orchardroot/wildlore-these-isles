@@ -472,5 +472,17 @@
    "venue": "cheshire",
    "who": "Club Captain"
   }
+ ],
+ "macc_worm_charmer": [
+  {
+   "do": "say",
+   "who": "Plot Judge",
+   "text": "Mind the plot. Three metres square, string round the edge, and not one spade allowed. We thrum the ground and ask nicely."
+  },
+  {
+   "do": "worms",
+   "venue": "willaston",
+   "who": "Plot Judge"
+  }
  ]
 }

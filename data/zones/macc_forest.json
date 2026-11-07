@@ -80,6 +80,16 @@
    "facing": "up",
    "move": "still",
    "trainer": "leanne"
+  },
+  {
+   "id": "macc_trials_steward",
+   "sprite": "farmer",
+   "x": 20,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "macc_trials_steward",
+   "name": "Trials Steward"
   }
  ],
  "encounters": {

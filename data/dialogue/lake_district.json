@@ -173,5 +173,17 @@
    "venue": "grasmere",
    "who": "Ring Steward"
   }
+ ],
+ "ld_trials_steward": [
+  {
+   "do": "say",
+   "who": "Fell Steward",
+   "text": "Two gates and a pen, and the Herdwicks have opinions. Whistle if you must. They won't answer."
+  },
+  {
+   "do": "sheepdog",
+   "venue": "lakes",
+   "who": "Fell Steward"
+  }
  ]
 }

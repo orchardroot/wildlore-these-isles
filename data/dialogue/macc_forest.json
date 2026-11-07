@@ -1,0 +1,14 @@
+{
+ "macc_trials_steward": [
+  {
+   "do": "say",
+   "who": "Trials Steward",
+   "text": "Dogs to the post, please. Sheep out at the far end, gate in the middle, pen on the left. The flask is for the judges."
+  },
+  {
+   "do": "sheepdog",
+   "venue": "longshaw",
+   "who": "Trials Steward"
+  }
+ ]
+}

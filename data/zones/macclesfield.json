@@ -670,6 +670,16 @@
    "move": "still",
    "script": "macc_bowler",
    "name": "Club Captain"
+  },
+  {
+   "id": "macc_worm_charmer",
+   "sprite": "farmer",
+   "x": 14,
+   "y": 32,
+   "facing": "down",
+   "move": "still",
+   "script": "macc_worm_charmer",
+   "name": "Plot Judge"
   }
  ],
  "encounters": {},
