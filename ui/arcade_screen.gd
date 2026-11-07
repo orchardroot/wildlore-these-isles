@@ -103,6 +103,7 @@ func _switch(dir: int) -> void:
 	_refresh()
 
 func _on_cancel() -> void:
+	await PiecePrompt.after_game(self, "arcade", float(TrainerStats.get_count(Game.data, "arcade_toys")))
 	close({})
 
 func _drop() -> void:

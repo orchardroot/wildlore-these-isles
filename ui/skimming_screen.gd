@@ -129,6 +129,7 @@ func _landed() -> void:
 		_msg += "\n\nYour best: %d. %s skims %d." % [_best, who, _their_best]
 		_refresh()
 		await get_tree().create_timer(2.2).timeout
+		await PiecePrompt.after_game(self, "skimming", float(_best))
 		close({"won": _best > _their_best, "draw": _best == _their_best, "best": _best})
 		return
 	_wait = 0.5

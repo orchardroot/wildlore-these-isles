@@ -12,6 +12,7 @@ const CURSOR := Color("e8a33d")
 const INK := Color("1d2230")
 
 var _puzzle: Dictionary = {}
+var _t0 := Time.get_ticks_msec()
 var _entry: Array = []          # typed letters, rows of "" or "A".."Z"
 var _cells: Array = []          # rows of PanelContainer
 var _letters: Array = []        # rows of Label
@@ -158,6 +159,7 @@ func _finish_later() -> void:
 	await get_tree().create_timer(0.9).timeout
 	if _done:
 		return
+	await PiecePrompt.after_game(self, "crossword", (Time.get_ticks_msec() - _t0) / 1000.0)
 	_done = true
 	closed.emit({"solved": true})
 

@@ -154,6 +154,7 @@ func _score() -> void:
 		_msg += " Match to %s." % ("you" if st == "me" else _who()) if st != "draw" else " All square, so a draw."
 		_refresh()
 		await get_tree().create_timer(1.8).timeout
+		await PiecePrompt.after_game(self, "bowls", float(_my_shots - _their_shots))
 		close({"won": st == "me", "draw": st == "draw", "ends": _ends_me})
 		return
 	_refresh()

@@ -350,6 +350,7 @@ func _finish() -> void:
 			_msg.text = "Level on %d cards each. Honour is satisfied. Nobody believes that." % _g.mine.size()
 	set_hints([["confirm", "Done"]])
 	await get_tree().create_timer(1.0).timeout
+	await PiecePrompt.after_game(self, "trumps", (2.0 if _g.mine.size() - _g.theirs.size() >= 4 else 1.0) if won else 0.0)
 	_phase = "end"
 	set_hints([["confirm", "Done"], ["cancel", "Done"]])
 

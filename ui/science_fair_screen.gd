@@ -116,7 +116,9 @@ func _win(line: String) -> void:
 	_msg = line
 	Audio.sfx("badge")
 	_refresh()
-	get_tree().create_timer(1.6).timeout.connect(func(): close({"solved": true}))
+	get_tree().create_timer(1.6).timeout.connect(func():
+		await PiecePrompt.after_game(self, "science", float(PartyPieces.state(Game.data, "science").plays + 1))
+		close({"solved": true}))
 
 func _on_cancel() -> void:
 	close({"solved": false})

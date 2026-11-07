@@ -69,7 +69,7 @@
  },
  "curling": {
   "name": "Curling",
-  "move": "hurry_hard",
+  "move": "sweep_hard",
   "types": [
    "frost",
    "iron",
