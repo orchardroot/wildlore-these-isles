@@ -246,6 +246,10 @@ func _exec(c: Dictionary) -> void:
 			await FolkRaceRun.new(self).cheese(c)
 		"pancake":
 			await FolkRaceRun.new(self).pancake(c)
+		"snorkel":
+			await BogRun.new(self).snorkel(c)
+		"coracle":
+			await BogRun.new(self).coracle(c)
 		"ring":
 			await RingingRun.new(self).ring(c)
 		"wall":

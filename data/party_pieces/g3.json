@@ -1,0 +1,28 @@
+{
+ "snorkel": {
+  "name": "Bog snorkelling",
+  "move": "peat_plunge",
+  "types": ["bog", "brook"],
+  "zone": "beacons",
+  "where": "The practice bog in the Brecon Beacons, with the Bog Marshal",
+  "good": 80.0,
+  "master": 56.0,
+  "lower_better": true,
+  "unit": "seconds",
+  "master_name": "Bethan, bog snorkelling champion of Powys",
+  "field": "snorkel"
+ },
+ "coracle": {
+  "name": "Coracle racing",
+  "move": "coracle_spin",
+  "types": ["brook", "tide"],
+  "zone": "ironbridge_gorge",
+  "where": "The Severn at Ironbridge, with the Coracle Racer",
+  "good": 40.0,
+  "master": 27.0,
+  "lower_better": true,
+  "unit": "seconds",
+  "master_name": "Eustace, coracle maker's grandson",
+  "field": "paddle"
+ }
+}

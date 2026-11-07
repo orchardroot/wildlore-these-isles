@@ -1,0 +1,17 @@
+{
+ "how": "Press Left and Right in turn on the beat, like a very wet cyclist. On the beat is good, near it is fair, and a ragged kick stirs up silt that clogs the snorkel and drains your breath. Confirm blows the snorkel clear, which costs about a beat. Two lengths, 60 yards each, flippers only.",
+ "venues": {
+  "waen_rhydd": {
+   "name": "Waen Rhydd peat bog",
+   "prize": 12,
+   "rival": {
+    "who": "Bethan, bog snorkelling champion of Powys",
+    "time": 64.0,
+    "spread": 4.0,
+    "intro": "Bethan is already in the trench up to her chin, with her flippers on and a face of perfect calm. The water is the colour of strong tea and about as warm as it was at breakfast.",
+    "beaten": "Bethan pushes her mask up and looks at you for a long moment. Then she says, in Welsh, something that is either a compliment or a question about your family."
+   },
+   "real": "The real thing is the World Bog Snorkelling Championships at Waen Rhydd peat bog, near Llanwrtyd Wells in Powys, held every August bank holiday. Competitors wear flippers and a snorkel, may not use any normal swimming stroke, and swim two lengths of a 60-yard trench cut through the peat. Fancy dress is encouraged."
+  }
+ }
+}
