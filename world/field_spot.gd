@@ -180,7 +180,7 @@ static func _hop(ow: Node, dest: Array) -> void:
 	var d := Vector2i(int(dest[0]), int(dest[1]))
 	var from: Vector3 = ow.player.position
 	var to := Vector3(d.x + 0.5, ZoneBuilder.ground_y(ow.zone, d), d.y + 0.5)
-	var t := ow.player.create_tween()
+	var t: Tween = ow.player.create_tween()
 	t.tween_method(func(f: float): ow.player.position = Player.hop_pos(from, to, f), 0.0, 1.0, 0.7)
 	await t.finished
 	ow.player.place(d, ow.player.facing, to.y)
