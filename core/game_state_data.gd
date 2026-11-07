@@ -14,6 +14,7 @@ var euros := 0            # the Republic of Ireland's money (see Wallet)
 var purses := {}          # the overseas territories' own money: {currency code: whole units}, only non-zero ones
 var markets: Dictionary = Markets.fresh()  # shares, Doggerel and the days the markets noticed things (see Markets)
 var flags: Dictionary = {}
+var pieces: Dictionary = {}  # party pieces {game_id: {best, plays, rosette}} (STUB field, session P owns it)
 var trumps: Dictionary = {}  # Trumps cards {cards: {species: n}, wins, losses, streak}; see Trumps (wave 47)
 var zone_id := "macclesfield"
 var pos := Vector2i(0, 0)
@@ -181,7 +182,7 @@ func to_dict() -> Dictionary:
 		"last_sanctuary": last_sanctuary.duplicate(true), "rng_seed": rng_seed,
 		"weather": weather, "weather_region": weather_region, "weather_until": weather_until,
 		"stats": stats.duplicate(), "euros": euros, "purses": purses.duplicate(), "markets": markets.duplicate(true),
-		"look": look.duplicate(true), "trumps": trumps.duplicate(true),
+		"look": look.duplicate(true), "trumps": trumps.duplicate(true), "pieces": pieces.duplicate(true),
 	}
 
 static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
@@ -218,6 +219,7 @@ static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
 	s.weather_region = str(d.get("weather_region", ""))
 	s.weather_until = int(d.get("weather_until", 0))
 	s.stats = TrainerStats.sanitise(d.get("stats"))
+	s.pieces = d.get("pieces", {}).duplicate(true) if d.get("pieces") is Dictionary else {}
 	s.euros = maxi(0, int(d.get("euros", 0)))
 	s.purses = Wallet.sanitise_purses(d.get("purses"))
 	s.markets = Markets.sanitise(d.get("markets"))
