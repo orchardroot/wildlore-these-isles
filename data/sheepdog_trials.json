@@ -1,0 +1,35 @@
+{
+ "how": "Walk your dog with the direction keys. Sheep drift away from the dog, so get round behind them and walk them where you want them: through the gate, then into the pen. Hold Run to dash (it spooks them), press Confirm to tell the dog to lie down (it settles the flock). Be steady and the sheep go quietly. Be rushed and they scatter.",
+ "venues": {
+  "longshaw": {
+   "name": "Longshaw",
+   "prize": 14,
+   "sheep": 7,
+   "limit": 150,
+   "gates": [{"x": 48.0, "y": 20.0, "w": 11.0}],
+   "rival": {
+    "who": "Roy, Peak District shepherd",
+    "penned": 5.2,
+    "spread": 1.4,
+    "intro": "Roy has two collies, one flat cap and no opinion of anyone who runs at sheep.",
+    "beaten": "Roy tips his cap, which for Roy is a speech."
+   },
+   "real": "The real thing is the Longshaw Sheepdog Trials on the Longshaw Estate in the Peak District, held every year in the autumn, with dogs working from the fetch to the pen against the clock."
+  },
+  "lakes": {
+   "name": "The Lakes",
+   "prize": 16,
+   "sheep": 7,
+   "limit": 140,
+   "gates": [{"x": 64.0, "y": 20.0, "w": 12.0}, {"x": 40.0, "y": 20.0, "w": 9.5}],
+   "rival": {
+    "who": "Hannah, Herdwick farmer",
+    "penned": 5.6,
+    "spread": 1.2,
+    "intro": "Hannah's Herdwicks are grey-faced, stubborn, and have seen better dogs than yours. Her dog, Fly, has seen them all.",
+    "beaten": "Hannah folds her arms. Fly looks at her, then at you, and wags once, which feels like a ruling."
+   },
+   "real": "The real thing is a Lakeland sheepdog trial in the summer or autumn, run on the fellside with Herdwicks, Swaledales and a very serious judge. The very first trials were held at Bala, in Wales, in 1873."
+  }
+ }
+}

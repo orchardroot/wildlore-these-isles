@@ -1,0 +1,19 @@
+{
+ "how": "Tap Confirm on the beat to thrum the ground with your fork: steady taps bring the worms up, sloppy ones scare them down. Move the fork with the direction keys, because a patch that has given up its worms needs a rest. Birds are drawn to a messy rhythm, so Shoo them (Run) before they land. Charmed worms are counted and put back.",
+ "bpm": 96,
+ "seconds": 60,
+ "venues": {
+  "willaston": {
+   "name": "Willaston",
+   "prize": 12,
+   "rival": {
+    "who": "Pat, three-time plot champion",
+    "worms": 32,
+    "spread": 6,
+    "intro": "Pat has a garden fork, a tin of patience and a technique that involves humming Abba at the soil.",
+    "beaten": "Pat looks at the plot, then at you, then writes down the words 'ask about the humming'."
+   },
+   "real": "The real thing is the World Worm Charming Championships at Willaston in Cheshire, held every summer. Each team gets a three-metre square plot and half an hour to bring worms to the surface by vibration, with no digging allowed. Every worm is counted, then put back where it came from."
+  }
+ }
+}

@@ -1,0 +1,4 @@
+[
+  {"id": "round_up", "name": "Round Up", "type": "kin", "category": "physical", "power": 65, "accuracy": 100, "pp": 15, "priority": 0, "effect": {"id": "flinch", "chance": 30}, "fx": {"shape": "slash"}, "piece": "sheepdog_trials"},
+  {"id": "charm_the_worms", "name": "Charm the Worms", "type": "bog", "category": "special", "power": 60, "accuracy": 100, "pp": 15, "priority": 0, "effect": {"id": "drain", "frac": 50}, "fx": {"shape": "wave"}, "piece": "worms"}
+]
