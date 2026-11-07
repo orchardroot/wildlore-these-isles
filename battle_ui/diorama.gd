@@ -51,6 +51,7 @@ func _ready() -> void:
 		a.home = PLAYER_POS if side == Battle.PLAYER else FOE_POS
 		a.position = a.home
 		add_child(a)
+		a.thump.connect(_on_thump)
 		actors.append(a)
 	_make_backdrop()
 	_place_camera()
@@ -93,12 +94,17 @@ func set_double(on: bool) -> void:
 		for side in 2:
 			var a := CreatureActor.new()
 			add_child(a)
+			a.thump.connect(_on_thump)
 			extra_actors.append(a)
 	for side in 2:
 		for pos in (2 if on else 1):
 			var a := actor(side, pos)
 			a.home = home_of(side, pos)
 			a.position = a.home
+
+## A heavy creature's charge landed: nudge the camera (softer with reduced flashing).
+func _on_thump(strength: float) -> void:
+	shake = maxf(shake, 0.6 * strength * Settings.flash_scale(0.25))
 
 ## The actor at a field position (position 1 only exists in doubles).
 func actor(side: int, pos := 0) -> CreatureActor:

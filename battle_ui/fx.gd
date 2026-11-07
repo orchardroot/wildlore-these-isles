@@ -9,6 +9,7 @@ const STATUS_COLOURS := {
 
 var dio: Diorama
 var hud: BattleHUD
+var _pieces: FXPieces
 var sky: SkyAndLight  # weather moves change the battle sky
 
 func _wait(sec: float) -> void:
@@ -361,7 +362,12 @@ func _attack(side: int, type_id: String, pos := 0, t_side := -1, t_pos := 0, spr
 		if _sigs == null:
 			_sigs = FXSignatures.new()
 			_sigs.fx = self
-		if _sigs.has_move(str(move.get("id", ""))):
+		if FXPieces.is_piece(move) and shape != "self":  # a party piece: its game's flourish, then its shape
+			if _pieces == null:
+				_pieces = FXPieces.new()
+				_pieces.fx = self
+			await _pieces.play(move, side, pos, other, hit_pos, t_pos, spread, pal, col)
+		elif _sigs.has_move(str(move.get("id", ""))):
 			await _sigs.play(str(move.id), side, pos, other, hit_pos, t_pos, pal, col)
 		else:
 			await play_shape(shape, side, pos, other, hit_pos, t_pos, spread, pal, col)
