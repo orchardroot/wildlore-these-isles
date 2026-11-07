@@ -431,4 +431,5 @@ func _paint_moves() -> void:
 		var from_name := str(Game.moves.get_move(_moves_of.moves[_swap_from].id).get("name", ""))
 		_move_info.text = "Swap %s with %s?" % [from_name, info.get("name", "")] if _swap_from != _move else "Pick where %s should go." % from_name
 		return
-	_move_info.text = "%sAccuracy %d  ·  %s" % [("Power %d  ·  " % power) if power > 0 else "", int(info.get("accuracy", 100)), MoveText.describe(info)]
+	# the move's full name leads, so a long one trimmed in its row ("Bramble La...") can still be read
+	_move_info.text = "%s  ·  %sAccuracy %d  ·  %s" % [str(info.get("name", _moves_of.moves[_move].id)), ("Power %d  ·  " % power) if power > 0 else "", int(info.get("accuracy", 100)), MoveText.describe(info)]
