@@ -3,7 +3,7 @@ extends RefCounted
 ## The `sheepdog` and `worms` story commands (wave 48).
 ##   {"do": "sheepdog", "venue": "longshaw", "who": "Roy"}    seven sheep, a gate and a pen, against the venue's local
 ##   {"do": "worms", "venue": "willaston", "who": "Pat"}      sixty seconds on a three-by-three plot, against the local
-## Rules, locals, venues and prizes live in Sheepdog (data/sheepdog.json) and WormCharming (data/worm_charming.json); the
+## Rules, locals, venues and prizes live in SheepdogTrials (data/sheepdog_trials.json) and WormCharming (data/worm_charming.json); the
 ## screens are ui/sheepdog_screen.gd and ui/worm_screen.gd, which also offer the party piece.
 
 var cmd: Commands
@@ -15,11 +15,11 @@ func _init(c: Commands) -> void:
 
 func sheepdog(c: Dictionary) -> void:
 	var id := str(c.get("venue", ""))
-	var v := Sheepdog.venue(id)
+	var v := SheepdogTrials.venue(id)
 	if v.is_empty():
 		push_warning("TrialsRun: no sheepdog venue '%s'" % id)
 		return
-	await _run(c, v, "sheepdog", Sheepdog.cfg().how, "Walk them in, steady. Sheep don't read the programme.", "penned")
+	await _run(c, v, "sheepdog", SheepdogTrials.cfg().how, "Walk them in, steady. Sheep don't read the programme.", "penned")
 
 func worms(c: Dictionary) -> void:
 	var id := str(c.get("venue", ""))
@@ -54,7 +54,7 @@ func _run(c: Dictionary, v: Dictionary, menu: String, how: String, tip: String, 
 		return
 	var won := bool(res.get("won", false))
 	var n := int(res.get(key, 0))
-	var fin: Dictionary = Sheepdog.finish(data, id, n, won) if sheep else WormCharming.finish(data, id, n, won)
+	var fin: Dictionary = SheepdogTrials.finish(data, id, n, won) if sheep else WormCharming.finish(data, id, n, won)
 	if not sheep and bool(fin.record):
 		await host.say("", "That is your best charm yet: %d worms." % n)
 	if not won:

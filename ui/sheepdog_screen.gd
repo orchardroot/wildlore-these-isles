@@ -2,7 +2,7 @@ extends MenuBase
 ## Sheepdog trials (story command {"do": "sheepdog"}): your lead creature works the flock. Direction keys walk the
 ## dog, Run dashes (it spooks them), Confirm lies the dog down (it settles them). Get round behind the sheep and walk
 ## them through the gate or gates into the pen before the clock runs out. Easier minigames widen the gates, add time and
-## make the sheep calmer. The rules and the flock live in Sheepdog. Closes with {"won": bool, "draw": bool,
+## make the sheep calmer. The rules and the flock live in SheepdogTrials. Closes with {"won": bool, "draw": bool,
 ## "penned": int} (null if you walk out).
 ## setup arg: "<venue id>" (dev: "dev" shows a run part way through).
 
@@ -34,7 +34,7 @@ var _info: Label
 var _dog_sprite: AnimSprite
 
 func _build() -> void:
-	set_title("Sheepdog trials")
+	set_title("SheepdogTrials trials")
 	_easy = Settings.easy_darts
 	var root := VBoxContainer.new()
 	root.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -50,7 +50,7 @@ func _build() -> void:
 	root.add_child(_info)
 	var tr := Rng.new(77)
 	for i in 90:
-		_tufts.append([Vector2(tr.roll() * Sheepdog.FIELD.x, tr.roll() * Sheepdog.FIELD.y), 0.5 + tr.roll() * 0.8, tr.roll()])
+		_tufts.append([Vector2(tr.roll() * SheepdogTrials.FIELD.x, tr.roll() * SheepdogTrials.FIELD.y), 0.5 + tr.roll() * 0.8, tr.roll()])
 	_dog_sprite = AnimSprite.new()
 	_dog_sprite.visible = false
 	_dog_sprite.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -64,7 +64,7 @@ func _build() -> void:
 
 func setup(arg: String) -> void:
 	var id := arg.split(":")[0]
-	_venue_id = id if not Sheepdog.venue(id).is_empty() else "longshaw"
+	_venue_id = id if not SheepdogTrials.venue(id).is_empty() else "longshaw"
 	if _stage != null:
 		_begin(_venue_id)
 	if arg.begins_with("dev"):   # four penned, three in the open, a gate passed, 62 seconds gone
@@ -93,9 +93,9 @@ func setup(arg: String) -> void:
 		_refresh()
 
 func _begin(id: String) -> void:
-	_v = Sheepdog.venue(id)
+	_v = SheepdogTrials.venue(id)
 	_rival = _v.rival
-	_st = Sheepdog.start(_v, _easy, _rng)
+	_st = SheepdogTrials.start(_v, _easy, _rng)
 	_started = false
 	_over = false
 	_lie = false
@@ -130,7 +130,7 @@ func _process(delta: float) -> void:
 		if _lie:
 			_lie = false
 	if _started:
-		var ev := Sheepdog.step(_st, delta, v, dash, _lie)
+		var ev := SheepdogTrials.step(_st, delta, v, dash, _lie)
 		_react(ev)
 		if v != Vector2.ZERO and dash and _step_cd <= 0.0:
 			Audio.sfx("step_grass")
@@ -180,14 +180,14 @@ func _on_cancel() -> void:
 func _finish() -> void:
 	_over = true
 	Audio.sfx("badge" if int(_st.penned) >= _st.sheep.size() else "cancel")
-	var mine := Sheepdog.score(_st)
-	var theirs := Sheepdog.local_score(_rival, _rng)
+	var mine := SheepdogTrials.score(_st)
+	var theirs := SheepdogTrials.local_score(_rival, _rng)
 	var who := str(_rival.get("who", "The local")).split(",")[0]
 	var left := int(maxf(0.0, float(_st.limit) - float(_st.t)))
-	_msg = "%d of %d penned%s.  %s\n%s penned %d." % [int(_st.penned), _st.sheep.size(), (", %d seconds to spare" % left) if int(_st.penned) >= _st.sheep.size() else "", Sheepdog.advice(_st), who, int(theirs)]
+	_msg = "%d of %d penned%s.  %s\n%s penned %d." % [int(_st.penned), _st.sheep.size(), (", %d seconds to spare" % left) if int(_st.penned) >= _st.sheep.size() else "", SheepdogTrials.advice(_st), who, int(theirs)]
 	_refresh()
 	await get_tree().create_timer(2.6).timeout
-	await PiecePrompt.after_game(self, Sheepdog.PIECE_ID, float(_st.penned))
+	await PiecePrompt.after_game(self, SheepdogTrials.PIECE_ID, float(_st.penned))
 	close({"won": mine > theirs, "draw": absf(mine - theirs) < 0.0001, "penned": int(_st.penned)})
 
 func _refresh() -> void:
@@ -215,8 +215,8 @@ func _draw_stage() -> void:
 	if _st.is_empty():
 		return
 	var d := _stage
-	var fw := Sheepdog.FIELD.x * S
-	var fh := Sheepdog.FIELD.y * S
+	var fw := SheepdogTrials.FIELD.x * S
+	var fh := SheepdogTrials.FIELD.y * S
 	# beyond the wall: hills and hedge, a marquee and onlookers along the top
 	d.draw_rect(Rect2(Vector2.ZERO, STAGE), Color("2d4a2b"))
 	d.draw_rect(Rect2(0, 0, STAGE.x, PAD.y + 4), Color("3d5f3a"))
@@ -238,7 +238,7 @@ func _draw_stage() -> void:
 	_draw_pen(d)
 	_draw_gates(d)
 	# a ring showing how close the dog can get before they move
-	var flight := Sheepdog.FLIGHT * (0.45 if _lie else (1.4 if _st.running else 1.0)) * (0.82 if _easy else 1.0)
+	var flight := SheepdogTrials.FLIGHT * (0.45 if _lie else (1.4 if _st.running else 1.0)) * (0.82 if _easy else 1.0)
 	var dp := _px(_st.dog)
 	d.draw_circle(dp, flight * S, Color(1, 1, 1, 0.06 if not _st.running else 0.12))
 	d.draw_arc(dp, flight * S, 0.0, TAU, 48, Color(1, 1, 1, 0.28), 2.0)
@@ -257,7 +257,7 @@ func _draw_stage() -> void:
 	_draw_hud(d)
 
 func _draw_pen(d: Control) -> void:
-	var r := Sheepdog.PEN
+	var r := SheepdogTrials.PEN
 	d.draw_rect(Rect2(_px(r.position), r.size * S), Color("c9b074"))
 	for i in 18:
 		var sp := _px(r.position + Vector2(1.0 + float((i * 7) % 14), 1.0 + float((i * 5) % 17)))
@@ -270,12 +270,12 @@ func _draw_pen(d: Control) -> void:
 	d.draw_line(bot, bot + Vector2(10, 16), WOOD, 5.0)
 	d.draw_circle(top, 6.0, Color("f2f0e8"))
 	d.draw_circle(bot, 6.0, Color("f2f0e8"))
-	for w in Sheepdog.walls({"gates": []}):
+	for w in SheepdogTrials.walls({"gates": []}):
 		_draw_fence(d, w)
 
 func _draw_gates(d: Control) -> void:
 	for w in _st.walls:
-		if not Sheepdog.PEN.grow(1.0).encloses(w):
+		if not SheepdogTrials.PEN.grow(1.0).encloses(w):
 			_draw_fence(d, w)
 	var i := 1
 	for g in _st.gates:

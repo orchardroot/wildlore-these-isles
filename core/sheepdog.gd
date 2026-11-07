@@ -1,193 +1,92 @@
 class_name Sheepdog
 extends RefCounted
-## Sheepdog trials: you steer your lead creature round a small flock, through the gate or gates, into the pen, against a
-## clock. Top-down and simple: each sheep drifts away from the dog (further if it is dashing, much less if it is lying
-## down), clings loosely to the others and grazes a little. The field is FIELD units across; the pen is on the left,
-## a fence with a gap (a gate) sits across the field for each gate in the venue. Pure logic with a seeded Rng (no
-## autoload names); ui/sheepdog_screen.gd draws it and the story command {"do": "sheepdog"} (story/trials_run.gd)
-## pays it out. Venues and locals live in data/sheepdog.json.
+## The sheepdog trials: steer your lead creature (the dog) round a field and drive four sheep through two gates
+## into the pen before the clock runs out. Pure rules; ui/sheepdog_trial.gd draws it and feeds in the direction.
+## Sheep drift away from the dog (the closer, the faster), huddle a little, and can only go through a gate's gap:
+## the rest of each gate is hurdle. Once through a gate a sheep stays through. "Easy" widens the gates, slows the
+## sheep and gives more time. A faster lead creature is a touch quicker, never so much that it decides it.
 
-const PATH := "res://data/sheepdog.json"
-const FIELD := Vector2(96.0, 40.0)
-const PEN := Rect2(3.0, 11.0, 15.0, 18.0)       # the pen's outer fence; its open side faces the field (right)
-const WALL := 0.8                               # fence thickness
-const FLIGHT := 13.0                            # how close the dog can get before a sheep moves off
-const WALK := 20.0                              # dog speeds, units per second
-const DASH := 31.0
-const FLEE := 15.0
-const MAX_SPEED := 7.5
-const FLAG_PREFIX := "sheepdog_"                # sheepdog_<venue> = true once the local has been beaten
-const FLAG_DAY := "sheepdog_day_"
-const DAILY_PURSE := 3
-const PIECE_ID := "sheepdog"
+const W := 12.0
+const H := 7.0
+const GATES := [5.0, 8.5]      # x of each gate
+const PEN_X := 10.0            # past the last gate and beyond this x, a sheep is penned
+const SHEEP := 4
+const FLEE_R := 2.4
+const SHEEP_SPEED := 1.7
+const DOG_SPEED := 3.3
+const TIME := 75.0
+const EASY_TIME := 110.0
 
-static var _cfg: Dictionary = {}
+## {dog, sheep: [{p, stage}], gap: half-width of a gate, time, left, easy, rng, speed}
+static func start(seed_text: String, lead_speed: int, easy: bool) -> Dictionary:
+	var rng := Rng.new(absi(hash("sheepdog/" + seed_text)))
+	var sheep := []
+	for i in SHEEP:
+		sheep.append({"p": Vector2(rng.roll_range(1.8, 4.0), rng.roll_range(1.6, H - 1.6)), "stage": 0})
+	return {"dog": Vector2(0.8, H * 0.5), "sheep": sheep, "gap": 1.5 if easy else 1.0,
+		"time": EASY_TIME if easy else TIME, "left": EASY_TIME if easy else TIME, "easy": easy, "rng": rng,
+		"speed": DOG_SPEED * (1.0 + clampf(float(lead_speed), 0.0, 100.0) / 500.0),
+		"gate_y": H * 0.5}
 
-static func cfg() -> Dictionary:
-	if _cfg.is_empty():
-		var d = JsonUtil.read(PATH)
-		_cfg = d if d is Dictionary else {"venues": {}}
-	return _cfg
+static func penned(st: Dictionary) -> int:
+	var n := 0
+	for s in st.sheep:
+		if int(s.stage) >= GATES.size() and s.p.x >= PEN_X:
+			n += 1
+	return n
 
-static func venues() -> Array:
-	return cfg().venues.keys()
+static func done(st: Dictionary) -> bool:
+	return penned(st) >= SHEEP or float(st.left) <= 0.0
 
-static func venue(id: String) -> Dictionary:
-	return cfg().venues.get(id, {})
-
-## The fences as thin rectangles: one per gate side, and three sides of the pen.
-static func walls(v: Dictionary, easy := false) -> Array:
-	var out: Array = []
-	for g in v.get("gates", []):
-		var w := float(g.w) + (3.0 if easy else 0.0)
-		var top := float(g.y) - w * 0.5
-		var bot := float(g.y) + w * 0.5
-		out.append(Rect2(float(g.x) - WALL * 0.5, 0.0, WALL, top))
-		out.append(Rect2(float(g.x) - WALL * 0.5, bot, WALL, FIELD.y - bot))
-	out.append(Rect2(PEN.position.x, PEN.position.y - WALL * 0.5, PEN.size.x, WALL))
-	out.append(Rect2(PEN.position.x, PEN.end.y - WALL * 0.5, PEN.size.x, WALL))
-	out.append(Rect2(PEN.position.x - WALL * 0.5, PEN.position.y, WALL, PEN.size.y))
-	return out
-
-## A fresh run. `easy` widens the gates, gives longer, and makes the sheep less jumpy.
-static func start(v: Dictionary, easy: bool, rng: Rng) -> Dictionary:
-	var sheep: Array = []
-	var n := int(v.get("sheep", 7))
-	var gates: Array = v.get("gates", [])
-	var gx := float(gates[0].x) if not gates.is_empty() else 40.0
-	var x0 := (gx + FIELD.x) * 0.5 + 6.0   # the flock starts beyond the first gate, in the open
-	for i in n:
-		sheep.append({"p": Vector2(x0 + rng.roll() * 12.0, 8.0 + rng.roll() * 24.0), "v": Vector2.ZERO, "penned": false, "through": 0, "scare": 0.0})
-	var limit := float(v.get("limit", 150))
-	return {"sheep": sheep, "dog": Vector2(FIELD.x - 4.0, 20.0), "lying": false, "running": false, "t": 0.0,
-		"limit": limit * (1.35 if easy else 1.0), "penned": 0, "through": 0, "easy": easy, "rng": rng,
-		"walls": walls(v, easy), "gates": gates, "done": false, "events": []}
-
-static func blocked(walls_: Array, p: Vector2, r := 0.5) -> bool:
-	if p.x < r or p.y < r or p.x > FIELD.x - r or p.y > FIELD.y - r:
-		return true
-	for w in walls_:
-		if (w as Rect2).grow(r).has_point(p):
-			return true
-	return false
-
-static func _move(walls_: Array, p: Vector2, d: Vector2, r: float) -> Vector2:
-	var to := p + d
-	if not blocked(walls_, to, r):
-		return to
-	if not blocked(walls_, Vector2(to.x, p.y), r):
-		return Vector2(to.x, p.y)
-	if not blocked(walls_, Vector2(p.x, to.y), r):
-		return Vector2(p.x, to.y)
-	return p
-
-## Advance by dt seconds with the dog steered by `move` (a vector, length up to 1), dashing or not.
-## Returns the events of this step: "gate", "pen", "scatter".
-static func step(st: Dictionary, dt: float, move: Vector2, dash: bool, lie: bool) -> Array:
-	var events: Array = []
-	if bool(st.done):
-		return events
-	var left := dt
-	while left > 0.0:
-		var h := minf(left, 0.04)
-		_sub(st, h, move, dash, lie, events)
-		left -= h
-	return events
-
-static func _sub(st: Dictionary, dt: float, move: Vector2, dash: bool, lie: bool, events: Array) -> void:
-	var rng: Rng = st.rng
-	var easy: bool = st.easy
-	st.t = float(st.t) + dt
-	st.lying = lie
-	st.running = dash and not lie and move != Vector2.ZERO
-	var speed := 0.0 if lie else (DASH if st.running else WALK)
-	if move != Vector2.ZERO:
-		st.dog = _move(st.walls, st.dog, move.limit_length(1.0) * speed * dt, 0.7)
-	var flight := FLIGHT * (0.45 if lie else (1.4 if st.running else 1.0)) * (0.82 if easy else 1.0)
-	var live: Array = []
+## Advances `dt` seconds with the dog heading `dir` (any length up to 1).
+static func step(st: Dictionary, dir: Vector2, dt: float) -> void:
+	if done(st):
+		return
+	st.left = maxf(0.0, float(st.left) - dt)
+	var d: Vector2 = dir.limit_length(1.0)
+	st.dog = (st.dog + d * float(st.speed) * dt).clamp(Vector2(0.3, 0.3), Vector2(W - 0.3, H - 0.3))
+	var speed := SHEEP_SPEED * (0.7 if st.easy else 1.0)
 	var centre := Vector2.ZERO
 	for s in st.sheep:
-		if not s.penned:
-			live.append(s)
-			centre += s.p
-	if not live.is_empty():
-		centre /= float(live.size())
-	for s in live:
-		var acc := Vector2.ZERO
+		centre += s.p
+	centre /= st.sheep.size()
+	for s in st.sheep:
+		var v := Vector2.ZERO
 		var away: Vector2 = s.p - st.dog
 		var dist := away.length()
-		if dist < flight and dist > 0.001:
-			acc += away / dist * (1.0 - dist / flight) * FLEE * (1.0 + 0.8 * float(s.scare))
-			s.scare = minf(1.0, float(s.scare) + dt * 1.2 * (1.0 - dist / flight) * (2.0 if st.running else 1.0))
-		else:
-			s.scare = maxf(0.0, float(s.scare) - dt * 0.5)
-		var toward: Vector2 = centre - s.p
-		if toward.length() > 7.0:
-			acc += toward.normalized() * 1.1
-		for o in live:
-			if o != s:
-				var dd: Vector2 = s.p - o.p
-				var l := dd.length()
-				if l < 2.4 and l > 0.001:
-					acc += dd / l * (2.4 - l) * 4.0
-		acc += Vector2(rng.roll() - 0.5, rng.roll() - 0.5) * 3.0   # grazing
-		s.v = (s.v + acc * dt) * exp(-2.4 * dt)
-		s.v = (s.v as Vector2).limit_length(MAX_SPEED)
-		var before: Vector2 = s.p
-		s.p = _move(st.walls, s.p, s.v * dt, 0.6)
-		if (s.p - before).length() < (s.v * dt).length() * 0.5:
-			s.v *= 0.4
-		# the gates: a sheep that crosses a fence line (through the gap, since the fences block elsewhere) is through
-		var gi := 0
-		for g in st.gates:
-			var gx := float(g.x)
-			if (before.x > gx) != (s.p.x > gx) and s.p.x < before.x and int(s.through) <= gi:
-				s.through = gi + 1
-				st.through = int(st.through) + 1
-				events.append("gate")
-			gi += 1
-		if float(s.scare) > 0.9 and rng.roll() < dt * 0.6:
-			events.append("scatter")
-		if PEN.grow(-1.4).has_point(s.p):
-			s.penned = true
-			s.v = Vector2.ZERO
-			st.penned = int(st.penned) + 1
-			events.append("pen")
-	if int(st.penned) >= st.sheep.size() or float(st.t) >= float(st.limit):
-		st.done = true
+		if dist < FLEE_R and dist > 0.001:
+			v += away / dist * speed * (1.0 - dist / FLEE_R + 0.25)
+		v += (centre - s.p).limit_length(1.0) * 0.12
+		v += Vector2(st.rng.roll_range(-1.0, 1.0), st.rng.roll_range(-1.0, 1.0)) * 0.1
+		# sheep shy off the walls, so none gets pinned in a corner
+		v.y += clampf(1.2 - s.p.y, 0.0, 1.2) * 0.9 - clampf(s.p.y - (H - 1.2), 0.0, 1.2) * 0.9
+		_move(st, s, s.p + v * dt, dt)
 
-## Points for the clock: whole sheep first, then the seconds left as a fraction of one.
-static func score(st: Dictionary) -> float:
-	var left := maxf(0.0, float(st.limit) - float(st.t)) / float(st.limit)
-	return float(st.penned) + (left * 0.99 if int(st.penned) >= st.sheep.size() else 0.0)
+static func _move(st: Dictionary, s: Dictionary, to: Vector2, dt: float) -> void:
+	to = to.clamp(Vector2(0.25, 0.25), Vector2(W - 0.25, H - 0.25))
+	var gate_i := int(s.stage)
+	# one-way gates: never back through one already passed
+	if gate_i > 0:
+		to.x = maxf(to.x, float(GATES[gate_i - 1]) + 0.15)
+	if gate_i < GATES.size():
+		var gx: float = GATES[gate_i]
+		if to.x >= gx:
+			if absf(to.y - float(st.gate_y)) <= float(st.gap):
+				if to.x >= gx + 0.15:
+					s.stage = gate_i + 1
+			else:
+				# a sheep nosing a hurdle shuffles along it towards the gap
+				to.x = gx - 0.05
+				to.y += signf(float(st.gate_y) - to.y) * 0.6 * dt
+	s.p = to
 
-static func local_score(rival: Dictionary, rng: Rng) -> float:
-	var n := float(rival.get("penned", 5.0)) + (rng.roll() - 0.5) * 2.0 * float(rival.get("spread", 1.0))
-	return float(clampi(roundi(n), 0, 7)) + rng.roll() * 0.5
-
-static func advice(st: Dictionary) -> String:
-	var left := st.sheep.size() - int(st.penned)
-	if left == 0:
-		return "The lot, penned, with %d seconds to spare. Lovely." % int(float(st.limit) - float(st.t))
-	if int(st.through) == 0:
-		return "Nobody went through the gate. Get behind the flock and walk them at it, slow."
-	if int(st.penned) == 0:
-		return "Through the gate, but nobody made the pen. Walk them left, steady, and lie down if they bolt."
-	return "%d still out. Dashing sends them off in all directions; walk, then lie down to settle them." % left
-
-static func beaten(data: GameStateData, venue_id: String) -> bool:
-	return data.flag(FLAG_PREFIX + venue_id) == true
-
-## Records a finished run. Returns {first, money (sterling), line}.
-static func finish(data: GameStateData, venue_id: String, penned: int, won: bool) -> Dictionary:
-	TrainerStats.add(data, "sheep_penned", penned)
-	if not won:
-		return {"first": false, "money": 0, "line": ""}
-	var v := venue(venue_id)
-	if not beaten(data, venue_id):
-		data.set_flag(FLAG_PREFIX + venue_id, true)
-		return {"first": true, "money": int(v.get("prize", 0)), "line": str(v.get("rival", {}).get("beaten", ""))}
-	if DailyKey.done_today(data, FLAG_DAY + venue_id):
-		return {"first": false, "money": 0, "line": ""}
-	data.set_flag(FLAG_DAY + venue_id, DailyKey.stamp(data))
-	return {"first": false, "money": DAILY_PURSE, "line": ""}
+## 1 (red) to 3 (yellow) by how many were penned and how much clock is left; 0 for none placed.
+static func place_for(st: Dictionary) -> int:
+	var n := penned(st)
+	if n >= SHEEP:
+		return 1 if float(st.left) >= float(st.time) * 0.3 else 2
+	if n >= SHEEP - 1:
+		return 2
+	if n >= 2:
+		return 3
+	return 0
