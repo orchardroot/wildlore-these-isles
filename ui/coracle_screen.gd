@@ -9,7 +9,7 @@ extends MenuBase
 const STAGE := Vector2(1184, 400)
 const PX := 9.0                 # pixels per metre
 const OX := 46.0
-const OY := 212.0               # screen y of the river's mid line (y = 28 m)
+const OY := 230.0               # screen y of the river's mid line (y = 28 m)
 const MID_M := 28.0
 const COUNT := 3.0
 
@@ -60,7 +60,14 @@ func _build() -> void:
 func setup(arg: String) -> void:
 	_venue_id = arg if not Coracle.venue(arg).is_empty() else "ironbridge"
 	_load(_venue_id)
-	if arg.begins_with("dev"):   # four gates through, a little spin on
+	if arg == "dev_end":   # one stride from the line, to try the finish and the party piece prompt
+		_s.p = Vector2(Coracle.finish_x(_course) - 0.2, Coracle.centre(_course, Coracle.finish_x(_course) - 0.2))
+		_s.v = Vector2(3.0, 0.0)
+		_s.gate = _gates.size()
+		_s.t = 27.5
+		_clock = 27.5
+		_started = true
+	elif arg.begins_with("dev"):   # four gates through, a little spin on
 		_s.p = Vector2(52.0, Coracle.centre(_course, 52.0) + 2.5)
 		_s.v = Vector2(2.0, 0.4)
 		_s.h = 0.35
@@ -235,14 +242,10 @@ func _draw_stage() -> void:
 		bank_t.append(_px(x, cy - half - 0.9))
 		bank_b.append(_px(x, cy + half + 0.9))
 		x += 1.0
-	var river := PackedVector2Array(top)
-	for i in range(bot.size() - 1, -1, -1):
-		river.append(bot[i])
-	var mud := PackedVector2Array(bank_t)
-	for i in range(bank_b.size() - 1, -1, -1):
-		mud.append(bank_b[i])
-	c.draw_colored_polygon(mud, Color("8a7a52"))
-	c.draw_colored_polygon(river, Color("3f7f8f"))
+	for i in top.size() - 1:
+		c.draw_colored_polygon(PackedVector2Array([bank_t[i], bank_t[i + 1], bank_b[i + 1], bank_b[i]]), Color("8a7a52"))
+	for i in top.size() - 1:
+		c.draw_colored_polygon(PackedVector2Array([top[i], top[i + 1], bot[i + 1], bot[i]]), Color("3f7f8f"))
 	# a deeper channel down the middle and current streaks moving downstream
 	var mid := PackedVector2Array()
 	var xx := 0.0
@@ -278,7 +281,7 @@ func _draw_stage() -> void:
 		for k in 9:
 			var by := lerpf(fp_top.y, fp_bot.y, float(k) / 8.0)
 			c.draw_line(Vector2(fp_top.x - 10, by), Vector2(fp_top.x + 10, by), Color("3a3232"), 2.0)
-		c.draw_string(ThemeDB.fallback_font, Vector2(fp_top.x - 60, fp_top.y - 8), "FINISH, 1781", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.CREAM)
+		c.draw_string(ThemeDB.fallback_font, Vector2(fp_bot.x - 130, fp_bot.y + 20), "FINISH, 1781", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.CREAM)
 	else:
 		c.draw_line(fp_top, fp_bot, Color("f2e8cf"), 4.0)
 	for p in _crowd:
@@ -300,7 +303,7 @@ func _draw_stage() -> void:
 		var a := clampf(1.0 - float(f.t) / 1.2, 0.0, 1.0)
 		var col: Color = f.col
 		col.a = a
-		c.draw_string(ThemeDB.fallback_font, f.pos + Vector2(0, -float(f.t) * 26.0), f.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 30, col, 3, Color(0, 0, 0, a * 0.6))
+		_text(f.pos + Vector2(0, -float(f.t) * 26.0), f.text, 30, col, a)
 	_draw_hud()
 
 func _draw_gate(i: int) -> void:
@@ -368,12 +371,16 @@ func _draw_hud() -> void:
 		c.draw_string(font, Vector2(150, 44), "+%ds" % (int(Coracle.MISS_PENALTY) * int(_s.misses)), HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("d9604a"))
 	# the spin gauge: how fast the boat is turning, which side the next stroke turns it
 	var sp := clampf(float(_s.spin) / 3.0, -1.0, 1.0)
-	c.draw_rect(Rect2(STAGE.x - 258, 6, 250, 40), Color(0.05, 0.06, 0.1, 0.6))
-	c.draw_string(font, Vector2(STAGE.x - 250, 22), "Spin", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, UIKit.MUTED)
+	c.draw_rect(Rect2(STAGE.x - 258, STAGE.y - 48, 250, 40), Color(0.05, 0.06, 0.1, 0.6))
+	c.draw_string(font, Vector2(STAGE.x - 250, STAGE.y - 32), "Spin", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, UIKit.MUTED)
 	var gx := STAGE.x - 133.0
-	c.draw_rect(Rect2(gx - 110, 26, 220, 12), Color("2c3a52"))
-	c.draw_rect(Rect2(gx - 1, 24, 2, 16), UIKit.CREAM)
-	c.draw_rect(Rect2(gx, 26, sp * 110.0, 12) if sp >= 0.0 else Rect2(gx + sp * 110.0, 26, -sp * 110.0, 12), Color("e8a030") if absf(sp) > 0.7 else Color("78b6d8"))
+	c.draw_rect(Rect2(gx - 110, STAGE.y - 28, 220, 12), Color("2c3a52"))
+	c.draw_rect(Rect2(gx - 1, STAGE.y - 30, 2, 16), UIKit.CREAM)
+	c.draw_rect(Rect2(gx, STAGE.y - 28, sp * 110.0, 12) if sp >= 0.0 else Rect2(gx + sp * 110.0, STAGE.y - 28, -sp * 110.0, 12), Color("e8a030") if absf(sp) > 0.7 else Color("78b6d8"))
 	if not _started:
 		var n := int(ceil(-_clock))
-		c.draw_string(font, Vector2(STAGE.x * 0.5 - 20, STAGE.y * 0.5), str(n) if n > 0 else "Go!", HORIZONTAL_ALIGNMENT_LEFT, -1, 88, UIKit.GOLD, 6, Color(0, 0, 0, 0.5))
+		_text(Vector2(STAGE.x * 0.5 - 20, STAGE.y * 0.5), str(n) if n > 0 else "Go!", 88, UIKit.GOLD, 1.0)
+
+func _text(pos: Vector2, text: String, size: int, col: Color, a := 1.0) -> void:
+	_stage.draw_string_outline(ThemeDB.fallback_font, pos, text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, 4, Color(0, 0, 0, a * 0.6))
+	_stage.draw_string(ThemeDB.fallback_font, pos, text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, col)

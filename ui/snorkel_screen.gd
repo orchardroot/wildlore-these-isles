@@ -66,7 +66,14 @@ func _build() -> void:
 func setup(arg: String) -> void:
 	_venue_id = arg if not Snorkel.venue(arg).is_empty() else "waen_rhydd"
 	_rival = Snorkel.venue(_venue_id).rival
-	if arg.begins_with("dev"):    # part way along the second length, a little silted
+	if arg == "dev_end":    # on the last yard, to try the finish and the party piece prompt
+		_s.x = Snorkel.LENGTH * 2.0
+		_s.length = 1
+		_s.t = 51.0
+		_clock = 51.0
+		_started = true
+		_their_time = 64.0
+	elif arg.begins_with("dev"):    # part way along the second length, a little silted
 		_s = Snorkel.fresh()
 		_s.x = 83.0
 		_s.length = 1
@@ -294,7 +301,7 @@ func _draw_stage() -> void:
 		var a := clampf(1.0 - float(f.t) / 1.1, 0.0, 1.0)
 		var col: Color = f.col
 		col.a = a
-		c.draw_string(ThemeDB.fallback_font, f.pos + Vector2(0, -float(f.t) * 30.0), f.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 30, col, 3, Color(0, 0, 0, a * 0.6))
+		_text(f.pos + Vector2(0, -float(f.t) * 30.0), f.text, 30, col, a)
 	_draw_hud()
 
 func _rival_dir() -> bool:
@@ -309,8 +316,8 @@ func _draw_swimmer(p: Vector2, dir: float, suit: Color, kick: float, rival: bool
 	# flippers (behind the body): alternate up and down; the kicked one swings wide
 	var fl_up := 8.0 + (kick * 10.0 if not rival else wobble * 2.0)
 	var fl_dn := 8.0 - (kick * 10.0 if not rival else wobble * 2.0)
-	c.draw_colored_polygon(PackedVector2Array([p + Vector2(-26 * f, -3), p + Vector2(-52 * f, -fl_up - 4), p + Vector2(-56 * f, -fl_up + 6), p + Vector2(-28 * f, 1)]), Color("e8a030"))
-	c.draw_colored_polygon(PackedVector2Array([p + Vector2(-26 * f, 3), p + Vector2(-52 * f, fl_dn - 6), p + Vector2(-56 * f, fl_dn + 4), p + Vector2(-28 * f, -1)]), Color("d0701c"))
+	c.draw_line(p + Vector2(-24 * f, -3), p + Vector2(-50 * f, -fl_up - 2), Color("e8a030"), 8.0)
+	c.draw_line(p + Vector2(-24 * f, 3), p + Vector2(-50 * f, fl_dn + 0), Color("d0701c"), 8.0)
 	# body and arms trailing back
 	c.draw_circle(p + Vector2(-8 * f, 0), 13.0, suit)
 	c.draw_circle(p + Vector2(-20 * f, 0), 10.0, suit.darkened(0.15))
@@ -364,3 +371,14 @@ func _draw_hud() -> void:
 		c.draw_arc(cc, r_out, 0.0, TAU, 28, Color("8fe0a0") if near else Color(UIKit.CREAM, 0.7), 4.0 if near else 2.5)
 	if _easy:
 		c.draw_arc(cc, 20.0, 0.0, TAU, 28, Color(UIKit.GOLD, 0.25), 12.0)
+
+func _text(pos: Vector2, text: String, size: int, col: Color, a := 1.0) -> void:
+	_stage.draw_string_outline(ThemeDB.fallback_font, pos, text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, 4, Color(0, 0, 0, a * 0.6))
+	_stage.draw_string(ThemeDB.fallback_font, pos, text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, col)
+
+func _meter(r: Rect2, frac: float, col: Color, label: String) -> void:
+	var c := _stage
+	c.draw_string(ThemeDB.fallback_font, Vector2(r.position.x - 92, r.position.y + 15), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 20, UIKit.CREAM)
+	c.draw_rect(r, Color("2c3a52"))
+	c.draw_rect(Rect2(r.position, Vector2(r.size.x * clampf(frac, 0.0, 1.0), r.size.y)), col)
+	c.draw_rect(r, Color(UIKit.HEATHER, 0.6), false, 2.0)
