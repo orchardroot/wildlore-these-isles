@@ -1,0 +1,60 @@
+[
+ {
+  "id": "fs_armboth_forest_topple",
+  "zone": "armboth_forest",
+  "x": 13,
+  "y": 14,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls some loose change and a gratitude card.",
+  "reward": {
+   "money": 2910
+  },
+  "flag": "field_armboth_forest_topple",
+  "at": "lancaster"
+ },
+ {
+  "id": "fs_carlisle_topple",
+  "zone": "carlisle",
+  "x": 24,
+  "y": 39,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "A dead trunk, leaning on nothing much. {lead} puts its shoulder to it and over it goes with a crack. Underneath: Hazelnuts.",
+  "reward": {
+   "item": "hazelnuts",
+   "qty": 1
+  },
+  "flag": "field_carlisle_topple",
+  "at": "carlisle"
+ },
+ {
+  "id": "fs_lake_district_mend",
+  "zone": "lake_district",
+  "x": 26,
+  "y": 55,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in the wall, where the stones have gone for a walk. {lead} fits them back one by one, like a very slow jigsaw. Tucked in the wall behind: Pocket Transistor Radio.",
+  "reward": {
+   "curio": "transistor"
+  },
+  "flag": "field_lake_district_mend",
+  "at": "lancaster"
+ },
+ {
+  "id": "fs_lake_district_paddle",
+  "zone": "lake_district",
+  "x": 34,
+  "y": 5,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Selkie Pearl.",
+  "reward": {
+   "item": "selkie_pearl",
+   "qty": 1
+  },
+  "flag": "field_lake_district_paddle",
+  "at": "lancaster"
+ }
+]

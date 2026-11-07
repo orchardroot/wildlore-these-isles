@@ -494,6 +494,13 @@ func _icon(mk: Dictionary, c: Vector2) -> void:
 						draw_rect(Rect2(c + Vector2(-2.5, -5), Vector2(5, 10)), INK)
 					_:
 						draw_rect(Rect2(c + Vector2(-4, -2), Vector2(8, 6)), INK)
+		"field":  # a leaf-green ring; a tick once the nook has been dealt with
+			draw_circle(c, 8.0, Color(INK, 0.9))
+			draw_circle(c, 6.6, Color("a9c98a") if mk.done else PAPER)
+			if mk.done:
+				draw_polyline(PackedVector2Array([c + Vector2(-3.5, 0.5), c + Vector2(-1, 3.5), c + Vector2(4, -3)]), INK, 1.8, true)
+			else:
+				draw_circle(c, 2.0, INK)
 		"post":  # an envelope with a red seal
 			var r := Rect2(c - Vector2(9, 6), Vector2(18, 12))
 			draw_rect(r, PAPER)

@@ -216,6 +216,7 @@ static func marks(data: GameStateData, show: Dictionary) -> Array:
 	if here and not Postcards.waiting(data).is_empty():
 		out.append({"kind": "post", "at": str(here)})
 	out.append_array(Poi.marks(data))  # the question marks on the routes
+	out.append_array(FieldSpots.marks(data))  # field piece nooks you have spotted
 	return out
 
 ## Where a mark sits on the map (map units), or (-1, -1) if its town or place isn't drawn.

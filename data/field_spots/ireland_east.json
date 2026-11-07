@@ -1,0 +1,31 @@
+[
+ {
+  "id": "fs_boyne_valley_round_up",
+  "zone": "boyne_valley",
+  "x": 20,
+  "y": 25,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep at the gate, and no sheep will go first. {lead} comes round the back, low and quiet, and the flock files through. The farmer's thanks: a roll of notes.",
+  "reward": {
+   "money": 1980
+  },
+  "flag": "field_boyne_valley_round_up",
+  "at": "boyne_valley"
+ },
+ {
+  "id": "fs_boyne_valley_snorkel",
+  "zone": "boyne_valley",
+  "x": 29,
+  "y": 16,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Hag Stone.",
+  "reward": {
+   "item": "hag_stone",
+   "qty": 1
+  },
+  "flag": "field_boyne_valley_snorkel",
+  "at": "boyne_valley"
+ }
+]

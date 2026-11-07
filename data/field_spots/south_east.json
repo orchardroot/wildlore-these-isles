@@ -1,0 +1,159 @@
+[
+ {
+  "id": "fs_bletchley_park_paddle",
+  "zone": "bletchley_park",
+  "x": 15,
+  "y": 14,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, tied up and patient. {lead} takes the paddle and you take a seat. The water is easy and the other side has Willow Sprig.",
+  "reward": {
+   "item": "willow_sprig",
+   "qty": 1
+  },
+  "flag": "field_bletchley_park_paddle",
+  "at": "bletchley_park"
+ },
+ {
+  "id": "fs_brighton_charm",
+  "zone": "brighton",
+  "x": 26,
+  "y": 7,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Truffle.",
+  "reward": {
+   "item": "truffle",
+   "qty": 1
+  },
+  "flag": "field_brighton_charm",
+  "at": "brighton"
+ },
+ {
+  "id": "fs_brighton_round_up",
+  "zone": "brighton",
+  "x": 38,
+  "y": 44,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "{lead} circles the flock like it has done this all its life. The gate is clear in a minute. Someone has hung Miniature Tin Bath on the post.",
+  "reward": {
+   "curio": "tin_bath"
+  },
+  "flag": "field_brighton_round_up",
+  "at": "brighton"
+ },
+ {
+  "id": "fs_canterbury_mend",
+  "zone": "canterbury",
+  "x": 35,
+  "y": 50,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in the wall, where the stones have gone for a walk. {lead} fits them back one by one, like a very slow jigsaw. Tucked in the wall behind: Fresnel Prism.",
+  "reward": {
+   "curio": "lighthouse_lens"
+  },
+  "flag": "field_canterbury_mend",
+  "at": "canterbury"
+ },
+ {
+  "id": "fs_canterbury_charm",
+  "zone": "canterbury",
+  "x": 38,
+  "y": 19,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: a roll of notes.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_canterbury_charm",
+  "at": "canterbury"
+ },
+ {
+  "id": "fs_kent_downs_round_up",
+  "zone": "kent_downs",
+  "x": 14,
+  "y": 29,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "A knot of sheep, all facing the wrong way. {lead} works them in a neat curve until the gate is clear. Left on the post for you: Double Gloucester.",
+  "reward": {
+   "item": "double_gloucester",
+   "qty": 1
+  },
+  "flag": "field_kent_downs_round_up",
+  "at": "kent_downs"
+ },
+ {
+  "id": "fs_kent_downs_line",
+  "zone": "kent_downs",
+  "x": 48,
+  "y": 34,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the water. {lead} wades in, makes a few calm passes and fishes it out: Lucky Sixpence.",
+  "reward": {
+   "curio": "sixpence"
+  },
+  "flag": "field_kent_downs_line",
+  "at": "kent_downs"
+ },
+ {
+  "id": "fs_oxford_mend",
+  "zone": "oxford",
+  "x": 55,
+  "y": 39,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Lucky Sixpence.",
+  "reward": {
+   "curio": "sixpence"
+  },
+  "flag": "field_oxford_mend",
+  "at": "oxford"
+ },
+ {
+  "id": "fs_oxford_charm",
+  "zone": "oxford",
+  "x": 22,
+  "y": 39,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: Colliery Check Tag.",
+  "reward": {
+   "curio": "pit_checks"
+  },
+  "flag": "field_oxford_charm",
+  "at": "oxford"
+ },
+ {
+  "id": "fs_south_downs_round_up",
+  "zone": "south_downs",
+  "x": 34,
+  "y": 6,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep at the gate, and no sheep will go first. {lead} comes round the back, low and quiet, and the flock files through. The farmer's thanks: a few coins.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_south_downs_round_up",
+  "at": "south_downs"
+ },
+ {
+  "id": "fs_south_downs_snorkel",
+  "zone": "south_downs",
+  "x": 7,
+  "y": 46,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "The bog water is dark and cold. {lead} ploughs through it with its face down and surfaces holding a few coins.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_south_downs_snorkel",
+  "at": "south_downs"
+ }
+]

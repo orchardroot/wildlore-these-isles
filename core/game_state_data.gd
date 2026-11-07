@@ -175,7 +175,7 @@ func to_dict() -> Dictionary:
 		"player_name": player_name, "rival_name": rival_name,
 		"party": (real_party if not real_party.is_empty() else party).map(func(c): return c.to_dict()),
 		"ark": ark.map(func(c): return c.to_dict()),
-		"bag": bag.duplicate(), "money": money, "flags": flags.duplicate(true),
+		"bag": bag.duplicate(), "money": money, "flags": flags.duplicate(true), "pieces": pieces.duplicate(true),
 		"zone_id": zone_id, "pos": [pos.x, pos.y], "facing": facing,
 		"seen": seen.duplicate(), "caught": caught.duplicate(), "badges": badges.duplicate(),
 		"play_seconds": play_seconds, "clock_minutes": clock_minutes, "day_count": day_count,
@@ -198,6 +198,7 @@ static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
 		s.bag[k] = int(bag_in[k])
 	s.money = int(d.get("money", 0))
 	s.flags = d.get("flags", {}).duplicate(true)
+	s.pieces = d.get("pieces", {}).duplicate(true)
 	for k in s.flags:
 		if typeof(s.flags[k]) == TYPE_FLOAT and s.flags[k] == floorf(s.flags[k]):
 			s.flags[k] = int(s.flags[k])

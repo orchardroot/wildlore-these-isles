@@ -1,0 +1,32 @@
+[
+ {
+  "id": "fs_blackpool_loft",
+  "zone": "blackpool",
+  "x": 48,
+  "y": 4,
+  "field": "loft",
+  "prop": "bale",
+  "text": "A bale and a bend, and a bowl that wants lofting. {lead} swings and sends it up over the hedge in one long arc. It lands by Blackberries.",
+  "reward": {
+   "item": "blackberries",
+   "qty": 1
+  },
+  "flag": "field_blackpool_loft",
+  "at": "blackpool"
+ },
+ {
+  "id": "fs_blackpool_skim",
+  "zone": "blackpool",
+  "x": 8,
+  "y": 57,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "A flat stone and a still stretch of water. {lead} sends it dancing across, once, twice, five times, and something on the far side wobbles loose: Sea Glass.",
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "field_blackpool_skim",
+  "at": "blackpool"
+ }
+]

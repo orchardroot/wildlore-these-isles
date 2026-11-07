@@ -1,0 +1,167 @@
+[
+ {
+  "id": "fs_cambridge_paddle",
+  "zone": "cambridge",
+  "x": 7,
+  "y": 15,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, left on the bank, light as a basket. {lead} gets in and paddles across without spinning more than twice. On the far side: Willow Sprig.",
+  "reward": {
+   "item": "willow_sprig",
+   "qty": 1
+  },
+  "flag": "field_cambridge_paddle",
+  "at": "cambridge"
+ },
+ {
+  "id": "fs_cambridge_loft",
+  "zone": "cambridge",
+  "x": 21,
+  "y": 18,
+  "field": "loft",
+  "prop": "bale",
+  "text": "A bale and a bend, and a bowl that wants lofting. {lead} swings and sends it up over the hedge in one long arc. It lands by some loose change and a gratitude card.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_cambridge_loft",
+  "at": "cambridge"
+ },
+ {
+  "id": "fs_norwich_skim",
+  "zone": "norwich",
+  "x": 63,
+  "y": 45,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Oak Acorn.",
+  "reward": {
+   "item": "oak_acorn",
+   "qty": 1
+  },
+  "flag": "field_norwich_skim",
+  "at": "norwich"
+ },
+ {
+  "id": "fs_norwich_paddle",
+  "zone": "norwich",
+  "x": 59,
+  "y": 32,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Selkie Pearl.",
+  "reward": {
+   "item": "selkie_pearl",
+   "qty": 1
+  },
+  "flag": "field_norwich_paddle",
+  "at": "norwich"
+ },
+ {
+  "id": "fs_staithe_marshes_round_up",
+  "zone": "staithe_marshes",
+  "x": 16,
+  "y": 20,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep at the gate, and no sheep will go first. {lead} comes round the back, low and quiet, and the flock files through. The farmer's thanks: Sheep Wool.",
+  "reward": {
+   "item": "sheep_wool",
+   "qty": 1
+  },
+  "flag": "field_staithe_marshes_round_up",
+  "at": "the_broads"
+ },
+ {
+  "id": "fs_the_broads_roll",
+  "zone": "the_broads",
+  "x": 21,
+  "y": 25,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Banbury Cake.",
+  "reward": {
+   "item": "banbury_cake",
+   "qty": 1
+  },
+  "flag": "field_the_broads_roll",
+  "at": "the_broads"
+ },
+ {
+  "id": "fs_the_broads_loft",
+  "zone": "the_broads",
+  "x": 18,
+  "y": 32,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: a roll of notes.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_the_broads_loft",
+  "at": "the_broads"
+ },
+ {
+  "id": "fs_the_fens_snorkel",
+  "zone": "the_fens",
+  "x": 38,
+  "y": 41,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "The bog water is dark and cold. {lead} ploughs through it with its face down and surfaces holding a roll of notes.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_the_fens_snorkel",
+  "at": "the_fens"
+ },
+ {
+  "id": "fs_the_fens_charm",
+  "zone": "the_fens",
+  "x": 22,
+  "y": 32,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: a purse, a bit damp.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_the_fens_charm",
+  "at": "the_fens"
+ },
+ {
+  "id": "fs_the_fens_topple_x1",
+  "zone": "the_fens",
+  "x": 61,
+  "y": 52,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+  "reward": {
+   "hop": [
+    64,
+    52
+   ]
+  },
+  "flag": "field_the_fens_topple_a",
+  "at": "the_fens"
+ },
+ {
+  "id": "fs_the_fens_topple_x2",
+  "zone": "the_fens",
+  "x": 63,
+  "y": 52,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
+  "reward": {
+   "hop": [
+    60,
+    52
+   ]
+  },
+  "flag": "field_the_fens_topple_b",
+  "at": "the_fens"
+ }
+]
