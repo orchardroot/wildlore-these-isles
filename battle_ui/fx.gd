@@ -9,6 +9,7 @@ const STATUS_COLOURS := {
 
 var dio: Diorama
 var hud: BattleHUD
+var _pieces: FXPieces
 var sky: SkyAndLight  # weather moves change the battle sky
 
 func _wait(sec: float) -> void:
@@ -268,6 +269,10 @@ func play(cue: Dictionary, battle: Battle) -> void:
 					move = battle.move_db.get_move(a.get_slice("=", 1))
 					cue.move_type = str(move.get("type", cue.move_type))
 					cue["dev_weather"] = str(move.get("effect", {}).get("weather", ""))
+			for a in DevArgs.user_args():  # --fx-piece=<game id>: the attack plays that party piece's flourish (screenshots only)
+				if a.begins_with("--fx-piece="):
+					move = move.duplicate()
+					move["piece"] = a.get_slice("=", 1)
 			await _attack(side, str(cue.move_type), pos, int(cue.get("target_side", 1 - side)), int(cue.get("target_pos", 0)), bool(cue.get("spread", false)), move)
 			if str(cue.get("dev_weather", "")) != "":  # the stand-in move's weather arrives too
 				await play({"cue": "weather", "weather": cue.dev_weather, "turns": 5}, battle)
@@ -361,7 +366,12 @@ func _attack(side: int, type_id: String, pos := 0, t_side := -1, t_pos := 0, spr
 		if _sigs == null:
 			_sigs = FXSignatures.new()
 			_sigs.fx = self
-		if _sigs.has_move(str(move.get("id", ""))):
+		if FXPieces.is_piece(move) and shape != "self":  # a party piece: its game's flourish, then its shape
+			if _pieces == null:
+				_pieces = FXPieces.new()
+				_pieces.fx = self
+			await _pieces.play(move, side, pos, other, hit_pos, t_pos, spread, pal, col)
+		elif _sigs.has_move(str(move.get("id", ""))):
 			await _sigs.play(str(move.id), side, pos, other, hit_pos, t_pos, pal, col)
 		else:
 			await play_shape(shape, side, pos, other, hit_pos, t_pos, spread, pal, col)
