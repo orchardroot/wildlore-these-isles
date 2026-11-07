@@ -19,6 +19,7 @@ func _init(menu: MenuBase) -> void:
 
 func build(parent: Control) -> void:
 	_ids = PartyPieces.ids()
+	_ids.sort_custom(func(a, b): return str(PartyPieces.entry(str(a)).name) < str(PartyPieces.entry(str(b)).name))
 	var row := HBoxContainer.new()
 	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -26,7 +27,9 @@ func build(parent: Control) -> void:
 	row.add_theme_constant_override("separation", 22)
 	parent.add_child(row)
 	var lp := UIKit.panel(Color("14182299"), 10)
-	lp.custom_minimum_size = Vector2(470, 0)
+	lp.custom_minimum_size = Vector2(380, 0)
+	lp.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	lp.size_flags_stretch_ratio = 0.8
 	lp.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	row.add_child(lp)
 	var sc := ScrollContainer.new()
@@ -41,6 +44,7 @@ func build(parent: Control) -> void:
 	sc.add_child(col)
 	var dp := UIKit.panel(PANEL, 18)
 	dp.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	dp.size_flags_stretch_ratio = 1.2
 	dp.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	row.add_child(dp)
 	var dsc := ScrollContainer.new()
@@ -52,7 +56,9 @@ func build(parent: Control) -> void:
 	_detail.add_theme_constant_override("separation", 8)
 	dsc.add_child(_detail)
 	var got := _ids.filter(func(i): return PartyPieces.unlocked(Game.data, str(i))).size()
-	col.add_child(UIKit.label("%d of %d pieces learnt. Win a silver rosette at a game and your lead creature picks up its piece." % [got, _ids.size()], 18, UIKit.GOLD))
+	var intro := UIKit.label("%d of %d pieces learnt. A silver rosette at a game and your lead creature picks up its piece." % [got, _ids.size()], 18, UIKit.GOLD)
+	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	col.add_child(intro)
 	for id in _ids:
 		var e := PartyPieces.entry(str(id))
 		var b: Button = _menu.make_button("%s   %s" % [str(e.name), MARKS[PartyPieces.rosette(Game.data, str(id))]], func(): pass)
@@ -85,7 +91,7 @@ func _show(id: String) -> void:
 	var lower := bool(e.get("lower_better", false))
 	var best := "not played yet" if int(st.plays) == 0 else "%s (played %d time%s)" % [_num(float(st.best)), int(st.plays), "" if int(st.plays) == 1 else "s"]
 	_line("Rosette: %s.   Best, %s: %s." % [MARKS[rose] if rose > 0 else "none yet", str(e.unit), best])
-	_line("Silver at %s %s, gold at %s (%s)." % ["or under" if lower else "at least", _num(float(e.good)), _num(float(e.master)), str(e.master_name)], 19, UIKit.MUTED)
+	_line("Silver needs %s%s, gold %s%s (to beat %s)." % [_num(float(e.good)), " or under" if lower else " or more", _num(float(e.master)), " or under" if lower else " or more", str(e.master_name)], 19, UIKit.MUTED)
 	_detail.add_child(UIKit.spacer(6))
 	var known := PartyPieces.unlocked(Game.data, id)
 	_line(("The piece: %s" % str(mv.get("name", "?"))) if known else "The piece: %s (win silver to learn it)" % str(mv.get("name", "?")), 24, UIKit.GOLD)
