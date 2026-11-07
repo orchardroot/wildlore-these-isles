@@ -269,6 +269,10 @@ func play(cue: Dictionary, battle: Battle) -> void:
 					move = battle.move_db.get_move(a.get_slice("=", 1))
 					cue.move_type = str(move.get("type", cue.move_type))
 					cue["dev_weather"] = str(move.get("effect", {}).get("weather", ""))
+			for a in DevArgs.user_args():  # --fx-piece=<game id>: the attack plays that party piece's flourish (screenshots only)
+				if a.begins_with("--fx-piece="):
+					move = move.duplicate()
+					move["piece"] = a.get_slice("=", 1)
 			await _attack(side, str(cue.move_type), pos, int(cue.get("target_side", 1 - side)), int(cue.get("target_pos", 0)), bool(cue.get("spread", false)), move)
 			if str(cue.get("dev_weather", "")) != "":  # the stand-in move's weather arrives too
 				await play({"cue": "weather", "weather": cue.dev_weather, "turns": 5}, battle)
