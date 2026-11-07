@@ -31,7 +31,6 @@ var rng_seed := 0
 var weather := ""          # the outdoor weather right now ("" = roll it at the next outdoor zone)
 var weather_region := ""   # the region it was rolled for
 var weather_until := 0     # world minute (see world_minutes) it lasts until
-var pieces: Dictionary = {}   # party pieces: {game_id: {best, plays, rosette}} (see PartyPieces)
 var stats: Dictionary = TrainerStats.fresh()  # lifetime tallies for the Stats page (see TrainerStats)
 var look: Dictionary = {}  # the player's look (see Looks); {} on saves from before 4.6, which keep their player_sprite flag
 ## While a County Show or the Open Moot is on, `party` holds exhibition copies (TournamentRun) and this holds the
@@ -176,7 +175,7 @@ func to_dict() -> Dictionary:
 		"player_name": player_name, "rival_name": rival_name,
 		"party": (real_party if not real_party.is_empty() else party).map(func(c): return c.to_dict()),
 		"ark": ark.map(func(c): return c.to_dict()),
-		"bag": bag.duplicate(), "money": money, "flags": flags.duplicate(true), "pieces": pieces.duplicate(true),
+		"bag": bag.duplicate(), "money": money, "flags": flags.duplicate(true),
 		"zone_id": zone_id, "pos": [pos.x, pos.y], "facing": facing,
 		"seen": seen.duplicate(), "caught": caught.duplicate(), "badges": badges.duplicate(),
 		"play_seconds": play_seconds, "clock_minutes": clock_minutes, "day_count": day_count,
@@ -199,7 +198,6 @@ static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
 		s.bag[k] = int(bag_in[k])
 	s.money = int(d.get("money", 0))
 	s.flags = d.get("flags", {}).duplicate(true)
-	s.pieces = d.get("pieces", {}).duplicate(true)
 	for k in s.flags:
 		if typeof(s.flags[k]) == TYPE_FLOAT and s.flags[k] == floorf(s.flags[k]):
 			s.flags[k] = int(s.flags[k])
@@ -221,12 +219,10 @@ static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
 	s.weather_region = str(d.get("weather_region", ""))
 	s.weather_until = int(d.get("weather_until", 0))
 	s.stats = TrainerStats.sanitise(d.get("stats"))
-	s.pieces = d.get("pieces", {}).duplicate(true) if d.get("pieces") is Dictionary else {}
 	s.euros = maxi(0, int(d.get("euros", 0)))
 	s.purses = Wallet.sanitise_purses(d.get("purses"))
 	s.markets = Markets.sanitise(d.get("markets"))
 	s.look = Looks.sanitise(d.get("look"))
-	s.pieces = d.get("pieces", {}).duplicate(true) if d.get("pieces") is Dictionary else {}
 	s.trumps = d.get("trumps", {}).duplicate(true) if d.get("trumps") is Dictionary else {}
 	s.pieces = PartyPieces.sanitise(d.get("pieces"))
 	if not d.has("euros"):
