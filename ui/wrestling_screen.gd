@@ -17,6 +17,7 @@ const VEST_HIM := Color("dde7f0")
 
 var _rng := Rng.new(int(Time.get_ticks_usec()))
 var _venue := ""
+var _rung := 0
 var _rival: Dictionary = {"who": "A Cumbrian wrestler", "window": 1.4, "feint": 0}
 var _easy := false
 var _bout := Wrestling.new_bout()
@@ -86,6 +87,7 @@ func setup(arg: String) -> void:
 		return
 	_venue = p[0] if p.size() > 0 else ""
 	var rivals: Array = Wrestling.venue(_venue).get("rivals", [])
+	_rung = int(p[1]) if p.size() > 1 else 0
 	if not rivals.is_empty():
 		_rival = rivals[clampi(int(p[1]) if p.size() > 1 else 0, 0, rivals.size() - 1)]
 	_msg = "You lock hold with %s: chest to chest, chin on the right shoulder, arms round the back. First to take the other off his feet wins the fall. Best of three." % _who()
@@ -165,6 +167,8 @@ func _finish() -> void:
 		_msg += " %s takes the bout, two falls to %d." % [_who(), int(_bout.me)]
 	_refresh()
 	await get_tree().create_timer(2.2).timeout
+	var top := (Wrestling.venue(_venue).get("rivals", []) as Array).size() - 1
+	await PiecePrompt.after_game(self, "wrestling", (2.0 if _rung >= top else 1.0) if won else 0.0)
 	close({"won": won})
 
 func _refresh() -> void:

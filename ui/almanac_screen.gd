@@ -19,7 +19,9 @@ func _build() -> void:
 	_show_hub()
 
 func setup(arg: String) -> void:
-	if arg.begins_with("ledger:") and content != null:
+	if arg == "pieces" and content != null:
+		_show_ledger("pieces")
+	elif arg.begins_with("ledger:") and content != null:
 		_show_ledger(arg.substr(7))
 
 func _clear_content() -> void:
@@ -82,6 +84,9 @@ func _show_ledger(kind: String) -> void:
 	col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	col.add_theme_constant_override("separation", 8)
 	card.add_child(col)
+	if kind == "pieces":  # Party Pieces (ui/pieces_tab.gd)
+		PiecesTab.new(self).build(col)
+		return
 	if kind == "papers":  # a list with the paper beside it (ui/papers_tab.gd)
 		PapersTab.new(self).build(col)
 		return

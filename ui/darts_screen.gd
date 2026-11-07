@@ -157,6 +157,8 @@ func _finish(won: bool) -> void:
 	_over = true
 	_refresh()
 	await get_tree().create_timer(1.4).timeout
+	var top := (Darts.league(_nation).get("rungs", []) as Array).size() - 1
+	await PiecePrompt.after_game(self, "darts", (2.0 if _rung >= top else 1.0) if won else 0.0)
 	close({"won": won})
 
 func _who() -> String:

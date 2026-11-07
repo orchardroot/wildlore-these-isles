@@ -162,6 +162,7 @@ func _show_result() -> void:
 func _finish() -> void:
 	if _done:
 		return
+	await PiecePrompt.after_game(self, "quiz", 100.0 * _score / maxf(1.0, float(_questions.size())))
 	_done = true  # not close(): that plays the back-out sound
 	closed.emit({"score": _score, "total": _questions.size()})
 

@@ -26,6 +26,7 @@ var _stage: Control
 var _info: Label
 var _result: Dictionary = {}
 var _dev := false
+var _pscore := 0.0   # what the party piece judges (see PartyPieces)
 var _since := 0.0
 # cheese
 var _course: Array = []
@@ -162,6 +163,7 @@ func _finish_cheese() -> void:
 	var pl := Fete.place(mine, _rivals)
 	var s := "You finish in %.1f seconds, place %d of 4 (%d stumbles%s)." % [mine, pl, _stumbles, ", dived" if dived else ", no dive"]
 	_msg = s
+	_pscore = mine
 	_finish(pl == 1, s)
 
 # ---- bog
@@ -198,6 +200,7 @@ func _finish_bog() -> void:
 	var tm := Fete.bog_time(_misses)
 	var s := "Your time: %d:%04.1f (%d slips), to beat %d:%02d." % [int(tm) / 60, fmod(tm, 60.0), _misses, int(Fete.BOG_TARGET) / 60, int(Fete.BOG_TARGET) % 60]
 	_msg = s
+	_pscore = tm
 	_finish(tm <= Fete.BOG_TARGET, s)
 
 # ---- welly
@@ -208,6 +211,7 @@ func _process_welly(delta: float) -> void:
 		if _pause <= 0.0:
 			if _throw >= Fete.WELLY_THROWS:
 				var s := "Best throw %.1f m, you need %.0f m." % [_best, Fete.WELLY_TARGET]
+				_pscore = _best
 				_finish(_best >= Fete.WELLY_TARGET, s)
 			else:
 				_phase = 0
@@ -237,7 +241,9 @@ func _finish(won: bool, summary: String) -> void:
 	_result = {"won": won, "summary": summary}
 	_msg = summary + "  " + ("Well done." if won else "Not this time.")
 	_refresh()
-	get_tree().create_timer(1.8).timeout.connect(func(): close(_result))
+	get_tree().create_timer(1.8).timeout.connect(func():
+		await PiecePrompt.after_game(self, "fete_" + _kind, _pscore)
+		close(_result))
 
 func _on_cancel() -> void:
 	if _over:

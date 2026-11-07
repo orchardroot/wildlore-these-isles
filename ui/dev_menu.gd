@@ -54,6 +54,12 @@ static func boot(game: Node, menu: String) -> void:
 	c.held = "oak_acorn"
 	d.party = [a, b, c, e, f]
 	d.ark = [mk.call("croakle", 6), mk.call("pipkin", 4), mk.call("dipling", 9)]
+	if menu == "almanac:pieces":  # `--menu=almanac:pieces`: the Party Pieces page with a few rosettes earned
+		PartyPieces.record(d, "skimming", 7)
+		PartyPieces.record(d, "caber", 34)
+		PartyPieces.record(d, "darts", 1)
+		PartyPieces.record(d, "crabbing", 3)
+		d.money -= PartyPieces.GOLD_PRIZE
 	if menu == "papers":  # `--menu=papers`: the Almanac's Papers page with 8 read, 2 of them trails still open
 		var plain := Letters.all().filter(func(q): return not Letters.has_trail(q)).slice(0, 6)
 		var trails := Letters.all().filter(func(q): return Letters.has_trail(q)).slice(0, 2)

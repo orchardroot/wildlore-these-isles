@@ -6,6 +6,7 @@ extends MenuBase
 const STONE := [Color("8f8c84"), Color("a39d90"), Color("7d7a72"), Color("9a9488"), Color("b0aa9c"), Color("85817a")]
 
 var _level := "normal"
+var _backs := 0   # stones taken back (a clean wall earns the gold)
 var _puzzle: Dictionary
 var _grid: Array
 var _stones: Array = []   # [{w, h, placed, x, y}] the player's pile
@@ -101,7 +102,9 @@ func _set_stone() -> void:
 	if Walling.solved(_grid):
 		_msg = "That's a wall."
 		_refresh()
-		get_tree().create_timer(1.0).timeout.connect(func(): close({"built": true}))
+		get_tree().create_timer(1.0).timeout.connect(func():
+			await PiecePrompt.after_game(self, "walling", 1.0 if _backs > 0 else 2.0)
+			close({"built": true}))
 		return
 	_sel = _next_free(_sel, 1)
 	_turned = false
@@ -111,6 +114,7 @@ func _set_stone() -> void:
 func _take_back() -> void:
 	if _order.is_empty():
 		return
+	_backs += 1
 	var last: int = _order.pop_back()
 	Walling.remove(_grid, last + 1)
 	_stones[last].placed = false
