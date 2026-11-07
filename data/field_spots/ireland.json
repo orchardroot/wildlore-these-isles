@@ -188,35 +188,6 @@
   "at": "enniskillen"
  },
  {
-  "id": "fs_lease_glenashen_roll",
-  "zone": "lease_glenashen",
-  "x": 39,
-  "y": 35,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Somerset Cider.",
-  "reward": {
-   "item": "bristol_cider",
-   "qty": 1
-  },
-  "flag": "field_lease_glenashen_roll",
-  "at": "antrim_coast"
- },
- {
-  "id": "fs_lease_glenashen_charm",
-  "zone": "lease_glenashen",
-  "x": 46,
-  "y": 32,
-  "field": "charm",
-  "prop": "molehill",
-  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Horse Brass.",
-  "reward": {
-   "curio": "brass_horse"
-  },
-  "flag": "field_lease_glenashen_charm",
-  "at": "antrim_coast"
- },
- {
   "id": "fs_lough_neagh_round_up",
   "zone": "lough_neagh",
   "x": 41,
@@ -232,18 +203,18 @@
   "at": "lough_neagh"
  },
  {
-  "id": "fs_lough_neagh_snorkel",
+  "id": "fs_lough_neagh_charm",
   "zone": "lough_neagh",
-  "x": 9,
-  "y": 45,
-  "field": "snorkel",
-  "prop": "bog_pool",
-  "text": "The bog water is dark and cold. {lead} ploughs through it with its face down and surfaces holding Peat.",
+  "x": 44,
+  "y": 24,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: Field Mushrooms.",
   "reward": {
-   "item": "peat",
+   "item": "field_mushrooms",
    "qty": 1
   },
-  "flag": "field_lough_neagh_snorkel",
+  "flag": "field_lough_neagh_charm",
   "at": "lough_neagh"
  },
  {
@@ -276,31 +247,33 @@
   "at": "mournes"
  },
  {
+  "id": "fs_wicklow_mend",
+  "zone": "wicklow",
+  "x": 29,
+  "y": 21,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Rowan Sprig.",
+  "reward": {
+   "item": "rowan_sprig",
+   "qty": 1
+  },
+  "flag": "field_wicklow_mend",
+  "at": "wicklow"
+ },
+ {
   "id": "fs_wicklow_snorkel",
   "zone": "wicklow",
   "x": 41,
   "y": 27,
   "field": "snorkel",
   "prop": "bog_pool",
-  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, a purse, a bit damp.",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Ammonite.",
   "reward": {
-   "money": 1650
+   "item": "ammonite",
+   "qty": 1
   },
   "flag": "field_wicklow_snorkel",
-  "at": "wicklow"
- },
- {
-  "id": "fs_wicklow_roll",
-  "zone": "wicklow",
-  "x": 50,
-  "y": 11,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "The wheel has been here since last spring's chase. {lead} sets it rolling, and underneath is Brass Miner's Lamp.",
-  "reward": {
-   "curio": "brass_miners_lamp"
-  },
-  "flag": "field_wicklow_roll",
   "at": "wicklow"
  }
 ]

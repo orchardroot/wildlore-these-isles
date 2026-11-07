@@ -30,32 +30,32 @@
   "at": "hull"
  },
  {
+  "id": "fs_leeds_roll",
+  "zone": "leeds",
+  "x": 43,
+  "y": 3,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Wade Whimsie.",
+  "reward": {
+   "curio": "wade_whimsie"
+  },
+  "flag": "field_leeds_roll",
+  "at": "leeds"
+ },
+ {
   "id": "fs_leeds_loft",
   "zone": "leeds",
   "x": 25,
   "y": 7,
   "field": "loft",
   "prop": "bale",
-  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Lucky Chip.",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Cream Tea.",
   "reward": {
-   "item": "lucky_chip",
+   "item": "cream_tea",
    "qty": 1
   },
   "flag": "field_leeds_loft",
-  "at": "leeds"
- },
- {
-  "id": "fs_leeds_charm",
-  "zone": "leeds",
-  "x": 43,
-  "y": 35,
-  "field": "charm",
-  "prop": "molehill",
-  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Gallopers Horse.",
-  "reward": {
-   "curio": "fairground_horse"
-  },
-  "flag": "field_leeds_charm",
   "at": "leeds"
  },
  {
@@ -73,18 +73,17 @@
   "at": "newcastle"
  },
  {
-  "id": "fs_north_york_moors_roll",
+  "id": "fs_north_york_moors_loft",
   "zone": "north_york_moors",
-  "x": 74,
-  "y": 34,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Banbury Cake.",
+  "x": 47,
+  "y": 50,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Toby Jug.",
   "reward": {
-   "item": "banbury_cake",
-   "qty": 1
+   "curio": "toby_jug"
   },
-  "flag": "field_north_york_moors_roll",
+  "flag": "field_north_york_moors_loft",
   "at": "newcastle"
  },
  {
@@ -116,18 +115,18 @@
   "at": "saddleworth_moor"
  },
  {
-  "id": "fs_saddleworth_moor_mend",
+  "id": "fs_saddleworth_moor_line",
   "zone": "saddleworth_moor",
-  "x": 38,
-  "y": 24,
-  "field": "mend",
-  "prop": "wall_gap",
-  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Four-Leaf Clover.",
+  "x": 22,
+  "y": 28,
+  "field": "line",
+  "prop": "glint",
+  "text": "A glint under the surface, just out of reach. {lead} hooks it with patience and a bit of reed. It is Perch.",
   "reward": {
-   "item": "four_leaf_clover",
+   "item": "perch",
    "qty": 1
   },
-  "flag": "field_saddleworth_moor_mend",
+  "flag": "field_saddleworth_moor_line",
   "at": "saddleworth_moor"
  },
  {
@@ -146,17 +145,18 @@
   "at": "sheffield"
  },
  {
-  "id": "fs_sheffield_roll",
+  "id": "fs_sheffield_snorkel",
   "zone": "sheffield",
-  "x": 69,
-  "y": 9,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: a few coins.",
+  "x": 18,
+  "y": 25,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Peat.",
   "reward": {
-   "money": 2730
+   "item": "peat",
+   "qty": 1
   },
-  "flag": "field_sheffield_roll",
+  "flag": "field_sheffield_snorkel",
   "at": "sheffield"
  },
  {
@@ -234,18 +234,17 @@
   "at": "york"
  },
  {
-  "id": "fs_yorkshire_dales_line",
+  "id": "fs_yorkshire_dales_loft",
   "zone": "yorkshire_dales",
-  "x": 33,
+  "x": 68,
   "y": 19,
-  "field": "line",
-  "prop": "glint",
-  "text": "Something glints in the water. {lead} wades in, makes a few calm passes and fishes it out: Ammonite.",
+  "field": "loft",
+  "prop": "bale",
+  "text": "A bale and a bend, and a bowl that wants lofting. {lead} swings and sends it up over the hedge in one long arc. It lands by some loose change and a gratitude card.",
   "reward": {
-   "item": "ammonite",
-   "qty": 1
+   "money": 2700
   },
-  "flag": "field_yorkshire_dales_line",
+  "flag": "field_yorkshire_dales_loft",
   "at": "york"
  },
  {

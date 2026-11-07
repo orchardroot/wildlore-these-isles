@@ -117,17 +117,17 @@
   "at": "the_fens"
  },
  {
-  "id": "fs_the_fens_skim",
+  "id": "fs_the_fens_charm",
   "zone": "the_fens",
-  "x": 35,
-  "y": 48,
-  "field": "skim",
-  "prop": "skim_target",
-  "text": "{lead} skims a stone over the pool and a bottle on a post tips over. Hanging from it: some loose change and a gratitude card.",
+  "x": 22,
+  "y": 32,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: a purse, a bit damp.",
   "reward": {
    "money": 3000
   },
-  "flag": "field_the_fens_skim",
+  "flag": "field_the_fens_charm",
   "at": "the_fens"
  },
  {

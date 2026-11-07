@@ -72,17 +72,18 @@
   "at": "llanberis"
  },
  {
-  "id": "fs_llanberis_quarry_loft",
+  "id": "fs_llanberis_quarry_charm",
   "zone": "llanberis_quarry",
-  "x": 11,
-  "y": 8,
-  "field": "loft",
-  "prop": "bale",
-  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: a purse, a bit damp.",
+  "x": 23,
+  "y": 15,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Wild Garlic.",
   "reward": {
-   "money": 360
+   "item": "wild_garlic",
+   "qty": 1
   },
-  "flag": "field_llanberis_quarry_loft",
+  "flag": "field_llanberis_quarry_charm",
   "at": "llanberis"
  },
  {

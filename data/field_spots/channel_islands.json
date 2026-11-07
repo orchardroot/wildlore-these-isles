@@ -59,17 +59,17 @@
   "at": "jersey_country"
  },
  {
-  "id": "fs_st_helier_charm",
+  "id": "fs_st_helier_roll",
   "zone": "st_helier",
-  "x": 33,
-  "y": 6,
-  "field": "charm",
-  "prop": "molehill",
-  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Colliery Check Tag.",
+  "x": 28,
+  "y": 15,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up a roll of notes.",
   "reward": {
-   "curio": "pit_checks"
+   "money": 1410
   },
-  "flag": "field_st_helier_charm",
+  "flag": "field_st_helier_roll",
   "at": "st_helier"
  },
  {

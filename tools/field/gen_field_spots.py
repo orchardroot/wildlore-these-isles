@@ -191,7 +191,7 @@ PROP = {"mend": "wall_gap", "skim": "skim_target", "topple": "dead_trunk", "line
 out = collections.defaultdict(list)
 used = collections.Counter()
 for zid, z in sorted(zones.items()):
-    if z["kind"] == "interior" or not z.get("rows") or not z["region"] or z["region"].startswith("overseas") or z["region"] == "dev": continue
+    if zid.startswith("lease_") or z["kind"] == "interior" or not z.get("rows") or not z["region"] or z["region"].startswith("overseas") or z["region"] == "dev": continue
     isroute = z["kind"] == "route"
     if not isroute and zid not in venues: continue
     w, hh = len(z["rows"][0]), len(z["rows"])
@@ -268,7 +268,7 @@ def find_pairs(z, verb, lo, hi):
 
 pair_n = collections.Counter()
 for zid, z in sorted(zones.items()):
-    if z["kind"] != "route" or not z.get("rows") or z["region"].startswith("overseas") or z["region"] == "dev": continue
+    if zid.startswith("lease_") or z["kind"] != "route" or not z.get("rows") or z["region"].startswith("overseas") or z["region"] == "dev": continue
     for verb, lo, hi in (("paddle", 2, 8), ("topple", 1, 3)):
         got = find_pairs(z, verb, lo, hi)
         if not got: continue

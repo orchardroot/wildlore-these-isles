@@ -73,33 +73,32 @@
   "at": "ironbridge_gorge"
  },
  {
-  "id": "fs_lincoln_line",
-  "zone": "lincoln",
-  "x": 16,
-  "y": 40,
-  "field": "line",
-  "prop": "glint",
-  "text": "{lead} peers into the water, then pulls out, with great ceremony, Ammonite.",
-  "reward": {
-   "item": "ammonite",
-   "qty": 1
-  },
-  "flag": "field_lincoln_line",
-  "at": "lincoln"
- },
- {
   "id": "fs_lincoln_skim",
   "zone": "lincoln",
-  "x": 6,
+  "x": 11,
   "y": 40,
   "field": "skim",
   "prop": "skim_target",
-  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Burn Water Flask.",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Oak Acorn.",
   "reward": {
-   "item": "burn_water_flask",
+   "item": "oak_acorn",
    "qty": 1
   },
   "flag": "field_lincoln_skim",
+  "at": "lincoln"
+ },
+ {
+  "id": "fs_lincoln_line",
+  "zone": "lincoln",
+  "x": 24,
+  "y": 42,
+  "field": "line",
+  "prop": "glint",
+  "text": "{lead} peers into the water, then pulls out, with great ceremony, a roll of notes.",
+  "reward": {
+   "money": 2760
+  },
+  "flag": "field_lincoln_line",
   "at": "lincoln"
  },
  {
@@ -192,47 +191,33 @@
   "at": "sheffield"
  },
  {
-  "id": "fs_shrewsbury_paddle",
-  "zone": "shrewsbury",
-  "x": 11,
-  "y": 39,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Donkey Bell.",
-  "reward": {
-   "curio": "donkey_bell"
-  },
-  "flag": "field_shrewsbury_paddle",
-  "at": "shrewsbury"
- },
- {
   "id": "fs_shrewsbury_skim",
   "zone": "shrewsbury",
   "x": 11,
-  "y": 29,
+  "y": 43,
   "field": "skim",
   "prop": "skim_target",
-  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: a roll of notes.",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Drake's Drum.",
   "reward": {
-   "money": 810
+   "item": "drakes_drum",
+   "qty": 1
   },
   "flag": "field_shrewsbury_skim",
   "at": "shrewsbury"
  },
  {
-  "id": "fs_shropshire_hills_charm",
-  "zone": "shropshire_hills",
-  "x": 22,
-  "y": 46,
-  "field": "charm",
-  "prop": "molehill",
-  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Four-Leaf Clover.",
+  "id": "fs_shrewsbury_paddle",
+  "zone": "shrewsbury",
+  "x": 11,
+  "y": 33,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Victorian Tea Caddy.",
   "reward": {
-   "item": "four_leaf_clover",
-   "qty": 1
+   "curio": "tea_caddy"
   },
-  "flag": "field_shropshire_hills_charm",
-  "at": "shropshire_hills"
+  "flag": "field_shrewsbury_paddle",
+  "at": "shrewsbury"
  },
  {
   "id": "fs_shropshire_hills_line",
@@ -241,12 +226,26 @@
   "y": 22,
   "field": "line",
   "prop": "glint",
-  "text": "{lead} peers into the water, then pulls out, with great ceremony, Roach.",
+  "text": "{lead} peers into the water, then pulls out, with great ceremony, a few coins.",
   "reward": {
-   "item": "roach",
-   "qty": 1
+   "money": 810
   },
   "flag": "field_shropshire_hills_line",
+  "at": "shropshire_hills"
+ },
+ {
+  "id": "fs_shropshire_hills_charm",
+  "zone": "shropshire_hills",
+  "x": 22,
+  "y": 46,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Bacon Rind.",
+  "reward": {
+   "item": "crab_bait",
+   "qty": 1
+  },
+  "flag": "field_shropshire_hills_charm",
   "at": "shropshire_hills"
  },
  {
@@ -279,32 +278,32 @@
   "at": "stoke"
  },
  {
-  "id": "fs_stonehenge_roll",
-  "zone": "stonehenge",
-  "x": 41,
-  "y": 41,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: a few coins.",
-  "reward": {
-   "money": 2940
-  },
-  "flag": "field_stonehenge_roll",
-  "at": "london"
- },
- {
   "id": "fs_stonehenge_loft",
   "zone": "stonehenge",
-  "x": 28,
-  "y": 50,
+  "x": 35,
+  "y": 44,
   "field": "loft",
   "prop": "bale",
-  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Hag Stone.",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Blackberries.",
   "reward": {
-   "item": "hag_stone",
+   "item": "blackberries",
    "qty": 1
   },
   "flag": "field_stonehenge_loft",
+  "at": "london"
+ },
+ {
+  "id": "fs_stonehenge_roll",
+  "zone": "stonehenge",
+  "x": 44,
+  "y": 26,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: Child's Hurley.",
+  "reward": {
+   "curio": "hurley"
+  },
+  "flag": "field_stonehenge_roll",
   "at": "london"
  }
 ]

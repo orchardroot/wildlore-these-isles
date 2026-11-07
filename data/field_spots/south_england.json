@@ -160,34 +160,19 @@
   "at": "mendips"
  },
  {
-  "id": "fs_mendips_line",
+  "id": "fs_mendips_roll",
   "zone": "mendips",
-  "x": 60,
-  "y": 29,
-  "field": "line",
-  "prop": "glint",
-  "text": "Something glints in the water. {lead} wades in, makes a few calm passes and fishes it out: Seaweed.",
+  "x": 28,
+  "y": 19,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: Cooper's Hill Ribbon.",
   "reward": {
-   "item": "seaweed",
+   "item": "coopers_wheel",
    "qty": 1
   },
-  "flag": "field_mendips_line",
+  "flag": "field_mendips_roll",
   "at": "mendips"
- },
- {
-  "id": "fs_plymouth_charm",
-  "zone": "plymouth",
-  "x": 46,
-  "y": 37,
-  "field": "charm",
-  "prop": "molehill",
-  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: Wild Garlic.",
-  "reward": {
-   "item": "wild_garlic",
-   "qty": 1
-  },
-  "flag": "field_plymouth_charm",
-  "at": "plymouth"
  },
  {
   "id": "fs_plymouth_loft",
@@ -196,32 +181,61 @@
   "y": 36,
   "field": "loft",
   "prop": "bale",
-  "text": "A bale and a bend, and a bowl that wants lofting. {lead} swings and sends it up over the hedge in one long arc. It lands by a roll of notes.",
+  "text": "A bale and a bend, and a bowl that wants lofting. {lead} swings and sends it up over the hedge in one long arc. It lands by Cream Tea.",
   "reward": {
-   "money": 1470
+   "item": "cream_tea",
+   "qty": 1
   },
   "flag": "field_plymouth_loft",
   "at": "plymouth"
  },
  {
-  "id": "fs_poole_skim",
+  "id": "fs_plymouth_roll",
+  "zone": "plymouth",
+  "x": 9,
+  "y": 32,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up a few coins.",
+  "reward": {
+   "money": 1470
+  },
+  "flag": "field_plymouth_roll",
+  "at": "plymouth"
+ },
+ {
+  "id": "fs_poole_snorkel",
   "zone": "poole",
   "x": 3,
   "y": 27,
-  "field": "skim",
-  "prop": "skim_target",
-  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Burn Water Flask.",
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "The bog water is dark and cold. {lead} ploughs through it with its face down and surfaces holding Bog Myrtle Sprig.",
   "reward": {
-   "item": "burn_water_flask",
+   "item": "bog_myrtle_sprig",
    "qty": 1
   },
-  "flag": "field_poole_skim",
+  "flag": "field_poole_snorkel",
   "at": "poole"
+ },
+ {
+  "id": "fs_severn_crossing_snorkel",
+  "zone": "severn_crossing",
+  "x": 16,
+  "y": 24,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "A peat pool, black as tea. {lead} dives in, flippers going, and comes up spluttering and delighted with Cup Tie Programme.",
+  "reward": {
+   "curio": "fa_cup_programme"
+  },
+  "flag": "field_severn_crossing_snorkel",
+  "at": "severn_crossing"
  },
  {
   "id": "fs_severn_crossing_line",
   "zone": "severn_crossing",
-  "x": 16,
+  "x": 55,
   "y": 25,
   "field": "line",
   "prop": "glint",
@@ -231,20 +245,6 @@
    "qty": 1
   },
   "flag": "field_severn_crossing_line",
-  "at": "severn_crossing"
- },
- {
-  "id": "fs_severn_crossing_snorkel",
-  "zone": "severn_crossing",
-  "x": 55,
-  "y": 25,
-  "field": "snorkel",
-  "prop": "bog_pool",
-  "text": "A peat pool, black as tea. {lead} dives in, flippers going, and comes up spluttering and delighted with a roll of notes.",
-  "reward": {
-   "money": 1320
-  },
-  "flag": "field_severn_crossing_snorkel",
   "at": "severn_crossing"
  },
  {
@@ -262,18 +262,18 @@
   "at": "somerset_levels"
  },
  {
-  "id": "fs_somerset_levels_topple",
+  "id": "fs_somerset_levels_skim",
   "zone": "somerset_levels",
-  "x": 17,
+  "x": 49,
   "y": 24,
-  "field": "topple",
-  "prop": "dead_trunk",
-  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls Field Mushrooms.",
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "A flat stone and a still stretch of water. {lead} sends it dancing across, once, twice, five times, and something on the far side wobbles loose: Oak Acorn.",
   "reward": {
-   "item": "field_mushrooms",
+   "item": "oak_acorn",
    "qty": 1
   },
-  "flag": "field_somerset_levels_topple",
+  "flag": "field_somerset_levels_skim",
   "at": "somerset_levels"
  }
 ]

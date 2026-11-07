@@ -332,34 +332,6 @@
   "at": "inverness"
  },
  {
-  "id": "fs_lease_dubh_lochan_round_up",
-  "zone": "lease_dubh_lochan",
-  "x": 29,
-  "y": 11,
-  "field": "round_up",
-  "prop": "sheep_gate",
-  "text": "Sheep at the gate, and no sheep will go first. {lead} comes round the back, low and quiet, and the flock files through. The farmer's thanks: Cigarette Card Set.",
-  "reward": {
-   "curio": "cigarette_card"
-  },
-  "flag": "field_lease_dubh_lochan_round_up",
-  "at": "flow_country"
- },
- {
-  "id": "fs_lease_dubh_lochan_loft",
-  "zone": "lease_dubh_lochan",
-  "x": 37,
-  "y": 24,
-  "field": "loft",
-  "prop": "bale",
-  "text": "The bowl sails over the bend like it knew the road. {lead} trots after it, and finds Miniature Tin Bath in the grass.",
-  "reward": {
-   "curio": "tin_bath"
-  },
-  "flag": "field_lease_dubh_lochan_loft",
-  "at": "flow_country"
- },
- {
   "id": "fs_lerwick_snorkel",
   "zone": "lerwick",
   "x": 14,
@@ -374,18 +346,18 @@
   "at": "lerwick"
  },
  {
-  "id": "fs_lerwick_line",
+  "id": "fs_lerwick_loft",
   "zone": "lerwick",
-  "x": 59,
-  "y": 45,
-  "field": "line",
-  "prop": "glint",
-  "text": "{lead} peers into the water, then pulls out, with great ceremony, European Eel.",
+  "x": 41,
+  "y": 32,
+  "field": "loft",
+  "prop": "bale",
+  "text": "The bowl sails over the bend like it knew the road. {lead} trots after it, and finds Blackberries in the grass.",
   "reward": {
-   "item": "european_eel",
+   "item": "blackberries",
    "qty": 1
   },
-  "flag": "field_lerwick_line",
+  "flag": "field_lerwick_loft",
   "at": "lerwick"
  },
  {
@@ -489,18 +461,18 @@
   "at": "pentland_coast"
  },
  {
-  "id": "fs_pentland_coast_loft",
+  "id": "fs_pentland_coast_skim",
   "zone": "pentland_coast",
-  "x": 53,
-  "y": 29,
-  "field": "loft",
-  "prop": "bale",
-  "text": "A bale and a bend, and a bowl that wants lofting. {lead} swings and sends it up over the hedge in one long arc. It lands by Sloes.",
+  "x": 72,
+  "y": 13,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Drake's Drum.",
   "reward": {
-   "item": "sloes",
+   "item": "drakes_drum",
    "qty": 1
   },
-  "flag": "field_pentland_coast_loft",
+  "flag": "field_pentland_coast_skim",
   "at": "pentland_coast"
  },
  {
@@ -518,62 +490,47 @@
   "at": "scottish_borders"
  },
  {
-  "id": "fs_scottish_borders_snorkel",
+  "id": "fs_scottish_borders_mend",
   "zone": "scottish_borders",
-  "x": 53,
-  "y": 37,
-  "field": "snorkel",
-  "prop": "bog_pool",
-  "text": "A peat pool, black as tea. {lead} dives in, flippers going, and comes up spluttering and delighted with Stereoscope Card.",
+  "x": 54,
+  "y": 17,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: some loose change and a gratitude card.",
   "reward": {
-   "curio": "stereoscope_card"
+   "money": 2220
   },
-  "flag": "field_scottish_borders_snorkel",
+  "flag": "field_scottish_borders_mend",
   "at": "scottish_borders"
+ },
+ {
+  "id": "fs_shetland_mainland_paddle",
+  "zone": "shetland_mainland",
+  "x": 45,
+  "y": 31,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, left on the bank, light as a basket. {lead} gets in and paddles across without spinning more than twice. On the far side: Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_shetland_mainland_paddle",
+  "at": "shetland_mainland"
  },
  {
   "id": "fs_shetland_mainland_snorkel",
   "zone": "shetland_mainland",
-  "x": 45,
-  "y": 31,
+  "x": 8,
+  "y": 15,
   "field": "snorkel",
   "prop": "bog_pool",
-  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, a purse, a bit damp.",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Bell Punch Ticket Machine.",
   "reward": {
-   "money": 2550
+   "curio": "bus_ticket_machine"
   },
   "flag": "field_shetland_mainland_snorkel",
   "at": "shetland_mainland"
- },
- {
-  "id": "fs_shetland_mainland_line",
-  "zone": "shetland_mainland",
-  "x": 7,
-  "y": 19,
-  "field": "line",
-  "prop": "glint",
-  "text": "Something glints in the water. {lead} wades in, makes a few calm passes and fishes it out: Seaweed.",
-  "reward": {
-   "item": "seaweed",
-   "qty": 1
-  },
-  "flag": "field_shetland_mainland_line",
-  "at": "shetland_mainland"
- },
- {
-  "id": "fs_skye_paddle",
-  "zone": "skye",
-  "x": 64,
-  "y": 24,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Norfolk Reed.",
-  "reward": {
-   "item": "norfolk_reed",
-   "qty": 1
-  },
-  "flag": "field_skye_paddle",
-  "at": "skye"
  },
  {
   "id": "fs_skye_skim",
@@ -582,12 +539,27 @@
   "y": 17,
   "field": "skim",
   "prop": "skim_target",
-  "text": "{lead} skims a stone over the pool and a bottle on a post tips over. Hanging from it: Lucky Chip.",
+  "text": "{lead} skims a stone over the pool and a bottle on a post tips over. Hanging from it: Drake's Drum.",
   "reward": {
-   "item": "lucky_chip",
+   "item": "drakes_drum",
    "qty": 1
   },
   "flag": "field_skye_skim",
+  "at": "skye"
+ },
+ {
+  "id": "fs_skye_paddle",
+  "zone": "skye",
+  "x": 64,
+  "y": 24,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_skye_paddle",
   "at": "skye"
  },
  {
@@ -661,73 +633,5 @@
   },
   "flag": "field_thurso_line",
   "at": "thurso"
- },
- {
-  "id": "fs_lease_dubh_lochan_paddle_x1",
-  "zone": "lease_dubh_lochan",
-  "x": 24,
-  "y": 29,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
-  "reward": {
-   "hop": [
-    24,
-    34
-   ]
-  },
-  "flag": "field_lease_dubh_lochan_paddle_a",
-  "at": "flow_country"
- },
- {
-  "id": "fs_lease_dubh_lochan_paddle_x2",
-  "zone": "lease_dubh_lochan",
-  "x": 24,
-  "y": 33,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it.",
-  "reward": {
-   "hop": [
-    24,
-    28
-   ]
-  },
-  "flag": "field_lease_dubh_lochan_paddle_b",
-  "at": "flow_country"
- },
- {
-  "id": "fs_lease_dubh_lochan_topple_x1",
-  "zone": "lease_dubh_lochan",
-  "x": 8,
-  "y": 24,
-  "field": "topple",
-  "prop": "dead_trunk",
-  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
-  "reward": {
-   "hop": [
-    8,
-    27
-   ]
-  },
-  "flag": "field_lease_dubh_lochan_topple_a",
-  "at": "flow_country"
- },
- {
-  "id": "fs_lease_dubh_lochan_topple_x2",
-  "zone": "lease_dubh_lochan",
-  "x": 8,
-  "y": 26,
-  "field": "topple",
-  "prop": "dead_trunk",
-  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
-  "reward": {
-   "hop": [
-    8,
-    23
-   ]
-  },
-  "flag": "field_lease_dubh_lochan_topple_b",
-  "at": "flow_country"
  }
 ]

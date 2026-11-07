@@ -160,62 +160,49 @@
   "at": "gweedore"
  },
  {
-  "id": "fs_lease_clonbeg_roll",
-  "zone": "lease_clonbeg",
-  "x": 22,
-  "y": 20,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: Cooper's Hill Ribbon.",
-  "reward": {
-   "item": "coopers_wheel",
-   "qty": 1
-  },
-  "flag": "field_lease_clonbeg_roll",
-  "at": "lough_gur"
- },
- {
-  "id": "fs_lease_clonbeg_skim",
-  "zone": "lease_clonbeg",
-  "x": 36,
-  "y": 18,
-  "field": "skim",
-  "prop": "skim_target",
-  "text": "{lead} skims a stone over the pool and a bottle on a post tips over. Hanging from it: Lucky Chip.",
-  "reward": {
-   "item": "lucky_chip",
-   "qty": 1
-  },
-  "flag": "field_lease_clonbeg_skim",
-  "at": "lough_gur"
- },
- {
-  "id": "fs_limerick_paddle",
-  "zone": "limerick",
-  "x": 33,
-  "y": 20,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is a roll of notes.",
-  "reward": {
-   "money": 1890
-  },
-  "flag": "field_limerick_paddle",
-  "at": "limerick"
- },
- {
   "id": "fs_limerick_skim",
   "zone": "limerick",
-  "x": 24,
-  "y": 52,
+  "x": 25,
+  "y": 20,
   "field": "skim",
   "prop": "skim_target",
-  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: some loose change and a gratitude card.",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Sea Glass.",
   "reward": {
-   "money": 1890
+   "item": "sea_glass",
+   "qty": 1
   },
   "flag": "field_limerick_skim",
   "at": "limerick"
+ },
+ {
+  "id": "fs_limerick_line",
+  "zone": "limerick",
+  "x": 24,
+  "y": 44,
+  "field": "line",
+  "prop": "glint",
+  "text": "A glint under the surface, just out of reach. {lead} hooks it with patience and a bit of reed. It is Perch.",
+  "reward": {
+   "item": "perch",
+   "qty": 1
+  },
+  "flag": "field_limerick_line",
+  "at": "limerick"
+ },
+ {
+  "id": "fs_lough_gur_charm",
+  "zone": "lough_gur",
+  "x": 5,
+  "y": 17,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_lough_gur_charm",
+  "at": "lough_gur"
  },
  {
   "id": "fs_lough_gur_snorkel",
@@ -229,20 +216,6 @@
    "money": 1890
   },
   "flag": "field_lough_gur_snorkel",
-  "at": "lough_gur"
- },
- {
-  "id": "fs_lough_gur_charm",
-  "zone": "lough_gur",
-  "x": 5,
-  "y": 17,
-  "field": "charm",
-  "prop": "molehill",
-  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: a purse, a bit damp.",
-  "reward": {
-   "money": 1890
-  },
-  "flag": "field_lough_gur_charm",
   "at": "lough_gur"
  },
  {
@@ -289,31 +262,31 @@
   "at": "shannon_estuary"
  },
  {
-  "id": "fs_shannon_estuary_mend",
+  "id": "fs_shannon_estuary_charm",
   "zone": "shannon_estuary",
-  "x": 62,
-  "y": 20,
-  "field": "mend",
-  "prop": "wall_gap",
-  "text": "A gap in the wall, where the stones have gone for a walk. {lead} fits them back one by one, like a very slow jigsaw. Tucked in the wall behind: some loose change and a gratitude card.",
+  "x": 67,
+  "y": 40,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Shortbread Tin.",
   "reward": {
-   "money": 1890
+   "curio": "tartan_tin"
   },
-  "flag": "field_shannon_estuary_mend",
+  "flag": "field_shannon_estuary_charm",
   "at": "shannon_estuary"
  },
  {
-  "id": "fs_tory_island_charm",
+  "id": "fs_tory_island_line",
   "zone": "tory_island",
-  "x": 4,
-  "y": 13,
-  "field": "charm",
-  "prop": "molehill",
-  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Pressed Flowers.",
+  "x": 43,
+  "y": 15,
+  "field": "line",
+  "prop": "glint",
+  "text": "A glint under the surface, just out of reach. {lead} hooks it with patience and a bit of reed. It is a few coins.",
   "reward": {
-   "curio": "pressed_flowers"
+   "money": 2130
   },
-  "flag": "field_tory_island_charm",
+  "flag": "field_tory_island_line",
   "at": "tory_island"
  },
  {
