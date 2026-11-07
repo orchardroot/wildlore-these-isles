@@ -1,0 +1,62 @@
+[
+ {
+  "id": "fs_aberystwyth_line",
+  "zone": "aberystwyth",
+  "x": 34,
+  "y": 41,
+  "field": "line",
+  "prop": "glint",
+  "text": "A glint under the surface, just out of reach. {lead} hooks it with patience and a bit of reed. It is Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_aberystwyth_line",
+  "at": "aberystwyth"
+ },
+ {
+  "id": "fs_cambrian_coast_mend",
+  "zone": "cambrian_coast",
+  "x": 29,
+  "y": 42,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Rowan Sprig in the hollow.",
+  "reward": {
+   "item": "rowan_sprig",
+   "qty": 1
+  },
+  "flag": "field_cambrian_coast_mend",
+  "at": "cambrian_coast"
+ },
+ {
+  "id": "fs_cambrian_coast_topple",
+  "zone": "cambrian_coast",
+  "x": 22,
+  "y": 14,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls Hazelnuts.",
+  "reward": {
+   "item": "hazelnuts",
+   "qty": 1
+  },
+  "flag": "field_cambrian_coast_topple",
+  "at": "cambrian_coast"
+ },
+ {
+  "id": "fs_hafod_cwm_charm",
+  "zone": "hafod_cwm",
+  "x": 17,
+  "y": 14,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_hafod_cwm_charm",
+  "at": "beacons"
+ }
+]

@@ -1,0 +1,32 @@
+[
+ {
+  "id": "fs_tintagel_round_up",
+  "zone": "tintagel",
+  "x": 51,
+  "y": 31,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep at the gate, and no sheep will go first. {lead} comes round the back, low and quiet, and the flock files through. The farmer's thanks: Double Gloucester.",
+  "reward": {
+   "item": "double_gloucester",
+   "qty": 1
+  },
+  "flag": "field_tintagel_round_up",
+  "at": "tintagel"
+ },
+ {
+  "id": "fs_tintagel_mend",
+  "zone": "tintagel",
+  "x": 16,
+  "y": 18,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Lucky Horseshoe in the hollow.",
+  "reward": {
+   "item": "horseshoe",
+   "qty": 1
+  },
+  "flag": "field_tintagel_mend",
+  "at": "tintagel"
+ }
+]

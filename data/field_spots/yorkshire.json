@@ -1,0 +1,280 @@
+[
+ {
+  "id": "fs_hull_skim",
+  "zone": "hull",
+  "x": 52,
+  "y": 18,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "A flat stone and a still stretch of water. {lead} sends it dancing across, once, twice, five times, and something on the far side wobbles loose: Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_hull_skim",
+  "at": "hull"
+ },
+ {
+  "id": "fs_hull_snorkel",
+  "zone": "hull",
+  "x": 52,
+  "y": 39,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Burn Water Flask.",
+  "reward": {
+   "item": "burn_water_flask",
+   "qty": 1
+  },
+  "flag": "field_hull_snorkel",
+  "at": "hull"
+ },
+ {
+  "id": "fs_leeds_loft",
+  "zone": "leeds",
+  "x": 25,
+  "y": 7,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Lucky Chip.",
+  "reward": {
+   "item": "lucky_chip",
+   "qty": 1
+  },
+  "flag": "field_leeds_loft",
+  "at": "leeds"
+ },
+ {
+  "id": "fs_leeds_charm",
+  "zone": "leeds",
+  "x": 43,
+  "y": 35,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Gallopers Horse.",
+  "reward": {
+   "curio": "fairground_horse"
+  },
+  "flag": "field_leeds_charm",
+  "at": "leeds"
+ },
+ {
+  "id": "fs_north_york_moors_charm",
+  "zone": "north_york_moors",
+  "x": 58,
+  "y": 51,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: a few coins.",
+  "reward": {
+   "money": 2610
+  },
+  "flag": "field_north_york_moors_charm",
+  "at": "newcastle"
+ },
+ {
+  "id": "fs_north_york_moors_roll",
+  "zone": "north_york_moors",
+  "x": 74,
+  "y": 34,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Banbury Cake.",
+  "reward": {
+   "item": "banbury_cake",
+   "qty": 1
+  },
+  "flag": "field_north_york_moors_roll",
+  "at": "newcastle"
+ },
+ {
+  "id": "fs_pennine_grouse_moor_mend",
+  "zone": "pennine_grouse_moor",
+  "x": 17,
+  "y": 15,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: some loose change and a gratitude card.",
+  "reward": {
+   "money": 2700
+  },
+  "flag": "field_pennine_grouse_moor_mend",
+  "at": "saddleworth_moor"
+ },
+ {
+  "id": "fs_saddleworth_moor_skim",
+  "zone": "saddleworth_moor",
+  "x": 38,
+  "y": 39,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "A flat stone and a still stretch of water. {lead} sends it dancing across, once, twice, five times, and something on the far side wobbles loose: Tara Brooch Copy.",
+  "reward": {
+   "curio": "harp_brooch"
+  },
+  "flag": "field_saddleworth_moor_skim",
+  "at": "saddleworth_moor"
+ },
+ {
+  "id": "fs_saddleworth_moor_mend",
+  "zone": "saddleworth_moor",
+  "x": 38,
+  "y": 24,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_saddleworth_moor_mend",
+  "at": "saddleworth_moor"
+ },
+ {
+  "id": "fs_sheffield_loft",
+  "zone": "sheffield",
+  "x": 73,
+  "y": 29,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Lucky Chip.",
+  "reward": {
+   "item": "lucky_chip",
+   "qty": 1
+  },
+  "flag": "field_sheffield_loft",
+  "at": "sheffield"
+ },
+ {
+  "id": "fs_sheffield_roll",
+  "zone": "sheffield",
+  "x": 69,
+  "y": 9,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: a few coins.",
+  "reward": {
+   "money": 2730
+  },
+  "flag": "field_sheffield_roll",
+  "at": "sheffield"
+ },
+ {
+  "id": "fs_whitby_line",
+  "zone": "whitby",
+  "x": 57,
+  "y": 39,
+  "field": "line",
+  "prop": "glint",
+  "text": "A glint under the surface, just out of reach. {lead} hooks it with patience and a bit of reed. It is a purse, a bit damp.",
+  "reward": {
+   "money": 2610
+  },
+  "flag": "field_whitby_line",
+  "at": "whitby"
+ },
+ {
+  "id": "fs_whitby_paddle",
+  "zone": "whitby",
+  "x": 36,
+  "y": 13,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, left on the bank, light as a basket. {lead} gets in and paddles across without spinning more than twice. On the far side: Norfolk Reed.",
+  "reward": {
+   "item": "norfolk_reed",
+   "qty": 1
+  },
+  "flag": "field_whitby_paddle",
+  "at": "whitby"
+ },
+ {
+  "id": "fs_york_mend",
+  "zone": "york",
+  "x": 40,
+  "y": 59,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Rowan Sprig.",
+  "reward": {
+   "item": "rowan_sprig",
+   "qty": 1
+  },
+  "flag": "field_york_mend",
+  "at": "york"
+ },
+ {
+  "id": "fs_york_charm",
+  "zone": "york",
+  "x": 65,
+  "y": 59,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: Bacon Rind.",
+  "reward": {
+   "item": "crab_bait",
+   "qty": 1
+  },
+  "flag": "field_york_charm",
+  "at": "york"
+ },
+ {
+  "id": "fs_yorkshire_dales_mend",
+  "zone": "yorkshire_dales",
+  "x": 50,
+  "y": 11,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in the wall, where the stones have gone for a walk. {lead} fits them back one by one, like a very slow jigsaw. Tucked in the wall behind: Hag Stone.",
+  "reward": {
+   "item": "hag_stone",
+   "qty": 1
+  },
+  "flag": "field_yorkshire_dales_mend",
+  "at": "york"
+ },
+ {
+  "id": "fs_yorkshire_dales_line",
+  "zone": "yorkshire_dales",
+  "x": 33,
+  "y": 19,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the water. {lead} wades in, makes a few calm passes and fishes it out: Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_yorkshire_dales_line",
+  "at": "york"
+ },
+ {
+  "id": "fs_yorkshire_wolds_round_up",
+  "zone": "yorkshire_wolds",
+  "x": 41,
+  "y": 11,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "A knot of sheep, all facing the wrong way. {lead} works them in a neat curve until the gate is clear. Left on the post for you: a few coins.",
+  "reward": {
+   "money": 2670
+  },
+  "flag": "field_yorkshire_wolds_round_up",
+  "at": "yorkshire_wolds"
+ },
+ {
+  "id": "fs_yorkshire_wolds_snorkel",
+  "zone": "yorkshire_wolds",
+  "x": 35,
+  "y": 18,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_yorkshire_wolds_snorkel",
+  "at": "yorkshire_wolds"
+ }
+]

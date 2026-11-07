@@ -1,0 +1,74 @@
+[
+ {
+  "id": "fs_hadrians_wall_mend",
+  "zone": "hadrians_wall",
+  "x": 51,
+  "y": 30,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Sheep Wool in the hollow.",
+  "reward": {
+   "item": "sheep_wool",
+   "qty": 1
+  },
+  "flag": "field_hadrians_wall_mend",
+  "at": "newcastle"
+ },
+ {
+  "id": "fs_hadrians_wall_roll",
+  "zone": "hadrians_wall",
+  "x": 9,
+  "y": 25,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Double Gloucester Round.",
+  "reward": {
+   "item": "fest_cheese_round",
+   "qty": 1
+  },
+  "flag": "field_hadrians_wall_roll",
+  "at": "newcastle"
+ },
+ {
+  "id": "fs_northumberland_coast_line",
+  "zone": "northumberland_coast",
+  "x": 61,
+  "y": 16,
+  "field": "line",
+  "prop": "glint",
+  "text": "{lead} peers into the water, then pulls out, with great ceremony, some loose change and a gratitude card.",
+  "reward": {
+   "money": 2520
+  },
+  "flag": "field_northumberland_coast_line",
+  "at": "aberdeen"
+ },
+ {
+  "id": "fs_northumberland_coast_mend",
+  "zone": "northumberland_coast",
+  "x": 19,
+  "y": 29,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds a few coins in the hollow.",
+  "reward": {
+   "money": 2520
+  },
+  "flag": "field_northumberland_coast_mend",
+  "at": "aberdeen"
+ },
+ {
+  "id": "fs_penshaw_roll",
+  "zone": "penshaw",
+  "x": 29,
+  "y": 18,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "The wheel has been here since last spring's chase. {lead} sets it rolling, and underneath is a purse, a bit damp.",
+  "reward": {
+   "money": 2550
+  },
+  "flag": "field_penshaw_roll",
+  "at": "newcastle"
+ }
+]

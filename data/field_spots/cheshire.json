@@ -1,0 +1,108 @@
+[
+ {
+  "id": "fs_macc_forest_topple",
+  "zone": "macc_forest",
+  "x": 55,
+  "y": 9,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "A dead trunk, leaning on nothing much. {lead} puts its shoulder to it and over it goes with a crack. Underneath: Souvenir Thimble.",
+  "reward": {
+   "curio": "thimble_collection"
+  },
+  "flag": "field_macc_forest_topple",
+  "at": "macc_forest"
+ },
+ {
+  "id": "fs_macc_forest_roll",
+  "zone": "macc_forest",
+  "x": 29,
+  "y": 16,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up some loose change and a gratitude card.",
+  "reward": {
+   "money": 330
+  },
+  "flag": "field_macc_forest_roll",
+  "at": "macc_forest"
+ },
+ {
+  "id": "fs_macclesfield_loft",
+  "zone": "macclesfield",
+  "x": 6,
+  "y": 27,
+  "field": "loft",
+  "prop": "bale",
+  "text": "The bowl sails over the bend like it knew the road. {lead} trots after it, and finds Sloes in the grass.",
+  "reward": {
+   "item": "sloes",
+   "qty": 1
+  },
+  "flag": "field_macclesfield_loft",
+  "at": "macclesfield"
+ },
+ {
+  "id": "fs_wirral_way_round_up",
+  "zone": "wirral_way",
+  "x": 39,
+  "y": 54,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "A knot of sheep, all facing the wrong way. {lead} works them in a neat curve until the gate is clear. Left on the post for you: Cream Tea.",
+  "reward": {
+   "item": "cream_tea",
+   "qty": 1
+  },
+  "flag": "field_wirral_way_round_up",
+  "at": "wirral_way"
+ },
+ {
+  "id": "fs_wirral_way_roll",
+  "zone": "wirral_way",
+  "x": 24,
+  "y": 36,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Bog Oak Carving.",
+  "reward": {
+   "curio": "bog_oak_carving"
+  },
+  "flag": "field_wirral_way_roll",
+  "at": "wirral_way"
+ },
+ {
+  "id": "fs_wirral_way_topple_x1",
+  "zone": "wirral_way",
+  "x": 13,
+  "y": 55,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+  "reward": {
+   "hop": [
+    9,
+    55
+   ]
+  },
+  "flag": "field_wirral_way_topple_a",
+  "at": "wirral_way"
+ },
+ {
+  "id": "fs_wirral_way_topple_x2",
+  "zone": "wirral_way",
+  "x": 10,
+  "y": 55,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
+  "reward": {
+   "hop": [
+    14,
+    55
+   ]
+  },
+  "flag": "field_wirral_way_topple_b",
+  "at": "wirral_way"
+ }
+]

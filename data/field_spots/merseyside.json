@@ -1,0 +1,76 @@
+[
+ {
+  "id": "fs_liverpool_topple",
+  "zone": "liverpool",
+  "x": 16,
+  "y": 54,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "A dead tree, waiting for an excuse. {lead} supplies one. In the roots, undisturbed for years: Oak Acorn.",
+  "reward": {
+   "item": "oak_acorn",
+   "qty": 1
+  },
+  "flag": "field_liverpool_topple",
+  "at": "liverpool"
+ },
+ {
+  "id": "fs_liverpool_roll",
+  "zone": "liverpool",
+  "x": 40,
+  "y": 47,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Double Gloucester.",
+  "reward": {
+   "item": "double_gloucester",
+   "qty": 1
+  },
+  "flag": "field_liverpool_roll",
+  "at": "liverpool"
+ },
+ {
+  "id": "fs_sefton_coast_round_up",
+  "zone": "sefton_coast",
+  "x": 10,
+  "y": 12,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "A knot of sheep, all facing the wrong way. {lead} works them in a neat curve until the gate is clear. Left on the post for you: a purse, a bit damp.",
+  "reward": {
+   "money": 750
+  },
+  "flag": "field_sefton_coast_round_up",
+  "at": "sefton_coast"
+ },
+ {
+  "id": "fs_sefton_coast_topple",
+  "zone": "sefton_coast",
+  "x": 46,
+  "y": 39,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls Field Mushrooms.",
+  "reward": {
+   "item": "field_mushrooms",
+   "qty": 1
+  },
+  "flag": "field_sefton_coast_topple",
+  "at": "sefton_coast"
+ },
+ {
+  "id": "fs_sefton_coast_roll",
+  "zone": "sefton_coast",
+  "x": 16,
+  "y": 37,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: Cream Tea.",
+  "reward": {
+   "item": "cream_tea",
+   "qty": 1
+  },
+  "flag": "field_sefton_coast_roll",
+  "at": "sefton_coast"
+ }
+]

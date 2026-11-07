@@ -1,0 +1,306 @@
+[
+ {
+  "id": "fs_antrim_coast_charm",
+  "zone": "antrim_coast",
+  "x": 36,
+  "y": 20,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_antrim_coast_charm",
+  "at": "antrim_coast"
+ },
+ {
+  "id": "fs_antrim_coast_roll",
+  "zone": "antrim_coast",
+  "x": 21,
+  "y": 13,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: some loose change and a gratitude card.",
+  "reward": {
+   "money": 2100
+  },
+  "flag": "field_antrim_coast_roll",
+  "at": "antrim_coast"
+ },
+ {
+  "id": "fs_belfast_paddle",
+  "zone": "belfast",
+  "x": 45,
+  "y": 24,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Sea Glass.",
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "field_belfast_paddle",
+  "at": "belfast"
+ },
+ {
+  "id": "fs_belfast_skim",
+  "zone": "belfast",
+  "x": 45,
+  "y": 49,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Drake's Drum.",
+  "reward": {
+   "item": "drakes_drum",
+   "qty": 1
+  },
+  "flag": "field_belfast_skim",
+  "at": "belfast"
+ },
+ {
+  "id": "fs_causeway_skim",
+  "zone": "causeway",
+  "x": 50,
+  "y": 21,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Aneroid Barometer.",
+  "reward": {
+   "curio": "barometer"
+  },
+  "flag": "field_causeway_skim",
+  "at": "causeway"
+ },
+ {
+  "id": "fs_causeway_line",
+  "zone": "causeway",
+  "x": 50,
+  "y": 11,
+  "field": "line",
+  "prop": "glint",
+  "text": "{lead} peers into the water, then pulls out, with great ceremony, a purse, a bit damp.",
+  "reward": {
+   "money": 2130
+  },
+  "flag": "field_causeway_line",
+  "at": "causeway"
+ },
+ {
+  "id": "fs_comeraghs_mend",
+  "zone": "comeraghs",
+  "x": 13,
+  "y": 27,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Rowan Sprig in the hollow.",
+  "reward": {
+   "item": "rowan_sprig",
+   "qty": 1
+  },
+  "flag": "field_comeraghs_mend",
+  "at": "comeraghs"
+ },
+ {
+  "id": "fs_comeraghs_roll",
+  "zone": "comeraghs",
+  "x": 39,
+  "y": 16,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up some loose change and a gratitude card.",
+  "reward": {
+   "money": 1710
+  },
+  "flag": "field_comeraghs_roll",
+  "at": "comeraghs"
+ },
+ {
+  "id": "fs_cork_line",
+  "zone": "cork",
+  "x": 61,
+  "y": 33,
+  "field": "line",
+  "prop": "glint",
+  "text": "{lead} peers into the water, then pulls out, with great ceremony, a roll of notes.",
+  "reward": {
+   "money": 1770
+  },
+  "flag": "field_cork_line",
+  "at": "cork"
+ },
+ {
+  "id": "fs_dublin_topple",
+  "zone": "dublin",
+  "x": 28,
+  "y": 9,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "A dead trunk, leaning on nothing much. {lead} puts its shoulder to it and over it goes with a crack. Underneath: Hazelnuts.",
+  "reward": {
+   "item": "hazelnuts",
+   "qty": 1
+  },
+  "flag": "field_dublin_topple",
+  "at": "dublin"
+ },
+ {
+  "id": "fs_dublin_skim",
+  "zone": "dublin",
+  "x": 50,
+  "y": 45,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Drake's Drum.",
+  "reward": {
+   "item": "drakes_drum",
+   "qty": 1
+  },
+  "flag": "field_dublin_skim",
+  "at": "dublin"
+ },
+ {
+  "id": "fs_enniskillen_paddle",
+  "zone": "enniskillen",
+  "x": 51,
+  "y": 23,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, left on the bank, light as a basket. {lead} gets in and paddles across without spinning more than twice. On the far side: Bakelite Radio.",
+  "reward": {
+   "curio": "bakelite_radio"
+  },
+  "flag": "field_enniskillen_paddle",
+  "at": "enniskillen"
+ },
+ {
+  "id": "fs_enniskillen_skim",
+  "zone": "enniskillen",
+  "x": 21,
+  "y": 16,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "A flat stone and a still stretch of water. {lead} sends it dancing across, once, twice, five times, and something on the far side wobbles loose: 1966 Final Ticket.",
+  "reward": {
+   "curio": "ticket_1966"
+  },
+  "flag": "field_enniskillen_skim",
+  "at": "enniskillen"
+ },
+ {
+  "id": "fs_lease_glenashen_roll",
+  "zone": "lease_glenashen",
+  "x": 39,
+  "y": 35,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Somerset Cider.",
+  "reward": {
+   "item": "bristol_cider",
+   "qty": 1
+  },
+  "flag": "field_lease_glenashen_roll",
+  "at": "antrim_coast"
+ },
+ {
+  "id": "fs_lease_glenashen_charm",
+  "zone": "lease_glenashen",
+  "x": 46,
+  "y": 32,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Horse Brass.",
+  "reward": {
+   "curio": "brass_horse"
+  },
+  "flag": "field_lease_glenashen_charm",
+  "at": "antrim_coast"
+ },
+ {
+  "id": "fs_lough_neagh_round_up",
+  "zone": "lough_neagh",
+  "x": 41,
+  "y": 31,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep at the gate, and no sheep will go first. {lead} comes round the back, low and quiet, and the flock files through. The farmer's thanks: Flask of Tea.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_lough_neagh_round_up",
+  "at": "lough_neagh"
+ },
+ {
+  "id": "fs_lough_neagh_snorkel",
+  "zone": "lough_neagh",
+  "x": 9,
+  "y": 45,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "The bog water is dark and cold. {lead} ploughs through it with its face down and surfaces holding Peat.",
+  "reward": {
+   "item": "peat",
+   "qty": 1
+  },
+  "flag": "field_lough_neagh_snorkel",
+  "at": "lough_neagh"
+ },
+ {
+  "id": "fs_mournes_mend",
+  "zone": "mournes",
+  "x": 42,
+  "y": 24,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds some loose change and a gratitude card in the hollow.",
+  "reward": {
+   "money": 2070
+  },
+  "flag": "field_mournes_mend",
+  "at": "mournes"
+ },
+ {
+  "id": "fs_mournes_roll",
+  "zone": "mournes",
+  "x": 39,
+  "y": 7,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Somerset Cider.",
+  "reward": {
+   "item": "bristol_cider",
+   "qty": 1
+  },
+  "flag": "field_mournes_roll",
+  "at": "mournes"
+ },
+ {
+  "id": "fs_wicklow_snorkel",
+  "zone": "wicklow",
+  "x": 41,
+  "y": 27,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, a purse, a bit damp.",
+  "reward": {
+   "money": 1650
+  },
+  "flag": "field_wicklow_snorkel",
+  "at": "wicklow"
+ },
+ {
+  "id": "fs_wicklow_roll",
+  "zone": "wicklow",
+  "x": 50,
+  "y": 11,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "The wheel has been here since last spring's chase. {lead} sets it rolling, and underneath is Brass Miner's Lamp.",
+  "reward": {
+   "curio": "brass_miners_lamp"
+  },
+  "flag": "field_wicklow_roll",
+  "at": "wicklow"
+ }
+]

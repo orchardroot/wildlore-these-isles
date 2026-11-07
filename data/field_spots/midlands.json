@@ -1,0 +1,310 @@
+[
+ {
+  "id": "fs_cotswolds_snorkel",
+  "zone": "cotswolds",
+  "x": 58,
+  "y": 40,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "A peat pool, black as tea. {lead} dives in, flippers going, and comes up spluttering and delighted with a roll of notes.",
+  "reward": {
+   "money": 2880
+  },
+  "flag": "field_cotswolds_snorkel",
+  "at": "cotswolds"
+ },
+ {
+  "id": "fs_cotswolds_paddle",
+  "zone": "cotswolds",
+  "x": 42,
+  "y": 40,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, left on the bank, light as a basket. {lead} gets in and paddles across without spinning more than twice. On the far side: Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_cotswolds_paddle",
+  "at": "cotswolds"
+ },
+ {
+  "id": "fs_cotswolds_roll",
+  "zone": "cotswolds",
+  "x": 14,
+  "y": 35,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: Cream Tea.",
+  "reward": {
+   "item": "cream_tea",
+   "qty": 1
+  },
+  "flag": "field_cotswolds_roll",
+  "at": "cotswolds"
+ },
+ {
+  "id": "fs_ironbridge_gorge_round_up",
+  "zone": "ironbridge_gorge",
+  "x": 23,
+  "y": 53,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "{lead} circles the flock like it has done this all its life. The gate is clear in a minute. Someone has hung Flask of Tea on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_ironbridge_gorge_round_up",
+  "at": "ironbridge_gorge"
+ },
+ {
+  "id": "fs_ironbridge_gorge_charm",
+  "zone": "ironbridge_gorge",
+  "x": 63,
+  "y": 20,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Seven-inch Single.",
+  "reward": {
+   "curio": "vinyl_single"
+  },
+  "flag": "field_ironbridge_gorge_charm",
+  "at": "ironbridge_gorge"
+ },
+ {
+  "id": "fs_lincoln_line",
+  "zone": "lincoln",
+  "x": 16,
+  "y": 40,
+  "field": "line",
+  "prop": "glint",
+  "text": "{lead} peers into the water, then pulls out, with great ceremony, Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_lincoln_line",
+  "at": "lincoln"
+ },
+ {
+  "id": "fs_lincoln_skim",
+  "zone": "lincoln",
+  "x": 6,
+  "y": 40,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Burn Water Flask.",
+  "reward": {
+   "item": "burn_water_flask",
+   "qty": 1
+  },
+  "flag": "field_lincoln_skim",
+  "at": "lincoln"
+ },
+ {
+  "id": "fs_london_round_up",
+  "zone": "london",
+  "x": 62,
+  "y": 14,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "{lead} circles the flock like it has done this all its life. The gate is clear in a minute. Someone has hung Kendal Mint Cake on the post.",
+  "reward": {
+   "item": "kendal_mint_cake",
+   "qty": 1
+  },
+  "flag": "field_london_round_up",
+  "at": "london"
+ },
+ {
+  "id": "fs_london_loft",
+  "zone": "london",
+  "x": 76,
+  "y": 51,
+  "field": "loft",
+  "prop": "bale",
+  "text": "A bale and a bend, and a bowl that wants lofting. {lead} swings and sends it up over the hedge in one long arc. It lands by a roll of notes.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_london_loft",
+  "at": "london"
+ },
+ {
+  "id": "fs_salisbury_plain_charm",
+  "zone": "salisbury_plain",
+  "x": 19,
+  "y": 12,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Bacon Rind.",
+  "reward": {
+   "item": "crab_bait",
+   "qty": 1
+  },
+  "flag": "field_salisbury_plain_charm",
+  "at": "birmingham"
+ },
+ {
+  "id": "fs_salisbury_plain_loft",
+  "zone": "salisbury_plain",
+  "x": 33,
+  "y": 4,
+  "field": "loft",
+  "prop": "bale",
+  "text": "A bale and a bend, and a bowl that wants lofting. {lead} swings and sends it up over the hedge in one long arc. It lands by Hag Stone.",
+  "reward": {
+   "item": "hag_stone",
+   "qty": 1
+  },
+  "flag": "field_salisbury_plain_loft",
+  "at": "birmingham"
+ },
+ {
+  "id": "fs_sherwood_charm",
+  "zone": "sherwood",
+  "x": 37,
+  "y": 44,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Wild Garlic.",
+  "reward": {
+   "item": "wild_garlic",
+   "qty": 1
+  },
+  "flag": "field_sherwood_charm",
+  "at": "sheffield"
+ },
+ {
+  "id": "fs_sherwood_topple",
+  "zone": "sherwood",
+  "x": 30,
+  "y": 36,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls Honeycomb.",
+  "reward": {
+   "item": "honeycomb",
+   "qty": 1
+  },
+  "flag": "field_sherwood_topple",
+  "at": "sheffield"
+ },
+ {
+  "id": "fs_shrewsbury_paddle",
+  "zone": "shrewsbury",
+  "x": 11,
+  "y": 39,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Donkey Bell.",
+  "reward": {
+   "curio": "donkey_bell"
+  },
+  "flag": "field_shrewsbury_paddle",
+  "at": "shrewsbury"
+ },
+ {
+  "id": "fs_shrewsbury_skim",
+  "zone": "shrewsbury",
+  "x": 11,
+  "y": 29,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: a roll of notes.",
+  "reward": {
+   "money": 810
+  },
+  "flag": "field_shrewsbury_skim",
+  "at": "shrewsbury"
+ },
+ {
+  "id": "fs_shropshire_hills_charm",
+  "zone": "shropshire_hills",
+  "x": 22,
+  "y": 46,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_shropshire_hills_charm",
+  "at": "shropshire_hills"
+ },
+ {
+  "id": "fs_shropshire_hills_line",
+  "zone": "shropshire_hills",
+  "x": 28,
+  "y": 22,
+  "field": "line",
+  "prop": "glint",
+  "text": "{lead} peers into the water, then pulls out, with great ceremony, Roach.",
+  "reward": {
+   "item": "roach",
+   "qty": 1
+  },
+  "flag": "field_shropshire_hills_line",
+  "at": "shropshire_hills"
+ },
+ {
+  "id": "fs_stoke_loft",
+  "zone": "stoke",
+  "x": 17,
+  "y": 45,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Cream Tea.",
+  "reward": {
+   "item": "cream_tea",
+   "qty": 1
+  },
+  "flag": "field_stoke_loft",
+  "at": "stoke"
+ },
+ {
+  "id": "fs_stoke_round_up",
+  "zone": "stoke",
+  "x": 23,
+  "y": 38,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "{lead} circles the flock like it has done this all its life. The gate is clear in a minute. Someone has hung a few coins on the post.",
+  "reward": {
+   "money": 450
+  },
+  "flag": "field_stoke_round_up",
+  "at": "stoke"
+ },
+ {
+  "id": "fs_stonehenge_roll",
+  "zone": "stonehenge",
+  "x": 41,
+  "y": 41,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: a few coins.",
+  "reward": {
+   "money": 2940
+  },
+  "flag": "field_stonehenge_roll",
+  "at": "london"
+ },
+ {
+  "id": "fs_stonehenge_loft",
+  "zone": "stonehenge",
+  "x": 28,
+  "y": 50,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Hag Stone.",
+  "reward": {
+   "item": "hag_stone",
+   "qty": 1
+  },
+  "flag": "field_stonehenge_loft",
+  "at": "london"
+ }
+]
