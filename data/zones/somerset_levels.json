@@ -786,7 +786,8 @@
     "min": 42,
     "max": 43,
     "weight": 15
-   }
+   },
+   {"species": "raftlet", "min": 41, "max": 43, "weight": 8}
   ]
  },
  "signs": [

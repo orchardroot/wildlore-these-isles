@@ -107,7 +107,8 @@
     "min": 46.0,
     "species": "pierlord",
     "weight": 20.0
-   }
+   },
+   {"species": "dishfin", "min": 46.0, "max": 48.0, "weight": 6, "season": ["summer"]}
   ]
  },
  "heights": [

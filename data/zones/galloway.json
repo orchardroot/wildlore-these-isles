@@ -524,7 +524,8 @@
     "season": [
      "autumn"
     ]
-   }
+   },
+   {"species": "tattybogle", "min": 67, "max": 69, "weight": 8, "time": ["dusk", "night"]}
   ],
   "water": [
    {
@@ -570,7 +571,8 @@
     "min": 68,
     "max": 69,
     "weight": 8
-   }
+   },
+   {"species": "barnaclet", "min": 67, "max": 69, "weight": 10}
   ]
  },
  "signs": [

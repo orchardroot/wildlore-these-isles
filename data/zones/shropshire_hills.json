@@ -318,7 +318,8 @@
      "drizzle",
      "downpour"
     ]
-   }
+   },
+   {"species": "brammel", "min": 21, "max": 23, "weight": 12, "season": ["summer", "autumn"]}
   ],
   "water": [
    {

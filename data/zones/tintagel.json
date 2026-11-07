@@ -689,7 +689,8 @@
     "min": 45,
     "max": 46,
     "weight": 20
-   }
+   },
+   {"species": "dishfin", "min": 45, "max": 47, "weight": 6, "season": ["summer"]}
   ]
  },
  "signs": [

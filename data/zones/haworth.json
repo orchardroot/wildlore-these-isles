@@ -127,7 +127,9 @@
     "weather": [
      "fog"
     ]
-   }
+   },
+   {"species": "brammel", "min": 14, "max": 16, "weight": 12, "season": ["summer", "autumn"]},
+   {"species": "dishwight", "min": 14, "max": 16, "weight": 8, "time": ["dusk", "night"]}
   ],
   "water": [
    {

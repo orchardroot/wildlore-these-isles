@@ -745,7 +745,8 @@
     "min": 69,
     "max": 70,
     "weight": 6
-   }
+   },
+   {"species": "slipknot", "min": 69, "max": 71, "weight": 8, "time": ["night"]}
   ]
  },
  "signs": [
