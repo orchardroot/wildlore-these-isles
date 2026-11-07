@@ -85,3 +85,13 @@ static func due_letters(data) -> Array:
 			data.set_flag(FLAG_PREFIX + str(t.id), true)
 			out.append({"id": str(t.id), "text": str(t.text), "money": int(t.money)})
 	return out
+
+## Dev only (`--menu=league:dev`): plays a few games to fill the card.
+static func dev_fill(data) -> void:
+	var n := 0
+	for id in PartyPieces.entries():
+		var e: Dictionary = PartyPieces.entries()[id]
+		PartyPieces.record(data, str(id), float(e.get("master", 1)) if n % 3 == 0 else float(e.get("good", 1)) if n % 3 == 1 else 0.0)
+		n += 1
+		if n >= 7:
+			break

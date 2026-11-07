@@ -1,0 +1,32 @@
+{
+ "kes_gurner": [
+  {
+   "do": "say",
+   "who": "Gurning Judge",
+   "text": "Welcome to the Crab Fair, Keswick branch. The real one is at Egremont, but the faces here are just as bad."
+  },
+  {
+   "do": "gurn",
+   "venue": "egremont",
+   "who": "Gurning Judge"
+  }
+ ],
+ "moor_wang_steward": [
+  {
+   "do": "say",
+   "who": "Wang Steward",
+   "text": "Boots are in the barrel. Wind is from the west, which on Saddleworth means it is from everywhere."
+  },
+  {
+   "do": "wang",
+   "venue": "upperthong",
+   "who": "Wang Steward"
+  }
+ ],
+ "kes_games_secretary": [
+  {
+   "do": "league",
+   "who": "Games Secretary"
+  }
+ ]
+}
