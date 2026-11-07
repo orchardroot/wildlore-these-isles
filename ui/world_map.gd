@@ -253,7 +253,8 @@ func _toggle_route(town: String) -> void:
 func _show_route() -> void:
 	var to := str(Game.data.flag("route_to")) if Game.data.flag("route_to") else ""
 	var path: Array = ZoneGraph.route(ZoneGraph.shared(), Game.data.zone_id, to, Game.data) if to != "" else []
-	view.route = MapLogic.route_points(path, ZoneIndex.get_index().zones)
+	var shapes := MapView.shapes()
+	view.route = MapLogic.route_legs(path, ZoneIndex.get_index().zones, ZoneGraph.shared(), shapes.rail, shapes.ferry_paths)
 	view.queue_redraw()
 	if _route_label == null:
 		return
