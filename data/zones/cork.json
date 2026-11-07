@@ -366,6 +366,16 @@
    "times": [
     "night"
    ]
+  },
+  {
+   "id": "cork_roadbowler",
+   "sprite": "hurler",
+   "x": 45,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "cork_roadbowler",
+   "name": "Road Bowler"
   }
  ],
  "props": [
@@ -1036,6 +1046,13 @@
    "theme": "arts",
    "title": "Rory Gallagher",
    "text": "Rory Gallagher was born in Ballyshannon in 1948 and grew up in Cork, where he bought a battered 1961 Fender Stratocaster as a teenager and played it until the paint came off. With Taste, and then under his own name, he played the blues loud and honest all over the world and never once chased a hit single. He died in 1995, aged 47. Cork named a square after him and put up a sculpture of a twisted guitar. The paint still has not been put back."
+  },
+  {
+   "x": 41,
+   "y": 33,
+   "plaque": "roadbowling_cork",
+   "title": "Road Bowling",
+   "text": "ROAD BOWLING. Cork and Armagh keep a sport that is thrown, not rolled: a 28 ounce iron bowl, underarm, along a closed country road, and the fewest throws to the finish wins. Scouts stand at the bends to mark where it lands."
   }
  ],
  "spawn": [

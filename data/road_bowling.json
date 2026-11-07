@@ -1,0 +1,46 @@
+{
+ "venues": {
+  "cork": {
+   "name": "Cork",
+   "prize": 14,
+   "length": 640,
+   "half_width": 5.0,
+   "bends": [
+    {"at": 150, "len": 60, "shift": 22},
+    {"at": 330, "len": 50, "shift": -28},
+    {"at": 480, "len": 45, "shift": 20}
+   ],
+   "scouts": [120, 300, 455],
+   "rival": {
+    "who": "Mairead, county champion",
+    "power": 0.82,
+    "sloppy": 0.10,
+    "intro": "Mairead has a bowl in each pocket and a cousin standing at every bend. She says the road does half the work if you let it.",
+    "beaten": "Mairead takes her bowl back, turns it over in her hand and says that was a road bowler's round. From her, that is a medal."
+   },
+   "real": "The real thing is Irish road bowling, played on the closed country lanes of County Cork and County Armagh. A 28 ounce iron bowl, thrown underarm along two miles or so of ordinary road, and whoever gets round in the fewest shots wins. Scouts stand at the bends to mark where it lands, and the roads are shut for the afternoon."
+  },
+  "armagh": {
+   "name": "Armagh",
+   "prize": 14,
+   "length": 700,
+   "half_width": 4.6,
+   "bends": [
+    {"at": 120, "len": 50, "shift": -20},
+    {"at": 260, "len": 40, "shift": 30},
+    {"at": 400, "len": 40, "shift": -30},
+    {"at": 540, "len": 50, "shift": 22}
+   ],
+   "scouts": [100, 240, 380, 520],
+   "rival": {
+    "who": "Declan, three-time Ulster finalist",
+    "power": 0.85,
+    "sloppy": 0.09,
+    "intro": "Declan lofts for a living, or would if anyone paid for it. He says a bend is just a hedge you can throw over.",
+    "beaten": "Declan whistles through his teeth. He says the lane has not seen a round like that since his uncle's, and his uncle is not here to argue."
+   },
+   "real": "The real thing is Ulster road bowling, strongest in County Armagh and across the border in Cork. Armagh players are known for lofting the bowl high to get it round a bend or over a bit of verge, and a good loft can save a whole shot."
+  }
+ },
+ "how": "Up and down set the power, left and right set the swing: the bowl curves as it goes. Roads bend, so throw into the bend and let it run. A bowl that leaves the tarmac is fetched out of the nettles and put back a few yards. Run lofts the bowl: it flies over the first half of its throw, so you can cut a corner, but it lands dead. Fewest throws to the finish wins."
+}

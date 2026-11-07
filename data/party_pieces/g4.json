@@ -1,0 +1,28 @@
+{
+ "road_bowling": {
+  "name": "Road bowling",
+  "move": "lofted_bowl",
+  "types": ["iron", "stone"],
+  "zone": "cork",
+  "where": "Cork, by the quays, and the Antrim coast road",
+  "good": 8,
+  "master": 6,
+  "lower_better": true,
+  "unit": "throws",
+  "master_name": "Mairead, county champion",
+  "field": "loft"
+ },
+ "poohsticks": {
+  "name": "Poohsticks",
+  "move": "under_the_bridge",
+  "types": ["fae", "brook"],
+  "zone": "oxford",
+  "where": "Oxford, on the Thames footbridge, and a Sussex brook",
+  "good": 3,
+  "master": 4,
+  "lower_better": false,
+  "unit": "races won",
+  "master_name": "Hugo, reigning champion of the lock",
+  "field": ""
+ }
+}

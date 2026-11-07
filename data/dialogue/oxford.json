@@ -97,5 +97,17 @@
    "who": "Street Poet",
    "text": "The spires are not all dreaming, by the way. Some of them are leaning on cranes. Preservation is a long job."
   }
+ ],
+ "ox_poohsticks": [
+  {
+   "do": "say",
+   "who": "Sticks Player",
+   "text": "Drop it upstream, run to the other side, and pretend you were never competitive. That is the whole rule."
+  },
+  {
+   "do": "poohsticks",
+   "venue": "oxford",
+   "who": "Sticks Player"
+  }
  ]
 }
