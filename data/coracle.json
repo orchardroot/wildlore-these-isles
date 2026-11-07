@@ -8,7 +8,7 @@
    "course": {"gates": 8, "first": 16.0, "step": 12.0, "gap": 10.0, "width": 22.0, "mid": 28.0, "bend": 8.0, "wave": 24.0},
    "rival": {
     "who": "Eustace, coracle maker's grandson",
-    "time": 40.0,
+    "time": 30.0,
     "spread": 3.0,
     "intro": "Eustace carries his coracle on his back, like a very large hat, and sets it on the water as if it were nothing. It is not nothing. It has opinions.",
     "beaten": "Eustace turns his coracle over to see if you have tampered with it. You haven't. He sits down on the bank to think about what has happened."
