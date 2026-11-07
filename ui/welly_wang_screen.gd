@@ -28,6 +28,7 @@ var _wait := 0.4
 var _their := -1.0
 var _clock := 0.0
 var _easy := false
+var _dev := false
 var _msg := "Hold Confirm to spin. Let go in the bright gap."
 var _stage: Control
 var _info: Label
@@ -56,6 +57,7 @@ func setup(arg: String) -> void:
 	_venue_id = arg if not WellyWang.venue(arg).is_empty() else "upperthong"
 	_rival = WellyWang.venue(_venue_id).rival
 	if arg.begins_with("dev"):
+		_dev = true
 		_throws = 1
 		_best = 21.4
 		_marks = [21.4]
@@ -88,7 +90,7 @@ func _process(delta: float) -> void:
 			_swing = fposmod(_swing + (110.0 + 130.0 * _spin) * delta, 360.0)
 			if _spin > WellyWang.DIZZY_ABOVE and fmod(_clock, 0.5) < delta:
 				Audio.sfx_at("snare_wobble", -4.0, 1.4)
-			if Input.is_action_just_released("confirm") or not Input.is_action_pressed("confirm"):
+			if not _dev and not Input.is_action_pressed("confirm"):
 				_release()
 		"flight":
 			_t += delta

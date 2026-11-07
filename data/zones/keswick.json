@@ -859,7 +859,7 @@
   {
    "id": "kes_games_sec",
    "sprite": "shopkeeper",
-   "x": 38,
+   "x": 36,
    "y": 29,
    "facing": "left",
    "move": "still",

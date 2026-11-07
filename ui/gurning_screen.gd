@@ -196,12 +196,12 @@ func _draw_stage() -> void:
 	s.draw_colored_polygon(PackedVector2Array([Vector2(w * 0.5 - 430, 96), Vector2(w * 0.5, 14), Vector2(w * 0.5 + 430, 96)]), Color("a23b3b"))
 	for k in 12:
 		var x0 := w * 0.5 - 430.0 + k * 72.0
-		s.draw_colored_polygon(PackedVector2Array([Vector2(x0, 96), Vector2(x0 + 36, 96), Vector2(x0 + 18, 14 + (1.0 - absf(x0 + 18 - w * 0.5) / 430.0) * 0.0 + 70)]) if false else PackedVector2Array([Vector2(x0, 96), Vector2(x0 + 36, 96), Vector2(x0 + 18, 70)]), Color("c9514b") if k % 2 == 0 else Color("e8d8b0"))
+		s.draw_colored_polygon(PackedVector2Array([Vector2(x0, 96), Vector2(x0 + 36, 96), Vector2(x0 + 18, 70)]), Color("c9514b") if k % 2 == 0 else Color("e8d8b0"))
 	s.draw_rect(Rect2(w * 0.5 - 430, 96, 860, 10), Color("7a2a2a"))
 	for k in 24:
 		var bx := 20.0 + k * 44.0
 		var by := 124.0 + sin(k * 0.52) * 7.0
-		var col := [Color("d95f4a"), Color("e8c872"), Color("5fa3c4"), Color("8fbf6a")][k % 4]
+		var col: Color = [Color("d95f4a"), Color("e8c872"), Color("5fa3c4"), Color("8fbf6a")][k % 4]
 		s.draw_colored_polygon(PackedVector2Array([Vector2(bx, by), Vector2(bx + 28, by), Vector2(bx + 14, by + 24)]), col)
 	s.draw_line(Vector2(0, 124), Vector2(w, 124), Color("3a2c28"), 2.0)
 	# the stage boards, the judges' table and a crowd that bobs when you do well
@@ -253,7 +253,7 @@ func _draw_stage() -> void:
 	var n := _seq.size()
 	for i in n:
 		var px := w - 30.0 - (n - i) * 26.0
-		var done := (_phase == "input" and i < _in_i) or (_phase == "show" and i < _show_i) or _phase == "pause" and false
+		var done := (_phase == "input" and i < _in_i) or (_phase == "show" and i < _show_i)
 		s.draw_circle(Vector2(px, 28), 9.0, UIKit.GOLD if done else Color(1, 1, 1, 0.25))
 	for i in Gurning.slips_allowed(_easy):
 		var used := i < _slips
@@ -270,7 +270,7 @@ func _draw_pad(p: Vector2, face: int, dir: String) -> void:
 	var r := Rect2(p - Vector2(74, 22), Vector2(148, 44))
 	_stage.draw_rect(r, Color("f2e8cf") if on else Color(0.1, 0.1, 0.16, 0.7))
 	_stage.draw_rect(r, UIKit.GOLD, false, 2.0)
-	var arrow := {"up": "^", "right": ">", "down": "v", "left": "<"}[dir]
+	var arrow: String = {"up": "^", "right": ">", "down": "v", "left": "<"}[dir]
 	var nm: String = str(Gurning.faces()[face].name).replace("The ", "")
 	_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-66, 8), arrow, HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("3a2c28") if on else UIKit.GOLD)
 	_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-44, 7), nm, HORIZONTAL_ALIGNMENT_LEFT, 112, 16, Color("3a2c28") if on else UIKit.CREAM)

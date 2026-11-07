@@ -94,7 +94,7 @@ func _draw_stamp(c: Control, r: Dictionary) -> void:
 	if not bool(r.stamped):
 		c.draw_arc(p, 17.0, 0.0, TAU, 24, Color("b0a088"), 2.0)
 		return
-	var col := [Color("6a8a5a"), BRONZE, SILVER, GOLD_R][clampi(int(r.rosette), 0, 3)]
+	var col: Color = [Color("6a8a5a"), BRONZE, SILVER, GOLD_R][clampi(int(r.rosette), 0, 3)]
 	for k in 12:
 		var a := TAU * k / 12.0
 		c.draw_circle(p + Vector2(cos(a), sin(a)) * 15.0, 6.0, col.darkened(0.15))
