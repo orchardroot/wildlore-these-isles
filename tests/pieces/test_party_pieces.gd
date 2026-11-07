@@ -57,3 +57,24 @@ func test_problems_flag_bad_entries() -> void:
 	var db := MoveDB.from_array([{"id": "rill_shot", "name": "x", "type": "brook", "piece": "t_skim"}, {"id": "drench", "name": "y", "type": "brook"}])
 	var p := PartyPieces.problems(db)
 	assert_eq(p.size(), 1, str(p))  # drench lacks the piece key
+
+func test_real_data_is_clean_and_covers_every_type() -> void:
+	PartyPieces._cache = {}
+	var db := MoveDB.load_default()
+	var p := PartyPieces.problems(db)
+	assert_eq(p.size(), 0, str(p))
+	var seen := {}
+	for id in PartyPieces.ids():
+		var e := PartyPieces.entry(id)
+		assert_true(db.has(str(e.move)), id)
+		assert_eq(str(db.get_move(str(e.move)).get("piece", "")), id)
+		for t in e.types:
+			seen[t] = int(seen.get(t, 0)) + 1
+	for t in ["bog", "brawn", "brook", "fae", "frost", "gale", "hearth", "hedgerow", "iron", "kin", "night", "spirit", "stone", "storm", "tide", "urban"]:
+		assert_true(int(seen.get(t, 0)) >= 2, "type %s has two pieces" % t)
+	for g in ["walling", "skimming", "caber", "crabbing"]:
+		assert_true(str(PartyPieces.entry(g).field) != "", g)
+
+func test_almanac_page_always_there() -> void:
+	assert_true("pieces" in Almanac.ORDER)
+	assert_true(Almanac.MENUS.has("pieces") and Almanac.NAMES.has("pieces"))
