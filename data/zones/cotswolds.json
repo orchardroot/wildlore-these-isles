@@ -1171,6 +1171,16 @@
    "move": "still",
    "script": "fete_cheese_steward",
    "name": "Hill Steward"
+  },
+  {
+   "id": "cw_hill_marshal",
+   "sprite": "farmer",
+   "x": 13,
+   "y": 59,
+   "facing": "up",
+   "move": "still",
+   "script": "cw_hill_marshal",
+   "name": "Race Starter"
   }
  ],
  "encounters": {
@@ -1440,6 +1450,13 @@
    "theme": "arts",
    "title": "Ralph Vaughan Williams",
    "text": "Ralph Vaughan Williams was born in the vicarage at Down Ampney, a Cotswold village, on 12 October 1872. From 1903 he went round England with a notebook, writing down folk songs from farm workers before they were forgotten, and their tunes run through all his music. He wrote The Lark Ascending in 1914 and the hymn tune 'Down Ampney' for 'Come down, O Love divine'. He died in 1958 and his ashes lie in Westminster Abbey. The lark is still ascending; it has never once come down for the applause."
+  },
+  {
+   "x": 15,
+   "y": 59,
+   "plaque": "cooper_hill_cheese",
+   "title": "Cooper's Hill Cheese Rolling",
+   "text": "CHEESE ROLLING. Every Spring Bank Holiday at Cooper's Hill, Brockworth, near Gloucester, a Double Gloucester cheese is sent down a hill so steep that the people chasing it mostly fall over. The first to the bottom wins the cheese. It has been going for centuries, and the slope is roughly one in two."
   }
  ],
  "spawn": [

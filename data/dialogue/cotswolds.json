@@ -484,5 +484,19 @@
    "event": "cheese",
    "who": "Hill Steward"
   }
+ ],
+ "cw_hill_marshal": [
+  {
+   "do": "face_player"
+  },
+  {
+   "do": "say",
+   "who": "Race Starter",
+   "text": "Welcome to the foot of Cooper's Hill. The top is up there, behind the sky. Mind the nettles, mind the cameras, and mind your own knees."
+  },
+  {
+   "do": "cheese",
+   "who": "Race Starter"
+  }
  ]
 }

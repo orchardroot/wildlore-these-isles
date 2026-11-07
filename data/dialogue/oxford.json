@@ -97,5 +97,19 @@
    "who": "Street Poet",
    "text": "The spires are not all dreaming, by the way. Some of them are leaning on cranes. Preservation is a long job."
   }
+ ],
+ "ox_pancake_marshal": [
+  {
+   "do": "face_player"
+  },
+  {
+   "do": "say",
+   "who": "Pancake Marshal",
+   "text": "Frying pan, apron, headscarf. That is the whole kit list, and the headscarf is not optional. The vicar is very firm."
+  },
+  {
+   "do": "pancake",
+   "who": "Pancake Marshal"
+  }
  ]
 }

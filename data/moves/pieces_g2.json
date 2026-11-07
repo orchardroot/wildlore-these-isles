@@ -1,0 +1,4 @@
+[
+  {"id": "coopers_roll", "name": "Cooper's Roll", "type": "stone", "category": "physical", "power": 95, "accuracy": 90, "pp": 10, "priority": 0, "piece": "cheese", "effect": {"id": "recoil", "frac": 25}, "fx": {"shape": "pounce"}},
+  {"id": "shrove_toss", "name": "Shrove Toss", "type": "hearth", "category": "special", "power": 70, "accuracy": 100, "pp": 15, "priority": 0, "piece": "pancake", "effect": {"id": "status", "status": "stung", "chance": 25}, "fx": {"shape": "burst"}}
+]

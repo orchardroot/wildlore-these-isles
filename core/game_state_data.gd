@@ -226,6 +226,7 @@ static func from_dict(d: Dictionary, dex: Dex) -> GameStateData:
 	s.purses = Wallet.sanitise_purses(d.get("purses"))
 	s.markets = Markets.sanitise(d.get("markets"))
 	s.look = Looks.sanitise(d.get("look"))
+	s.pieces = d.get("pieces", {}).duplicate(true) if d.get("pieces") is Dictionary else {}
 	s.trumps = d.get("trumps", {}).duplicate(true) if d.get("trumps") is Dictionary else {}
 	s.pieces = PartyPieces.sanitise(d.get("pieces"))
 	if not d.has("euros"):
