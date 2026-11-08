@@ -61,19 +61,33 @@ func _ready() -> void:
 static func text_width(l: Label) -> float:
 	return l.get_theme_font("font").get_string_size(l.text, HORIZONTAL_ALIGNMENT_LEFT, -1, l.get_theme_font_size("font_size")).x
 
+## How wide a wrapping line goes: MAX_W, narrowed while that keeps the same number of lines, so the lines come out
+## even rather than one long line and a last word on its own.
+static func wrap_width(l: Label) -> float:
+	var f := l.get_theme_font("font")
+	var fs := l.get_theme_font_size("font_size")
+	var lines := func(w: float) -> int:
+		return roundi(f.get_multiline_string_size(l.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y / f.get_height(fs))
+	var n: int = lines.call(MAX_W)
+	var w := MAX_W
+	while w > MAX_W * 0.5 and lines.call(w - 16.0) == n:
+		w -= 16.0
+	return w
+
 ## Sizes the panel to the text now on it and centres it. A wrapping label works out its height from the width it
 ## has *now*, so the body is given its wrap width before the panel is measured (else it measured one word a line
 ## and the panel ran to the bottom of the screen).
 func lay_out() -> void:
 	var wide := text_width(_body) > MAX_W
+	var w := wrap_width(_body) if wide else 0.0
 	_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART if wide else TextServer.AUTOWRAP_OFF
-	_body.custom_minimum_size.x = MAX_W if wide else 0.0
-	_body.size = Vector2(MAX_W if wide else 0.0, 0.0)
+	_body.custom_minimum_size.x = w
+	_body.size = Vector2(w, 0.0)
 	_body.update_minimum_size()
 	_panel.reset_size()
-	var w := _panel.size.x
-	_panel.offset_left = -w * 0.5
-	_panel.offset_right = w * 0.5
+	var pw := _panel.size.x
+	_panel.offset_left = -pw * 0.5
+	_panel.offset_right = pw * 0.5
 
 ## The panel's box on screen while a message is up, else an empty rect (the route chip steps out of its way).
 func rect() -> Rect2:

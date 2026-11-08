@@ -101,6 +101,7 @@ func test_next_milestone_and_stats_line() -> void:
 func test_reward_text_reads_well() -> void:
 	var m := {"n": 10, "title": "Curious Visitor", "money": 500, "items": {"flask_of_tea": 2}}
 	assert_eq(Gazetteer.reward_text(m, ItemDB.load_default()), "£500 and 2 Flask of Tea")
+	assert_eq(Gazetteer.reward_text({"money": 10000}, null), "£10,000", "thousands get a comma, as everywhere else")
 
 func test_validate_catches_duplicates_and_blanks() -> void:
 	var l := _list()
