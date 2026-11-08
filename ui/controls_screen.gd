@@ -68,7 +68,7 @@ func _build() -> void:
 	back.focus_neighbor_bottom = back.get_path_to(rows[0][1])
 	rows[0][0].focus_neighbor_top = rows[0][0].get_path_to(reset)
 	rows[0][1].focus_neighbor_top = rows[0][1].get_path_to(back)
-	_message = UIKit.label("In photo mode the move keys swing the camera, + / - zoom, Confirm takes a photo.", 20, UIKit.GOLD)
+	_message = UIKit.label("Photo mode: the move keys swing the camera, + / - zoom, Confirm takes a photo.  %s anywhere reports a problem." % InputSetup.hint_name(Settings.bindings, "report", false), 20, UIKit.GOLD)
 	_message.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	col.add_child(_message)
 	_refresh()
@@ -83,9 +83,9 @@ func _hdr(text: String, w: int) -> Label:
 
 func _cell(action: String, device: String, w: int) -> Button:
 	var b := UIKit.button("", w)
-	b.custom_minimum_size = Vector2(w, 32)
+	b.custom_minimum_size = Vector2(w, 30)
 	b.add_theme_font_size_override("font_size", 21)
-	UIKit.compact(b, 2)
+	UIKit.compact(b, 1)
 	b.focus_entered.connect(func(): Audio.sfx("cursor"))
 	b.pressed.connect(func(): begin_capture(action, device))
 	_cells["%s:%s" % [action, device]] = b
