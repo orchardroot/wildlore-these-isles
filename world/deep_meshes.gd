@@ -29,8 +29,8 @@ static func mesh(kind: String, variant: int) -> ArrayMesh:
 			return crate(look)
 		"deep_plate":
 			return plate(on)
-		"cave_hole":
-			return cave_hole()
+		"cave_cleft":
+			return cave_cleft()
 	return Landmarks.lever(0)
 
 # --- gates (closed; an open gate is just the room's floor) ----------------------------------------------------
@@ -194,17 +194,17 @@ static func plate(pressed: bool) -> ArrayMesh:
 
 # --- a way down ---------------------------------------------------------------------------------------------
 
-## A cave mouth opening in the ground at the foot of a cliff, seen from above: a black hole with worn steps going
-## down into it and a rim of rock round the back and sides. Walk on to it (it is a warp's own tile).
-static func cave_hole() -> ArrayMesh:
+## A cave mouth in a rock outcrop: a dark cleft between two heaps of rock under a rough lintel, open right through
+## so it reads from any side, the way in from the front and the camera's view from behind alike. It stands on the
+## warp's own tile, so you walk into it.
+static func cave_cleft() -> ArrayMesh:
 	var st := Meshes._st()
 	var rng := Meshes._rng(9300)
-	Meshes.box(st, Vector3(-0.4, 0, -0.36), Vector3(0.8, 0.012, 0.72), DARK)
-	for k in 3:  # worn steps at the near (north) lip, each a little darker as it goes down
-		Meshes.box(st, Vector3(-0.3, 0.012, -0.36 + k * 0.12), Vector3(0.6, 0.02, 0.1), LIME.darkened(0.25 + k * 0.2))
-	var rock := Color("8a8476")
-	for i in 7:  # the rim: round the sides and the back, low, so the hole shows from above
-		var a := PI * (0.05 + 0.9 * i / 6.0)
-		var c := Vector3(cos(a) * 0.48, 0.06, sin(a) * 0.42)
-		Meshes.blob(st, c, Vector3(0.16, 0.12 + rng.randf() * 0.08, 0.14), rock.lightened(rng.randf_range(-0.08, 0.06)), rng, 0.25)
+	var rock := Color("a19a8a")
+	Meshes.box(st, Vector3(-0.24, 0, -0.5), Vector3(0.48, 0.98, 1.0), DARK)
+	for side in [-1.0, 1.0]:
+		Meshes.blob(st, Vector3(side * 0.4, 0.5, 0.0), Vector3(0.2, 0.62, 0.5), rock.lightened(rng.randf_range(-0.06, 0.04)), rng, 0.2)
+		Meshes.blob(st, Vector3(side * 0.36, 0.95, 0.12), Vector3(0.18, 0.3, 0.32), rock.lightened(0.05), rng, 0.25)
+	Meshes.blob(st, Vector3(0, 1.1, 0.0), Vector3(0.52, 0.2, 0.46), rock.lightened(0.08), rng, 0.2)
+	Meshes.blob(st, Vector3(0.1, 1.28, -0.05), Vector3(0.3, 0.14, 0.3), Color("6a8a4a"), rng, 0.3)  # turf on top
 	return Meshes._finish(st)

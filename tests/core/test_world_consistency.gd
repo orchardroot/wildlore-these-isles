@@ -37,7 +37,7 @@ func test_a_cave_needs_a_mouth_and_a_warp_needs_a_way_in() -> void:
 	var nothing := _zone("town", "town", rows, {"warps": [{"x": 2, "y": 2, "to": "hole", "tx": 2, "ty": 2}]})
 	assert_true("entrance:town:hole" in _rules({"town": nothing, "hole": cave}))
 	var hole := _zone("town", "town", rows, {"warps": [{"x": 2, "y": 2, "to": "hole", "tx": 2, "ty": 2}],
-		"props": [{"type": "cave_hole", "x": 2, "y": 2, "walk": true}]})
+		"props": [{"type": "cave_cleft", "x": 2, "y": 2, "walk": true}]})
 	assert_eq(_rules({"town": hole, "hole": cave}), [])
 
 func test_a_warp_behind_brambles_wants_a_hint() -> void:

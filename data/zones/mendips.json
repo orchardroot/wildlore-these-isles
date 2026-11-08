@@ -737,7 +737,7 @@
    "item": "honeycomb"
   },
   {
-   "type": "cave_hole",
+   "type": "cave_cleft",
    "x": 62,
    "y": 40,
    "walk": true

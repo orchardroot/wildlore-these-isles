@@ -35,7 +35,7 @@ const UNDERGROUND := "cave|caves|cavern|mine|tunnel|tunnels|pit|hole|colliery|so
 ## Outside buildings that read as a way underground.
 const ENTRANCE_STYLES := ["cave_mouth", "marble_arch_cave", "canal_tunnel", "passage_tomb", "baths_boulders", "winding_gear", "engine_house"]
 ## Props that show a way in where there is no building.
-const ENTRANCE_PROPS := ["tunnel_portal", "cave_hole", "crypt_arch", "brick_arch", "harbour_arch"]
+const ENTRANCE_PROPS := ["tunnel_portal", "cave_cleft", "crypt_arch", "brick_arch", "harbour_arch"]
 ## Text tokens the dialogue runner fills in (Commands, Looks).
 const TOKENS := ["{player}", "{rival}", "{greeting}", "{caught}", "{left}", "{total}", "{he}", "{him}", "{his}", "{Mr}", "{man}",
 	"{He}", "{Him}", "{His}", "{Man}", "{worn_top}", "{worn_shoes}", "{worn_neck}", "{worn_hat}", "{worn_coat}"]
