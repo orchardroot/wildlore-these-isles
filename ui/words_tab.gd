@@ -43,9 +43,17 @@ static func show(id: String, detail: VBoxContainer) -> void:
 			var line := HBoxContainer.new()
 			line.add_theme_constant_override("separation", 12)
 			line.add_child(UIKit.label(str(w.word), 24, Langs.LOCAL_INK))
-			line.add_child(UIKit.label(str(w.meaning), 20, UIKit.MUTED))
+			var mean := UIKit.label(str(w.meaning), 20, UIKit.MUTED)
+			mean.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # wraps rather than widen the panel
+			mean.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			mean.custom_minimum_size = Vector2(120, 0)
+			line.add_child(mean)
 			if str(w.get("say", "")) != "":
-				line.add_child(UIKit.label("say " + str(w.say), 16, Color("b9c7e6")))
+				var say := UIKit.label("say " + str(w.say), 16, Color("b9c7e6"))
+				say.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+				say.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+				say.custom_minimum_size = Vector2(120, 0)
+				line.add_child(say)
 			rows.add_child(line)
 		var sc := ScrollContainer.new()  # a long list scrolls rather than run off the panel; Confirm reads on down it
 		sc.name = "WordsScroll"
@@ -63,11 +71,17 @@ static func _lessons(id: String, detail: VBoxContainer) -> void:
 	var d: GameStateData = Game.data
 	var certs := LangLessons.certs(d, id).map(func(lv): return "level %d" % lv)
 	var line := "Lessons %d of %d%s" % [LangLessons.lessons_done(d, id), all.size(), (". Certificates: " + ", ".join(certs)) if not certs.is_empty() else ""]
-	detail.add_child(UIKit.label(line, 20, UIKit.CREAM))
+	var ll := UIKit.label(line, 20, UIKit.CREAM)
+	ll.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	ll.custom_minimum_size = Vector2(300, 0)
+	detail.add_child(ll)
 	if not LangLessons.learnt_words(d, id).is_empty():
 		var due := LangLessons.due_count(d, id)
-		detail.add_child(UIKit.label(("%d word%s due for revision. Press confirm to revise." % [due, "" if due == 1 else "s"]) if due > 0
-			else "Nothing due. Press confirm for a little practice.", 18, UIKit.GOLD))
+		var due_l := UIKit.label(("%d word%s due for revision. Press confirm to revise." % [due, "" if due == 1 else "s"]) if due > 0
+			else "Nothing due. Press confirm for a little practice.", 18, UIKit.GOLD)
+		due_l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		due_l.custom_minimum_size = Vector2(300, 0)
+		detail.add_child(due_l)
 	else:
 		var nxt := LangLessons.next_anywhere(d, id)
 		if not nxt.is_empty():

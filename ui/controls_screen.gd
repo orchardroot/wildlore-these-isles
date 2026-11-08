@@ -51,6 +51,7 @@ func _build() -> void:
 	for b in [reset, back]:
 		b.custom_minimum_size.y = 40
 		UIKit.compact(b, 6)
+		b.add_theme_font_size_override("font_size", 28)  # the theme's normal size even with Large text: the rows above need the room
 	bottom.add_child(reset)
 	bottom.add_child(back)
 	v.add_child(bottom)
@@ -73,6 +74,13 @@ func _build() -> void:
 	col.add_child(_message)
 	_refresh()
 	UIKit.focus_later(rows[0][0])
+	_fit.call_deferred(col)
+
+## Twelve rows and the help line: with Large text the words step down together to fit (the key cells keep their size).
+func _fit(col: VBoxContainer) -> void:
+	await get_tree().process_frame
+	if is_instance_valid(col):
+		UIKit.fit_column(col, content.size.y)
 
 func _hdr(text: String, w: int) -> Label:
 	var l := UIKit.label(text, 20, UIKit.MUTED)

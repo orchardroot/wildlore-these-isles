@@ -22,7 +22,7 @@ func _build() -> void:
 	row.add_theme_constant_override("separation", 24)
 	content.add_child(row)
 	var lp := UIKit.panel(Color("1d2230f0"), 12)
-	lp.custom_minimum_size = Vector2(700, 0)
+	lp.custom_minimum_size = Vector2(700 if not UIKit.big_text() else 620, 0)
 	row.add_child(lp)
 	var sc := ScrollContainer.new()
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -143,7 +143,9 @@ func _describe(id: String) -> void:
 	_side.add_child(UIKit.label(str(info.get("name", id)), 34))
 	_side.add_child(UIKit.types_row([str(info.get("type", "kin"))], 20))
 	var power := int(info.get("power", 0))
-	_side.add_child(UIKit.label("%sAccuracy %d  ·  PP %d" % [("Power %d  ·  " % power) if power > 0 else "", int(info.get("accuracy", 100)), int(info.get("pp", 10))], 22, UIKit.GOLD))
+	var stats := UIKit.label("%sAccuracy %d  ·  PP %d" % [("Power %d  ·  " % power) if power > 0 else "", int(info.get("accuracy", 100)), int(info.get("pp", 10))], 22, UIKit.GOLD)
+	stats.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_side.add_child(stats)
 	var d := UIKit.label(MoveText.describe(info), 22, Color("d8cfb4"))
 	d.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_side.add_child(d)

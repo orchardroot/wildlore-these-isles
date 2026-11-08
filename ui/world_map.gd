@@ -122,12 +122,14 @@ func _place_panel() -> void:
 		return
 	var t: Dictionary = Travel.world_map().towns[view.cursor]
 	var sp := view.screen_pos(Vector2(float(t.x), float(t.y)))
-	_panel.reset_size()
 	var left := sp.x > view.size.x * 0.5
-	var y := 96.0
+	var top := 14.0 + (60.0 if _can_fly else 0.0)  # clear of the Fly button
+	var bottom: float = _panel.get_parent().size.y - 12.0
 	if _objective_panel != null and _panel.get_parent() == _objective_panel.get_parent():
-		var strip_top: float = _panel.get_parent().size.y - 12.0 - _objective_panel.get_combined_minimum_size().y
-		y = minf(y, strip_top - _panel.size.y - 8.0)
+		bottom -= _objective_panel.get_combined_minimum_size().y + 8.0
+	UIKit.fit_column(_panel.get_child(0), bottom - top - 28.0)  # a town with a lot on (or Large text) steps its words down
+	_panel.reset_size()
+	var y := maxf(top, minf(96.0, bottom - _panel.size.y))
 	_panel.position = Vector2(20 if left else view.size.x - _panel.size.x - 20, y)
 	view.compass_left = not left
 

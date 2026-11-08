@@ -33,6 +33,7 @@ func _build() -> void:
 		var lab := UIKit.label(l, 44 if l == "WILDLORE" else 28, UIKit.GOLD if l in ["WILDLORE", "Thanks for playing."] else UIKit.CREAM)
 		lab.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		lab.custom_minimum_size = Vector2(1180, 0)
+		lab.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # a long line wraps (Large text) rather than run off the sides
 		_scroll.add_child(lab)
 	Audio.play_music("credits", 1.0)
 

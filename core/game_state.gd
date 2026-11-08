@@ -36,6 +36,11 @@ func _ready() -> void:
 	Calendar.set_override(str(args.get("date", "")))  # --date=MM-DD or YYYY-MM-DD: screenshot any season, festival or day
 	if str(args.get("quality", "")) in ["low", "medium", "high"]:
 		Settings.quality = str(args.quality)  # --quality: before/after screenshots without touching the player's settings
+	if Access.TEXT_SIZES.has(str(args.get("text", ""))) or bool(args.get("readable", false)):
+		if Access.TEXT_SIZES.has(str(args.get("text", ""))):
+			Settings.text_size = str(args.text)  # --text=large and --readable: screenshots at the player's text settings
+		Settings.readable_font = Settings.readable_font or bool(args.get("readable", false))
+		Settings.apply_access()
 	var seed_value: int = args.seed if args.seed >= 0 else int(Time.get_unix_time_from_system())
 	rng = Rng.new(seed_value)
 	data.rng_seed = seed_value

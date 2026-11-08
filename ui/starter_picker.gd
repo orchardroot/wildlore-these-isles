@@ -35,7 +35,7 @@ func _build() -> void:
 		v.add_theme_constant_override("separation", 3)
 		p.add_child(v)
 		var holder := VBoxContainer.new()
-		holder.custom_minimum_size = Vector2(0, 288)
+		holder.custom_minimum_size = Vector2(0, 288 if not UIKit.big_text() else 192)  # Large text: smaller, for Garside's words
 		holder.alignment = BoxContainer.ALIGNMENT_END
 		v.add_child(holder)
 		_holders.append(holder)
@@ -80,7 +80,7 @@ func _refresh() -> void:
 		p.modulate = Color.WHITE if on else Color(1, 1, 1, 0.6)
 		UIKit.clear(_holders[i])
 		var s := AnimSprite.new()
-		s.show_species(STARTERS[i], "front", 3 if on else 2)
+		s.show_species(STARTERS[i], "front", 3 if on and not UIKit.big_text() else 2)
 		s.animate(Game.dex.get_species(STARTERS[i]))
 		s.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		_holders[i].add_child(s)

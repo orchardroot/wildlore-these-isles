@@ -4,16 +4,45 @@ extends TestCase
 ## second headless Godot (about ten seconds). Run the lot with `godot --headless --path . -s res://tools/dev/text_audit.gd`.
 
 const KEY_SCREENS := ["pause", "bag", "settings", "pedia:spikkin", "summary:0", "almanac", "travel:all", "stats:standing"]
+## The ones that were worst with Large text (and the Readable font, which is wider).
+const LARGE_SCREENS := ["summary:0", "races:dev", "exchange:london", "map:route"]
 
 func test_key_screens_fit_their_words() -> void:
+	_audit(KEY_SCREENS, [], "the key screens")
+
+func test_worst_screens_fit_with_large_text_and_the_readable_font() -> void:
+	_audit(LARGE_SCREENS, ["--text=large", "--readable"], "Large text")
+
+func _audit(screens: Array, flags: Array, what: String) -> void:
 	var out := []
 	var args := ["--headless", "--path", ProjectSettings.globalize_path("res://"), "-s", "res://tools/dev/text_audit.gd", "--"]
-	var code := OS.execute(OS.get_executable_path(), PackedStringArray(args + KEY_SCREENS), out, true)
+	var code := OS.execute(OS.get_executable_path(), PackedStringArray(args + screens + flags), out, true)
 	var log := "\n".join(out)
-	var problems := Array(log.split("\n")).filter(func(l): return str(l).get_slice(" ", 0) in KEY_SCREENS)
-	assert_false(log.contains("SCRIPT ERROR"), "the audit ran cleanly")
-	assert_true(log.contains("text_audit: "), "the audit finished")
-	assert_eq(code, 0, "no text problems on the key screens:\n" + "\n".join(problems))
+	var problems := Array(log.split("\n")).filter(func(l): return str(l).get_slice(" ", 0) in screens)
+	assert_false(log.contains("SCRIPT ERROR"), "the audit ran cleanly (%s)" % what)
+	assert_true(log.contains("text_audit: "), "the audit finished (%s)" % what)
+	assert_eq(code, 0, "no text problems on %s:\n%s" % [what, "\n".join(problems)])
+
+func test_fitted_names_allow_for_large_text() -> void:
+	var was := Settings.text_size
+	Settings.text_size = "large"
+	var l := UIKit.fit_label("MWMWMWMWMWMW", 220, 24, 18)
+	var fs := l.get_theme_font_size("font_size")
+	assert_true(UIKit.font().get_string_size(l.text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs).x <= 220, "fits its width at the drawn size (%d)" % fs)
+	assert_eq(UIKit.fit_scaled("Spikkin", 400, 24, 18), 30, "a short name gets the full Large size")
+	assert_eq(UIKit.sized(24), 30, "nominal sizes scale like UIKit.label")
+	l.free()
+	Settings.text_size = was
+
+func test_readable_font_stays_on_the_shared_theme() -> void:
+	var was: bool = Settings.readable_font
+	Settings.readable_font = true
+	Settings.apply_access()
+	assert_eq(UIKit.font().resource_path, Access.FONT_PATH, "UIKit measures with the Readable font")
+	assert_eq((load("res://ui/theme.tres") as Theme).default_font, UIKit.font(), "and a later load of the theme still has it")
+	Settings.readable_font = was
+	Settings.apply_access()
+	assert_true(UIKit.font() == ThemeDB.fallback_font, "back to the default font")
 
 func test_small_text_is_floored() -> void:
 	var l := UIKit.label("x", 12)

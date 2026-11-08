@@ -154,7 +154,7 @@ func _draw_list() -> void:
 		var price := _buy_price(id)
 		var shown := price if _side == "buy" else _sell_price(id)
 		var b := Button.new()
-		b.custom_minimum_size = Vector2(0, 56)
+		b.custom_minimum_size = Vector2(0, maxi(56, UIKit.line_height(28) + 8))
 		b.focus_entered.connect(func():
 			Audio.sfx("cursor")
 			_last_item = _item_buttons.find(b)
@@ -169,8 +169,12 @@ func _draw_list() -> void:
 		h.offset_left = 14
 		h.offset_right = -14
 		h.add_theme_constant_override("separation", 10)
-		h.add_child(UIKit.label(str(it.get("name", id)), 28))
-		h.add_child(UIKit.fill())
+		var nm := UIKit.label(str(it.get("name", id)), 28)
+		nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # the room the price leaves; a long name shrinks, then trims
+		nm.clip_text = true
+		nm.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		UIKit.fit_width(nm)
+		h.add_child(nm)
 		var afford: bool = _side == "sell" or _budget() >= price
 		h.add_child(UIKit.label(UIKit.money_text(shown, _mc), 26, UIKit.GOLD if afford else Color("e9998c")))
 		for c in h.get_children():
@@ -184,8 +188,21 @@ func _draw_list() -> void:
 	_describe(_ids[_last_item])  # straight away, so the right panel is never empty while focus catches up
 	UIKit.focus_later(_item_buttons[_last_item])
 
+## The item's card steps its words down together if the try-on (or Large text) would make it too tall.
+func _fit_desc() -> void:
+	await get_tree().process_frame
+	if not is_instance_valid(_desc):
+		return
+	var right := _desc.get_parent().get_parent() as VBoxContainer
+	var room: float = content.size.y - 36  # inside the card's margins
+	for c in right.get_children():
+		if c != _desc.get_parent() and c.visible:
+			room -= c.size.y + right.get_theme_constant("separation")
+	UIKit.fit_column(_desc, room)
+
 func _describe(id: String) -> void:
 	UIKit.clear(_desc)
+	_fit_desc.call_deferred()
 	var it: Dictionary = Game.items.get_item(id)
 	_desc.add_child(UIKit.label(str(it.get("name", id)), 36))
 	_desc.add_child(UIKit.chip(UIKit.kind_name(str(it.get("kind", ""))), Color("4a4f5e"), UIKit.CREAM, 18))
@@ -199,8 +216,9 @@ func _describe(id: String) -> void:
 		var tryon := HBoxContainer.new()
 		tryon.add_theme_constant_override("separation", 16)
 		var r := Looks.preview(Game.data, id, Game.items)
-		tryon.add_child(LookArt.frame_rect(r, "down", 3.0))
-		tryon.add_child(LookArt.frame_rect(r, "right", 3.0))
+		var k := 3.0 if not UIKit.big_text() else 2.5  # a little smaller with Large text, to leave the words room
+		tryon.add_child(LookArt.frame_rect(r, "down", k))
+		tryon.add_child(LookArt.frame_rect(r, "right", k))
 		var worn := Looks.worn_name(Game.data, str(it.get("slot", "")), Game.items)
 		var how := "Trying it on." if worn == "" else "Trying it on, in place of your %s." % worn.to_lower()
 		var tl := UIKit.label(how + "\nWear it from the Wardrobe (pause menu) once it's yours.", 22, UIKit.MUTED)

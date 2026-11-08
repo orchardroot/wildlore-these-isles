@@ -7,6 +7,7 @@ const CELL := 92.0
 const REEL_W := 128.0
 const STOP_TIMES := [0.9, 1.25, 1.6]
 
+var _side: VBoxContainer
 var _reels: Control
 var _pos := [0, 3, 7]         # stops on the line
 var _offset := [0.0, 0.0, 0.0] # drawn position, in stops (fractional while spinning)
@@ -41,9 +42,10 @@ func _build() -> void:
 	cab.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	root.add_child(cab)
 	var cv := VBoxContainer.new()
-	cv.add_theme_constant_override("separation", 8)
+	cv.add_theme_constant_override("separation", 8 if not UIKit.big_text() else 2)
 	cab.add_child(cv)
 	var top := serif(34, UIKit.GOLD, "CREATURE  FEATURE")
+	top.add_theme_font_size_override("font_size", 34)  # the cabinet's lettering, part of the machine: one size
 	top.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	cv.add_child(top)
 	_lamps = UIKit.label("", 24, UIKit.CREAM)
@@ -60,7 +62,7 @@ func _build() -> void:
 	cv.add_child(row)
 	for r in 3:
 		var col := VBoxContainer.new()
-		col.add_theme_constant_override("separation", 6)
+		col.add_theme_constant_override("separation", 6 if not UIKit.big_text() else 2)
 		var hold := UIKit.pill_button("HOLD", 20)
 		hold.custom_minimum_size = Vector2(118, 40)
 		hold.pressed.connect(_toggle_hold.bind(r))
@@ -73,6 +75,7 @@ func _build() -> void:
 		_reel_btns.append([hold, nudge])
 	# the side: pay table, stake, buttons
 	var side := VBoxContainer.new()
+	_side = side
 	side.custom_minimum_size = Vector2(360, 0)
 	side.add_theme_constant_override("separation", 10)
 	root.add_child(side)
@@ -131,7 +134,9 @@ func _process(delta: float) -> void:
 func _update_controls() -> void:
 	var busy := _spinning
 	_spin_btn.disabled = busy or _pending
-	_collect_btn.visible = _pending
+	if _collect_btn.visible != _pending or not _side.has_meta("sep"):
+		_collect_btn.visible = _pending
+		fit_side(_side)  # the extra button may need the words a little smaller (Large text)
 	for r in 3:
 		var hold: Button = _reel_btns[r][0]
 		var nudge: Button = _reel_btns[r][1]

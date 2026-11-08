@@ -25,7 +25,7 @@ func _build() -> void:
 	row.add_theme_constant_override("separation", 28)
 	content.add_child(row)
 	var lp := UIKit.panel(Color("1d2230f0"), 14)
-	lp.custom_minimum_size = Vector2(520, 0)
+	lp.custom_minimum_size = Vector2(520 if not UIKit.big_text() else 560, 0)  # room for a long nickname beside its notes
 	row.add_child(lp)
 	var lcol := VBoxContainer.new()
 	lp.add_child(lcol)
@@ -102,9 +102,9 @@ func _fill_list() -> void:
 		h.add_child(ic)
 		var nm := UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 220, 24, 16)
 		nm.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		nm.custom_minimum_size.x = 220  # a clipped label has no width of its own in an HBox
+		nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # the room the notes leave (a clipped label has no width of its own)
+		UIKit.fit_width(nm)
 		h.add_child(nm)
-		h.add_child(UIKit.fill())
 		var tag := "Ark" if _cands[i].where == "ark" else "Team"
 		var note := UIKit.label("%s, %s%s" % [UIKit.sex_word(c).to_lower() if c.sex != "" else "no sex", tag.to_lower(), "  fond" if PairingLogic.is_fond(c) else ""], 18, UIKit.MUTED if not PairingLogic.is_fond(c) else Color("8fd48f"))
 		note.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -136,6 +136,14 @@ func _pick(i: int) -> void:
 func _verdict() -> Dictionary:
 	return PairingLogic.verdict(Game.data, Game.data.zone_id, _a, _b)
 
+## The right-hand card's words step down together if Dr Keir's question (or Large text) makes it too tall.
+func _fit_right() -> void:
+	await get_tree().process_frame
+	if not is_instance_valid(_right):
+		return
+	var room: float = content.size.y - 36 - ((_bar.size.y + 10) if _bar.visible else 0.0)  # the card's margins, the buttons
+	UIKit.fit_column(_right, room)
+
 func _refresh() -> void:
 	for i in _buttons.size():
 		var c: Creature = _cands[i].c
@@ -148,6 +156,7 @@ func _refresh() -> void:
 	_preview_btn.text = "Pairing" if _preview else "Preview"
 	UIKit.clear(_right)
 	_bar.visible = _ask.is_empty()
+	_fit_right.call_deferred()
 	if not _ask.is_empty():
 		_show_ask()
 		return
@@ -173,8 +182,8 @@ func _refresh() -> void:
 			var nrow := HBoxContainer.new()
 			nrow.add_theme_constant_override("separation", 6)
 			nrow.add_child(UIKit.sex_mark(c, 22))
-			var nl := UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 190, 24, 16)
-			nl.custom_minimum_size.x = 190  # a clipped label has no width of its own in an HBox
+			var nl := UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 220, 24, 16)
+			nl.custom_minimum_size.x = 220  # a clipped label has no width of its own in an HBox
 			nrow.add_child(nl)
 			col.add_child(nrow)
 			col.add_child(UIKit.label("%s, %s" % [pair[1], PairingLogic.sex_desc(c)], 18, UIKit.MUTED))

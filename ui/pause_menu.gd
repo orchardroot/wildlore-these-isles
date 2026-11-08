@@ -13,6 +13,7 @@ var _buttons: Array = []
 var _names: Array = []
 var _info: VBoxContainer
 var _next: VBoxContainer
+var _words: ScrollContainer  # the Where next? words, which Right reads down when they run on
 
 func _build() -> void:
 	set_title("Pause")
@@ -139,6 +140,16 @@ func _refresh() -> void:
 		team.add_child(s)
 	_info.add_child(team)
 	_refresh_next()
+	_fit_info.call_deferred()
+
+## The top card keeps to under half the page (as it does at normal text), so Where next? keeps its room with Large text.
+func _fit_info() -> void:
+	await get_tree().process_frame
+	if is_instance_valid(_info):
+		UIKit.fit_column(_info, content.size.y * 0.45)
+	await get_tree().process_frame
+	if is_instance_valid(_words):
+		set_hints(([["move_right", "Read on"]] if UIKit.reads_on(_words) else []) + [["confirm", "Choose"], ["cancel", "Close"]])
 
 ## "Where next?", Today's Walk and, after the ending, who's up for a rematch today.
 func _refresh_next() -> void:
@@ -151,8 +162,13 @@ func _refresh_next() -> void:
 		head.add_child(UIKit.fill())
 		head.add_child(UIKit.label(Jobs.summary(d, Game.dex), 20, UIKit.GOLD))  # odd jobs off the noticeboards (the Almanac lists them)
 		_next.add_child(head)
-	var wb := UIKit.words_box([24, 22, 20, 18], 6)  # however much there is to say, it shrinks to fit the card
+	var wb := UIKit.words_box([24, 22, 20, 18, 16, 14], 6)  # however much there is to say, it shrinks to fit the card (to 18 px with Large text)
 	_next.add_child(wb[0])
+	_words = wb[0]
+	UIKit.key_scroll(_words, _button(_last_entry))  # if it still runs on, Right reads down it and Back returns to the list
+	_words.focus_entered.connect(func(): _words.set_meta("back_to", weakref(_button(_last_entry))))
+	for b in _buttons:
+		b.focus_neighbor_right = b.get_path_to(_words)
 	var town := str(d.flag("last_town")) if d.flag("last_town") != null else ""
 	var colours := {"story": UIKit.CREAM, "quest": Color("c9b3e0"), "here": UIKit.GOLD, "festival": UIKit.GOLD, "deed": UIKit.GOLD, "basket": UIKit.GOLD}
 	for s in WhereNext.suggest(d, Game.dex.core_ids().size(), town, {"show": Tournament.today(d)}):  # up to three, the story first

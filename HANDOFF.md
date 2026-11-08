@@ -15,6 +15,37 @@ outside the other w50 sessions' files. Full write-up: `docs/audit/w50_critic.md`
   of the same file. `data/zones/chat_moss.json` and `ring_of_kerry.json` are touched by both, in different places.
 - Checks: `tools/test.sh` 2996 passed, 0 failed, validate 0 errors, no SCRIPT ERROR (five "Parse JSON failed"
   lines come from tests that feed bad JSON on purpose); `tools/playtest.sh slice 2` PLAYTEST PASS (Maud won).
+# w50-tf-large handoff
+
+Branch `w50-tf-large` (from int-w50): the text-fit work finished for Large text, long nicknames and the Readable
+font. Details and numbers in `docs/audit/w50_text.md` (last section).
+
+## Results
+- Text audit, all 122 screens: 0 problems at normal, `--text=large`, `--readable`, `--readable --text=large`, and with
+  `--stress` at normal, Large and Readable+Large. Before: 168 on 41 screens at Large; 7 (normal) and 32 (Large)
+  trimmed or spilling nicknames with `--stress`. `--text=largest` (not a target) has 144 on 43 screens.
+- Before/after shots: `docs/screens/w50-large-{summary,races,exchange}-{before,after}.png`.
+- Full `tools/test.sh`: 2997 passed, 0 failed, `validate: 0 error(s)`, no SCRIPT ERROR.
+- Also fixed: the hint bar's "move" prompt (crossword, sheepdog, worm charming) showed "-"; it now says Arrows / D-pad.
+
+## Notes for the integrator
+- **Real bug fixed in `core/settings.gd`**: `apply_access` let go of `ui/theme.tres` after setting it, so once no menu
+  held the theme the next load came back plain: the Readable font (and the theme's Large button size) could quietly
+  vanish, and dev runs never had them. Settings now holds the theme. Expect buttons to look bigger with Large text
+  everywhere that relied on the theme default (battle UI and overworld too: the other session's area, untouched).
+- Shared files: `ui/ui_kit.gd` (new `sized`, `font`, `big_text`, `fit_scaled`, `row_label`; `fit_label`, `fit_size`,
+  `fit_block`, `fit_column`, `fit_width`, `keep_fitted`, `line_height` changed as described in the doc),
+  `ui/menu_base.gd` (header read-out shrinks to fit; hint bar fits at the Large size), `ui/casino_base.gd`
+  (`fit_side`), `core/dev_args.gd` + `core/game_state.gd` (`--text=`, `--readable`), `core/settings.gd` (the held
+  theme). `UIKit.fit_size` still takes drawn sizes; anything that passes its result to `UIKit.label` should use
+  `fit_scaled` and set the override (as party and Ark now do), or it grows by a quarter with Large text.
+- `fit_block`'s last argument (`_block_height`) is now a tier cut, not a bool; `test_fieldbook_teaching` updated.
+- Behaviour touches: pause gains "Right: Read on" when Where next? still runs on; quest cards and Gazetteer plaques
+  and peoples read on with Confirm (hint says so); with Large text the Noticeboard's standing card sits under the
+  list, the bag shows the run of tabs that fits, the Summary's knack shares the entry's card.
+- `tests/ui/test_text_fit.gd` runs a second audit (Large + Readable, 4 screens): the file takes about 20 s, 30 s on a
+  busy machine.
+- Not touched: battle_ui, overworld HUD, 3D signs, data/zones, dialogue (other sessions).
 
 # w50-report handoff
 
