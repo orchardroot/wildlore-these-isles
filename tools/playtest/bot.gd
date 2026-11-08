@@ -526,6 +526,9 @@ func _routing_zones() -> Dictionary:
 				if n.has("show_if") and not Game.data.flag(str(n.show_if)):
 					continue
 				z.blocked[Vector2i(int(n.x), int(n.y))] = true
+			for f in FieldSpots.for_zone(id):  # field spots stand solid until they're done (see FieldSpot.dress)
+				if not FieldSpots.gone(Game.data, f):
+					z.blocked[FieldSpots.tile(f)] = true
 	return _rz
 
 ## Legs from here to a tile: first over only the zones near the shortest zone-hop path (fast), then the whole map.
