@@ -79,10 +79,10 @@ for every timing minigame are under Settings, Accessibility.
 
 ## What's new
 
-5.1 "Party Pieces": every minigame now teaches a move. Win a rosette and your lead creature learns a party piece
-named after the game (the TMs), and some of them clear nooks out in the world (the HMs). Ten new games where they
-really happen, from sheepdog trials and cheese rolling to gurning and Poohsticks, a Games League card, thirty new
-creatures, and creatures that move like themselves. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
+5.2 "Lucky Strikes": critical hits get some edge, with high-crit moves such as Treble Twenty and a lucky White
+Heather charm. Creature portraits now move in the Summary and Fieldbook, there are 24 water crossings instead of 3,
+and the Party Pieces games are retuned so silver and gold feel fair. It builds on 5.1 "Party Pieces", where every
+minigame teaches a move. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
 
 ## How it's made
 
