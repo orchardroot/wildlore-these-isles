@@ -16,3 +16,4 @@
 - Not done: "view with plaque" and "rare encounter patch" far sides; caches only. Stones are small in the screenshot; they sit on the banks.
 - Hadrian's Wall loft hops the Roman wall itself; change the obstacle set if that reads badly.
 - Verified: `tools/test.sh field` 71 passed, validate 0 errors; `tools/playtest.sh slice 2` PLAYTEST PASS. The full test result is below.
+Full test: 2941 passed, 0 failed, validate 0 error(s), no SCRIPT ERROR (JSON parse ERROR lines are pre-existing test noise; RID leaks at exit are harmless).
