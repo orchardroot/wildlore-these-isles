@@ -122,3 +122,42 @@ func test_prize_once_then_a_daily_purse() -> void:
 	assert_eq(g.money, SheepdogTrials.DAILY_PURSE)
 	assert_eq(SheepdogTrials.finish(d, "longshaw", 6, true).money, 0)
 	assert_eq(SheepdogTrials.finish(d, "longshaw", 2, false).money, 0)
+
+func _lone_sheep(at: Vector2, through: int) -> Dictionary:
+	var st := SheepdogTrials.start(SheepdogTrials.venue("longshaw"), false, Rng.new(3))
+	st.sheep = [{"p": at, "v": Vector2.ZERO, "penned": false, "through": through, "scare": 0.0}]
+	st.dog = Vector2(90.0, 38.0)      # a long way off
+	return st
+
+func test_a_calm_straggler_by_a_gate_is_not_stuck_there() -> void:
+	# once through the gate and left alone, a sheep wanders on to the pen (it used to stand by the fence until the clock ran out)
+	var st := _lone_sheep(Vector2(46.5, 20.0), 1)
+	st.limit = 400.0
+	for i in 12000:
+		SheepdogTrials.step(st, 1.0 / 30.0, Vector2.ZERO, false, false)
+		if bool(st.done):
+			break
+	assert_eq(int(st.penned), 1)
+	assert_true(float(st.t) < 150.0, "in good time (%.0f s)" % float(st.t))
+
+func test_a_sheep_pushed_back_out_of_the_gate_comes_back_to_it() -> void:
+	var st := _lone_sheep(Vector2(52.0, 20.0), 1)
+	st.limit = 400.0
+	for i in 12000:
+		SheepdogTrials.step(st, 1.0 / 30.0, Vector2.ZERO, false, false)
+		if bool(st.done):
+			break
+	assert_eq(int(st.penned), 1)
+
+func test_a_flock_split_in_two_does_not_pin_itself_in_place() -> void:
+	# each half used to be tugged towards the empty grass between them; now they cling to their own neighbours
+	var st := SheepdogTrials.start(SheepdogTrials.venue("longshaw"), false, Rng.new(5))
+	var spots := [Vector2(34, 19), Vector2(35, 21), Vector2(34, 20), Vector2(74, 19), Vector2(75, 21), Vector2(76, 20)]
+	st.sheep = []
+	for p in spots:
+		st.sheep.append({"p": p, "v": Vector2.ZERO, "penned": false, "through": 1 if p.x < 48.0 else 0, "scare": 0.0})
+	st.dog = Vector2(90.0, 38.0)
+	st.limit = 400.0
+	for i in 3000:
+		SheepdogTrials.step(st, 1.0 / 30.0, Vector2.ZERO, false, false)
+	assert_true(int(st.penned) >= 1, "the near half has walked on to the pen (%d)" % int(st.penned))

@@ -63,3 +63,23 @@ func test_finish_pays_once_then_daily() -> void:
 	assert_true(Snorkel.finish(d, "waen_rhydd", 71.0, true).money == Snorkel.DAILY_PURSE)
 	assert_eq(int(Snorkel.finish(d, "waen_rhydd", 72.0, true).money), 0)
 	assert_eq(Snorkel.best(d), 700)
+
+func test_the_plain_trench_is_even_and_each_seed_has_its_own_set() -> void:
+	var plain := Snorkel.fresh()
+	assert_eq(Snorkel.carry_at(plain), 1.0)
+	var lo := 9.0
+	var hi := 0.0
+	for i in 40:
+		var c := Snorkel.carry_at(Snorkel.fresh(i + 1))
+		lo = minf(lo, c)
+		hi = maxf(hi, c)
+	assert_true(hi - lo > 0.06, "the water differs from swim to swim (%.3f to %.3f)" % [lo, hi])
+
+func test_a_perfect_swimmer_has_spread_but_the_floor_stays_near_forty_three() -> void:
+	var times: Array = []
+	for i in 20:
+		var s := Snorkel.auto_swim(1.0, Rng.new(i + 1), false, i + 1)
+		times.append(float(s.t))
+	times.sort()
+	assert_true(float(times[-1]) - float(times[0]) > 1.0, "perfect swims differ (%.1f to %.1f)" % [times[0], times[-1]])
+	assert_true(float(times[0]) > 40.5, "the floor has not dropped far (%.1f)" % times[0])

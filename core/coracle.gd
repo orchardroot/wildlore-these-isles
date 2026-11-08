@@ -15,6 +15,10 @@ const DRAG_ALONG := 0.85          # per second
 const DRAG_SIDE := 0.55           # a round boat slides sideways
 const SPIN_DRAG := 0.9
 const CURRENT := 0.35             # the river's own push, m/s down the course
+const FLOW_LOW := 0.5             # the river's level changes from run to run: a seeded fraction of CURRENT, low to high
+const FLOW_HIGH := 1.2
+const MIDSTREAM := 0.9            # the current is stronger in mid-channel than under the banks (1 = the full effect)
+const EDDY := 0.3                 # and gusts and slackens along the course
 const MISS_PENALTY := 3.0         # seconds per missed gate
 const FLAG_PREFIX := "coracle_"
 const FLAG_DAY := "coracle_day_"
@@ -53,9 +57,29 @@ static func gates(course: Dictionary, easy := false) -> Array:
 static func finish_x(course: Dictionary) -> float:
 	return float(course.get("first", 16.0)) + float(course.get("step", 12.0)) * float(int(course.get("gates", 8))) + 6.0
 
-static func fresh(course: Dictionary) -> Dictionary:
+## `seed_value` 0 is the plain river (the old, even current); any other seed gives that day's river: its level, where
+## the eddies are, and a stronger stream down the middle for a boat that holds a good line.
+static func fresh(course: Dictionary, seed_value := 0) -> Dictionary:
+	var flow := 1.0
+	var mid := 0.0
+	var eddy := 0.0
+	var phase := 0.0
+	if seed_value != 0:
+		var r := Rng.new(seed_value)
+		flow = lerpf(FLOW_LOW, FLOW_HIGH, r.roll())
+		mid = MIDSTREAM
+		eddy = EDDY
+		phase = r.roll() * TAU
 	return {"p": Vector2(4.0, centre(course, 4.0)), "v": Vector2.ZERO, "h": 0.0, "spin": 0.0, "cool": 0.0, "t": 0.0,
-		"gate": 0, "misses": 0, "hits": 0, "strokes": 0, "done": false, "last": ""}
+		"gate": 0, "misses": 0, "hits": 0, "strokes": 0, "done": false, "last": "", "flow": flow, "mid": mid, "eddy": eddy, "phase": phase}
+
+## The river's push at p, m/s down the course.
+static func current_at(s: Dictionary, course: Dictionary, p: Vector2) -> float:
+	var half := float(course.get("width", 22.0)) * 0.5
+	var d := clampf((p.y - centre(course, p.x)) / half, -1.0, 1.0)
+	var line := 1.0 + float(s.get("mid", 0.0)) * (0.35 - 0.9 * d * d)
+	var gust := 1.0 + float(s.get("eddy", 0.0)) * sin(p.x / 14.0 + float(s.get("phase", 0.0)))
+	return CURRENT * float(s.get("flow", 1.0)) * line * gust
 
 ## A stroke on `side` ("l" or "r"). Returns false if the paddle is still coming round.
 static func paddle(s: Dictionary, side: String) -> bool:
@@ -92,7 +116,7 @@ static func step(s: Dictionary, course: Dictionary, gate_list: Array, dt: float,
 	var along := v.dot(fwd) * maxf(0.0, 1.0 - DRAG_ALONG * dt)
 	var across := v.dot(side) * maxf(0.0, 1.0 - DRAG_SIDE * dt)
 	s.v = fwd * along + side * across
-	var p: Vector2 = s.p + (Vector2(s.v) + Vector2(CURRENT, 0.0)) * dt
+	var p: Vector2 = s.p + (Vector2(s.v) + Vector2(current_at(s, course, s.p), 0.0)) * dt
 	# banks
 	var half := float(course.get("width", 22.0)) * 0.5
 	var cy := centre(course, p.x)
