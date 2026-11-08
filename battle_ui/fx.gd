@@ -533,12 +533,12 @@ func play_shape(shape: String, side: int, pos: int, other: int, hit_pos: Array, 
 			for p in hit_pos:
 				var tp := _chest(other, p)
 				var across := (tp - u).cross(Vector3.UP).normalized()
-				for i in _n(14):
+				for i in _n(14):  # the last of the wave lands as the cue ends, so the hit never beats it there
 					var c := col.lerp(hi, _rng.randf_range(0.0, 0.5))
-					_spawn(u, across * sin(i * 1.7) * 1.1, c, _rng.randf_range(0.2, 0.38), 0.4, 0.0, PATH, 0.03 * i, tp, 0.4 + 0.3 * sin(i * 0.9), true, 1.0, tx)
+					_spawn(u, across * sin(i * 1.7) * 1.1, c, _rng.randf_range(0.2, 0.38), 0.4, 0.0, PATH, 0.02 * i, tp, 0.4 + 0.3 * sin(i * 0.9), true, 1.0, tx)
 			await _wait(0.5)
 			_impact(other, hit_pos, pal, 18)
-			await _wait(0.1)
+			await _wait(0.16)
 		"self":
 			actor.cast()
 			_aura(actor.global_position, col, tx)
@@ -549,11 +549,11 @@ func play_shape(shape: String, side: int, pos: int, other: int, hit_pos: Array, 
 			for p in hit_pos:
 				var tp := _chest(other, p) + Vector3(0, 0.4, 0)
 				var across := (tp - u).cross(Vector3.UP).normalized()
-				for i in 7:
-					_spawn(u + Vector3(0, 0.8, 0), across * sin(i * 2.1) * 0.8, col.lerp(hi, 0.5 * (i % 2)), 0.34, 0.6, 0.0, PATH, 0.07 * i, tp, 0.6 + 0.12 * i, true, 1.0, 5)
-				get_tree().create_timer(0.55).timeout.connect(func():
+				for i in 7:  # the notes land between 0.6 and 0.84 s: the burst comes with the first, the hit after the last
+					_spawn(u + Vector3(0, 0.8, 0), across * sin(i * 2.1) * 0.8, col.lerp(hi, 0.5 * (i % 2)), 0.34, 0.5, 0.0, PATH, 0.04 * i, tp, 0.6 + 0.12 * i, true, 1.0, 5)
+				get_tree().create_timer(0.5).timeout.connect(func():
 					burst(tp, hi, _n(10), 2.0, 0.22, 0.4, 1.0, Vector3.UP, 2))
-			await _wait(0.7)
+			await _wait(0.75)
 		"bite":
 			actor.lunge(_aim(other, t_pos, spread))
 			await _wait(0.12)
