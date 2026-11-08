@@ -81,7 +81,7 @@
    "text": "Wookey Hole is a landmark in British cave diving. In the 1930s early divers in heavy rubber suits and hard hats followed the Axe upstream into the dark, and every chamber they reached was a new one. Divers now number the chambers past twenty-five."
   },
   {
-   "x": 8,
+   "x": 7,
    "y": 3,
    "text": "A brass sluice wheel, green with age. The water to the east is waist-deep and it is very cold."
   }
@@ -90,7 +90,7 @@
   "levers": [
    {
     "id": "sluice",
-    "x": 9,
+    "x": 8,
     "y": 3,
     "on": "You spin the sluice wheel. The Axe backs off along the passage and leaves the floor shining.",
     "off": "You close the sluice. The river creeps back across the floor."

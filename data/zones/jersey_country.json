@@ -15,7 +15,7 @@
  "props": [
   {
    "type": "building",
-   "style": "stone",
+   "style": "cave_mouth",
    "x": 8,
    "y": 19,
    "w": 10,

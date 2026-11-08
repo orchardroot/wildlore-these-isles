@@ -2,8 +2,13 @@ class_name DeepScene
 extends RefCounted
 ## The overworld side of a Deep Place (rules in DeepPlace): face a lever and press Confirm to pull it, and plates
 ## take the weight of a crate (or you) as you step. A change rebuilds the scenery so gates swing and water drains.
+## Facing a closed gate reads its line, so the hint about what opens it is where the player is looking.
 
 static func interact(ow: Node, p: Vector2i) -> bool:
+	var gate := DeepPlace.gate_at(ow.zone, p)
+	if not gate.is_empty() and not DeepPlace.gate_open(Game.data, str(ow.zone.id), gate):
+		await ow.say([str(gate.get("line", "It's shut."))])
+		return true
 	var lever := DeepPlace.lever_at(ow.zone, p)
 	if lever.is_empty():
 		return false

@@ -76,13 +76,20 @@
  ],
  "rows": [
   "xxxxxxxxxxx",
-  "x+++++++++x",
-  "x+++++++++x",
-  "x+++++++++x",
-  "x+++++++++x",
-  "x+++++++++x",
-  "x+++++++++x",
-  "x++++D++++x",
+  "xeeeeeeeeex",
+  "xeeeeeeeeex",
+  "xeeeeeeeeex",
+  "xeeeeeeeeex",
+  "xeeeeeeeeex",
+  "xeeeeeeeeex",
+  "xeeeeDeeeex",
   "xxxxxxxxxxx"
- ]
+ ],
+ "stage": "cave",
+ "legend_extra": {
+  "e": {
+   "tile": "path",
+   "colour": "#7a6a5a"
+  }
+ }
 }

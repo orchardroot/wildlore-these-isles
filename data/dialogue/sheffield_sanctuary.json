@@ -43,7 +43,7 @@
       {
        "do": "say",
        "who": "Nurse",
-       "text": "The Ark? Up the stairs, past the relish. It runs on steam, I think. Or maybe it's Wi-Fi."
+       "text": "The Ark? Behind the counter, past the relish. It runs on steam, I think. Or maybe it's Wi-Fi."
       },
       {
        "do": "ark"

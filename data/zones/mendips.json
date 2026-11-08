@@ -735,6 +735,12 @@
    "x": 27,
    "y": 40,
    "item": "honeycomb"
+  },
+  {
+   "type": "cave_cleft",
+   "x": 62,
+   "y": 40,
+   "walk": true
   }
  ],
  "warps": [
@@ -1096,7 +1102,7 @@
   {
    "x": 62,
    "y": 29,
-   "text": "WOOKEY HOLE. The River Axe wells up from deep inside the Mendips. You'll want to wade. The witch under the arch doesn't mind, but her stalagmite does."
+   "text": "WOOKEY HOLE. The River Axe wells up from deep inside the Mendips, and the cave mouth is across the water at the foot of the cliff. You'll want to wade: Brook-wade comes with the Urban Stone from Keeper Ray in Liverpool. The witch under the arch doesn't mind, but her stalagmite does."
   },
   {
    "x": 20,

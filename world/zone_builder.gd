@@ -342,7 +342,9 @@ const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "roc
 	"penguin", "seal", "iceberg", "tussac", "skidoo", "headstone", "catcher_hulk", "twin_otter",
 	# British Overseas Territories (CaribStyles.PROPS)
 	"palm", "cannon", "salt_heap", "buried_roof",
-	"slot_machine", "roulette_table", "card_table", "tote_board", "velvet_rope", "horse_statue"]
+	"slot_machine", "roulette_table", "card_table", "tote_board", "velvet_rope", "horse_statue",
+	# Deep Places: gates, levers, crates and plates as their lines describe them (DeepMeshes)
+	"deep_gate", "deep_lever", "deep_crate", "deep_plate", "cave_cleft"]
 ## Cloth meshes that ripple (flutter shader) and glow meshes that add light (firelight shader).
 const CLOTH := ["bunting", "flag", "washing_line"]
 const FLOATING := ["boat", "canal_boat", "buoy", "punt", "wherry", "iceberg", "catcher_hulk"]
@@ -711,6 +713,8 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 			return Dressing.wall_map()
 		"mirror":
 			return LooksMirror.mesh()
+	if DeepPlace.LOOKS.has(name) or name == "cave_cleft":
+		return DeepMeshes.mesh(name, variant)
 	if name in CaribStyles.PROPS:
 		return CaribStyles.prop(name, variant)
 	if name in Landmarks.COTS_PROPS:
@@ -790,7 +794,9 @@ static func _interior_walls(z: ZoneData) -> MeshInstance3D:
 			var floor_e := east != "" and east != "void"
 			var floor_w := west != "" and west != "void"
 			if cave and (floor_s or floor_e or floor_w or floor_n):
-				_rock(st, p, rng, plaster)
+				# full height behind the floor, a low rubble lip in front of it (as a plaster room has a low skirting
+				# there, so the camera still sees in), and between the two at the sides
+				_rock(st, p, rng, plaster, 1.0 if floor_s else (0.2 if floor_n else 0.3))
 				continue
 			if floor_s:
 				Meshes.box(st, Vector3(x, 0, y + 0.6), Vector3(1, 2.4, 0.4), plaster, plaster.darkened(0.3))
@@ -809,22 +815,29 @@ static func _interior_walls(z: ZoneData) -> MeshInstance3D:
 	mi.material_override = Meshes.solid
 	return mi
 
-## One tile of cave wall: uneven stacked blocks of stone, a different height and tint each.
-static func _rock(st: SurfaceTool, p: Vector2i, rng: RandomNumberGenerator, base: Color) -> void:
+## One tile of cave wall: uneven stacked blocks of stone, a different height and tint each, `scale` of full height.
+static func _rock(st: SurfaceTool, p: Vector2i, rng: RandomNumberGenerator, base: Color, scale := 1.0) -> void:
 	for i in 3:
 		var w := rng.randf_range(0.35, 0.6)
-		var h := rng.randf_range(1.6, 2.6)
+		var h := rng.randf_range(1.6, 2.6) * scale
 		var ox := rng.randf_range(0.0, 1.0 - w)
 		var oz := rng.randf_range(0.0, 1.0 - w)
 		var c := base.lightened(rng.randf_range(-0.12, 0.1))
 		Meshes.box(st, Vector3(p.x + ox, 0, p.y + oz), Vector3(w, h, w), c, c.lightened(0.1))
 
-## Cones of rock hanging over scattered floor tiles, a few tiles per room.
+## Cones of rock hanging over scattered floor tiles, a few tiles per room. None in the two tiles south of anything
+## you might look for (a prop, a sign, a person), where from the camera they would hang right in front of it.
 static func _stalactites(st: SurfaceTool, z: ZoneData, rng: RandomNumberGenerator) -> void:
+	var clear := {}
+	for list in [z.props, z.signs, z.npcs]:
+		for it in list:
+			if it.has("x") and it.get("type", "") != "building":
+				for dy in 3:
+					clear[Vector2i(int(it.x), int(it.y) + dy)] = true
 	for y in z.height:
 		for x in z.width:
 			var t := z.tile_at(Vector2i(x, y))
-			if t == "void" or t == "" or rng.randf() > 0.07:
+			if t == "void" or t == "" or rng.randf() > 0.07 or clear.has(Vector2i(x, y)):
 				continue
 			var c := Color("857d70")
 			for k in 3:

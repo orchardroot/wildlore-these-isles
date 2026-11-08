@@ -53,6 +53,7 @@ func _initialize() -> void:
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
 	errors.append_array(Letters.errors(zones, items_db))  # papers on tables and their treasure trails
+	errors.append_array(WorldConsistency.check(zones, StoryData.all_dialogue()))  # w50: the world matches what it says
 	errors.append_array(PartyPieces.problems(MoveDB.load_default()))  # w48 P: data/party_pieces and the moves they teach
 	for e in errors:
 		printerr("DATA: " + e)
