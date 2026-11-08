@@ -161,8 +161,15 @@ func _meal_buff() -> void:
 	var lead := battle.current(Battle.PLAYER)
 	match str(b.buff):
 		"stat":
-			if lead == null or lead.change_stage(str(b.stat), 1) == 0:
+			var up := lead.change_stage(str(b.stat), 1) if lead != null else 0
+			if up == 0:
 				return
+			# a charm-style event, so the lead's plate gets its stat pill with the line rather than a turn later
+			var e := {"type": "charm", "side": Battle.PLAYER, "stat": str(b.stat), "delta": up, "text": str(b.text)}
+			if battle.double:
+				e["pos"] = 0
+			await _play([e])
+			return
 		"catch":
 			battle.meal_catch = float(b.mult)
 		"purse":

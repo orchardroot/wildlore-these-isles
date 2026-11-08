@@ -427,3 +427,14 @@ func test_a_fainted_fighter_does_not_share() -> void:
 	b.parties[Battle.FOE][0].hp = 0
 	b._faint(Battle.FOE, 0, ev)
 	assert_eq(ev[0].witnesses, [1], "only the standing fighter")
+
+func test_meal_stat_buff_plays_as_an_event_so_the_plate_shows_it() -> void:  # not a turn later at the sync
+	var a := Fixtures.creature("kindlet", 10)
+	var ui := FakeBattleUI.new()
+	var f := _flow([a], [Fixtures.creature("spikkin", 3)], ui)
+	f.data.set_flag(Meals.FLAG, "lancashire_hotpot")
+	f.run()
+	var first: Dictionary = ui.event_batches[0][0]
+	assert_eq([first.type, first.side, int(first.delta)], ["charm", Battle.PLAYER, 1])
+	assert_true(str(first.stat) != "")
+	assert_true(f.log.any(func(l): return str(l).begins_with(a.display_name())), "the dish's line names the lead")
