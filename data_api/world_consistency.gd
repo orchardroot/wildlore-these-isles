@@ -31,7 +31,7 @@ const OBJECTS := {
 	"boat": ["prop:boat", "prop:canal_boat", "prop:punt", "prop:currach", "prop:wherry", "prop:catcher_hulk", "prop:ship_ribs", "ferry"],
 }
 ## Words in the same sentence that make a mention a pointer ("by the desk", "pull the lever"), not a story.
-const CUES := "by|beside|next to|behind|near|up in|over there|over by|across|at the back|in the corner|this side|pull|haul|heave|turn|spin|wind|push|climb|press|ring|works|opens|through|up the|down the"
+const CUES := "mind|by|beside|next to|behind|near|up in|over there|over by|across|at the back|in the corner|this side|pull|haul|heave|turn|spin|wind|push|climb|press|ring|works|opens|through|up the|down the"
 const STAIRS := "upstairs|downstairs|up the stairs|down the stairs|up the steps|down the steps|through the back|the back room|back door"
 const UNDERGROUND := "cave|caves|cavern|mine|tunnel|tunnels|pit|hole|colliery|souterrain|grotto|catacomb|catacombs"
 ## Outside buildings that read as a way underground.

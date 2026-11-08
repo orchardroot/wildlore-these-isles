@@ -1,26 +1,36 @@
-# w49-games handoff
+# w50-world handoff
 
-Branch `w49-games` (from int-w49). Fixes three gameplay problems from the tune session; numbers and reasoning are in
-`docs/audit/w49_tune.md` under "Follow-up". Earlier handoffs moved to `docs/audit/w49_handoffs.md`.
+Branch `w50-world`. "The world doesn't match what it says": Deep Places drawn as their lines describe, cave entrances
+that look like caves, and a checker in the validator for the rest. Full write-up, counts and leftovers in
+`docs/audit/w50_world.md`. The w49-games handoff moved to the end of `docs/audit/w49_handoffs.md`.
 
 ## What changed
-- **Pancake race** (`core/pancake.gd`): lean push 13 to 9, pan drag 0.9 to 2.2, lean rate eased. A 0.15 s reaction on a
-  keyboard now drops it 0.2 times a race (was 9), 0.2 s about 7 (was 31), 0.3 s still about 20. Rosette thresholds
-  reset to 40 / 36.5 s (`data/party_pieces/g2.json`, `Pancake.GOOD_TIME`/`MASTER_TIME`), champion 37 to 39.5 s.
-- **Sheepdog trials** (`core/sheepdog_trials.gd`): the jam was cohesion towards the global flock centre (a split flock
-  held itself still), no pull on a calm straggler, and a dead zone at the pen mouth. Fixed (local cohesion, gentle calm
-  lure, lure back to the gate, pen lure to the mouth). Clocks cut to 50 s Longshaw and 60 s lakes
-  (`data/sheepdog_trials.json`) because the fix made it easy. The simulator's own bot also dithered and is fixed.
-- **Coracle and snorkel**: seeded per-run river level and eddies (coracle) and set and springs (snorkel); seed 0 keeps
-  the plain behaviour. Screens seed from the clock.
+- **Deep Places** (`core/deep_place.gd`, new `world/deep_meshes.gd`): a closed gate is a solid prop on the room's own
+  floor (cave gate, grille, timber gate, barrier, oak door, slab, basalt, flowstone), an open one is the floor; levers,
+  crates and plates have looks too (wheel, winch, weir board, handle, column, crack; boulder, tub, block, slab, column).
+  The look comes from the line's words or a `"look"` key. Gate tiles are no longer rewritten, so `tile_at` on a gate is
+  the room's floor; tests check `walkable` and the gate prop instead. Facing a closed gate reads its line
+  (`world/deep_scene.gd`).
+- **Cave rooms** (`world/zone_builder.gd`): low rubble on the camera side, lower side walls, no stalactite in front of
+  a prop, sign or person. New point props `deep_gate`, `deep_lever`, `deep_crate`, `deep_plate`, `cave_cleft`.
+- **Checker** (`data_api/world_consistency.gd`, called from `tools/validate.gd`; `tools/world_check.gd` lists all):
+  object, near, stairs, cave, entrance, blocker and text rules. Findings that are right as they stand go in
+  `data/world_consistency.json` with the reason. Tests: `tests/core/test_world_consistency.gd`, `test_deep_place.gd`.
+- **Data**: see the audit. Zones: aillwee_entry, blue_john_entry, jersey_tunnels, pit_cave (cave stage, stone floor),
+  castleton, jersey_country, dover (cave mouths), mendips (Wookey cleft, sign), wookey_hole, wookey_river,
+  staffa_columns, blaenavon_bigpit_east, shetland_mainland (gate), chat_moss, ring_of_kerry (signs), chatmoss_signalbox
+  and nym_signalbox (lever frames). Dialogue: dover_museum, plymouth_smeaton, three sanctuaries, brighton_rockshop,
+  oxford_bodleian, oxford_camera.
 
 ## How to see it
-`tools/shot.sh out.png 30 --menu=pancake:dev` (also `coracle:dev`, `sheepdog:longshaw`, `snorkel:dev`). Simulator:
-`.godot-bin/Godot.app/Contents/MacOS/Godot --headless --path . -s res://tools/dev/minigame_sim.gd -- <game> 80`.
+`tools/shot.sh out.png 60 --boot=blue_john_entry@6,6` (add `--flag=dp_blue_john_entry_gate` for open),
+`--boot=staffa_columns@7,5 --ride=lantern`, `--boot=mendips@62,39`, `--boot=castleton@45,22`. The machine was very
+loaded (load average over 100), so 30 s delays often caught the title screen; 60 s worked. Run shots one at a time:
+parallel `open -n` runs sometimes drop their arguments. Screens: `docs/screens/w50-world-consistency-*.png`.
 
 ## Notes for the integrator
-- Sheepdog gold (pen all 7) is still too easy for the bots (decent 72%); see the follow-up for the option of scoring
-  with the clock left. Left alone as a design call.
-- No lean ease-in beyond the fast-then-gentle rate: a slower ease made late reactions fatal.
-- Touched beyond the three games: `tools/dev/minigame_sim.gd` (bots seed the new fresh(); sheepdog bot fixes).
-- Easier-mode gold rosettes (finding 2 of the tune session) untouched.
+- The w50-tf-world session owns sign text sizing; I didn't touch `world/signage.gd` or landmark labels. Building style
+  changes (cave_mouth) keep their labels.
+- The playtest bot never applied Deep Places and still doesn't; nothing here makes a new tile solid except the Shetland
+  field gate, which replaces a wall tile (same solidity) and is a zone prop the bot already loads.
+- `data/world_consistency.json` will need an entry, or a fix, for any new line that points at something not drawn.
