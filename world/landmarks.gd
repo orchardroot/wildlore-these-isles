@@ -46,7 +46,7 @@ const SPECIAL := ["edinburgh_tenement", "glasgow_tenement", "aberdeen_granite", 
 	"pitcairn_house", "boat_shed", "base_hangar", "base_tower", "base_block", "plantation_ruin", "island_church",
 	"jersey_granite", "guernsey_granite", "jersey_tower", "little_chapel",
 	"andaluz_house", "andaluz_church", "frontier_post", "fort_ruin", "venetian_gate", "venetian_wall", "selimiye", "han",
-	"kioski_house", "orthodox_church", "checkpoint_booth", "un_tower"]
+	"kioski_house", "orthodox_church", "checkpoint_booth", "un_tower", "minster"]
 
 ## Doors: where each style's door sits on its tile (see _door and friends), for the swing as you go in.
 ## {x, w, y, h, z}: left edge and width across the door column, bottom and height, z of the door's face from
@@ -69,6 +69,7 @@ const DOOR_RECTS := {
 	"castle_red": {"x": 0.2, "w": 0.6, "y": 0.0, "h": 1.1, "z": 0.11},
 	"paddle_steamer": {"x": 0.22, "w": 0.56, "y": 0.7, "h": 0.9, "z": -0.6},
 	"cathedral": {"x": 0.15, "w": 0.7, "y": 0.0, "h": 1.3, "z": 0.03},
+	"minster": {"x": 0.1, "w": 0.8, "y": 0.0, "h": 1.32, "z": -0.19},
 	"glass_tower": {"x": 0.15, "w": 0.7, "y": 0.0, "h": 1.2, "z": 0.02},
 	"canal_tunnel": {"x": 0.24, "w": 0.52, "y": 0.0, "h": 0.95, "z": -0.04},
 	"leeds_town_hall": {"x": 0.15, "w": 0.7, "y": 0.4, "h": 1.3, "z": -0.94},
@@ -171,6 +172,8 @@ static func building(w: int, d: int, style: String, door_x: int, seed_value: int
 			_crow_steps(st, w, d)
 		"cathedral":
 			_cathedral(st, wst, w, d, door_x, SANDSTONE)
+		"minster":
+			MinsterStyle.build(st, wst, w, d, door_x)
 		"chapel":
 			_chapel(st, wst, w, d, door_x)
 		"round_tower":
@@ -679,9 +682,12 @@ static func _cathedral(st: SurfaceTool, wst: SurfaceTool, w: int, d: int, door_x
 	_merlons(st, 0, tower_w, d - 0.6, th, stone, true)
 	# _window puts its frame across a face at z - 0.05 (a house's front): the nave's front is at d - 0.3 and the
 	# tower's at d, so pass those plus 0.05 or the glass sits inside the stone
+	# pointed lancets between buttresses (kept under the name band, see Signage.front), a belfry lancet on the tower
 	for x in range(tower_w, w):
-		_window(st, wst, x + 0.32, 0.6, d - 0.25, 0.36, 1.5, stone.lightened(0.2))
-	_window(st, wst, tower_w * 0.5 - 0.3, 3.4, d + 0.05, 0.6, 1.2, stone.lightened(0.2))
+		MinsterStyle._lancet(st, wst, x + 0.32, 0.6, d - 0.25, 0.36, 1.3, stone.lightened(0.2))
+		if x > tower_w:
+			Meshes.box(st, Vector3(x - 0.09, 0, d - 0.32), Vector3(0.18, 2.0, 0.3), stone.darkened(0.07))
+	MinsterStyle._lancet(st, wst, tower_w * 0.5 - 0.3, 3.4, d + 0.05, 0.6, 1.1, stone.lightened(0.2))
 	if door_x >= 0:
 		Meshes.box(st, Vector3(door_x + 0.15, 0, d - 0.05), Vector3(0.7, 1.3, 0.08), Color("3b2a22"))
 

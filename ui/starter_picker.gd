@@ -18,7 +18,7 @@ var _prompt: Label
 
 func _build() -> void:
 	set_title("Choose your partner")
-	header_right.text = "Professor Garside's field station"
+	header_right.text = "Professor Garside's Field Station"
 	var col := VBoxContainer.new()
 	col.set_anchors_preset(Control.PRESET_FULL_RECT)
 	col.add_theme_constant_override("separation", 10)

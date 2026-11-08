@@ -8,18 +8,8 @@
  "props": [
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 1
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 1
-  },
-  {
-   "type": "bookshelf",
-   "x": 1,
-   "y": 4
   },
   {
    "type": "table",
@@ -31,6 +21,43 @@
    "x": 5,
    "y": 1,
    "walk": true
+  },
+  {
+   "type": "sanctuary_shelf",
+   "x": 1,
+   "y": 1
+  },
+  {
+   "type": "sanctuary_restorer",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "sanctuary_noticeboard",
+   "x": 7,
+   "y": 1
+  },
+  {
+   "type": "sanctuary_poster",
+   "x": 2,
+   "y": 1
+  },
+  {
+   "type": "sanctuary_poster",
+   "x": 8,
+   "y": 1,
+   "variant": 1
+  },
+  {
+   "type": "creature_basket",
+   "x": 1,
+   "y": 4
+  },
+  {
+   "type": "creature_basket",
+   "x": 1,
+   "y": 5,
+   "variant": 1
   }
  ],
  "warps": [

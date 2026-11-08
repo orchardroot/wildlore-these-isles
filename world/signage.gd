@@ -21,6 +21,9 @@ const GENERIC := ["Home", "House", "Test House", "Cottage", "Farmhouse", "Barn",
 const FS := 64  # Label3D font size: the em in world units is FS * pixel_size
 const SHRINK_OK := 0.8  # a one-line name may shrink this far before it wraps on to two lines
 const TIGHT := 0.14  # two-line names sit this much (of an em) closer than the font's own line height
+## Smaller than this (world units a capital is high) a name on a wall or a roofline can't be read from the street: a
+## heritage or attraction name goes on a lectern in front instead (a lectern's own two-line names are about 0.1).
+const MIN_EM := 0.1
 
 ## Heritage shopfront colours, painted boards with gilt or cream lettering.
 const GILT := Color("d9b45e")
@@ -116,6 +119,9 @@ static func type_of(z: ZoneData, pr: Dictionary) -> String:
 		return ""
 	var door := door_of(z, pr)
 	return sign_type(str(pr.label), str(pr.get("style", "red_brick")), str(pr.get("kind", "")), str(door[1]))
+
+## Sign types that stand on a lectern when their front has no room (others keep their own kind of board).
+const LECTERN_TYPES := ["heritage", "tourist"]
 
 const KIND_WORDS := {"museum": "Museum", "library": "Library", "church": "Church", "castle": "Castle", "hall": "Hall",
 	"theatre": "Theatre", "mill": "Mill", "school": "School", "workshop": "Workshop", "cafe": "Cafe"}
@@ -274,6 +280,8 @@ static func front(style: String, w: int, d: int, door_x: int) -> Dictionary:
 				f.merge({"z": d - 0.3, "lo": 2.22, "hi": 3.0, "x0": tower_w + 0.15, "x1": w - 0.15}, true)
 			else:
 				f.merge({"lo": 1.4, "hi": 1.95, "x0": 0.15, "x1": tower_w - 0.15}, true)
+		"minster":  # York Minster: over the west portal, under the great window
+			f.merge(MinsterStyle.sign_front(w, d, door_x), true)
 		"castle", "castle_red":
 			if door_x >= 0:
 				f.merge({"z": d + 0.1, "lo": 1.22, "hi": 2.3, "x0": door_x - 0.32, "x1": door_x + 1.32}, true)
@@ -498,11 +506,29 @@ static func _sign(kit: Kit, z: ZoneData, pr: Dictionary, t: String, door_x: int)
 		if mode == "stand":
 			stand = _stand_spot(kit, _lectern_fit(label, t), w, d, door_x, eye)
 			if not tried_wall and int(stand.hidden) > 0:
-				# hidden even so: a name on the wall, where some of the front shows and a wall backs it
+				# hidden even so: a name on the wall, where some of the front shows and a wall backs it (if the
+				# stretch is wide enough to read a name on)
 				var seen := kit.sight.place(f, mi, eye, near_x, true)
-				if not seen.is_empty():
+				if not seen.is_empty() and (t not in LECTERN_TYPES or _wall_em(label, t, f.merged(seen, true), "wall", style) >= MIN_EM):
 					f.merge(seen, true)
 					mode = "wall"
+		elif t in LECTERN_TYPES:
+			# the front has too little room for the name: a gatehouse squeezed between drum towers carries a tablet
+			# across them, proud of the stone; anything else (a small mill's parapet) a lectern in front
+			var em := _wall_em(label, t, f, mode, style)
+			if style in ["castle", "castle_red"] and em < MIN_EM * 1.5:
+				var proud := _proud_front(kit, w, d, door_x, 1.6, 0.05, 1.25, 1.85)
+				if _wall_em(label, t, proud, "wall", style) > em * 1.3:
+					f = proud
+					em = MIN_EM
+			if em < MIN_EM:
+				mode = "stand"
+				stand = _stand_spot(kit, _lectern_fit(label, t), w, d, door_x, eye)
+	if t == "keeper" and (mode in ["stand", "monolith", "trough"] or float(_keeper_fit(label, f).em) < KEEPER_MIN_EM):
+		# a keeper's hall always carries its black and gold board over the door: where its front has no wall for
+		# one, or too narrow a stretch (a gatehouse between drum towers), the board stands proud on brackets
+		f = _keeper_front(kit, w, d, door_x)
+		mode = "wall"
 	if t == "station" and mode == "canopy":
 		_station(kit, label, f, w, d, z.region)
 		return
@@ -783,6 +809,22 @@ static func _rail_board(kit: Kit, label: String, f: Dictionary, w: int, door_x: 
 	_enamel(kit, Transform3D(Basis(), Vector3(cx, y, float(f.z) + 0.01)), bw, h, enamel)
 	kit.text(Transform3D.IDENTITY, Vector3(cx, y, float(f.z) + 0.04), fit_w, fnt, ENAMEL_WHITE)
 
+static func _heritage_fit(label: String, f: Dictionary, fnt: Font) -> Dictionary:
+	var room: float = float(f.hi) - float(f.lo) - 0.08
+	var text := label.to_upper() if fnt == font("caps") else label
+	return fit(text, fnt, minf(0.3, room * 0.8), float(f.x1) - float(f.x0) - 0.3, room * 0.85)
+
+## How big a heritage or attraction name would be on the front f (world units a capital is high): the boards that
+## fall back to a lectern when their front has too little room (see MIN_EM).
+static func _wall_em(label: String, t: String, f: Dictionary, mode: String, style: String) -> float:
+	if mode == "parapet":
+		return float(_parapet_fit(label, f, style).em)
+	if t == "tourist":
+		var h := minf(float(f.hi) - float(f.lo) - 0.06, 0.4)
+		return float(fit(label, font("sans"), minf(0.3, h * 0.78), float(f.x1) - float(f.x0) - 0.3, h * 0.8).em)
+	var fnt := font("serif") if style == "tudor" else font("caps")
+	return float(_heritage_fit(label, f, fnt).em)
+
 ## A carved name over the door of a museum, library, church or hall: a stone tablet with a moulded frame, the name
 ## in spaced capitals cut into it. Timber-framed fronts get an oak board instead, and slate cottages a slate one.
 static func _heritage(kit: Kit, label: String, f: Dictionary, w: int, door_x: int, style: String) -> void:
@@ -802,11 +844,9 @@ static func _heritage(kit: Kit, label: String, f: Dictionary, w: int, door_x: in
 	elif style == "stone" or style == "cathedral" or style == "castle" or style == "castle_red" or style == "chapel":
 		face = Color("e4dccb")
 		edge = Color("9b917e")
-	var text := label.to_upper() if fnt == font("caps") else label
 	var room: float = float(f.hi) - float(f.lo) - 0.08
 	var span: float = float(f.x1) - float(f.x0)
-	var em := minf(0.3, room * 0.8)
-	var fit_w := fit(text, fnt, em, span - 0.3, room * 0.85)
+	var fit_w := _heritage_fit(label, f, fnt)
 	var h := minf(room, float(fit_w.height) + 0.11)
 	var bw := minf(span, float(fit_w.width) + 0.34)
 	var cx := _centre(f, bw, door_x, w)
@@ -817,14 +857,39 @@ static func _heritage(kit: Kit, label: String, f: Dictionary, w: int, door_x: in
 	kit.box(Vector3(cx - bw * 0.5 - 0.07, y0 + h + 0.04, z0), Vector3(bw + 0.14, 0.04, 0.09), edge.lightened(0.1))  # hood
 	kit.text(Transform3D.IDENTITY, Vector3(cx, y0 + h * 0.5, z0 + 0.064), fit_w, fnt, ink)
 
-## Grand: a keeper's hall gets a black and gold board the width of its front, with lanterns either side.
-static func _keeper(kit: Kit, label: String, f: Dictionary, w: int, door_x: int) -> void:
-	var fnt := font("caps")
-	var text := label.to_upper()
+const KEEPER_LAMP := 0.3
+## Below this (world units a capital is high) a keeper's name is not grand any more: the board moves out to a wider one.
+const KEEPER_MIN_EM := 0.15
+
+## The keeper board's lettering on the front f (see _keeper).
+static func _keeper_fit(label: String, f: Dictionary) -> Dictionary:
 	var span: float = float(f.x1) - float(f.x0)
 	var h := minf(float(f.hi) - float(f.lo) - 0.1, 0.5)
-	var lamp := 0.3
-	var fit_w := fit(text, fnt, minf(0.32, h * 0.8), span - 0.4 - lamp * 2.0, h * 0.85)
+	return fit(label.to_upper(), font("caps"), minf(0.32, h * 0.8), span - 0.4 - KEEPER_LAMP * 2.0, h * 0.85)
+
+## A keeper board's own front when the building's has no room: centred over the door, as wide as the building
+## allows (and a little over), standing just proud of whatever is there (towers, a porch) at that height.
+static func _keeper_front(kit: Kit, w: int, d: int, door_x: int) -> Dictionary:
+	return _proud_front(kit, w, d, door_x, 1.8, -0.3, 1.32, 1.95)
+
+## A front for a board centred over the door, up to `half` either side and `margin` in from the building's ends
+## (negative: over them), lo..hi high, just proud of whatever the building has there.
+static func _proud_front(kit: Kit, w: int, d: int, door_x: int, half: float, margin: float, lo: float, hi: float) -> Dictionary:
+	var c := door_x + 0.5 if door_x >= 0 else w * 0.5
+	var x0 := maxf(margin, c - half)
+	var x1 := minf(w - margin, c + half)
+	var z := float(d)
+	if kit.sight != null and kit.body is MeshInstance3D:
+		z = maxf(z, kit.sight.reach(kit.body as MeshInstance3D, x0, x1, lo - 0.1, hi + 0.15, d + 3.0))
+	return {"mode": "wall", "z": z + 0.03, "lo": lo, "hi": hi, "x0": x0, "x1": x1, "hang": -1.0}
+
+## Grand: a keeper's hall gets a black and gold board the width of its front, with lanterns either side.
+static func _keeper(kit: Kit, label: String, f: Dictionary, w: int, door_x: int) -> void:
+	var span: float = float(f.x1) - float(f.x0)
+	var h := minf(float(f.hi) - float(f.lo) - 0.1, 0.5)
+	var lamp := KEEPER_LAMP
+	var fnt := font("caps")
+	var fit_w := _keeper_fit(label, f)
 	var bw := minf(span - lamp * 2.0, float(fit_w.width) + 0.8)
 	var cx := _centre(f, bw + lamp * 2.0, door_x, w)
 	var y0: float = float(f.lo) + 0.05
@@ -892,14 +957,18 @@ static func _brown_board(kit: Kit, label: String, f: Dictionary, w: int, door_x:
 	_enamel(kit, Transform3D(Basis(), Vector3(cx, y, float(f.z) + 0.01)), bw, h, BROWN)
 	kit.text(Transform3D.IDENTITY, Vector3(cx, y, float(f.z) + 0.04), fit_w, fnt, ENAMEL_WHITE)
 
+static func _parapet_fit(label: String, f: Dictionary, style: String) -> Dictionary:
+	var h: float = float(f.hi) - float(f.lo)
+	var fnt := font("caps") if style == "liver_building" else font("sans_caps")
+	return fit(label.to_upper(), fnt, minf(0.36, h * 0.8), float(f.x1) - float(f.x0) - 0.3, h * 0.85)
+
 ## A name on the roofline: painted on a brick panel standing on a mill's cornice (or carved in Portland stone).
 static func _parapet(kit: Kit, label: String, f: Dictionary, style: String) -> void:
 	var stone := style == "liver_building"
 	var fnt := font("caps") if stone else font("sans_caps")
-	var text := label.to_upper()
 	var h: float = float(f.hi) - float(f.lo)
 	var span: float = float(f.x1) - float(f.x0)
-	var fit_w := fit(text, fnt, minf(0.36, h * 0.8), span - 0.3, h * 0.85)
+	var fit_w := _parapet_fit(label, f, style)
 	var bw := minf(span, float(fit_w.width) + 0.5)
 	var cx: float = (float(f.x0) + float(f.x1)) * 0.5
 	var y0: float = f.lo
