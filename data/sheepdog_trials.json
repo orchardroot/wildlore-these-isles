@@ -5,7 +5,7 @@
    "name": "Longshaw",
    "prize": 14,
    "sheep": 7,
-   "limit": 150,
+   "limit": 50,
    "gates": [{"x": 48.0, "y": 20.0, "w": 11.0}],
    "rival": {
     "who": "Roy, Peak District shepherd",
@@ -20,7 +20,7 @@
    "name": "The Lakes",
    "prize": 16,
    "sheep": 7,
-   "limit": 140,
+   "limit": 60,
    "gates": [{"x": 64.0, "y": 20.0, "w": 12.0}, {"x": 40.0, "y": 20.0, "w": 9.5}],
    "rival": {
     "who": "Hannah, Herdwick farmer",

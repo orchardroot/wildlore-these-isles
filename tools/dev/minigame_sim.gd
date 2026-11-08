@@ -91,13 +91,13 @@ func _sheep_goal(st: Dictionary) -> Vector2:
 	c /= float(pts.size())
 	var dir_c: Vector2 = (c - goal).normalized()
 	var want: Vector2 = c + dir_c * 9.0
-	want = Vector2(minf(want.x, 93.0), clampf(want.y, 2.0, 38.0))
+	want = Vector2(minf(want.x, 94.8), clampf(want.y, 2.0, 38.0))
 	var to_dog: Vector2 = st.dog - c
 	if to_dog.dot(dir_c) < 2.0 and to_dog.length() < 18.0:
 		var perp := Vector2(-dir_c.y, dir_c.x)
-		if perp.dot(want - st.dog) < 0.0:
+		if perp.dot(to_dog) < 0.0:   # keep to the side the dog is already on, so it commits to going round
 			perp = -perp
-		return (perp + to_dog.normalized() * 0.5).normalized()
+		return (perp + to_dog.normalized() * clampf((15.0 - to_dog.length()) * 0.2, -1.0, 1.0)).normalized()
 	return (want - st.dog).limit_length(1.0) if (want - st.dog).length() > 1.0 else Vector2.ZERO
 
 func _play_sheepdog_trials(sk: String, seed_: int, easy: bool) -> float:
@@ -241,7 +241,7 @@ func _play_snorkel(sk: String, seed_: int, easy: bool) -> float:
 	var sd := float({"sloppy": 0.2, "decent": 0.11, "sharp": 0.05}[sk])
 	var slip := float({"sloppy": 0.08, "decent": 0.02, "sharp": 0.0}[sk])
 	var blow_silt := float({"sloppy": 0.8, "decent": 0.5, "sharp": 0.5}[sk])
-	var s := Snorkel.fresh()
+	var s := Snorkel.fresh(1000 + seed_)
 	var side := "l"
 	var guard := 0
 	while not bool(s.done) and guard < 4000:
@@ -265,7 +265,7 @@ func _play_coracle(sk: String, seed_: int, easy: bool) -> float:
 	var skill := float({"sloppy": 0.55, "decent": 0.8, "sharp": 1.0}[sk])
 	var react := float({"sloppy": 0.6, "decent": 0.3, "sharp": 0.1}[sk])
 	var course: Dictionary = Coracle.venue("ironbridge").course
-	var s := Coracle.fresh(course)
+	var s := Coracle.fresh(course, 1000 + seed_)
 	var gl := Coracle.gates(course, easy)
 	var side := "l"
 	var guard := 0

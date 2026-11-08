@@ -81,3 +81,77 @@ reads well), road bowling (POWER label is tiny but legible), poohsticks, gurning
 screens and read correctly.
 
 Not seen: the finish screens of the eight games without a `dev_end` arg; they only end after a real play.
+
+## Follow-up (session "games", wave 49)
+
+Three findings from the list above were fixed in the game code. Numbers are the simulator (`minigame_sim.gd`, 80 seeds,
+normal difficulty), decent bot / sharp bot unless stated.
+
+### Pancake race (findings 1 and 4)
+
+`core/pancake.gd`: the lean now pushes back with 9 units instead of 13 (`LEAN_PUSH`), the pan has more drag (`PAN_DRAG`
+was 0.9, now `PAN_DAMP` 2.2) and the lean follows the key with a rate that is quicker when far from it
+(`LEAN_EASE`). A longer ease-in was tried (constant 6, 8 and 10 a second) and made a late reaction fatal, so the lean
+still arrives in about a tenth of a second; the gain is in the lower authority and the damping. Keyboard bot, 20 seeds
+(`tools/dev/pancake_probe.gd`), drops per run:
+
+| Reaction | Before | After |
+|---|---|---|
+| 0.08 s | 0 | 0 |
+| 0.15 s (look 0.5 s) | 9.1 | 0.2 |
+| 0.20 s | 30.6 | 6.8 |
+| 0.30 s | 175 | 19.6 |
+
+An attentive player now keeps it on, a 0.2 s one drops it a few times, a careless one still drops it a lot. The
+sprint is no longer a trap, so the clock decides: a clean run is still 36 s, so thresholds moved to 40 / 36.5
+(was 58 / 44), champion's time 37 to 39.5 (was 46 to 50). `Pancake.GOOD_TIME` and `MASTER_TIME` follow.
+
+| | Silver decent / sharp | Gold decent / sharp |
+|---|---|---|
+| Before (58 / 44) with the old pan | 96% / 100% | 0% / 100% |
+| New pan, old thresholds | 100% / 100% | 100% / 100% |
+| New pan, 40 / 36.5 | 88% / 100% | 13% / 98% |
+
+Easier mode: sloppy 52% silver, decent 100% / 90% gold (was 0% silver sloppy).
+
+### Sheepdog trials (finding 3)
+
+The real file is `core/sheepdog_trials.gd` (`core/sheepdog.gd` is an older, unused model). Causes found by tracing the
+sharp bot's failed runs:
+
+1. **Cohesion pulled towards the flock's global centre.** With the flock split in two (one half past the gate, one half
+   in the corridor), the centre sat on empty grass between them and each half was tugged towards it at 1.6, which
+   cancelled the dog's drive and the pull of the gate. Now each sheep clings to the neighbours within 16 units
+   (`COHESION_R`).
+2. **No pull on a calm sheep.** A sheep alone, not being walked on, only grazed; a straggler sat by the gate or in the
+   corridor for the rest of the run. Calm sheep near a gap now amble towards it (`CALM_LURE`, 0.5), and one pushed back
+   out through a gate is drawn back to it.
+3. **Gap between the pen and the lure.** The pen lure started at the pen's outer edge (x = 18) but a sheep counts as
+   penned only inside it (x < 16.6), so a sheep at the mouth had nothing drawing it in.
+4. The simulator's bot (not the game) hovered 18 units from a lone straggler, dithered between going round either side
+   and could not get behind a sheep against the right wall. Fixed in `_sheep_goal` (commit to a side, keep to a
+   radius, aim right up to x = 94.8); this was most of the "pens nothing" runs.
+
+Result: the sharp bot pens nothing 0 times in 80 (was 1 in 10 before). With the jam gone the game became very easy
+(even the sloppy bot penned 7 in nearly every run in 150 s), so the clocks were cut: Longshaw 150 to 50 s, the lakes
+140 to 60 s (the easier mode still takes 1.35x). Decent bot at 50 s: silver 73%, gold 72%; sloppy 53% / 47%; sharp 45% / 43%.
+
+Not at target: gold ("pen all 7") is bimodal (the flock tends to arrive together, so a run is 0 or 7) and the bots read
+the field perfectly, so the decent bot's gold rate stays far above 20%. A human with the real keys will be slower; if
+gold feels too soft in play, score the piece with `SheepdogTrials.score()` (sheep plus the share of the clock left)
+and set master to about 7.4, which needs `PiecePrompt` to format a decimal score. The thresholds are left at 5 / 7.
+
+### Coracle and snorkel floors (finding 5)
+
+Both games now take a seed (`Coracle.fresh(course, seed)`, `Snorkel.fresh(seed)`; seed 0 is the old plain course, used
+by the tests and dev screens, and the screens seed from the clock):
+
+- Coracle: the river's level is 0.5 to 1.2 of the old current, it gusts and slackens along the course (eddies), and
+  the stream is stronger in mid-channel than under the banks, so a good line pays. Sharp bot: 24.0 s flat, now 23.2 to
+  24.4 s (p10 23.2, median 23.9). Decent bot medians 33.5 s (silver 57%, gold 8%, was 53% and 6%).
+- Snorkel: each swim has its own set (a kick carries 0.96 to 1.04 of normal) and springs and slacks along the trench
+  (plus or minus 7%). Sharp bot: 42.8 s flat, now 41.5 to 44.6 s (median 42.8). Decent 100% silver, 1% gold.
+
+Floors fell by about 0.8 s (coracle) and 1.3 s (snorkel), so thresholds are unchanged (coracle 34 / 27, snorkel 60 / 47).
+Tests: `tests/g3/test_coracle.gd`, `test_snorkel.gd`, `tests/minigames/test_sheepdog_trials.gd`,
+`test_g2_cheese_pancake.gd`.

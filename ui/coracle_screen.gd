@@ -90,7 +90,7 @@ func _load(id: String) -> void:
 	_course = _venue.course
 	_rival = _venue.rival
 	_gates = Coracle.gates(_course, _easy)
-	_s = Coracle.fresh(_course)
+	_s = Coracle.fresh(_course, _rng.roll_int(1, 1 << 20))
 	_their_time = Coracle.local_time(_rival, _rng)
 	_gate_state = []
 	for g in _gates:
