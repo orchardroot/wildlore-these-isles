@@ -2,13 +2,13 @@
  "gurning": {
   "name": "Gurning", "move": "gurn", "types": ["fae", "night"], "zone": "keswick",
   "where": "Keswick, at the Egremont Crab Fair stall by the Moot Hall",
-  "good": 5, "master": 8, "lower_better": false, "unit": "gurns copied",
+  "good": 6, "master": 8, "lower_better": false, "unit": "gurns copied",
   "master_name": "Maureen, five-time Gurning Champion", "field": ""
  },
  "welly_wang": {
   "name": "Welly wanging", "move": "welly_wang", "types": ["gale", "brawn"], "zone": "saddleworth_moor",
   "where": "Saddleworth Moor, the Upperthong boot-throwing field",
-  "good": 20, "master": 30, "lower_better": false, "unit": "metres",
+  "good": 22, "master": 31, "lower_better": false, "unit": "metres",
   "master_name": "Dave, farrier and three-time champion", "field": ""
  }
 }

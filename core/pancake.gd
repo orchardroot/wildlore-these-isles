@@ -21,8 +21,8 @@ const PERFECT_BONUS := 0.2
 const FLAG_PREFIX := "pancake_"
 const FLAG_DAY := "pancake_day"
 const DAILY_PURSE := 3
-const GOOD_TIME := 52.0
-const MASTER_TIME := 42.0
+const GOOD_TIME := 58.0            # silver and gold, kept in step with data/party_pieces/g2.json
+const MASTER_TIME := 44.0
 
 var rng: Rng
 var easy := false
