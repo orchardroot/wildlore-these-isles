@@ -1,3 +1,24 @@
+# w52-left handoff
+
+Branch `w52-left` (from int-w51). The bug hunts' leftovers, each checked on the merged build first. Full write-up:
+`docs/audit/w52_leftovers.md`; before/after in `docs/screens/w52-*.png` (map, shed, mill, sign).
+
+- World map: `MapView.inset` keeps the picked town clear of the info panel and the "Where next?" strip (Dingle,
+  London, Cambridge, St Helier were under them). `--menu=map:post:<town>` sets the cursor for screenshots.
+- Deed huts get their own buildings and doors: York's allotment shed (was a hidden door in the Minster), Lancaster's
+  (in the Castle), Whitby's boat hut (in the Station, whose door is the station again) and Dingle's (in the Dolphin
+  Gifts). Rooms' exits and `data/deeds/*` doors follow; saves are untouched (the Deed flags hold no door).
+- New `WorksStyles` (`world/landmarks_works.gd`): tower windmill (Llynnon), the Laxey Wheel, Starcross Pumping House,
+  Cornish engine house (Penzance, Snailbeach), allotment shed, tarred boat hut.
+- Signs abroad: Anguilla's Fountain Cavern lower (a two-deep `cave_mouth` piles lower; Cairngorm Cave, Dover's
+  tunnels and Ogof Dinas Emrys are two-deep too, so a little lower), Grand Turk palms moved, Douglas bunting moved.
+- Up Helly Aa guizers in Viking gear (new `guizer` recipe, `viking_helmet` hat); Braemar Gathering moved off the ski
+  snow to the green glen; Grytviken's church has its tower and spire; coracle/snorkel dead heats; "in the Channel
+  Islands" mid-sentence (`Standing.mid_name`).
+- Merge note: new class_name `WorksStyles`, new sprite `art/sprites/chars/guizer.png`: run `--import` after merging.
+  `world/landmarks.gd` gets additive lines (SPECIAL, DOOR_RECTS, the match arm) and the `_cave_mouth` change.
+- Checks: `tools/test.sh` 3051 passed, 0 failed, validate 0 errors, no SCRIPT ERROR; `tools/playtest.sh slice 2` PLAYTEST PASS.
+
 # w51-places handoff
 
 Branch `w51-places` (from int-w50). Places that didn't look like what they are, from the w50 critic's and world
