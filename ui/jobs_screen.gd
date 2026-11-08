@@ -208,7 +208,9 @@ func _describe(i: int) -> void:
 	var title := UIKit.label(str(j.get("title", "")), 32)
 	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_desc.add_child(title)
-	_desc.add_child(UIKit.label("Posted by " + str(j.get("poster", "")), 19, UIKit.MUTED))
+	var by := UIKit.label("Posted by " + str(j.get("poster", "")), 19, UIKit.MUTED)
+	by.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # wraps rather than widen the card
+	_desc.add_child(by)
 	var body := UIKit.label(str(j.get("text", "")), 22)
 	body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_desc.add_child(body)
@@ -223,7 +225,9 @@ func _describe(i: int) -> void:
 		_desc.add_child(_line("Progress", p, OK if ready else UIKit.CREAM))
 	_desc.add_child(_line("Pays", _pay_text(j), UIKit.GOLD))
 	var how: String = "Finishes by itself when it's done." if str(j.step.type) in Jobs.AUTO else "Hand it in at any noticeboard in %s." % Standing.name_of(str(j.nation))
-	_desc.add_child(UIKit.label(how, 18, UIKit.MUTED))
+	var hl := UIKit.label(how, 18, UIKit.MUTED)
+	hl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_desc.add_child(hl)
 	_set_row_hint(r)
 
 func _line(k: String, v: String, col: Color) -> HBoxContainer:

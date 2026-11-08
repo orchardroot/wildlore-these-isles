@@ -319,10 +319,16 @@ func _open_picker(focus := 0) -> void:
 		if pm != "":  # a chapbook is pending: say who can be taught it
 			var st := Chapbooks.status(c, pm, Game.moves)
 			h.add_child(UIKit.label(Chapbooks.label(st), 22, {Chapbooks.CAN: UIKit.GOLD, Chapbooks.KNOWS: UIKit.CREAM}.get(st, UIKit.MUTED)))
-		var hp := UIKit.hp_bar(c.hp, c.max_hp(), 90, 10)
-		hp.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		h.add_child(hp)
-		h.add_child(UIKit.label("%d/%d" % [c.hp, c.max_hp()], 20, UIKit.MUTED))
+		var hv := VBoxContainer.new()  # the bar over its numbers, leaving a long nickname the room to show in full
+		hv.add_theme_constant_override("separation", -2)
+		hv.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		hv.add_child(UIKit.hp_bar(c.hp, c.max_hp(), 90, 10))
+		var hn := UIKit.label("%d/%d" % [c.hp, c.max_hp()], 18, UIKit.MUTED)
+		hn.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		hv.add_child(hn)
+		h.add_child(hv)
+		for k in hv.get_children():
+			k.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		for ch in h.get_children():
 			ch.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		b.add_child(h)

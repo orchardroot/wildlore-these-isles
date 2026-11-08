@@ -122,13 +122,13 @@ func _show() -> void:
 	_moves_of = c
 	_set_hint()
 	_body.add_child(_left(c))
+	_fit_columns.call_deferred()
 	if _genome:
 		_move_rows = []
 		_body.add_child(GenomePage.build(Game.data, c))
 		return
 	_body.add_child(_middle(c))
 	_body.add_child(_right(c))
-	_fit_columns.call_deferred()
 
 ## The three cards step their words down together if they need to (Large text, a long charm) to fit the page.
 func _fit_columns() -> void:
@@ -184,7 +184,7 @@ func _left(c: Creature) -> Control:
 	holder.add_child(s)
 	v.add_child(holder)
 	var inner := _left_w() - 36
-	var n := UIKit.fit_label(c.display_name(), inner, 38, 24)
+	var n := UIKit.fit_label(c.display_name(), inner, 38, 20)
 	n.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(n)
 	if c.nickname != "" and c.nickname != c.species.name:

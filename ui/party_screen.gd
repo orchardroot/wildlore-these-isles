@@ -110,6 +110,11 @@ func _slot_button(c: Creature, i: int) -> Button:
 	top.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	top.add_child(UIKit.sex_mark(c, 24))
 	var name_l := UIKit.label(c.display_name(), 28, Color("e9998c") if c.is_fainted() else UIKit.CREAM)
+	name_l.clip_text = true  # a long nickname shrinks, then trims, rather than push the row under the preview
+	name_l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	name_l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	name_l.size_flags_stretch_ratio = 4.0  # nearly all the spare room, the status chip still close by
+	UIKit.fit_width(name_l, 20)
 	top.add_child(name_l)
 	top.add_theme_constant_override("separation", 14)
 	var chip: Control = UIKit.chip("fainted", Color("6b2f2f")) if c.is_fainted() else UIKit.status_chip(c.status)
