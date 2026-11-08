@@ -1094,7 +1094,8 @@
     "max": 23,
     "weight": 5,
     "time": ["dusk", "night"]
-   }
+   },
+   {"species": "gawplet", "min": 21, "max": 23, "weight": 12, "season": ["summer"], "time": ["day"]}
   ],
   "water": [
    {

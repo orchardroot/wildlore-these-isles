@@ -80,5 +80,17 @@
    "event": "bog",
    "who": "Bog Marshal"
   }
+ ],
+ "g3_bog_marshal": [
+  {
+   "do": "say",
+   "who": "Bog Marshal",
+   "text": "Welcome to the practice bog. Sixty yards of peat, two lengths, flippers only. No arms. No front crawl. If your hands do anything, I will know."
+  },
+  {
+   "do": "snorkel",
+   "venue": "waen_rhydd",
+   "who": "Bog Marshal"
+  }
  ]
 }

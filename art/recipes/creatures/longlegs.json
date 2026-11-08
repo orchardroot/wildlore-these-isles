@@ -1,0 +1,22 @@
+{"id": "longlegs",
+ "palette": {"leg": "#7e6e3e", "leg2": "#4e4426", "body": "#c4a85a", "body2": "#8a7430", "wing": "#dae8f2", "vein": "#a8bccc"},
+ "layers": [
+  {"shape": "line", "points": [[46, 50], [30, 28], [12, 22], [2, 38]], "width": 1.8, "colour": "leg", "mirror": true, "shade": false, "rim": true},
+  {"shape": "line", "points": [[46, 56], [22, 52], [6, 66], [4, 92]], "width": 1.8, "colour": "leg", "mirror": true, "shade": false, "rim": true},
+  {"shape": "line", "points": [[46, 62], [24, 74], [18, 88], [22, 96]], "width": 1.8, "colour": "leg", "mirror": true, "shade": false, "rim": true},
+  {"shape": "ellipse", "at": [22, 36], "size": [30, 12], "colour": "wing", "shade": false, "rim": false, "angle": -35, "mirror": true},
+  {"shape": "ellipse", "at": [48, 56], "size": [16, 44], "colour": "body", "pattern": "stripes", "pcolour": "body2", "period": 5, "pangle": 90},
+  {"shape": "circle", "at": [48, 32], "r": 8, "colour": "body"},
+  {"shape": "poly", "points": [[42, 38], [48, 52], [54, 38]], "colour": "body2", "rim": false, "shade": false},
+  {"shape": "line", "points": [[48, 24], [48, 16]], "width": 1.4, "colour": "leg2", "shade": false, "mirror": false}
+ ],
+ "face_layers": [
+  {"shape": "line", "points": [[46, 38], [48, 40], [50, 38]], "width": 1, "colour": "#2a1e10", "shade": false}
+ ],
+ "eyes": [
+  {"at": [44, 31], "r": 3.6, "mirror": true, "colour": "#2a1e10"}
+ ],
+ "dimorph": {"f": {"add_layers": [{"shape": "poly", "points": [[44, 74], [48, 92], [52, 74]], "colour": "body2"}]}, "m": {"add_layers": [{"shape": "circle", "at": [48, 80], "r": 5, "colour": "body2"}]}},
+ "anim": "shift",
+ "bob": 2.0
+}

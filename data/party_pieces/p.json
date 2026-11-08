@@ -1,0 +1,400 @@
+{
+ "darts": {
+  "name": "Darts",
+  "move": "treble_twenty",
+  "types": [
+   "urban",
+   "iron",
+   "spirit"
+  ],
+  "zone": "blackpool_pub",
+  "where": "Pub darts leagues, from Blackpool to Donegal",
+  "good": 1,
+  "master": 2,
+  "lower_better": false,
+  "unit": "rivals beaten (2 = the league champion)",
+  "master_name": "the league champion",
+  "field": ""
+ },
+ "bowls": {
+  "name": "Bowls",
+  "move": "draw_to_the_jack",
+  "types": [
+   "kin",
+   "hedgerow",
+   "stone"
+  ],
+  "zone": "macclesfield",
+  "where": "Crown green and flat green bowls clubs",
+  "good": 1,
+  "master": 6,
+  "lower_better": false,
+  "unit": "shots ahead",
+  "master_name": "the club captain",
+  "field": ""
+ },
+ "skimming": {
+  "name": "Stone skimming",
+  "move": "ducks_and_drakes",
+  "types": [
+   "brook",
+   "gale",
+   "tide"
+  ],
+  "zone": "oban",
+  "where": "Beaches and shores, from Easdale to Llanberis",
+  "good": 6,
+  "master": 11,
+  "lower_better": false,
+  "unit": "bounces",
+  "master_name": "the island champion",
+  "field": "skim"
+ },
+ "crabbing": {
+  "name": "Crabbing",
+  "move": "bucket_and_line",
+  "types": [
+   "tide",
+   "bog",
+   "night"
+  ],
+  "zone": "whitby",
+  "where": "Harbour walls on the east and west coasts",
+  "good": 8,
+  "master": 13,
+  "lower_better": false,
+  "unit": "crabs in the bucket",
+  "master_name": "the harbourmaster's nephew",
+  "field": "line"
+ },
+ "curling": {
+  "name": "Curling",
+  "move": "sweep_hard",
+  "types": [
+   "frost",
+   "iron",
+   "stone"
+  ],
+  "zone": "inverness_rink",
+  "where": "Rinks and clubs, Inverness to Dumfries",
+  "good": 1,
+  "master": 2,
+  "lower_better": false,
+  "unit": "skips beaten (2 = the club champion)",
+  "master_name": "the club champion",
+  "field": ""
+ },
+ "wrestling": {
+  "name": "Wrestling",
+  "move": "cross_buttock",
+  "types": [
+   "brawn",
+   "kin",
+   "stone"
+  ],
+  "zone": "lake_district",
+  "where": "Lakeland sports rings like Grasmere",
+  "good": 1,
+  "master": 2,
+  "lower_better": false,
+  "unit": "rivals beaten (2 = the ring champion)",
+  "master_name": "the ring champion",
+  "field": ""
+ },
+ "conkers": {
+  "name": "Conkers",
+  "move": "soaked_in_vinegar",
+  "types": [
+   "hedgerow",
+   "bog",
+   "spirit",
+   "hearth"
+  ],
+  "zone": "sherwood",
+  "where": "Under any horse chestnut in October",
+  "good": 1,
+  "master": 3,
+  "lower_better": false,
+  "unit": "strings left (3 = untouched)",
+  "master_name": "the oldest conker on the green",
+  "field": ""
+ },
+ "ringing": {
+  "name": "Bell ringing",
+  "move": "plain_bob",
+  "types": [
+   "iron",
+   "spirit",
+   "urban"
+  ],
+  "zone": "exeter_cathedral",
+  "where": "Church towers, Exeter to St Helier",
+  "good": 70,
+  "master": 95,
+  "lower_better": false,
+  "unit": "% of pulls on time",
+  "master_name": "the Tower Captain",
+  "field": ""
+ },
+ "walling": {
+  "name": "Dry stone walling",
+  "move": "drystone_dyke",
+  "types": [
+   "stone",
+   "kin",
+   "hedgerow"
+  ],
+  "zone": "goyt_valley",
+  "where": "Pennine and Dales walling jobs",
+  "good": 1,
+  "master": 2,
+  "lower_better": false,
+  "unit": "walls built (2 = no stone taken back)",
+  "master_name": "the waller on the Dales Way",
+  "field": "mend"
+ },
+ "shanty": {
+  "name": "Shanties",
+  "move": "sing_the_wellerman",
+  "types": [
+   "tide",
+   "fae",
+   "kin",
+   "hearth"
+  ],
+  "zone": "dingle_pierbar",
+  "where": "Harbour pubs, Dingle to Lerwick",
+  "good": 70,
+  "master": 95,
+  "lower_better": false,
+  "unit": "% of pulls on the beat",
+  "master_name": "the shantyman at the pier bar",
+  "field": ""
+ },
+ "crossword": {
+  "name": "Crosswords",
+  "move": "cryptic_clue",
+  "types": [
+   "spirit",
+   "urban",
+   "night",
+   "fae"
+  ],
+  "zone": "cambridge",
+  "where": "The Cambridge crossword setters",
+  "good": 900,
+  "master": 300,
+  "lower_better": true,
+  "unit": "seconds taken",
+  "master_name": "the Times setter",
+  "field": ""
+ },
+ "quiz": {
+  "name": "Pub quiz",
+  "move": "quizmasters_ruling",
+  "types": [
+   "urban",
+   "frost",
+   "storm",
+   "hearth"
+  ],
+  "zone": "oxford_eagle",
+  "where": "Pub quiz nights, anywhere with a chalkboard",
+  "good": 60,
+  "master": 100,
+  "lower_better": false,
+  "unit": "% right",
+  "master_name": "the regular who knows everything",
+  "field": ""
+ },
+ "caber": {
+  "name": "Tossing the caber",
+  "move": "toss_the_caber",
+  "types": [
+   "brawn",
+   "stone",
+   "hedgerow"
+  ],
+  "zone": "oban",
+  "where": "Highland games, Oban and Fort William",
+  "good": 24,
+  "master": 33,
+  "lower_better": false,
+  "unit": "points",
+  "master_name": "the Games champion",
+  "field": "topple"
+ },
+ "tug": {
+  "name": "Tug of war",
+  "move": "anchor_man",
+  "types": [
+   "iron",
+   "brawn",
+   "frost"
+  ],
+  "zone": "oban",
+  "where": "Highland games and village fetes",
+  "good": 1,
+  "master": 90,
+  "lower_better": false,
+  "unit": "pull (100 = full)",
+  "master_name": "the anchor of the home team",
+  "field": ""
+ },
+ "hurling": {
+  "name": "Hurling",
+  "move": "sliotar_strike",
+  "types": [
+   "gale",
+   "brawn",
+   "hedgerow"
+  ],
+  "zone": "cork_pairc",
+  "where": "Pairc and club grounds in Ireland",
+  "good": 5,
+  "master": 11,
+  "lower_better": false,
+  "unit": "points",
+  "master_name": "the county forward",
+  "field": ""
+ },
+ "shinty": {
+  "name": "Shinty",
+  "move": "caman_clash",
+  "types": [
+   "hedgerow",
+   "gale",
+   "fae"
+  ],
+  "zone": "fort_william",
+  "where": "Highland pitches like Fort William",
+  "good": 3,
+  "master": 5,
+  "lower_better": false,
+  "unit": "points",
+  "master_name": "the camanachd captain",
+  "field": ""
+ },
+ "arcade": {
+  "name": "Seaside arcade",
+  "move": "penny_falls",
+  "types": [
+   "urban",
+   "fae",
+   "iron"
+  ],
+  "zone": "blackpool_arcade",
+  "where": "The arcades at Blackpool and Brighton",
+  "good": 1,
+  "master": 8,
+  "lower_better": false,
+  "unit": "toys won so far",
+  "master_name": "the man at the change booth",
+  "field": ""
+ },
+ "fete_cheese": {
+  "name": "Fete cheese roll",
+  "move": "double_gloucester",
+  "types": [
+   "stone",
+   "hearth",
+   "kin"
+  ],
+  "zone": "cotswolds",
+  "where": "Gloucestershire cheese rolling (and its village imitators)",
+  "good": 14,
+  "master": 11.5,
+  "lower_better": true,
+  "unit": "seconds down the hill",
+  "master_name": "last year's winner",
+  "field": ""
+ },
+ "fete_bog": {
+  "name": "Fete bog snorkel",
+  "move": "trench_wallow",
+  "types": [
+   "bog",
+   "brook",
+   "tide",
+   "spirit"
+  ],
+  "zone": "beacons",
+  "where": "Welsh moors and bogs",
+  "good": 80,
+  "master": 70,
+  "lower_better": true,
+  "unit": "seconds, two lengths",
+  "master_name": "the reigning snorkel champion",
+  "field": ""
+ },
+ "fete_welly": {
+  "name": "Fete welly wang",
+  "move": "gumboot_fling",
+  "types": [
+   "gale",
+   "storm",
+   "hedgerow"
+  ],
+  "zone": "yorkshire_dales",
+  "where": "Fetes up and down the country, Yorkshire above all",
+  "good": 30,
+  "master": 40,
+  "lower_better": false,
+  "unit": "metres",
+  "master_name": "the farmer's wife with the best arm",
+  "field": ""
+ },
+ "forecasting": {
+  "name": "Forecasting",
+  "move": "red_sky_at_night",
+  "types": [
+   "storm",
+   "gale",
+   "tide",
+   "frost"
+  ],
+  "zone": "exeter",
+  "where": "The Met Office at Exeter",
+  "good": 60,
+  "master": 100,
+  "lower_better": false,
+  "unit": "% right",
+  "master_name": "the senior forecaster",
+  "field": ""
+ },
+ "trumps": {
+  "name": "Trumps",
+  "move": "ace_up_the_sleeve",
+  "types": [
+   "night",
+   "urban",
+   "fae"
+  ],
+  "zone": "manchester",
+  "where": "Card tables in pubs and market halls",
+  "good": 1,
+  "master": 2,
+  "lower_better": false,
+  "unit": "cards won (2 = won by a clear margin)",
+  "master_name": "the best hand in the Isles",
+  "field": ""
+ },
+ "science": {
+  "name": "Science fair",
+  "move": "eureka",
+  "types": [
+   "storm",
+   "iron",
+   "spirit",
+   "frost"
+  ],
+  "zone": "cambridge",
+  "where": "Science fairs and inventors' benches",
+  "good": 1,
+  "master": 5,
+  "lower_better": false,
+  "unit": "puzzles solved so far",
+  "master_name": "the Cambridge lab-bench champion",
+  "field": ""
+ }
+}

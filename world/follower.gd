@@ -25,6 +25,7 @@ var _stride_from := Vector3.ZERO  # the stride under way, in step with the playe
 var _stride_to := Vector3.ZERO
 var _stride_hop := false
 var _bob_t := 0.0
+var _idle_phase := randf() * 3.0
 var _rng := RandomNumberGenerator.new()
 var _walked := 0  # steps walked as the follower, towards the next bit of friendship
 
@@ -262,7 +263,13 @@ func _process(delta: float) -> void:
 		pl.on_bike, pl.wading, pl.visible, _npc_here(), _tile_ok)
 	if visible and not _moving and not Router.busy:
 		_bob_t += delta
-		_sprite.position.y = absf(sin(_bob_t * BOB_SPEED)) * BOB_HEIGHT
+		if _lead != null:  # idles in its own manner (wave 48 A): a wisp hovers, a frog hops, a golem shifts its weight
+			var idle := Motion.idle(Motion.style_for(_lead.species), _bob_t, _idle_phase)
+			var off: Vector2 = idle.pos
+			_sprite.position.y = off.y * 0.6
+			_sprite.position.x = off.x * 0.5
+		else:
+			_sprite.position.y = absf(sin(_bob_t * BOB_SPEED)) * BOB_HEIGHT
 
 ## The player has just set off from `from`: step onto it, in time with them.
 func _follow(from: Vector2i, to: Vector2i) -> void:
@@ -294,7 +301,7 @@ func _follow(from: Vector2i, to: Vector2i) -> void:
 	_stride_hop = hops(prev, dest)
 	_sprite.walking = true
 	_sprite.walk_rate = pl.sprite.walk_rate
-	_sprite.position.y = 0.0
+	_sprite.position = Vector3.ZERO
 
 func _arrived(pl: Player) -> void:
 	position = _stride_to

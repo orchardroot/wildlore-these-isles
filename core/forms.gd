@@ -101,7 +101,11 @@ static func assign_wild(c: Creature, region: String, zone_id: String, moves: Mov
 static func apply(c: Creature, form_id: String, moves: MoveDB = null) -> void:
 	if c == null or c.species.is_empty() or not has(str(c.species.id), form_id):
 		return
+	var was_full := c.hp >= c.max_hp()
 	c.form = form_id
+	# a form that leans HP changes the max: a fresh (full) creature stays full, and nobody sits above the new max,
+	# so its battle plate never starts part-drained
+	c.hp = c.max_hp() if was_full else mini(c.hp, c.max_hp())
 	var mv := str(get_form(str(c.species.id), form_id).get("move", ""))
 	if mv == "" or c.has_move(mv) or moves == null or not moves.has(mv):
 		return

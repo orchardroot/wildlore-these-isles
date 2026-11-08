@@ -1,0 +1,36 @@
+{
+ "venues": {
+  "oxford": {
+   "name": "the Thames footbridge",
+   "prize": 10,
+   "flow": 0.55,
+   "bias": 0.0,
+   "rival": {
+    "who": "Hugo, reigning champion of the lock",
+    "skill": 0.7,
+    "intro": "Hugo has a bucket of sticks, a stopwatch he swears he does not use, and a theory about willow.",
+    "beaten": "Hugo looks at his watch, then at the water, then at you. He is going to need a new theory."
+   },
+   "real": "The real thing is the World Poohsticks Championships, which began at Day's Lock on the Thames in Oxfordshire in 1984 and raise money for charity. The game itself comes from A. A. Milne's Winnie-the-Pooh, set around the wooden bridge in Ashdown Forest, East Sussex."
+  },
+  "ashdown": {
+   "name": "the brook footbridge",
+   "prize": 10,
+   "flow": 0.4,
+   "bias": 0.4,
+   "rival": {
+    "who": "Rosalind, a retired headmistress with a terrifying drop",
+    "skill": 0.8,
+    "intro": "Rosalind has played this brook since 1971 and is quietly furious that anybody else knows about it.",
+    "beaten": "Rosalind inspects your stick for a long moment, as if for a hidden motor. Then she nods, once, which is a great deal."
+   },
+   "real": "The real thing is Pooh Bridge in Ashdown Forest, East Sussex, a little way north-east of here. A. A. Milne lived at Hartfield and wrote about the forest for his son, and the bridge there has been rebuilt more than once as the old one wore out. Visitors still play."
+  }
+ },
+ "sticks": [
+  {"id": "willow", "name": "A willow switch", "speed": 1.08, "snag": 1.5, "desc": "Light and quick, but it catches on anything."},
+  {"id": "ash", "name": "A plain ash stick", "speed": 1.0, "snag": 1.0, "desc": "Honest, the sort Pooh would choose."},
+  {"id": "oak", "name": "A fat oak branch", "speed": 0.92, "snag": 0.25, "desc": "Slow in the slack, but nothing holds it."}
+ ],
+ "how": "Pick the lane you will drop your stick into. The river is faster in the middle, slower at the banks, with eddies and reeds where sticks stall. Watch how the water moves, then decide. Run changes the stick, up and down choose the lane. First under the bridge and out the other side wins the race. Five races, and most wins takes the match."
+}

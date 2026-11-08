@@ -97,7 +97,9 @@ func _next() -> void:
 		var won := _theirs <= 0
 		_msg += " Their conker flies apart!" if won else " Yours breaks!"
 		_refresh()
-		get_tree().create_timer(1.2).timeout.connect(func(): close({"won": won}))
+		get_tree().create_timer(1.2).timeout.connect(func():
+			await PiecePrompt.after_game(self, "conkers", float(maxi(_mine, 0)) if won else 0.0)
+			close({"won": won}))
 		return
 	_t = 0.0
 	_refresh()

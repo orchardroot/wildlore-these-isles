@@ -238,6 +238,28 @@ func _exec(c: Dictionary) -> void:
 			await GreenRun.new(self).bowls(c)
 		"skim":
 			await GreenRun.new(self).skim(c)
+		"sheepdog":
+			await TrialsRun.new(self).sheepdog(c)
+		"worms":
+			await TrialsRun.new(self).worms(c)
+		"cheese":
+			await FolkRaceRun.new(self).cheese(c)
+		"pancake":
+			await FolkRaceRun.new(self).pancake(c)
+		"snorkel":
+			await BogRun.new(self).snorkel(c)
+		"coracle":
+			await BogRun.new(self).coracle(c)
+		"road_bowl":
+			await RoadBowlRun.new(self).road_bowl(c)
+		"poohsticks":
+			await RoadBowlRun.new(self).poohsticks(c)
+		"gurn":
+			await ContestRun.new(self).gurn(c)
+		"wang":
+			await ContestRun.new(self).wang(c)
+		"league":
+			await ContestRun.new(self).league(c)
 		"ring":
 			await RingingRun.new(self).ring(c)
 		"wall":

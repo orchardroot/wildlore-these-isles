@@ -1,0 +1,25 @@
+{"id": "barnaclet",
+ "palette": {"plate": "#ece8f6", "plate2": "#b4a8d8", "stalk": "#cc8a7c", "stalk2": "#a86a5e", "wood": "#9a7c5a", "wood2": "#6e5438", "cirri": "#f4ecd8"},
+ "layers": [
+  {"shape": "ellipse", "at": [48, 90], "size": [92, 12], "colour": "wood", "pattern": "stripes", "pcolour": "wood2", "period": 5, "pangle": 8},
+  {"shape": "line", "points": [[40, 86], [30, 70], [60, 62], [44, 46], [46, 36]], "width": 12, "colour": "stalk", "shade": true},
+  {"shape": "line", "points": [[40, 86], [30, 70], [60, 62], [44, 46]], "width": 4, "colour": "stalk2", "shade": false, "rim": false},
+  {"shape": "line", "points": [[48, 30], [32, 18]], "width": 1.4, "colour": "cirri", "shade": false, "rim": false},
+  {"shape": "line", "points": [[48, 30], [40, 12]], "width": 1.4, "colour": "cirri", "shade": false, "rim": false},
+  {"shape": "line", "points": [[48, 30], [48, 8]], "width": 1.4, "colour": "cirri", "shade": false, "rim": false},
+  {"shape": "line", "points": [[48, 30], [56, 12]], "width": 1.4, "colour": "cirri", "shade": false, "rim": false},
+  {"shape": "line", "points": [[48, 30], [64, 18]], "width": 1.4, "colour": "cirri", "shade": false, "rim": false},
+  {"shape": "poly", "points": [[24, 36], [30, 16], [48, 8], [66, 16], [72, 36]], "colour": "plate", "pattern": "stripes", "pcolour": "plate2", "period": 7, "pangle": 75},
+  {"shape": "poly", "points": [[48, 8], [40, 36], [56, 36]], "colour": "plate2", "rim": false, "shade": false},
+  {"shape": "poly", "points": [[24, 36], [48, 42], [72, 36], [72, 40], [48, 46], [24, 40]], "colour": "plate2", "rim": false}
+ ],
+ "face_layers": [
+  {"shape": "line", "points": [[44, 29], [48, 31], [52, 29]], "width": 1, "colour": "#4a3a6a", "shade": false},
+  {"shape": "circle", "at": [34, 28], "r": 2.4, "colour": "#f4a0c0", "shade": false, "rim": false},
+  {"shape": "circle", "at": [62, 28], "r": 2.4, "colour": "#f4a0c0", "shade": false, "rim": false}
+ ],
+ "eyes": [
+  {"at": [40, 24], "r": 3.6},
+  {"at": [56, 24], "r": 3.6}
+ ]
+}

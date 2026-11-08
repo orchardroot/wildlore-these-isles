@@ -216,6 +216,7 @@ static func marks(data: GameStateData, show: Dictionary) -> Array:
 	if here and not Postcards.waiting(data).is_empty():
 		out.append({"kind": "post", "at": str(here)})
 	out.append_array(Poi.marks(data))  # the question marks on the routes
+	out.append_array(FieldSpots.marks(data))  # field piece nooks you have spotted
 	return out
 
 ## Where a mark sits on the map (map units), or (-1, -1) if its town or place isn't drawn.
@@ -233,3 +234,184 @@ static func route_points(path: Array, zones: Dictionary) -> PackedVector2Array:
 		if pos.x >= 0 and (out.is_empty() or out[out.size() - 1] != pos):
 			out.append(pos)
 	return out
+
+## The route as drawn: a walk goes town to town, a rail hop follows the railway between the two stations and a
+## ferry hop follows its crossing, so the line runs where you'll actually go. `rail` is the map's rail polylines
+## (PackedVector2Array each), `ferry_paths` route id -> PackedVector2Array; a leg with no drawn line is straight.
+static func route_legs(path: Array, zones: Dictionary, g: Dictionary, rail: Array, ferry_paths: Dictionary) -> PackedVector2Array:
+	var out := PackedVector2Array()
+	var prev_zid := ""
+	for zid in path:
+		var pos: Vector2 = zones.get(str(zid), {}).get("pos", Vector2(-1, -1))
+		if pos.x < 0:
+			continue
+		if not out.is_empty():
+			var mode := ZoneGraph.hop_mode(g, prev_zid, str(zid)) if prev_zid != "" else "walk"
+			var leg := PackedVector2Array()
+			if mode == "rail":
+				leg = rail_leg(rail, out[out.size() - 1], pos)
+			elif mode == "ferry":
+				leg = ferry_leg(ferry_paths.get(str(g.ferry.get(prev_zid, ["", ""])[1]), PackedVector2Array()), out[out.size() - 1], pos)
+			for p in leg:
+				if out[out.size() - 1] != p:
+					out.append(p)
+		if out.is_empty() or out[out.size() - 1] != pos:
+			out.append(pos)
+		prev_zid = str(zid)
+	return out
+
+## A ferry's drawn crossing, pointed from `a` to `b` (empty when there is none).
+static func ferry_leg(pts: PackedVector2Array, a: Vector2, b: Vector2) -> PackedVector2Array:
+	if pts.size() < 2:
+		return PackedVector2Array()
+	var fwd := pts[0].distance_to(a) + pts[pts.size() - 1].distance_to(b)
+	var back := pts[pts.size() - 1].distance_to(a) + pts[0].distance_to(b)
+	if back < fwd:
+		var r := pts.duplicate()
+		r.reverse()
+		return r
+	return pts
+
+const RAIL_SNAP := 40.0  # a station's dot is this close to its railway, or the hop is drawn straight
+const RAIL_JOIN := 4.0  # a line ending this close to another is joined to it (branches off a main line)
+
+## The railway between two stations: from the point on the drawn lines nearest `a`, the shortest run along them
+## to the point nearest `b` (empty when either is off the network or they aren't joined up).
+static func rail_leg(rail: Array, a: Vector2, b: Vector2) -> PackedVector2Array:
+	var net := _rail_net(rail)
+	var sa := _snap(net, a)
+	var sb := _snap(net, b)
+	if sa.is_empty() or sb.is_empty():
+		return PackedVector2Array()
+	if sa.u == sb.u and sa.v == sb.v:  # both on the same stretch of line
+		return PackedVector2Array([sa.pt, sb.pt])
+	var nodes: Array = net.nodes
+	var dist := {sa.u: float(sa.du), sa.v: float(sa.dv)}
+	var prev := {}
+	var open := [sa.u, sa.v]
+	var done := {}
+	while not open.is_empty():
+		var best := -1
+		for i in open:
+			if best < 0 or float(dist[i]) < float(dist[best]):
+				best = i
+		open.erase(best)
+		if done.has(best):
+			continue
+		done[best] = true
+		if done.has(sb.u) and done.has(sb.v):
+			break
+		for nx in net.adj[best]:
+			var nd: float = float(dist[best]) + nodes[best].distance_to(nodes[nx])
+			if not dist.has(nx) or nd < float(dist[nx]):
+				dist[nx] = nd
+				prev[nx] = best
+				open.append(nx)
+	var ends := []
+	for e in [[sb.u, sb.du], [sb.v, sb.dv]]:
+		if dist.has(e[0]):
+			ends.append([float(dist[e[0]]) + float(e[1]), int(e[0])])
+	if ends.is_empty():
+		return PackedVector2Array()
+	ends.sort()
+	var out := PackedVector2Array([sb.pt])
+	var at: int = ends[0][1]
+	while true:
+		out.append(nodes[at])
+		if not prev.has(at):
+			break
+		at = int(prev[at])
+	out.append(sa.pt)
+	out.reverse()
+	var clean := PackedVector2Array()
+	for q in out:
+		if clean.is_empty() or clean[clean.size() - 1].distance_to(q) > 0.01:
+			clean.append(q)
+	return clean
+
+## Where `p` meets the network: the nearest point on any edge within RAIL_SNAP, with the edge's ends and the
+## distances along it to each ({} when the point is off the network).
+static func _snap(net: Dictionary, p: Vector2) -> Dictionary:
+	var best := {}
+	var bd := RAIL_SNAP
+	var nodes: Array = net.nodes
+	for u in nodes.size():
+		for v in net.adj[u]:
+			if v < u:
+				continue
+			var q: Vector2 = Geometry2D.get_closest_point_to_segment(p, nodes[u], nodes[v])
+			var d := q.distance_to(p)
+			if d < bd:
+				bd = d
+				best = {"pt": q, "u": u, "v": v, "du": q.distance_to(nodes[u]), "dv": q.distance_to(nodes[v])}
+	return best
+
+static var _rail_cache := {}
+
+## Vertices snapped to whole map units (so lines that meet end to end share a node) with their neighbours; a
+## line that ends on or just short of another line is joined to it there (a branch off a main line).
+static func _rail_net(rail: Array) -> Dictionary:
+	var key := rail.size()
+	for line in rail:
+		key = key * 31 + line.size()
+	if _rail_cache.get("key", -1) == key:
+		return _rail_cache.net
+	var nodes := []
+	var index := {}
+	var adj := []
+	var ends := []
+	for line in rail:
+		var last := -1
+		for n in line.size():
+			var p: Vector2 = line[n]
+			var k := Vector2i(roundi(p.x), roundi(p.y))
+			if not index.has(k):
+				index[k] = nodes.size()
+				nodes.append(Vector2(p))
+				adj.append([])
+			var i: int = index[k]
+			if last >= 0 and last != i:
+				_link(adj, last, i)
+			if n == 0 or n == line.size() - 1:
+				ends.append(i)
+			last = i
+	for e in ends:
+		if adj[e].size() > 1:
+			continue  # already part of a junction
+		var best := {}
+		var bd := RAIL_JOIN
+		for u in nodes.size():
+			for v in adj[u]:
+				if v < u or u == e or v == e:
+					continue
+				var q: Vector2 = Geometry2D.get_closest_point_to_segment(nodes[e], nodes[u], nodes[v])
+				var d: float = q.distance_to(nodes[e])
+				if d < bd:
+					bd = d
+					best = {"pt": q, "u": u, "v": v}
+		if best.is_empty():
+			continue
+		var pt: Vector2 = best.pt
+		if pt.distance_to(nodes[best.u]) <= 1.0:
+			_link(adj, e, best.u)
+		elif pt.distance_to(nodes[best.v]) <= 1.0:
+			_link(adj, e, best.v)
+		else:  # the line ends against the middle of a stretch: split it there
+			var n := nodes.size()
+			nodes.append(pt)
+			adj.append([])
+			adj[best.u].erase(best.v)
+			adj[best.v].erase(best.u)
+			_link(adj, best.u, n)
+			_link(adj, n, best.v)
+			_link(adj, e, n)
+	_rail_cache = {"key": key, "net": {"nodes": nodes, "adj": adj}}
+	return _rail_cache.net
+
+static func _link(adj: Array, a: int, b: int) -> void:
+	if a == b:
+		return
+	if not adj[a].has(b):
+		adj[a].append(b)
+	if not adj[b].has(a):
+		adj[b].append(a)

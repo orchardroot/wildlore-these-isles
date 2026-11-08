@@ -1,0 +1,24 @@
+{"id": "dandylion",
+ "palette": {"mane": "#fbd630", "mane2": "#e8a014", "face": "#f3b030", "leaf": "#58a634", "leaf2": "#3a7a22", "nose": "#a84a1c", "tooth": "#fff8e0"},
+ "layers": [
+  {"shape": "poly", "points": [[72, 84], [90, 70], [96, 52], [92, 74], [84, 90]], "colour": "leaf", "rim": true},
+  {"shape": "poly", "points": [[78, 84], [92, 88], [88, 96]], "colour": "leaf2", "rim": false},
+  {"shape": "ellipse", "at": [48, 80], "size": [44, 32], "colour": "face"},
+  {"shape": "ellipse", "at": [28, 90], "size": [18, 10], "colour": "leaf", "mirror": true},
+  {"shape": "spikes", "at": [48, 40], "size": [76, 70], "colour": "mane2", "count": 22, "len": 10, "seed": 5, "from": 0, "to": 360},
+  {"shape": "circle", "at": [48, 40], "r": 32, "colour": "mane", "pattern": "speckle", "pcolour": "mane2", "density": 14},
+  {"shape": "circle", "at": [22, 18], "r": 7, "colour": "face", "mirror": true},
+  {"shape": "circle", "at": [48, 44], "r": 23, "colour": "face"},
+  {"shape": "ellipse", "at": [48, 54], "size": [20, 14], "colour": "#f8dc88", "rim": false},
+  {"shape": "poly", "points": [[44, 48], [52, 48], [48, 54]], "colour": "nose", "rim": false},
+  {"shape": "poly", "points": [[40, 60], [43, 66], [46, 60]], "colour": "tooth", "rim": false, "shade": false},
+  {"shape": "poly", "points": [[50, 60], [53, 66], [56, 60]], "colour": "tooth", "rim": false, "shade": false}
+ ],
+ "face_layers": [
+  {"shape": "line", "points": [[48, 54], [48, 58]], "width": 1.2, "colour": "#6a2a10", "shade": false},
+  {"shape": "line", "points": [[40, 58], [48, 60], [56, 58]], "width": 1.2, "colour": "#6a2a10", "shade": false}
+ ],
+ "eyes": [
+  {"at": [38, 38], "r": 4.4, "mirror": true, "colour": "#2a1808"}
+ ]
+}

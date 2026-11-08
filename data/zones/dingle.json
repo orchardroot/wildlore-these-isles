@@ -1088,7 +1088,9 @@
     "min": 55,
     "max": 55,
     "weight": 15
-   }
+   },
+   {"species": "dishfin", "min": 55, "max": 57, "weight": 6, "season": ["summer"]},
+   {"species": "barnaclet", "min": 55, "max": 57, "weight": 10}
   ]
  },
  "signs": [

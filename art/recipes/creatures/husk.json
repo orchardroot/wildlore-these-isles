@@ -1,0 +1,19 @@
+{"id": "husk",
+ "palette": {"case": "#a47a50", "case2": "#6e4a2c", "hi": "#d8b078", "horn": "#4a3220", "slit": "#1a0e08", "glow": "#f8e890"},
+ "layers": [
+  {"shape": "poly", "points": [[36, 22], [30, 6], [42, 16]], "colour": "horn", "rim": false},
+  {"shape": "poly", "points": [[60, 22], [66, 6], [54, 16]], "colour": "horn", "rim": false},
+  {"shape": "poly", "points": [[30, 40], [34, 20], [48, 14], [62, 20], [66, 40], [60, 76], [48, 96], [36, 76]], "colour": "case", "pattern": "stripes", "pcolour": "case2", "period": 6, "pangle": 0},
+  {"shape": "ellipse", "at": [40, 36], "size": [10, 24], "colour": "hi", "rim": false, "shade": false, "angle": 10},
+  {"shape": "ellipse", "at": [48, 40], "size": [28, 22], "colour": "slit"},
+  {"shape": "line", "points": [[18, 58], [30, 52]], "width": 2, "colour": "case2", "shade": false},
+  {"shape": "line", "points": [[78, 58], [66, 52]], "width": 2, "colour": "case2", "shade": false},
+  {"shape": "line", "points": [[20, 70], [32, 66]], "width": 2, "colour": "case2", "shade": false},
+  {"shape": "line", "points": [[76, 70], [64, 66]], "width": 2, "colour": "case2", "shade": false}
+ ],
+ "eyes": [
+  {"at": [42, 40], "r": 4.2, "colour": "#f8e890", "mirror": true}
+ ],
+ "anim": "squash",
+ "bob": 1.5
+}

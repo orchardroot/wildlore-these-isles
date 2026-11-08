@@ -1,0 +1,170 @@
+{
+ "line": "whorlet",
+ "species": [
+  {
+   "id": "whorlet",
+   "appendix": true,
+   "name": "Whorlet",
+   "types": [
+    "bog",
+    "stone"
+   ],
+   "base": {
+    "hp": 55,
+    "atk": 40,
+    "def": 70,
+    "lore": 40,
+    "ward": 60,
+    "spd": 45
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "pebble_flick"
+    ],
+    [
+     4,
+     "grit_in_eye"
+    ],
+    [
+     8,
+     "peat_spit"
+    ],
+    [
+     12,
+     "hunker"
+    ],
+    [
+     16,
+     "sphagnum_sponge"
+    ],
+    [
+     20,
+     "boulder_bump"
+    ],
+    [
+     26,
+     "hard_hat"
+    ],
+    [
+     32,
+     "millstone_drop"
+    ]
+   ],
+   "evolves": {
+    "to": "shellhaven",
+    "level": 20
+   },
+   "habitat": [
+    "macc_forest",
+    "goyt_valley",
+    "chat_moss"
+   ],
+   "dex": {
+    "text": "A small snail with a swirly shell and a very large sense of home. It will not be hurried, and it will not be argued out of the rain.",
+    "fact": "A garden snail's shell grows with it from the day it hatches, and the snail cannot leave it, because the body is anchored inside."
+   },
+   "sprite": "whorlet",
+   "real": "A garden snail has a ribbon of thousands of tiny teeth, called a radula, which it uses to rasp its way through a salad.",
+   "names": {
+    "cy": "malwen",
+    "ga": "seilide",
+    "gd": "seilcheag"
+   }
+  },
+  {
+   "id": "shellhaven",
+   "appendix": true,
+   "name": "Shellhaven",
+   "types": [
+    "bog",
+    "stone"
+   ],
+   "base": {
+    "hp": 85,
+    "atk": 60,
+    "def": 112,
+    "lore": 70,
+    "ward": 95,
+    "spd": 63
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 150,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "pebble_flick"
+    ],
+    [
+     4,
+     "grit_in_eye"
+    ],
+    [
+     8,
+     "peat_spit"
+    ],
+    [
+     12,
+     "hunker"
+    ],
+    [
+     16,
+     "sphagnum_sponge"
+    ],
+    [
+     20,
+     "boulder_bump"
+    ],
+    [
+     26,
+     "hard_hat"
+    ],
+    [
+     30,
+     "bog_drag"
+    ],
+    [
+     32,
+     "millstone_drop"
+    ],
+    [
+     36,
+     "cairn_stack"
+    ],
+    [
+     40,
+     "snug_as_a_bug"
+    ],
+    [
+     46,
+     "megalith_mutter"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "Has been extended, thatched and given a chimney, and the planning officer is still pretending not to notice. Smoke curls out when it feels cosy.",
+    "fact": "In dry spells a snail can seal its shell mouth with a skin of dried slime, called an epiphragm, and sit tight until it rains."
+   },
+   "sprite": "shellhaven",
+   "real": "Snails are slow but not idle: a garden snail can sense smells through its upper tentacles and its eyes sit at the tips of them.",
+   "names": {
+    "cy": "malwen",
+    "ga": "seilide",
+    "gd": "seilcheag"
+   }
+  }
+ ]
+}

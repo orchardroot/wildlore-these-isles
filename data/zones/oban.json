@@ -1052,7 +1052,8 @@
      "gale",
      "downpour"
     ]
-   }
+   },
+   {"species": "slipknot", "min": 69, "max": 71, "weight": 8, "time": ["night"]}
   ]
  },
  "signs": [

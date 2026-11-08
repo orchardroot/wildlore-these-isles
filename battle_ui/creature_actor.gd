@@ -9,9 +9,12 @@ var sprite: Sprite3D
 var shadow: MeshInstance3D
 var home := Vector3.ZERO
 var _t := randf() * 4.0
+var _phase := randf() * 3.0
 var _squash := Vector3.ONE   # extra scale applied by tweens
 var _tween: Tween
 var marker: MeshInstance3D  # the bobbing arrow over a creature being picked as a target (doubles)
+var motion := "bob"         # how this creature moves (see Motion): idle, lunge and shadow follow it
+signal thump(strength: float)  # a heavy creature landed a charge: the diorama nudges the camera
 var coat := ""              # an uncommon coat: it glints as it pops in (see CoatArt)
 
 static var _blob: GradientTexture2D
@@ -64,6 +67,7 @@ func show_creature(c: Creature, is_back: bool) -> void:
 	sprite.texture = CoatArt.texture(base_tex, "%s/%s#%s" % [stem, is_back, c.form], c.variant)
 	fit_sheet()
 	coat = c.variant
+	motion = Motion.style_for(c.species)
 	sprite.visible = true
 	sprite.modulate = Color(1.12, 1.12, 1.12)
 	_squash = Vector3.ONE
@@ -91,8 +95,13 @@ func _process(delta: float) -> void:
 		marker.position.y = HEIGHT + 0.55 + sin(_t * 6.0) * 0.12
 		marker.rotation.y += delta * 2.0
 	var breathe := 1.0 + sin(_t * 2.6) * 0.012
-	sprite.scale = Vector3(_squash.x / breathe, _squash.y * breathe, 1.0)
-	shadow.scale = Vector3(_squash.x, 1.0, _squash.x)
+	var idle := Motion.idle(motion, _t, _phase)
+	var off: Vector2 = idle.pos
+	var sq: Vector2 = idle.squash
+	sprite.position = Vector3(off.x, off.y, 0.0)
+	sprite.scale = Vector3(_squash.x * sq.x / breathe, _squash.y * sq.y * breathe, 1.0)
+	var sh: float = idle.shadow  # the shadow shrinks and fades as it rises, and breathes
+	shadow.scale = Vector3(_squash.x * sh, 1.0, _squash.x * sh)
 
 func _kill() -> void:
 	if _tween and _tween.is_valid():
@@ -123,16 +132,44 @@ func pop_out() -> void:
 	sprite.visible = false
 	shadow.visible = false
 
-## Dash towards `to` and back.
+## Attack towards `to` and back, in this creature's own manner: fliers swoop in an arc, slitherers strike low and
+## fast, heavy ones wind up and charge (and shake the camera), hoppers leap. Everything else dashes.
 func lunge(to: Vector3) -> void:
 	_kill()
 	var dir := (to - home)
 	dir.y = 0
 	dir = dir.normalized()
 	_tween = create_tween().set_trans(Tween.TRANS_QUAD)
-	_tween.tween_property(self, "position", home - dir * 0.25, 0.12).set_ease(Tween.EASE_OUT)
-	_tween.tween_property(self, "position", home + dir * 1.4, 0.11).set_ease(Tween.EASE_IN)
-	_tween.tween_property(self, "position", home, 0.22).set_ease(Tween.EASE_OUT)
+	match Motion.lunge_kind(motion):
+		"swoop":
+			_tween.tween_property(self, "position", home - dir * 0.2 + Vector3(0, 0.9, 0), 0.14).set_ease(Tween.EASE_OUT)
+			_tween.tween_property(self, "position", home + dir * 1.4 + Vector3(0, 0.1, 0), 0.12).set_ease(Tween.EASE_IN)
+			_tween.tween_property(self, "position", home, 0.24).set_ease(Tween.EASE_OUT)
+		"strike":
+			_tween.tween_property(self, "position", home - dir * 0.45, 0.14).set_ease(Tween.EASE_OUT)
+			_tween.parallel().tween_property(self, "_squash", Vector3(0.9, 1.12, 1.0), 0.14)
+			_tween.tween_property(self, "position", home + dir * 1.5, 0.07).set_ease(Tween.EASE_IN)
+			_tween.parallel().tween_property(self, "_squash", Vector3(1.15, 0.9, 1.0), 0.07)
+			_tween.tween_property(self, "position", home, 0.26).set_ease(Tween.EASE_OUT)
+			_tween.parallel().tween_property(self, "_squash", Vector3.ONE, 0.26)
+		"charge":
+			_tween.tween_property(self, "position", home - dir * 0.35, 0.2).set_ease(Tween.EASE_OUT)
+			_tween.parallel().tween_property(self, "_squash", Vector3(1.08, 0.88, 1.0), 0.2)
+			_tween.tween_property(self, "position", home + dir * 1.5, 0.15).set_ease(Tween.EASE_IN)
+			_tween.parallel().tween_property(self, "_squash", Vector3.ONE, 0.15)
+			_tween.tween_callback(func(): thump.emit(1.0))
+			_tween.tween_property(self, "position", home, 0.3).set_ease(Tween.EASE_OUT)
+		"leap":
+			_tween.tween_property(self, "_squash", Vector3(1.12, 0.85, 1.0), 0.1)
+			_tween.tween_property(self, "position", home + dir * 0.7 + Vector3(0, 1.0, 0), 0.12).set_ease(Tween.EASE_OUT)
+			_tween.parallel().tween_property(self, "_squash", Vector3(0.92, 1.1, 1.0), 0.12)
+			_tween.tween_property(self, "position", home + dir * 1.4, 0.1).set_ease(Tween.EASE_IN)
+			_tween.parallel().tween_property(self, "_squash", Vector3.ONE, 0.1)
+			_tween.tween_property(self, "position", home, 0.22).set_ease(Tween.EASE_OUT)
+		_:
+			_tween.tween_property(self, "position", home - dir * 0.25, 0.12).set_ease(Tween.EASE_OUT)
+			_tween.tween_property(self, "position", home + dir * 1.4, 0.11).set_ease(Tween.EASE_IN)
+			_tween.tween_property(self, "position", home, 0.22).set_ease(Tween.EASE_OUT)
 	await _tween.finished
 
 ## Rear up and settle: the wind-up for a special, status or weather move (no dash). Not awaited by BattleFX.

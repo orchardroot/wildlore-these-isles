@@ -1,0 +1,159 @@
+{
+ "line": "barnaclet",
+ "species": [
+  {
+   "id": "barnaclet",
+   "appendix": true,
+   "name": "Barnaclet",
+   "types": [
+    "tide",
+    "kin"
+   ],
+   "base": {
+    "hp": 50,
+    "atk": 40,
+    "def": 70,
+    "lore": 45,
+    "ward": 60,
+    "spd": 45
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "crab_pinch"
+    ],
+    [
+     1,
+     "brine_spray"
+    ],
+    [
+     4,
+     "barnacle_glue"
+    ],
+    [
+     8,
+     "chatter"
+    ],
+    [
+     12,
+     "scrap"
+    ],
+    [
+     16,
+     "sea_fret"
+    ],
+    [
+     20,
+     "barge"
+    ],
+    [
+     25,
+     "tide_tables"
+    ]
+   ],
+   "evolves": {
+    "to": "barnagoose",
+    "level": 40
+   },
+   "habitat": [
+    "gower",
+    "dingle",
+    "antrim_coast",
+    "galloway"
+   ],
+   "dex": {
+    "text": "A goose-neck barnacle on a plank of driftwood, with a long neck and a hopeful expression. If you wait, it might hatch into something with feathers.",
+    "fact": "Medieval people believed barnacle geese grew from goose barnacles on driftwood, and so the church treated the geese as fish for fast days."
+   },
+   "sprite": "barnaclet",
+   "real": "Goose barnacles are crustaceans, relatives of crabs, and as adults spend their lives glued by their heads to one spot.",
+   "names": {
+    "ga": "gé ghiúrainn"
+   }
+  },
+  {
+   "id": "barnagoose",
+   "appendix": true,
+   "name": "Barnagoose",
+   "types": [
+    "tide",
+    "kin"
+   ],
+   "base": {
+    "hp": 75,
+    "atk": 75,
+    "def": 90,
+    "lore": 70,
+    "ward": 85,
+    "spd": 95
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 160,
+   "learnset": [
+    [
+     1,
+     "crab_pinch"
+    ],
+    [
+     1,
+     "brine_spray"
+    ],
+    [
+     4,
+     "barnacle_glue"
+    ],
+    [
+     8,
+     "chatter"
+    ],
+    [
+     12,
+     "scrap"
+    ],
+    [
+     16,
+     "sea_fret"
+    ],
+    [
+     20,
+     "barge"
+    ],
+    [
+     25,
+     "tide_tables"
+    ],
+    [
+     30,
+     "seal_slap"
+    ],
+    [
+     34,
+     "gull_scream"
+    ],
+    [
+     38,
+     "spring_tide"
+    ],
+    [
+     44,
+     "mums_look"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "Hatched out of its plank at last, all black neck and white face, and very sure that this is the right way round. Gerald of Wales would be thrilled.",
+    "fact": "Gerald of Wales wrote about barnacle geese in the twelfth century, and the real birds breed in the Arctic and winter in places such as the Solway Firth and Islay."
+   },
+   "sprite": "barnagoose",
+   "real": "The real barnacle goose nests on cliff ledges in the Arctic, and its goslings jump from the cliff a few days after hatching.",
+   "names": {
+    "ga": "gé ghiúrainn"
+   }
+  }
+ ]
+}

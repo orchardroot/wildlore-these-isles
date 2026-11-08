@@ -1,0 +1,32 @@
+{"id": "moladisc",
+ "palette": {"body": "#8e94a4", "body2": "#5c6478", "belly": "#c4cad6", "fin": "#6a7488", "pink": "#d89098", "gull": "#f4f4f0", "gull2": "#8c98a8", "beak": "#e8b030"},
+ "layers": [
+  {"shape": "poly", "points": [[36, 24], [54, 0], [68, 28]], "colour": "fin"},
+  {"shape": "poly", "points": [[36, 76], [54, 98], [68, 72]], "colour": "fin"},
+  {"shape": "ellipse", "at": [88, 50], "size": [16, 56], "colour": "fin", "pattern": "stripes", "pcolour": "body2", "period": 4, "pangle": 90},
+  {"shape": "ellipse", "at": [46, 52], "size": [82, 74], "colour": "body", "pattern": "speckle", "pcolour": "body2", "density": 20},
+  {"shape": "ellipse", "at": [40, 70], "size": [52, 24], "colour": "belly", "rim": false, "shade": false, "angle": 10},
+  {"shape": "ellipse", "at": [54, 62], "size": [20, 12], "colour": "fin", "angle": 30},
+  {"shape": "circle", "at": [12, 58], "r": 5.5, "colour": "pink"},
+  {"shape": "circle", "at": [36, 36], "r": 2.6, "colour": "body2", "rim": false, "shade": false},
+  {"shape": "circle", "at": [52, 30], "r": 3, "colour": "body2", "rim": false, "shade": false},
+  {"shape": "circle", "at": [60, 46], "r": 2.4, "colour": "body2", "rim": false, "shade": false},
+  {"shape": "circle", "at": [70, 60], "r": 2.8, "colour": "body2", "rim": false, "shade": false},
+  {"shape": "circle", "at": [48, 48], "r": 2, "colour": "body2", "rim": false, "shade": false},
+  {"shape": "ellipse", "at": [50, 12], "size": [16, 10], "colour": "gull"},
+  {"shape": "circle", "at": [42, 9], "r": 4, "colour": "gull"},
+  {"shape": "poly", "points": [[38, 9], [33, 10], [38, 12]], "colour": "beak", "rim": false},
+  {"shape": "ellipse", "at": [54, 13], "size": [10, 6], "colour": "gull2", "rim": false}
+ ],
+ "face_layers": [
+  {"shape": "circle", "at": [12, 58], "r": 1.8, "colour": "#6a2a38", "shade": false, "rim": false},
+  {"shape": "circle", "at": [22, 62], "r": 3.4, "colour": "#f4a0a0", "shade": false, "rim": false},
+  {"shape": "line", "points": [[14, 38], [28, 36]], "width": 1.6, "colour": "#4a5468", "shade": false}
+ ],
+ "eyes": [
+  {"at": [26, 46], "r": 5.5, "colour": "#2a2a3a"},
+  {"at": [42, 9], "r": 1.6, "colour": "#1a1a1a"}
+ ],
+ "anim": "shift",
+ "bob": 2.0
+}

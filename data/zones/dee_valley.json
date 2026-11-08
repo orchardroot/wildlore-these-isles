@@ -611,7 +611,8 @@
     "max": 24,
     "weight": 10,
     "time": ["dawn", "day", "dusk"]
-   }
+   },
+   {"species": "brammel", "min": 22, "max": 24, "weight": 12, "season": ["summer", "autumn"]}
   ],
   "water": [
    {

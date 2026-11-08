@@ -1,0 +1,24 @@
+{"id": "barnagoose",
+ "palette": {"plate": "#ece8f6", "plate2": "#b4a8d8", "wood": "#9a7c5a", "wood2": "#6e5438", "black": "#1c1c26", "white": "#f6f6f2", "grey": "#9ca6b6", "grey2": "#6a7486", "beak": "#2a2a2a", "foot": "#3a3a44"},
+ "layers": [
+  {"shape": "ellipse", "at": [48, 92], "size": [92, 10], "colour": "wood", "pattern": "stripes", "pcolour": "wood2", "period": 5, "pangle": 8},
+  {"shape": "poly", "points": [[26, 84], [32, 70], [48, 64], [64, 70], [70, 84]], "colour": "plate", "pattern": "stripes", "pcolour": "plate2", "period": 7, "pangle": 75},
+  {"shape": "poly", "points": [[48, 64], [42, 84], [54, 84]], "colour": "plate2", "rim": false, "shade": false},
+  {"shape": "ellipse", "at": [48, 62], "size": [58, 44], "colour": "grey", "pattern": "stripes", "pcolour": "grey2", "period": 5, "pangle": 10},
+  {"shape": "ellipse", "at": [14, 62], "size": [16, 30], "colour": "grey2", "angle": 20},
+  {"shape": "ellipse", "at": [82, 62], "size": [16, 30], "colour": "grey2", "angle": -20},
+  {"shape": "ellipse", "at": [48, 66], "size": [26, 28], "colour": "white"},
+  {"shape": "ellipse", "at": [48, 46], "size": [24, 26], "colour": "black"},
+  {"shape": "rect", "at": [48, 32], "size": [16, 28], "colour": "black", "round": 6},
+  {"shape": "circle", "at": [48, 20], "r": 12, "colour": "black"},
+  {"shape": "ellipse", "at": [48, 22], "size": [16, 12], "colour": "white"},
+  {"shape": "ellipse", "at": [48, 15], "size": [10, 5], "colour": "white", "rim": false, "shade": false},
+  {"shape": "poly", "points": [[44, 26], [48, 33], [52, 26]], "colour": "beak", "rim": false}
+ ],
+ "face_layers": [
+  {"shape": "line", "points": [[41, 19], [55, 19]], "width": 1.6, "colour": "#1c1c26", "shade": false}
+ ],
+ "eyes": [
+  {"at": [42, 21], "r": 2.6, "mirror": true, "colour": "#1a1010"}
+ ]
+}

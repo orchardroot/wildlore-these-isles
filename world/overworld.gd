@@ -246,6 +246,7 @@ func _build_zone_node() -> void:
 	Viaduct.dress(zone, _zone_node)  # railway viaducts striding across (Castlefield)
 	OccluderFade.dress(zone, _zone_node, player)  # buildings between the camera and you go see-through
 	PoiScene.dress(zone, _zone_node, Game.data, self)  # question marks: dens, camps, stones, caches
+	FieldSpot.dress(zone, _zone_node, Game.data, self)  # field pieces: a gap in a wall, sheep at a gate, a molehill
 	Forage.dress(zone, _zone_node, Game.data)  # hedgerow pickings and crafting benches
 	TrailsScene.dress(zone, _zone_node, Game.data)  # a paper on the table, a dig spot where a trail ends
 	CreatureJobsScene.dress(zone, _zone_node, Game.data)  # spots where your lead creature can do a job
@@ -500,6 +501,8 @@ func interact(p: Vector2i) -> void:
 	if await LooksMirror.interact(self, p):  # a mirror: the Wardrobe, hair included
 		return
 	if await PoiScene.interact(self, p):  # a den, camp, stone or cache on a route
+		return
+	if await FieldSpot.interact(self, p):  # a field piece's nook (wave 48)
 		return
 	if await SearchScene.interact(self, p):  # furniture in a room: go through it (wave 47)
 		return

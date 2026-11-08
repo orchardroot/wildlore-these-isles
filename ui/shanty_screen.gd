@@ -67,7 +67,9 @@ func _process(delta: float) -> void:
 		_finished = true
 		var hits := Shanties.hits_of(_results)
 		_refresh()
-		get_tree().create_timer(1.2).timeout.connect(func(): close({"hits": hits, "pulls": _targets.size()}))
+		get_tree().create_timer(1.2).timeout.connect(func():
+			await PiecePrompt.after_game(self, "shanty", 100.0 * hits / maxf(1.0, float(_targets.size())))
+			close({"hits": hits, "pulls": _targets.size()}))
 	_refresh()
 	_stage.queue_redraw()
 

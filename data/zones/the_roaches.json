@@ -401,7 +401,8 @@
     "season": [
      "winter"
     ]
-   }
+   },
+   {"species": "leatherjack", "min": 8, "max": 10, "weight": 12}
   ],
   "water": [
    {

@@ -635,7 +635,8 @@
     "weather": [
      "gale"
     ]
-   }
+   },
+   {"species": "barnaclet", "min": 33, "max": 35, "weight": 10}
   ]
  },
  "signs": [

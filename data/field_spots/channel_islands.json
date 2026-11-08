@@ -1,0 +1,90 @@
+[
+ {
+  "id": "fs_guernsey_country_charm",
+  "zone": "guernsey_country",
+  "x": 47,
+  "y": 28,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_guernsey_country_charm",
+  "at": "guernsey_country"
+ },
+ {
+  "id": "fs_guernsey_country_roll",
+  "zone": "guernsey_country",
+  "x": 12,
+  "y": 19,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Aneroid Barometer.",
+  "reward": {
+   "curio": "barometer"
+  },
+  "flag": "field_guernsey_country_roll",
+  "at": "guernsey_country"
+ },
+ {
+  "id": "fs_jersey_country_loft",
+  "zone": "jersey_country",
+  "x": 42,
+  "y": 38,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: Sloes.",
+  "reward": {
+   "item": "sloes",
+   "qty": 1
+  },
+  "flag": "field_jersey_country_loft",
+  "at": "jersey_country"
+ },
+ {
+  "id": "fs_jersey_country_snorkel",
+  "zone": "jersey_country",
+  "x": 7,
+  "y": 5,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "The bog water is dark and cold. {lead} ploughs through it with its face down and surfaces holding Burn Water Flask.",
+  "reward": {
+   "item": "burn_water_flask",
+   "qty": 1
+  },
+  "flag": "field_jersey_country_snorkel",
+  "at": "jersey_country"
+ },
+ {
+  "id": "fs_st_helier_roll",
+  "zone": "st_helier",
+  "x": 28,
+  "y": 15,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up a roll of notes.",
+  "reward": {
+   "money": 1410
+  },
+  "flag": "field_st_helier_roll",
+  "at": "st_helier"
+ },
+ {
+  "id": "fs_st_peter_port_line",
+  "zone": "st_peter_port",
+  "x": 44,
+  "y": 47,
+  "field": "line",
+  "prop": "glint",
+  "text": "A glint under the surface, just out of reach. {lead} hooks it with patience and a bit of reed. It is Sea Glass.",
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "field_st_peter_port_line",
+  "at": "st_peter_port"
+ }
+]

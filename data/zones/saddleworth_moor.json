@@ -129,7 +129,8 @@
      "dusk",
      "night"
     ]
-   }
+   },
+   {"species": "dishwight", "min": 14, "max": 16, "weight": 8, "time": ["dusk", "night"]}
   ],
   "water": [
    {
@@ -670,6 +671,16 @@
    "facing": "right",
    "move": "still",
    "trainer": "pennines_boater"
+  },
+  {
+   "id": "moor_wang_steward",
+   "sprite": "farmer",
+   "x": 27,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "moor_wang_steward",
+   "name": "Wang Steward"
   }
  ],
  "signs": [
@@ -760,6 +771,13 @@
    "text": "Oldham grew on cotton. By the late 1800s it had more spinning mills than almost anywhere on Earth, and folk said it spun more cotton than France and Germany put together. You can still count the chimneys from up on the moor.",
    "plaque": "pennines_oldham_cotton",
    "title": "Cotton Town"
+  },
+  {
+   "x": 29,
+   "y": 22,
+   "plaque": "welly_upperthong",
+   "title": "Welly Wanging",
+   "text": "WELLY WANGING. To wang is Northern dialect for to throw. The Upperthong boot-throwing contest near Holmfirth in West Yorkshire has a field, a tea tent, and a great many wellingtons that are never seen again."
   }
  ],
  "rows": [

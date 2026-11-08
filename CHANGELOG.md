@@ -2,6 +2,58 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.1: Party Pieces
+
+Every game in the isles now teaches your creatures something. Win a rosette at the darts, the caber or the gurning
+and your lead picks up a move named after it, and some of those moves open the way out in the world.
+
+**Party pieces (the new TMs)**
+- **A move for every game.** Thirty-three minigames, from darts and crown green bowls to the pub quiz and the science
+  fair, each teach a themed move: Treble Twenty, Plain Bob, Toss the Caber, Soaked in Vinegar, Cryptic Clue.
+- **Rosettes.** Bronze for taking part, silver teaches the piece, and gold means you beat the local master, who pays
+  £150 the first time.
+- **The Party Pieces page.** A new Almanac page lists every game, where it's played, your best, your rosette and the
+  move it teaches. A piece you've won can be taught again to anyone in the team who can learn it, free.
+- **Pieces that look like themselves.** A piece in battle gets its own flourish first: a skimmed stone hopping
+  across, three darts in a tight group, a caber turning end over end, bell notes, a dry-stone wall going up.
+
+**Field pieces (the new HMs)**
+- **Nooks off the path.** Around 240 spots across 22 regions: a gap in a wall that needs mending, a felled trunk, a
+  pond to skim across, sheep in the lane, a fen to snorkel, a river to paddle by coracle, a cheese-rolling slope.
+- **Know the piece, clear the way.** A creature in your team who knows the right piece deals with it, and there's
+  usually something on the other side. Don't know it yet? The hint names the piece and where it's taught. The map
+  marks the ones you've seen and ticks the ones you've done.
+
+**Ten new games, at the places they really happen**
+- **Sheepdog trials** in Macclesfield Forest and the Lakes, and **worm charming** at Willaston, Cheshire.
+- **Cheese rolling** down Cooper's Hill, and the **pancake race** along Olney's High Street on Shrove Tuesday.
+- **Bog snorkelling** at Llanwrtyd Wells, and **coracle racing** on the Severn under the Iron Bridge.
+- **Road bowling** in Cork and Armagh, and **Poohsticks** in Oxford and on Ashdown Forest.
+- **Gurning** for the Egremont Crab Fair crowd, and **welly wanging** on Saddleworth Moor.
+- **The Isles Games League.** A card with a stamp for every game you've played, kept by the Games Secretary in
+  Keswick (and on the Party Pieces page). The Isles Games Society writes, with a postal order, at 10 and 20 stamps
+  and the full set.
+
+**Creatures**
+- **Thirty new species in fourteen lines**, all shapes the Fieldbook didn't have yet: a snail with a cottage on its
+  shell, a moon jellyfish, a hagfish tied in a knot, a teapot golem from Stoke, a boggart living in a Welsh dresser,
+  a post mill, a fen raft spider, a scarecrow, an ocean sunfish with a gull on it, a goose barnacle that hatches a
+  barnacle goose, a crane fly in three stages, and a dandelion that becomes a lion and then a clock.
+- **They move like themselves.** Nine styles of idle and attack: hoverers bob, hoppers hop, snakes slither, the big
+  ones stomp (and the camera feels it), moths flutter and rays drift. Your follower uses the same style.
+
+**Fixes and polish**
+- A wild creature whose regional form has more HP now starts the battle at full health.
+- The route line on the Map follows the railways and ferries you'd actually take.
+- A long move name cut short in the Summary is shown in full on the info line.
+- The Almanac's Papers page no longer loses its buttons after the first visit.
+
+| | |
+|---|---|
+| ![The Party Pieces page](docs/screens/w48-p-pieces.png) | ![Cheese rolling on Cooper's Hill](docs/screens/w48-g2-cheese-1.png) |
+| ![Sheepdog trials](docs/screens/w48-g1-sheepdog.png) | ![Coracle racing under the Iron Bridge](docs/screens/w48-g3-coracle.png) |
+| ![The gurning contest](docs/screens/w48-g5-gurning.png) | ![A wild Shellhaven](docs/screens/w48-m-battle-shellhaven.png) |
+
 ## What's new in 5.0: Every Door
 
 Every door in the isles now has a reason to be opened. Rummage the furniture, read what people leave on the table,

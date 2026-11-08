@@ -1,0 +1,158 @@
+{
+ "line": "slipknot",
+ "species": [
+  {
+   "id": "slipknot",
+   "appendix": true,
+   "name": "Slipknot",
+   "types": [
+    "tide",
+    "bog"
+   ],
+   "base": {
+    "hp": 55,
+    "atk": 50,
+    "def": 50,
+    "lore": 45,
+    "ward": 55,
+    "spd": 55
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "barnacle_glue"
+    ],
+    [
+     4,
+     "murky_gaze"
+    ],
+    [
+     8,
+     "peat_spit"
+    ],
+    [
+     12,
+     "rip_current"
+    ],
+    [
+     16,
+     "bog_cotton_wrap"
+    ],
+    [
+     20,
+     "bog_drag"
+    ],
+    [
+     26,
+     "tidal_surge"
+    ],
+    [
+     32,
+     "sphagnum_sponge"
+    ]
+   ],
+   "evolves": {
+    "to": "gordian",
+    "level": 72
+   },
+   "habitat": [
+    "oban",
+    "tobermory",
+    "portree"
+   ],
+   "dex": {
+    "text": "More knot than creature, and entirely at ease with that. If you manage to pick it up, it will not be in your hands for long.",
+    "fact": "Hagfish tie themselves into knots, which helps them wipe off their own slime and get leverage on food."
+   },
+   "sprite": "slipknot",
+   "real": "A hagfish in trouble can turn the water around it to slime in a fraction of a second.",
+   "names": {}
+  },
+  {
+   "id": "gordian",
+   "appendix": true,
+   "name": "Gordian",
+   "types": [
+    "tide",
+    "bog"
+   ],
+   "base": {
+    "hp": 80,
+    "atk": 80,
+    "def": 75,
+    "lore": 60,
+    "ward": 95,
+    "spd": 100
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 165,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "barnacle_glue"
+    ],
+    [
+     4,
+     "murky_gaze"
+    ],
+    [
+     8,
+     "peat_spit"
+    ],
+    [
+     12,
+     "rip_current"
+    ],
+    [
+     16,
+     "bog_cotton_wrap"
+    ],
+    [
+     20,
+     "bog_drag"
+    ],
+    [
+     26,
+     "tidal_surge"
+    ],
+    [
+     32,
+     "sphagnum_sponge"
+    ],
+    [
+     40,
+     "worm_coil"
+    ],
+    [
+     46,
+     "undertow"
+    ],
+    [
+     52,
+     "wave_sweeper"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "Tied itself in a knot so tight that nobody, including Alexander the Great, is going to try cutting it. Smells of the sea bottom and holds a grudge.",
+    "fact": "Hagfish have no jaws; they feed by rasping with toothed plates on their tongue, often on dead fish on the sea floor."
+   },
+   "sprite": "gordian",
+   "real": "Hagfish live on the cold seabed, including in Scottish sea lochs, and are not true eels.",
+   "names": {}
+  }
+ ]
+}

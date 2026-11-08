@@ -1,0 +1,59 @@
+[
+ {
+  "id": "fs_chat_moss_snorkel",
+  "zone": "chat_moss",
+  "x": 51,
+  "y": 31,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, a roll of notes.",
+  "reward": {
+   "money": 660
+  },
+  "flag": "field_chat_moss_snorkel",
+  "at": "chat_moss"
+ },
+ {
+  "id": "fs_chat_moss_loft",
+  "zone": "chat_moss",
+  "x": 31,
+  "y": 24,
+  "field": "loft",
+  "prop": "bale",
+  "text": "The bowl sails over the bend like it knew the road. {lead} trots after it, and finds Sloes in the grass.",
+  "reward": {
+   "item": "sloes",
+   "qty": 1
+  },
+  "flag": "field_chat_moss_loft",
+  "at": "chat_moss"
+ },
+ {
+  "id": "fs_manchester_topple",
+  "zone": "manchester",
+  "x": 30,
+  "y": 3,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "A dead tree, waiting for an excuse. {lead} supplies one. In the roots, undisturbed for years: some loose change and a gratitude card.",
+  "reward": {
+   "money": 600
+  },
+  "flag": "field_manchester_topple",
+  "at": "manchester"
+ },
+ {
+  "id": "fs_manchester_mend",
+  "zone": "manchester",
+  "x": 50,
+  "y": 48,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in the wall, where the stones have gone for a walk. {lead} fits them back one by one, like a very slow jigsaw. Tucked in the wall behind: some loose change and a gratitude card.",
+  "reward": {
+   "money": 600
+  },
+  "flag": "field_manchester_mend",
+  "at": "manchester"
+ }
+]

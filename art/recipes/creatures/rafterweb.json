@@ -1,0 +1,31 @@
+{"id": "rafterweb",
+ "palette": {"body": "#5a4a22", "body2": "#3e3218", "stripe": "#f6e8b0", "pad": "#3e8a3e", "pad2": "#2e6a30", "water": "#7cc8d8", "leg": "#3a2e14", "log": "#8a6a40", "web": "#f0f6f8"},
+ "layers": [
+  {"shape": "ellipse", "at": [48, 90], "size": [94, 10], "colour": "water", "shade": false},
+  {"shape": "line", "points": [[10, 52], [48, 20], [88, 52]], "width": 0.8, "colour": "web", "shade": false, "rim": false},
+  {"shape": "line", "points": [[6, 70], [48, 28], [92, 70]], "width": 0.8, "colour": "web", "shade": false, "rim": false},
+  {"shape": "line", "points": [[16, 36], [48, 14], [80, 36]], "width": 0.8, "colour": "web", "shade": false, "rim": false},
+  {"shape": "rect", "at": [48, 86], "size": [64, 9], "colour": "log"},
+  {"shape": "line", "points": [[38, 48], [18, 26], [2, 38], [0, 70]], "width": 3.4, "colour": "leg", "mirror": true, "shade": false},
+  {"shape": "line", "points": [[40, 54], [10, 46], [0, 62], [2, 86]], "width": 3.4, "colour": "leg", "mirror": true, "shade": false},
+  {"shape": "line", "points": [[42, 60], [12, 70], [6, 84], [8, 94]], "width": 3.4, "colour": "leg", "mirror": true, "shade": false},
+  {"shape": "line", "points": [[44, 44], [34, 22], [22, 8], [6, 10]], "width": 3.4, "colour": "leg", "mirror": true, "shade": false},
+  {"shape": "ellipse", "at": [48, 64], "size": [36, 40], "colour": "body", "pattern": "speckle", "pcolour": "body2", "density": 12},
+  {"shape": "line", "points": [[32, 54], [30, 68], [36, 82]], "width": 3.2, "colour": "stripe", "mirror": true, "shade": false},
+  {"shape": "ellipse", "at": [48, 42], "size": [28, 24], "colour": "body"},
+  {"shape": "poly", "points": [[42, 52], [45, 60], [48, 52]], "colour": "stripe", "rim": false, "shade": false},
+  {"shape": "poly", "points": [[48, 52], [51, 60], [54, 52]], "colour": "stripe", "rim": false, "shade": false},
+  {"shape": "circle", "at": [40, 76], "r": 2, "colour": "water", "shade": false, "rim": false},
+  {"shape": "circle", "at": [58, 80], "r": 1.6, "colour": "water", "shade": false, "rim": false}
+ ],
+ "face_layers": [
+  {"shape": "circle", "at": [44, 34], "r": 1.4, "colour": "#f8ec9a", "shade": false, "rim": false},
+  {"shape": "circle", "at": [52, 34], "r": 1.4, "colour": "#f8ec9a", "shade": false, "rim": false},
+  {"shape": "circle", "at": [40, 36], "r": 1.2, "colour": "#f8ec9a", "shade": false, "rim": false},
+  {"shape": "circle", "at": [56, 36], "r": 1.2, "colour": "#f8ec9a", "shade": false, "rim": false}
+ ],
+ "eyes": [
+  {"at": [41, 42], "r": 4.6, "mirror": true, "colour": "#f2e4ac", "pupil": [2, 2.4]}
+ ],
+ "dimorph": {"f": {"palette": {}}, "m": {"set": {"9": {"size": [26, 30]}}, "palette": {"body": "#5a4620"}}}
+}

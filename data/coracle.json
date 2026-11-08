@@ -1,0 +1,19 @@
+{
+ "how": "Left and Right paddle on that side. Each stroke drives you forward and turns the boat away from it, so alternate sides to go straight; paddle one side and you will spin. Confirm braces the paddle and stops the spin. Steer through each pair of buoys; a missed gate costs three seconds.",
+ "venues": {
+  "ironbridge": {
+   "name": "The Severn at Ironbridge",
+   "prize": 12,
+   "style": "bridge",
+   "course": {"gates": 8, "first": 16.0, "step": 12.0, "gap": 10.0, "width": 22.0, "mid": 28.0, "bend": 8.0, "wave": 24.0},
+   "rival": {
+    "who": "Eustace, coracle maker's grandson",
+    "time": 30.0,
+    "spread": 3.0,
+    "intro": "Eustace carries his coracle on his back, like a very large hat, and sets it on the water as if it were nothing. It is not nothing. It has opinions.",
+    "beaten": "Eustace turns his coracle over to see if you have tampered with it. You haven't. He sits down on the bank to think about what has happened."
+   },
+   "real": "Coracles are round, woven boats covered in hide or tarred cloth, light enough to carry on your back, and they have been used on the Severn at Ironbridge for centuries. The real racing is at the Cilgerran Coracle Regatta on the River Teifi in west Wales, held in August, and the Ironbridge Gorge Museum keeps coracles too."
+  }
+ }
+}

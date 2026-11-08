@@ -1,0 +1,162 @@
+{
+ "line": "raftlet",
+ "species": [
+  {
+   "id": "raftlet",
+   "appendix": true,
+   "name": "Raftlet",
+   "types": [
+    "bog",
+    "brook"
+   ],
+   "base": {
+    "hp": 45,
+    "atk": 60,
+    "def": 45,
+    "lore": 40,
+    "ward": 45,
+    "spd": 75
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "rill_shot"
+    ],
+    [
+     4,
+     "murky_gaze"
+    ],
+    [
+     8,
+     "paddle_poke"
+    ],
+    [
+     12,
+     "sundew_snap"
+    ],
+    [
+     16,
+     "eddy_ripple"
+    ],
+    [
+     20,
+     "bog_drag"
+    ],
+    [
+     25,
+     "weir_shove"
+    ]
+   ],
+   "evolves": {
+    "to": "rafterweb",
+    "level": 42
+   },
+   "habitat": [
+    "somerset_levels",
+    "the_broads",
+    "the_fens"
+   ],
+   "dex": {
+    "text": "A long-legged spider that sits on a lily pad like a lifeguard, feeling for ripples. Do not mistake it for a friend of the flies.",
+    "fact": "The fen raft spider can run across the surface of the water, and can dive under it to escape or to hunt."
+   },
+   "sprite": "raftlet",
+   "real": "The fen raft spider is one of Britain's largest spiders and survives at only a few wetland sites.",
+   "names": {
+    "cy": "pry cop",
+    "ga": "damhán alla",
+    "gd": "damhan-allaidh"
+   }
+  },
+  {
+   "id": "rafterweb",
+   "appendix": true,
+   "name": "Rafterweb",
+   "types": [
+    "bog",
+    "brook"
+   ],
+   "base": {
+    "hp": 70,
+    "atk": 100,
+    "def": 70,
+    "lore": 60,
+    "ward": 70,
+    "spd": 115
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 155,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "rill_shot"
+    ],
+    [
+     4,
+     "murky_gaze"
+    ],
+    [
+     8,
+     "paddle_poke"
+    ],
+    [
+     12,
+     "sundew_snap"
+    ],
+    [
+     16,
+     "eddy_ripple"
+    ],
+    [
+     20,
+     "bog_drag"
+    ],
+    [
+     25,
+     "weir_shove"
+    ],
+    [
+     30,
+     "undertow"
+    ],
+    [
+     34,
+     "peat_hag"
+    ],
+    [
+     38,
+     "flash_flood"
+    ],
+    [
+     44,
+     "sphagnum_sponge"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "Sits on its raft of sticks, strung with silk, and feels every tadpole in the pond. It is very patient and entirely without pity.",
+    "fact": "A female fen raft spider carries her egg sac in her jaws, and then builds a nursery web for the spiderlings."
+   },
+   "sprite": "rafterweb",
+   "real": "Fen raft spiders catch small fish and tadpoles as well as insects, and are very sensitive to ripples on the water.",
+   "names": {
+    "cy": "pry cop",
+    "ga": "damhán alla",
+    "gd": "damhan-allaidh"
+   }
+  }
+ ]
+}

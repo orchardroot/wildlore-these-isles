@@ -754,6 +754,25 @@
    "x": 38,
    "y": 15,
    "item": "sloes"
+  },
+  {
+   "type": "buoy",
+   "x": 40,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "buoy",
+   "x": 44,
+   "y": 29,
+   "variant": 1
+  },
+  {
+   "type": "bunting",
+   "x": 39,
+   "y": 30,
+   "variant": 2,
+   "walk": true
   }
  ],
  "warps": [
@@ -895,6 +914,15 @@
    "facing": "left",
    "move": "still",
    "trainer": "ib_painter"
+  },
+  {
+   "id": "g3_coracle_racer",
+   "sprite": "currach_rower",
+   "x": 39,
+   "y": 31,
+   "facing": "right",
+   "move": "still",
+   "script": "g3_coracle_racer"
   }
  ],
  "encounters": {
@@ -971,7 +999,8 @@
     "min": 21,
     "max": 22,
     "weight": 8
-   }
+   },
+   {"species": "brewlet", "min": 21, "max": 23, "weight": 10}
   ],
   "water": [
    {
@@ -1095,6 +1124,11 @@
    "x": 3,
    "y": 32,
    "text": "WEST: Shrewsbury. NORTH: Coalbrookdale, the Wrekin. EAST over the Iron Bridge: Ironbridge, Blists Hill. SOUTH: Much Wenlock."
+  },
+  {
+   "x": 39,
+   "y": 33,
+   "text": "CORACLE RACE. Eight pairs of buoys down the Severn, round boat, one paddle. Mind the spin. The Iron Bridge is the finish."
   }
  ],
  "spawn": [

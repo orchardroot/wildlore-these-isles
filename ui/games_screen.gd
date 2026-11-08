@@ -148,7 +148,9 @@ func _finish(won: bool, score: int) -> void:
 	_result = {"won": won, "score": score}
 	_msg += "  " + ("Well played." if won else "Not this time.")
 	_refresh()
-	get_tree().create_timer(1.6).timeout.connect(func(): close(_result))
+	get_tree().create_timer(1.6).timeout.connect(func():
+		await PiecePrompt.after_game(self, _kind, float(score) if (won or _kind != "tug") else 0.0)
+		close(_result))
 
 func _on_cancel() -> void:
 	if _over:

@@ -1376,7 +1376,8 @@
     "min": 16,
     "max": 18,
     "weight": 6
-   }
+   },
+   {"species": "whorlet", "min": 15, "max": 17, "weight": 12, "weather": ["drizzle", "downpour", "fog"]}
   ],
   "water": [
    {

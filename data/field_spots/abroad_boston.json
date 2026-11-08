@@ -1,0 +1,15 @@
+[
+ {
+  "id": "fs_boston_loft",
+  "zone": "boston",
+  "x": 24,
+  "y": 29,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: a purse, a bit damp.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_boston_loft"
+ }
+]

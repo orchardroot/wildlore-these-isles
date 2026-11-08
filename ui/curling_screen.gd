@@ -249,6 +249,7 @@ func _finish() -> void:
 		_msg = "%s scores %d." % [_who(), int(sc.points)]
 	_refresh()
 	await get_tree().create_timer(2.0).timeout
+	await PiecePrompt.after_game(self, "curling", (2.0 if _rung >= (Curling.rink(_rink).get("skips", []) as Array).size() - 1 else 1.0) if won else 0.0)
 	close({"won": won})
 
 func _refresh() -> void:

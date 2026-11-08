@@ -1,0 +1,161 @@
+[
+ {
+  "id": "fs_anglesey_loft",
+  "zone": "anglesey",
+  "x": 25,
+  "y": 35,
+  "field": "loft",
+  "prop": "bale",
+  "text": "The bowl sails over the bend like it knew the road. {lead} trots after it, and finds Lucky Chip in the grass.",
+  "reward": {
+   "item": "lucky_chip",
+   "qty": 1
+  },
+  "flag": "field_anglesey_loft",
+  "at": "anglesey"
+ },
+ {
+  "id": "fs_anglesey_snorkel",
+  "zone": "anglesey",
+  "x": 37,
+  "y": 14,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "A peat pool, black as tea. {lead} dives in, flippers going, and comes up spluttering and delighted with a roll of notes.",
+  "reward": {
+   "money": 1560
+  },
+  "flag": "field_anglesey_snorkel",
+  "at": "anglesey"
+ },
+ {
+  "id": "fs_dee_valley_line",
+  "zone": "dee_valley",
+  "x": 28,
+  "y": 20,
+  "field": "line",
+  "prop": "glint",
+  "text": "{lead} peers into the water, then pulls out, with great ceremony, Roach.",
+  "reward": {
+   "item": "roach",
+   "qty": 1
+  },
+  "flag": "field_dee_valley_line",
+  "at": "dee_valley"
+ },
+ {
+  "id": "fs_holyhead_paddle",
+  "zone": "holyhead",
+  "x": 18,
+  "y": 31,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, tied up and patient. {lead} takes the paddle and you take a seat. The water is easy and the other side has a purse, a bit damp.",
+  "reward": {
+   "money": 1590
+  },
+  "flag": "field_holyhead_paddle",
+  "at": "holyhead"
+ },
+ {
+  "id": "fs_llanberis_skim",
+  "zone": "llanberis",
+  "x": 22,
+  "y": 30,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "Ripples run out from {lead}'s throw like a good rumour, and the stone raps a reed stem. Something drops out of it: Goss Crested China Urn.",
+  "reward": {
+   "curio": "goss_pot_conwy"
+  },
+  "flag": "field_llanberis_skim",
+  "at": "llanberis"
+ },
+ {
+  "id": "fs_llanberis_quarry_charm",
+  "zone": "llanberis_quarry",
+  "x": 23,
+  "y": 15,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Wild Garlic.",
+  "reward": {
+   "item": "wild_garlic",
+   "qty": 1
+  },
+  "flag": "field_llanberis_quarry_charm",
+  "at": "llanberis"
+ },
+ {
+  "id": "fs_ogwen_line",
+  "zone": "ogwen",
+  "x": 54,
+  "y": 22,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the water. {lead} wades in, makes a few calm passes and fishes it out: Perch.",
+  "reward": {
+   "item": "perch",
+   "qty": 1
+  },
+  "flag": "field_ogwen_line",
+  "at": "ogwen"
+ },
+ {
+  "id": "fs_ogwen_paddle",
+  "zone": "ogwen",
+  "x": 63,
+  "y": 8,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, left on the bank, light as a basket. {lead} gets in and paddles across without spinning more than twice. On the far side: Colliery Check Tag.",
+  "reward": {
+   "curio": "pit_checks"
+  },
+  "flag": "field_ogwen_paddle",
+  "at": "ogwen"
+ },
+ {
+  "id": "fs_welsh_conifer_plantation_topple",
+  "zone": "welsh_conifer_plantation",
+  "x": 40,
+  "y": 31,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "A dead tree, waiting for an excuse. {lead} supplies one. In the roots, undisturbed for years: Fresnel Prism.",
+  "reward": {
+   "curio": "lighthouse_lens"
+  },
+  "flag": "field_welsh_conifer_plantation_topple",
+  "at": "dee_valley"
+ },
+ {
+  "id": "fs_yr_wyddfa_skim",
+  "zone": "yr_wyddfa",
+  "x": 31,
+  "y": 29,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "A flat stone and a still stretch of water. {lead} sends it dancing across, once, twice, five times, and something on the far side wobbles loose: Burn Water Flask.",
+  "reward": {
+   "item": "burn_water_flask",
+   "qty": 1
+  },
+  "flag": "field_yr_wyddfa_skim",
+  "at": "yr_wyddfa"
+ },
+ {
+  "id": "fs_yr_wyddfa_paddle",
+  "zone": "yr_wyddfa",
+  "x": 38,
+  "y": 34,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is a few coins.",
+  "reward": {
+   "money": 1050
+  },
+  "flag": "field_yr_wyddfa_paddle",
+  "at": "yr_wyddfa"
+ }
+]

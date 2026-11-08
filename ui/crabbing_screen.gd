@@ -102,7 +102,9 @@ func _haul() -> void:
 func _after_use() -> void:
 	if _used >= _total or _bucket.size() >= Crabbing.bucket_size():
 		_msg += " That's the lot."
-		get_tree().create_timer(1.6).timeout.connect(func(): close({"bucket": _bucket, "used": _used}))
+		get_tree().create_timer(1.6).timeout.connect(func():
+			await PiecePrompt.after_game(self, "crabbing", float(_bucket.size()))
+			close({"bucket": _bucket, "used": _used}))
 		_lock = 5.0
 
 func _refresh() -> void:

@@ -1,0 +1,163 @@
+{
+ "line": "sailet",
+ "species": [
+  {
+   "id": "sailet",
+   "appendix": true,
+   "name": "Sailet",
+   "types": [
+    "gale",
+    "iron"
+   ],
+   "base": {
+    "hp": 45,
+    "atk": 50,
+    "def": 50,
+    "lore": 45,
+    "ward": 50,
+    "spd": 70
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     1,
+     "rivet"
+    ],
+    [
+     4,
+     "updraught"
+    ],
+    [
+     8,
+     "galvanise"
+    ],
+    [
+     12,
+     "bluster"
+    ],
+    [
+     16,
+     "forge_hammer"
+    ],
+    [
+     21,
+     "kestrel_dive"
+    ],
+    [
+     25,
+     "riveters_brace"
+    ]
+   ],
+   "evolves": {
+    "to": "postmill",
+    "level": 38
+   },
+   "habitat": [
+    "anglesey",
+    "lincoln",
+    "the_fens",
+    "south_downs"
+   ],
+   "dex": {
+    "text": "A tiny post mill with four sails, all of them eager. It turns to face the wind, whichever way the wind goes, and takes the credit.",
+    "fact": "In a post mill the whole body of the mill turns on one great central post, so the miller can face the sails into the wind."
+   },
+   "sprite": "sailet",
+   "real": "Windmills came to England in the late twelfth century, and their sails are called sweeps in some parts of the country.",
+   "names": {
+    "cy": "melin wynt",
+    "ga": "muileann gaoithe",
+    "gd": "muileann-gaoithe"
+   }
+  },
+  {
+   "id": "postmill",
+   "appendix": true,
+   "name": "Postmill",
+   "types": [
+    "gale",
+    "iron"
+   ],
+   "base": {
+    "hp": 70,
+    "atk": 85,
+    "def": 80,
+    "lore": 65,
+    "ward": 70,
+    "spd": 115
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 155,
+   "learnset": [
+    [
+     1,
+     "gust_nudge"
+    ],
+    [
+     1,
+     "rivet"
+    ],
+    [
+     4,
+     "updraught"
+    ],
+    [
+     8,
+     "galvanise"
+    ],
+    [
+     12,
+     "bluster"
+    ],
+    [
+     16,
+     "forge_hammer"
+    ],
+    [
+     21,
+     "kestrel_dive"
+    ],
+    [
+     25,
+     "riveters_brace"
+    ],
+    [
+     30,
+     "gale_force"
+    ],
+    [
+     34,
+     "girder_sweep"
+    ],
+    [
+     38,
+     "crane_swing"
+    ],
+    [
+     44,
+     "blast_furnace"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "Stands on one post and turns on it as the weather demands, covered in flour and sacks. Knows exactly which way the wind is blowing, and tells everyone.",
+    "fact": "A post mill is turned by pushing on a long tail pole at the back, which is why millers had to be strong as well as patient."
+   },
+   "sprite": "postmill",
+   "real": "Bourn Windmill in Cambridgeshire, dated to 1636, is often described as among the oldest surviving post mills in the country.",
+   "names": {
+    "cy": "melin wynt",
+    "ga": "muileann gaoithe",
+    "gd": "muileann-gaoithe"
+   }
+  }
+ ]
+}

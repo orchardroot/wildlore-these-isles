@@ -1,0 +1,225 @@
+{
+ "line": "leatherjack",
+ "species": [
+  {
+   "id": "leatherjack",
+   "appendix": true,
+   "name": "Leatherjack",
+   "types": [
+    "bog"
+   ],
+   "base": {
+    "hp": 55,
+    "atk": 50,
+    "def": 50,
+    "lore": 30,
+    "ward": 45,
+    "spd": 70
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 55,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "hunker"
+    ],
+    [
+     5,
+     "murky_gaze"
+    ],
+    [
+     9,
+     "peat_spit"
+    ],
+    [
+     13,
+     "midge_swarm"
+    ]
+   ],
+   "evolves": {
+    "to": "husk",
+    "level": 12
+   },
+   "habitat": [
+    "cat_and_fiddle",
+    "the_roaches",
+    "goyt_valley",
+    "blue_john_stream"
+   ],
+   "dex": {
+    "text": "A tough little grub that chews the lawn from underneath and is surprisingly well liked by rooks. It has no legs and no complaints.",
+    "fact": "A leatherjacket is the larva of a crane fly, and it lives in the soil eating grass roots, often for most of a year."
+   },
+   "sprite": "leatherjack",
+   "real": "Starlings, rooks and gulls probe lawns and fields for leatherjackets, and a large flock can clear a lot of them.",
+   "names": {
+    "cy": "pry teiliwr"
+   }
+  },
+  {
+   "id": "husk",
+   "appendix": true,
+   "name": "Husk",
+   "types": [
+    "bog"
+   ],
+   "base": {
+    "hp": 70,
+    "atk": 40,
+    "def": 100,
+    "lore": 40,
+    "ward": 90,
+    "spd": 60
+   },
+   "growth": "medium",
+   "catch_rate": 120,
+   "base_xp": 100,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "hunker"
+    ],
+    [
+     5,
+     "murky_gaze"
+    ],
+    [
+     9,
+     "peat_spit"
+    ],
+    [
+     13,
+     "midge_swarm"
+    ],
+    [
+     16,
+     "bog_cotton_wrap"
+    ],
+    [
+     19,
+     "sphagnum_sponge"
+    ],
+    [
+     22,
+     "mire_stomp"
+    ]
+   ],
+   "evolves": {
+    "to": "longlegs",
+    "level": 24
+   },
+   "habitat": [],
+   "dex": {
+    "text": "A tarry case with two horns and a slit. Something is in there thinking about it, and its eyes glow if you look in.",
+    "fact": "A crane fly spends the winter as a larva or pupa in the soil, then the adult crawls out of the pupal case to emerge in late summer."
+   },
+   "sprite": "husk",
+   "real": "The pupal case of a crane fly has two small horns at its head end, which it uses to push its way up through the soil.",
+   "names": {
+    "cy": "pry teiliwr"
+   }
+  },
+  {
+   "id": "longlegs",
+   "appendix": true,
+   "name": "Longlegs",
+   "types": [
+    "bog",
+    "gale"
+   ],
+   "base": {
+    "hp": 65,
+    "atk": 100,
+    "def": 65,
+    "lore": 85,
+    "ward": 70,
+    "spd": 135
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 160,
+   "learnset": [
+    [
+     1,
+     "squelch"
+    ],
+    [
+     1,
+     "hunker"
+    ],
+    [
+     5,
+     "murky_gaze"
+    ],
+    [
+     9,
+     "peat_spit"
+    ],
+    [
+     13,
+     "midge_swarm"
+    ],
+    [
+     16,
+     "bog_cotton_wrap"
+    ],
+    [
+     19,
+     "sphagnum_sponge"
+    ],
+    [
+     22,
+     "mire_stomp"
+    ],
+    [
+     24,
+     "updraught"
+    ],
+    [
+     26,
+     "gust_nudge"
+    ],
+    [
+     29,
+     "midge_swarm"
+    ],
+    [
+     32,
+     "swoop"
+    ],
+    [
+     36,
+     "kestrel_dive"
+    ],
+    [
+     40,
+     "murmuration"
+    ],
+    [
+     46,
+     "gale_force"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "All legs and apology, bumping into the lampshade at night. It cannot bite or sting, and is quite put out when people think it can.",
+    "fact": "Adult crane flies are harmless; they do not bite or sting, and many live for only a few days, just long enough to find a mate."
+   },
+   "sprite": "longlegs",
+   "real": "A crane fly can shed a leg to escape a predator, which is why so many daddy-long-legs are found missing one.",
+   "names": {
+    "cy": "pry teiliwr"
+   }
+  }
+ ]
+}

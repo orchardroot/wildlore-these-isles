@@ -80,7 +80,9 @@ func _close_row() -> void:
 		_finished = true
 		var hits := _results.filter(func(r): return r != "miss").size()
 		_refresh()
-		get_tree().create_timer(1.2).timeout.connect(func(): close({"hits": hits, "rows": _rows.size()}))
+		get_tree().create_timer(1.2).timeout.connect(func():
+			await PiecePrompt.after_game(self, "ringing", 100.0 * hits / maxf(1.0, float(_rows.size())))
+			close({"hits": hits, "rows": _rows.size()}))
 		return
 	_refresh()
 

@@ -1,0 +1,161 @@
+{
+ "line": "tattybogle",
+ "species": [
+  {
+   "id": "tattybogle",
+   "appendix": true,
+   "name": "Tattybogle",
+   "types": [
+    "hedgerow",
+    "kin"
+   ],
+   "base": {
+    "hp": 50,
+    "atk": 50,
+    "def": 55,
+    "lore": 45,
+    "ward": 55,
+    "spd": 55
+   },
+   "growth": "medium",
+   "catch_rate": 190,
+   "base_xp": 60,
+   "learnset": [
+    [
+     1,
+     "bramble_lash"
+    ],
+    [
+     1,
+     "scrap"
+    ],
+    [
+     4,
+     "chatter"
+    ],
+    [
+     8,
+     "nettle_sting"
+    ],
+    [
+     12,
+     "glare"
+    ],
+    [
+     16,
+     "spore_puff"
+    ],
+    [
+     20,
+     "sheepdog_herd"
+    ],
+    [
+     25,
+     "elder_hex"
+    ]
+   ],
+   "evolves": {
+    "to": "mawkin",
+    "level": 72
+   },
+   "habitat": [
+    "galloway",
+    "scottish_borders",
+    "yorkshire_wolds",
+    "cotswolds"
+   ],
+   "dex": {
+    "text": "A scarecrow in a borrowed coat, with a turnip for a head and a good deal of pride in the job. The crows have stopped being scared and started being rude.",
+    "fact": "In Scotland a scarecrow is a tattie bogle, from the potato fields it stood in, and a bogle is a goblin or a ghost."
+   },
+   "sprite": "tattybogle",
+   "real": "Before cheap fencing and netting, farms hired children as bird scarers, and the scarecrow took over their shift.",
+   "names": {
+    "cy": "bwgan brain",
+    "ga": "fear bréige"
+   }
+  },
+  {
+   "id": "mawkin",
+   "appendix": true,
+   "name": "Mawkin",
+   "types": [
+    "hedgerow",
+    "kin"
+   ],
+   "base": {
+    "hp": 75,
+    "atk": 85,
+    "def": 80,
+    "lore": 70,
+    "ward": 90,
+    "spd": 90
+   },
+   "growth": "medium",
+   "catch_rate": 60,
+   "base_xp": 160,
+   "learnset": [
+    [
+     1,
+     "bramble_lash"
+    ],
+    [
+     1,
+     "scrap"
+    ],
+    [
+     4,
+     "chatter"
+    ],
+    [
+     8,
+     "nettle_sting"
+    ],
+    [
+     12,
+     "glare"
+    ],
+    [
+     16,
+     "spore_puff"
+    ],
+    [
+     20,
+     "sheepdog_herd"
+    ],
+    [
+     25,
+     "elder_hex"
+    ],
+    [
+     30,
+     "hawthorn_hammer"
+    ],
+    [
+     34,
+     "murder_of_crows"
+    ],
+    [
+     38,
+     "mums_look"
+    ],
+    [
+     46,
+     "wild_hunt_bloom"
+    ]
+   ],
+   "evolves": null,
+   "habitat": [],
+   "dex": {
+    "text": "Wears a hat, a lantern for a face, and an expression that says the harvest is not going to bring itself in. The crows are leaving the area.",
+    "fact": "Mawkin and malkin are old dialect words for a scarecrow, used in parts of eastern England."
+   },
+   "sprite": "mawkin",
+   "real": "Before pumpkins arrived, people in Britain and Ireland carved lanterns out of turnips and swedes for Hallowe'en.",
+   "names": {
+    "cy": "bwgan brain",
+    "ga": "fear bréige"
+   }
+  }
+ ]
+}
