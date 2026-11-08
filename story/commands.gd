@@ -254,6 +254,12 @@ func _exec(c: Dictionary) -> void:
 			await RoadBowlRun.new(self).road_bowl(c)
 		"poohsticks":
 			await RoadBowlRun.new(self).poohsticks(c)
+		"gurn":
+			await ContestRun.new(self).gurn(c)
+		"wang":
+			await ContestRun.new(self).wang(c)
+		"league":
+			await ContestRun.new(self).league(c)
 		"ring":
 			await RingingRun.new(self).ring(c)
 		"wall":

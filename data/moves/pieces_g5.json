@@ -1,0 +1,14 @@
+[
+ {
+  "id": "gurn", "name": "Gurn", "type": "fae", "category": "special",
+  "power": 60, "accuracy": 100, "pp": 20, "priority": 0, "piece": "gurning",
+  "effect": {"id": "status", "status": "muddled", "chance": 30},
+  "fx": {"shape": "cloud"}
+ },
+ {
+  "id": "welly_wang", "name": "Welly Wang", "type": "gale", "category": "physical",
+  "power": 80, "accuracy": 90, "pp": 15, "priority": 0, "piece": "welly_wang",
+  "effect": {"id": "flinch", "chance": 20},
+  "fx": {"shape": "wave"}
+ }
+]

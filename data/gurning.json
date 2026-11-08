@@ -1,0 +1,23 @@
+{
+ "faces": [
+  {"id": "cross", "name": "The Cross-Eyed Stare", "dir": "up", "hint": "eyes crossed, brows up"},
+  {"id": "lip", "name": "The Lip Over the Nose", "dir": "right", "hint": "top lip reaching for the nose"},
+  {"id": "chin", "name": "The Jutting Chin", "dir": "down", "hint": "jaw out, bottom lip over"},
+  {"id": "teeth", "name": "The Toothless Grin", "dir": "left", "hint": "mouth wide, teeth tucked away"}
+ ],
+ "venues": {
+  "egremont": {
+   "name": "Egremont Crab Fair",
+   "prize": 10,
+   "rival": {
+    "who": "Maureen, five-time Gurning Champion",
+    "reach": 6,
+    "spread": 1,
+    "intro": "Maureen has been practising in the mirror since the Coronation. She takes the collar off the wall like a woman greeting an old friend.",
+    "beaten": "Maureen takes the braffin back, polishes it with her sleeve, and says she'll see you at the Fair. It sounded like a warning."
+   },
+   "real": "The real thing is the World Gurning Championships at the Egremont Crab Fair in Cumbria, held on the third Saturday of September. The fair dates from 1267. Competitors put their heads through a horse collar, called a braffin, and pull the ugliest face they can. Toothless players are said to have the advantage."
+  }
+ },
+ "how": "Put your head through the braffin, then watch the judges: each gurn flashes up in turn. Copy them back in the same order with the direction keys. Each round adds one more face. Two slips and the collar comes off. Your score is the longest run you copy cleanly."
+}

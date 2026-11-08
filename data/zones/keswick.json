@@ -845,6 +845,26 @@
    "facing": "down",
    "move": "still",
    "trainer": "kes_climber"
+  },
+  {
+   "id": "kes_gurner",
+   "sprite": "villager_2",
+   "x": 28,
+   "y": 29,
+   "facing": "right",
+   "move": "still",
+   "script": "kes_gurner",
+   "name": "Gurning Judge"
+  },
+  {
+   "id": "kes_games_sec",
+   "sprite": "shopkeeper",
+   "x": 36,
+   "y": 29,
+   "facing": "left",
+   "move": "still",
+   "script": "kes_games_secretary",
+   "name": "Games Secretary"
   }
  ],
  "encounters": {
@@ -860,14 +880,19 @@
     "min": 87,
     "max": 88,
     "weight": 8,
-    "time": ["day"]
+    "time": [
+     "day"
+    ]
    },
    {
     "species": "midgie",
     "min": 87,
     "max": 87,
     "weight": 12,
-    "time": ["dusk", "dawn"]
+    "time": [
+     "dusk",
+     "dawn"
+    ]
    },
    {
     "species": "slatelet",
@@ -936,7 +961,10 @@
     "min": 87,
     "max": 88,
     "weight": 8,
-    "weather": ["drizzle", "downpour"]
+    "weather": [
+     "drizzle",
+     "downpour"
+    ]
    }
   ]
  },
@@ -1008,6 +1036,13 @@
    "x": 52,
    "y": 19,
    "text": "FINGERPOST: NORTH along the shore path to CARLISLE, border city of the red stone. Keep the lake on your left, and your sheep-counting at the ready."
+  },
+  {
+   "x": 29,
+   "y": 30,
+   "plaque": "gurning_egremont",
+   "title": "Gurning",
+   "text": "GURNING. The World Gurning Championships are part of the Egremont Crab Fair in Cumbria, which has been going since 1267. Competitors put their heads through a horse collar called a braffin and pull the ugliest face they can. The fair also has the Parade of the Apple Cart, where crab apples are thrown to the crowd."
   }
  ],
  "spawn": [
