@@ -313,7 +313,8 @@ func test_double_battle_runs_to_a_win_and_shares_xp() -> void:
 	assert_eq(f.result.result, "win")
 	assert_true(f.battle.double)
 	assert_true(a.xp > xa and b.xp > xb, "both creatures on the field earned XP")
-	assert_has(f.log, "Twins Aoife and Fionn sends out Spikkin and Spikkin!")
+	assert_has(f.log, "Twins Aoife and Fionn send out Spikkin and Spikkin!")
+	assert_has(f.log, "Twins Aoife and Fionn want to battle!", "a pair takes the plural")
 	assert_has(f.log, "Go! Kindlet and Kindlet!")
 
 func test_double_battle_xp_goes_only_to_witnesses() -> void:

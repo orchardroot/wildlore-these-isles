@@ -63,6 +63,8 @@ func test_status_damage_faint_switch() -> void:
 	assert_eq(_lines({"type": "switch", "side": 0, "index": 1, "user": "Holtling"}), ["Go! Holtling!"])
 	var tr := _ctx("trainer", {"name": "Keeper Maud"})
 	assert_eq(EventPlayer.lines_for({"type": "switch", "side": 1, "index": 1, "user": "Dipling"}, tr), ["Keeper Maud sends out Dipling!"])
+	assert_eq(EventPlayer.verb("Aoife and Orla", "sends"), "send")
+	assert_eq(EventPlayer.verb("Keeper Maud", "wants"), "wants")
 
 func test_run_lines() -> void:
 	assert_eq(_lines({"type": "run", "side": 0, "success": true}), ["Got away safely!"])

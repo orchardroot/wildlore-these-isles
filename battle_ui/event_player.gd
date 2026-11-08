@@ -105,7 +105,7 @@ static func lines_for(ev: Dictionary, ctx: Dictionary) -> Array[String]:
 				if b.kind == "wild" or t == "":
 					out.append("The wild %s steps up!" % ev.user)
 				else:
-					out.append("%s sends out %s!" % [t, ev.user])
+					out.append("%s %s out %s!" % [t, verb(t, "sends"), ev.user])
 		"run":
 			if bool(ev.success):
 				out.append("Got away safely!")
@@ -170,6 +170,10 @@ static func lines_for(ev: Dictionary, ctx: Dictionary) -> Array[String]:
 		"end":
 			pass
 	return out
+
+## A keeper's verb: "sends" for one, "send" for a pair ("Aoife and Orla send out...").
+static func verb(keeper: String, singular: String) -> String:
+	return singular.trim_suffix("s") if " and " in keeper or " & " in keeper else singular
 
 const WEATHER_START := {
 	"drizzle": "A fine drizzle sets in for %d turns.",

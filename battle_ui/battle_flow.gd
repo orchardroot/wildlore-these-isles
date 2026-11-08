@@ -180,8 +180,8 @@ func _intro_lines() -> Array[String]:
 	var out: Array[String] = []
 	if battle.double:
 		var t := str(trainer.get("name", "A keeper"))
-		out.append("%s wants to battle!" % t if not is_wild() else "Wild creatures appeared!")
-		out.append("%s sends out %s!" % [t, _names(battle.actives(Battle.FOE))])
+		out.append("%s %s to battle!" % [t, EventPlayer.verb(t, "wants")] if not is_wild() else "Wild creatures appeared!")
+		out.append("%s %s out %s!" % [t, EventPlayer.verb(t, "sends"), _names(battle.actives(Battle.FOE))])
 		out.append("Go! %s!" % _names(battle.actives(Battle.PLAYER)))
 		_weather_intro(out)
 		return out
@@ -195,8 +195,8 @@ func _intro_lines() -> Array[String]:
 			out.append(Coats.intro_line(foe.variant))  # an uncommon coat
 	else:
 		var t := str(trainer.get("name", "A keeper"))
-		out.append("%s wants to battle!" % t)
-		out.append("%s sends out %s!" % [t, foe.display_name()])
+		out.append("%s %s to battle!" % [t, EventPlayer.verb(t, "wants")])
+		out.append("%s %s out %s!" % [t, EventPlayer.verb(t, "sends"), foe.display_name()])
 	_weather_intro(out)
 	out.append("Go! %s!" % me.display_name())
 	return out
