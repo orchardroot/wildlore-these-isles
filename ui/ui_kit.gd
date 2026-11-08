@@ -30,6 +30,10 @@ static func label(text: String, size := 28, colour := CREAM) -> Label:
 	l.add_theme_color_override("font_color", colour)
 	return l
 
+## How tall a line of UIKit.label(text, size) is at the player's Text size: for rows whose height is set by hand.
+static func line_height(size: int) -> int:
+	return ceili(ThemeDB.fallback_font.get_height(Access.scaled(maxi(size, MIN_TEXT), Settings.text_size)))
+
 ## The largest font size from `big` down to `small` at which `text` fits in `width` px on one line
 ## (`small` if nothing does). For names and hint bars that must never widen a panel.
 static func fit_size(text: String, width: float, big: int, small: int) -> int:

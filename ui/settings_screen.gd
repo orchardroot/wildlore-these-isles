@@ -28,7 +28,7 @@ func _build() -> void:
 	var buttons := []
 	for def in [["text_speed", "Text speed"], ["battle_speed", "Battle speed"], ["travel_scenes", "Travel scenes"], ["quality", "Graphics quality"], ["music_volume", "Music volume"], ["sfx_volume", "Effects volume"], ["ambience_volume", "Ambience volume"], ["run_mode", "Run key"], ["follower", "Follower"], ["colour_blind", "Colour-blind friendly"], ["damage_numbers", "Damage numbers"], ["local_languages", "Local languages"], ["hints", "Hints"]]:
 		var b := Button.new()
-		b.custom_minimum_size = Vector2(0, 30)  # the preview panel must clear the hint line (minigame aids live under Accessibility)
+		b.custom_minimum_size = Vector2(0, maxi(30, UIKit.line_height(23)))  # snug rows; taller with Large text so they never overlap
 		UIKit.compact(b, 2)
 		var h := HBoxContainer.new()
 		h.set_anchors_preset(Control.PRESET_FULL_RECT)
