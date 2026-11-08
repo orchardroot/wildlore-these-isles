@@ -127,6 +127,11 @@ func _process(delta: float) -> void:
 	global_position = global_position.lerp(_clamped(want + _lead + _nudge + idle_drift(_idle_t, _clock)), 1.0 - exp(-delta * 6.0))
 
 func _clamped(p: Vector3) -> Vector3:
+	return clamp_to(bounds, p, distance, fov)
+
+## Where the rig sits following a player at `p` in a zone `bounds` (tiles), and where its eye is: the signs ask
+## this to read their fronts as you will see them.
+static func clamp_to(bounds: Rect2, p: Vector3, distance := 21.0, fov := 30.0) -> Vector3:
 	var half_w := distance * tan(deg_to_rad(fov) * 0.5) * (16.0 / 9.0) * 0.95
 	var x := p.x
 	if bounds.size.x > half_w * 2.0:
@@ -141,3 +146,7 @@ func _clamped(p: Vector3) -> Vector3:
 	else:
 		z = bounds.get_center().y
 	return Vector3(x, p.y, z)
+
+static func eye_for(bounds: Rect2, p: Vector3, distance := 21.0) -> Vector3:
+	var a := deg_to_rad(PITCH)
+	return clamp_to(bounds, p, distance) + Vector3(0, sin(a) * distance, cos(a) * distance)
