@@ -72,7 +72,6 @@ static func _choose(host: Node, text: String, options: Array) -> int:
 	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
 	layer.add_child(dim)
 	var card := UIKit.panel(Color("1d2230f8"), 22)
-	card.set_anchors_preset(Control.PRESET_CENTER)
 	card.custom_minimum_size = Vector2(760, 0)
 	layer.add_child(card)
 	var col := VBoxContainer.new()
@@ -80,6 +79,7 @@ static func _choose(host: Node, text: String, options: Array) -> int:
 	card.add_child(col)
 	var l := UIKit.label(text, 28, UIKit.CREAM)
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	l.custom_minimum_size = Vector2(716, 0)  # a known wrap width, or the card measures one word per line
 	col.add_child(l)
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 18)
@@ -93,8 +93,8 @@ static func _choose(host: Node, text: String, options: Array) -> int:
 		btns.append(b)
 	UIKit.wrap_focus(btns)
 	host.add_child(layer)
-	card.position = Vector2(560 - 380, 300)
-	card.set_anchors_preset(Control.PRESET_CENTER)
+	card.reset_size()
+	card.position = ((layer.get_viewport_rect().size - card.size) / 2.0).floor()
 	UIKit.focus_later(btns[0])
 	var tree: SceneTree = host.get_tree()
 	while done[0] < 0 and is_instance_valid(layer):

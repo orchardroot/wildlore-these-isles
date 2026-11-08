@@ -78,7 +78,9 @@ func build(parent: Control) -> void:
 	if _buttons.is_empty():
 		return
 	UIKit.wrap_focus(_buttons)
-	UIKit.focus_later(_buttons[1] if _buttons.size() > 1 else _buttons[0])
+	# focus once the list has its size, or follow_focus scrolls it to the bottom on opening
+	var first: Button = _buttons[1] if _buttons.size() > 1 else _buttons[0]
+	_menu.get_tree().process_frame.connect(func(): UIKit.focus_later(first), CONNECT_ONE_SHOT)
 	if not _ids.is_empty():
 		_show(str(_ids[0]))
 

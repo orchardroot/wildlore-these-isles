@@ -293,7 +293,7 @@
   "field": ""
  },
  "fete_cheese": {
-  "name": "Cheese rolling",
+  "name": "Fete cheese roll",
   "move": "double_gloucester",
   "types": [
    "stone",
@@ -310,7 +310,7 @@
   "field": ""
  },
  "fete_bog": {
-  "name": "Bog snorkelling",
+  "name": "Fete bog snorkel",
   "move": "trench_wallow",
   "types": [
    "bog",
@@ -328,7 +328,7 @@
   "field": ""
  },
  "fete_welly": {
-  "name": "Welly wanging",
+  "name": "Fete welly wang",
   "move": "gumboot_fling",
   "types": [
    "gale",

@@ -206,12 +206,12 @@ func _draw_stage() -> void:
 	s.draw_line(Vector2(0, 124), Vector2(w, 124), Color("3a2c28"), 2.0)
 	# the stage boards, the judges' table and a crowd that bobs when you do well
 	s.draw_rect(Rect2(0, 262, w, h - 262), Color("6b4a32"))
-	for k in 20:
+	for k in int(w / 56.0) + 1:
 		s.draw_line(Vector2(k * 56.0, 262), Vector2(k * 56.0 - 30, h), Color("4e3524"), 2.0)
 	s.draw_rect(Rect2(34, 228, 190, 60), Color("8a6a4a"))
 	s.draw_rect(Rect2(34, 224, 190, 8), Color("b08a60"))
-	s.draw_rect(Rect2(52, 196, 70, 30), Color("f2e8cf"))
-	s.draw_string(ThemeDB.fallback_font, Vector2(60, 218), "JUDGES", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("3a2c28"))
+	s.draw_rect(Rect2(84, 244, 80, 28), Color("f2e8cf"))  # on the table's front, clear of the judges
+	s.draw_string(ThemeDB.fallback_font, Vector2(92, 265), "JUDGES", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("3a2c28"))
 	for k in 3:
 		var jx := 70.0 + k * 52.0
 		s.draw_circle(Vector2(jx, 188), 14.0, SKIN)
