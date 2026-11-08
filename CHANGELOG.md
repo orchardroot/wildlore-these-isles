@@ -35,6 +35,8 @@ there are many more ways across the water.
 - **Welly wanging.** Spinning yourself dizzy no longer throws further. It throws wilder, as it should.
 - Screen fixes: the pancake title card no longer covers the START banner, cheese rolling says "Heat 1 of 3" once,
   and the welly wanging field is no longer stretched.
+- A creature sent out and hit on the same turn now shows its health bar draining, instead of arriving already
+  hurt with the bar sitting still.
 
 | | |
 |---|---|
