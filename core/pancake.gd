@@ -15,14 +15,17 @@ const SWAY_HZ := 0.55
 const FLIP_AIR := 0.5
 const OPEN := 0.9                  # seconds before a flag that its flip window opens
 const CLOSE := 0.6                 # and seconds after it that it shuts
+const LEAN_PUSH := 9.0             # how hard a full lean shoves the pancake back (it was 13: all or nothing on keys)
+const LEAN_EASE := 5.0             # the lean follows the key at this rate a second, quicker when far from it (a longer ease-in made a late reaction fatal)
+const PAN_DAMP := 2.2              # the pancake's own drag on the pan (was 0.9)
 const MISS_PENALTY := 1.5
 const FINISH_MISS_PENALTY := 3.0
 const PERFECT_BONUS := 0.2
 const FLAG_PREFIX := "pancake_"
 const FLAG_DAY := "pancake_day"
 const DAILY_PURSE := 3
-const GOOD_TIME := 58.0            # silver and gold, kept in step with data/party_pieces/g2.json
-const MASTER_TIME := 44.0
+const GOOD_TIME := 40.0            # silver and gold, kept in step with data/party_pieces/g2.json
+const MASTER_TIME := 36.5
 
 var rng: Rng
 var easy := false
@@ -100,13 +103,13 @@ func step(dt: float, tilt: float, sprint: bool, flip: bool) -> void:
 		v = move_toward(v, SPRINT if sprint else JOG, 9.0 * dt)
 	y += v * dt
 	# the pan: a sway with every stride, a slow drift, and your lean pushing back
-	lean = move_toward(lean, tilt, 14.0 * dt)
+	lean = move_toward(lean, tilt, LEAN_EASE * dt * (1.0 + 2.0 * absf(tilt - lean)))
 	if air <= 0.0 and stopped <= 0.0:
 		var frac := clampf((v - JOG * 0.5) / (SPRINT - JOG * 0.5), 0.0, 1.0)
 		var amp := (2.5 + 5.5 * frac) * (0.55 if easy else 1.0)
 		drift = clampf(drift + (rng.roll() - 0.5) * 3.0 * dt, -1.0, 1.0)
-		var push := amp * sin(TAU * SWAY_HZ * t + phase) + drift * 1.6 * frac - 13.0 * lean
-		pv = (pv + push * dt) * (1.0 - 0.9 * dt)
+		var push := amp * sin(TAU * SWAY_HZ * t + phase) + drift * 1.6 * frac - LEAN_PUSH * lean
+		pv = (pv + push * dt) * (1.0 - PAN_DAMP * dt)
 		p += pv * dt
 		var rim := 1.0
 		if absf(p) > 0.72 * rim and not _near:
@@ -180,7 +183,7 @@ func count(grade: String) -> int:
 ## The champion's time on the day: a touch over MASTER, a touch under GOOD.
 static func champion_time(seed_value: int) -> float:
 	var r := Rng.new(seed_value * 7 + 3)
-	return snappedf(46.0 + r.roll() * 4.0, 0.1)
+	return snappedf(37.0 + r.roll() * 2.5, 0.1)
 
 func verdict(champ: float) -> String:
 	var tt := total()
