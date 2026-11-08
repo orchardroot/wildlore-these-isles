@@ -12,6 +12,7 @@ const MIN_RUN := 1.2       # narrower than this, a clear stretch of front is no 
 var _items := []   # of {aabb, pos, mesh, rect (footprint), behind (OccluderFade.reach), tm (TriangleMesh, made on first use)}
 var _bounds := Rect2()
 var _at := Vector2(-INF, -INF)  # where the player stands (eye): buildings that go see-through then don't hide
+var _near := []                  # the buildings that can stand between the sign in hand and the eye (focus)
 
 ## `bodies` is ZoneBuilder's [{pr, body, door_x}] (each body a MeshInstance3D placed by translation only).
 static func make(z: ZoneData, bodies: Array) -> SignSight:
@@ -32,13 +33,23 @@ static func make(z: ZoneData, bodies: Array) -> SignSight:
 ## this look past any building that goes see-through with the player there (OccluderFade), as the game does.
 func eye(p: Vector2i, gy: float) -> Vector3:
 	_at = Vector2(p.x + 0.5, p.y + 0.5)
+	_near = _items
 	return CameraRig.eye_for(_bounds, Vector3(p.x + 0.5, gy, p.y + 0.5))
 
-## Does any building stand between `from` and the eye?
+## Narrows the next sight lines to the buildings that can come between anywhere in `box` (world) and `eye_at`,
+## leaving out those that go see-through: a handful, not the whole town, for each ray.
+func focus(box: AABB, eye_at: Vector3) -> void:
+	var reach := box.expand(eye_at)
+	_near = []
+	for it in _items:
+		if (it.aabb as AABB).intersects(reach) and not OccluderFade.hides(it.rect, _at, it.behind):
+			_near.append(it)
+
+## Does any building stand between `from` and the eye? (Among those `focus` picked, if it was called.)
 func blocked(from: Vector3, to: Vector3) -> bool:
 	var seg := AABB(from, Vector3.ZERO).expand(to)
-	for it in _items:
-		if not (it.aabb as AABB).intersects(seg) or OccluderFade.hides(it.rect, _at, it.behind):
+	for it in _near:
+		if not (it.aabb as AABB).intersects(seg):
 			continue
 		if it.tm == null:
 			it.tm = (it.mesh as Mesh).generate_triangle_mesh()
@@ -76,20 +87,22 @@ func place(f: Dictionary, body: MeshInstance3D, eye_at: Vector3, near_x: float, 
 	if flush:
 		var own = _item(body)
 		if own != null:
+			for i in range(0, n, 2):  # every other column; one between two that agree takes their depth
+				face[i] = _face_at(own.tm, x0 + i * STEP, lo, hi, plane)
+			for i in range(1, n, 2):
+				if i + 1 < n and absf(face[i - 1] - face[i + 1]) < 0.01:
+					face[i] = face[i - 1]
+				else:  # an edge (a porch, an oriel): look properly
+					face[i] = _face_at(own.tm, x0 + i * STEP, lo, hi, plane)
 			var depths := []
 			for i in n:
-				var x := x0 + i * STEP
-				for k in 6:  # every 0.07 or so up the band (a string course can be thin), above a window head's top
-					var y := lo + 0.07 + (hi - lo - 0.1) * k / 5.0
-					var hit := (own.tm as TriangleMesh).intersect_segment(Vector3(x, y, plane + 2.0), Vector3(x, y, plane - 0.6))
-					if not hit.is_empty():
-						face[i] = maxf(face[i], float(hit.position.z))
 				if face[i] > -INF:
 					depths.append(face[i])
 			if not depths.is_empty():
 				depths.sort()
 				plane = maxf(plane, float(depths[depths.size() / 2]) + 0.01)
 	var base := body.position
+	focus(AABB(base + Vector3(x0, lo, plane - 0.1), Vector3(x1 - x0, hi - lo, 0.3)), eye_at)
 	var ys := [lo + (hi - lo) * 0.3, lo + (hi - lo) * 0.75]
 	var best := {}
 	var best_score := -INF
@@ -133,6 +146,17 @@ func reach(body: MeshInstance3D, x0: float, x1: float, y0: float, y1: float, z_f
 		x += 0.2
 	return out
 
+## How far forward the front reaches at column x, over the band lo..hi: every 0.07 or so up it (a string course can
+## be thin), starting above a window head's top. -INF where nothing is there.
+static func _face_at(tm: TriangleMesh, x: float, lo: float, hi: float, plane: float) -> float:
+	var out := -INF
+	for k in 6:
+		var y := lo + 0.07 + (hi - lo - 0.1) * k / 5.0
+		var hit := tm.intersect_segment(Vector3(x, y, plane + 2.0), Vector3(x, y, plane - 0.6))
+		if not hit.is_empty():
+			out = maxf(out, float(hit.position.z))
+	return out
+
 func _item(body: MeshInstance3D) -> Variant:
 	for it in _items:
 		if it.mesh == body.mesh:
@@ -173,6 +197,7 @@ static func audit(z: ZoneData, root: Node3D) -> Array:
 			var ax := lab.transform.basis.x.normalized() * size.x * 0.5
 			var ay := lab.transform.basis.y.normalized() * size.y * 0.4
 			var nz := lab.transform.basis.z.normalized() * 0.02
+			sight.focus(AABB(c - ax - ay, Vector3.ZERO).expand(c + ax + ay + nz), eye_at)
 			var hid := 0.0
 			for k in [-1.0, 0.0, 1.0]:
 				hid = maxf(hid, sight.hidden_share(c - ax + ay * k + nz, c + ax + ay * k + nz, eye_at, 11))

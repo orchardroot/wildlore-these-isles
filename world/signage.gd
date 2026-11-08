@@ -958,6 +958,7 @@ static func _stand_spot(kit: Kit, name_fit: Dictionary, w: int, d: int, door_x: 
 		xs.append(clampf(door_x + 0.5 - (float(xs[0]) - door_x - 0.5), 0.6, maxf(0.6, w - 0.6)))
 	xs.append(w * 0.5)
 	var hy := float(name_fit.height) if int(name_fit.lines) > 1 else float(name_fit.em) * 0.72
+	kit.sight.focus(AABB(kit.base + Vector3(0, 0, d), Vector3(w, 1.0, 1.0)), eye)
 	var best := {}
 	for x: float in xs:
 		var zf := clampf(kit.sight.reach(kit.body as MeshInstance3D, x - 0.6, x + 0.6, 0.15, 2.0, d + 1.2) + 0.3, d + 0.2, d + 0.85)
