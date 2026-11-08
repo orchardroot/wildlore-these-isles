@@ -190,18 +190,25 @@ static func fit_column(col: VBoxContainer, room: float) -> void:
 	col.add_theme_constant_override("separation", mini(int(col.get_meta("sep")), 3))  # at the smallest, close up the gaps too
 
 ## A detail column inside a ScrollContainer that refits (fit_column) to the box's height whenever it is refilled, once
-## per refill: long words step down before the keyboard-less scroll bar is needed.
+## per refill, and when the box changes size: long words step down before the keyboard-less scroll bar is needed.
 static func keep_fitted(col: VBoxContainer) -> void:
-	col.child_entered_tree.connect(func(_n: Node):
-		if col.has_meta("fit_queued"):
+	var ref: WeakRef = weakref(col)
+	col.child_entered_tree.connect(func(_n: Node): _queue_fit(ref))
+	if col.get_parent() is Control:
+		(col.get_parent() as Control).resized.connect(func(): _queue_fit(ref))
+
+static func _queue_fit(ref: WeakRef) -> void:
+	var col := ref.get_ref() as VBoxContainer
+	if col == null or col.has_meta("fit_queued"):
+		return
+	col.set_meta("fit_queued", true)
+	(func():
+		var c := ref.get_ref() as VBoxContainer
+		if c == null:
 			return
-		col.set_meta("fit_queued", true)
-		(func():
-			if not is_instance_valid(col):
-				return
-			col.remove_meta("fit_queued")
-			if col.get_parent() is Control:
-				fit_column(col, (col.get_parent() as Control).size.y)).call_deferred())
+		c.remove_meta("fit_queued")
+		if c.get_parent() is Control:
+			fit_column(c, (c.get_parent() as Control).size.y)).call_deferred()
 
 static func _column_height(col: VBoxContainer) -> float:
 	var h := 0.0

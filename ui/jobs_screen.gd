@@ -24,9 +24,13 @@ func _build() -> void:
 	row.set_anchors_preset(Control.PRESET_FULL_RECT)
 	row.add_theme_constant_override("separation", 22)
 	content.add_child(row)
+	var left := VBoxContainer.new()
+	left.custom_minimum_size = Vector2(560 if not UIKit.big_text() else 600, 0)  # long titles need a little more with Large text
+	left.add_theme_constant_override("separation", 12)
+	row.add_child(left)
 	var lp := UIKit.panel(Color("1d2230f0"), 12)
-	lp.custom_minimum_size = Vector2(560 if not UIKit.big_text() else 600, 0)  # long titles need a little more with Large text
-	row.add_child(lp)
+	lp.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	left.add_child(lp)
 	var sc := ScrollContainer.new()
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	sc.follow_focus = true
@@ -51,7 +55,7 @@ func _build() -> void:
 	dsc.add_child(_desc)
 	UIKit.keep_fitted(_desc)  # a long job steps its words down to fit
 	var sp := UIKit.panel(Color("1d2230f0"), 14)
-	right.add_child(sp)
+	(left if UIKit.big_text() else right).add_child(sp)  # with Large text the standing card sits under the list, so the job has the room
 	_standing = VBoxContainer.new()
 	_standing.add_theme_constant_override("separation", 6)
 	sp.add_child(_standing)
@@ -64,8 +68,8 @@ func _build() -> void:
 ## Several hand-ins at once make a long line: it steps down a size or two rather than push the panels off the page.
 func _fit_say() -> void:
 	var w := maxf(_say.size.x, 200.0)
-	var fs := 22
-	while fs > UIKit.MIN_TEXT and ThemeDB.fallback_font.get_multiline_string_size(_say.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y > 90:
+	var fs := UIKit.sized(22)
+	while fs > UIKit.MIN_TEXT and UIKit.font().get_multiline_string_size(_say.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y > 90:
 		fs -= 1
 	if _say.get_theme_font_size("font_size") != fs:
 		_say.add_theme_font_size_override("font_size", fs)
