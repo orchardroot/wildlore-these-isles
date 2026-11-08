@@ -1,3 +1,23 @@
+# w51-hud handoff
+
+Branch `w51-hud` (from int-w50). The overworld HUD and sign sight checked on the merged build and finished.
+Full write-up: `docs/audit/w51_hud.md`; before/after in `docs/screens/w51-hud-*.png`.
+
+- Fixed: the first-arrival Standing toast measured itself one word a line and ran to the bottom of the screen
+  (`ParishToast.lay_out`); the route chip steps below a wide card or toast; a toast gives way to a new zone card;
+  Saved and Reported toasts stack and go top right during dialogue; photo mode hides all the HUD; long choice lists
+  scroll; the dialogue box follows the Text size; the Readable font now survives startup (`core/settings.gd` holds
+  the theme). Toast wording ("out here", "in the Channel Islands", "among the Kin Abroad") and £10,000.
+- Signs: props (lamp posts, trees, phone boxes) are in `SignSight`; 61 signs were cut counting them, 1 now
+  (Carfax Tower, 9%). A few props moved in london, llangollen, thurso, blackpool, shrewsbury, lease_glenashen;
+  the title's Silk Museum bunting moved (macclesfield).
+- Dev: `--shot-from-zone`, `--hud=all|news|card|toast[:n]|talk:<case>` (writes `<shot>.hud.txt`), `--hud-check`,
+  `--backdrop=<zone>`, and `--text`/`--readable` (identical lines to w50-tf-large's, so they merge cleanly).
+- Merge notes: `world/zone_builder.gd` gets one line (prop transforms as metadata); `world/signage.gd` two small
+  edits in `build` and `_stand_spot`; `ui/dialogue_box.gd` (sizes, group, choice window); `core/game_state.gd`
+  (shot timing, DevHud hook, the --text lines).
+- Checks: full `tools/test.sh` 3020 passed, 0 failed, `validate: 0 error(s)`, no SCRIPT ERROR; sign audit 1 of 1539 cut.
+
 # w50-critic handoff
 
 Branch `w50-critic` (from int-w50). A new player's walk along the story by screenshot, fixing what looked wrong
