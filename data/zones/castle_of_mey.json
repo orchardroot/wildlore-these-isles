@@ -103,9 +103,9 @@
   {
    "id": "mey_guide",
    "sprite": "tour_guide",
-   "x": 7,
+   "x": 6,
    "y": 7,
-   "facing": "down",
+   "facing": "right",
    "move": "still",
    "script": "mey_guide",
    "name": "Castle Guide"
