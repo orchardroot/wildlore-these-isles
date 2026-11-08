@@ -6,6 +6,13 @@ func _applied(id: String, d: GameStateData) -> ZoneData:
 	DeepPlace.apply(d, z, DeepPlace.crates_start(z))
 	return z
 
+## A closed gate: a solid gate prop on the room's own floor (DeepPlace.apply).
+func _shut(z: ZoneData, p: Vector2i) -> bool:
+	for pr in z.props:
+		if pr.get("type") == DeepPlace.GATE_PROP and Vector2i(int(pr.x), int(pr.y)) == p:
+			return not z.walkable(p)
+	return false
+
 func test_the_floors_are_linked_and_valid() -> void:
 	var all := ZoneData.load_all()
 	for id in ["staffa_cave", "staffa_columns", "staffa_hollow"]:
@@ -17,10 +24,10 @@ func test_the_floors_are_linked_and_valid() -> void:
 func test_winch_opens_the_first_gate() -> void:
 	var d := GameStateData.new()
 	var z := _applied("staffa_columns", d)
-	assert_eq(z.tile_at(Vector2i(8, 3)), "fence")
+	assert_true(_shut(z, Vector2i(8, 3)))
 	DeepPlace.pull(d, z.id, DeepPlace.lever_at(z, Vector2i(6, 4)))
 	DeepPlace.apply(d, z, DeepPlace.crates_start(z))
-	assert_eq(z.tile_at(Vector2i(8, 3)), "path")
+	assert_false(_shut(z, Vector2i(8, 3)))
 
 func test_block_onto_stone_plate_opens_the_second_gate() -> void:
 	var d := GameStateData.new()
@@ -31,13 +38,13 @@ func test_block_onto_stone_plate_opens_the_second_gate() -> void:
 		DeepPlace.push(z, crates, crates.block, Vector2i(1, 0))
 	assert_eq(DeepPlace.press_plates(d, z, crates, Vector2i.ZERO), ["stone"])
 	DeepPlace.apply(d, z, crates)
-	assert_eq(z.tile_at(Vector2i(18, 3)), "path")
+	assert_false(_shut(z, Vector2i(18, 3)))
 
 func test_tide_and_echo_in_the_hollow() -> void:
 	var d := GameStateData.new()
 	var z := _applied("staffa_hollow", d)
 	assert_eq(z.tile_at(Vector2i(10, 3)), "deep_water")
-	assert_eq(z.tile_at(Vector2i(16, 3)), "fence")
+	assert_true(_shut(z, Vector2i(16, 3)))
 	DeepPlace.pull(d, z.id, DeepPlace.lever_at(z, Vector2i(6, 4)))
 	DeepPlace.apply(d, z, {})
 	assert_eq(z.tile_at(Vector2i(10, 3)), "shallow")
@@ -47,7 +54,7 @@ func test_tide_and_echo_in_the_hollow() -> void:
 	assert_true(DeepPlace.can_find(d, z, echo))
 	DeepPlace.pull(d, z.id, echo)
 	DeepPlace.apply(d, z, {})
-	assert_eq(z.tile_at(Vector2i(16, 3)), "path")
+	assert_false(_shut(z, Vector2i(16, 3)))
 
 func test_four_plaques_and_the_reward() -> void:
 	var n := 0
