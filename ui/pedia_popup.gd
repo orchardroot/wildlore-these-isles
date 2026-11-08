@@ -49,6 +49,7 @@ func setup(species_id: String) -> void:
 	col.add_child(frame)
 	var s := AnimSprite.new()
 	s.show_species(species_id, "front", 2)
+	s.animate(sp)
 	frame.add_child(s)
 	var n := UIKit.label(str(sp.get("name", species_id)), 44)
 	n.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
