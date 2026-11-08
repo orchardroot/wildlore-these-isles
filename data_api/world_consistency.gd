@@ -277,10 +277,13 @@ static func _on_border(z: ZoneData, p: Vector2i) -> bool:
 
 # --- blockers -------------------------------------------------------------------------------------------------------
 
-## zone id -> tiles people arrive on from other zones' warps.
+## zone id -> tiles people arrive on from outdoor zones' warps (coming back out of a building or a cave puts you
+## on the far side of whatever kept you out of it, so those don't count).
 static func _arrivals(zones: Dictionary) -> Dictionary:
 	var out := {}
 	for zid in zones:
+		if zones[zid].kind == "interior":
+			continue
 		for w in zones[zid].warps:
 			var to := str(w.get("to", ""))
 			if not out.has(to):
