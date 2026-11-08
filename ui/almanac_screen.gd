@@ -110,7 +110,7 @@ func _show_ledger(kind: String) -> void:
 		v.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		h.add_child(v)
 		col.add_child(h)
-	sl[0].focus_mode = Control.FOCUS_ALL  # nothing to pick here: up and down scroll a long ledger instead
+	UIKit.key_scroll(sl[0])  # nothing to pick here: up and down scroll a long ledger instead
 	UIKit.focus_later(sl[0])
 
 func _on_cancel() -> void:

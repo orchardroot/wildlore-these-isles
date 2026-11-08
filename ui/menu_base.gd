@@ -181,6 +181,12 @@ func _input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed("cancel") or event.is_action_pressed("menu"):
 		get_viewport().set_input_as_handled()
+		var f := get_viewport().gui_get_focus_owner()
+		var back = f.get_meta("back_to").get_ref() if f != null and f.has_meta("back_to") else null
+		if back != null and back.is_visible_in_tree():  # out of a box of words scrolled with the keys (UIKit.key_scroll)
+			Audio.sfx("cancel")
+			back.grab_focus()
+			return
 		_on_cancel()
 
 ## A button with the standard cursor and confirm sounds.

@@ -13,6 +13,7 @@ extends RefCounted
 ##   under    a panel drawn over part of some text
 ##   small    font below MIN_FONT px at 1280x720
 ##   box      a framed panel running past the screen or its clip, so its border (and maybe its last lines) is cut
+##   stuck    a scroll box with more words than it shows and nothing the keyboard can focus to scroll it
 
 const MIN_FONT := 18
 const SLACK := 2.0      # px of rounding and shadow we forgive
@@ -67,6 +68,8 @@ static func _walk(n: Node, clip: Rect2, screen: Rect2, layer: int, texts: Array,
 					inner = Rect2(-1e6, inner.position.y, 2e6, inner.size.y)
 				for ch in sc.get_children():
 					_walk_scrolled(ch, clip.intersection(r), inner, screen, layer, texts, panels, out, root)
+					if ch is Control and (ch as Control).size.y > r.size.y + SLACK and not _keys_reach(sc):
+						_add(out, ch, root, "stuck", "%d px of words in a %d px box only a mouse can scroll" % [ch.size.y, r.size.y])
 				return
 			clip = clip.intersection(r)
 	for ch in n.get_children():
@@ -234,6 +237,15 @@ static func _opaque(c: Control) -> bool:
 		return sb is StyleBoxFlat and (sb as StyleBoxFlat).bg_color.a > 0.6 or sb is StyleBoxTexture
 	if c is ColorRect:
 		return (c as ColorRect).color.a > 0.6 and c.get_global_rect().get_area() < 1280 * 600
+	return false
+
+## True if the keyboard can move through a scroll box: it takes focus itself, or something inside it does.
+static func _keys_reach(sc: ScrollContainer) -> bool:
+	if sc.focus_mode != Control.FOCUS_NONE or sc.has_meta("pages"):  # "pages": the screen scrolls it on a key itself
+		return true
+	for c in sc.find_children("*", "Control", true, false):
+		if (c as Control).focus_mode != Control.FOCUS_NONE and (c as Control).is_visible_in_tree():
+			return true
 	return false
 
 ## A panel with a visible border: cutting it off shows.

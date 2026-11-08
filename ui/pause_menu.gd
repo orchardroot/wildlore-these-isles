@@ -97,8 +97,14 @@ func _refresh() -> void:
 		_info.add_child(_stat("Euros", UIKit.money_text(d.euros, Wallet.EUR)))
 	for line in Wallet.foreign_lines(d):  # any overseas money still in your pockets
 		_info.add_child(_stat(str(line[0]), str(line[1])))
-	_info.add_child(_stat("Play time", MenuLogic.play_time(d.play_seconds)))
-	_info.add_child(_stat("Fieldbook", "%d seen, %d caught" % [d.seen.size(), d.caught.size()]))
+	var two := HBoxContainer.new()  # two to a row, leaving Where next? its room
+	two.add_theme_constant_override("separation", 40)
+	for kv in [["Play time", MenuLogic.play_time(d.play_seconds), 0.7], ["Fieldbook", "%d seen, %d caught" % [d.seen.size(), d.caught.size()], 1.3]]:
+		var h := _stat(kv[0], kv[1])
+		h.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		h.size_flags_stretch_ratio = kv[2]
+		two.add_child(h)
+	_info.add_child(two)
 	var wod := LangLessons.word_of_day(d, Langs.code_for(d.zone_id, ZoneIndex.get_index()), d.day_count) if Settings.languages_on() else {}
 	if not wod.is_empty():  # the word of the day (4.5): from what you've learnt, or a taster of the local language
 		var wl := UIKit.fit_label("%s word of the day: %s (%s), %s" % [LangLessons.lang_name(str(wod.code)), str(wod.word.local),
@@ -153,7 +159,7 @@ func _refresh_next() -> void:
 		UIKit.add_words(wb[1], "- " + str(s.text), 0 if s.kind == "story" else -2, colours.get(s.kind, UIKit.CREAM))
 	var walk := TodaysWalk.summary(d, Game.dex)
 	if walk != "":
-		UIKit.add_words(wb[1], walk, -6, UIKit.MUTED)
+		UIKit.add_words(wb[1], walk, -2, UIKit.MUTED, true)  # the first to go if the card is full
 	var ready := MenuLogic.rematches_ready(d)
 	if d.flag("game_complete") == true:
 		UIKit.add_words(wb[1], "Rematches today: " + (", ".join(ready) if not ready.is_empty() else "all fought, back tomorrow"), -2, UIKit.GOLD)

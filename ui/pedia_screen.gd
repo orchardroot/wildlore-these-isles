@@ -25,7 +25,6 @@ var _cur := 0
 var _scroll: ScrollContainer
 var _list_col: VBoxContainer
 var _detail: VBoxContainer
-var _stamps_from: Button = null  # the stamps row, while the stamps themselves have the focus (to scroll them)
 var _buttons: Array = []
 var _rumours: Array = []       # the Rumours tab's rows, when it's showing
 const WORD_SIZES := [25, 23, 21, 19, 17, 16, 15]  # the body text's size, biggest first, until the entry fits
@@ -147,19 +146,6 @@ func setup(arg: String) -> void:
 
 func _input(event: InputEvent) -> void:
 	if _locked or _done:
-		return
-	if is_instance_valid(_stamps_from) and get_viewport().gui_get_focus_owner() != _stamps_from \
-			and (event.is_action_pressed("cancel") or event.is_action_pressed("menu")):
-		get_viewport().set_input_as_handled()  # out of the stamps, back to their row
-		Audio.sfx("cancel")
-		_stamps_from.grab_focus()
-		_stamps_from = null
-		return
-	if is_instance_valid(_stamps_from) and (event.is_action_pressed("move_up", true) or event.is_action_pressed("move_down", true)):
-		var sc := get_viewport().gui_get_focus_owner() as ScrollContainer
-		if sc != null:
-			get_viewport().set_input_as_handled()
-			sc.scroll_vertical += 48 if event.is_action_pressed("move_down", true) else -48
 		return
 	var d := 0
 	if event.is_action_pressed("move_left") or _shoulder(event, JOY_BUTTON_LEFT_SHOULDER):
@@ -311,7 +297,7 @@ func _rumour_button(i: int) -> Button:
 		var stamps := _detail.find_child("StampScroll", true, false) as ScrollContainer
 		if str(r.species) == "" and stamps != null:  # into the stamps, to scroll them; Back comes out again
 			Audio.sfx("confirm")
-			_stamps_from = b
+			UIKit.key_scroll(stamps, b)
 			stamps.grab_focus()
 			return
 		if str(r.species) == "" or state_of(str(r.species)) == "unseen":
@@ -413,7 +399,7 @@ func _show(id: String) -> void:
 	elif Crossbreeds.is_id(id):  # each parent shown, and the biology of why it could happen
 		UIKit.add_words(words, Crossbreeds.parents_line(sp), -4, FACT_INK)
 	else:
-		UIKit.add_words(words, found_in(MenuLogic.habitats(habitat_index(), id)), -4, FACT_INK)
+		UIKit.add_words(words, found_in(MenuLogic.habitats(habitat_index(), id)), -4, FACT_INK, true)  # the first to go when the entry is long: the map (Confirm) shows where
 	var dex: Dictionary = sp.get("dex", {})
 	if st == "caught":
 		UIKit.add_words(words, str(dex.get("text", "")), 0)

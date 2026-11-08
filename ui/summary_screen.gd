@@ -265,13 +265,15 @@ func _bond_box(c: Creature) -> Control:
 		row.add_child(tok)
 		var nm := UIKit.label("%s:" % Charms.name_of(c.held), 16, UIKit.GOLD)
 		row.add_child(nm)
-		var fx := UIKit.label(str(Charms.item(c.held).get("effect_text", "")), 16, Color("d8cfb4"))
-		fx.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		fx.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # the whole effect, on a second line if it needs one
-		row.add_child(fx)
-		row.custom_minimum_size = Vector2(340, 0)
+		var fx := str(Charms.item(c.held).get("effect_text", ""))
+		var f := ThemeDB.fallback_font
+		var one_line := f.get_string_size("%s: %s" % [Charms.name_of(c.held), fx], HORIZONTAL_ALIGNMENT_LEFT, -1, UIKit.MIN_TEXT).x + 30 <= MID_W - 36
+		if one_line:  # name and effect side by side when they fit; otherwise the effect gets a line of its own
+			row.add_child(UIKit.label(fx, 16, Color("d8cfb4")))
 		v.add_child(UIKit.spacer(4))
 		v.add_child(row)
+		if not one_line:
+			v.add_child(_small(fx, Color("d8cfb4")))
 	return v
 
 ## A small wrapped line that wraps inside the stats panel instead of widening it.

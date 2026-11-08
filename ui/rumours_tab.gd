@@ -83,7 +83,7 @@ static func _stamps(detail: VBoxContainer) -> void:
 	sc.name = "StampScroll"
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	sc.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	sc.focus_mode = Control.FOCUS_ALL
+	sc.set_meta("pages", true)  # the pedia screen hands it the keys (UIKit.key_scroll); TextFitAudit counts that as reachable
 	detail.add_child(sc)
 	var grid := GridContainer.new()
 	grid.columns = 2

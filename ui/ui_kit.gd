@@ -115,6 +115,20 @@ static func fit_column(col: VBoxContainer, room: float) -> void:
 			return
 	col.add_theme_constant_override("separation", mini(int(col.get_meta("sep")), 3))  # at the smallest, close up the gaps too
 
+## A detail column inside a ScrollContainer that refits (fit_column) to the box's height whenever it is refilled, once
+## per refill: long words step down before the keyboard-less scroll bar is needed.
+static func keep_fitted(col: VBoxContainer) -> void:
+	col.child_entered_tree.connect(func(_n: Node):
+		if col.has_meta("fit_queued"):
+			return
+		col.set_meta("fit_queued", true)
+		(func():
+			if not is_instance_valid(col):
+				return
+			col.remove_meta("fit_queued")
+			if col.get_parent() is Control:
+				fit_column(col, (col.get_parent() as Control).size.y)).call_deferred())
+
 static func _column_height(col: VBoxContainer) -> float:
 	var h := 0.0
 	var n := 0
@@ -286,6 +300,23 @@ static func pill_button(text: String, size := 20) -> Button:
 	for state in ["hover", "focus", "pressed", "hover_pressed"]:
 		b.add_theme_stylebox_override(state, on)
 	return b
+
+## Lets the keyboard scroll a box of words that has nothing in it to focus: it takes the focus itself and up/down
+## (whatever they are bound to) move it a few lines. With `back`, Cancel hands the focus back there instead of
+## leaving the menu (MenuBase reads the "back_to" meta).
+static func key_scroll(sc: ScrollContainer, back: Control = null, step := 48) -> void:
+	sc.focus_mode = Control.FOCUS_ALL
+	if back != null:
+		sc.set_meta("back_to", weakref(back))
+	sc.gui_input.connect(func(ev: InputEvent):
+		var d := 0
+		if ev.is_action_pressed("move_down", true):
+			d = 1
+		elif ev.is_action_pressed("move_up", true):
+			d = -1
+		if d != 0:
+			sc.scroll_vertical += d * step
+			sc.accept_event())
 
 ## Makes the first and last of a vertical run of controls loop round on up/down.
 static func wrap_focus(items: Array) -> void:

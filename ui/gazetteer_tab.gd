@@ -57,6 +57,7 @@ func build(parent: Control) -> void:
 	_detail.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_detail.add_theme_constant_override("separation", 10)
 	dsc.add_child(_detail)
+	UIKit.keep_fitted(_detail)  # a long plaque steps its words down to fit the panel
 	_places()
 
 ## The strip along the top: the total, a bar, your title and the next milestone.
@@ -116,6 +117,7 @@ func _summary() -> PanelContainer:
 
 func _places() -> void:
 	_town = {}
+	_dsc.remove_meta("pages")
 	UIKit.clear(_list_col)
 	_buttons.clear()
 	_rows.clear()
@@ -461,6 +463,7 @@ func _isles_row(h: HBoxContainer) -> void:
 func _open_isles_work(focus_id := "") -> void:
 	_place_at = 0
 	_town = {"isles_work": true, "name": IslesWorkView.NAME}
+	_dsc.set_meta("pages", true)  # Confirm reads on down a long topic (TextFitAudit counts that as reachable)
 	UIKit.clear(_list_col)
 	_buttons.clear()
 	_rows = IslesWork.all().duplicate()

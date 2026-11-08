@@ -30,6 +30,8 @@ func _build() -> void:
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	root.add_child(scroll)
+	UIKit.key_scroll(scroll)  # a read-only card: up and down scroll it
+	UIKit.focus_later(scroll)
 	var card := PanelContainer.new()
 	card.add_theme_stylebox_override("panel", UIKit.box(CARD, Color("8a6a4a"), 4, 10, 18))
 	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
