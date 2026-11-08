@@ -118,13 +118,12 @@ func test_cue_details() -> void:
 	assert_eq(c.strength, "strong")
 	assert_eq(c.hp, 3)
 
-func test_hp_after_item_accounts_for_later_damage() -> void:
-	var c := Fixtures.creature("kindlet", 10)
-	c.hp = 10
-	var evs := [{"type": "item", "side": 0, "target": 0}, {"type": "damage", "side": 0, "amount": 4, "hp": 10}]
-	assert_eq(EventPlayer.hp_after_item(evs, 0, c), 14)
-	c.hp = c.max_hp() - 1
-	assert_eq(EventPlayer.hp_after_item(evs, 0, c), c.max_hp())
+func test_item_and_switch_cues_carry_what_the_plate_shows() -> void:  # not the creature's end-of-turn state
+	var c := EventPlayer.fx_for({"type": "item", "side": 0, "item": "cup_of_tea", "target": 0, "hp": 21, "status": "", "text": "x"}, _ctx())
+	assert_eq([c.cue, c.hp, c.status], ["heal", 21, ""])
+	c = EventPlayer.fx_for({"type": "switch", "side": 0, "index": 1, "user": "Holtling", "hp": 30, "status": "stung"}, _ctx())
+	assert_eq([c.cue, c.hp, c.status], ["switch", 30, "stung"])
+	assert_eq(EventPlayer.fx_for({"type": "cure_team", "side": 0, "count": 2, "cured": [0, 1]}, _ctx()).team, [0, 1], "a team cure clears the plates it cured")
 
 func _double_ctx() -> Dictionary:
 	var b := Fixtures.battle([Fixtures.creature("kindlet", 10), Fixtures.creature("holtling", 10)],

@@ -286,19 +286,12 @@ func _item_action(c: Dictionary) -> Dictionary:
 	return {"type": "item", "item": id, "target": target}
 
 func _play(events: Array) -> void:
-	var party: Array = battle.parties[Battle.PLAYER]
-	for i in events.size():
-		var e: Dictionary = events[i]
+	for e in events:
 		if e.type == "catch" and str(e.get("reason", "")) == "":
 			e["snare_name"] = _snare.get("name", "snare")
 			e["wobbles"] = Catching.wobbles(Catching.last_roll, _catch_chance, bool(e.success)) if Catching.last_roll >= 0.0 else wobbles_for(_catch_chance, bool(e.success))
 			var foe := battle.current(Battle.FOE)
 			e["clean"] = bool(e.success) and foe != null and foe.status == "asleep" and foe.hp >= foe.max_hp()
-		elif e.type == "item":
-			var t := int(e.get("target", 0))
-			if t >= 0 and t < party.size():
-				var at: int = battle.active[Battle.PLAYER].find(t) if battle.double else -1
-				e["shown_hp"] = EventPlayer.hp_after_item(events, i, party[t], at)
 	var cx := ctx()
 	for e in events:
 		log.append_array(EventPlayer.lines_for(e, cx))
