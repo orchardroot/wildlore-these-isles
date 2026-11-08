@@ -91,7 +91,7 @@ func _sheep_goal(st: Dictionary) -> Vector2:
 	c /= float(pts.size())
 	var dir_c: Vector2 = (c - goal).normalized()
 	var want: Vector2 = c + dir_c * 9.0
-	want = Vector2(minf(want.x, 93.0), clampf(want.y, 2.0, 38.0))
+	want = Vector2(minf(want.x, 94.8), clampf(want.y, 2.0, 38.0))
 	var to_dog: Vector2 = st.dog - c
 	if to_dog.dot(dir_c) < 2.0 and to_dog.length() < 18.0:
 		var perp := Vector2(-dir_c.y, dir_c.x)

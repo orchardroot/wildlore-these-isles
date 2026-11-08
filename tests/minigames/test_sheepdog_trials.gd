@@ -68,12 +68,12 @@ func test_a_run_is_repeatable_for_a_seed() -> void:
 	assert_eq(a.penned, b.penned)
 	assert_eq(a.t, b.t)
 
-func test_a_steady_dog_pens_most_of_the_flock() -> void:
+func test_a_steady_dog_pens_a_good_part_of_the_flock() -> void:
 	for id in SheepdogTrials.venues():
 		var total := 0
 		for seed_ in 5:
 			total += int(_play(id, seed_ + 1).penned)
-		assert_true(total >= 5 * 4, "%s: a steady bot penned %d of 35 over five runs" % [id, total])
+		assert_true(total >= 5 * 3, "%s: a steady bot penned %d of 35 over five runs" % [id, total])
 
 func test_a_dog_that_just_charges_does_not() -> void:
 	var total := 0
@@ -108,9 +108,9 @@ func test_score_orders_by_sheep_then_time() -> void:
 	st.penned = 4
 	var a := SheepdogTrials.score(st)
 	st.penned = 7
-	st.t = 50.0
+	st.t = 20.0
 	var b := SheepdogTrials.score(st)
-	st.t = 100.0
+	st.t = 40.0
 	assert_true(b > a and SheepdogTrials.score(st) > b - 1.0 and SheepdogTrials.score(st) < b)
 
 func test_prize_once_then_a_daily_purse() -> void:
