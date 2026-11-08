@@ -282,10 +282,10 @@ func _small(text: String, colour: Color, size := 16) -> Label:
 	return l
 
 func _middle(c: Creature) -> Control:
-	var p := UIKit.panel(Color("1d2230f0"), 18)
+	var p := UIKit.panel(Color("1d2230f0"), 14)  # snug: a charm's effect may take a second line at the foot
 	p.custom_minimum_size = Vector2(MID_W, 0)
 	var v := VBoxContainer.new()
-	v.add_theme_constant_override("separation", 5)
+	v.add_theme_constant_override("separation", 4)
 	p.add_child(v)
 	v.add_child(UIKit.label("Stats", 24, UIKit.MUTED))
 	var nat: Array = Rules.NATURES.get(c.nature, [])
