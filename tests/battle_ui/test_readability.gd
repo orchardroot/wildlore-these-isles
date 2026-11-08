@@ -137,6 +137,10 @@ func test_damage_numbers_follow_the_setting() -> void:
 	assert_eq(hud.number_text({"type": "damage", "side": 1, "amount": 0, "hp": 3}), "")
 	assert_eq(hud.number_text({"type": "status_damage", "side": 1, "amount": 2, "hp": 3}), "-2")
 	assert_eq(hud.number_text({"type": "stat", "side": 1, "stat": "atk", "delta": 1}), "")
+	assert_eq(hud.number_text({"type": "knack", "side": 1, "other_side": 0, "amount": 3, "hp": 20, "text": "x"}), "-3", "a prick hurts the attacker")
+	assert_eq(hud.number_text({"type": "heal", "side": 0, "amount": 6, "hp": 20, "reason": "drain"}), "+6")
+	assert_eq(hud.number_text({"type": "charm", "side": 0, "amount": 2, "hp": 20, "text": "x"}), "+2", "a regen charm")
+	assert_eq(hud.number_text({"type": "charm", "side": 0, "stat": "def", "delta": 1, "text": "x"}), "")
 	Settings.damage_numbers = false
 	assert_eq(hud.number_text({"type": "damage", "side": 1, "amount": 12, "hp": 3}), "")
 	Settings.damage_numbers = was

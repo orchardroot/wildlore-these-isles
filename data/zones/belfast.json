@@ -931,13 +931,13 @@
   "TT........BBBBBB..................:===:.wooow.................$$$$$$$$$$",
   "TT........BBDBBB..................:===:.wooow.................$$$$$$$$$$",
   "TT................................:===:.wooow.................$$$$$$$$$$",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTT$$$$$$$$$$",
-  "TTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTT$$$$$$$$$$"
+  "TTTTTTTTTTTHHHTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTT$$$$$$$$$$",
+  "TTTTPTTTTTTHHHTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTT$$$$$$$$$$"
  ],
  "signs": [
   {
    "x": 55,
-   "y": 52,
+   "y": 51,
    "plaque": "belfast_chaim_herzog",
    "title": "Chaim Herzog",
    "text": "Chaim Herzog was born in Belfast in 1918, where his father Yitzhak Herzog was the city's rabbi before becoming Chief Rabbi of Ireland. Chaim grew up in Dublin, fought in the British Army in the Second World War and became the sixth President of Israel in 1983.",

@@ -67,6 +67,11 @@ func test_validate_ragged_rows() -> void:
 	var z := ZoneData.from_dict(_base(["...", ".."]))
 	assert_true(_has(z.validate({"t": z}), "ragged"))
 
+func test_validate_spawn_with_extra_entries() -> void:
+	# a sign pasted into the spawn array is silently dropped from the world; say so instead
+	var z := ZoneData.from_dict(_base(["...", "...", "..."], {"spawn": [1, 1, {"x": 2, "y": 2, "text": "lost"}]}))
+	assert_true(_has(z.validate({"t": z}), "spawn must be [x, y]"))
+
 func test_validate_unknown_char() -> void:
 	var z := ZoneData.from_dict(_base(["...", ".?.", "..."]))
 	assert_true(_has(z.validate({"t": z}), "unknown tile char '?'"))

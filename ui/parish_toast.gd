@@ -1,9 +1,12 @@
 class_name ParishToast
 extends CanvasLayer
 ## Parish news at the top of the screen: a job finished, a job ready to hand in, a nation that now counts you as one
-## of its own. Slides down, holds, fades. Messages queue and play one at a time. Never takes input.
+## of its own. Slides down, holds, fades. Messages queue and play one at a time, and wait for the town's name card
+## to go (they share the top of the screen). A long line wraps rather than run wide over the route chip. Never takes
+## input.
 
 const HOLD := 2.6
+const MAX_W := 640.0  # px of text before it wraps: the panel then stays clear of the route chip on the left
 const BG := Color(0.114, 0.133, 0.188, 0.92)
 
 var _panel: PanelContainer
@@ -40,7 +43,7 @@ func _ready() -> void:
 	col.add_theme_constant_override("separation", 2)
 	col.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_panel.add_child(col)
-	_head = UIKit.label("", 17, UIKit.GOLD)
+	_head = UIKit.label("", 18, UIKit.GOLD)
 	_head.uppercase = true
 	_head.add_theme_constant_override("outline_size", 0)
 	col.add_child(_head)
@@ -48,6 +51,9 @@ func _ready() -> void:
 	col.add_child(_body)
 	add_child(_panel)
 	_panel.modulate.a = 0.0
+
+static func text_width(l: Label) -> float:
+	return l.get_theme_font("font").get_string_size(l.text, HORIZONTAL_ALIGNMENT_LEFT, -1, l.get_theme_font_size("font_size")).x
 
 func show_news(header: String, text: String) -> void:
 	_queue.append([header, text])
@@ -59,9 +65,15 @@ func _next() -> void:
 		_playing = false
 		return
 	_playing = true
+	var card := get_tree().get_first_node_in_group(ZoneCard.GROUP) as ZoneCard
+	while card != null and is_instance_valid(card) and card.showing():
+		await get_tree().create_timer(0.25).timeout
 	var m: Array = _queue.pop_front()
 	_head.text = m[0]
 	_body.text = m[1]
+	var wide := text_width(_body) > MAX_W
+	_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART if wide else TextServer.AUTOWRAP_OFF
+	_body.custom_minimum_size.x = MAX_W if wide else 0.0
 	_panel.reset_size()
 	_panel.offset_left = -_panel.size.x * 0.5
 	_panel.offset_right = _panel.size.x * 0.5

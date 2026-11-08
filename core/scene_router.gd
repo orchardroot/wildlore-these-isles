@@ -115,6 +115,15 @@ func battle(foe_party: Array, opts: Dictionary) -> Dictionary:
 	Bus.battle_ended.emit(result)
 	return result
 
+## The scene files of the menus open now, bottom first (the report key notes them).
+func open_menus() -> Array:
+	return _menu_layer.get_children().map(func(m): return m.scene_file_path)
+
+## Holds every open menu still while the game is paused (the report key's note box), or lets them run again.
+## Menus normally run through a pause because the Router does.
+func hold_menus(hold: bool) -> void:
+	_menu_layer.process_mode = Node.PROCESS_MODE_PAUSABLE if hold else Node.PROCESS_MODE_INHERIT
+
 ## Opens a menu scene (name or "shop:<id>") and waits for its `closed(result)` signal.
 func open_menu(menu: String) -> Variant:
 	var parts := menu.split(":", true, 1)

@@ -76,14 +76,14 @@
  ],
  "rows": [
   "xxxxxxxxxxxxxx",
-  "x++++++++++D+x",
-  "x++++++++++++x",
-  "x++++++++++++x",
-  "xxxxxx++xxxxxx",
-  "x++++++++++++x",
-  "x++++++++++++x",
-  "x++++++++++++x",
-  "x+++++D++++++x",
+  "xeeeeeeeeeeDex",
+  "xeeeeeeeeeeeex",
+  "xeeeeeeeeeeeex",
+  "xxxxxxeexxxxxx",
+  "xeeeeeeeeeeeex",
+  "xeeeeeeeeeeeex",
+  "xeeeeeeeeeeeex",
+  "xeeeeeDeeeeeex",
   "xxxxxxxxxxxxxx"
  ],
  "deep": {
@@ -114,5 +114,12 @@
     "line": "The gate is shut."
    }
   ]
+ },
+ "stage": "cave",
+ "legend_extra": {
+  "e": {
+   "tile": "path",
+   "colour": "#565d69"
+  }
  }
 }

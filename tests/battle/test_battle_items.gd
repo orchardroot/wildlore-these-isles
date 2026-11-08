@@ -26,6 +26,17 @@ func test_item_heals_before_foe_moves() -> void:
 	assert_true(a.hp > before - 1, "healed before being hit (or healed at all)")
 	assert_eq(ev[1].type, "move", "foe still acts after")
 
+func test_item_event_carries_the_hp_and_status_it_left() -> void:  # the plate shows these, not the end of the turn
+	var a := Fixtures.creature("kindlet", 10)
+	a.take_damage(12)
+	a.status = "stung"
+	var b := _battle([a], [Fixtures.creature("spikkin", 5)])
+	var ev := b.take_turn({"type": "item", "item": "cup_of_tea", "target": 0}, _move())
+	var healed := int(ev[0].hp)
+	assert_true(healed > a.max_hp() - 12, "the hp right after the tea")
+	assert_eq(ev[0].status, "stung")
+	assert_true(a.hp < healed, "and the turn went on to hurt it")
+
 func test_item_on_benched_revive() -> void:
 	var a := Fixtures.creature("kindlet", 10)
 	var spare := Fixtures.creature("spikkin", 10)

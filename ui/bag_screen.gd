@@ -274,8 +274,12 @@ func _open_picker(focus := 0) -> void:
 		ic.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		h.add_child(ic)
 		h.add_child(UIKit.sex_mark(c, 20))
-		h.add_child(UIKit.label(c.display_name(), 24))
-		h.add_child(UIKit.fill())
+		var nm := UIKit.label(c.display_name(), 24)
+		nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		nm.clip_text = true  # a long nickname shrinks, then trims, so the HP stays on the row
+		nm.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		UIKit.fit_width(nm)
+		h.add_child(nm)
 		var pm := Chapbooks.move_of(Game.items.get_item(_pending))
 		if pm != "":  # a chapbook is pending: say who can be taught it
 			var st := Chapbooks.status(c, pm, Game.moves)

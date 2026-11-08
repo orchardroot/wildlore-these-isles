@@ -1,0 +1,377 @@
+{
+ "_doc": "Findings of WorldConsistency (data_api/world_consistency.gd) looked at and kept, by rule, zone and key, with why. Fix the world or the words first; list a finding here only when it is right as it stands.",
+ "ok": [
+  {
+   "rule": "object",
+   "zone": "bath_abbey",
+   "key": "ladder",
+   "why": "the stone ladders carved on the real west front"
+  },
+  {
+   "rule": "object",
+   "zone": "blackpool",
+   "key": "slab",
+   "why": "rock is rolled out from a slab: how it's made, not a thing here"
+  },
+  {
+   "rule": "object",
+   "zone": "blackpool",
+   "key": "lever",
+   "why": "the switch-on is a scene on the stage, which is here"
+  },
+  {
+   "rule": "object",
+   "zone": "blackpool_rockfactory",
+   "key": "slab",
+   "why": "how rock is made"
+  },
+  {
+   "rule": "object",
+   "zone": "blackpool_wintergardens",
+   "key": "switch",
+   "why": "sends you to the stage on the prom for the switch-on"
+  },
+  {
+   "rule": "object",
+   "zone": "blaenavon_bigpit_below",
+   "key": "slab",
+   "why": "a creature appears from behind a slab of rock: the coal face is the scene"
+  },
+  {
+   "rule": "object",
+   "zone": "blaenavon_miners_hall",
+   "key": "plate",
+   "why": "the examine spot is the plate"
+  },
+  {
+   "rule": "object",
+   "zone": "castleton",
+   "key": "bell",
+   "why": "a bell of flowers on the Garland King"
+  },
+  {
+   "rule": "object",
+   "zone": "causeway",
+   "key": "bell",
+   "why": "a simile"
+  },
+  {
+   "rule": "object",
+   "zone": "douglas",
+   "key": "bell",
+   "why": "a tram bell in the distance"
+  },
+  {
+   "rule": "object",
+   "zone": "dundee_discovery",
+   "key": "crate",
+   "why": "a shopping list"
+  },
+  {
+   "rule": "object",
+   "zone": "hills_tearoom",
+   "key": "slab",
+   "why": "a slab of pie"
+  },
+  {
+   "rule": "object",
+   "zone": "la_linea",
+   "key": "plate",
+   "why": "what a tapa is"
+  },
+  {
+   "rule": "object",
+   "zone": "llangollen_home2",
+   "key": "handle",
+   "why": "what a windlass is"
+  },
+  {
+   "rule": "object",
+   "zone": "manc_bikes",
+   "key": "bell",
+   "why": "the bell on the bike you hire"
+  },
+  {
+   "rule": "object",
+   "zone": "newcastle_sanctuary",
+   "key": "plate",
+   "why": "a stottie on a plate with the tea"
+  },
+  {
+   "rule": "object",
+   "zone": "poole_pub",
+   "key": "winch",
+   "why": "what the shanties were for"
+  },
+  {
+   "rule": "object",
+   "zone": "st_helena_jamestown",
+   "key": "ladder",
+   "why": "Ladder Hill, the real name of the steps"
+  },
+  {
+   "rule": "object",
+   "zone": "thurso",
+   "key": "slab",
+   "why": "what a Caithness flag is"
+  },
+  {
+   "rule": "object",
+   "zone": "vane_tower_top",
+   "key": "bell",
+   "why": "a simile"
+  },
+  {
+   "rule": "object",
+   "zone": "wicklow_roundtower",
+   "key": "ladder",
+   "why": "how the monks got in, long ago"
+  },
+  {
+   "rule": "stairs",
+   "zone": "aberdeen_skene",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "bath_sallylunn",
+   "key": "downstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "belfast_ulstermuseum",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "cambridge_fitzwilliam",
+   "key": "down the stairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "canterbury_beaney",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "canterbury_crypt",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "edinburgh_home_b",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "enniskillen_castlecoole",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "exeter_cathedral",
+   "key": "up the stairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "exeter_customs",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "fens_cathedral",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "fens_cromwell",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "hull_whiteharte",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "lake_barn",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "manchester_royalmills",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "merthyr_cyfarthfa",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "merthyr_cyfarthfa",
+   "key": "downstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "norwich_strangers",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "portree_aros",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "portree_aros",
+   "key": "downstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "saddleworth_museum",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "shannon_foynes",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "shrewsbury_museum",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "stdavids_orielyparc",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "stoke_leopard",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "swansea_birthplace",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "thurso_gallery",
+   "key": "upstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "thurso_gallery",
+   "key": "downstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "yorkshire_dales_fieldbarn",
+   "key": "downstairs",
+   "why": "about the real building's other floors, not a way to go in the game"
+  },
+  {
+   "rule": "stairs",
+   "zone": "norwich_dragonhall",
+   "key": "back door",
+   "why": "boats unloading at the back door in the Middle Ages"
+  },
+  {
+   "rule": "stairs",
+   "zone": "oxford_eagle",
+   "key": "the back room",
+   "why": "this room stands for the back room where the Inklings met"
+  },
+  {
+   "rule": "stairs",
+   "zone": "limerick_home_pery",
+   "key": "through the back",
+   "why": "how the fox got in"
+  },
+  {
+   "rule": "stairs",
+   "zone": "kilkenny_kyteler",
+   "key": "back door",
+   "why": "the examine spot by the west wall is the back door"
+  },
+  {
+   "rule": "cave",
+   "zone": "beacons",
+   "key": "dyo_entry",
+   "why": "Dan yr Ogof's real visitor centre"
+  },
+  {
+   "rule": "cave",
+   "zone": "penzance",
+   "key": "geevor",
+   "why": "Geevor's real mine buildings"
+  },
+  {
+   "rule": "cave",
+   "zone": "york",
+   "key": "york_minster_crypt",
+   "why": "the crypt is under the Minster"
+  },
+  {
+   "rule": "cave",
+   "zone": "liverpool",
+   "key": "liverpool_club",
+   "why": "the Cavern is a club in a cellar"
+  },
+  {
+   "rule": "cave",
+   "zone": "lake_district",
+   "key": "lake_slatemine",
+   "why": "Honister's slate-built visitor centre"
+  },
+  {
+   "rule": "cave",
+   "zone": "mendips",
+   "key": "mendips_cave",
+   "why": "the Cheddar caves' ticket office and museum in the village"
+  },
+  {
+   "rule": "entrance",
+   "zone": "skye",
+   "key": "faerie_glen",
+   "why": "the ring of standing stones is the doorway, as the sign says"
+  },
+  {
+   "rule": "text",
+   "zone": "limerick",
+   "key": "sign 39,34",
+   "why": "A A B B A is the limerick's rhyme scheme"
+  }
+ ]
+}

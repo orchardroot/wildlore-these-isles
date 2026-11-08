@@ -25,6 +25,7 @@ var _cur := 0
 var _scroll: ScrollContainer
 var _list_col: VBoxContainer
 var _detail: VBoxContainer
+var _words_sc: ScrollContainer = null  # the entry's words: Confirm reads on down a long one before it opens the map
 var _buttons: Array = []
 var _rumours: Array = []       # the Rumours tab's rows, when it's showing
 const WORD_SIZES := [25, 23, 21, 19, 17, 16, 15]  # the body text's size, biggest first, until the entry fits
@@ -202,6 +203,10 @@ func _entry_button(i: int) -> Button:
 	b.pressed.connect(func():
 		if state_of(id) == "unseen":
 			return
+		if UIKit.read_on(_words_sc):  # a long entry at 18 px: down the words first, then the map
+			Audio.sfx("cursor")
+			_entry_hints.call_deferred()
+			return
 		Audio.sfx("confirm")
 		await open_child("map:species:" + id)
 		b.grab_focus())
@@ -237,6 +242,15 @@ func _entry_button(i: int) -> Button:
 		c.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return b
 
+## A tab's page steps its words down a size or two when a long one would run past the panel (UIKit.fit_column).
+func _fit_tab() -> void:
+	(func(): UIKit.fit_column(_detail, content.size.y - 44)).call_deferred()  # less the panel's margins and border, once laid out
+
+## The hint bar for an entry: Confirm reads on while a long entry has more below, then shows the map.
+func _entry_hints() -> void:
+	var more := UIKit.reads_on(_words_sc) and _filter not in ["studbook", "casebook", "words", "rumours"]
+	set_hints([["updown", "Browse"], ["shoulders", "Jump 10"], ["run", "Filter"], ["bike", "Cry"], ["confirm", "Read on" if more else "Map"], ["cancel", "Back"]])
+
 ## A Stud Book tab row: an idea (or the Crosses log).
 func _book_button(i: int) -> Button:
 	var id := str(_ids[i])
@@ -251,14 +265,19 @@ func _book_button(i: int) -> Button:
 		elif _filter == "words":
 			WordsTab.show(id, _detail)
 		else:
-			StudBookTab.show(id, _detail))
+			StudBookTab.show(id, _detail)
+		_fit_tab())
 	if _filter == "words":
-		b.pressed.connect(func():  # revise the language (4.5)
+		b.pressed.connect(func():  # down a long word list first, then revise the language (4.5)
+			if UIKit.read_on(_detail.find_child("WordsScroll", true, false) as ScrollContainer):
+				Audio.sfx("cursor")
+				return
 			if not WordsTab.can_revise(id):
 				return
 			Audio.sfx("confirm")
 			await open_child("lang:review:" + id)
 			WordsTab.show(id, _detail)
+			_fit_tab()
 			b.grab_focus())
 	var h := HBoxContainer.new()
 	h.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -285,8 +304,15 @@ func _rumour_button(i: int) -> Button:
 		Audio.sfx("cursor")
 		_cur = i
 		_last_id = str(r.species)
-		RumoursTab.show(r, _detail))
+		RumoursTab.show(r, _detail)
+		_fit_tab())
 	b.pressed.connect(func():
+		var stamps := _detail.find_child("StampScroll", true, false) as ScrollContainer
+		if str(r.species) == "" and stamps != null:  # into the stamps, to scroll them; Back comes out again
+			Audio.sfx("confirm")
+			UIKit.key_scroll(stamps, b)
+			stamps.grab_focus()
+			return
 		if str(r.species) == "" or state_of(str(r.species)) == "unseen":
 			return
 		Audio.sfx("confirm")
@@ -379,6 +405,9 @@ func _show(id: String) -> void:
 	var wb := UIKit.words_box(WORD_SIZES, WORD_SEP)
 	_detail.add_child(wb[0])
 	var words: VBoxContainer = wb[1]
+	_words_sc = wb[0]
+	_words_sc.set_meta("pages", true)  # Confirm reads on (TextFitAudit counts that as reachable)
+	words.resized.connect(_entry_hints)
 	if Dex.is_hybrid(id):  # never found in the wild: what it is, and whether it can have young of its own
 		var h: Dictionary = Genetics.hybrids().get(id, {})
 		var how: String = {"real": "A real cross.", "folklore": "Folklore: they say.", "invented": "A game invention."}.get(str(h.get("real", "")), "")

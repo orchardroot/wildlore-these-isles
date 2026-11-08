@@ -52,6 +52,7 @@ func _show_page() -> void:
 	cols.add_theme_constant_override("separation", 40)
 	card.add_child(cols)
 	var col: VBoxContainer = null
+	var cw := content.size.x if content.size.x > 0 else get_viewport_rect().size.x - SIDE * 2  # before the first layout
 	for i in rows.size():
 		if i == 0 or i == split:
 			col = VBoxContainer.new()
@@ -61,10 +62,24 @@ func _show_page() -> void:
 		elif i == 1 or i == DAFT_ONES:  # a little gap before the walking and before the daft ones
 			col.add_child(UIKit.spacer(4))
 		var h := HBoxContainer.new()
-		h.add_child(UIKit.label(rows[i][0], 24 if two else 26, UIKit.MUTED))
+		var k := UIKit.label(rows[i][0], 24 if two else 26, UIKit.MUTED)
+		var v := UIKit.label(rows[i][1], 26 if two else 28, UIKit.GOLD if i == 0 else UIKit.CREAM)
+		_fit_pair(k, v, (cw - 28 - (40 if two else 0)) / (2.0 if two else 1.0) - 16)
+		h.add_child(k)
 		h.add_child(UIKit.fill())
-		h.add_child(UIKit.label(rows[i][1], 26 if two else 28, UIKit.GOLD if i == 0 else UIKit.CREAM))
+		h.add_child(v)
 		col.add_child(h)
+
+## A tally and its value step down together until they share a column's width (Large text makes two columns tight).
+func _fit_pair(k: Label, v: Label, room: float) -> void:
+	var f := ThemeDB.fallback_font
+	var ks := k.get_theme_font_size("font_size")
+	var vs := v.get_theme_font_size("font_size")
+	while ks > UIKit.MIN_TEXT and f.get_string_size(k.text, HORIZONTAL_ALIGNMENT_LEFT, -1, ks).x + f.get_string_size(v.text, HORIZONTAL_ALIGNMENT_LEFT, -1, vs).x > room:
+		ks -= 1
+		vs = maxi(UIKit.MIN_TEXT, vs - 1)
+	k.add_theme_font_size_override("font_size", ks)
+	v.add_theme_font_size_override("font_size", vs)
 
 func _input(event: InputEvent) -> void:
 	if not _locked and not _done and (event.is_action_pressed("move_left") or event.is_action_pressed("move_right")):

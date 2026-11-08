@@ -234,7 +234,7 @@ func test_remapped_keys_do_not_leave_builtin_ui_bindings() -> void:
 func _all_distinct(b: Dictionary, dev: String) -> bool:
 	var seen := {}
 	for a in InputSetup.ACTIONS:
-		if b[a][dev].is_empty():
+		if b[a][dev].is_empty() and not InputSetup.may_be_empty(a, dev):
 			return false
 		for c in b[a][dev]:
 			if seen.has(c):

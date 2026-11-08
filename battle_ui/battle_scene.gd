@@ -81,6 +81,8 @@ func _ready() -> void:
 	root.add_child(msg)
 	menus = BattleMenus.new()
 	root.add_child(menus)
+	menus.opened.connect(msg.make_room)
+	menus.closed.connect(msg.make_room.bind(Rect2()))
 	if _dev_cursor >= 0:
 		menus.remember("bag" if _dev_menu == "bag" else "moves", _dev_cursor)
 
@@ -218,10 +220,6 @@ func play_events(events: Array, ctx: Dictionary) -> void:
 	for ev in events:
 		var cue := EventPlayer.fx_for(ev, ctx)
 		var lines := EventPlayer.lines_for(ev, ctx)
-		var item_pos: int = b.active[Battle.PLAYER].find(int(ev.get("target", 0))) if ev.type == "item" else -1
-		if item_pos >= 0:
-			var who := b.current_at(Battle.PLAYER, item_pos)
-			hud.tween_hp(Battle.PLAYER, int(ev.get("shown_hp", who.hp)), 0.7, item_pos)
 		if ev.type == "catch" and cue.cue == "catch" and lines.size() > 1:
 			await msg.say(lines[0])
 			await fx.play(cue, b)
@@ -243,18 +241,8 @@ func _cue_task(cue: Dictionary, b: Battle, flag: Array) -> void:
 	await fx.play(cue, b)
 	flag[0] = false
 
-## Make the plates match the creatures, in case an event batch left them slightly off (item cures, caught foes...).
 func _sync_hud(b: Battle) -> void:
-	hud.set_weather(b.weather, b.weather_turns)
-	for side in 2:
-		for pos in b.positions():
-			var c := b.current_at(side, pos)
-			if c == null:
-				continue
-			hud.set_status(side, c.status, pos)
-			hud.set_stages(side, c.stages, pos)
-			if absf(hud.shown_hp(side, pos) - c.hp) > 0.5 and not (side == Battle.FOE and b.caught != null):
-				hud.tween_hp(side, c.hp, 0.25, pos)
+	hud.sync(b)
 
 func choose_action(f: BattleFlow) -> Dictionary:
 	if Engine.has_meta("autopilot"):

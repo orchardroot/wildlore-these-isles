@@ -1126,7 +1126,7 @@
   },
   {
    "x": 46,
-   "y": 5,
+   "y": 4,
    "text": "LADIES' VIEW. Named for Queen Victoria's ladies-in-waiting, who were so taken with the view in 1861 that the spot was named for them. The view hasn't charged for it since."
   },
   {
@@ -1147,6 +1147,11 @@
    "plaque": "ring_of_kerry_puck_fair",
    "title": "Puck Fair",
    "text": "Every August in Killorglin, a wild mountain goat is caught and crowned King Puck, and sits in state above the town for three days of the Puck Fair, one of Ireland's oldest fairs. Then he is taken back to the mountains, none the worse and a lot more famous."
+  },
+  {
+   "x": 9,
+   "y": 40,
+   "text": "INNISFALLEN. The island out in Lough Leane, with its abbey, where monks wrote the Annals of Innisfallen. The channel from this shore is too deep to walk; Brook-wade would see you across, and it comes with the Urban Stone from Keeper Ray in Liverpool."
   }
  ],
  "spawn": [

@@ -265,14 +265,15 @@ func _bond_box(c: Creature) -> Control:
 		row.add_child(tok)
 		var nm := UIKit.label("%s:" % Charms.name_of(c.held), 16, UIKit.GOLD)
 		row.add_child(nm)
-		var fx := UIKit.label(str(Charms.item(c.held).get("effect_text", "")), 16, Color("d8cfb4"))
-		fx.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-		fx.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		fx.clip_text = true
-		row.add_child(fx)
-		row.custom_minimum_size = Vector2(340, 0)
+		var fx := str(Charms.item(c.held).get("effect_text", ""))
+		var f := ThemeDB.fallback_font
+		var one_line := f.get_string_size("%s: %s" % [Charms.name_of(c.held), fx], HORIZONTAL_ALIGNMENT_LEFT, -1, UIKit.MIN_TEXT).x + 30 <= MID_W - 36
+		if one_line:  # name and effect side by side when they fit; otherwise the effect gets a line of its own
+			row.add_child(UIKit.label(fx, 16, Color("d8cfb4")))
 		v.add_child(UIKit.spacer(4))
 		v.add_child(row)
+		if not one_line:
+			v.add_child(_small(fx, Color("d8cfb4")))
 	return v
 
 ## A small wrapped line that wraps inside the stats panel instead of widening it.
@@ -283,10 +284,10 @@ func _small(text: String, colour: Color, size := 16) -> Label:
 	return l
 
 func _middle(c: Creature) -> Control:
-	var p := UIKit.panel(Color("1d2230f0"), 18)
+	var p := UIKit.panel(Color("1d2230f0"), 14)  # snug: a charm's effect may take a second line at the foot
 	p.custom_minimum_size = Vector2(MID_W, 0)
 	var v := VBoxContainer.new()
-	v.add_theme_constant_override("separation", 5)
+	v.add_theme_constant_override("separation", 4)
 	p.add_child(v)
 	v.add_child(UIKit.label("Stats", 24, UIKit.MUTED))
 	var nat: Array = Rules.NATURES.get(c.nature, [])
@@ -368,8 +369,9 @@ func _right(c: Creature) -> Control:
 		row.add_child(chip)
 		var mn := UIKit.label(str(info.get("name", m.id)), 24)
 		mn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		mn.clip_text = true  # a long move name trims rather than push the PP off the panel
+		mn.clip_text = true  # a long move name shrinks a little, then trims, rather than push the PP off the panel
 		mn.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		UIKit.fit_width(mn, 20)
 		row.add_child(mn)
 		var low: bool = int(m.pp) * 4 <= int(m.max_pp)
 		row.add_child(UIKit.label("PP %d/%d" % [m.pp, m.max_pp], 20, Color("e9998c") if low else UIKit.MUTED))

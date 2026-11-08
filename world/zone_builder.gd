@@ -324,7 +324,7 @@ const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "roc
 	"buoy", "lighthouse", "statue", "harp", "clock_tower", "shard", "buffer_stop", "tunnel_portal",
 	"bunting", "flagpole", "washing_line", "hanging_basket", "rug", "fireplace", "wall_picture", "clock", "kitchen_dresser",
 	"fryer", "menu_board", "piano", "telescope", "plant_stand", "sofa", "display_case", "cascade", "sheep",
-	"field_gate", "limestone_pavement", "window", "cat_bowl", "owl_perch", "kettle_table", "specimen_shelf", "wall_map", "mirror",
+	"field_gate", "limestone_pavement", "window", "cat_bowl", "owl_perch", "kettle_table", "specimen_shelf", "shop_shelf", "wall_map", "mirror",
 	# the Keeper venues (Dressing.VENUE_PROPS)
 	"stadium_stand", "rugby_posts", "floodlight", "puddle", "pitch_line", "gantry_crane", "ship_ribs", "steel_plates",
 	"hall_stage", "tea_urn", "stacked_chairs", "currach", "lobster_pots", "harbour_arch", "fae_lantern", "toadstool_ring",
@@ -342,7 +342,9 @@ const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "roc
 	"penguin", "seal", "iceberg", "tussac", "skidoo", "headstone", "catcher_hulk", "twin_otter",
 	# British Overseas Territories (CaribStyles.PROPS)
 	"palm", "cannon", "salt_heap", "buried_roof",
-	"slot_machine", "roulette_table", "card_table", "tote_board", "velvet_rope", "horse_statue"]
+	"slot_machine", "roulette_table", "card_table", "tote_board", "velvet_rope", "horse_statue",
+	# Deep Places: gates, levers, crates and plates as their lines describe them (DeepMeshes)
+	"deep_gate", "deep_lever", "deep_crate", "deep_plate", "cave_cleft"]
 ## Cloth meshes that ripple (flutter shader) and glow meshes that add light (firelight shader).
 const CLOTH := ["bunting", "flag", "washing_line"]
 const FLOATING := ["boat", "canal_boat", "buoy", "punt", "wherry", "iceberg", "catcher_hulk"]
@@ -525,7 +527,7 @@ static func _add(buckets: Dictionary, key: String, tr: Transform3D) -> void:
 
 ## Furniture that gets a soft contact shadow on the floor (characters have their own blob).
 const CONTACT_SHADOWED := ["table", "bench", "sofa", "bed", "bookshelf", "kitchen_dresser", "piano", "display_case",
-	"specimen_shelf", "plant_stand", "potted_plant", "kettle_table", "fryer", "telescope", "stacked_chairs", "tea_urn",
+	"specimen_shelf", "shop_shelf", "plant_stand", "potted_plant", "kettle_table", "fryer", "telescope", "stacked_chairs", "tea_urn",
 	"market_stall", "statue", "tomb_chest", "loom", "harp"]
 
 static var contact_material: StandardMaterial3D
@@ -707,10 +709,14 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 			return Dressing.kettle_table()
 		"specimen_shelf":
 			return Dressing.specimen_shelf(variant)
+		"shop_shelf":
+			return Dressing.shop_shelf(variant)
 		"wall_map":
 			return Dressing.wall_map()
 		"mirror":
 			return LooksMirror.mesh()
+	if DeepPlace.LOOKS.has(name) or name == "cave_cleft":
+		return DeepMeshes.mesh(name, variant)
 	if name in CaribStyles.PROPS:
 		return CaribStyles.prop(name, variant)
 	if name in Landmarks.COTS_PROPS:
@@ -790,7 +796,9 @@ static func _interior_walls(z: ZoneData) -> MeshInstance3D:
 			var floor_e := east != "" and east != "void"
 			var floor_w := west != "" and west != "void"
 			if cave and (floor_s or floor_e or floor_w or floor_n):
-				_rock(st, p, rng, plaster)
+				# full height behind the floor, a low rubble lip in front of it (as a plaster room has a low skirting
+				# there, so the camera still sees in), and between the two at the sides
+				_rock(st, p, rng, plaster, 1.0 if floor_s else (0.2 if floor_n else 0.3))
 				continue
 			if floor_s:
 				Meshes.box(st, Vector3(x, 0, y + 0.6), Vector3(1, 2.4, 0.4), plaster, plaster.darkened(0.3))
@@ -800,7 +808,7 @@ static func _interior_walls(z: ZoneData) -> MeshInstance3D:
 				Meshes.box(st, Vector3(ox, 0, y), Vector3(0.3, 1.2, 1), plaster.darkened(0.08), plaster.darkened(0.3))
 			elif floor_n:
 				Meshes.box(st, Vector3(x, 0, y), Vector3(1, 0.25, 0.3), plaster.darkened(0.1), skirting)
-	if cave:
+	if cave and z.dark:  # in a lit show-cave room a hanging cone and its hard shadow read as a post on the floor
 		_stalactites(st, z, rng)
 	st.index()
 	var mi := MeshInstance3D.new()
@@ -809,22 +817,32 @@ static func _interior_walls(z: ZoneData) -> MeshInstance3D:
 	mi.material_override = Meshes.solid
 	return mi
 
-## One tile of cave wall: uneven stacked blocks of stone, a different height and tint each.
-static func _rock(st: SurfaceTool, p: Vector2i, rng: RandomNumberGenerator, base: Color) -> void:
+## One tile of cave wall: uneven stacked blocks of stone, a different height and tint each, `scale` of full height.
+static func _rock(st: SurfaceTool, p: Vector2i, rng: RandomNumberGenerator, base: Color, scale := 1.0) -> void:
 	for i in 3:
 		var w := rng.randf_range(0.35, 0.6)
-		var h := rng.randf_range(1.6, 2.6)
+		var h := rng.randf_range(1.6, 2.6) * scale
 		var ox := rng.randf_range(0.0, 1.0 - w)
 		var oz := rng.randf_range(0.0, 1.0 - w)
 		var c := base.lightened(rng.randf_range(-0.12, 0.1))
 		Meshes.box(st, Vector3(p.x + ox, 0, p.y + oz), Vector3(w, h, w), c, c.lightened(0.1))
 
-## Cones of rock hanging over scattered floor tiles, a few tiles per room.
+## Cones of rock hanging over scattered floor tiles, a few tiles per room. None in the three tiles south of anything
+## you might look for (a prop, a sign, a person, a Deep Place gate open or shut, a way out), where from the camera a
+## cone hangs right in front of it and its shadow reads as a post on the floor.
 static func _stalactites(st: SurfaceTool, z: ZoneData, rng: RandomNumberGenerator) -> void:
+	var clear := {}
+	var things: Array = z.props + z.signs + z.npcs + z.warps
+	for kind in z.deep:
+		things.append_array(z.deep[kind].filter(func(it): return it is Dictionary and it.has("x")))
+	for it in things:
+		if it.has("x") and it.get("type", "") != "building":
+			for dy in 4:
+				clear[Vector2i(int(it.x), int(it.y) + dy)] = true
 	for y in z.height:
 		for x in z.width:
 			var t := z.tile_at(Vector2i(x, y))
-			if t == "void" or t == "" or rng.randf() > 0.07:
+			if t == "void" or t == "" or rng.randf() > 0.07 or clear.has(Vector2i(x, y)):
 				continue
 			var c := Color("857d70")
 			for k in 3:

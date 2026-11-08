@@ -50,6 +50,7 @@ func _ready() -> void:
 	parish = Parish.connect_bus(self)  # jobs off the noticeboards and standing with the nations
 	quest_news = QuestNews.connect_bus(self, parish)  # "New quest", "Quest complete" and the Gazetteer's toasts
 	Bus.creature_caught.connect(func(_id: String): TodaysWalk.note_catch(data, Forecast.current_weather()))
+	add_child(ReportKey.new())  # F9 anywhere: a bug report in user://reports, see ui/report_key.gd
 	if "--quiet-window" in DevArgs.user_args():
 		# screenshot runs (tools/shot.sh): never grab focus, sit off-screen, make no sound
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, true)
@@ -270,6 +271,11 @@ func _take_shot() -> void:
 	if "--audit" in DevArgs.user_args():  # dev: list what spills out of its menu, beside the PNG
 		var lines := LayoutAudit.report(get_tree().root, get_viewport().get_visible_rect())
 		var f := FileAccess.open(path.get_basename() + ".audit.txt", FileAccess.WRITE)
+		f.store_string("\n".join(lines) + ("\n" if lines else "ok\n"))
+		f.close()
+	if "--text-check" in DevArgs.user_args():  # dev: list text a player can't read whole (TextCheck), beside the PNG
+		var lines := TextCheck.report(get_tree().root, get_viewport().get_visible_rect())
+		var f := FileAccess.open(path.get_basename() + ".text.txt", FileAccess.WRITE)
 		f.store_string("\n".join(lines) + ("\n" if lines else "ok\n"))
 		f.close()
 	get_tree().quit()

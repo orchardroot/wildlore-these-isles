@@ -92,16 +92,16 @@ class ChartView extends Control:
 			draw_arc(c, r, 0.0, TAU, 96, ISOBAR, 1.5 if k > 1 else 2.0)
 			if k % 2 == 1:  # every other ring is labelled, up the diagonal so tight rings don't overlap
 				var label := str(p0 + (4 * k if low else -4 * k))
-				draw_string(font, c + Vector2(r * 0.72 + 6, -r * 0.72 - 2), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 14, ISOBAR)
+				draw_string(font, c + Vector2(r * 0.72 + 6, -r * 0.72 - 2), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, ISOBAR)
 		draw_string(font, c + Vector2(-13, 14), "L" if low else "H", HORIZONTAL_ALIGNMENT_LEFT, -1, 40, WARM if low else COLD)
-		draw_string(font, c + Vector2(-22, 34), str(p0), HORIZONTAL_ALIGNMENT_LEFT, -1, 16, INK)
+		draw_string(font, c + Vector2(-22, 34), str(p0), HORIZONTAL_ALIGNMENT_LEFT, -1, 18, INK)
 		var front := str(chart.get("front", "none"))
 		if low and front != "none":
 			_front(c, _px(BRITAIN), front == "warm")
 		var b := _px(BRITAIN)
 		draw_circle(b, 5.0, INK)
-		draw_string(font, b + Vector2(10, 6), "You", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, INK)
-		draw_string(font, Vector2(14, size.y - 14), "Isobars every 4 millibars", HORIZONTAL_ALIGNMENT_LEFT, -1, 14, ISOBAR)
+		draw_string(font, b + Vector2(10, 6), "You", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, INK)
+		draw_string(font, Vector2(14, size.y - 14), "Isobars every 4 millibars", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, ISOBAR)
 
 	## A front sweeping from the low past Britain: red with bumps (warm), blue with teeth (cold).
 	func _front(c: Vector2, b: Vector2, warm: bool) -> void:

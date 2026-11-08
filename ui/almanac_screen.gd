@@ -38,10 +38,9 @@ func _show_hub() -> void:
 	var card := UIKit.panel(Color("1d2230f0"), 12)
 	card.set_anchors_preset(Control.PRESET_FULL_RECT)
 	content.add_child(card)
-	_list = VBoxContainer.new()
-	_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_list.add_theme_constant_override("separation", 3)
-	card.add_child(_list)
+	var sl := UIKit.scroll_list(3)  # the pages sprout as the journey goes on: past a screenful, it scrolls
+	_list = sl[1]
+	card.add_child(sl[0])
 	_buttons.clear()
 	_ids.clear()
 	for p in Almanac.pages(Game.data):
@@ -93,6 +92,11 @@ func _show_ledger(kind: String) -> void:
 		_tab = PapersTab.new(self)
 		_tab.build(col)
 		return
+	card.remove_child(col)  # a plain ledger: its rows scroll if a long journey makes too many
+	col.queue_free()
+	var sl := UIKit.scroll_list(8)
+	col = sl[1]
+	card.add_child(sl[0])
 	for r in Almanac.ledger(Game.data, kind):
 		var h := HBoxContainer.new()
 		h.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -106,6 +110,8 @@ func _show_ledger(kind: String) -> void:
 		v.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		h.add_child(v)
 		col.add_child(h)
+	UIKit.key_scroll(sl[0])  # nothing to pick here: up and down scroll a long ledger instead
+	UIKit.focus_later(sl[0])
 
 func _on_cancel() -> void:
 	if _ledger != "":

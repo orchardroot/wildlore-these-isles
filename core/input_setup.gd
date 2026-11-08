@@ -3,18 +3,20 @@ extends RefCounted
 ## Registers the game's input actions in code (keyboard and gamepad), so project.godot stays readable.
 ## The bindings are data: `defaults()` gives the factory set, Settings stores the player's and calls `apply`.
 
-const ACTIONS := ["move_up", "move_down", "move_left", "move_right", "confirm", "cancel", "menu", "run", "bike", "fly", "photo"]
+const ACTIONS := ["move_up", "move_down", "move_left", "move_right", "confirm", "cancel", "menu", "run", "bike", "fly", "photo", "report"]
 const LABELS := {
 	"move_up": "Move up", "move_down": "Move down", "move_left": "Move left", "move_right": "Move right",
-	"confirm": "Confirm", "cancel": "Cancel", "menu": "Menu", "run": "Run", "bike": "Bike", "fly": "Fly", "photo": "Photo mode",
+	"confirm": "Confirm", "cancel": "Cancel", "menu": "Menu", "run": "Run", "bike": "Bike", "fly": "Fly", "photo": "Photo mode", "report": "Report a problem",
 }
+## Actions that may have no button on a device (the report key has no pad button until the player gives it one).
+const OPTIONAL := {"report": ["pad"]}
 ## Confirm and cancel can never be left empty or share a button, or menus become impossible to use.
 const ESSENTIAL := ["confirm", "cancel"]
 const KEYS := {
 	"move_up": [KEY_UP, KEY_W], "move_down": [KEY_DOWN, KEY_S],
 	"move_left": [KEY_LEFT, KEY_A], "move_right": [KEY_RIGHT, KEY_D],
 	"confirm": [KEY_Z, KEY_ENTER, KEY_SPACE], "cancel": [KEY_X, KEY_BACKSPACE],
-	"menu": [KEY_ESCAPE, KEY_TAB], "run": [KEY_SHIFT], "bike": [KEY_B], "fly": [KEY_F], "photo": [KEY_P],
+	"menu": [KEY_ESCAPE, KEY_TAB], "run": [KEY_SHIFT], "bike": [KEY_B], "fly": [KEY_F], "photo": [KEY_P], "report": [KEY_F9],
 }
 const PAD_BUTTONS := {
 	"move_up": [JOY_BUTTON_DPAD_UP], "move_down": [JOY_BUTTON_DPAD_DOWN],
@@ -76,7 +78,7 @@ static func sanitise(raw) -> Dictionary:
 		var seen := {}
 		var ok := true
 		for a in ACTIONS:
-			if set[a].is_empty():
+			if set[a].is_empty() and not may_be_empty(a, dev):
 				ok = false
 			for c in set[a]:
 				if seen.has(c):
@@ -86,6 +88,9 @@ static func sanitise(raw) -> Dictionary:
 			for a in ACTIONS:
 				out[a][dev] = set[a]
 	return out
+
+static func may_be_empty(action: String, device: String) -> bool:
+	return device in OPTIONAL.get(action, [])
 
 static func _usable(dev: String, code: int, action: String) -> bool:
 	if dev == "key":
@@ -108,7 +113,7 @@ static func rebound(current: Dictionary, action: String, device: String, code: i
 		if other == action or not b[other][device].has(code):
 			continue
 		b[other][device].erase(code)
-		if b[other][device].is_empty():
+		if b[other][device].is_empty() and not may_be_empty(other, device):
 			return {"bindings": current, "error": "%s needs a %s button" % [LABELS[other], "key" if device == "key" else "pad"]}
 	var mine: Array = b[action][device]
 	mine.erase(code)

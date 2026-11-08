@@ -173,7 +173,9 @@ func _refresh() -> void:
 			var nrow := HBoxContainer.new()
 			nrow.add_theme_constant_override("separation", 6)
 			nrow.add_child(UIKit.sex_mark(c, 22))
-			nrow.add_child(UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 190, 24, 16))
+			var nl := UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 190, 24, 16)
+			nl.custom_minimum_size.x = 190  # a clipped label has no width of its own in an HBox
+			nrow.add_child(nl)
 			col.add_child(nrow)
 			col.add_child(UIKit.label("%s, %s" % [pair[1], PairingLogic.sex_desc(c)], 18, UIKit.MUTED))
 		else:

@@ -223,3 +223,53 @@ func test_station_board_stands_on_the_canopy_with_a_totem() -> void:
 	for l: Label3D in labels:
 		assert_eq(l.font, Signage.font("sans"))
 	root.free()
+
+# --- where you can read it (SignSight) ------------------------------------------------------
+
+func test_a_taller_neighbour_in_front_pushes_the_name_along_the_front() -> void:
+	# Cardiff Bay's Pierhead: a long front with its door at the west end, and a block standing two rows forward
+	# across its east end, off to the side of the door (so it stays solid while you stand there)
+	Meshes.materials()
+	var rows := []
+	for y in 10:
+		rows.append("..........")
+	rows[0] = "BBBBBBBBBB"
+	rows[1] = "BBBBBBBBBB"
+	rows[2] = "BBBBBBBBBB"
+	rows[3] = "BDBBBBBBBB"
+	var shop := {"type": "building", "style": "red_brick", "label": "Pierhead Building", "kind": "museum", "x": 0, "y": 0, "w": 10, "h": 4}
+	var block := {"type": "building", "style": "mill", "x": 3, "y": 6, "w": 7, "h": 3}
+	var z := _zone(rows, [shop, block])
+	var root := ZoneBuilder.build(z)
+	var l: Label3D = _labels(root.get_node("Building_0_0"))[0]
+	var half := float(l.get_meta("size").x) * 0.5
+	assert_true(l.position.x + half < 3.4, "the name keeps west of the block (ends at %.2f)" % (l.position.x + half))
+	for r in SignSight.audit(z, root):
+		assert_eq(float(r.hidden), 0.0, "%s: all of it shows from the door" % r.label)
+	root.free()
+
+func test_a_jettied_front_carries_its_name_on_its_face_not_inside_it() -> void:
+	Meshes.materials()
+	var rows := ["BBBBBBBB", "BBBBBBBB", "BBBBBBBB", "BBBDBBBB", "........", "........"]
+	var z := _zone(rows, [{"type": "building", "style": "york_timber", "label": "Bettys Tea Rooms", "x": 0, "y": 0, "w": 8, "h": 4}])
+	var root := ZoneBuilder.build(z)
+	var l: Label3D = _labels(root.get_node("Building_0_0"))[0]
+	assert_true(l.position.z > 4.12, "in front of the oversailing upper floor (z %.2f)" % l.position.z)
+	assert_eq(float(SignSight.audit(z, root)[0].hidden), 0.0)
+	root.free()
+
+func test_town_signs_read_whole_from_their_doors() -> void:
+	# the towns players see most, and the owner's Cardiff Bay: every name fits its building and shows whole
+	# from its door with the game's camera (tools/dev/sign_audit.gd runs this over every zone)
+	Meshes.materials()
+	for id in ["cardiff", "liverpool", "london", "edinburgh", "york", "belfast", "dublin", "macclesfield", "llanberis", "whitby"]:
+		var z := ZoneData.load_id(id)
+		if z == null:
+			continue
+		var root := ZoneBuilder.build(z)
+		for r in SignSight.audit(z, root):
+			assert_eq(float(r.hidden), 0.0, "%s/%s hidden from its door" % [id, r.label])
+			assert_false(r.wide, "%s/%s wider than its building" % [id, r.label])
+			assert_eq(float(r.off), 0.0, "%s/%s off the screen" % [id, r.label])
+			assert_false(r.moved, "%s/%s pushed off its wall" % [id, r.label])
+		root.free()

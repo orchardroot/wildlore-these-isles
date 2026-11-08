@@ -94,6 +94,7 @@ func _show_tab() -> void:
 	_detail.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_detail.add_theme_constant_override("separation", 10)
 	dsc.add_child(_detail)
+	UIKit.keep_fitted(_detail)  # a long quest steps its words down to fit the panel
 	_quests = Quests.active(Game.data) if _tab == 0 else Quests.done(Game.data)
 	for i in _quests.size():
 		_list_col.add_child(_row(i))

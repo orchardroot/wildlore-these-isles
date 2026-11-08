@@ -232,8 +232,8 @@
    "text": "HYENA DEN. Bones of hyenas and other Ice Age animals were dug out of Mendip caves like this one by Victorian scholars. Hyenas denned in the hills when the climate was far colder, and dragged their dinners home."
   },
   {
-   "x": 10,
-   "y": 19,
+   "x": 12,
+   "y": 15,
    "text": "A brass lever set into the rock by the water's edge. Someone has stencilled 'HATCH' on it in 1950s paint."
   },
   {
@@ -289,7 +289,7 @@
    {
     "id": "hatch",
     "x": 11,
-    "y": 19,
+    "y": 15,
     "on": "You haul the brass lever. Somewhere across the grass, an iron gate groans open.",
     "off": "You haul the lever back. The gate clangs shut."
    }

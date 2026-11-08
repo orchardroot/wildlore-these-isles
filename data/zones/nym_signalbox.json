@@ -52,6 +52,48 @@
    "h": 2,
    "variant": 0,
    "walk": true
+  },
+  {
+   "type": "lever",
+   "x": 2,
+   "y": 2,
+   "variant": 0
+  },
+  {
+   "type": "lever",
+   "x": 3,
+   "y": 2,
+   "variant": 1
+  },
+  {
+   "type": "lever",
+   "x": 4,
+   "y": 2,
+   "variant": 0
+  },
+  {
+   "type": "lever",
+   "x": 5,
+   "y": 2,
+   "variant": 1
+  },
+  {
+   "type": "lever",
+   "x": 6,
+   "y": 2,
+   "variant": 0
+  },
+  {
+   "type": "lever",
+   "x": 7,
+   "y": 2,
+   "variant": 1
+  },
+  {
+   "type": "lever",
+   "x": 8,
+   "y": 2,
+   "variant": 0
   }
  ],
  "warps": [
@@ -85,7 +127,7 @@
  "rows": [
   "xxxxxxxxxxx",
   "x|||||||||x",
-  "x|CCCCCCC|x",
+  "x|||||||||x",
   "x|||||||||x",
   "x|||||||||x",
   "x|||||||||x",

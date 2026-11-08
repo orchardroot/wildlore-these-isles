@@ -290,30 +290,30 @@ func play(cue: Dictionary, battle: Battle) -> void:
 		"status":
 			var col: Color = STATUS_COLOURS.get(str(cue.status), Color.WHITE)
 			burst(_chest(side, pos), col, 18, 2.5, 0.16, 0.8, -1.0)
-			hud.set_status(side, str(cue.status), pos)
+			plates(cue, battle)
 			await _wait(0.5)
 		"cure":
-			burst(_chest(side, pos), Color("fff2b0"), 14, 2.5, 0.14, 0.7, -2.0)
-			hud.set_status(side, "", pos)
+			for p in cue.get("team", [pos]):
+				burst(_chest(side, int(p)), Color("fff2b0"), 14, 2.5, 0.14, 0.7, -2.0)
+			plates(cue, battle)
 			await _wait(0.4)
 		"idle":
 			await _actor(side, pos).nod()
 		"faint":
 			Audio.sfx("faint")
+			plates(cue, battle)
 			await _actor(side, pos).faint()
 		"switch":
-			await _switch(side, battle.parties[side][int(cue.index)], pos, int(cue.get("hp", -1)))
+			await _switch(side, battle.parties[side][int(cue.index)], pos, cue, battle)
 		"run":
 			Audio.sfx("run")
 			await _actor(Battle.PLAYER).slip_away()
 		"heal":
 			Audio.sfx("heal")
-			var at := 0
-			if battle.double:
-				at = maxi(0, battle.active[side].find(int(cue.get("target", 0))))
-			burst(_actor(side, at).global_position + Vector3(0, 0.2, 0), Color("8fe89a"), 18, 2.2, 0.15, 1.0, 1.0, Vector3.UP)
-			if cue.has("hp"):
-				hud.tween_hp(side, int(cue.hp), 0.5, at)
+			var at := heal_pos(cue, battle)
+			if at >= 0:  # an item on a creature on the bench has nobody on the field to glow
+				burst(_actor(side, at).global_position + Vector3(0, 0.2, 0), Color("8fe89a"), 18, 2.2, 0.15, 1.0, 1.0, Vector3.UP)
+			plates(cue, battle)
 			await _wait(0.5)
 		"protect":
 			Audio.sfx("bump")
@@ -328,12 +328,56 @@ func play(cue: Dictionary, battle: Battle) -> void:
 			if called:
 				_weather_call(w)
 			_weather_sky(w, called)
-			hud.set_weather(w, int(cue.get("turns", 0)))
+			plates(cue, battle)
 			await _wait(1.1 if called else 0.4)
 		"catch":
 			await _catch(bool(cue.success), int(cue.wobbles))
 		"end", "none":
 			pass
+
+## What a cue does to the name plates, and only that: the HP bar, the status chip, a creature coming in, the
+## weather plate. play() calls it at the cue's moment of contact; the playback tests call it on their own.
+## Every value comes from the cue (so from the event), never from the creature: by playback the Battle has worked
+## out the whole turn, and the creature's own hp and status are already the end of it.
+func plates(cue: Dictionary, battle: Battle) -> void:
+	var side := int(cue.get("side", 0))
+	var pos := int(cue.get("pos", 0))
+	match str(cue.cue):
+		"hit":
+			hud.tween_hp(side, int(cue.hp), hit_time(side, int(cue.hp), pos), pos)
+		"heal":
+			var at := heal_pos(cue, battle)
+			if at < 0:
+				return
+			if cue.has("hp"):
+				hud.tween_hp(side, int(cue.hp), 0.5, at)
+			if cue.has("status"):
+				hud.set_status(side, str(cue.status), at)
+		"status":
+			hud.set_status(side, str(cue.status), pos)
+		"cure":
+			for p in cue.get("team", [pos]):  # a team cure: every field position it cured
+				hud.set_status(side, "", int(p))
+		"switch":
+			var c: Creature = battle.parties[side][int(cue.index)]
+			hud.set_creature(side, c, pos, int(cue.get("hp", -1)))
+			if cue.has("status"):
+				hud.set_status(side, str(cue.status), pos)
+		"weather":
+			hud.set_weather(str(cue.weather), int(cue.get("turns", 0)))
+		"faint":
+			hud.fade_plate(side, pos)
+
+## Where a heal cue's creature stands: its field position, or -1 when it is on the bench (an item on a reserve).
+static func heal_pos(cue: Dictionary, battle: Battle) -> int:
+	if not cue.has("target"):
+		return int(cue.get("pos", 0))
+	return battle.active[int(cue.get("side", 0))].find(int(cue.target))
+
+## How long an HP bar takes to drain to `hp`: longer for a bigger bite.
+func hit_time(side: int, hp: int, pos := 0) -> float:
+	var frac := absf(hud.shown_hp(side, pos) - hp) / maxf(1.0, hud.max_hp(side, pos))
+	return clampf(0.35 + frac * 1.4, 0.35, 1.4)
 
 func _attack(side: int, type_id: String, pos := 0, t_side := -1, t_pos := 0, spread := false, move := {}) -> void:
 	var other := 1 - side if t_side < 0 else t_side
@@ -492,12 +536,12 @@ func play_shape(shape: String, side: int, pos: int, other: int, hit_pos: Array, 
 			for p in hit_pos:
 				var tp := _chest(other, p)
 				var across := (tp - u).cross(Vector3.UP).normalized()
-				for i in _n(14):
+				for i in _n(14):  # the last of the wave lands as the cue ends, so the hit never beats it there
 					var c := col.lerp(hi, _rng.randf_range(0.0, 0.5))
-					_spawn(u, across * sin(i * 1.7) * 1.1, c, _rng.randf_range(0.2, 0.38), 0.4, 0.0, PATH, 0.03 * i, tp, 0.4 + 0.3 * sin(i * 0.9), true, 1.0, tx)
+					_spawn(u, across * sin(i * 1.7) * 1.1, c, _rng.randf_range(0.2, 0.38), 0.4, 0.0, PATH, 0.02 * i, tp, 0.4 + 0.3 * sin(i * 0.9), true, 1.0, tx)
 			await _wait(0.5)
 			_impact(other, hit_pos, pal, 18)
-			await _wait(0.1)
+			await _wait(0.16)
 		"self":
 			actor.cast()
 			_aura(actor.global_position, col, tx)
@@ -508,11 +552,11 @@ func play_shape(shape: String, side: int, pos: int, other: int, hit_pos: Array, 
 			for p in hit_pos:
 				var tp := _chest(other, p) + Vector3(0, 0.4, 0)
 				var across := (tp - u).cross(Vector3.UP).normalized()
-				for i in 7:
-					_spawn(u + Vector3(0, 0.8, 0), across * sin(i * 2.1) * 0.8, col.lerp(hi, 0.5 * (i % 2)), 0.34, 0.6, 0.0, PATH, 0.07 * i, tp, 0.6 + 0.12 * i, true, 1.0, 5)
-				get_tree().create_timer(0.55).timeout.connect(func():
+				for i in 7:  # the notes land between 0.6 and 0.84 s: the burst comes with the first, the hit after the last
+					_spawn(u + Vector3(0, 0.8, 0), across * sin(i * 2.1) * 0.8, col.lerp(hi, 0.5 * (i % 2)), 0.34, 0.5, 0.0, PATH, 0.04 * i, tp, 0.6 + 0.12 * i, true, 1.0, 5)
+				get_tree().create_timer(0.5).timeout.connect(func():
 					burst(tp, hi, _n(10), 2.0, 0.22, 0.4, 1.0, Vector3.UP, 2))
-			await _wait(0.7)
+			await _wait(0.75)
 		"bite":
 			actor.lunge(_aim(other, t_pos, spread))
 			await _wait(0.12)
@@ -688,18 +732,17 @@ func _hit(side: int, hp: int, strength: String, pos := 0) -> void:
 	var n := 12 if strength == "weak" else 24
 	var base := Color("fff2d0") if strength != "strong" else Color("ffd070")
 	burst(_chest(side, pos), base.lerp(_hit_tint, 0.55), _n(n / 2 if small else n), 3.0 if small else 4.0, 0.15 if small else 0.2, 0.4)
-	var before := hud.shown_hp(side, pos)
-	var frac := absf(before - hp) / maxf(1.0, hud.max_hp(side, pos))
-	hud.tween_hp(side, hp, clampf(0.35 + frac * 1.4, 0.35, 1.4), pos)
+	var drain := hit_time(side, hp, pos)
+	plates({"cue": "hit", "side": side, "hp": hp, "pos": pos}, null)
 	await a.hit(strength, _hit_tint)
-	await _wait(maxf(0.0, clampf(0.35 + frac * 1.4, 0.35, 1.4) - 0.45))
+	await _wait(maxf(0.0, drain - 0.45))
 
-func _switch(side: int, c: Creature, pos := 0, hp := -1) -> void:
+func _switch(side: int, c: Creature, pos: int, cue: Dictionary, battle: Battle) -> void:
 	var a := _actor(side, pos)
 	if a.sprite.visible:
 		await a.pop_out()
 	a.show_creature(c, side == Battle.PLAYER)
-	hud.set_creature(side, c, pos, hp)
+	plates(cue, battle)
 	Audio.sfx("send_out")
 	Audio.cry(c.species)
 	burst(a.global_position + Vector3(0, 1.0, 0), Color("fff2d0"), 20, 3.0, 0.16, 0.6, -1.0)

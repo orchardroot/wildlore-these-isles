@@ -364,6 +364,7 @@ func _strike(side: int, pos: int, user: Creature, t_side: int, t_pos: int, targe
 	var hits := MoveFX.roll_hits(fx, rng) if fx.id == "multi_hit" else 1
 	var total := 0
 	var landed := 0
+	var from := ev.size()
 	for h in hits:
 		if target.is_fainted() or user.is_fainted():
 			break
@@ -403,8 +404,13 @@ func _strike(side: int, pos: int, user: Creature, t_side: int, t_pos: int, targe
 		elif dealt > 0:
 			_thorns(side, pos, user, t_side, t_pos, target, move, ev)
 			_prickly(side, pos, user, t_side, t_pos, target, move, ev)
-	if fx.id == "multi_hit":
-		ev.append(_at({"type": "hits", "side": side, "count": landed}, pos))
+	if fx.id == "multi_hit":  # "Hit 3 times!" before anyone faints from it, not after
+		var at := ev.size()
+		for i in range(from, ev.size()):
+			if ev[i].type == "faint":
+				at = i
+				break
+		ev.insert(at, _at({"type": "hits", "side": side, "count": landed}, pos))
 	return total
 
 ## Drain and recoil, from the damage one target took.
@@ -447,15 +453,19 @@ func _self_effect(side: int, pos: int, user: Creature, move: Dictionary, ev: Arr
 			_set_weather(side, pos, user, str(fx.weather), ev, true, int(fx.get("turns", MoveFX.DEFAULT_TURNS)))
 		"cure_team":
 			var cured := 0
-			for c in parties[side]:
+			var on_field := []  # the field positions it cured: their plates lose the chip, a fainted one keeps its own
+			for i in parties[side].size():
+				var c: Creature = parties[side][i]
 				if c.status != "" and not c.is_fainted():
 					c.status = ""
 					c.status_turns = 0
 					cured += 1
+					if i in active[side]:
+						on_field.append(active[side].find(i))
 			if cured == 0:
 				ev.append(_at({"type": "fail", "side": side}, pos))
 			else:
-				ev.append(_at({"type": "cure_team", "side": side, "count": cured}, pos))
+				ev.append(_at({"type": "cure_team", "side": side, "count": cured, "cured": on_field}, pos))
 
 ## Calls up a weather for a few turns (a Weather Eye knack makes it last longer). The same weather again fails.
 func _set_weather(side: int, pos: int, by: Creature, w: String, ev: Array, say_fail := true, turns := MoveFX.DEFAULT_TURNS) -> void:
@@ -532,8 +542,8 @@ func _do_switch(side: int, index: int, ev: Array, pos := 0) -> void:
 				ev.append(_knack(side, pos, out, "switch", {"hp": out.hp, "amount": back}))
 	active[side][pos] = index
 	_note_fighters()
-	# hp as it comes in: the UI plays the turn back after it is all worked out, so the creature's own hp is already the end of it
-	ev.append(_at({"type": "switch", "side": side, "index": index, "user": party[index].display_name(), "hp": party[index].hp}, pos))
+	# hp and status as it comes in: the UI plays the turn back after it is all worked out, so the creature's own are already the end of it
+	ev.append(_at({"type": "switch", "side": side, "index": index, "user": party[index].display_name(), "hp": party[index].hp, "status": party[index].status}, pos))
 	_entered(side, pos, ev)
 
 func _do_item(side: int, item_id: String, target: int, ev: Array) -> void:
@@ -542,6 +552,7 @@ func _do_item(side: int, item_id: String, target: int, ev: Array) -> void:
 		return
 	var text := "Nothing happened."
 	var party: Array = parties[side]
+	var e := {"type": "item", "side": side, "item": item_id, "target": target}
 	if side == PLAYER and item_db != null and target >= 0 and target < party.size():
 		var item := item_db.get_item(item_id)
 		var on_field_fainted: bool = target in active[side] and party[target].is_fainted()
@@ -550,7 +561,11 @@ func _do_item(side: int, item_id: String, target: int, ev: Array) -> void:
 			text = "It can't be revived while it's still on the field."
 		elif bool(item.get("battle", false)) and item.get("kind", "") in ["heal", "cure", "revive", "pp"]:
 			text = ItemEffects.apply(item, party[target]).text
-	ev.append({"type": "item", "side": side, "item": item_id, "target": target, "text": text})
+		# what its plate shows once the item works, as for a switch: later events in the turn have moved it on since
+		e["hp"] = party[target].hp
+		e["status"] = party[target].status
+	e["text"] = text
+	ev.append(e)
 
 ## A keeper's one tea (TrainerParty.TEA on the creature, set from its trainer data): heals it once and is gone.
 ## Played as a charm-style event (side, item, hp, text with "{name}") so the HP bar rises with no "You used" line.

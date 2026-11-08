@@ -231,6 +231,11 @@
    "type": "lighthouse",
    "x": 38,
    "y": 58
+  },
+  {
+   "type": "field_gate",
+   "x": 30,
+   "y": 12
   }
  ],
  "warps": [],
@@ -573,7 +578,7 @@
   "$$$$$$$wkWkkkkkhhkhkkkhhkkkhkkkkkk===kkkkkkkkkkkkkw$$$$$",
   "$$$$$$$wkWhkkkkkkkhkkhkhkhkkkkkkkk===kkkkkkkkkkkkkw$$$$$",
   "$$$$$$$wkWkkkhkkhkkkkhkkkkkkkkWkkk===kkkkkkkkkkkkkw$$$$$",
-  "$$$$$$$wkWkkkkkkkkkkkhkkkkhkkkWkkk===kkkkkkkkkkkkkw$$$$$",
+  "$$$$$$$wkWkkkkkkkkkkkhkkkkhkkkkkkk===kkkkkkkkkkkkkw$$$$$",
   "$$$$$$$wkWkkkhhkkhhkkkkkkkkkkkWkkk===kkkkkkkkkkkkkw$$$$$",
   "$$$$$$$wkWWWWWWWWWWWWWWWWWWWWWWkkk===kkkkkkkkkkkkw$$$$$$",
   "$$$k$$$wkhkkkkkkkkkkhkhkhkhkkkkkkk===kkkkkkkkkkkkw$$$$$$",

@@ -55,7 +55,7 @@ func test_weir_drains_the_river_and_block_opens_the_slab() -> void:
 	var c := ZoneData.load_id("dyo_cathedral")
 	var crates := DeepPlace.crates_start(c)
 	DeepPlace.apply(d, c, crates)
-	assert_eq(c.tile_at(Vector2i(14, 4)), "fence")
+	assert_false(c.walkable(Vector2i(14, 4)), "the slab is across the way")
 	for i in 2:
 		DeepPlace.push(c, crates, crates.block, Vector2i(0, -1))
 	for i in 5:
@@ -63,4 +63,4 @@ func test_weir_drains_the_river_and_block_opens_the_slab() -> void:
 		DeepPlace.push(c, crates, crates.block, Vector2i(1, 0))
 	assert_eq(DeepPlace.press_plates(d, c, crates, Vector2i(0, 0)), ["plate"])
 	DeepPlace.apply(d, c, crates)
-	assert_eq(c.tile_at(Vector2i(14, 4)), "path")
+	assert_true(c.walkable(Vector2i(14, 4)), "and now it isn't")
