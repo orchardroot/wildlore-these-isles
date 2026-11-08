@@ -65,7 +65,7 @@ func _build_frame() -> void:
 	hint_label.clip_text = true  # never widens the frame; _fit_hint shrinks the text first
 	hint_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	foot.add_child(hint_label)
-	foot.resized.connect(_fit_hint)
+	hint_label.resized.connect(_fit_hint)  # the label's own width, once the bar has laid it out (not the bar's)
 	var margin := MarginContainer.new()
 	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
 	for side in ["left", "right"]:
@@ -150,8 +150,10 @@ func _redraw_hint() -> void:
 func _fit_hint() -> void:
 	if not is_instance_valid(hint_label):
 		return
-	var w := hint_label.size.x if hint_label.size.x > 0 else size.x - SIDE * 2
-	hint_label.add_theme_font_size_override("font_size", UIKit.fit_size(hint_label.text, w, HINT_FONT, HINT_MIN))
+	var w := hint_label.size.x if hint_label.size.x > SIDE else get_viewport_rect().size.x - SIDE * 2  # before layout it is a sliver
+	var fs := UIKit.fit_size(hint_label.text, w, HINT_FONT, HINT_MIN)
+	if fs != hint_label.get_theme_font_size("font_size"):
+		hint_label.add_theme_font_size_override("font_size", fs)
 
 func _exit_tree() -> void:
 	if InputDevice.changed.is_connected(_redraw_hint):
