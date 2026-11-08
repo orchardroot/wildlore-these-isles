@@ -645,7 +645,7 @@ func set_stages(side: int, stages: Dictionary, pos := 0) -> void:
 	plate(side, pos).stage_row.set_all(stages)
 
 ## Called as each battle event starts playing: stat pills move with the "rose!" line, a crit flashes gold,
-## and (if the setting is on) the damage floats off the plate.
+## and (if the setting is on) the damage or healing floats off the plate it happens to (a prick: the attacker's).
 func on_event(ev: Dictionary) -> void:
 	var side := int(ev.get("side", 0))
 	var pos := int(ev.get("pos", 0))
@@ -655,24 +655,32 @@ func on_event(ev: Dictionary) -> void:
 		flash_crit()
 	var t := number_text(ev)
 	if t != "":
-		_pop_number(plate(side, pos), t, ev.type == "damage" and bool(ev.get("crit", false)))
+		var at := plate(int(ev.other_side), int(ev.get("other_pos", 0))) if ev.has("other_side") else plate(side, pos)
+		_pop_number(at, t, ev.type == "damage" and bool(ev.get("crit", false)), t.begins_with("+"))
 
-## "-12" for an event that took HP off a plate, "" when there's nothing to show (or the setting is off).
+## "-12" for an event that took HP off a plate, "+5" for one that gave some back, "" when there's nothing to
+## show (or the setting is off). A charm or knack with "other_side" pricked the attacker; one with "hp" healed.
 func number_text(ev: Dictionary) -> String:
-	if not Settings.damage_numbers or str(ev.get("type", "")) not in ["damage", "status_damage", "self_hit", "recoil"]:
-		return ""
 	var n := int(ev.get("amount", 0))
-	return "-%d" % n if n > 0 else ""
+	if not Settings.damage_numbers or n <= 0:
+		return ""
+	var t := str(ev.get("type", ""))
+	var charm := t in ["charm", "knack"]
+	if t in ["damage", "status_damage", "self_hit", "recoil"] or (charm and ev.has("other_side")):
+		return "-%d" % n
+	if t == "heal" or (charm and ev.has("hp")):
+		return "+%d" % n
+	return ""
 
-## A small number that drifts up beside the plate's HP bar and fades. Gold for a crit.
-func _pop_number(p: Plate, text: String, crit: bool) -> void:
+## A small number that drifts up beside the plate's HP bar and fades. Gold for a crit, green for healing.
+func _pop_number(p: Plate, text: String, crit: bool, healed := false) -> void:
 	if not p.visible:
 		return
 	var l := Label.new()
 	l.text = text
 	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	l.add_theme_font_size_override("font_size", 26 if crit else 22)
-	l.add_theme_color_override("font_color", Color("ffd257") if crit else CREAM)
+	l.add_theme_color_override("font_color", Color("ffd257") if crit else (Color("9ff0a4") if healed else CREAM))
 	l.add_theme_color_override("font_outline_color", Color("14161c"))
 	l.add_theme_constant_override("outline_size", 6)
 	add_child(l)
