@@ -18,8 +18,8 @@ Branch `w49-tune`. Full write-up with the simulation table and findings: `docs/a
   label has a backing. Screens: `docs/screens/w49-tune-*.png`.
 
 ## For the integrator
-- No existing test pinned an old threshold; all minigame test files pass unchanged. Full `tools/test.sh` run at the end
-  (result noted in the final commit message).
+- No existing test pinned an old threshold; all minigame test files pass unchanged. Full `tools/test.sh` at the end:
+  2941 passed, 0 failed, validate 0 error(s), no SCRIPT ERROR.
 - Findings that are bigger than a tuning pass, all in `docs/audit/w49_tune.md`: the pancake pan is on a knife edge with
   key input (reaction 0.08 s flawless, 0.2 s thirty drops); Easier minigames hands out gold rosettes and the 150 pound
   prize; the sheepdog flock can jam at the gate for bot and probably player alike; coracle and snorkel have fixed
