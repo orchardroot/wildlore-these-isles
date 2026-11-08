@@ -480,13 +480,13 @@ static func _sign(kit: Kit, z: ZoneData, pr: Dictionary, t: String, door_x: int)
 	var label := str(pr.label)
 	var f := front(style, w, d, door_x)
 	var mode: String = f.mode
-	var stand_z := d + 0.2
+	var stand := {"x": _stand_x(w, door_x), "z": d + 0.2}
 	if kit.sight != null and mode in ["wall", "parapet", "canopy", "stand"]:
 		# keep the name on the part of the front you can see from its door: on the front's real face, clear of a
 		# porch, and out from behind a neighbour standing further forward
 		var near_x := door_x + 0.5 if door_x >= 0 else w * 0.5
-		var stand := Vector2i(int(pr.x) + int(near_x), int(pr.y) + d)
-		var eye := kit.sight.eye(stand, ZoneBuilder.ground_y(z, stand))
+		var at := Vector2i(int(pr.x) + int(near_x), int(pr.y) + d)
+		var eye := kit.sight.eye(at, ZoneBuilder.ground_y(z, at))
 		var mi := kit.body as MeshInstance3D
 		var tried_wall := mode == "wall"
 		if mode != "stand":
@@ -496,15 +496,8 @@ static func _sign(kit: Kit, z: ZoneData, pr: Dictionary, t: String, door_x: int)
 			elif mode == "wall":
 				mode = "stand"  # no stretch of the front shows: the name goes on a board in front instead
 		if mode == "stand":
-			# a board on posts stands clear of a porch or a veranda, not under it
-			var sx := _stand_x(w, door_x)
-			stand_z = clampf(kit.sight.reach(mi, sx - 0.6, sx + 0.6, 0.15, 2.0, d + 1.2) + 0.3, d + 0.2, d + 0.85)
-			var xf := _lectern_frame(sx, stand_z)
-			var line := []
-			for u in [-0.45, 0.0, 0.45]:
-				for v in [0.06, 0.14, 0.22]:
-					line.append(kit.base + xf * Vector3(u, v, 0.03))
-			if not tried_wall and kit.sight.any_hidden(line, eye):
+			stand = _stand_spot(kit, _lectern_fit(label, t), w, d, door_x, eye)
+			if not tried_wall and int(stand.hidden) > 0:
 				# hidden even so: a name on the wall, where some of the front shows and a wall backs it
 				var seen := kit.sight.place(f, mi, eye, near_x, true)
 				if not seen.is_empty():
@@ -515,7 +508,7 @@ static func _sign(kit: Kit, z: ZoneData, pr: Dictionary, t: String, door_x: int)
 		return
 	match mode:
 		"stand":
-			_lectern(kit, label, t, w, stand_z, door_x)
+			_lectern(kit, label, t, float(stand.x), float(stand.z))
 			return
 		"monolith":
 			_monolith(kit, label, w, d, door_x)
@@ -937,25 +930,53 @@ static func _iron_plate(kit: Kit, label: String, f: Dictionary) -> void:
 
 ## A heritage interpretation board on two posts just in front of a landmark with no wall for a name (a round
 ## tower, a crane, a monument), its face tipped back toward you; a brown one for an attraction.
-static func _lectern(kit: Kit, label: String, t: String, w: int, zf: float, door_x: int) -> void:
+static func _lectern(kit: Kit, label: String, t: String, x: float, zf: float) -> void:
 	var brown := t == "tourist"
 	var fnt := font("sans") if brown else font("serif")
 	var face := BROWN if brown else Color("23392d")
 	var bw := 1.15
 	var bh := 0.62
-	var x := _stand_x(w, door_x)
 	var xf := _lectern_frame(x, zf)
 	for px in [-bw * 0.36, bw * 0.36]:
 		kit.box(Vector3(x + px - 0.03, 0.0, zf - 0.03), Vector3(0.06, 0.6, 0.06), POST)
 	kit.obox(xf, Vector3(-bw * 0.5 - 0.03, -bh * 0.5 - 0.03, -0.04), Vector3(bw + 0.06, bh + 0.06, 0.04), POST)
 	kit.obox(xf, Vector3(-bw * 0.5, -bh * 0.5, 0.0), Vector3(bw, bh, 0.01), face)
 	var ink := ENAMEL_WHITE if brown else Color("efe6cf")
-	var fit_w := fit(label, fnt, 0.2, bw - 0.14, bh * 0.42)
+	var fit_w := _lectern_fit(label, t)
 	kit.text(xf, Vector3(0, bh * 0.22, 0.014), fit_w, fnt, ink)
 	# the "body text" and a picture, too small to read: enough to say what kind of board it is
 	kit.obox(xf, Vector3(-bw * 0.5 + 0.07, -bh * 0.5 + 0.07, 0.01), Vector3(bw * 0.38, bh * 0.4, 0.004), Color("8fa89a") if not brown else Color("c9b38f"))
 	for k in 4:
 		kit.obox(xf, Vector3(-bw * 0.5 + 0.12 + bw * 0.38, -bh * 0.5 + 0.09 + k * 0.065, 0.01), Vector3(bw * 0.42 - (0.08 if k == 3 else 0.0), 0.022, 0.004), ink.darkened(0.25))
+
+## Where a board on posts can stand and be seen from `eye`: beside the door, the other side of it, or mid-front,
+## each clear of a porch or a veranda rather than under it. {x, z, hidden (of 15 points on its name)}: the
+## first that shows whole, else the one hidden least.
+static func _stand_spot(kit: Kit, name_fit: Dictionary, w: int, d: int, door_x: int, eye: Vector3) -> Dictionary:
+	var xs := [_stand_x(w, door_x)]
+	if door_x >= 0:
+		xs.append(clampf(door_x + 0.5 - (float(xs[0]) - door_x - 0.5), 0.6, maxf(0.6, w - 0.6)))
+	xs.append(w * 0.5)
+	var hy := float(name_fit.height) if int(name_fit.lines) > 1 else float(name_fit.em) * 0.72
+	var best := {}
+	for x: float in xs:
+		var zf := clampf(kit.sight.reach(kit.body as MeshInstance3D, x - 0.6, x + 0.6, 0.15, 2.0, d + 1.2) + 0.3, d + 0.2, d + 0.85)
+		var xf := _lectern_frame(x, zf)
+		var n := 0
+		for k in 5:  # across the name (see _lectern)
+			for v in [-0.4, 0.0, 0.4]:
+				var u := (k / 4.0 - 0.5) * float(name_fit.width)
+				if kit.sight.blocked(kit.base + xf * Vector3(u, 0.136 + v * hy, 0.034), eye):
+					n += 1
+		if best.is_empty() or n < int(best.hidden):
+			best = {"x": x, "z": zf, "hidden": n}
+		if n == 0:
+			break
+	return best
+
+## A lectern's name, fitted to its 1.15 x 0.62 board.
+static func _lectern_fit(label: String, t: String) -> Dictionary:
+	return fit(label, font("sans") if t == "tourist" else font("serif"), 0.2, 1.15 - 0.14, 0.62 * 0.42)
 
 ## The board's face, tipped back toward you, at x and zf on the front.
 static func _lectern_frame(x: float, zf: float) -> Transform3D:

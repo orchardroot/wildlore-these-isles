@@ -19,6 +19,7 @@ func _go() -> void:
 	ids.sort()
 	var signs := 0
 	var bad := 0
+	var moved := []
 	for id in ids:
 		var z = zone_data.load_id(id)
 		if z == null or z.kind == "interior":
@@ -26,9 +27,12 @@ func _go() -> void:
 		var root: Node3D = builder.build(z)
 		for r in sight.audit(z, root):
 			signs += 1
+			if r.moved:
+				moved.append("%s/%s" % [r.zone, r.label])
 			if float(r.hidden) > 0.0 or r.wide or float(r.off) > 0.0:
 				bad += 1
 				print("%-22s %-34s hidden %3d%%  off %3d%%%s" % [r.zone, r.label, int(float(r.hidden) * 100), int(float(r.off) * 100), "  WIDER THAN BUILDING" if r.wide else ""])
 		root.free()
-	print("sign_audit: %d of %d signs cut" % [bad, signs])
+	print("on a board in front, no wall to show them: %s" % ", ".join(moved))
+	print("sign_audit: %d of %d signs cut, %d moved off their wall" % [bad, signs, moved.size()])
 	quit()

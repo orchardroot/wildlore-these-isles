@@ -9,7 +9,7 @@ extends RefCounted
 const STEP := 0.1          # tiles between the columns sampled along a front
 const MIN_RUN := 1.2       # narrower than this, a clear stretch of front is no place for a name
 
-var _items := []   # of {aabb: AABB (world), pos: Vector3, mesh: Mesh, rect: Rect2 (footprint), tm: TriangleMesh (made on first use)}
+var _items := []   # of {aabb, pos, mesh, rect (footprint), behind (OccluderFade.reach), tm (TriangleMesh, made on first use)}
 var _bounds := Rect2()
 var _at := Vector2(-INF, -INF)  # where the player stands (eye): buildings that go see-through then don't hide
 
@@ -25,7 +25,7 @@ static func make(z: ZoneData, bodies: Array) -> SignSight:
 		box.position += mi.position
 		var pr: Dictionary = b.pr
 		s._items.append({"aabb": box, "pos": mi.position, "mesh": mi.mesh, "tm": null,
-			"rect": Rect2(int(pr.x), int(pr.y), int(pr.w), int(pr.h))})
+			"rect": Rect2(int(pr.x), int(pr.y), int(pr.w), int(pr.h)), "behind": OccluderFade.reach_of(mi)})
 	return s
 
 ## Where the camera's eye is with the player on tile `p` standing at ground height `gy`. Sight lines checked after
@@ -38,7 +38,7 @@ func eye(p: Vector2i, gy: float) -> Vector3:
 func blocked(from: Vector3, to: Vector3) -> bool:
 	var seg := AABB(from, Vector3.ZERO).expand(to)
 	for it in _items:
-		if not (it.aabb as AABB).intersects(seg) or OccluderFade.hides(it.rect, _at):
+		if not (it.aabb as AABB).intersects(seg) or OccluderFade.hides(it.rect, _at, it.behind):
 			continue
 		if it.tm == null:
 			it.tm = (it.mesh as Mesh).generate_triangle_mesh()
@@ -79,8 +79,8 @@ func place(f: Dictionary, body: MeshInstance3D, eye_at: Vector3, near_x: float, 
 			var depths := []
 			for i in n:
 				var x := x0 + i * STEP
-				for k in 6:  # every 0.08 or so up the band: a string course or a lintel can be thin
-					var y := lo + 0.02 + (hi - lo - 0.04) * k / 5.0
+				for k in 6:  # every 0.07 or so up the band (a string course can be thin), above a window head's top
+					var y := lo + 0.07 + (hi - lo - 0.1) * k / 5.0
 					var hit := (own.tm as TriangleMesh).intersect_segment(Vector3(x, y, plane + 2.0), Vector3(x, y, plane - 0.6))
 					if not hit.is_empty():
 						face[i] = maxf(face[i], float(hit.position.z))
@@ -117,13 +117,6 @@ func place(f: Dictionary, body: MeshInstance3D, eye_at: Vector3, near_x: float, 
 			start = -1
 	return best
 
-## Is any of `points` (world) hidden from `eye_at`?
-func any_hidden(points: Array, eye_at: Vector3) -> bool:
-	for p in points:
-		if blocked(p, eye_at):
-			return true
-	return false
-
 ## How far forward (footprint z) the building's own mesh reaches between x0 and x1 at heights y0..y1: a porch, a
 ## veranda, a bow front. -INF where nothing does.
 func reach(body: MeshInstance3D, x0: float, x1: float, y0: float, y1: float, z_from: float) -> float:
@@ -152,7 +145,7 @@ func _item(body: MeshInstance3D) -> Variant:
 
 ## Every sign's lettering in a built zone (`root` from ZoneBuilder.build), checked from its building's door:
 ## [{zone, label, text, hidden (share of the lettering hidden), wide (lettering wider than the building),
-## off (share of the lettering off screen)}], one per name.
+## off (share of the lettering off screen), moved (a front meant for a wall sign got a board on posts)}].
 static func audit(z: ZoneData, root: Node3D) -> Array:
 	var bodies := []
 	for pr in z.props:
@@ -170,6 +163,7 @@ static func audit(z: ZoneData, root: Node3D) -> Array:
 		var dx := int(door[0]) if int(door[0]) >= 0 else int(pr.w) / 2
 		var stand := Vector2i(int(pr.x) + dx, int(pr.y) + int(pr.h))
 		var eye_at := sight.eye(stand, ZoneBuilder.ground_y(z, stand))
+		var walled: bool = Signage.front(str(pr.get("style", "red_brick")), int(pr.w), int(pr.h), int(door[0])).mode == "wall"
 		for l in body.get_children():
 			if not (l is Label3D and l.has_meta("caps")):
 				continue
@@ -183,7 +177,7 @@ static func audit(z: ZoneData, root: Node3D) -> Array:
 			for k in [-1.0, 0.0, 1.0]:
 				hid = maxf(hid, sight.hidden_share(c - ax + ay * k + nz, c + ax + ay * k + nz, eye_at, 11))
 			out.append({"zone": z.id, "label": str(pr.label), "text": lab.text.replace("\n", " / "), "hidden": hid,
-				"wide": size.x > float(pr.w) + 0.01, "off": off_screen(sight._bounds, stand, ZoneBuilder.ground_y(z, stand), c - ax, c + ax)})
+				"moved": walled and c.y - body.position.y < 0.95, "wide": size.x > float(pr.w) + 0.01, "off": off_screen(sight._bounds, stand, ZoneBuilder.ground_y(z, stand), c - ax, c + ax)})
 	return out
 
 ## The share of the line a..b outside a 16:9 view with the player at `stand` (0 when all of it shows).
