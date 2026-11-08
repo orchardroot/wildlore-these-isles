@@ -7,12 +7,12 @@
  "weather": {},
  "props": [
   {
-   "type": "bookshelf",
+   "type": "shop_shelf",
    "x": 1,
    "y": 1
   },
   {
-   "type": "bookshelf",
+   "type": "shop_shelf",
    "x": 7,
    "y": 1
   },

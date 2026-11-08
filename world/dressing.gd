@@ -529,6 +529,40 @@ static func specimen_shelf(variant := 0) -> ArrayMesh:
 			x += r * 2.0 + 0.04
 	return Meshes._finish(st)
 
+## A corner shop's shelves against the north wall: tins, packets, jars and bottles, a price strip on each shelf.
+static func shop_shelf(variant := 0) -> ArrayMesh:
+	var st := Meshes._st()
+	var rng := Meshes._rng(37400 + variant)
+	var frame := Color("e8e2d4")
+	Meshes.box(st, Vector3(-0.46, 0, -0.5), Vector3(0.92, 1.6, 0.05), frame.darkened(0.08))
+	for sx in [-0.46, 0.42]:
+		Meshes.box(st, Vector3(sx, 0, -0.5), Vector3(0.04, 1.6, 0.4), frame)
+	Meshes.box(st, Vector3(-0.46, 1.56, -0.5), Vector3(0.92, 0.04, 0.4), frame)
+	var labels := [Color("c9483f"), Color("2f6f9e"), Color("e0b83a"), Color("3f8a55"), Color("e8e2d4"), Color("8c3b6a"), Color("d9772f")]
+	for row in 4:
+		var y := 0.08 + row * 0.38
+		Meshes.box(st, Vector3(-0.42, y - 0.04, -0.46), Vector3(0.84, 0.04, 0.36), frame.darkened(0.04))
+		Meshes.box(st, Vector3(-0.42, y - 0.06, -0.1), Vector3(0.84, 0.05, 0.012), Color("f2ede2"))  # the price strip
+		var x := -0.4
+		while x < 0.32:
+			var c: Color = labels[rng.randi() % labels.size()]
+			match rng.randi() % 3:
+				0:  # a tin
+					var r := rng.randf_range(0.045, 0.06)
+					Meshes.cylinder(st, Vector3(x + r, y, -0.22), r, rng.randf_range(0.1, 0.14), 8, c)
+					x += r * 2.0 + 0.02
+				1:  # a packet
+					var w := rng.randf_range(0.1, 0.15)
+					Meshes.box(st, Vector3(x, y, -0.3), Vector3(w, rng.randf_range(0.18, 0.26), 0.12), c)
+					x += w + 0.02
+				_:  # a bottle
+					var r2 := rng.randf_range(0.035, 0.045)
+					var h := rng.randf_range(0.16, 0.24)
+					Meshes.cylinder(st, Vector3(x + r2, y, -0.22), r2, h, 6, c.darkened(0.25))
+					Meshes.cylinder(st, Vector3(x + r2, y + h, -0.22), r2 * 0.45, 0.06, 6, c.darkened(0.4))
+					x += r2 * 2.0 + 0.03
+	return Meshes._finish(st)
+
 const ISLES_GB := [[-5.7, 50.05], [-5.2, 49.96], [-4.1, 50.35], [-2.45, 50.6], [-1.3, 50.7], [-0.1, 50.8], [1.4, 51.15],
 	[1.4, 51.38], [0.9, 51.8], [1.75, 52.5], [1.3, 52.93], [0.3, 52.85], [0.1, 53.6], [-0.1, 54.1], [-0.6, 54.5],
 	[-1.4, 55.0], [-2.0, 55.77], [-2.6, 56.05], [-2.6, 56.3], [-2.1, 57.15], [-2.0, 57.69], [-3.5, 57.65],

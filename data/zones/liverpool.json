@@ -1388,7 +1388,7 @@
   },
   {
    "x": 29,
-   "y": 54,
+   "y": 52,
    "text": "SOUTH: the Wirral Way and Chester. Mind the tide."
   },
   {
@@ -1520,7 +1520,7 @@
   "TTT.BBBBDBBB..BBBBDBBB....:=:.....ddddd.dddddddsssss...d.....TTT",
   "TTT.#####################.:=:.......d......d........ddddddd..TTT",
   "TTT.......................:=:............ssssssssssssssss....TTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTT:=:TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTHHHTTTTTTTHHHTTTTTT:=:TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
   "TTTTTTTTTTTTTTTTTTTTTTTTTT:=:TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
   "TTTTTTTTTTTTTTTTTTTTTTTTTT:=:TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
  ],

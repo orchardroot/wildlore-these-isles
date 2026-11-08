@@ -536,7 +536,7 @@
   },
   {
    "x": 40,
-   "y": 35,
+   "y": 34,
    "plaque": "buxton_solomons_temple",
    "title": "Solomon's Temple",
    "text": "Up on Grin Low, south of town, stands Solomon's Temple, a little stone tower built in 1896 by a local man called Solomon Mycock. It sits on top of a Bronze Age burial mound, so the view has been popular for about four thousand years."
@@ -591,7 +591,7 @@
   "TTT.BBBBB.~~~~~~~~~.#.ffffff....BBBBBBBBBB..BBDBB....TTT",
   "TTT.BBDBB.~~~~~~~~~.#...........BBBBBDBBBB...........TTT",
   "TTT.......~~~~~~~~~.#...............##.........BBBBB.TTT",
-  "TTT.......sssssssss##.........T.......T.....T..BBBBB.TTT",
+  "TTT.......sssssssss##.........T.............T..BBBBB.TTT",
   "TTT..ffff......................T...............BBDBB.TTT",
   "TTT..ffff..........................T.................TTT",
   "TTT................................T.....T....TT.....TTT",

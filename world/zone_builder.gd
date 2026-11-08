@@ -324,7 +324,7 @@ const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "roc
 	"buoy", "lighthouse", "statue", "harp", "clock_tower", "shard", "buffer_stop", "tunnel_portal",
 	"bunting", "flagpole", "washing_line", "hanging_basket", "rug", "fireplace", "wall_picture", "clock", "kitchen_dresser",
 	"fryer", "menu_board", "piano", "telescope", "plant_stand", "sofa", "display_case", "cascade", "sheep",
-	"field_gate", "limestone_pavement", "window", "cat_bowl", "owl_perch", "kettle_table", "specimen_shelf", "wall_map", "mirror",
+	"field_gate", "limestone_pavement", "window", "cat_bowl", "owl_perch", "kettle_table", "specimen_shelf", "shop_shelf", "wall_map", "mirror",
 	# the Keeper venues (Dressing.VENUE_PROPS)
 	"stadium_stand", "rugby_posts", "floodlight", "puddle", "pitch_line", "gantry_crane", "ship_ribs", "steel_plates",
 	"hall_stage", "tea_urn", "stacked_chairs", "currach", "lobster_pots", "harbour_arch", "fae_lantern", "toadstool_ring",
@@ -527,7 +527,7 @@ static func _add(buckets: Dictionary, key: String, tr: Transform3D) -> void:
 
 ## Furniture that gets a soft contact shadow on the floor (characters have their own blob).
 const CONTACT_SHADOWED := ["table", "bench", "sofa", "bed", "bookshelf", "kitchen_dresser", "piano", "display_case",
-	"specimen_shelf", "plant_stand", "potted_plant", "kettle_table", "fryer", "telescope", "stacked_chairs", "tea_urn",
+	"specimen_shelf", "shop_shelf", "plant_stand", "potted_plant", "kettle_table", "fryer", "telescope", "stacked_chairs", "tea_urn",
 	"market_stall", "statue", "tomb_chest", "loom", "harp"]
 
 static var contact_material: StandardMaterial3D
@@ -709,6 +709,8 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 			return Dressing.kettle_table()
 		"specimen_shelf":
 			return Dressing.specimen_shelf(variant)
+		"shop_shelf":
+			return Dressing.shop_shelf(variant)
 		"wall_map":
 			return Dressing.wall_map()
 		"mirror":
