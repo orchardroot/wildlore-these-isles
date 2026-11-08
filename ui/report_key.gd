@@ -4,7 +4,7 @@ extends CanvasLayer
 ## copy of the game go to user://reports/<date_time>/ (see ProblemReport). A toast says so and play carries on.
 ## A second press within NOTE_WINDOW seconds opens a one-line note box; the game holds still while you type.
 ## It listens on the window's own input signal, so no menu can swallow the press, and it does nothing per frame.
-## Dev: --report-now[=seconds] presses it once (default 3 s in), --report-note=<text> then adds that note.
+## Dev: --report-now[=seconds] presses it once (default 3 s in) and then quits; --report-note=<text> adds that note.
 
 const NOTE_WINDOW := 3.0
 const TOAST := "Reported. Keep playing."
@@ -158,7 +158,7 @@ func _finish_writing() -> void:
 
 ## Dev --report-now: `delay` real seconds after the boot has settled, press the report key as a
 ## player would; with --report-note, press it again and type the note. Real time, as a slow first load can make
-## the scene timers jump.
+## the scene timers jump. The game then quits a second after the report is written.
 func _dev_press(delay: float) -> void:
 	while not _booted():
 		await get_tree().process_frame
@@ -170,16 +170,21 @@ func _dev_press(delay: float) -> void:
 	for a in DevArgs.user_args():
 		if a.begins_with("--report-note="):
 			note = a.substr(14)
-	if note == "":
-		return
-	at = Time.get_ticks_msec() + 500
+	if note != "":
+		at = Time.get_ticks_msec() + 500
+		while Time.get_ticks_msec() < at:
+			await get_tree().process_frame
+		_press_key()
+		await get_tree().process_frame
+		if _note != null:
+			_note.text = note
+			_note.text_submitted.emit(note)
+	_finish_writing()
+	at = Time.get_ticks_msec() + 1000
 	while Time.get_ticks_msec() < at:
 		await get_tree().process_frame
-	_press_key()
-	await get_tree().process_frame
-	if _note != null:
-		_note.text = note
-		_note.text_submitted.emit(note)
+	print("report-now: done, quitting")
+	get_tree().quit()  # a dev run ends itself once the report is on disk
 
 ## A zone, a battle or a menu is up (a dev boot has got where it was going).
 func _booted() -> bool:
