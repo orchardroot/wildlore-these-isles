@@ -111,3 +111,83 @@ After, normal text: **0 problems on all 122 screens**. `--stress` adds only
 
 Test: `tools/test.sh text_fit` runs the audit on eight key screens (pause, bag, settings, a Fieldbook entry, summary,
 Almanac, the long travel list, Standing) in a second headless Godot, about ten seconds, and fails on any problem.
+
+## Large text, long names and the Readable font (w50-tf-large)
+
+Branch `w50-tf-large`. Where the first pass left off: 168 problems on 41 screens with `--text=large` (at 6c5340a7),
+and with `--stress` 7 trimmed 12-letter nicknames at normal text, 32 problems at Large.
+
+### What was wrong underneath
+
+- **The Readable font never stayed on.** `Settings.apply_access` set the font (and the theme's Large button size) on
+  `ui/theme.tres` and let go of it; once no menu held the theme it was freed, and the next `load` came back plain.
+  Dev runs and the audit never saw the Readable font at all, and in play it held only while something kept the theme
+  alive. Settings now keeps the theme (`_theme`). This also made buttons draw at their real Large size in the audit,
+  which turned up a dozen more problems (casino side columns, name entry keys, the Cage), fixed below.
+- **Fitted names grew after fitting.** `fit_label` and the hint bar worked out a size at normal text, then
+  `UIKit.label` scaled it by a quarter. New `UIKit.fit_scaled(text, width, big, small)` starts from the Large size and
+  may shrink to `small` (unscaled); `UIKit.sized(n)` is what `UIKit.label(t, n)` draws at.
+- **Measured with the wrong font.** `fit_size`, `line_height` and the word boxes measured with
+  `ThemeDB.fallback_font`. `UIKit.font()` is the font in use (the Readable font when it is on); trump cards draw with
+  it too, so their names fit.
+- **Word boxes ignored Large text** (`fit_block` set unscaled sizes). They scale now, and lines can be optional in
+  tiers (`add_words(..., optional = 2)` goes before `1`).
+- `fit_column` measured rows by their old minimum sizes (a container's minimum lags its labels' new fonts), so it
+  shrank much further than needed; it now measures rows, stacks, grids and panels from their labels.
+- `fit_width` only refitted on resize, so a label whose words changed later kept the old size; it refits on redraw.
+- `keep_fitted` fitted once per refill, sometimes before layout had settled (too small for good); it also refits
+  when its box resizes.
+- A word box that stopped needing its scroll bar kept showing it (Godot only rechecks when the box's own minimum
+  size is asked for): `fit_block` rechecks.
+
+### New shared pieces
+
+- `MenuBase.header_right` takes the room beside the title and shrinks (to 18 px) before it would run off: the
+  casino purse-and-limit line, page counts.
+- `UIKit.row_label`: a row's name that takes the room the rest of the row leaves, shrinks, then trims.
+- `UIKit.big_text()`: for the few layouts that trade a little picture or bar for the words.
+- `CasinoBase.fit_side(column)`: a table's side column steps its words down to fit, and with Large text its buttons
+  lose their top and bottom padding.
+- Dev switches `--text=normal|large|largest` and `--readable` for the game (screenshots) and `--readable` for the
+  audit. Neither is ever saved.
+
+### Per screen
+
+Summary (picture and stat bars a little smaller with Large text, the three cards step down together, the knack
+shares the entry's card and the entry gives way to it if need be, move names share one size); racecard (runners
+scroll, side column wraps and steps down); Exchange and the Doggerel kiosk (figure columns size to their widest
+entry, names shrink, the detail pane steps down around the deal slip, the portfolio fits); crossword (letters take
+the largest size that fits the square); world map town card (steps down to the room above Where next?); Noticeboard
+(with Large text the standing card sits under the list); bag (the run of tabs that fits round the current one, item
+card fits, the picker's HP bar sits over its numbers); shops (names take the room the price leaves, card fits,
+try-on a touch smaller); pairing (rows, plates, Dr Keir's card); casino tables (Cage, fruit machine, Higher or
+Lower, Blackjack, roulette); pause (the top card keeps under half the page, Where next? shrinks to 18 px and Right
+reads down it if it still runs on); quests and Gazetteer plaques and peoples (Confirm reads on, as Isles topics
+did); controls, Keepers, Biology, relearn, starter, Ark, Stud Book, Rumours and stamps, the Words tab, Papers,
+credits and name entry.
+
+Long nicknames: the bag's picker, pairing, the summary (may step to 20 px) and the Team rows now show a 12-letter
+"MWMW..." name in full at both text sizes. Ellipsis is left only where nothing else fits.
+
+### After
+
+| run | before | after |
+|---|---|---|
+| `--text=large` | 168 on 41 screens | 0 on 122 |
+| `--readable` | (font never applied) | 0 |
+| `--readable --text=large` | (font never applied) | 0 |
+| `--stress` | 7 | 0 |
+| `--stress --text=large` | 32 | 0 |
+| `--stress --readable --text=large` | | 0 |
+| normal | 0 | 0 |
+
+`--text=largest` was not a target: 144 problems on 43 screens (mostly minigame side panels, and the same detail
+panes one step further).
+
+Under heavy machine load the Noticeboard once showed a problem at Large that a rerun didn't (its detail fits a frame
+after it settles; the audit waits 0.7 s).
+
+`tests/ui/test_text_fit.gd` now also audits summary, racecard, Exchange and world map with Large text and the
+Readable font (a second audit run, about 8 s, 15 s on a busy machine), and checks `fit_scaled` and the held theme.
+
+Before and after: `docs/screens/w50-large-{summary,races,exchange}-{before,after}.png`.
