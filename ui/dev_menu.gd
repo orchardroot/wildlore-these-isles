@@ -148,6 +148,11 @@ static func boot(game: Node, menu: String) -> void:
 		d.set_flag("champion")
 		d.set_flag("game_complete")
 		d.set_flag("last_town", "york")
+	if menu == "travel:all":  # `--menu=travel:all`: every station, for the long departures list
+		for t in Travel.world_map().get("towns", {}):
+			d.set_flag("visited_" + t)
+			d.set_flag("station_" + t)
+		menu = "travel:rail"
 	if menu == "map:route":  # `--menu=map:route`: the whole map visited and a route from Macclesfield stored
 		for t in Travel.world_map().get("towns", {}):
 			d.set_flag("visited_" + t)

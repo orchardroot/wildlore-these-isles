@@ -2,6 +2,17 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.2.1: fixes
+
+- **Dialogue no longer hides its first line.** A four-line page grew the box upwards under the speaker's name tag;
+  the tag now sits on the box's edge. The place name at the bottom left steps aside while anyone is talking.
+- **Long station lists scroll.** With plenty of stations visited, the rail, Fly and RAF lists ran off the screen.
+- **Show-cave levers you can find.** At Blue John, Dan yr Ogof and Aillwee the guide's lever is now a proper lever
+  beside the desk, where the guide says it is, not a bollard across the room.
+- **Caves look like caves.** Ogof Dinas Emrys, Rob Roy's Cave and the Cairngorm cave have a rocky cave mouth
+  instead of a cottage door or a gap in the boulders.
+- **Blocked paths say what you need.** Brambles, deep water, scree and bog name the Stone and the Keeper who gives it.
+
 ## What's new in 5.2: Lucky Strikes
 
 A tidy-up of Party Pieces that adds a bit of luck. Some hits land harder now, the Fieldbook's creatures move, and

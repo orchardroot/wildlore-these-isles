@@ -74,6 +74,7 @@ func _build_box() -> void:
 	_box.add_theme_stylebox_override("panel", _panel_style(SLATE, CREAM))
 	_box.grow_vertical = Control.GROW_DIRECTION_BEGIN  # a fourth line grows the box upwards, never off the bottom
 	_ui.add_child(_box)
+	_box.resized.connect(_seat_tab)
 	_label = Label.new()
 	_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_label.custom_minimum_size = Vector2(0, 100)
@@ -98,10 +99,16 @@ func _build_tab() -> void:
 	sb.content_margin_right = 20
 	_tab.add_theme_stylebox_override("panel", sb)
 	_ui.add_child(_tab)
+	_tab.resized.connect(_seat_tab)
 	_tab_label = Label.new()
 	_tab_label.add_theme_font_size_override("font_size", 26)
 	_tab.add_child(_tab_label)
 	_tab.visible = false
+
+## The speaker's tab sits on the box's top edge, wherever that is: a four-line page grows the box upwards, and a
+## tab left at the three-line height would cover the first line.
+func _seat_tab() -> void:
+	_tab.position.y = _box.position.y - _tab.size.y + 6.0
 
 func _build_arrow() -> void:
 	_arrow = Control.new()

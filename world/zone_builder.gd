@@ -320,7 +320,7 @@ const TILE_PROPS := {
 const LINEAR := ["hedge", "drystone_wall", "fence", "rail"]
 ## Point props (one tile, blocking unless "walk": true). Floating ones sit on the water surface.
 const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "rock", "market_stall", "planter", "phone_box",
-	"post_box", "bookshelf", "potted_plant", "table", "bed", "standing_stone", "slate_heap", "boat", "canal_boat", "bollard",
+	"post_box", "bookshelf", "potted_plant", "table", "bed", "standing_stone", "slate_heap", "boat", "canal_boat", "bollard", "lever",
 	"buoy", "lighthouse", "statue", "harp", "clock_tower", "shard", "buffer_stop", "tunnel_portal",
 	"bunting", "flagpole", "washing_line", "hanging_basket", "rug", "fireplace", "wall_picture", "clock", "kitchen_dresser",
 	"fryer", "menu_board", "piano", "telescope", "plant_stand", "sofa", "display_case", "cascade", "sheep",
@@ -639,6 +639,8 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 			return Landmarks.canal_boat(variant)
 		"bollard":
 			return Landmarks.bollard()
+		"lever":
+			return Landmarks.lever(variant)
 		"buoy":
 			return Landmarks.buoy(variant)
 		"lighthouse":

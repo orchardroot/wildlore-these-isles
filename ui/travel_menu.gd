@@ -1,7 +1,12 @@
 extends MenuBase
 ## Rail fast travel: pick a visited station. setup("rail"). Closes with the town id, or null.
 
+const ROW := 72.0      # a button and the gap under it
+const MAX_ROWS := 6    # more than this scrolls; 720 px high leaves no room for a seventh with the title and hints
+
 var _list: VBoxContainer
+var _scroll: ScrollContainer
+var _col: VBoxContainer  # the list, then anything under it (the departures blurb)
 
 func _build() -> void:
 	set_title("Where to?")
@@ -9,9 +14,21 @@ func _build() -> void:
 	var p := UIKit.panel(Color("1d2230f0"), 14)
 	p.set_anchors_preset(Control.PRESET_TOP_WIDE)
 	content.add_child(p)
+	_col = VBoxContainer.new()
+	_col.add_theme_constant_override("separation", 8)
+	p.add_child(_col)
+	_scroll = ScrollContainer.new()
+	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_scroll.follow_focus = true
+	_col.add_child(_scroll)
 	_list = VBoxContainer.new()
+	_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_list.add_theme_constant_override("separation", 8)
-	p.add_child(_list)
+	_scroll.add_child(_list)
+
+## The list's height: every row up to `rows`, then it scrolls (with a peek of the next row to say so).
+func _fit(n: int, rows: int) -> void:
+	_scroll.custom_minimum_size.y = ROW * n - 8.0 if n <= rows else ROW * rows - 8.0 + ROW * 0.5
 
 func setup(arg: String) -> void:
 	if arg == "overseas":
@@ -37,7 +54,9 @@ func setup(arg: String) -> void:
 	if buttons.is_empty():
 		var none := Travel.rail_empty_text(Game.data, here, flying)
 		_list.add_child(UIKit.label(none, 26, UIKit.MUTED))
+		_fit(1, MAX_ROWS)
 		return
+	_fit(buttons.size(), MAX_ROWS)
 	UIKit.wrap_focus(buttons)
 	UIKit.focus_later(buttons[0])
 
@@ -62,7 +81,9 @@ func _setup_departures() -> void:
 		buttons.append(b)
 	if buttons.is_empty():
 		_list.add_child(UIKit.label("Nothing on the board yet. Come back with some paperwork.", 26, UIKit.MUTED))
+		_fit(1, MAX_ROWS)
 		return
-	_list.add_child(blurb)
+	_fit(buttons.size(), MAX_ROWS - 2)  # the blurb goes under the list, outside the scroll
+	_col.add_child(blurb)
 	UIKit.wrap_focus(buttons)
 	UIKit.focus_later(buttons[0])

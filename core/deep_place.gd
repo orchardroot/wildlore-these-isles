@@ -18,7 +18,7 @@ extends RefCounted
 const GATE_CLOSED := "fence"
 const GATE_OPEN := "path"
 const CRATE_PROP := "slate_stack"
-const LEVER_PROP := "bollard"
+const LEVER_PROP := "lever"
 const PLATE_PROP := "limestone_pavement"
 
 static func flag_key(zone_id: String, id: String) -> String:
@@ -124,7 +124,7 @@ static func apply(data: GameStateData, zone: ZoneData, crates: Dictionary) -> vo
 		zone.blocked.erase(p)
 	zone.deep_solid.clear()
 	for l in zone.deep.get("levers", []):
-		_add_prop(zone, LEVER_PROP, Vector2i(int(l.x), int(l.y)), true)
+		_add_prop(zone, LEVER_PROP, Vector2i(int(l.x), int(l.y)), true, 1 if is_on(data, zone.id, str(l.id)) else 0)
 	for pl in zone.deep.get("plates", []):
 		_add_prop(zone, PLATE_PROP, Vector2i(int(pl.x), int(pl.y)), false)
 	for id in crates:
@@ -134,8 +134,8 @@ static func _set_tile(zone: ZoneData, p: Vector2i, tile: String) -> void:
 	if zone.in_bounds(p):
 		zone.tiles[p.y][p.x] = tile
 
-static func _add_prop(zone: ZoneData, type: String, p: Vector2i, solid: bool) -> void:
-	zone.props.append({"type": type, "x": p.x, "y": p.y, "walk": not solid, "deep": true})
+static func _add_prop(zone: ZoneData, type: String, p: Vector2i, solid: bool, variant := 0) -> void:
+	zone.props.append({"type": type, "x": p.x, "y": p.y, "walk": not solid, "deep": true, "variant": variant})
 	if solid:
 		zone.blocked[p] = true
 		zone.deep_solid.append(p)

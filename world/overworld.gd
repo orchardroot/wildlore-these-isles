@@ -152,6 +152,11 @@ func _dev_radio() -> void:
 			var lines := TodaysWalk.radio_lines(Game.data, Game.dex, Game.items)
 			await say(lines.slice(clampi(int(a.get_slice(":", 1)), 0, lines.size() - 1)))
 			return
+		if a.begins_with("--talk=sign:"):  # `--talk=sign:x,y`: read the sign on that tile at once (screenshots of long text)
+			await get_tree().create_timer(0.6).timeout
+			var sg := zone.sign_at(Vector2i(int(a.get_slice(":", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
+			await say([str(sg.get("text", "No sign there."))], _sign_title(sg) if not sg.is_empty() else "")
+			return
 		if a.begins_with("--search="):  # dev: `--search=x,y` rummages that tile at once (screenshots of a find)
 			await get_tree().create_timer(0.6).timeout
 			await SearchScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))

@@ -45,6 +45,9 @@ static func text_for(info: Dictionary) -> String:
 
 func _ready() -> void:
 	layer = 4
+	get_tree().node_added.connect(func(n: Node) -> void:  # talk and signs cover the corner: step aside till the next step
+		if n is DialogueBox:
+			hide_place(true))
 	var root := Control.new()
 	root.set_anchors_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE

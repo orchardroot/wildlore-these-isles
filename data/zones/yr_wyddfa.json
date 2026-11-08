@@ -242,7 +242,7 @@
   },
   {
    "type": "building",
-   "style": "stone",
+   "style": "cave_mouth",
    "x": 35,
    "y": 8,
    "w": 3,
