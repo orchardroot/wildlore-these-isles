@@ -15,6 +15,16 @@
  "props": [
   {
    "type": "building",
+   "style": "allotment_shed",
+   "x": 69,
+   "y": 10,
+   "w": 3,
+   "h": 2,
+   "label": "Allotment Shed",
+   "kind": "workshop"
+  },
+  {
+   "type": "building",
    "style": "castle",
    "x": 11,
    "y": 11,
@@ -882,8 +892,8 @@
    "facing": "up"
   },
   {
-   "x": 33,
-   "y": 18,
+   "x": 70,
+   "y": 11,
    "to": "york_allotment_shed",
    "tx": 6,
    "ty": 7,
@@ -1248,15 +1258,15 @@
   "TT.,,,,,,.....===.........................................................TT",
   "TT.,,,,,,.W:.W===WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW.:W.......TT",
   "TT.,,,,,,.W:.:===:::::::::::::::::::::::::::::::::::::::::::::::.:W.......TT",
-  "TT.,,,,,..W:..===................................................:W.......TT",
-  "TT.,,,,,..WBBB===BBB..........BBBBBBBBBBBBBBBB...................:W.......TT",
+  "TT.,,,,,..W:..===................................................:W..BBB..TT",
+  "TT.,,,,,..WBBB===BBB..........BBBBBBBBBBBBBBBB...................:W..BDB..TT",
   "TT..,,,...WBDB===BBB.BBBBB....BBBBBBBBBBBBBBBB....BBBBBBBBBB.....:W...,...TT",
   "TT...,....W:..===....BBBBB....BBBBBBBBBBBBBBBB....BBBBBBBBBB.....:W...,,..TT",
   "TT........W:..===....BBDBB,...BBBBBBBBBBBBBBBB....BBBBBBBBBB.....:W.,,,,..TT",
   "TT........W:..===.....,#,,,,,.BBBBBBBBBBBBBBBB....BBBBBBBBBB.....:W.,,,,,.TT",
   "TT........W:..===.....,#,,,,,,BBBBBBBBBBBBBBBB....BBBBBDBBBB.....:W.,,,,,.TT",
   "TT........WBBB===.....,#,,,,,.BBBBBBBBBBBBBBBB..::::::::::::::...:W.,,,,,.TT",
-  "TT........WBDB===...#########.BBBDBBBBDBBBBBBB..::::::::::::::...:W.,,,,,.TT",
+  "TT........WBDB===...#########.BBBBBBBBDBBBBBBB..::::::::::::::...:W.,,,,,.TT",
   "TT........W:..===::::::::::::::::::::::::::::::::::::BBBBBBBB....:W,,,,,,.TT",
   "=================::::::::::::::::::::::::::::::::::::BBBBBBBB....:W.,,,,,.TT",
   "=================::::::::::::::::::::::::::::::::::::BBBDBBBB....:W,,,,,,,TT",

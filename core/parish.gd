@@ -49,7 +49,7 @@ static func standing_line(data: GameStateData, nation: String, n: int) -> String
 	var line := Standing.add(data, nation, n)
 	if line != "" or before > 0 or Standing.points(data, nation) <= 0:
 		return line
-	var where: String = WHERE.get(nation, "in " + Standing.name_of(nation))
+	var where: String = WHERE.get(nation, "in " + Standing.mid_name(nation))
 	return "Someone %s has noticed you. Help out and they'll count you as one of their own." % where
 
 func _on_battle_ended(result: Dictionary) -> void:
@@ -85,7 +85,7 @@ func _ready_news(slots: Array) -> void:
 		var j := Jobs.get_job(str(Jobs.slot(_data(), i).get("id", "")))
 		if j.is_empty() or str(j.step.type) in Jobs.AUTO:
 			continue
-		news("Job ready", "%s. Hand it in at any noticeboard in %s." % [str(j.title), Standing.name_of(str(j.nation))])
+		news("Job ready", "%s. Hand it in at any noticeboard in %s." % [str(j.title), Standing.mid_name(str(j.nation))])
 
 ## Catch and beat jobs pay out the moment they're done.
 func _finish_auto() -> void:
@@ -103,7 +103,7 @@ static func reward_text(r: Dictionary, items: ItemDB) -> String:
 	if str(r.get("recipe", "")) != "":
 		bits.append("a recipe for " + str(r.recipe))
 	if int(r.get("standing", 0)) > 0:
-		bits.append("%d standing in %s" % [int(r.standing), Standing.name_of(str(r.get("nation", "")))])
+		bits.append("%d standing in %s" % [int(r.standing), Standing.mid_name(str(r.get("nation", "")))])
 	var list: String = bits[0] if bits.size() == 1 else ", ".join(bits.slice(0, bits.size() - 1)) + " and " + str(bits.back())
 	return "%s: %s" % [str(r.get("title", "")), list]
 

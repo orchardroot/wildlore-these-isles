@@ -121,6 +121,7 @@ func _place_panel() -> void:
 	if _panel == null or view.cursor == "":
 		return
 	var t: Dictionary = Travel.world_map().towns[view.cursor]
+	view.inset = Rect2()
 	var sp := view.screen_pos(Vector2(float(t.x), float(t.y)))
 	var left := sp.x > view.size.x * 0.5
 	var top := 14.0 + (60.0 if _can_fly else 0.0)  # clear of the Fly button
@@ -132,6 +133,10 @@ func _place_panel() -> void:
 	var y := maxf(top, minf(96.0, bottom - _panel.size.y))
 	_panel.position = Vector2(20 if left else view.size.x - _panel.size.x - 20, y)
 	view.compass_left = not left
+	# the map scrolls in the part the panel and the strip leave, so no town hides under them (Ireland, London)
+	var side := _panel.size.x + 28.0
+	view.inset = Rect2(side if left else 0.0, 0.0, 0.0 if left else side, view.size.y - bottom)
+	view.queue_redraw()
 
 ## Rings the "Where next?" town (or spot) in gold and says what it is along the bottom.
 func _show_objective() -> void:
@@ -177,6 +182,12 @@ func _show_quest(id: String) -> void:
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	p.add_child(l)
 	content.add_child(p)
+	_clear_strip.call_deferred(p)
+	view.queue_redraw()
+
+## The map scrolls above the step strip, so the ringed place never sits under it.
+func _clear_strip(p: Control) -> void:
+	view.inset = Rect2(0, 0, 0, p.get_combined_minimum_size().y + 20.0)
 	view.queue_redraw()
 
 ## Where an objective sits on the map: its "map" point, else its town or place; (-1, -1) if neither.

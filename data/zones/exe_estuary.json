@@ -246,7 +246,7 @@
   },
   {
    "type": "building",
-   "style": "mill",
+   "style": "pumping_house",
    "x": 36,
    "y": 36,
    "w": 4,

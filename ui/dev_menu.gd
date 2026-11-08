@@ -139,7 +139,7 @@ static func boot(game: Node, menu: String) -> void:
 		d.bag = {"chapbook_haymaker": 1, "chapbook_glare": 1, "chapbook_kindle": 1, "chapbook_swoop": 1, "cup_of_tea": 2}
 	if menu == "bag:first":  # `--menu=bag:first`: a first-hour bag (tea, snares, the map and the Fieldbook)
 		d.bag = {"cup_of_tea": 3, "wicker_snare": 5, "map": 1, "fieldbook": 1}
-	if menu == "map:post":  # `--menu=map:post`: the whole map visited, Champion, every Stone
+	if menu == "map:post" or menu.begins_with("map:post:"):  # `--menu=map:post[:<town>]`: the whole map visited, Champion, every Stone (the cursor on York or <town>)
 		for t in Travel.world_map().get("towns", {}):
 			d.set_flag("visited_" + t)
 			d.set_flag("station_" + t)
@@ -147,7 +147,7 @@ static func boot(game: Node, menu: String) -> void:
 			d.set_flag("badge_" + k)
 		d.set_flag("champion")
 		d.set_flag("game_complete")
-		d.set_flag("last_town", "york")
+		d.set_flag("last_town", menu.substr(9) if menu.length() > 9 else "york")
 	if menu == "travel:all":  # `--menu=travel:all`: every station, for the long departures list
 		for t in Travel.world_map().get("towns", {}):
 			d.set_flag("visited_" + t)

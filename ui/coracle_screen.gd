@@ -198,11 +198,17 @@ func _finished() -> void:
 	var won := mine < _their_time
 	Audio.sfx("level_up" if won else "cancel")
 	var pen := " (%d missed, +%ds)" % [int(_s.misses), int(Coracle.MISS_PENALTY) * int(_s.misses)] if int(_s.misses) > 0 else ""
-	_msg = "%.1fs%s. %s: %.1fs.%s" % [mine, pen, who, _their_time, " You win by %.1f seconds." % (_their_time - mine) if won else " Not this time."]
+	_msg = "%.1fs%s. %s: %.1fs.%s" % [mine, pen, who, _their_time, _verdict(mine, _their_time, won)]
 	_refresh()
 	await get_tree().create_timer(2.4).timeout
 	await PiecePrompt.after_game(self, "coracle", mine)
 	close({"won": won, "time": mine})
+
+## The line after the times: a win and by how much, a dead heat when the two read the same, or not this time.
+static func _verdict(mine: float, theirs: float, won: bool) -> String:
+	if absf(theirs - mine) < 0.05:
+		return " A dead heat. You need to beat the time, not match it." if not won else " You win by a whisker."
+	return " You win by %.1f seconds." % (theirs - mine) if won else " Not this time."
 
 func _on_cancel() -> void:
 	if _over:

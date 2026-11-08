@@ -4,8 +4,8 @@
  "name": "Rhubarb Rise Allotments",
  "zone": "york",
  "door": {
-  "x": 33,
-  "y": 18
+  "x": 70,
+  "y": 11
  },
  "interior": "york_allotment_shed",
  "cost": [

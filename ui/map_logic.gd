@@ -117,7 +117,7 @@ static func info(data: GameStateData, town: String) -> Dictionary:
 	out.rooms_seen = rooms.x
 	out.rooms = rooms.y
 	var nation := Standing.nation_for_zone(town)
-	out["standing"] = "%s in %s" % [Standing.tier_name(data, nation), Standing.name_of(nation)]
+	out["standing"] = "%s in %s" % [Standing.tier_name(data, nation), Standing.mid_name(nation)]
 	return out
 
 ## The panel's lines, top to bottom.

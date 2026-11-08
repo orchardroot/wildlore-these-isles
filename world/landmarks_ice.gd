@@ -74,11 +74,15 @@ static func _church(st: SurfaceTool, wst: SurfaceTool, w: int, d: int, door_x: i
 	for x in range(0, w):
 		if x != door_x:
 			Landmarks._window(st, wst, x + 0.3, 0.7, d, 0.34, 0.9, wall.darkened(0.25))
-	var bx := clampf(door_x - 0.5, 0.0, w - 1.2)
-	Meshes.box(st, Vector3(bx, h, d - 1.0), Vector3(1.0, 1.1, 0.9), wall)
-	Landmarks._roof_at(st, bx - 0.05, bx + 1.05, d - 1.05, d - 0.05, h + 1.1, 0.5, roof, wall)
-	var spire := Vector3(bx + 0.5, h + 1.55, d - 0.55)
-	Meshes.box(st, Vector3(spire.x - 0.03, spire.y, spire.z - 0.03), Vector3(0.06, 0.8, 0.06), roof.darkened(0.2))
+	# the tower over the door, boarded white from the ground up, with louvred belfry openings and a tall dark spire
+	var tw := 1.2
+	var bx := clampf((door_x + 0.5 if door_x >= 0 else w * 0.5) - tw * 0.5, 0.0, w - tw)
+	var th := h + 1.5
+	Meshes.box(st, Vector3(bx, 0, d - 1.15), Vector3(tw, th, 1.1), wall)
+	Meshes.box(st, Vector3(bx + 0.35, th - 0.75, d - 0.07), Vector3(0.5, 0.5, 0.04), roof.darkened(0.25))
+	Meshes.box(st, Vector3(bx - 0.06, th, d - 1.21), Vector3(tw + 0.12, 0.12, 1.22), roof)
+	Meshes.cone(st, Vector3(bx + tw * 0.5, th + 0.1, d - 0.6), 0.72, 2.4, 8, roof, Meshes._rng(7))
+	Meshes.box(st, Vector3(bx + tw * 0.5 - 0.03, th + 2.45, d - 0.63), Vector3(0.06, 0.35, 0.06), Color("c9a24a"))  # the finial
 	Landmarks._door(st, door_x, d, wall, 1.1)
 
 ## A modern station on piles, clad in orange and grey panels with a band of windows, a flat roof and a wind mast.
