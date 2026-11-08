@@ -914,12 +914,6 @@
   },
   {
    "type": "bush",
-   "x": 60,
-   "y": 30,
-   "variant": 2
-  },
-  {
-   "type": "bush",
    "x": 67,
    "y": 17,
    "variant": 1

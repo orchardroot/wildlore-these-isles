@@ -246,7 +246,8 @@
    "y": 22,
    "w": 6,
    "h": 4,
-   "label": "Bristol"
+   "label": "Bristol",
+   "show_label": false
   },
   {
    "type": "building",
@@ -255,7 +256,8 @@
    "y": 22,
    "w": 7,
    "h": 4,
-   "label": "Bristol"
+   "label": "Bristol",
+   "show_label": false
   },
   {
    "type": "building",
@@ -264,7 +266,8 @@
    "y": 22,
    "w": 6,
    "h": 4,
-   "label": "Bristol"
+   "label": "Bristol",
+   "show_label": false
   },
   {
    "type": "building",
@@ -273,7 +276,8 @@
    "y": 22,
    "w": 7,
    "h": 4,
-   "label": "Bristol"
+   "label": "Bristol",
+   "show_label": false
   },
   {
    "type": "lamp_post",

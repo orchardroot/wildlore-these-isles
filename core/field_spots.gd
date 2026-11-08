@@ -115,14 +115,18 @@ static func piece_where(verb: String) -> String:
 	return str(VERBS.get(verb, {}).get("where", "somewhere in the Isles"))
 
 ## What you are told when nobody in the party can do it: what it is, and which party piece would.
-static func hint(s: Dictionary) -> Array:
+## `moves` gives the move its own name ("Cooper's Roll"); without it the id is tidied up. The "where" lines are
+## written to stand alone in the Almanac ("Beaches and shores, from Easdale to Llanberis"), so they follow a colon.
+static func hint(s: Dictionary, moves: MoveDB = null) -> Array:
 	var v := str(s.field)
 	var sees: String = VERBS.get(v, {}).get("sees", "Something that wants doing.")
 	var move_name := ""
 	var pc := piece_for(v)
 	if not pc.is_empty() and str(pc.move) != "":
-		move_name = " The move is %s." % str(pc.move).capitalize().replace("_", " ")
-	return ["%s A creature with the party piece %s would know what to do. You learn it at %s.%s" % [sees, piece_name(v), piece_where(v), move_name]]
+		var m := str(pc.move)
+		var shown := str(moves.get_move(m).get("name", "")) if moves != null and moves.has(m) else ""
+		move_name = " The move is %s." % (shown if shown != "" else m.replace("_", " ").capitalize())
+	return ["%s A creature with the party piece %s would know what to do. Where to learn it: %s.%s" % [sees, piece_name(v), piece_where(v), move_name]]
 
 static func success_lines(s: Dictionary, lead: Creature) -> Array:
 	var who := lead.nickname if lead.nickname != "" else str(lead.species.name)

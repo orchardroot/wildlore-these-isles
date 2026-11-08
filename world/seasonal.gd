@@ -18,16 +18,19 @@ var _bursts: Array = []
 var _burst_wait := 1.0
 var _rng := RandomNumberGenerator.new()
 
-## Sets the foliage shader to today's season. Called once when the shared materials are made.
-static func tint(foliage: ShaderMaterial) -> void:
+## Sets the foliage shader to today's season, as `region` keeps it (Calendar.foliage_tint_in). Called when the
+## shared materials are made and again as each zone is dressed, so a palm on St Helena stays green in November.
+static func tint(foliage: ShaderMaterial, region := "") -> void:
 	var t := Calendar.today()
-	var k := Calendar.foliage_tint(t.x, t.y)
+	var k := Calendar.foliage_tint_in(region, t.x, t.y)
 	foliage.set_shader_parameter("spring", k.x)
 	foliage.set_shader_parameter("autumn", k.y)
 	foliage.set_shader_parameter("winter", k.z)
 
 ## Dresses a freshly built zone for the date. `follow` is the player (leaves and fireworks stay round them).
 static func dress(z: ZoneData, zone_node: Node3D, follow_node: Node3D) -> void:
+	if Meshes.foliage != null:
+		tint(Meshes.foliage, z.region)
 	if z.kind == "interior":
 		return
 	var season := Calendar.season_today()
@@ -37,7 +40,7 @@ static func dress(z: ZoneData, zone_node: Node3D, follow_node: Node3D) -> void:
 	s.follow = follow_node
 	s._rng.seed = hash(z.id)
 	var low := Settings.quality == "low"
-	if season == "autumn" and not low and tree_count(z) >= WOODED_TREES and not z.region.begins_with("overseas_"):  # palms drop no leaves
+	if Calendar.season_in(z.region) == "autumn" and not low and tree_count(z) >= WOODED_TREES and not z.region.begins_with("overseas_"):  # palms drop no leaves
 		s._add_leaves()
 	if z.kind == "town" and Calendar.festival_here(festival, z.region):
 		match festival:

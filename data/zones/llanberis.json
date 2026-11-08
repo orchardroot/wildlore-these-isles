@@ -212,14 +212,14 @@
    "y": 16.0
   },
   {
-   "facing": "up",
+   "facing": "left",
    "id": "cafe_owner",
    "move": "still",
    "name": "Caffi Owner",
    "script": "cafe_owner",
    "sprite": "villager_4",
-   "x": 36.0,
-   "y": 18.0
+   "x": 37.0,
+   "y": 17.0
   },
   {
    "facing": "left",

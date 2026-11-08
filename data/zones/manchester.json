@@ -428,7 +428,7 @@
   {
    "type": "lamp_post",
    "x": 38,
-   "y": 42
+   "y": 41
   },
   {
    "type": "lamp_post",
@@ -771,7 +771,7 @@
   {
    "type": "lamp_post",
    "x": 31,
-   "y": 42
+   "y": 41
   },
   {
    "type": "bench",
@@ -781,7 +781,7 @@
   {
    "type": "planter",
    "x": 38,
-   "y": 43
+   "y": 45
   },
   {
    "type": "bush",

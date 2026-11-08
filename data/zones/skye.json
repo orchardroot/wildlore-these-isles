@@ -280,12 +280,6 @@
   },
   {
    "type": "pine",
-   "x": 68,
-   "y": 5,
-   "variant": 0
-  },
-  {
-   "type": "pine",
    "x": 14,
    "y": 20,
    "variant": 0
@@ -493,12 +487,6 @@
    "x": 53,
    "y": 40,
    "variant": 2
-  },
-  {
-   "type": "bush",
-   "x": 70,
-   "y": 3,
-   "variant": 0
   },
   {
    "type": "building",

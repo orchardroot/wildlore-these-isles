@@ -327,6 +327,7 @@ const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "roc
 	"field_gate", "limestone_pavement", "window", "cat_bowl", "owl_perch", "kettle_table", "specimen_shelf", "shop_shelf", "wall_map", "mirror",
 	# a Sanctuary's furniture (SanctuaryProps)
 	"sanctuary_restorer", "sanctuary_shelf", "creature_basket", "sanctuary_noticeboard", "sanctuary_poster", "back_door",
+	"dartboard",  # the darts pubs (w51)
 	# the Keeper venues (Dressing.VENUE_PROPS)
 	"stadium_stand", "rugby_posts", "floodlight", "puddle", "pitch_line", "gantry_crane", "ship_ribs", "steel_plates",
 	"hall_stage", "tea_urn", "stacked_chairs", "currach", "lobster_pots", "harbour_arch", "fae_lantern", "toadstool_ring",
@@ -685,6 +686,8 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 			return Dressing.wall_picture(variant)
 		"clock":
 			return Dressing.clock()
+		"dartboard":
+			return Dressing.dartboard()
 		"kitchen_dresser":
 			return Dressing.kitchen_dresser()
 		"fryer":

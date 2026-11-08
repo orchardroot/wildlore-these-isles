@@ -50,9 +50,9 @@
   {
    "id": "pass_guide",
    "sprite": "hillwalker",
-   "x": 3,
-   "y": 10,
-   "facing": "up",
+   "x": 2,
+   "y": 11,
+   "facing": "right",
    "move": "still",
    "script": "pass_guide",
    "name": "Passage Guide"

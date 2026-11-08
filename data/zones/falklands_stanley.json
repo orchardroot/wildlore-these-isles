@@ -531,9 +531,9 @@
   {
    "id": "fal_baker",
    "sprite": "shopkeeper",
-   "x": 18,
-   "y": 24,
-   "facing": "down",
+   "x": 19,
+   "y": 23,
+   "facing": "left",
    "move": "still",
    "script": "fal_baker"
   },

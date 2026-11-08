@@ -132,7 +132,8 @@
    "y": 23,
    "w": 5,
    "h": 4,
-   "label": "Edinburgh"
+   "label": "Edinburgh",
+   "show_label": false
   },
   {
    "type": "building",
@@ -141,7 +142,8 @@
    "y": 23,
    "w": 6,
    "h": 4,
-   "label": "Edinburgh"
+   "label": "Edinburgh",
+   "show_label": false
   },
   {
    "type": "building",
@@ -150,7 +152,8 @@
    "y": 23,
    "w": 6,
    "h": 4,
-   "label": "Edinburgh"
+   "label": "Edinburgh",
+   "show_label": false
   },
   {
    "type": "building",

@@ -125,7 +125,7 @@ static func interact(ow: Node, p: Vector2i) -> bool:
 	Game.data.set_flag(FieldSpots.seen_key(s), true)
 	var lead: Creature = FieldSpots.helper(Game.data, str(s.field))
 	if lead == null:
-		await ow.say(FieldSpots.hint(s))
+		await ow.say(FieldSpots.hint(s, Game.moves))
 		return true
 	var node: Node3D = ow._zone_node.get_node_or_null("FieldSpots/F_%d_%d" % [p.x, p.y]) if ow._zone_node else null
 	var rw: Dictionary = s.reward

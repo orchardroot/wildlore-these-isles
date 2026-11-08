@@ -62,9 +62,9 @@
   {
    "id": "leemoor_ranger",
    "sprite": "hiker",
-   "x": 4,
-   "y": 17,
-   "facing": "right",
+   "x": 5,
+   "y": 16,
+   "facing": "left",
    "move": "still",
    "script": "leemoor_ranger",
    "name": "Moor Ranger"

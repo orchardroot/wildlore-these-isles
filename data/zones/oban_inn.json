@@ -58,6 +58,13 @@
    "h": 3,
    "variant": 2,
    "walk": true
+  },
+  {
+   "type": "dartboard",
+   "x": 13,
+   "y": 6,
+   "rot": 270,
+   "walk": true
   }
  ],
  "warps": [
