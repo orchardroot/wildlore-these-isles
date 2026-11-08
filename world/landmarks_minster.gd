@@ -108,9 +108,9 @@ static func build(st: SurfaceTool, wst: SurfaceTool, w: int, d: int, door_x: int
 		Meshes.box(st, Vector3(cx + 0.62 - o - 0.02, 0, fz + 0.12 - o * 0.5), Vector3(0.12, 1.32, 0.1), STONE.lightened(0.06 - k * 0.03))
 	_arch(st, cx, 1.32, fz + 0.2, 0.72, 0.36, STONE.lightened(0.08))
 	if door_x >= 0:
-		Meshes.box(st, Vector3(cx - 0.42, 0, fz - 0.02), Vector3(0.84, 1.32, 0.08), DOOR)
+		Meshes.box(st, Vector3(cx - 0.4, 0, fz - 0.02), Vector3(0.8, 1.32, 0.08), DOOR)
 		Meshes.box(st, Vector3(cx - 0.01, 0.05, fz + 0.06), Vector3(0.02, 1.22, 0.01), DOOR.darkened(0.3))
-		Meshes._tri(st, Vector3(cx - 0.42, 1.32, fz + 0.06), Vector3(cx, 1.6, fz + 0.06), Vector3(cx + 0.42, 1.32, fz + 0.06), DOOR.darkened(0.15))
+		Meshes._tri(st, Vector3(cx - 0.4, 1.32, fz + 0.06), Vector3(cx, 1.6, fz + 0.06), Vector3(cx + 0.4, 1.32, fz + 0.06), DOOR.darkened(0.15))
 	# the twin west towers, stepped buttresses up their corners, belfry lights, parapets and pinnacles
 	for tx in [lx, x1]:
 		var tw := minf(TOWER_W, (x0 - lx) if tx == lx else (rx - x1))

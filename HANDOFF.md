@@ -1,3 +1,28 @@
+# w51-places handoff
+
+Branch `w51-places` (from int-w50). Places that didn't look like what they are, from the w50 critic's and world
+sessions' leftovers. Full write-up: `docs/audit/w51_places.md`; before/after in `docs/screens/w51-places-*.png`.
+
+- York Minster is its own pale limestone `minster` style (`world/landmarks_minster.gd`): twin west towers, great
+  west window, portal, buttresses, central tower, transepts and the Rose Window. A keeper's hall now always keeps its
+  gold board (`Signage._keeper_front`), which also restored Belfast Yard's and made St Michael's Tower's readable.
+- Names squeezed past reading on their own board (Signage.MIN_EM): lectern for the small mills, a tablet across the
+  York bars' drum towers. `SignSight.audit` reports name height and lettering that runs off its board;
+  `tools/dev/sign_audit.gd` lists both (0 of 1,539). No board ever cut a name: "THE CAVERN (ISH" was the screen edge.
+- `cathedral` fronts (Chester, Liverpool and about 30 more) have pointed lancets between buttresses.
+- All 103 Sanctuaries dressed (`world/sanctuary_props.gd`): restoring cabinet, medicine shelf, baskets, noticeboard,
+  posters; test keeps every person and the door reachable.
+- Smaller: Kyteler's back door (new `back_door` prop), Wookey Hole braziers, moor gateposts, Honister Slate Mine
+  re-dressed, picker "Field Station". Crypt arrival checked, already fine.
+- Left: deed huts behind other buildings' doors (York allotment shed through the Minster, Lancaster, Whitby,
+  Dingle); Llynnon Mill and the Laxey Wheel drawn as cotton mills; six signs hidden from their doors (sign sight).
+- Merge note: `world/zone_builder.gd` gets additive lines in POINT_PROPS, CONTACT_SHADOWED and `_ctor`;
+  `world/signage.gd` and `world/sign_sight.gd` (audit only) change; `ui/photo_mode.gd` gets a dev-only
+  `--photo-view`. New class_names (MinsterStyle, SanctuaryProps, PlaceProps): run `--import` after merging.
+- Checks: `tools/test.sh` 3025 passed, 2 failed (the Minster door rect was 0.84 wide, over test_feel_world's 0.8;
+  fixed to 0.8, feel_world and minster re-run 0 failed), validate 0 errors, no SCRIPT ERROR;
+  `tools/playtest.sh slice 2` PLAYTEST PASS (Maud won).
+
 # w50-critic handoff
 
 Branch `w50-critic` (from int-w50). A new player's walk along the story by screenshot, fixing what looked wrong
