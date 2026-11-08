@@ -61,5 +61,19 @@
   },
   "flag": "field_boyne_valley_skim_b",
   "at": "boyne_valley"
+ },
+ {
+  "id": "fs_boyne_valley_charm_c",
+  "zone": "boyne_valley",
+  "x": 62,
+  "y": 21,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: a few coins.",
+  "reward": {
+   "money": 1980
+  },
+  "flag": "field_boyne_valley_charm_c",
+  "at": "boyne_valley"
  }
 ]

@@ -667,6 +667,20 @@
   "at": "inverness"
  },
  {
+  "id": "fs_inverness_round_up_c",
+  "zone": "inverness",
+  "x": 4,
+  "y": 42,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "{lead} circles the flock like it has done this all its life. The gate is clear in a minute. Someone has hung Stick of Rock on the post.",
+  "reward": {
+   "curio": "seaside_rock"
+  },
+  "flag": "field_inverness_round_up_c",
+  "at": "inverness"
+ },
+ {
   "id": "fs_flow_country_snorkel_x1",
   "zone": "flow_country",
   "x": 13,
@@ -701,6 +715,21 @@
   "at": "flow_country"
  },
  {
+  "id": "fs_flow_country_charm_c",
+  "zone": "flow_country",
+  "x": 13,
+  "y": 11,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_flow_country_charm_c",
+  "at": "flow_country"
+ },
+ {
   "id": "fs_scottish_borders_skim_x1",
   "zone": "scottish_borders",
   "x": 7,
@@ -732,6 +761,20 @@
    ]
   },
   "flag": "field_scottish_borders_skim_b",
+  "at": "scottish_borders"
+ },
+ {
+  "id": "fs_scottish_borders_topple_c",
+  "zone": "scottish_borders",
+  "x": 8,
+  "y": 39,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "A dead tree, waiting for an excuse. {lead} supplies one. In the roots, undisturbed for years: Typewriter Key.",
+  "reward": {
+   "curio": "typewriter_key"
+  },
+  "flag": "field_scottish_borders_topple_c",
   "at": "scottish_borders"
  }
 ]

@@ -104,5 +104,19 @@
   },
   "flag": "field_hadrians_wall_loft_b",
   "at": "newcastle"
+ },
+ {
+  "id": "fs_hadrians_wall_charm_c",
+  "zone": "hadrians_wall",
+  "x": 61,
+  "y": 27,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: a roll of notes.",
+  "reward": {
+   "money": 2520
+  },
+  "flag": "field_hadrians_wall_charm_c",
+  "at": "newcastle"
  }
 ]

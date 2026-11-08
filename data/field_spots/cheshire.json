@@ -105,5 +105,20 @@
   },
   "flag": "field_macclesfield_topple_b",
   "at": "macclesfield"
+ },
+ {
+  "id": "fs_macclesfield_charm_c",
+  "zone": "macclesfield",
+  "x": 11,
+  "y": 31,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_macclesfield_charm_c",
+  "at": "macclesfield"
  }
 ]

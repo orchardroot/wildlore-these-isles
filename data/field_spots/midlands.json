@@ -339,5 +339,19 @@
   },
   "flag": "field_ironbridge_gorge_paddle_b",
   "at": "ironbridge_gorge"
+ },
+ {
+  "id": "fs_ironbridge_gorge_charm_c",
+  "zone": "ironbridge_gorge",
+  "x": 38,
+  "y": 39,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Lucky Sixpence.",
+  "reward": {
+   "curio": "sixpence"
+  },
+  "flag": "field_ironbridge_gorge_charm_c",
+  "at": "ironbridge_gorge"
  }
 ]

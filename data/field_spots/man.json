@@ -32,5 +32,19 @@
   },
   "flag": "field_douglas_loft_b",
   "at": "douglas"
+ },
+ {
+  "id": "fs_douglas_charm_c",
+  "zone": "douglas",
+  "x": 8,
+  "y": 41,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: a purse, a bit damp.",
+  "reward": {
+   "money": 840
+  },
+  "flag": "field_douglas_charm_c",
+  "at": "douglas"
  }
 ]

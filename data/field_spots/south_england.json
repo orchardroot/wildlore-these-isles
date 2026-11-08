@@ -311,6 +311,20 @@
   "at": "avon_gorge"
  },
  {
+  "id": "fs_avon_gorge_charm_c",
+  "zone": "avon_gorge",
+  "x": 6,
+  "y": 51,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Silver Quaich.",
+  "reward": {
+   "curio": "quaich"
+  },
+  "flag": "field_avon_gorge_charm_c",
+  "at": "avon_gorge"
+ },
+ {
   "id": "fs_somerset_levels_topple_x1",
   "zone": "somerset_levels",
   "x": 50,
@@ -342,6 +356,20 @@
    ]
   },
   "flag": "field_somerset_levels_topple_b",
+  "at": "somerset_levels"
+ },
+ {
+  "id": "fs_somerset_levels_topple_c",
+  "zone": "somerset_levels",
+  "x": 53,
+  "y": 12,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls a few coins.",
+  "reward": {
+   "money": 1410
+  },
+  "flag": "field_somerset_levels_topple_c",
   "at": "somerset_levels"
  },
  {

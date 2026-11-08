@@ -277,15 +277,15 @@
  {
   "id": "fs_enniskillen_paddle_x1",
   "zone": "enniskillen",
-  "x": 21,
-  "y": 42,
+  "x": 17,
+  "y": 46,
   "field": "paddle",
   "prop": "coracle",
   "text": "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
   "reward": {
    "hop": [
-    16,
-    42
+    22,
+    46
    ]
   },
   "flag": "field_enniskillen_paddle_a",
@@ -294,18 +294,32 @@
  {
   "id": "fs_enniskillen_paddle_x2",
   "zone": "enniskillen",
-  "x": 17,
-  "y": 42,
+  "x": 21,
+  "y": 46,
   "field": "paddle",
   "prop": "coracle",
   "text": "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it.",
   "reward": {
    "hop": [
-    22,
-    42
+    16,
+    46
    ]
   },
   "flag": "field_enniskillen_paddle_b",
+  "at": "enniskillen"
+ },
+ {
+  "id": "fs_enniskillen_charm_c",
+  "zone": "enniskillen",
+  "x": 22,
+  "y": 43,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: some loose change and a gratitude card.",
+  "reward": {
+   "money": 2100
+  },
+  "flag": "field_enniskillen_charm_c",
   "at": "enniskillen"
  },
  {
@@ -340,6 +354,20 @@
    ]
   },
   "flag": "field_antrim_coast_topple_b",
+  "at": "antrim_coast"
+ },
+ {
+  "id": "fs_antrim_coast_charm_c",
+  "zone": "antrim_coast",
+  "x": 12,
+  "y": 13,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Coronation Biscuit Tin.",
+  "reward": {
+   "curio": "coronation_tin"
+  },
+  "flag": "field_antrim_coast_charm_c",
   "at": "antrim_coast"
  }
 ]

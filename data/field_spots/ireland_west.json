@@ -324,6 +324,21 @@
   "at": "sligo"
  },
  {
+  "id": "fs_sligo_charm_c",
+  "zone": "sligo",
+  "x": 44,
+  "y": 36,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Truffle.",
+  "reward": {
+   "item": "truffle",
+   "qty": 1
+  },
+  "flag": "field_sligo_charm_c",
+  "at": "sligo"
+ },
+ {
   "id": "fs_glenveagh_skim_x1",
   "zone": "glenveagh",
   "x": 32,
@@ -358,6 +373,20 @@
   "at": "glenveagh"
  },
  {
+  "id": "fs_glenveagh_charm_c",
+  "zone": "glenveagh",
+  "x": 31,
+  "y": 4,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: a few coins.",
+  "reward": {
+   "money": 2130
+  },
+  "flag": "field_glenveagh_charm_c",
+  "at": "glenveagh"
+ },
+ {
   "id": "fs_galway_skim_x1",
   "zone": "galway",
   "x": 56,
@@ -389,6 +418,21 @@
    ]
   },
   "flag": "field_galway_skim_b",
+  "at": "galway"
+ },
+ {
+  "id": "fs_galway_charm_c",
+  "zone": "galway",
+  "x": 50,
+  "y": 13,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_galway_charm_c",
   "at": "galway"
  }
 ]

@@ -308,5 +308,20 @@
   },
   "flag": "field_yorkshire_dales_loft_b",
   "at": "york"
+ },
+ {
+  "id": "fs_yorkshire_dales_charm_c",
+  "zone": "yorkshire_dales",
+  "x": 16,
+  "y": 26,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_yorkshire_dales_charm_c",
+  "at": "york"
  }
 ]

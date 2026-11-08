@@ -165,6 +165,21 @@
   "at": "the_fens"
  },
  {
+  "id": "fs_the_fens_roll_c",
+  "zone": "the_fens",
+  "x": 60,
+  "y": 7,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: Cooper's Hill Ribbon.",
+  "reward": {
+   "item": "coopers_wheel",
+   "qty": 1
+  },
+  "flag": "field_the_fens_roll_c",
+  "at": "the_fens"
+ },
+ {
   "id": "fs_norwich_paddle_x1",
   "zone": "norwich",
   "x": 59,
@@ -196,6 +211,20 @@
    ]
   },
   "flag": "field_norwich_paddle_b",
+  "at": "norwich"
+ },
+ {
+  "id": "fs_norwich_charm_c",
+  "zone": "norwich",
+  "x": 65,
+  "y": 12,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: a few coins.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_norwich_charm_c",
   "at": "norwich"
  }
 ]

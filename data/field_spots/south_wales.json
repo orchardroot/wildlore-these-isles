@@ -223,5 +223,20 @@
   },
   "flag": "field_cardiff_loft_b",
   "at": "cardiff"
+ },
+ {
+  "id": "fs_cardiff_charm_c",
+  "zone": "cardiff",
+  "x": 21,
+  "y": 8,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: Truffle.",
+  "reward": {
+   "item": "truffle",
+   "qty": 1
+  },
+  "flag": "field_cardiff_charm_c",
+  "at": "cardiff"
  }
 ]

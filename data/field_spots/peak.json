@@ -134,5 +134,19 @@
   },
   "flag": "field_the_roaches_loft_b",
   "at": "the_roaches"
+ },
+ {
+  "id": "fs_the_roaches_charm_c",
+  "zone": "the_roaches",
+  "x": 15,
+  "y": 5,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Cut-glass Decanter.",
+  "reward": {
+   "curio": "cut_glass_decanter"
+  },
+  "flag": "field_the_roaches_charm_c",
+  "at": "the_roaches"
  }
 ]

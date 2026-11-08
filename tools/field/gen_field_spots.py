@@ -328,7 +328,13 @@ def find_pairs(z, verb, taken_tiles):
                             if n in r and n not in d and n != a:
                                 d[n] = d[t] + 1; q.append(n)
                     if d.get(land, 99) < 24: continue
-                    res.append((a, pre, b, land, (dx, dy), None))
+                    cache = None
+                    for t in sorted(r, key=lambda t: h(zid, verb, t, "c")):
+                        if t in (a, b, land) or not 1 <= max(abs(t[0] - land[0]), abs(t[1] - land[1])) <= 3: continue
+                        if any((t[0] + ox, t[1] + oy) in bl for ox in (-1, 0, 1) for oy in (-1, 0, 1)): continue
+                        cv = [v for v in ("charm", "mend", "topple", "round_up", "roll", "loft") if can(z, v, t[0], t[1])]
+                        if cv and not cuts(z, {a, b, t}): cache = (t, cv[h(zid, t, "cv") % len(cv)]); break
+                    res.append((a, pre, b, land, (dx, dy), cache))
                 else:
                     comp = comp0
                     cb = comp.get(land)
@@ -367,6 +373,7 @@ for cap in (1, 2, 3):
         verbs = sorted([v for (q, v) in cand if q == zid and pair_n[v] < 8], key=lambda v: (pair_n[v], h(zid, v)))
         if not verbs: continue
         v = verbs[0]; got = cand[(zid, v)]
+        got = [g for g in got if g[5]] or got
         a, pre, b, land, d, cache = got[h(zid, v) % len(got)]
         at = map_at(zid)
         base = "fs_%s_%s_x" % (zid, v)

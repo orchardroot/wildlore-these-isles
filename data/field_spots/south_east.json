@@ -191,6 +191,20 @@
   "at": "canterbury"
  },
  {
+  "id": "fs_canterbury_charm_c",
+  "zone": "canterbury",
+  "x": 34,
+  "y": 6,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: a roll of notes.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_canterbury_charm_c",
+  "at": "canterbury"
+ },
+ {
   "id": "fs_south_downs_topple_x1",
   "zone": "south_downs",
   "x": 30,
@@ -222,6 +236,20 @@
    ]
   },
   "flag": "field_south_downs_topple_b",
+  "at": "south_downs"
+ },
+ {
+  "id": "fs_south_downs_charm_c",
+  "zone": "south_downs",
+  "x": 32,
+  "y": 47,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Sheepdog Whistle.",
+  "reward": {
+   "curio": "sheepdog_whistle"
+  },
+  "flag": "field_south_downs_charm_c",
   "at": "south_downs"
  }
 ]
