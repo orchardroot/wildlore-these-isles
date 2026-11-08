@@ -352,7 +352,7 @@ static func progress_text(data: GameStateData, i: int, dex: Dex) -> String:
 	var j := get_job(str(s.id))
 	var kind := str(j.get("step", {}).get("type", ""))
 	if is_ready(data, i, dex):
-		return "Ready: hand in at any noticeboard in %s" % Standing.name_of(str(j.nation))
+		return "Ready: hand in at any noticeboard in %s" % Standing.mid_name(str(j.nation))
 	if kind == "bring":
 		var st: Dictionary = j.get("step", {})
 		return "Have %d of %d" % [mini(Bag.new(data.bag).count(str(st.get("item", ""))), int(st.get("n", 1))), int(st.get("n", 1))]
@@ -370,7 +370,7 @@ static func held_back(data: GameStateData, nation: String, items: ItemDB, dex: D
 		var title := str(j.get("title", ""))
 		if is_ready(data, a[0], dex):
 			if str(j.get("nation", "")) != nation:
-				out.append("%s: done, hand it in at a board in %s." % [title, Standing.name_of(str(j.nation))])
+				out.append("%s: done, hand it in at a board in %s." % [title, Standing.mid_name(str(j.nation))])
 			continue
 		var st: Dictionary = j.get("step", {})
 		match str(st.get("type", "")):

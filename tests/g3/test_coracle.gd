@@ -113,3 +113,11 @@ func test_a_skilled_helmsman_has_run_to_run_spread_without_a_lower_floor() -> vo
 	times.sort()
 	assert_true(float(times[-1]) - float(times[0]) > 0.8, "good runs differ (%.1f to %.1f)" % [times[0], times[-1]])
 	assert_true(float(times[0]) > 22.0, "and the floor has not dropped far (%.1f)" % times[0])
+
+func test_a_tie_reads_as_a_dead_heat() -> void:
+	# w52: equal times to the tenth showed a silver rosette with "Not this time."
+	var screen = load("res://ui/coracle_screen.gd")
+	assert_true(str(screen._verdict(27.6, 27.6, false)).contains("dead heat"))
+	assert_eq(str(screen._verdict(26.0, 27.6, true)), " You win by 1.6 seconds.")
+	assert_eq(str(screen._verdict(29.0, 27.6, false)), " Not this time.")
+	assert_true(str(load("res://ui/snorkel_screen.gd")._verdict(40.0, 40.0, false)).contains("dead heat"))

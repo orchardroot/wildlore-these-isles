@@ -100,3 +100,18 @@ func test_a_met_but_untouched_site_still_shows() -> void:
 	var m := MapLogic.marks(d, {})
 	assert_eq(m.size(), 1)
 	assert_eq(m[0].stage, 0)
+
+func test_every_town_comes_out_from_under_the_panels() -> void:
+	# w52: the info panel (left or right) and the strip along the bottom keep a part of the view; the map scrolls in
+	# what is left, so a picked town (Dingle in the far west, London low down) is never under either
+	var v := MapView.new()
+	v.size = Vector2(1180, 550)
+	v.zoom = 2.4
+	var towns: Dictionary = Travel.world_map().towns
+	for t in towns:
+		v.centre = Vector2(float(towns[t].x), float(towns[t].y))
+		for left in [true, false]:
+			v.inset = Rect2(428.0 if left else 0.0, 0.0, 0.0 if left else 428.0, 90.0)
+			var free := Rect2(v.inset.position, v.size - v.inset.position - v.inset.size)
+			assert_true(free.grow(-4).has_point(v.screen_pos(v.centre)), "%s clear of a panel on the %s" % [t, "left" if left else "right"])
+	v.free()

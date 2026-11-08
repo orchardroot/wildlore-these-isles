@@ -108,6 +108,11 @@ static func is_nation(n: String) -> bool:
 static func name_of(nation: String) -> String:
 	return str(NAMES.get(nation, nation.capitalize()))
 
+## How a nation reads in the middle of a sentence ("a Stranger in the Channel Islands").
+static func mid_name(nation: String) -> String:
+	var n := name_of(nation)
+	return "the " + n.substr(4) if n.begins_with("The ") else n
+
 static func points(data: GameStateData, nation: String) -> int:
 	var v = data.flag(FLAG_PREFIX + nation)
 	return int(v) if (v is int or v is float) else 0

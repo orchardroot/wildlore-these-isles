@@ -94,3 +94,19 @@ func test_a_haul_never_beats_the_days_takings() -> void:
 				var h := DeedYield.haul(d, s, day)
 				var w := DeedYield.worth(data, h, str(d.zone))
 				assert_true(w <= DeedYield.ceiling(d), "%s %s day %d: haul worth %d vs ceiling %d" % [id, s, day, w, DeedYield.ceiling(d)])
+
+func test_each_hut_is_its_own_building() -> void:
+	# w52: York's shed was a second door in the Minster's front, Lancaster's in the Castle, the boat huts in Whitby
+	# Station and Dingle's Dolphin Gifts; each now has a little shed or hut of its own
+	for id in IDS:
+		var d := _deed(id)
+		var town := ZoneData.from_dict(_zone(str(d.zone)))
+		var b := town.building_at(Vector2i(int(d.door.x), int(d.door.y)))
+		assert_eq(str(b.get("style", "")), "net_hut" if str(d.kind) == "boat" else "allotment_shed", id)
+		var doors := 0
+		for x in range(int(b.x), int(b.x) + int(b.w)):
+			for y in range(int(b.y), int(b.y) + int(b.h)):
+				doors += 1 if town.tile_at(Vector2i(x, y)) == "door" else 0
+		assert_eq(doors, 1, id + ": one door, its own")
+		var room := _zone(str(d.interior))
+		assert_eq(Vector2i(int(room.warps[0].tx), int(room.warps[0].ty)), Vector2i(int(d.door.x), int(d.door.y) + 1), id + ": out on the step")

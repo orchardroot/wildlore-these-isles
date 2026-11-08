@@ -46,7 +46,8 @@ const SPECIAL := ["edinburgh_tenement", "glasgow_tenement", "aberdeen_granite", 
 	"pitcairn_house", "boat_shed", "base_hangar", "base_tower", "base_block", "plantation_ruin", "island_church",
 	"jersey_granite", "guernsey_granite", "jersey_tower", "little_chapel",
 	"andaluz_house", "andaluz_church", "frontier_post", "fort_ruin", "venetian_gate", "venetian_wall", "selimiye", "han",
-	"kioski_house", "orthodox_church", "checkpoint_booth", "un_tower", "minster"]
+	"kioski_house", "orthodox_church", "checkpoint_booth", "un_tower", "minster",
+	"allotment_shed", "net_hut", "tower_mill", "water_wheel", "pumping_house", "cornish_engine"]
 
 ## Doors: where each style's door sits on its tile (see _door and friends), for the swing as you go in.
 ## {x, w, y, h, z}: left edge and width across the door column, bottom and height, z of the door's face from
@@ -89,6 +90,10 @@ const DOOR_RECTS := {
 	"lincoln_cathedral": {"x": 0.15, "w": 0.7, "y": 0.0, "h": 1.3, "z": 0.03},
 	"limestone_church": {"x": 0.15, "w": 0.7, "y": 0.0, "h": 1.3, "z": 0.03},
 	"the_deep": {"x": 0.2, "w": 0.6, "y": 0.0, "h": 1.0, "z": 0.0},
+	"allotment_shed": {"x": 0.22, "w": 0.56, "y": 0.0, "h": 0.95, "z": -0.12},
+	"net_hut": {"x": 0.22, "w": 0.56, "y": 0.0, "h": 0.95, "z": -0.12},
+	"tower_mill": {"x": 0.24, "w": 0.52, "y": 0.0, "h": 1.0, "z": -0.1},
+	"water_wheel": {"x": 0.22, "w": 0.56, "y": 0.0, "h": 0.95, "z": -0.07},
 }
 const DOOR_OPEN_ANGLE := -1.75     # radians about the hinge: swings out toward you, about 100 degrees
 const DOOR_SWING_SECS := 0.16
@@ -386,6 +391,8 @@ static func building(w: int, d: int, style: String, door_x: int, seed_value: int
 			SouthAtlanticStyles.tin_cottage(st, wst, w, d, door_x, rng)
 		"whalebone_arch":
 			SouthAtlanticStyles.whalebone_arch(st, w, d)
+		"allotment_shed", "net_hut", "tower_mill", "water_wheel", "pumping_house", "cornish_engine":
+			WorksStyles.build(st, wst, w, d, door_x, rng, style)
 		"pitcairn_house":
 			PacificStyles.house(st, wst, w, d, door_x, rng)
 		"boat_shed":
@@ -2330,19 +2337,21 @@ static func _pier(st: SurfaceTool, w: int, d: int) -> void:
 	Meshes._quad(st, Vector3(w * 0.5 - 0.5, dy, hz + 2.6), Vector3(w * 0.5 + 0.5, dy, hz + 2.6),
 		Vector3(w * 0.5 + 0.5, -0.4, hz + 4.2), Vector3(w * 0.5 - 0.5, -0.4, hz + 4.2), Color("6a6a66"))
 
-## A cave in the limestone cliff: a pale, knobbly outcrop with a black mouth on the door column.
+## A cave in the limestone cliff: a pale, knobbly outcrop with a black mouth on the door column. A shallow plot
+## (two tiles deep) gets a lower heap, so it doesn't stand over the street behind it (Anguilla's Fountain Cavern).
 static func _cave_mouth(st: SurfaceTool, w: int, d: int, door_x: int, rng: RandomNumberGenerator) -> void:
 	var lime := Color("b4ae9e")
+	var k := clampf(d / 3.0, 0.65, 1.0)
 	# a heap of weathered limestone boulders, banded grey, piled round the black mouth
-	Meshes.blob(st, Vector3(w * 0.5, 0.6, d * 0.45), Vector3(w * 0.55, 1.6, d * 0.5), lime.darkened(0.1), rng, 0.3)
+	Meshes.blob(st, Vector3(w * 0.5, 0.6 * k, d * 0.45), Vector3(w * 0.55, 1.6 * k, d * 0.5), lime.darkened(0.1), rng, 0.3)
 	for i in 9:
-		var c := Vector3(rng.randf_range(0.3, w - 0.3), rng.randf_range(0.6, 2.4), rng.randf_range(0.4, d - 0.6))
-		Meshes.blob(st, c, Vector3(rng.randf_range(0.6, 1.1), rng.randf_range(0.5, 0.9), rng.randf_range(0.5, 0.9)), lime.lightened(rng.randf_range(-0.1, 0.08)), rng, 0.3)
+		var c := Vector3(rng.randf_range(0.3, w - 0.3), rng.randf_range(0.6, 2.4) * k, rng.randf_range(0.4, d - 0.6))
+		Meshes.blob(st, c, Vector3(rng.randf_range(0.6, 1.1), rng.randf_range(0.5, 0.9) * k, rng.randf_range(0.5, 0.9)), lime.lightened(rng.randf_range(-0.1, 0.08)), rng, 0.3)
 	for x in [0.35, w - 0.35]:
 		Meshes.blob(st, Vector3(x, 0.7, d - 0.45), Vector3(0.6, 0.9, 0.5), lime.darkened(0.04), rng, 0.3)
 	Meshes.blob(st, Vector3(w * 0.5, 1.7, d - 0.5), Vector3(1.1, 0.5, 0.45), lime.lightened(0.04), rng, 0.25)
 	for i in 4:  # ivy and turf hanging over the top
-		Meshes.blob(st, Vector3(rng.randf_range(0.4, w - 0.4), 2.6, rng.randf_range(0.6, d - 0.8)), Vector3(0.5, 0.25, 0.5), Color("6a8a4a"), rng, 0.3)
+		Meshes.blob(st, Vector3(rng.randf_range(0.4, w - 0.4), 2.6 * k, rng.randf_range(0.6, d - 0.8)), Vector3(0.5, 0.25, 0.5), Color("6a8a4a"), rng, 0.3)
 	if door_x >= 0:
 		var black := Color("0c0a0a")
 		Meshes.box(st, Vector3(door_x + 0.1, 0, d - 0.12), Vector3(0.8, 1.1, 0.06), black)

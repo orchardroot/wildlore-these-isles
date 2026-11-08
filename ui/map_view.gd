@@ -29,6 +29,7 @@ var route := PackedVector2Array()  # map units: the "Route here" polyline, drawn
 var marks: Array = []       # MapLogic.marks: rewilding, the show, side stories, the post
 var framed := false         # the pause-menu map: a frame, a vignette and a compass
 var compass_left := false   # the compass goes top left (the info panel is on the right)
+var inset := Rect2()        # px kept clear by panels over the map (position: left/top, size: right/bottom); the map centres and scrolls in what is left
 var font: Font
 var _italic: FontVariation  # sea and hill names
 var _spaced: FontVariation  # NATION NAMES
@@ -193,12 +194,18 @@ func _xf() -> Array:
 	var space: Array = m.get("space", [1000, 1300])
 	var k := minf(size.x / float(space[0]), size.y / float(space[1])) * zoom
 	var c := centre if centre.x >= 0 else Vector2(space[0], space[1]) * 0.5
-	var off := size * 0.5 - c * k
-	# keep the map on screen: don't scroll past its own edges
+	var free := Rect2(inset.position, size - inset.position - inset.size)
+	var off := free.get_center() - c * k
+	# keep the map on screen: don't scroll past its own edges, but let them come out from under a panel
 	var w := Vector2(space[0], space[1]) * k
-	off.x = clampf(off.x, size.x - w.x, 0.0) if w.x > size.x else (size.x - w.x) * 0.5
-	off.y = clampf(off.y, size.y - w.y, 0.0) if w.y > size.y else (size.y - w.y) * 0.5
+	off.x = _fit(off.x, w.x, free.position.x, free.end.x)
+	off.y = _fit(off.y, w.y, free.position.y, free.end.y)
 	return [k, off]
+
+## One axis of the scroll: a map bigger than the free span can't bring its edge past the span's ends; a smaller
+## one sits in the middle of it.
+static func _fit(o: float, w: float, lo: float, hi: float) -> float:
+	return clampf(o, hi - w, lo) if w > hi - lo else (lo + hi - w) * 0.5
 
 ## Where a map-space point lands on this control right now.
 func screen_pos(map_pos: Vector2) -> Vector2:

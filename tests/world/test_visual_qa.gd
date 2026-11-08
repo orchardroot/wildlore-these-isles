@@ -201,3 +201,22 @@ func test_field_barn_is_a_small_stone_barn() -> void:
 	assert_has(Landmarks.SPECIAL, "field_barn")
 	var box := (Meshes.building(3, 2, "field_barn", -1, 1)[0] as ArrayMesh).get_aabb()
 	assert_true(box.size.y > 1.4 and box.size.y < 2.6, "a storey and a roof (%.2f)" % box.size.y)
+
+func test_mills_look_like_their_kind() -> void:
+	# w52: Llynnon (a windmill), Laxey (a waterwheel), Starcross (a pumping house) and the Cornish engine houses were
+	# all Lancashire cotton mills
+	var want := {"anglesey": ["Llynnon Mill", "tower_mill"], "douglas": ["Laxey Wheel (not to scale)", "water_wheel"],
+		"exe_estuary": ["Starcross Pumping House", "pumping_house"], "penzance": ["Engine House", "cornish_engine"],
+		"shropshire_hills": ["Snailbeach Engine House", "cornish_engine"]}
+	for zid in want:
+		var found := ""
+		for pr in ZoneData.load_id(zid).props:
+			if str(pr.get("label", "")) == want[zid][0]:
+				found = str(pr.style)
+		assert_eq(found, want[zid][1], zid)
+	for style in WorksStyles.STYLES:
+		assert_has(Landmarks.SPECIAL, style)
+	var mill := (Meshes.building(4, 4, "tower_mill", 1, 1)[0] as ArrayMesh).get_aabb()
+	assert_true(mill.size.y > 5.0, "sails above a tall tower (%.2f)" % mill.size.y)
+	var shed := (Meshes.building(3, 2, "allotment_shed", 1, 1)[0] as ArrayMesh).get_aabb()
+	assert_true(shed.size.y < 2.0, "a shed is low (%.2f)" % shed.size.y)
