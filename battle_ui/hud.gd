@@ -347,6 +347,7 @@ class Plate extends PanelContainer:
 	var xp_shown := 0.0
 	var _hp_tween: Tween
 	var _xp_tween: Tween
+	var _fade: Tween
 	var _sb: StyleBoxFlat
 	var _border: Color
 	var _border_w := 2
@@ -435,6 +436,9 @@ class Plate extends PanelContainer:
 		queue_redraw()
 
 	func set_creature(c: Creature, hp := -1) -> void:
+		if _fade and _fade.is_valid():
+			_fade.kill()
+		modulate.a = 1.0
 		creature = c
 		name_l.text = c.display_name()
 		sex_m.set_sex(c.sex, sex_px)
@@ -497,6 +501,17 @@ class Plate extends PanelContainer:
 		_hp_tween.tween_method(func(v: float):
 			hp_shown = v
 			_sync_hp(), hp_shown, to, dur)
+
+	## A faint: the plate fades out with its creature (a replacement's plate slides back in).
+	func fade_out(dur: float) -> void:
+		if not is_inside_tree() or not visible:
+			visible = false
+			return
+		_fade = create_tween()
+		_fade.tween_property(self, "modulate:a", 0.0, dur).set_delay(dur * 0.4)
+		_fade.tween_callback(func():
+			visible = false
+			modulate.a = 1.0)
 
 	func set_status(s: String) -> void:
 		status = s
@@ -609,6 +624,9 @@ func set_creature(side: int, c: Creature, pos := 0, hp := -1) -> void:
 		var home := p.position
 		p.position = home + from
 		create_tween().tween_property(p, "position", home, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+func fade_plate(side: int, pos := 0, dur := 0.5) -> void:
+	plate(side, pos).fade_out(dur)
 
 func tween_hp(side: int, hp: int, dur: float, pos := 0) -> void:
 	plate(side, pos).tween_hp(float(hp), dur)

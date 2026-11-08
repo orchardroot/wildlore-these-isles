@@ -301,6 +301,7 @@ func play(cue: Dictionary, battle: Battle) -> void:
 			await _actor(side, pos).nod()
 		"faint":
 			Audio.sfx("faint")
+			plates(cue, battle)
 			await _actor(side, pos).faint()
 		"switch":
 			await _switch(side, battle.parties[side][int(cue.index)], pos, cue, battle)
@@ -364,6 +365,8 @@ func plates(cue: Dictionary, battle: Battle) -> void:
 				hud.set_status(side, str(cue.status), pos)
 		"weather":
 			hud.set_weather(str(cue.weather), int(cue.get("turns", 0)))
+		"faint":
+			hud.fade_plate(side, pos)
 
 ## Where a heal cue's creature stands: its field position, or -1 when it is on the bench (an item on a reserve).
 static func heal_pos(cue: Dictionary, battle: Battle) -> int:
