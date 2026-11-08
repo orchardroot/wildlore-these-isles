@@ -81,6 +81,8 @@ func _ready() -> void:
 	root.add_child(msg)
 	menus = BattleMenus.new()
 	root.add_child(menus)
+	menus.opened.connect(msg.make_room)
+	menus.closed.connect(msg.make_room.bind(Rect2()))
 	if _dev_cursor >= 0:
 		menus.remember("bag" if _dev_menu == "bag" else "moves", _dev_cursor)
 

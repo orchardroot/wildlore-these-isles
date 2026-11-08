@@ -106,9 +106,19 @@ func _build_tab() -> void:
 	_tab.visible = false
 
 ## The speaker's tab sits on the box's top edge, wherever that is: a four-line page grows the box upwards, and a
-## tab left at the three-line height would cover the first line.
+## tab left at the three-line height would cover the first line. The choices stand just above the box too, and
+## above the tab where a long list would reach across it.
 func _seat_tab() -> void:
 	_tab.position.y = _box.position.y - _tab.size.y + 6.0
+	var tab := Rect2(_tab.position, _tab.size) if _tab.visible else Rect2()
+	_choice_panel.position.y = choice_bottom(_box.position.y, tab, _choice_panel.position.x) - _choice_panel.size.y
+
+## Where the choice list's bottom edge goes: just above the box's top, or above the speaker's tab (`tab`, empty
+## when there is none) if the list, starting at `left`, would reach across it.
+static func choice_bottom(box_top: float, tab: Rect2, left: float) -> float:
+	if tab.has_area() and left < tab.end.x + CHOICE_GAP:
+		return tab.position.y - CHOICE_GAP
+	return box_top - CHOICE_GAP
 
 func _build_arrow() -> void:
 	_arrow = Control.new()
@@ -146,6 +156,7 @@ func _build_choices() -> void:
 	_choice_panel.grow_vertical = Control.GROW_DIRECTION_BEGIN
 	_choice_panel.add_theme_stylebox_override("panel", _panel_style(SLATE, HEATHER))
 	_ui.add_child(_choice_panel)
+	_choice_panel.resized.connect(_seat_tab)
 	_choice_panel.add_child(VBoxContainer.new())
 	_choice_panel.visible = false
 
@@ -209,6 +220,7 @@ static func paginate(text: String, fits: Callable) -> Array:
 	return pages
 
 const MAX_LINES := 4
+const CHOICE_GAP := 8.0  # px between the choice list and the box (or the speaker's tab) under it
 const SIZES := [30, 26]  # try the usual size, then a touch smaller, before splitting into pages
 
 ## Fits the text to the box: the usual size if it fits in MAX_LINES, else a little smaller, else pages at that size.
@@ -314,6 +326,7 @@ func _finish_typing() -> void:
 	_label.visible_characters = -1
 	if _choice_after_typing:
 		_choice_panel.visible = true
+		_seat_tab()
 		state = State.CHOOSING
 		_armed_at = Time.get_ticks_msec() + 120
 	else:

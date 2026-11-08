@@ -49,3 +49,10 @@ func test_cancel_in_choice_picks_decline() -> void:
 	b._tick(0.016, false, true, false)
 	assert_eq(got[0], 1)
 	b.free()
+
+func test_choices_stand_above_the_box_and_clear_of_the_speaker() -> void:
+	# a four-line page grows the box up to y 472: the list sits above that, not at the three-line height
+	assert_eq(DialogueBox.choice_bottom(472.0, Rect2(), 700.0), 472.0 - DialogueBox.CHOICE_GAP)
+	var tab := Rect2(76, 431, 220, 47)
+	assert_eq(DialogueBox.choice_bottom(472.0, tab, 700.0), 472.0 - DialogueBox.CHOICE_GAP, "a short list keeps right of the tab")
+	assert_eq(DialogueBox.choice_bottom(472.0, tab, 200.0), 431.0 - DialogueBox.CHOICE_GAP, "a wide one goes over it")

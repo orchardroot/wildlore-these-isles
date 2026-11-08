@@ -6,6 +6,8 @@ extends Control
 
 signal _picked(index: int)
 signal cursor_moved(index: int)  # the highlighted row changed (the scene uses it to mark a target)
+signal opened(rect: Rect2)  # a picker took this part of the screen (the message box keeps its words clear of it)
+signal closed
 
 const CREAM := Color("f2e8cf")
 const HEATHER := Color("9b6fb0")
@@ -114,6 +116,7 @@ func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, 
 	_panel = PanelContainer.new()
 	_panel.position = rect.position
 	_panel.size = rect.size
+	opened.emit(rect)
 	var sb: StyleBoxFlat = (load("res://ui/theme.tres") as Theme).get_stylebox("panel", "PanelContainer").duplicate()
 	sb.set_content_margin_all(10)
 	sb.bg_color.a = 1.0
@@ -170,6 +173,7 @@ func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, 
 func _clear() -> void:
 	if _panel and is_instance_valid(_panel):
 		_panel.queue_free()
+		closed.emit()
 	_panel = null
 	_rows = []
 	_footer = null
@@ -206,7 +210,7 @@ func _row(d: Dictionary, i: int) -> PanelContainer:
 	if d.has("chip") and str(d.chip) != "":
 		var chip := Label.new()
 		chip.text = " %s " % str(d.chip).to_upper()
-		chip.add_theme_font_size_override("font_size", 15)
+		chip.add_theme_font_size_override("font_size", 16)
 		var chip_fg: Color = d.get("chip_text", Color("14161c"))
 		chip.add_theme_color_override("font_color", chip_fg)
 		chip.add_theme_constant_override("shadow_offset_x", 0)
@@ -315,7 +319,8 @@ func bag(entries: Array) -> int:
 	var footer := func(i: int) -> String:
 		return bag_footer(entries[i])
 	var h := mini(entries.size(), 6) * 46 + 100
-	return await _pick(Rect2(700, 560 - h, 556, h), "BAG", rows, 1, "bag", true, footer)
+	# on the left, over our own creature: both HP plates stay in view while you pick a cup of tea
+	return await _pick(Rect2(20, 560 - h, 540, h), "BAG", rows, 1, "bag", true, footer)
 
 ## A bag entry's line: a snare leads with its odds, in words, or as a rough number once the species is caught.
 static func bag_footer(e: Dictionary) -> String:
@@ -346,7 +351,7 @@ func party(creatures: Array, active: Variant, mode: String, item: Dictionary = {
 			"chip_text": CREAM if chip == "out" else Color("14161c"), "disabled": dis})
 	var title: String = {"switch": "SEND OUT WHO?", "forced": "SEND OUT WHO?", "item": "USE ON WHOM?", "swap": "SWAP WITH WHO?"}.get(mode, "TEAM")
 	var h := creatures.size() * 46 + 56
-	return await _pick(Rect2(560, 560 - h, 696, h), title, rows, 1, "party_" + mode, mode != "forced")
+	return await _pick(Rect2(20, 560 - h, 696, h), title, rows, 1, "party_" + mode, mode != "forced")  # left, as the bag
 
 ## Double battles: which foe to aim at. names: the foe at each position ("" for nobody there). Left and right
 ## match the diorama. Returns the position, or -1 when cancelled.
