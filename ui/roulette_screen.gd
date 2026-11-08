@@ -148,6 +148,7 @@ func _next_type() -> void:
 
 func _show_type() -> void:
 	_type_btn.text = "Bet type:  " + TYPE_NAMES[TYPES[_type_i]]
+	_type_btn.add_theme_font_size_override("font_size", UIKit.fit_size(_type_btn.text, 420 - 24, UIKit.sized(28), UIKit.MIN_TEXT))  # never wider than its 420 px
 
 ## The inside bet the current type makes from number `n`, or {} if there isn't one there.
 func _inside(n: int) -> Dictionary:

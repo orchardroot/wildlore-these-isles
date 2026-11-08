@@ -51,7 +51,7 @@ func _build() -> void:
 	_table.add_child(_player_l)
 	var side := VBoxContainer.new()
 	side.custom_minimum_size = Vector2(330, 0)
-	side.add_theme_constant_override("separation", 10)
+	side.add_theme_constant_override("separation", 10 if not UIKit.big_text() else 4)  # five buttons and Large text
 	root.add_child(side)
 	var rules := UIKit.label("Double on any two. No splits, no insurance, no arguing with Maureen.", 18, UIKit.MUTED)
 	rules.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -89,10 +89,13 @@ func _update() -> void:
 		_dealer_l.text = "Dealer  %d" % dv.total if _dealer_views.size() > 0 else ""
 		var pv := Blackjack.value(_game.player)
 		_player_l.text = ("You  %d%s" % [pv.total, "  (soft)" if pv.soft and pv.total < 21 else ""]) if _player_views.size() > 0 else ""
+	var was := _tip.text
 	_tip.text = ""
 	if live and not _busy:
 		var advice := Blackjack.basic_strategy(_game)
 		_tip.text = "Maureen, the dealer, mutters: \"The book says %s.\"" % {"hit": "hit", "stand": "stand", "double": "double"}[advice]
+	if _tip.text != was or not _tip.has_meta("want"):
+		fit_side(_tip.get_parent())  # Maureen's line may need the side's words a little smaller (Large text)
 	set_hints([["confirm", "Choose"], ["leftright", "Stake"], ["cancel", "Leave"]] if not live else [["updown", "Choose"], ["confirm", "Play"]])
 
 func _all_dealer_up() -> bool:

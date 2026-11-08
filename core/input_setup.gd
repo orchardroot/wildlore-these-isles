@@ -150,6 +150,13 @@ static func hint_name(b: Dictionary, action: String, pad: bool) -> String:
 		return "%s / %s" % [a, z]
 	if action == "shoulders":
 		return "LB / RB" if pad else hint_name(b, "leftright", false)
+	if action == "move":  # all four ways: "Arrows" or "D-pad" when they are, else the four buttons
+		var four: Array = ["move_up", "move_left", "move_down", "move_right"].map(func(a): return hint_name(b, a, pad))
+		if pad and four.all(func(n): return str(n).begins_with("D-pad ")):
+			return "D-pad"
+		if not pad and four == ["Up", "Left", "Down", "Right"]:
+			return "Arrows"
+		return " / ".join(four)
 	var codes: Array = b.get(action, {}).get("pad" if pad else "key", [])
 	if codes.is_empty():
 		return "-"

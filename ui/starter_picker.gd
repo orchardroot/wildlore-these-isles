@@ -18,7 +18,7 @@ var _prompt: Label
 
 func _build() -> void:
 	set_title("Choose your partner")
-	header_right.text = "Professor Garside's field station"
+	header_right.text = "Professor Garside's Field Station"
 	var col := VBoxContainer.new()
 	col.set_anchors_preset(Control.PRESET_FULL_RECT)
 	col.add_theme_constant_override("separation", 10)
@@ -35,7 +35,7 @@ func _build() -> void:
 		v.add_theme_constant_override("separation", 3)
 		p.add_child(v)
 		var holder := VBoxContainer.new()
-		holder.custom_minimum_size = Vector2(0, 288)
+		holder.custom_minimum_size = Vector2(0, 288 if not UIKit.big_text() else 192)  # Large text: smaller, for Garside's words
 		holder.alignment = BoxContainer.ALIGNMENT_END
 		v.add_child(holder)
 		_holders.append(holder)
@@ -80,7 +80,7 @@ func _refresh() -> void:
 		p.modulate = Color.WHITE if on else Color(1, 1, 1, 0.6)
 		UIKit.clear(_holders[i])
 		var s := AnimSprite.new()
-		s.show_species(STARTERS[i], "front", 3 if on else 2)
+		s.show_species(STARTERS[i], "front", 3 if on and not UIKit.big_text() else 2)
 		s.animate(Game.dex.get_species(STARTERS[i]))
 		s.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		_holders[i].add_child(s)

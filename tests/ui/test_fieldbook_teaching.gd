@@ -88,7 +88,7 @@ func test_every_caught_entry_fits_the_words_box() -> void:
 		Pedia.add_real_life(words, sp)
 		var entries: Array = words.get_meta("words")
 		var smallest: int = Pedia.WORD_SIZES[Pedia.WORD_SIZES.size() - 1]
-		var need := UIKit._block_height(entries, BOX.x - 16, smallest, Pedia.WORD_SEP, true)
+		var need := UIKit._block_height(entries, BOX.x - 16, smallest, Pedia.WORD_SEP, 99)
 		if need > BOX.y * 2 + ESTIMATE_SLACK:
 			spill.append("%s (%d px)" % [id, need])
 		UIKit.fit_block(entries, box, Pedia.WORD_SIZES, Pedia.WORD_SEP)

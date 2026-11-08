@@ -26,7 +26,7 @@ static func box(bg: Color, border := Color(0, 0, 0, 0), bw := 0, radius := 6, ma
 static func label(text: String, size := 28, colour := CREAM) -> Label:
 	var l := Label.new()
 	l.text = text
-	l.add_theme_font_size_override("font_size", Access.scaled(maxi(size, MIN_TEXT), Settings.text_size))
+	l.add_theme_font_size_override("font_size", sized(size))
 	l.add_theme_color_override("font_color", colour)
 	return l
 
@@ -36,14 +36,29 @@ static func ink_label(text: String, size := 28, colour := SLATE) -> Label:
 	l.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0))
 	return l
 
+## The size UIKit.label(text, size) draws at: the player's Text size, never below MIN_TEXT.
+static func sized(size: int) -> int:
+	return Access.scaled(maxi(size, MIN_TEXT), Settings.text_size)
+
+## True with the Large or Largest Text size: for layouts that trade a little picture or bar for the bigger words.
+static func big_text() -> bool:
+	return Access.scale_of(Settings.text_size) > 1.0
+
+## The font menus draw with: the Readable font when that setting is on (ui/theme.tres), else Godot's default.
+## Measure with this, never ThemeDB.fallback_font, or the Readable font's wider letters overrun the sums.
+static func font() -> Font:
+	var t: Theme = load("res://ui/theme.tres")
+	return t.default_font if t != null and t.default_font != null else ThemeDB.fallback_font
+
 ## How tall a line of UIKit.label(text, size) is at the player's Text size: for rows whose height is set by hand.
 static func line_height(size: int) -> int:
-	return ceili(ThemeDB.fallback_font.get_height(Access.scaled(maxi(size, MIN_TEXT), Settings.text_size)))
+	return ceili(font().get_height(sized(size)))
 
 ## The largest font size from `big` down to `small` at which `text` fits in `width` px on one line
-## (`small` if nothing does). For names and hint bars that must never widen a panel.
+## (`small` if nothing does). For names and hint bars that must never widen a panel. Sizes are drawn sizes:
+## for a UIKit.label's nominal size use fit_scaled, which allows for Large text.
 static func fit_size(text: String, width: float, big: int, small: int) -> int:
-	var f: Font = ThemeDB.fallback_font  # the game's font (ui/theme.tres sets no other)
+	var f: Font = font()
 	small = maxi(small, MIN_TEXT)
 	big = maxi(big, small)
 	for s in range(big, small - 1, -1):
@@ -51,54 +66,103 @@ static func fit_size(text: String, width: float, big: int, small: int) -> int:
 			return s
 	return small
 
+## fit_size for nominal UIKit.label sizes: starts from `big` at the player's Text size and may shrink as far as
+## `small` (unscaled), so with Large text a long name shrinks to fit before it is ever trimmed. Returns a drawn size.
+static func fit_scaled(text: String, width: float, big: int, small: int) -> int:
+	return fit_size(text, width, sized(big), maxi(small, MIN_TEXT))
+
 ## A label that shrinks its font (down to `small`) so `text` fits `width` on one line.
 static func fit_label(text: String, width: float, big := 28, small := 18, colour := CREAM) -> Label:
-	var l := label(text, fit_size(text, width, big, small), colour)
+	var l := label(text, big, colour)
+	l.add_theme_font_size_override("font_size", fit_scaled(text, width, big, small))
 	l.clip_text = true
 	l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	return l
 
 ## Keeps a one-line label's text inside its own width as layout settles: its size steps down (to `small`) whenever
-## it is resized, before any trimming. Changing the font never changes a clipped label's width, so this can't loop.
+## it is resized or its words change, before any trimming. Changing the font never changes a clipped label's width,
+## so this can't loop.
 static func fit_width(l: Label, small := MIN_TEXT) -> void:
 	var big := l.get_theme_font_size("font_size")
-	l.resized.connect(func():
-		if l.size.x > 0:
-			l.add_theme_font_size_override("font_size", fit_size(l.text, l.size.x, big, small)))
+	var ref: WeakRef = weakref(l)  # a lambda must not hold a label that may be freed before it runs
+	l.resized.connect(func(): _refit(ref, big, small))
+	l.draw.connect(func(): _refit.call_deferred(ref, big, small))  # new words redraw it
+
+static func _refit(ref: WeakRef, big: int, small: int) -> void:
+	var l := ref.get_ref() as Label
+	if l != null and l.size.x > 0:
+		var fs := fit_size(l.text, l.size.x, big, small)
+		if fs != l.get_theme_font_size("font_size"):
+			l.add_theme_font_size_override("font_size", fs)
+
+## A one-line label for a row's name: it takes the room the row's other parts leave, and a long one shrinks (to
+## `small`) before it trims. Use it in place of a label followed by UIKit.fill().
+static func row_label(text: String, size := 28, colour := CREAM, small := MIN_TEXT) -> Label:
+	var l := label(text, size, colour)
+	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	l.clip_text = true
+	l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	fit_width(l, small)
+	return l
 
 ## A block of wrapped labels that must fit `box` (a ScrollContainer, as a fallback for the very longest): sets the
 ## biggest body size from `sizes` (biggest first) at which they all fit. `words` holds [label, size offset, optional]
 ## entries, e.g. a heading one size up from the body; optional ones (a "Did you know?") are left out before the
-## text gets any smaller than the last size. `sep` is the box's separation. No line goes below MIN_TEXT: past that
-## the box scrolls instead.
+## text gets any smaller than the last size. `sep` is the box's separation. Sizes are nominal (Large text scales
+## them, as UIKit.label does). No line goes below MIN_TEXT: past that the box scrolls instead.
 static func fit_block(words: Array, box: Control, sizes: Array, sep := 8) -> void:
 	if not is_instance_valid(box) or box.size.y <= 0 or words.is_empty():
 		return
 	var w := box.size.x - 16  # room for a scroll bar, so measuring never promises a fit that then wraps once more
 	var body: int = sizes[sizes.size() - 1]
-	var keep_all := false
-	for size in sizes:
-		if _block_height(words, w, size, sep, true) <= box.size.y:
-			body = size
-			keep_all = true
-			break
-	if not keep_all:
+	var top := 0
+	for e in words:
+		top = maxi(top, _tier(e))
+	var cut := top + 1  # lines of this tier or higher are left out: first none, then the most optional, and so on
+	var fitted := false
+	while not fitted and cut > 1:
+		for size in sizes:
+			if _block_height(words, w, size, sep, cut) <= box.size.y:
+				body = size
+				fitted = true
+				break
+		if not fitted:
+			cut -= 1
+	if not fitted:
 		for size in sizes:
 			body = size
-			if _block_height(words, w, size, sep, false) <= box.size.y:
+			if _block_height(words, w, size, sep, cut) <= box.size.y:
 				break
 	for e in words:
 		if is_instance_valid(e[0]):
-			e[0].add_theme_font_size_override("font_size", maxi(body + e[1], MIN_TEXT))
-			e[0].visible = keep_all or not (e.size() > 2 and e[2])
+			e[0].add_theme_font_size_override("font_size", sized(body + e[1]))
+			e[0].visible = _tier(e) < cut or _tier(e) == 0
+	if box is ScrollContainer:
+		_recheck_bar.call_deferred(weakref(box))
 
-static func _block_height(words: Array, w: float, size: int, sep: int, with_optional: bool) -> float:
-	var f: Font = ThemeDB.fallback_font
+## A ScrollContainer only rechecks its scroll bar when it is laid out after its minimum size was asked for: words that
+## no longer need the bar (smaller, or a line left out) can leave it showing otherwise.
+static func _recheck_bar(ref: WeakRef) -> void:
+	var sc := ref.get_ref() as ScrollContainer
+	if sc == null:
+		return
+	sc.update_minimum_size()
+	sc.get_combined_minimum_size()
+	sc.queue_sort()
+
+## How optional a words_box line is: 0 never left out; higher tiers go first (`optional` true is tier 1).
+static func _tier(e: Array) -> int:
+	if e.size() < 3:
+		return 0
+	return int(e[2]) if e[2] is int else (1 if e[2] else 0)
+
+static func _block_height(words: Array, w: float, size: int, sep: int, cut: int) -> float:
+	var f: Font = font()
 	var h := -float(sep)
 	for e in words:
-		if not with_optional and e.size() > 2 and e[2]:
+		if _tier(e) >= cut and _tier(e) > 0:
 			continue
-		var fs: int = maxi(size + e[1], MIN_TEXT)
+		var fs: int = sized(size + e[1])
 		var tall := f.get_multiline_string_size(e[0].text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y
 		var lines := maxi(1, roundi(tall / f.get_height(fs)))
 		h += tall + (lines - 1) * 3 + sep + 2  # the theme's line spacing, and a shadow pixel or two
@@ -126,18 +190,25 @@ static func fit_column(col: VBoxContainer, room: float) -> void:
 	col.add_theme_constant_override("separation", mini(int(col.get_meta("sep")), 3))  # at the smallest, close up the gaps too
 
 ## A detail column inside a ScrollContainer that refits (fit_column) to the box's height whenever it is refilled, once
-## per refill: long words step down before the keyboard-less scroll bar is needed.
+## per refill, and when the box changes size: long words step down before the keyboard-less scroll bar is needed.
 static func keep_fitted(col: VBoxContainer) -> void:
-	col.child_entered_tree.connect(func(_n: Node):
-		if col.has_meta("fit_queued"):
+	var ref: WeakRef = weakref(col)
+	col.child_entered_tree.connect(func(_n: Node): _queue_fit(ref))
+	if col.get_parent() is Control:
+		(col.get_parent() as Control).resized.connect(func(): _queue_fit(ref))
+
+static func _queue_fit(ref: WeakRef) -> void:
+	var col := ref.get_ref() as VBoxContainer
+	if col == null or col.has_meta("fit_queued"):
+		return
+	col.set_meta("fit_queued", true)
+	(func():
+		var c := ref.get_ref() as VBoxContainer
+		if c == null:
 			return
-		col.set_meta("fit_queued", true)
-		(func():
-			if not is_instance_valid(col):
-				return
-			col.remove_meta("fit_queued")
-			if col.get_parent() is Control:
-				fit_column(col, (col.get_parent() as Control).size.y)).call_deferred())
+		c.remove_meta("fit_queued")
+		if c.get_parent() is Control:
+			fit_column(c, (c.get_parent() as Control).size.y)).call_deferred()
 
 static func _column_height(col: VBoxContainer) -> float:
 	var h := 0.0
@@ -146,16 +217,41 @@ static func _column_height(col: VBoxContainer) -> float:
 		if not (c is Control) or not c.visible:
 			continue
 		n += 1
-		if c is Label:
-			h += _label_height(c, col.size.x)
-		elif c is Container:
-			var tall: float = c.get_combined_minimum_size().y
-			for l in c.find_children("*", "Label", true, false):
-				tall = maxf(tall, _label_height(l, c.size.x))
-			h += tall
-		else:
-			h += c.get_combined_minimum_size().y
+		h += _part_height(c, col.size.x)
 	return h + maxi(0, n - 1) * col.get_theme_constant("separation")
+
+## How tall one part of a fit_column column is with its labels' new sizes (a container's own minimum size still
+## has the old ones until the next layout, so rows and stacks are measured from their labels).
+static func _part_height(c: Control, w: float) -> float:
+	if c is Label:
+		return _label_height(c, w)
+	if c is VBoxContainer:
+		return _column_height(c)
+	if c is HBoxContainer:
+		var tall := 0.0
+		for k in c.get_children():
+			if k is Control and k.visible:
+				tall = maxf(tall, _part_height(k, k.size.x))
+		return tall
+	if c is GridContainer:
+		var shown: Array = c.get_children().filter(func(k): return k is Control and k.visible)
+		var cols: int = maxi(1, c.columns)
+		var total := 0.0
+		for r in ceili(shown.size() / float(cols)):
+			var tall := 0.0
+			for k in shown.slice(r * cols, (r + 1) * cols):
+				tall = maxf(tall, _part_height(k, k.size.x))
+			total += tall
+		return total + maxi(0, ceili(shown.size() / float(cols)) - 1) * c.get_theme_constant("v_separation")
+	if c is PanelContainer and c.get_child_count() == 1 and c.get_child(0) is Control:
+		var sb: StyleBox = c.get_theme_stylebox("panel")
+		return _part_height(c.get_child(0), c.get_child(0).size.x) + (sb.get_minimum_size().y if sb != null else 0.0)
+	if c is Container:
+		var tall: float = c.get_combined_minimum_size().y
+		for l in c.find_children("*", "Label", true, false):
+			tall = maxf(tall, _label_height(l, c.size.x))
+		return tall
+	return c.get_combined_minimum_size().y
 
 static func _label_height(l: Label, w: float) -> float:
 	var f := l.get_theme_font("font")
@@ -185,8 +281,9 @@ static func words_box(sizes: Array, sep := 8) -> Array:
 	col.set_meta("sizes", sizes)
 	return [sc, col]
 
-## A wrapped line in a words_box column, `offset` sizes from the body text; `optional` lines go first if space is short.
-static func add_words(col: VBoxContainer, text: String, offset := 0, colour := CREAM, optional := false) -> Label:
+## A wrapped line in a words_box column, `offset` sizes from the body text; `optional` lines go first if space is
+## short (true, or a tier: tier 2 lines go before tier 1).
+static func add_words(col: VBoxContainer, text: String, offset := 0, colour := CREAM, optional: Variant = false) -> Label:
 	var sizes: Array = col.get_meta("sizes")
 	var l := label(text, sizes[0] + offset, colour)
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

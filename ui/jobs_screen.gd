@@ -24,9 +24,13 @@ func _build() -> void:
 	row.set_anchors_preset(Control.PRESET_FULL_RECT)
 	row.add_theme_constant_override("separation", 22)
 	content.add_child(row)
+	var left := VBoxContainer.new()
+	left.custom_minimum_size = Vector2(560 if not UIKit.big_text() else 600, 0)  # long titles need a little more with Large text
+	left.add_theme_constant_override("separation", 12)
+	row.add_child(left)
 	var lp := UIKit.panel(Color("1d2230f0"), 12)
-	lp.custom_minimum_size = Vector2(560, 0)
-	row.add_child(lp)
+	lp.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	left.add_child(lp)
 	var sc := ScrollContainer.new()
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	sc.follow_focus = true
@@ -51,7 +55,7 @@ func _build() -> void:
 	dsc.add_child(_desc)
 	UIKit.keep_fitted(_desc)  # a long job steps its words down to fit
 	var sp := UIKit.panel(Color("1d2230f0"), 14)
-	right.add_child(sp)
+	(left if UIKit.big_text() else right).add_child(sp)  # with Large text the standing card sits under the list, so the job has the room
 	_standing = VBoxContainer.new()
 	_standing.add_theme_constant_override("separation", 6)
 	sp.add_child(_standing)
@@ -64,8 +68,8 @@ func _build() -> void:
 ## Several hand-ins at once make a long line: it steps down a size or two rather than push the panels off the page.
 func _fit_say() -> void:
 	var w := maxf(_say.size.x, 200.0)
-	var fs := 22
-	while fs > UIKit.MIN_TEXT and ThemeDB.fallback_font.get_multiline_string_size(_say.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y > 90:
+	var fs := UIKit.sized(22)
+	while fs > UIKit.MIN_TEXT and UIKit.font().get_multiline_string_size(_say.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y > 90:
 		fs -= 1
 	if _say.get_theme_font_size("font_size") != fs:
 		_say.add_theme_font_size_override("font_size", fs)
@@ -204,7 +208,9 @@ func _describe(i: int) -> void:
 	var title := UIKit.label(str(j.get("title", "")), 32)
 	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_desc.add_child(title)
-	_desc.add_child(UIKit.label("Posted by " + str(j.get("poster", "")), 19, UIKit.MUTED))
+	var by := UIKit.label("Posted by " + str(j.get("poster", "")), 19, UIKit.MUTED)
+	by.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # wraps rather than widen the card
+	_desc.add_child(by)
 	var body := UIKit.label(str(j.get("text", "")), 22)
 	body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_desc.add_child(body)
@@ -219,7 +225,9 @@ func _describe(i: int) -> void:
 		_desc.add_child(_line("Progress", p, OK if ready else UIKit.CREAM))
 	_desc.add_child(_line("Pays", _pay_text(j), UIKit.GOLD))
 	var how: String = "Finishes by itself when it's done." if str(j.step.type) in Jobs.AUTO else "Hand it in at any noticeboard in %s." % Standing.name_of(str(j.nation))
-	_desc.add_child(UIKit.label(how, 18, UIKit.MUTED))
+	var hl := UIKit.label(how, 18, UIKit.MUTED)
+	hl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_desc.add_child(hl)
 	_set_row_hint(r)
 
 func _line(k: String, v: String, col: Color) -> HBoxContainer:

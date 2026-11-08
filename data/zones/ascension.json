@@ -483,9 +483,9 @@
   {
    "id": "ascension_return",
    "sprite": "rail_guard",
-   "x": 36,
-   "y": 44,
-   "facing": "down",
+   "x": 37,
+   "y": 43,
+   "facing": "left",
    "move": "still",
    "script": "ascension_return",
    "name": "Movements Officer"

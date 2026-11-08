@@ -103,6 +103,13 @@
    "bench": "hob",
    "x": 5,
    "y": 2
+  },
+  {
+   "type": "dartboard",
+   "x": 11,
+   "y": 4,
+   "rot": 270,
+   "walk": true
   }
  ],
  "warps": [

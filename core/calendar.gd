@@ -129,6 +129,30 @@ static func foliage_tint(month: int, day: int) -> Vector3:
 			return Vector3(0, 0, 1)
 	return Vector3.ZERO
 
+## Overseas, the trees and the frost go by the place's own year. In the tropics (and Bermuda's evergreen palms
+## and cedars) there is no autumn colour and no frost; south of the equator the seasons run six months behind
+## ours, so November in the Falklands is late spring.
+const TROPICAL_REGIONS := ["overseas_anguilla", "overseas_ascension", "overseas_bermuda", "overseas_biot", "overseas_bvi",
+	"overseas_cayman", "overseas_montserrat", "overseas_pitcairn", "overseas_st_helena", "overseas_turks_caicos"]
+const SOUTHERN_REGIONS := ["overseas_falklands", "overseas_south_georgia", "overseas_tristan", "overseas_antarctic", "abroad_patagonia"]
+
+## The month as the seasons in `region` feel it (the same month at home, six on in the far south).
+static func local_month(region: String, month: int) -> int:
+	return (month + 5) % 12 + 1 if region in SOUTHERN_REGIONS else month
+
+## foliage_tint for a zone's region: none in the tropics, the southern year down south.
+static func foliage_tint_in(region: String, month: int, day: int) -> Vector3:
+	if region in TROPICAL_REGIONS:
+		return Vector3.ZERO
+	return foliage_tint(local_month(region, month), day)
+
+## The season the weather keeps in `region` today: "" in the tropics (no winter frosts).
+static func season_in(region: String) -> String:
+	if region in TROPICAL_REGIONS:
+		return ""
+	var t := today()
+	return season_for(local_month(region, t.x), t.y)
+
 ## A zone's weather odds for the season: in winter a frost is twice as likely (and a small chance where the
 ## zone never usually has one). Returns a copy; an empty table stays empty.
 static func seasonal_weather(table: Dictionary, season: String) -> Dictionary:

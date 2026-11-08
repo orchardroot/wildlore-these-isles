@@ -16,6 +16,7 @@ var _tabs_row: HBoxContainer
 var _body: Control
 var _list_col: VBoxContainer
 var _detail: VBoxContainer
+var _dsc: ScrollContainer     # the quest's card: Confirm reads on down a long one first
 var _buttons: Array = []
 var _quests: Array = []
 var _last := {}             # tab -> row index
@@ -89,7 +90,9 @@ func _show_tab() -> void:
 	row.add_child(dp)
 	var dsc := ScrollContainer.new()
 	dsc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	dsc.set_meta("pages", true)  # Confirm reads on down it (TextFitAudit counts that as reachable)
 	dp.add_child(dsc)
+	_dsc = dsc
 	_detail = VBoxContainer.new()
 	_detail.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_detail.add_theme_constant_override("separation", 10)
@@ -140,11 +143,7 @@ func _row(i: int) -> Button:
 	mark.custom_minimum_size = Vector2(26, 26)
 	mark.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	h.add_child(mark)
-	var t := UIKit.label(str(q.get("title", "")) + _year_tag(q), 25, UIKit.CREAM)
-	t.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-	t.clip_text = true
-	t.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	h.add_child(t)
+	h.add_child(UIKit.row_label(str(q.get("title", "")) + _year_tag(q), 25, UIKit.CREAM))
 	var town := UIKit.label(_place(str(q.get("town", ""))), 19, Color("d8cfb4"))
 	town.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	h.add_child(town)
@@ -168,6 +167,7 @@ func _year_tag(q: Dictionary) -> String:
 
 func _describe(i: int) -> void:
 	UIKit.clear(_detail)
+	_dsc.scroll_vertical = 0
 	var q: Dictionary = _quests[i]
 	var title := UIKit.label(str(q.get("title", "")) + _year_tag(q), 34)
 	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -196,10 +196,21 @@ func _describe(i: int) -> void:
 	rv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	rw.add_child(rv)
 	_detail.add_child(rw)
-	if _tab == 0 and not current.is_empty():
-		set_hints([["leftright", "Tabs"], ["updown", "Quests"], ["confirm", "Show on map"], ["cancel", "Back"]])
-	else:
-		set_hints([["leftright", "Tabs"], ["updown", "Quests"], ["cancel", "Back"]])
+	_quest_hints(i)
+	_quest_hints_fitted.call_deferred(i)
+
+## Once the card has fitted (UIKit.keep_fitted), a quest that still runs on reads on with Confirm.
+func _quest_hints_fitted(i: int) -> void:
+	await get_tree().process_frame
+	await get_tree().process_frame
+	_quest_hints(i)
+
+func _quest_hints(i: int) -> void:
+	if not is_instance_valid(_dsc) or i >= _quests.size():
+		return
+	var map := _tab == 0 and not Quests.current_step(Game.data, _quests[i]).is_empty()
+	var confirm := [["confirm", "Read on"]] if UIKit.reads_on(_dsc) else ([["confirm", "Show on map"]] if map else [])
+	set_hints([["leftright", "Tabs"], ["updown", "Quests"]] + confirm + [["cancel", "Back"]])
 
 ## One step: ticked and quiet once done, the current one in a lit box with where it is.
 func _step_line(s: Dictionary) -> Control:
@@ -228,6 +239,10 @@ func _step_line(s: Dictionary) -> Control:
 	return p
 
 func _press(i: int) -> void:
+	if UIKit.read_on(_dsc):  # down a long quest first
+		Audio.sfx("cursor")
+		_quest_hints(i)
+		return
 	if _tab != 0 or i < 0 or i >= _quests.size():
 		return
 	if Quests.current_step(Game.data, _quests[i]).is_empty():

@@ -24,6 +24,13 @@ func test_pad_mode_uses_pad_names() -> void:
 	var r := InputSetup.rebound(b, "confirm", "pad", JOY_BUTTON_LEFT_STICK)
 	assert_eq(InputSetup.hint_text(r.bindings, true, BASIC), "L-Stick  Choose        B  Back")
 
+func test_move_names_all_four_ways() -> void:
+	var b := InputSetup.defaults()
+	assert_eq(InputSetup.hint_name(b, "move", false), "Arrows")
+	assert_eq(InputSetup.hint_name(b, "move", true), "D-pad")
+	var m := InputSetup.rebound(b, "move_up", "key", KEY_I)
+	assert_eq(InputSetup.hint_name(m.bindings, "move", false), "I / Left / Down / Right")
+
 func test_device_only_entries_and_literals() -> void:
 	var e := [["=Enter", "Done", "kbd"], ["cancel", "Delete", "pad"], ["confirm", "Pick"]]
 	assert_eq(InputSetup.hint_text(InputSetup.defaults(), false, e), "Enter  Done        Z  Pick")

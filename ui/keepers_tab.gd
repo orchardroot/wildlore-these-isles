@@ -79,6 +79,7 @@ func _show(k: String) -> void:
 		_detail.remove_child(c)
 		c.queue_free()
 	var d: GameStateData = Game.data
+	_fit_detail.call_deferred()
 	var top := HBoxContainer.new()
 	top.add_theme_constant_override("separation", 18)
 	_detail.add_child(top)
@@ -126,6 +127,12 @@ func _show(k: String) -> void:
 		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		l.custom_minimum_size.x = 640
 		_detail.add_child(l)
+
+## A Keeper with a lot of gossip (or Large text) steps the page's words down together to fit.
+func _fit_detail() -> void:
+	await get_tree().process_frame
+	if is_instance_valid(_detail):
+		UIKit.fit_column(_detail, content.size.y - 36)
 
 func _on_cancel() -> void:
 	close(null)

@@ -83,8 +83,15 @@ func _words(text: String, size := 21, colour := UIKit.CREAM) -> Label:
 	_detail.add_child(l)
 	return l
 
+## A long page (or Large text) steps its words down together to fit the panel.
+func _fit_detail() -> void:
+	await get_tree().process_frame
+	if is_instance_valid(_detail):
+		UIKit.fit_column(_detail, content.size.y - 40)
+
 func _show(id: String) -> void:
 	UIKit.clear(_detail)
+	_fit_detail.call_deferred()
 	var d: GameStateData = Game.data
 	match id:
 		"challenges":

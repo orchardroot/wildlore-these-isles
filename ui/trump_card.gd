@@ -92,7 +92,7 @@ func _frame(rect: Rect2, radius: int, bw: int) -> void:
 	draw_style_box(sb, rect)
 
 func _draw() -> void:
-	var f: Font = ThemeDB.fallback_font
+	var f: Font = UIKit.font()
 	if not face_up:
 		_draw_back(f)
 		return

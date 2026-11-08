@@ -1,3 +1,66 @@
+# w51-places handoff
+
+Branch `w51-places` (from int-w50). Places that didn't look like what they are, from the w50 critic's and world
+sessions' leftovers. Full write-up: `docs/audit/w51_places.md`; before/after in `docs/screens/w51-places-*.png`.
+
+- York Minster is its own pale limestone `minster` style (`world/landmarks_minster.gd`): twin west towers, great
+  west window, portal, buttresses, central tower, transepts and the Rose Window. A keeper's hall now always keeps its
+  gold board (`Signage._keeper_front`), which also restored Belfast Yard's and made St Michael's Tower's readable.
+- Names squeezed past reading on their own board (Signage.MIN_EM): lectern for the small mills, a tablet across the
+  York bars' drum towers. `SignSight.audit` reports name height and lettering that runs off its board;
+  `tools/dev/sign_audit.gd` lists both (0 of 1,539). No board ever cut a name: "THE CAVERN (ISH" was the screen edge.
+- `cathedral` fronts (Chester, Liverpool and about 30 more) have pointed lancets between buttresses.
+- All 103 Sanctuaries dressed (`world/sanctuary_props.gd`): restoring cabinet, medicine shelf, baskets, noticeboard,
+  posters; test keeps every person and the door reachable.
+- Smaller: Kyteler's back door (new `back_door` prop), Wookey Hole braziers, moor gateposts, Honister Slate Mine
+  re-dressed, picker "Field Station". Crypt arrival checked, already fine.
+- Left: deed huts behind other buildings' doors (York allotment shed through the Minster, Lancaster, Whitby,
+  Dingle); Llynnon Mill and the Laxey Wheel drawn as cotton mills; six signs hidden from their doors (sign sight).
+- Merge note: `world/zone_builder.gd` gets additive lines in POINT_PROPS, CONTACT_SHADOWED and `_ctor`;
+  `world/signage.gd` and `world/sign_sight.gd` (audit only) change; `ui/photo_mode.gd` gets a dev-only
+  `--photo-view`. New class_names (MinsterStyle, SanctuaryProps, PlaceProps): run `--import` after merging.
+- Checks: `tools/test.sh` 3025 passed, 2 failed (the Minster door rect was 0.84 wide, over test_feel_world's 0.8;
+  fixed to 0.8, feel_world and minster re-run 0 failed), validate 0 errors, no SCRIPT ERROR;
+  `tools/playtest.sh slice 2` PLAYTEST PASS (Maud won).
+# w51-critic2 handoff
+
+Branch `w51-critic2` (from int-w50). A new player's walk round the side content (overseas, islands, Party Pieces
+venues and minigames, travel, map, Journal, jobs, festivals, post-game, field pieces), fixing what looked wrong.
+Full write-up: `docs/audit/w51_critic2.md`; before/after in `docs/screens/w51-critic2-*.png`.
+
+- Fixed: arriving inside a guide (Exeter passages, Castle of Mey); 14 residents standing in front of a doorstep or
+  the Ascension landing; unreadable signs (in the sea off St Peter Port, Dundee, the Exe; Tintagel's Gallos;
+  Llangollen); 28 props inside buildings (Oxford's oak, Anguilla's flagpole...); town-name boards on doorless houses
+  abroad (Gaiman, Roscoff, Baddeck, Boston, Bristol, Tristan, Adamstown); tropical and southern trees and frost now
+  keep their own year (`Calendar.foliage_tint_in`, `season_in`); a clearing round the sheepdog trials steward; a new
+  `dartboard` prop in the five darts pubs; field piece hints ("Where to learn it:", real move names); "sticks of rock".
+- Left for others: map info panel hides the west (HUD/menus); truncated name boards (w51-places); Guizer Magnus
+  sprite; Braemar on snow in September; Grytviken church mesh. See the audit.
+- Merge note: `world/zone_builder.gd` gets one line in POINT_PROPS and one match case for `dartboard`;
+  `world/dressing.gd` a new function; `world/seasonal.gd`, `world/sky_and_light.gd`, `core/calendar.gd`,
+  `core/field_spots.gd`, `world/field_spot.gd` small edits. About 60 zone files, small data edits each.
+- Checks: `tools/test.sh` 3021 passed, 0 failed, validate 0 errors, no SCRIPT ERROR; `tools/playtest.sh slice 2`
+  PLAYTEST PASS (Maud won).
+# w51-hud handoff
+
+Branch `w51-hud` (from int-w50). The overworld HUD and sign sight checked on the merged build and finished.
+Full write-up: `docs/audit/w51_hud.md`; before/after in `docs/screens/w51-hud-*.png`.
+
+- Fixed: the first-arrival Standing toast measured itself one word a line and ran to the bottom of the screen
+  (`ParishToast.lay_out`); the route chip steps below a wide card or toast; a toast gives way to a new zone card;
+  Saved and Reported toasts stack and go top right during dialogue; photo mode hides all the HUD; long choice lists
+  scroll; the dialogue box follows the Text size; the Readable font now survives startup (`core/settings.gd` holds
+  the theme). Toast wording ("out here", "in the Channel Islands", "among the Kin Abroad") and £10,000.
+- Signs: props (lamp posts, trees, phone boxes) are in `SignSight`; 61 signs were cut counting them, 1 now
+  (Carfax Tower, 9%). A few props moved in london, llangollen, thurso, blackpool, shrewsbury, lease_glenashen;
+  the title's Silk Museum bunting moved (macclesfield).
+- Dev: `--shot-from-zone`, `--hud=all|news|card|toast[:n]|talk:<case>` (writes `<shot>.hud.txt`), `--hud-check`,
+  `--backdrop=<zone>`, and `--text`/`--readable` (identical lines to w50-tf-large's, so they merge cleanly).
+- Merge notes: `world/zone_builder.gd` gets one line (prop transforms as metadata); `world/signage.gd` two small
+  edits in `build` and `_stand_spot`; `ui/dialogue_box.gd` (sizes, group, choice window); `core/game_state.gd`
+  (shot timing, DevHud hook, the --text lines).
+- Checks: full `tools/test.sh` 3020 passed, 0 failed, `validate: 0 error(s)`, no SCRIPT ERROR; sign audit 1 of 1539 cut.
+
 # w50-critic handoff
 
 Branch `w50-critic` (from int-w50). A new player's walk along the story by screenshot, fixing what looked wrong
@@ -15,6 +78,37 @@ outside the other w50 sessions' files. Full write-up: `docs/audit/w50_critic.md`
   of the same file. `data/zones/chat_moss.json` and `ring_of_kerry.json` are touched by both, in different places.
 - Checks: `tools/test.sh` 2996 passed, 0 failed, validate 0 errors, no SCRIPT ERROR (five "Parse JSON failed"
   lines come from tests that feed bad JSON on purpose); `tools/playtest.sh slice 2` PLAYTEST PASS (Maud won).
+# w50-tf-large handoff
+
+Branch `w50-tf-large` (from int-w50): the text-fit work finished for Large text, long nicknames and the Readable
+font. Details and numbers in `docs/audit/w50_text.md` (last section).
+
+## Results
+- Text audit, all 122 screens: 0 problems at normal, `--text=large`, `--readable`, `--readable --text=large`, and with
+  `--stress` at normal, Large and Readable+Large. Before: 168 on 41 screens at Large; 7 (normal) and 32 (Large)
+  trimmed or spilling nicknames with `--stress`. `--text=largest` (not a target) has 144 on 43 screens.
+- Before/after shots: `docs/screens/w50-large-{summary,races,exchange}-{before,after}.png`.
+- Full `tools/test.sh`: 2997 passed, 0 failed, `validate: 0 error(s)`, no SCRIPT ERROR.
+- Also fixed: the hint bar's "move" prompt (crossword, sheepdog, worm charming) showed "-"; it now says Arrows / D-pad.
+
+## Notes for the integrator
+- **Real bug fixed in `core/settings.gd`**: `apply_access` let go of `ui/theme.tres` after setting it, so once no menu
+  held the theme the next load came back plain: the Readable font (and the theme's Large button size) could quietly
+  vanish, and dev runs never had them. Settings now holds the theme. Expect buttons to look bigger with Large text
+  everywhere that relied on the theme default (battle UI and overworld too: the other session's area, untouched).
+- Shared files: `ui/ui_kit.gd` (new `sized`, `font`, `big_text`, `fit_scaled`, `row_label`; `fit_label`, `fit_size`,
+  `fit_block`, `fit_column`, `fit_width`, `keep_fitted`, `line_height` changed as described in the doc),
+  `ui/menu_base.gd` (header read-out shrinks to fit; hint bar fits at the Large size), `ui/casino_base.gd`
+  (`fit_side`), `core/dev_args.gd` + `core/game_state.gd` (`--text=`, `--readable`), `core/settings.gd` (the held
+  theme). `UIKit.fit_size` still takes drawn sizes; anything that passes its result to `UIKit.label` should use
+  `fit_scaled` and set the override (as party and Ark now do), or it grows by a quarter with Large text.
+- `fit_block`'s last argument (`_block_height`) is now a tier cut, not a bool; `test_fieldbook_teaching` updated.
+- Behaviour touches: pause gains "Right: Read on" when Where next? still runs on; quest cards and Gazetteer plaques
+  and peoples read on with Confirm (hint says so); with Large text the Noticeboard's standing card sits under the
+  list, the bag shows the run of tabs that fits, the Summary's knack shares the entry's card.
+- `tests/ui/test_text_fit.gd` runs a second audit (Large + Readable, 4 screens): the file takes about 20 s, 30 s on a
+  busy machine.
+- Not touched: battle_ui, overworld HUD, 3D signs, data/zones, dialogue (other sessions).
 
 # w50-report handoff
 

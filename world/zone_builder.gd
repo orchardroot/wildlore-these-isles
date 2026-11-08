@@ -325,6 +325,9 @@ const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "roc
 	"bunting", "flagpole", "washing_line", "hanging_basket", "rug", "fireplace", "wall_picture", "clock", "kitchen_dresser",
 	"fryer", "menu_board", "piano", "telescope", "plant_stand", "sofa", "display_case", "cascade", "sheep",
 	"field_gate", "limestone_pavement", "window", "cat_bowl", "owl_perch", "kettle_table", "specimen_shelf", "shop_shelf", "wall_map", "mirror",
+	# a Sanctuary's furniture (SanctuaryProps)
+	"sanctuary_restorer", "sanctuary_shelf", "creature_basket", "sanctuary_noticeboard", "sanctuary_poster", "back_door",
+	"dartboard",  # the darts pubs (w51)
 	# the Keeper venues (Dressing.VENUE_PROPS)
 	"stadium_stand", "rugby_posts", "floodlight", "puddle", "pitch_line", "gantry_crane", "ship_ribs", "steel_plates",
 	"hall_stage", "tea_urn", "stacked_chairs", "currach", "lobster_pots", "harbour_arch", "fae_lantern", "toadstool_ring",
@@ -462,6 +465,7 @@ static func _props(z: ZoneData, root: Node3D, rng: RandomNumberGenerator) -> voi
 		var mmi := MultiMeshInstance3D.new()
 		mmi.name = "Props_" + key.replace(":", "_")
 		mmi.multimesh = mm
+		mmi.set_meta("xforms", list)  # SignSight reads where the props stand (a headless MultiMesh can't say)
 		var foliage := parts[0] in ["heather_tuft", "reeds", "bramble", "birch", "bush"]
 		for tname in TILE_PROPS:
 			if TILE_PROPS[tname][0] == parts[0]:
@@ -527,7 +531,7 @@ static func _add(buckets: Dictionary, key: String, tr: Transform3D) -> void:
 
 ## Furniture that gets a soft contact shadow on the floor (characters have their own blob).
 const CONTACT_SHADOWED := ["table", "bench", "sofa", "bed", "bookshelf", "kitchen_dresser", "piano", "display_case",
-	"specimen_shelf", "shop_shelf", "plant_stand", "potted_plant", "kettle_table", "fryer", "telescope", "stacked_chairs", "tea_urn",
+	"specimen_shelf", "shop_shelf", "sanctuary_restorer", "sanctuary_shelf", "creature_basket", "plant_stand", "potted_plant", "kettle_table", "fryer", "telescope", "stacked_chairs", "tea_urn",
 	"market_stall", "statue", "tomb_chest", "loom", "harp"]
 
 static var contact_material: StandardMaterial3D
@@ -683,6 +687,8 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 			return Dressing.wall_picture(variant)
 		"clock":
 			return Dressing.clock()
+		"dartboard":
+			return Dressing.dartboard()
 		"kitchen_dresser":
 			return Dressing.kitchen_dresser()
 		"fryer":
@@ -711,6 +717,18 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 			return Dressing.specimen_shelf(variant)
 		"shop_shelf":
 			return Dressing.shop_shelf(variant)
+		"sanctuary_restorer":
+			return SanctuaryProps.restorer()
+		"sanctuary_shelf":
+			return SanctuaryProps.shelf(variant)
+		"creature_basket":
+			return SanctuaryProps.basket(variant)
+		"sanctuary_noticeboard":
+			return SanctuaryProps.noticeboard()
+		"sanctuary_poster":
+			return SanctuaryProps.poster(variant)
+		"back_door":
+			return PlaceProps.back_door(variant)
 		"wall_map":
 			return Dressing.wall_map()
 		"mirror":

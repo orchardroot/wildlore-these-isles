@@ -148,6 +148,10 @@ func _backdrop() -> Control:
 	# a different backdrop most launches: Macclesfield, Liverpool's waterfront or Llanberis under the mountain
 	var spots := BACKDROPS.filter(func(b): return Game.zone_exists(b[0]))
 	var pick: Array = spots[int(Time.get_unix_time_from_system()) % spots.size()] if not spots.is_empty() else ["testbed", 14.0, 16.0]
+	for a in DevArgs.user_args():  # dev: --backdrop=<zone> picks one (screenshots)
+		for b in spots:
+			if a == "--backdrop=" + str(b[0]):
+				pick = b
 	var zid: String = pick[0]
 	_focus = Vector2(float(pick[1]), float(pick[2]))
 	var zone := ZoneData.load_id(zid)

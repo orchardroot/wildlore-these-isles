@@ -22,8 +22,7 @@ static func row(id: String, h: HBoxContainer) -> void:
 		h.add_child(UIKit.label("Crosses", 26, UIKit.CREAM))
 		return
 	var open := StudBook.unlocked(Game.data, id)
-	h.add_child(UIKit.label(str(StudBook.idea(id).title), 26, UIKit.CREAM if open else UIKit.MUTED))
-	h.add_child(UIKit.fill())
+	h.add_child(UIKit.row_label(str(StudBook.idea(id).title), 26, UIKit.CREAM if open else UIKit.MUTED))
 	if open:
 		h.add_child(UIKit.chip("LEARNT", UIKit.GOLD.darkened(0.25), UIKit.SLATE, 16))
 

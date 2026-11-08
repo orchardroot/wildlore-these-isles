@@ -123,13 +123,35 @@ func _set_hint() -> void:
 func _draw_tabs() -> void:
 	UIKit.clear(_tabs_row)
 	_tabs_row.add_child(UIKit.label("<", 26, UIKit.MUTED))
-	for i in _kinds.size():
+	for i: int in _shown_tabs():
 		var on := i == _tab
 		var p := PanelContainer.new()
 		p.add_theme_stylebox_override("panel", UIKit.box(UIKit.HEATHER if on else Color("1d2230cc"), UIKit.CREAM if on else Color("4a4f5e"), 2, 8, 8))
 		p.add_child(UIKit.label(UIKit.kind_name(_kinds[i]), 24, Color.WHITE if on else UIKit.MUTED))
 		_tabs_row.add_child(p)
 	_tabs_row.add_child(UIKit.label(">", 26, UIKit.MUTED))
+
+## The tabs that fit across the screen, the current one among them: all of them normally; with Large text (or a full
+## bag) a run either side of the current tab, and the arrows page on round to the rest.
+func _shown_tabs() -> Array:
+	var f := UIKit.font()
+	var room := get_viewport_rect().size.x - SIDE * 2 - 2 * (f.get_string_size(">", HORIZONTAL_ALIGNMENT_LEFT, -1, UIKit.sized(26)).x + 10)
+	var w := func(i: int) -> float: return f.get_string_size(UIKit.kind_name(_kinds[i]), HORIZONTAL_ALIGNMENT_LEFT, -1, UIKit.sized(24)).x + 16 + 4 + 10
+	var lo := _tab
+	var hi := _tab
+	var used: float = w.call(_tab)
+	var grew := true
+	while grew:
+		grew = false
+		if hi + 1 < _kinds.size() and used + w.call(hi + 1) <= room:
+			hi += 1
+			used += w.call(hi)
+			grew = true
+		if lo > 0 and used + w.call(lo - 1) <= room:
+			lo -= 1
+			used += w.call(lo)
+			grew = true
+	return range(lo, hi + 1)
 
 func _draw_list() -> void:
 	UIKit.clear(_list_col)
@@ -169,10 +191,23 @@ func _draw_list() -> void:
 	_last_item = clampi(_last_item, 0, _item_buttons.size() - 1)
 	UIKit.focus_later(_item_buttons[_last_item])
 
+## The item's card steps its words down together if a long description (or Large text) would make it too tall.
+func _fit_desc() -> void:
+	await get_tree().process_frame
+	if not is_instance_valid(_desc):
+		return
+	var right := _desc.get_parent().get_parent() as VBoxContainer
+	var room: float = content.size.y - _tabs_row.size.y - 12 - 36  # under the tabs, inside the card's margins
+	for c in right.get_children():
+		if c != _desc.get_parent() and c.visible:
+			room -= c.size.y + right.get_theme_constant("separation")
+	UIKit.fit_column(_desc, room)
+
 func _show_desc(id: String) -> void:
 	UIKit.clear(_desc)
 	if id == "":
 		return
+	_fit_desc.call_deferred()
 	var it: Dictionary = Game.items.get_item(id)
 	_desc.add_child(UIKit.label(str(it.get("name", id)), 36))
 	_desc.add_child(UIKit.chip(UIKit.kind_name(str(it.get("kind", ""))), Color("4a4f5e"), UIKit.CREAM, 18))
@@ -284,10 +319,16 @@ func _open_picker(focus := 0) -> void:
 		if pm != "":  # a chapbook is pending: say who can be taught it
 			var st := Chapbooks.status(c, pm, Game.moves)
 			h.add_child(UIKit.label(Chapbooks.label(st), 22, {Chapbooks.CAN: UIKit.GOLD, Chapbooks.KNOWS: UIKit.CREAM}.get(st, UIKit.MUTED)))
-		var hp := UIKit.hp_bar(c.hp, c.max_hp(), 90, 10)
-		hp.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		h.add_child(hp)
-		h.add_child(UIKit.label("%d/%d" % [c.hp, c.max_hp()], 20, UIKit.MUTED))
+		var hv := VBoxContainer.new()  # the bar over its numbers, leaving a long nickname the room to show in full
+		hv.add_theme_constant_override("separation", -2)
+		hv.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		hv.add_child(UIKit.hp_bar(c.hp, c.max_hp(), 90, 10))
+		var hn := UIKit.label("%d/%d" % [c.hp, c.max_hp()], 18, UIKit.MUTED)
+		hn.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		hv.add_child(hn)
+		h.add_child(hv)
+		for k in hv.get_children():
+			k.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		for ch in h.get_children():
 			ch.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		b.add_child(h)

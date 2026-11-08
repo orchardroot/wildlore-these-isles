@@ -27,7 +27,7 @@ const SCREENS := [
 const SETTLE := 0.7  # seconds for slide-ins and fades to finish
 
 ## args: screen names (or "all"); "--kind=a,b" keeps only those kinds; "--summary" prints counts only;
-## "--text=large" audits at a bigger Text size; "--stress" (read by DevMenu) gives the widest names and sums.
+## "--text=large" audits at a bigger Text size; "--readable" with the Readable font; "--stress" (read by DevMenu) gives the widest names and sums.
 func run(tree: SceneTree, args: PackedStringArray) -> int:
 	var want: Array = []
 	var kinds: Array = []
@@ -39,6 +39,9 @@ func run(tree: SceneTree, args: PackedStringArray) -> int:
 			summary = true
 		elif a.begins_with("--text="):  # large | largest: the Text size setting, for this run only (never saved)
 			Settings.text_size = a.substr(7)
+			Settings.apply_access()
+		elif a == "--readable":  # the Readable font setting, for this run only (never saved)
+			Settings.readable_font = true
 			Settings.apply_access()
 		elif not a.begins_with("--"):
 			want.append(a)

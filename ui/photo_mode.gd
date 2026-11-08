@@ -79,9 +79,14 @@ func _begin(ow: Node) -> void:
 	_was_busy = Router.busy
 	Router.busy = true  # the player stands still; the world is not paused, so water, clouds and people carry on
 	for c in ow.get_children():
-		if c is ZoneCard:
+		if c is ZoneCard or c is RouteChip or c is PlaceIndicator:
 			c.visible = false
 			_hidden.append(c)
+	for g in [ParishToast.GROUP, SaveToast.GROUP]:  # news and the Saved note stay out of the picture too
+		for c in get_tree().get_nodes_in_group(g):
+			if c.visible:
+				c.visible = false
+				_hidden.append(c)
 	var shade := ColorRect.new()
 	shade.set_anchors_preset(Control.PRESET_FULL_RECT)
 	shade.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -108,6 +113,10 @@ func _begin(ow: Node) -> void:
 	if dev_wanted():  # screenshots: already swung round a little, hint gone
 		set_view(Vector2(24, 8), 0.8)
 		_hint_left = 0.0
+		for a in DevArgs.user_args():  # --photo-view=yaw,pitch,zoom (e.g. 0,-12,1.35 to see a tall front whole)
+			var v := a.trim_prefix("--photo-view=").split(",")
+			if a.begins_with("--photo-view=") and v.size() == 3:
+				set_view(orbit_step(Vector2(v[0].to_float(), v[1].to_float()), Vector2.ZERO, 0.0), zoom_step(v[2].to_float(), 0.0))
 
 func _process(delta: float) -> void:
 	if _done:

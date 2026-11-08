@@ -394,9 +394,9 @@
   {
    "id": "mill_keeper",
    "sprite": "villager_6",
-   "x": 27,
-   "y": 29,
-   "facing": "up",
+   "x": 26,
+   "y": 28,
+   "facing": "right",
    "move": "still",
    "script": "mill_keeper"
   },
@@ -442,9 +442,9 @@
   {
    "id": "post_clerk",
    "sprite": "shopkeeper",
-   "x": 7,
-   "y": 17,
-   "facing": "down",
+   "x": 8,
+   "y": 16,
+   "facing": "left",
    "move": "still",
    "script": "post_clerk"
   },

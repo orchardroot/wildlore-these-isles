@@ -130,26 +130,30 @@ func _show_card() -> void:
 	head.add_child(UIKit.label("%s   Going: %s" % [_card.distance, _card.going.name], 20, UIKit.MUTED))
 	var n: int = _card.runners.size()
 	var terms := UIKit.label("Each-way: %d places at 1/%d the odds.   Form: latest run on the right (F fell, P pulled up)." % [Racing.places_for(n), Racing.place_fraction(n)[1]], 18, UIKit.MUTED)
+	terms.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	left.add_child(terms)
+	var list := UIKit.scroll_list(4)  # a big field (or Large text) scrolls with the focus instead of running off
+	left.add_child(list[0])
 	for i in n:
 		var row := _runner_row(i)
-		left.add_child(row)
+		list[1].add_child(row)
 		_rows.append(row)
 	UIKit.wrap_focus(_rows)
+	var sw := SIDE_W + (50 if UIKit.big_text() else 0)
 	var side := VBoxContainer.new()
-	side.custom_minimum_size = Vector2(330, 0)
+	side.custom_minimum_size = Vector2(sw, 0)
 	side.add_theme_constant_override("separation", 8)
 	h.add_child(side)
 	_detail = VBoxContainer.new()
 	_detail.add_theme_constant_override("separation", 4)
 	side.add_child(_detail)
 	side.add_child(stake_picker())
-	_ew_btn = make_button("", _toggle_ew, 330)
+	_ew_btn = make_button("", _toggle_ew, sw)
 	side.add_child(_ew_btn)
-	_go_btn = make_button("", _off, 330)
+	_go_btn = make_button("", _off, sw)
 	side.add_child(_go_btn)
 	if not _card.get("novice", false):
-		side.add_child(make_button("Skip to the next race", _skip_race, 330))
+		side.add_child(make_button("Skip to the next race", _skip_race, sw))
 	_slip_l = UIKit.label("", 20, UIKit.CREAM)
 	_slip_l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	side.add_child(_slip_l)
@@ -157,10 +161,12 @@ func _show_card() -> void:
 	UIKit.focus_later(_rows[_sel])
 	set_hints([["updown", "Runner"], ["confirm", "Back it"], ["leftright", "Stake"], ["cancel", "Leave"]])
 
+const SIDE_W := 330
+
 func _runner_row(i: int) -> Button:
 	var r: Dictionary = _card.runners[i]
 	var b := Button.new()
-	b.custom_minimum_size = Vector2(0, 52)
+	b.custom_minimum_size = Vector2(0, maxi(52, UIKit.line_height(24) + UIKit.line_height(17) - 14))  # name over species
 	UIKit.compact(b, 2)
 	b.focus_entered.connect(_pick.bind(i))
 	b.pressed.connect(_back.bind(i))
@@ -197,6 +203,7 @@ func _runner_row(i: int) -> Button:
 	odds.custom_minimum_size = Vector2(110, 0)
 	odds.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	row.add_child(odds)
+	row.add_child(UIKit.spacer(0, 8))  # clear of the list's scroll bar
 	return b
 
 func _pick(i: int) -> void:
@@ -216,8 +223,12 @@ func _refresh_card() -> void:
 	_detail.add_child(_bar("Stamina", float(r.stamina) / 130.0))
 	var pref := Racing.going_pref(sp)
 	var g := "Loves the mud." if pref > 0 else ("Wants it fast." if pref < 0 else "Goes on any ground.")
-	_detail.add_child(UIKit.label("%s  Form %s." % [g, r.form], 18, Color("d8cfb4")))
-	_detail.add_child(hand(26, UIKit.GOLD, "%s   (%d%% on the book)" % [Odds.text(r.odds), roundi(Odds.implied(r.odds) * 100)]))
+	var gl := UIKit.label("%s  Form %s." % [g, r.form], 18, Color("d8cfb4"))
+	gl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_detail.add_child(gl)
+	var ol := hand(26, UIKit.GOLD, "%s   (%d%% on the book)" % [Odds.text(r.odds), roundi(Odds.implied(r.odds) * 100)])
+	ol.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_detail.add_child(ol)
 	_ew_btn.text = "Bet type:  %s" % ("Each-way (stake x2)" if _each_way else "Win")
 	_go_btn.text = ("Go to post" if _card.get("novice", false) else "They're off!") + ("" if _slip.is_empty() else "  (%s staked)" % Purse.text(_slip_total()))
 	_go_btn.disabled = _slip.is_empty() and not _card.get("novice", false)
@@ -225,11 +236,18 @@ func _refresh_card() -> void:
 	for e in _slip:
 		lines.append("%s %s on %s at %s" % [Purse.text(int(e.stake)), "each-way" if e.each_way else "to win", _card.runners[int(e.runner)].name, Odds.text(_card.runners[int(e.runner)].odds)])
 	_slip_l.text = ("Your slip:\n" + "\n".join(lines)) if not lines.is_empty() else "Pick a runner and press %s to back it. Up to three bets a race." % UIKit.key_for("confirm")
+	_fit_side.call_deferred()
+
+## The runner's details, stake and slip step their words down together if the column is too tall (Large text).
+func _fit_side() -> void:
+	await get_tree().process_frame
+	if is_instance_valid(_detail) and _detail.get_parent() is VBoxContainer:
+		UIKit.fit_column(_detail.get_parent(), content.size.y)
 
 func _bar(label: String, frac: float) -> Control:
 	var h := HBoxContainer.new()
 	var l := UIKit.label(label, 18, UIKit.MUTED)
-	l.custom_minimum_size = Vector2(80, 0)
+	l.custom_minimum_size = Vector2(UIKit.sized(18) * 5, 0)  # "Stamina" at the player's Text size
 	h.add_child(l)
 	var b := ProgressBar.new()
 	b.show_percentage = false
@@ -237,6 +255,7 @@ func _bar(label: String, frac: float) -> Control:
 	b.value = clampf(frac, 0.05, 1.0)
 	b.custom_minimum_size = Vector2(200, 12)
 	b.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	b.add_theme_stylebox_override("background", UIKit.box(Color("0d0f15"), Color("5a5f6e"), 1, 3, 0))
 	b.add_theme_stylebox_override("fill", UIKit.box(UIKit.GOLD, Color(0, 0, 0, 0), 0, 3, 0))
 	h.add_child(b)

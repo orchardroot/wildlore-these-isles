@@ -800,9 +800,9 @@
   {
    "id": "cheese_maker",
    "sprite": "farmer",
-   "x": 7,
-   "y": 19,
-   "facing": "down",
+   "x": 8,
+   "y": 18,
+   "facing": "left",
    "move": "still",
    "script": "cheese_maker"
   },

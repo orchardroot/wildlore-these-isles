@@ -36,6 +36,11 @@ func _ready() -> void:
 	Calendar.set_override(str(args.get("date", "")))  # --date=MM-DD or YYYY-MM-DD: screenshot any season, festival or day
 	if str(args.get("quality", "")) in ["low", "medium", "high"]:
 		Settings.quality = str(args.quality)  # --quality: before/after screenshots without touching the player's settings
+	if Access.TEXT_SIZES.has(str(args.get("text", ""))) or bool(args.get("readable", false)):
+		if Access.TEXT_SIZES.has(str(args.get("text", ""))):
+			Settings.text_size = str(args.text)  # --text=large and --readable: screenshots at the player's text settings
+		Settings.readable_font = Settings.readable_font or bool(args.get("readable", false))
+		Settings.apply_access()
 	var seed_value: int = args.seed if args.seed >= 0 else int(Time.get_unix_time_from_system())
 	rng = Rng.new(seed_value)
 	data.rng_seed = seed_value
@@ -227,6 +232,8 @@ func _dev_boot() -> void:
 		if args.ride == "bike":
 			Router.overworld.player.set_bike(true)
 		_dev_cues()
+		if DevHud.wanted() != "":
+			DevHud.show(self, DevHud.wanted())  # dev: every HUD box up at once, held (see DevHud)
 		if PhotoMode.dev_wanted():
 			await get_tree().create_timer(1.5).timeout
 			PhotoMode.start(Router.overworld)
@@ -255,7 +262,13 @@ func _dev_cues() -> void:
 	_cues_fired = true
 
 func _take_shot() -> void:
-	await get_tree().create_timer(float(args.shot_delay), true, false, true).timeout
+	if "--shot-from-zone" in DevArgs.user_args():  # dev: count the delay in real seconds from the first zone entry
+		await Bus.zone_entered
+		var until := Time.get_ticks_msec() + int(float(args.shot_delay) * 1000.0)
+		while Time.get_ticks_msec() < until:
+			await get_tree().process_frame
+	else:
+		await get_tree().create_timer(float(args.shot_delay), true, false, true).timeout
 	if Array(DevArgs.user_args()).any(func(a): return str(a).begins_with("--set=") or str(a).begins_with("--read=")):
 		while not _cues_fired:  # a slow boot: wait for the zone, then give the toast time to slide in
 			await get_tree().process_frame
@@ -271,6 +284,11 @@ func _take_shot() -> void:
 	if "--audit" in DevArgs.user_args():  # dev: list what spills out of its menu, beside the PNG
 		var lines := LayoutAudit.report(get_tree().root, get_viewport().get_visible_rect())
 		var f := FileAccess.open(path.get_basename() + ".audit.txt", FileAccess.WRITE)
+		f.store_string("\n".join(lines) + ("\n" if lines else "ok\n"))
+		f.close()
+	if DevHud.wanted() != "" or "--hud-check" in DevArgs.user_args():  # dev: HUD boxes overlapping or off the screen
+		var lines := DevHud.report(get_tree().root, get_viewport().get_visible_rect())
+		var f := FileAccess.open(path.get_basename() + ".hud.txt", FileAccess.WRITE)
 		f.store_string("\n".join(lines) + ("\n" if lines else "ok\n"))
 		f.close()
 	if "--text-check" in DevArgs.user_args():  # dev: list text a player can't read whole (TextCheck), beside the PNG

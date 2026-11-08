@@ -273,3 +273,24 @@ func test_town_signs_read_whole_from_their_doors() -> void:
 			assert_eq(float(r.off), 0.0, "%s/%s off the screen" % [id, r.label])
 			assert_false(r.moved, "%s/%s pushed off its wall" % [id, r.label])
 		root.free()
+
+func test_lamp_posts_and_trees_count_as_in_the_way() -> void:
+	# London's Vane Tower lost its O to a lamp post: props standing in front of a building are in the sight check
+	Meshes.materials()
+	var z := ZoneData.load_id("london")
+	var root := ZoneBuilder.build(z)
+	var bodies := []
+	for pr in z.props:
+		if pr.get("type") == "building" and root.get_node_or_null("Building_%d_%d" % [int(pr.x), int(pr.y)]):
+			bodies.append({"pr": pr, "body": root.get_node("Building_%d_%d" % [int(pr.x), int(pr.y)])})
+	var sight := SignSight.make(z, bodies, root)
+	var lamp := {}
+	for it in sight._items:
+		if it.has("prop") and (it.xf as Transform3D).origin.is_equal_approx(Vector3(39.5, (it.xf as Transform3D).origin.y, 21.5)):
+			lamp = it
+	assert_false(lamp.is_empty(), "the lamp post in front of the Vane Tower is in the check")
+	var eye := sight.eye(Vector2i(37, 20), ZoneBuilder.ground_y(z, Vector2i(37, 20)))
+	var at := Vector3(39.5, 1.0, 21.5)  # right behind the lamp, looking at the camera
+	sight.focus(AABB(at, Vector3.ZERO), eye)
+	assert_true(sight.blocked(at - (eye - at).normalized() * 0.5, eye), "a sight line through a lamp post is blocked")
+	root.free()

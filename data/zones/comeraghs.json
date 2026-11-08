@@ -220,12 +220,6 @@
   },
   {
    "type": "rock",
-   "x": 31,
-   "y": 31,
-   "variant": 1
-  },
-  {
-   "type": "rock",
    "x": 7,
    "y": 36,
    "variant": 1

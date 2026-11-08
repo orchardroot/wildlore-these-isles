@@ -158,6 +158,11 @@ static func _slim(b: Button, h: int) -> void:
 		sb.content_margin_bottom = 0
 		b.add_theme_stylebox_override(state, sb)
 	b.custom_minimum_size.y = h
+	if not b.has_theme_font_size_override("font_size"):  # the theme's size, or (Large text) the largest that sits in the key
+		var fs := UIKit.sized(28)
+		while fs > UIKit.MIN_TEXT and UIKit.font().get_height(fs) > h:
+			fs -= 1
+		b.add_theme_font_size_override("font_size", fs)
 
 ## The values a chooser cycles through, as [value, shown name] pairs.
 static func choices(key: String) -> Array:

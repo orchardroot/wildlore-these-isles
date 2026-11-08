@@ -46,6 +46,7 @@ func _build() -> void:
 	_box_label.clip_text = true  # gives way to the Sort button rather than pushing it off the screen
 	_box_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	_box_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	UIKit.fit_width(_box_label)  # shrinks before it trims (Large text)
 	head.add_child(_box_label)
 	head.add_child(make_button(">", func(): _page(1), 56))
 	_sort_button = make_button("", _sort, 210)
@@ -111,6 +112,7 @@ func _refresh(focus_left := -1, focus_right := -1) -> void:
 	_box = clampi(_box, 0, boxes - 1)
 	_box_label.text = "Box %d/%d, %d stored" % [_box + 1, boxes, data.ark.size()]
 	_sort_button.text = "Sort: %s" % ArkLogic.MODE_NAMES[_sort_next]
+	_sort_button.add_theme_font_size_override("font_size", UIKit.fit_size(_sort_button.text, 210 - 24, UIKit.sized(28), UIKit.MIN_TEXT))  # keeps to its 210 px
 	_rights = []
 	for j in range(_box * PER_BOX, mini(data.ark.size(), (_box + 1) * PER_BOX)):
 		var b := _creature_button(data.ark[j], false)
@@ -143,7 +145,8 @@ func _creature_button(c: Creature, wide: bool) -> Button:
 		s.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		box.add_child(s)
 		box.add_child(UIKit.sex_mark(c, 22))
-		var nm := UIKit.label(c.display_name(), UIKit.fit_size(c.display_name(), 240, 26, 20))  # long names shrink a little first
+		var nm := UIKit.label(c.display_name(), 26)
+		nm.add_theme_font_size_override("font_size", UIKit.fit_scaled(c.display_name(), 240, 26, 20))  # long names shrink a little first
 		nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		nm.clip_text = true
 		nm.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS

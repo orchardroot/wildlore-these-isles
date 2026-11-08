@@ -82,6 +82,21 @@ func test_foliage_tint_follows_the_season() -> void:
 		for i in 3:
 			assert_true(t[i] >= 0.0 and t[i] <= 1.0, "month %d" % m)
 
+## w51: St Helena's trees went russet in November and a Cayman frost was possible in January.
+func test_overseas_trees_keep_their_own_year() -> void:
+	assert_eq(Calendar.foliage_tint_in("overseas_st_helena", 11, 20), Vector3.ZERO, "no autumn in the tropics")
+	assert_eq(Calendar.foliage_tint_in("overseas_cayman", 1, 10), Vector3.ZERO, "no frost on the palms")
+	assert_eq(Calendar.foliage_tint_in("overseas_falklands", 11, 20), Calendar.foliage_tint(5, 20), "November is late spring down south")
+	assert_true(Calendar.foliage_tint_in("overseas_falklands", 4, 20).y > 0.0, "and April is autumn")
+	assert_eq(Calendar.foliage_tint_in("cheshire", 11, 20), Calendar.foliage_tint(11, 20), "home as before")
+	assert_eq(Calendar.local_month("abroad_patagonia", 1), 7)
+	assert_eq(Calendar.local_month("abroad_patagonia", 7), 1)
+	Calendar.set_override("01-10")
+	assert_eq(Calendar.season_in("overseas_cayman"), "", "the tropics keep no winter")
+	assert_eq(Calendar.season_in("overseas_falklands"), "summer")
+	assert_eq(Calendar.season_in("cheshire"), "winter")
+	Calendar.set_override("")
+
 func test_winter_makes_frost_a_bit_likelier() -> void:
 	var table := {"drizzle": 45, "clear": 35, "frost": 10}
 	assert_eq(Calendar.seasonal_weather(table, "autumn"), table, "only winter changes the odds")

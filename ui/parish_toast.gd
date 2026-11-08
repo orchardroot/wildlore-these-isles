@@ -8,15 +8,21 @@ extends CanvasLayer
 const HOLD := 2.6
 const MAX_W := 640.0  # px of text before it wraps: the panel then stays clear of the route chip on the left
 const BG := Color(0.114, 0.133, 0.188, 0.92)
+const GROUP := "parish_toast"
 
 var _panel: PanelContainer
 var _head: Label
 var _body: Label
 var _queue: Array = []   # [header, text]
 var _playing := false
+var _up := false         # a message is on screen (or sliding in or out)
+var _tween: Tween
+var _current: Array = []
 
 func _ready() -> void:
 	layer = 61
+	add_to_group(GROUP)
+	Bus.zone_entered.connect(_on_zone_entered)
 	_panel = PanelContainer.new()
 	_panel.theme = load("res://ui/theme.tres")
 	_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -55,6 +61,55 @@ func _ready() -> void:
 static func text_width(l: Label) -> float:
 	return l.get_theme_font("font").get_string_size(l.text, HORIZONTAL_ALIGNMENT_LEFT, -1, l.get_theme_font_size("font_size")).x
 
+## How wide a wrapping line goes: MAX_W, narrowed while that keeps the same number of lines, so the lines come out
+## even rather than one long line and a last word on its own.
+static func wrap_width(l: Label) -> float:
+	var f := l.get_theme_font("font")
+	var fs := l.get_theme_font_size("font_size")
+	var lines := func(w: float) -> int:
+		return roundi(f.get_multiline_string_size(l.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y / f.get_height(fs))
+	var n: int = lines.call(MAX_W)
+	var w := MAX_W
+	while w > MAX_W * 0.5 and lines.call(w - 16.0) == n:
+		w -= 16.0
+	return w
+
+## Sizes the panel to the text now on it and centres it. A wrapping label works out its height from the width it
+## has *now*, so the body is given its wrap width before the panel is measured (else it measured one word a line
+## and the panel ran to the bottom of the screen).
+func lay_out() -> void:
+	var wide := text_width(_body) > MAX_W
+	var w := wrap_width(_body) if wide else 0.0
+	_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART if wide else TextServer.AUTOWRAP_OFF
+	_body.custom_minimum_size.x = w
+	_body.size = Vector2(w, 0.0)
+	_body.update_minimum_size()
+	_panel.reset_size()
+	var pw := _panel.size.x
+	_panel.offset_left = -pw * 0.5
+	_panel.offset_right = pw * 0.5
+
+## The panel's box on screen while a message is up, else an empty rect (the route chip steps out of its way).
+func rect() -> Rect2:
+	return _panel.get_global_rect() if _up else Rect2()
+
+## A town's name card is coming up while a message shows (you walked into the next zone): the message steps aside
+## and comes back after the card, rather than lie on top of it.
+func _on_zone_entered(_id: String) -> void:
+	if not _up or _tween == null:
+		return
+	await get_tree().process_frame  # the card hears the same signal; let it decide whether to show
+	var card := get_tree().get_first_node_in_group(ZoneCard.GROUP) as ZoneCard
+	if not _up or card == null or not card.showing():
+		return
+	_tween.kill()
+	_queue.push_front(_current)
+	_tween = create_tween()
+	_tween.tween_property(_panel, "modulate:a", 0.0, 0.15)
+	_tween.tween_callback(func() -> void:
+		_up = false
+		_next())
+
 func show_news(header: String, text: String) -> void:
 	_queue.append([header, text])
 	if not _playing:
@@ -69,19 +124,18 @@ func _next() -> void:
 	while card != null and is_instance_valid(card) and card.showing():
 		await get_tree().create_timer(0.25).timeout
 	var m: Array = _queue.pop_front()
+	_current = m
+	_up = true
 	_head.text = m[0]
 	_body.text = m[1]
-	var wide := text_width(_body) > MAX_W
-	_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART if wide else TextServer.AUTOWRAP_OFF
-	_body.custom_minimum_size.x = MAX_W if wide else 0.0
-	_panel.reset_size()
-	_panel.offset_left = -_panel.size.x * 0.5
-	_panel.offset_right = _panel.size.x * 0.5
-	_panel.offset_top = 8
-	var tw := create_tween()
-	tw.set_parallel(true)
-	tw.tween_property(_panel, "modulate:a", 1.0, 0.2)
-	tw.tween_property(_panel, "offset_top", 22.0, 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	tw.chain().tween_interval(HOLD)
-	tw.chain().tween_property(_panel, "modulate:a", 0.0, 0.5)
-	tw.chain().tween_callback(_next)
+	lay_out()
+	_panel.position.y = 8.0
+	_tween = create_tween()
+	_tween.set_parallel(true)
+	_tween.tween_property(_panel, "modulate:a", 1.0, 0.2)
+	_tween.tween_property(_panel, "position:y", 22.0, 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	_tween.chain().tween_interval(HOLD)
+	_tween.chain().tween_property(_panel, "modulate:a", 0.0, 0.5)
+	_tween.chain().tween_callback(func() -> void:
+		_up = false
+		_next())

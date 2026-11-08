@@ -1,6 +1,6 @@
 extends SceneTree
 ## Lists words that don't fit on every menu, screen and minigame at 1280x720 (see core/text_fit_audit.gd).
-## godot --headless --path . -s res://tools/dev/text_audit.gd -- [screen ...|all] [--kind=wide,cut] [--summary] [--stress] [--text=large]
+## godot --headless --path . -s res://tools/dev/text_audit.gd -- [screen ...|all] [--kind=wide,cut] [--summary] [--stress] [--text=large] [--readable]
 ## Screens are --menu= names, e.g. `pause bag:first travel:all almanac:pieces`; the list is in text_audit_body.gd.
 ## Exits 1 if anything was found.
 

@@ -111,6 +111,10 @@ func _on_zone_entered(zone_id: String) -> void:
 func showing() -> bool:
 	return _panel.modulate.a > 0.01 or (_tween != null and _tween.is_running())
 
+## Where the card is, while it is showing (else an empty rect): the route chip steps down out of its way.
+func rect() -> Rect2:
+	return _panel.get_global_rect() if showing() else Rect2()
+
 func show_card(title: String, sub: String, local := "") -> void:
 	_name.text = title
 	_name.add_theme_font_size_override("font_size", UIKit.fit_size(title, MAX_W, Access.scaled(38, Settings.text_size), 28))

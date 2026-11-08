@@ -111,7 +111,7 @@ static func next_milestone(d: GameStateData, list: Array = [], milestones: Array
 static func reward_text(m: Dictionary, items: ItemDB) -> String:
 	var bits := []
 	if int(m.get("money", 0)) > 0:
-		bits.append("£%d" % int(m.money))
+		bits.append(Wallet.fmt(int(m.money)))
 	for id in m.get("items", {}):
 		var nm := str(items.get_item(str(id)).get("name", str(id).capitalize())) if items != null else str(id)
 		bits.append("%d %s" % [int(m.items[id]), nm])

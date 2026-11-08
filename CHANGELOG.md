@@ -2,6 +2,25 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.2.3: second sweep
+
+- **The Readable font stays on.** It quietly switched itself off once no menu was open; it now sticks, everywhere.
+- **Large text fits.** Every menu and screen was measured again at Large text, with the Readable font and with very
+  long nicknames, and fixed until nothing spills or is cut off. The dialogue box now follows the text size too.
+- **News that reads.** The "someone has noticed you" message was a tall thin column down the screen; it's a normal
+  two-line note now. Toasts, the route chip, the zone card and the Saved and F9 notes never sit on each other, and a
+  long list of choices scrolls instead of running off the top.
+- **Signs behind lamp posts and trees** are fixed: one of the 1,539 building names is still slightly clipped.
+- **York Minster looks like York Minster:** pale limestone, twin west towers, the great west window and the Keeper's
+  gold board. About thirty other cathedrals got proper pointed windows.
+- **Sanctuaries look like sanctuaries:** a healing cabinet, medicines, creature baskets and a noticeboard.
+- **Off the beaten track:** you no longer arrive inside a guide or behind someone on the doorstep; signs that stood in
+  the sea are on land; 28 trees, lamp posts and flagpoles no longer grow through buildings; houses abroad lost their
+  stray town-name boards; the tropics skip autumn and the far south runs six months behind; darts pubs have
+  dartboards; field piece hints read properly.
+- Smaller: "Field Station" has its capitals, Kyteler's Inn has its back door, Wookey Hole lost its street lamps, the
+  Pennine moor lost its bollards, and the Slate Mine looks like a mine.
+
 ## 5.2.2: the big tidy
 
 A day spent finding and fixing what a player actually sees.

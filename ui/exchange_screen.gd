@@ -134,8 +134,10 @@ func _build() -> void:
 	_qty_label = UIKit.label("", 28)
 	qv.add_child(_qty_label)
 	_total_label = UIKit.label("", 22, _accent)
+	_total_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	qv.add_child(_total_label)
 	_limit_label = UIKit.label("", 18, UIKit.MUTED)
+	_limit_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	qv.add_child(_limit_label)
 	right.add_child(_qty_panel)
 	_say = UIKit.label("", 21, _accent)
@@ -224,12 +226,23 @@ func _row_label(text: String, size: int, colour: Color, width := 0.0, right := f
 	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	return l
 
+## How wide a column of figures must be for the widest of `texts` at `size` (the player's Text size and font).
+func _col_w(texts: Array, size: int, least: float) -> float:
+	var w := least
+	for t in texts:
+		w = maxf(w, ceilf(UIKit.font().get_string_size(str(t), HORIZONTAL_ALIGNMENT_LEFT, -1, UIKit.sized(size)).x) + 2.0)
+	return w
+
 func _draw_list() -> void:
 	UIKit.clear(_list_col)
 	_rows.clear()
+	# the figures' columns fit their widest entry, so Large text widens them instead of trimming a price
+	var id_w := _col_w(_ids, 18, 52.0)
+	var price_w := _col_w(_ids.map(func(i): return _price_text(_price(i))), 21, 92.0)
+	var pct_w := _col_w(_ids.map(func(i): return _pct(_move(i))), 17, 62.0)
 	for id in _ids + [PORTFOLIO]:
 		var b := Button.new()
-		b.custom_minimum_size = Vector2(0, ROW_H)
+		b.custom_minimum_size = Vector2(0, maxi(ROW_H, UIKit.line_height(21) + 10))
 		UIKit.compact(b, 2)
 		b.focus_neighbor_left = NodePath(".")
 		b.focus_neighbor_right = NodePath(".")
@@ -245,14 +258,15 @@ func _draw_list() -> void:
 			h.add_child(_row_label(UIKit.money_text(_portfolio_value(), _cur), 22, UIKit.CREAM, 0.0, true))
 		else:
 			var m := _move(id)
-			h.add_child(_row_label(str(id), 18, UIKit.MUTED, 52.0))
+			h.add_child(_row_label(str(id), 18, UIKit.MUTED, id_w))
 			var nm := _row_label(_name(id), 21, UIKit.CREAM, 10.0)
 			nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 			nm.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+			UIKit.fit_width(nm)  # a long name steps down before it trims
 			h.add_child(nm)
 			h.add_child(_row_label("*" if _held(id) > 0 else "", 21, _accent, 12.0))
-			h.add_child(_row_label(_price_text(_price(id)), 21, UIKit.CREAM, 92.0, true))
-			h.add_child(_row_label(_pct(m), 17, _move_colour(m), 62.0, true))
+			h.add_child(_row_label(_price_text(_price(id)), 21, UIKit.CREAM, price_w, true))
+			h.add_child(_row_label(_pct(m), 17, _move_colour(m), pct_w, true))
 		for c in h.get_children():
 			c.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		b.add_child(h)
@@ -283,6 +297,7 @@ func _portfolio_value() -> int:
 func _describe(id: String) -> void:
 	UIKit.clear(_detail)
 	_act_buttons.clear()
+	_fit_detail.call_deferred()
 	if id == PORTFOLIO:
 		_describe_portfolio()
 		return
@@ -306,7 +321,7 @@ func _describe(id: String) -> void:
 	_detail.add_child(pl)
 	var chart := PriceChart.new()
 	chart.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	chart.custom_minimum_size = Vector2(240, 120)
+	chart.custom_minimum_size = Vector2(240, 120 if not UIKit.big_text() else 80)
 	_style_chart(chart)
 	_detail.add_child(chart)
 	chart.set_values(_history(id), func(v: float) -> String: return _price_text(v))
@@ -331,6 +346,18 @@ func _describe(id: String) -> void:
 		b.focus_mode = Control.FOCUS_NONE if _mode != "act" else Control.FOCUS_ALL
 		_act_row.add_child(b)
 		_act_buttons.append(b)
+
+## The detail pane steps its words down together if the deal slip and the dealer's line leave it too little room.
+func _fit_detail() -> void:
+	await get_tree().process_frame
+	if not is_instance_valid(_detail):
+		return
+	var right := _detail.get_parent().get_parent() as VBoxContainer
+	var room: float = content.size.y - _tick.get_parent().size.y - 10 - 28  # the ticker strip, its gap, the pane's margins
+	for c in right.get_children():
+		if c != _detail.get_parent() and c.visible:
+			room -= c.size.y + right.get_theme_constant("separation")
+	UIKit.fit_column(_detail, room)
 
 func _style_chart(_c: PriceChart) -> void:
 	pass
@@ -360,10 +387,9 @@ func _describe_portfolio() -> void:
 			var worth := floori(n * Markets.price_for(d, str(id)))
 			var g := worth - int(d.markets.h[id].cost)
 			var h := HBoxContainer.new()
-			h.add_child(_row_label("%s  x %d" % [Markets.company(str(id)).get("name", id), n], 20, UIKit.CREAM))
-			h.add_child(UIKit.fill())
-			h.add_child(_row_label(Wallet.fmt(worth, cur), 20, UIKit.CREAM, 110.0, true))
-			h.add_child(_row_label(("+" if g >= 0 else "") + Wallet.fmt(g, cur), 18, _move_colour(g), 110.0, true))
+			h.add_child(_holding_name("%s  x %d" % [Markets.company(str(id)).get("name", id), n]))
+			h.add_child(_row_label(Wallet.fmt(worth, cur), 20, UIKit.CREAM, _col_w([Wallet.fmt(worth, cur)], 20, 110.0), true))
+			h.add_child(_row_label(("+" if g >= 0 else "") + Wallet.fmt(g, cur), 18, _move_colour(g), _col_w([Wallet.fmt(g, cur) + "+"], 18, 110.0), true))
 			_detail.add_child(h)
 	var coins := Markets.coin_held(d)
 	if coins > 0:
@@ -371,10 +397,9 @@ func _describe_portfolio() -> void:
 		var cv := floori(coins * Markets.coin_price_for(d))
 		var g2 := cv - int(d.markets.coin.cost)
 		var h2 := HBoxContainer.new()
-		h2.add_child(_row_label("%s  x %d" % [Markets.coin_state(d.rng_seed, d.day_count).name, coins], 20, UIKit.CREAM))
-		h2.add_child(UIKit.fill())
-		h2.add_child(_row_label(Wallet.fmt(cv, Wallet.GBP), 20, UIKit.CREAM, 110.0, true))
-		h2.add_child(_row_label(("+" if g2 >= 0 else "") + Wallet.fmt(g2, Wallet.GBP), 18, _move_colour(g2), 110.0, true))
+		h2.add_child(_holding_name("%s  x %d" % [Markets.coin_state(d.rng_seed, d.day_count).name, coins]))
+		h2.add_child(_row_label(Wallet.fmt(cv, Wallet.GBP), 20, UIKit.CREAM, _col_w([Wallet.fmt(cv, Wallet.GBP)], 20, 110.0), true))
+		h2.add_child(_row_label(("+" if g2 >= 0 else "") + Wallet.fmt(g2, Wallet.GBP), 18, _move_colour(g2), _col_w([Wallet.fmt(g2, Wallet.GBP) + "+"], 18, 110.0), true))
 		_detail.add_child(h2)
 	if not any:
 		var l := UIKit.label("Nothing yet. Every fortune starts with a single share, and most end with one too.", 20, UIKit.MUTED)
@@ -386,8 +411,18 @@ func _describe_portfolio() -> void:
 	for cur in [Wallet.GBP, Wallet.EUR]:
 		if int(r.get(cur, 0)) != 0 or cur == Wallet.GBP:
 			bits.append(("+" if int(r.get(cur, 0)) >= 0 else "") + Wallet.fmt(int(r.get(cur, 0)), cur))
-	_detail.add_child(UIKit.label("Banked so far (sales and dividends): %s" % ", ".join(bits), 20, UIKit.GOLD))
-	_detail.add_child(UIKit.label("Deals done: %d.   Limit per company: %s, more with each Stone." % [int(d.markets.get("trades", 0)), UIKit.money_text(_limit(), _cur)], 18, UIKit.MUTED))
+	for l in [UIKit.label("Banked so far (sales and dividends): %s" % ", ".join(bits), 20, UIKit.GOLD),
+			UIKit.label("Deals done: %d.   Limit per company: %s, more with each Stone." % [int(d.markets.get("trades", 0)), UIKit.money_text(_limit(), _cur)], 18, UIKit.MUTED)]:
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_detail.add_child(l)
+
+## A holding's name in the portfolio: takes the room left of its figures and steps down before it trims.
+func _holding_name(text: String) -> Label:
+	var l := _row_label(text, 20, UIKit.CREAM, 10.0)
+	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	UIKit.fit_width(l)
+	return l
 
 # --- dealing ---------------------------------------------------------------------------------------
 
@@ -433,6 +468,7 @@ func _open_qty(side: String) -> void:
 	_say.text = ""
 	_refresh_qty()
 	_set_hint()
+	_fit_detail.call_deferred()
 
 func _max_qty() -> int:
 	return _max_buy(_sel) if _side == "buy" else _held(_sel)

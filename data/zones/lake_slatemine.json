@@ -17,17 +17,18 @@
    "y": 5
   },
   {
-   "type": "potted_plant",
+   "type": "slate_stack",
    "x": 1,
-   "y": 7
+   "y": 7,
+   "variant": 1
   },
   {
-   "type": "potted_plant",
+   "type": "slate_wagon",
    "x": 11,
    "y": 7
   },
   {
-   "type": "kitchen_dresser",
+   "type": "slate_stack",
    "x": 6,
    "y": 1
   },
@@ -43,20 +44,6 @@
    "y": 1,
    "walk": true,
    "variant": 0
-  },
-  {
-   "type": "rug",
-   "x": 5,
-   "y": 3,
-   "w": 2,
-   "h": 2,
-   "variant": 2,
-   "walk": true
-  },
-  {
-   "type": "plant_stand",
-   "x": 1,
-   "y": 6
   }
  ],
  "warps": [
@@ -89,14 +76,14 @@
  ],
  "rows": [
   "xxxxxxxxxxxxx",
-  "x|||||||||||x",
-  "x|CCCCCCCCC|x",
-  "x|||||||||||x",
-  "x|||||||||||x",
-  "x|||||||||||x",
-  "x|||||||||||x",
-  "x|||||||||||x",
-  "x|||||D|||||x",
+  "x:::::::::::x",
+  "x:CCCCCCCCC:x",
+  "x:::::::::::x",
+  "x:::::::::::x",
+  "x:::::::::::x",
+  "x:::::::::::x",
+  "x:::::::::::x",
+  "x:::::D:::::x",
   "xxxxxxxxxxxxx"
  ]
 }

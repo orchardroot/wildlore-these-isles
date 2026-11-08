@@ -20,8 +20,7 @@ static func row(r: Dictionary, h: HBoxContainer) -> void:
 		var st := UIKit.chip("STAMPS", UIKit.GOLD.darkened(0.25), UIKit.SLATE, 18)
 		st.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		h.add_child(st)
-		h.add_child(UIKit.label("Region stamps", 28, UIKit.GOLD))
-		h.add_child(UIKit.fill())
+		h.add_child(UIKit.row_label("Region stamps", 28, UIKit.GOLD))
 		h.add_child(UIKit.label("%d of %d" % [done, FieldbookGoals.region_progress(Game.data, ZoneIndex.get_index()).size()], 22, UIKit.MUTED))
 		return
 	var ic := AnimSprite.new()
@@ -101,9 +100,7 @@ static func _stamps(detail: VBoxContainer) -> void:
 		var h := HBoxContainer.new()
 		h.add_theme_constant_override("separation", 6)
 		card.add_child(h)
-		var nl := UIKit.label(str(p.name), 19, UIKit.GOLD if done else UIKit.CREAM)
-		nl.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-		nl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		var nl := UIKit.row_label(str(p.name), 19, UIKit.GOLD if done else UIKit.CREAM)
 		nl.custom_minimum_size = Vector2(120, 0)
 		h.add_child(nl)
 		if done:

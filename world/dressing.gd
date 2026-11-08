@@ -321,6 +321,18 @@ static func clock() -> ArrayMesh:
 	_bar(st, c + Vector3(0, 0, 0.035), c + Vector3(0.09, -0.03, 0.035), 0.012, IRON)
 	return Meshes._finish(st)
 
+## A pub dartboard on the wall (the north wall; "rot" 270 hangs it on the east): a cabinet back, the black
+## surround, the green and red rings and the bull, so the darts pubs show where the game is.
+static func dartboard() -> ArrayMesh:
+	var st := Meshes._st()
+	var c := Vector3(0, 1.5, -0.47)
+	Meshes.box(st, Vector3(-0.3, 1.18, -0.5), Vector3(0.6, 0.64, 0.02), DARK_WOOD)
+	var rings := [[0.25, Color("1c1c1c")], [0.2, Color("2f7a3a")], [0.185, Color("efe4c8")], [0.15, Color("1c1c1c")],
+		[0.12, Color("c0392b")], [0.105, Color("efe4c8")], [0.06, Color("1c1c1c")], [0.035, Color("2f7a3a")], [0.016, Color("c0392b")]]
+	for i in rings.size():
+		_disc_z(st, c + Vector3(0, 0, 0.004 * i), float(rings[i][0]), 16, rings[i][1])
+	return Meshes._finish(st)
+
 static func kitchen_dresser() -> ArrayMesh:
 	var st := Meshes._st()
 	var blue := Color("3f6a8a")

@@ -72,6 +72,13 @@
    "type": "piano",
    "x": 1,
    "y": 6
+  },
+  {
+   "type": "dartboard",
+   "x": 11,
+   "y": 5,
+   "rot": 270,
+   "walk": true
   }
  ],
  "warps": [

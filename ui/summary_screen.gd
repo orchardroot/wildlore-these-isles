@@ -122,12 +122,29 @@ func _show() -> void:
 	_moves_of = c
 	_set_hint()
 	_body.add_child(_left(c))
+	_fit_columns.call_deferred()
 	if _genome:
 		_move_rows = []
 		_body.add_child(GenomePage.build(Game.data, c))
 		return
 	_body.add_child(_middle(c))
 	_body.add_child(_right(c))
+
+## The three cards step their words down together if they need to (Large text, a long charm) to fit the page.
+func _fit_columns() -> void:
+	await get_tree().process_frame  # wrapped words measure against their laid-out width
+	if not is_instance_valid(_body):
+		return
+	for p in _body.get_children():
+		if p is PanelContainer and p.get_child(0) is VBoxContainer:
+			var sb: StyleBox = p.get_theme_stylebox("panel")
+			UIKit.fit_column(p.get_child(0), content.size.y - sb.get_minimum_size().y)
+	var least := 999  # the move names share one size: the largest at which the longest fits, before any trimming
+	for row in _move_rows:
+		var mn: Label = row.get_child(0).get_child(1)
+		least = mini(least, UIKit.fit_size(mn.text, mn.size.x, UIKit.sized(24), 20))
+	for row in _move_rows:
+		row.get_child(0).get_child(1).add_theme_font_size_override("font_size", least)
 
 func _set_hint() -> void:
 	if _moves_of == null:
@@ -141,24 +158,33 @@ func _set_hint() -> void:
 const LEFT_W := 336
 const MID_W := 392
 
+## Large text takes a little width from the picture and stat bars for the moves column.
+func _left_w() -> int:
+	return 300 if UIKit.big_text() else LEFT_W
+
+func _mid_w() -> int:
+	return 360 if UIKit.big_text() else MID_W
+
 func _left(c: Creature) -> Control:
 	var p := UIKit.panel(Color("1d2230f0"), 18)
-	p.custom_minimum_size = Vector2(LEFT_W, 0)
+	p.custom_minimum_size = Vector2(_left_w(), 0)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 6)
 	p.add_child(v)
-	# The sprite at full size, in a box trimmed of the frame's empty sky so the rest of the card fits under it.
+	# The sprite at full size (two thirds with Large text), in a box trimmed of the frame's empty sky so the rest of
+	# the card fits under it.
+	var k := 2 if UIKit.big_text() else 3
 	var holder := Control.new()
-	holder.custom_minimum_size = Vector2(288, 262)
+	holder.custom_minimum_size = Vector2(96 * k, 87 * k + 1)
 	holder.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	var s := AnimSprite.new()
-	s.show_species(c.species.id, "front", 3, false, c.variant, c.form, c.sex)
+	s.show_species(c.species.id, "front", k, false, c.variant, c.form, c.sex)
 	s.animate(c.species)
-	s.position = Vector2(0, -18)
+	s.position = Vector2(0, -6 * k)
 	holder.add_child(s)
 	v.add_child(holder)
-	var inner := LEFT_W - 36
-	var n := UIKit.fit_label(c.display_name(), inner, 38, 24)
+	var inner := _left_w() - 36
+	var n := UIKit.fit_label(c.display_name(), inner, 38, 20)
 	n.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(n)
 	if c.nickname != "" and c.nickname != c.species.name:
@@ -184,7 +210,7 @@ func _left(c: Creature) -> Control:
 	for t in c.types():
 		var chip := UIKit.type_chip(str(t), 20)
 		chip.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		(lv_row if c.types().size() == 1 else tags).add_child(chip)
+		(lv_row if c.types().size() == 1 and not UIKit.big_text() else tags).add_child(chip)
 	if c.form != "":
 		tags.add_child(UIKit.chip(Forms.name_of(str(c.species.id), c.form) + " form", Color("3a4a3a"), Color("dfe8d0"), 20))
 	if c.variant != "":
@@ -266,8 +292,7 @@ func _bond_box(c: Creature) -> Control:
 		var nm := UIKit.label("%s:" % Charms.name_of(c.held), 16, UIKit.GOLD)
 		row.add_child(nm)
 		var fx := str(Charms.item(c.held).get("effect_text", ""))
-		var f := ThemeDB.fallback_font
-		var one_line := f.get_string_size("%s: %s" % [Charms.name_of(c.held), fx], HORIZONTAL_ALIGNMENT_LEFT, -1, UIKit.MIN_TEXT).x + 30 <= MID_W - 36
+		var one_line := UIKit.font().get_string_size("%s: %s" % [Charms.name_of(c.held), fx], HORIZONTAL_ALIGNMENT_LEFT, -1, UIKit.sized(16)).x + 30 <= _mid_w() - 36
 		if one_line:  # name and effect side by side when they fit; otherwise the effect gets a line of its own
 			row.add_child(UIKit.label(fx, 16, Color("d8cfb4")))
 		v.add_child(UIKit.spacer(4))
@@ -280,12 +305,12 @@ func _bond_box(c: Creature) -> Control:
 func _small(text: String, colour: Color, size := 16) -> Label:
 	var l := UIKit.label(text, size, colour)
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	l.custom_minimum_size = Vector2(340, 0)
+	l.custom_minimum_size = Vector2(_mid_w() - 52, 0)
 	return l
 
 func _middle(c: Creature) -> Control:
 	var p := UIKit.panel(Color("1d2230f0"), 14)  # snug: a charm's effect may take a second line at the foot
-	p.custom_minimum_size = Vector2(MID_W, 0)
+	p.custom_minimum_size = Vector2(_mid_w(), 0)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 4)
 	p.add_child(v)
@@ -303,19 +328,19 @@ func _middle(c: Creature) -> Control:
 			tag = "-"
 			colour = Color("e9998c")
 		var name_l := UIKit.label(STAT_NAMES[s] + tag, 24, colour)
-		name_l.custom_minimum_size = Vector2(118, 0)
+		name_l.custom_minimum_size = Vector2(118 if not UIKit.big_text() else 136, 0)
 		row.add_child(name_l)
 		var val := c.max_hp() if s == "hp" else c.calc_stat(s)
 		# HP reads "22 / 33", so its bar is the health bar (current over max); the others show the stat's size
 		var bar: ProgressBar
 		if s == "hp":
-			bar = UIKit.hp_bar(c.hp, val, 124, 14)
+			bar = UIKit.hp_bar(c.hp, val, _bar_w(), 14)
 		else:
 			bar = ProgressBar.new()
 			bar.show_percentage = false
 			bar.max_value = 130
 			bar.value = val
-			bar.custom_minimum_size = Vector2(124, 14)
+			bar.custom_minimum_size = Vector2(_bar_w(), 14)
 			bar.add_theme_stylebox_override("fill", UIKit.box(UIKit.HEATHER, Color(0, 0, 0, 0), 0, 3, 0))
 		bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		row.add_child(bar)
@@ -329,11 +354,14 @@ func _middle(c: Creature) -> Control:
 	var nl := UIKit.label("%s temper" % c.nature.capitalize(), 26, UIKit.GOLD)
 	v.add_child(nl)
 	if nat.size() == 2:
-		v.add_child(UIKit.label("Likes %s, less keen on %s" % [STAT_NAMES[nat[0]], STAT_NAMES[nat[1]]], 20, UIKit.MUTED))
+		v.add_child(_small("Likes %s, less keen on %s" % [STAT_NAMES[nat[0]], STAT_NAMES[nat[1]]], UIKit.MUTED, 20))
 	else:
 		v.add_child(_small("Perfectly balanced, as all things should be", UIKit.MUTED, 18))
 	v.add_child(_bond_box(c))
 	return p
+
+func _bar_w() -> int:
+	return 64 if UIKit.big_text() else 124
 
 func _right(c: Creature) -> Control:
 	var col := VBoxContainer.new()
@@ -369,9 +397,8 @@ func _right(c: Creature) -> Control:
 		row.add_child(chip)
 		var mn := UIKit.label(str(info.get("name", m.id)), 24)
 		mn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		mn.clip_text = true  # a long move name shrinks a little, then trims, rather than push the PP off the panel
+		mn.clip_text = true  # long move names shrink a little (_fit_columns), then trim, rather than push the PP off the panel
 		mn.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-		UIKit.fit_width(mn, 20)
 		row.add_child(mn)
 		var low: bool = int(m.pp) * 4 <= int(m.max_pp)
 		row.add_child(UIKit.label("PP %d/%d" % [m.pp, m.max_pp], 20, Color("e9998c") if low else UIKit.MUTED))
@@ -384,7 +411,7 @@ func _right(c: Creature) -> Control:
 		mv.add_child(UIKit.label("-", 26, UIKit.MUTED))
 	_move_info = UIKit.label("", 18, Color("d8cfb4"))
 	_move_info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_move_info.custom_minimum_size = Vector2(0, 50)  # two lines, so paging moves never shifts the layout
+	_move_info.custom_minimum_size = Vector2(0, UIKit.line_height(18) * 2 - 4)  # two lines, so paging moves never shifts the layout
 	mv.add_child(_move_info)
 	_move = clampi(_move, 0, maxi(0, c.moves.size() - 1))
 	_paint_moves()
@@ -394,21 +421,27 @@ func _right(c: Creature) -> Control:
 	var fv := VBoxContainer.new()
 	fv.add_theme_constant_override("separation", 10)
 	fp.add_child(fv)
-	var kb := _knack_box(c)
-	if kb.get_child_count() > 0:
-		fv.add_child(kb)
-		var rule := ColorRect.new()
-		rule.color = Color(UIKit.CREAM, 0.15)
-		rule.custom_minimum_size = Vector2(0, 2)
-		fv.add_child(rule)
-	else:
-		kb.free()
 	var dex: Dictionary = c.species.get("dex", {})
 	var wb := UIKit.words_box([21, 19, 18, 17, 16], 6)  # long entries step the type down so it never spills
+	var kid := Knacks.id_of(c)
+	if UIKit.big_text() and kid != "":  # with Large text the knack shrinks with the entry, so the two share the card
+		UIKit.add_words(wb[1], "Knack: %s" % Knacks.name_of(kid), 0, UIKit.GOLD)
+		UIKit.add_words(wb[1], Knacks.desc_of(kid), -2, Color("d8cfb4"))
+	else:
+		var kb := _knack_box(c)
+		if kb.get_child_count() > 0:
+			fv.add_child(kb)
+			var rule := ColorRect.new()
+			rule.color = Color(UIKit.CREAM, 0.15)
+			rule.custom_minimum_size = Vector2(0, 2)
+			fv.add_child(rule)
+		else:
+			kb.free()
 	fv.add_child(wb[0])
-	UIKit.add_words(wb[1], str(dex.get("text", "")))
-	UIKit.add_words(wb[1], "Did you know?", 1, UIKit.GOLD, true)  # the Fieldbook always has room for the fact
-	UIKit.add_words(wb[1], str(dex.get("fact", "")), 0, Color("d8cfb4"), true)
+	# The Fieldbook always has room for the fact; with Large text the entry itself can give way to the knack too
+	UIKit.add_words(wb[1], str(dex.get("text", "")), 0, UIKit.CREAM, 1 if UIKit.big_text() and kid != "" else 0)
+	UIKit.add_words(wb[1], "Did you know?", 1, UIKit.GOLD, 2)
+	UIKit.add_words(wb[1], str(dex.get("fact", "")), 0, Color("d8cfb4"), 2)
 	return col
 
 ## Highlights the chosen move row and says what that move does.

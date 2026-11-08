@@ -5,6 +5,7 @@ extends CanvasLayer
 ## so wandering off route just re-routes; hidden indoors; cleared with a soft chime on arrival.
 
 const MARGIN := Vector2(22, 118)  # under the toasts and zone card
+const GAP := 10.0                 # px kept clear below a toast or name card that would reach across the chip
 
 var _panel: PanelContainer
 var _arrow: Label
@@ -46,6 +47,27 @@ func _ready() -> void:
 	Bus.zone_entered.connect(func(_id: String) -> void: _on_entered())
 	await get_tree().create_timer(0.7).timeout  # the zone has loaded by now
 	_refresh(true)
+
+## Where the chip's top goes: MARGIN.y, or just below `box` (a toast or the zone card, empty when there is none)
+## when that reaches across the chip's corner. A long route name or Large text makes the chip wide enough to meet them.
+static func clear_y(chip: Rect2, box: Rect2) -> float:
+	if box.has_area() and box.position.x < chip.end.x + GAP and box.end.x > chip.position.x - GAP \
+			and box.position.y < chip.end.y + GAP:
+		return maxf(chip.position.y, box.end.y + GAP)
+	return chip.position.y
+
+func _process(delta: float) -> void:
+	if not _panel.visible:
+		return
+	var chip := Rect2(Vector2(MARGIN.x, MARGIN.y), _panel.size)
+	var y := MARGIN.y
+	var card := get_tree().get_first_node_in_group(ZoneCard.GROUP) as ZoneCard
+	if card:
+		y = maxf(y, clear_y(chip, card.rect()))
+	var news := get_tree().get_first_node_in_group(ParishToast.GROUP) as ParishToast
+	if news:
+		y = maxf(y, clear_y(chip, news.rect()))
+	_panel.position.y = move_toward(_panel.position.y, y, delta * 900.0)
 
 func _refresh(recompute: bool) -> void:
 	var ow := get_parent()
