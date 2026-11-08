@@ -2337,19 +2337,21 @@ static func _pier(st: SurfaceTool, w: int, d: int) -> void:
 	Meshes._quad(st, Vector3(w * 0.5 - 0.5, dy, hz + 2.6), Vector3(w * 0.5 + 0.5, dy, hz + 2.6),
 		Vector3(w * 0.5 + 0.5, -0.4, hz + 4.2), Vector3(w * 0.5 - 0.5, -0.4, hz + 4.2), Color("6a6a66"))
 
-## A cave in the limestone cliff: a pale, knobbly outcrop with a black mouth on the door column.
+## A cave in the limestone cliff: a pale, knobbly outcrop with a black mouth on the door column. A shallow plot
+## (two tiles deep) gets a lower heap, so it doesn't stand over the street behind it (Anguilla's Fountain Cavern).
 static func _cave_mouth(st: SurfaceTool, w: int, d: int, door_x: int, rng: RandomNumberGenerator) -> void:
 	var lime := Color("b4ae9e")
+	var k := clampf(d / 3.0, 0.65, 1.0)
 	# a heap of weathered limestone boulders, banded grey, piled round the black mouth
-	Meshes.blob(st, Vector3(w * 0.5, 0.6, d * 0.45), Vector3(w * 0.55, 1.6, d * 0.5), lime.darkened(0.1), rng, 0.3)
+	Meshes.blob(st, Vector3(w * 0.5, 0.6 * k, d * 0.45), Vector3(w * 0.55, 1.6 * k, d * 0.5), lime.darkened(0.1), rng, 0.3)
 	for i in 9:
-		var c := Vector3(rng.randf_range(0.3, w - 0.3), rng.randf_range(0.6, 2.4), rng.randf_range(0.4, d - 0.6))
-		Meshes.blob(st, c, Vector3(rng.randf_range(0.6, 1.1), rng.randf_range(0.5, 0.9), rng.randf_range(0.5, 0.9)), lime.lightened(rng.randf_range(-0.1, 0.08)), rng, 0.3)
+		var c := Vector3(rng.randf_range(0.3, w - 0.3), rng.randf_range(0.6, 2.4) * k, rng.randf_range(0.4, d - 0.6))
+		Meshes.blob(st, c, Vector3(rng.randf_range(0.6, 1.1), rng.randf_range(0.5, 0.9) * k, rng.randf_range(0.5, 0.9)), lime.lightened(rng.randf_range(-0.1, 0.08)), rng, 0.3)
 	for x in [0.35, w - 0.35]:
 		Meshes.blob(st, Vector3(x, 0.7, d - 0.45), Vector3(0.6, 0.9, 0.5), lime.darkened(0.04), rng, 0.3)
 	Meshes.blob(st, Vector3(w * 0.5, 1.7, d - 0.5), Vector3(1.1, 0.5, 0.45), lime.lightened(0.04), rng, 0.25)
 	for i in 4:  # ivy and turf hanging over the top
-		Meshes.blob(st, Vector3(rng.randf_range(0.4, w - 0.4), 2.6, rng.randf_range(0.6, d - 0.8)), Vector3(0.5, 0.25, 0.5), Color("6a8a4a"), rng, 0.3)
+		Meshes.blob(st, Vector3(rng.randf_range(0.4, w - 0.4), 2.6 * k, rng.randf_range(0.6, d - 0.8)), Vector3(0.5, 0.25, 0.5), Color("6a8a4a"), rng, 0.3)
 	if door_x >= 0:
 		var black := Color("0c0a0a")
 		Meshes.box(st, Vector3(door_x + 0.1, 0, d - 0.12), Vector3(0.8, 1.1, 0.06), black)
