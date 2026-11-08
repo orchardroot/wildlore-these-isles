@@ -70,11 +70,24 @@ func refresh_header() -> void:
 	header_right.text = "   ".join(parts)
 
 ## A side column of words and buttons that steps its words down together (UIKit.fit_column) if it is taller than the
-## table's room: with Large text. Call once it is built.
-func fit_side(side: VBoxContainer) -> void:
+## table's room (less `margins`, for one inside a panel): with Large text. Call once it is built.
+func fit_side(side: VBoxContainer, margins := 0.0) -> void:
 	await get_tree().process_frame
-	if is_instance_valid(side):
-		UIKit.fit_column(side, content.size.y)
+	if not is_instance_valid(side):
+		return
+	if UIKit.big_text():  # the buttons lose their top and bottom padding first: the row height alone sets them
+		for b in side.find_children("*", "Button", true, false):
+			if b.has_meta("snug"):
+				continue
+			b.set_meta("snug", true)
+			for state in ["normal", "hover", "focus", "pressed", "hover_pressed", "disabled"]:
+				var sb: StyleBox = b.get_theme_stylebox(state)
+				if sb != null:
+					sb = sb.duplicate()
+					sb.content_margin_top = 0
+					sb.content_margin_bottom = 0
+					b.add_theme_stylebox_override(state, sb)
+	UIKit.fit_column(side, content.size.y - margins)
 
 ## What's available to stake: chips or the purse.
 func funds() -> int:

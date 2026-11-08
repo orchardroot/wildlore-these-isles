@@ -83,8 +83,12 @@ func load_settings() -> void:
 	_sync_languages()
 	apply_access()
 
+var _theme: Theme  # held, so the choices below stay on the one shared theme (once nothing holds it, it reloads plain)
+
 func apply_access() -> void:
-	Access.apply_theme(load("res://ui/theme.tres"), text_size, readable_font)
+	if _theme == null:
+		_theme = load("res://ui/theme.tres")
+	Access.apply_theme(_theme, text_size, readable_font)
 
 func save_settings() -> void:
 	var f := FileAccess.open(path, FileAccess.WRITE)

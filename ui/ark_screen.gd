@@ -112,6 +112,7 @@ func _refresh(focus_left := -1, focus_right := -1) -> void:
 	_box = clampi(_box, 0, boxes - 1)
 	_box_label.text = "Box %d/%d, %d stored" % [_box + 1, boxes, data.ark.size()]
 	_sort_button.text = "Sort: %s" % ArkLogic.MODE_NAMES[_sort_next]
+	_sort_button.add_theme_font_size_override("font_size", UIKit.fit_size(_sort_button.text, 210 - 24, UIKit.sized(28), UIKit.MIN_TEXT))  # keeps to its 210 px
 	_rights = []
 	for j in range(_box * PER_BOX, mini(data.ark.size(), (_box + 1) * PER_BOX)):
 		var b := _creature_button(data.ark[j], false)

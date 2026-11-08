@@ -51,6 +51,7 @@ func _build() -> void:
 	for b in [reset, back]:
 		b.custom_minimum_size.y = 40
 		UIKit.compact(b, 6)
+		b.add_theme_font_size_override("font_size", 28)  # the theme's normal size even with Large text: the rows above need the room
 	bottom.add_child(reset)
 	bottom.add_child(back)
 	v.add_child(bottom)
