@@ -14,6 +14,7 @@ const SIDE := 48              # the frame's left and right margin
 const HINT_H := 46            # the hint bar's own strip along the bottom
 const HINT_FONT := 20         # its text size; shrinks (to HINT_MIN) rather than run off the screen
 const HINT_MIN := 18
+const HEADER_FONT := 26       # the read-out right of the title (money, page counts); shrinks to HINT_MIN to fit
 
 var _hint_entries: Array = []   # the prompts behind the hint bar, redrawn when the device or bindings change
 var _done := false
@@ -82,11 +83,14 @@ func _build_frame() -> void:
 	var t := UIKit.label(title_text, 44, UIKit.CREAM)
 	t.name = "Title"
 	head.add_child(t)
-	head.add_child(UIKit.fill())
-	header_right = UIKit.label("", 26, UIKit.GOLD)
+	header_right = UIKit.label("", HEADER_FONT, UIKit.GOLD)
 	header_right.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	header_right.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	header_right.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # the room beside the title, and no more
+	header_right.clip_text = true  # never widens the frame; _fit_header shrinks the text first
 	head.add_child(header_right)
+	header_right.resized.connect(_fit_header)
+	header_right.draw.connect(func(): _fit_header.call_deferred())  # screens set its text directly: refit when it changes
 	content = Control.new()
 	content.name = "Content"
 	content.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -154,6 +158,14 @@ func _fit_hint() -> void:
 	var fs := UIKit.fit_scaled(hint_label.text, w, HINT_FONT, HINT_MIN)
 	if fs != hint_label.get_theme_font_size("font_size"):
 		hint_label.add_theme_font_size_override("font_size", fs)
+
+## The biggest size (HEADER_FONT at the player's Text size, down to HINT_MIN) at which the header read-out fits.
+func _fit_header() -> void:
+	if not is_instance_valid(header_right) or header_right.size.x <= 0:
+		return
+	var fs := UIKit.fit_scaled(header_right.text, header_right.size.x, HEADER_FONT, HINT_MIN)
+	if fs != header_right.get_theme_font_size("font_size"):
+		header_right.add_theme_font_size_override("font_size", fs)
 
 func _exit_tree() -> void:
 	if InputDevice.changed.is_connected(_redraw_hint):
