@@ -165,7 +165,8 @@ func _refresh() -> void:
 		var flag := mini(_g.next_station, Pancake.STATIONS)
 		l = "Time %.1f   Flag %d of %d   Drops %d   The champion is on %.1f." % [_g.total(), flag, Pancake.STATIONS, _g.drops, _champ]
 	elif _state == "ready":
-		l = "The champion's time today is %.1f seconds. Gold needs %.0f, silver %.0f." % [_champ, Pancake.MASTER_TIME, Pancake.GOOD_TIME]
+		var e := PartyPieces.entry("pancake")   # the rosette thresholds, so the sign never drifts from the data
+		l = "The champion's time today is %.1f seconds. Gold needs %.0f, silver %.0f." % [_champ, float(e.get("master", Pancake.MASTER_TIME)), float(e.get("good", Pancake.GOOD_TIME))]
 	if _msg != "":
 		l += "\n" + _msg
 	_info.text = l
