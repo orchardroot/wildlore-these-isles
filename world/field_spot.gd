@@ -29,6 +29,8 @@ static func dress(z: ZoneData, zone_node: Node3D, data: GameStateData, ow: Node)
 		n.position = Vector3(t.x + 0.5, ZoneBuilder.ground_y(z, t), t.y + 0.5)
 		n.rotation.y = float(hash(t) % 628) / 100.0 if str(s.prop) in ["molehill", "glint", "cheese", "bog_pool"] else 0.0
 		root.add_child(n)
+		if str(s.prop) == "stepping_stones" and FieldSpots.is_hop(s) and t < Vector2i(int(s.reward.hop[0]), int(s.reward.hop[1])):  # one bank draws them
+			_stones_across(z, root, t, s.reward.hop)
 	z.set_meta("field_tiles", spots)
 	if spots.is_empty():
 		return
@@ -87,15 +89,31 @@ static func _mesh(kind: String) -> ArrayMesh:
 		"cheese":  # a big wheel of cheese, standing in a hollow
 			Meshes.cylinder(st, Vector3(0, 0, 0), 0.4, 0.22, 12, Color("e8b84a"))
 			Meshes.cylinder(st, Vector3(0, 0.22, 0), 0.34, 0.03, 12, Color("f1cf70"))
+		"stone_slab":  # one flat stone standing proud of the water, for a stepping-stones crossing
+			Meshes.blob(st, Vector3(0, 0.02, 0), Vector3(0.36, 0.14, 0.32), Color("a19d94"), rng, 0.04)
 		"stepping_stones":  # a short row of flat grey slabs, each a little lower than the last
 			for i in 4:
-				Meshes.cylinder(st, Vector3(-0.45 + i * 0.3, 0, (i % 2) * 0.14 - 0.07), 0.21, 0.16 - i * 0.02, 7, Color("8c8a84"))
+				Meshes.blob(st, Vector3(-0.45 + i * 0.3, 0.04, (i % 2) * 0.14 - 0.07), Vector3(0.2, 0.1 - i * 0.015, 0.18), Color("a19d94"), rng, 0.03)
 		_:  # bale: a straw bale with a bowl on it
 			Meshes.box(st, Vector3(0, 0, 0), Vector3(0.8, 0.45, 0.5), Color("c9ab5a"))
 			Meshes.blob(st, Vector3(0.1, 0.55, 0), Vector3(0.12, 0.1, 0.12), Color("3a3a3e"), rng, 0.05)
 	var m: ArrayMesh = Meshes._finish(st)
 	_mesh_cache[kind] = m
 	return m
+
+## A stepping-stones crossing shows its stones in the water it crosses, from the bank at `t` toward the landing.
+## Decoration only: the hop itself is the spot's business.
+static func _stones_across(z: ZoneData, root: Node3D, t: Vector2i, hop: Array) -> void:
+	var d := Vector2i(signi(int(hop[0]) - t.x), signi(int(hop[1]) - t.y))
+	var p := t + d
+	while z.in_bounds(p) and not z.walkable(p) and p != Vector2i(int(hop[0]), int(hop[1])):
+		var n := MeshInstance3D.new()
+		n.mesh = _mesh("stone_slab")
+		n.material_override = Meshes.solid
+		n.position = Vector3(p.x + 0.5, ZoneBuilder.water_y(z, p), p.y + 0.5)
+		n.rotation.y = float(hash(p) % 628) / 100.0
+		root.add_child(n)
+		p += d
 
 ## Facing a spot and pressing confirm. True when it was one of ours.
 static func interact(ow: Node, p: Vector2i) -> bool:
