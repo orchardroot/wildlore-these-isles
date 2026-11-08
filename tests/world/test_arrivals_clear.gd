@@ -46,3 +46,25 @@ func test_every_sign_can_be_read() -> void:
 			if not ok:
 				bad.append("%s %d,%d" % [z.id, p.x, p.y])
 	assert_eq(bad, [], "signs with nowhere to stand and read them")
+
+## An oak grew up through a house on Oxford's High Street (by the pancake race) and a flagpole stood in the roof of
+## Anguilla's Salt Cottage. Ruins (Jarlshof, Blaenavon) are open to the sky, so rocks and sheep are fine there.
+const OPEN_TO_THE_SKY := ["kirk_ruin", "ironworks"]
+
+func test_no_prop_stands_inside_a_building() -> void:
+	var bad := []
+	for z: ZoneData in _all().values():
+		if z.kind == "interior":
+			continue
+		for b in z.props:
+			if str(b.get("type", "")) != "building" or not b.has("w") or str(b.get("style", "")) in OPEN_TO_THE_SKY:
+				continue
+			var r := Rect2i(int(b.x), int(b.y), int(b.w), int(b.get("h", 1)))
+			for p in z.props:
+				var t := str(p.get("type", ""))
+				if t in ["building", "hanging_basket"] or p.get("walk", false):
+					continue
+				var at := Vector2i(int(p.get("x", -1)), int(p.get("y", -1)))
+				if r.has_point(at) and z.tile_at(at) == "building":
+					bad.append("%s %s %d,%d" % [z.id, t, at.x, at.y])
+	assert_eq(bad, [], "props inside a building")
