@@ -13,6 +13,8 @@ outside the other w50 sessions' files. Full write-up: `docs/audit/w50_critic.md`
   starter picker "field station"; truncated venue boards; bare Sanctuaries.
 - Merge note: `world/zone_builder.gd` gets three small additive lines for `shop_shelf`; w50-world edits other parts
   of the same file. `data/zones/chat_moss.json` and `ring_of_kerry.json` are touched by both, in different places.
+- Checks: `tools/test.sh` 2996 passed, 0 failed, validate 0 errors, no SCRIPT ERROR (five "Parse JSON failed"
+  lines come from tests that feed bad JSON on purpose); `tools/playtest.sh slice 2` PLAYTEST PASS (Maud won).
 
 # w50-report handoff
 
