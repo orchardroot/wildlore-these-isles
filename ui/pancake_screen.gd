@@ -62,7 +62,7 @@ func setup(arg: String) -> void:
 			if _g.next_station <= Pancake.STATIONS and absf(Pancake.station_y(_g.next_station) - _g.y) / maxf(_g.v, Pancake.JOG) < 0.04:
 				_g.step(1.0 / 60.0, 0.0, true, true)
 		_g.events.clear()
-		_msg = "Flag 3 is coming. Press Confirm as you pass it."
+		_msg = "Flag %d is coming. Press Confirm as you pass it." % _g.next_station
 	_refresh()
 
 func _reset() -> void:
@@ -202,8 +202,9 @@ func _draw_stage() -> void:
 		_stage.draw_string(ThemeDB.fallback_font, pos + Vector2(2, 2), str(p.text), HORIZONTAL_ALIGNMENT_LEFT, -1, 32, Color(0, 0, 0, col.a * 0.6))
 		_stage.draw_string(ThemeDB.fallback_font, pos, str(p.text), HORIZONTAL_ALIGNMENT_LEFT, -1, 32, col)
 	if _state == "ready":
-		_stage.draw_string(ThemeDB.fallback_font, Vector2(w * 0.5 - 220, 120), "Olney, Shrove Tuesday", HORIZONTAL_ALIGNMENT_LEFT, -1, 44, Color("fff8e0"))
-		_stage.draw_string(ThemeDB.fallback_font, Vector2(w * 0.5 - 220, 156), "415 yards. Apron and headscarf are compulsory.", HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("f0e8cc"))
+		# on the empty road, clear of the START banner above and the pan close-up top right
+		_stage.draw_string(ThemeDB.fallback_font, Vector2(w * 0.5 - 180, ROAD_Y + 48), "Olney, Shrove Tuesday", HORIZONTAL_ALIGNMENT_LEFT, -1, 44, Color("fff8e0"))
+		_stage.draw_string(ThemeDB.fallback_font, Vector2(w * 0.5 - 180, ROAD_Y + 82), "415 yards. Apron and headscarf are compulsory.", HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("f0e8cc"))
 	# the progress strip along the bottom
 	var by := STAGE.y - 16.0
 	_stage.draw_rect(Rect2(40, by, w - 80, 6), Color(0.05, 0.07, 0.1, 0.5))

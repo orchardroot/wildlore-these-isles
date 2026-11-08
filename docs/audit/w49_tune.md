@@ -63,4 +63,21 @@ and with them the 150 pound prize and `masters_beaten`. That is a design call ra
    times feel less like a lap record.
 
 ## Screens
-(filled in below after the play-through)
+
+Every game shot at the start (`--menu=<game>:<venue>`), part way through (`:dev`) and, for snorkel and coracle, at the
+finish with the rosette card (`:dev_end`); 22 screens at 30 s. Fixed here (small, in the screens):
+
+- **Pancake race**: the "Olney, Shrove Tuesday" title card sat on top of the START banner and ran under the pan
+  close-up. It now sits on the empty road (`docs/screens/w49-tune-pancake-start.png`). The dev state said "Flag 3 is
+  coming" while the HUD said flag 7; it now names the real flag. The start sign reads the thresholds from the data.
+- **Cheese rolling**: the start screen said "Heat 1 of 3." twice (info line and message). Once now.
+- **Welly wanging**: the stage control was stretched wider than its 1040 px art, so clouds and wall stones were drawn
+  out in the dark to the right of the picture; it now keeps its size and the clip holds. The SPIN label was cream on
+  the dark hill and all but invisible; it has a dark tab behind it (`docs/screens/w49-tune-welly.png`).
+
+Looked at and left alone: sheepdog (clear, though the direction hint shows as "-" in the key bar, a shared hint-bar
+quirk), worms (the "Perfect!" pop sits over the BEAT label for a moment, fine), snorkel, coracle (+3s penalty flash
+reads well), road bowling (POWER label is tiny but legible), poohsticks, gurning. Rosette cards fire at both dev_end
+screens and read correctly.
+
+Not seen: the finish screens of the eight games without a `dev_end` arg; they only end after a real play.
