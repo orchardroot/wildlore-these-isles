@@ -105,6 +105,8 @@ static func from_dict(d: Dictionary) -> ZoneData:
 	z.ambience = str(d.get("ambience", ""))
 	var sp: Array = d.get("spawn", [0, 0])
 	z.spawn = Vector2i(int(sp[0]), int(sp[1]))
+	if sp.size() != 2:
+		z.parse_errors.append("spawn must be [x, y], not %d entries" % sp.size())
 	for p in z.props:
 		if p.get("type", "") != "building" and not p.get("walk", false):
 			z.blocked[Vector2i(int(p.get("x", 0)), int(p.get("y", 0)))] = true

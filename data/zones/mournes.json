@@ -720,19 +720,19 @@
  "plaque": "arc_ni_wall_builders",
  "title": "The Wall Builders",
  "text": "The Mourne Wall was built between 1904 and 1922 for the Belfast Water Commissioners to keep livestock off the land that drains to Silent Valley. Local men built it by hand from the granite on the hillside, with no mortar. It is about 22 miles long and crosses 15 summits, and the sheep still test it."
+},
+{
+ "x": 38,
+ "y": 52,
+ "plaque": "arts_percy_french",
+ "theme": "arts",
+ "title": "The Mountains of Mourne",
+ "text": "Percy French, born in Roscommon in 1854, trained as an engineer and worked as an inspector of drains before he found his trade as an entertainer and songwriter. He wrote 'The Mountains of Mourne' in 1896, a letter home from a lad in London: 'where the Mountains of Mourne sweep down to the sea'. He also wrote 'Are Ye Right There, Michael?' about the West Clare Railway, which sued him and lost. He died in 1920. The mountains have never stopped sweeping, and the sea is in no hurry either."
 }
 ],
  "spawn": [
   36,
-  50,
-  {
-   "x": 38,
-   "y": 52,
-   "plaque": "arts_percy_french",
-   "theme": "arts",
-   "title": "The Mountains of Mourne",
-   "text": "Percy French, born in Roscommon in 1854, trained as an engineer and worked as an inspector of drains before he found his trade as an entertainer and songwriter. He wrote 'The Mountains of Mourne' in 1896, a letter home from a lad in London: 'where the Mountains of Mourne sweep down to the sea'. He also wrote 'Are Ye Right There, Michael?' about the West Clare Railway, which sued him and lost. He died in 1920. The mountains have never stopped sweeping, and the sea is in no hurry either."
-  }
+  50
  ],
  "stage": "mountain",
  "rows": [
