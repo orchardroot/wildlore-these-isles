@@ -39,6 +39,19 @@
   "msg": "{name}'s Four-Leaf Clover brought a bit of luck!"
  },
  {
+  "id": "white_heather",
+  "name": "White Heather",
+  "kind": "charm",
+  "price": 0,
+  "battle": false,
+  "field": true,
+  "wild": true,
+  "desc": "Rarer than the purple sort and counted lucky all over Scotland. Tuck a sprig in a pocket before anything that matters.",
+  "effect_text": "Its hits land critical hits more often.",
+  "charm": {"effect": "crit", "stages": 1},
+  "msg": "{name}'s White Heather guided the blow!"
+ },
+ {
   "id": "brigid_cross",
   "name": "Brigid's Cross",
   "kind": "charm",

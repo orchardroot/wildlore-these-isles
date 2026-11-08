@@ -367,7 +367,7 @@ func _strike(side: int, pos: int, user: Creature, t_side: int, t_pos: int, targe
 	for h in hits:
 		if target.is_fainted() or user.is_fainted():
 			break
-		var crit := DamageCalc.CRIT_CHANCE * Weather.crit_mult(weather, side) * (Bond.crit_mult(user) if side == PLAYER else 1.0)
+		var crit := DamageCalc.crit_percent(DamageCalc.crit_stage(user, move)) * Weather.crit_mult(weather, side) * (Bond.crit_mult(user) if side == PLAYER else 1.0)
 		var km := 1.0
 		if knacks_on:
 			crit *= Knacks.crit_mult(user)

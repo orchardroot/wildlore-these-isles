@@ -18,7 +18,7 @@ const STATUS_TEXT := {
 ## One or two short sentences. A "desc" in the move data wins, for moves that need a hand-written line.
 static func describe(mv: Dictionary) -> String:
 	if str(mv.get("desc", "")) != "":
-		return str(mv.desc)
+		return str(mv.desc) + (" High chance of a critical hit." if int(mv.get("crit", 0)) > 0 else "")
 	var parts: Array[String] = []
 	var cat := str(mv.get("category", "status"))
 	var fx: Dictionary = mv.get("effect", {"id": "none"})
@@ -72,6 +72,8 @@ static func describe(mv: Dictionary) -> String:
 			parts.append("%s in %s." % [how, where])
 		if bool(wb.get("sure_hit", false)):
 			parts.append("Never misses in %s." % where)
+	if int(mv.get("crit", 0)) > 0:
+		parts.append("High chance of a critical hit.")
 	if int(mv.get("priority", 0)) > 0:
 		parts.append("Usually strikes first.")
 	if str(mv.get("target", "")) == "all_foes":
