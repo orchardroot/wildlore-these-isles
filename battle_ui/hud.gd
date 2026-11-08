@@ -253,14 +253,14 @@ class WeatherPlate extends PanelContainer:
 		pips = TurnPips.new()
 		sub.add_child(pips)
 		sub_l = Label.new()
-		sub_l.add_theme_font_size_override("font_size", 16)
+		sub_l.add_theme_font_size_override("font_size", 18)
 		sub_l.modulate = Color("e8c46a")
 		sub.add_child(sub_l)
 		chips = HBoxContainer.new()
 		chips.add_theme_constant_override("separation", 5)
 		col.add_child(chips)
 		note_l = Label.new()
-		note_l.add_theme_font_size_override("font_size", 15)
+		note_l.add_theme_font_size_override("font_size", 18)
 		note_l.modulate = Color("ffe08a")
 		col.add_child(note_l)
 	var chips: HBoxContainer
@@ -290,10 +290,10 @@ class WeatherPlate extends PanelContainer:
 			var h := HBoxContainer.new()
 			h.add_theme_constant_override("separation", 3)
 			pc.add_child(h)
-			h.add_child(TypeGlyph.make(t, fg if e.up else BattleHUD.CREAM, 13))
+			h.add_child(TypeGlyph.make(t, fg if e.up else BattleHUD.CREAM, 16))
 			var l := Label.new()
 			l.text = str(e.text)
-			l.add_theme_font_size_override("font_size", 14)
+			l.add_theme_font_size_override("font_size", 18)
 			l.add_theme_color_override("font_color", fg if e.up else BattleHUD.CREAM)
 			l.add_theme_constant_override("shadow_offset_x", 0)
 			l.add_theme_constant_override("shadow_offset_y", 0)
@@ -351,7 +351,7 @@ class Plate extends PanelContainer:
 
 	func build(player: bool, compact := false) -> void:
 		is_player = player
-		var k := 0.72 if compact else 1.0  # compact plates for doubles: smaller type, tighter padding
+		var k := 0.72 if compact else 1.0  # compact plates for doubles: smaller type (never under 16 px), tighter padding
 		var sb: StyleBoxFlat = (load("res://ui/theme.tres") as Theme).get_stylebox("panel", "PanelContainer").duplicate()
 		_sb = sb
 		_border = sb.border_color
@@ -374,38 +374,40 @@ class Plate extends PanelContainer:
 		sex_m = SexMark.make("", sex_px)  # male or female sign before the name, nothing for a kindred without sexes
 		top.add_child(sex_m)
 		name_l = Label.new()
-		name_l.add_theme_font_size_override("font_size", int(28 * k))
+		name_l.add_theme_font_size_override("font_size", maxi(22, int(28 * k)))
 		name_l.clip_text = compact
+		if compact:  # a long name on a doubles plate ends in an ellipsis, not half a letter
+			name_l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		name_l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		top.add_child(name_l)
 		chip = Label.new()
-		chip.add_theme_font_size_override("font_size", int(16 * k))
+		chip.add_theme_font_size_override("font_size", maxi(16, int(18 * k)))
 		chip.visible = false
 		chip.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		top.add_child(chip)
 		level_l = Label.new()
-		level_l.add_theme_font_size_override("font_size", int(24 * k))
+		level_l.add_theme_font_size_override("font_size", maxi(19, int(24 * k)))
 		top.add_child(level_l)
 		var hp_row := HBoxContainer.new()
 		hp_row.add_theme_constant_override("separation", 8)
 		col.add_child(hp_row)
 		var tag := Label.new()
 		tag.text = "HP"
-		tag.add_theme_font_size_override("font_size", int(18 * k))
+		tag.add_theme_font_size_override("font_size", maxi(16, int(18 * k)))
 		tag.modulate = Color("e8c46a")
 		hp_row.add_child(tag)
 		hp_bar = Bar.new(12 if compact else 16)
 		hp_bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		hp_bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		hp_row.add_child(hp_bar)
-		stage_row = StageRow.new(maxi(12, int(14 * k)))
+		stage_row = StageRow.new(maxi(14, int(16 * k)))
 		stage_row.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		if player:  # the stage pills share the HP numbers' row, so the plate never grows into the message box
 			var num_row := HBoxContainer.new()
 			col.add_child(num_row)
 			num_row.add_child(stage_row)
 			hp_text = Label.new()
-			hp_text.add_theme_font_size_override("font_size", int(22 * k))
+			hp_text.add_theme_font_size_override("font_size", maxi(18, int(22 * k)))
 			hp_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 			hp_text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 			num_row.add_child(hp_text)
@@ -416,7 +418,7 @@ class Plate extends PanelContainer:
 			col.add_child(xp_row)
 			var xt := Label.new()
 			xt.text = "XP"
-			xt.add_theme_font_size_override("font_size", int(16 * k))
+			xt.add_theme_font_size_override("font_size", maxi(16, int(18 * k)))
 			xt.modulate = Color("9ab6ff")
 			xp_row.add_child(xt)
 			xp_bar = Bar.new(6 if compact else 8)

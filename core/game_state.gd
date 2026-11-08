@@ -272,4 +272,9 @@ func _take_shot() -> void:
 		var f := FileAccess.open(path.get_basename() + ".audit.txt", FileAccess.WRITE)
 		f.store_string("\n".join(lines) + ("\n" if lines else "ok\n"))
 		f.close()
+	if "--text-check" in DevArgs.user_args():  # dev: list text a player can't read whole (TextCheck), beside the PNG
+		var lines := TextCheck.report(get_tree().root, get_viewport().get_visible_rect())
+		var f := FileAccess.open(path.get_basename() + ".text.txt", FileAccess.WRITE)
+		f.store_string("\n".join(lines) + ("\n" if lines else "ok\n"))
+		f.close()
 	get_tree().quit()

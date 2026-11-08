@@ -28,6 +28,8 @@ const OVERRIDES := {
 	"brize_norton": "Oxfordshire", "akrotiri": "Akrotiri Sovereign Base Area", "dhekelia": "Dhekelia Sovereign Base Area",
 	"pyla": "The UN buffer zone, Cyprus",
 }
+const GROUP := "zone_card"
+const MAX_W := 640.0  # a long name shrinks a little rather than reach across the route chip (top left)  # ParishToast waits for the card before its news takes the top of the screen
 const FADE_IN := 0.5
 const HOLD := 2.4
 const FADE_OUT := 0.7
@@ -56,6 +58,7 @@ func note(kind: String, zone_id: String) -> bool:
 
 func _ready() -> void:
 	layer = 5
+	add_to_group(GROUP)
 	var root := Control.new()
 	root.set_anchors_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -104,8 +107,13 @@ func _on_zone_entered(zone_id: String) -> void:
 		Langs.note_place(Game.data, zone_id, z.name, idx)
 	show_card(z.name, subtitle(zone_id, z.region), str(b[1]))
 
+## On screen, or about to be (the card waits for the fade in).
+func showing() -> bool:
+	return _panel.modulate.a > 0.01 or (_tween != null and _tween.is_running())
+
 func show_card(title: String, sub: String, local := "") -> void:
 	_name.text = title
+	_name.add_theme_font_size_override("font_size", UIKit.fit_size(title, MAX_W, Access.scaled(38, Settings.text_size), 28))
 	_local.text = local
 	_local.visible = local != ""
 	_sub.text = sub
