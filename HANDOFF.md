@@ -1,3 +1,23 @@
+# w51-critic2 handoff
+
+Branch `w51-critic2` (from int-w50). A new player's walk round the side content (overseas, islands, Party Pieces
+venues and minigames, travel, map, Journal, jobs, festivals, post-game, field pieces), fixing what looked wrong.
+Full write-up: `docs/audit/w51_critic2.md`; before/after in `docs/screens/w51-critic2-*.png`.
+
+- Fixed: arriving inside a guide (Exeter passages, Castle of Mey); 14 residents standing in front of a doorstep or
+  the Ascension landing; unreadable signs (in the sea off St Peter Port, Dundee, the Exe; Tintagel's Gallos;
+  Llangollen); 28 props inside buildings (Oxford's oak, Anguilla's flagpole...); town-name boards on doorless houses
+  abroad (Gaiman, Roscoff, Baddeck, Boston, Bristol, Tristan, Adamstown); tropical and southern trees and frost now
+  keep their own year (`Calendar.foliage_tint_in`, `season_in`); a clearing round the sheepdog trials steward; a new
+  `dartboard` prop in the five darts pubs; field piece hints ("Where to learn it:", real move names); "sticks of rock".
+- Left for others: map info panel hides the west (HUD/menus); truncated name boards (w51-places); Guizer Magnus
+  sprite; Braemar on snow in September; Grytviken church mesh. See the audit.
+- Merge note: `world/zone_builder.gd` gets one line in POINT_PROPS and one match case for `dartboard`;
+  `world/dressing.gd` a new function; `world/seasonal.gd`, `world/sky_and_light.gd`, `core/calendar.gd`,
+  `core/field_spots.gd`, `world/field_spot.gd` small edits. About 60 zone files, small data edits each.
+- Checks: `tools/test.sh` 3021 passed, 0 failed, validate 0 errors, no SCRIPT ERROR; `tools/playtest.sh slice 2`
+  PLAYTEST PASS (Maud won).
+
 # w50-critic handoff
 
 Branch `w50-critic` (from int-w50). A new player's walk along the story by screenshot, fixing what looked wrong
