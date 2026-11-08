@@ -56,7 +56,7 @@ seconds over 1,540 zones and 1,532 dialogue files on a loaded machine), determin
 
 | Rule | What it flags | Found | Fixed | Kept, with reason |
 |---|---|---|---|---|
-| object | a line points at a findable thing ("pull the lever", "the boat behind me", "the judge is by the gate") and the zone, its outside and up to three rooms on through the cave or building, has nothing like it | 27 | 6 | 19 (figures of speech, recipes, history) |
+| object | a line points at a findable thing ("pull the lever", "mind the levers", "the boat behind me", "the judge is by the gate") and the zone, its outside and up to three rooms on through the cave or building, has nothing like it | 30 | 8 | 19 (figures of speech, recipes, history) |
 | near | "the lever by the desk", "a lever near the water": both exist here but not within two tiles | 0 after the base fix and the Wookey move | 1 (Wookey hatch) | 0 |
 | stairs | upstairs, downstairs, down the steps, through the back, the back room, the back door, in a room with one way out | 39 | 6 | 33 (the real building's other floors) |
 | cave | a warp into a cave, mine or tunnel (dark, cave stage, or the name says so) whose outside is not drawn as an entrance (`ENTRANCE_STYLES` or a portal prop beside it) | 10 | 4 | 6 (real visitor centres and buildings) |
@@ -71,8 +71,9 @@ Fixed by rule:
 - object: Dover Museum ("the boat behind me": now "the boat in these cases", which flank the curator); Smeaton's Tower
   ("Up the ladders to the lantern if you dare": no way up, now the keepers went up ladders between the rooms); Shetland
   (the show judge "by the gate": there was a gap in the wall and no gate, now a field gate stands in it); the Chat Moss
-  and North York Moors signal boxes ("Mind the levers": a counter, now a lever frame of seven levers); Big Pit and Fingal's
-  Cave as above.
+  and North York Moors signal boxes ("Mind the levers": a counter, now a lever frame of seven levers); the Enclosure
+  agent on the Pennine grouse moor ("Mind the gate, it bites": no gate, now the grouse are spoken for); Big Pit and
+  Fingal's Cave as above.
 - stairs: the Ark at Brize Norton, La Linea and Sheffield is behind the counter (was through the back, or up the
   stairs); the Brighton rock maker sends you to the counter, not a shop through the back; the Bodleian librarian and the
   Radcliffe Camera clerk send you to the Eagle and Child on St Giles', not to a back room it hasn't got.
@@ -91,6 +92,8 @@ Fixed by rule:
   could do with a mine-office look. `mendips_cave` ("Cave Tours") is a museum hall where the guide says "found a
   skeleton here"; kept as the Cheddar ticket office and museum.
 - Wookey Hole's show cave has street lamp posts and green grass inside (encounter grass); not a text mismatch, left.
+- Street bollards stand in odd places (one on the Pennine grouse moor at 16,30); they may be stand-ins for waymarks.
+  Not checked: no line points at them.
 - Exeter Cathedral's ringer says "Six bells up the stairs". The real ring is twelve bells (fourteen in the tower); it
   matches the minigame, so it is a facts question for whoever owns the bells, not a world one.
 - Compass directions to other places ("Newgrange is just east of here", "the kirkyard to the south-west") are not

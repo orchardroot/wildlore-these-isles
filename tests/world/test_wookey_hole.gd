@@ -30,7 +30,7 @@ func test_the_hatch_lever_opens_the_stair() -> void:
 	var d := GameStateData.new()
 	var z := _applied("wookey_hole", d)
 	assert_false(z.walkable(Vector2i(4, 17)))
-	DeepPlace.pull(d, z.id, DeepPlace.lever_at(z, Vector2i(11, 19)))
+	DeepPlace.pull(d, z.id, DeepPlace.lever_at(z, Vector2i(11, 15)))  # by the water, as its sign and the gate say
 	DeepPlace.apply(d, z, {})
 	assert_true(z.walkable(Vector2i(4, 17)))
 
@@ -38,7 +38,7 @@ func test_the_sluice_drains_the_passage() -> void:
 	var d := GameStateData.new()
 	var z := _applied("wookey_river", d)
 	assert_false(z.walkable(Vector2i(13, 4)))
-	DeepPlace.pull(d, z.id, DeepPlace.lever_at(z, Vector2i(9, 3)))
+	DeepPlace.pull(d, z.id, DeepPlace.lever_at(z, Vector2i(8, 3)))
 	DeepPlace.apply(d, z, {})
 	assert_true(z.reachable(z.spawn).has(Vector2i(24, 7)))
 
