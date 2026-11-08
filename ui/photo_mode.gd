@@ -79,9 +79,14 @@ func _begin(ow: Node) -> void:
 	_was_busy = Router.busy
 	Router.busy = true  # the player stands still; the world is not paused, so water, clouds and people carry on
 	for c in ow.get_children():
-		if c is ZoneCard:
+		if c is ZoneCard or c is RouteChip or c is PlaceIndicator:
 			c.visible = false
 			_hidden.append(c)
+	for g in [ParishToast.GROUP, SaveToast.GROUP]:  # news and the Saved note stay out of the picture too
+		for c in get_tree().get_nodes_in_group(g):
+			if c.visible:
+				c.visible = false
+				_hidden.append(c)
 	var shade := ColorRect.new()
 	shade.set_anchors_preset(Control.PRESET_FULL_RECT)
 	shade.mouse_filter = Control.MOUSE_FILTER_IGNORE

@@ -25,6 +25,7 @@ var readable_font := false  # a dyslexia-friendly typeface (Atkinson Hyperlegibl
 var hints := true          # first-time introductions to each system (see Intros)
 var damage_numbers := true  # battle: the damage taken drifts up beside the plate
 var bindings := {}        # action -> {"key": [physical keycodes], "pad": [joypad buttons]}, see InputSetup
+var _theme: Theme         # the shared UI theme, kept loaded so apply_access's changes stick
 
 func _ready() -> void:
 	load_settings()
@@ -83,10 +84,9 @@ func load_settings() -> void:
 	_sync_languages()
 	apply_access()
 
-var _theme: Theme  # held, so the choices below stay on the one shared theme (once nothing holds it, it reloads plain)
 
 func apply_access() -> void:
-	if _theme == null:
+	if _theme == null:  # held here: an unreferenced theme is freed and the next load() reads it plain from disk
 		_theme = load("res://ui/theme.tres")
 	Access.apply_theme(_theme, text_size, readable_font)
 
