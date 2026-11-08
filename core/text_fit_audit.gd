@@ -205,6 +205,8 @@ static func _overlaps(texts: Array, panels: Array, out: Array, root: Node) -> vo
 				continue
 			if a.get_parent() == b.get_parent() and a.get_parent() is Container:
 				continue  # laid out side by side: only the ink could touch, never the boxes
+			if a.rotation != 0.0 or b.rotation != 0.0:
+				continue  # hand-set lettering at a slant (a postcard's "Greetings from"): placed to touch
 			var x := ra.intersection(texts[j][1])
 			if x.size.x > OVERLAP and x.size.y > OVERLAP and not _covered(a, ra, texts[i][2], panels, texts[i][3]):
 				_add(out, b, root, "overlap", "over %s (%s)" % [_short(a, root), _rs(x)])

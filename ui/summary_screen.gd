@@ -266,9 +266,8 @@ func _bond_box(c: Creature) -> Control:
 		var nm := UIKit.label("%s:" % Charms.name_of(c.held), 16, UIKit.GOLD)
 		row.add_child(nm)
 		var fx := UIKit.label(str(Charms.item(c.held).get("effect_text", "")), 16, Color("d8cfb4"))
-		fx.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		fx.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		fx.clip_text = true
+		fx.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # the whole effect, on a second line if it needs one
 		row.add_child(fx)
 		row.custom_minimum_size = Vector2(340, 0)
 		v.add_child(UIKit.spacer(4))
@@ -368,8 +367,9 @@ func _right(c: Creature) -> Control:
 		row.add_child(chip)
 		var mn := UIKit.label(str(info.get("name", m.id)), 24)
 		mn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		mn.clip_text = true  # a long move name trims rather than push the PP off the panel
+		mn.clip_text = true  # a long move name shrinks a little, then trims, rather than push the PP off the panel
 		mn.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		UIKit.fit_width(mn, 20)
 		row.add_child(mn)
 		var low: bool = int(m.pp) * 4 <= int(m.max_pp)
 		row.add_child(UIKit.label("PP %d/%d" % [m.pp, m.max_pp], 20, Color("e9998c") if low else UIKit.MUTED))

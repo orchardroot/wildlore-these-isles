@@ -48,6 +48,14 @@ static func fit_label(text: String, width: float, big := 28, small := 18, colour
 	l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	return l
 
+## Keeps a one-line label's text inside its own width as layout settles: its size steps down (to `small`) whenever
+## it is resized, before any trimming. Changing the font never changes a clipped label's width, so this can't loop.
+static func fit_width(l: Label, small := MIN_TEXT) -> void:
+	var big := l.get_theme_font_size("font_size")
+	l.resized.connect(func():
+		if l.size.x > 0:
+			l.add_theme_font_size_override("font_size", fit_size(l.text, l.size.x, big, small)))
+
 ## A block of wrapped labels that must fit `box` (a ScrollContainer, as a fallback for the very longest): sets the
 ## biggest body size from `sizes` (biggest first) at which they all fit. `words` holds [label, size offset, optional]
 ## entries, e.g. a heading one size up from the body; optional ones (a "Did you know?") are left out before the

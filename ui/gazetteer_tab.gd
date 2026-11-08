@@ -484,6 +484,7 @@ func _open_isles_work(focus_id := "") -> void:
 		l.clip_text = true
 		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		l.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		UIKit.fit_width(l)  # a long title steps down before it trims
 		h.add_child(l)
 		_list_col.add_child(b)
 	Audio.sfx("confirm")
