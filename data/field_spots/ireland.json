@@ -247,33 +247,127 @@
   "at": "mournes"
  },
  {
-  "id": "fs_wicklow_mend",
-  "zone": "wicklow",
-  "x": 29,
-  "y": 21,
-  "field": "mend",
-  "prop": "wall_gap",
-  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Rowan Sprig.",
-  "reward": {
-   "item": "rowan_sprig",
-   "qty": 1
-  },
-  "flag": "field_wicklow_mend",
-  "at": "wicklow"
- },
- {
   "id": "fs_wicklow_snorkel",
   "zone": "wicklow",
   "x": 41,
   "y": 27,
   "field": "snorkel",
   "prop": "bog_pool",
-  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Ammonite.",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, a purse, a bit damp.",
   "reward": {
-   "item": "ammonite",
-   "qty": 1
+   "money": 1650
   },
   "flag": "field_wicklow_snorkel",
   "at": "wicklow"
+ },
+ {
+  "id": "fs_wicklow_roll",
+  "zone": "wicklow",
+  "x": 50,
+  "y": 11,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "The wheel has been here since last spring's chase. {lead} sets it rolling, and underneath is Brass Miner's Lamp.",
+  "reward": {
+   "curio": "brass_miners_lamp"
+  },
+  "flag": "field_wicklow_roll",
+  "at": "wicklow"
+ },
+ {
+  "id": "fs_enniskillen_paddle_x1",
+  "zone": "enniskillen",
+  "x": 17,
+  "y": 46,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
+  "reward": {
+   "hop": [
+    22,
+    46
+   ]
+  },
+  "flag": "field_enniskillen_paddle_a",
+  "at": "enniskillen"
+ },
+ {
+  "id": "fs_enniskillen_paddle_x2",
+  "zone": "enniskillen",
+  "x": 21,
+  "y": 46,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it.",
+  "reward": {
+   "hop": [
+    16,
+    46
+   ]
+  },
+  "flag": "field_enniskillen_paddle_b",
+  "at": "enniskillen"
+ },
+ {
+  "id": "fs_enniskillen_charm_c",
+  "zone": "enniskillen",
+  "x": 22,
+  "y": 43,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: some loose change and a gratitude card.",
+  "reward": {
+   "money": 2100
+  },
+  "flag": "field_enniskillen_charm_c",
+  "at": "enniskillen"
+ },
+ {
+  "id": "fs_antrim_coast_topple_x1",
+  "zone": "antrim_coast",
+  "x": 9,
+  "y": 12,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+  "reward": {
+   "hop": [
+    12,
+    12
+   ]
+  },
+  "flag": "field_antrim_coast_topple_a",
+  "at": "antrim_coast"
+ },
+ {
+  "id": "fs_antrim_coast_topple_x2",
+  "zone": "antrim_coast",
+  "x": 11,
+  "y": 12,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
+  "reward": {
+   "hop": [
+    8,
+    12
+   ]
+  },
+  "flag": "field_antrim_coast_topple_b",
+  "at": "antrim_coast"
+ },
+ {
+  "id": "fs_antrim_coast_charm_c",
+  "zone": "antrim_coast",
+  "x": 12,
+  "y": 13,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Coronation Biscuit Tin.",
+  "reward": {
+   "curio": "coronation_tin"
+  },
+  "flag": "field_antrim_coast_charm_c",
+  "at": "antrim_coast"
  }
 ]

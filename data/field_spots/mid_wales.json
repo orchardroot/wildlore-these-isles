@@ -58,5 +58,53 @@
   },
   "flag": "field_hafod_cwm_charm",
   "at": "beacons"
+ },
+ {
+  "id": "fs_cambrian_coast_paddle_x1",
+  "zone": "cambrian_coast",
+  "x": 9,
+  "y": 32,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
+  "reward": {
+   "hop": [
+    9,
+    23
+   ]
+  },
+  "flag": "field_cambrian_coast_paddle_a",
+  "at": "cambrian_coast"
+ },
+ {
+  "id": "fs_cambrian_coast_paddle_x2",
+  "zone": "cambrian_coast",
+  "x": 9,
+  "y": 24,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it.",
+  "reward": {
+   "hop": [
+    9,
+    33
+   ]
+  },
+  "flag": "field_cambrian_coast_paddle_b",
+  "at": "cambrian_coast"
+ },
+ {
+  "id": "fs_cambrian_coast_charm_c",
+  "zone": "cambrian_coast",
+  "x": 8,
+  "y": 20,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Stick of Rock.",
+  "reward": {
+   "curio": "seaside_rock"
+  },
+  "flag": "field_cambrian_coast_charm_c",
+  "at": "cambrian_coast"
  }
 ]

@@ -96,7 +96,7 @@
   "prop": "glint",
   "text": "{lead} peers into the water, then pulls out, with great ceremony, a roll of notes.",
   "reward": {
-   "money": 2760
+   "money": 2820
   },
   "flag": "field_lincoln_line",
   "at": "lincoln"
@@ -163,8 +163,8 @@
  {
   "id": "fs_sherwood_charm",
   "zone": "sherwood",
-  "x": 37,
-  "y": 44,
+  "x": 33,
+  "y": 9,
   "field": "charm",
   "prop": "molehill",
   "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Wild Garlic.",
@@ -305,5 +305,53 @@
   },
   "flag": "field_stonehenge_roll",
   "at": "london"
+ },
+ {
+  "id": "fs_ironbridge_gorge_paddle_x1",
+  "zone": "ironbridge_gorge",
+  "x": 45,
+  "y": 37,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
+  "reward": {
+   "hop": [
+    38,
+    37
+   ]
+  },
+  "flag": "field_ironbridge_gorge_paddle_a",
+  "at": "ironbridge_gorge"
+ },
+ {
+  "id": "fs_ironbridge_gorge_paddle_x2",
+  "zone": "ironbridge_gorge",
+  "x": 39,
+  "y": 37,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it.",
+  "reward": {
+   "hop": [
+    46,
+    37
+   ]
+  },
+  "flag": "field_ironbridge_gorge_paddle_b",
+  "at": "ironbridge_gorge"
+ },
+ {
+  "id": "fs_ironbridge_gorge_charm_c",
+  "zone": "ironbridge_gorge",
+  "x": 38,
+  "y": 39,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Lucky Sixpence.",
+  "reward": {
+   "curio": "sixpence"
+  },
+  "flag": "field_ironbridge_gorge_charm_c",
+  "at": "ironbridge_gorge"
  }
 ]

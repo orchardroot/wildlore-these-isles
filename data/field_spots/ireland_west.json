@@ -262,17 +262,17 @@
   "at": "shannon_estuary"
  },
  {
-  "id": "fs_shannon_estuary_charm",
+  "id": "fs_shannon_estuary_mend",
   "zone": "shannon_estuary",
-  "x": 67,
-  "y": 40,
-  "field": "charm",
-  "prop": "molehill",
-  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Shortbread Tin.",
+  "x": 62,
+  "y": 20,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in the wall, where the stones have gone for a walk. {lead} fits them back one by one, like a very slow jigsaw. Tucked in the wall behind: some loose change and a gratitude card.",
   "reward": {
-   "curio": "tartan_tin"
+   "money": 1890
   },
-  "flag": "field_shannon_estuary_charm",
+  "flag": "field_shannon_estuary_mend",
   "at": "shannon_estuary"
  },
  {
@@ -290,37 +290,149 @@
   "at": "tory_island"
  },
  {
-  "id": "fs_ring_of_kerry_topple_x1",
-  "zone": "ring_of_kerry",
-  "x": 49,
-  "y": 8,
-  "field": "topple",
-  "prop": "dead_trunk",
-  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+  "id": "fs_sligo_skim_x1",
+  "zone": "sligo",
+  "x": 47,
+  "y": 40,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "{lead} skims a flat stone and it ticks off a row of stepping stones, each one settling a little. You hop after it, dry as a bone, mostly.",
   "reward": {
    "hop": [
-    52,
-    8
+    47,
+    35
    ]
   },
-  "flag": "field_ring_of_kerry_topple_a",
-  "at": "ring_of_kerry"
+  "flag": "field_sligo_skim_a",
+  "at": "sligo"
  },
  {
-  "id": "fs_ring_of_kerry_topple_x2",
-  "zone": "ring_of_kerry",
-  "x": 51,
-  "y": 8,
-  "field": "topple",
-  "prop": "dead_trunk",
-  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
+  "id": "fs_sligo_skim_x2",
+  "zone": "sligo",
+  "x": 47,
+  "y": 36,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "You hop back along the stepping stones. {lead} skims a stone ahead of you for luck, and it lands every time.",
   "reward": {
    "hop": [
-    48,
-    8
+    47,
+    41
    ]
   },
-  "flag": "field_ring_of_kerry_topple_b",
-  "at": "ring_of_kerry"
+  "flag": "field_sligo_skim_b",
+  "at": "sligo"
+ },
+ {
+  "id": "fs_sligo_charm_c",
+  "zone": "sligo",
+  "x": 44,
+  "y": 36,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Truffle.",
+  "reward": {
+   "item": "truffle",
+   "qty": 1
+  },
+  "flag": "field_sligo_charm_c",
+  "at": "sligo"
+ },
+ {
+  "id": "fs_glenveagh_skim_x1",
+  "zone": "glenveagh",
+  "x": 32,
+  "y": 12,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "{lead} skims a flat stone and it ticks off a row of stepping stones, each one settling a little. You hop after it, dry as a bone, mostly.",
+  "reward": {
+   "hop": [
+    32,
+    6
+   ]
+  },
+  "flag": "field_glenveagh_skim_a",
+  "at": "glenveagh"
+ },
+ {
+  "id": "fs_glenveagh_skim_x2",
+  "zone": "glenveagh",
+  "x": 32,
+  "y": 7,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "You hop back along the stepping stones. {lead} skims a stone ahead of you for luck, and it lands every time.",
+  "reward": {
+   "hop": [
+    32,
+    13
+   ]
+  },
+  "flag": "field_glenveagh_skim_b",
+  "at": "glenveagh"
+ },
+ {
+  "id": "fs_glenveagh_charm_c",
+  "zone": "glenveagh",
+  "x": 31,
+  "y": 4,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: a few coins.",
+  "reward": {
+   "money": 2130
+  },
+  "flag": "field_glenveagh_charm_c",
+  "at": "glenveagh"
+ },
+ {
+  "id": "fs_galway_skim_x1",
+  "zone": "galway",
+  "x": 56,
+  "y": 10,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "{lead} skims a flat stone and it ticks off a row of stepping stones, each one settling a little. You hop after it, dry as a bone, mostly.",
+  "reward": {
+   "hop": [
+    50,
+    10
+   ]
+  },
+  "flag": "field_galway_skim_a",
+  "at": "galway"
+ },
+ {
+  "id": "fs_galway_skim_x2",
+  "zone": "galway",
+  "x": 51,
+  "y": 10,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "You hop back along the stepping stones. {lead} skims a stone ahead of you for luck, and it lands every time.",
+  "reward": {
+   "hop": [
+    57,
+    10
+   ]
+  },
+  "flag": "field_galway_skim_b",
+  "at": "galway"
+ },
+ {
+  "id": "fs_galway_charm_c",
+  "zone": "galway",
+  "x": 50,
+  "y": 13,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_galway_charm_c",
+  "at": "galway"
  }
 ]

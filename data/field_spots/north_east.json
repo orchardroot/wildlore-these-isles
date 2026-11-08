@@ -70,5 +70,53 @@
   },
   "flag": "field_penshaw_roll",
   "at": "newcastle"
+ },
+ {
+  "id": "fs_hadrians_wall_loft_x1",
+  "zone": "hadrians_wall",
+  "x": 64,
+  "y": 24,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+  "reward": {
+   "hop": [
+    64,
+    27
+   ]
+  },
+  "flag": "field_hadrians_wall_loft_a",
+  "at": "newcastle"
+ },
+ {
+  "id": "fs_hadrians_wall_loft_x2",
+  "zone": "hadrians_wall",
+  "x": 64,
+  "y": 26,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    64,
+    23
+   ]
+  },
+  "flag": "field_hadrians_wall_loft_b",
+  "at": "newcastle"
+ },
+ {
+  "id": "fs_hadrians_wall_charm_c",
+  "zone": "hadrians_wall",
+  "x": 61,
+  "y": 27,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: a roll of notes.",
+  "reward": {
+   "money": 2520
+  },
+  "flag": "field_hadrians_wall_charm_c",
+  "at": "newcastle"
  }
 ]
