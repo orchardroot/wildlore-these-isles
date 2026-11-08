@@ -55,6 +55,24 @@ func _ready() -> void:
 static func text_width(l: Label) -> float:
 	return l.get_theme_font("font").get_string_size(l.text, HORIZONTAL_ALIGNMENT_LEFT, -1, l.get_theme_font_size("font_size")).x
 
+## Sizes the panel to the text now on it and centres it. A wrapping label works out its height from the width it
+## has *now*, so the body is given its wrap width before the panel is measured (else it measured one word a line
+## and the panel ran to the bottom of the screen).
+func lay_out() -> void:
+	var wide := text_width(_body) > MAX_W
+	_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART if wide else TextServer.AUTOWRAP_OFF
+	_body.custom_minimum_size.x = MAX_W if wide else 0.0
+	_body.size = Vector2(MAX_W if wide else 0.0, 0.0)
+	_body.update_minimum_size()
+	_panel.reset_size()
+	var w := _panel.size.x
+	_panel.offset_left = -w * 0.5
+	_panel.offset_right = w * 0.5
+
+## The panel's box on screen (for the HUD checks).
+func rect() -> Rect2:
+	return _panel.get_global_rect()
+
 func show_news(header: String, text: String) -> void:
 	_queue.append([header, text])
 	if not _playing:
@@ -71,17 +89,12 @@ func _next() -> void:
 	var m: Array = _queue.pop_front()
 	_head.text = m[0]
 	_body.text = m[1]
-	var wide := text_width(_body) > MAX_W
-	_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART if wide else TextServer.AUTOWRAP_OFF
-	_body.custom_minimum_size.x = MAX_W if wide else 0.0
-	_panel.reset_size()
-	_panel.offset_left = -_panel.size.x * 0.5
-	_panel.offset_right = _panel.size.x * 0.5
-	_panel.offset_top = 8
+	lay_out()
+	_panel.position.y = 8.0
 	var tw := create_tween()
 	tw.set_parallel(true)
 	tw.tween_property(_panel, "modulate:a", 1.0, 0.2)
-	tw.tween_property(_panel, "offset_top", 22.0, 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tw.tween_property(_panel, "position:y", 22.0, 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tw.chain().tween_interval(HOLD)
 	tw.chain().tween_property(_panel, "modulate:a", 0.0, 0.5)
 	tw.chain().tween_callback(_next)

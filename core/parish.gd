@@ -47,7 +47,7 @@ static func standing_line(data: GameStateData, nation: String, n: int) -> String
 	if line != "" or before > 0 or Standing.points(data, nation) <= 0:
 		return line
 	var where := ("on the " if nation == "mann" else "in ") + Standing.name_of(nation)
-	return "Someone %s has noticed you. Help out and they'll count you as one of their own" % where
+	return "Someone %s has noticed you. Help out and they'll count you as one of their own." % where
 
 func _on_battle_ended(result: Dictionary) -> void:
 	if str(result.get("result", "")) != "win" or bool(result.get("exhibition", false)):

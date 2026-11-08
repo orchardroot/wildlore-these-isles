@@ -255,7 +255,13 @@ func _dev_cues() -> void:
 	_cues_fired = true
 
 func _take_shot() -> void:
-	await get_tree().create_timer(float(args.shot_delay), true, false, true).timeout
+	if "--shot-from-zone" in DevArgs.user_args():  # dev: count the delay in real seconds from the first zone entry
+		await Bus.zone_entered
+		var until := Time.get_ticks_msec() + int(float(args.shot_delay) * 1000.0)
+		while Time.get_ticks_msec() < until:
+			await get_tree().process_frame
+	else:
+		await get_tree().create_timer(float(args.shot_delay), true, false, true).timeout
 	if Array(DevArgs.user_args()).any(func(a): return str(a).begins_with("--set=") or str(a).begins_with("--read=")):
 		while not _cues_fired:  # a slow boot: wait for the zone, then give the toast time to slide in
 			await get_tree().process_frame
