@@ -89,7 +89,7 @@ static func _mesh(kind: String) -> ArrayMesh:
 			Meshes.cylinder(st, Vector3(0, 0.22, 0), 0.34, 0.03, 12, Color("f1cf70"))
 		"stepping_stones":  # a short row of flat grey slabs, each a little lower than the last
 			for i in 4:
-				Meshes.cylinder(st, Vector3(-0.42 + i * 0.28, 0, (i % 2) * 0.12 - 0.06), 0.15, 0.1 - i * 0.015, 7, Color("8c8a84"))
+				Meshes.cylinder(st, Vector3(-0.45 + i * 0.3, 0, (i % 2) * 0.14 - 0.07), 0.21, 0.16 - i * 0.02, 7, Color("8c8a84"))
 		_:  # bale: a straw bale with a bowl on it
 			Meshes.box(st, Vector3(0, 0, 0), Vector3(0.8, 0.45, 0.5), Color("c9ab5a"))
 			Meshes.blob(st, Vector3(0.1, 0.55, 0), Vector3(0.12, 0.1, 0.12), Color("3a3a3e"), rng, 0.05)
