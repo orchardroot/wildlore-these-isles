@@ -12,7 +12,9 @@ esac
 if [ ! -f "$TPL/version.txt" ]; then
   mkdir -p "$TPL"
   TMP="$(mktemp -d)"
-  curl -sSL -o "$TMP/t.tpz" "https://github.com/godotengine/godot/releases/download/$TAG/Godot_v${TAG}_export_templates.tpz"
+  # GitHub first; Godot's own download site if GitHub's release files are having a bad day
+  curl -fsSL --retry 3 --retry-delay 10 -o "$TMP/t.tpz" "https://github.com/godotengine/godot/releases/download/$TAG/Godot_v${TAG}_export_templates.tpz" \
+    || curl -fsSL --retry 3 --retry-delay 10 -o "$TMP/t.tpz" "https://downloads.godotengine.org/?version=${TAG%-*}&flavor=${TAG#*-}&slug=export_templates.tpz&platform=templates"
   unzip -q "$TMP/t.tpz" -d "$TMP"
   mv "$TMP"/templates/* "$TPL"/
   rm -rf "$TMP"
