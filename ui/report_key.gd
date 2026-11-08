@@ -105,11 +105,11 @@ func open_note() -> void:
 	Router.hold_menus(true)
 	_note_panel = PanelContainer.new()
 	_note_panel.theme = load("res://ui/theme.tres")
-	_note_panel.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+	_note_panel.set_anchors_preset(Control.PRESET_CENTER)  # mid-screen: clear of the dialogue and battle boxes
 	_note_panel.offset_left = -420
 	_note_panel.offset_right = 420
-	_note_panel.offset_top = -150
-	_note_panel.offset_bottom = -70
+	_note_panel.offset_top = -40
+	_note_panel.offset_bottom = 40
 	var v := VBoxContainer.new()
 	_note_panel.add_child(v)
 	var l := Label.new()
@@ -156,12 +156,14 @@ func _finish_writing() -> void:
 		WorkerThreadPool.wait_for_task_completion(_task)
 		_task = -1
 
-## Dev --report-now: once the boot has settled and `delay` real seconds have passed, press the report key as a
+## Dev --report-now: `delay` real seconds after the boot has settled, press the report key as a
 ## player would; with --report-note, press it again and type the note. Real time, as a slow first load can make
 ## the scene timers jump.
 func _dev_press(delay: float) -> void:
+	while not _booted():
+		await get_tree().process_frame
 	var at := Time.get_ticks_msec() + int(delay * 1000.0)
-	while Time.get_ticks_msec() < at or Router.busy and Router.open_menus().is_empty() and not _in_battle():
+	while Time.get_ticks_msec() < at:
 		await get_tree().process_frame
 	_press_key()
 	var note := ""
@@ -179,8 +181,11 @@ func _dev_press(delay: float) -> void:
 		_note.text = note
 		_note.text_submitted.emit(note)
 
-func _in_battle() -> bool:
-	return get_tree().root.get_children().any(func(n): return n.get("flow") is BattleFlow)
+## A zone, a battle or a menu is up (a dev boot has got where it was going).
+func _booted() -> bool:
+	if not Router.open_menus().is_empty() or get_tree().root.get_children().any(func(n): return n.get("flow") is BattleFlow):
+		return true
+	return Router.overworld != null and is_instance_valid(Router.overworld) and Router.overworld.get("zone") != null
 
 func _press_key() -> void:
 	for down in [true, false]:
