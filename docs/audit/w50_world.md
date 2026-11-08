@@ -47,7 +47,9 @@ Data fixes in the deep zones:
 
 Cave rooms, for all 39 cave interiors (`ZoneBuilder.is_cave`): the rock wall in front of the camera is now a low
 rubble lip (as a plaster room has a low skirting there) and the side walls are lower, so the room and its gate can be
-seen; stalactites no longer hang in the two tiles in front of a prop, sign or person.
+seen. Stalactites hang only in the dark caves, and never in the three tiles in front of a prop, sign, person, gate or
+way out: in the lit show-cave entrances a hanging cone and its hard brazier shadow read as a post standing in front of
+the gate.
 
 ## 2. The checker
 

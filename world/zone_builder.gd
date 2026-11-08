@@ -806,7 +806,7 @@ static func _interior_walls(z: ZoneData) -> MeshInstance3D:
 				Meshes.box(st, Vector3(ox, 0, y), Vector3(0.3, 1.2, 1), plaster.darkened(0.08), plaster.darkened(0.3))
 			elif floor_n:
 				Meshes.box(st, Vector3(x, 0, y), Vector3(1, 0.25, 0.3), plaster.darkened(0.1), skirting)
-	if cave:
+	if cave and z.dark:  # in a lit show-cave room a hanging cone and its hard shadow read as a post on the floor
 		_stalactites(st, z, rng)
 	st.index()
 	var mi := MeshInstance3D.new()
@@ -825,15 +825,18 @@ static func _rock(st: SurfaceTool, p: Vector2i, rng: RandomNumberGenerator, base
 		var c := base.lightened(rng.randf_range(-0.12, 0.1))
 		Meshes.box(st, Vector3(p.x + ox, 0, p.y + oz), Vector3(w, h, w), c, c.lightened(0.1))
 
-## Cones of rock hanging over scattered floor tiles, a few tiles per room. None in the two tiles south of anything
-## you might look for (a prop, a sign, a person), where from the camera they would hang right in front of it.
+## Cones of rock hanging over scattered floor tiles, a few tiles per room. None in the three tiles south of anything
+## you might look for (a prop, a sign, a person, a Deep Place gate open or shut, a way out), where from the camera a
+## cone hangs right in front of it and its shadow reads as a post on the floor.
 static func _stalactites(st: SurfaceTool, z: ZoneData, rng: RandomNumberGenerator) -> void:
 	var clear := {}
-	for list in [z.props, z.signs, z.npcs]:
-		for it in list:
-			if it.has("x") and it.get("type", "") != "building":
-				for dy in 3:
-					clear[Vector2i(int(it.x), int(it.y) + dy)] = true
+	var things: Array = z.props + z.signs + z.npcs + z.warps
+	for kind in z.deep:
+		things.append_array(z.deep[kind].filter(func(it): return it is Dictionary and it.has("x")))
+	for it in things:
+		if it.has("x") and it.get("type", "") != "building":
+			for dy in 4:
+				clear[Vector2i(int(it.x), int(it.y) + dy)] = true
 	for y in z.height:
 		for x in z.width:
 			var t := z.tile_at(Vector2i(x, y))
