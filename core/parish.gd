@@ -7,6 +7,9 @@ extends Node
 
 const SEEN_PREFIX := "standing_seen_"   # first visit to a town counted
 const CHECK_EVERY := 1.0                # visit jobs: how often to look at where you are, the hour and the sky
+## "Someone ___ has noticed you": where a nation's name doesn't simply follow "in".
+const WHERE := {"mann": "on the Isle of Man", "channel_islands": "in the Channel Islands",
+	"overseas": "out here", "abroad": "among the Kin Abroad"}
 
 var _game: Node
 var _kind := "wild"
@@ -46,7 +49,7 @@ static func standing_line(data: GameStateData, nation: String, n: int) -> String
 	var line := Standing.add(data, nation, n)
 	if line != "" or before > 0 or Standing.points(data, nation) <= 0:
 		return line
-	var where := ("on the " if nation == "mann" else "in ") + Standing.name_of(nation)
+	var where: String = WHERE.get(nation, "in " + Standing.name_of(nation))
 	return "Someone %s has noticed you. Help out and they'll count you as one of their own." % where
 
 func _on_battle_ended(result: Dictionary) -> void:
