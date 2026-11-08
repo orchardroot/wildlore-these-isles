@@ -60,6 +60,14 @@ func test_switch_goes_first_and_resets_stages() -> void:
 	assert_eq(b.current(0).species.id, "holtling")
 	assert_eq(_first(ev, "damage").side, 0)
 
+func test_switch_carries_hp_before_the_hit() -> void:  # the UI shows this, then the hit drains it
+	var bench := Fixtures.creature("holtling", 10)
+	var b := Fixtures.battle([Fixtures.creature("spikkin", 10), bench], [Fixtures.creature("kindlet", 10)], {"kind": "trainer"})
+	var full := bench.hp
+	var ev := b.take_turn({"type": "switch", "index": 1}, SCRAP)
+	assert_eq(int(_first(ev, "switch").hp), full)
+	assert_true(bench.hp < full, "and it was hit after coming in")
+
 func test_run_from_wild_when_faster() -> void:
 	var b := Fixtures.battle([Fixtures.creature("kindlet", 10)], [Fixtures.creature("spikkin", 10)])
 	var ev := b.take_turn({"type": "run"}, SCRAP)

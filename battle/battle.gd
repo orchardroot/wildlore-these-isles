@@ -532,7 +532,8 @@ func _do_switch(side: int, index: int, ev: Array, pos := 0) -> void:
 				ev.append(_knack(side, pos, out, "switch", {"hp": out.hp, "amount": back}))
 	active[side][pos] = index
 	_note_fighters()
-	ev.append(_at({"type": "switch", "side": side, "index": index, "user": party[index].display_name()}, pos))
+	# hp as it comes in: the UI plays the turn back after it is all worked out, so the creature's own hp is already the end of it
+	ev.append(_at({"type": "switch", "side": side, "index": index, "user": party[index].display_name(), "hp": party[index].hp}, pos))
 	_entered(side, pos, ev)
 
 func _do_item(side: int, item_id: String, target: int, ev: Array) -> void:
