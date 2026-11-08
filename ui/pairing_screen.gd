@@ -102,9 +102,9 @@ func _fill_list() -> void:
 		h.add_child(ic)
 		var nm := UIKit.fit_label(c.nickname if c.nickname != "" else str(c.species.name), 220, 24, 16)
 		nm.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		nm.custom_minimum_size.x = 220  # a clipped label has no width of its own in an HBox
+		nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # the room the notes leave (a clipped label has no width of its own)
+		UIKit.fit_width(nm)
 		h.add_child(nm)
-		h.add_child(UIKit.fill())
 		var tag := "Ark" if _cands[i].where == "ark" else "Team"
 		var note := UIKit.label("%s, %s%s" % [UIKit.sex_word(c).to_lower() if c.sex != "" else "no sex", tag.to_lower(), "  fond" if PairingLogic.is_fond(c) else ""], 18, UIKit.MUTED if not PairingLogic.is_fond(c) else Color("8fd48f"))
 		note.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -136,6 +136,14 @@ func _pick(i: int) -> void:
 func _verdict() -> Dictionary:
 	return PairingLogic.verdict(Game.data, Game.data.zone_id, _a, _b)
 
+## The right-hand card's words step down together if Dr Keir's question (or Large text) makes it too tall.
+func _fit_right() -> void:
+	await get_tree().process_frame
+	if not is_instance_valid(_right):
+		return
+	var room: float = content.size.y - 36 - ((_bar.size.y + 10) if _bar.visible else 0.0)  # the card's margins, the buttons
+	UIKit.fit_column(_right, room)
+
 func _refresh() -> void:
 	for i in _buttons.size():
 		var c: Creature = _cands[i].c
@@ -148,6 +156,7 @@ func _refresh() -> void:
 	_preview_btn.text = "Pairing" if _preview else "Preview"
 	UIKit.clear(_right)
 	_bar.visible = _ask.is_empty()
+	_fit_right.call_deferred()
 	if not _ask.is_empty():
 		_show_ask()
 		return

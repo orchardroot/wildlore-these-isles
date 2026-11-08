@@ -60,6 +60,9 @@ func _grid_panel(n: int) -> Control:
 	g.add_theme_constant_override("h_separation", 3)
 	g.add_theme_constant_override("v_separation", 3)
 	p.add_child(g)
+	var big := UIKit.sized(38)  # the letters fill the square at any Text size, but never overflow it
+	while big > UIKit.MIN_TEXT and UIKit.font().get_height(big) > CELL - 8:
+		big -= 1
 	for y in n:
 		var cr := []
 		var lr := []
@@ -68,6 +71,7 @@ func _grid_panel(n: int) -> Control:
 			var c := PanelContainer.new()
 			c.custom_minimum_size = Vector2(CELL, CELL)
 			var l := UIKit.label("", 38, INK)
+			l.add_theme_font_size_override("font_size", big)
 			l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 			var num := UIKit.label("", 15, INK)
