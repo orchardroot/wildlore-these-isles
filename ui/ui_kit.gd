@@ -26,7 +26,7 @@ static func box(bg: Color, border := Color(0, 0, 0, 0), bw := 0, radius := 6, ma
 static func label(text: String, size := 28, colour := CREAM) -> Label:
 	var l := Label.new()
 	l.text = text
-	l.add_theme_font_size_override("font_size", Access.scaled(maxi(size, MIN_TEXT), Settings.text_size))
+	l.add_theme_font_size_override("font_size", sized(size))
 	l.add_theme_color_override("font_color", colour)
 	return l
 
@@ -36,14 +36,25 @@ static func ink_label(text: String, size := 28, colour := SLATE) -> Label:
 	l.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0))
 	return l
 
+## The size UIKit.label(text, size) draws at: the player's Text size, never below MIN_TEXT.
+static func sized(size: int) -> int:
+	return Access.scaled(maxi(size, MIN_TEXT), Settings.text_size)
+
+## The font menus draw with: the Readable font when that setting is on (ui/theme.tres), else Godot's default.
+## Measure with this, never ThemeDB.fallback_font, or the Readable font's wider letters overrun the sums.
+static func font() -> Font:
+	var t: Theme = load("res://ui/theme.tres")
+	return t.default_font if t != null and t.default_font != null else ThemeDB.fallback_font
+
 ## How tall a line of UIKit.label(text, size) is at the player's Text size: for rows whose height is set by hand.
 static func line_height(size: int) -> int:
-	return ceili(ThemeDB.fallback_font.get_height(Access.scaled(maxi(size, MIN_TEXT), Settings.text_size)))
+	return ceili(font().get_height(sized(size)))
 
 ## The largest font size from `big` down to `small` at which `text` fits in `width` px on one line
-## (`small` if nothing does). For names and hint bars that must never widen a panel.
+## (`small` if nothing does). For names and hint bars that must never widen a panel. Sizes are drawn sizes:
+## for a UIKit.label's nominal size use fit_scaled, which allows for Large text.
 static func fit_size(text: String, width: float, big: int, small: int) -> int:
-	var f: Font = ThemeDB.fallback_font  # the game's font (ui/theme.tres sets no other)
+	var f: Font = font()
 	small = maxi(small, MIN_TEXT)
 	big = maxi(big, small)
 	for s in range(big, small - 1, -1):
@@ -51,9 +62,15 @@ static func fit_size(text: String, width: float, big: int, small: int) -> int:
 			return s
 	return small
 
+## fit_size for nominal UIKit.label sizes: starts from `big` at the player's Text size and may shrink as far as
+## `small` (unscaled), so with Large text a long name shrinks to fit before it is ever trimmed. Returns a drawn size.
+static func fit_scaled(text: String, width: float, big: int, small: int) -> int:
+	return fit_size(text, width, sized(big), maxi(small, MIN_TEXT))
+
 ## A label that shrinks its font (down to `small`) so `text` fits `width` on one line.
 static func fit_label(text: String, width: float, big := 28, small := 18, colour := CREAM) -> Label:
-	var l := label(text, fit_size(text, width, big, small), colour)
+	var l := label(text, big, colour)
+	l.add_theme_font_size_override("font_size", fit_scaled(text, width, big, small))
 	l.clip_text = true
 	l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	return l
@@ -69,8 +86,8 @@ static func fit_width(l: Label, small := MIN_TEXT) -> void:
 ## A block of wrapped labels that must fit `box` (a ScrollContainer, as a fallback for the very longest): sets the
 ## biggest body size from `sizes` (biggest first) at which they all fit. `words` holds [label, size offset, optional]
 ## entries, e.g. a heading one size up from the body; optional ones (a "Did you know?") are left out before the
-## text gets any smaller than the last size. `sep` is the box's separation. No line goes below MIN_TEXT: past that
-## the box scrolls instead.
+## text gets any smaller than the last size. `sep` is the box's separation. Sizes are nominal (Large text scales
+## them, as UIKit.label does). No line goes below MIN_TEXT: past that the box scrolls instead.
 static func fit_block(words: Array, box: Control, sizes: Array, sep := 8) -> void:
 	if not is_instance_valid(box) or box.size.y <= 0 or words.is_empty():
 		return
@@ -89,16 +106,16 @@ static func fit_block(words: Array, box: Control, sizes: Array, sep := 8) -> voi
 				break
 	for e in words:
 		if is_instance_valid(e[0]):
-			e[0].add_theme_font_size_override("font_size", maxi(body + e[1], MIN_TEXT))
+			e[0].add_theme_font_size_override("font_size", sized(body + e[1]))
 			e[0].visible = keep_all or not (e.size() > 2 and e[2])
 
 static func _block_height(words: Array, w: float, size: int, sep: int, with_optional: bool) -> float:
-	var f: Font = ThemeDB.fallback_font
+	var f: Font = font()
 	var h := -float(sep)
 	for e in words:
 		if not with_optional and e.size() > 2 and e[2]:
 			continue
-		var fs: int = maxi(size + e[1], MIN_TEXT)
+		var fs: int = sized(size + e[1])
 		var tall := f.get_multiline_string_size(e[0].text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y
 		var lines := maxi(1, roundi(tall / f.get_height(fs)))
 		h += tall + (lines - 1) * 3 + sep + 2  # the theme's line spacing, and a shadow pixel or two

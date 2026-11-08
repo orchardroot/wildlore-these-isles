@@ -143,7 +143,8 @@ func _show_preview(c: Creature) -> void:
 	s.show_species(c.species.id, "front", 2, false, c.variant, c.form, c.sex)
 	s.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	_preview.add_child(s)
-	var n := UIKit.label(c.display_name(), UIKit.fit_size(c.display_name(), 360, 36, 24))  # a long nickname mustn't widen the panel
+	var n := UIKit.label(c.display_name(), 36)
+	n.add_theme_font_size_override("font_size", UIKit.fit_scaled(c.display_name(), 360, 36, 24))  # a long nickname mustn't widen the panel
 	n.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	if Sexes.valid(c.sex):
 		var nr := HBoxContainer.new()

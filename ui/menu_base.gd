@@ -151,7 +151,7 @@ func _fit_hint() -> void:
 	if not is_instance_valid(hint_label):
 		return
 	var w := hint_label.size.x if hint_label.size.x > SIDE else get_viewport_rect().size.x - SIDE * 2  # before layout it is a sliver
-	var fs := UIKit.fit_size(hint_label.text, w, HINT_FONT, HINT_MIN)
+	var fs := UIKit.fit_scaled(hint_label.text, w, HINT_FONT, HINT_MIN)
 	if fs != hint_label.get_theme_font_size("font_size"):
 		hint_label.add_theme_font_size_override("font_size", fs)
 
