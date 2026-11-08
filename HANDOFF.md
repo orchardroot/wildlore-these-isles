@@ -22,3 +22,7 @@ popped a gold number; a crit counts as a "strong" hit for the shake. I left all 
 - Touched shared files by small hunks: `data_api/validator.gd` (crit range check), `battle/ai.gd`, `battle/battle.gd` (one line).
 - No save changes. No UI changes (nothing needed).
 - Test and playtest results: see the end of this file.
+
+## Results
+- Full `tools/test.sh`: 2952 passed, 0 failed, validate: 0 error(s), no SCRIPT ERROR (the "Parse JSON failed" lines are the corrupt-save tests, expected).
+- `tools/playtest.sh slice 2`: PLAYTEST PASS, 69 wins / 2 losses in 73 battles, brook badge won. Win rate not hurt.
