@@ -80,12 +80,20 @@ static func fit_label(text: String, width: float, big := 28, small := 18, colour
 	return l
 
 ## Keeps a one-line label's text inside its own width as layout settles: its size steps down (to `small`) whenever
-## it is resized, before any trimming. Changing the font never changes a clipped label's width, so this can't loop.
+## it is resized or its words change, before any trimming. Changing the font never changes a clipped label's width,
+## so this can't loop.
 static func fit_width(l: Label, small := MIN_TEXT) -> void:
 	var big := l.get_theme_font_size("font_size")
-	l.resized.connect(func():
-		if l.size.x > 0:
-			l.add_theme_font_size_override("font_size", fit_size(l.text, l.size.x, big, small)))
+	var ref: WeakRef = weakref(l)  # a lambda must not hold a label that may be freed before it runs
+	l.resized.connect(func(): _refit(ref, big, small))
+	l.draw.connect(func(): _refit.call_deferred(ref, big, small))  # new words redraw it
+
+static func _refit(ref: WeakRef, big: int, small: int) -> void:
+	var l := ref.get_ref() as Label
+	if l != null and l.size.x > 0:
+		var fs := fit_size(l.text, l.size.x, big, small)
+		if fs != l.get_theme_font_size("font_size"):
+			l.add_theme_font_size_override("font_size", fs)
 
 ## A one-line label for a row's name: it takes the room the row's other parts leave, and a long one shrinks (to
 ## `small`) before it trims. Use it in place of a label followed by UIKit.fill().

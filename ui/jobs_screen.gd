@@ -25,7 +25,7 @@ func _build() -> void:
 	row.add_theme_constant_override("separation", 22)
 	content.add_child(row)
 	var lp := UIKit.panel(Color("1d2230f0"), 12)
-	lp.custom_minimum_size = Vector2(560, 0)
+	lp.custom_minimum_size = Vector2(560 if not UIKit.big_text() else 600, 0)  # long titles need a little more with Large text
 	row.add_child(lp)
 	var sc := ScrollContainer.new()
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED

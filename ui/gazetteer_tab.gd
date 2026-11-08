@@ -260,7 +260,7 @@ func _open(i: int) -> void:
 	for k in _rows.size():
 		var p: Dictionary = _rows[k]
 		var read := Gazetteer.is_read(Game.data, str(p.id))
-		var b := _row_button(k, func(j: int): _show_plaque(_rows[j]), func(_j: int): pass)
+		var b := _row_button(k, func(j: int): _show_plaque(_rows[j]), func(_j: int): _read_on())
 		var h := _inner(b)
 		var mk := ColorRect.new()
 		mk.custom_minimum_size = Vector2(10, 30)
@@ -284,11 +284,12 @@ func _open(i: int) -> void:
 			break
 	UIKit.focus_later(_buttons[first])
 	_show_plaque(_rows[first])
-	_menu.set_hints([["updown", "Plaques"], ["cancel", "All places"]])
+	_dsc.set_meta("pages", true)  # Confirm reads on down a long plaque (TextFitAudit counts that as reachable)
+	_menu.set_hints([["updown", "Plaques"], ["confirm", "Read on"], ["cancel", "All places"]])
 
 ## A plaque read before, as it looks on its board: enamel, a bronze edge, cream letters. One not found yet says where.
 func _show_plaque(p: Dictionary) -> void:
-	UIKit.clear(_detail)
+	_cleared()
 	if not Gazetteer.is_read(Game.data, str(p.id)):
 		_detail.add_child(UIKit.label("Not yet found", 32, UIKit.MUTED))
 		var l := UIKit.label("There's a plaque you haven't read somewhere in %s. Look beside its landmarks, and up on the walls." % str(p.town_name), 22)
@@ -397,7 +398,7 @@ func _open_isles() -> void:
 	_list_col.add_child(UIKit.label("< These Isles", 22, UIKit.GOLD))
 	for k in _themes.size():
 		var t: Dictionary = _themes[k]
-		var b := _row_button(k, func(j: int): _show_theme(_themes[j]), func(_j: int): pass)
+		var b := _row_button(k, func(j: int): _show_theme(_themes[j]), func(_j: int): _read_on())
 		var h := _inner(b)
 		var full := int(t.found) == int(t.total)
 		var nm := UIKit.label(str(t.name), 22, UIKit.GOLD if full else (UIKit.CREAM if int(t.found) > 0 else UIKit.MUTED))
@@ -414,12 +415,13 @@ func _open_isles() -> void:
 	if not _buttons.is_empty():
 		UIKit.focus_later(_buttons[0])
 		_show_theme(_themes[0])
-	_menu.set_hints([["updown", "Peoples"], ["cancel", "All places"]])
+	_dsc.set_meta("pages", true)
+	_menu.set_hints([["updown", "Peoples"], ["confirm", "Read on"], ["cancel", "All places"]])
 
 const KIND_WORD := {"plaque": "Plaque", "person": "Meet", "quest": "Quest"}
 
 func _show_theme(t: Dictionary) -> void:
-	UIKit.clear(_detail)
+	_cleared()
 	var name := UIKit.label(str(t.name), 32)
 	name.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_detail.add_child(name)

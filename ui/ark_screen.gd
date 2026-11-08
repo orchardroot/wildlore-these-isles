@@ -46,6 +46,7 @@ func _build() -> void:
 	_box_label.clip_text = true  # gives way to the Sort button rather than pushing it off the screen
 	_box_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	_box_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	UIKit.fit_width(_box_label)  # shrinks before it trims (Large text)
 	head.add_child(_box_label)
 	head.add_child(make_button(">", func(): _page(1), 56))
 	_sort_button = make_button("", _sort, 210)
