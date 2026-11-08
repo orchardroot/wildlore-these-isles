@@ -17,7 +17,7 @@ static func after_game(host: Node, game_id: String, score: float) -> void:
 		var line := "%s rosette for %s." % [ROSETTES[rose], str(e.name).to_lower()]
 		if rose == 3:
 			line = "Gold rosette! You beat %s at %s. A prize of %s." % [e.master_name, str(e.name).to_lower(), UIKit.money_text(int(r.prize))]
-		if not r.unlocked:
+		if not r.unlocked or rose == 3:   # a first-time gold also unlocks: tell them about the prize before the offer
 			await _toast(host, line)
 	if r.unlocked:
 		await _offer(host, game_id)

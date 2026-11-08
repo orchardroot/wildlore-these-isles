@@ -12,6 +12,7 @@ var _list: VBoxContainer
 var _buttons: Array = []
 var _ids: Array = []
 var _ledger := ""
+var _tab: RefCounted   # keeps the ledger page's helper alive: its buttons' callbacks point at it
 
 func _build() -> void:
 	set_title("Almanac")
@@ -85,10 +86,12 @@ func _show_ledger(kind: String) -> void:
 	col.add_theme_constant_override("separation", 8)
 	card.add_child(col)
 	if kind == "pieces":  # Party Pieces (ui/pieces_tab.gd)
-		PiecesTab.new(self).build(col)
+		_tab = PiecesTab.new(self)
+		_tab.build(col)
 		return
 	if kind == "papers":  # a list with the paper beside it (ui/papers_tab.gd)
-		PapersTab.new(self).build(col)
+		_tab = PapersTab.new(self)
+		_tab.build(col)
 		return
 	for r in Almanac.ledger(Game.data, kind):
 		var h := HBoxContainer.new()
