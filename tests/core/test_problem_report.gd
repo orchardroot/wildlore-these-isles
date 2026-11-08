@@ -89,7 +89,8 @@ func test_write_puts_three_files_in_the_folder_and_a_note_after() -> void:
 	var dir := TMP.path_join("r1")
 	var img := Image.create(8, 6, false, Image.FORMAT_RGB8)
 	var save := {"player_name": "Sam", "_scratch": 1}
-	assert_eq(ProblemReport.write(dir, ProblemReport.info({"zone": "york"}), save, img), OK)
+	var info0 := ProblemReport.info({"zone": "york", "day": 3})
+	assert_eq(ProblemReport.write(dir, info0, save, img), OK)
 	assert_true(FileAccess.file_exists(dir.path_join("shot.png")))
 	var info = JSON.parse_string(FileAccess.get_file_as_string(dir.path_join("info.json")))
 	assert_eq(info.zone, "york")
@@ -97,10 +98,12 @@ func test_write_puts_three_files_in_the_folder_and_a_note_after() -> void:
 	assert_eq(saved.player_name, "Sam")
 	assert_false(saved.has("_scratch"), "the same payload the save system writes")
 	assert_eq(int(saved.version), SaveSystem.VERSION)
-	assert_eq(ProblemReport.add_note(dir, "the fence"), OK)
-	info = JSON.parse_string(FileAccess.get_file_as_string(dir.path_join("info.json")))
+	assert_eq(ProblemReport.add_note(dir, info0, "the fence"), OK)
+	var text := FileAccess.get_file_as_string(dir.path_join("info.json"))
+	info = JSON.parse_string(text)
 	assert_eq(info.note, "the fence")
 	assert_eq(info.zone, "york", "the rest is kept")
+	assert_true(text.contains("\"day\": 3,"), "numbers stay whole")
 	_wipe(TMP)
 
 func test_write_without_a_picture_still_writes_the_facts() -> void:

@@ -91,14 +91,13 @@ static func write(dir: String, report: Dictionary, save: Dictionary, shot: Image
 			return e
 	return OK
 
-## Adds the player's one-line note to a report already written.
-static func add_note(dir: String, note: String) -> Error:
-	var path := dir.path_join("info.json")
-	var d = JSON.parse_string(FileAccess.get_file_as_string(path)) if FileAccess.file_exists(path) else null
-	if not (d is Dictionary):
+## Adds the player's one-line note to the report written in `dir`, rewriting info.json from `report` (the same
+## dict it was written from: read back from JSON, every number would come back a float).
+static func add_note(dir: String, report: Dictionary, note: String) -> Error:
+	if not FileAccess.file_exists(dir.path_join("info.json")):
 		return ERR_FILE_NOT_FOUND
-	d["note"] = tidy_note(note)
-	return _write_json(path, d)
+	report["note"] = tidy_note(note)
+	return _write_json(dir.path_join("info.json"), report)
 
 static func _write_json(path: String, d: Dictionary) -> Error:
 	var f := FileAccess.open(path, FileAccess.WRITE)

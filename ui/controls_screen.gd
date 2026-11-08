@@ -108,6 +108,10 @@ func _refresh() -> void:
 		else:
 			b.text = InputSetup.describe(Settings.bindings, parts[0], parts[1])
 
+## True while a cell waits for its new key (the report key stays quiet so F9 can be bound).
+func capturing() -> bool:
+	return _capturing != ""
+
 ## Starts waiting for the next key (or pad button, for a gamepad cell).
 func begin_capture(action: String, device: String) -> void:
 	_capturing = "%s:%s" % [action, device]
