@@ -73,6 +73,13 @@ func _build() -> void:
 	col.add_child(_message)
 	_refresh()
 	UIKit.focus_later(rows[0][0])
+	_fit.call_deferred(col)
+
+## Twelve rows and the help line: with Large text the words step down together to fit (the key cells keep their size).
+func _fit(col: VBoxContainer) -> void:
+	await get_tree().process_frame
+	if is_instance_valid(col):
+		UIKit.fit_column(col, content.size.y)
 
 func _hdr(text: String, w: int) -> Label:
 	var l := UIKit.label(text, 20, UIKit.MUTED)
