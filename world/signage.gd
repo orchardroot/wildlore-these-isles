@@ -462,7 +462,7 @@ static func night(tree: SceneTree, lamps: float) -> void:
 static func build(z: ZoneData, root: Node3D, bodies: Array) -> void:
 	var kit := Kit.new()
 	if z.kind != "interior":
-		kit.sight = SignSight.make(z, bodies)
+		kit.sight = SignSight.make(z, bodies, root)
 	for b in bodies:
 		var pr: Dictionary = b.pr
 		var t := type_of(z, pr)
@@ -949,13 +949,16 @@ static func _lectern(kit: Kit, label: String, t: String, x: float, zf: float) ->
 	for k in 4:
 		kit.obox(xf, Vector3(-bw * 0.5 + 0.12 + bw * 0.38, -bh * 0.5 + 0.09 + k * 0.065, 0.01), Vector3(bw * 0.42 - (0.08 if k == 3 else 0.0), 0.022, 0.004), ink.darkened(0.25))
 
-## Where a board on posts can stand and be seen from `eye`: beside the door, the other side of it, or mid-front,
-## each clear of a porch or a veranda rather than under it. {x, z, hidden (of 15 points on its name)}: the
+## Where a board on posts can stand and be seen from `eye`: beside the door (or either side of mid-front when there
+## is none), the other side of it, or mid-front,
+## each clear of a porch or a veranda rather than under it. {x, z, hidden (of 33 points on its name)}: the
 ## first that shows whole, else the one hidden least.
 static func _stand_spot(kit: Kit, name_fit: Dictionary, w: int, d: int, door_x: int, eye: Vector3) -> Dictionary:
 	var xs := [_stand_x(w, door_x)]
 	if door_x >= 0:
 		xs.append(clampf(door_x + 0.5 - (float(xs[0]) - door_x - 0.5), 0.6, maxf(0.6, w - 0.6)))
+	elif w >= 4:  # no door: you read it from mid-front, so a board right there stands behind you; try either side first
+		xs = [w * 0.5 + 1.3, w * 0.5 - 1.3]
 	xs.append(w * 0.5)
 	var hy := float(name_fit.height) if int(name_fit.lines) > 1 else float(name_fit.em) * 0.72
 	kit.sight.focus(AABB(kit.base + Vector3(0, 0, d), Vector3(w, 1.0, 1.0)), eye)
@@ -964,9 +967,9 @@ static func _stand_spot(kit: Kit, name_fit: Dictionary, w: int, d: int, door_x: 
 		var zf := clampf(kit.sight.reach(kit.body as MeshInstance3D, x - 0.6, x + 0.6, 0.15, 2.0, d + 1.2) + 0.3, d + 0.2, d + 0.85)
 		var xf := _lectern_frame(x, zf)
 		var n := 0
-		for k in 5:  # across the name (see _lectern)
+		for k in 11:  # across the name (see _lectern), as finely as SignSight.audit looks: a lamp post is thin
 			for v in [-0.4, 0.0, 0.4]:
-				var u := (k / 4.0 - 0.5) * float(name_fit.width)
+				var u := ((k + 0.5) / 11.0 - 0.5) * float(name_fit.width)
 				if kit.sight.blocked(kit.base + xf * Vector3(u, 0.136 + v * hy, 0.034), eye):
 					n += 1
 		if best.is_empty() or n < int(best.hidden):

@@ -8,14 +8,22 @@ extends RefCounted
 
 const STEP := 0.1          # tiles between the columns sampled along a front
 const MIN_RUN := 1.2       # narrower than this, a clear stretch of front is no place for a name
+const PROP_MIN_H := 1.0    # props at least this tall (lamp posts, trees, flagpoles, statues) hide lettering too
+const THIN := 0.6         # a prop narrower than this (a lamp post, a flagpole) hides its whole box, lamp head and all
+const PROP_SOUTH := 8      # tiles south of a building that a prop can stand between its front and the camera
+## Prop meshes that never hide anything: light, shadow and glow (see ZoneBuilder._props).
+const NOT_SOLID := ["lamp_pool", "lamp_bulb", "contact_shadow", "fireplace_fire"]
 
 var _items := []   # of {aabb, pos, mesh, rect (footprint), behind (OccluderFade.reach), tm (TriangleMesh, made on first use)}
+                   # props: {aabb, xf (Transform3D), mesh, prop: true}; their TriangleMesh is shared in _prop_tms
+var _prop_tms := {}  # mesh -> TriangleMesh
 var _bounds := Rect2()
 var _at := Vector2(-INF, -INF)  # where the player stands (eye): buildings that go see-through then don't hide
 var _near := []                  # the buildings that can stand between the sign in hand and the eye (focus)
 
-## `bodies` is ZoneBuilder's [{pr, body, door_x}] (each body a MeshInstance3D placed by translation only).
-static func make(z: ZoneData, bodies: Array) -> SignSight:
+## `bodies` is ZoneBuilder's [{pr, body, door_x}] (each body a MeshInstance3D placed by translation only). With
+## `root` (the zone being built, props already in it), tall props in front of the buildings count too.
+static func make(z: ZoneData, bodies: Array, root: Node3D = null) -> SignSight:
 	var s := SignSight.new()
 	s._bounds = Rect2(0, 0, z.width, z.height)
 	for b in bodies:
@@ -27,7 +35,35 @@ static func make(z: ZoneData, bodies: Array) -> SignSight:
 		var pr: Dictionary = b.pr
 		s._items.append({"aabb": box, "pos": mi.position, "mesh": mi.mesh, "tm": null,
 			"rect": Rect2(int(pr.x), int(pr.y), int(pr.w), int(pr.h)), "behind": OccluderFade.reach_of(mi)})
+	if root != null:
+		s._add_props(z, bodies, root)
 	return s
+
+## Lamp posts, trees, flagpoles and the like standing just south of a building (between its front and the camera):
+## they hide lettering as surely as a wall does (London's Vane Tower lost its O to a lamp post). Props elsewhere
+## can't come between a sign and the eye, so they are left out (a forest's thousand trees cost nothing).
+func _add_props(z: ZoneData, bodies: Array, root: Node3D) -> void:
+	var near := PackedByteArray()
+	near.resize(z.width * z.height)
+	for b in bodies:
+		var pr: Dictionary = b.pr
+		for y in range(maxi(0, int(pr.y)), mini(z.height, int(pr.y) + int(pr.h) + PROP_SOUTH)):
+			for x in range(maxi(0, int(pr.x) - 2), mini(z.width, int(pr.x) + int(pr.w) + 2)):
+				near[y * z.width + x] = 1
+	for c in root.get_children():
+		var mmi := c as MultiMeshInstance3D
+		if mmi == null or not str(mmi.name).begins_with("Props_") or mmi.multimesh == null or mmi.multimesh.mesh == null:
+			continue
+		var mesh := mmi.multimesh.mesh
+		var box := mesh.get_aabb()
+		if box.size.y < PROP_MIN_H or str(mmi.name).trim_prefix("Props_").rsplit("_", true, 1)[0] in NOT_SOLID:
+			continue
+		for xf: Transform3D in mmi.get_meta("xforms", []):
+			var tx := int(floor(xf.origin.x))
+			var ty := int(floor(xf.origin.z))
+			if tx < 0 or ty < 0 or tx >= z.width or ty >= z.height or near[ty * z.width + tx] == 0:
+				continue
+			_items.append({"aabb": xf * box, "xf": xf, "mesh": mesh, "prop": true})
 
 ## Where the camera's eye is with the player on tile `p` standing at ground height `gy`. Sight lines checked after
 ## this look past any building that goes see-through with the player there (OccluderFade), as the game does.
@@ -42,7 +78,7 @@ func focus(box: AABB, eye_at: Vector3) -> void:
 	var reach := box.expand(eye_at)
 	_near = []
 	for it in _items:
-		if (it.aabb as AABB).intersects(reach) and not OccluderFade.hides(it.rect, _at, it.behind):
+		if (it.aabb as AABB).intersects(reach) and (it.has("prop") or not OccluderFade.hides(it.rect, _at, it.behind)):
 			_near.append(it)
 
 ## Does any building stand between `from` and the eye? (Among those `focus` picked, if it was called.)
@@ -50,6 +86,10 @@ func blocked(from: Vector3, to: Vector3) -> bool:
 	var seg := AABB(from, Vector3.ZERO).expand(to)
 	for it in _near:
 		if not (it.aabb as AABB).intersects(seg):
+			continue
+		if it.has("prop"):
+			if _prop_hit(it, from, to):
+				return true
 			continue
 		if it.tm == null:
 			it.tm = (it.mesh as Mesh).generate_triangle_mesh()
@@ -59,6 +99,21 @@ func blocked(from: Vector3, to: Vector3) -> bool:
 		if not (it.tm as TriangleMesh).intersect_segment(from - o, to - o).is_empty():
 			return true
 	return false
+
+func _prop_hit(it: Dictionary, from: Vector3, to: Vector3) -> bool:
+	var inv: Transform3D = (it.xf as Transform3D).affine_inverse()
+	var a := inv * from
+	var b := inv * to
+	var box := (it.mesh as Mesh).get_aabb()
+	if box.size.x < THIN and box.size.z < THIN:  # a pole: rays a column apart could slip past it, so take its box
+		return box.grow(0.04).intersects_segment(a, b) != null
+	var tm: TriangleMesh = _prop_tms.get(it.mesh)
+	if tm == null:
+		tm = (it.mesh as Mesh).generate_triangle_mesh()
+		if tm == null:
+			return false
+		_prop_tms[it.mesh] = tm
+	return not tm.intersect_segment(a, b).is_empty()
 
 ## The share (0..1) of the points from..to (a line across a sign, world units) hidden from `eye`.
 func hidden_share(a: Vector3, b: Vector3, eye_at: Vector3, samples := 9) -> float:
@@ -178,7 +233,7 @@ static func audit(z: ZoneData, root: Node3D) -> Array:
 		var body := root.get_node_or_null("Building_%d_%d" % [int(pr.x), int(pr.y)])
 		if body:
 			bodies.append({"pr": pr, "body": body})
-	var sight := make(z, bodies)
+	var sight := make(z, bodies, root)
 	var out := []
 	for b in bodies:
 		var pr: Dictionary = b.pr
