@@ -81,6 +81,7 @@ func _refresh() -> void:
 		UIKit.clear(_holders[i])
 		var s := AnimSprite.new()
 		s.show_species(STARTERS[i], "front", 3 if on else 2)
+		s.animate(Game.dex.get_species(STARTERS[i]))
 		s.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		_holders[i].add_child(s)
 	_line.text = LINES.get(STARTERS[_index], "")
