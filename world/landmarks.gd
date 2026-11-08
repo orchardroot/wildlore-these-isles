@@ -1419,8 +1419,8 @@ static func _leeds_town_hall(st: SurfaceTool, wst: SurfaceTool, w: int, d: int, 
 	Meshes.box(st, Vector3(0.6, 3.1, front - 0.45), Vector3(w - 1.2, 0.25, 0.4), stone.lightened(0.08))
 	for x in range(1, w - 1):
 		if x != door_x:
-			_window(st, wst, x + 0.3, 0.9, front - 0.4, 0.4, 0.9, stone.lightened(0.2))
-			_window(st, wst, x + 0.32, 2.2, front - 0.4, 0.36, 0.6, stone.lightened(0.2))
+			_window(st, wst, x + 0.3, 0.9, front - 0.35, 0.4, 0.9, stone.lightened(0.2))  # the face is at front - 0.4
+			_window(st, wst, x + 0.32, 2.2, front - 0.35, 0.36, 0.6, stone.lightened(0.2))
 	if door_x >= 0:
 		Meshes.box(st, Vector3(door_x + 0.15, 0.4, front - 0.46), Vector3(0.7, 1.5, 0.06), Color("3b2a22"))
 		Meshes.box(st, Vector3(door_x + 0.08, 1.9, front - 0.47), Vector3(0.84, 0.16, 0.08), stone.lightened(0.2))
