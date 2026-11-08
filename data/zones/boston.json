@@ -175,7 +175,8 @@
    "y": 22,
    "w": 5,
    "h": 4,
-   "label": "Boston"
+   "label": "Boston",
+   "show_label": false
   },
   {
    "type": "building",
@@ -184,7 +185,8 @@
    "y": 22,
    "w": 6,
    "h": 4,
-   "label": "Boston"
+   "label": "Boston",
+   "show_label": false
   },
   {
    "type": "building",
@@ -193,7 +195,8 @@
    "y": 22,
    "w": 5,
    "h": 4,
-   "label": "Boston"
+   "label": "Boston",
+   "show_label": false
   },
   {
    "type": "building",
@@ -202,7 +205,8 @@
    "y": 22,
    "w": 5,
    "h": 4,
-   "label": "Boston"
+   "label": "Boston",
+   "show_label": false
   },
   {
    "type": "building",
@@ -211,7 +215,8 @@
    "y": 22,
    "w": 7,
    "h": 4,
-   "label": "Boston"
+   "label": "Boston",
+   "show_label": false
   },
   {
    "type": "statue",
