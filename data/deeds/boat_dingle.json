@@ -4,8 +4,8 @@
  "name": "An Faoileán Beag",
  "zone": "dingle",
  "door": {
-  "x": 8,
-  "y": 14
+  "x": 51,
+  "y": 34
  },
  "interior": "dingle_boat_hut",
  "cost": [

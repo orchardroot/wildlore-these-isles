@@ -4,8 +4,8 @@
  "name": "The Saucy Kittiwake",
  "zone": "whitby",
  "door": {
-  "x": 23,
-  "y": 37
+  "x": 18,
+  "y": 42
  },
  "interior": "whitby_boat_hut",
  "cost": [

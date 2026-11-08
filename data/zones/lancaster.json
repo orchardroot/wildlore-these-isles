@@ -15,6 +15,16 @@
  "props": [
   {
    "type": "building",
+   "style": "allotment_shed",
+   "x": 20,
+   "y": 12,
+   "w": 3,
+   "h": 2,
+   "label": "Allotment Shed",
+   "kind": "workshop"
+  },
+  {
+   "type": "building",
    "style": "castle",
    "x": 9,
    "y": 5,
@@ -559,8 +569,8 @@
    "facing": "up"
   },
   {
-   "x": 20,
-   "y": 10,
+   "x": 21,
+   "y": 13,
    "to": "lancaster_allotment_shed",
    "tx": 6,
    "ty": 7,
@@ -868,10 +878,10 @@
   "TT.......BBBBBBBBBBBBBB......:===:BBBDBBB....:~~~:.BBBBBB.TT",
   "TT.......BBBBBBBBBBBBBB......:===:::::::::...:~~~:.BBBDBB.TT",
   "TT.......BBBBBBBBBBBBBB......:===:.BBBBBBB...:~~~:........TT",
-  "TT.......BBBBBBBDBBBDBB......:===:.BBBBBBB...:~~~:.BBBBBB.TT",
+  "TT.......BBBBBBBDBBBBBB......:===:.BBBBBBB...:~~~:.BBBBBB.TT",
   "TT.........BBBB.::...........:===:.BBBBBBB...:~~~:.BBBBBB.TT",
-  "TT.........BBBB.::...........:===:.BBBDBBB...:~~~:.BBBBBB.TT",
-  "TT.........BDBB.::...........:===:...........:~~~:.BBBDBB.TT",
+  "TT.........BBBB.::..BBB......:===:.BBBDBBB...:~~~:.BBBBBB.TT",
+  "TT.........BDBB.::..BDB......:===:...........:~~~:.BBBDBB.TT",
   "TT..............::...........:===:...........:~~~:........TT",
   "TT..............::...........:===:.BBBBBBBBBB:~~~:.BBBBB..TT",
   "TT..............::...........:===:.BBBBBBBBBB:~~~:.BBBBB..TT",

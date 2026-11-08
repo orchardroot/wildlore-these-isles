@@ -4,8 +4,8 @@
  "name": "Brindle Bank Allotments",
  "zone": "lancaster",
  "door": {
-  "x": 20,
-  "y": 10
+  "x": 21,
+  "y": 13
  },
  "interior": "lancaster_allotment_shed",
  "cost": [
