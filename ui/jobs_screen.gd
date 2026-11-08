@@ -42,9 +42,14 @@ func _build() -> void:
 	var dp := UIKit.panel(Color("1d2230f0"), 18)
 	dp.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	right.add_child(dp)
+	var dsc := ScrollContainer.new()  # whatever the standing card and the landlord's words leave
+	dsc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	dp.add_child(dsc)
 	_desc = VBoxContainer.new()
+	_desc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_desc.add_theme_constant_override("separation", 8)
-	dp.add_child(_desc)
+	dsc.add_child(_desc)
+	UIKit.keep_fitted(_desc)  # a long job steps its words down to fit
 	var sp := UIKit.panel(Color("1d2230f0"), 14)
 	right.add_child(sp)
 	_standing = VBoxContainer.new()
@@ -60,7 +65,7 @@ func _build() -> void:
 func _fit_say() -> void:
 	var w := maxf(_say.size.x, 200.0)
 	var fs := 22
-	while fs > 17 and ThemeDB.fallback_font.get_multiline_string_size(_say.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y > 90:
+	while fs > UIKit.MIN_TEXT and ThemeDB.fallback_font.get_multiline_string_size(_say.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y > 90:
 		fs -= 1
 	if _say.get_theme_font_size("font_size") != fs:
 		_say.add_theme_font_size_override("font_size", fs)
@@ -166,6 +171,7 @@ func _row_button(i: int) -> Button:
 	t.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	t.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	t.clip_text = true
+	UIKit.fit_width(t)  # a long title steps down before it trims
 	h.add_child(t)
 	var tag := _tag(r, done)
 	if tag[0] != "":

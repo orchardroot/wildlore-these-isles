@@ -76,12 +76,21 @@ static func show(r: Dictionary, detail: VBoxContainer) -> void:
 ## One stamp per region: gold and "COMPLETE" once every creature found there is caught.
 static func _stamps(detail: VBoxContainer) -> void:
 	detail.add_child(UIKit.label("Region stamps", 34, UIKit.GOLD))
-	detail.add_child(UIKit.label("Catch everything found in a region for its stamp.", 21, UIKit.MUTED))
+	var how := UIKit.label("Catch everything found in a region for its stamp. %s to scroll through them." % UIKit.key_for("confirm"), 21, UIKit.MUTED)
+	how.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	detail.add_child(how)
+	var sc := ScrollContainer.new()  # fifty-odd regions don't fit: Confirm on the stamps row moves in here to scroll
+	sc.name = "StampScroll"
+	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	sc.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	sc.set_meta("pages", true)  # the pedia screen hands it the keys (UIKit.key_scroll); TextFitAudit counts that as reachable
+	detail.add_child(sc)
 	var grid := GridContainer.new()
 	grid.columns = 2
+	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	grid.add_theme_constant_override("h_separation", 10)
 	grid.add_theme_constant_override("v_separation", 6)
-	detail.add_child(grid)
+	sc.add_child(grid)
 	for p in FieldbookGoals.region_progress(Game.data, ZoneIndex.get_index()):
 		var done: bool = p.complete
 		var card := PanelContainer.new()

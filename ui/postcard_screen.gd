@@ -79,6 +79,11 @@ func _show() -> void:
 		set_title("Post from %s" % Game.data.rival_name)
 		header_right.text = "%d of %d" % [_i + 1, _ids.size()] if _ids.size() > 1 else str(c.get("place", ""))
 	_place_label.text = str(c.get("place", "")).to_upper()
+	var pf := _place_label.get_theme_font("font")
+	var ps := 62
+	while ps > 40 and pf.get_string_size(_place_label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, ps).x > _place_label.size.x:
+		ps -= 2  # a long place name steps down rather than lose its end off the card
+	_place_label.add_theme_font_size_override("font_size", ps)
 	_back_side.set_card(c, Postcards.card_index(str(c.id)) + 1, Postcards.cards().size(), str(Game.data.flag(Postcards.flag_key(str(c.id))) if Game.data.flag(Postcards.flag_key(str(c.id))) != null else Calendar.today_key()))
 	_front.visible = not _back
 	_back_side.visible = _back

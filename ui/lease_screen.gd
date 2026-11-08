@@ -29,10 +29,11 @@ func _build() -> void:
 	right.add_theme_constant_override("separation", 12)
 	row.add_child(right)
 	var bp := UIKit.panel(Color("1d2230f0"), 10)
+	bp.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	right.add_child(bp)
-	_box = VBoxContainer.new()
-	bp.add_child(_box)
-	right.add_child(UIKit.fill())
+	var sl := UIKit.scroll_list(4)  # ten lots and a Leave button: past the panel, the list scrolls
+	_box = sl[1]
+	bp.add_child(sl[0])
 	_say = UIKit.label("", 24, UIKit.GOLD)
 	_say.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	right.add_child(_say)
@@ -94,6 +95,7 @@ func _refresh() -> void:
 		_button("Leave", func(): close(null))
 	UIKit.wrap_focus(_buttons)
 	UIKit.focus_later(_buttons[0])
+	(func(): UIKit.fit_column(_stmt, content.size.y - 40)).call_deferred()  # a long statement steps its words down to fit the panel
 
 func _list() -> void:
 	var d: GameStateData = Game.data

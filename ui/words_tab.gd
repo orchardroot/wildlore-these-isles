@@ -47,7 +47,9 @@ static func show(id: String, detail: VBoxContainer) -> void:
 			if str(w.get("say", "")) != "":
 				line.add_child(UIKit.label("say " + str(w.say), 16, Color("b9c7e6")))
 			rows.add_child(line)
-		var sc := ScrollContainer.new()  # a long list scrolls rather than run off the panel
+		var sc := ScrollContainer.new()  # a long list scrolls rather than run off the panel; Confirm reads on down it
+		sc.name = "WordsScroll"
+		sc.set_meta("pages", true)
 		sc.size_flags_vertical = Control.SIZE_EXPAND_FILL
 		sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 		sc.add_child(rows)

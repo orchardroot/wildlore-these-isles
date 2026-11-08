@@ -398,7 +398,7 @@ func _draw_player() -> void:
 		var dir := signf(cam)
 		var base := Vector2(_sw() * 0.5 + 330.0, STAGE.y - 24.0)
 		_stage.draw_line(base - Vector2(dir * 40.0, 0), base + Vector2(dir * 40.0 * clampf(absf(cam) * 3.0, 0.4, 1.0), 0), Color("fff2c4", 0.8), 4.0)
-		_stage.draw_string(ThemeDB.fallback_font, base + Vector2(-60, -8), "the slope leans", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("fff2c4", 0.8))
+		_stage.draw_string(ThemeDB.fallback_font, base + Vector2(-60, -8), "the slope leans", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("fff2c4", 0.8))
 	if _state == "run" and _g.brace:
 		_stage.draw_string(ThemeDB.fallback_font, foot + Vector2(-40, 12), "heels in", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("f0e8cc"))
 
@@ -419,7 +419,7 @@ func _draw_hud() -> void:
 	var sp := clampf(_g.v / CheeseRoll.MAX_V, 0.0, 1.0)
 	_stage.draw_rect(Rect2(20, STAGE.y - 28, 160, 12), Color(0.05, 0.07, 0.1, 0.55))
 	_stage.draw_rect(Rect2(20, STAGE.y - 28, 160 * sp, 12), Color("ffd27a").lerp(Color("ff7a4a"), sp))
-	_stage.draw_string(ThemeDB.fallback_font, Vector2(20, STAGE.y - 34), "speed", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("f0e8cc"))
+	_stage.draw_string(ThemeDB.fallback_font, Vector2(20, STAGE.y - 34), "speed", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("f0e8cc"))
 	# tumbles as plasters
 	for i in _g.tumbles:
 		_stage.draw_rect(Rect2(20 + i * 22, STAGE.y - 60, 18, 8), Color("e8b890"))

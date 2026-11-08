@@ -3,8 +3,9 @@ extends MenuBase
 ## with the Keeper card, the time and weather, and "Where next?" beside it.
 
 const ROW_GAP := 4
-const ROW_MIN := 42  # eleven rows (Wardrobe and Ark both in) still fit the panel; the label shrinks to 30px then
+const ROW_MIN := 42  # eleven rows (Wardrobe and Ark both in) still fit the panel; the text steps down to suit
 const ROW_MAX := 66
+const PANEL_EDGE := 16  # the list panel's margin and border, each side
 
 static var _last_entry := "Team"  # reopens on the entry you left it on (this session only)
 
@@ -21,7 +22,7 @@ func _build() -> void:
 	row.add_theme_constant_override("separation", 28)
 	content.add_child(row)
 
-	var left := UIKit.panel(Color("1d2230f0"), 14)
+	var left := UIKit.panel(Color("1d2230f0"), PANEL_EDGE - 2)
 	left.custom_minimum_size = Vector2(380, 0)
 	row.add_child(left)
 	var menu := VBoxContainer.new()
@@ -38,7 +39,7 @@ func _build() -> void:
 		_trim_padding(b)  # once in the tree, so it sees the theme's boxes
 		_buttons.append(b)
 		_names.append(nm)
-	menu.resized.connect(_size_rows.bind(menu))  # rows share the panel's height, however many there are
+	content.resized.connect(_size_rows)  # rows share the panel's height, however many there are
 	UIKit.wrap_focus(_buttons)
 
 	var right := VBoxContainer.new()
@@ -70,12 +71,18 @@ func _trim_padding(b: Button) -> void:
 		sb.content_margin_bottom = 0
 		b.add_theme_stylebox_override(state, sb)
 
-## Gives each row an equal share of the list's height (between ROW_MIN and ROW_MAX), so nine fit as well as eight.
-func _size_rows(menu: VBoxContainer) -> void:
-	var h := MenuLogic.row_height(menu.size.y, _buttons.size(), ROW_GAP, ROW_MIN, ROW_MAX)
+## Gives each row an equal share of the panel's room (between ROW_MIN and ROW_MAX), so eleven fit as well as eight,
+## and the biggest text that sits in a row that tall. (From the content area, not the list: an overfull list is
+## already taller than its panel, and would share out more room than there is.)
+func _size_rows() -> void:
+	var room := content.size.y - PANEL_EDGE * 2
+	var h := MenuLogic.row_height(room, _buttons.size(), ROW_GAP, ROW_MIN, ROW_MAX)
+	var fs := 32
+	while fs > 26 and ThemeDB.fallback_font.get_height(fs) > h:
+		fs -= 1
 	for b in _buttons:
 		b.custom_minimum_size.y = h
-		b.add_theme_font_size_override("font_size", 32 if h >= 46 else 30)
+		b.add_theme_font_size_override("font_size", fs)
 
 func _button(nm: String) -> Button:
 	var i := _names.find(nm)
@@ -90,8 +97,14 @@ func _refresh() -> void:
 		_info.add_child(_stat("Euros", UIKit.money_text(d.euros, Wallet.EUR)))
 	for line in Wallet.foreign_lines(d):  # any overseas money still in your pockets
 		_info.add_child(_stat(str(line[0]), str(line[1])))
-	_info.add_child(_stat("Play time", MenuLogic.play_time(d.play_seconds)))
-	_info.add_child(_stat("Fieldbook", "%d seen, %d caught" % [d.seen.size(), d.caught.size()]))
+	var two := HBoxContainer.new()  # two to a row, leaving Where next? its room
+	two.add_theme_constant_override("separation", 40)
+	for kv in [["Play time", MenuLogic.play_time(d.play_seconds), 0.7], ["Fieldbook", "%d seen, %d caught" % [d.seen.size(), d.caught.size()], 1.3]]:
+		var h := _stat(kv[0], kv[1])
+		h.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		h.size_flags_stretch_ratio = kv[2]
+		two.add_child(h)
+	_info.add_child(two)
 	var wod := LangLessons.word_of_day(d, Langs.code_for(d.zone_id, ZoneIndex.get_index()), d.day_count) if Settings.languages_on() else {}
 	if not wod.is_empty():  # the word of the day (4.5): from what you've learnt, or a taster of the local language
 		var wl := UIKit.fit_label("%s word of the day: %s (%s), %s" % [LangLessons.lang_name(str(wod.code)), str(wod.word.local),
@@ -146,7 +159,7 @@ func _refresh_next() -> void:
 		UIKit.add_words(wb[1], "- " + str(s.text), 0 if s.kind == "story" else -2, colours.get(s.kind, UIKit.CREAM))
 	var walk := TodaysWalk.summary(d, Game.dex)
 	if walk != "":
-		UIKit.add_words(wb[1], walk, -6, UIKit.MUTED)
+		UIKit.add_words(wb[1], walk, -2, UIKit.MUTED, true)  # the first to go if the card is full
 	var ready := MenuLogic.rematches_ready(d)
 	if d.flag("game_complete") == true:
 		UIKit.add_words(wb[1], "Rematches today: " + (", ".join(ready) if not ready.is_empty() else "all fought, back tomorrow"), -2, UIKit.GOLD)

@@ -159,7 +159,7 @@ func _show(i: int) -> void:
 		line = "Finish the set for %s." % Trumps.prize_line(Trumps.prize(str(g.region)), Game.dex)
 	if _note != "":
 		line = _note
-	_head.add_child(UIKit.fit_label(line, 760, 19, 14, UIKit.GOLD if g.complete and not g.claimed else UIKit.MUTED))
+	_head.add_child(UIKit.fit_label(line, 760, 19, 18, UIKit.GOLD if g.complete and not g.claimed else UIKit.MUTED))
 	for s in g.species:
 		var have := Trumps.has_card(Game.data, str(s))
 		var c := TrumpCard.new(false)
@@ -171,11 +171,17 @@ func _show(i: int) -> void:
 			c.add_child(l)
 		_grid.add_child(c)
 	_scroll.scroll_vertical = 0
+	_scroll.set_meta("pages", true)  # Confirm hands it the keys when it runs long (TextFitAudit counts that as reachable)
 	_menu.set_hints([["updown", "Regions"], ["confirm", "Collect prize"], ["cancel", "Back"]] if g.complete and not g.claimed else [["updown", "Regions"], ["cancel", "Back"]])
 
 func _press(i: int) -> void:
 	var g: Dictionary = _groups[i]
 	if not g.complete or g.claimed:
+		if _grid.size.y > _scroll.size.y + 2:  # more cards than show: into the album to scroll them, Back comes out
+			Audio.sfx("confirm")
+			UIKit.key_scroll(_scroll, _buttons[i])
+			_scroll.grab_focus()
+			return
 		Audio.sfx("cancel")
 		return
 	var d: GameStateData = Game.data

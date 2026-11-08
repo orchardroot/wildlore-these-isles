@@ -28,7 +28,7 @@ func _build() -> void:
 	for def in [["text_size", "Text size"], ["readable_font", "Readable font"], ["reduce_flashing", "Reduce flashing"],
 			["easy_fishing", "Easier fishing and sheepdogs"], ["easy_darts", "Easier pub games and crafts"]]:
 		var b := Button.new()
-		b.custom_minimum_size = Vector2(0, 30)
+		b.custom_minimum_size = Vector2(0, maxi(30, UIKit.line_height(23)))  # taller with Large text so rows never overlap
 		UIKit.compact(b, 2)
 		var h := HBoxContainer.new()
 		h.set_anchors_preset(Control.PRESET_FULL_RECT)

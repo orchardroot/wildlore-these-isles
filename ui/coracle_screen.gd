@@ -372,7 +372,7 @@ func _draw_hud() -> void:
 	# the spin gauge: how fast the boat is turning, which side the next stroke turns it
 	var sp := clampf(float(_s.spin) / 3.0, -1.0, 1.0)
 	c.draw_rect(Rect2(STAGE.x - 258, STAGE.y - 48, 250, 40), Color(0.05, 0.06, 0.1, 0.6))
-	c.draw_string(font, Vector2(STAGE.x - 250, STAGE.y - 32), "Spin", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, UIKit.MUTED)
+	c.draw_string(font, Vector2(STAGE.x - 250, STAGE.y - 32), "Spin", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.MUTED)
 	var gx := STAGE.x - 133.0
 	c.draw_rect(Rect2(gx - 110, STAGE.y - 28, 220, 12), Color("2c3a52"))
 	c.draw_rect(Rect2(gx - 1, STAGE.y - 30, 2, 16), UIKit.CREAM)

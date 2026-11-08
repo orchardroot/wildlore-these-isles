@@ -57,6 +57,7 @@ func build(parent: Control) -> void:
 	_detail.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_detail.add_theme_constant_override("separation", 10)
 	dsc.add_child(_detail)
+	UIKit.keep_fitted(_detail)  # a long plaque steps its words down to fit the panel
 	_places()
 
 ## The strip along the top: the total, a bar, your title and the next milestone.
@@ -116,6 +117,7 @@ func _summary() -> PanelContainer:
 
 func _places() -> void:
 	_town = {}
+	_dsc.remove_meta("pages")
 	UIKit.clear(_list_col)
 	_buttons.clear()
 	_rows.clear()
@@ -126,7 +128,7 @@ func _places() -> void:
 	_rows.append({"isles": true})
 	_list_col.add_child(_isles_button(0))
 	_rows.append(ISLES_ROW)  # the How these isles work page heads the list (IslesWorkView)
-	_list_col.add_child(_place_button(0))
+	_list_col.add_child(_place_button(_rows.size() - 1))
 	for g in _groups:
 		var head := HBoxContainer.new()
 		var hl := UIKit.label(str(g.name), 19, UIKit.MUTED)
@@ -335,7 +337,7 @@ func open_town(town: String) -> void:
 		_open_isles_work(town.get_slice(":", 1))
 		return
 	for i in _rows.size():
-		if str(_rows[i].town) == town:
+		if str(_rows[i].get("town", "")) == town:
 			_open(i)
 			return
 
@@ -461,6 +463,7 @@ func _isles_row(h: HBoxContainer) -> void:
 func _open_isles_work(focus_id := "") -> void:
 	_place_at = 0
 	_town = {"isles_work": true, "name": IslesWorkView.NAME}
+	_dsc.set_meta("pages", true)  # Confirm reads on down a long topic (TextFitAudit counts that as reachable)
 	UIKit.clear(_list_col)
 	_buttons.clear()
 	_rows = IslesWork.all().duplicate()
@@ -484,6 +487,7 @@ func _open_isles_work(focus_id := "") -> void:
 		l.clip_text = true
 		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		l.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		UIKit.fit_width(l)  # a long title steps down before it trims
 		h.add_child(l)
 		_list_col.add_child(b)
 	Audio.sfx("confirm")

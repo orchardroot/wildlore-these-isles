@@ -7,8 +7,7 @@ const Pedia = preload("res://ui/pedia_screen.gd")
 ## The Fieldbook's words box at 1280x720 with the sample party: 682 wide, 296 tall below the picture.
 const BOX := Vector2(682, 296)
 ## fit_block's height estimate adds a shadow pixel or two a line on purpose, so it never promises a fit that
-## then wraps once more; the longest entry (Macaquet, a 357-character fact) renders inside the box at the
-## smallest size with this much to spare in the estimate.
+## then wraps once more; this much is forgiven.
 const ESTIMATE_SLACK := 20.0
 
 func _sp(real := "", names = {}) -> Dictionary:
@@ -70,8 +69,8 @@ func test_found_in_line() -> void:
 	assert_eq(Pedia.found_in(["Dee Valley", "Ogwen"]), "Found in: Dee Valley, Ogwen")
 	assert_eq(Pedia.found_in(["A", "B", "C", "D", "E"]), "Found in: A, B, C and 2 more")
 
-## Every caught entry, teaching lines included, fits the words box at 1280x720 at one of WORD_SIZES, so the
-## Fieldbook shrinks rather than scrolls; most need no shrinking at all.
+## Every caught entry, teaching lines included, fits the words box at 1280x720 in at most two boxes' worth at the
+## smallest readable size (18 px, UIKit.MIN_TEXT): a long one shrinks that far, then Confirm reads on once.
 func test_every_caught_entry_fits_the_words_box() -> void:
 	var dex := Dex.load_default()
 	var habitats: Dictionary = Pedia.habitat_index()
@@ -90,14 +89,14 @@ func test_every_caught_entry_fits_the_words_box() -> void:
 		var entries: Array = words.get_meta("words")
 		var smallest: int = Pedia.WORD_SIZES[Pedia.WORD_SIZES.size() - 1]
 		var need := UIKit._block_height(entries, BOX.x - 16, smallest, Pedia.WORD_SEP, true)
-		if need > BOX.y + ESTIMATE_SLACK:
+		if need > BOX.y * 2 + ESTIMATE_SLACK:
 			spill.append("%s (%d px)" % [id, need])
 		UIKit.fit_block(entries, box, Pedia.WORD_SIZES, Pedia.WORD_SEP)
 		for e in entries:
 			assert_true(e[0].visible, "%s: no line is dropped" % id)
 		wb[0].free()
 	box.free()
-	assert_eq(spill, [], "entries too tall for the box even at the smallest size")
+	assert_eq(spill, [], "entries longer than two boxes even at the smallest size")
 
 func test_every_species_names_are_in_the_three_languages_only() -> void:
 	var dex := Dex.load_default()

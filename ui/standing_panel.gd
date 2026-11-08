@@ -10,13 +10,22 @@ static func build(d: GameStateData, dex: Dex) -> PanelContainer:
 	col.add_theme_constant_override("separation", 4)
 	card.add_child(col)
 	col.add_child(_heading("Standing"))
+	var grid := GridContainer.new()  # the nations two abreast, so the jobs below keep their room
+	grid.columns = 2
+	grid.add_theme_constant_override("h_separation", 48)
+	grid.add_theme_constant_override("v_separation", 8)
+	col.add_child(grid)
 	for row in Standing.lines(d):
+		var nation := VBoxContainer.new()
+		nation.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		nation.add_theme_constant_override("separation", 4)
 		var h := HBoxContainer.new()
 		h.add_child(UIKit.label(str(row[0]), 24, UIKit.MUTED))
 		h.add_child(UIKit.fill())
 		h.add_child(UIKit.label(str(row[1]), 24, UIKit.GOLD if int(row[2]) >= Standing.TIER_POINTS[Standing.REGULAR] else UIKit.CREAM))
-		col.add_child(h)
-		col.add_child(_bar(int(row[2])))
+		nation.add_child(h)
+		nation.add_child(_bar(int(row[2])))
+		grid.add_child(nation)
 	col.add_child(UIKit.spacer(8))
 	var held := Jobs.active(d)
 	col.add_child(_heading("Jobs in hand  (%d of %d)" % [held.size(), Jobs.SLOTS]))
@@ -24,8 +33,7 @@ static func build(d: GameStateData, dex: Dex) -> PanelContainer:
 		col.add_child(UIKit.label("None. Try a parish noticeboard.", 20, UIKit.MUTED))
 	for line in Jobs.pause_lines(d, dex):
 		var l := UIKit.label(str(line), 20)
-		l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-		l.clip_text = true
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # a long job wraps rather than lose its end
 		col.add_child(l)
 	return card
 
