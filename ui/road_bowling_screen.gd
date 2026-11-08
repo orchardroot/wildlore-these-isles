@@ -384,7 +384,7 @@ func _draw_posts(s0: float, s1: float, hw: float, px: float) -> void:
 		if s > 0.0 and s < float(_v.get("length", 600)):
 			var c := Vector2(_sx(s), _sy(RoadBowling.centre(_v, s) + hw + 2.2))
 			_stage.draw_rect(Rect2(c.x - 3, c.y - 7, 6, 14), Color("efe9d8"))
-			_stage.draw_string(ThemeDB.fallback_font, c + Vector2(6, 5), "%d" % int(s), HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color(1, 1, 1, 0.8))
+			_stage.draw_string(ThemeDB.fallback_font, c + Vector2(6, 5), "%d" % int(s), HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color(1, 1, 1, 0.8))
 		k += 1
 
 func _draw_scouts(hw: float, px: float) -> void:
@@ -514,10 +514,10 @@ func _draw_hud() -> void:
 	# power bar (bottom left) and swing dial
 	var x := 18.0
 	var y := STAGE.y - 36.0
-	_stage.draw_rect(Rect2(x - 4, y - 10, 232, 40), Color(0.1, 0.12, 0.16, 0.7))
+	_stage.draw_rect(Rect2(x - 4, y - 18, 232, 48), Color(0.1, 0.12, 0.16, 0.7))
 	_stage.draw_rect(Rect2(x, y, 140, 12), Color(1, 1, 1, 0.15))
 	_stage.draw_rect(Rect2(x, y, 140.0 * _power, 12), Color("e8c872"))
-	_stage.draw_string(ThemeDB.fallback_font, Vector2(x, y - 1), "POWER", HORIZONTAL_ALIGNMENT_LEFT, -1, 12, UIKit.CREAM)
+	_stage.draw_string(ThemeDB.fallback_font, Vector2(x, y - 1), "POWER", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.CREAM)
 	var c := Vector2(x + 188, y + 14)
 	_stage.draw_arc(c, 20.0, PI, TAU, 18, Color(1, 1, 1, 0.3), 2.0)
 	var a := -PI * 0.5 + _swing * PI * 0.45

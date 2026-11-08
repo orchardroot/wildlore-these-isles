@@ -282,7 +282,7 @@ func _draw_stage() -> void:
 		var tx := _yd_to_x(float(k) * 15.0)
 		c.draw_line(Vector2(tx, TRENCH_Y0), Vector2(tx, TRENCH_Y1), Color(1, 1, 1, 0.22), 2.0)
 		c.draw_string(ThemeDB.fallback_font, Vector2(tx - 12, TRENCH_Y1 + 28), "%d" % (k * 15), HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("f2e8cf"))
-	c.draw_string(ThemeDB.fallback_font, Vector2(X0 - 56, TRENCH_Y1 + 28), "yards", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("e8d8b0"))
+	c.draw_string(ThemeDB.fallback_font, Vector2(X0 - 56, TRENCH_Y1 + 28), "yards", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("e8d8b0"))
 	# end walls with the start/finish board
 	c.draw_rect(Rect2(0, TRENCH_Y0, 38, TRENCH_Y1 - TRENCH_Y0), PEAT)
 	c.draw_rect(Rect2(w - 38, TRENCH_Y0, 38, TRENCH_Y1 - TRENCH_Y0), PEAT)

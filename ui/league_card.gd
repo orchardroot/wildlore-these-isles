@@ -23,7 +23,7 @@ func _build() -> void:
 	_head = UIKit.label("", 28, UIKit.GOLD)
 	root.add_child(_head)
 	_bar = Control.new()
-	_bar.custom_minimum_size = Vector2(0, 34)
+	_bar.custom_minimum_size = Vector2(0, 42)
 	_bar.draw.connect(_draw_bar)
 	root.add_child(_bar)
 	var scroll := ScrollContainer.new()
@@ -109,8 +109,8 @@ func _draw_bar() -> void:
 	_bar.draw_rect(Rect2(0, 8, w, 14), Color(0, 0, 0, 0.35))
 	if g.is_empty():
 		_bar.draw_rect(Rect2(0, 8, w, 14), UIKit.GOLD)
-		_bar.draw_string(ThemeDB.fallback_font, Vector2(6, 32), "Every letter earned. The urn is proud.", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, UIKit.CREAM)
+		_bar.draw_string(ThemeDB.fallback_font, Vector2(6, 40), "Every letter earned. The urn is proud.", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.CREAM)
 		return
 	var f := clampf(float(g.have) / maxf(1.0, float(g.need)), 0.0, 1.0)
 	_bar.draw_rect(Rect2(0, 8, w * f, 14), UIKit.GOLD)
-	_bar.draw_string(ThemeDB.fallback_font, Vector2(6, 34), "Next letter from the Isles Games Society at %s" % str(g.label), HORIZONTAL_ALIGNMENT_LEFT, -1, 16, UIKit.CREAM)
+	_bar.draw_string(ThemeDB.fallback_font, Vector2(6, 40), "Next letter from the Isles Games Society at %s" % str(g.label), HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.CREAM)

@@ -317,7 +317,7 @@ func _draw_one_stick(w: Dictionary, te: float, rival: bool) -> void:
 	_stage.draw_line(p - dir, p + dir, w.col.darkened(0.35), 5.0)
 	_stage.draw_line(p - dir, p + dir, w.col, 3.0)
 	if bool(w.run.snagged) and te * SHOW > Poohsticks.SPAN * 0.4 / float(w.run.speed) and te * SHOW < Poohsticks.SPAN * 0.4 / float(w.run.speed) + float(w.run.stall):
-		_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-6, -16), "stuck", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("f2e8cf"))
+		_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-6, -16), "stuck", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("f2e8cf"))
 
 func _draw_sticks_before_deck() -> void:
 	if _anim.is_empty():
@@ -337,7 +337,7 @@ func _draw_sticks_after_deck() -> void:
 			if not bool(_anim.get("done", false)):
 				var first: String = str(_anim.get("first", ""))
 				if first == k:
-					_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-8, -20), "YOU" if k == "me" else str(_rival.get("who", "Them")).split(" ")[0].to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("e8c872"))
+					_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-8, -20), "YOU" if k == "me" else str(_rival.get("who", "Them")).split(" ")[0].to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("e8c872"))
 
 func _draw_lane_marker() -> void:
 	if not _anim.is_empty() or _over:
