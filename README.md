@@ -47,14 +47,16 @@ update; they always have.
   rooms, and play them at Trumps for the card in their pocket. Chapmen at the market sell chapbooks that teach your
   creatures new moves, and the neighbours will tell you what the Keeper keeps, if you ask.
 - **Play what the locals play.** Darts leagues, crown green bowls, curling, the caber, hurling and shinty, sea
-  shanties, conkers, crabbing, cheese rolling, bog snorkelling, a seaside arcade and a pub quiz. All at the places
-  they really happen, all explained by someone who's been doing it for years.
+  shanties, conkers, crabbing, cheese rolling, bog snorkelling, sheepdog trials, coracle racing, road bowling,
+  gurning, Poohsticks, a seaside arcade and a pub quiz. All at the places they really happen, all explained by
+  someone who's been doing it for years, and every one teaches your creatures a move if you win a rosette.
 - **Learn things by accident.** Over nine hundred heritage plaques, festivals on their real dates, the local
   language where it's spoken, optional short lessons in Welsh, Gaelic, Irish and Scots, and plain-words pages on how
   these isles actually work. None of it is homework. Sorry.
 
 | | |
 |---|---|
+| ![Cheese rolling on Cooper's Hill](docs/screens/w48-g2-cheese-1.png) | ![The gurning contest](docs/screens/w48-g5-gurning.png) |
 | ![Trumps in a front room](docs/screens/r50-trumps.png) | ![Know your Keeper](docs/screens/r50-keepers.png) |
 | ![Who's setting off?](docs/screens/r46-creator.png) | ![Grassmarket Outfitters, Edinburgh](docs/screens/r46-boutique.png) |
 
@@ -77,9 +79,10 @@ for every timing minigame are under Settings, Accessibility.
 
 ## What's new
 
-5.0 "Every Door": every house worth walking into. Furniture to rummage, letters and treasure trails, residents who
-trade and run front-room shops, a card game against half the isles, chapbooks (TMs) from the chapmen, Keeper briefings,
-moves that look like their type, "?" places on the routes, and a route planner on the map. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
+5.1 "Party Pieces": every minigame now teaches a move. Win a rosette and your lead creature learns a party piece
+named after the game (the TMs), and some of them clear nooks out in the world (the HMs). Ten new games where they
+really happen, from sheepdog trials and cheese rolling to gurning and Poohsticks, a Games League card, thirty new
+creatures, and creatures that move like themselves. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
 
 ## How it's made
 

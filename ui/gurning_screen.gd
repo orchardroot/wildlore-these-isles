@@ -198,7 +198,7 @@ func _draw_stage() -> void:
 		var x0 := w * 0.5 - 430.0 + k * 72.0
 		s.draw_colored_polygon(PackedVector2Array([Vector2(x0, 96), Vector2(x0 + 36, 96), Vector2(x0 + 18, 70)]), Color("c9514b") if k % 2 == 0 else Color("e8d8b0"))
 	s.draw_rect(Rect2(w * 0.5 - 430, 96, 860, 10), Color("7a2a2a"))
-	for k in 24:
+	for k in int((w - 48.0) / 44.0) + 1:  # pennants stop at the stage's edge
 		var bx := 20.0 + k * 44.0
 		var by := 124.0 + sin(k * 0.52) * 7.0
 		var col: Color = [Color("d95f4a"), Color("e8c872"), Color("5fa3c4"), Color("8fbf6a")][k % 4]

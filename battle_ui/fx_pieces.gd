@@ -14,6 +14,7 @@ const KIND := {
 	"forecasting": "whirl", "races": "slide", "science": "flip",
 	"sheepdog_trials": "whirl", "worms": "notes", "cheese": "tumble", "pancake": "flip", "snorkel": "skip", "coracle": "whirl",
 	"fete_cheese": "tumble", "fete_bog": "skip", "fete_welly": "tumble",
+	"road_bowling": "tumble", "poohsticks": "slide", "gurning": "notes", "welly_wang": "tumble",
 }
 
 var fx: BattleFX

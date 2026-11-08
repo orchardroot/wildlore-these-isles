@@ -59,6 +59,13 @@ func build(parent: Control) -> void:
 	var intro := UIKit.label("%d of %d pieces learnt. A silver rosette at a game and your lead creature picks up its piece." % [got, _ids.size()], 18, UIKit.GOLD)
 	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	col.add_child(intro)
+	var lg: Button = _menu.make_button("Isles Games League card", func(): _menu.open_child("league"))
+	lg.custom_minimum_size = Vector2(0, ROW_H)
+	lg.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	lg.add_theme_font_size_override("font_size", 20)
+	lg.focus_entered.connect(_show_league)
+	col.add_child(lg)
+	_buttons.append(lg)
 	for id in _ids:
 		var e := PartyPieces.entry(str(id))
 		var b: Button = _menu.make_button("%s   %s" % [str(e.name), MARKS[PartyPieces.rosette(Game.data, str(id))]], func(): pass)
@@ -71,14 +78,24 @@ func build(parent: Control) -> void:
 	if _buttons.is_empty():
 		return
 	UIKit.wrap_focus(_buttons)
-	UIKit.focus_later(_buttons[0])
-	_show(str(_ids[0]))
+	UIKit.focus_later(_buttons[1] if _buttons.size() > 1 else _buttons[0])
+	if not _ids.is_empty():
+		_show(str(_ids[0]))
 
 func _line(text: String, size := 21, colour := UIKit.CREAM) -> Label:
 	var t := UIKit.label(text, size, colour)
 	t.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_detail.add_child(t)
 	return t
+
+func _show_league() -> void:
+	UIKit.clear(_detail)
+	_line("Isles Games League", 30, UIKit.GOLD)
+	_line("A stamp for every game you have played, venue by venue: %d of %d so far." % [GamesLeague.stamps(Game.data), GamesLeague.total()])
+	var goal := GamesLeague.next_goal(Game.data)
+	if not goal.is_empty():
+		_line("The Isles Games Society writes again at %s." % str(goal.label), 19, UIKit.MUTED)
+	_line("Press Confirm to open the card.", 19, UIKit.MUTED)
 
 func _show(id: String) -> void:
 	UIKit.clear(_detail)
