@@ -42,6 +42,7 @@ func _build() -> void:
 	content.add_child(root)
 	_stage = Control.new()
 	_stage.custom_minimum_size = STAGE
+	_stage.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN   # the VBox would stretch it wider than the art
 	_stage.clip_contents = true
 	_stage.draw.connect(_draw_stage)
 	root.add_child(_stage)
@@ -222,6 +223,7 @@ func _draw_stage() -> void:
 	s.draw_rect(Rect2(24, 30 + 150 * (1.0 - WellyWang.DIZZY_ABOVE) * 0.0, 22, 150 * (1.0 - WellyWang.DIZZY_ABOVE)), Color("b84a3a"))
 	var fillh := 150.0 * _spin
 	s.draw_rect(Rect2(26, 180 - fillh, 18, fillh), UIKit.GOLD if _spin <= WellyWang.DIZZY_ABOVE else Color("e8603a"))
+	s.draw_rect(Rect2(8, 186, 54, 24), Color(0, 0, 0, 0.4))   # a dark tab, or the label vanishes into the hill
 	s.draw_string(ThemeDB.fallback_font, Vector2(14, 204), "SPIN", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, UIKit.CREAM)
 
 func _draw_boot_flag(m: float) -> void:

@@ -74,7 +74,7 @@ func setup(arg: String) -> void:
 func _new_heat() -> void:
 	_g = CheeseRoll.new(_seed + _heat * 31, _easy)
 	_state = "ready"
-	_msg = "Heat %d of %d. Confirm when you are at the top and ready to go." % [_heat + 1, CheeseRoll.HEATS]
+	_msg = "Confirm when you are at the top and ready to go."   # the info line already names the heat
 	_pops.clear()
 	_refresh()
 
