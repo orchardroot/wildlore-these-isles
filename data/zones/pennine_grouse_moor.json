@@ -86,14 +86,16 @@
    "y": 20
   },
   {
-   "type": "bollard",
+   "type": "standing_stone",
    "x": 16,
-   "y": 30
+   "y": 30,
+   "variant": 0
   },
   {
-   "type": "bollard",
+   "type": "standing_stone",
    "x": 12,
-   "y": 30
+   "y": 30,
+   "variant": 0
   }
  ],
  "warps": [],
