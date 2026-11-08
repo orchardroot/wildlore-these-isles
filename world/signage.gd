@@ -274,6 +274,8 @@ static func front(style: String, w: int, d: int, door_x: int) -> Dictionary:
 				f.merge({"z": d - 0.3, "lo": 2.22, "hi": 3.0, "x0": tower_w + 0.15, "x1": w - 0.15}, true)
 			else:
 				f.merge({"lo": 1.4, "hi": 1.95, "x0": 0.15, "x1": tower_w - 0.15}, true)
+		"minster":  # York Minster: over the west portal, under the great window
+			f.merge(MinsterStyle.sign_front(w, d, door_x), true)
 		"castle", "castle_red":
 			if door_x >= 0:
 				f.merge({"z": d + 0.1, "lo": 1.22, "hi": 2.3, "x0": door_x - 0.32, "x1": door_x + 1.32}, true)
@@ -503,6 +505,11 @@ static func _sign(kit: Kit, z: ZoneData, pr: Dictionary, t: String, door_x: int)
 				if not seen.is_empty():
 					f.merge(seen, true)
 					mode = "wall"
+	if t == "keeper" and (mode in ["stand", "monolith", "trough"] or float(_keeper_fit(label, f).em) < KEEPER_MIN_EM):
+		# a keeper's hall always carries its black and gold board over the door: where its front has no wall for
+		# one, or too narrow a stretch (a gatehouse between drum towers), the board stands proud on brackets
+		f = _keeper_front(kit, w, d, door_x)
+		mode = "wall"
 	if t == "station" and mode == "canopy":
 		_station(kit, label, f, w, d, z.region)
 		return
@@ -817,14 +824,36 @@ static func _heritage(kit: Kit, label: String, f: Dictionary, w: int, door_x: in
 	kit.box(Vector3(cx - bw * 0.5 - 0.07, y0 + h + 0.04, z0), Vector3(bw + 0.14, 0.04, 0.09), edge.lightened(0.1))  # hood
 	kit.text(Transform3D.IDENTITY, Vector3(cx, y0 + h * 0.5, z0 + 0.064), fit_w, fnt, ink)
 
-## Grand: a keeper's hall gets a black and gold board the width of its front, with lanterns either side.
-static func _keeper(kit: Kit, label: String, f: Dictionary, w: int, door_x: int) -> void:
-	var fnt := font("caps")
-	var text := label.to_upper()
+const KEEPER_LAMP := 0.3
+## Below this (world units a capital is high) a keeper's name is not grand any more: the board moves out to a wider one.
+const KEEPER_MIN_EM := 0.15
+
+## The keeper board's lettering on the front f (see _keeper).
+static func _keeper_fit(label: String, f: Dictionary) -> Dictionary:
 	var span: float = float(f.x1) - float(f.x0)
 	var h := minf(float(f.hi) - float(f.lo) - 0.1, 0.5)
-	var lamp := 0.3
-	var fit_w := fit(text, fnt, minf(0.32, h * 0.8), span - 0.4 - lamp * 2.0, h * 0.85)
+	return fit(label.to_upper(), font("caps"), minf(0.32, h * 0.8), span - 0.4 - KEEPER_LAMP * 2.0, h * 0.85)
+
+## A keeper board's own front when the building's has no room: centred over the door, as wide as the building
+## allows (up to 3.6), standing just proud of whatever is there (towers, a porch) at that height.
+static func _keeper_front(kit: Kit, w: int, d: int, door_x: int) -> Dictionary:
+	var c := door_x + 0.5 if door_x >= 0 else w * 0.5
+	var x0 := maxf(-0.3, c - 1.8)
+	var x1 := minf(w + 0.3, c + 1.8)
+	var lo := 1.32
+	var hi := 1.95
+	var z := float(d)
+	if kit.sight != null and kit.body is MeshInstance3D:
+		z = maxf(z, kit.sight.reach(kit.body as MeshInstance3D, x0, x1, lo - 0.1, hi + 0.15, d + 3.0))
+	return {"mode": "wall", "z": z + 0.03, "lo": lo, "hi": hi, "x0": x0, "x1": x1, "hang": -1.0}
+
+## Grand: a keeper's hall gets a black and gold board the width of its front, with lanterns either side.
+static func _keeper(kit: Kit, label: String, f: Dictionary, w: int, door_x: int) -> void:
+	var span: float = float(f.x1) - float(f.x0)
+	var h := minf(float(f.hi) - float(f.lo) - 0.1, 0.5)
+	var lamp := KEEPER_LAMP
+	var fnt := font("caps")
+	var fit_w := _keeper_fit(label, f)
 	var bw := minf(span - lamp * 2.0, float(fit_w.width) + 0.8)
 	var cx := _centre(f, bw + lamp * 2.0, door_x, w)
 	var y0: float = float(f.lo) + 0.05

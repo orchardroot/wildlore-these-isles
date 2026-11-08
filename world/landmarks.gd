@@ -46,7 +46,7 @@ const SPECIAL := ["edinburgh_tenement", "glasgow_tenement", "aberdeen_granite", 
 	"pitcairn_house", "boat_shed", "base_hangar", "base_tower", "base_block", "plantation_ruin", "island_church",
 	"jersey_granite", "guernsey_granite", "jersey_tower", "little_chapel",
 	"andaluz_house", "andaluz_church", "frontier_post", "fort_ruin", "venetian_gate", "venetian_wall", "selimiye", "han",
-	"kioski_house", "orthodox_church", "checkpoint_booth", "un_tower"]
+	"kioski_house", "orthodox_church", "checkpoint_booth", "un_tower", "minster"]
 
 ## Doors: where each style's door sits on its tile (see _door and friends), for the swing as you go in.
 ## {x, w, y, h, z}: left edge and width across the door column, bottom and height, z of the door's face from
@@ -69,6 +69,7 @@ const DOOR_RECTS := {
 	"castle_red": {"x": 0.2, "w": 0.6, "y": 0.0, "h": 1.1, "z": 0.11},
 	"paddle_steamer": {"x": 0.22, "w": 0.56, "y": 0.7, "h": 0.9, "z": -0.6},
 	"cathedral": {"x": 0.15, "w": 0.7, "y": 0.0, "h": 1.3, "z": 0.03},
+	"minster": {"x": 0.08, "w": 0.84, "y": 0.0, "h": 1.32, "z": -0.19},
 	"glass_tower": {"x": 0.15, "w": 0.7, "y": 0.0, "h": 1.2, "z": 0.02},
 	"canal_tunnel": {"x": 0.24, "w": 0.52, "y": 0.0, "h": 0.95, "z": -0.04},
 	"leeds_town_hall": {"x": 0.15, "w": 0.7, "y": 0.4, "h": 1.3, "z": -0.94},
@@ -171,6 +172,8 @@ static func building(w: int, d: int, style: String, door_x: int, seed_value: int
 			_crow_steps(st, w, d)
 		"cathedral":
 			_cathedral(st, wst, w, d, door_x, SANDSTONE)
+		"minster":
+			MinsterStyle.build(st, wst, w, d, door_x)
 		"chapel":
 			_chapel(st, wst, w, d, door_x)
 		"round_tower":
