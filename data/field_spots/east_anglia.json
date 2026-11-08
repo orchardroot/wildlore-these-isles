@@ -133,15 +133,15 @@
  {
   "id": "fs_the_fens_topple_x1",
   "zone": "the_fens",
-  "x": 61,
-  "y": 52,
+  "x": 63,
+  "y": 10,
   "field": "topple",
   "prop": "dead_trunk",
   "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
   "reward": {
    "hop": [
-    64,
-    52
+    60,
+    10
    ]
   },
   "flag": "field_the_fens_topple_a",
@@ -150,18 +150,52 @@
  {
   "id": "fs_the_fens_topple_x2",
   "zone": "the_fens",
-  "x": 63,
-  "y": 52,
+  "x": 61,
+  "y": 10,
   "field": "topple",
   "prop": "dead_trunk",
   "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
   "reward": {
    "hop": [
-    60,
-    52
+    64,
+    10
    ]
   },
   "flag": "field_the_fens_topple_b",
   "at": "the_fens"
+ },
+ {
+  "id": "fs_norwich_paddle_x1",
+  "zone": "norwich",
+  "x": 59,
+  "y": 13,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
+  "reward": {
+   "hop": [
+    64,
+    13
+   ]
+  },
+  "flag": "field_norwich_paddle_a",
+  "at": "norwich"
+ },
+ {
+  "id": "fs_norwich_paddle_x2",
+  "zone": "norwich",
+  "x": 63,
+  "y": 13,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it.",
+  "reward": {
+   "hop": [
+    58,
+    13
+   ]
+  },
+  "flag": "field_norwich_paddle_b",
+  "at": "norwich"
  }
 ]

@@ -27,5 +27,39 @@
   },
   "flag": "field_boyne_valley_snorkel",
   "at": "boyne_valley"
+ },
+ {
+  "id": "fs_boyne_valley_skim_x1",
+  "zone": "boyne_valley",
+  "x": 60,
+  "y": 18,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "{lead} skims a flat stone and it ticks off a row of stepping stones, each one settling a little. You hop after it, dry as a bone, mostly.",
+  "reward": {
+   "hop": [
+    60,
+    22
+   ]
+  },
+  "flag": "field_boyne_valley_skim_a",
+  "at": "boyne_valley"
+ },
+ {
+  "id": "fs_boyne_valley_skim_x2",
+  "zone": "boyne_valley",
+  "x": 60,
+  "y": 21,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "You hop back along the stepping stones. {lead} skims a stone ahead of you for luck, and it lands every time.",
+  "reward": {
+   "hop": [
+    60,
+    17
+   ]
+  },
+  "flag": "field_boyne_valley_skim_b",
+  "at": "boyne_valley"
  }
 ]

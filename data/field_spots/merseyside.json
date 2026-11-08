@@ -44,33 +44,32 @@
   "at": "sefton_coast"
  },
  {
+  "id": "fs_sefton_coast_line",
+  "zone": "sefton_coast",
+  "x": 39,
+  "y": 20,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the water. {lead} wades in, makes a few calm passes and fishes it out: Ammonite.",
+  "reward": {
+   "item": "ammonite",
+   "qty": 1
+  },
+  "flag": "field_sefton_coast_line",
+  "at": "sefton_coast"
+ },
+ {
   "id": "fs_sefton_coast_topple",
   "zone": "sefton_coast",
   "x": 46,
   "y": 39,
   "field": "topple",
   "prop": "dead_trunk",
-  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls Field Mushrooms.",
+  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls a roll of notes.",
   "reward": {
-   "item": "field_mushrooms",
-   "qty": 1
+   "money": 750
   },
   "flag": "field_sefton_coast_topple",
-  "at": "sefton_coast"
- },
- {
-  "id": "fs_sefton_coast_roll",
-  "zone": "sefton_coast",
-  "x": 16,
-  "y": 37,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: Cream Tea.",
-  "reward": {
-   "item": "cream_tea",
-   "qty": 1
-  },
-  "flag": "field_sefton_coast_roll",
   "at": "sefton_coast"
  }
 ]

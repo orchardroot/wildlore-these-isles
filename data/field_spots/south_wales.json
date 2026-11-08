@@ -189,5 +189,39 @@
   },
   "flag": "field_swansea_paddle",
   "at": "swansea"
+ },
+ {
+  "id": "fs_cardiff_loft_x1",
+  "zone": "cardiff",
+  "x": 17,
+  "y": 10,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+  "reward": {
+   "hop": [
+    20,
+    10
+   ]
+  },
+  "flag": "field_cardiff_loft_a",
+  "at": "cardiff"
+ },
+ {
+  "id": "fs_cardiff_loft_x2",
+  "zone": "cardiff",
+  "x": 19,
+  "y": 10,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    16,
+    10
+   ]
+  },
+  "flag": "field_cardiff_loft_b",
+  "at": "cardiff"
  }
 ]

@@ -190,17 +190,17 @@
   "at": "plymouth"
  },
  {
-  "id": "fs_plymouth_roll",
+  "id": "fs_plymouth_charm",
   "zone": "plymouth",
-  "x": 9,
-  "y": 32,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up a few coins.",
+  "x": 46,
+  "y": 37,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: Claddagh Ring.",
   "reward": {
-   "money": 1470
+   "curio": "claddagh_ring"
   },
-  "flag": "field_plymouth_roll",
+  "flag": "field_plymouth_charm",
   "at": "plymouth"
  },
  {
@@ -275,5 +275,107 @@
   },
   "flag": "field_somerset_levels_skim",
   "at": "somerset_levels"
+ },
+ {
+  "id": "fs_avon_gorge_loft_x1",
+  "zone": "avon_gorge",
+  "x": 7,
+  "y": 56,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+  "reward": {
+   "hop": [
+    7,
+    53
+   ]
+  },
+  "flag": "field_avon_gorge_loft_a",
+  "at": "avon_gorge"
+ },
+ {
+  "id": "fs_avon_gorge_loft_x2",
+  "zone": "avon_gorge",
+  "x": 7,
+  "y": 54,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    7,
+    57
+   ]
+  },
+  "flag": "field_avon_gorge_loft_b",
+  "at": "avon_gorge"
+ },
+ {
+  "id": "fs_somerset_levels_topple_x1",
+  "zone": "somerset_levels",
+  "x": 50,
+  "y": 8,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+  "reward": {
+   "hop": [
+    50,
+    11
+   ]
+  },
+  "flag": "field_somerset_levels_topple_a",
+  "at": "somerset_levels"
+ },
+ {
+  "id": "fs_somerset_levels_topple_x2",
+  "zone": "somerset_levels",
+  "x": 50,
+  "y": 10,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
+  "reward": {
+   "hop": [
+    50,
+    7
+   ]
+  },
+  "flag": "field_somerset_levels_topple_b",
+  "at": "somerset_levels"
+ },
+ {
+  "id": "fs_exe_estuary_paddle_x1",
+  "zone": "exe_estuary",
+  "x": 46,
+  "y": 15,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
+  "reward": {
+   "hop": [
+    51,
+    15
+   ]
+  },
+  "flag": "field_exe_estuary_paddle_a",
+  "at": "exe_estuary"
+ },
+ {
+  "id": "fs_exe_estuary_paddle_x2",
+  "zone": "exe_estuary",
+  "x": 50,
+  "y": 15,
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it.",
+  "reward": {
+   "hop": [
+    45,
+    15
+   ]
+  },
+  "flag": "field_exe_estuary_paddle_b",
+  "at": "exe_estuary"
  }
 ]

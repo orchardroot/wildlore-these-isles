@@ -10,7 +10,7 @@ extends RefCounted
 
 const DIR := "res://data/field_spots"
 const SEEN_RANGE := 6
-const PROPS := ["wall_gap", "sheep_gate", "molehill", "dead_trunk", "glint", "skim_target", "bog_pool", "coracle", "cheese", "bale"]
+const PROPS := ["wall_gap", "sheep_gate", "molehill", "dead_trunk", "glint", "skim_target", "bog_pool", "coracle", "cheese", "bale", "stepping_stones"]
 ## verb -> the label for hints, a stand-in piece name and place for when no party piece is authored for it yet,
 ## what the player sees, and the little bit of business the creature does
 const VERBS := {

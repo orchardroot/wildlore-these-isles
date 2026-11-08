@@ -426,7 +426,7 @@
   "prop": "dead_trunk",
   "text": "A dead tree, waiting for an excuse. {lead} supplies one. In the roots, undisturbed for years: a purse, a bit damp.",
   "reward": {
-   "money": 2220
+   "money": 2250
   },
   "flag": "field_oban_topple",
   "at": "oban"
@@ -440,7 +440,7 @@
   "prop": "skim_target",
   "text": "{lead} skims a stone over the pool and a bottle on a post tips over. Hanging from it: a roll of notes.",
   "reward": {
-   "money": 2220
+   "money": 2250
   },
   "flag": "field_oban_skim",
   "at": "oban"
@@ -498,38 +498,37 @@
   "prop": "wall_gap",
   "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: some loose change and a gratitude card.",
   "reward": {
-   "money": 2220
+   "money": 2250
   },
   "flag": "field_scottish_borders_mend",
   "at": "scottish_borders"
  },
  {
-  "id": "fs_shetland_mainland_paddle",
+  "id": "fs_shetland_mainland_snorkel",
   "zone": "shetland_mainland",
   "x": 45,
   "y": 31,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "A coracle, left on the bank, light as a basket. {lead} gets in and paddles across without spinning more than twice. On the far side: Ammonite.",
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, a purse, a bit damp.",
   "reward": {
-   "item": "ammonite",
-   "qty": 1
+   "money": 2550
   },
-  "flag": "field_shetland_mainland_paddle",
+  "flag": "field_shetland_mainland_snorkel",
   "at": "shetland_mainland"
  },
  {
-  "id": "fs_shetland_mainland_snorkel",
+  "id": "fs_shetland_mainland_paddle",
   "zone": "shetland_mainland",
   "x": 8,
   "y": 15,
-  "field": "snorkel",
-  "prop": "bog_pool",
-  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Bell Punch Ticket Machine.",
+  "field": "paddle",
+  "prop": "coracle",
+  "text": "A coracle, left on the bank, light as a basket. {lead} gets in and paddles across without spinning more than twice. On the far side: a few coins.",
   "reward": {
-   "curio": "bus_ticket_machine"
+   "money": 2550
   },
-  "flag": "field_shetland_mainland_snorkel",
+  "flag": "field_shetland_mainland_paddle",
   "at": "shetland_mainland"
  },
  {
@@ -548,34 +547,18 @@
   "at": "skye"
  },
  {
-  "id": "fs_skye_paddle",
+  "id": "fs_skye_snorkel",
   "zone": "skye",
-  "x": 64,
-  "y": 24,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "The little round boat wobbles, then settles. {lead} crosses the water with short, careful strokes and lands among the reeds. There is Ammonite.",
+  "x": 34,
+  "y": 29,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "A peat pool, black as tea. {lead} dives in, flippers going, and comes up spluttering and delighted with a purse, a bit damp.",
   "reward": {
-   "item": "ammonite",
-   "qty": 1
+   "money": 2400
   },
-  "flag": "field_skye_paddle",
+  "flag": "field_skye_snorkel",
   "at": "skye"
- },
- {
-  "id": "fs_st_andrews_skim",
-  "zone": "st_andrews",
-  "x": 27,
-  "y": 27,
-  "field": "skim",
-  "prop": "skim_target",
-  "text": "A flat stone and a still stretch of water. {lead} sends it dancing across, once, twice, five times, and something on the far side wobbles loose: Sea Glass.",
-  "reward": {
-   "item": "sea_glass",
-   "qty": 1
-  },
-  "flag": "field_st_andrews_skim",
-  "at": "st_andrews"
  },
  {
   "id": "fs_st_andrews_paddle",
@@ -584,11 +567,26 @@
   "y": 54,
   "field": "paddle",
   "prop": "coracle",
-  "text": "A coracle, tied up and patient. {lead} takes the paddle and you take a seat. The water is easy and the other side has Goss Crested China Pot.",
+  "text": "A coracle, tied up and patient. {lead} takes the paddle and you take a seat. The water is easy and the other side has Selkie Pearl.",
+  "reward": {
+   "item": "selkie_pearl",
+   "qty": 1
+  },
+  "flag": "field_st_andrews_paddle",
+  "at": "st_andrews"
+ },
+ {
+  "id": "fs_st_andrews_skim",
+  "zone": "st_andrews",
+  "x": 27,
+  "y": 27,
+  "field": "skim",
+  "prop": "skim_target",
+  "text": "A flat stone and a still stretch of water. {lead} sends it dancing across, once, twice, five times, and something on the far side wobbles loose: Goss Crested China Pot.",
   "reward": {
    "curio": "goss_pot_macc"
   },
-  "flag": "field_st_andrews_paddle",
+  "flag": "field_st_andrews_skim",
   "at": "st_andrews"
  },
  {
@@ -633,5 +631,107 @@
   },
   "flag": "field_thurso_line",
   "at": "thurso"
+ },
+ {
+  "id": "fs_inverness_loft_x1",
+  "zone": "inverness",
+  "x": 7,
+  "y": 42,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+  "reward": {
+   "hop": [
+    7,
+    39
+   ]
+  },
+  "flag": "field_inverness_loft_a",
+  "at": "inverness"
+ },
+ {
+  "id": "fs_inverness_loft_x2",
+  "zone": "inverness",
+  "x": 7,
+  "y": 40,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    7,
+    43
+   ]
+  },
+  "flag": "field_inverness_loft_b",
+  "at": "inverness"
+ },
+ {
+  "id": "fs_flow_country_snorkel_x1",
+  "zone": "flow_country",
+  "x": 13,
+  "y": 18,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "{lead} ploughs a channel through the bog, face down and delighted, and you pick your way after it on the firm bits. Squelch, squelch, dry land.",
+  "reward": {
+   "hop": [
+    13,
+    13
+   ]
+  },
+  "flag": "field_flow_country_snorkel_a",
+  "at": "flow_country"
+ },
+ {
+  "id": "fs_flow_country_snorkel_x2",
+  "zone": "flow_country",
+  "x": 13,
+  "y": 14,
+  "field": "snorkel",
+  "prop": "bog_pool",
+  "text": "{lead} clears the channel again and you squelch back. Your socks have opinions about this.",
+  "reward": {
+   "hop": [
+    13,
+    19
+   ]
+  },
+  "flag": "field_flow_country_snorkel_b",
+  "at": "flow_country"
+ },
+ {
+  "id": "fs_scottish_borders_skim_x1",
+  "zone": "scottish_borders",
+  "x": 7,
+  "y": 33,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "{lead} skims a flat stone and it ticks off a row of stepping stones, each one settling a little. You hop after it, dry as a bone, mostly.",
+  "reward": {
+   "hop": [
+    7,
+    38
+   ]
+  },
+  "flag": "field_scottish_borders_skim_a",
+  "at": "scottish_borders"
+ },
+ {
+  "id": "fs_scottish_borders_skim_x2",
+  "zone": "scottish_borders",
+  "x": 7,
+  "y": 37,
+  "field": "skim",
+  "prop": "stepping_stones",
+  "text": "You hop back along the stepping stones. {lead} skims a stone ahead of you for luck, and it lands every time.",
+  "reward": {
+   "hop": [
+    7,
+    32
+   ]
+  },
+  "flag": "field_scottish_borders_skim_b",
+  "at": "scottish_borders"
  }
 ]

@@ -188,6 +188,31 @@ for f in glob.glob("data/items/*.json"):
 PROP = {"mend": "wall_gap", "skim": "skim_target", "topple": "dead_trunk", "line": "glint", "round_up": "sheep_gate", "charm": "molehill",
         "snorkel": "bog_pool", "paddle": "coracle", "roll": "cheese", "loft": "bale"}
 
+def comps(z, block=()):
+    """Components of walkable tiles (4-connected, height rule) as a dict tile -> id."""
+    w, hh = len(z["rows"][0]), len(z["rows"]); cid = {}; n = 0
+    for sy in range(hh):
+        for sx in range(w):
+            if (sx, sy) in cid or (sx, sy) in block or tile(z, sx, sy) not in WALK: continue
+            n += 1; cid[(sx, sy)] = n; q = [(sx, sy)]
+            while q:
+                x, y = q.pop()
+                for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    nx, ny = x + dx, y + dy
+                    if 0 <= nx < w and 0 <= ny < hh and (nx, ny) not in cid and (nx, ny) not in block and tile(z, nx, ny) in WALK:
+                        if z.get("heights") and abs(int(z["heights"][ny][nx]) - int(z["heights"][y][x])) > 1: continue
+                        cid[(nx, ny)] = n; q.append((nx, ny))
+    return cid
+
+def cuts(z, spots):
+    """True when making these tiles solid cuts any other walkable tile off from the rest of its component."""
+    before = comps(z); after = comps(z, set(spots))
+    sizes = collections.Counter(before[t] for t in before if t not in spots)
+    seen = collections.Counter(); mapping = {}
+    for t, c in after.items():
+        mapping.setdefault(before[t], set()).add(c)
+    return any(len(v) > 1 for v in mapping.values())
+
 out = collections.defaultdict(list)
 used = collections.Counter()
 for zid, z in sorted(zones.items()):
@@ -223,7 +248,7 @@ for zid, z in sorted(zones.items()):
         if len(chosen) >= n: break
         cl = sorted(cands[v], key=lambda p: h(zid, v, p))
         for p in cl:
-            if all(abs(p[0] - q[0]) + abs(p[1] - q[1]) >= 10 for q, _ in chosen):
+            if all(abs(p[0] - q[0]) + abs(p[1] - q[1]) >= 10 for q, _ in chosen) and not cuts(z, {q for q, _ in chosen} | {p}):
                 chosen.append((p, v)); used[v] += 1; break
     for i, (p, v) in enumerate(chosen):
         rw, _ = reward(v, zid, i, lvl)
@@ -233,18 +258,51 @@ for zid, z in sorted(zones.items()):
         if at: e["at"] = at
         out[z["region"]].append(e)
 
-# --- pairs: a coracle or a felled trunk takes you across a gap of water inside one zone ---
-def find_pairs(z, verb, lo, hi):
+# --- pairs (w49): a creature carries you over a gap that is worth crossing. Kinds: paddle (coracle, water), topple (trunk,
+# narrow water), skim (stepping stones, water), snorkel (bog), loft (bale over a hedge, fence or wall). The far side is
+# either a pocket cut off from the zone (it gets a cache) or a shortcut that saves a long walk. ---
+KINDS = {  # verb: (obstacle tiles, min gap, max gap)
+    "paddle": (WATER, 2, 8), "topple": (WATER, 1, 3), "skim": (WATER, 2, 4), "snorkel": ({"bog"}, 2, 6),
+    "loft": ({"hedge", "fence", "drystone_wall", "bramble"}, 1, 2),
+}
+HOP_PROP = {"paddle": "coracle", "topple": "dead_trunk", "skim": "stepping_stones", "snorkel": "bog_pool", "loft": "bale"}
+HOP_TEXT = {
+    "paddle": ("{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
+               "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it."),
+    "topple": ("{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+               "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business."),
+    "skim": ("{lead} skims a flat stone and it ticks off a row of stepping stones, each one settling a little. You hop after it, dry as a bone, mostly.",
+             "You hop back along the stepping stones. {lead} skims a stone ahead of you for luck, and it lands every time."),
+    "snorkel": ("{lead} ploughs a channel through the bog, face down and delighted, and you pick your way after it on the firm bits. Squelch, squelch, dry land.",
+                "{lead} clears the channel again and you squelch back. Your socks have opinions about this."),
+    "loft": ("{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+             "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal."),
+}
+
+def entry_tiles(zid, z):
+    """Tiles where someone can arrive: warps' own tiles, other zones' warps into here, the borders when there are edges."""
+    s = {(int(p["x"]), int(p["y"])) for p in z.get("warps", [])}
+    for oz in zones.values():
+        for p in oz.get("warps", []):
+            if p["to"] == zid: s.add((int(p["tx"]), int(p["ty"])))
+        for e in oz.get("edges", {}).values():
+            pass
+    return s
+
+def find_pairs(z, verb, taken_tiles):
+    obst, lo, hi = KINDS[verb]
     zid = z["id"]; w, hh = len(z["rows"][0]), len(z["rows"])
     r = reach(z)
     blockers = {(int(p.get("x", -9)), int(p.get("y", -9))) for k in ("props", "warps", "signs", "npcs", "examine") for p in z.get(k, []) if isinstance(p, dict)}
     blockers.add((int(z["spawn"][0]), int(z["spawn"][1])))
     for p in pois:
         if p["zone"] == zid: blockers.add((p["near"][0], p["near"][1]))
-    taken = {(e["x"], e["y"]) for L in out.values() for e in L if e["zone"] == zid}
-    bl = blockers | taken
+    bl = blockers | taken_tiles
+    entries = entry_tiles(zid, z)
+    comp0 = comps(z)
+    border = z.get("edges") and True
     res = []
-    for (x, y) in sorted(r, key=lambda p: h(zid, verb, p))[:6000]:
+    for (x, y) in sorted(r, key=lambda p: h(zid, verb, p))[:8000]:
         if x < 4 or y < 4 or x >= w - 5 or y >= hh - 5: continue
         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             a = (x, y)
@@ -252,41 +310,79 @@ def find_pairs(z, verb, lo, hi):
             pre = (x - dx, y - dy)
             if pre not in r or tile(z, *pre) not in WALK: continue
             for L in range(lo, hi + 1):
-                if not all(tile(z, x + dx * k, y + dy * k) in WATER for k in range(1, L + 1)): continue
+                if not all(tile(z, x + dx * k, y + dy * k) in obst for k in range(1, L + 1)): continue
                 b = (x + dx * (L + 1), y + dy * (L + 1))
                 land = (b[0] + dx, b[1] + dy)
                 if not (0 <= land[0] < w and 0 <= land[1] < hh): continue
                 if tile(z, *b) not in GOOD or tile(z, *land) not in WALK: continue
+                if 0 > b[0] - 4 or b[0] >= w - 5 or b[1] < 4 or b[1] >= hh - 5: continue
                 bad = {a, pre, b, land}
                 if any((q[0] + ox, q[1] + oy) in bl for q in bad for ox in (-1, 0, 1) for oy in (-1, 0, 1)): continue
-                if b in r:  # a shortcut round the water is fine, but it must save a real walk
-                    continue
-                res.append((a, pre, b, land, (dx, dy)))
+                if b in r:
+                    # a shortcut: only if going round is a long walk
+                    d = {pre: 0}; q = [pre]
+                    for t in q:
+                        if d[t] > 40: break
+                        for ox, oy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                            n = (t[0] + ox, t[1] + oy)
+                            if n in r and n not in d and n != a:
+                                d[n] = d[t] + 1; q.append(n)
+                    if d.get(land, 99) < 24: continue
+                    res.append((a, pre, b, land, (dx, dy), None))
+                else:
+                    comp = comp0
+                    cb = comp.get(land)
+                    pocket = [t for t, c in comp.items() if c == cb]
+                    if not 8 <= len(pocket) <= 600 or any(t in entries or t[0] < 2 or t[1] < 2 or t[0] >= w - 2 or t[1] >= hh - 2 for t in pocket): continue
+                    if any((int(n.get("x", -9)), int(n.get("y", -9))) in set(pocket) for n in z.get("npcs", [])): continue
+                    cache = None
+                    for t in sorted(pocket, key=lambda t: h(zid, verb, t, "c")):
+                        if t in (b, land) or max(abs(t[0] - land[0]), abs(t[1] - land[1])) > 1: continue
+                        if any((t[0] + ox, t[1] + oy) in bl for ox in (-1, 0, 1) for oy in (-1, 0, 1)): continue
+                        cv = [v for v in ("charm", "mend", "topple", "round_up", "roll", "loft") if can(z, v, t[0], t[1])]
+                        if cv and not cuts(z, {a, b, t}): cache = (t, cv[h(zid, t, "cv") % len(cv)]); break
+                    if cache is None: continue
+                    res.append((a, pre, b, land, (dx, dy), cache))
                 break
             if res and res[-1][0] == a: break
-    return res
+    return [p for p in res if not cuts(z, {p[0], p[2]} | ({p[5][0]} if p[5] else set()))]
 
-pair_n = collections.Counter()
+taken_all = collections.defaultdict(set)
+for L in out.values():
+    for e in L: taken_all[e["zone"]].add((e["x"], e["y"]))
+cand = {}
 for zid, z in sorted(zones.items()):
-    if zid.startswith("lease_") or z["kind"] != "route" or not z.get("rows") or z["region"].startswith("overseas") or z["region"] == "dev": continue
-    for verb, lo, hi in (("paddle", 2, 8), ("topple", 1, 3)):
-        got = find_pairs(z, verb, lo, hi)
-        if not got: continue
-        a, pre, b, land, d = got[h(zid, verb) % len(got)]
-        lvl = levels(z); at = map_at(zid)
-        v = verb
+    if zid.startswith("lease_") or z["kind"] == "interior" or not z.get("rows") or not z["region"] or z["region"].startswith("overseas") or z["region"] == "dev": continue
+    for verb in KINDS:
+        got = find_pairs(z, verb, taken_all[zid])
+        if got: cand[(zid, verb)] = got
+
+pair_n = collections.Counter(); region_n = collections.Counter(); done_zone = set()
+TARGET = 28
+for cap in (1, 2, 3):
+    for zid in sorted({k[0] for k in cand}, key=lambda q: h(q, "ord")):
+        if zid in done_zone or sum(pair_n.values()) >= TARGET: continue
+        z = zones[zid]
+        if region_n[z["region"]] >= cap: continue
+        verbs = sorted([v for (q, v) in cand if q == zid and pair_n[v] < 8], key=lambda v: (pair_n[v], h(zid, v)))
+        if not verbs: continue
+        v = verbs[0]; got = cand[(zid, v)]
+        a, pre, b, land, d, cache = got[h(zid, v) % len(got)]
+        at = map_at(zid)
         base = "fs_%s_%s_x" % (zid, v)
-        if v == "paddle":
-            t1 = "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours."
-            t2 = "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it."
-        else:
-            t1 = "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act."
-            t2 = "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business."
-        e1 = {"id": base + "1", "zone": zid, "x": a[0], "y": a[1], "field": v, "prop": PROP[v], "text": t1, "reward": {"hop": [land[0], land[1]]}, "flag": "field_%s_%s_a" % (zid, v)}
-        e2 = {"id": base + "2", "zone": zid, "x": b[0], "y": b[1], "field": v, "prop": PROP[v], "text": t2, "reward": {"hop": [pre[0], pre[1]]}, "flag": "field_%s_%s_b" % (zid, v)}
-        if at: e1["at"] = at; e2["at"] = at
-        out[z["region"]] += [e1, e2]
-        pair_n[v] += 1
+        t1, t2 = HOP_TEXT[v]
+        e1 = {"id": base + "1", "zone": zid, "x": a[0], "y": a[1], "field": v, "prop": HOP_PROP[v], "text": t1, "reward": {"hop": [land[0], land[1]]}, "flag": "field_%s_%s_a" % (zid, v)}
+        e2 = {"id": base + "2", "zone": zid, "x": b[0], "y": b[1], "field": v, "prop": HOP_PROP[v], "text": t2, "reward": {"hop": [pre[0], pre[1]]}, "flag": "field_%s_%s_b" % (zid, v)}
+        add = [e1, e2]
+        if cache:
+            (cx, cy), cv = cache
+            rw, _ = reward(cv, zid, 7, levels(z))
+            ct = TEXT[cv][h(zid, cv, "t") % 3].replace("{what}", what_of(rw, itemnames) if "money" not in rw else MONEY_WHAT[h(zid, cv) % 4])
+            add.append({"id": "fs_%s_%s_c" % (zid, cv), "zone": zid, "x": cx, "y": cy, "field": cv, "prop": PROP[cv], "text": ct, "reward": rw, "flag": "field_%s_%s_c" % (zid, cv)})
+        for e in add:
+            if at: e["at"] = at
+        out[z["region"]] += add
+        pair_n[v] += 1; region_n[z["region"]] += 1; done_zone.add(zid)
 
 total = 0
 os.makedirs("data/field_spots", exist_ok=True)

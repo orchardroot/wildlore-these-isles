@@ -58,51 +58,52 @@
   "at": "wirral_way"
  },
  {
-  "id": "fs_wirral_way_roll",
+  "id": "fs_wirral_way_charm",
   "zone": "wirral_way",
-  "x": 24,
-  "y": 36,
-  "field": "roll",
-  "prop": "cheese",
-  "text": "A cheese wheel stuck in a hollow, as they do. {lead} gives it a shove and down the slope it goes, and the hollow gives up Bog Oak Carving.",
+  "x": 31,
+  "y": 38,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Peat.",
   "reward": {
-   "curio": "bog_oak_carving"
+   "item": "peat",
+   "qty": 1
   },
-  "flag": "field_wirral_way_roll",
+  "flag": "field_wirral_way_charm",
   "at": "wirral_way"
  },
  {
-  "id": "fs_wirral_way_paddle_x1",
-  "zone": "wirral_way",
-  "x": 13,
-  "y": 55,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "{lead} paddles you across in the little round boat, spinning once for good manners. The far bank is quiet, reedy and yours.",
+  "id": "fs_macclesfield_topple_x1",
+  "zone": "macclesfield",
+  "x": 12,
+  "y": 28,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
   "reward": {
    "hop": [
-    9,
-    55
+    12,
+    32
    ]
   },
-  "flag": "field_wirral_way_paddle_a",
-  "at": "wirral_way"
+  "flag": "field_macclesfield_topple_a",
+  "at": "macclesfield"
  },
  {
-  "id": "fs_wirral_way_paddle_x2",
-  "zone": "wirral_way",
-  "x": 10,
-  "y": 55,
-  "field": "paddle",
-  "prop": "coracle",
-  "text": "{lead} paddles you back. The boat drifts in a gentle circle the whole way, and nobody mentions it.",
+  "id": "fs_macclesfield_topple_x2",
+  "zone": "macclesfield",
+  "x": 12,
+  "y": 31,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
   "reward": {
    "hop": [
-    14,
-    55
+    12,
+    27
    ]
   },
-  "flag": "field_wirral_way_paddle_b",
-  "at": "wirral_way"
+  "flag": "field_macclesfield_topple_b",
+  "at": "macclesfield"
  }
 ]

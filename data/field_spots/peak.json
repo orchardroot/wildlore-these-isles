@@ -74,33 +74,65 @@
   "at": "goyt_valley"
  },
  {
+  "id": "fs_the_roaches_topple",
+  "zone": "the_roaches",
+  "x": 29,
+  "y": 19,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls some loose change and a gratitude card.",
+  "reward": {
+   "money": 450
+  },
+  "flag": "field_the_roaches_topple",
+  "at": "the_roaches"
+ },
+ {
   "id": "fs_the_roaches_mend",
   "zone": "the_roaches",
-  "x": 24,
-  "y": 15,
+  "x": 35,
+  "y": 13,
   "field": "mend",
   "prop": "wall_gap",
-  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Hag Stone.",
+  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Cup Tie Programme.",
   "reward": {
-   "item": "hag_stone",
-   "qty": 1
+   "curio": "fa_cup_programme"
   },
   "flag": "field_the_roaches_mend",
   "at": "the_roaches"
  },
  {
-  "id": "fs_the_roaches_topple",
+  "id": "fs_the_roaches_loft_x1",
   "zone": "the_roaches",
-  "x": 36,
-  "y": 17,
-  "field": "topple",
-  "prop": "dead_trunk",
-  "text": "The old trunk is hollow and ready to go. {lead} heaves, it topples, and out of the hollow rolls Truffle.",
+  "x": 21,
+  "y": 5,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
   "reward": {
-   "item": "truffle",
-   "qty": 1
+   "hop": [
+    18,
+    5
+   ]
   },
-  "flag": "field_the_roaches_topple",
+  "flag": "field_the_roaches_loft_a",
+  "at": "the_roaches"
+ },
+ {
+  "id": "fs_the_roaches_loft_x2",
+  "zone": "the_roaches",
+  "x": 19,
+  "y": 5,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    22,
+    5
+   ]
+  },
+  "flag": "field_the_roaches_loft_b",
   "at": "the_roaches"
  }
 ]
