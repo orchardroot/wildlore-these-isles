@@ -2,7 +2,7 @@
  "id": "lerwick_guizer",
  "name": "Guizer Olaf",
  "class": "Guizer",
- "sprite": "explorer",
+ "sprite": "guizer",
  "party": [
   {
    "species": "kindlet",

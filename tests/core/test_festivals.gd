@@ -140,6 +140,18 @@ func test_braemar_is_on_the_scottish_dee() -> void:
 		assert_eq(str(s.get("zone", "")), "cairngorms")
 	assert_true(Festivals.in_window(e, 9, 1) and Festivals.in_window(e, 9, 7), "the first Saturday of September always falls from the 1st to the 7th")
 
+func test_braemar_is_held_on_green_grass_not_ski_snow() -> void:
+	# w52: Caber Callum stood on the snow by the ski centre in September; the Games are on a green field
+	var e := Festivals.get_event("braemar")
+	var raw: Dictionary = JsonUtil.read("res://data/zones/cairngorms.json")
+	var ch := str(raw.rows[int(e.y)])[int(e.x)]
+	assert_eq(str(raw.legend_extra.get(ch, {}).get("colour", "")), "#6f8a52", "the glen's green grass, not the white 'n'")
+
+func test_up_helly_aa_guizers_are_in_viking_gear() -> void:
+	# w52: Guizer Magnus wore Blackpool's pink flower crown
+	assert_eq(str(Festivals.get_event("uphellyaa").sprite), "guizer")
+	assert_true(ResourceLoader.exists("res://art/sprites/chars/guizer.png"))
+
 func test_run_year_follows_the_year_a_new_year_window_opened() -> void:
 	var hog := Festivals.get_event("hogmanay")
 	assert_eq(Festivals.run_year(hog, Vector2i(12, 31), 2026), 2026)

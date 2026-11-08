@@ -20,7 +20,7 @@ const HAIRS := ["short", "long", "bob", "bun", "pony", "curly", "spiky", "bald",
 	"afro", "braids", "locs", "undercut", "mohawk", "buzz"]
 const HATS := ["none", "cap", "beanie", "swimcap", "sunhat", "bucket", "headband", "welding_visor", "bobble_hat", "deerstalker",
 	"witch_hat", "panama", "hard_hat", "flat_cap", "helmet", "flower_crown", "holly_crown", "headscarf", "turban", "top_hat", "tudor_bonnet",
-	"sou_wester", "tam", "boater"]
+	"sou_wester", "tam", "boater", "viking_helmet"]
 const BOTTOMS := ["trousers", "shorts", "skirt", "kilt"]
 const SLEEVES := ["long", "short"]
 const ACCESSORIES := ["labcoat", "glasses", "hoodie", "gilet", "scarf", "backpack", "cape", "apron", "phone", "binoculars", "rod", "badge",
@@ -868,6 +868,18 @@ static func _hat(cv, c: Dictionary, cx: float, cy: float, hw: float, hh: float, 
 					cv.px(int(cx - hw * 0.5), yy, cage)
 				for k in range(0, 5):
 					cv.px(int(cx - hw * 0.5) + k, int(cy + hh * 0.5) - 1, cage)
+		"viking_helmet":
+			# Up Helly Aa's Jarl Squad: a steel cap with a brow band and a nose guard, and a pale wing either side
+			var vx2 := cx + (1.0 if side else 0.0)
+			var wing := Canvas.tones(Canvas.parse_colour(c.pal.get("leaf", "#ece6d8")))
+			for ws in ([-1, 1] if not side else [1]):
+				var wx: float = vx2 + ws * (hw * 0.5 + 2.5) if not side else vx2 + 2.5
+				_rect(cv, wx, top + 1.5, 3, 8, wing, 1, true, true, 0.25 * ws)
+				_rect(cv, wx + ws * 1.5, top - 2.0, 2, 5, wing, 1, true, false, 0.4 * ws)
+			_ell(cv, vx2, top + 3.5, hw + 2, 9, col, true, true)
+			_rect(cv, vx2, top + 7.0, hw + 2.5, 2, _tn(c, hk, 0.2), 0, true, true)
+			if dir == "down":
+				_rect(cv, cx, top + 10.0, 1.5, 5, _tn(c, hk, 0.2), 0, false)
 		"bobble_hat":
 			var bx2 := cx + (1.0 if side else 0.0)
 			_ell(cv, bx2, top + 3.5, hw + 1.5, 9, col, true, true, 0.0, {"pattern": "stripes", "pcol": _tn(c, "accent"), "period": 4, "angle": 0})

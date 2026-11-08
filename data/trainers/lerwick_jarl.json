@@ -2,7 +2,7 @@
  "id": "lerwick_jarl",
  "name": "Jarl Sigurd",
  "class": "Guizer Jarl",
- "sprite": "ghillie",
+ "sprite": "guizer",
  "party": [
   {
    "species": "pyredrey",
