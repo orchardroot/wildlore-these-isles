@@ -36,3 +36,16 @@ func test_settings_round_trip_and_bad_value() -> void:
 	Settings.text_size = "normal"
 	Settings.readable_font = false
 	Settings.apply_access()
+
+func test_the_readable_font_outlives_the_first_load() -> void:
+	# applied at startup, before any screen holds the theme: it used to be freed and come back plain
+	Settings.readable_font = true
+	Settings.apply_access()
+	for i in 3:
+		var l := Label.new()
+		l.free()
+	var th: Theme = load("res://ui/theme.tres")
+	assert_true(th.has_default_font(), "the Readable font is still on the theme when a screen loads it")
+	Settings.readable_font = false
+	Settings.apply_access()
+	assert_false((load("res://ui/theme.tres") as Theme).has_default_font(), "and off again")

@@ -71,10 +71,38 @@ static func toast_samples() -> Array:
 		["New gadget", "%s: find it in the Almanac's Timeline" % _longest(Invention.eras().map(func(e): return e.get("gadget", {})), "name")],
 	]
 
+const LONG_WHO := "Professor Bartholomew Fothergill-Montgomery"
+const LONG_LINE := "Right, listen carefully, because I'll only say this the once and then I'll be off to put the kettle on. The silk mills along the Bollin ran on water first, then steam, and every bobbin you see in the museum went through a dozen pairs of hands before it ever saw a loom. If you want to understand this town, start with the river, then the chapels, then the pubs, in roughly that order."
+const CHOICE_LINE := "Which way are you headed? The road over the moor is quicker, but the canal path is kinder on the legs and there's a tea room at the bottom lock that does a very respectable scone."
+
+## Dev `--hud=talk:<case>`: the dialogue box at its worst. long (a line that needs pages), name (a very long
+## speaker), choice (a choice with a speaker), many (more choices than fit above the box). Waits for input, so
+## take the shot while it shows.
+static func talk(ow: Node, what: String) -> void:
+	var box: DialogueBox = load("res://ui/dialogue_box.tscn").instantiate()
+	ow.add_child(box)
+	match what:
+		"long":
+			box.show_text(LONG_LINE, "Garside")
+		"name":
+			box.show_text("Good afternoon. You'll be wanting the museum, I expect. Everyone does.", LONG_WHO)
+		"choice":
+			box.show_choice(CHOICE_LINE, ["Over the moor", "Along the canal", "Not today"], "Keeper Maud")
+		"many":
+			var opts := []
+			for t in ["Macclesfield", "Buxton", "Liverpool", "Chester", "Llanberis", "Cardiff", "Glastonbury", "Holyhead",
+					"Dublin", "Galway", "Belfast", "Inverness", "York", "Stay here"]:
+				opts.append(t)
+			box.show_choice(CHOICE_LINE, opts, "Station master")
+
 ## Puts them all up (after the boot zone has loaded).
 static func show(game: Node, what: String) -> void:
 	var ow: Node = Router.overworld
 	if ow == null:
+		return
+	if what.begins_with("talk:"):
+		await game.get_tree().create_timer(0.6).timeout
+		talk(ow, what.substr(5))
 		return
 	await game.get_tree().create_timer(1.2).timeout  # the route chip and place chip settle first
 	var card := game.get_tree().get_first_node_in_group(ZoneCard.GROUP) as ZoneCard
@@ -130,7 +158,7 @@ static func report(root: Node, screen: Rect2) -> Array:
 		for j in range(i + 1, boxes.size()):
 			var b: Dictionary = boxes[j]
 			var hit: Rect2 = a.rect.intersection(b.rect)
-			if hit.size.x > 1.0 and hit.size.y > 1.0:
+			if hit.size.x > 1.0 and hit.size.y > 8.0:  # a few px is a seam by design (the speaker's tab sits on the box)
 				out.append("%s overlaps %s (%dx%d px)" % [a.name, b.name, hit.size.x, hit.size.y])
 	return out
 

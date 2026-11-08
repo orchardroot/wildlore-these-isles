@@ -56,3 +56,33 @@ func test_choices_stand_above_the_box_and_clear_of_the_speaker() -> void:
 	var tab := Rect2(76, 431, 220, 47)
 	assert_eq(DialogueBox.choice_bottom(472.0, tab, 700.0), 472.0 - DialogueBox.CHOICE_GAP, "a short list keeps right of the tab")
 	assert_eq(DialogueBox.choice_bottom(472.0, tab, 200.0), 431.0 - DialogueBox.CHOICE_GAP, "a wide one goes over it")
+
+func test_a_long_choice_list_scrolls() -> void:
+	assert_eq(DialogueBox.choice_window(4, 3, 6, 0), 0, "all fit: no scrolling")
+	assert_eq(DialogueBox.choice_window(14, 0, 7, 0), 0)
+	assert_eq(DialogueBox.choice_window(14, 7, 7, 0), 1, "down past the last row moves the window one")
+	assert_eq(DialogueBox.choice_window(14, 13, 7, 1), 7, "wrapping to the end shows the end")
+	assert_eq(DialogueBox.choice_window(14, 3, 7, 7), 3, "up past the first row moves it back")
+	var f := ThemeDB.fallback_font
+	var rows := DialogueBox.choice_rows(720.0, f, 28, 30, 26)
+	assert_true(rows >= 5 and rows < 14, "a sensible number fit at 1280x720 (%d)" % rows)
+	assert_true(DialogueBox.choice_rows(720.0, f, 35, 38, 33) < rows, "fewer at Large text")
+
+func test_choices_show_a_window_with_more_arrows() -> void:
+	var b := DialogueBox.new()
+	b._ready()
+	var opts := []
+	for i in 14:
+		opts.append("Town %d" % i)
+	b._fill_choices(opts)
+	var shown := b._choice_labels.filter(func(l): return l.visible).size()
+	assert_eq(shown, b._rows, "only the window shows")
+	assert_true(b._rows < 14 and b._more_down.visible, "with arrows")
+	for i in 13:
+		b._choice_index = i + 1
+		b._refresh_choices()
+	assert_true(b._choice_labels[13].visible and not b._choice_labels[0].visible, "scrolled to the end")
+	b._fill_choices(["Yes", "No"])
+	assert_false(b._more_up.visible, "a short list after a long one: no arrows")
+	assert_true(is_instance_valid(b._more_up), "the arrows survive a refill")
+	b.free()

@@ -33,6 +33,10 @@ var _total := 0
 var _armed_at := 0
 var _choice_after_typing := false
 var _decline := -1
+var _first := 0          # the first choice showing, when there are more than fit (see choice_window)
+var _rows := 0           # how many choices show at once
+var _more_up: Label
+var _more_down: Label
 
 func _ready() -> void:
 	layer = 20
@@ -79,8 +83,8 @@ func _build_box() -> void:
 	_box.resized.connect(_seat_tab)
 	_label = Label.new()
 	_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_label.custom_minimum_size = Vector2(0, 100)
-	_label.add_theme_font_size_override("font_size", 30)
+	_label.custom_minimum_size = Vector2(0, Access.scaled(100, Settings.text_size))
+	_label.add_theme_font_size_override("font_size", Access.scaled(30, Settings.text_size))
 	_label.add_theme_constant_override("line_spacing", 6)
 	_box.add_child(_label)
 
@@ -103,7 +107,7 @@ func _build_tab() -> void:
 	_ui.add_child(_tab)
 	_tab.resized.connect(_seat_tab)
 	_tab_label = Label.new()
-	_tab_label.add_theme_font_size_override("font_size", 26)
+	_tab_label.add_theme_font_size_override("font_size", Access.scaled(26, Settings.text_size))
 	_tab.add_child(_tab_label)
 	_tab.visible = false
 
@@ -161,6 +165,20 @@ func _build_choices() -> void:
 	_choice_panel.resized.connect(_seat_tab)
 	_choice_panel.add_child(VBoxContainer.new())
 	_choice_panel.visible = false
+	_more_up = _more("▲")
+	_more_down = _more("▼")
+	_choice_panel.get_child(0).add_child(_more_up)
+	_choice_panel.get_child(0).add_child(_more_down)
+
+## The little arrow over (or under) a choice list that has more choices than fit, scrolled with up and down.
+func _more(glyph: String) -> Label:
+	var l := Label.new()
+	l.text = glyph
+	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	l.add_theme_font_size_override("font_size", Access.scaled(18, Settings.text_size))
+	l.add_theme_color_override("font_color", HEATHER.lightened(0.3))
+	l.visible = false
+	return l
 
 ## Types `text` out, then waits for confirm. `who` shows in the name tab (hidden when empty).
 func show_text(text: String, who := "") -> void:
@@ -229,10 +247,11 @@ const SIZES := [30, 26]  # try the usual size, then a touch smaller, before spli
 func _pages(text: String) -> Array:
 	var font := _label.get_theme_font("font")
 	var width := maxf(_box.size.x, get_viewport().get_visible_rect().size.x - 96.0) - 52.0
-	for fs in SIZES:
+	for fs0 in SIZES:
+		var fs := Access.scaled(fs0, Settings.text_size)
 		var fits := func(t: String) -> bool:
 			return font.get_multiline_string_size(t, HORIZONTAL_ALIGNMENT_LEFT, width, fs).y <= font.get_height(fs) * MAX_LINES + 2.0
-		if fits.call(text) or fs == SIZES.back():
+		if fits.call(text) or fs0 == SIZES.back():
 			_label.add_theme_font_size_override("font_size", fs)
 			return paginate(text, fits)
 	return [text]
@@ -265,24 +284,60 @@ func _begin(text: String, who: String) -> void:
 
 func _fill_choices(options: Array) -> void:
 	var vb: VBoxContainer = _choice_panel.get_child(0)
+	if _more_up.get_parent():  # kept for the next choice: out before the old choices are freed
+		vb.remove_child(_more_up)
+		vb.remove_child(_more_down)
 	for c in vb.get_children():
 		c.queue_free()
 	_choice_labels.clear()
+	vb.add_child(_more_up)
+	var fs := Access.scaled(28, Settings.text_size)
 	for o in options:
 		var l := Label.new()
-		l.add_theme_font_size_override("font_size", 28)
+		l.add_theme_font_size_override("font_size", fs)
 		l.text = "    " + str(o)
 		vb.add_child(l)
 		_choice_labels.append(l)
+	vb.add_child(_more_down)
 	_choice_index = 0
+	_first = 0
+	_rows = mini(options.size(), choice_rows(get_viewport().get_visible_rect().size.y if is_inside_tree() else 720.0,
+		_label.get_theme_font("font"), fs, _label.get_theme_font_size("font_size"), _tab_label.get_theme_font_size("font_size")))
 	_refresh_choices()
 
+## How many choices fit above the box at once, with the box at its tallest (MAX_LINES), its speaker's tab, the
+## list's own margins and the two "more" arrows, between the top of the screen and the box.
+static func choice_rows(screen_h: float, font: Font, choice_fs: int, text_fs: int, tab_fs: int) -> int:
+	var box := (font.get_height(text_fs) + 6.0) * MAX_LINES + 38.0 + 28.0
+	var tab := font.get_height(tab_fs) + 20.0
+	var arrows := (font.get_height(18) + 4.0) * 2.0
+	var room := screen_h - box - tab - CHOICE_GAP - 38.0 - arrows - 16.0
+	return maxi(3, int(room / (font.get_height(choice_fs) + 4.0)))
+
+## The first choice to show so that `index` is in view, moving the window as little as possible from `first`.
+static func choice_window(count: int, index: int, rows: int, first: int) -> int:
+	if rows >= count:
+		return 0
+	if index < first:
+		first = index
+	elif index >= first + rows:
+		first = index - rows + 1
+	return clampi(first, 0, count - rows)
+
 func _refresh_choices() -> void:
+	_first = choice_window(_choice_labels.size(), _choice_index, _rows, _first)
 	for i in _choice_labels.size():
 		var l: Label = _choice_labels[i]
 		var base: String = l.text.strip_edges().trim_prefix("▶").strip_edges()
 		l.text = ("▶ " if i == _choice_index else "    ") + base
 		l.add_theme_color_override("font_color", Color.WHITE if i == _choice_index else CREAM.darkened(0.15))
+		l.visible = i >= _first and i < _first + _rows
+	_more_up.visible = _rows < _choice_labels.size()
+	_more_down.visible = _more_up.visible
+	_more_up.modulate.a = 1.0 if _first > 0 else 0.25
+	_more_down.modulate.a = 1.0 if _first + _rows < _choice_labels.size() else 0.25
+	_choice_panel.offset_left = _choice_panel.offset_right  # shrink to what shows; it grows up and left from its corner
+	_choice_panel.offset_top = _choice_panel.offset_bottom
 
 func _process(delta: float) -> void:
 	var armed := Time.get_ticks_msec() >= _armed_at
