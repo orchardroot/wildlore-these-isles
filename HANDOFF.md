@@ -15,12 +15,17 @@ that look like caves, and a checker in the validator for the rest. Full write-up
   a prop, sign or person. New point props `deep_gate`, `deep_lever`, `deep_crate`, `deep_plate`, `cave_cleft`.
 - **Checker** (`data_api/world_consistency.gd`, called from `tools/validate.gd`; `tools/world_check.gd` lists all):
   object, near, stairs, cave, entrance, blocker and text rules. Findings that are right as they stand go in
-  `data/world_consistency.json` with the reason. Tests: `tests/core/test_world_consistency.gd`, `test_deep_place.gd`.
+  `data/world_consistency.json` with the reason. Tests: `tests/core/test_world_consistency.gd`, `test_deep_place.gd`;
+  `test_fingals_cave.gd`, `test_dan_yr_ogof.gd` and `test_wookey_hole.gd` follow the gate props and moved levers.
 - **Data**: see the audit. Zones: aillwee_entry, blue_john_entry, jersey_tunnels, pit_cave (cave stage, stone floor),
   castleton, jersey_country, dover (cave mouths), mendips (Wookey cleft, sign), wookey_hole, wookey_river,
   staffa_columns, blaenavon_bigpit_east, shetland_mainland (gate), chat_moss, ring_of_kerry (signs), chatmoss_signalbox
   and nym_signalbox (lever frames). Dialogue: dover_museum, plymouth_smeaton, three sanctuaries, brighton_rockshop,
-  oxford_bodleian, oxford_camera.
+  oxford_bodleian, oxford_camera, pennine_grouse_moor.
+
+## Verified
+`tools/test.sh`: 2975 passed, 0 failed, `validate: 0 error(s)`, no SCRIPT ERROR. `tools/playtest.sh slice 2`: PLAYTEST
+PASS. Every Deep Place zone and every fixed outdoor entrance screenshot and looked at.
 
 ## How to see it
 `tools/shot.sh out.png 60 --boot=blue_john_entry@6,6` (add `--flag=dp_blue_john_entry_gate` for open),
