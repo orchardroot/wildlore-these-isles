@@ -735,6 +735,12 @@
    "x": 27,
    "y": 40,
    "item": "honeycomb"
+  },
+  {
+   "type": "cave_hole",
+   "x": 62,
+   "y": 40,
+   "walk": true
   }
  ],
  "warps": [

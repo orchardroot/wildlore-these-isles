@@ -29,6 +29,8 @@ static func mesh(kind: String, variant: int) -> ArrayMesh:
 			return crate(look)
 		"deep_plate":
 			return plate(on)
+		"cave_hole":
+			return cave_hole()
 	return Landmarks.lever(0)
 
 # --- gates (closed; an open gate is just the room's floor) ----------------------------------------------------
@@ -188,4 +190,21 @@ static func plate(pressed: bool) -> ArrayMesh:
 	Meshes.box(st, Vector3(-0.33, 0, -0.33), Vector3(0.66, top, 0.66), IRON.lightened(0.0 if pressed else 0.2))
 	for k in 3:
 		Meshes.box(st, Vector3(-0.25 + k * 0.2, top, -0.25), Vector3(0.1, 0.01, 0.5), IRON.lightened(0.35 if not pressed else 0.1))
+	return Meshes._finish(st)
+
+# --- a way down ---------------------------------------------------------------------------------------------
+
+## A cave mouth opening in the ground at the foot of a cliff, seen from above: a black hole with worn steps going
+## down into it and a rim of rock round the back and sides. Walk on to it (it is a warp's own tile).
+static func cave_hole() -> ArrayMesh:
+	var st := Meshes._st()
+	var rng := Meshes._rng(9300)
+	Meshes.box(st, Vector3(-0.4, 0, -0.36), Vector3(0.8, 0.012, 0.72), DARK)
+	for k in 3:  # worn steps at the near (north) lip, each a little darker as it goes down
+		Meshes.box(st, Vector3(-0.3, 0.012, -0.36 + k * 0.12), Vector3(0.6, 0.02, 0.1), LIME.darkened(0.25 + k * 0.2))
+	var rock := Color("8a8476")
+	for i in 7:  # the rim: round the sides and the back, low, so the hole shows from above
+		var a := PI * (0.05 + 0.9 * i / 6.0)
+		var c := Vector3(cos(a) * 0.48, 0.06, sin(a) * 0.42)
+		Meshes.blob(st, c, Vector3(0.16, 0.12 + rng.randf() * 0.08, 0.14), rock.lightened(rng.randf_range(-0.08, 0.06)), rng, 0.25)
 	return Meshes._finish(st)

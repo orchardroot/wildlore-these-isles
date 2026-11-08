@@ -174,14 +174,14 @@
  ],
  "rows": [
   "xxxxxxxxxxxxxxx",
-  "x+++++++++++++x",
-  "x+++++++++++++x",
-  "x+++++++++++++x",
-  "x+++++++++++++x",
-  "x+++++++++++++x",
-  "x+++++++++++++x",
-  "x+++++++++++++x",
-  "x++++++D++++++x",
+  "xeeeeeeeeeeeeex",
+  "xeeeeeeeeeeeeex",
+  "xeeeeeeeeeeeeex",
+  "xeeeeeeeeeeeeex",
+  "xeeeeeeeeeeeeex",
+  "xeeeeeeeeeeeeex",
+  "xeeeeeeeeeeeeex",
+  "xeeeeeeDeeeeeex",
   "xxxxxxxxxxxxxxx"
  ],
  "examine": [
@@ -194,5 +194,12 @@
     "A man who buys old ledgers has been in the tunnels. It is a visitors' book, though, not a confession."
    ]
   }
- ]
+ ],
+ "stage": "cave",
+ "legend_extra": {
+  "e": {
+   "tile": "path",
+   "colour": "#6a6a66"
+  }
+ }
 }

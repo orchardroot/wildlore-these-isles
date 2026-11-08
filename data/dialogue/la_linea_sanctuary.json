@@ -43,7 +43,7 @@
       {
        "do": "say",
        "who": "Nurse",
-       "text": "The Ark's through the back. It's cooler there, which is why the doctor is always in it."
+       "text": "The Ark's behind the counter. It's the coolest spot in the building, which is why the doctor is always stood next to it."
       },
       {
        "do": "ark"

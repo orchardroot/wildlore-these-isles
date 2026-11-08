@@ -344,7 +344,7 @@ const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "roc
 	"palm", "cannon", "salt_heap", "buried_roof",
 	"slot_machine", "roulette_table", "card_table", "tote_board", "velvet_rope", "horse_statue",
 	# Deep Places: gates, levers, crates and plates as their lines describe them (DeepMeshes)
-	"deep_gate", "deep_lever", "deep_crate", "deep_plate"]
+	"deep_gate", "deep_lever", "deep_crate", "deep_plate", "cave_hole"]
 ## Cloth meshes that ripple (flutter shader) and glow meshes that add light (firelight shader).
 const CLOTH := ["bunting", "flag", "washing_line"]
 const FLOATING := ["boat", "canal_boat", "buoy", "punt", "wherry", "iceberg", "catcher_hulk"]
@@ -713,7 +713,7 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 			return Dressing.wall_map()
 		"mirror":
 			return LooksMirror.mesh()
-	if DeepPlace.LOOKS.has(name):
+	if DeepPlace.LOOKS.has(name) or name == "cave_hole":
 		return DeepMeshes.mesh(name, variant)
 	if name in CaribStyles.PROPS:
 		return CaribStyles.prop(name, variant)
