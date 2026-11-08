@@ -7,6 +7,9 @@ extends RefCounted
 const FROM_BADGE := {"brook": "hedge_lay", "urban": "brook_wade", "stone": "fell_scramble", "iron": "lantern", "frost": "bog_cross"}
 const NAMES := {"hedge_lay": "Hedge-lay", "brook_wade": "Brook-wade", "fell_scramble": "Fell-scramble", "lantern": "Lantern", "bog_cross": "Bog-cross"}
 const TILE_ABILITY := {"bramble": "hedge_lay", "deep_water": "brook_wade", "scree": "fell_scramble", "bog": "bog_cross"}
+## Where each ability's Stone is won, for the hint when one blocks the way.
+const WHERE := {"brook": "Keeper Maud in Buxton", "urban": "Keeper Ray in Liverpool", "stone": "Keeper Eluned in Llanberis",
+	"iron": "Keeper Ruairi in Belfast", "frost": "Keeper Isla in Inverness"}
 const LIGHT_DIM := 2.0       # tiles of light round you in a dark cave
 const LIGHT_LANTERN := 6.0
 
@@ -46,7 +49,9 @@ static func block_hint(data: GameStateData, zone: ZoneData, p: Vector2i) -> Stri
 		return ""
 	var t := zone.tile_at(p)
 	var what: String = {"bramble": "Brambles too thick to push through", "deep_water": "Too deep to wade", "scree": "Loose scree, too steep to climb", "bog": "Bog too soft to cross"}.get(t, "Not passable")
-	return "%s. You'd need %s, which comes with one of the Stones. Not yet, then." % [what, NAMES.get(TILE_ABILITY[t], "a field skill")]
+	var ability: String = TILE_ABILITY[t]
+	var badge: String = FROM_BADGE.find_key(ability)
+	return "%s. You'd need %s, which comes with the %s Stone from %s." % [what, NAMES[ability], badge.capitalize(), WHERE[badge]]
 
 ## How far you can see in a dark zone.
 static func light_radius(data: GameStateData) -> float:
