@@ -29,6 +29,15 @@ func test_hint_names_the_piece_and_where() -> void:
 	assert_true("party piece" in h[0] and FieldSpots.piece_name("mend") in h[0])
 	assert_true(FieldSpots.piece_where("mend") in h[0])
 
+## w51: the hint said "You learn it at The practice bog..." and "The move is Coopers Roll".
+func test_hint_reads_well_with_the_real_move_name() -> void:
+	var moves := MoveDB.load_default()
+	var roll: String = FieldSpots.hint(_spot("roll"), moves)[0]
+	assert_true("Cooper's Roll" in roll, roll)
+	for v in FieldSpots.VERBS:
+		var h: String = FieldSpots.hint(_spot(v), moves)[0]
+		assert_false(" at The " in h or " at Beaches" in h or " at Harbour" in h, h)
+
 func test_once_flag_and_gone() -> void:
 	var d := GameStateData.new()
 	var s := _spot("charm")
