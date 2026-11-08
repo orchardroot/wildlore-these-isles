@@ -1201,8 +1201,8 @@
   {
    "id": "moss_signalman",
    "sprite": "villager_4",
-   "x": 38,
-   "y": 25,
+   "x": 39,
+   "y": 24,
    "facing": "left",
    "move": "still",
    "script": "signalman",
@@ -1241,9 +1241,9 @@
   {
    "id": "moss_hermit",
    "sprite": "villager_5",
-   "x": 63,
-   "y": 9,
-   "facing": "down",
+   "x": 64,
+   "y": 8,
+   "facing": "left",
    "move": "still",
    "script": "hermit",
    "name": "Hermit"

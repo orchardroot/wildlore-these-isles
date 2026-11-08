@@ -478,9 +478,9 @@
   {
    "id": "peat_cutter",
    "sprite": "villager_6",
-   "x": 9,
-   "y": 12,
-   "facing": "down",
+   "x": 10,
+   "y": 11,
+   "facing": "left",
    "move": "still",
    "script": "peat_cutter"
   },

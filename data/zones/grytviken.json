@@ -383,9 +383,9 @@
   {
    "id": "sg_biosec",
    "sprite": "warden_grunt",
-   "x": 31,
-   "y": 21,
-   "facing": "down",
+   "x": 32,
+   "y": 20,
+   "facing": "left",
    "move": "still",
    "script": "sg_biosec",
    "name": "Biosecurity Officer"

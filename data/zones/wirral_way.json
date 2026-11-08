@@ -755,9 +755,9 @@
   {
    "id": "wirral_icecream",
    "sprite": "villager_3",
-   "x": 45,
-   "y": 54,
-   "facing": "down",
+   "x": 46,
+   "y": 53,
+   "facing": "left",
    "move": "still",
    "script": "icecream",
    "name": "Ice Cream Seller"

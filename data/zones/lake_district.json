@@ -1217,9 +1217,9 @@
   {
    "id": "ld_slater",
    "sprite": "tin_miner",
-   "x": 61,
-   "y": 8,
-   "facing": "down",
+   "x": 62,
+   "y": 7,
+   "facing": "left",
    "move": "still",
    "script": "ld_slater"
   },

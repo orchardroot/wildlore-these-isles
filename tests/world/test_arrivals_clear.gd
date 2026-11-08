@@ -22,9 +22,18 @@ static func _fixed(n: Dictionary) -> bool:
 
 func test_nobody_stands_where_you_arrive() -> void:
 	var zones := _all()
+	var abroad := []  # where a flight or a Channel Islands ferry sets you down (data/overseas)
+	for path in JsonUtil.list_json("res://data/overseas"):
+		var o = JsonUtil.read(path)
+		if o is Dictionary and o.get("arrival") is Dictionary:
+			abroad.append(o.arrival)
+	assert_true(abroad.size() > 20, "found the overseas arrivals")
 	var bad := []
 	for z: ZoneData in zones.values():
 		var lands := [z.spawn]
+		for a in abroad:
+			if str(a.get("zone", "")) == z.id:
+				lands.append(Vector2i(int(a.x), int(a.y)))
 		for src: ZoneData in zones.values():
 			for w in src.warps:
 				if str(w.get("to", "")) == z.id and w.has("tx"):
@@ -32,6 +41,10 @@ func test_nobody_stands_where_you_arrive() -> void:
 		for n in z.npcs:
 			if _fixed(n) and Vector2i(int(n.x), int(n.y)) in lands:
 				bad.append("%s/%s" % [z.id, n.get("id", "")])
+			# Outdoors, someone right in front of a doorstep hides you as you come out and blocks the way.
+			# A trainer waiting there is the point of them.
+			elif z.kind != "interior" and _fixed(n) and not n.has("trainer") and Vector2i(int(n.x), int(n.y) - 1) in lands:
+				bad.append("%s/%s (in front)" % [z.id, n.get("id", "")])
 	assert_eq(bad, [], "people standing on an arrival tile")
 
 func test_every_sign_can_be_read() -> void:
