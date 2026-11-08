@@ -60,3 +60,14 @@ func test_leftovers_in_text() -> void:
 func test_deep_place_looks_must_be_known() -> void:
 	var z := _zone("c", "interior", ["xxxx", "x++x", "x++x", "xxxx"], {"deep": {"gates": [{"x": 1, "y": 1, "by": [], "line": "Shut.", "look": "portcullis"}]}})
 	assert_eq(DeepPlace.problems(z).size(), 1)
+
+func test_the_lever_by_the_desk_is_by_the_desk() -> void:
+	var rows := ["xxxxxx", "x++++x", "x++++x", "x+D++x", "xxxxxx"]
+	var talk := {"room": {"guide": [{"do": "say", "who": "Gwen", "text": "The lever by the desk works it."}]}}
+	var npc := [{"id": "guide", "x": 2, "y": 1, "script": "guide"}]
+	var far := _zone("room", "interior", rows, {"npcs": npc, "props": [{"type": "table", "x": 1, "y": 1}],
+		"deep": {"levers": [{"id": "g", "x": 4, "y": 3, "on": "Clunk."}]}})
+	assert_true(_rules({"room": far}, talk).any(func(r): return r.begins_with("near:room:")), "across the room is not by the desk")
+	var close := _zone("room", "interior", rows, {"npcs": npc, "props": [{"type": "table", "x": 3, "y": 1}],
+		"deep": {"levers": [{"id": "g", "x": 4, "y": 1, "on": "Clunk."}]}})
+	assert_false(_rules({"room": close}, talk).any(func(r): return r.begins_with("near:room:")))

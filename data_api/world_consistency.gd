@@ -4,6 +4,8 @@ extends RefCounted
 ## dialogue of the people standing in it:
 ##   object     a line points at a thing you could look for ("the lever by the desk", "pull the winch") that the
 ##              zone has nothing like (OBJECTS: props, tiles, building styles, Deep Place pieces)
+##   near       a line puts a thing by another ("the lever by the desk", "a lever near the water") and in this zone
+##              no such thing stands within NEAR tiles of the other
 ##   stairs     a line in a one-room interior sends you upstairs, down the steps or through the back
 ##   cave       a warp into a cave, mine or tunnel whose outside is drawn as an ordinary building
 ##   entrance   a warp in an outdoor zone with nothing to show a way in (no building, door, portal or map edge)
@@ -39,7 +41,16 @@ const ENTRANCE_PROPS := ["tunnel_portal", "cave_cleft", "crypt_arch", "brick_arc
 ## Text tokens the dialogue runner fills in (Commands, Looks).
 const TOKENS := ["{player}", "{rival}", "{greeting}", "{caught}", "{left}", "{total}", "{he}", "{him}", "{his}", "{Mr}", "{man}",
 	"{He}", "{Him}", "{His}", "{Man}", "{worn_top}", "{worn_shoes}", "{worn_neck}", "{worn_hat}", "{worn_coat}"]
-const HINT_RADIUS := 8  # tiles from the first blocking tile within which a sign or a person should name the Stone
+const HINT_RADIUS := 8
+## "<thing> by the <place>": where each can be, as for OBJECTS but only things with a tile (see _spots).
+const THINGS := {"lever": ["deep:levers", "prop:lever"], "handle": ["deep:levers"], "switch": ["deep:levers"],
+	"valve": ["look:wheel"], "sluice": ["look:wheel", "look:board"], "wheel": ["look:wheel"], "winch": ["look:winch"],
+	"plate": ["deep:plates"], "gate": ["deep:gates", "prop:field_gate"]}
+const PLACES := {"desk": ["prop:table", "prop:kitchen_dresser", "tile:counter"], "table": ["prop:table"],
+	"counter": ["tile:counter"], "door": ["tile:door"], "water": ["tile:water", "tile:shallow", "tile:deep_water", "tile:sea"],
+	"bank": ["tile:water", "tile:shallow", "tile:deep_water"], "water's": ["tile:water", "tile:shallow", "tile:deep_water", "tile:sea"],
+	"wall": ["tile:void", "tile:building", "tile:drystone_wall"]}
+const NEAR := 2  # tiles from the first blocking tile within which a sign or a person should name the Stone
 
 static var _re := {}
 
@@ -72,6 +83,7 @@ static func findings(zones: Dictionary, dialogue: Dictionary) -> Array:
 			continue
 		var lines := zone_lines(z, dialogue)
 		out.append_array(_objects(z, lines, zones))
+		out.append_array(_near(z, lines))
 		out.append_array(_stairs(z, lines))
 		if z.kind != "interior":
 			out.append_array(_warps(z, zones))
@@ -220,6 +232,48 @@ static func _things(z: ZoneData) -> Dictionary:
 	if not z.ferry.is_empty():
 		have["ferry"] = true
 	return have
+
+# --- near -----------------------------------------------------------------------------------------------------------
+
+static func _near(z: ZoneData, lines: Array) -> Array:
+	var re := _rx("near", "(?i)\\b(" + "|".join(PackedStringArray(THINGS.keys())) + ")\\b[^.?!]{0,30}?\\b(?:by|beside|next to|near)\\s+the\\s+(?:[\\w-]+\\s)?(" + "|".join(PackedStringArray(PLACES.keys())) + ")\\b")
+	var out := []
+	for l in lines:
+		for m in re.search_all(str(l.text)):
+			var things := _spots(z, THINGS[m.get_string(1).to_lower()])
+			var places := _spots(z, PLACES[m.get_string(2).to_lower()])
+			if things.is_empty() or places.is_empty():
+				continue  # not in this zone: the object rule speaks for the zone as a whole
+			var ok := false
+			for a in things:
+				for b in places:
+					ok = ok or maxi(absi(a.x - b.x), absi(a.y - b.y)) <= NEAR
+			if not ok:
+				out.append({"rule": "near", "zone": z.id, "key": m.get_string(0).to_lower(), "text": "%s says \"%s\" but none is within %d tiles of one" % [l.who, m.get_string(0), NEAR]})
+	return out
+
+## Tiles where things of these kinds stand in a zone.
+static func _spots(z: ZoneData, kinds: Array) -> Array:
+	var out := []
+	for k in kinds:
+		var kind := str(k)
+		if kind.begins_with("prop:"):
+			for p in z.props:
+				if p.get("type", "") == kind.substr(5) and p.has("x"):
+					out.append(Vector2i(int(p.x), int(p.y)))
+		elif kind.begins_with("deep:"):
+			for it in z.deep.get(kind.substr(5), []):
+				out.append(Vector2i(int(it.x), int(it.y)))
+		elif kind.begins_with("look:"):
+			for it in z.deep.get("levers", []):
+				if DeepPlace.look_of(DeepPlace.LEVER_PROP, it) == kind.substr(5):
+					out.append(Vector2i(int(it.x), int(it.y)))
+		elif kind.begins_with("tile:"):
+			for y in z.height:
+				for x in z.width:
+					if z.tiles[y][x] == kind.substr(5):
+						out.append(Vector2i(x, y))
+	return out
 
 # --- stairs ---------------------------------------------------------------------------------------------------------
 
