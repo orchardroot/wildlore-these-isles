@@ -239,7 +239,7 @@ func _entry_button(i: int) -> Button:
 
 ## A tab's page steps its words down a size or two when a long one would run past the panel (UIKit.fit_column).
 func _fit_tab() -> void:
-	UIKit.fit_column.call_deferred(_detail, content.size.y - 44)  # the panel's margins and border
+	(func(): UIKit.fit_column(_detail, content.size.y - 44)).call_deferred()  # less the panel's margins and border, once laid out
 
 ## A Stud Book tab row: an idea (or the Crosses log).
 func _book_button(i: int) -> Button:

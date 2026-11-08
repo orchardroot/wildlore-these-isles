@@ -30,6 +30,12 @@ static func label(text: String, size := 28, colour := CREAM) -> Label:
 	l.add_theme_color_override("font_color", colour)
 	return l
 
+## A label for dark ink on paper (a light card): no drop shadow, which smears dark letters on a pale ground.
+static func ink_label(text: String, size := 28, colour := SLATE) -> Label:
+	var l := label(text, size, colour)
+	l.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0))
+	return l
+
 ## How tall a line of UIKit.label(text, size) is at the player's Text size: for rows whose height is set by hand.
 static func line_height(size: int) -> int:
 	return ceili(ThemeDB.fallback_font.get_height(Access.scaled(maxi(size, MIN_TEXT), Settings.text_size)))

@@ -95,7 +95,7 @@ func _refresh() -> void:
 		_button("Leave", func(): close(null))
 	UIKit.wrap_focus(_buttons)
 	UIKit.focus_later(_buttons[0])
-	UIKit.fit_column.call_deferred(_stmt, content.size.y - 40)  # a long statement steps its words down to fit the panel
+	(func(): UIKit.fit_column(_stmt, content.size.y - 40)).call_deferred()  # a long statement steps its words down to fit the panel
 
 func _list() -> void:
 	var d: GameStateData = Game.data

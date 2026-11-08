@@ -39,7 +39,7 @@ func _build() -> void:
 	_list = VBoxContainer.new()
 	_list.add_theme_constant_override("separation", 4)
 	card.add_child(_list)
-	set_hints([["cancel", "Close"]])
+	set_hints([["updown", "Scroll"], ["cancel", "Close"]])
 	_fill()
 
 func setup(arg: String) -> void:
@@ -60,7 +60,7 @@ func _fill() -> void:
 	for r in rows:
 		if str(r.region) != region:
 			region = str(r.region)
-			var hl := UIKit.label(region.to_upper(), 20, Color("7a2a2a"))
+			var hl := UIKit.ink_label(region.to_upper(), 20, Color("7a2a2a"))
 			_list.add_child(hl)
 			var rule := ColorRect.new()
 			rule.color = Color("8a6a4a")
@@ -68,7 +68,7 @@ func _fill() -> void:
 			_list.add_child(rule)
 		_list.add_child(_row(r))
 	if rows.is_empty():
-		_list.add_child(UIKit.label("No games listed yet.", 24, INK))
+		_list.add_child(UIKit.ink_label("No games listed yet.", 24, INK))
 	_bar.queue_redraw()
 
 func _row(r: Dictionary) -> Control:
@@ -81,11 +81,11 @@ func _row(r: Dictionary) -> Control:
 	var col := VBoxContainer.new()
 	col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	col.add_theme_constant_override("separation", 0)
-	col.add_child(UIKit.label(str(r.name), 24, INK if bool(r.stamped) else Color("8a7a68")))
+	col.add_child(UIKit.ink_label(str(r.name), 24, INK if bool(r.stamped) else Color("7a6a58")))
 	var sub := str(r.where)
 	if bool(r.stamped) and float(r.best) > 0.0:
 		sub += "  (best %s %s)" % [str(snappedf(float(r.best), 0.1)).trim_suffix(".0"), str(r.unit)]
-	var wl := UIKit.label(sub, 16, Color("6a5a48"))
+	var wl := UIKit.ink_label(sub, 18, Color("5a4a38"))
 	wl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	col.add_child(wl)
 	h.add_child(col)
