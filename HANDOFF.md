@@ -1,26 +1,38 @@
-# w49-games handoff
+# w50-tf-menus handoff
 
-Branch `w49-games` (from int-w49). Fixes three gameplay problems from the tune session; numbers and reasoning are in
-`docs/audit/w49_tune.md` under "Follow-up". Earlier handoffs moved to `docs/audit/w49_handoffs.md`.
+Branch `w50-tf-menus`: text that fits on every menu, screen and minigame at 1280x720 (the other half, battle UI,
+overworld and HUD toasts, is the other session's). Full findings in `docs/audit/w50_text.md`. (The previous
+HANDOFF.md, w49-games, is in git history at 83dd13d5.)
 
-## What changed
-- **Pancake race** (`core/pancake.gd`): lean push 13 to 9, pan drag 0.9 to 2.2, lean rate eased. A 0.15 s reaction on a
-  keyboard now drops it 0.2 times a race (was 9), 0.2 s about 7 (was 31), 0.3 s still about 20. Rosette thresholds
-  reset to 40 / 36.5 s (`data/party_pieces/g2.json`, `Pancake.GOOD_TIME`/`MASTER_TIME`), champion 37 to 39.5 s.
-- **Sheepdog trials** (`core/sheepdog_trials.gd`): the jam was cohesion towards the global flock centre (a split flock
-  held itself still), no pull on a calm straggler, and a dead zone at the pen mouth. Fixed (local cohesion, gentle calm
-  lure, lure back to the gate, pen lure to the mouth). Clocks cut to 50 s Longshaw and 60 s lakes
-  (`data/sheepdog_trials.json`) because the fix made it easy. The simulator's own bot also dithered and is fixed.
-- **Coracle and snorkel**: seeded per-run river level and eddies (coracle) and set and springs (snorkel); seed 0 keeps
-  the plain behaviour. Screens seed from the clock.
+## What I built
+- `core/text_fit_audit.gd` (TextFitAudit): walks the visible text under a node and lists what doesn't fit: wide,
+  trimmed, lines, cut, spills, overlap, under, small (< 18 px), box (a framed panel cut off), stuck (words only a
+  mouse can scroll to).
+- `tools/dev/text_audit.gd` (+ `_body.gd`): opens all 122 screens with DevMenu's sample journey, headless, no window,
+  and prints one line per problem. Exits 1 if anything was found.
+- `tests/ui/test_text_fit.gd`: the audit over eight key screens in a second headless Godot (about ten seconds), plus
+  unit tests for the 18 px floor and `UIKit.fit_column`.
 
-## How to see it
-`tools/shot.sh out.png 30 --menu=pancake:dev` (also `coracle:dev`, `sheepdog:longshaw`, `snorkel:dev`). Simulator:
-`.godot-bin/Godot.app/Contents/MacOS/Godot --headless --path . -s res://tools/dev/minigame_sim.gd -- <game> 80`.
+## How to run it
+```
+.godot-bin/Godot.app/Contents/MacOS/Godot --headless --path . -s res://tools/dev/text_audit.gd -- all
+    [screen ...] [--summary] [--stress] [--text=large] [--kind=cut,box]
+```
+After adding a `class_name`, run `--import` once or the audit can't see it (it quits with code 2).
+
+## Numbers
+Before (528d58a9): 331 problems on 70 screens, plus a Gazetteer script error. After: 0 on 121 screens; the Words tab's
+learnt-word list still only scrolls with a mouse. Large text still has 162 on 43 screens (see the audit doc).
 
 ## Notes for the integrator
-- Sheepdog gold (pen all 7) is still too easy for the bots (decent 72%); see the follow-up for the option of scoring
-  with the clock left. Left alone as a design call.
-- No lean ease-in beyond the fast-then-gentle rate: a slower ease made late reactions fatal.
-- Touched beyond the three games: `tools/dev/minigame_sim.gd` (bots seed the new fresh(); sheepdog bot fixes).
-- Easier-mode gold rosettes (finding 2 of the tune session) untouched.
+- Shared files touched: `ui/ui_kit.gd` (MIN_TEXT floor in `label`, `fit_size`, `fit_block`; new `scroll_list`,
+  `fit_column`, `keep_fitted`, `fit_width`, `key_scroll`, `line_height`, `ink_label`) and `ui/menu_base.gd` (hint bar
+  fit, HINT_MIN 18, Cancel honours a `back_to` meta). The floor means any `UIKit.label(x, 16)` is now 18 px.
+  Outside my scope the only small literal is `ui/parish_toast.gd`'s 17 px heading (now 18); battle_ui and world pass
+  18 or more, so their layouts should be unchanged.
+- Not audited (the other session's): overworld toasts and HUD, `ui/parish_toast.gd`, battle UI.
+- `ui/gazetteer_tab.gd` had a real bug (row 0 vs 1) that threw on every Gazetteer open and hid the "How these isles
+  work" row: fixed here.
+- Pause's Today's Walk line is now optional in the Where next? card: it shows when there is room at a readable size
+  (it was 12 px before). The Fieldbook's "Found in" line is the optional one there; the map (Confirm) shows the places.
+- Before/after shots of the worst five: `docs/screens/w50-text-*-before.png` / `-after.png`.
