@@ -700,6 +700,16 @@
    "facing": "down",
    "move": "still",
    "trainer": "ant_student"
+  },
+  {
+   "id": "arm_roadbowler",
+   "sprite": "villager_2",
+   "x": 29,
+   "y": 35,
+   "facing": "right",
+   "move": "still",
+   "script": "arm_roadbowler",
+   "name": "Road Bowler"
   }
  ],
  "encounters": {
@@ -891,6 +901,13 @@
    "theme": "arts",
    "title": "The Rhyming Weavers",
    "text": "Around 1800 the weavers of Antrim and Down wrote verse in their own Ulster Scots, printed in Belfast and read aloud at the loom: the Rhyming Weavers. James Orr of Ballycarry, the Bard of Ballycarry, fought with the United Irishmen at the Battle of Antrim in 1798, fled to America, came home and kept writing; his poem 'The Irishman' is still recited. Robert Burns was their model, and their tongue is the one still spoken in the glens. They rhymed better than they were paid."
+  },
+  {
+   "x": 29,
+   "y": 33,
+   "plaque": "roadbowling_ulster",
+   "title": "Ulster Road Bowling",
+   "text": "ULSTER ROAD BOWLING. The game is strongest in County Armagh and County Cork, and is played on ordinary closed lanes. Armagh players are known for lofting the bowl to get it round a bend or over a bit of verge."
   }
  ],
  "spawn": [

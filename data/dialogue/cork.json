@@ -350,5 +350,17 @@
    "who": "Night Nurse",
    "text": "Mind yourself going home, like. Get a good sleep in for me."
   }
+ ],
+ "cork_roadbowler": [
+  {
+   "do": "say",
+   "who": "Road Bowler",
+   "text": "Down the lane past the quays, the road is shut for the afternoon. Bring an iron bowl and a good eye for a bend."
+  },
+  {
+   "do": "road_bowl",
+   "venue": "cork",
+   "who": "Road Bowler"
+  }
  ]
 }

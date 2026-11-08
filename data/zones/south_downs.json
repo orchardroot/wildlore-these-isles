@@ -355,6 +355,16 @@
    "facing": "down",
    "move": "still",
    "script": "landsky_knepp"
+  },
+  {
+   "id": "sd_poohsticks",
+   "sprite": "hillwalker",
+   "x": 27,
+   "y": 46,
+   "facing": "right",
+   "move": "still",
+   "script": "sd_poohsticks",
+   "name": "Brook Walker"
   }
  ],
  "encounters": {
@@ -573,6 +583,13 @@
    "plaque": "landsky_knepp",
    "title": "Knepp",
    "text": "At Knepp, in the Sussex Weald a few miles north of here, a farm that had lost money for years was given over to nature from 2001. Longhorn cattle, Tamworth pigs, ponies and deer roam free and the land was left to see what came. Nightingales and turtle doves came, and purple emperor butterflies, and in 2020 white storks raised chicks in the wild in Britain for the first time in centuries. Isabella Tree told the story in Wilding, in 2018."
+  },
+  {
+   "x": 27,
+   "y": 48,
+   "plaque": "poohsticks_downs",
+   "title": "Brook Poohsticks",
+   "text": "POOHSTICKS IN SUSSEX. Pooh Bridge is in Ashdown Forest, East Sussex, where A. A. Milne lived at Hartfield and wrote about the forest for his son. Any footbridge over a brook will do for the game."
   }
  ],
  "spawn": [

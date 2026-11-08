@@ -865,6 +865,16 @@
    "move": "still",
    "script": "ox_pancake_marshal",
    "name": "Pancake Marshal"
+  },
+  {
+   "id": "ox_poohsticks",
+   "sprite": "student",
+   "x": 58,
+   "y": 29,
+   "facing": "right",
+   "move": "still",
+   "script": "ox_poohsticks",
+   "name": "Sticks Player"
   }
  ],
  "encounters": {
@@ -1157,6 +1167,13 @@
    "plaque": "oxford_olney_pancake",
    "title": "The Olney Pancake Race",
    "text": "PANCAKE RACE. Every Shrove Tuesday the women of Olney, Buckinghamshire, run 415 yards to the church in aprons and headscarves, tossing a pancake in a frying pan at the start and the finish. By tradition it has been run since 1445. The town of Liberal, Kansas, runs the same race and compares times."
+  },
+  {
+   "x": 57,
+   "y": 32,
+   "plaque": "oxford_poohsticks",
+   "title": "Poohsticks",
+   "text": "POOHSTICKS. The World Poohsticks Championships began in 1984 at Day's Lock on the Thames, in Oxfordshire, and raise money for charity. The game itself comes from A. A. Milne's Winnie-the-Pooh: drop a stick from the upstream side of a bridge, and the first to come out the other side wins."
   }
  ],
  "spawn": [

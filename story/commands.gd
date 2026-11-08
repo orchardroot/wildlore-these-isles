@@ -250,6 +250,10 @@ func _exec(c: Dictionary) -> void:
 			await BogRun.new(self).snorkel(c)
 		"coracle":
 			await BogRun.new(self).coracle(c)
+		"road_bowl":
+			await RoadBowlRun.new(self).road_bowl(c)
+		"poohsticks":
+			await RoadBowlRun.new(self).poohsticks(c)
 		"ring":
 			await RingingRun.new(self).ring(c)
 		"wall":

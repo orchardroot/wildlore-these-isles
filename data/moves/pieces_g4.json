@@ -1,0 +1,4 @@
+[
+  {"id": "lofted_bowl", "name": "Lofted Bowl", "type": "iron", "category": "physical", "power": 80, "accuracy": 90, "pp": 15, "priority": 0, "piece": "road_bowling", "desc": "Heaves an iron bowl high over the bend and drops it on the foe. Learnt at the road bowling.", "effect": {"id": "flinch", "chance": 20}, "fx": {"shape": "quake"}},
+  {"id": "under_the_bridge", "name": "Under the Bridge", "type": "brook", "category": "physical", "power": 40, "accuracy": 100, "pp": 25, "priority": 1, "piece": "poohsticks", "desc": "Drops in upstream and is out the other side before the foe has looked. Learnt at Poohsticks.", "effect": {"id": "none"}, "fx": {"shape": "wave"}}
+]

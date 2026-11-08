@@ -248,5 +248,17 @@
    "flag": "landsky_knepp",
    "value": true
   }
+ ],
+ "sd_poohsticks": [
+  {
+   "do": "say",
+   "who": "Brook Walker",
+   "text": "It is not Pooh Bridge, which is a way north in Ashdown Forest. But a brook is a brook, and I have a pocket full of sticks."
+  },
+  {
+   "do": "poohsticks",
+   "venue": "ashdown",
+   "who": "Brook Walker"
+  }
  ]
 }

@@ -53,5 +53,17 @@
    "who": "Chipgull",
    "text": "It stares at your lunch with the focus of a bank manager. You pretend not to notice. It knows."
   }
+ ],
+ "arm_roadbowler": [
+  {
+   "do": "say",
+   "who": "Road Bowler",
+   "text": "Armagh will tell you it is the home of the lofted bowl. It is a good road for it. Bends like a bag of snakes."
+  },
+  {
+   "do": "road_bowl",
+   "venue": "armagh",
+   "who": "Road Bowler"
+  }
  ]
 }
