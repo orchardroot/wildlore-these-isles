@@ -87,17 +87,17 @@
   "at": "newcastle"
  },
  {
-  "id": "fs_pennine_grouse_moor_mend",
+  "id": "fs_pennine_grouse_moor_roll",
   "zone": "pennine_grouse_moor",
-  "x": 17,
-  "y": 15,
-  "field": "mend",
-  "prop": "wall_gap",
-  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: some loose change and a gratitude card.",
+  "x": 11,
+  "y": 17,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "The wheel has been here since last spring's chase. {lead} sets it rolling, and underneath is a few coins.",
   "reward": {
    "money": 2700
   },
-  "flag": "field_pennine_grouse_moor_mend",
+  "flag": "field_pennine_grouse_moor_roll",
   "at": "saddleworth_moor"
  },
  {
@@ -115,18 +115,18 @@
   "at": "saddleworth_moor"
  },
  {
-  "id": "fs_saddleworth_moor_line",
+  "id": "fs_saddleworth_moor_mend",
   "zone": "saddleworth_moor",
-  "x": 22,
-  "y": 28,
-  "field": "line",
-  "prop": "glint",
-  "text": "A glint under the surface, just out of reach. {lead} hooks it with patience and a bit of reed. It is Perch.",
+  "x": 38,
+  "y": 24,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "The drystone has slumped. {lead} lifts the big stones in first and wedges the small ones after, which is exactly how it is done. Behind the stones: Four-Leaf Clover.",
   "reward": {
-   "item": "perch",
+   "item": "four_leaf_clover",
    "qty": 1
   },
-  "flag": "field_saddleworth_moor_line",
+  "flag": "field_saddleworth_moor_mend",
   "at": "saddleworth_moor"
  },
  {
@@ -145,18 +145,17 @@
   "at": "sheffield"
  },
  {
-  "id": "fs_sheffield_snorkel",
+  "id": "fs_sheffield_roll",
   "zone": "sheffield",
-  "x": 18,
-  "y": 25,
-  "field": "snorkel",
-  "prop": "bog_pool",
-  "text": "Bubbles rise in the peat. {lead} follows them down and brings up, to its evident pride, Peat.",
+  "x": 69,
+  "y": 9,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "{lead} tips the wheel over the lip and it bounds off downhill with great purpose. Where it was sitting: a few coins.",
   "reward": {
-   "item": "peat",
-   "qty": 1
+   "money": 2730
   },
-  "flag": "field_sheffield_snorkel",
+  "flag": "field_sheffield_roll",
   "at": "sheffield"
  },
  {
@@ -256,7 +255,7 @@
   "prop": "sheep_gate",
   "text": "A knot of sheep, all facing the wrong way. {lead} works them in a neat curve until the gate is clear. Left on the post for you: a few coins.",
   "reward": {
-   "money": 2670
+   "money": 2700
   },
   "flag": "field_yorkshire_wolds_round_up",
   "at": "yorkshire_wolds"
@@ -275,5 +274,54 @@
   },
   "flag": "field_yorkshire_wolds_snorkel",
   "at": "yorkshire_wolds"
+ },
+ {
+  "id": "fs_yorkshire_dales_loft_x1",
+  "zone": "yorkshire_dales",
+  "x": 18,
+  "y": 24,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+  "reward": {
+   "hop": [
+    18,
+    27
+   ]
+  },
+  "flag": "field_yorkshire_dales_loft_a",
+  "at": "york"
+ },
+ {
+  "id": "fs_yorkshire_dales_loft_x2",
+  "zone": "yorkshire_dales",
+  "x": 18,
+  "y": 26,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    18,
+    23
+   ]
+  },
+  "flag": "field_yorkshire_dales_loft_b",
+  "at": "york"
+ },
+ {
+  "id": "fs_yorkshire_dales_charm_c",
+  "zone": "yorkshire_dales",
+  "x": 16,
+  "y": 26,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "{lead} taps out a steady beat beside the hill and the earth begins to wriggle. Turned up with the worms: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_yorkshire_dales_charm_c",
+  "at": "york"
  }
 ]

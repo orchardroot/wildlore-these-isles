@@ -70,5 +70,54 @@
   },
   "flag": "field_penshaw_roll",
   "at": "newcastle"
+ },
+ {
+  "id": "fs_northumberland_coast_loft_x1",
+  "zone": "northumberland_coast",
+  "x": 13,
+  "y": 4,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+  "reward": {
+   "hop": [
+    13,
+    7
+   ]
+  },
+  "flag": "field_northumberland_coast_loft_a",
+  "at": "aberdeen"
+ },
+ {
+  "id": "fs_northumberland_coast_loft_x2",
+  "zone": "northumberland_coast",
+  "x": 13,
+  "y": 6,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    13,
+    3
+   ]
+  },
+  "flag": "field_northumberland_coast_loft_b",
+  "at": "aberdeen"
+ },
+ {
+  "id": "fs_northumberland_coast_charm_c",
+  "zone": "northumberland_coast",
+  "x": 14,
+  "y": 8,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Wild Garlic.",
+  "reward": {
+   "item": "wild_garlic",
+   "qty": 1
+  },
+  "flag": "field_northumberland_coast_charm_c",
+  "at": "aberdeen"
  }
 ]

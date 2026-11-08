@@ -114,7 +114,7 @@ func test_jogging_is_safer_but_slower() -> void:
 	var j := _pancake_run(3, false)
 	var s := _pancake_run(3, true)
 	assert_true(j.total() > s.total() + 5.0, "jog %.1f v sprint %.1f" % [j.total(), s.total()])
-	assert_true(j.total() < Pancake.GOOD_TIME + 8.0)
+	assert_true(j.total() < 62.0, "a jog is slow but not a disaster (%.1f s)" % j.total())
 
 func test_not_tilting_the_pan_drops_the_pancake() -> void:
 	var g := _pancake_run(3, true, false, true, false)
@@ -138,6 +138,39 @@ func test_easier_pancake_has_wider_windows_and_fewer_drops() -> void:
 func test_the_champion_is_beatable_but_not_by_jogging_idly() -> void:
 	for s in 6:
 		assert_true(Pancake.champion_time(s) > Pancake.MASTER_TIME and Pancake.champion_time(s) < Pancake.GOOD_TIME)
+
+## A keyboard player: the key is all or nothing, held against where the pancake was `react` seconds ago plus a look ahead.
+func _key_run(seed_value: int, react: float) -> Pancake:
+	var g := Pancake.new(seed_value, false)
+	g.step(DT, 0.0, false, true)
+	var seen: Array = []
+	var lag := maxi(1, int(round(react / DT)))
+	var tilt := 0.0
+	var guard := 0
+	while not g.done and guard < 20000:
+		seen.append(Vector2(g.p, g.pv))
+		if seen.size() > lag:
+			seen.pop_front()
+		var heading: float = (seen[0] as Vector2).x + (seen[0] as Vector2).y * 0.4
+		if absf(heading) > 0.2:
+			tilt = signf(heading)
+		elif absf(heading) < 0.1:
+			tilt = 0.0
+		var flip := false
+		if g.next_station <= Pancake.STATIONS:
+			flip = not g.flipped_here and (Pancake.station_y(g.next_station) - g.y) / maxf(g.v, Pancake.JOG) <= 0.0
+		g.step(DT, tilt, true, flip)
+		guard += 1
+	return g
+
+func test_the_pan_is_controllable_on_keys() -> void:
+	var attentive := 0
+	var careless := 0
+	for s in 6:
+		attentive += _key_run(s + 1, 0.15).drops
+		careless += _key_run(s + 1, 0.3).drops
+	assert_true(attentive <= 6 * 3, "a 0.15 s reaction keeps it on most of the time (%d drops in 6 runs)" % attentive)
+	assert_true(careless > attentive * 3 and careless >= 6 * 5, "a 0.3 s reaction still drops it (%d v %d)" % [careless, attentive])
 
 # ---- prizes
 
@@ -178,5 +211,5 @@ func test_g2_rosettes_follow_the_score_both_ways_round() -> void:
 	var r := PartyPieces.record(d, "cheese", 80.0)
 	assert_true(r.unlocked and r.rosette == 2)
 	assert_eq(PartyPieces.record(d, "cheese", 125.0).rosette, 3)
-	assert_eq(PartyPieces.record(d, "pancake", 51.0).rosette, 2)   # lower is better: 51 s is silver
-	assert_eq(PartyPieces.record(d, "pancake", 41.0).rosette, 3)
+	assert_eq(PartyPieces.record(d, "pancake", 38.0).rosette, 2)   # lower is better: 38 s is silver
+	assert_eq(PartyPieces.record(d, "pancake", 36.0).rosette, 3)

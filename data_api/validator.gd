@@ -46,6 +46,10 @@ static func _check_move(m: Dictionary, chart: TypeChart) -> Array:
 		e.append("move %s: effect chance must be 1..100" % id)
 	if int(m.get("priority", 0)) < -3 or int(m.get("priority", 0)) > 3:
 		e.append("move %s: priority must be -3..3" % id)
+	if int(m.get("crit", 0)) < 0 or int(m.get("crit", 0)) > 3:
+		e.append("move %s: crit must be 0..3" % id)
+	if int(m.get("crit", 0)) > 0 and m.get("category") == "status":
+		e.append("move %s: a status move can't have a crit stage" % id)
 	if fx.get("target", "foe") not in ["self", "foe"]:
 		e.append("move %s: effect target must be self or foe" % id)
 	e.append_array(MoveFX.check(m))

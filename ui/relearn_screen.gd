@@ -94,6 +94,7 @@ func _focus_creature(i: int) -> void:
 	UIKit.clear(_side)
 	var s := AnimSprite.new()
 	s.show_species(c.species.id, "front", 2, false, c.variant, c.form, c.sex)
+	s.animate(c.species)
 	s.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	_side.add_child(s)
 	var n := UIKit.label(c.display_name(), 34)

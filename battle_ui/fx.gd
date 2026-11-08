@@ -302,7 +302,7 @@ func play(cue: Dictionary, battle: Battle) -> void:
 			Audio.sfx("faint")
 			await _actor(side, pos).faint()
 		"switch":
-			await _switch(side, battle.parties[side][int(cue.index)], pos)
+			await _switch(side, battle.parties[side][int(cue.index)], pos, int(cue.get("hp", -1)))
 		"run":
 			Audio.sfx("run")
 			await _actor(Battle.PLAYER).slip_away()
@@ -694,12 +694,12 @@ func _hit(side: int, hp: int, strength: String, pos := 0) -> void:
 	await a.hit(strength, _hit_tint)
 	await _wait(maxf(0.0, clampf(0.35 + frac * 1.4, 0.35, 1.4) - 0.45))
 
-func _switch(side: int, c: Creature, pos := 0) -> void:
+func _switch(side: int, c: Creature, pos := 0, hp := -1) -> void:
 	var a := _actor(side, pos)
 	if a.sprite.visible:
 		await a.pop_out()
 	a.show_creature(c, side == Battle.PLAYER)
-	hud.set_creature(side, c, pos)
+	hud.set_creature(side, c, pos, hp)
 	Audio.sfx("send_out")
 	Audio.cry(c.species)
 	burst(a.global_position + Vector3(0, 1.0, 0), Color("fff2d0"), 20, 3.0, 0.16, 0.6, -1.0)

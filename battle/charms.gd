@@ -9,10 +9,11 @@ extends RefCounted
 ##   thorns      {frac}         a physical hit costs the attacker 1/frac of its max HP
 ##   regen       {frac}         1/frac of max HP back at the end of every turn
 ##   start_stage {stat, stages} the first time it comes out in a battle
+##   crit        {stages}       the holder's hits land critical hits a stage more often
 ## Both sides' charms work (wild creatures can carry one). Pure: no autoloads.
 
 const PATH := "res://data/items/charms.json"
-const EFFECTS := ["resist", "boost", "endure", "catch", "no_status", "thorns", "regen", "start_stage"]
+const EFFECTS := ["resist", "boost", "endure", "catch", "no_status", "thorns", "regen", "start_stage", "crit"]
 const WILD_CHANCE := 0.02
 
 static var _table: Dictionary = {}
@@ -94,6 +95,10 @@ static func start_stage(c: Creature) -> Dictionary:
 		return {}
 	var fx := effect(c)
 	return {"stat": str(fx.get("stat", "def")), "stages": int(fx.get("stages", 1))}
+
+## Crit stages the holder's charm adds to every damaging move (0 if none).
+static func crit_stages(c: Creature) -> int:
+	return maxi(0, int(effect(c).get("stages", 1))) if _is(c, "crit") else 0
 
 ## Charms a wild creature might be found carrying.
 static func wild_pool() -> Array:

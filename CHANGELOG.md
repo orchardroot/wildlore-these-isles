@@ -2,6 +2,48 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## What's new in 5.2: Lucky Strikes
+
+A tidy-up of Party Pieces that adds a bit of luck. Some hits land harder now, the Fieldbook's creatures move, and
+there are many more ways across the water.
+
+**Critical hits, with a sharper edge**
+- **Moves built for it.** Treble Twenty, Peregrine Plunge, Kestrel Dive and Flint Flick now land critical hits far
+  more often (about 1 in 8 rather than 1 in 24), and their descriptions say so.
+- **White Heather.** A new charm, rarer than the purple sort, that some wild creatures carry. A creature holding it
+  lands critical hits more often with every move.
+- Opponents know which of their moves are likely to crit and use them a little more.
+
+**Creatures that move on the page**
+- Portraits on the Summary, the Fieldbook, a Fieldbook pop-up, the move relearner, the naming screen and the starter
+  choice now idle in their own way: hovering, hopping, stomping or drifting. Reduce Flashing calms them down.
+
+**More crossings**
+- **24 crossings in all**, up from 3: be paddled over in a coracle, shove a dead trunk across a gap, hop stepping
+  stones you can actually see in the water, squelch through a bog behind a snorkeller, or loft a road bowl over a
+  hedge and climb after it on a hay bale.
+  There's always something on the far side, and the story never needs one.
+
+**Fairer games**
+- Silver and gold scores for the ten Party Pieces games were checked against hundreds of simulated runs at three
+  skill levels: silver after a few decent tries, gold only for real skill.
+- **Pancake race.** Playable on a keyboard now. The pan no longer tips the moment you're a fraction slow.
+- **Sheepdog trials.** A split flock no longer freezes in place, and a straggler drifts back towards the others. The
+  clock is tighter to match.
+- **Coracle racing and bog snorkelling.** Every run is a little different: the river's level and eddies, the
+  trench's set and springs.
+- **Welly wanging.** Spinning yourself dizzy no longer throws further. It throws wilder, as it should.
+- Screen fixes: the pancake title card no longer covers the START banner, cheese rolling says "Heat 1 of 3" once,
+  and the welly wanging field is no longer stretched.
+- A creature sent out and hit on the same turn now shows its health bar draining, instead of arriving already
+  hurt with the bar sitting still.
+
+| | |
+|---|---|
+| ![Stepping stones in Galway](docs/screens/w49-crossing-galway.png) | ![A crossing in the Flow Country](docs/screens/w49-crossing-flow_country.png) |
+| ![The Summary page](docs/screens/w49-portraits-summary.png) | ![A Fieldbook portrait](docs/screens/w49-portraits-pedia-snowhare.png) |
+| ![The pancake race](docs/screens/w49-tune-pancake-start.png) | ![Welly wanging](docs/screens/w49-tune-welly.png) |
+
 ## What's new in 5.1: Party Pieces
 
 Every game in the isles now teaches your creatures something. Win a rosette at the darts, the caber or the gurning

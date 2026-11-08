@@ -58,9 +58,12 @@ static func wang(spin: float, swing: float, wind_ms: float, jitter := 0.0) -> Di
 	var dizzy := spin > DIZZY_ABOVE
 	if el < 0.0:
 		return {"metres": 0.0, "foul": true, "dizzy": dizzy, "quality": 0.0}
-	if dizzy:
-		el = clampf(el + jitter, 1.0, 89.0)
 	var v := speed_for(spin)
+	if dizzy:
+		# past the dizzy line the aim wobbles and the legs go: the extra spin is more than lost, so holding on for
+		# a full spin and letting go giddy never beats a clean release just under the line
+		el = clampf(el + jitter, 1.0, 89.0)
+		v = speed_for(DIZZY_ABOVE) * 0.9
 	var rad := deg_to_rad(el)
 	var flight := 2.0 * v * sin(rad) / GRAVITY
 	var m := v * cos(rad) * flight * 0.78 + wind_ms * flight * 0.45

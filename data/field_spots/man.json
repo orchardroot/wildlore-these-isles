@@ -1,0 +1,50 @@
+[
+ {
+  "id": "fs_douglas_loft_x1",
+  "zone": "douglas",
+  "x": 9,
+  "y": 37,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+  "reward": {
+   "hop": [
+    9,
+    40
+   ]
+  },
+  "flag": "field_douglas_loft_a",
+  "at": "douglas"
+ },
+ {
+  "id": "fs_douglas_loft_x2",
+  "zone": "douglas",
+  "x": 9,
+  "y": 39,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    9,
+    36
+   ]
+  },
+  "flag": "field_douglas_loft_b",
+  "at": "douglas"
+ },
+ {
+  "id": "fs_douglas_charm_c",
+  "zone": "douglas",
+  "x": 8,
+  "y": 41,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: a purse, a bit damp.",
+  "reward": {
+   "money": 840
+  },
+  "flag": "field_douglas_charm_c",
+  "at": "douglas"
+ }
+]

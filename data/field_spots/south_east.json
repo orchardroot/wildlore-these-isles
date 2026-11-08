@@ -155,5 +155,101 @@
   },
   "flag": "field_south_downs_snorkel",
   "at": "south_downs"
+ },
+ {
+  "id": "fs_canterbury_loft_x1",
+  "zone": "canterbury",
+  "x": 31,
+  "y": 4,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} lofts the bowl clear over the hedge and the bale makes a fine step. You scramble over after it, picking out the odd twig.",
+  "reward": {
+   "hop": [
+    31,
+    7
+   ]
+  },
+  "flag": "field_canterbury_loft_a",
+  "at": "canterbury"
+ },
+ {
+  "id": "fs_canterbury_loft_x2",
+  "zone": "canterbury",
+  "x": 31,
+  "y": 6,
+  "field": "loft",
+  "prop": "bale",
+  "text": "You go back over the bale, and {lead} lofts the bowl after you. A passing cyclist nods, as if this is normal.",
+  "reward": {
+   "hop": [
+    31,
+    3
+   ]
+  },
+  "flag": "field_canterbury_loft_b",
+  "at": "canterbury"
+ },
+ {
+  "id": "fs_canterbury_charm_c",
+  "zone": "canterbury",
+  "x": 34,
+  "y": 6,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A molehill, freshly heaped. {lead} drums a gentle rhythm on the ground and the worms come up to see what the fuss is. Among the soil: a roll of notes.",
+  "reward": {
+   "money": 3000
+  },
+  "flag": "field_canterbury_charm_c",
+  "at": "canterbury"
+ },
+ {
+  "id": "fs_south_downs_topple_x1",
+  "zone": "south_downs",
+  "x": 30,
+  "y": 47,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} shoves the dead trunk over the gap, where it lands with a satisfying thump. You walk across, arms out like a tightrope act.",
+  "reward": {
+   "hop": [
+    30,
+    50
+   ]
+  },
+  "flag": "field_south_downs_topple_a",
+  "at": "south_downs"
+ },
+ {
+  "id": "fs_south_downs_topple_x2",
+  "zone": "south_downs",
+  "x": 30,
+  "y": 49,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "You cross back over the trunk, arms out. {lead} goes under the stream bank, which is its own business.",
+  "reward": {
+   "hop": [
+    30,
+    46
+   ]
+  },
+  "flag": "field_south_downs_topple_b",
+  "at": "south_downs"
+ },
+ {
+  "id": "fs_south_downs_charm_c",
+  "zone": "south_downs",
+  "x": 32,
+  "y": 47,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Sheepdog Whistle.",
+  "reward": {
+   "curio": "sheepdog_whistle"
+  },
+  "flag": "field_south_downs_charm_c",
+  "at": "south_downs"
  }
 ]

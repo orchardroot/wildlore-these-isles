@@ -367,7 +367,7 @@ func _strike(side: int, pos: int, user: Creature, t_side: int, t_pos: int, targe
 	for h in hits:
 		if target.is_fainted() or user.is_fainted():
 			break
-		var crit := DamageCalc.CRIT_CHANCE * Weather.crit_mult(weather, side) * (Bond.crit_mult(user) if side == PLAYER else 1.0)
+		var crit := DamageCalc.crit_percent(DamageCalc.crit_stage(user, move)) * Weather.crit_mult(weather, side) * (Bond.crit_mult(user) if side == PLAYER else 1.0)
 		var km := 1.0
 		if knacks_on:
 			crit *= Knacks.crit_mult(user)
@@ -532,7 +532,8 @@ func _do_switch(side: int, index: int, ev: Array, pos := 0) -> void:
 				ev.append(_knack(side, pos, out, "switch", {"hp": out.hp, "amount": back}))
 	active[side][pos] = index
 	_note_fighters()
-	ev.append(_at({"type": "switch", "side": side, "index": index, "user": party[index].display_name()}, pos))
+	# hp as it comes in: the UI plays the turn back after it is all worked out, so the creature's own hp is already the end of it
+	ev.append(_at({"type": "switch", "side": side, "index": index, "user": party[index].display_name(), "hp": party[index].hp}, pos))
 	_entered(side, pos, ev)
 
 func _do_item(side: int, item_id: String, target: int, ev: Array) -> void:

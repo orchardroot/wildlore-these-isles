@@ -16,6 +16,8 @@ const WALK := 20.0                              # dog speeds, units per second
 const DASH := 31.0
 const FLEE := 15.0
 const MAX_SPEED := 7.5
+const COHESION_R := 16.0
+const CALM_LURE := 0.5                          # how hard a calm sheep near a gap is drawn to it
 const FLAG_PREFIX := "sheepdog_"                # sheepdog_<venue> = true once the local has been beaten
 const FLAG_DAY := "sheepdog_day_"
 const DAILY_PURSE := 3
@@ -105,13 +107,9 @@ static func _sub(st: Dictionary, dt: float, move: Vector2, dash: bool, lie: bool
 		st.dog = _move(st.walls, st.dog, move.limit_length(1.0) * speed * dt, 0.7)
 	var flight := FLIGHT * (0.45 if lie else (1.4 if st.running else 1.0)) * (0.82 if easy else 1.0)
 	var live: Array = []
-	var centre := Vector2.ZERO
 	for s in st.sheep:
 		if not s.penned:
 			live.append(s)
-			centre += s.p
-	if not live.is_empty():
-		centre /= float(live.size())
 	for s in live:
 		var acc := Vector2.ZERO
 		var away: Vector2 = s.p - st.dog
@@ -121,9 +119,18 @@ static func _sub(st: Dictionary, dt: float, move: Vector2, dash: bool, lie: bool
 			s.scare = minf(1.0, float(s.scare) + dt * 1.2 * (1.0 - dist / flight) * (2.0 if st.running else 1.0))
 		else:
 			s.scare = maxf(0.0, float(s.scare) - dt * 0.5)
-		var toward: Vector2 = centre - s.p
-		if toward.length() > 5.0:
-			acc += toward.normalized() * 1.6
+		# clinging to the neighbours, not to the middle of the whole field: a flock split in two used to have each half
+		# tugged towards the empty grass between them, which held both still at the gate until the clock ran out
+		var mates := Vector2.ZERO
+		var near := 0
+		for o in live:
+			if o != s and (o.p - s.p).length() < COHESION_R:
+				mates += o.p
+				near += 1
+		if near > 0:
+			var toward: Vector2 = mates / float(near) - s.p
+			if toward.length() > 5.0:
+				acc += toward.normalized() * 1.6
 		for o in live:
 			if o != s:
 				var dd: Vector2 = s.p - o.p
@@ -131,19 +138,21 @@ static func _sub(st: Dictionary, dt: float, move: Vector2, dash: bool, lie: bool
 				if l < 2.4 and l > 0.001:
 					acc += dd / l * (2.4 - l) * 4.0
 		acc += Vector2(rng.roll() - 0.5, rng.roll() - 0.5) * 3.0   # grazing
-		# a sheep that is being walked on sees the open gap and tends to take it (a nudge, so the game stays fair)
-		if float(s.scare) > 0.05:
-			var lure := Vector2.ZERO
-			var gj := 0
-			for g in st.gates:
-				var gxx := float(g.x)
-				if int(s.through) <= gj and s.p.x > gxx and s.p.x - gxx < 18.0:
-					lure = Vector2(gxx - 2.0, float(g.y))
-				gj += 1
-			if lure == Vector2.ZERO and int(s.through) >= st.gates.size() and s.p.x > PEN.end.x and s.p.x < PEN.end.x + 20.0:
-				lure = Vector2(PEN.end.x - 3.0, PEN.get_center().y)
-			if lure != Vector2.ZERO:
-				acc += (lure - s.p).normalized() * (4.0 if st.easy else 2.6)
+		# a sheep sees the open gap and tends to take it: firmly when it is being walked on, and a gentle amble when it
+		# is calm and near one, so a straggler left on its own never just sits by a gate until the clock runs out
+		var lure := Vector2.ZERO
+		var nxt := mini(int(s.through), st.gates.size() - 1)   # the gate it is working on (the last one, if it got back out)
+		if nxt >= 0:
+			var gxx := float(st.gates[nxt].x)
+			if s.p.x > gxx and s.p.x - gxx < (18.0 if float(s.scare) > 0.05 else 12.0):
+				lure = Vector2(gxx - 2.0, float(st.gates[nxt].y))
+		if lure == Vector2.ZERO and int(s.through) >= st.gates.size() and s.p.x < PEN.end.x + (20.0 if float(s.scare) > 0.05 else 30.0):
+			lure = Vector2(PEN.end.x - 3.0, PEN.get_center().y)
+		if lure == Vector2.ZERO and int(s.through) > 0 and int(s.through) < st.gates.size():
+			lure = Vector2(float(st.gates[int(s.through)].x) - 2.0, float(st.gates[int(s.through)].y))   # between two gates: on to the next
+		if lure != Vector2.ZERO:
+			var pull := (4.0 if st.easy else 2.6) if float(s.scare) > 0.05 else CALM_LURE
+			acc += (lure - s.p).normalized() * pull
 		for w in st.walls:   # ...and from the fences, so nobody sticks to one
 			var wr: Rect2 = w
 			var nearest := Vector2(clampf(s.p.x, wr.position.x, wr.end.x), clampf(s.p.y, wr.position.y, wr.end.y))

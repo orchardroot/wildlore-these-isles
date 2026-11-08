@@ -14,6 +14,10 @@ var _frames: Array = []
 var _frame := 0
 var _t := 0.0
 var _px := 96
+var _style := ""           # a Motion style when the picture idles (see PortraitMotion), else ""
+var _mat: ShaderMaterial
+var _phase := 0.0
+var _clock := 0.0
 
 ## kind: "front" (96 px frames, animated) or "icon" (32 px). `variant`: an uncommon coat (see CoatArt), "" for none; `form`: a regional form (see FormArt);
 ## `sex`: "m" or "f", for the sheet of a species whose sexes differ (see Sexes), else the usual one.
@@ -47,9 +51,32 @@ func show_species(id: String, kind := "front", scale_factor := 2, as_silhouette 
 		_frames.append(sheet)
 	_frame = 0
 	texture = _frames[0]
+	_style = ""
+	if _mat != null:
+		_mat.set_shader_parameter("shift", Vector2.ZERO)
+		_mat.set_shader_parameter("squash", Vector2.ONE)
 	set_process(_frames.size() > 1)
 
+## Makes a front picture idle in the species' Motion style (Summary, Fieldbook). Not for silhouettes or icons.
+func animate(species: Dictionary) -> void:
+	if silhouette or _px != 96 or species.is_empty():
+		return
+	_style = Motion.style_for(species)
+	_phase = float(hash(species_id) % 628) / 100.0
+	if _mat == null:
+		_mat = PortraitMotion.material_for()
+		material = _mat
+	set_process(true)
+
 func _process(delta: float) -> void:
+	if _style != "":
+		_clock += delta
+		var f := PortraitMotion.frame_for(_style, _clock, size.y, _phase, Settings.flash_scale())
+		_mat.set_shader_parameter("pivot", Vector2(size.x * 0.5, size.y * 0.95))
+		_mat.set_shader_parameter("shift", f.shift)
+		_mat.set_shader_parameter("squash", f.squash)
+	if _frames.size() < 2:
+		return
 	_t += delta
 	if _t >= 0.6:
 		_t = 0.0

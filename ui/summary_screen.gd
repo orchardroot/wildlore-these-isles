@@ -153,6 +153,7 @@ func _left(c: Creature) -> Control:
 	holder.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	var s := AnimSprite.new()
 	s.show_species(c.species.id, "front", 3, false, c.variant, c.form, c.sex)
+	s.animate(c.species)
 	s.position = Vector2(0, -18)
 	holder.add_child(s)
 	v.add_child(holder)

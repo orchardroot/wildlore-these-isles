@@ -15,6 +15,9 @@ const WINDOW_EASY := 0.22
 const OK_WINDOW := 0.27           # a "fair" kick; anything later is ragged
 const GAIN := {"good": 1.5, "ok": 1.05, "ragged": 0.45}
 const STREAK_CAP := 6
+const SET_LOW := 0.96             # the trench is different every swim: how far a kick carries, low to high
+const SET_HIGH := 1.04
+const SPRING := 0.07              # cold springs and peat slacks along the trench speed or slow a stretch of it
 const FLAG_PREFIX := "snorkel_"   # snorkel_<venue> = true once the local has been beaten
 const FLAG_DAY := "snorkel_day_"
 const DAILY_PURSE := 3
@@ -33,9 +36,18 @@ static func venue(id: String) -> Dictionary:
 static func venues() -> Array:
 	return cfg().venues.keys()
 
-## A fresh swim. x counts yards over both lengths (0 to LENGTH * LENGTHS).
-static func fresh() -> Dictionary:
-	return {"x": 0.0, "t": 0.0, "breath": 1.0, "silt": 0.0, "last": "", "streak": 0, "pause": 0.0, "done": false,
+## A fresh swim. x counts yards over both lengths (0 to LENGTH * LENGTHS). `seed_value` 0 is the plain trench; any
+## other seed sets that swim's set (how far a kick carries) and where the springs and slacks are.
+static func fresh(seed_value := 0) -> Dictionary:
+	var carry := 1.0
+	var spring := 0.0
+	var phase := 0.0
+	if seed_value != 0:
+		var r := Rng.new(seed_value)
+		carry = lerpf(SET_LOW, SET_HIGH, r.roll())
+		spring = SPRING
+		phase = r.roll() * TAU
+	return {"carry": carry, "spring": spring, "phase": phase, "x": 0.0, "t": 0.0, "breath": 1.0, "silt": 0.0, "last": "", "streak": 0, "pause": 0.0, "done": false,
 		"swallowed": 0, "kicks": 0, "good": 0, "length": 0, "turn": false}
 
 static func window(easy: bool) -> float:
@@ -67,9 +79,13 @@ static func kick(s: Dictionary, side: String, err: float, easy := false) -> Stri
 		s.streak = 0
 		s.silt = minf(1.0, float(s.silt) + 0.14)
 	var clog := 1.0 - 0.6 * float(s.silt)   # a clogged snorkel means you swim half-blind and short of air
-	s.x = float(s.x) + float(GAIN[g]) * (1.0 + 0.05 * float(s.streak)) * clog
+	s.x = float(s.x) + float(GAIN[g]) * (1.0 + 0.05 * float(s.streak)) * clog * carry_at(s)
 	s.breath = maxf(0.0, float(s.breath) - (0.012 if g == "good" else 0.03))
 	return g
+
+## How far a kick carries just here: the swim's set, and a springs-and-slacks wobble along the trench.
+static func carry_at(s: Dictionary) -> float:
+	return float(s.get("carry", 1.0)) * (1.0 + float(s.get("spring", 0.0)) * sin(float(s.x) / 9.0 + float(s.get("phase", 0.0))))
 
 ## Blow the snorkel clear: it costs about a beat.
 static func blow(s: Dictionary) -> bool:
@@ -124,8 +140,8 @@ static func fmt(t: float) -> String:
 
 ## Plays a swim with a rhythm of steadiness `steady` (0 to 1: the share of kicks that land on the beat) and returns
 ## the final state. For tests and for balancing the locals.
-static func auto_swim(steady: float, rng: Rng, easy := false) -> Dictionary:
-	var s := fresh()
+static func auto_swim(steady: float, rng: Rng, easy := false, seed_value := 0) -> Dictionary:
+	var s := fresh(seed_value)
 	var side := "l"
 	var guard := 0
 	while not bool(s.done) and guard < 4000:

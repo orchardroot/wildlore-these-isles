@@ -219,7 +219,9 @@ static func attack_score(b: Battle, me: Creature, foe: Creature, move: Dictionar
 		s *= Knacks.defend_mult(foe, move, eff) * Knacks.weather_power(me, move, w)
 	if move.type in me.types():
 		s *= 1.5
-	return s
+	# a crit is worth half again, so a better chance of one is worth a little more than the plain odds
+	var crit_gain := (DamageCalc.crit_percent(DamageCalc.crit_stage(me, move)) - DamageCalc.CRIT_CHANCE) / 100.0 * (DamageCalc.CRIT_MULT - 1.0)
+	return s * (1.0 + crit_gain)
 
 static func _side_of(b: Battle, c: Creature) -> int:
 	return Battle.PLAYER if c in b.parties[Battle.PLAYER] else Battle.FOE

@@ -432,7 +432,7 @@ class Plate extends PanelContainer:
 		_sb.set_border_width_all(4 if on else _border_w)
 		queue_redraw()
 
-	func set_creature(c: Creature) -> void:
+	func set_creature(c: Creature, hp := -1) -> void:
 		creature = c
 		name_l.text = c.display_name()
 		sex_m.set_sex(c.sex, sex_px)
@@ -440,7 +440,7 @@ class Plate extends PanelContainer:
 		hp_max = float(c.max_hp())
 		if _hp_tween and _hp_tween.is_valid():
 			_hp_tween.kill()  # a drain still running for the creature that left would overwrite the new one's HP
-		hp_shown = float(c.hp)
+		hp_shown = float(c.hp if hp < 0 else hp)
 		_sync_hp()
 		set_status(c.status)
 		stage_row.clear()  # a creature comes in level; the stat events (and the end-of-batch sync) fill it in
@@ -574,9 +574,10 @@ func refresh_names() -> void:
 	for p in player_plates():
 		p.refresh_names()
 
-func set_creature(side: int, c: Creature, pos := 0) -> void:
+## `hp` >= 0 shows that instead of the creature's hp now (a switch-in that is hit later in the same turn).
+func set_creature(side: int, c: Creature, pos := 0, hp := -1) -> void:
 	var p := plate(side, pos)
-	p.set_creature(c)
+	p.set_creature(c, hp)
 	if not p.visible:
 		p.visible = true
 		var from := Vector2(-480, 0) if side == Battle.FOE else Vector2(520, 0)

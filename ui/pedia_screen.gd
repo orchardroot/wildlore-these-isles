@@ -316,6 +316,8 @@ func _show(id: String) -> void:
 	top.add_child(frame)
 	var s := AnimSprite.new()
 	s.show_species(id if st != "unseen" else "", "front", 2, st == "seen")
+	if st == "caught":
+		s.animate(sp)
 	if st == "unseen":
 		s.modulate = Color(1, 1, 1, 0.35)
 	frame.add_child(s)
