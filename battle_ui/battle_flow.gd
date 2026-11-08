@@ -161,8 +161,15 @@ func _meal_buff() -> void:
 	var lead := battle.current(Battle.PLAYER)
 	match str(b.buff):
 		"stat":
-			if lead == null or lead.change_stage(str(b.stat), 1) == 0:
+			var up := lead.change_stage(str(b.stat), 1) if lead != null else 0
+			if up == 0:
 				return
+			# a charm-style event, so the lead's plate gets its stat pill with the line rather than a turn later
+			var e := {"type": "charm", "side": Battle.PLAYER, "stat": str(b.stat), "delta": up, "text": str(b.text)}
+			if battle.double:
+				e["pos"] = 0
+			await _play([e])
+			return
 		"catch":
 			battle.meal_catch = float(b.mult)
 		"purse":
@@ -173,8 +180,8 @@ func _intro_lines() -> Array[String]:
 	var out: Array[String] = []
 	if battle.double:
 		var t := str(trainer.get("name", "A keeper"))
-		out.append("%s wants to battle!" % t if not is_wild() else "Wild creatures appeared!")
-		out.append("%s sends out %s!" % [t, _names(battle.actives(Battle.FOE))])
+		out.append("%s %s to battle!" % [t, EventPlayer.verb(t, "wants")] if not is_wild() else "Wild creatures appeared!")
+		out.append("%s %s out %s!" % [t, EventPlayer.verb(t, "sends"), _names(battle.actives(Battle.FOE))])
 		out.append("Go! %s!" % _names(battle.actives(Battle.PLAYER)))
 		_weather_intro(out)
 		return out
@@ -188,8 +195,8 @@ func _intro_lines() -> Array[String]:
 			out.append(Coats.intro_line(foe.variant))  # an uncommon coat
 	else:
 		var t := str(trainer.get("name", "A keeper"))
-		out.append("%s wants to battle!" % t)
-		out.append("%s sends out %s!" % [t, foe.display_name()])
+		out.append("%s %s to battle!" % [t, EventPlayer.verb(t, "wants")])
+		out.append("%s %s out %s!" % [t, EventPlayer.verb(t, "sends"), foe.display_name()])
 	_weather_intro(out)
 	out.append("Go! %s!" % me.display_name())
 	return out
@@ -286,19 +293,12 @@ func _item_action(c: Dictionary) -> Dictionary:
 	return {"type": "item", "item": id, "target": target}
 
 func _play(events: Array) -> void:
-	var party: Array = battle.parties[Battle.PLAYER]
-	for i in events.size():
-		var e: Dictionary = events[i]
+	for e in events:
 		if e.type == "catch" and str(e.get("reason", "")) == "":
 			e["snare_name"] = _snare.get("name", "snare")
 			e["wobbles"] = Catching.wobbles(Catching.last_roll, _catch_chance, bool(e.success)) if Catching.last_roll >= 0.0 else wobbles_for(_catch_chance, bool(e.success))
 			var foe := battle.current(Battle.FOE)
 			e["clean"] = bool(e.success) and foe != null and foe.status == "asleep" and foe.hp >= foe.max_hp()
-		elif e.type == "item":
-			var t := int(e.get("target", 0))
-			if t >= 0 and t < party.size():
-				var at: int = battle.active[Battle.PLAYER].find(t) if battle.double else -1
-				e["shown_hp"] = EventPlayer.hp_after_item(events, i, party[t], at)
 	var cx := ctx()
 	for e in events:
 		log.append_array(EventPlayer.lines_for(e, cx))

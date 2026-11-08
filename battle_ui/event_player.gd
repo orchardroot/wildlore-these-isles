@@ -3,6 +3,8 @@ extends RefCounted
 ## Turns Battle events into message lines and animation cues. Pure: no nodes, no autoloads.
 ## ctx comes from make_ctx(battle, trainer). Events are played right after the Battle call that made them,
 ## so battle.current_at(side, pos) is still the creature the event is about (a switch carries its own name).
+## Its hp, status and stages are not: the Battle has worked out the whole turn, so they are already the end of it.
+## Anything a name plate shows comes from the event itself ("hp", "status", "delta").
 ## Double-battle events carry "pos" (the field position); singles events have none and mean position 0.
 
 const STAT_NAMES := {"atk": "Attack", "def": "Defence", "lore": "Lore", "ward": "Ward", "spd": "Speed", "acc": "Accuracy"}
@@ -103,7 +105,7 @@ static func lines_for(ev: Dictionary, ctx: Dictionary) -> Array[String]:
 				if b.kind == "wild" or t == "":
 					out.append("The wild %s steps up!" % ev.user)
 				else:
-					out.append("%s sends out %s!" % [t, ev.user])
+					out.append("%s %s out %s!" % [t, verb(t, "sends"), ev.user])
 		"run":
 			if bool(ev.success):
 				out.append("Got away safely!")
@@ -168,6 +170,10 @@ static func lines_for(ev: Dictionary, ctx: Dictionary) -> Array[String]:
 		"end":
 			pass
 	return out
+
+## A keeper's verb: "sends" for one, "send" for a pair ("Aoife and Orla send out...").
+static func verb(keeper: String, singular: String) -> String:
+	return singular.trim_suffix("s") if " and " in keeper or " & " in keeper else singular
 
 const WEATHER_START := {
 	"drizzle": "A fine drizzle sets in for %d turns.",
@@ -254,7 +260,11 @@ static func _cue(ev: Dictionary, ctx: Dictionary) -> Dictionary:
 		"faint":
 			return {"cue": "faint", "side": side}
 		"switch":
-			return {"cue": "switch", "side": side, "index": int(ev.index)}
+			var sw := {"cue": "switch", "side": side, "index": int(ev.index)}
+			for k in ["hp", "status"]:  # as it came in, not as the turn left it
+				if ev.has(k):
+					sw[k] = ev[k]
+			return sw
 		"run":
 			return {"cue": "run" if bool(ev.success) else "idle", "side": Battle.PLAYER}
 		"end":
@@ -282,22 +292,13 @@ static func _cue(ev: Dictionary, ctx: Dictionary) -> Dictionary:
 		"weather", "weather_end":
 			return {"cue": "weather", "weather": str(ev.weather), "turns": int(ev.get("turns", 0))}
 		"cure_team":
-			return {"cue": "cure", "side": side}
+			return {"cue": "cure", "side": side, "team": ev.get("cured", [int(ev.get("pos", 0))])}
 		"item":
-			return {"cue": "heal", "side": side, "target": int(ev.get("target", 0))}
+			var item := {"cue": "heal", "side": side, "target": int(ev.get("target", 0))}
+			for k in ["hp", "status"]:  # the target as the item left it (a turn's later events have moved it on since)
+				if ev.has(k):
+					item[k] = ev[k]
+			return item
 		"catch":
 			return {"cue": "catch", "success": bool(ev.success), "wobbles": int(ev.get("wobbles", 3))}
 	return {"cue": "none"}
-
-## What the player's creature should show once an item event plays: the creature's HP now plus any damage
-## still to come later in the same batch (the Battle has already resolved the whole turn).
-## In doubles pass the creature's field position, so damage to its partner is not counted.
-static func hp_after_item(events: Array, index: int, c: Creature, pos := -1) -> int:
-	var hp := c.hp
-	for j in range(index + 1, events.size()):
-		var e: Dictionary = events[j]
-		if pos >= 0 and int(e.get("pos", 0)) != pos:
-			continue
-		if int(e.get("side", -1)) == Battle.PLAYER and e.type in ["damage", "self_hit", "status_damage"]:
-			hp += int(e.get("amount", 0))
-	return mini(hp, c.max_hp())

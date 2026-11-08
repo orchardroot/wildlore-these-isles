@@ -132,6 +132,8 @@ func test_multi_hit_stops_when_the_target_drops() -> void:
 	var ev := b.take_turn(USE, USE)
 	assert_eq(all_of(ev, "damage").size(), 1)
 	assert_eq(first(ev, "hits").count, 1)
+	var types := ev.map(func(e): return e.type)
+	assert_true(types.find("hits") < types.find("faint"), "\"Hit once!\" comes before the faint: %s" % [types])
 
 func test_heal_self_restores_half_and_fails_at_full() -> void:
 	var me := mon("me", ["t_heal"], 90)

@@ -65,13 +65,13 @@ func _tide(side, pos, other, hit_pos, t_pos, pal, col) -> void:
 	var u := fx._chest(side, pos)
 	var tp := fx._chest(other, t_pos)
 	fx._actor(side, pos).cast()
-	for k in 2:  # two swells, the second bigger
+	for k in 2:  # two swells, the second bigger; it breaks (0.6 s) and is all in (0.77 s) before the hit
 		for i in fx._n(12):
-			fx._spawn(u + Vector3(0, -0.4, 0), Vector3(0, 0, sin(i) * 0.9), col.lerp(pal[1], k * 0.4), 0.4 + 0.2 * k, 0.4, 0.0, BattleFX.PATH, 0.03 * i + 0.25 * k, tp + Vector3(0, -0.2 + 0.5 * k, 0), 0.5 + 0.5 * k, true, 1.0, 4)
-	await fx._wait(0.5)
+			fx._spawn(u + Vector3(0, -0.4, 0), Vector3(0, 0, sin(i) * 0.9), col.lerp(pal[1], k * 0.4), 0.4 + 0.2 * k, 0.4, 0.0, BattleFX.PATH, 0.015 * i + 0.2 * k, tp + Vector3(0, -0.2 + 0.5 * k, 0), 0.5 + 0.5 * k, true, 1.0, 4)
+	await fx._wait(0.6)
 	fx.burst(tp, pal[1], fx._n(26), 5.0, 0.22, 0.5, -5.0, Vector3.UP, 4)
 	fx._impact(other, hit_pos, pal, 14)
-	await fx._wait(0.2)
+	await fx._wait(0.17)
 
 func _hearth(side, pos, other, hit_pos, t_pos, pal, col) -> void:
 	var a := fx._actor(side, pos)

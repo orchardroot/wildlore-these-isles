@@ -341,10 +341,13 @@ class Plate extends PanelContainer:
 	var stage_row: StageRow
 	var xp_bar: Bar
 	var hp_shown := 1.0
+	var hp_to := 1.0  # where the bar is heading (hp_shown while it drains), what the plate has been told to show
 	var hp_max := 1.0
+	var status := ""  # the status chip's condition ("" for none)
 	var xp_shown := 0.0
 	var _hp_tween: Tween
 	var _xp_tween: Tween
+	var _fade: Tween
 	var _sb: StyleBoxFlat
 	var _border: Color
 	var _border_w := 2
@@ -433,6 +436,9 @@ class Plate extends PanelContainer:
 		queue_redraw()
 
 	func set_creature(c: Creature, hp := -1) -> void:
+		if _fade and _fade.is_valid():
+			_fade.kill()
+		modulate.a = 1.0
 		creature = c
 		name_l.text = c.display_name()
 		sex_m.set_sex(c.sex, sex_px)
@@ -441,6 +447,7 @@ class Plate extends PanelContainer:
 		if _hp_tween and _hp_tween.is_valid():
 			_hp_tween.kill()  # a drain still running for the creature that left would overwrite the new one's HP
 		hp_shown = float(c.hp if hp < 0 else hp)
+		hp_to = hp_shown
 		_sync_hp()
 		set_status(c.status)
 		stage_row.clear()  # a creature comes in level; the stat events (and the end-of-batch sync) fill it in
@@ -448,33 +455,66 @@ class Plate extends PanelContainer:
 			xp_shown = xp_fraction(c)
 			xp_bar.value = xp_shown
 
+	## A new nickname or an evolution. Not the level: XP is given before its bar fills, and the level goes up
+	## with the bar (animate_xp), not as "gained XP" comes up.
 	func refresh_names() -> void:
 		if creature != null:
 			name_l.text = creature.display_name()
-			level_l.text = "Lv %d" % creature.level
 
-	func refresh_stats() -> void:
+	## After a level-up: the new level, and the bar grows with the new maximum and the HP it brought (the bar
+	## and the max together, so it never dips first, as it would with the new max under the old HP).
+	func refresh_stats(dur := 0.4) -> void:
 		if creature == null:
 			return
 		level_l.text = "Lv %d" % creature.level
-		hp_max = float(creature.max_hp())
-		_sync_hp()
+		if _hp_tween and _hp_tween.is_valid():
+			_hp_tween.kill()
+		var from := Vector2(hp_shown, hp_max)
+		var to := Vector2(creature.hp, creature.max_hp())
+		hp_to = to.x
+		if not is_inside_tree() or dur <= 0.0:
+			hp_shown = to.x
+			hp_max = to.y
+			_sync_hp()
+			return
+		_hp_tween = create_tween()
+		_hp_tween.tween_method(func(v: Vector2):
+			hp_shown = v.x
+			hp_max = v.y
+			_sync_hp(), from, to, dur)
 
 	func _sync_hp() -> void:
 		hp_bar.value = hp_shown / maxf(1.0, hp_max)
 		hp_bar.queue_redraw()
 		if hp_text:
-			hp_text.text = "%d / %d" % [int(ceil(hp_shown)), int(hp_max)]
+			hp_text.text = "%d / %d" % [int(ceil(hp_shown)), int(round(hp_max))]
 
 	func tween_hp(to: float, dur: float) -> void:
 		if _hp_tween and _hp_tween.is_valid():
 			_hp_tween.kill()
+		hp_to = to
+		if not is_inside_tree():  # headless tests: no tweens, the bar is simply there
+			hp_shown = to
+			_sync_hp()
+			return
 		_hp_tween = create_tween()
 		_hp_tween.tween_method(func(v: float):
 			hp_shown = v
 			_sync_hp(), hp_shown, to, dur)
 
+	## A faint: the plate fades out with its creature (a replacement's plate slides back in).
+	func fade_out(dur: float) -> void:
+		if not is_inside_tree() or not visible:
+			visible = false
+			return
+		_fade = create_tween()
+		_fade.tween_property(self, "modulate:a", 0.0, dur).set_delay(dur * 0.4)
+		_fade.tween_callback(func():
+			visible = false
+			modulate.a = 1.0)
+
 	func set_status(s: String) -> void:
+		status = s
 		chip.visible = s != ""
 		if s == "":
 			return
@@ -585,11 +625,18 @@ func set_creature(side: int, c: Creature, pos := 0, hp := -1) -> void:
 		p.position = home + from
 		create_tween().tween_property(p, "position", home, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
+func fade_plate(side: int, pos := 0, dur := 0.5) -> void:
+	plate(side, pos).fade_out(dur)
+
 func tween_hp(side: int, hp: int, dur: float, pos := 0) -> void:
 	plate(side, pos).tween_hp(float(hp), dur)
 
 func shown_hp(side: int, pos := 0) -> float:
 	return plate(side, pos).hp_shown
+
+## The HP a plate has been told to show (the end of any drain still running).
+func target_hp(side: int, pos := 0) -> float:
+	return plate(side, pos).hp_to
 
 func max_hp(side: int, pos := 0) -> float:
 	return plate(side, pos).hp_max
@@ -597,12 +644,26 @@ func max_hp(side: int, pos := 0) -> float:
 func set_status(side: int, s: String, pos := 0) -> void:
 	plate(side, pos).set_status(s)
 
+## Makes the plates match the creatures once a batch of events has played. Every change should already have
+## come from its own event (so this changes nothing); it is a safety net, and it never cuts a drain short.
+func sync(b: Battle) -> void:
+	set_weather(b.weather, b.weather_turns)
+	for side in 2:
+		for pos in b.positions():
+			var c := b.current_at(side, pos)
+			if c == null:
+				continue
+			set_status(side, c.status, pos)
+			set_stages(side, c.stages, pos)
+			if absf(target_hp(side, pos) - c.hp) > 0.5 and not (side == Battle.FOE and b.caught != null):
+				tween_hp(side, c.hp, 0.25, pos)
+
 ## The stat-stage pills straight from a creature's stages (the end-of-batch sync).
 func set_stages(side: int, stages: Dictionary, pos := 0) -> void:
 	plate(side, pos).stage_row.set_all(stages)
 
 ## Called as each battle event starts playing: stat pills move with the "rose!" line, a crit flashes gold,
-## and (if the setting is on) the damage floats off the plate.
+## and (if the setting is on) the damage or healing floats off the plate it happens to (a prick: the attacker's).
 func on_event(ev: Dictionary) -> void:
 	var side := int(ev.get("side", 0))
 	var pos := int(ev.get("pos", 0))
@@ -612,24 +673,32 @@ func on_event(ev: Dictionary) -> void:
 		flash_crit()
 	var t := number_text(ev)
 	if t != "":
-		_pop_number(plate(side, pos), t, ev.type == "damage" and bool(ev.get("crit", false)))
+		var at := plate(int(ev.other_side), int(ev.get("other_pos", 0))) if ev.has("other_side") else plate(side, pos)
+		_pop_number(at, t, ev.type == "damage" and bool(ev.get("crit", false)), t.begins_with("+"))
 
-## "-12" for an event that took HP off a plate, "" when there's nothing to show (or the setting is off).
+## "-12" for an event that took HP off a plate, "+5" for one that gave some back, "" when there's nothing to
+## show (or the setting is off). A charm or knack with "other_side" pricked the attacker; one with "hp" healed.
 func number_text(ev: Dictionary) -> String:
-	if not Settings.damage_numbers or str(ev.get("type", "")) not in ["damage", "status_damage", "self_hit", "recoil"]:
-		return ""
 	var n := int(ev.get("amount", 0))
-	return "-%d" % n if n > 0 else ""
+	if not Settings.damage_numbers or n <= 0:
+		return ""
+	var t := str(ev.get("type", ""))
+	var charm := t in ["charm", "knack"]
+	if t in ["damage", "status_damage", "self_hit", "recoil"] or (charm and ev.has("other_side")):
+		return "-%d" % n
+	if t == "heal" or (charm and ev.has("hp")):
+		return "+%d" % n
+	return ""
 
-## A small number that drifts up beside the plate's HP bar and fades. Gold for a crit.
-func _pop_number(p: Plate, text: String, crit: bool) -> void:
+## A small number that drifts up beside the plate's HP bar and fades. Gold for a crit, green for healing.
+func _pop_number(p: Plate, text: String, crit: bool, healed := false) -> void:
 	if not p.visible:
 		return
 	var l := Label.new()
 	l.text = text
 	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	l.add_theme_font_size_override("font_size", 26 if crit else 22)
-	l.add_theme_color_override("font_color", Color("ffd257") if crit else CREAM)
+	l.add_theme_color_override("font_color", Color("ffd257") if crit else (Color("9ff0a4") if healed else CREAM))
 	l.add_theme_color_override("font_outline_color", Color("14161c"))
 	l.add_theme_constant_override("outline_size", 6)
 	add_child(l)
@@ -691,6 +760,6 @@ func animate_xp(c: Creature, level_events: Array) -> void:
 		p.level_l.text = "Lv %d" % (c.level - gained + i + 1)
 		p.xp_shown = 0.0
 		p.xp_bar.value = 0.0
-	p.refresh_stats()
-	p.tween_hp(float(c.hp), 0.4)
+	if gained > 0:
+		p.refresh_stats()
 	await p.tween_xp(Plate.xp_fraction(c), 0.6)
