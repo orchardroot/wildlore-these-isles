@@ -8,15 +8,21 @@ extends CanvasLayer
 const HOLD := 2.6
 const MAX_W := 640.0  # px of text before it wraps: the panel then stays clear of the route chip on the left
 const BG := Color(0.114, 0.133, 0.188, 0.92)
+const GROUP := "parish_toast"
 
 var _panel: PanelContainer
 var _head: Label
 var _body: Label
 var _queue: Array = []   # [header, text]
 var _playing := false
+var _up := false         # a message is on screen (or sliding in or out)
+var _tween: Tween
+var _current: Array = []
 
 func _ready() -> void:
 	layer = 61
+	add_to_group(GROUP)
+	Bus.zone_entered.connect(_on_zone_entered)
 	_panel = PanelContainer.new()
 	_panel.theme = load("res://ui/theme.tres")
 	_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -69,9 +75,26 @@ func lay_out() -> void:
 	_panel.offset_left = -w * 0.5
 	_panel.offset_right = w * 0.5
 
-## The panel's box on screen (for the HUD checks).
+## The panel's box on screen while a message is up, else an empty rect (the route chip steps out of its way).
 func rect() -> Rect2:
-	return _panel.get_global_rect()
+	return _panel.get_global_rect() if _up else Rect2()
+
+## A town's name card is coming up while a message shows (you walked into the next zone): the message steps aside
+## and comes back after the card, rather than lie on top of it.
+func _on_zone_entered(_id: String) -> void:
+	if not _up or _tween == null:
+		return
+	await get_tree().process_frame  # the card hears the same signal; let it decide whether to show
+	var card := get_tree().get_first_node_in_group(ZoneCard.GROUP) as ZoneCard
+	if not _up or card == null or not card.showing():
+		return
+	_tween.kill()
+	_queue.push_front(_current)
+	_tween = create_tween()
+	_tween.tween_property(_panel, "modulate:a", 0.0, 0.15)
+	_tween.tween_callback(func() -> void:
+		_up = false
+		_next())
 
 func show_news(header: String, text: String) -> void:
 	_queue.append([header, text])
@@ -87,14 +110,18 @@ func _next() -> void:
 	while card != null and is_instance_valid(card) and card.showing():
 		await get_tree().create_timer(0.25).timeout
 	var m: Array = _queue.pop_front()
+	_current = m
+	_up = true
 	_head.text = m[0]
 	_body.text = m[1]
 	lay_out()
 	_panel.position.y = 8.0
-	var tw := create_tween()
-	tw.set_parallel(true)
-	tw.tween_property(_panel, "modulate:a", 1.0, 0.2)
-	tw.tween_property(_panel, "position:y", 22.0, 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	tw.chain().tween_interval(HOLD)
-	tw.chain().tween_property(_panel, "modulate:a", 0.0, 0.5)
-	tw.chain().tween_callback(_next)
+	_tween = create_tween()
+	_tween.set_parallel(true)
+	_tween.tween_property(_panel, "modulate:a", 1.0, 0.2)
+	_tween.tween_property(_panel, "position:y", 22.0, 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	_tween.chain().tween_interval(HOLD)
+	_tween.chain().tween_property(_panel, "modulate:a", 0.0, 0.5)
+	_tween.chain().tween_callback(func() -> void:
+		_up = false
+		_next())

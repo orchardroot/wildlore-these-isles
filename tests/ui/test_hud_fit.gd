@@ -22,3 +22,10 @@ func test_a_long_toast_wraps_into_a_short_panel() -> void:
 	t.lay_out()
 	assert_true(t._panel.size.x < 300.0, "a short line after a long one shrinks back (%d px)" % t._panel.size.x)
 	t.free()
+
+func test_route_chip_steps_below_a_box_that_reaches_it() -> void:
+	var chip := Rect2(RouteChip.MARGIN, Vector2(420, 48))
+	assert_eq(RouteChip.clear_y(chip, Rect2()), RouteChip.MARGIN.y, "nothing up: its usual place")
+	assert_eq(RouteChip.clear_y(chip, Rect2(560, 22, 300, 100)), RouteChip.MARGIN.y, "a narrow card leaves it be")
+	assert_eq(RouteChip.clear_y(chip, Rect2(300, 36, 680, 150)), 186.0 + RouteChip.GAP, "a wide card: just below it")
+	assert_eq(RouteChip.clear_y(chip, Rect2(300, 22, 680, 80)), RouteChip.MARGIN.y, "a short box ending above it")

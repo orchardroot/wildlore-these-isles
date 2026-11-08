@@ -36,6 +36,11 @@ func _ready() -> void:
 	Calendar.set_override(str(args.get("date", "")))  # --date=MM-DD or YYYY-MM-DD: screenshot any season, festival or day
 	if str(args.get("quality", "")) in ["low", "medium", "high"]:
 		Settings.quality = str(args.quality)  # --quality: before/after screenshots without touching the player's settings
+	if Access.TEXT_SIZES.has(str(args.get("text", ""))) or bool(args.get("readable", false)):
+		if Access.TEXT_SIZES.has(str(args.get("text", ""))):
+			Settings.text_size = str(args.text)  # --text=large and --readable: screenshots at the player's text settings
+		Settings.readable_font = Settings.readable_font or bool(args.get("readable", false))
+		Settings.apply_access()
 	var seed_value: int = args.seed if args.seed >= 0 else int(Time.get_unix_time_from_system())
 	rng = Rng.new(seed_value)
 	data.rng_seed = seed_value
@@ -227,6 +232,8 @@ func _dev_boot() -> void:
 		if args.ride == "bike":
 			Router.overworld.player.set_bike(true)
 		_dev_cues()
+		if DevHud.wanted() != "":
+			DevHud.show(self, DevHud.wanted())  # dev: every HUD box up at once, held (see DevHud)
 		if PhotoMode.dev_wanted():
 			await get_tree().create_timer(1.5).timeout
 			PhotoMode.start(Router.overworld)
@@ -277,6 +284,11 @@ func _take_shot() -> void:
 	if "--audit" in DevArgs.user_args():  # dev: list what spills out of its menu, beside the PNG
 		var lines := LayoutAudit.report(get_tree().root, get_viewport().get_visible_rect())
 		var f := FileAccess.open(path.get_basename() + ".audit.txt", FileAccess.WRITE)
+		f.store_string("\n".join(lines) + ("\n" if lines else "ok\n"))
+		f.close()
+	if DevHud.wanted() != "" or "--hud-check" in DevArgs.user_args():  # dev: HUD boxes overlapping or off the screen
+		var lines := DevHud.report(get_tree().root, get_viewport().get_visible_rect())
+		var f := FileAccess.open(path.get_basename() + ".hud.txt", FileAccess.WRITE)
 		f.store_string("\n".join(lines) + ("\n" if lines else "ok\n"))
 		f.close()
 	if "--text-check" in DevArgs.user_args():  # dev: list text a player can't read whole (TextCheck), beside the PNG

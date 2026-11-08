@@ -12,6 +12,7 @@ const SLATE := Color(0.114, 0.133, 0.188, 0.95)
 const FAST_FORWARD := 6.0   # typing speed multiplier while confirm is held
 const DECLINES := ["just looking", "not today", "not yet", "another day", "no thanks", "no, ta", "carry on", "walk past", "leave him"]
 const INPUT_GRACE_MS := 180   # ignore the confirm press that opened the conversation
+const GROUP := "dialogue_box"
 
 signal _advanced
 signal _chosen(index: int)
@@ -35,6 +36,7 @@ var _decline := -1
 
 func _ready() -> void:
 	layer = 20
+	add_to_group(GROUP)
 	_ui = Control.new()
 	_ui.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_ui.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -237,6 +239,10 @@ func _pages(text: String) -> Array:
 
 func close() -> void:
 	queue_free()
+
+## Showing a line or a choice (the bottom of the screen is taken).
+func up() -> bool:
+	return _ui != null and _ui.visible
 
 ## What the box shows right now: the speaker and the text typed out so far ("" when the box is hidden).
 func on_screen() -> Dictionary:
