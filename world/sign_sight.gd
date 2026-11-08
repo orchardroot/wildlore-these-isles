@@ -169,7 +169,8 @@ func _item(body: MeshInstance3D) -> Variant:
 
 ## Every sign's lettering in a built zone (`root` from ZoneBuilder.build), checked from its building's door:
 ## [{zone, label, text, hidden (share of the lettering hidden), wide (lettering wider than the building),
-## off (share of the lettering off screen), moved (a front meant for a wall sign got a board on posts)}].
+## off (share of the lettering off screen), moved (a front meant for a wall sign got a board on posts),
+## em (how high a capital is, world units), overhang (an end of the lettering with no board behind it)}].
 static func audit(z: ZoneData, root: Node3D) -> Array:
 	var bodies := []
 	for pr in z.props:
@@ -180,6 +181,11 @@ static func audit(z: ZoneData, root: Node3D) -> Array:
 			bodies.append({"pr": pr, "body": body})
 	var sight := make(z, bodies)
 	var out := []
+	var boards := []  # the sign boards themselves, to find lettering that runs off its board
+	for n in ["Signs", "SignsLit"]:
+		var mi := root.get_node_or_null(n) as MeshInstance3D
+		if mi and mi.mesh:
+			boards.append(mi.mesh.generate_triangle_mesh())
 	for b in bodies:
 		var pr: Dictionary = b.pr
 		var body: Node3D = b.body
@@ -201,8 +207,17 @@ static func audit(z: ZoneData, root: Node3D) -> Array:
 			var hid := 0.0
 			for k in [-1.0, 0.0, 1.0]:
 				hid = maxf(hid, sight.hidden_share(c - ax + ay * k + nz, c + ax + ay * k + nz, eye_at, 11))
+			var n := lab.transform.basis.z.normalized()
+			var over := false
+			for e in [c - ax * 0.98, c + ax * 0.98]:
+				var backed := false
+				for tm in boards:
+					if not (tm as TriangleMesh).intersect_segment(e + n * 0.1, e - n * 0.2).is_empty():
+						backed = true
+				over = over or not backed
 			out.append({"zone": z.id, "label": str(pr.label), "text": lab.text.replace("\n", " / "), "hidden": hid,
-				"moved": walled and c.y - body.position.y < 0.95, "wide": size.x > float(pr.w) + 0.01, "off": off_screen(sight._bounds, stand, ZoneBuilder.ground_y(z, stand), c - ax, c + ax)})
+				"moved": walled and c.y - body.position.y < 0.95, "wide": size.x > float(pr.w) + 0.01, "off": off_screen(sight._bounds, stand, ZoneBuilder.ground_y(z, stand), c - ax, c + ax),
+				"em": lab.pixel_size * Signage.FS, "overhang": over})
 	return out
 
 ## The share of the line a..b outside a 16:9 view with the player at `stand` (0 when all of it shows).
