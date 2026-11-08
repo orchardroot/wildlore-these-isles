@@ -388,7 +388,7 @@
   },
   {
    "type": "building",
-   "style": "mill",
+   "style": "tower_mill",
    "x": 20,
    "y": 30,
    "w": 4,

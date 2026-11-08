@@ -46,7 +46,8 @@ const SPECIAL := ["edinburgh_tenement", "glasgow_tenement", "aberdeen_granite", 
 	"pitcairn_house", "boat_shed", "base_hangar", "base_tower", "base_block", "plantation_ruin", "island_church",
 	"jersey_granite", "guernsey_granite", "jersey_tower", "little_chapel",
 	"andaluz_house", "andaluz_church", "frontier_post", "fort_ruin", "venetian_gate", "venetian_wall", "selimiye", "han",
-	"kioski_house", "orthodox_church", "checkpoint_booth", "un_tower", "minster"]
+	"kioski_house", "orthodox_church", "checkpoint_booth", "un_tower", "minster",
+	"allotment_shed", "net_hut", "tower_mill", "water_wheel", "pumping_house", "cornish_engine"]
 
 ## Doors: where each style's door sits on its tile (see _door and friends), for the swing as you go in.
 ## {x, w, y, h, z}: left edge and width across the door column, bottom and height, z of the door's face from
@@ -89,6 +90,10 @@ const DOOR_RECTS := {
 	"lincoln_cathedral": {"x": 0.15, "w": 0.7, "y": 0.0, "h": 1.3, "z": 0.03},
 	"limestone_church": {"x": 0.15, "w": 0.7, "y": 0.0, "h": 1.3, "z": 0.03},
 	"the_deep": {"x": 0.2, "w": 0.6, "y": 0.0, "h": 1.0, "z": 0.0},
+	"allotment_shed": {"x": 0.22, "w": 0.56, "y": 0.0, "h": 0.95, "z": -0.12},
+	"net_hut": {"x": 0.22, "w": 0.56, "y": 0.0, "h": 0.95, "z": -0.12},
+	"tower_mill": {"x": 0.24, "w": 0.52, "y": 0.0, "h": 1.0, "z": -0.1},
+	"water_wheel": {"x": 0.22, "w": 0.56, "y": 0.0, "h": 0.95, "z": -0.07},
 }
 const DOOR_OPEN_ANGLE := -1.75     # radians about the hinge: swings out toward you, about 100 degrees
 const DOOR_SWING_SECS := 0.16
@@ -386,6 +391,8 @@ static func building(w: int, d: int, style: String, door_x: int, seed_value: int
 			SouthAtlanticStyles.tin_cottage(st, wst, w, d, door_x, rng)
 		"whalebone_arch":
 			SouthAtlanticStyles.whalebone_arch(st, w, d)
+		"allotment_shed", "net_hut", "tower_mill", "water_wheel", "pumping_house", "cornish_engine":
+			WorksStyles.build(st, wst, w, d, door_x, rng, style)
 		"pitcairn_house":
 			PacificStyles.house(st, wst, w, d, door_x, rng)
 		"boat_shed":
