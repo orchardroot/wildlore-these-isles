@@ -1,3 +1,19 @@
+# w50-critic handoff
+
+Branch `w50-critic` (from int-w50). A new player's walk along the story by screenshot, fixing what looked wrong
+outside the other w50 sessions' files. Full write-up: `docs/audit/w50_critic.md`; before/after in
+`docs/screens/w50-critic-*.png`.
+
+- Fixed: doorsteps on a town's south edge hid the player behind the tree belt (21 doors, now low hedges); the Tor
+  arrival likewise; cathedral and Leeds Town Hall windows were inside the stone (`world/landmarks.gd`); all 102
+  shops get a new `shop_shelf` prop; the Percy French plaque was lost in the Mournes spawn array (and a bad spawn now
+  fails validation); trees hiding doors and boards moved; 16 signs moved out from behind tree belts; "car park".
+- Left for others: the Standing toast lands on the zone card and runs off screen (HUD, w50-tf-world); York Minster
+  crypt arrival (should be cured by w50-world's low south wall); York Minster colour needs a signage tweak first;
+  starter picker "field station"; truncated venue boards; bare Sanctuaries.
+- Merge note: `world/zone_builder.gd` gets three small additive lines for `shop_shelf`; w50-world edits other parts
+  of the same file. `data/zones/chat_moss.json` and `ring_of_kerry.json` are touched by both, in different places.
+
 # w50-report handoff
 
 Branch `w50-report` (from 5.2.1). An in-game "report a problem" key, so a bug can be flagged mid-play without
