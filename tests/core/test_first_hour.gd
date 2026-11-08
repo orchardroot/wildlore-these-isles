@@ -28,6 +28,8 @@ func test_first_standing_point_in_a_nation_is_noticed() -> void:
 	assert_eq(Parish.standing_line(d, "england", 1), "", "later points stay quiet")
 	assert_true(Parish.standing_line(d, "mann", 1).contains("on the Isle of Man"), "on an island, not in it")
 	assert_true(Parish.standing_line(d, "channel_islands", 1).contains("in the Channel Islands"), "no capital The mid-sentence")
+	assert_eq(Standing.mid_name("channel_islands"), "the Channel Islands", "w52: the map's Standing line and job lines too")
+	assert_eq(Standing.mid_name("wales"), "Wales")
 	assert_true(Parish.standing_line(d, "overseas", 1).contains("Someone out here has"), "not \"in Britain Overseas\" (some of it is Spain, Cyprus or Oxfordshire)")
 	assert_true(Parish.standing_line(d, "abroad", 1).contains("among the Kin Abroad"), "people, not a place")
 	assert_eq(Parish.standing_line(d, "atlantis", 1), "", "not a nation")
