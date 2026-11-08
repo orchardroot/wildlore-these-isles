@@ -18,7 +18,7 @@
   "types": ["brook", "tide"],
   "zone": "ironbridge_gorge",
   "where": "The Severn at Ironbridge, with the Coracle Racer",
-  "good": 40.0,
+  "good": 34.0,
   "master": 27.0,
   "lower_better": true,
   "unit": "seconds",
