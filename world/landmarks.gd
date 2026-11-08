@@ -682,9 +682,12 @@ static func _cathedral(st: SurfaceTool, wst: SurfaceTool, w: int, d: int, door_x
 	_merlons(st, 0, tower_w, d - 0.6, th, stone, true)
 	# _window puts its frame across a face at z - 0.05 (a house's front): the nave's front is at d - 0.3 and the
 	# tower's at d, so pass those plus 0.05 or the glass sits inside the stone
+	# pointed lancets between buttresses (kept under the name band, see Signage.front), a belfry lancet on the tower
 	for x in range(tower_w, w):
-		_window(st, wst, x + 0.32, 0.6, d - 0.25, 0.36, 1.5, stone.lightened(0.2))
-	_window(st, wst, tower_w * 0.5 - 0.3, 3.4, d + 0.05, 0.6, 1.2, stone.lightened(0.2))
+		MinsterStyle._lancet(st, wst, x + 0.32, 0.6, d - 0.25, 0.36, 1.3, stone.lightened(0.2))
+		if x > tower_w:
+			Meshes.box(st, Vector3(x - 0.09, 0, d - 0.32), Vector3(0.18, 2.0, 0.3), stone.darkened(0.07))
+	MinsterStyle._lancet(st, wst, tower_w * 0.5 - 0.3, 3.4, d + 0.05, 0.6, 1.1, stone.lightened(0.2))
 	if door_x >= 0:
 		Meshes.box(st, Vector3(door_x + 0.15, 0, d - 0.05), Vector3(0.7, 1.3, 0.08), Color("3b2a22"))
 
