@@ -15,7 +15,7 @@ func test_lever_opens_the_gate_and_back() -> void:
 	var z := _applied("blue_john_entry", d)
 	assert_eq(z.tile_at(Vector2i(6, 4)), "fence", "shut on a fresh save")
 	assert_false(z.walkable(Vector2i(6, 4)))
-	var lever := DeepPlace.lever_at(z, Vector2i(2, 7))
+	var lever := DeepPlace.lever_at(z, Vector2i(10, 6))  # beside the desk, as Gwen says
 	assert_true(DeepPlace.pull(d, z.id, lever))
 	DeepPlace.apply(d, z, DeepPlace.crates_start(z))
 	assert_eq(z.tile_at(Vector2i(6, 4)), "path")

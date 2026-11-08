@@ -97,8 +97,8 @@
   "levers": [
    {
     "id": "gate",
-    "x": 11,
-    "y": 7,
+    "x": 10,
+    "y": 6,
     "on": "You heave the old iron lever. Somewhere above the steps, a gate swings open.",
     "off": "You haul the lever back. The gate clanks shut."
    }

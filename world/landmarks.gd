@@ -1266,6 +1266,19 @@ static func bollard() -> ArrayMesh:
 	Meshes.cylinder(st, Vector3(0, 0.4, 0), 0.2, 0.08, 8, Color("2a2f38"))
 	return Meshes._finish(st)
 
+## A Deep Place lever: an iron box on the floor and a long handle with a red knob, leaning back (variant 0) or
+## thrown forward (1, pulled). Big and bright on purpose, so it reads from across a dim cave.
+static func lever(variant := 0) -> ArrayMesh:
+	var st := Meshes._st()
+	var rng := Meshes._rng(9480)
+	Meshes.box(st, Vector3(-0.22, 0, -0.16), Vector3(0.44, 0.22, 0.32), Color("3a3f48"), Color("4a505a"))
+	Meshes.box(st, Vector3(-0.17, 0.22, -0.04), Vector3(0.34, 0.02, 0.08), Color("16181c"))  # the slot
+	var lean := -1.0 if variant == 0 else 1.0
+	for k in 7:  # the handle, a stack of short bars stepping over to one side
+		Meshes.box(st, Vector3(-0.035 + lean * k * 0.035, 0.22 + k * 0.08, -0.035), Vector3(0.07, 0.09, 0.07), Color("8a8f98"))
+	Meshes.blob(st, Vector3(lean * 0.245, 0.8, 0), Vector3(0.09, 0.09, 0.09), Color("d23a2a"), rng, 0.02)
+	return Meshes._finish(st)
+
 static func buoy(variant := 0) -> ArrayMesh:
 	var st := Meshes._st()
 	var rng := Meshes._rng(9500)
