@@ -40,6 +40,10 @@ static func ink_label(text: String, size := 28, colour := SLATE) -> Label:
 static func sized(size: int) -> int:
 	return Access.scaled(maxi(size, MIN_TEXT), Settings.text_size)
 
+## True with the Large or Largest Text size: for layouts that trade a little picture or bar for the bigger words.
+static func big_text() -> bool:
+	return Access.scale_of(Settings.text_size) > 1.0
+
 ## The font menus draw with: the Readable font when that setting is on (ui/theme.tres), else Godot's default.
 ## Measure with this, never ThemeDB.fallback_font, or the Readable font's wider letters overrun the sums.
 static func font() -> Font:
@@ -93,27 +97,52 @@ static func fit_block(words: Array, box: Control, sizes: Array, sep := 8) -> voi
 		return
 	var w := box.size.x - 16  # room for a scroll bar, so measuring never promises a fit that then wraps once more
 	var body: int = sizes[sizes.size() - 1]
-	var keep_all := false
-	for size in sizes:
-		if _block_height(words, w, size, sep, true) <= box.size.y:
-			body = size
-			keep_all = true
-			break
-	if not keep_all:
+	var top := 0
+	for e in words:
+		top = maxi(top, _tier(e))
+	var cut := top + 1  # lines of this tier or higher are left out: first none, then the most optional, and so on
+	var fitted := false
+	while not fitted and cut > 1:
+		for size in sizes:
+			if _block_height(words, w, size, sep, cut) <= box.size.y:
+				body = size
+				fitted = true
+				break
+		if not fitted:
+			cut -= 1
+	if not fitted:
 		for size in sizes:
 			body = size
-			if _block_height(words, w, size, sep, false) <= box.size.y:
+			if _block_height(words, w, size, sep, cut) <= box.size.y:
 				break
 	for e in words:
 		if is_instance_valid(e[0]):
 			e[0].add_theme_font_size_override("font_size", sized(body + e[1]))
-			e[0].visible = keep_all or not (e.size() > 2 and e[2])
+			e[0].visible = _tier(e) < cut or _tier(e) == 0
+	if box is ScrollContainer:
+		_recheck_bar.call_deferred(weakref(box))
 
-static func _block_height(words: Array, w: float, size: int, sep: int, with_optional: bool) -> float:
+## A ScrollContainer only rechecks its scroll bar when it is laid out after its minimum size was asked for: words that
+## no longer need the bar (smaller, or a line left out) can leave it showing otherwise.
+static func _recheck_bar(ref: WeakRef) -> void:
+	var sc := ref.get_ref() as ScrollContainer
+	if sc == null:
+		return
+	sc.update_minimum_size()
+	sc.get_combined_minimum_size()
+	sc.queue_sort()
+
+## How optional a words_box line is: 0 never left out; higher tiers go first (`optional` true is tier 1).
+static func _tier(e: Array) -> int:
+	if e.size() < 3:
+		return 0
+	return int(e[2]) if e[2] is int else (1 if e[2] else 0)
+
+static func _block_height(words: Array, w: float, size: int, sep: int, cut: int) -> float:
 	var f: Font = font()
 	var h := -float(sep)
 	for e in words:
-		if not with_optional and e.size() > 2 and e[2]:
+		if _tier(e) >= cut and _tier(e) > 0:
 			continue
 		var fs: int = sized(size + e[1])
 		var tall := f.get_multiline_string_size(e[0].text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y
@@ -163,16 +192,28 @@ static func _column_height(col: VBoxContainer) -> float:
 		if not (c is Control) or not c.visible:
 			continue
 		n += 1
-		if c is Label:
-			h += _label_height(c, col.size.x)
-		elif c is Container:
-			var tall: float = c.get_combined_minimum_size().y
-			for l in c.find_children("*", "Label", true, false):
-				tall = maxf(tall, _label_height(l, c.size.x))
-			h += tall
-		else:
-			h += c.get_combined_minimum_size().y
+		h += _part_height(c, col.size.x)
 	return h + maxi(0, n - 1) * col.get_theme_constant("separation")
+
+## How tall one part of a fit_column column is with its labels' new sizes (a container's own minimum size still
+## has the old ones until the next layout, so rows and stacks are measured from their labels).
+static func _part_height(c: Control, w: float) -> float:
+	if c is Label:
+		return _label_height(c, w)
+	if c is VBoxContainer:
+		return _column_height(c)
+	if c is HBoxContainer:
+		var tall := 0.0
+		for k in c.get_children():
+			if k is Control and k.visible:
+				tall = maxf(tall, _part_height(k, k.size.x))
+		return tall
+	if c is Container:
+		var tall: float = c.get_combined_minimum_size().y
+		for l in c.find_children("*", "Label", true, false):
+			tall = maxf(tall, _label_height(l, c.size.x))
+		return tall
+	return c.get_combined_minimum_size().y
 
 static func _label_height(l: Label, w: float) -> float:
 	var f := l.get_theme_font("font")
@@ -202,8 +243,9 @@ static func words_box(sizes: Array, sep := 8) -> Array:
 	col.set_meta("sizes", sizes)
 	return [sc, col]
 
-## A wrapped line in a words_box column, `offset` sizes from the body text; `optional` lines go first if space is short.
-static func add_words(col: VBoxContainer, text: String, offset := 0, colour := CREAM, optional := false) -> Label:
+## A wrapped line in a words_box column, `offset` sizes from the body text; `optional` lines go first if space is
+## short (true, or a tier: tier 2 lines go before tier 1).
+static func add_words(col: VBoxContainer, text: String, offset := 0, colour := CREAM, optional: Variant = false) -> Label:
 	var sizes: Array = col.get_meta("sizes")
 	var l := label(text, sizes[0] + offset, colour)
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
