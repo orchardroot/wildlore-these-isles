@@ -6,7 +6,7 @@ extends MenuBase
 ## {"won": bool, "draw": bool, "throws": int} (null if you walk out).
 ## setup arg: "<venue id>" (dev: "dev" shows a lofted throw part way round).
 
-const STAGE := Vector2(1000, 330)
+const STAGE := Vector2(1184, 330)
 const WIN_M := 240.0                     # metres of lane on screen
 const POWER_RATE := 0.5                  # fraction per second
 const SWING_RATE := 0.9

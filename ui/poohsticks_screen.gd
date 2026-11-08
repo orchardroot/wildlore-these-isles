@@ -6,7 +6,7 @@ extends MenuBase
 ## The numbers live in Poohsticks. Closes with {"won": bool, "draw": bool, "wins": int, "losses": int} (null if you walk out).
 ## setup arg: "<venue id>" or "<venue id>:<stake>" (the stake is paid by the story command). Dev: "dev".
 
-const STAGE := Vector2(1000, 330)
+const STAGE := Vector2(1184, 330)
 const LANE_H := 34.0
 const WATER_TOP := 46.0
 const BRIDGE_X := 400.0
@@ -70,7 +70,7 @@ func setup(arg: String) -> void:
 		_lane = Poohsticks.best_lane(_river)
 		var me := Poohsticks.run(_river, _lane, Poohsticks.stick(1), Rng.new(3))
 		var tl := Poohsticks.local_lane(_river, 0.7, Rng.new(4))
-		_anim = {"me": {"run": me, "lane": _lane, "col": Color("efe3c0")}, "them": {"run": Poohsticks.run(_river, tl, Poohsticks.stick(1), Rng.new(5)), "lane": tl, "col": Color("d9772c")}, "t": 1.1, "done": false, "dev": true}
+		_anim = {"me": {"run": me, "lane": _lane, "col": Color("efe3c0")}, "them": {"run": Poohsticks.run(_river, tl, Poohsticks.stick(1), Rng.new(5)), "lane": tl, "col": Color("d9772c")}, "t": 2.4, "done": false, "dev": true}
 		_msg = ""
 	_refresh()
 

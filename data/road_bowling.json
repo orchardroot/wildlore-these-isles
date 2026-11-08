@@ -6,15 +6,31 @@
    "length": 640,
    "half_width": 5.0,
    "bends": [
-    {"at": 150, "len": 60, "shift": 22},
-    {"at": 330, "len": 50, "shift": -28},
-    {"at": 480, "len": 45, "shift": 20}
+    {
+     "at": 150,
+     "len": 80,
+     "shift": 16
+    },
+    {
+     "at": 330,
+     "len": 70,
+     "shift": -20
+    },
+    {
+     "at": 480,
+     "len": 60,
+     "shift": 14
+    }
    ],
-   "scouts": [120, 300, 455],
+   "scouts": [
+    120,
+    300,
+    455
+   ],
    "rival": {
     "who": "Mairead, county champion",
     "power": 0.82,
-    "sloppy": 0.10,
+    "sloppy": 0.1,
     "intro": "Mairead has a bowl in each pocket and a cousin standing at every bend. She says the road does half the work if you let it.",
     "beaten": "Mairead takes her bowl back, turns it over in her hand and says that was a road bowler's round. From her, that is a medal."
    },
@@ -26,12 +42,33 @@
    "length": 700,
    "half_width": 4.6,
    "bends": [
-    {"at": 120, "len": 50, "shift": -20},
-    {"at": 260, "len": 40, "shift": 30},
-    {"at": 400, "len": 40, "shift": -30},
-    {"at": 540, "len": 50, "shift": 22}
+    {
+     "at": 120,
+     "len": 80,
+     "shift": -12
+    },
+    {
+     "at": 260,
+     "len": 70,
+     "shift": 16
+    },
+    {
+     "at": 400,
+     "len": 70,
+     "shift": -16
+    },
+    {
+     "at": 540,
+     "len": 80,
+     "shift": 12
+    }
    ],
-   "scouts": [100, 240, 380, 520],
+   "scouts": [
+    100,
+    240,
+    380,
+    520
+   ],
    "rival": {
     "who": "Declan, three-time Ulster finalist",
     "power": 0.85,

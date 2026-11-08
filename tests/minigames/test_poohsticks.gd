@@ -36,8 +36,8 @@ func test_reading_the_water_wins_most_races() -> void:
 	var wins := 0
 	for i in 200:
 		var r := Poohsticks.river(v, rng)
-		var mine := Poohsticks.run(r, Poohsticks.best_lane(r), Poohsticks.stick(1), rng).time
-		var theirs := Poohsticks.run(r, 0, Poohsticks.stick(1), rng).time
+		var mine: float = Poohsticks.run(r, Poohsticks.best_lane(r), Poohsticks.stick(1), rng).time
+		var theirs: float = Poohsticks.run(r, 0, Poohsticks.stick(1), rng).time
 		if mine < theirs:
 			wins += 1
 	assert_true(wins > 150, "best lane beats a bank lane (%d/200)" % wins)
@@ -49,8 +49,8 @@ func test_the_local_is_beatable_and_not_hopeless() -> void:
 		var wins := 0
 		for i in 300:
 			var r := Poohsticks.river(v, rng)
-			var mine := Poohsticks.run(r, Poohsticks.best_lane(r), Poohsticks.stick(1), rng).time
-			var theirs := Poohsticks.run(r, Poohsticks.local_lane(r, float(v.rival.skill), rng), Poohsticks.stick(1), rng).time
+			var mine: float = Poohsticks.run(r, Poohsticks.best_lane(r), Poohsticks.stick(1), rng).time
+			var theirs: float = Poohsticks.run(r, Poohsticks.local_lane(r, float(v.rival.skill), rng), Poohsticks.stick(1), rng).time
 			if mine < theirs:
 				wins += 1
 		assert_true(wins > 90 and wins < 270, "%s: perfect reading wins %d/300" % [id, wins])

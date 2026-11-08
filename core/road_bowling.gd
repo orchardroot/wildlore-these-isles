@@ -93,13 +93,27 @@ static func throw_bowl(v: Dictionary, s0: float, y0: float, power: float, swing:
 		y1 = centre(v, s1)
 	return {"pts": pts, "air_until": s0 + (d * LOFT_AIR if loft else d), "s1": s1, "y1": y1, "off": off, "off_s": off_s, "finished": finished, "d": d, "loft": loft}
 
-## What the local throws: aims at where the road will be when the bowl lands, with a bit of the hand's wobble.
+## What the local throws: tries a few powers and swings on a steady hand, keeps the one that gets furthest without
+## leaving the road, then lets the hand wobble a little.
 static func local_throw(v: Dictionary, rival: Dictionary, s0: float, y0: float, rng: Rng) -> Dictionary:
-	var pw := clampf(float(rival.get("power", 0.8)) + (rng.roll() - 0.5) * 0.16, 0.25, 1.0)
-	var d := distance_for(pw)
-	var target := centre(v, s0 + d)
-	var sw := clampf((target - y0) / CURL + (rng.roll() - 0.5) * 2.0 * float(rival.get("sloppy", 0.1)), -1.0, 1.0)
-	return throw_bowl(v, s0, y0, pw, sw, false, rng)
+	var base := float(rival.get("power", 0.8))
+	var best_pw := base
+	var best_sw := 0.0
+	var best_score := -1.0
+	var probe := Rng.new(1)
+	for pw in [base, base * 0.7, base * 0.5, base * 0.3, 0.1]:
+		for k in 21:
+			var sw := -1.0 + float(k) * 0.1
+			var r := throw_bowl(v, s0, y0, pw, sw, false, probe, 0.0)
+			var sc := float(r.s1) - s0 + (1000.0 if bool(r.finished) else 0.0) - (40.0 if bool(r.off) else 0.0)
+			if sc > best_score:
+				best_score = sc
+				best_pw = pw
+				best_sw = sw
+	var sloppy := float(rival.get("sloppy", 0.1))
+	var pw2 := clampf(best_pw + (rng.roll() - 0.5) * 0.16, 0.25, 1.0)
+	var sw2 := clampf(best_sw + (rng.roll() - 0.5) * 2.0 * sloppy, -1.0, 1.0)
+	return throw_bowl(v, s0, y0, pw2, sw2, false, rng)
 
 ## The local's whole round: how many throws.
 static func local_round(v: Dictionary, rng: Rng) -> int:
