@@ -21,12 +21,12 @@ HANDOFF.md, w49-games, is in git history at 83dd13d5.)
 After adding a `class_name`, run `--import` once or the audit can't see it (it quits with code 2).
 
 ## Numbers
-Before (528d58a9): 331 problems on 70 screens, plus a Gazetteer script error. After: 0 on 121 screens; the Words tab's
-learnt-word list still only scrolls with a mouse. Large text still has 162 on 43 screens (see the audit doc).
+Before (528d58a9): 331 problems on 70 screens, plus a Gazetteer script error. After: 0 on all 122 screens. Large
+text still has about 160 on 43 screens (see the audit doc).
 
 ## Notes for the integrator
 - Shared files touched: `ui/ui_kit.gd` (MIN_TEXT floor in `label`, `fit_size`, `fit_block`; new `scroll_list`,
-  `fit_column`, `keep_fitted`, `fit_width`, `key_scroll`, `line_height`, `ink_label`) and `ui/menu_base.gd` (hint bar
+  `fit_column`, `keep_fitted`, `fit_width`, `key_scroll`, `read_on`, `line_height`, `ink_label`) and `ui/menu_base.gd` (hint bar
   fit, HINT_MIN 18, Cancel honours a `back_to` meta). The floor means any `UIKit.label(x, 16)` is now 18 px.
   Outside my scope the only small literal is `ui/parish_toast.gd`'s 17 px heading (now 18); battle_ui and world pass
   18 or more, so their layouts should be unchanged.
@@ -34,5 +34,8 @@ learnt-word list still only scrolls with a mouse. Large text still has 162 on 43
 - `ui/gazetteer_tab.gd` had a real bug (row 0 vs 1) that threw on every Gazetteer open and hid the "How these isles
   work" row: fixed here.
 - Pause's Today's Walk line is now optional in the Where next? card: it shows when there is room at a readable size
-  (it was 12 px before). The Fieldbook's "Found in" line is the optional one there; the map (Confirm) shows the places.
+  (it was 12 px before).
+- Fieldbook: at the 18 px floor a long entry no longer fits one box, so Confirm reads on down it (hint "Read on")
+  before opening the map; same on the Words tab before revision. `tests/ui/test_fieldbook_teaching.gd`'s fit test
+  now allows two boxes instead of one (it used to rely on 15 px text).
 - Before/after shots of the worst five: `docs/screens/w50-text-*-before.png` / `-after.png`.

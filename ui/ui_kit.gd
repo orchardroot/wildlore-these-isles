@@ -328,6 +328,21 @@ static func key_scroll(sc: ScrollContainer, back: Control = null, step := 48) ->
 			sc.scroll_vertical += d * step
 			sc.accept_event())
 
+## True if a box of words runs on past what it shows and isn't at its end yet.
+static func reads_on(sc: ScrollContainer) -> bool:
+	if not is_instance_valid(sc) or sc.get_child_count() == 0:
+		return false
+	var inner := sc.get_child(0) as Control
+	return inner.size.y > sc.size.y + 2 and sc.scroll_vertical + sc.size.y < inner.size.y - 2
+
+## "Read on": scrolls a long box of words down most of a page. Returns false (and does nothing) once the end shows,
+## so Confirm can read on first and then do its usual job.
+static func read_on(sc: ScrollContainer) -> bool:
+	if not reads_on(sc):
+		return false
+	sc.scroll_vertical += int(sc.size.y * 0.8)
+	return true
+
 ## Makes the first and last of a vertical run of controls loop round on up/down.
 static func wrap_focus(items: Array) -> void:
 	if items.size() < 2:

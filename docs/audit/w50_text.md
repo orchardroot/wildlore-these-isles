@@ -76,7 +76,7 @@ Shared fixes first (so the same pattern is fixed everywhere it is used):
   Word boxes that can't fit at 18 drop their optional lines first, then scroll.
 - `UIKit.scroll_list` (a column that scrolls past its room, following focus), `UIKit.fit_column` and
   `UIKit.keep_fitted` (a detail pane steps its words down together, to 18 at least, then closes its gaps),
-  `UIKit.fit_width` (a one-line label shrinks to its width before it trims), `UIKit.key_scroll` (a box of words
+  `UIKit.fit_width` (a one-line label shrinks to its width before it trims), `UIKit.read_on` (Confirm pages down long words before its usual job), `UIKit.key_scroll` (a box of words
   takes the focus and scrolls on up/down; Cancel returns to the list via MenuBase's `back_to`), `UIKit.line_height`
   (hand-set row heights grow with Large text), `UIKit.ink_label` (no drop shadow for dark text on paper).
 
@@ -87,7 +87,9 @@ abreast; job lines wrap), Stats tallies (fit their column), Enclosure's lots (sc
 (job words fit their panel, titles shrink before trimming), summary (move names shrink, charm effect gets its own
 line, the middle card is snug), party preview and bag picker (long nicknames), pairing names, Isles topics and
 postcard place names (shrink before trimming), quests and Gazetteer pages (fit), league card and card album (keys
-scroll; league words lose the smearing shadow), Fieldbook entry ("Found in" is the optional line; the map shows where).
+scroll; league words lose the smearing shadow), Fieldbook entries and the Words tab (at 18 px most entries still fit
+one box; a long one shows "Read on" in the hint bar and Confirm pages down it before it opens the map or revision, as
+the Gazetteer's Isles topics already did; `test_fieldbook_teaching` now holds every entry to two boxes at most).
 Settings and Accessibility rows grow with Large text instead of overlapping.
 
 Minigame stages (`draw_string`, not seen by the audit): words under 18 px raised to 18 (isobar labels and "Isobars every
@@ -95,13 +97,11 @@ Minigame stages (`draw_string`, not seen by the audit): words under 18 px raised
 slope hints, "Spin", "yards"). Icon glyphs inside small markers (the "?" on the map, saddle-cloth numbers, the FINISH
 flag) were left as drawn.
 
-After, normal text: **0 problems on 121 of 122 screens**; the one left is the Words tab (below). `--stress` adds only
+After, normal text: **0 problems on all 122 screens**. `--stress` adds only
 12-letter "MWMW..." nicknames trimmed with an ellipsis in three tight rows, which is the fallback working.
 
 ## What's left
 
-- **Words tab** (`pedia:words`): the learnt-words list scrolls only with a mouse (`stuck`). Confirm on a language
-  already opens revision, so it needs its own key; not done.
 - **Large text** (`--text=large`): 162 problems remain on 43 screens (normal had the priority; the owner
   plays at normal). The worst: summary (three columns too tall), racecard, Exchange and Crypto (trimmed figures),
   crossword grid, world map's info card, jobs, pairing predict, shop boutique. Fixed so far at Large: Settings,
