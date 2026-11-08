@@ -208,6 +208,19 @@ static func _part_height(c: Control, w: float) -> float:
 			if k is Control and k.visible:
 				tall = maxf(tall, _part_height(k, k.size.x))
 		return tall
+	if c is GridContainer:
+		var shown: Array = c.get_children().filter(func(k): return k is Control and k.visible)
+		var cols: int = maxi(1, c.columns)
+		var total := 0.0
+		for r in ceili(shown.size() / float(cols)):
+			var tall := 0.0
+			for k in shown.slice(r * cols, (r + 1) * cols):
+				tall = maxf(tall, _part_height(k, k.size.x))
+			total += tall
+		return total + maxi(0, ceili(shown.size() / float(cols)) - 1) * c.get_theme_constant("v_separation")
+	if c is PanelContainer and c.get_child_count() == 1 and c.get_child(0) is Control:
+		var sb: StyleBox = c.get_theme_stylebox("panel")
+		return _part_height(c.get_child(0), c.get_child(0).size.x) + (sb.get_minimum_size().y if sb != null else 0.0)
 	if c is Container:
 		var tall: float = c.get_combined_minimum_size().y
 		for l in c.find_children("*", "Label", true, false):

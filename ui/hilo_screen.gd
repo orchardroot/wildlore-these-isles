@@ -57,6 +57,7 @@ func _build() -> void:
 	for b in [_deal_btn, _hi_btn, _lo_btn, _cash_btn]:
 		side.add_child(b)
 	side.add_child(make_button("Leave the table", func(): _on_cancel(), 340))
+	fit_side(side)
 	_update()
 	UIKit.focus_later(_deal_btn)
 

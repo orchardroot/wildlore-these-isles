@@ -27,7 +27,7 @@ func _build() -> void:
 	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	v.add_child(note)
 	_stack = Control.new()
-	_stack.custom_minimum_size = Vector2(0, 230)
+	_stack.custom_minimum_size = Vector2(0, 230 if not UIKit.big_text() else 170)  # shorter stacks make room for Large text
 	_stack.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	_stack.draw.connect(_draw_stack)
 	v.add_child(_stack)

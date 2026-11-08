@@ -69,6 +69,13 @@ func refresh_header() -> void:
 	parts.append("Today's limit " + Purse.text(Punt.left_today(d)) + " left")
 	header_right.text = "   ".join(parts)
 
+## A side column of words and buttons that steps its words down together (UIKit.fit_column) if it is taller than the
+## table's room: with Large text. Call once it is built.
+func fit_side(side: VBoxContainer) -> void:
+	await get_tree().process_frame
+	if is_instance_valid(side):
+		UIKit.fit_column(side, content.size.y)
+
 ## What's available to stake: chips or the purse.
 func funds() -> int:
 	return Punt.chips(Game.data) if with_chips else Purse.balance(Game.data)
