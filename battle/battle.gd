@@ -364,6 +364,7 @@ func _strike(side: int, pos: int, user: Creature, t_side: int, t_pos: int, targe
 	var hits := MoveFX.roll_hits(fx, rng) if fx.id == "multi_hit" else 1
 	var total := 0
 	var landed := 0
+	var from := ev.size()
 	for h in hits:
 		if target.is_fainted() or user.is_fainted():
 			break
@@ -403,8 +404,13 @@ func _strike(side: int, pos: int, user: Creature, t_side: int, t_pos: int, targe
 		elif dealt > 0:
 			_thorns(side, pos, user, t_side, t_pos, target, move, ev)
 			_prickly(side, pos, user, t_side, t_pos, target, move, ev)
-	if fx.id == "multi_hit":
-		ev.append(_at({"type": "hits", "side": side, "count": landed}, pos))
+	if fx.id == "multi_hit":  # "Hit 3 times!" before anyone faints from it, not after
+		var at := ev.size()
+		for i in range(from, ev.size()):
+			if ev[i].type == "faint":
+				at = i
+				break
+		ev.insert(at, _at({"type": "hits", "side": side, "count": landed}, pos))
 	return total
 
 ## Drain and recoil, from the damage one target took.
