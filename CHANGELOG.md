@@ -2,6 +2,40 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.2.2: the big tidy
+
+A day spent finding and fixing what a player actually sees.
+
+**Text you can read**
+- Every menu, Almanac page, shop and minigame was measured line by line: 331 places where text spilled, was cut off,
+  ran off the screen or was too small are fixed, and a check now fails the build if one comes back. The hint bar on
+  every menu was stuck at 15 px; nothing is smaller than 18 px now, and long Fieldbook entries page instead of
+  shrinking.
+- Building signs: 331 of the 1,539 building names were cut off from their own door, many behind their own walls or
+  the building in front. Now 5 are, and only partly.
+- Dialogue choices no longer cover the first line, toasts wait for the zone card and wrap instead of running across
+  the screen, and the battle message box no longer grows off the bottom.
+- In battle the Bag and Team menus open on the left, so you can see your own HP while you pick a heal.
+
+**Battles that play in the right order**
+- The HP bar, status icons and stat pips only change when their moment comes: after items, cures, switch-ins,
+  level-ups, song and wave moves, and partner heals in doubles (which showed damage early).
+- A multi-hit knockout says "Hit once!" before "fainted!", a fainted creature's plate fades away, pricks and heals pop
+  a number, and pairs of keepers "want" to battle.
+
+**A world that matches its words**
+- Cave gates look like the gate the guide describes (iron gates, grilles, timber gates, slabs), levers, crates and
+  plates look like what they are, and facing a shut gate reads its hint.
+- Blue John Cavern, Dover's wartime tunnels and the Jersey War Tunnels have cave mouths; Wookey Hole has a visible
+  way in; show-cave entrances have rock walls.
+- About a dozen people no longer mention things that aren't there (stairs in one-room Sanctuaries, a gate on a moor).
+- Stepping out of a door on a town's south edge no longer hides you in the trees; cathedrals have their windows back;
+  shops have stock on their shelves; a lost plaque in the Mournes is back.
+
+**Report a problem: press F9**
+- Anywhere in the game, F9 saves a screenshot, where you are and a copy of your game to a Reports folder, and play
+  carries on. Press it again within three seconds to add a note.
+
 ## 5.2.1: fixes
 
 - **Dialogue no longer hides its first line.** A four-line page grew the box upwards under the speaker's name tag;
