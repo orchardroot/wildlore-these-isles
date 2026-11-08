@@ -289,9 +289,12 @@ def entry_tiles(zid, z):
             pass
     return s
 
+NO_HOP = {("loft", "hadrians_wall")}  # nobody scrambles over a World Heritage Site, bale or no bale
+
 def find_pairs(z, verb, taken_tiles):
     obst, lo, hi = KINDS[verb]
     zid = z["id"]; w, hh = len(z["rows"][0]), len(z["rows"])
+    if (verb, zid) in NO_HOP: return []
     r = reach(z)
     blockers = {(int(p.get("x", -9)), int(p.get("y", -9))) for k in ("props", "warps", "signs", "npcs", "examine") for p in z.get(k, []) if isinstance(p, dict)}
     blockers.add((int(z["spawn"][0]), int(z["spawn"][1])))
