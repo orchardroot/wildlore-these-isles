@@ -25,6 +25,7 @@ var _cur := 0
 var _scroll: ScrollContainer
 var _list_col: VBoxContainer
 var _detail: VBoxContainer
+var _stamps_from: Button = null  # the stamps row, while the stamps themselves have the focus (to scroll them)
 var _buttons: Array = []
 var _rumours: Array = []       # the Rumours tab's rows, when it's showing
 const WORD_SIZES := [25, 23, 21, 19, 17, 16, 15]  # the body text's size, biggest first, until the entry fits
@@ -147,6 +148,19 @@ func setup(arg: String) -> void:
 func _input(event: InputEvent) -> void:
 	if _locked or _done:
 		return
+	if is_instance_valid(_stamps_from) and get_viewport().gui_get_focus_owner() != _stamps_from \
+			and (event.is_action_pressed("cancel") or event.is_action_pressed("menu")):
+		get_viewport().set_input_as_handled()  # out of the stamps, back to their row
+		Audio.sfx("cancel")
+		_stamps_from.grab_focus()
+		_stamps_from = null
+		return
+	if is_instance_valid(_stamps_from) and (event.is_action_pressed("move_up", true) or event.is_action_pressed("move_down", true)):
+		var sc := get_viewport().gui_get_focus_owner() as ScrollContainer
+		if sc != null:
+			get_viewport().set_input_as_handled()
+			sc.scroll_vertical += 48 if event.is_action_pressed("move_down", true) else -48
+		return
 	var d := 0
 	if event.is_action_pressed("move_left") or _shoulder(event, JOY_BUTTON_LEFT_SHOULDER):
 		d = -PAGE
@@ -237,6 +251,10 @@ func _entry_button(i: int) -> Button:
 		c.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return b
 
+## A tab's page steps its words down a size or two when a long one would run past the panel (UIKit.fit_column).
+func _fit_tab() -> void:
+	UIKit.fit_column.call_deferred(_detail, content.size.y - 44)  # the panel's margins and border
+
 ## A Stud Book tab row: an idea (or the Crosses log).
 func _book_button(i: int) -> Button:
 	var id := str(_ids[i])
@@ -251,7 +269,8 @@ func _book_button(i: int) -> Button:
 		elif _filter == "words":
 			WordsTab.show(id, _detail)
 		else:
-			StudBookTab.show(id, _detail))
+			StudBookTab.show(id, _detail)
+		_fit_tab())
 	if _filter == "words":
 		b.pressed.connect(func():  # revise the language (4.5)
 			if not WordsTab.can_revise(id):
@@ -259,6 +278,7 @@ func _book_button(i: int) -> Button:
 			Audio.sfx("confirm")
 			await open_child("lang:review:" + id)
 			WordsTab.show(id, _detail)
+			_fit_tab()
 			b.grab_focus())
 	var h := HBoxContainer.new()
 	h.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -285,8 +305,15 @@ func _rumour_button(i: int) -> Button:
 		Audio.sfx("cursor")
 		_cur = i
 		_last_id = str(r.species)
-		RumoursTab.show(r, _detail))
+		RumoursTab.show(r, _detail)
+		_fit_tab())
 	b.pressed.connect(func():
+		var stamps := _detail.find_child("StampScroll", true, false) as ScrollContainer
+		if str(r.species) == "" and stamps != null:  # into the stamps, to scroll them; Back comes out again
+			Audio.sfx("confirm")
+			_stamps_from = b
+			stamps.grab_focus()
+			return
 		if str(r.species) == "" or state_of(str(r.species)) == "unseen":
 			return
 		Audio.sfx("confirm")

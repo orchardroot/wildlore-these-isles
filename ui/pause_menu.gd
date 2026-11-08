@@ -3,8 +3,9 @@ extends MenuBase
 ## with the Keeper card, the time and weather, and "Where next?" beside it.
 
 const ROW_GAP := 4
-const ROW_MIN := 42  # eleven rows (Wardrobe and Ark both in) still fit the panel; the label shrinks to 30px then
+const ROW_MIN := 42  # eleven rows (Wardrobe and Ark both in) still fit the panel; the text steps down to suit
 const ROW_MAX := 66
+const PANEL_EDGE := 16  # the list panel's margin and border, each side
 
 static var _last_entry := "Team"  # reopens on the entry you left it on (this session only)
 
@@ -21,7 +22,7 @@ func _build() -> void:
 	row.add_theme_constant_override("separation", 28)
 	content.add_child(row)
 
-	var left := UIKit.panel(Color("1d2230f0"), 14)
+	var left := UIKit.panel(Color("1d2230f0"), PANEL_EDGE - 2)
 	left.custom_minimum_size = Vector2(380, 0)
 	row.add_child(left)
 	var menu := VBoxContainer.new()
@@ -38,7 +39,7 @@ func _build() -> void:
 		_trim_padding(b)  # once in the tree, so it sees the theme's boxes
 		_buttons.append(b)
 		_names.append(nm)
-	menu.resized.connect(_size_rows.bind(menu))  # rows share the panel's height, however many there are
+	content.resized.connect(_size_rows)  # rows share the panel's height, however many there are
 	UIKit.wrap_focus(_buttons)
 
 	var right := VBoxContainer.new()
@@ -70,12 +71,18 @@ func _trim_padding(b: Button) -> void:
 		sb.content_margin_bottom = 0
 		b.add_theme_stylebox_override(state, sb)
 
-## Gives each row an equal share of the list's height (between ROW_MIN and ROW_MAX), so nine fit as well as eight.
-func _size_rows(menu: VBoxContainer) -> void:
-	var h := MenuLogic.row_height(menu.size.y, _buttons.size(), ROW_GAP, ROW_MIN, ROW_MAX)
+## Gives each row an equal share of the panel's room (between ROW_MIN and ROW_MAX), so eleven fit as well as eight,
+## and the biggest text that sits in a row that tall. (From the content area, not the list: an overfull list is
+## already taller than its panel, and would share out more room than there is.)
+func _size_rows() -> void:
+	var room := content.size.y - PANEL_EDGE * 2
+	var h := MenuLogic.row_height(room, _buttons.size(), ROW_GAP, ROW_MIN, ROW_MAX)
+	var fs := 32
+	while fs > 26 and ThemeDB.fallback_font.get_height(fs) > h:
+		fs -= 1
 	for b in _buttons:
 		b.custom_minimum_size.y = h
-		b.add_theme_font_size_override("font_size", 32 if h >= 46 else 30)
+		b.add_theme_font_size_override("font_size", fs)
 
 func _button(nm: String) -> Button:
 	var i := _names.find(nm)

@@ -23,7 +23,6 @@ func build(parent: Control) -> void:
 	var row := HBoxContainer.new()
 	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	row.custom_minimum_size = Vector2(0, 560)
 	row.add_theme_constant_override("separation", 22)
 	parent.add_child(row)
 	var lp := UIKit.panel(Color("14182299"), 10)

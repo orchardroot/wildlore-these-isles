@@ -20,10 +20,11 @@ func _build() -> void:
 	col.add_theme_constant_override("separation", 10)
 	content.add_child(col)
 	var p := UIKit.panel(Color("1d2230f0"), 8)
+	p.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	col.add_child(p)
-	var v := VBoxContainer.new()
-	v.add_theme_constant_override("separation", 0)
-	p.add_child(v)
+	var sl := UIKit.scroll_list(0)  # whatever room the preview leaves; the last rows scroll into view
+	var v: VBoxContainer = sl[1]
+	p.add_child(sl[0])
 	var buttons := []
 	for def in [["text_speed", "Text speed"], ["battle_speed", "Battle speed"], ["travel_scenes", "Travel scenes"], ["quality", "Graphics quality"], ["music_volume", "Music volume"], ["sfx_volume", "Effects volume"], ["ambience_volume", "Ambience volume"], ["run_mode", "Run key"], ["follower", "Follower"], ["colour_blind", "Colour-blind friendly"], ["damage_numbers", "Damage numbers"], ["local_languages", "Local languages"], ["hints", "Hints"]]:
 		var b := Button.new()
@@ -100,7 +101,7 @@ func _build() -> void:
 	ph.add_theme_constant_override("separation", 20)
 	pv.add_child(ph)
 	_preview = UIKit.label(SAMPLE, 20)
-	_preview.custom_minimum_size = Vector2(520, 0)
+	_preview.custom_minimum_size = Vector2(420, 0)  # leaves the type chips two rows, not three
 	_preview.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	ph.add_child(_preview)
 	_chips = HFlowContainer.new()

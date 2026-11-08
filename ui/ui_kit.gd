@@ -86,6 +86,54 @@ static func _block_height(words: Array, w: float, size: int, sep: int, with_opti
 		h += tall + (lines - 1) * 3 + sep + 2  # the theme's line spacing, and a shadow pixel or two
 	return h
 
+## Steps a column's labels down together (never below MIN_TEXT) until the column fits `room` px high: for a detail
+## pane whose words come from data, so the longest entry shrinks a little instead of running off the panel. Each
+## label's own size is remembered, so refilling the column and fitting again starts from the full sizes. If even the
+## smallest text is too tall, the gaps between lines close up as a last resort.
+static func fit_column(col: VBoxContainer, room: float) -> void:
+	if not is_instance_valid(col) or room <= 0 or col.size.x <= 0:
+		return
+	var labels: Array = col.find_children("*", "Label", true, false)
+	for l in labels:
+		if not l.has_meta("want"):
+			l.set_meta("want", l.get_theme_font_size("font_size"))
+	if not col.has_meta("sep"):
+		col.set_meta("sep", col.get_theme_constant("separation"))
+	col.add_theme_constant_override("separation", int(col.get_meta("sep")))
+	for k in [1.0, 0.92, 0.85, 0.78, 0.72]:
+		for l in labels:
+			l.add_theme_font_size_override("font_size", maxi(MIN_TEXT, roundi(int(l.get_meta("want")) * k)))
+		if _column_height(col) <= room:
+			return
+	col.add_theme_constant_override("separation", mini(int(col.get_meta("sep")), 3))  # at the smallest, close up the gaps too
+
+static func _column_height(col: VBoxContainer) -> float:
+	var h := 0.0
+	var n := 0
+	for c in col.get_children():
+		if not (c is Control) or not c.visible:
+			continue
+		n += 1
+		if c is Label:
+			h += _label_height(c, col.size.x)
+		elif c is Container:
+			var tall: float = c.get_combined_minimum_size().y
+			for l in c.find_children("*", "Label", true, false):
+				tall = maxf(tall, _label_height(l, c.size.x))
+			h += tall
+		else:
+			h += c.get_combined_minimum_size().y
+	return h + maxi(0, n - 1) * col.get_theme_constant("separation")
+
+static func _label_height(l: Label, w: float) -> float:
+	var f := l.get_theme_font("font")
+	var fs := l.get_theme_font_size("font_size")
+	if l.autowrap_mode == TextServer.AUTOWRAP_OFF:
+		return f.get_height(fs)
+	var tall := f.get_multiline_string_size(l.text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y
+	var lines := maxi(1, roundi(tall / f.get_height(fs)))
+	return tall + (lines - 1) * l.get_theme_constant("line_spacing") + 2
+
 ## A ScrollContainer of wrapped words that shrink to fit it (see fit_block): returns [scroll, column].
 ## Add labels with add_words(); the fit runs once laid out and again whenever the box resizes.
 static func words_box(sizes: Array, sep := 8) -> Array:
