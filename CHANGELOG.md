@@ -2,6 +2,20 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.2.4: loose ends
+
+- **The map shows every place.** The info panel and the bottom strip used to cover Ireland, London and Cambridge; the
+  map now scrolls so the town you pick sits in the clear.
+- **Every hut has its own door.** York's allotment shed was reached through York Minster's front, Lancaster's through
+  the Castle and the boat huts through Whitby Station and a gift shop. Each now has its own little building, and
+  Whitby Station's door opens the station again.
+- **Mills that look like their mills:** Llynnon is a stone windmill, the Laxey Wheel is a great red wheel, Starcross
+  is a red sandstone pumping house, and the Cornish engine houses have their round stacks.
+- **Up Helly Aa's guizers** wear winged helmets, beards and red cloaks, and carry torches.
+- **The Braemar Gathering** is on green grass, not the ski centre's snow.
+- **Grytviken's church** has its tower and spire.
+- A dead heat in the coracle or snorkel race now says so, and a few names abroad read whole.
+
 ## 5.2.3: second sweep
 
 - **The Readable font stays on.** It quietly switched itself off once no menu was open; it now sticks, everywhere.
