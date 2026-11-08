@@ -87,6 +87,16 @@ static func fit_width(l: Label, small := MIN_TEXT) -> void:
 		if l.size.x > 0:
 			l.add_theme_font_size_override("font_size", fit_size(l.text, l.size.x, big, small)))
 
+## A one-line label for a row's name: it takes the room the row's other parts leave, and a long one shrinks (to
+## `small`) before it trims. Use it in place of a label followed by UIKit.fill().
+static func row_label(text: String, size := 28, colour := CREAM, small := MIN_TEXT) -> Label:
+	var l := label(text, size, colour)
+	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	l.clip_text = true
+	l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	fit_width(l, small)
+	return l
+
 ## A block of wrapped labels that must fit `box` (a ScrollContainer, as a fallback for the very longest): sets the
 ## biggest body size from `sizes` (biggest first) at which they all fit. `words` holds [label, size offset, optional]
 ## entries, e.g. a heading one size up from the body; optional ones (a "Did you know?") are left out before the
