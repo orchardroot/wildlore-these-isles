@@ -241,14 +241,15 @@ func _draw_stage() -> void:
 	_draw_face(c, 62.0, shown)
 	_draw_collar(c)
 	# four arrows round the collar: each direction is a face
-	_draw_pad(Vector2(c.x, 38), 0, "up")
-	_draw_pad(Vector2(c.x + 190, c.y), 1, "right")
-	_draw_pad(Vector2(c.x, h - 6 - 36 - 14), 2, "down")
-	_draw_pad(Vector2(c.x - 190, c.y), 3, "left")
+	_draw_pad(Vector2(c.x, 30), 0, "up")
+	_draw_pad(Vector2(c.x + 235, c.y), 1, "right")
+	_draw_pad(Vector2(c.x, h - 30), 2, "down")
+	_draw_pad(Vector2(c.x - 235, c.y), 3, "left")
 	if label != "":
-		var tw := ThemeDB.fallback_font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, 28).x
-		s.draw_rect(Rect2(c.x - tw * 0.5 - 14, 276, tw + 28, 38), Color(0.1, 0.08, 0.1, 0.78))
-		s.draw_string(ThemeDB.fallback_font, Vector2(c.x - tw * 0.5, 304), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 28, UIKit.GOLD)
+		var tw := ThemeDB.fallback_font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, 26).x
+		var lx := c.x + 100.0
+		s.draw_rect(Rect2(lx - 10, 236, tw + 20, 36), Color(0.1, 0.08, 0.1, 0.8))
+		s.draw_string(ThemeDB.fallback_font, Vector2(lx, 263), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 26, UIKit.GOLD)
 	# progress pips for the run, and slips
 	var n := _seq.size()
 	for i in n:
@@ -267,13 +268,13 @@ func _draw_stage() -> void:
 
 func _draw_pad(p: Vector2, face: int, dir: String) -> void:
 	var on := _face == face and (_phase == "show" or _mirror > 0.0)
-	var r := Rect2(p - Vector2(74, 22), Vector2(148, 44))
+	var r := Rect2(p - Vector2(98, 22), Vector2(196, 44))
 	_stage.draw_rect(r, Color("f2e8cf") if on else Color(0.1, 0.1, 0.16, 0.7))
 	_stage.draw_rect(r, UIKit.GOLD, false, 2.0)
 	var arrow: String = {"up": "^", "right": ">", "down": "v", "left": "<"}[dir]
 	var nm: String = str(Gurning.faces()[face].name).replace("The ", "")
-	_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-66, 8), arrow, HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("3a2c28") if on else UIKit.GOLD)
-	_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-44, 7), nm, HORIZONTAL_ALIGNMENT_LEFT, 112, 16, Color("3a2c28") if on else UIKit.CREAM)
+	_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-90, 8), arrow, HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("3a2c28") if on else UIKit.GOLD)
+	_stage.draw_string(ThemeDB.fallback_font, p + Vector2(-66, 7), nm, HORIZONTAL_ALIGNMENT_LEFT, 160, 18, Color("3a2c28") if on else UIKit.CREAM)
 
 ## The horse collar, drawn over the neck of the face: a thick leather ring with brass studs and a red lining.
 func _draw_collar(c: Vector2) -> void:

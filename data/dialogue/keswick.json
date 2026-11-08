@@ -207,5 +207,23 @@
    "who": "Ice Cream Seller",
    "text": "Cumberland sausage: a coil, never a link. Cumberland people are very particular. Ask them."
   }
+ ],
+ "kes_gurner": [
+  {
+   "do": "say",
+   "who": "Gurning Judge",
+   "text": "Welcome to the Crab Fair, Keswick branch. The real one is at Egremont, but the faces here are just as bad."
+  },
+  {
+   "do": "gurn",
+   "venue": "egremont",
+   "who": "Gurning Judge"
+  }
+ ],
+ "kes_games_secretary": [
+  {
+   "do": "league",
+   "who": "Games Secretary"
+  }
  ]
 }

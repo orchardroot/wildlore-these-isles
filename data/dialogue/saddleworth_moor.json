@@ -160,5 +160,17 @@
    "who": "",
    "text": "A mountain hare sits up in the heather, ears like two exclamation marks. It looks at you. It decides you are not a fox, and goes back to eating."
   }
+ ],
+ "moor_wang_steward": [
+  {
+   "do": "say",
+   "who": "Wang Steward",
+   "text": "Boots are in the barrel. Wind is from the west, which on Saddleworth means it is from everywhere."
+  },
+  {
+   "do": "wang",
+   "venue": "upperthong",
+   "who": "Wang Steward"
+  }
  ]
 }
