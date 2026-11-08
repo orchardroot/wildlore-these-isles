@@ -8,6 +8,8 @@ font. Details and numbers in `docs/audit/w50_text.md` (last section).
   `--stress` at normal, Large and Readable+Large. Before: 168 on 41 screens at Large; 7 (normal) and 32 (Large)
   trimmed or spilling nicknames with `--stress`. `--text=largest` (not a target) has 144 on 43 screens.
 - Before/after shots: `docs/screens/w50-large-{summary,races,exchange}-{before,after}.png`.
+- Full `tools/test.sh`: 2997 passed, 0 failed, `validate: 0 error(s)`, no SCRIPT ERROR.
+- Also fixed: the hint bar's "move" prompt (crossword, sheepdog, worm charming) showed "-"; it now says Arrows / D-pad.
 
 ## Notes for the integrator
 - **Real bug fixed in `core/settings.gd`**: `apply_access` let go of `ui/theme.tres` after setting it, so once no menu
