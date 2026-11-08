@@ -226,6 +226,12 @@ func _pages(text: String) -> Array:
 func close() -> void:
 	queue_free()
 
+## What the box shows right now: the speaker and the text typed out so far ("" when the box is hidden).
+func on_screen() -> Dictionary:
+	if not _ui.visible:
+		return {"who": "", "text": ""}
+	return {"who": _tab_label.text if _tab.visible else "", "text": ProblemReport.shown_text(_label.text, _label.visible_characters)}
+
 func _begin(text: String, who: String) -> void:
 	_ui.visible = true
 	_label.text = text

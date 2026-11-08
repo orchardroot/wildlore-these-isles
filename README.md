@@ -72,6 +72,7 @@ update; they always have.
 | Bike on / off | B | Y / North |
 | Fly (after the Moot) | F | Back / Select |
 | Photo mode | P | Right stick click |
+| Report a problem | F9 (twice to add a note) | - |
 
 All of it can be rebound under Settings, Controls. Confirm and Back can't be swapped onto the same key, because
 I've seen what happens. Larger text, a readable font, colour-blind type symbols, reduced flashing and an easier mode

@@ -12,14 +12,7 @@ static func slot_path(slot: String, dir := DEFAULT_DIR) -> String:
 static func save(slot: String, data: Dictionary, dir := DEFAULT_DIR) -> Error:
 	DirAccess.make_dir_recursive_absolute(dir)
 	var path := slot_path(slot, dir)
-	var payload := {}
-	for k in data:
-		if not str(k).begins_with("_"):
-			payload[k] = data[k]
-	payload = payload.duplicate(true)
-	payload["version"] = VERSION
-	if not payload.has("saved_at"):
-		payload["saved_at"] = Time.get_unix_time_from_system()
+	var payload := payload_of(data)
 	var tmp := path + ".tmp"
 	var f := FileAccess.open(tmp, FileAccess.WRITE)
 	if f == null:
@@ -38,6 +31,18 @@ static func save(slot: String, data: Dictionary, dir := DEFAULT_DIR) -> Error:
 	elif FileAccess.file_exists(path):
 		DirAccess.remove_absolute(path)
 	return DirAccess.rename_absolute(tmp, path)
+
+## What a save file holds for this game state: a deep copy without the "_" scratch keys, stamped with the version.
+static func payload_of(data: Dictionary) -> Dictionary:
+	var payload := {}
+	for k in data:
+		if not str(k).begins_with("_"):
+			payload[k] = data[k]
+	payload = payload.duplicate(true)
+	payload["version"] = VERSION
+	if not payload.has("saved_at"):
+		payload["saved_at"] = Time.get_unix_time_from_system()
+	return payload
 
 static func load_slot(slot: String, dir := DEFAULT_DIR) -> Dictionary:
 	var path := slot_path(slot, dir)
