@@ -1,26 +1,45 @@
-# w49-games handoff
+# w50-tf-world handoff
 
-Branch `w49-games` (from int-w49). Fixes three gameplay problems from the tune session; numbers and reasoning are in
-`docs/audit/w49_tune.md` under "Follow-up". Earlier handoffs moved to `docs/audit/w49_handoffs.md`.
+Branch `w50-tf-world`. Text that renders badly while walking about and in battle: building signs, the overworld HUD
+and the battle UI. Findings, numbers and what is left are in `docs/audit/w50_text_world.md`; before and after shots
+are `docs/screens/w50-world-*.png`. The previous handoff (w49-games) moved to `docs/audit/w49_handoffs.md`.
 
 ## What changed
-- **Pancake race** (`core/pancake.gd`): lean push 13 to 9, pan drag 0.9 to 2.2, lean rate eased. A 0.15 s reaction on a
-  keyboard now drops it 0.2 times a race (was 9), 0.2 s about 7 (was 31), 0.3 s still about 20. Rosette thresholds
-  reset to 40 / 36.5 s (`data/party_pieces/g2.json`, `Pancake.GOOD_TIME`/`MASTER_TIME`), champion 37 to 39.5 s.
-- **Sheepdog trials** (`core/sheepdog_trials.gd`): the jam was cohesion towards the global flock centre (a split flock
-  held itself still), no pull on a calm straggler, and a dead zone at the pen mouth. Fixed (local cohesion, gentle calm
-  lure, lure back to the gate, pen lure to the mouth). Clocks cut to 50 s Longshaw and 60 s lakes
-  (`data/sheepdog_trials.json`) because the fix made it easy. The simulator's own bot also dithered and is fixed.
-- **Coracle and snorkel**: seeded per-run river level and eddies (coracle) and set and springs (snorkel); seed 0 keeps
-  the plain behaviour. Screens seed from the clock.
+- **Signs** (`world/sign_sight.gd`, new; `world/signage.gd`): a building's name goes where you can read it from its
+  door. Boards find the front's real face (jettied York fronts, Chester's Rows, porticoes no longer swallow them),
+  keep off porches and oriels, and move along the front out from behind a neighbour standing further forward
+  (Pierhead Building, Norwegian Church). Boards on posts stand clear of verandas; station totems in front of the
+  canopy beam. 331 of 1539 signs were cut from their own door; 5 now are, each partly (9 to 18%).
+- **OccluderFade** (`world/occluder_fade.gd`): a tall building fades from further back (a house is unchanged), so you
+  and the sign behind it no longer vanish behind Blackpool's Illuminations Depot.
+- **Dialogue** (`ui/dialogue_box.gd`): the choice list stands on the box's top edge, so a four-line page's first line
+  is no longer under it (same bug as the speaker's tab, fixed earlier on this branch).
+- **Toasts and zone card** (`ui/parish_toast.gd`, `ui/zone_card.gd`): news waits for the town's name card instead of
+  covering it, wraps past 640 px clear of the route chip, 18 px header; a very long zone name shrinks to fit.
+- **Battle** (`battle_ui/message_box.gd`, `menus.gd`, `hud.gd`, `battle_scene.gd`): a long line takes a smaller size
+  instead of growing the message box off the screen, and keeps left of a picker opened over it; Bag and Team open on
+  the left so both HP plates stay in view; doubles plates end long names in an ellipsis; small type raised (weather
+  plate and singles plates 18 px, nothing under 16).
+- **Dev**: `tools/dev/sign_audit.gd` (every sign, from its door) and `--text-check` beside `--shot`
+  (`core/text_check.gd`, one hook in `core/game_state.gd`): writes `<shot>.text.txt` listing text a player can't read
+  whole. `CameraRig.clamp_to`/`eye_for` are the rig's clamp as statics, for the sight lines.
 
 ## How to see it
-`tools/shot.sh out.png 30 --menu=pancake:dev` (also `coracle:dev`, `sheepdog:longshaw`, `snorkel:dev`). Simulator:
-`.godot-bin/Godot.app/Contents/MacOS/Godot --headless --path . -s res://tools/dev/minigame_sim.gd -- <game> 80`.
+- `tools/shot.sh out.png 30 --boot=cardiff@48,32` (the owner's view), `--boot=york@57,29` (Bettys on its jetty),
+  `--boot=blackpool@55,6` (the station through the faded depot).
+- `tools/shot.sh out.png 28 --battle=puffkin:20 --battle-menu=bag --stress --text-check` (and `team`, `fight`,
+  `--double --battle-menu=target`, `--weather=sunshine --battle-stages`).
+- `.godot-bin/Godot.app/Contents/MacOS/Godot --headless --path . -s res://tools/dev/sign_audit.gd` (a minute).
+- Tests: `tools/test.sh signage`, `occluder`, `dialogue`, `battle_text_fit`.
 
 ## Notes for the integrator
-- Sheepdog gold (pen all 7) is still too easy for the bots (decent 72%); see the follow-up for the option of scoring
-  with the clock left. Left alone as a design call.
-- No lean ease-in beyond the fast-then-gentle rate: a slower ease made late reactions fatal.
-- Touched beyond the three games: `tools/dev/minigame_sim.gd` (bots seed the new fresh(); sheepdog bot fixes).
-- Easier-mode gold rosettes (finding 2 of the tune session) untouched.
+- Shared files touched, all small: `core/game_state.gd` (the `--text-check` hook after `--audit`),
+  `world/camera_rig.gd` (`_clamped` now calls the static), `battle_ui/battle_scene.gd` (two signal connects).
+- Sign placement adds about 20 ms to a zone load here (sight lines are cast once at build, never per frame).
+- `test_signage::test_town_signs_read_whole_from_their_doors` builds ten real towns (a few seconds): if a later map
+  edit puts a taller building in front of a sign, it names the sign.
+- Not fixed, by design: a sign seen from somewhere other than its own door can still be behind a roof; the place
+  chip carries the reading. Props (a lamp post before London's Vane Tower) aren't in the sight check.
+- The stage pills, doubles HP/XP tags and move-row type chips stay at 16 px capitals (a row of six pills wouldn't
+  fit the plate at 18). `--text-check` lists them.
+- For the menus session: `UIKit.fit_size` measures with the fallback font even when the readable font is on.
