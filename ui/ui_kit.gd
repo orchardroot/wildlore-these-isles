@@ -7,6 +7,7 @@ const MUTED := Color("a9a294")
 const HEATHER := Color("9b6fb0")
 const SLATE := Color("1d2230")
 const GOLD := Color("e8c872")
+const MIN_TEXT := 18  # the smallest text on any menu at 1280x720: below this it is a squint (tools/dev/text_audit.gd checks)
 const STATUS_COLOURS := {
 	"soaked": Color("4a90d9"), "chilled": Color("86d4e0"), "muddled": Color("c9a33c"),
 	"hexed": Color("8e6fbf"), "stung": Color("c24a3e"), "asleep": Color("7d7f8a"),
@@ -25,7 +26,7 @@ static func box(bg: Color, border := Color(0, 0, 0, 0), bw := 0, radius := 6, ma
 static func label(text: String, size := 28, colour := CREAM) -> Label:
 	var l := Label.new()
 	l.text = text
-	l.add_theme_font_size_override("font_size", Access.scaled(size, Settings.text_size))
+	l.add_theme_font_size_override("font_size", Access.scaled(maxi(size, MIN_TEXT), Settings.text_size))
 	l.add_theme_color_override("font_color", colour)
 	return l
 
@@ -33,6 +34,8 @@ static func label(text: String, size := 28, colour := CREAM) -> Label:
 ## (`small` if nothing does). For names and hint bars that must never widen a panel.
 static func fit_size(text: String, width: float, big: int, small: int) -> int:
 	var f: Font = ThemeDB.fallback_font  # the game's font (ui/theme.tres sets no other)
+	small = maxi(small, MIN_TEXT)
+	big = maxi(big, small)
 	for s in range(big, small - 1, -1):
 		if f.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, s).x <= width:
 			return s
@@ -48,7 +51,8 @@ static func fit_label(text: String, width: float, big := 28, small := 18, colour
 ## A block of wrapped labels that must fit `box` (a ScrollContainer, as a fallback for the very longest): sets the
 ## biggest body size from `sizes` (biggest first) at which they all fit. `words` holds [label, size offset, optional]
 ## entries, e.g. a heading one size up from the body; optional ones (a "Did you know?") are left out before the
-## text gets any smaller than the last size. `sep` is the box's separation.
+## text gets any smaller than the last size. `sep` is the box's separation. No line goes below MIN_TEXT: past that
+## the box scrolls instead.
 static func fit_block(words: Array, box: Control, sizes: Array, sep := 8) -> void:
 	if not is_instance_valid(box) or box.size.y <= 0 or words.is_empty():
 		return
@@ -67,7 +71,7 @@ static func fit_block(words: Array, box: Control, sizes: Array, sep := 8) -> voi
 				break
 	for e in words:
 		if is_instance_valid(e[0]):
-			e[0].add_theme_font_size_override("font_size", body + e[1])
+			e[0].add_theme_font_size_override("font_size", maxi(body + e[1], MIN_TEXT))
 			e[0].visible = keep_all or not (e.size() > 2 and e[2])
 
 static func _block_height(words: Array, w: float, size: int, sep: int, with_optional: bool) -> float:
@@ -76,7 +80,7 @@ static func _block_height(words: Array, w: float, size: int, sep: int, with_opti
 	for e in words:
 		if not with_optional and e.size() > 2 and e[2]:
 			continue
-		var fs: int = size + e[1]
+		var fs: int = maxi(size + e[1], MIN_TEXT)
 		var tall := f.get_multiline_string_size(e[0].text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y
 		var lines := maxi(1, roundi(tall / f.get_height(fs)))
 		h += tall + (lines - 1) * 3 + sep + 2  # the theme's line spacing, and a shadow pixel or two
@@ -109,6 +113,20 @@ static func add_words(col: VBoxContainer, text: String, offset := 0, colour := C
 	col.add_child(l)
 	col.get_meta("words").append([l, offset, optional])
 	return l
+
+## A column that scrolls once it is taller than the room it is given, following the focused row: returns
+## [scroll, column]. For any list whose length depends on the save (pages, places, lots), so it never runs off the panel.
+static func scroll_list(sep := 4) -> Array:
+	var sc := ScrollContainer.new()
+	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	sc.follow_focus = true
+	sc.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	sc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var col := VBoxContainer.new()
+	col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	col.add_theme_constant_override("separation", sep)
+	sc.add_child(col)
+	return [sc, col]
 
 static func spacer(h := 0, w := 0) -> Control:
 	var c := Control.new()

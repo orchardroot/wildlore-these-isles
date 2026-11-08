@@ -126,7 +126,7 @@ func _places() -> void:
 	_rows.append({"isles": true})
 	_list_col.add_child(_isles_button(0))
 	_rows.append(ISLES_ROW)  # the How these isles work page heads the list (IslesWorkView)
-	_list_col.add_child(_place_button(0))
+	_list_col.add_child(_place_button(_rows.size() - 1))
 	for g in _groups:
 		var head := HBoxContainer.new()
 		var hl := UIKit.label(str(g.name), 19, UIKit.MUTED)
@@ -335,7 +335,7 @@ func open_town(town: String) -> void:
 		_open_isles_work(town.get_slice(":", 1))
 		return
 	for i in _rows.size():
-		if str(_rows[i].town) == town:
+		if str(_rows[i].get("town", "")) == town:
 			_open(i)
 			return
 

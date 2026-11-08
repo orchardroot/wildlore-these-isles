@@ -12,6 +12,7 @@ extends RefCounted
 ##   overlap  two pieces of text drawn over each other
 ##   under    a panel drawn over part of some text
 ##   small    font below MIN_FONT px at 1280x720
+##   box      a framed panel running past the screen or its clip, so its border (and maybe its last lines) is cut
 
 const MIN_FONT := 18
 const SLACK := 2.0      # px of rounding and shadow we forgive
@@ -49,6 +50,12 @@ static func _walk(n: Node, clip: Rect2, screen: Rect2, layer: int, texts: Array,
 			_check_text(c, r, clip, screen, texts, layer, out, root)
 		elif _opaque(c):
 			panels.append([c, r.intersection(clip), texts.size() + panels.size(), layer])
+			if _framed(c) and not _inside(r, clip) and r.intersects(clip):
+				_add(out, c, root, "box", "%s past %s" % [_rs(r), _rs(clip)])
+		if c.has_meta("rolls"):  # text that moves through its box on purpose (the credits): judged like a scroll box
+			for ch in c.get_children():
+				_walk_scrolled(ch, clip, Rect2(clip.position.x, -1e6, clip.size.x, 2e6), screen, layer, texts, panels, out, root)
+			return
 		if c.clip_contents or c is ScrollContainer:
 			if c is ScrollContainer:
 				var sc := c as ScrollContainer
@@ -81,6 +88,8 @@ static func _walk_scrolled(n: Node, seen: Rect2, bounds: Rect2, screen: Rect2, l
 				_check_text(c, r, Rect2(-1e6, -1e6, 2e6, 2e6), screen, texts, layer, out, root, seen)
 		elif _opaque(c) and r.intersects(seen):
 			panels.append([c, r.intersection(seen), texts.size() + panels.size(), layer])
+			if _framed(c) and not _inside(r, bounds):
+				_add(out, c, root, "box", "sideways out of its scroll box (%s in %s)" % [_rs(r), _rs(bounds)])
 		if c.clip_contents and not c is ScrollContainer:
 			bounds = bounds.intersection(r)
 			seen = seen.intersection(r)
@@ -225,6 +234,11 @@ static func _opaque(c: Control) -> bool:
 		return (c as ColorRect).color.a > 0.6 and c.get_global_rect().get_area() < 1280 * 600
 	return false
 
+## A panel with a visible border: cutting it off shows.
+static func _framed(c: Control) -> bool:
+	var sb := c.get_theme_stylebox("panel")
+	return sb is StyleBoxFlat and (sb as StyleBoxFlat).border_width_bottom > 0 and (sb as StyleBoxFlat).border_color.a > 0.3
+
 ## The nearest panel holding `c`, if any, whose edges the text should keep inside.
 static func _panel_of(c: Control) -> Control:
 	var p := c.get_parent()
@@ -256,7 +270,13 @@ static func _inside(r: Rect2, b: Rect2) -> bool:
 		and r.end.x <= b.end.x + SLACK and r.end.y <= b.end.y + SLACK
 
 static func _add(out: Array, c: Control, root: Node, kind: String, detail: String) -> void:
-	out.append({"path": _short(c, root), "kind": kind, "text": _text_of(c).replace("\n", " / ").left(40), "detail": detail})
+	var t := _text_of(c)
+	if t == "":  # a panel: name it by the first words inside
+		for l in c.find_children("*", "Label", true, false):
+			t = _text_of(l)
+			if t != "":
+				break
+	out.append({"path": _short(c, root), "kind": kind, "text": t.replace("\n", " / ").left(40), "detail": detail})
 
 static func _short(c: Node, root: Node) -> String:
 	var s := str(root.get_path_to(c)) if root.is_ancestor_of(c) else str(c.get_path())

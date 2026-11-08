@@ -13,7 +13,7 @@ var hint_label: Label
 const SIDE := 48              # the frame's left and right margin
 const HINT_H := 46            # the hint bar's own strip along the bottom
 const HINT_FONT := 20         # its text size; shrinks (to HINT_MIN) rather than run off the screen
-const HINT_MIN := 15
+const HINT_MIN := 18
 
 var _hint_entries: Array = []   # the prompts behind the hint bar, redrawn when the device or bindings change
 var _done := false

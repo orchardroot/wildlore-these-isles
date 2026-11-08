@@ -27,6 +27,7 @@ func _build() -> void:
 	_scroll = VBoxContainer.new()
 	_scroll.add_theme_constant_override("separation", 10)
 	_scroll.position = Vector2(0, 720)
+	_scroll.set_meta("rolls", true)  # TextFitAudit: these lines roll up through the screen on purpose
 	content.add_child(_scroll)
 	for l in LINES:
 		var lab := UIKit.label(l, 44 if l == "WILDLORE" else 28, UIKit.GOLD if l in ["WILDLORE", "Thanks for playing."] else UIKit.CREAM)
