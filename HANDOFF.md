@@ -1,26 +1,42 @@
-# w49-games handoff
+# w50-battle handoff
 
-Branch `w49-games` (from int-w49). Fixes three gameplay problems from the tune session; numbers and reasoning are in
-`docs/audit/w49_tune.md` under "Follow-up". Earlier handoffs moved to `docs/audit/w49_handoffs.md`.
+Branch `w50-battle`. Battle playback correctness and feel: plates that showed the end of a turn early, attacks that
+landed after their hit, and some polish. The full list of paths checked is `docs/audit/w50_battle.md`.
+
+## The cause, and the rule now
+`Battle.take_turn` works out the whole turn before the UI plays it back, so a creature's own hp, status and stages
+are already the end of the turn during playback. Every plate write a cue makes now goes through
+`BattleFX.plates(cue, battle)`, which only reads the cue (so the event). If you add an event that changes what a
+plate shows, put the value in the event (as `damage`, `switch` and `item` do) and handle it in `plates()`.
+`tests/battle_ui/test_playback_plates.gd` will fail otherwise: it plays 120 seeded battles through the real HUD and
+checks no plate changes before (or without) its own event.
 
 ## What changed
-- **Pancake race** (`core/pancake.gd`): lean push 13 to 9, pan drag 0.9 to 2.2, lean rate eased. A 0.15 s reaction on a
-  keyboard now drops it 0.2 times a race (was 9), 0.2 s about 7 (was 31), 0.3 s still about 20. Rosette thresholds
-  reset to 40 / 36.5 s (`data/party_pieces/g2.json`, `Pancake.GOOD_TIME`/`MASTER_TIME`), champion 37 to 39.5 s.
-- **Sheepdog trials** (`core/sheepdog_trials.gd`): the jam was cohesion towards the global flock centre (a split flock
-  held itself still), no pull on a calm straggler, and a dead zone at the pen mouth. Fixed (local cohesion, gentle calm
-  lure, lure back to the gate, pen lure to the mouth). Clocks cut to 50 s Longshaw and 60 s lakes
-  (`data/sheepdog_trials.json`) because the fix made it easy. The simulator's own bot also dithered and is fixed.
-- **Coracle and snorkel**: seeded per-run river level and eddies (coracle) and set and springs (snorkel); seed 0 keeps
-  the plain behaviour. Screens seed from the clock.
+- Engine (`battle/battle.gd`): `item` events carry the target's `hp` and `status` after the item; `switch` events
+  carry `status`; `cure_team` carries `cured` (field positions); a multi-hit's `hits` event goes before the first
+  faint it caused.
+- `battle_ui/event_player.gd`: item and switch cues pass those fields on; `hp_after_item` is gone (it guessed, and
+  missed recoil, pricks and heals). `EventPlayer.verb()` for pair keepers ("send out", "want to battle").
+- `battle_ui/fx.gd`: `plates()`, `heal_pos()`, `hit_time()`; an item on a benched creature no longer glows over the
+  one on the field; a faint fades its plate; song, wave and Tidal Surge (`fx_signatures.gd`) land before the hit.
+- `battle_ui/hud.gd`: plates track `hp_to` (where the bar is heading) and `status`; `sync(b)` (moved from the scene)
+  compares with `hp_to`, so it no longer restarts a hit's drain; level-up grows bar and max together (no dip), and
+  "gained XP" no longer bumps the plate's level before the bar fills; prick and heal numbers; `fade_out`.
+- `battle_ui/battle_scene.gd`: the item special case is gone; `_sync_hud` calls `hud.sync`.
+- `battle_ui/battle_flow.gd`: a meal's stat buff plays as a charm event so its pill shows with its line.
 
-## How to see it
-`tools/shot.sh out.png 30 --menu=pancake:dev` (also `coracle:dev`, `sheepdog:longshaw`, `snorkel:dev`). Simulator:
-`.godot-bin/Godot.app/Contents/MacOS/Godot --headless --path . -s res://tools/dev/minigame_sim.gd -- <game> 80`.
+## Layout
+Nothing in the layout session's area: no sizes, fonts or positions changed. The new number colour (heal green) and
+the faint fade are in `hud.gd` but only touch modulate and a label colour. `Plate.set_creature` now resets the
+plate's `modulate.a` (for the fade); if the layout session animates plate modulate, keep that in mind.
 
-## Notes for the integrator
-- Sheepdog gold (pen all 7) is still too easy for the bots (decent 72%); see the follow-up for the option of scoring
-  with the clock left. Left alone as a design call.
-- No lean ease-in beyond the fast-then-gentle rate: a slower ease made late reactions fatal.
-- Touched beyond the three games: `tools/dev/minigame_sim.gd` (bots seed the new fresh(); sheepdog bot fixes).
-- Easier-mode gold rosettes (finding 2 of the tune session) untouched.
+## Not done
+- Victory music still starts after the XP and prize lines: the jingle is 3 s and does not loop. A looping victory
+  track would let it start with the last faint.
+- I could not reach a level-up with the dev `--battle` lead in a traced run; the level-up path is unit-tested.
+
+## Results
+- Full `tools/test.sh`: 2982 passed, 0 failed, `validate: 0 error(s)`, no SCRIPT ERROR (the "Parse JSON failed"
+  lines are the corrupt-save tests). The pair-keeper wording commit landed during that run; its two test files
+  (`test_flow`, `test_event_player`) were run again on their own afterwards and pass.
+- `tools/playtest.sh slice 2`: PLAYTEST PASS, 85 wins / 3 losses in 90 battles, brook badge, no SCRIPT ERROR.
