@@ -119,5 +119,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of the old car ferry between Aust and Beachley, a few cars aboard and a sailor looking bored.",
+    "It ran until the bridge opened in 1966. He took thousands over, and a few came back."
+   ],
+   "flag": "looked_aust_ferry"
+  }
  ]
 }

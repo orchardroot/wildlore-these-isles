@@ -129,5 +129,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A jar of spice, which is what Sheffield calls sweets, and a stern notice for the bird feeder: NO HANGING UPSIDE DOWN.",
+    "The notice is addressed to the grizzlets. They have read it and carried on."
+   ]
+  }
  ]
 }

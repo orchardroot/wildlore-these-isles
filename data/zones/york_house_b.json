@@ -129,5 +129,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A sketch of a Viking comb and a leather shoe, drawn by one of the children after a school trip to Jorvik.",
+    "The Vikings took York in 866, and a whole street of their houses was dug up under Coppergate in the 1970s."
+   ],
+   "flag": "looked_viking_sketch"
+  }
  ]
 }

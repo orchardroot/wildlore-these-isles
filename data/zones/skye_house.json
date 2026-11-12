@@ -129,5 +129,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A photograph of the Cuillin ridge, black against the sky.",
+    "The rock is rough and grips boots wonderfully. It also shreds knees, as the family will tell you."
+   ],
+   "flag": "looked_cuillin_photo"
+  }
  ]
 }

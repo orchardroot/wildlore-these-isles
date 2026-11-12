@@ -142,5 +142,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A canteen of Sheffield cutlery, every knife stamped with the maker's name.",
+    "Stainless steel was first made in Sheffield, by Harry Brearley in 1913. Mrs Platt's husband never got over it, and neither has the city."
+   ],
+   "flag": "looked_platt_cutlery"
+  }
  ]
 }

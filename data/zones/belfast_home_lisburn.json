@@ -140,5 +140,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "The clock is ten minutes fast, and always has been, so that everybody is only a little bit late.",
+    "In Belfast a wee while can mean five minutes or a week. The clock has never settled the matter."
+   ]
+  }
  ]
 }

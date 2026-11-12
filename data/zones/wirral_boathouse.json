@@ -129,5 +129,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A print of Parkgate when the Dee still reached the wall, with packet boats waiting to sail for Ireland.",
+    "The river silted up and the water went away. Now it is marsh, and in winter short-eared owls hunt over it."
+   ]
+  }
  ]
 }

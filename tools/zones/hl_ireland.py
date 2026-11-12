@@ -29,4 +29,6 @@ E = {
     "limerick_home_pery": ("wall_picture", ["A sketch of a Georgian front door, with the half-moon fanlight above it.", "The fanlight lets light into the hall. Newtown Pery was laid out on a grid by Edmund Sexton Pery, and the fox on the good rug has no opinion about it."]),
     "newgrange_home_cottage": ("kitchen_dresser", ["A tea towel pinned up with a list: fáilte, slán, go raibh maith agat. A cúpla focal.", "Siobhán says everyone has a cúpla focal and they are all lovely."]),
     "newgrange_home_dig": ("bookshelf", ["Site notebooks, a worn trowel and a drawing of a spiral from the carved stones of Newgrange.", "The passage tomb is over five thousand years old, older than Stonehenge and the pyramids. At winter solstice dawn the sun reaches into the chamber."], {"flag": "looked_newgrange_notes"}),
+    "shannon_cottage": ("fireplace", ["The kettle hangs from the crane over the hearth, where the fire is raked over with ashes at night and blown back to life in the morning.", "Some hearths in these cottages have burned for two hundred years. A scoop of turf sits by the fender."], {"find": {"item": "peat"}}),
+    "sligo_home_strand": ("wall_picture", ["A print of Benbulben, the flat-topped mountain over Sligo.", "W. B. Yeats is buried in Drumcliff churchyard in its shadow. Nana gives out about the weather, but not about the view."]),
 }

@@ -130,5 +130,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A photograph of herring girls gutting at the quay, their fingers bound in rags against the knives.",
+    "They travelled the coast following the fish and worked twelve hours at a stretch. They sang while they did it, and they were quick."
+   ],
+   "flag": "looked_herring_girls"
+  }
  ]
 }

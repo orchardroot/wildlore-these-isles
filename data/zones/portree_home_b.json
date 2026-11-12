@@ -119,5 +119,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A chart of the Minch, the sea between Skye and the Outer Hebrides. Someone has written 'grumpy' on it in pencil.",
+    "Minchmen are said to turn up there. They are never lost, only on a long detour."
+   ]
+  }
  ]
 }

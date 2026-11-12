@@ -131,5 +131,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A photograph of Jonathan the giant tortoise on the lawn, looking as if the house belongs to him.",
+    "He is thought to have hatched around 1832, which makes him the oldest known living land animal. He has outlasted every Governor in the building."
+   ]
+  }
  ]
 }

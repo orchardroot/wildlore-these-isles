@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A print of Benbulben, the flat-topped mountain over Sligo.",
+    "W. B. Yeats is buried in Drumcliff churchyard in its shadow. Nana gives out about the weather, but not about the view."
+   ]
+  }
  ]
 }

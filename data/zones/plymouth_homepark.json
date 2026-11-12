@@ -210,5 +210,15 @@
    "tile": "grass",
    "colour": "#3b6332"
   }
- }
+ },
+ "examine": [
+  {
+   "x": 1,
+   "y": 10,
+   "text": [
+    "A green and white pennant for Plymouth Argyle, founded in 1886.",
+    "The club are called the Pilgrims after the Mayflower, which sailed from Plymouth in 1620. The kit man says the sailing was easier than the M5."
+   ]
+  }
+ ]
 }

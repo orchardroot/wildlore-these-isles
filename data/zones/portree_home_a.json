@@ -142,5 +142,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A painting of Portree harbour with its row of pastel houses, pink one in the middle.",
+    "One story says the colours let fishermen spot home from the sea. Mum thinks they just like pink."
+   ]
+  }
  ]
 }

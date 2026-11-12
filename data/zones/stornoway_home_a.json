@@ -130,5 +130,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "Sticky notes all over the shelf: THA on the kettle, CHAN EIL on the cat.",
+    "Tha means is, and chan eil means is not. Gaelic has no yes or no, so the cat has to answer for itself."
+   ]
+  }
  ]
 }

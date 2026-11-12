@@ -130,5 +130,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A fiddle hangs above the mantel, the varnish worn pale where a chin has rested for sixty years.",
+    "Shetland has a great fiddle tradition, with reels and slow airs that came across the sea. The wedding fiddler plays all night."
+   ],
+   "flag": "looked_fiddle"
+  }
  ]
 }

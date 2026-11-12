@@ -134,5 +134,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "The range is black-leaded until it shines, with an oven on one side and a kettle on the other. They built the fireplace first and the house round it.",
+    "A tin bath hangs on a nail outside, waiting for Friday."
+   ]
+  }
  ]
 }

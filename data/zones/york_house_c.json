@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A Terry's Chocolate Orange, unwrapped, waiting for a tap. It falls apart into segments just like a real one.",
+    "York is a city of sweets. Kit Kat began here as a Chocolate Crisp in 1935 and was renamed in 1937."
+   ]
+  }
  ]
 }
