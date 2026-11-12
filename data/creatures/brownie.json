@@ -82,7 +82,14 @@
         "flag_text": "once you have passed a Gaelic lesson"
       },
       "habitat": [
-        "inverness"
+        "borders_bakehouse",
+        "cairnryan_home_a",
+        "central_belt_cottage",
+        "fw_home_b",
+        "inverness",
+        "inverness_home_c",
+        "oban_home_b",
+        "thurso_cottage"
       ],
       "dex": {
         "text": "Does the washing up while you sleep and expects a bowl of cream as thanks. Sulks if it is given clothes, so please keep your jumpers to yourself.",

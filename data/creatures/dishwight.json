@@ -59,8 +59,15 @@
     "level": 26
    },
    "habitat": [
+    "chester_h1",
     "haworth",
+    "liverpool_h4",
+    "macc_h3",
+    "manchester_h2",
+    "manchester_h4",
     "saddleworth_moor",
+    "sheffield_home_doreen",
+    "sheffield_home_platt",
     "yorkshire_dales"
    ],
    "dex": {

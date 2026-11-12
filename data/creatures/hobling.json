@@ -75,8 +75,10 @@
         "level": 32
       },
       "habitat": [
+        "haworth",
         "saddleworth_moor",
-        "haworth"
+        "york_house_a",
+        "york_house_c"
       ],
       "appendix": true,
       "dex": {

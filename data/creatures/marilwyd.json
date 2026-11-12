@@ -1,6 +1,14 @@
 {
   "line": "marilwyd",
   "species": [
-    {"id": "marilwyd", "real": "The Mari Lwyd's visit is a contest of rhymes called pwnco: her party sings verses at the door, the household sings back, and whoever runs out first loses, which usually means the horse gets in.", "names": {"cy": "Mari Lwyd"}, "name": "Mari Lwyd", "types": ["spirit", "frost"], "base": {"hp": 82, "atk": 88, "def": 72, "lore": 96, "ward": 82, "spd": 70}, "growth": "medium", "catch_rate": 45, "base_xp": 205, "learnset": [[1, "whisper"], [1, "snow_flick"], [6, "eerie_wail"], [10, "rap_on_pane"], [14, "cold_snap"], [19, "chain_rattle"], [24, "frostbite_snap"], [29, "crossroads_whisper"], [33, "pantomime_horse"], [38, "passing_bell"], [43, "hoarfrost"], [49, "headless_charge"], [55, "whiteout"]], "evolves": null, "habitat": ["swansea", "gower", "beacons"], "appendix": true, "dex": {"text": "A horse's skull on a pole under a white sheet, hung with ribbons and bells, that knocks on your door on a winter's night and demands to be let in. Lose the rhyming contest and it's coming in either way.", "fact": "The Mari Lwyd, 'grey mare', is a South Wales midwinter custom. Between Christmas and Twelfth Night a party carries the decorated skull door to door and challenges each house to the pwnco, a battle of rhymes, before it is let in for food and drink."}, "sprite": "marilwyd"}
+    {"id": "marilwyd", "real": "The Mari Lwyd's visit is a contest of rhymes called pwnco: her party sings verses at the door, the household sings back, and whoever runs out first loses, which usually means the horse gets in.", "names": {"cy": "Mari Lwyd"}, "name": "Mari Lwyd", "types": ["spirit", "frost"], "base": {"hp": 82, "atk": 88, "def": 72, "lore": 96, "ward": 82, "spd": 70}, "growth": "medium", "catch_rate": 45, "base_xp": 205, "learnset": [[1, "whisper"], [1, "snow_flick"], [6, "eerie_wail"], [10, "rap_on_pane"], [14, "cold_snap"], [19, "chain_rattle"], [24, "frostbite_snap"], [29, "crossroads_whisper"], [33, "pantomime_horse"], [38, "passing_bell"], [43, "hoarfrost"], [49, "headless_charge"], [55, "whiteout"]], "evolves": null, "habitat": [
+   "beacons",
+   "cardiff_home_bute",
+   "cardiff_home_roath",
+   "gower",
+   "rhondda_bakehouse",
+   "rhondda_home",
+   "swansea"
+ ], "appendix": true, "dex": {"text": "A horse's skull on a pole under a white sheet, hung with ribbons and bells, that knocks on your door on a winter's night and demands to be let in. Lose the rhyming contest and it's coming in either way.", "fact": "The Mari Lwyd, 'grey mare', is a South Wales midwinter custom. Between Christmas and Twelfth Night a party carries the decorated skull door to door and challenges each house to the pwnco, a battle of rhymes, before it is let in for food and drink."}, "sprite": "marilwyd"}
   ]
 }

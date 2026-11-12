@@ -106,7 +106,7 @@
  "encounters": {
   "indoor": [
    {
-    "species": "dresserwight",
+    "species": "dishwight",
     "min": 20,
     "max": 22,
     "weight": 10,
