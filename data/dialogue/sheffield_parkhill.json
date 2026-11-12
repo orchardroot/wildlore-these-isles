@@ -2,17 +2,17 @@
  "parkhill_resident": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Carol Hague",
    "text": "Welcome to our flat in Park Hill. We live on a 'street in the sky', a wide deck with front doors all along it."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Carol Hague",
    "text": "The decks were built wide enough for the milk float, which is the most Sheffield sentence I have ever said."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Carol Hague",
    "text": "It was finished around 1961 and it is among the biggest listed buildings in Europe. Concrete can be a landmark too."
   }
  ],
