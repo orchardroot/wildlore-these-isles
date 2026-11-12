@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "manchester_h5_0"
+   "script": "manchester_h5_0",
+   "name": "Pat Kershaw"
   }
  ],
  "encounters": {},

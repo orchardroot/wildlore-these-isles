@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "stationterrace_fan"
+   "script": "stationterrace_fan",
+   "name": "Gwyn Edwards"
   },
   {
    "id": "case_emrys",

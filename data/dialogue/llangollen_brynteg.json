@@ -2,17 +2,17 @@
  "brynteg_dad": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Huw Pritchard",
    "text": "Bryn Teg means fair hill. I have no idea which hill. I think the house just liked the name."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Huw Pritchard",
    "text": "A canal horse used to walk the towpath for hours, pulling the boat. They were very stubborn and very well liked."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Huw Pritchard",
    "text": "My daughter says martlings stalk the trees near the river. They are small and quick, and I never get a good look."
   }
  ]
