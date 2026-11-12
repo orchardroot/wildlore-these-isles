@@ -21,7 +21,7 @@ func test_the_regional_pieces_are_in_use() -> void:
 
 func test_dressed_homes_stay_walkable() -> void:
 	for z in _homes():
-		var reach := z.reachable(z.spawn)
+		var reach: Dictionary = z.reachable(z.spawn)
 		assert_true(z.walkable(z.spawn), z.id + ": spawn clear")
 		for w in z.warps:
 			assert_true(reach.has(Vector2i(int(w.x), int(w.y))), z.id + ": door reachable")
@@ -38,5 +38,5 @@ func test_a_save_on_new_furniture_lands_on_floor() -> void:
 	for z in _homes():
 		for p in z.props:
 			if p.get("type") in HomeProps.NAMES and not p.get("walk", false):
-				var spot := z.landing_near(Vector2i(int(p.x), int(p.y)))
+				var spot: Vector2i = z.landing_near(Vector2i(int(p.x), int(p.y)))
 				assert_true(z.walkable(spot), z.id + ": landing beside " + str(p.type))
