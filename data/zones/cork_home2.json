@@ -138,5 +138,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A painting of Cobh, with the cathedral of St Colman standing over the harbour.",
+    "The Titanic's last port of call was Cobh, which was then called Queenstown, in April 1912."
+   ]
+  }
  ]
 }

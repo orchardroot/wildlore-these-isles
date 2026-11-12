@@ -129,5 +129,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A bin-day calendar hangs under the clock, every Thursday circled in red with a small drawing of a fox.",
+    "Someone has written NEVER LEAVE THE BAG OUT underneath, with three underlines."
+   ]
+  }
  ]
 }

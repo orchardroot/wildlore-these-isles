@@ -140,5 +140,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A photograph of a street of Georgian doors, every one a different bright colour.",
+    "One story says they were painted to tell the identical houses apart. Another says the owners just liked colour."
+   ]
+  }
  ]
 }

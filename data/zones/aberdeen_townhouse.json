@@ -135,5 +135,15 @@
   "x+++++++++++x",
   "x+++++D+++++x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "The city arms, carved and painted: three towers, two leopards, and the motto Bon Accord.",
+    "It means good agreement. The council minutes suggest that is more of an aim than a habit."
+   ]
+  }
  ]
 }

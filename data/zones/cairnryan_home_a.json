@@ -119,5 +119,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A jam jar of hooks, a ball of line and a ledger of catches. The boy's column is short. His sister's runs onto a second page.",
+    "Under 'bait' he has written 'secret'."
+   ]
+  }
  ]
 }

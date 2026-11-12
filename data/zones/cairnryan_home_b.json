@@ -130,5 +130,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A photograph of a basking shark's fin cutting the water off the coast, taken from a boat that looks rather too small.",
+    "They are the second largest fish in the sea, and they live on plankton. Gentle as a cushion, as Sandy says."
+   ]
+  }
  ]
 }

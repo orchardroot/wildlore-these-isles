@@ -119,5 +119,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A star atlas lies open beside the old telescope, with one tiny dot ringed in pencil.",
+    "On 13 March 1781 William Herschel spotted it from his garden in Bath, and it turned out to be Uranus. He wanted to call it King George's Star. The astronomers were not keen."
+   ],
+   "flag": "looked_herschel"
+  }
  ]
 }

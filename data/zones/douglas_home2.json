@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "A framed photograph of an old Steam Packet ferry steaming into Douglas.",
+    "The company has run boats here since 1830, and Old Tom has crossed on most of them."
+   ]
+  }
  ]
 }

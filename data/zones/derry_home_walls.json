@@ -130,5 +130,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A child's drawing of the Walls, with stick figures running along the top.",
+    "They went up in the early 1600s, and Derry is the only city in Ireland whose walls are still complete."
+   ]
+  }
  ]
 }

@@ -142,5 +142,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "Cian's Irish homework. 'Go raibh maith agat' is written fifty times down the page.",
+    "A note in red pen: fine. Now say it to your sister."
+   ]
+  }
  ]
 }

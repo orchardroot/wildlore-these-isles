@@ -130,5 +130,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "A photograph of the mill floor, rows of women at sewing machines and a clock at the far end.",
+    "Derry was a great shirt-making town, and the old mill still has the big windows to prove it."
+   ]
+  }
  ]
 }

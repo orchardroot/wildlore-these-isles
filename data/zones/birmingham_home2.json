@@ -138,5 +138,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A biscuit tin of old steel pen nibs, each stamped with the maker's name. Gillott's, mostly.",
+    "Birmingham made nibs by the million in the 1800s. The whole world wrote with them."
+   ]
+  }
  ]
 }

@@ -130,5 +130,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A photograph of Footdee, the little fishing houses set round squares that face the sea.",
+    "It is written Footdee and said Fittie, and the neighbours will correct you if you get it wrong."
+   ],
+   "find": {
+    "item": "sea_glass"
+   }
+  }
  ]
 }

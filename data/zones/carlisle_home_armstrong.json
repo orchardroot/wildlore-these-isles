@@ -76,5 +76,16 @@
   "x|||||||x",
   "x|||||||x",
   "xxxxDxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A print of Johnnie Armstrong of Gilnockie, with a sword, a stern face and a lot of ribbon.",
+    "There is an old ballad about him and he does not come out of it badly. The Armstrongs wrote the version they like best on the back."
+   ],
+   "flag": "looked_armstrong_portrait"
+  }
  ]
 }

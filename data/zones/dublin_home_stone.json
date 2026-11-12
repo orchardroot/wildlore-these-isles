@@ -130,5 +130,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A shelf of history books and a pile of marking. On top, a longship made by a pupil and held together by optimism.",
+    "Dublin has Viking beginnings, from Dubh Linn, the black pool. The ship has the dragon at the wrong end."
+   ]
+  }
  ]
 }

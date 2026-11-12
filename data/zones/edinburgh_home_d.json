@@ -130,5 +130,16 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A print of the Forth Bridge, which opened in 1890.",
+    "Mrs Rintoul has pencilled a tally on the frame. Twenty-five years of paint, then back to the bottom of the list."
+   ],
+   "flag": "looked_forth_bridge"
+  }
  ]
 }

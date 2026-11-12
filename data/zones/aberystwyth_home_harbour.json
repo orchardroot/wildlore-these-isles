@@ -138,5 +138,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "Boats in bottles, shelf after shelf. Idris's handiwork, and Idris's wife has counted eleven.",
+    "A twelfth is half rigged on the table. It does not look as if it will fit the neck."
+   ]
+  }
  ]
 }

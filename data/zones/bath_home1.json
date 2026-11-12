@@ -142,5 +142,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A shortbread tin on the mantelpiece, marked DO NOT TOUCH in capital letters.",
+    "The cat has read it and decided it is a challenge."
+   ]
+  }
  ]
 }

@@ -129,5 +129,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A poster on the shelf: an madra, an cat, an capall, with a picture beside each word.",
+    "The cat has been labelled twice, once in Irish and once in Cat. He disagrees with both."
+   ]
+  }
  ]
 }

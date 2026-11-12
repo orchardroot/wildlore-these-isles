@@ -1,0 +1,21 @@
+"""Authored examine spots for homes (scotland), see home_looks.py. zone -> (prop type[:nth], lines, extra)."""
+
+E = {
+    "aberdeen_home_a": ("wall_picture:1", ["A framed photograph of Rubislaw Quarry, the great hole the granite came out of.", "It closed in 1971. The city still sparkles a bit when the sun hits it, and now you know why."]),
+    "aberdeen_home_b": ("clock", ["A bin-day calendar hangs under the clock, every Thursday circled in red with a small drawing of a fox.", "Someone has written NEVER LEAVE THE BAG OUT underneath, with three underlines."]),
+    "aberdeen_home_c": ("wall_picture:1", ["A photograph of Footdee, the little fishing houses set round squares that face the sea.", "It is written Footdee and said Fittie, and the neighbours will correct you if you get it wrong."], {"find": {"item": "sea_glass"}}),
+    "aberdeen_home_d": ("table", ["A tray of rowies cooling under a cloth. Flat, salty and a bit greasy, exactly as advertised.", "One is missing. The cat looks innocent in the way only a guilty cat can."]),
+    "aberdeen_townhouse": ("wall_picture:1", ["The city arms, carved and painted: three towers, two leopards, and the motto Bon Accord.", "It means good agreement. The council minutes suggest that is more of an aim than a habit."]),
+    "bushmills_home_green": ("wall_picture", ["A faded photograph of a tram at Bushmills. It ran from here to the Giant's Causeway, from 1883.", "The power came from the River Bush, one of the first hydro-electric tramways in the world. Granda was right all along."]),
+    "cairnryan_home_a": ("kitchen_dresser", ["A jam jar of hooks, a ball of line and a ledger of catches. The boy's column is short. His sister's runs onto a second page.", "Under 'bait' he has written 'secret'."]),
+    "cairnryan_home_b": ("wall_picture", ["A photograph of a basking shark's fin cutting the water off the coast, taken from a boat that looks rather too small.", "They are the second largest fish in the sea, and they live on plankton. Gentle as a cushion, as Sandy says."]),
+    "carlisle_home_armstrong": ("wall_picture", ["A print of Johnnie Armstrong of Gilnockie, with a sword, a stern face and a lot of ribbon.", "There is an old ballad about him and he does not come out of it badly. The Armstrongs wrote the version they like best on the back."], {"flag": "looked_armstrong_portrait"}),
+    "carlisle_home_graham": ("fireplace", ["Over the fire, carved into the mantel, the family motto: Ne oublie. Do not forget.", "The Grahams have not. Ask about 1606 and you will be there until teatime."]),
+    "central_belt_cottage": ("wall_picture", ["A print of the Falkirk Wheel, the rotating boat lift that opened in 2002 and joins two canals at different heights.", "Bessie says it is a stoater of an idea. A boat goes up one side, another comes down the other, and nobody spills their tea."]),
+    "edinburgh_home_a": ("wall_picture", ["A child's drawing of Edinburgh Castle with legs, following a very small boy down the Royal Mile.", "Underneath, in careful letters: THE CASTLE IS WATCHING."]),
+    "edinburgh_home_b": ("wall_picture", ["An old print of the Old Town, tenements stacked up the ridge like books on a shelf.", "Before the cry went out, you looked up. Gardyloo, from the French for watch out for the water. It was seldom water."]),
+    "edinburgh_home_c": ("wall_picture", ["Fringe posters pasted over each other, years deep, one layer for every August.", "The Fringe began in 1947 when eight companies turned up uninvited. Their descendants are juggling in the hall."]),
+    "edinburgh_home_d": ("wall_picture", ["A print of the Forth Bridge, which opened in 1890.", "Mrs Rintoul has pencilled a tally on the frame. Twenty-five years of paint, then back to the bottom of the list."], {"flag": "looked_forth_bridge"}),
+    "edinburgh_home_e": ("clock", ["The clock is set by the One O'Clock Gun, and has been for years. The gun goes off at the Castle every day but Sunday.", "It started in 1861 so ships in the Forth could set their chronometers. Now it mostly startles tourists."]),
+    "borders_bakehouse": ("kitchen_dresser", ["A Selkirk bannock cooling under a cloth, a rich fruit bread with a golden top.", "Queen Victoria is said to have approved of it, so Ma Haig has put that on the label too."]),
+}

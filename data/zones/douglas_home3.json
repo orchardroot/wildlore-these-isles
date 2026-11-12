@@ -129,5 +129,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A photograph of a Manx cat, sitting very upright, with no tail at all.",
+    "Manx cats are stumpy or tailless because of a natural gene. The Noah story is better, and Aunty Jo knows it."
+   ]
+  }
  ]
 }
