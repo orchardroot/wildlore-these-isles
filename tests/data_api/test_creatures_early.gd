@@ -124,6 +124,13 @@ func test_each_line_is_met_where_its_fieldbook_says_at_the_zone_band() -> void:
 				if LINES.has(str(e.species)):
 					where[e.species] = where.get(e.species, []) + [zid]
 					assert_true(int(e.min) >= band[0] - 1 and int(e.max) <= band[1] + 1, "%s in %s %s: levels %d-%d sit in the band %s" % [e.species, zid, table, e.min, e.max, band])
+	# w53: homes anywhere can have an "indoor" visitor (IndoorFolk); those count as where it's met too
+	for path in JsonUtil.list_json("res://data/zones"):
+		var z = JsonUtil.read(path)
+		if z is Dictionary and z.get("encounters") is Dictionary:
+			for e in z.encounters.get(IndoorFolk.KIND, []):
+				if LINES.has(str(e.species)):
+					where[e.species] = where.get(e.species, []) + [str(z.id)]
 	for line in LINES:
 		var got: Array = where.get(line, [])
 		assert_true(got.size() >= 1, "%s is met somewhere early" % line)
