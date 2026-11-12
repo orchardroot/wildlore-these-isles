@@ -77,7 +77,20 @@
    "name": "Granny Gunn"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 76,
+    "max": 77,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

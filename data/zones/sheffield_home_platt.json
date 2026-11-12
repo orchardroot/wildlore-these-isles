@@ -113,7 +113,19 @@
    "script": "shfhome_platt"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "dishwight",
+    "min": 86,
+    "max": 87,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 3,

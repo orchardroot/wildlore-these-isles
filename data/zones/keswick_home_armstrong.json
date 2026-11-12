@@ -103,7 +103,20 @@
    "script": "keshome_armstrong"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bogglet",
+    "min": 87,
+    "max": 88,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 3,

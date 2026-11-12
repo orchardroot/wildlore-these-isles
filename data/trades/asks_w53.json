@@ -1,0 +1,619 @@
+{
+ "trades": [
+  {
+   "id": "tr_nottingham_home3_seen_hushwing",
+   "zone": "nottingham_home3",
+   "npc": "not_home3_nurse",
+   "wants": {
+    "kind": "seen",
+    "species": "hushwing"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "I work nights and I hear a Hushwing most mornings on the way home, but I have never once seen the thing. Find one, show me your Fieldbook page, and there's a few pounds in it for you.",
+   "thanks": "There it is, heart-shaped face and all. Lovely. Here, that's for the trouble, and my thanks.",
+   "repeat": false
+  },
+  {
+   "id": "tr_severn_home_ferry_seen_clawcastle",
+   "zone": "severn_home_ferry",
+   "npc": "oldferry_sailor",
+   "wants": {
+    "kind": "seen",
+    "species": "clawcastle"
+   },
+   "gives": {
+    "money": 160
+   },
+   "ask": "A Clawcastle is a walking fortress, and I'm told nobody on this side of the river has seen one lately. Show me one in your Fieldbook and I'll say you've been down to the water properly.",
+   "thanks": "Well, I never. Walking fortress and no mistake. Here, for your trouble.",
+   "repeat": false
+  },
+  {
+   "id": "tr_aberdeen_home_d_seen_orcalet",
+   "zone": "aberdeen_home_d",
+   "npc": "abdn_home_d_mum",
+   "wants": {
+    "kind": "seen",
+    "species": "orcalet"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "Orcalets turn up by the harbour at Torry, if you've the patience. Show me one in your Fieldbook and I'll know you waited long enough.",
+   "thanks": "Patience pays. Good for you. Take this, and go and have a rowie.",
+   "repeat": false
+  },
+  {
+   "id": "tr_inverness_home_d_seen_hootlet",
+   "zone": "inverness_home_d",
+   "npc": "inv_home_d_man",
+   "wants": {
+    "kind": "seen",
+    "species": "hootlet"
+   },
+   "gives": {
+    "money": 160
+   },
+   "ask": "Hootlets nest in the old trees by the churchyard and I'd like to know somebody has seen one properly. Show me one in your Fieldbook, would you?",
+   "thanks": "Polite little face on it, isn't there. Thank you. This is for your trouble.",
+   "repeat": false
+  },
+  {
+   "id": "tr_kirkwall_home_d_seen_cragchough",
+   "zone": "kirkwall_home_d",
+   "npc": "kwl_home_d_mum",
+   "wants": {
+    "kind": "seen",
+    "species": "cragchough"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "Cragchoughs nest on the cliffs near here, red legs and all. Show me one in your Fieldbook and I'll know you've walked the cliff path.",
+   "thanks": "Red legs and a tidy tail. You've been out on the cliffs. That's the proper way. Here.",
+   "repeat": false
+  },
+  {
+   "id": "tr_bushmills_home_hill_seen_heronarch",
+   "zone": "bushmills_home_hill",
+   "npc": "bush_home_birder",
+   "wants": {
+    "kind": "seen",
+    "species": "heronarch"
+   },
+   "gives": {
+    "money": 220
+   },
+   "ask": "Have you seen a Heronarch on the river? The binoculars are by the window, and I do like a witness. Show me your Fieldbook page and I'll make it worth your while.",
+   "thanks": "Stalking along the river, just as I said. Thank you. That's for the trouble, and your good eyes.",
+   "repeat": false
+  },
+  {
+   "id": "tr_belfast_home_wain_seen_starlet",
+   "zone": "belfast_home_wain",
+   "npc": "bel_home_family",
+   "wants": {
+    "kind": "seen",
+    "species": "starlet"
+   },
+   "gives": {
+    "money": 150
+   },
+   "ask": "At dusk the starlets sit on the cranes by the hundred. Show me one in your Fieldbook and I'll tell the neighbours somebody listened to me.",
+   "thanks": "Loud little article, isn't it. Thanks, love. Here's a bit for your patience.",
+   "repeat": false
+  },
+  {
+   "id": "tr_dublin_home_park_seen_hushwing",
+   "zone": "dublin_home_park",
+   "npc": "dub_home_hurler",
+   "wants": {
+    "kind": "seen",
+    "species": "hushwing"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "Hushwing hunts over the Park at dusk, silent as a tea towel. Show me one in your Fieldbook and I'll know you stayed out past teatime.",
+   "thanks": "Silent as a tea towel, I told you. Grand job. Here, buy yourself a tea.",
+   "repeat": false
+  },
+  {
+   "id": "tr_kilkenny_home3_seen_rillotter",
+   "zone": "kilkenny_home3",
+   "npc": "walsh_mrs",
+   "wants": {
+    "kind": "seen",
+    "species": "rillotter"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "If you're quiet by the Nore you might spot a Rillotter. Show me one in your Fieldbook and I'll stand you a few pounds.",
+   "thanks": "Well done. Not an easy one to catch sight of. Here you go.",
+   "repeat": false
+  },
+  {
+   "id": "tr_kilkenny_home2_seen_gealhare",
+   "zone": "kilkenny_home2",
+   "npc": "daly_gran",
+   "wants": {
+    "kind": "seen",
+    "species": "gealhare"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "In spring, if you see two hares boxing, it's usually the lady fending off the gentleman. Show me a Gealhare in your Fieldbook and I'll believe you were looking.",
+   "thanks": "So you saw her. Fair play to her. Here's something for your trouble.",
+   "repeat": false
+  },
+  {
+   "id": "tr_dingle_home4_seen_polartern",
+   "zone": "dingle_home4",
+   "npc": "fitzgerald_teacher",
+   "wants": {
+    "kind": "seen",
+    "species": "polartern"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "The Polartern nests on the shore in spring, and a pole-to-pole traveller is worth a look. Show me one in your Fieldbook. And do not wave near a nest.",
+   "thanks": "Pole to pole and still turns up for the spring. Mar sin leat, as we say. Here, for you.",
+   "repeat": false
+  },
+  {
+   "id": "tr_st_helena_plantation_house_seen_plodlet",
+   "zone": "st_helena_plantation_house",
+   "npc": "sth_aide",
+   "wants": {
+    "kind": "seen",
+    "species": "plodlet"
+   },
+   "gives": {
+    "money": 250
+   },
+   "ask": "Jonathan comes in for the lawn most days, and he is the oldest resident here by a long chalk. Show me a Plodlet in your Fieldbook and I'll know you've said hello to the right sort.",
+   "thanks": "Slow and wise, that's the family. Here you are, with the Governor's compliments, more or less.",
+   "repeat": false
+  },
+  {
+   "id": "tr_keswick_home_lowther_seen_pipkin",
+   "zone": "keswick_home_lowther",
+   "npc": "keshome_lowther",
+   "wants": {
+    "kind": "seen",
+    "species": "pipkin"
+   },
+   "gives": {
+    "money": 120
+   },
+   "ask": "A Pipkin sits on our windowsill every morning, waistcoat out, demanding crumbs. Show me one in your Fieldbook, and I'll know you've been told the way of things.",
+   "thanks": "You have the look of someone who has been crumbed at. Here's a little something.",
+   "repeat": false
+  },
+  {
+   "id": "tr_aberystwyth_home_harbour_seen_cragchough",
+   "zone": "aberystwyth_home_harbour",
+   "npc": "harbour_wife",
+   "wants": {
+    "kind": "seen",
+    "species": "cragchough"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "Cragchoughs work the cliffs along this coast, and I like to know who is out looking. Walk the coast path, find one, and show me your Fieldbook page. There's a few pounds in it.",
+   "thanks": "Red legs and a nice loud voice. You've walked the cliffs. Diolch, cariad. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_oxford_boathouse_photo_oxford",
+   "zone": "oxford_boathouse",
+   "npc": "ox_boatman",
+   "wants": {
+    "kind": "photo",
+    "zone": "oxford"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "My sister collects views of the city. Get your camera out in Oxford, on the bridge or by the river, and show me the photograph. I'll make it worth a few pounds.",
+   "thanks": "Oh, that's lovely. She'll want it framed. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_liverpool_warehouse_photo_liverpool",
+   "zone": "liverpool_warehouse",
+   "npc": "keeper",
+   "wants": {
+    "kind": "photo",
+    "zone": "liverpool"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "Those pillars have held this roof since 1846 and nobody ever photographs them. Take a photo in Liverpool, down by the Docks if you can, and show me.",
+   "thanks": "Look at that. Cast iron looks well in a photograph. Here, for your trouble.",
+   "repeat": false
+  },
+  {
+   "id": "tr_norwich_home_b_photo_norwich",
+   "zone": "norwich_home_b",
+   "npc": "nor_flintman",
+   "wants": {
+    "kind": "photo",
+    "zone": "norwich"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "There's no good building stone in Norfolk, and Norwich looks like it on purpose. Take a photo somewhere in the city with flint in the picture, and show me.",
+   "thanks": "Flint, all the way up. Grand. Here's a little something for the film.",
+   "repeat": false
+  },
+  {
+   "id": "tr_llanberis_home5_photo_yr_wyddfa",
+   "zone": "llanberis_home5",
+   "npc": "lh5_nain",
+   "wants": {
+    "kind": "photo",
+    "zone": "yr_wyddfa"
+   },
+   "gives": {
+    "money": 240
+   },
+   "ask": "My nephew is away and has never been up Yr Wyddfa. Take a photo up there, bach, and show me. I'll put it on the fridge.",
+   "thanks": "Dyna ni, that's the mountain. Diolch yn fawr. A bit for your boots.",
+   "repeat": false
+  },
+  {
+   "id": "tr_aberdeen_townhouse_photo_aberdeen",
+   "zone": "aberdeen_townhouse",
+   "npc": "townhouse_clerk",
+   "wants": {
+    "kind": "photo",
+    "zone": "aberdeen"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "Granite in the rain is grey, granite in the sun sparkles. Take me a photo of Aberdeen when it's sparkling, and show me. The councillors will want to see it.",
+   "thanks": "Mica and all. Bon Accord, as the motto says. Here's a bit for your trouble.",
+   "repeat": false
+  },
+  {
+   "id": "tr_skye_house_photo_skye",
+   "zone": "skye_house",
+   "npc": "skye_house_woman",
+   "wants": {
+    "kind": "photo",
+    "zone": "skye"
+   },
+   "gives": {
+    "money": 240
+   },
+   "ask": "The Cuillin is the shape on the skyline everyone puts on a postcard. Take a photo of it from the island and show me. I haven't a good one of my own.",
+   "thanks": "There she is, black rock and all. Thank you. Mind your knees on it.",
+   "repeat": false
+  },
+  {
+   "id": "tr_kirkwall_home_b_photo_kirkwall",
+   "zone": "kirkwall_home_b",
+   "npc": "kwl_home_b_man",
+   "wants": {
+    "kind": "photo",
+    "zone": "kirkwall"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "Kirkwall is Kirkjuvagr, church bay, so there ought to be a photograph of the church. Take one in town and show me.",
+   "thanks": "St Magnus looks well in a photograph. Thank you. This is for your trouble.",
+   "repeat": false
+  },
+  {
+   "id": "tr_derry_home_station_photo_derry",
+   "zone": "derry_home_station",
+   "npc": "derry_home_railfan",
+   "wants": {
+    "kind": "photo",
+    "zone": "derry"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "My brother lives away and misses the city walls. Take a photo in Derry and show me, and I'll send it on.",
+   "thanks": "He'll love that. Thank you. Here, for the film and the walking.",
+   "repeat": false
+  },
+  {
+   "id": "tr_dublin_customhouse_photo_dublin",
+   "zone": "dublin_customhouse",
+   "npc": "dub_custom_clerk",
+   "wants": {
+    "kind": "photo",
+    "zone": "dublin"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "The river heads over the doors are the best bit and nobody ever looks up. Take a photo in Dublin and show me what you saw.",
+   "thanks": "Well, you looked up. That's the whole trick. Here, for your trouble.",
+   "repeat": false
+  },
+  {
+   "id": "tr_cork_home2_photo_cork",
+   "zone": "cork_home2",
+   "npc": "murphy_dad",
+   "wants": {
+    "kind": "photo",
+    "zone": "cork"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "My cousin in Boston wants a picture of the city. Take a photo of Cork for him and show me. He'll say it's smaller than he remembers, but they all do.",
+   "thanks": "Grand. He'll say it looks smaller. Here, a few pounds for the pains.",
+   "repeat": false
+  },
+  {
+   "id": "tr_galway_home_claddagh_photo_galway",
+   "zone": "galway_home_claddagh",
+   "npc": "home_claddagh_fisher",
+   "wants": {
+    "kind": "photo",
+    "zone": "galway"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "The old Claddagh was cleared long ago, and nobody takes pictures of what's left. Take a photo in Galway and show me, would you?",
+   "thanks": "Look at that, the same bay. Thank you. Go raibh maith agat.",
+   "repeat": false
+  },
+  {
+   "id": "tr_bermuda_lighthouse_photo_bermuda",
+   "zone": "bermuda_lighthouse",
+   "npc": "bm_keeper",
+   "wants": {
+    "kind": "photo",
+    "zone": "bermuda"
+   },
+   "gives": {
+    "money": 250
+   },
+   "ask": "Gibbs Hill light is up above all of us. Take a photo in Bermuda, from anywhere you can see it, and show me. I count the steps, you take the picture.",
+   "thanks": "There you go, a hundred and ten metres of cast iron, shrunk to a photograph. Thank you.",
+   "repeat": false
+  },
+  {
+   "id": "tr_tci_lighthouse_photo_turks_caicos",
+   "zone": "tci_lighthouse",
+   "npc": "tci_keeper",
+   "wants": {
+    "kind": "photo",
+    "zone": "turks_caicos"
+   },
+   "gives": {
+    "money": 250
+   },
+   "ask": "On a clear day you can see the whole island from up here, but nobody carries a camera up. Take a photo on Grand Turk and show me.",
+   "thanks": "That's the salt ponds and the sea like a tablecloth. Thank you, here's something for your film.",
+   "repeat": false
+  },
+  {
+   "id": "tr_lake_farmhouse_photo_lake_district",
+   "zone": "lake_farmhouse",
+   "npc": "lakefarm_farmer",
+   "wants": {
+    "kind": "photo",
+    "zone": "lake_district"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "Beatrix Potter left fourteen farms to the National Trust, and I'd like a decent photo of the fells they're on. Take one in the Lake District and show me.",
+   "thanks": "Lovely view of the fells. Thank you. The dog didn't move, so it isn't in the picture.",
+   "repeat": false
+  },
+  {
+   "id": "tr_edinburgh_home_d_photo_forth_bridges",
+   "zone": "edinburgh_home_d",
+   "npc": "edinburgh_home_d_rintoul",
+   "wants": {
+    "kind": "photo",
+    "zone": "forth_bridges"
+   },
+   "gives": {
+    "money": 220
+   },
+   "ask": "They say a hopeless job is like painting the Forth Bridge, and nobody believes that it was ever finished. Take a photo at the Forth Bridges and show me.",
+   "thanks": "Finished, and still red. I'll take it. Thank you. Here's a little something.",
+   "repeat": false
+  },
+  {
+   "id": "tr_stdavids_home_cottage_photo_st_davids",
+   "zone": "stdavids_home_cottage",
+   "npc": "sd_fisher",
+   "wants": {
+    "kind": "photo",
+    "zone": "st_davids"
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "Ramsey Island is across the sound, and it makes a good picture on a clear day. Take a photo around St Davids and show me. I'll show it to Dad.",
+   "thanks": "Hwyl! Dad will love that. Thank you. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_bath_home1_photo_bath",
+   "zone": "bath_home1",
+   "npc": "bath_home1_gran",
+   "wants": {
+    "kind": "photo",
+    "zone": "bath"
+   },
+   "gives": {
+    "money": 180
+   },
+   "ask": "My sister in Leeds says Bath is all one colour. I say honey. Take a photo in Bath and show me, so I can win.",
+   "thanks": "Honey, not beige. I win. Thank you. Here, for the film.",
+   "repeat": false
+  },
+  {
+   "id": "tr_keswick_guesthouse_dish_home_cumberland_sausage",
+   "zone": "keswick_guesthouse",
+   "npc": "kesguest_landlady",
+   "wants": {
+    "item": "home_cumberland_sausage",
+    "n": 1
+   },
+   "gives": {
+    "money": 140
+   },
+   "ask": "The breakfast cook is off and the guests are hungry. Cook me a Cumberland sausage, the proper long coil, and I'll pay you for it.",
+   "thanks": "Perfect, that'll feed a room. Here, and thank you.",
+   "repeat": true
+  },
+  {
+   "id": "tr_rhondda_bakehouse_dish_welsh_cakes",
+   "zone": "rhondda_bakehouse",
+   "npc": "rhn_baker",
+   "wants": {
+    "item": "welsh_cakes",
+    "n": 1
+   },
+   "gives": {
+    "money": 120
+   },
+   "ask": "Welsh cakes, please, the proper bakestone ones. I've run out and chapel is on Saturday. I'll pay for a batch.",
+   "thanks": "Dyna ni, still warm. Thank you. Here's your money.",
+   "repeat": true
+  },
+  {
+   "id": "tr_aberdeen_home_c_dish_cullen_skink",
+   "zone": "aberdeen_home_c",
+   "npc": "abdn_home_c_gran",
+   "wants": {
+    "item": "cullen_skink",
+    "n": 1
+   },
+   "gives": {
+    "money": 130
+   },
+   "ask": "My gran made it with Finnan haddie and I haven't had a bowl since. Cook me a Cullen Skink and I'll pay you for it.",
+   "thanks": "That's it, that's gran's. Thank you. Here's your money.",
+   "repeat": true
+  },
+  {
+   "id": "tr_edinburgh_home_b_dish_stovies",
+   "zone": "edinburgh_home_b",
+   "npc": "edinburgh_home_b_ferguson",
+   "wants": {
+    "item": "stovies",
+    "n": 1
+   },
+   "gives": {
+    "money": 130
+   },
+   "ask": "Stovies are what you make with the last of Sunday's meat and a lot of potatoes. Cook me a plate and I'll pay for it.",
+   "thanks": "Just like my mother's, and I won't tell her. Here you are.",
+   "repeat": true
+  },
+  {
+   "id": "tr_bushmills_home_green_dish_home_ulster_fry",
+   "zone": "bushmills_home_green",
+   "npc": "bush_home_nan",
+   "wants": {
+    "item": "home_ulster_fry",
+    "n": 1
+   },
+   "gives": {
+    "money": 150
+   },
+   "ask": "I'm home from a long dander and I want an Ulster Fry with the soda and the potato bread. Cook me one and I'll pay you.",
+   "thanks": "Proper job. Every inch of the plate. Thank you. Here's your money.",
+   "repeat": true
+  },
+  {
+   "id": "tr_dublin_home_terrace_dish_dublin_coddle",
+   "zone": "dublin_home_terrace",
+   "npc": "dub_home_orla",
+   "wants": {
+    "item": "dublin_coddle",
+    "n": 1
+   },
+   "gives": {
+    "money": 130
+   },
+   "ask": "A Dublin Coddle is sausages, bacon and potato in a pot, and I've the afternoon to eat one. Cook me one and I'll pay.",
+   "thanks": "That'll do us nicely. Thank you. Here's your money.",
+   "repeat": true
+  },
+  {
+   "id": "tr_galway_home_prom_dish_home_soda_bread",
+   "zone": "galway_home_prom",
+   "npc": "home_prom_gran",
+   "wants": {
+    "item": "home_soda_bread",
+    "n": 1
+   },
+   "gives": {
+    "money": 120
+   },
+   "ask": "I've the tea made and no bread for it. Bake me a soda bread, if you would, and I'll pay for it.",
+   "thanks": "Grand. A soda loaf and a cup of tea. Thank you. Here you are.",
+   "repeat": true
+  },
+  {
+   "id": "tr_aberystwyth_home_harbour_fish_mackerel",
+   "zone": "aberystwyth_home_harbour",
+   "npc": "harbour_fisher",
+   "wants": {
+    "item": "mackerel",
+    "n": 2
+   },
+   "gives": {
+    "money": 200
+   },
+   "ask": "I used to row out before dawn. Now I only say I did. Bring me two mackerel from the sea and I'll pay you for them, and keep my story straight.",
+   "thanks": "Two good ones. Looks like you did what I only talk about. Here you are.",
+   "repeat": false
+  },
+  {
+   "id": "tr_stornoway_home_b_fish_herring",
+   "zone": "stornoway_home_b",
+   "npc": "sw_oldfisher",
+   "wants": {
+    "item": "herring",
+    "n": 3
+   },
+   "gives": {
+    "money": 280
+   },
+   "ask": "In my day we fished the Minch for herring. Bring me three, fresh, and I'll pay you for them, and show you how it's done.",
+   "thanks": "Silver and fresh. That's the herring. Thank you. Here's your money.",
+   "repeat": false
+  },
+  {
+   "id": "tr_derry_home_foyle_fish_atlantic_salmon",
+   "zone": "derry_home_foyle",
+   "npc": "derry_home_boatman",
+   "wants": {
+    "item": "atlantic_salmon",
+    "n": 1
+   },
+   "gives": {
+    "money": 600
+   },
+   "ask": "I have never caught a salmon here, and the salmon have never caught me. Bring me one from the river and I'll pay you well for the trouble.",
+   "thanks": "Well, that's an understanding broken. Beautiful fish. Here's your money.",
+   "repeat": false
+  }
+ ]
+}

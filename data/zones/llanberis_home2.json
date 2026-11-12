@@ -113,7 +113,19 @@
    "name": "Nain Gwen"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "tylwyth",
+    "min": 27,
+    "max": 29,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

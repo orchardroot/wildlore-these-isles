@@ -56,7 +56,20 @@
    "script": "gra_dad"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bogglet",
+    "min": 87,
+    "max": 88,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   4,

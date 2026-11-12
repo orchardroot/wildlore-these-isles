@@ -103,7 +103,20 @@
    "script": "fw_home_b_mum"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 72,
+    "max": 72,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,

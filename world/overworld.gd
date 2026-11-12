@@ -385,7 +385,8 @@ func _on_step(p: Vector2i) -> void:
 	if encounters.in_grace():
 		encounters.stepped()
 		return
-	var enc := Encounters.roll(zone, tile, Game.phase(), weather, Game.rng, TodaysWalk.featured_in(Game.data, zone.id), Game.data.flags)
+	var enc := IndoorFolk.roll(zone, Game.phase(), sky.weather, Game.rng, Game.data.flags) if zone.kind == "interior" else \
+			Encounters.roll(zone, tile, Game.phase(), weather, Game.rng, TodaysWalk.featured_in(Game.data, zone.id), Game.data.flags)
 	if not enc.is_empty() and Game.data.first_able() != null and not Repel.blocks(Game.data, int(enc.level)):
 		if enc.get("scaled", false):  # off the main line: grown up to suit the level
 			enc.species = ParLevel.stage(Game.dex, str(enc.species), int(enc.level))

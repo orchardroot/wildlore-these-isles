@@ -103,7 +103,19 @@
    "script": "home_prom_gran"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "cluricaun",
+    "min": 56,
+    "max": 57,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 3,

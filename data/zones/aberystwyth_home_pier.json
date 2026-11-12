@@ -122,7 +122,19 @@
    "script": "pierst_boy"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "tylwyth",
+    "min": 30,
+    "max": 32,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,

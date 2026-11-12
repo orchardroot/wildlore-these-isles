@@ -103,7 +103,23 @@
    "script": "kerry_cottager"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bansheen",
+    "min": 54,
+    "max": 55,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "weather": [
+     "gale",
+     "fog"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

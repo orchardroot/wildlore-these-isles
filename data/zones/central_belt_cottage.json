@@ -103,7 +103,20 @@
    "script": "central_belt_cottage_bessie"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 69,
+    "max": 70,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

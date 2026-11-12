@@ -103,7 +103,20 @@
    "script": "lakefarm_farmer"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bogglet",
+    "min": 86,
+    "max": 88,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,

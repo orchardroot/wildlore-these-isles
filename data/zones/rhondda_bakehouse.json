@@ -71,7 +71,22 @@
    "name": "Nan, the baker"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "marilwyd",
+    "min": 34,
+    "max": 36,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "season": [
+     "winter"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 5,

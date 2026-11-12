@@ -103,7 +103,22 @@
    "script": "roath_dad"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "marilwyd",
+    "min": 36,
+    "max": 38,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "season": [
+     "winter"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

@@ -19,7 +19,7 @@ func test_trades_give_chapbooks_and_use_curios() -> void:
 		if g.has("item") and _kind(items, str(g.item)) == "chapbook":
 			chaps += 1
 			assert_true(items.has(str(g.item)))
-		if (g.has("item") and _kind(items, str(g.item)) == "curio") or _kind(items, str(w.item)) == "curio":
+		if (g.has("item") and _kind(items, str(g.item)) == "curio") or _kind(items, str(w.get("item", ""))) == "curio":
 			curios += 1
 		assert_false(str(t.ask).contains("—"))
 	assert_true(chaps >= 12, "chapbook trades: %d" % chaps)

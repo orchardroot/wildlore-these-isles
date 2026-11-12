@@ -103,7 +103,19 @@
    "script": "macc_h3_0"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "dresserwight",
+    "min": 20,
+    "max": 22,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

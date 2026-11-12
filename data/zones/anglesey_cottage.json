@@ -103,7 +103,19 @@
    "script": "angcottage_nain"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "tylwyth",
+    "min": 47,
+    "max": 48,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

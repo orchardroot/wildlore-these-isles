@@ -161,6 +161,8 @@ func _take() -> void:
 	var today := Calendar.today_key()
 	var path := await Share.export_image(self, img, PhotoMode.photo_name(Time.get_datetime_dict_from_system()), Share.caption(place, today),
 		OS.get_system_dir(OS.SYSTEM_DIR_PICTURES), DevArgs.is_dev_session(Game.args, DevArgs.user_args()))
+	if path != "":
+		Wants.note_photo(Game.data, str(_ow.zone.id))  # residents who asked for a photograph of here
 	Audio.sfx("confirm" if path != "" else "bump")
 	_toast.flash("Photo saved" if path != "" else "Couldn't save the photo")
 	_hint_left = 2.0

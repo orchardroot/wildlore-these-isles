@@ -123,7 +123,19 @@
    "name": "Mam Deasy"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "cluricaun",
+    "min": 53,
+    "max": 54,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 3,

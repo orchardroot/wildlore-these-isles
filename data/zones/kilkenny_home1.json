@@ -123,7 +123,19 @@
    "name": "Grandad Phelan"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "cluricaun",
+    "min": 50,
+    "max": 51,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,

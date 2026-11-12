@@ -103,7 +103,19 @@
    "script": "llh1_mam"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "tylwyth",
+    "min": 25,
+    "max": 25,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

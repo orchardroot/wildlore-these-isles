@@ -124,7 +124,19 @@
    "name": "The Fox in the Garden"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "cluricaun",
+    "min": 58,
+    "max": 59,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,

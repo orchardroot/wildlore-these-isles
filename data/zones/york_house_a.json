@@ -123,7 +123,20 @@
    "name": "Mrs Hartley"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "hobling",
+    "min": 84,
+    "max": 85,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 6,

@@ -113,7 +113,19 @@
    "script": "shfhome_doreen"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "dishwight",
+    "min": 86,
+    "max": 87,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

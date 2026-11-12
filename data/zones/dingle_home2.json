@@ -113,7 +113,23 @@
    "script": "kennedy_nan"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bansheen",
+    "min": 55,
+    "max": 55,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "weather": [
+     "gale",
+     "fog"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

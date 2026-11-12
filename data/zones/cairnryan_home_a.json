@@ -103,7 +103,20 @@
    "script": "cairnryan_home_a_morag"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 67,
+    "max": 68,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

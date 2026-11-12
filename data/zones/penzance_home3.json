@@ -103,7 +103,23 @@
    "script": "penz_home3_jory"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "pixiedell",
+    "min": 46,
+    "max": 48,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "weather": [
+     "fog",
+     "drizzle"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

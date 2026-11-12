@@ -103,7 +103,20 @@
    "script": "inv_home_c_mum"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 73,
+    "max": 74,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
