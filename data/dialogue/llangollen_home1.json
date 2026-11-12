@@ -2,17 +2,17 @@
  "llh1_mam": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Bethan Davies",
    "text": "Come in, cariad. Wipe your feet or the dog will do it for you."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Bethan Davies",
    "text": "Further downstream the river Dee marks part of the border. For centuries Welsh and English crossed it, argued and traded."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Bethan Davies",
    "text": "At night I leave a light on for the tylwyth teg, the fair family. Better to be on good terms with the neighbours."
   }
  ]

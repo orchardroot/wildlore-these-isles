@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "fw_home_a_woman"
+   "script": "fw_home_a_woman",
+   "name": "Catriona Cameron"
   }
  ],
  "encounters": {},

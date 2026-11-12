@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "kwl_home_d_mum"
+   "script": "kwl_home_d_mum",
+   "name": "Thora Linklater"
   }
  ],
  "encounters": {},

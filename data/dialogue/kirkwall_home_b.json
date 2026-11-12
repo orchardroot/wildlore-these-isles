@@ -2,12 +2,12 @@
  "kwl_home_b_man": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Magnus Rendall",
    "text": "Kirkwall comes from the Old Norse Kirkjuvagr, church bay. Orkney was Norse for hundreds of years."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Magnus Rendall",
    "text": "Scapa Flow was a great naval base. After the First World War the interned German fleet was scuttled there in 1919, and divers visit the wrecks."
   }
  ]

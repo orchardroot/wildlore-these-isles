@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "fw_home_c_man"
+   "script": "fw_home_c_man",
+   "name": "Ewen MacMillan"
   }
  ],
  "encounters": {},

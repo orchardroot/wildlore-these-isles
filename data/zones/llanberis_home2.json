@@ -100,7 +100,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "lh2_dad"
+   "script": "lh2_dad",
+   "name": "Dewi Parry"
   },
   {
    "id": "cook_cawl",

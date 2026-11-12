@@ -100,7 +100,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "lh5_nain"
+   "script": "lh5_nain",
+   "name": "Olwen Thomas"
   }
  ],
  "encounters": {},

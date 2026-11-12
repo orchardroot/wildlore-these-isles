@@ -2,12 +2,12 @@
  "portree_home_c_mum": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Mairead MacLeod",
    "text": "Madainn mhath is good morning in Gaelic, and oidhche mhath is good night. You will hear both in the shop."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Mairead MacLeod",
    "text": "Orcalets are seen off Portree harbour in summer, with a bit of luck. Bring waterproofs, because the weather has not heard of luck."
   }
  ]

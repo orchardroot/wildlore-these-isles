@@ -49,6 +49,7 @@ func _initialize() -> void:
 	errors.append_array(Poi.check(zones, dex, items_db))  # data/poi: dens, camps, stones and caches on the routes
 	errors.append_array(FieldSpots.check(zones, items_db))  # w48 F: data/field_spots on free tiles beside the path
 	errors.append_array(FamilyDrawer.check(zones, items_db))  # w53: data/family_drawers.json
+	errors.append_array(Visits.check(zones))  # w53: data/visits return-visit lines for home residents
 	errors.append_array(Wants.check(zones, items_db, dex))  # w47 C: data/trades residents, wants, front-room shops
 	errors.append_array(Errands.check(zones, items_db))  # w47 C: errand npcs and rewards
 	errors.append_array(Coverage.check(dex, zones))

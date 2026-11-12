@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "inv_home_b_grandad"
+   "script": "inv_home_b_grandad",
+   "name": "Hamish Munro"
   }
  ],
  "encounters": {},

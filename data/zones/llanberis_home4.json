@@ -100,7 +100,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "lh4_lad"
+   "script": "lh4_lad",
+   "name": "Rhys Evans"
   }
  ],
  "encounters": {},

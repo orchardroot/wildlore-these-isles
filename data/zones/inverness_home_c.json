@@ -100,7 +100,8 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "inv_home_c_mum"
+   "script": "inv_home_c_mum",
+   "name": "Fiona Macrae"
   }
  ],
  "encounters": {

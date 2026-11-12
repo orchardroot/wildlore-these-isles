@@ -100,7 +100,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "lh1_mam"
+   "script": "lh1_mam",
+   "name": "Eirlys Roberts"
   },
   {
    "id": "welsh_miner",

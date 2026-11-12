@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "skye_house_woman"
+   "script": "skye_house_woman",
+   "name": "Peigi MacKinnon"
   }
  ],
  "encounters": {},

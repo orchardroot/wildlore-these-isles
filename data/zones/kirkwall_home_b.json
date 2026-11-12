@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "kwl_home_b_man"
+   "script": "kwl_home_b_man",
+   "name": "Magnus Rendall"
   }
  ],
  "encounters": {},

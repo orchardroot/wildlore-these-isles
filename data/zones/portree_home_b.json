@@ -100,7 +100,8 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "portree_home_b_man"
+   "script": "portree_home_b_man",
+   "name": "Norman MacAskill"
   }
  ],
  "encounters": {},

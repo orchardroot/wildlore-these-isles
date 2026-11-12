@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "abdn_home_b_dad"
+   "script": "abdn_home_b_dad",
+   "name": "Alan Mitchell"
   }
  ],
  "encounters": {},

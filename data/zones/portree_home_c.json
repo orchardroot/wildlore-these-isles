@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "portree_home_c_mum"
+   "script": "portree_home_c_mum",
+   "name": "Mairead MacLeod"
   }
  ],
  "encounters": {},
