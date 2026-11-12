@@ -109,6 +109,7 @@ static func lump_total() -> float:
 	t += float(VisitorsBook.MONEY) * ZoneIndex.get_index().get("town_rooms", {}).size() * EXPLORED
 	var ql := QuizLeague.cfg()
 	t += float(ql.get("title_prize", 0)) * 3 + float(ql.get("cup_prize", 0))
+	t += float(Wants.visit_asks_total())   # residents' sightings and photographs, once each (wave 53)
 	return t
 
 # --- the Trade Ledger ---

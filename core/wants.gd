@@ -91,6 +91,15 @@ static func kind_of(t: Dictionary) -> String:
 static func note_photo(data: GameStateData, zone_id: String) -> void:
 	data.set_flag(PHOTO_PREFIX + zone_id, true)
 
+## Money from asks that cost the player nothing but a visit (a sighting or a photograph), each paid once: a lump for the
+## economy sim. Item asks are not counted: what they take is worth at least what they pay.
+static func visit_asks_total() -> int:
+	var n := 0
+	for t in all():
+		if kind_of(t) != "item" and not bool(t.get("repeat", false)):
+			n += int(t.get("gives", {}).get("money", 0))
+	return n
+
 ## The player carries (or has seen, or has photographed) what the resident wants.
 static func can_pay(data: GameStateData, t: Dictionary) -> bool:
 	var w: Dictionary = t.get("wants", {})
