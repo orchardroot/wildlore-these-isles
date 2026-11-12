@@ -8,6 +8,7 @@ Newest first. The README is the front page; this is the long memory.
   Mum's front room with a cup. Mum and they get on like a house on fire, they say something in their own voice (all
   seventy have their own lines), and you leave with a flask of tea. One visitor at a time, the longest-standing
   friend first, and friends you made before this update still get their visit.
+- The last five people who were only ever "Resident" (in Birmingham, Manchester, Llangollen and Sheffield) have names.
 
 ## 5.3.0: Houses
 
