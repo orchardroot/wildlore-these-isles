@@ -130,5 +130,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of a caber caught in mid-flip, a very large man below it looking surprised.",
+    "The toss is not judged on distance. A perfect throw lands at twelve o'clock, straight out in front. Most do not."
+   ]
+  }
  ]
 }

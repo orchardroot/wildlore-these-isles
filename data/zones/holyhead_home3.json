@@ -132,5 +132,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of the old Roman fort walls in Holyhead, with the church of St Cybi inside them.",
+    "Whoever chose the spot wanted to guard the harbour, and the ferry still does."
+   ]
+  }
  ]
 }

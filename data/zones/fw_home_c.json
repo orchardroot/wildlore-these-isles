@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A kit bag hangs ready by the door with a rope, a helmet and a whistle.",
+    "Six long blasts in a minute means help on a hill. Three back means someone heard you. It is the first thing he teaches anyone."
+   ]
+  }
  ]
 }

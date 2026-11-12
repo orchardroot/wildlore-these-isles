@@ -119,5 +119,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A portrait of Daniel O'Connell, the Liberator, born near Cahersiveen in 1775.",
+    "Visitors ask who. The cottager tells them. They ask again."
+   ]
+  }
  ]
 }

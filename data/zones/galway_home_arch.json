@@ -139,5 +139,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A pair of small worn shoes on the hearth, just in case.",
+    "The family says a cluricaun lives behind the boiler and mends shoes at night. Nobody has found one mended yet, but a lot go missing."
+   ]
+  }
  ]
 }

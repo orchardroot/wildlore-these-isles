@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A pager on the table, with a torch, a map and a flask laid out in a row beside it.",
+    "Dinner here is whenever the pager lets it be. The rescue team are all volunteers."
+   ]
+  }
  ]
 }

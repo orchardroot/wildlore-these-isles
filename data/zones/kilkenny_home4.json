@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A black and amber scarf, framed like a medal, with a signed hurley below it.",
+    "Kilkenny was the capital of Confederate Ireland in the 1640s. The scarf is about hurling, though, which matters more."
+   ]
+  }
  ]
 }

@@ -119,5 +119,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "Five pairs of wellies by the dresser, in order of size. The smallest are the dog's.",
+    "The big hill outside, the Tor, is about 158 metres, and the tower on the top is St Michael's. You can see it from the yard."
+   ]
+  }
  ]
 }

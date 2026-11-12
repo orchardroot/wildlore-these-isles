@@ -153,5 +153,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A photograph of the close, tiled halfway up in glazed cream and green.",
+    "A tiled close was a proud thing, and a posh one was called a wally close. Nobody in this close would claim to be posh."
+   ]
+  }
  ]
 }

@@ -120,5 +120,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 3,
+   "text": [
+    "A tall pile of marking. The top essay is called WHAT I DID AT THE WEEKEND, and it reads: nothing.",
+    "It is the best of the lot, and she knows it."
+   ]
+  }
  ]
 }

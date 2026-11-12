@@ -74,5 +74,18 @@
   "x+++++++++x",
   "x++++D++++x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 3,
+   "text": [
+    "A case of groatie buckies, tiny cowrie shells from the John o' Groats shore, sold as good luck for years.",
+    "They are pretty, they cost almost nothing, and they are the reason the till drawer rattles."
+   ],
+   "find": {
+    "item": "sea_glass"
+   }
+  }
  ]
 }

@@ -139,5 +139,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A small print of the Ness running through town, the castle above it on its bluff.",
+    "Inbhir Nis, mouth of the Ness. The river is the whole reason for the place, which the town is happy to admit."
+   ]
+  }
  ]
 }

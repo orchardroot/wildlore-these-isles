@@ -119,5 +119,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of a boat climbing Neptune's Staircase, eight locks one after the other, with the Ben behind.",
+    "Telford's Caledonian Canal was finished in 1822. The climb takes about ninety minutes, which gives you plenty of time for a flask."
+   ]
+  }
  ]
 }

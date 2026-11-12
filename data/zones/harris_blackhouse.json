@@ -129,5 +129,18 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 4,
+   "text": [
+    "A peat fire burns in the middle of the floor. There is no chimney, so the smoke finds its own way out through the thatch.",
+    "The soot is why it is called a black house, or one of the reasons. The warm peat smell stays in your coat for days."
+   ],
+   "find": {
+    "item": "peat"
+   }
+  }
  ]
 }

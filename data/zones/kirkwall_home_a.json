@@ -152,5 +152,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "A peedie cat in a peedie frame, looking unimpressed.",
+    "In midsummer here it hardly gets dark at all, and nobody sleeps either. The simmer dim, the Shetlanders call it."
+   ],
+   "flag": "looked_peedie_cat"
+  }
  ]
 }

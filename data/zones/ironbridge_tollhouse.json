@@ -120,5 +120,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "A print of the Iron Bridge, with a few people in top hats on it.",
+    "Abraham Darby III built it, and it opened in 1781. It was the first big bridge in the world made of cast iron, and everybody paid to cross."
+   ]
+  }
  ]
 }

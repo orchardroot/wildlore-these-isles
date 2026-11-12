@@ -138,5 +138,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A poster for the school play, with a small tree in a corner. The tree has a speaking part.",
+    "Theatre by the Lake opened in 1999. The Lowthers know every line, and by now the tree's too."
+   ]
+  }
  ]
 }

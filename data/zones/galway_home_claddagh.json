@@ -139,5 +139,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A Claddagh ring in a frame, two hands holding a heart with a crown on top.",
+    "The Claddagh fishing village gave it its name. The hands are friendship, the heart is love and the crown is loyalty."
+   ]
+  }
  ]
 }

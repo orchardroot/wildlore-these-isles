@@ -130,5 +130,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A Ba', the hand-sewn leather ball for the Kirkwall game, on a little stand with a cork heart.",
+    "Uppies against Doonies on Christmas Day and New Year's Day, by where you were born. Nobody agrees how it started."
+   ],
+   "flag": "looked_kirkwall_ba"
+  }
  ]
 }
