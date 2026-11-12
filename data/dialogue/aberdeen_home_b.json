@@ -2,12 +2,12 @@
  "abdn_home_b_dad": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Alan Mitchell",
    "text": "Binfoxes come out on bin day with fur bristling and plans in their eyes. Never leave a bag out. They know."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Alan Mitchell",
    "text": "The haarling comes in with the haar, the cold sea fog off the North Sea. It always arrives on the day of the picnic."
   },
   {
@@ -16,14 +16,14 @@
    "then": [
     {
      "do": "say",
-     "who": "Resident",
+     "who": "Alan Mitchell",
      "text": "Another bit? You will be too sweet to stand. Off you go."
     }
    ],
    "else": [
     {
      "do": "say",
-     "who": "Resident",
+     "who": "Alan Mitchell",
      "text": "Here, take a bit of tablet. My wife makes it by the tray and I am only allowed to give it away."
     },
     {

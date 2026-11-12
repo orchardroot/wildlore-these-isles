@@ -2,17 +2,17 @@
  "lh3_gran": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Menna Owen",
    "text": "Come in and sit down. You look like you have been up Snowdon. Everyone does by Tuesday."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Menna Owen",
    "text": "Hiraeth is a Welsh word for missing home so much it aches. I felt it the day I moved two streets away."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Menna Owen",
    "text": "My husband worked on the lake railway. The locos came from the quarry, small and stubborn, like him."
   }
  ]

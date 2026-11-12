@@ -2,17 +2,17 @@
  "lh5_nain": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Olwen Thomas",
    "text": "Welcome in, bach. The kettle is on. It is always on. It is a very tired kettle."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Olwen Thomas",
    "text": "My grandad's quarry whistle is on the shelf. When it blew, everyone knew what time it was and what was for dinner."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Olwen Thomas",
    "text": "The wispets drift up from the marsh by Padarn on mild nights. Folk used to call it fairy fire. I call it good telly."
   }
  ]

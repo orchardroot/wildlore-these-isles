@@ -2,12 +2,12 @@
  "inv_home_c_mum": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Fiona Macrae",
    "text": "Thomas Telford built the Caledonian Canal, finished in 1822, so boats could cross the Highlands without sailing round the top."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Fiona Macrae",
    "text": "Go and watch the locks at Muirtown. The boats go up like they are climbing a staircase made of water."
   },
   {
@@ -16,14 +16,14 @@
    "then": [
     {
      "do": "say",
-     "who": "Resident",
+     "who": "Fiona Macrae",
      "text": "I have given you a cup already. Do not be greedy, the kettle is tired."
     }
    ],
    "else": [
     {
      "do": "say",
-     "who": "Resident",
+     "who": "Fiona Macrae",
      "text": "There, a cup of tea to go. You look like someone who has been watching boats."
     },
     {

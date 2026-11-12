@@ -2,17 +2,17 @@
  "llh2_dad": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Gareth Lloyd",
    "text": "Ahoy. Well, 'ahoy' if you live on the canal. I live on land. Mostly."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Gareth Lloyd",
    "text": "A windlass is the handle you use to wind open a lock paddle. I own seven. I can find one on a good day."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Gareth Lloyd",
    "text": "Elverlets dart around the water meadows. I see them from the towpath. They are very fast and very unimpressed."
   }
  ]

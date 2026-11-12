@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "kwl_home_a_woman"
+   "script": "kwl_home_a_woman",
+   "name": "Ingrid Flett"
   },
   {
    "id": "island_storyteller",

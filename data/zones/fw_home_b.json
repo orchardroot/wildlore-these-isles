@@ -100,7 +100,8 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "fw_home_b_mum"
+   "script": "fw_home_b_mum",
+   "name": "Morag MacDonald"
   }
  ],
  "encounters": {},

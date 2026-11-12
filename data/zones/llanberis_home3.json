@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "lh3_gran"
+   "script": "lh3_gran",
+   "name": "Menna Owen"
   }
  ],
  "encounters": {},

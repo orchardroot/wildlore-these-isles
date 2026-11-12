@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "inv_home_a_mum"
+   "script": "inv_home_a_mum",
+   "name": "Isobel Fraser"
   },
   {
    "id": "highland_ghillie",

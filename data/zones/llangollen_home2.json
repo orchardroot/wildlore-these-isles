@@ -100,7 +100,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "llh2_dad"
+   "script": "llh2_dad",
+   "name": "Gareth Lloyd"
   }
  ],
  "encounters": {},

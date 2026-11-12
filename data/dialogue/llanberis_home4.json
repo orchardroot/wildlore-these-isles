@@ -2,17 +2,17 @@
  "lh4_lad": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Rhys Evans",
    "text": "Just back from a run. Mum says I look like a drowned otter. Probably the correct look."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Rhys Evans",
    "text": "Yr Wyddfa, the name Snowdon goes by in Welsh, means something like the burial mound. It is friendlier than it sounds."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Rhys Evans",
    "text": "On the long route to the summit I always see a kidgruff on the crags. Grumpy little goat. We get on fine."
   }
  ]

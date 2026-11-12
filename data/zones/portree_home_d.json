@@ -100,7 +100,8 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "portree_home_d_kid"
+   "script": "portree_home_d_kid",
+   "name": "Ruairidh Beaton"
   }
  ],
  "encounters": {},

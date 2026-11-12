@@ -2,12 +2,12 @@
  "fw_home_a_woman": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Catriona Cameron",
    "text": "An Gearasdan is the Gaelic name for Fort William. It means the garrison. Nothing here is easy to spell, but it is all lovely."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Catriona Cameron",
    "text": "Our midgies are no joke. On a still summer evening they get everywhere. Keep moving, wear a hat, and think brave thoughts."
   }
  ]

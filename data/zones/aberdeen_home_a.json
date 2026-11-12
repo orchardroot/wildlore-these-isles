@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "abdn_home_a_quine"
+   "script": "abdn_home_a_quine",
+   "name": "Kirsty Cruickshank"
   },
   {
    "id": "cook_cullen_skink",

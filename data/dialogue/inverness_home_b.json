@@ -2,12 +2,12 @@
  "inv_home_b_grandad": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Hamish Munro",
    "text": "Culloden Moor is a few miles east. The battle there in 1746 was the last pitched battle fought on British soil. It is quiet now and well worth a visit."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Hamish Munro",
    "text": "My grandfather said a brownie keeps a tidy house tidy and a messy house messier. I still tidy before bed, just in case."
   }
  ]

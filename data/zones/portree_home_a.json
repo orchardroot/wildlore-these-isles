@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "portree_home_a_mum"
+   "script": "portree_home_a_mum",
+   "name": "Seonaid Nicolson"
   }
  ],
  "encounters": {},
