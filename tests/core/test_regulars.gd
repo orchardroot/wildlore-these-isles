@@ -203,7 +203,9 @@ func test_bound_regular_spawns_no_npc_but_hooks_the_talk() -> void:
 	assert_eq(out[1].do, "regular")
 	assert_eq(out[1].id, str(r.id))
 	assert_eq(Regulars.hook(str(r.zone), "nobody_here", base, d), base)
-	assert_eq(ScriptHooks.wrap(str(r.zone), str(r.npc), base, d).slice(0, 2), out, "ScriptHooks.wrap carries it")
+	var wrapped := ScriptHooks.wrap(str(r.zone), str(r.npc), base, d)
+	assert_eq(wrapped[0], base[0], "ScriptHooks.wrap keeps their own lines first")
+	assert_true(wrapped.has(out[1]), "ScriptHooks.wrap carries it (after the w53 visit bookkeeping)")
 
 func test_bound_regular_intro_in_the_house_not_the_street() -> void:
 	var r: Dictionary = _bound()[0]
