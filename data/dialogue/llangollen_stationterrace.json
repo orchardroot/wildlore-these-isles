@@ -2,17 +2,17 @@
  "stationterrace_fan": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Gwyn Edwards",
    "text": "Welcome to my little museum. It is also my living room."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Gwyn Edwards",
    "text": "The Llangollen Railway is a heritage line. They run proper steam engines along the Dee, and the whistle gets me every time."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Gwyn Edwards",
    "text": "Steam trains use coal to heat water that makes steam that pushes pistons. Simple. Hard to get right."
   }
  ],

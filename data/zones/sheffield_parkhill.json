@@ -110,7 +110,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "parkhill_resident"
+   "script": "parkhill_resident",
+   "name": "Carol Hague"
   },
   {
    "id": "parkhill_kid",

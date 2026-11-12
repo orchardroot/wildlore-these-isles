@@ -100,7 +100,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "brynteg_dad"
+   "script": "brynteg_dad",
+   "name": "Huw Pritchard"
   }
  ],
  "encounters": {},

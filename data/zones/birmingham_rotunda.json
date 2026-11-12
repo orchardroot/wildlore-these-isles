@@ -124,7 +124,8 @@
    "y": 5,
    "facing": "down",
    "move": "still",
-   "script": "rotunda_resident"
+   "script": "rotunda_resident",
+   "name": "Priya Sandhu"
   }
  ],
  "encounters": {},
