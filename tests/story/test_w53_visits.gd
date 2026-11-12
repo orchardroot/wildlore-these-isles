@@ -10,6 +10,7 @@ func _entry() -> Dictionary:
 
 func _setup() -> FakeStoryHost:
 	Visits.reset()
+	Visits.all().clear()
 	Visits.all()[Visits.key(Z, N)] = _entry()
 	return FakeStoryHost.new()
 
@@ -72,6 +73,7 @@ func test_only_again_is_enough() -> void:
 
 func test_check_catches_bad_shapes() -> void:
 	Visits.reset()
+	Visits.all().clear()  # only this test's entries, not the shipped ones
 	var zones := {Z: _zone()}
 	Visits.all()[Visits.key(Z, N)] = {"who": "Test Person", "again": []}
 	assert_eq(Visits.check(zones).size(), 1)

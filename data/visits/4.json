@@ -1,0 +1,394 @@
+{
+ "nottingham_home1|not_home1_nanna": {
+  "who": "Nanna Mavis",
+  "again": [
+   "Ay up, back again, me duck. Kettle's only just boiled, so your timing is spot on.",
+   "I was saying to the cat, someone will pop in today. She did not look up."
+  ],
+  "morning": [
+   "Morning, me duck. Sit yourself down, the toast is nearly done."
+  ]
+ },
+ "nottingham_home2|not_home2_ken": {
+  "who": "Grandad Ken",
+  "again": [
+   "Back again? Good. Nobody else lets me finish a story.",
+   "Where was I? Ah yes, the scarf. It has been washed twice and I have not forgiven either time."
+  ]
+ },
+ "nottingham_home3|not_home3_nurse": {
+  "who": "Priya",
+  "again": [
+   "Oh, it's you again. Excuse the state of me, I have been awake since yesterday.",
+   "If you see a good cup of tea on your travels, send it my way."
+  ]
+ },
+ "nottingham_home4|not_home4_dev": {
+  "who": "Dev",
+  "again": [
+   "Hello again. Sorry about the mess, there is an essay due and I am avoiding it with great skill.",
+   "Come to hide from deadlines too? Pull up a chair."
+  ],
+  "evening": [
+   "It is the evening, so naturally I am only now starting the essay."
+  ]
+ },
+ "oban_home_a|obn_gran": {
+  "who": "Granny",
+  "again": [
+   "Back again. You've the look of someone who's been standing too near the ferry.",
+   "Sit by the window, you can see the boats from here. It's better than the television."
+  ]
+ },
+ "oban_home_b|obn_shintykid": {
+  "who": "Shinty Kid",
+  "again": [
+   "Oh, you're back. Want to see me swing it? Not in here, Mum says."
+  ]
+ },
+ "oxford_boathouse|ox_boatman": {
+  "who": "Boatman",
+  "again": [
+   "Back again. Fancy another go on the pole? I'll look away this time. Possibly.",
+   "Every term the students swear they've done it before. Every term, a splash."
+  ],
+  "season": {
+   "summer": [
+    "Summer is the busy time. Half the town wants to be on the river and the other half wants to watch."
+   ]
+  }
+ },
+ "pembroke_lhcottage|lhcottage_child": {
+  "who": "Child",
+  "again": [
+   "You came back! I counted the ferries while you were gone. There were quite a few.",
+   "Did you see the light flash? I can count it with my eyes shut."
+  ]
+ },
+ "pembroke_lhcottage|lhcottage_wife": {
+  "who": "Keeper's Wife",
+  "again": [
+   "Back again, are you? Come in out of that wind before it has your hat.",
+   "The bread is just out. I always make too much, so you're doing me a favour."
+  ]
+ },
+ "penzance_home1|penz_home1_mum": {
+  "who": "Mrs Trevenna",
+  "again": [
+   "Back again, my lover. The kettle is on, dreckly.",
+   "Sit down, I have been meaning to tell you something, and I will, once I remember what."
+  ],
+  "morning": [
+   "Morning, my lover. Pasty for breakfast? I will not tell."
+  ]
+ },
+ "penzance_home2|penz_home2_fisher": {
+  "who": "Mr Penhaligon",
+  "again": [
+   "Back, are you? Mind the nets by the door, they have caught better men than you.",
+   "I was up before light and the sea was fine. Now I am in here being sensible."
+  ]
+ },
+ "penzance_home3|penz_home3_jory": {
+  "who": "Old Jory",
+  "again": [
+   "Ah, you again. Emmet you may be, but you come back, so you are all right with me.",
+   "Sit you down. Not that chair, that one is the cat's."
+  ]
+ },
+ "penzance_home4|penz_home4_meryn": {
+  "who": "Meryn",
+  "again": [
+   "You're back! I have built a bigger sandcastle since. It has a moat and everything.",
+   "Is it still mizzling? It always is, in my head."
+  ],
+  "weather": {
+   "rain": [
+    "Mizzle again. I will go out anyway. Mum says I will melt, but I have not yet."
+   ]
+  }
+ },
+ "pit_boathouse|pit_old_cox": {
+  "who": "Old Boatman",
+  "again": [
+   "Back again. Come to watch an old man not rowing?",
+   "The young ones row fast now. I tell them that the sea doesn't care how fast."
+  ]
+ },
+ "plymouth_homepark|hp_kitman": {
+  "who": "Kit Man",
+  "again": [
+   "You again. Mind the boots, I've just laid them out and they're in order.",
+   "Washing the shirts is the real work. Eleven of them, each with a tale."
+  ]
+ },
+ "plymouth_homepark|hp_steward": {
+  "who": "Steward",
+  "again": [
+   "Back again. Good to see a familiar face, I mostly see the same four hundred.",
+   "If you're staying, stand where I can see you. It's nothing personal."
+  ],
+  "weather": {
+   "rain": [
+    "Wet day. It will hold off by kick-off, it always does, he said hopefully."
+   ]
+  }
+ },
+ "portree_home_a|portree_home_a_mum": {
+  "who": "Seonaid Nicolson",
+  "again": [
+   "Fàilte air ais, welcome back. The kettle is on, and so is the oven.",
+   "You look like someone who could manage a second scone. I am rarely wrong."
+  ]
+ },
+ "portree_home_b|portree_home_b_man": {
+  "who": "Norman MacAskill",
+  "again": [
+   "Oh, it's yourself again. Sit down, I'll not bite.",
+   "I watch the water from this window most of the day. It never does the same thing twice."
+  ]
+ },
+ "portree_home_c|portree_home_c_mum": {
+  "who": "Mairead MacLeod",
+  "again": [
+   "Fàilte, back again. The children will be glad, they like a new face to show things to.",
+   "Mind the wellies by the door. There are always more wellies than children."
+  ],
+  "evening": [
+   "Oidhche mhath soon. The children are nearly asleep, so keep your voice down."
+  ]
+ },
+ "portree_home_d|portree_home_d_kid": {
+  "who": "Ruairidh Beaton",
+  "again": [
+   "You came back. I've been learning more things about dinosaurs. Do you want to hear them all?",
+   "My mum says I ask too many questions. I say that's what questions are for."
+  ]
+ },
+ "rhondda_bakehouse|rhn_baker": {
+  "who": "Nan, the baker",
+  "again": [
+   "Back again, bach? Welsh cakes are warm, so don't dawdle.",
+   "Every morning someone says I've done too many. By the afternoon, there are none."
+  ]
+ },
+ "rhondda_home|rhn_home_mum": {
+  "who": "Mrs Pugh's sister",
+  "again": [
+   "Back again, cariad. Come in the kitchen, the parlour's still not for you.",
+   "Put the kettle on, there's a love. I've been on my feet since six."
+  ],
+  "evening": [
+   "Evening, cariad. Sit by the fire, it's the best seat and I'm not using it."
+  ]
+ },
+ "severn_home_ferry|oldferry_sailor": {
+  "who": "Old Ferryman",
+  "again": [
+   "Back again. I still look at the water and expect a car to come off it.",
+   "Sit down. I've got more tales than the river's got mud."
+  ]
+ },
+ "severn_home_keeper|bridgekeeper_mum": {
+  "who": "Mrs Hafren",
+  "again": [
+   "Back again. Sit by the window, you can see the whole sweep of the river from there.",
+   "The wind off the water gets in everywhere. I've stopped fighting it."
+  ]
+ },
+ "shannon_cottage|bean_an_ti": {
+  "who": "Bean an Tí",
+  "again": [
+   "Ah, you're back. Sit in by the fire, there's tea in the pot.",
+   "Is the bread gone already? The people of this house always say they're not hungry."
+  ],
+  "morning": [
+   "Morning. The fire's been raked and the bread's rising. Good timing."
+  ]
+ },
+ "shannon_cottage|cottage_settle": {
+  "who": "Old Farmer",
+  "again": [
+   "Back again? Sit on the settle. It's harder than it looks, but it's honest.",
+   "I'd tell you a story, but the fire's doing a better job."
+  ]
+ },
+ "sheffield_home_ahmed|shfhome_ahmed": {
+  "who": "Mr Ahmed",
+  "again": [
+   "Welcome back! Mind the football, it has moved. It's always moved.",
+   "Have you eaten? It's the second thing we ask in this house. The first is whether you want tea."
+  ]
+ },
+ "sheffield_home_doreen|shfhome_doreen": {
+  "who": "Doreen",
+  "again": [
+   "Back again, love. Sit down. Mind the goalkeeper, he's in the hall.",
+   "I've had a quiet day, which means the grandson hasn't been round yet."
+  ],
+  "morning": [
+   "Morning, love. I've just done the washing, and the washing is regretting it."
+  ]
+ },
+ "sheffield_home_eze|shfhome_eze": {
+  "who": "Mr Eze",
+  "again": [
+   "Welcome back. I've given up on the phone, it just rings and nobody picks up.",
+   "Come in, kettle's on. Better than the bus, anyway."
+  ]
+ },
+ "sheffield_home_platt|shfhome_platt": {
+  "who": "Mrs Platt",
+  "again": [
+   "Back again, duck. Sit down, there's a brew in the pot.",
+   "I've got the fire on. Don't let him tell you it's too warm, he's always too warm."
+  ]
+ },
+ "skye_house|skye_house_woman": {
+  "who": "Peigi MacKinnon",
+  "again": [
+   "Fàilte, back again. Sit in by the stove, you look like you've walked.",
+   "The loch's been quiet today. I've not minded. It's good to have nothing happen."
+  ],
+  "weather": {
+   "rain": [
+    "Och, rain on the loch. It makes the whole view go soft, which suits it."
+   ]
+  }
+ },
+ "sligo_home_strand|home_sligo_nana": {
+  "who": "Nana",
+  "again": [
+   "Ah, you're back. Sit down, sit down, I'll put the kettle on.",
+   "I was just giving out about the neighbours' hedge. It's a hobby."
+  ]
+ },
+ "st_helena_plantation_house|sth_aide": {
+  "who": "Governor's Aide",
+  "again": [
+   "Welcome back. The Governor is busy, as ever, but the tortoise isn't.",
+   "I'd offer a tour, but I've done it so many times I've started talking to the lawn."
+  ]
+ },
+ "stdavids_home_close|close_gran": {
+  "who": "Mrs Jenkins",
+  "again": [
+   "Hello again, love. You're back, and the gulls have not got your chips. Good for you.",
+   "Come in, sit down. The kettle's boiled twice, so it's strong."
+  ],
+  "weather": {
+   "gale": [
+    "Wind's up. I'll keep the washing in and the cat in. She's furious about both."
+   ]
+  }
+ },
+ "stdavids_home_cottage|sd_daughter": {
+  "who": "Seren",
+  "again": [
+   "Oh, you're back. I've been practising my hwyl. It's mostly humming.",
+   "Dad is out on the boat. I'm in charge of the house, which means the biscuit tin."
+  ]
+ },
+ "stdavids_home_cottage|sd_fisher": {
+  "who": "Mr Griffiths",
+  "again": [
+   "Back, are you? Sit down. I've been out since dawn and my knees have views.",
+   "The sea's been fair today, which makes me suspicious."
+  ]
+ },
+ "stdavids_home_hollow|hollow_mam": {
+  "who": "Mam",
+  "again": [
+   "Back again, cariad. Come in, mind the socks, they've multiplied.",
+   "Cai's still on about St David. Today he says he can walk on water. I've said he can try the puddle."
+  ],
+  "evening": [
+   "Evening, cariad. Tea's nearly ready, and Cai's pretending to do his homework."
+  ]
+ },
+ "stornoway_home_a|sw_teacher": {
+  "who": "Gaelic Teacher",
+  "again": [
+   "Fàilte air ais, welcome back. Ciamar a tha thu? You remember, you said it already.",
+   "Come in, sit down. I'm marking homework, and the spelling is the true adventure."
+  ]
+ },
+ "stornoway_home_b|sw_oldfisher": {
+  "who": "Old Fisherman",
+  "again": [
+   "Back again, are you? Good. Sit and let an old man rattle on.",
+   "My knees tell me the weather. They're right more often than the forecast."
+  ]
+ },
+ "tci_lighthouse|tci_keeper": {
+  "who": "Lighthouse Keeper",
+  "again": [
+   "Back up the stairs? You've more energy than I have. Sit and catch your breath.",
+   "The lamp doesn't mind visitors. I do, a bit, but I'm warming to you."
+  ],
+  "weather": {
+   "sunshine": [
+    "Bright day. The sea's all blues and greens from up here, as if someone's been showing off."
+   ]
+  }
+ },
+ "thurso_bakehouse|baker": {
+  "who": "Baker",
+  "again": [
+   "Back again. You're just in time, I've a tray of something still warm.",
+   "Don't ask me what day it is. I know the time it's ready, and that's all I need."
+  ]
+ },
+ "thurso_cottage|gunn_gran": {
+  "who": "Granny Gunn",
+  "again": [
+   "Back again, come in. The cat's moved, so you've got the good chair.",
+   "I was just thinking you'd be along. I'm not a witch, I just know the kettle."
+  ]
+ },
+ "wirral_boathouse|wirral_boathouse_0": {
+  "who": "Boatman",
+  "again": [
+   "Back again. The boats sit here and wait for water, same as me.",
+   "It's quiet today, but the marsh is never really still if you watch."
+  ],
+  "season": {
+   "autumn": [
+    "Autumn tides are the ones to watch. The water comes up fast."
+   ]
+  }
+ },
+ "wirral_boathouse|wirral_boathouse_1": {
+  "who": "Birdwatcher",
+  "again": [
+   "Oh, hello again. Keep your voice down, I think something's about.",
+   "I've been here since early with the binoculars and a flask. Both are nearly empty."
+  ]
+ },
+ "york_house_a|house_a_resident": {
+  "who": "Mr Ibbotson",
+  "again": [
+   "Ey up, back again. Duck, mind that beam, I've forgotten to warn you twice.",
+   "I've found another snickelway I didn't know. After thirty years, it's rather humbling."
+  ]
+ },
+ "york_house_b|house_b_resident": {
+  "who": "Mrs Calvert",
+  "again": [
+   "Back again, love. Mind the floor, it's still sloping.",
+   "I'll put the kettle on. My husband says nowt about it, but he drinks it."
+  ],
+  "weather": {
+   "fog": [
+    "Mist's come in off the river. The whole city looks like it's thinking."
+   ]
+  }
+ },
+ "york_house_c|house_c_resident": {
+  "who": "Mrs Hill",
+  "again": [
+   "Come in again, pet. The chocolate smell's strong today, you'll have noticed.",
+   "My bairn has been asking after you. Well, after your coat."
+  ]
+ }
+}
