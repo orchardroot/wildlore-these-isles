@@ -155,7 +155,7 @@
    "Mind the wellies by the door. There are always more wellies than children."
   ],
   "evening": [
-   "Oidhche mhath soon. The children are nearly asleep, so keep your voice down."
+   "It is nearly oidhche mhath, good night, in this house. The children are nearly asleep, so keep your voice down."
   ]
  },
  "portree_home_d|portree_home_d_kid": {
@@ -309,7 +309,7 @@
  "stornoway_home_a|sw_teacher": {
   "who": "Gaelic Teacher",
   "again": [
-   "Fàilte air ais, welcome back. Ciamar a tha thu? You remember, you said it already.",
+   "Fàilte air ais, welcome back. Ciamar a tha thu? That is how are you, and you will be asked it a lot.",
    "Come in, sit down. I'm marking homework, and the spelling is the true adventure."
   ]
  },
@@ -387,7 +387,7 @@
  "york_house_c|house_c_resident": {
   "who": "Mrs Hill",
   "again": [
-   "Come in again, pet. The chocolate smell's strong today, you'll have noticed.",
+   "Come in again, love. The chocolate smell's strong today, you'll have noticed.",
    "My bairn has been asking after you. Well, after your coat."
   ]
  }
