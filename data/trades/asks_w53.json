@@ -71,8 +71,8 @@
    "gives": {
     "money": 180
    },
-   "ask": "Cragchoughs nest on the cliffs near here, red legs and all. Show me one in your Fieldbook and I'll know you've walked the cliff path.",
-   "thanks": "Red legs and a tidy tail. You've been out on the cliffs. That's the proper way. Here.",
+   "ask": "Cragchoughs are cliff birds, red legs and all, and I have not seen one in years. Show me one in your Fieldbook and I'll know you've walked a proper cliff path.",
+   "thanks": "Red legs and a tidy tail. You've been out on the cliffs, then. That's the proper way. Here.",
    "repeat": false
   },
   {
@@ -162,7 +162,7 @@
     "money": 180
    },
    "ask": "The Polartern nests on the shore in spring, and a pole-to-pole traveller is worth a look. Show me one in your Fieldbook. And do not wave near a nest.",
-   "thanks": "Pole to pole and still turns up for the spring. Mar sin leat, as we say. Here, for you.",
+   "thanks": "Pole to pole and still turns up for the spring. Slán leat, as we say. Here, for you.",
    "repeat": false
   },
   {
@@ -387,7 +387,7 @@
     "money": 250
    },
    "ask": "Gibbs Hill light is up above all of us. Take a photo in Bermuda, from anywhere you can see it, and show me. I count the steps, you take the picture.",
-   "thanks": "There you go, a hundred and ten metres of cast iron, shrunk to a photograph. Thank you.",
+   "thanks": "There you go, thirty-odd metres of cast iron, shrunk to a photograph. Thank you.",
    "repeat": false
   },
   {
