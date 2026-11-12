@@ -144,5 +144,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "The clock is set by the One O'Clock Gun, and has been for years. The gun goes off at the Castle every day but Sunday.",
+    "It started in 1861 so ships in the Forth could set their chronometers. Now it mostly startles tourists."
+   ]
+  }
  ]
 }

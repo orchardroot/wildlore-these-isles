@@ -134,5 +134,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of a tiny steam engine on the lakeshore at Llanberis.",
+    "The Lake Railway runs on part of the old Dinorwic quarry line, and its engines worked in the quarry. Small and stubborn, as she says."
+   ]
+  }
  ]
 }

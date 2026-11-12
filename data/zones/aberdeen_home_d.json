@@ -135,5 +135,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A tray of rowies cooling under a cloth. Flat, salty and a bit greasy, exactly as advertised.",
+    "One is missing. The cat looks innocent in the way only a guilty cat can."
+   ]
+  }
  ]
 }

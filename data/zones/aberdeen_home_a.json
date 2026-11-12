@@ -133,5 +133,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A framed photograph of Rubislaw Quarry, the great hole the granite came out of.",
+    "It closed in 1971. The city still sparkles a bit when the sun hits it, and now you know why."
+   ]
+  }
  ]
 }

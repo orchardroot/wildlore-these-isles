@@ -89,5 +89,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 0,
+   "text": [
+    "A chart of Pitcairn with the landing at Bounty Bay marked in pencil, and a note in the margin: aim for the gap.",
+    "The islanders descend from the Bounty mutineers and the Tahitians who settled here in 1790. The longboat is how everything and everyone comes ashore."
+   ]
+  }
  ]
 }

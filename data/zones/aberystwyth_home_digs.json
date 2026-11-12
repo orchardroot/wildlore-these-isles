@@ -144,5 +144,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "Textbooks, none of them cracked. A takeaway menu is doing the work of a bookmark.",
+    "A note says: whoever finished the milk, we need to talk."
+   ]
+  }
  ]
 }

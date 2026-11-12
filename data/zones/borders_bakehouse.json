@@ -103,5 +103,15 @@
   "x|||||||||x",
   "x|||||||||x",
   "xxxxxDxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A Selkirk bannock cooling under a cloth, a rich fruit bread with a golden top.",
+    "Queen Victoria is said to have approved of it, so Ma Haig has put that on the label too."
+   ]
+  }
  ]
 }

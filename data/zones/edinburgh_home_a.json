@@ -142,5 +142,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A child's drawing of Edinburgh Castle with legs, following a very small boy down the Royal Mile.",
+    "Underneath, in careful letters: THE CASTLE IS WATCHING."
+   ]
+  }
  ]
 }

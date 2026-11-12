@@ -160,5 +160,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A row of wellies by the door, the smallest painted with sparkly stars.",
+    "Hwyl is written on a card above them in a child's best handwriting."
+   ]
+  }
  ]
 }

@@ -135,5 +135,16 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A photograph of a line of walkers crossing the sands of Morecambe Bay behind a guide with a long pole.",
+    "The route is marked with laurel branches that the guide moves as the channels shift. The job goes back to the 1500s."
+   ],
+   "flag": "looked_guide_sands"
+  }
  ]
 }

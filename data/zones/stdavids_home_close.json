@@ -125,5 +125,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A child's drawing of a gull with a very large chip, labelled GWYLAN.",
+    "The spelling is perfect. The chip is enormous."
+   ]
+  }
  ]
 }

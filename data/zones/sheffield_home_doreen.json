@@ -153,5 +153,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "A photograph of the grandson in goal, arms wide, in front of a full washing line.",
+    "A pennant from Sheffield FC hangs beside it. The club was founded in 1857, and the family does not let anyone forget it."
+   ]
+  }
  ]
 }

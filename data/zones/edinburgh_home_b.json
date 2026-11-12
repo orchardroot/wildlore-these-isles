@@ -139,5 +139,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "An old print of the Old Town, tenements stacked up the ridge like books on a shelf.",
+    "Before the cry went out, you looked up. Gardyloo, from the French for watch out for the water. It was seldom water."
+   ]
+  }
  ]
 }

@@ -136,5 +136,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A child's drawing of a dinosaur footprint, with a stick figure standing in it for scale.",
+    "The footprints at Staffin on Skye are about 170 million years old. The stick figure looks suitably small."
+   ],
+   "find": {
+    "item": "ammonite"
+   }
+  }
  ]
 }

@@ -147,5 +147,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A pasty crust left on a saucer by the dresser, for the knockers.",
+    "Tin miners saved the end of the pasty for the little folk who tapped the rock. Old Jory still does it, in case."
+   ],
+   "find": {
+    "item": "pasty"
+   }
+  }
  ]
 }

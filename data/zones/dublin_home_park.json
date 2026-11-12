@@ -137,5 +137,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 3,
+   "text": [
+    "A hurley across the table, a helmet beside it, and a sliotar with grass stains.",
+    "Hurling is a very old game and a very fast one. Wear the helmet."
+   ]
+  }
  ]
 }

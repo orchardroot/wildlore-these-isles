@@ -141,5 +141,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A faded photograph of a tram at Bushmills. It ran from here to the Giant's Causeway, from 1883.",
+    "The power came from the River Bush, one of the first hydro-electric tramways in the world. Granda was right all along."
+   ]
+  }
  ]
 }

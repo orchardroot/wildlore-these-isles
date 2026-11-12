@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A midge net hangs on a peg by the door, with a tin of repellent beside it and a note: THINK BRAVE THOUGHTS.",
+    "An Gearasdan, the garrison, is a long way from a quiet life in July."
+   ]
+  }
  ]
 }

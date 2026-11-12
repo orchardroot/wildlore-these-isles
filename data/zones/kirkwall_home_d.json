@@ -143,5 +143,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "A photograph of the stone dresser at Skara Brae, facing the door of the house like a welcome.",
+    "The village is about 5,000 years old. A storm in 1850 stripped away the sand and showed the houses, stone beds and all."
+   ]
+  }
  ]
 }

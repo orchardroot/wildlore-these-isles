@@ -166,5 +166,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A book about the Statutes of Kilkenny, passed in 1366 to stop the settlers speaking Irish and keeping Irish ways.",
+    "It did not work. Within a generation half the settlers spoke the language better than the locals."
+   ]
+  }
  ]
 }

@@ -177,5 +177,15 @@
   "x+++++++++++x",
   "x+++++D+++++x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 3,
+   "text": [
+    "Part of the floor has been lifted to show a hypocaust: little pillars of tile, with room for hot air to flow beneath.",
+    "Underfloor heating, Roman style. The house was a hotel for important travellers, which tells you what the important ones expected."
+   ]
+  }
  ]
 }

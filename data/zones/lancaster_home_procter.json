@@ -143,5 +143,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A jug painted with roses and a castle, in the traditional style of canal boat families.",
+    "He kept it on the boat for years. It has never been moved far from the kettle."
+   ]
+  }
  ]
 }

@@ -164,5 +164,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A sketch of a Georgian front door, with the half-moon fanlight above it.",
+    "The fanlight lets light into the hall. Newtown Pery was laid out on a grid by Edmund Sexton Pery, and the fox on the good rug has no opinion about it."
+   ]
+  }
  ]
 }

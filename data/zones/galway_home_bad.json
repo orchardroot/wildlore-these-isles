@@ -146,5 +146,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A painting of a Galway hooker, black hull and rusty brown sails, leaning into the wind.",
+    "They are racing boats and workboats at once. The Kinvara race festival is every August."
+   ]
+  }
  ]
 }

@@ -1,1 +1,15 @@
-{"id": "bermuda_lighthouse", "name": "Gibbs Hill Lighthouse", "region": "", "kind": "interior", "music": "", "weather": {}, "props": [{"type": "telescope", "x": 1, "y": 2}, {"type": "bookshelf", "x": 5, "y": 2}, {"type": "wall_map", "x": 3, "y": 1}, {"type": "potted_plant", "x": 5, "y": 6}], "warps": [{"x": 3, "y": 8, "to": "bermuda", "tx": 30, "ty": 29, "facing": "down"}], "edges": {}, "npcs": [{"id": "bm_keeper", "sprite": "lamplighter", "x": 3, "y": 4, "facing": "down", "move": "still", "script": "bm_keeper", "name": "Lighthouse Keeper"}, {"id": "bm_climber", "sprite": "hiker", "x": 4, "y": 6, "facing": "down", "move": "wander", "script": "bm_climber", "name": "Out-of-Breath Visitor", "radius": 0}], "encounters": {}, "signs": [], "spawn": [3, 7], "rows": ["xxxxxxx", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "xxxDxxx"], "stage": "town"}
+{"id": "bermuda_lighthouse", "name": "Gibbs Hill Lighthouse", "region": "", "kind": "interior", "music": "", "weather": {}, "props": [{"type": "telescope", "x": 1, "y": 2}, {"type": "bookshelf", "x": 5, "y": 2}, {"type": "wall_map", "x": 3, "y": 1}, {"type": "potted_plant", "x": 5, "y": 6}], "warps": [{"x": 3, "y": 8, "to": "bermuda", "tx": 30, "ty": 29, "facing": "down"}], "edges": {}, "npcs": [{"id": "bm_keeper", "sprite": "lamplighter", "x": 3, "y": 4, "facing": "down", "move": "still", "script": "bm_keeper", "name": "Lighthouse Keeper"}, {"id": "bm_climber", "sprite": "hiker", "x": 4, "y": 6, "facing": "down", "move": "wander", "script": "bm_climber", "name": "Out-of-Breath Visitor", "radius": 0}], "encounters": {}, "signs": [], "spawn": [3, 7], "rows": ["xxxxxxx", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "xxxDxxx"], "stage": "town",
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "A chart of the waters round Bermuda, the reefs cross-hatched in red and the wrecks marked with small crosses.",
+    "Gibbs Hill was lit in 1846 to keep ships off them, and the crosses show how well that worked early on."
+   ],
+   "find": {
+    "item": "sea_glass"
+   }
+  }
+ ]
+}

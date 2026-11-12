@@ -127,5 +127,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "Grandad's quarry whistle hangs on a nail. It blew to start the working day and to end it.",
+    "Everyone could tell the time by it, and what was for tea."
+   ],
+   "flag": "looked_quarry_whistle"
+  }
  ]
 }

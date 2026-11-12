@@ -141,5 +141,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "Binoculars on the table and a notebook full of ticks. Today's tally: one heronarch, the same as yesterday.",
+    "Dunluce Castle is a few miles west on its cliff. Part of the kitchen is said to have fallen into the sea in 1639."
+   ]
+  }
  ]
 }

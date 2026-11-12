@@ -142,5 +142,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A photograph of Nain as a girl on the Menai Bridge, holding her hat on with both hands.",
+    "Telford's suspension bridge opened in 1826 and joined Anglesey to the mainland. Before that, it was a ferry and a lot of patience."
+   ]
+  }
  ]
 }

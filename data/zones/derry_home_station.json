@@ -141,5 +141,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "Timetables, old and new, filed by year. Coleraine line, the shore of Lough Foyle, and the tunnel under the cliffs at Downhill.",
+    "A sticky label on the spine says WINDOW SEAT."
+   ]
+  }
  ]
 }

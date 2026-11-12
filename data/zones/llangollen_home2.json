@@ -120,5 +120,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 3,
+   "text": [
+    "A hook of windlasses by the door. Seven on it, none quite the one you need for this lock.",
+    "The eighth, as usual, is on the towpath where it was left."
+   ]
+  }
  ]
 }

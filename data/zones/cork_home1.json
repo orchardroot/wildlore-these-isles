@@ -185,5 +185,16 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "Behind glass, the good china: gold-rimmed, never used, and dusted every Friday.",
+    "Nan Kelleher says it is for a great occasion. In forty years the great occasion has not yet turned up."
+   ],
+   "flag": "looked_kelleher_china"
+  }
  ]
 }

@@ -128,5 +128,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A retirement card from the depot, signed by half the Number 11 route.",
+    "Thirty years of Outer Circle, one of the longest city bus routes in Europe. He has not been on a bus since. Not once."
+   ]
+  }
  ]
 }

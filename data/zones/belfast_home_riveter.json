@@ -147,5 +147,16 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "Granda's riveting hammer hangs under a photograph of the Harland and Wolff yard, the big yellow cranes behind.",
+    "A riveting gang was four: the heater, the catcher, the holder-on and the hammerer. Samson and Goliath still stand over the yard."
+   ],
+   "flag": "looked_riveter_gun"
+  }
  ]
 }

@@ -133,5 +133,18 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "A photograph of Fungie, the bottlenose dolphin who lived in Dingle harbour for decades and escorted boats out to sea.",
+    "He was a fond fixture of the town, and the harbour has not quite got used to the gap."
+   ],
+   "find": {
+    "item": "sea_glass"
+   }
+  }
  ]
 }

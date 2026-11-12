@@ -123,5 +123,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "The hearthstone is a single Caithness flag, worn smooth, and the whole floor is cut from the same stone.",
+    "Flagstone splits into thin flat slabs, and it holds the heat. Granny Gunn says it has kept the family warm since her grandfather's day."
+   ],
+   "find": {
+    "item": "slate_chip"
+   }
+  }
  ]
 }

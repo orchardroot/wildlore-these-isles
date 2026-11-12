@@ -129,5 +129,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A framed map of the Subway, a single loop with no way of getting lost.",
+    "It opened in 1896, after London and Budapest, and the loop has gone round and round ever since. Orange is the colour of the trains."
+   ]
+  }
  ]
 }

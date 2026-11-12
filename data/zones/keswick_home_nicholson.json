@@ -137,5 +137,16 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A framed newspaper cutting about the ospreys nesting at Bassenthwaite in 2001.",
+    "It was the first time in about 150 years. The Nicholsons cheered as if it was the football."
+   ],
+   "flag": "looked_ospreys"
+  }
  ]
 }

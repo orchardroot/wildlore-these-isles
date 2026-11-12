@@ -154,5 +154,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A child's drawing of a corncrake in long grass, mouth wide open.",
+    "Its Latin name is Crex crex, which is also exactly what it says. The meadow corner is left uncut for it."
+   ]
+  }
  ]
 }

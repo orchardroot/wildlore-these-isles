@@ -1,1 +1,12 @@
-{"id": "tci_lighthouse", "name": "Grand Turk Lighthouse", "region": "", "kind": "interior", "music": "", "weather": {}, "props": [{"type": "telescope", "x": 1, "y": 2}, {"type": "bookshelf", "x": 5, "y": 2}, {"type": "wall_map", "x": 3, "y": 1}], "warps": [{"x": 3, "y": 8, "to": "turks_caicos", "tx": 34, "ty": 12, "facing": "down"}], "edges": {}, "npcs": [{"id": "tci_keeper", "sprite": "lamplighter", "x": 3, "y": 4, "facing": "down", "move": "still", "script": "tci_keeper", "name": "Lighthouse Keeper"}], "encounters": {}, "signs": [], "spawn": [3, 7], "rows": ["xxxxxxx", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "xxxDxxx"], "stage": "town"}
+{"id": "tci_lighthouse", "name": "Grand Turk Lighthouse", "region": "", "kind": "interior", "music": "", "weather": {}, "props": [{"type": "telescope", "x": 1, "y": 2}, {"type": "bookshelf", "x": 5, "y": 2}, {"type": "wall_map", "x": 3, "y": 1}], "warps": [{"x": 3, "y": 8, "to": "turks_caicos", "tx": 34, "ty": 12, "facing": "down"}], "edges": {}, "npcs": [{"id": "tci_keeper", "sprite": "lamplighter", "x": 3, "y": 4, "facing": "down", "move": "still", "script": "tci_keeper", "name": "Lighthouse Keeper"}], "encounters": {}, "signs": [], "spawn": [3, 7], "rows": ["xxxxxxx", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "x|||||x", "xxxDxxx"], "stage": "town",
+ "examine": [
+  {
+   "x": 1,
+   "y": 2,
+   "text": [
+    "A brass telescope on a stand, pointed at the reef.",
+    "The lighthouse went up in 1852, cast iron shipped out from England, to warn ships off. Through the glass the sea is a very good blue."
+   ]
+  }
+ ]
+}

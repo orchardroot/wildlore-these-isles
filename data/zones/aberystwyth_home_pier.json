@@ -190,5 +190,18 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A flat iron bakestone, the maen, waits by the fire. Picau ar y maen are cooked on it, a few minutes each side.",
+    "Nain keeps a tin of the finished ones on the mantel. It is lighter than it looks, the boy being the boy."
+   ],
+   "find": {
+    "item": "welsh_cakes_tin"
+   }
+  }
  ]
 }

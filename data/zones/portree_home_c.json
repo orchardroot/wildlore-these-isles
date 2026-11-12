@@ -140,5 +140,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "Two little signs by the door: MADAINN MHATH on the way out, OIDHCHE MHATH on the way in.",
+    "Good morning and good night. The family wears them both out."
+   ]
+  }
  ]
 }

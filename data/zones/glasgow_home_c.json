@@ -155,5 +155,16 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A black and white photograph of a ship being launched into the Clyde, a crowd of caps flying on the bank.",
+    "The Queen Mary went down the slip in 1934, and the QE2 in 1967. Granda is the third cap from the left, he says."
+   ],
+   "flag": "looked_clyde_launch"
+  }
  ]
 }

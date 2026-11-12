@@ -177,5 +177,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "The clock stopped some time ago. A note taped to it says: Fixing it dreckly.",
+    "The note has been there longer than the clock was running."
+   ]
+  }
  ]
 }

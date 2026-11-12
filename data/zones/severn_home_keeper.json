@@ -125,5 +125,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A tide table pinned up with the biggest dates ringed in red. The Severn Bore is a wave that runs upriver on a spring tide.",
+    "It is one of the highest in the world. Her son wants to ride it. She has told him to start with a bath."
+   ]
+  }
  ]
 }

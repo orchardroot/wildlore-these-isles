@@ -135,5 +135,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A tin of Bath Olivers, the crisp dry biscuits Dr William Oliver devised in the 1700s.",
+    "He said they were good for you. Sensible, plain, and best with a bit of cheese."
+   ]
+  }
  ]
 }

@@ -139,5 +139,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A cross-stitch sampler: 'Cwtch', a cat, and a great deal of stitching.",
+    "A cwtch is a cuddle, and also the cupboard under the stairs. The sampler hangs where it can see both."
+   ]
+  }
  ]
 }

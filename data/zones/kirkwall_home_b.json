@@ -136,5 +136,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A photograph of a diver coming up beside a rusty hull in Scapa Flow.",
+    "The German fleet was scuttled there in 1919, and divers still visit the wrecks. It is cold, dark and very popular."
+   ]
+  }
  ]
 }

@@ -160,5 +160,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of a Loaghtan ram, four horns, brown wool and an expression of enormous dignity.",
+    "Ned Maddrell, the last native Manx speaker, died in 1974. The language is being taught again, and the sheep will not be told."
+   ]
+  }
  ]
 }

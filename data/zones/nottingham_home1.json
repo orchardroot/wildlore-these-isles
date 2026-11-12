@@ -141,5 +141,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A photograph of the Left Lion outside the Council House, with a crowd of people waiting under it.",
+    "The Council House opened in 1929, and meeting under the Left Lion has been a Nottingham habit ever since."
+   ]
+  }
  ]
 }

@@ -135,5 +135,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A map of Sheffield with the edge of the Peak District National Park shaded in, and a pin for home.",
+    "A good chunk of the city lies inside the park. The daughter cycles up the hill to school and arrives pink."
+   ]
+  }
  ]
 }

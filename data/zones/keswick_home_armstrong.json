@@ -162,5 +162,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A photograph of a Herdwick lamb, almost black, with a face like a small bear.",
+    "They fade to grey as they grow. Beatrix Potter kept Herdwicks and left her farms to the National Trust."
+   ]
+  }
  ]
 }

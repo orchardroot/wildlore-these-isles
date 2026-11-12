@@ -138,5 +138,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A print of the Falkirk Wheel, the rotating boat lift that opened in 2002 and joins two canals at different heights.",
+    "Bessie says it is a stoater of an idea. A boat goes up one side, another comes down the other, and nobody spills their tea."
+   ]
+  }
  ]
 }

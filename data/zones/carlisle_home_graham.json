@@ -84,5 +84,15 @@
   "x|||||||x",
   "x|||||||x",
   "xxxxDxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "Over the fire, carved into the mantel, the family motto: Ne oublie. Do not forget.",
+    "The Grahams have not. Ask about 1606 and you will be there until teatime."
+   ]
+  }
  ]
 }

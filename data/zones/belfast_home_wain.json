@@ -169,5 +169,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 10,
+   "y": 1,
+   "text": [
+    "A wall of school photographs, one for each year, gap-toothed grins in every row.",
+    "The wains are at school. The cat is on the radiator. Everyone is exactly where they ought to be."
+   ]
+  }
  ]
 }

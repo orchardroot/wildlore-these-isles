@@ -136,5 +136,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A framed menu from a Glasgow restaurant that claims to have invented chicken tikka masala in the 1970s.",
+    "A note underneath reads: DISPUTED. The argument has fed three generations of this family, and the dish has fed rather more."
+   ]
+  }
  ]
 }

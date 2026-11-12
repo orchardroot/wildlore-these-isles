@@ -141,5 +141,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A kettle sits on the hob, and by the look of it, always has.",
+    "Nan Pat says the kettle is on in Birmingham the way the tide is in the sea. Tara-a-bit."
+   ]
+  }
  ]
 }

@@ -139,5 +139,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A print of a boat in Muirtown locks, the lock gates open and the water still.",
+    "Telford's canal joins Inverness to Fort William through the Great Glen and Loch Ness, a road across the Highlands for boats."
+   ]
+  }
  ]
 }
