@@ -26,4 +26,7 @@ E = {
     "kilkenny_home2": ("fireplace", ["Her father's hurley hangs over the fire, the wood worn pale where hands have held it.", "They touch it for luck before the big matches, whether it is working or not."]),
     "kilkenny_home3": ("wall_picture", ["A cartoon of two cats at war, with only a pair of tails left at the end.", "The Kilkenny cats fought until nothing remained but the tails. The tails have not been found."]),
     "kilkenny_home4": ("wall_picture", ["A black and amber scarf, framed like a medal, with a signed hurley below it.", "Kilkenny was the capital of Confederate Ireland in the 1640s. The scarf is about hurling, though, which matters more."]),
+    "limerick_home_pery": ("wall_picture", ["A sketch of a Georgian front door, with the half-moon fanlight above it.", "The fanlight lets light into the hall. Newtown Pery was laid out on a grid by Edmund Sexton Pery, and the fox on the good rug has no opinion about it."]),
+    "newgrange_home_cottage": ("kitchen_dresser", ["A tea towel pinned up with a list: fáilte, slán, go raibh maith agat. A cúpla focal.", "Siobhán says everyone has a cúpla focal and they are all lovely."]),
+    "newgrange_home_dig": ("bookshelf", ["Site notebooks, a worn trowel and a drawing of a spiral from the carved stones of Newgrange.", "The passage tomb is over five thousand years old, older than Stonehenge and the pyramids. At winter solstice dawn the sun reaches into the chamber."], {"flag": "looked_newgrange_notes"}),
 }

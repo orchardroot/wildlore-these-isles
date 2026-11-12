@@ -129,5 +129,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A poster of the Snowdon Mountain Railway, a little steam engine pushing a carriage up the slope.",
+    "It has run since 1896 on a rack and pinion track, and the engine pushes rather than pulls. A slate chip on the frame is rumoured to be lucky."
+   ],
+   "find": {
+    "item": "slate_chip"
+   }
+  }
  ]
 }

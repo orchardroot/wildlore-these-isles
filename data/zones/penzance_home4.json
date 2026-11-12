@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A photograph of the Jubilee Pool at Penzance, a triangular seawater lido with Art Deco curves.",
+    "It opened in 1935. Meryn says it is bracing. Everybody else says it is cold."
+   ]
+  }
  ]
 }

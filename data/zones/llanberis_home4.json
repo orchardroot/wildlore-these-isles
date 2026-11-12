@@ -119,5 +119,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A finisher's medal on a ribbon: the Snowdon Race, up Yr Wyddfa from Llanberis and back down again.",
+    "It is held every July. His mother says he came back looking like a drowned otter, which fits."
+   ]
+  }
  ]
 }

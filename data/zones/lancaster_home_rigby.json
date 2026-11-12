@@ -129,5 +129,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A tea towel printed with the red rose of Lancashire, pinned up as if it were a banner.",
+    "Jack is not wrong. The rose is on the bin lorry, the bus, the signs and quite possibly the cat."
+   ]
+  }
  ]
 }

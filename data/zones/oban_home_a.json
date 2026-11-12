@@ -97,5 +97,15 @@
   "x|||||||||||x",
   "x|||||||||||x",
   "xxxxxxDxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "From the window you can see the ferry quay and the harbour. A logbook of arrivals sits on the sill, kept in pencil.",
+    "Granny has watched every ferry come in since 1958. The log stops being tidy around the 1990s."
+   ]
+  }
  ]
 }

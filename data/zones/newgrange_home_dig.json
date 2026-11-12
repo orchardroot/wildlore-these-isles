@@ -120,5 +120,16 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 11,
+   "y": 1,
+   "text": [
+    "Site notebooks, a worn trowel and a drawing of a spiral from the carved stones of Newgrange.",
+    "The passage tomb is over five thousand years old, older than Stonehenge and the pyramids. At winter solstice dawn the sun reaches into the chamber."
+   ],
+   "flag": "looked_newgrange_notes"
+  }
  ]
 }

@@ -119,5 +119,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "Beside a lamp in the window, a saucer of milk that is not for the cat.",
+    "The tylwyth teg are better as friends than as neighbours who are not asked. Mam leaves the light on."
+   ]
+  }
  ]
 }

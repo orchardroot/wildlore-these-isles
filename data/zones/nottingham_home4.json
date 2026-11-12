@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A shelf of Nottingham writers: Byron's poems, D. H. Lawrence, and Alan Sillitoe's Saturday Night and Sunday Morning, which is set in the city.",
+    "Nottingham became a UNESCO City of Literature in 2015. Dev has read about a third of it."
+   ]
+  }
  ]
 }

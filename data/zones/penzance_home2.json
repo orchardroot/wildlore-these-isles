@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A stargazy pie on the table, with fish heads poking out through the crust.",
+    "On 23 December in Mousehole it is eaten in memory of Tom Bawcock, who went out in a storm and came back with fish for a hungry village."
+   ]
+  }
  ]
 }

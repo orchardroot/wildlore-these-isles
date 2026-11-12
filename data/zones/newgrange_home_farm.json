@@ -130,5 +130,16 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A shoebox of flint flakes ploughed up in the fields, labelled in Granda's writing: DO NOT THROW OUT.",
+    "People have farmed this valley for five thousand years and the soil is still handing things back."
+   ],
+   "flag": "looked_farm_flint"
+  }
  ]
 }

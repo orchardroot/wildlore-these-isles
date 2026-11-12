@@ -139,5 +139,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A print of the Lune Aqueduct, which carries the canal 62 feet above the river. John Rennie designed it, and it opened in 1797.",
+    "Mrs Dewhurst has a hotpot in the oven that has been a lot more reliable."
+   ]
+  }
  ]
 }

@@ -120,5 +120,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "Enamel mugs in a row, one for each hand on the farm, and a kettle that has clearly never once been switched off.",
+    "A dog sleeps under the dresser and minds nobody. Beatrix Potter would have understood."
+   ]
+  }
  ]
 }
