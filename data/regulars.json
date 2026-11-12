@@ -2684,6 +2684,170 @@
    ],
    "ax": 31,
    "ay": 22
+  },
+  {
+   "id": "ewen_fort_william",
+   "name": "Ewen MacMillan",
+   "short": "Ewen",
+   "zone": "fw_home_c",
+   "npc": "fw_home_c_man",
+   "sprite": "villager_6",
+   "home": "fort_william",
+   "away": "oban",
+   "likes": "scotch_broth",
+   "hint": "Ewen says a bowl of Scotch broth is what a person should be handed after a day on the hill, and not one minute before.",
+   "intro": [
+    "Ewen: Ewen MacMillan. Mountain rescue, on the quiet days. Before you ask, yes, I will ask where you are going. I ask everyone.",
+    "Ewen: A bowl of Scotch broth, hot, after a day up the Ben, is about the best thing there is. If you ever have one going spare, I will count it as a green place."
+   ],
+   "meet": [
+    "Ewen is on the esplanade at Oban with a flask, looking at the sea the way he would look at a hill he did not trust.",
+    "Ewen: A day off. I told my wife where I was going and when I would be back, as I always do. She says that is not a hobby, it is a condition.",
+    "Ewen: Mòran taing for stopping, that is many thanks. Tell someone where you are headed next. I will know if you do not."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Ben had its hat on all week, so I stayed down and fixed the gate, and the snowhares stayed up and kept their own counsel. Tell someone where you are going. Always.",
+    "Yours, Ewen (gate fixed, kettle on)"
+   ],
+   "offer": [
+    "Ewen: Your business, {player}. I have spent years looking after people who did not plan the day, so a plan I can manage.",
+    "Ewen: Off you go. I will keep an eye on it, and I will want to know what time you are back."
+   ],
+   "chat": [
+    "Ewen: Snowhares go white in winter. Up on the Ben it is a decent trick, and it still works on most people.",
+    "Ewen: The forecast said fine. The Ben said otherwise. I go with the Ben.",
+    "Ewen: Mountain rescue are up the hill a lot. If you are going up, tell someone. I will keep saying it."
+   ],
+   "thanks": [
+    "Ewen takes the broth in both hands and has a careful sip, like a man checking a path.",
+    "Ewen: That is a proper broth. Barley and all. Mòran taing, {player}. And well done for telling me you were coming."
+   ],
+   "ax": 30,
+   "ay": 19
+  },
+  {
+   "id": "gethin_holyhead",
+   "name": "Gethin Hughes",
+   "short": "Gethin",
+   "zone": "holyhead_home3",
+   "npc": "hh3_lad",
+   "sprite": "student",
+   "home": "holyhead",
+   "away": "dublin",
+   "likes": "home_cawl",
+   "hint": "Gethin says a bowl of proper home-made cawl is the only thing that has ever made him close a book and eat at the table.",
+   "intro": [
+    "Gethin: Gethin. I am revising. By which I mean I am sitting near a book, and the book is winning.",
+    "Gethin: Mam makes cawl on Sundays and it is better on Monday. If you ever have some home-made cawl, I will say diolch like I mean it, because I will."
+   ],
+   "meet": [
+    "Gethin is by the ferry terminal in Dublin with a rucksack and a very tired face, watching the boats as if they might take him back by themselves.",
+    "Gethin: Over on the ferry for a look at the university. The Romans picked Holyhead for the harbour and I picked this for the pizza. Both fine decisions.",
+    "Gethin: Bore da, that is good morning, which it is, technically. Do not tell Mam I am not at the library."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The revision is going. I keep saying it, and Mam keeps saying 'is it', and Nan says she saw a selklet on the rocks again, which she did not. Probably. She is usually right about animals.",
+    "Yours, Gethin (near a book)"
+   ],
+   "offer": [
+    "Gethin: A business is a good idea, {player}. It is a lot more fun than anything with an exam in it.",
+    "Gethin: I will keep an eye on it. I will do it at the table, so I can say I am working."
+   ],
+   "chat": [
+    "Gethin: The old fort at Holyhead sits over the harbour for a reason. Same reason there is a ferry. I did learn something.",
+    "Gethin: Nan says there is a selklet on the rocks. Nan is right about animals and wrong about directions.",
+    "Gethin: Exams soon. I am calm. I am calm in the way of a lad about to be very busy."
+   ],
+   "thanks": [
+    "Gethin lifts the lid of the pot, breathes in, and forgets the book entirely.",
+    "Gethin: Cawl! Diolch, {player}. That is Monday sorted and Mam will say it was her idea."
+   ],
+   "ax": 10,
+   "ay": 20
+  },
+  {
+   "id": "gareth_llangollen",
+   "name": "Gareth Lloyd",
+   "short": "Gareth",
+   "zone": "llangollen_home2",
+   "npc": "llh2_dad",
+   "sprite": "canal_boater",
+   "home": "llangollen",
+   "away": "chester",
+   "likes": "perch",
+   "hint": "Gareth says a good perch off the canal bank is the nearest thing to a perfect afternoon, and he would not argue with you about it.",
+   "intro": [
+    "Gareth: Ahoy. Gareth Lloyd. Well, ahoy if you live on the canal. I live on land. Mostly.",
+    "Gareth: I own seven windlasses and can find one on a good day. A perch off the towpath, now, I can always find a place for. Bring me one and I will count it as a green place."
+   ],
+   "meet": [
+    "Gareth is on the Chester canal side, watching a boat go through a lock with his arms folded and his whole body leaning in to help.",
+    "Gareth: A day out for the boats. I came to watch somebody else do the paddles for once. It is not relaxing, it is supervising.",
+    "Gareth: Diolch for stopping. Mind the lock edge. That is the advice and the whole of it."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The canal was quiet, so I walked the towpath and looked at the water, and an elverlet crossed the meadow so quickly I could not have said what it was. Unimpressed, as ever. A windlass has turned up in the shed. That makes eight, or the same one twice.",
+    "Yours, Gareth (mostly on land)"
+   ],
+   "offer": [
+    "Gareth: A business, {player}. I have kept a lock in a hurry before now. A small business I can keep at a steady pace.",
+    "Gareth: Off you go. I will mind it, and I will find a windlass in a minute, I promise."
+   ],
+   "chat": [
+    "Gareth: A windlass winds the paddle on a lock. People ask. I tell them. Some of them even nod.",
+    "Gareth: Elverlets in the water meadows. Very fast, very unimpressed. I admire them.",
+    "Gareth: The kettle is quiet. That is worrying. Come in and we shall sort it out."
+   ],
+   "thanks": [
+    "Gareth holds the perch up to the light and inspects it like a man checking a lock gate.",
+    "Gareth: A proper fish. Diolch, {player}. That will do for tea, and for the story, which will get bigger."
+   ],
+   "ax": 30,
+   "ay": 20
+  },
+  {
+   "id": "peigi_skye",
+   "name": "Peigi MacKinnon",
+   "short": "Peigi",
+   "zone": "skye_house",
+   "npc": "skye_house_woman",
+   "sprite": "villager_2",
+   "home": "skye",
+   "away": "inverness",
+   "likes": "mackerel",
+   "hint": "Peigi says a mackerel grilled the same evening it is landed is a better supper than anything the shops of Inverness could offer.",
+   "intro": [
+    "Peigi: Fàilte. Peigi MacKinnon. Sit in by the stove, you look like you have walked.",
+    "Peigi: A mackerel, grilled the day it comes out of the sea, is the best supper there is. If you have one to spare, I will count it as a green place."
+   ],
+   "meet": [
+    "Peigi is in Inverness by the river, in a good coat, looking at the bridges as if checking they are all still there.",
+    "Peigi: I came over to the town for a day. There is a lot of it, and all of it in a hurry. I miss the loch already.",
+    "Peigi: Madainn mhath, that is good morning. I will not make you say it back, but I will notice if you do."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The loch has been quiet and I have not minded. The Cuillin had snow on top, and an orcalet showed off the point on Tuesday. I did not mistake it for a seal. It would have sulked.",
+    "Yours, Peigi (by the stove)"
+   ],
+   "offer": [
+    "Peigi: A business, {player}? I have kept a croft house through a good few storms. A wee business is easy by comparison.",
+    "Peigi: Away you go and see the world. I will keep it tidy, and the stove will be on."
+   ],
+   "chat": [
+    "Peigi: The Cuillin is made of rough black rock. It grips boots wonderfully and shreds knees even better.",
+    "Peigi: Orcalets off the point on a calm day. Bring binoculars, and do not mistake a seal for one.",
+    "Peigi: Nothing happened on the loch today. It was lovely. I recommend it."
+   ],
+   "thanks": [
+    "Peigi turns the mackerel over, sniffs it once, and smiles like she has been told good news.",
+    "Peigi: Mòran taing, {player}. That is the supper sorted, and the stove will be glad of it."
+   ],
+   "ax": 46,
+   "ay": 18
   }
  ]
 }
