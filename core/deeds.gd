@@ -532,5 +532,5 @@ static func summary(data: GameStateData, id: String) -> Array:
 		stock.append("%s %d" % [str(Trade.items().get_item(str(inp.item)).get("name", inp.item)), store_of(data, id, str(inp.item))])
 	if not stock.is_empty():
 		out.append("Store: " + ", ".join(stock))
-	out.append("Manager: %s" % (manager(data, id) if manager(data, id) != "" else "none"))
+	out.append("Manager: %s" % (str(Regulars.get_reg(manager(data, id)).get("name", manager(data, id))) if manager(data, id) != "" else "none"))
 	return out
