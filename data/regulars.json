@@ -716,7 +716,7 @@
     "Old Alf: Give me the keys, {player}. I'll sit in your shop and watch it like a tide. It'll come in, I'm told."
    ],
    "chat": [
-    "Old Alf: Handel landed right here. Said nothing about the weather. Very polite.",
+    "Old Alf: Handel crossed to Dublin in 1741 with the Messiah in his luggage. Said nothing about the weather. Very polite.",
     "Old Alf: The water went and the birds came. Better company, if you ask me. They don't talk back.",
     "Old Alf: Tide's out. It's been out since 1800 or so. It might come back."
    ],
@@ -903,7 +903,7 @@
    "likes": "european_eel",
    "hint": "Hugh says a good eel from the Witham, stewed the old way, is the most honest medieval dish still going.",
    "intro": [
-    "Hugh: Hugh Fenwick. I look after this house, or it looks after me. We've not agreed on which. Stone since about 1160. I find it very patient.",
+    "Hugh: Hugh Fenwick. I look after this house, or it looks after me. We've not agreed on which. Stone since the twelfth century. I find it very patient.",
     "Hugh: I'd be glad of an eel from the Witham some time. Stewed, not jellied. A man can only take so much history on an empty stomach."
    ],
    "meet": [
@@ -1522,7 +1522,7 @@
    ],
    "meet": [
     "Mrs Lynch is on the Kilkenny side of a hurling pitch wearing red, with a flask and a look of grim contentment.",
-    "Mrs Lynch: Mrs Lynch: I am surrounded by black and amber and I will not be moved. My husband is gas, he brought a sandwich for each of the three possible results. Sit down, mind my flask."
+    "Mrs Lynch: I am surrounded by black and amber and I will not be moved. My husband is gas, he brought a sandwich for each of the three possible results. Sit down, mind my flask."
    ],
    "letter": [
     "Dear {player},",
@@ -1540,7 +1540,7 @@
    ],
    "thanks": [
     "Mrs Lynch lifts the lid, breathes in, and says nothing for a good three seconds.",
-    "Mrs Lynch: Mrs Lynch: Oh, you good thing. The butter is in the middle where it belongs. Sit, sit, you have earned the good chair."
+    "Mrs Lynch: Oh, you good thing. The butter is in the middle where it belongs. Sit, sit, you have earned the good chair."
    ],
    "ax": 26,
    "ay": 19
@@ -1562,7 +1562,7 @@
    ],
    "meet": [
     "Mr Brogan is on the Enniskillen shore of Lough Erne, holding a rod with great composure and no bait.",
-    "Mr Brogan: Mr Brogan: Different water. Same result. I am told there is a very large fish in there. I thought we might have a chat."
+    "Mr Brogan: Different water. Same result. I am told there is a very large fish in there. I thought we might have a chat."
    ],
    "letter": [
     "Dear {player},",
@@ -1580,7 +1580,7 @@
    ],
    "thanks": [
     "Mr Brogan looks at the salmon for a long, quiet moment, like a man shaking hands with an old rival.",
-    "Mr Brogan: Mr Brogan: Well. So that is what they look like. I will say it, it is very well made."
+    "Mr Brogan: Well. So that is what they look like. I will say it, it is very well made."
    ],
    "ax": 43,
    "ay": 31
@@ -1602,7 +1602,7 @@
    ],
    "meet": [
     "Old Mattie is on the pier in Dingle, supervising a boat that is not his.",
-    "Old Mattie: Old Mattie: Ah, there you are, that's a lovely boat, isn't it. A man here owes me a favour and I'm collecting it in advice. Sit down, will you, I'll tell you about the time I went out in worse than this."
+    "Old Mattie: Ah, there you are, that's a lovely boat, isn't it. A man here owes me a favour and I'm collecting it in advice. Sit down, will you, I'll tell you about the time I went out in worse than this."
    ],
    "letter": [
     "Dear {player},",
@@ -1620,7 +1620,7 @@
    ],
    "thanks": [
     "Old Mattie holds the herring up to the window, like a man checking a banknote.",
-    "Old Mattie: Old Mattie: Oh, that's grand, that's a beauty, silver as a new coin. My father would have wept. He'd have said it was too small, but he'd have wept."
+    "Old Mattie: Oh, that's grand, that's a beauty, silver as a new coin. My father would have wept. He'd have said it was too small, but he'd have wept."
    ],
    "ax": 28,
    "ay": 19
@@ -1642,7 +1642,7 @@
    ],
    "meet": [
     "Gran Daly is in a Dublin street on the day of a big match, in black and amber, carrying a hurley she is absolutely not meant to have.",
-    "Gran Daly: Gran Daly: Do not look at the hurley. It's for luck, it's not for use. Well, mostly. Good to see you, now off, I've a match to win."
+    "Gran Daly: Do not look at the hurley. It's for luck, it's not for use. Well, mostly. Good to see you, now off, I've a match to win."
    ],
    "letter": [
     "Dear {player},",
@@ -1660,7 +1660,7 @@
    ],
    "thanks": [
     "Gran Daly breaks off a corner, butters it, and eats it standing up, which she never does.",
-    "Gran Daly: Gran Daly: Ah, that is the right one. Warm. You are a good child. Come here to me."
+    "Gran Daly: Ah, that is the right one. Warm. You are a good child. Come here to me."
    ],
    "ax": 28,
    "ay": 19
@@ -1682,7 +1682,7 @@
    ],
    "meet": [
     "Mr Hannon is in Cork in the foyer of a theatre, wearing a very good coat and the expression of a man guarding it.",
-    "Mr Hannon: Mr Hannon: You find me away from the ballroom. A cousin has a play on, and the foyer, I am pleased to say, is not as grand as mine. Good to see you. Say nothing to the cousin."
+    "Mr Hannon: You find me away from the ballroom. A cousin has a play on, and the foyer, I am pleased to say, is not as grand as mine. Good to see you. Say nothing to the cousin."
    ],
    "letter": [
     "Dear {player},",
@@ -1700,7 +1700,7 @@
    ],
    "thanks": [
     "Mr Hannon looks at the salmon as though it were about to be presented at court.",
-    "Mr Hannon: Mr Hannon: Well. We shall have it plain, with a little parsley, in the dining room. The fox may watch from the door."
+    "Mr Hannon: Well. We shall have it plain, with a little parsley, in the dining room. The fox may watch from the door."
    ],
    "ax": 30,
    "ay": 22
@@ -1722,7 +1722,7 @@
    ],
    "meet": [
     "Ruth is in Sligo, kneeling at the edge of a prehistoric tomb with her notebook on her knee and a flask on the ground.",
-    "Ruth: Ruth: Carrowmore, my day off. I came to look at stones, because apparently I do not get enough of that. Do not tell my supervisor I am enjoying it."
+    "Ruth: Carrowmore, my day off. I came to look at stones, because apparently I do not get enough of that. Do not tell my supervisor I am enjoying it."
    ],
    "letter": [
     "Dear {player},",
@@ -1740,7 +1740,7 @@
    ],
    "thanks": [
     "Ruth takes the champ and breathes in, the steam fogging her glasses.",
-    "Ruth: Ruth: Oh, that is exactly right. I will log it. Find number one. Context, my kitchen. Condition, vanishing."
+    "Ruth: Oh, that is exactly right. I will log it. Find number one. Context, my kitchen. Condition, vanishing."
    ],
    "ax": 32,
    "ay": 25
@@ -1762,7 +1762,7 @@
    ],
    "meet": [
     "Old Con is at Galway Races with a flat cap, a very small bet and a face of complete calm.",
-    "Old Con: Old Con: I have a horse. I have not told it. Sure look it, it is only a bit of fun. You will not tell the wife."
+    "Old Con: I have a horse. I have not told it. Sure look it, it is only a bit of fun. You will not tell the wife."
    ],
    "letter": [
     "Dear {player},",
@@ -1780,7 +1780,7 @@
    ],
    "thanks": [
     "Old Con lifts the lid, sniffs, and puts the lid back with a look of deep respect.",
-    "Old Con: Old Con: That is a stew. No nonsense in it. Well, sure look it, you did well."
+    "Old Con: That is a stew. No nonsense in it. Well, sure look it, you did well."
    ],
    "ax": 32,
    "ay": 22
@@ -1802,7 +1802,7 @@
    ],
    "meet": [
     "Old Batt is wandering the stalls in Limerick, tasting nothing, buying nothing, and thoroughly enjoying himself.",
-    "Old Batt: Old Batt: A market is a great thing for the soul. You look at it all and you buy a single onion. Come back to the cottage some day. The kettle is on the crane."
+    "Old Batt: A market is a great thing for the soul. You look at it all and you buy a single onion. Come back to the cottage some day. The kettle is on the crane."
    ],
    "letter": [
     "Dear {player},",
@@ -1820,7 +1820,7 @@
    ],
    "thanks": [
     "Old Batt takes the eel and holds it up to the firelight like a man appraising a good horse.",
-    "Old Batt: Old Batt: Well now. That is a Shannon eel, all right. My father would have taken his hat off to it."
+    "Old Batt: Well now. That is a Shannon eel, all right. My father would have taken his hat off to it."
    ],
    "ax": 40,
    "ay": 22
@@ -1842,7 +1842,7 @@
    ],
    "meet": [
     "Nana is on a bench in Donegal Town, looking at the sky with an expression of deep personal disappointment.",
-    "Nana: Nana: My sister lives here and the weather is even worse. I am delighted. Have you ever seen such a sky? I have a list. Sit down, it is a long list."
+    "Nana: My sister lives here and the weather is even worse. I am delighted. Have you ever seen such a sky? I have a list. Sit down, it is a long list."
    ],
    "letter": [
     "Dear {player},",
@@ -1860,7 +1860,7 @@
    ],
    "thanks": [
     "Nana turns the boxty over on the plate, sniffs, and gives an approving little nod.",
-    "Nana: Nana: Well, I will not say a word. That is a lovely one. I will say nothing at all. Sit down, I will pour you tea."
+    "Nana: Well, I will not say a word. That is a lovely one. I will say nothing at all. Sit down, I will pour you tea."
    ],
    "ax": 30,
    "ay": 16
@@ -2184,7 +2184,7 @@
    "chat": [
     "Murdo: The smoke says it is cold, and it is.",
     "Murdo: My granny read the weather in the peat reek. She was right more than the forecast.",
-    "Murdo: Gearrannan is quiet today. The wind has taken the rest."
+    "Murdo: The village is quiet today. The wind has taken the rest."
    ],
    "thanks": [
     "Murdo lifts the cloth and the warm smell of spice and fruit fills the room.",
@@ -2388,7 +2388,7 @@
    ],
    "chat": [
     "Emrys: Bryn Eglwys means church hill. The church has gone and the hill stayed. That is the Welsh way.",
-    "Emrys: Half the roofs in Britain, and nobody ever thanks the slate.",
+    "Emrys: Roofs all over Britain, and nobody ever thanks the slate.",
     "Emrys: Stand still on the spoil heap and a slatelet will come and look at you. Rude, but honest."
    ],
    "thanks": [
