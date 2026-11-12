@@ -42,6 +42,16 @@
    "h": 2,
    "variant": 0,
    "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 9,
+   "y": 4
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 4
   }
  ],
  "warps": [

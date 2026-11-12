@@ -89,6 +89,12 @@
    "x": 1,
    "y": 6,
    "variant": 1
+  },
+  {
+   "type": "window",
+   "x": 5,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

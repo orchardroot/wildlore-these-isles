@@ -32,11 +32,6 @@
    "y": 6
   },
   {
-   "type": "potted_plant",
-   "x": 9,
-   "y": 6
-  },
-  {
    "type": "fireplace",
    "x": 5,
    "y": 1
@@ -56,13 +51,6 @@
    "y": 3,
    "variant": 0,
    "rot": 90
-  },
-  {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 3,
-   "rot": 270
   },
   {
    "type": "clock",
@@ -89,6 +77,16 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "kitchen_dresser",
+   "x": 9,
+   "y": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 9,
+   "y": 6
   }
  ],
  "warps": [

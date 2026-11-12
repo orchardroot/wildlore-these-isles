@@ -46,6 +46,23 @@
    "h": 3,
    "variant": 0,
    "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 11,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 1,
+   "y": 5
+  },
+  {
+   "type": "wall_map",
+   "x": 4,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

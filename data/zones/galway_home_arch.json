@@ -89,6 +89,28 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 11,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "cat_bowl",
+   "x": 2,
+   "y": 2,
+   "walk": true
   }
  ],
  "warps": [

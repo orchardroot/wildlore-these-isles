@@ -52,6 +52,24 @@
    "x": 7,
    "y": 1,
    "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 2,
+   "y": 3,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 3,
+   "walk": true
   }
  ],
  "warps": [

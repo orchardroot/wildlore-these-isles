@@ -12,10 +12,11 @@
    "y": 1
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 2,
    "y": 4,
-   "rot": 90
+   "rot": 90,
+   "variant": 1
   },
   {
    "type": "table",
@@ -37,6 +38,23 @@
    "type": "rug",
    "x": 4,
    "y": 4
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 4
+  },
+  {
+   "type": "cat_bowl",
+   "x": 3,
+   "y": 5,
+   "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

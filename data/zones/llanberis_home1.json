@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 6
   },
@@ -79,6 +74,18 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "slate_heap",
+   "x": 1,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "window",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

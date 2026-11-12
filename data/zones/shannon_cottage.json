@@ -93,6 +93,16 @@
    "type": "plant_stand",
    "x": 1,
    "y": 6
+  },
+  {
+   "type": "range_cooker",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 11,
+   "y": 2
   }
  ],
  "warps": [

@@ -79,6 +79,12 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "cat_bowl",
+   "x": 7,
+   "y": 2,
+   "walk": true
   }
  ],
  "warps": [

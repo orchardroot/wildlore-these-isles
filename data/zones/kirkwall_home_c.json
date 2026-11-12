@@ -7,9 +7,10 @@
  "weather": {},
  "props": [
   {
-   "type": "bed",
+   "type": "box_bed",
    "x": 8,
-   "y": 1
+   "y": 1,
+   "variant": 1
   },
   {
    "type": "bookshelf",
@@ -58,13 +59,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 5,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 8,
    "y": 1,
@@ -89,6 +83,23 @@
    "x": 1,
    "y": 6,
    "variant": 0
+  },
+  {
+   "type": "wall_map",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 9,
+   "y": 6
+  },
+  {
+   "type": "window",
+   "x": 2,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

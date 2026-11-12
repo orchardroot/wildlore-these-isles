@@ -79,6 +79,39 @@
    "type": "plant_stand",
    "x": 1,
    "y": 6
+  },
+  {
+   "type": "range_cooker",
+   "x": 6,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "bookshelf",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "wall_picture",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 7,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
   }
  ],
  "warps": [

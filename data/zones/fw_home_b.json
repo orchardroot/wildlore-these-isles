@@ -79,6 +79,11 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
   }
  ],
  "warps": [

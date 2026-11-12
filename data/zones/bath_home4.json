@@ -79,6 +79,18 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "dartboard",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

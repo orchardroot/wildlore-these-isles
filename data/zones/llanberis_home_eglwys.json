@@ -85,10 +85,21 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "kitchen_dresser",
+   "x": 7,
+   "y": 1
+  },
+  {
+   "type": "slate_heap",
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "window",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

@@ -41,6 +41,30 @@
    "x": 9,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "wall_picture",
+   "x": 5,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 7,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

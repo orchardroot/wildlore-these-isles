@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 6,
    "y": 1,
@@ -89,6 +82,23 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "kitchen_dresser",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 4,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 7,
+   "y": 5,
+   "walk": true
   }
  ],
  "warps": [

@@ -45,6 +45,30 @@
    "type": "cat_bowl",
    "x": 1,
    "y": 6
+  },
+  {
+   "type": "wall_picture",
+   "x": 6,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 1,
+   "y": 5,
+   "walk": true
   }
  ],
  "warps": [

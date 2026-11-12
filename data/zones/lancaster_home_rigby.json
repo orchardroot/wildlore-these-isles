@@ -51,17 +51,17 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
-   "variant": 0,
+   "variant": 1,
    "rot": 90
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 11,
    "y": 3,
-   "variant": 5,
+   "variant": 0,
    "rot": 270
   },
   {
@@ -85,10 +85,15 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "kettle_table",
    "x": 1,
-   "y": 5,
-   "variant": 1
+   "y": 5
+  },
+  {
+   "type": "window",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

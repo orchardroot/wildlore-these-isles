@@ -79,6 +79,24 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "slate_heap",
+   "x": 9,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 7,
+   "y": 6,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 4,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

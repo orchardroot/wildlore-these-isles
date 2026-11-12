@@ -94,6 +94,12 @@
    "type": "plant_stand",
    "x": 1,
    "y": 6
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

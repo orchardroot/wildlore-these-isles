@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 6
   },
@@ -79,6 +74,27 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "range_cooker",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "bookshelf",
+   "x": 8,
+   "y": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
   }
  ],
  "warps": [

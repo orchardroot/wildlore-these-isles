@@ -79,6 +79,23 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "harp",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 2,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 6,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
