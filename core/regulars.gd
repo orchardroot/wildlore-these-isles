@@ -6,6 +6,8 @@ extends RefCounted
 ## through the post box, 4 they offer to manage one of your Deeds (see Deeds.set_manager), 5 a lifelong friend.
 ## State lives in the flag `reg_<id>` = {favour, pts, gift_day, meet, letter, manager}; a save without it means
 ## strangers, so old saves are fine. Nothing here touches money. Pure logic, no autoloads.
+## A Regular is either spawned (x, y in the `home` town) or BOUND to a home resident (`zone` and `npc`): then no NPC is
+## added, and `hook` (one line in ScriptHooks.wrap) appends the Regular's scenes to what that resident already says.
 
 const PATH := "res://data/regulars.json"
 const PREFIX := "reg_"
@@ -15,6 +17,7 @@ const MAX_FAVOUR := 5
 const GIFTS_FOR := {2: 1, 3: 3, 4: 5, 5: 8}
 
 static var _regs: Array = []
+static var _bound: Dictionary = {}   # "zone/npc" -> regular id, built on first use
 
 static func all() -> Array:
 	if _regs.is_empty():
@@ -24,6 +27,22 @@ static func all() -> Array:
 
 static func ids() -> Array:
 	return all().map(func(r): return str(r.id))
+
+## The Regular who is this resident, or "" (a bound Regular, see the header).
+static func bound_id(zone_id: String, npc_id: String) -> String:
+	if _bound.is_empty():
+		for r in all():
+			if str(r.get("zone", "")) != "":
+				_bound[str(r.zone) + "/" + str(r.get("npc", ""))] = str(r.id)
+		_bound["_"] = ""
+	return str(_bound.get(zone_id + "/" + npc_id, ""))
+
+## What lines and prompts call them: `short` if given ("Old Tom", "Mrs Hale"), else the first name.
+static func short_name(r: Dictionary) -> String:
+	return str(r.get("short", str(r.get("name", "")).split(" ")[0]))
+
+static func is_bound(r: Dictionary) -> bool:
+	return str(r.get("zone", "")) != ""
 
 static func get_reg(id: String) -> Dictionary:
 	for r in all():
@@ -100,7 +119,7 @@ static func next_beat(data: GameStateData, id: String, zone_id: String) -> Strin
 		return ""
 	var st := _peek(data, id)
 	var f := favour(data, id)
-	if zone_id == str(r.home):
+	if zone_id == str(r.home) or (is_bound(r) and zone_id == str(r.zone)):
 		if f < 1:
 			return "intro"
 		if f >= 4 and str(st.get("manager", "")) == "" and not eligible_deeds(data).is_empty():
@@ -124,7 +143,7 @@ static func npcs_for(zone_id: String, data: GameStateData, list: Array = []) -> 
 	var out := []
 	for r in (list if not list.is_empty() else all()):
 		var id := str(r.id)
-		var here: bool = str(r.get("home", "")) == zone_id
+		var here: bool = str(r.get("home", "")) == zone_id and not is_bound(r)  # a bound Regular is already standing there
 		var away: bool = str(r.get("away", "")) == zone_id and favour(data, id) >= 2 and _peek(data, id).get("meet") != true
 		if not (here or away):
 			continue
@@ -132,6 +151,13 @@ static func npcs_for(zone_id: String, data: GameStateData, list: Array = []) -> 
 			"name": str(r.get("name", "")), "x": int(r.get("x" if here else "ax", 0)), "y": int(r.get("y" if here else "ay", 0)), "facing": "down",
 			"move": "still", "script": "regular_" + id, "script_file": SCRIPT_FILE})
 	return out
+
+## ScriptHooks entry: a resident who is a Regular says their usual lines, then the Regular scene (story/regular_talk.gd).
+static func hook(zone_id: String, npc_id: String, commands: Array, _data: GameStateData) -> Array:
+	var id := bound_id(zone_id, npc_id)
+	if id == "":
+		return commands
+	return commands + [{"do": "regular", "id": id, "bound": true}]
 
 ## Chat for a visit with nothing else on: rotates by day, and moves on from the "stranger" lines as favour grows.
 static func chat_line(data: GameStateData, id: String) -> String:
@@ -161,6 +187,50 @@ static func letter_lines(id: String, player: String) -> Array:
 	for t in r.get("letter", []):
 		out.append(str(t).replace("{player}", player))
 	return out
+
+## Problems with the Regulars file: real zones, real NPCs (or a walkable away tile), real items, unique ids and residents.
+static func problems(zones: Dictionary, items: ItemDB) -> Array:
+	var errs := []
+	var seen := {}
+	var spots := {}
+	for r in all():
+		var id := str(r.get("id", ""))
+		var tag := "regular '%s'" % id
+		if id == "" or seen.has(id):
+			errs.append("%s: missing or duplicate id" % tag)
+		seen[id] = true
+		if not items.has(str(r.get("likes", ""))):
+			errs.append("%s: likes '%s' is not an item" % [tag, r.get("likes", "")])
+		for k in ["name", "sprite", "hint"]:
+			if str(r.get(k, "")).strip_edges() == "":
+				errs.append("%s: no %s" % [tag, k])
+		for k in ["intro", "meet", "letter", "offer", "thanks", "chat"]:
+			if not (r.get(k, []) is Array) or (r.get(k, []) as Array).is_empty():
+				errs.append("%s: no %s lines" % [tag, k])
+		if "—" in JSON.stringify(r):
+			errs.append("%s: has an em-dash" % tag)
+		var home: ZoneData = zones.get(str(r.get("home", "")))
+		var away: ZoneData = zones.get(str(r.get("away", "")))
+		if home == null:
+			errs.append("%s: home '%s' is not a zone" % [tag, r.get("home", "")])
+		if away == null:
+			errs.append("%s: away '%s' is not a zone" % [tag, r.get("away", "")])
+		elif str(r.away) == str(r.get("home", "")):
+			errs.append("%s: away is the home town" % tag)
+		elif not away.in_bounds(Vector2i(int(r.get("ax", -1)), int(r.get("ay", -1)))):
+			errs.append("%s: away tile is off the map" % tag)
+		if is_bound(r):
+			var z: ZoneData = zones.get(str(r.zone))
+			if z == null:
+				errs.append("%s: zone '%s' is not a zone" % [tag, r.zone])
+			elif not z.npcs.any(func(n): return str(n.get("id", "")) == str(r.get("npc", ""))):
+				errs.append("%s: zone %s has no npc '%s'" % [tag, r.zone, r.get("npc", "")])
+			if spots.has(str(r.zone) + "/" + str(r.get("npc", ""))):
+				errs.append("%s: that resident is already a Regular" % tag)
+			spots[str(r.zone) + "/" + str(r.get("npc", ""))] = true
+		elif home != null and not home.in_bounds(Vector2i(int(r.get("x", -1)), int(r.get("y", -1)))):
+			errs.append("%s: spawn tile (%s, %s) is off the map" % [tag, r.get("x", "?"), r.get("y", "?")])  # the overworld nudges it to a free tile
+	return errs
 
 # --- the manager hook (Deeds is session A's) ---------------------------------------------------------------
 

@@ -9,6 +9,7 @@ static func wrap(zone_id: String, npc_id: String, commands: Array, data: GameSta
 	# w47 J: one talk, at most ONE offer prompt (priority: errand > trade you can make > front-room shop > Trumps),
 	# plus the one-off lines (keeper gossip, one place on the map) and one unmet-ask line.
 	commands = Visits.hook(zone_id, npc_id, commands, data)  # w53: a resident who notices you've been before
+	commands = Regulars.hook(zone_id, npc_id, commands, data)  # a resident who is a Regular: the scene follows their usual lines
 	var n := commands.size()
 	var trumps: Array = Trumps.hook(zone_id, npc_id, commands, data).slice(n)
 	var gossip: Array = KeeperIntel.hook(zone_id, npc_id, commands, data).slice(n)

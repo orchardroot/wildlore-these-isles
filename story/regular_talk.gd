@@ -26,13 +26,15 @@ static func run(cmd: Commands, c: Dictionary) -> void:
 			await _offer(cmd, r)
 		_:
 			var l := Regulars.chat_line(data, id)
+			if c.get("bound", false) and Regulars.favour(data, id) < 2:
+				l = ""  # a resident has already said their piece; chat is for friends
 			if l != "":
 				await _say_all(cmd, r, [l])
 	await _gift(cmd, r)
 
 ## Lines may begin "Name: " for the person talking; anything else is narration.
 static func _say_all(cmd: Commands, r: Dictionary, lines: Array) -> void:
-	var first := str(r.name).split(" ")[0]
+	var first := Regulars.short_name(r)
 	for l in lines:
 		var t := str(l)
 		var who := ""
@@ -53,7 +55,7 @@ static func _gift(cmd: Commands, r: Dictionary) -> void:
 		if Regulars.favour(data, id) < Regulars.MAX_FAVOUR and int(data.bag.get(item, 0)) <= 0:
 			await host.say("", str(r.hint))
 		return
-	if await host.choice("Give %s %s?" % [str(r.name).split(" ")[0], nm], YES_NO) != 0:
+	if await host.choice("Give %s %s?" % [Regulars.short_name(r), nm], YES_NO) != 0:
 		return
 	var before := Regulars.favour(data, id)
 	Regulars.give_gift(data, id)
@@ -61,7 +63,7 @@ static func _gift(cmd: Commands, r: Dictionary) -> void:
 	await _say_all(cmd, r, r.get("thanks", []))
 	var now := Regulars.favour(data, id)
 	if now > before:
-		await host.say("", "%s thinks well of you now. (Favour %d of %d.)" % [str(r.name).split(" ")[0], now, Regulars.MAX_FAVOUR])
+		await host.say("", "%s thinks well of you now. (Favour %d of %d.)" % [Regulars.short_name(r), now, Regulars.MAX_FAVOUR])
 
 static func _offer(cmd: Commands, r: Dictionary) -> void:
 	var host = cmd.host
@@ -71,7 +73,7 @@ static func _offer(cmd: Commands, r: Dictionary) -> void:
 	var deeds := Regulars.eligible_deeds(data)
 	var names := deeds.map(func(d): return str(Deeds.get_deed(str(d)).get("name", d)))
 	names.append(NOT_NOW)
-	var pick: int = await host.choice("Put %s in charge of..." % str(r.name).split(" ")[0], names)
+	var pick: int = await host.choice("Put %s in charge of..." % Regulars.short_name(r), names)
 	if pick < 0 or pick >= deeds.size():
 		await host.say(str(r.name), "Ask any time. I'm not going anywhere. Well, I am, but I'll be back.")
 		return
