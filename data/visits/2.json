@@ -2,8 +2,8 @@
  "derry_home_flats|derry_home_flat": {
   "who": "Mrs Doherty",
   "again": [
-   "Back again. Good. The kettle has been doing nothing all afternoon and it was starting to sulk.",
-   "Sit down by the window, there is always a bit of light in here."
+   "Good timing. The kettle has been doing nothing all afternoon and it was starting to sulk.",
+   "By the window, there is always a bit of light in here."
   ],
   "weather": {
    "rain": [
@@ -24,14 +24,14 @@
  "derry_home_station|derry_home_railfan": {
   "who": "Mr Cassidy",
   "again": [
-   "Back again. Did you hear that one go by? I had the window open before the whistle."
+   "Did you hear that one go by? I had the window open before the whistle."
   ]
  },
  "derry_home_walls|derry_home_wains": {
   "who": "Mrs Gallagher",
   "again": [
-   "Back again, are you? Mind, the wains have gone quiet, which means trouble or sleep, and I am not sure which.",
-   "Sit down, I will find you a biscuit before they do."
+   "Wheesht a minute, the wains have gone quiet, which means trouble or sleep, and I am not sure which.",
+   "I will find you a biscuit before they do."
   ],
   "evening": [
    "Teatime in this house is a contact sport. Stand back from the table."
@@ -40,7 +40,7 @@
  "dingle_home1|osullivan_ma": {
   "who": "Mrs O'Sullivan",
   "again": [
-   "Ah, you are back. Sit down, the teapot is still warm, near enough.",
+   "The teapot is still warm, near enough, so sit down.",
    "Cian is at his Irish again. I hear 'tá' coming out of the room like a sneeze."
   ]
  },
@@ -54,7 +54,7 @@
  "dingle_home3|moriarty_da": {
   "who": "Mr Moriarty",
   "again": [
-   "Back again! Good man yourself. I was only saying you would be in.",
+   "Good man yourself! I was only saying you would be in.",
    "Sit in, there is a fire and a story, and I will do the story for free."
   ],
   "weather": {
@@ -73,7 +73,7 @@
  "douglas_home1|dou_home1_quayle": {
   "who": "Mrs Quayle",
   "again": [
-   "Back again. Traa dy liooar, there is no rush, sit down and have a cup.",
+   "Traa dy liooar, there is no rush, sit down and have a cup.",
    "I was just about to put the kettle on, which is how I know you were coming."
   ]
  },
@@ -81,7 +81,7 @@
   "who": "Old Tom",
   "again": [
    "Ah, the visitor. I was starting to think you had sailed off without a word.",
-   "Sit down. I do my best stories after the second cup, and it is the second cup now."
+   "I do my best stories after the second cup, and it is the second cup now."
   ],
   "weather": {
    "gale": [
@@ -92,7 +92,7 @@
  "douglas_home3|dou_home3_jo": {
   "who": "Aunty Jo",
   "again": [
-   "Back again, lovely. The kettle is hot, so you have timed it well, as ever.",
+   "The kettle is hot, lovely, so you have timed it well, as ever.",
    "I have a fresh batch of something on the side. I will not say what, in case it burns."
   ],
   "morning": [
@@ -115,13 +115,13 @@
  "dublin_customhouse|dub_bureau": {
   "who": "Bureau Clerk",
   "again": [
-   "Back again. Same rates as before, which is to say, ours."
+   "Same rates as before, which is to say, ours."
   ]
  },
  "dublin_customhouse|dub_custom_clerk": {
   "who": "Clerk",
   "again": [
-   "Back again. The building has not moved, I checked. It is very reliable.",
+   "The building has not moved, I checked. It is very reliable.",
    "If you ask nicely, I will point out a third carved head you may have missed."
   ],
   "morning": [
@@ -131,13 +131,13 @@
  "dublin_customhouse|dub_exchange": {
   "who": "Broker",
   "again": [
-   "Back again. The numbers have changed since you were last here. They always do. It is the whole business."
+   "The numbers have changed since you were last here. They always do. It is the whole business."
   ]
  },
  "dublin_customhouse|dub_lecturer": {
   "who": "History Lecturer",
   "again": [
-   "Back again? Good. Nobody comes to the same building twice unless they are either curious or lost.",
+   "Nobody comes to the same building twice unless they are either curious or lost. Good.",
    "If you want to understand Dublin, read a bit, then walk a bit, then read it again."
   ]
  },
@@ -145,7 +145,7 @@
   "who": "Aoife",
   "again": [
    "Oh, you again. Grand. I have the kettle on and absolutely no reason to study.",
-   "Sit down, I am avoiding an essay and you are an excellent excuse."
+   "I am avoiding an essay and you are an excellent excuse."
   ],
   "evening": [
    "I do my best thinking at night. It is also when I do my best snacking."
@@ -154,14 +154,14 @@
  "dublin_home_park|dub_home_hurler": {
   "who": "Ciaran",
   "again": [
-   "Back again? Good man. You would make a decent corner back with a bit of training.",
+   "Is that yourself? You would make a decent corner back with a bit of training.",
    "I was out on the pitch earlier. It is amazing how a puck of the ball clears your head."
   ]
  },
  "dublin_home_stone|dub_home_teacher": {
   "who": "Mr Byrne",
   "again": [
-   "Back again. Marvellous. I have been talking to the bicycle, and the bicycle has opinions.",
+   "Marvellous. I have been talking to the bicycle, and the bicycle has opinions.",
    "There is always more to say about this city. I could go all night. Please stop me."
   ]
  },
@@ -206,14 +206,14 @@
  "edinburgh_home_d|edinburgh_home_d_rintoul": {
   "who": "Mrs Rintoul",
   "again": [
-   "Back again, dear. Come in out of that. I have the kettle on and nothing to say about the bridge.",
+   "The kettle is on, dear, and I have nothing to say about the bridge.",
    "I have the best view in the street, if you stand on the right chair."
   ]
  },
  "edinburgh_home_e|edinburgh_home_e_archie": {
   "who": "Archie",
   "again": [
-   "Back again! Gran has been telling the same story. I have the whole thing memorised.",
+   "Gran has been telling the same story again. I have the whole thing memorised.",
    "Do not tell her I said that."
   ],
   "morning": [
@@ -223,14 +223,14 @@
  "edinburgh_home_e|edinburgh_home_e_gran": {
   "who": "Gran",
   "again": [
-   "Back again, are you? Good. Archie needs somebody else to look glaikit at.",
-   "Sit down and have a cup of tea. I have a story about the neighbours and it needs an audience."
+   "Archie needs somebody else to look glaikit at. Sit yourself there.",
+   "Have a cup of tea. I have a story about the neighbours and it needs an audience."
   ]
  },
  "falklands_farmhouse|fal_farmwife": {
   "who": "Farmer's Wife",
   "again": [
-   "Back again. Come in, come in, there is always a spare cup. Out here you take any visitor you can get.",
+   "Come in, come in, there is always a spare cup. Out here you take any visitor you can get.",
    "The wind has been at the windows all day. I stopped listening years ago."
   ],
   "weather": {
@@ -242,14 +242,14 @@
  "fw_home_a|fw_home_a_woman": {
   "who": "Catriona Cameron",
   "again": [
-   "Back again. Come in and get warm, it is a long walk from anywhere round here.",
+   "Get warm, it is a long walk from anywhere round here.",
    "Sit yourself down. I have the kettle on and the midgies off, so it is a good day."
   ]
  },
  "fw_home_b|fw_home_b_mum": {
   "who": "Morag MacDonald",
   "again": [
-   "Back again. The kettle is still warm, and so, I hope, are you.",
+   "The kettle is still warm, and so, I hope, are you.",
    "I think the dentist is already suspicious of me. He asks what I have been eating."
   ],
   "morning": [
@@ -259,7 +259,7 @@
  "fw_home_c|fw_home_c_man": {
   "who": "Ewen MacMillan",
   "again": [
-   "Back again. Good. Did you tell anyone where you were going? I will ask every time, you know.",
+   "Did you tell anyone where you were going? I will ask every time, you know.",
    "The kettle is on. The weather up the Ben is never what the forecast said."
   ],
   "season": {
@@ -271,7 +271,7 @@
  "galway_home_arch|home_arch_dad": {
   "who": "Neighbour",
   "again": [
-   "Back again. The kettle is on, and the cluricaun is quiet, so it is a good day.",
+   "The kettle is on, and the cluricaun is quiet, so it is a good day.",
    "If any more of my shoes go missing I am going to start charging him rent."
   ]
  },
@@ -290,7 +290,7 @@
  "galway_home_claddagh|home_claddagh_fisher": {
   "who": "Retired Fisherman",
   "again": [
-   "Back again. Sit in, the kettle is on. At my age a visitor is better than the radio.",
+   "Sit in, the kettle is on. At my age a visitor is better than the radio.",
    "I have had my share of good days on that water, and a few cold ones. The good ones were better."
   ],
   "weather": {
@@ -302,15 +302,15 @@
  "galway_home_prom|home_prom_gran": {
   "who": "Gran",
   "again": [
-   "Back again, love. Sit in, mind the cat, she has no manners.",
+   "Sit in, love, mind the cat, she has no manners.",
    "Did I tell you about the yoke I could not find? It was in my hand. It was the yoke I was holding."
   ]
  },
  "galway_home_teacher|home_teacher": {
   "who": "Teacher",
   "again": [
-   "Back again. Have you come to help me mark? I will pay in tea.",
-   "I have had a very long day of explaining the difference between 'there' and 'their'."
+   "Have you come to help me mark? I will pay in tea.",
+   "Today was a very long lesson on the difference between 'there' and 'their'."
   ],
   "evening": [
    "Evenings are for marking, and for pretending that I am not about to stop marking."
@@ -319,15 +319,15 @@
  "glasgow_home_a|glasgow_home_a_mrmackay": {
   "who": "Mrs MacKay",
   "again": [
-   "Back again! Come in, come in, wipe your feet. I will not ask twice, but I will mention it.",
+   "Wipe your feet, hen. I will not ask twice, but I will mention it.",
    "I have the kettle on and a full tin of tablet, so you are in luck, hen."
   ]
  },
  "glasgow_home_b|glasgow_home_b_gillespie": {
   "who": "Mr Gillespie",
   "again": [
-   "Back again, are you? Well, come in out of the drizzle. Not that it ever stops.",
-   "I have been on that Subway a thousand times and it has never once been on time. I love it."
+   "Well, come in out of the drizzle. Not that it ever stops.",
+   "A thousand trips on that Subway and it has never once been on time. I love it."
   ],
   "weather": {
    "rain": [
@@ -338,21 +338,21 @@
  "glasgow_home_c|glasgow_home_c_aileen": {
   "who": "Aileen",
   "again": [
-   "Back again. Mind the stooshie, the place is a state and I am not apologising.",
+   "Excuse the stooshie, the place is a state and I am not apologising.",
    "Granda would have loved a visitor. He had a story for every single rivet."
   ]
  },
  "glasgow_home_c|glasgow_home_c_rory": {
   "who": "Rory",
   "again": [
-   "Back again! The cooplets still have it in for my chips. I have lost a war of attrition.",
+   "The cooplets still have it in for my chips. I have lost a war of attrition.",
    "I would give you one but there are none left. Do not look at me like that."
   ]
  },
  "glasgow_home_d|glasgow_home_d_mrahmed": {
   "who": "Mr Ahmed",
   "again": [
-   "Back again. Come in, there is always a pot of tea going in this house, and usually something with it.",
+   "There is always a pot of tea going in this house, and usually something with it.",
    "My brother has stopped saying he is fine. That is a worrying sign. He is better today."
   ]
  },
@@ -369,7 +369,7 @@
  "glastonbury_home1|glaston_home1_gran": {
   "who": "Granny Vowles",
   "again": [
-   "Hello again, my lover. Sit, sit, I was only just saying the house was too quiet.",
+   "Sit, sit, my lover, I was only just saying the house was too quiet.",
    "The cat has been sulking since breakfast. You will be an improvement."
   ],
   "season": {
@@ -381,7 +381,7 @@
  "glastonbury_home2|glaston_home2_farmer": {
   "who": "Mr Pomeroy",
   "again": [
-   "Back again. Mind the dog, he has taken a shine to you. It will wear off.",
+   "That dog has taken a shine to you. It will wear off.",
    "Busy day on the farm, but there is always time for a cup. That is the secret of farming. Cups."
   ],
   "morning": [
@@ -391,8 +391,8 @@
  "glastonbury_home3|glaston_home3_student": {
   "who": "Bryony",
   "again": [
-   "Oh, hi again! Excuse the mess. It is not a mess, it is a system. A very messy system.",
-   "I have still got mud in my boots from the clear-up, and that was weeks ago."
+   "Excuse the mess. It is not a mess, it is a system. A very messy system.",
+   "There is still mud in my boots from the clear-up, and that was weeks ago."
   ]
  },
  "harris_blackhouse|hb_guide": {

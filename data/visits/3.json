@@ -2,7 +2,7 @@
  "inverness_home_a|inv_home_a_mum": {
   "who": "Isobel Fraser",
   "again": [
-   "Back again? Good. The kettle was getting ideas above its station.",
+   "Right on cue. The kettle was getting ideas above its station.",
    "Dreich or no, you keep turning up. I admire that in a person."
   ],
   "weather": {
@@ -28,7 +28,7 @@
  "inverness_home_d|inv_home_d_man": {
   "who": "Callum Ross",
   "again": [
-   "Back again. I was just saying to myself, I wonder who will want to hear about owls.",
+   "Just saying to myself: I wonder who will want to hear about owls.",
    "If you are staying, keep your voice down. I am trying to hear what the garden is doing."
   ]
  },
@@ -36,14 +36,14 @@
   "who": "Toll Keeper",
   "again": [
    "Back across the bridge, are you? Free of charge, as ever. Old habits, I keep looking for my coin tin.",
-   "Hello again. I still say good morning to everybody who crosses. Nobody has complained yet."
+   "I still say good morning to everybody who crosses. Nobody has complained yet."
   ]
  },
  "jog_lasthouse|lasthouse_keeper": {
   "who": "Shopkeeper",
   "again": [
-   "Back again! You would make a grand regular. The postcards are still just as flat.",
-   "Ah, you came back. People do, up here. The wind sends them round again."
+   "You would make a grand regular. The postcards are still just as flat.",
+   "People do come back, up here. The wind sends them round again."
   ],
   "weather": {
    "gale": [
@@ -55,13 +55,13 @@
   "who": "Farmer",
   "again": [
    "Ah, it's yourself. Sit down, sit down, the tea is not going anywhere.",
-   "Back again, are you? Sure look it, you are always welcome."
+   "Sure look it, you are always welcome here."
   ]
  },
  "keswick_guesthouse|bnb_keswick_desk": {
   "who": "Herdwick Rest Desk",
   "again": [
-   "Back again? The ledger says you are on the list of people who always return. I just wrote that.",
+   "The ledger says you are on the list of people who always return. I just wrote that.",
    "Welcome back. The kettle is on the desk and the pen is on the string. Mostly."
   ]
  },
@@ -75,8 +75,8 @@
  "keswick_guesthouse|kesguest_landlady": {
   "who": "Landlady",
   "again": [
-   "Back already! The drying room is empty, so your boots have the pick of the pegs.",
-   "Hello again. If those boots are wet, you know where to put them. Not on my good carpet."
+   "The drying room is empty, so your boots have the pick of the pegs.",
+   "If those boots are wet, you know where to put them. Not on my good carpet."
   ],
   "morning": [
    "Morning. Breakfast is on if you want it, and the toast is the right shade of brown."
@@ -90,7 +90,7 @@
  "keswick_home_armstrong|keshome_armstrong": {
   "who": "Mr Armstrong",
   "again": [
-   "Back again. Sit down, the sheep can wait. They always do.",
+   "The sheep can wait. They always do.",
    "Ah, hello. I have been staring at that wall all morning and the Herdlet still stares back."
   ],
   "season": {
@@ -102,22 +102,22 @@
  "keswick_home_lowther|keshome_lowther": {
   "who": "Mr Lowther",
   "again": [
-   "Back again. The Pipkin has had its toast and is not sharing the crumbs.",
+   "The Pipkin has had its toast and is not sharing the crumbs.",
    "Hello! Come in. If you hear the word whoosh, it is a rehearsal and not a disaster."
   ]
  },
  "keswick_home_lowther|keshome_lowther_kid": {
   "who": "Kid",
   "again": [
-   "It is me again. I have a new line. It is still whoosh, but now it is louder.",
+   "I have a new line. It is still whoosh, but now it is louder.",
    "Do you think a tree can be scared? Because I am not scared. I am just very rooted."
   ]
  },
  "keswick_home_nicholson|keshome_nicholson": {
   "who": "Mrs Nicholson",
   "again": [
-   "Hello again, you. Come in out of that. I was only gossiping with the kettle.",
-   "Back again. You are becoming part of the furniture, and there are worse bits of furniture."
+   "You, is it? I was only gossiping with the kettle.",
+   "Another visit. You are becoming part of the furniture, and there are worse bits of furniture."
   ],
   "season": {
    "autumn": [
@@ -128,21 +128,21 @@
  "keswick_home_tyson|keshome_tyson": {
   "who": "Mrs Tyson",
   "again": [
-   "Back again, love. If the pager goes, I will have to ask you to move your tea.",
-   "Hello again. Mind the pile of boots by the door, there is always one pair missing."
+   "If the pager goes, love, I will have to ask you to move your tea.",
+   "Mind the pile of boots by the door, there is always one pair missing."
   ]
  },
  "kilkenny_home1|brennan_da": {
   "who": "Mr Brennan",
   "again": [
    "Ah, it's yourself again. Come in, your man at the shop was asking after you.",
-   "Back again, are you? Sit down. I was only waiting for somebody to disagree with."
+   "Take a seat: I was only waiting for somebody to disagree with."
   ]
  },
  "kilkenny_home2|daly_gran": {
   "who": "Gran Daly",
   "again": [
-   "Back again? Good girl. Or good boy, I have the eyes of a hawk, but not for faces.",
+   "Good girl. Or good boy, I have the eyes of a hawk, but not for faces.",
    "Ah, there you are. Come in. I will not be asking for the match score, I know it already."
   ],
   "weather": {
@@ -154,22 +154,22 @@
  "kilkenny_home3|walsh_mrs": {
   "who": "Mrs Walsh",
   "again": [
-   "Back again! The kettle is not banjaxed, so sit down and have a cup.",
-   "Hello again, love. I have been watching the river for otters and seeing only ducks."
+   "The kettle is not banjaxed, so sit down and have a cup.",
+   "Otters, I was promised. All I get from the river is ducks, love."
   ]
  },
  "kilkenny_home4|cullen_grandad": {
   "who": "Mr Cullen",
   "again": [
    "Back so soon. Grand. Come in and let me tell you something you already know.",
-   "Ah, hello again. The Binfox was at it again last night. I gave it a stern look through the window."
+   "The Binfox was at it again last night. I gave it a stern look through the window."
   ]
  },
  "kirkwall_home_a|kwl_home_a_woman": {
   "who": "Ingrid Flett",
   "again": [
-   "Back again, are you? Come in and sit down, you will let the peedie draught in.",
-   "Hello again. Nothing ever happens here, and I like to talk about it."
+   "Shut the door, you will let the peedie draught in.",
+   "Nothing ever happens here, and I like to talk about it."
   ],
   "season": {
    "summer": [
@@ -181,7 +181,7 @@
   "who": "Magnus Rendall",
   "again": [
    "Ah, it's yourself. Sit in. I was just thinking about the sea, as ever.",
-   "Back again. Folk who come back once tend to keep coming. The islands do that."
+   "Folk who come back once tend to keep coming. The islands do that."
   ],
   "weather": {
    "gale": [
@@ -192,22 +192,22 @@
  "kirkwall_home_c|kwl_home_c_dad": {
   "who": "Billy Drever",
   "again": [
-   "Back again! Are you an Uppie or a Doonie? Do not answer, I will only argue.",
-   "Hello again. If you hear shouting round Christmas, that is the Ba'. It is not a riot, probably."
+   "Are you an Uppie or a Doonie? Do not answer, I will only argue.",
+   "If you hear shouting round Christmas, that is the Ba'. It is not a riot, probably."
   ]
  },
  "kirkwall_home_d|kwl_home_d_mum": {
   "who": "Thora Linklater",
   "again": [
-   "Back again. I have been dusting, which here means doing nothing at all, very slowly.",
-   "Hello again. The cliffs are noisy this week, so I am keeping my lunch indoors."
+   "Dusting, which here means doing nothing at all, very slowly.",
+   "The cliffs are noisy this week, so I am keeping my lunch indoors."
   ]
  },
  "lake_farmhouse|lakefarm_farmer": {
   "who": "Farmer",
   "again": [
-   "Back again! Mind the dog, the dog is still not minding anybody.",
-   "Hello again, love. Sit by the stove. The kettle is on, as the law demands."
+   "Mind the dog, the dog is still not minding anybody.",
+   "Sit by the stove, love. The kettle is on, as the law demands."
   ],
   "morning": [
    "Early start, is it? I have been up since the sheep told me to be."
@@ -221,8 +221,8 @@
  "lancaster_home_birkett|lanhome_birkett": {
   "who": "Mr Birkett",
   "again": [
-   "Back again. Sit down, the tide is not going to fetch you.",
-   "Hello again. I have been looking at the bay all day. It has done nothing and looks wonderful."
+   "The tide is not going to fetch you, so you may as well stay.",
+   "The bay has done nothing all day and looks wonderful. I have been watching it ever since."
   ],
   "weather": {
    "fog": [
@@ -233,7 +233,7 @@
  "lancaster_home_dewhurst|lanhome_dewhurst": {
   "who": "Mrs Dewhurst",
   "again": [
-   "Hello again, don't mither, I am only fussing over you a bit.",
+   "Don't mither, I am only fussing over you a bit.",
    "Back so soon. Good. Sit down and don't stand there like a coat stand."
   ]
  },
@@ -241,20 +241,20 @@
   "who": "Mr Procter",
   "again": [
    "Come aboard again. I mean come in. It is a habit I am trying to keep.",
-   "Back again! The towpath is quiet and so am I. Sit down, I am glad of a chat."
+   "The towpath is quiet and so am I. Sit down, I am glad of a chat."
   ]
  },
  "lancaster_home_rigby|lanhome_rigby": {
   "who": "Mrs Rigby",
   "again": [
-   "Back again, love. Our Jack has asked another daft question, so you are in luck.",
-   "Hello again. Sit yourself down. The bin lorry has already gone, so we are safe."
+   "Our Jack has asked another daft question, so you are in luck, love.",
+   "Sit yourself down. The bin lorry has already gone, so we are safe."
   ]
  },
  "lerwick_home_a|ls_fiddler_home": {
   "who": "Old Fiddler",
   "again": [
-   "Back again, are you? Sit. I will play a tune if you do not tell me it is out of key.",
+   "Sit. I will play a tune if you do not tell me it is out of key.",
    "Ah, it's you. The fiddle has been asking after you. Well, I have been asking on its behalf."
   ]
  },
@@ -267,29 +267,29 @@
  "limerick_home_pery|pery_owner": {
   "who": "Householder",
   "again": [
-   "Back again. Mind the stairs, there are four storeys and every one is a conversation.",
-   "Hello again. I have been up and down these stairs all day and I blame the architect."
+   "Four storeys, and every one is a conversation. Watch the stairs.",
+   "All day up and down these stairs, and I blame the architect."
   ]
  },
  "lincoln_jewshouse|lin_historian": {
   "who": "Local Historian",
   "again": [
    "You came back. Most people only stand at the door and leave. Come in and look properly.",
-   "Back again. Old houses are patient, and stone remembers whether or not we do."
+   "Old houses are patient, and stone remembers whether or not we do."
   ]
  },
  "liverpool_warehouse|keeper": {
   "who": "Dock Warden",
   "again": [
-   "Back again. Mind the pillars, they have been there a long while and they will not move for you.",
-   "Hello again. It is calm in here, which is rare for a place so full of echoes."
+   "The pillars have been there a long while and they will not move for you.",
+   "It is calm in here, which is rare for a place so full of echoes."
   ]
  },
  "llanberis_home1|lh1_mam": {
   "who": "Eirlys Roberts",
   "again": [
-   "Back again, cariad. Come in. The kettle is hot and the radiators are working, for once.",
-   "Hello again, love. The tapping started again last night. I turned the radio up."
+   "Come in, cariad. The kettle is hot and the radiators are working, for once.",
+   "The tapping started again last night, love. I turned the radio up."
   ],
   "weather": {
    "rain": [
@@ -300,29 +300,29 @@
  "llanberis_home2|lh2_dad": {
   "who": "Dewi Parry",
   "again": [
-   "Back again! Mind the wellies, there are more than yesterday.",
-   "Hello again. My little one asked after you. She said you had hwyl."
+   "Mind the wellies, there are more than yesterday.",
+   "My little one asked after you. She said you had hwyl."
   ]
  },
  "llanberis_home3|lh3_gran": {
   "who": "Menna Owen",
   "again": [
-   "Back again, bach. Sit down. I have been knitting the same sleeve since Monday.",
-   "Hello again. You look like someone who has been up Snowdon twice. Well done."
+   "Bach, I have been knitting the same sleeve since Monday.",
+   "You look like someone who has been up Snowdon twice. Well done."
   ]
  },
  "llanberis_home4|lh4_lad": {
   "who": "Rhys Evans",
   "again": [
-   "Back again! I have just been out for another run. Mum says I never sit down.",
-   "Hello again. My legs are jelly, but the view was worth it."
+   "Just been out for another run. Mum says I never sit down.",
+   "My legs are jelly, but the view was worth it."
   ]
  },
  "llanberis_home5|lh5_nain": {
   "who": "Olwen Thomas",
   "again": [
-   "Back again, bach. I made extra bara brith, so sit down and eat it.",
-   "Hello again. It is you. Come in. The kettle has been sulking in your absence."
+   "I made extra bara brith, bach, so sit down and eat it.",
+   "It is you. Come in. The kettle has been sulking in your absence."
   ]
  },
  "llanberis_home_eglwys|eglwys_quarryman": {
@@ -335,22 +335,22 @@
  "llangollen_home1|llh1_mam": {
   "who": "Bethan Davies",
   "again": [
-   "Back again, cariad. Mind the dog, she is learning not to jump. Slowly.",
-   "Hello again. I left the light on, as you see. Never hurts to be polite."
+   "The dog is learning not to jump, cariad. Slowly.",
+   "I left the light on, as you see. Never hurts to be polite."
   ]
  },
  "llangollen_home2|llh2_dad": {
   "who": "Gareth Lloyd",
   "again": [
    "Ahoy again. Sorry, habit. Come in and sit down. I will find a windlass in a minute.",
-   "Back again! The canal is quiet today. So is the kettle, which worries me a bit."
+   "The canal is quiet today. So is the kettle, which worries me a bit."
   ]
  },
  "macc_home|mum": {
   "who": "Mum",
   "again": [
-   "Back again. Did you put your coat on? You did not. I can tell from your face.",
-   "Hello again, love. Go on, sit down. Have you eaten? That is not a question, it is a plan."
+   "Did you put your coat on? You did not. I can tell from your face.",
+   "Go on, love, sit down. Have you eaten? That is not a question, it is a plan."
   ],
   "morning": [
    "Morning. Eat something before you go. Your head works better full."
@@ -371,15 +371,15 @@
  "newgrange_home_dig|ng_home_digger": {
   "who": "Ruth",
   "again": [
-   "Back again. Fifteen years in and I still find something new in the soil every week.",
-   "Hello again. I was just looking at my notes and wondering where the trowel went."
+   "Fifteen years in and I still find something new in the soil every week.",
+   "Looking at my notes and wondering where the trowel went."
   ]
  },
  "newgrange_home_farm|ng_home_farmer": {
   "who": "Farmer Dunne",
   "again": [
    "Ah, you're back. Sit down and tell me nothing, I have the cattle for gossip.",
-   "Hello again. Mind the boots, they are the muddiest in Meath and proud of it."
+   "My boots are the muddiest in Meath and proud of it, so watch the floor."
   ],
   "season": {
    "autumn": [
@@ -391,7 +391,7 @@
   "who": "Norfolk Gran",
   "again": [
    "Come you in again, bor! Sit you down, you look wholly peckish.",
-   "Hello again, bor. I wondered where you'd got to. The kettle has gone cold waiting."
+   "I wondered where you'd got to, bor. The kettle has gone cold waiting."
   ],
   "weather": {
    "rain": [
@@ -402,8 +402,8 @@
  "norwich_home_b|nor_flintman": {
   "who": "Flint Knapper",
   "again": [
-   "Back again. Mind the dust, there's flint everywhere. It gets in everything, tea included.",
-   "Hello again. I've split a good one today. Black and glassy as a beetle's back."
+   "Mind the dust, there's flint everywhere. It gets in everything, tea included.",
+   "I've split a good one today. Black and glassy as a beetle's back."
   ],
   "morning": [
    "Early start. The hammer is warmed up and so am I. Come and have a look."

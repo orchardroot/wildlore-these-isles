@@ -14,7 +14,7 @@
  "aberdeen_home_b|abdn_home_b_dad": {
   "who": "Alan Mitchell",
   "again": [
-   "Back again? Good. I have run out of people to complain to about the bins.",
+   "A fresh pair of ears. I have run out of people to complain to about the bins.",
    "You again. Fair enough, the kettle was getting lonely."
   ],
   "morning": [
@@ -25,7 +25,7 @@
   "who": "Davie Duthie",
   "again": [
    "Och, ye're back. Gran would have put the kettle on before ye reached the door.",
-   "Back again? Ye'll wear a groove in the step. Mind, I dinna mind."
+   "Ye'll wear a groove in the step. Mind, I dinna mind."
   ],
   "weather": {
    "gale": [
@@ -36,7 +36,7 @@
  "aberdeen_home_d|abdn_home_d_mum": {
   "who": "Jessie Ritchie",
   "again": [
-   "Back again! Sit doon, ye look like ye could dae wi a rowie.",
+   "Sit doon, sit doon, ye look like ye could dae wi a rowie.",
    "Ye're back. I'd say I'm surprised, but ye've the look of a body that likes company."
   ],
   "morning": [
@@ -46,7 +46,7 @@
  "aberdeen_townhouse|townhouse_clerk": {
   "who": "Clerk",
   "again": [
-   "Back again. The paperwork has not moved, but it has had a good rest.",
+   "Ah, the file reopens. The paperwork has not moved, but it has had a good rest.",
    "Ah, a returning visitor. Please sign the book. It is more for my morale than anything."
   ]
  },
@@ -54,7 +54,7 @@
   "who": "Student",
   "again": [
    "Oh, you again. Come in, the kettle works even if the radiator does not.",
-   "Back again? Good. Someone to blame the washing up on."
+   "Someone to blame the washing up on. Perfect timing."
   ],
   "evening": [
    "It is gone nine and I am only now thinking about the essay due tomorrow. Tradition, really."
@@ -63,7 +63,7 @@
  "aberystwyth_home_harbour|harbour_fisher": {
   "who": "Idris",
   "again": [
-   "Back again. I was just telling the tide about you. It was not impressed.",
+   "I was just telling the tide about you. It was not impressed.",
    "Ah, it is you. Sit down, I have a story, and it gets better each time I tell it."
   ],
   "weather": {
@@ -75,7 +75,7 @@
  "aberystwyth_home_harbour|harbour_wife": {
   "who": "Mair",
   "again": [
-   "Back again, bach? Idris has been sulking at the window all week. Cheer him up.",
+   "Duw, bach, Idris has been sulking at the window all week. Cheer him up.",
    "Come in, come in. He will say he never missed you. He did."
   ]
  },
@@ -83,7 +83,7 @@
   "who": "Gethin",
   "again": [
    "You are back! Nain made more, and I am being very brave not eating the lot.",
-   "Back again? If you are staying, keep an eye on the plate for me."
+   "Are you staying? Keep an eye on the plate for me."
   ],
   "morning": [
    "Mornings Nain has the bakestone out and the whole house smells like Sunday, whatever day it is."
@@ -92,7 +92,7 @@
  "aberystwyth_home_pier|pierst_nain": {
   "who": "Nain",
   "again": [
-   "Back again, bach. Sit, sit. You are looking thin, and I say that to everyone.",
+   "Sit, sit, bach. You are looking thin, and I say that to everyone.",
    "Well, look who it is. The kettle will not be a minute."
   ]
  },
@@ -100,7 +100,7 @@
   "who": "Nain",
   "again": [
    "Cariad, you came back. The cat has been waiting by the door, or so she says.",
-   "Back again? Good. I have knitted something and nobody here will admit to liking it."
+   "Good, a fresh opinion. I have knitted something and nobody here will admit to liking it."
   ],
   "season": {
    "winter": [
@@ -111,7 +111,7 @@
  "bath_home1|bath_home1_gran": {
   "who": "Mrs Hale",
   "again": [
-   "Back again, dear? Wipe your feet, I mean it this time.",
+   "Wipe your feet, dear, I mean it this time.",
    "Oh, it is you. The shortbread has been watching the door too."
   ],
   "weather": {
@@ -133,14 +133,14 @@
  "bath_home3|bath_home3_nan": {
   "who": "Nan",
   "again": [
-   "Back again, my lover? Sit down before you fall down.",
+   "Mind how you go, my lover, and sit down before you fall down.",
    "There you are. I was just saying to the cat that someone nice would turn up."
   ]
  },
  "bath_home4|bath_home4_student": {
   "who": "Joss",
   "again": [
-   "Oh good, a distraction. Hello again. My revision timetable thanks you.",
+   "Oh good, a distraction. My revision timetable thanks you.",
    "You are back. I have read the same page four times. Talk to me."
   ],
   "evening": [
@@ -158,14 +158,14 @@
   "who": "Mr Gillen",
   "again": [
    "Ah, you are back. Pull up a chair, I will tell you the story again and it will be better.",
-   "Back again, is it? You have the look of someone who likes a good yarn."
+   "Another visit, is it? You have the look of someone who likes a good yarn."
   ]
  },
  "belfast_home_wain|bel_home_family": {
   "who": "Mrs Hanna",
   "again": [
-   "Back again, love? Mind the wee racket, it is half three and nobody has done their homework.",
-   "Come in out of that. The tea is stewed, but sure it is the thought that counts."
+   "It is half three, love, and nobody has done their homework, so excuse the wee racket.",
+   "In out of that, now. The tea is stewed, but sure it is the thought that counts."
   ],
   "evening": [
    "Evenings here are tea, telly and the cat refusing to move off the best seat."
@@ -174,7 +174,7 @@
  "belfast_palmhouse|bel_palm_gardener": {
   "who": "Gardener",
   "again": [
-   "Back again. The ferns noticed. They are very sensitive.",
+   "The ferns noticed your absence. They are very sensitive.",
    "Ah, you return. Keep your coat on, the warm air will make you sleepy."
   ],
   "season": {
@@ -193,8 +193,8 @@
  "bermuda_lighthouse|bm_keeper": {
   "who": "Lighthouse Keeper",
   "again": [
-   "Back again. Good. Not many come up twice, so I take it as a compliment.",
-   "Ah, you. Mind the rail, and mind your knees, they will let you know tomorrow."
+   "Twice up the stairs. Not many do that, so I take it as a compliment.",
+   "Watch the rail, and watch your knees, they will let you know tomorrow."
   ],
   "evening": [
    "Evening is the best part of the job. The light comes on, and I pretend it was my idea."
@@ -203,7 +203,7 @@
  "birmingham_home1|brum_home1_nan": {
   "who": "Nan Pat",
   "again": [
-   "Back again, bab? Sit yourself down, the kettle never went off.",
+   "Sit yourself down, bab, the kettle never went off.",
    "Well, look what the cat dragged in. Only joking, the cat dragged in a sock."
   ],
   "morning": [
@@ -246,7 +246,7 @@
  "borders_bakehouse|gran_haig": {
   "who": "Gran Haig",
   "again": [
-   "Back again, hen? Well, come in and mind the bannocks.",
+   "Well, come in, hen, and mind the bannocks.",
    "Ach, ye're no lost, are ye? Sit doon a minute."
   ],
   "morning": [
@@ -256,7 +256,7 @@
  "borders_bakehouse|ma_haig": {
   "who": "Ma Haig",
   "again": [
-   "Back again, hen? The oven's hot and my patience is hotter. Only joking, mostly.",
+   "The oven's hot and my patience is hotter, hen. Only joking, mostly.",
    "Come in, come in. Ye've the look of a body that needs a pie."
   ],
   "morning": [
@@ -266,14 +266,14 @@
  "bushmills_home_green|bush_home_nan": {
   "who": "Nan Boyle",
   "again": [
-   "Come away in, back again? I was just going for a dander, but sure it can wait.",
+   "Come away in. I was just going for a dander, but sure it can wait.",
    "Well now, look who it is. The tea's wet, as they say."
   ]
  },
  "bushmills_home_hill|bush_home_birder": {
   "who": "Mr Wylie",
   "again": [
-   "Back again. Quietly, please. Something has just landed and I do not want it spooked.",
+   "Quietly, please. Something has just landed and I do not want it spooked.",
    "Ah, you. Sit, but stay still. Birds have long memories for bad manners."
   ],
   "morning": [
@@ -283,7 +283,7 @@
  "cairnryan_home_a|cairnryan_home_a_morag": {
   "who": "Morag",
   "again": [
-   "Back again? Ye'll catch yer death in that smirr. Come in.",
+   "Ye'll catch yer death in that smirr. Come in.",
    "Ah, it's yersel. The boy's out the back pretending he isna cold."
   ],
   "weather": {
@@ -295,7 +295,7 @@
  "cairnryan_home_b|cairnryan_home_b_sandy": {
   "who": "Sandy",
   "again": [
-   "Back again, are ye? Mind the glaur on yer boots, I've only just swept.",
+   "Mind the glaur on yer boots, I've only just swept.",
    "Ah, ye're back. Pull up a chair and tell me something I havena heard."
   ],
   "weather": {
@@ -307,7 +307,7 @@
  "cambridge_home_a|cam_landlady": {
   "who": "Landlady",
   "again": [
-   "Back again? Do wipe your feet. The last lodger did not, and I am still bitter.",
+   "Do wipe your feet. The last lodger did not, and I am still bitter.",
    "Oh, it is you. I trust you have not been punting. They always come back damp."
   ],
   "morning": [
@@ -318,7 +318,7 @@
   "who": "Maths Student",
   "again": [
    "You are back. Good, I need someone who does not know what a lemma is.",
-   "Back again? I am procrastinating beautifully, thank you for asking."
+   "Perfect timing. I am procrastinating beautifully."
   ],
   "evening": [
    "It is late and I am still on problem four. Tell me it is normal."
@@ -327,14 +327,14 @@
  "cardiff_home_bute|bute_oldman": {
   "who": "Old Dockworker",
   "again": [
-   "Back again, butt? Pull up a chair, I'm not going anywhere.",
+   "Pull up a chair, butt, I'm not going anywhere.",
    "Alright, butt. Good to see a face that stops to listen."
   ]
  },
  "cardiff_home_grange|grange_mamgu": {
   "who": "Mamgu",
   "again": [
-   "Back again, cariad? Come here and have a cwtch before you go.",
+   "Come here, cariad, and have a cwtch before you go.",
    "Ah, you're back. The kettle's on, the cat's on the settee, all is well."
   ],
   "morning": [
@@ -344,7 +344,7 @@
  "cardiff_home_roath|roath_dad": {
   "who": "Dad",
   "again": [
-   "Back again, mate? Sit down, I'm just trying to find where my match ticket went.",
+   "Sit down, mate, I'm just trying to find where my match ticket went.",
    "Come in, come in. The telly is on but nobody is watching, as usual."
   ],
   "weather": {
@@ -356,21 +356,21 @@
  "carlisle_home_armstrong|arm_mum": {
   "who": "Mrs Armstrong",
   "again": [
-   "Back, are you, pet? You have the look of someone who left without saying goodbye.",
+   "Is it yourself, pet? You have the look of someone who left without saying goodbye.",
    "Well, well. Come in, then. I'll count the spoons after."
   ]
  },
  "carlisle_home_graham|gra_dad": {
   "who": "Mr Graham",
   "again": [
-   "Back again. Good. I never forget a face, family motto and all.",
+   "Yes, I remember you. I never forget a face, family motto and all.",
    "Ah, you've returned. I was just telling the dog about you. He didn't care."
   ]
  },
  "central_belt_cottage|central_belt_cottage_bessie": {
   "who": "Bessie",
   "again": [
-   "Back again, hen? Ye've the look of someone who could use a hot roll.",
+   "Ye've the look of someone who could use a hot roll, hen.",
    "Och, it's yersel. Sit doon, the canal's no going anywhere."
   ],
   "weather": {
@@ -382,15 +382,15 @@
  "cork_home1|kelleher_nan": {
   "who": "Nan Kelleher",
   "again": [
-   "Back again, love? Sit down before I put the kettle on without asking.",
+   "Sit down before I put the kettle on without asking, love.",
    "Ah, there you are. I was only after saying you'd be back."
   ]
  },
  "cork_home2|murphy_dad": {
   "who": "Mr Murphy",
   "again": [
-   "Back again, grand. The tea is on and so is the match, so it's a good day.",
-   "Come in, come in. You're a sight for sore eyes, or at least a sight."
+   "Grand, grand. The tea is on and so is the match, so it's a good day.",
+   "You're a sight for sore eyes, or at least a sight."
   ],
   "weather": {
    "rain": [
@@ -408,14 +408,14 @@
  "cork_home3|lynch_mrs": {
   "who": "Mrs Lynch",
   "again": [
-   "Back again, are you? You're gas. Come in, the kettle's still warm.",
+   "You're gas, you are. Come in, the kettle's still warm.",
    "Ah sure, the door was only open for you. Sit down."
   ]
  },
  "cotswolds_woolhouse|cw_fleecegirl": {
   "who": "Spinner",
   "again": [
-   "Back again? Careful, there's wool on everything. You will leave covered in it.",
+   "Careful, there's wool on everything. You will leave covered in it.",
    "Oh good, you're back. Feel this one, it's softer than yesterday's, I swear."
   ],
   "season": {
@@ -428,7 +428,7 @@
   "who": "Wool Stapler",
   "again": [
    "You return. Good. A man likes an audience, particularly one who appreciates a fine staple.",
-   "Ah, back again. I have been grading since dawn and my eyes have turned to wool."
+   "Just in time. I have been grading since dawn and my eyes have turned to wool."
   ]
  }
 }
