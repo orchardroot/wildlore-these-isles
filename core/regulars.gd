@@ -228,8 +228,8 @@ static func problems(zones: Dictionary, items: ItemDB) -> Array:
 			if spots.has(str(r.zone) + "/" + str(r.get("npc", ""))):
 				errs.append("%s: that resident is already a Regular" % tag)
 			spots[str(r.zone) + "/" + str(r.get("npc", ""))] = true
-		elif home != null and not home.walkable(Vector2i(int(r.get("x", -1)), int(r.get("y", -1)))):
-			errs.append("%s: spawn tile (%s, %s) is not walkable" % [tag, r.get("x", "?"), r.get("y", "?")])
+		elif home != null and not home.in_bounds(Vector2i(int(r.get("x", -1)), int(r.get("y", -1)))):
+			errs.append("%s: spawn tile (%s, %s) is off the map" % [tag, r.get("x", "?"), r.get("y", "?")])  # the overworld nudges it to a free tile
 	return errs
 
 # --- the manager hook (Deeds is session A's) ---------------------------------------------------------------

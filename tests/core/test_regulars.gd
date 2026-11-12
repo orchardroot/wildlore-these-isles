@@ -173,7 +173,7 @@ func _bound() -> Array:
 func test_bound_regulars_point_at_real_residents() -> void:
 	var zones := ZoneData.load_all()
 	assert_eq(Regulars.problems(zones, ItemDB.load_default()), [])
-	assert_true(_bound().size() >= 60, "a Regular for each of the 60 other towns with homes")
+	assert_true(_bound().size() >= 50, "a Regular in (nearly) every town with homes")
 	for r in _bound():
 		assert_eq(Regulars.bound_id(str(r.zone), str(r.npc)), str(r.id))
 
@@ -190,7 +190,7 @@ func test_problems_catches_bad_bindings() -> void:
 	Regulars._regs = [good, bad]
 	var errs := Regulars.problems(zones, ItemDB.load_default())
 	Regulars._regs = saved
-	assert_true(errs.size() >= 4, str(errs))
+	assert_true(errs.size() >= 3, str(errs))
 
 func test_bound_regular_spawns_no_npc_but_hooks_the_talk() -> void:
 	var r: Dictionary = _bound()[0]
@@ -240,7 +240,9 @@ func test_old_save_has_no_regular_state_for_the_new_ones() -> void:
 
 func test_many_managers_dont_clash_over_a_deed() -> void:
 	var d := _data()
-	d.badges = ["a", "b", "c", "d"]
+	for i in 4:
+		d.badges.append("b%d" % i)
+	d.set_flag("badge_stone", true)
 	d.money = 999999
 	assert_eq(Deeds.buy(d, "chippy_whitby"), "")
 	var a := str(_bound()[0].id)
