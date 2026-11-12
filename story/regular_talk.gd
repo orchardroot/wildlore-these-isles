@@ -24,6 +24,9 @@ static func run(cmd: Commands, c: Dictionary) -> void:
 			Regulars.complete(data, id, "meet")
 		"offer":
 			await _offer(cmd, r)
+		"mums":
+			await RegularMums.run(cmd, r)  # favour 5, at Mum's (story/regular_mums.gd)
+			return
 		_:
 			var l := Regulars.chat_line(data, id)
 			if c.get("bound", false) and Regulars.favour(data, id) < 2:

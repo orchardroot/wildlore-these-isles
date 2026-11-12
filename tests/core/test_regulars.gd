@@ -259,3 +259,85 @@ func test_many_managers_dont_clash_over_a_deed() -> void:
 	assert_eq(Regulars.next_beat(d, b, str(Regulars.get_reg(b).home)), "", "no free Deed, no offer")
 	assert_eq(Deeds.manager(d, "chippy_whitby"), a)
 	assert_true(Deeds.summary(d, "chippy_whitby").has("Manager: " + str(Regulars.get_reg(a).name)), "shown by name")
+
+# --- favour 5: the scene at Mum's (w53 mums) ---------------------------------------------------------------
+
+func _five(d: GameStateData, id: String, day: int) -> void:
+	d.day_count = day
+	_meet(d, id)
+	_gift_days(d, id, 8)  # eight gifts takes them to favour 5
+
+func test_nobody_waits_at_mums_before_favour_five() -> void:
+	var d := _data()
+	assert_eq(Regulars.npcs_for("macc_home", d), [])
+	_meet(d, "ned")
+	_gift_days(d, "ned", 5)
+	assert_eq(Regulars.favour(d, "ned"), 4)
+	assert_eq(Regulars.npcs_for("macc_home", d), [])
+	assert_eq(Regulars.next_beat(d, "ned", "macc_home"), "")
+
+func test_favour_five_waits_at_mums_and_nowhere_else_new() -> void:
+	var d := _data()
+	_five(d, "ned", 10)
+	assert_eq(Regulars.favour(d, "ned"), 5)
+	var defs := Regulars.npcs_for("macc_home", d)
+	assert_eq(defs.size(), 1)
+	assert_eq(defs[0].id, "reg_ned_mums")
+	assert_eq(defs[0].script, "regular_ned")
+	assert_eq(Regulars.next_beat(d, "ned", "macc_home"), "mums")
+	assert_eq(Regulars.npcs_for("whitby", d).size(), 1, "still at home in Whitby, nothing else added")
+
+func test_one_visitor_at_a_time_earliest_first() -> void:
+	var d := _data()
+	_five(d, "gwenllian", 40)
+	_five(d, "ned", 20)
+	_five(d, "mervyn", 30)
+	assert_eq(Regulars.mums_visitor(d), "ned")
+	assert_eq(Regulars.npcs_for("macc_home", d).size(), 1)
+	assert_eq(Regulars.next_beat(d, "mervyn", "macc_home"), "", "not their turn")
+	Regulars.complete(d, "ned", "mums")
+	assert_eq(Regulars.mums_visitor(d), "mervyn")
+	Regulars.complete(d, "mervyn", "mums")
+	assert_eq(Regulars.mums_visitor(d), "gwenllian")
+	Regulars.complete(d, "gwenllian", "mums")
+	assert_eq(Regulars.mums_visitor(d), "")
+
+func test_old_save_favour_five_counts_as_day_zero() -> void:
+	var d := _data()
+	d.set_flag(Regulars.flag_key("hilda"), {"favour": 5, "pts": 8})  # no five_day, as before this change
+	_five(d, "ned", 12)
+	assert_eq(Regulars.mums_visitor(d), "hilda", "the old save's friend comes first and still gets a scene")
+	d.set_flag(Regulars.flag_key("hilda"), {"favour": 5, "pts": 8, "mums": true})
+	assert_eq(Regulars.mums_visitor(d), "ned")
+
+func test_the_scene_plays_gives_tea_and_they_go_home() -> void:
+	var h := FakeStoryHost.new()
+	h.zone = "macc_home"
+	h.data.player_name = "Sam"
+	_five(h.data, "ned", 10)
+	await Commands.new(h).run([{"do": "regular", "id": "ned"}])
+	var said := str(h.said)
+	assert_true(said.contains("Mum"), "Mum is in it")
+	assert_true(said.contains("Whitby"), "their town is filled in")
+	assert_true(said.contains("Sam"), "{player} is filled in")
+	assert_true(said.contains("Hull"), "their own line")
+	assert_false(said.contains("{"), "no raw placeholders")
+	assert_true(Regulars._peek(h.data, "ned").get("mums") == true)
+	assert_eq(int(h.data.bag.get("flask_of_tea", 0)), 1)
+	assert_eq(Regulars.npcs_for("macc_home", h.data), [], "they have gone home")
+	assert_eq(Regulars.favour(h.data, "ned"), 5)
+
+func test_validator_wants_mums_lines() -> void:
+	var zones := ZoneData.load_all()
+	assert_eq(Regulars.problems(zones, ItemDB.load_default()), [], "all 70 have lines")
+	var saved := Regulars._regs
+	for bad in [null, [], [""], [5]]:
+		var r: Dictionary = Regulars.all()[0].duplicate(true)
+		if bad == null:
+			r.erase("mums")
+		else:
+			r["mums"] = bad
+		Regulars._regs = [r]
+		var errs := Regulars.problems(zones, ItemDB.load_default())
+		assert_true(errs.size() >= 1 and "mums" in str(errs), "caught " + str(bad))
+	Regulars._regs = saved

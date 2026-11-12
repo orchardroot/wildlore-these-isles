@@ -15,6 +15,10 @@ const SCRIPT_FILE := "regulars"   # data/dialogue/regulars.json, script regular_
 const MAX_FAVOUR := 5
 ## Gifts (points) needed in all to reach favour 2, 3, 4 and 5. Favour 1 is just meeting them.
 const GIFTS_FOR := {2: 1, 3: 3, 4: 5, 5: 8}
+## At favour 5 a Regular comes to Mum's (zone MUMS_ZONE, spot MUMS_SPOT, nudged to a free tile), one at a time, the
+## one who got there first. State: `five_day` (the day favour hit 5; absent on an old save = day 0) and `mums` (seen).
+const MUMS_ZONE := "macc_home"
+const MUMS_SPOT := Vector2i(6, 5)
 
 static var _regs: Array = []
 static var _bound: Dictionary = {}   # "zone/npc" -> regular id, built on first use
@@ -107,6 +111,8 @@ static func give_gift(data: GameStateData, id: String) -> int:
 	st["gift_day"] = data.day_count
 	for lv in range(MAX_FAVOUR, 1, -1):
 		if int(st.pts) >= int(GIFTS_FOR[lv]):
+			if lv == MAX_FAVOUR and int(st.get("favour", 0)) < MAX_FAVOUR:
+				st["five_day"] = data.day_count
 			st["favour"] = maxi(int(st.get("favour", 0)), lv)
 			break
 	return favour(data, id)
@@ -119,6 +125,8 @@ static func next_beat(data: GameStateData, id: String, zone_id: String) -> Strin
 		return ""
 	var st := _peek(data, id)
 	var f := favour(data, id)
+	if zone_id == MUMS_ZONE:
+		return "mums" if mums_visitor(data) == id else ""
 	if zone_id == str(r.home) or (is_bound(r) and zone_id == str(r.zone)):
 		if f < 1:
 			return "intro"
@@ -128,6 +136,20 @@ static func next_beat(data: GameStateData, id: String, zone_id: String) -> Strin
 		return "meet"
 	return ""
 
+## Who is waiting at Mum's: the Regular at favour 5 who got there first and hasn't had their scene, or "".
+static func mums_visitor(data: GameStateData, list: Array = []) -> String:
+	var best := ""
+	var best_day := 0
+	for r in (list if not list.is_empty() else all()):
+		var id := str(r.id)
+		if favour(data, id) < MAX_FAVOUR or _peek(data, id).get("mums") == true:
+			continue
+		var d := int(_peek(data, id).get("five_day", 0))
+		if best == "" or d < best_day:
+			best = id
+			best_day = d
+	return best
+
 ## The scene's been played.
 static func complete(data: GameStateData, id: String, beat: String) -> void:
 	var st := _st(data, id)
@@ -136,11 +158,19 @@ static func complete(data: GameStateData, id: String, beat: String) -> void:
 			st["favour"] = maxi(1, int(st.get("favour", 0)))
 		"meet":
 			st["meet"] = true
+		"mums":
+			st["mums"] = true
 
 ## NPC definitions for the regulars standing in this zone: each at home, and in their second town while the
 ## meeting is waiting. Positions (x, y at home, ax, ay away) are nudged to a free tile by the overworld, like side stories.
 static func npcs_for(zone_id: String, data: GameStateData, list: Array = []) -> Array:
 	var out := []
+	if zone_id == MUMS_ZONE:
+		var v := get_reg(mums_visitor(data, list))
+		if not v.is_empty():
+			out.append({"id": "reg_" + str(v.id) + "_mums", "sprite": str(v.get("sprite", "villager_1")), "name": str(v.get("name", "")),
+				"x": MUMS_SPOT.x, "y": MUMS_SPOT.y, "facing": "left", "move": "still", "script": "regular_" + str(v.id), "script_file": SCRIPT_FILE})
+		return out
 	for r in (list if not list.is_empty() else all()):
 		var id := str(r.id)
 		var here: bool = str(r.get("home", "")) == zone_id and not is_bound(r)  # a bound Regular is already standing there
@@ -204,9 +234,12 @@ static func problems(zones: Dictionary, items: ItemDB) -> Array:
 		for k in ["name", "sprite", "hint"]:
 			if str(r.get(k, "")).strip_edges() == "":
 				errs.append("%s: no %s" % [tag, k])
-		for k in ["intro", "meet", "letter", "offer", "thanks", "chat"]:
+		for k in ["intro", "meet", "letter", "offer", "thanks", "chat", "mums"]:
 			if not (r.get(k, []) is Array) or (r.get(k, []) as Array).is_empty():
 				errs.append("%s: no %s lines" % [tag, k])
+		for l in r.get("mums", []) if r.get("mums", []) is Array else []:
+			if not (l is String) or str(l).strip_edges() == "":
+				errs.append("%s: a mums line is not text" % tag)
 		if "—" in JSON.stringify(r):
 			errs.append("%s: has an em-dash" % tag)
 		var home: ZoneData = zones.get(str(r.get("home", "")))

@@ -1,5 +1,5 @@
 {
- "_doc": "The Regulars (core/regulars.gd): recurring characters. home: the town they live in (an NPC all the time; or zone + npc: a home resident who is the Regular, no NPC spawned); away: a second town where they turn up once favour is 2; likes: the item that wins them over; intro / meet / letter / offer / chat / thanks: the lines for each beat ({player} is you). Flag reg_<id> holds {favour, pts, gift_day, met, letter, manager}.",
+ "_doc": "The Regulars (core/regulars.gd): recurring characters. home: the town they live in (an NPC all the time; or zone + npc: a home resident who is the Regular, no NPC spawned); away: a second town where they turn up once favour is 2; likes: the item that wins them over; intro / meet / letter / offer / chat / thanks: the lines for each beat ({player} is you). Flag reg_<id> holds {favour, pts, gift_day, met, letter, manager}. mums: one or two lines said at Mum's (zone macc_home) when a Regular reaches favour 5 (story/regular_mums.gd); mums_shared holds the lines every visit has before and after. Flag also holds five_day and mums.",
  "regulars": [
   {
    "id": "ned",
@@ -35,6 +35,10 @@
    "thanks": [
     "Ned takes the fish, sniffs it professionally and nods once.",
     "Ned: That's a proper one. Nobody's brought me a proper one since 1998."
+   ],
+   "mums": [
+    "Ned: Your mum asked if I'd ever been lost at sea. I said no, only in Hull. She's written it down for the Christmas card.",
+    "Ned: Not one gull in the whole house. I don't know where to look."
    ],
    "x": 11,
    "y": 31,
@@ -77,6 +81,9 @@
     "Gwenllian: Welsh cakes! Still warm? Oh, you've been dear to me, {player}.",
     "She eats three, with the tuning fork under her arm, and tells you it was for the altos."
    ],
+   "mums": [
+    "Gwenllian: Your mother has perfect pitch for a kettle. I've asked her to join the altos. She said she'd think about it, which means no, and I respect it."
+   ],
    "x": 38,
    "y": 4,
    "ax": 34,
@@ -118,6 +125,9 @@
     "Mervyn: Champ! With the butter well in the middle, the way it should be. You're a credit, {player}.",
     "He eats it from the bowl, with a spoon, in total silence, which you understand is the highest praise."
    ],
+   "mums": [
+    "Mervyn: Best brew I've had outside the yard. Mum takes the bag out at the right moment. Forty-four years I've waited for somebody who does."
+   ],
    "x": 34,
    "y": 30,
    "ax": 30,
@@ -157,6 +167,9 @@
    "thanks": [
     "Dessie: Coddle! Sausage, bacon, potato, all in the one pot, like a family at Christmas. Good lad.",
     "He eats it and recalculates three bets in his head, all in your favour, for the first time."
+   ],
+   "mums": [
+    "Dessie: Your mum and I had a small wager on whether you'd be late. I won't say who won. I'll say the house, once again, did not lose."
    ],
    "x": 34,
    "y": 22,
@@ -198,6 +211,9 @@
     "Morag: A clootie dumpling! Spiced and boiled in a cloth the old way. You've the manners of a laird, {player}.",
     "She cuts it in two even slices without looking, which seems to be the way she does everything."
    ],
+   "mums": [
+    "Morag: I looked over her cardigan. Good wool, honest stitch. I said so. She went pink. A month for a coat and a minute for a compliment, that's me."
+   ],
    "x": 33,
    "y": 22,
    "ax": 38,
@@ -237,6 +253,9 @@
    "thanks": [
     "Pauline: Hotpot! Proper lamb and sliced potatoes on top, all crispy! You're a darling, {player}.",
     "She takes the bowl straight to the kitchen and comes back with a plate of her own, which she insists is 'just a taste'."
+   ],
+   "mums": [
+    "Pauline: We've compared guest books. Hers is the Macclesfield one, mine is Blackpool. We agree on ketchup, and we agree on who it was."
    ],
    "x": 34,
    "y": 62,
@@ -278,6 +297,9 @@
     "Barnaby: Marmalade! Thick-cut, I trust? Oh, bless you. Bitter, orange and just slightly smug, like me.",
     "He opens the jar, smells it and puts the lid back on with the air of a man saving something for later."
    ],
+   "mums": [
+    "Barnaby: I rang her doorbell as a joke, a gentle peal. She said that was the first time anyone had used it properly. I may have found my calling."
+   ],
    "x": 6,
    "y": 31,
    "ax": 40,
@@ -317,6 +339,9 @@
    "thanks": [
     "Fiona: Scotch broth! Barley and neep and a bit of mutton. Perfect for the cold. Cheers, {player}.",
     "She tucks a napkin in her collar, props the fiddle on her knee and eats like a woman who has played four hours straight."
+   ],
+   "mums": [
+    "Fiona: Your mum asked for a tune and then talked all the way through it. That's a proper audience. I've never felt so at home."
    ],
    "x": 30,
    "y": 18,
@@ -358,6 +383,9 @@
     "Dot: A proper Cumberland! Coiled like a snake and peppery enough to wake you. You're alright, {player}.",
     "She eats it standing up, mid-stretch, without once breaking a sweat."
    ],
+   "mums": [
+    "Dot: Walked here from the station, and your mum says it's too far for my age. Seventy-one and I beat the bus. I told her that. She gave me a second scone."
+   ],
    "x": 34,
    "y": 32,
    "ax": 34,
@@ -397,6 +425,9 @@
    "thanks": [
     "Seán: Irish stew! Mutton, spuds and onion, not a carrot in sight. A man of good taste, {player}.",
     "He eats it with the gravity of a man at Mass, and wipes the bowl with bread."
+   ],
+   "mums": [
+    "Seán: I told your mum about Fungie and the tourists. She says I'm a terrible man. She's not wrong, and she gave me biscuits for it."
    ],
    "x": 32,
    "y": 22,
@@ -438,6 +469,9 @@
     "Tamsin: Mackerel! Fresh as a daisy and shining like a coin. You're a good sort, {player}.",
     "She turns it over in her palm, approving, and tosses it into a bucket labelled 'for the cat, (me)'."
    ],
+   "mums": [
+    "Tamsin: Your mum tried to haggle over a pot of jam. Over a pot of jam! I've never been so proud of a customer. I gave her no discount."
+   ],
    "x": 32,
    "y": 21,
    "ax": 38,
@@ -477,6 +511,9 @@
    "thanks": [
     "Hilda: Yorkshire pudding! Home-made and risen like a church steeple. Well done, {player}. You'd make a good signalwoman.",
     "She eats it with gravy from a flask she was, you realise, already carrying."
+   ],
+   "mums": [
+    "Hilda: Fifty past, the bus said. It came at fifty-three. I'm still composing a letter. Your mum has offered to proofread it."
    ],
    "x": 18,
    "y": 14,
@@ -519,6 +556,9 @@
     "Old Tom turns the tench over like a rare comet.",
     "Old Tom: Well, that's a find. I'll name it. Gerald."
    ],
+   "mums": [
+    "Old Tom: Took your mum out to the back garden and showed her Jupiter. She said it looked like a lamp. She's right, you know. Nobody's ever said it so well."
+   ],
    "ax": 12,
    "ay": 53
   },
@@ -559,6 +599,9 @@
    "thanks": [
     "Mrs Armstrong weighs the sausage in her hand, then sniffs it like a customs officer.",
     "Mrs Armstrong: Cumberland, and not a crumb of a lie in it. You're welcome in this house any day, pet. Mind the cat."
+   ],
+   "mums": [
+    "Mrs Armstrong: Your mother and I are cousins now. Not by blood. By sausage. She's got the Cumberland coil right, I checked."
    ],
    "ax": 30,
    "ay": 18
@@ -601,6 +644,9 @@
     "Farmer Walt turns the charr over, grunts, and for once does not say no.",
     "Farmer Walt: Well. That's a fish. Sit down, I'll put the kettle on. It's on. Sit down anyway."
    ],
+   "mums": [
+    "Farmer Walt: Left the dog at home. It would only have gone under her table. She says there's room for it next time, which is more than my own table can say."
+   ],
    "ax": 28,
    "ay": 43
   },
@@ -641,6 +687,9 @@
    "thanks": [
     "Mr Procter holds up the perch to the light like a man checking a gauge.",
     "Mr Procter: Splendid. Stripes and all. Now I shall be a bore for the rest of the evening, and you are welcome to stay and enjoy it."
+   ],
+   "mums": [
+    "Mr Procter: I've told her about the canal, at length. She nodded in all the right places. I've not had that since 1987."
    ],
    "ax": 55,
    "ay": 16
@@ -683,6 +732,9 @@
     "Eddie lifts the lid, breathes in, and nods slowly, like a man who has just been reunited with his nan.",
     "Eddie: Coddle. Right. That'll do. You're all right, you. I'd say more, but I'd only get misty."
    ],
+   "mums": [
+    "Eddie: Your mum's got a coddle on the go. I've said nothing. Not one word. I've just been sitting here, very hopeful."
+   ],
    "ax": 42,
    "ay": 11
   },
@@ -723,6 +775,9 @@
    "thanks": [
     "Old Alf holds the bass up and looks it in the eye, like an old rival.",
     "Old Alf: Well now. That's silver, that is. You've done me proud, {player}. I'll sit in the boat and think about it."
+   ],
+   "mums": [
+    "Old Alf: I've been telling your mum about Handel and the Messiah. She said the Messiah was a very good film. I let it go. I had cake."
    ],
    "ax": 27,
    "ay": 20
@@ -765,6 +820,9 @@
     "Doreen peels back the foil, looks at the height of it and says nothing for a moment.",
     "Doreen: It's risen. It's actually risen. Well done, love. Sit down, sit down. I'll get the gravy, and you can tell me everything."
    ],
+   "mums": [
+    "Doreen: Your mum and I have swapped notes on sons. Callum's a good lad and so are you, apparently. We've agreed to say nothing to either of you."
+   ],
    "ax": 24,
    "ay": 27
   },
@@ -805,6 +863,9 @@
    "thanks": [
     "Mr Okafor takes the roach, looks it over for a good ten seconds, then nods like a man signing off a service.",
     "Mr Okafor: On time and in good order. That's a good fish. Right, sit down. I'll tell you about the Number 11. It will not take long. It will."
+   ],
+   "mums": [
+    "Mr Okafor: Your mum asked what time the bus is. I told her. To the minute. She has now seen how a man says it properly."
    ],
    "ax": 30,
    "ay": 59
@@ -847,6 +908,9 @@
     "Mr Haines lifts the lid, inhales slowly and closes his eyes, as though grading it.",
     "Mr Haines: Long, rich and heavy. The finest I have met in a pot. You have a good hand, {player}. I shall tell no one. Or everyone."
    ],
+   "mums": [
+    "Mr Haines: I mentioned the Cotswold sheep to your mother, and its Florentine customers. She said I should bring one next time. I have been given a clear brief."
+   ],
    "ax": 27,
    "ay": 24
   },
@@ -887,6 +951,9 @@
    "thanks": [
     "Hetty takes the bowl in both hands and breathes it in, as though paying herself a small compliment.",
     "Hetty: Cawl. You've paid in full, {player}, with interest. I'll put you down as a regular. I mean it. Sit."
+   ],
+   "mums": [
+    "Hetty: I tried to charge your mum for the chair. She said it was hers. I paid. I don't know how that happened."
    ],
    "ax": 24,
    "ay": 24
@@ -929,6 +996,9 @@
     "Hugh unwraps the eel carefully and sets it on the table like an exhibit.",
     "Hugh: A fine specimen. Medieval cooks would have wept. Thank you, {player}. I'll make notes, and then I'll eat it."
    ],
+   "mums": [
+    "Hugh: Your mum has the whole of your childhood on the mantelpiece. I've written a list. I'll not be showing you the list."
+   ],
    "ax": 14,
    "ay": 11
   },
@@ -969,6 +1039,9 @@
    "thanks": [
     "Nanna Mavis lifts the lid, sniffs the almond and takes a very small, very proud step backwards.",
     "Nanna Mavis: Bakewell pudding! Jam and all. You're a good 'un, me duck. Sit down. There's tea, and I've not finished telling you about the jitty."
+   ],
+   "mums": [
+    "Nanna Mavis: Your mum had the kettle on before I got my coat off. Best welcome in Macclesfield, me duck. I'd have said so even if she'd not given me cake."
    ],
    "ax": 2,
    "ay": 34
@@ -1011,6 +1084,9 @@
     "Wilf lifts the roach by the tail and measures it against his thumb, then his forearm, then his thumb again.",
     "Wilf: Excellent. Twelve centimetres, give or take, and nothing about it is irrational. Thank you, {player}."
    ],
+   "mums": [
+    "Wilf: Your mother asked what I'm studying and I tried to explain. She said that sounded like a lot of work for not much tea. She is, annoyingly, right."
+   ],
    "ax": 3,
    "ay": 34
   },
@@ -1051,6 +1127,9 @@
    "thanks": [
     "Marion holds the plaice up to the light as if it might be painted on a wall.",
     "Marion: Perfect. Flat, honest and from the Channel. Thank you, {player}. Now mind the step, there is always a step."
+   ],
+   "mums": [
+    "Marion: I did your mum the Roman wall in ten minutes, on her own table, with the sugar. She asked if there was a gift shop. I gave her a leaflet."
    ],
    "ax": 2,
    "ay": 24
@@ -1093,6 +1172,9 @@
     "Granny Vowles takes the eel in a tea towel like a baby, and tells it it has had a very long journey.",
     "Granny Vowles: Oh, that is a proper one. Ansum, my lover, ansum. Stay for supper, I insist."
    ],
+   "mums": [
+    "Granny Vowles: Brought your mum a sprig off the Thorn. She said it was lovely and put it in the mug. Well, the cat will think it's his."
+   ],
    "ax": 6,
    "ay": 53
   },
@@ -1133,6 +1215,9 @@
    "thanks": [
     "Alf lays the chub across his knee and regards it with the slow respect of a man looking at an old rival.",
     "Alf: Ugly beast. Marvellous. Thank you, {player}. You can have the good pole next time."
+   ],
+   "mums": [
+    "Alf: Your mum asked which was better, Oxford or Cambridge. I said Oxford. She said she'd always preferred Macclesfield. I've no answer to that."
    ],
    "ax": 34,
    "ay": 49
@@ -1175,6 +1260,9 @@
     "Dougie sets the sardine on a slice of toast so quickly you suspect he had planned it.",
     "Dougie: Proper job, {player}. Salt, smoke and butter. Match day starts here."
    ],
+   "mums": [
+    "Dougie: Told your mum about Argyle since 1886. She said that sounded like a long wait for a goal. My lover, it is. It always has been."
+   ],
    "ax": 30,
    "ay": 45
   },
@@ -1215,6 +1303,9 @@
    "thanks": [
     "Mrs Hafren holds the Welsh cake to her nose, still warm from the bakestone, and closes her eyes for a moment.",
     "Mrs Hafren: Diolch, {player}. That is thank you, in case you wondered. The bridge will survive another week."
+   ],
+   "mums": [
+    "Mrs Hafren: Your mum and I have had the best sort of silence. The kind you only get with someone who knows when to stop. I could stay here for weeks."
    ],
    "ax": 28,
    "ay": 16
@@ -1257,6 +1348,9 @@
     "Mrs Quayle turns the herring in the light, silver as a coin, and nods like a woman receiving a long-lost relative.",
     "Mrs Quayle: Gura mie ayd, {player}. That is thank you. Put the kettle on, I will do the rest."
    ],
+   "mums": [
+    "Mrs Quayle: Taught your mum \"fastyr mie\". She said it back very well. The girl at the school was right: it is easy, if somebody is patient."
+   ],
    "ax": 24,
    "ay": 21
   },
@@ -1297,6 +1391,9 @@
    "thanks": [
     "Old Dave lifts the wahoo, long and steel-blue, and weighs it in his hands like an old oar.",
     "Old Dave: Now that is a fish. Thank you, {player}. Come by the boathouse and I will tell you about the one that got away."
+   ],
+   "mums": [
+    "Old Dave: Your mum asked if I'd like a fish for my tea. I said not a word until it was finished, same as ever. She said that was the best compliment she's had all year."
    ],
    "ax": 29,
    "ay": 24
@@ -1339,6 +1436,9 @@
     "Cecil lifts the snapper, bright yellow along the flank, and nods slowly as if counting it.",
     "Cecil: One. Lovely. Thank you, {player}. I may even get the same count twice."
    ],
+   "mums": [
+    "Cecil: Your mum asked if it is true there are no snack bars at step forty. I said it is. She has given me a flask for the trip home, which is the first sensible suggestion in years."
+   ],
    "ax": 22,
    "ay": 19
   },
@@ -1379,6 +1479,9 @@
    "thanks": [
     "Rita takes the sea trout in both hands and looks at it the way the men look at the weather.",
     "Rita: Lovely, {player}. That will go on the table at four. Smoko, mind. Stay if you like."
+   ],
+   "mums": [
+    "Rita: Peat and a tin roof, that's mine. Your mum's got a carpet. I took my boots off at the door and felt like a different person."
    ],
    "ax": 35,
    "ay": 21
@@ -1421,6 +1524,9 @@
     "Joyce takes the tuna, glances at it with the eye of someone who has judged many a plate, and nods.",
     "Joyce: A Saint's fish, and a good one. Thank you, {player}. Do sit, the tortoise is off duty."
    ],
+   "mums": [
+    "Joyce: Your mum's kept a spare room made up, just in case. I told her we Saints do the same. We had a nice cry over it, and then a nice sandwich."
+   ],
    "ax": 34,
    "ay": 22
   },
@@ -1462,6 +1568,9 @@
     "Lloyd turns the bonefish in his hands, silver and long, and smiles as at an old friend.",
     "Lloyd: That is a fine one, {player}. Thank you. Sit down, the wind is gentle for once."
    ],
+   "mums": [
+    "Lloyd: I showed your mum a picture of the flats at low tide. She said it looked very flat. I said that was the whole point. She went to put the kettle on."
+   ],
    "ax": 31,
    "ay": 30
   },
@@ -1501,6 +1610,9 @@
    "thanks": [
     "Mr Wylie lays the fry down on the sill, then moves his binoculars so they do not get grease on them.",
     "Mr Wylie: That is a breakfast. Five stars. I would write it in the notebook, but my hands are full."
+   ],
+   "mums": [
+    "Mr Wylie: Your mum asked what I'd been watching. I said a bird, for about three minutes, and it was a very good three minutes. She said that was all right then."
    ],
    "ax": 28,
    "ay": 27
@@ -1542,6 +1654,9 @@
     "Mrs Lynch lifts the lid, breathes in, and says nothing for a good three seconds.",
     "Mrs Lynch: Oh, you good thing. The butter is in the middle where it belongs. Sit, sit, you have earned the good chair."
    ],
+   "mums": [
+    "Mrs Lynch: Your mum and I have put the world to rights and my husband's gate in the next sentence. We agreed they were about as likely."
+   ],
    "ax": 26,
    "ay": 19
   },
@@ -1581,6 +1696,9 @@
    "thanks": [
     "Mr Brogan looks at the salmon for a long, quiet moment, like a man shaking hands with an old rival.",
     "Mr Brogan: Well. So that is what they look like. I will say it, it is very well made."
+   ],
+   "mums": [
+    "Mr Brogan: I told your mother about the seals tipping their heads. She said she'd do the same to the milkman. I think we could be great friends."
    ],
    "ax": 43,
    "ay": 31
@@ -1622,6 +1740,9 @@
     "Old Mattie holds the herring up to the window, like a man checking a banknote.",
     "Old Mattie: Oh, that's grand, that's a beauty, silver as a new coin. My father would have wept. He'd have said it was too small, but he'd have wept."
    ],
+   "mums": [
+    "Old Mattie: Your mum put a plate of something fried in front of me, said nothing, and sat down. That's a woman who understands a man from Galway."
+   ],
    "ax": 28,
    "ay": 19
   },
@@ -1661,6 +1782,9 @@
    "thanks": [
     "Gran Daly breaks off a corner, butters it, and eats it standing up, which she never does.",
     "Gran Daly: Ah, that is the right one. Warm. You are a good child. Come here to me."
+   ],
+   "mums": [
+    "Gran Daly: Your mum showed me her soda bread. I said it was grand, and it is. I've said a prayer for it, in case it needs one."
    ],
    "ax": 28,
    "ay": 19
@@ -1702,6 +1826,9 @@
     "Mr Hannon looks at the salmon as though it were about to be presented at court.",
     "Mr Hannon: Well. We shall have it plain, with a little parsley, in the dining room. The fox may watch from the door."
    ],
+   "mums": [
+    "Mr Hannon: I told your mum about Frank McCourt and she said she'd never heard of him. I have decided to forgive her, and then to bring her the book."
+   ],
    "ax": 30,
    "ay": 22
   },
@@ -1741,6 +1868,9 @@
    "thanks": [
     "Ruth takes the champ and breathes in, the steam fogging her glasses.",
     "Ruth: Oh, that is exactly right. I will log it. Find number one. Context, my kitchen. Condition, vanishing."
+   ],
+   "mums": [
+    "Ruth: Your mum asked what the spirals mean. I said nobody knows. She said that's exactly how she feels about you. I'll take it as a compliment on your behalf."
    ],
    "ax": 32,
    "ay": 25
@@ -1782,6 +1912,9 @@
     "Old Con lifts the lid, sniffs, and puts the lid back with a look of deep respect.",
     "Old Con: That is a stew. No nonsense in it. Well, sure look it, you did well."
    ],
+   "mums": [
+    "Old Con: Your mum asked me a question and I said, \"Sure look it.\" She said that was an answer. We've been getting along ever since."
+   ],
    "ax": 32,
    "ay": 22
   },
@@ -1822,6 +1955,9 @@
     "Old Batt takes the eel and holds it up to the firelight like a man appraising a good horse.",
     "Old Batt: Well now. That is a Shannon eel, all right. My father would have taken his hat off to it."
    ],
+   "mums": [
+    "Old Batt: Your mum's got hens, she says. I said not to go near them. She said she's been keeping hens since before you were born. I was told."
+   ],
    "ax": 40,
    "ay": 22
   },
@@ -1861,6 +1997,9 @@
    "thanks": [
     "Nana turns the boxty over on the plate, sniffs, and gives an approving little nod.",
     "Nana: Well, I will not say a word. That is a lovely one. I will say nothing at all. Sit down, I will pour you tea."
+   ],
+   "mums": [
+    "Nana: It's not raining and your mum's still got a roof. I said nothing. I said nothing for nearly a minute, and a good minute it was."
    ],
    "ax": 30,
    "ay": 16
@@ -1903,6 +2042,9 @@
     "Mr Duthie holds the haddock at arm's length, as if reviewing it.",
     "Mr Duthie: Approved without amendment. I shall not minute that I am delighted."
    ],
+   "mums": [
+    "Mr Duthie: I've been making notes on the visit. Item one, tea. Item two, more tea. Carried, unanimously, by both of us."
+   ],
    "ax": 38,
    "ay": 37
   },
@@ -1943,6 +2085,9 @@
    "thanks": [
     "Mrs Henderson lifts the lid, breathes in and closes her eyes for a moment.",
     "Mrs Henderson: Oh, that will do nicely. You are a good soul, and do not let the haar tell you otherwise."
+   ],
+   "mums": [
+    "Mrs Henderson: Your mum has a stovies pot older than yours truly. I looked at it a long time. We're both quite emotional about it."
    ],
    "ax": 27,
    "ay": 18
@@ -1985,6 +2130,9 @@
     "Old Calum weighs the salmon in one hand and nods once, slowly.",
     "Old Calum: Aye. That is a fish. I will say no more, and I mean it kindly."
    ],
+   "mums": [
+    "Old Calum: Told your mum about forty years in the cold water. She said she's got a hot-water bottle. I said very little, which is the best I can do."
+   ],
    "ax": 20,
    "ay": 18
   },
@@ -2025,6 +2173,9 @@
    "thanks": [
     "Magnus looks at the herring and begins to smile, slowly.",
     "Magnus: Now that is a worthy fish. I will tell you a tale about it, but you will owe me another."
+   ],
+   "mums": [
+    "Magnus: Told your mum the one about the selkie who could not swim. She laughed in all the wrong places, and I'd not have it any other way."
    ],
    "ax": 28,
    "ay": 24
@@ -2067,6 +2218,9 @@
     "Old Tammie turns the mackerel over, tapping it like a tuning fork.",
     "Old Tammie: Well now. That deserves a tune. Sit down, and do not talk through the slow part."
    ],
+   "mums": [
+    "Old Tammie: I played a reel in your mum's kitchen. She danced it with the tea towel. The tea towel kept up better than I'd have thought."
+   ],
    "ax": 2,
    "ay": 22
   },
@@ -2107,6 +2261,9 @@
    "thanks": [
     "Mrs Sinclair peers into the bag with the air of a woman checking a ledger.",
     "Mrs Sinclair: Oh, they are lovely. You have just made my week, and I will not tell the coach party."
+   ],
+   "mums": [
+    "Mrs Sinclair: Your mum's got the last cup of tea down to a fine art. I told her so, with a flourish. She said she's had the practice."
    ],
    "ax": 42,
    "ay": 12
@@ -2149,6 +2306,9 @@
     "Granny Gunn sniffs the smokie and nods like an old friend has called.",
     "Granny Gunn: Now that is a fish. Sit down, you will have a cup of tea. You have not had your tea."
    ],
+   "mums": [
+    "Granny Gunn: Your mum's got a stone floor. I knelt and felt it, for the heat. She asked if I was all right. I said it's the flagstones. She understood."
+   ],
    "ax": 32,
    "ay": 20
   },
@@ -2189,6 +2349,9 @@
    "thanks": [
     "Murdo lifts the cloth and the warm smell of spice and fruit fills the room.",
     "Murdo: Ah, now. That is a proper one. Tapadh leibh, and sit down by the fire."
+   ],
+   "mums": [
+    "Murdo: Your mum's fire is a good one. I sat beside it and said tapadh leibh three times. She said you're welcome, in the end, only to make me stop."
    ],
    "ax": 28,
    "ay": 19
@@ -2231,6 +2394,9 @@
     "Ma Haig lifts the lid, inhales and nods slowly, as if inspecting a rival bakery.",
     "Ma Haig: Well. That is a decent pot. You can come in any time, hen."
    ],
+   "mums": [
+    "Ma Haig: Up at four with the ovens, I told her. She said she's up at six and thinks that's brave. Eat, I said. She's not got enough in her."
+   ],
    "ax": 30,
    "ay": 23
   },
@@ -2271,6 +2437,9 @@
    "thanks": [
     "Idris holds the mackerel up to the light as if it were the last of the morning.",
     "Idris: Now that is a proper fish. I will say I caught it. Mair will say I did not. We will both be right."
+   ],
+   "mums": [
+    "Idris: I told your mum I'd tell the tide she said hello. She asked which tide. I said all of them. She put another biscuit on my plate."
    ],
    "ax": 6,
    "ay": 23
@@ -2313,6 +2482,9 @@
     "Nain takes the Welsh cake in both hands and holds it to her cheek like a hot water bottle.",
     "Nain: Still warm. You have the touch, cariad. The cat will want a crumb and he will not get one."
    ],
+   "mums": [
+    "Nain: Your mum gave me a Welsh cake, warm from the pan. I'd say it was nearly as good as mine, but I am a truthful woman and also a guest."
+   ],
    "ax": 28,
    "ay": 20
   },
@@ -2353,6 +2525,9 @@
    "thanks": [
     "Old Wilf unwraps the Glamorgan sausage and sniffs it like a customs officer.",
     "Old Wilf: Leek, cheese, crisp outside. Cleared for landing. Diolch, butt."
+   ],
+   "mums": [
+    "Old Wilf: Your mum asked me which crane. I told her. She wrote it down. I've not had anybody write it down in thirty years."
    ],
    "ax": 25,
    "ay": 21
@@ -2395,6 +2570,9 @@
     "Emrys lifts the lid and breathes in as if it were mountain air.",
     "Emrys: Cawl. Proper cawl. Diolch, {player}. You have the hands of a quarry wife and I mean that as the highest praise."
    ],
+   "mums": [
+    "Emrys: Your mum said she'd never been up a mountain. I said Snowdon's much too tall for her sort of afternoon. We agreed on a short walk to the post box."
+   ],
    "ax": 56,
    "ay": 16
   },
@@ -2435,6 +2613,9 @@
    "thanks": [
     "Mrs Rees takes the pollack and weighs it in her palm like a woman who has seen many fish and been fooled by few.",
     "Mrs Rees: A beauty. That is dinner and a story, {player}. The French would have surrendered over less."
+   ],
+   "mums": [
+    "Mrs Rees: Counted four flashes in your mum's kitchen, from the toaster. She said it's broken. I said it's a perfectly good lighthouse."
    ],
    "ax": 18,
    "ay": 14
@@ -2477,6 +2658,9 @@
     "Dilys holds the Welsh cake in a tea towel as if it were a small, golden, sleeping baby.",
     "Dilys: Still warm! Not the parlour, mind, we will eat this at the kitchen table like normal people. Diolch, cariad."
    ],
+   "mums": [
+    "Dilys: Your mum let me into the parlour. Me! Nobody gets in the parlour. I sat there like the Queen of Sheba, in my cardigan, and had a Welsh cake."
+   ],
    "ax": 2,
    "ay": 20
   },
@@ -2517,6 +2701,9 @@
    "thanks": [
     "Mr Griffiths tips the laverbread onto toast without ceremony and eats it standing at the window.",
     "Mr Griffiths: Ahh. That is the sea in a dish. Diolch, {player}. The seals will hear of this."
+   ],
+   "mums": [
+    "Mr Griffiths: Your mum had laverbread on toast ready before I'd mentioned it. Either she's psychic or you talk about me. I'll take either."
    ],
    "ax": 34,
    "ay": 1
@@ -2559,6 +2746,9 @@
     "Morag turns the haddock over and gives it the look she gives a promising knot.",
     "Morag: A proper haddock. Wait until my boy sees it. He will say it is the bait."
    ],
+   "mums": [
+    "Morag: Told your mum about the ternlets. She said she'd put out a saucer. For a tern. I didn't have the heart."
+   ],
    "ax": 30,
    "ay": 27
   },
@@ -2599,6 +2789,9 @@
    "thanks": [
     "Bessie lifts the lid, breathes the steam and closes her eyes like she has just been forgiven.",
     "Bessie: Stovies! That is a stoater, {player}. You have the touch. Sit, and I will tell you who was talking about you."
+   ],
+   "mums": [
+    "Bessie: A plate of your mum's stovies, a good one, with a bit of crust. That's a stoater. I'm her friend for life, and she's my second one."
    ],
    "ax": 31,
    "ay": 23
@@ -2641,6 +2834,9 @@
     "Granny Isa cuts the clootie dumpling with the solemn care of a woman opening a new bridge.",
     "Granny Isa: That is a skin done right. Ah, hen, you will go far. And you will come back for tea, I hope."
    ],
+   "mums": [
+    "Granny Isa: Your mum's got a garden at the front. A bit of green with a dandelion on it. I counted it. Green places, and she's got one."
+   ],
    "ax": 39,
    "ay": 37
   },
@@ -2681,6 +2877,9 @@
    "thanks": [
     "Granny weighs the bag of queenies as if it held the crown jewels.",
     "Granny: Queenies! Fresh, I can tell by the smell. Thank you, dear. That is the ferry and the supper sorted."
+   ],
+   "mums": [
+    "Granny: Your mum asked if I'd like to sit by the window. I said only if it wasn't a ferry. She said it's a road. I said I'll risk it."
    ],
    "ax": 31,
    "ay": 22
@@ -2723,6 +2922,9 @@
     "Ewen takes the broth in both hands and has a careful sip, like a man checking a path.",
     "Ewen: That is a proper broth. Barley and all. Mòran taing, {player}. And well done for telling me you were coming."
    ],
+   "mums": [
+    "Ewen: Told your mum about the snowhares on the Ben. She said they've got more sense than you. I said they've got better coats than me."
+   ],
    "ax": 30,
    "ay": 19
   },
@@ -2763,6 +2965,9 @@
    "thanks": [
     "Gethin lifts the lid of the pot, breathes in, and forgets the book entirely.",
     "Gethin: Cawl! Diolch, {player}. That is Monday sorted and Mam will say it was her idea."
+   ],
+   "mums": [
+    "Gethin: My mam makes cawl on Sundays. Your mum asked what's in it. I said everything. She's making it on Monday. I said diolch twice."
    ],
    "ax": 10,
    "ay": 20
@@ -2805,6 +3010,9 @@
     "Gareth holds the perch up to the light and inspects it like a man checking a lock gate.",
     "Gareth: A proper fish. Diolch, {player}. That will do for tea, and for the story, which will get bigger."
    ],
+   "mums": [
+    "Gareth: Told your mum what a windlass is. She nodded. She really did. I don't know whether to put it in my will."
+   ],
    "ax": 30,
    "ay": 20
   },
@@ -2846,8 +3054,22 @@
     "Peigi turns the mackerel over, sniffs it once, and smiles like she has been told good news.",
     "Peigi: Mòran taing, {player}. That is the supper sorted, and the stove will be glad of it."
    ],
+   "mums": [
+    "Peigi: Your mum asked if I'd ever been to Macclesfield. I said never. She said it's mostly hills and silk. I think I'd like it, now I've met her."
+   ],
    "ax": 46,
    "ay": 18
   }
- ]
+ ],
+ "mums_shared": {
+  "before": [
+   "Mum has the good cups out, and {name} is in the other chair as though it had been theirs for years.",
+   "Mum: There you are, {player}. {short}'s been here since dinner. We've done {town}, the price of everything, and your habit of leaving a wet towel on the bed.",
+   "They are getting on like a house on fire. You are, for the record, one of the topics."
+  ],
+  "after": [
+   "Mum: Lovely, they are. Why can't you bring friends like this home more often? I'll not ask twice. Well, I will.",
+   "{short} gets up to go, with a promise to write and an instruction to look after you. Mum sees them to the door and stands there a good while after."
+  ]
+ }
 }
