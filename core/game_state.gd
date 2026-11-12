@@ -222,6 +222,9 @@ func _dev_boot() -> void:
 			if a.begins_with("--flag="):  # dev: story flags set before the zone loads (a postcard waiting, a side story)
 				for f in a.substr(7).split(",", false):
 					data.set_flag(f.get_slice("=", 0), f.get_slice("=", 1) if "=" in f else true)  # k=v sets a string
+			elif a.begins_with("--regular-five="):  # dev: these Regulars (comma separated ids) are at favour 5, waiting at Mum's
+				for id in a.substr(15).split(",", false):
+					data.set_flag(Regulars.flag_key(id), {"favour": 5, "pts": 8, "five_day": data.day_count})
 			elif a.begins_with("--badges="):  # dev: this many Stones held
 				for i in int(a.substr(9)):
 					data.badges.append("dev_%d" % i)

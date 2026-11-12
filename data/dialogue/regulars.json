@@ -70,5 +70,353 @@
    "do": "regular",
    "id": "hilda"
   }
+ ],
+ "regular_tom_bath": [
+  {
+   "do": "regular",
+   "id": "tom_bath"
+  }
+ ],
+ "regular_maureen_carlisle": [
+  {
+   "do": "regular",
+   "id": "maureen_carlisle"
+  }
+ ],
+ "regular_walt_lake_district": [
+  {
+   "do": "regular",
+   "id": "walt_lake_district"
+  }
+ ],
+ "regular_harold_lancaster": [
+  {
+   "do": "regular",
+   "id": "harold_lancaster"
+  }
+ ],
+ "regular_eddie_liverpool": [
+  {
+   "do": "regular",
+   "id": "eddie_liverpool"
+  }
+ ],
+ "regular_alf_wirral_way": [
+  {
+   "do": "regular",
+   "id": "alf_wirral_way"
+  }
+ ],
+ "regular_doreen_sheffield": [
+  {
+   "do": "regular",
+   "id": "doreen_sheffield"
+  }
+ ],
+ "regular_emeka_birmingham": [
+  {
+   "do": "regular",
+   "id": "emeka_birmingham"
+  }
+ ],
+ "regular_cuthbert_cotswolds": [
+  {
+   "do": "regular",
+   "id": "cuthbert_cotswolds"
+  }
+ ],
+ "regular_hetty_ironbridge": [
+  {
+   "do": "regular",
+   "id": "hetty_ironbridge"
+  }
+ ],
+ "regular_hugh_lincoln": [
+  {
+   "do": "regular",
+   "id": "hugh_lincoln"
+  }
+ ],
+ "regular_mavis_nottingham": [
+  {
+   "do": "regular",
+   "id": "mavis_nottingham"
+  }
+ ],
+ "regular_wilf_cambridge": [
+  {
+   "do": "regular",
+   "id": "wilf_cambridge"
+  }
+ ],
+ "regular_marion_dover": [
+  {
+   "do": "regular",
+   "id": "marion_dover"
+  }
+ ],
+ "regular_dolly_glastonbury": [
+  {
+   "do": "regular",
+   "id": "dolly_glastonbury"
+  }
+ ],
+ "regular_alf_oxford": [
+  {
+   "do": "regular",
+   "id": "alf_oxford"
+  }
+ ],
+ "regular_dougie_plymouth": [
+  {
+   "do": "regular",
+   "id": "dougie_plymouth"
+  }
+ ],
+ "regular_nesta_severn": [
+  {
+   "do": "regular",
+   "id": "nesta_severn"
+  }
+ ],
+ "regular_ellen_douglas": [
+  {
+   "do": "regular",
+   "id": "ellen_douglas"
+  }
+ ],
+ "regular_dave_adamstown": [
+  {
+   "do": "regular",
+   "id": "dave_adamstown"
+  }
+ ],
+ "regular_cecil_bermuda": [
+  {
+   "do": "regular",
+   "id": "cecil_bermuda"
+  }
+ ],
+ "regular_rita_falklands": [
+  {
+   "do": "regular",
+   "id": "rita_falklands"
+  }
+ ],
+ "regular_joyce_st_helena": [
+  {
+   "do": "regular",
+   "id": "joyce_st_helena"
+  }
+ ],
+ "regular_lloyd_turks_caicos": [
+  {
+   "do": "regular",
+   "id": "lloyd_turks_caicos"
+  }
+ ],
+ "regular_desmond_bushmills": [
+  {
+   "do": "regular",
+   "id": "desmond_bushmills"
+  }
+ ],
+ "regular_breda_cork": [
+  {
+   "do": "regular",
+   "id": "breda_cork"
+  }
+ ],
+ "regular_francie_derry": [
+  {
+   "do": "regular",
+   "id": "francie_derry"
+  }
+ ],
+ "regular_mattie_galway": [
+  {
+   "do": "regular",
+   "id": "mattie_galway"
+  }
+ ],
+ "regular_nora_kilkenny": [
+  {
+   "do": "regular",
+   "id": "nora_kilkenny"
+  }
+ ],
+ "regular_aidan_limerick": [
+  {
+   "do": "regular",
+   "id": "aidan_limerick"
+  }
+ ],
+ "regular_ruth_newgrange": [
+  {
+   "do": "regular",
+   "id": "ruth_newgrange"
+  }
+ ],
+ "regular_con_kerry": [
+  {
+   "do": "regular",
+   "id": "con_kerry"
+  }
+ ],
+ "regular_batt_shannon": [
+  {
+   "do": "regular",
+   "id": "batt_shannon"
+  }
+ ],
+ "regular_peggy_sligo": [
+  {
+   "do": "regular",
+   "id": "peggy_sligo"
+  }
+ ],
+ "regular_alec_aberdeen": [
+  {
+   "do": "regular",
+   "id": "alec_aberdeen"
+  }
+ ],
+ "regular_morag_edinburgh": [
+  {
+   "do": "regular",
+   "id": "morag_edinburgh"
+  }
+ ],
+ "regular_calum_inverness": [
+  {
+   "do": "regular",
+   "id": "calum_inverness"
+  }
+ ],
+ "regular_magnus_kirkwall": [
+  {
+   "do": "regular",
+   "id": "magnus_kirkwall"
+  }
+ ],
+ "regular_tammie_lerwick": [
+  {
+   "do": "regular",
+   "id": "tammie_lerwick"
+  }
+ ],
+ "regular_ina_pentland": [
+  {
+   "do": "regular",
+   "id": "ina_pentland"
+  }
+ ],
+ "regular_ishbel_thurso": [
+  {
+   "do": "regular",
+   "id": "ishbel_thurso"
+  }
+ ],
+ "regular_murdo_harris": [
+  {
+   "do": "regular",
+   "id": "murdo_harris"
+  }
+ ],
+ "regular_ma_haig_borders": [
+  {
+   "do": "regular",
+   "id": "ma_haig_borders"
+  }
+ ],
+ "regular_idris_aberystwyth": [
+  {
+   "do": "regular",
+   "id": "idris_aberystwyth"
+  }
+ ],
+ "regular_nain_anglesey": [
+  {
+   "do": "regular",
+   "id": "nain_anglesey"
+  }
+ ],
+ "regular_wilf_cardiff": [
+  {
+   "do": "regular",
+   "id": "wilf_cardiff"
+  }
+ ],
+ "regular_emrys_llanberis": [
+  {
+   "do": "regular",
+   "id": "emrys_llanberis"
+  }
+ ],
+ "regular_menna_pembroke": [
+  {
+   "do": "regular",
+   "id": "menna_pembroke"
+  }
+ ],
+ "regular_dilys_rhondda": [
+  {
+   "do": "regular",
+   "id": "dilys_rhondda"
+  }
+ ],
+ "regular_emlyn_st_davids": [
+  {
+   "do": "regular",
+   "id": "emlyn_st_davids"
+  }
+ ],
+ "regular_morag_cairnryan": [
+  {
+   "do": "regular",
+   "id": "morag_cairnryan"
+  }
+ ],
+ "regular_bessie_central_belt": [
+  {
+   "do": "regular",
+   "id": "bessie_central_belt"
+  }
+ ],
+ "regular_isa_glasgow": [
+  {
+   "do": "regular",
+   "id": "isa_glasgow"
+  }
+ ],
+ "regular_catriona_oban": [
+  {
+   "do": "regular",
+   "id": "catriona_oban"
+  }
+ ],
+ "regular_ewen_fort_william": [
+  {
+   "do": "regular",
+   "id": "ewen_fort_william"
+  }
+ ],
+ "regular_gethin_holyhead": [
+  {
+   "do": "regular",
+   "id": "gethin_holyhead"
+  }
+ ],
+ "regular_gareth_llangollen": [
+  {
+   "do": "regular",
+   "id": "gareth_llangollen"
+  }
+ ],
+ "regular_peigi_skye": [
+  {
+   "do": "regular",
+   "id": "peigi_skye"
+  }
  ]
 }

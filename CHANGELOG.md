@@ -2,6 +2,14 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.3.1: Round at Mum's
+
+- **Friends come to tea.** Win a Regular all the way to favour 5 and, next time you go home, they are sitting in
+  Mum's front room with a cup. Mum and they get on like a house on fire, they say something in their own voice (all
+  seventy have their own lines), and you leave with a flask of tea. One visitor at a time, the longest-standing
+  friend first, and friends you made before this update still get their visit.
+- The last five people who were only ever "Resident" (in Birmingham, Manchester, Llangollen and Sheffield) have names.
+
 ## 5.3.0: Houses
 
 Going into a house used to be talk-and-leave: the same room, the same few lines for ever. Ideas from issues #143 to
