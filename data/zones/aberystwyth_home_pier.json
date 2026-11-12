@@ -85,10 +85,49 @@
    "variant": 0
   },
   {
-   "type": "plant_stand",
+   "type": "kitchen_dresser",
+   "x": 8,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 10,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
    "x": 1,
-   "y": 6,
-   "variant": 0
+   "y": 6
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "wall_picture",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 11,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 5,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

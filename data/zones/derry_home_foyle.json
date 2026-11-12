@@ -89,6 +89,17 @@
    "x": 1,
    "y": 6,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

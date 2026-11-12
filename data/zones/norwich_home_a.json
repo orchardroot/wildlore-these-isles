@@ -45,6 +45,12 @@
    "h": 2,
    "variant": 2,
    "walk": true
+  },
+  {
+   "type": "window",
+   "x": 2,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

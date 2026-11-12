@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 5,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 4,
    "y": 1,
@@ -89,6 +82,12 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

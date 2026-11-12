@@ -89,6 +89,12 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 10,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

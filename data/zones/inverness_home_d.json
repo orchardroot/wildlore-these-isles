@@ -32,11 +32,6 @@
    "y": 7
   },
   {
-   "type": "potted_plant",
-   "x": 9,
-   "y": 7
-  },
-  {
    "type": "fireplace",
    "x": 5,
    "y": 1
@@ -89,6 +84,17 @@
    "x": 1,
    "y": 6,
    "variant": 0
+  },
+  {
+   "type": "harp",
+   "x": 9,
+   "y": 7
+  },
+  {
+   "type": "window",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

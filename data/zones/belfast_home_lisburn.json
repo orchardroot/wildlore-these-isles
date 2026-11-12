@@ -85,10 +85,26 @@
    "variant": 0
   },
   {
-   "type": "plant_stand",
+   "type": "range_cooker",
+   "x": 9,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 4,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
    "x": 1,
-   "y": 6,
-   "variant": 1
+   "y": 6
+  },
+  {
+   "type": "cat_bowl",
+   "x": 8,
+   "y": 5,
+   "walk": true
   }
  ],
  "warps": [

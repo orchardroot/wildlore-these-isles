@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 10,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 7,
    "y": 1,
@@ -89,6 +82,28 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "range_cooker",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 3,
+   "y": 6,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

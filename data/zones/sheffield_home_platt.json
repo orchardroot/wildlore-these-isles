@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 6
   },
@@ -51,14 +46,14 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
-   "variant": 0,
+   "variant": 1,
    "rot": 90
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 9,
    "y": 3,
    "variant": 1,
@@ -89,6 +84,17 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
+  },
+  {
+   "type": "window",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [

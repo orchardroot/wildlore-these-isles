@@ -76,9 +76,28 @@
    "variant": 1
   },
   {
-   "type": "plant_stand",
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "lobster_pots",
    "x": 1,
-   "y": 5
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 4,
+   "y": 5,
+   "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
