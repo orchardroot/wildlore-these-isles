@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 6
   },
@@ -51,14 +46,14 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
-   "variant": 0,
+   "variant": 1,
    "rot": 90
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 9,
    "y": 3,
    "variant": 1,
@@ -89,6 +84,17 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
+  },
+  {
+   "type": "window",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -113,7 +119,19 @@
    "script": "shfhome_platt"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "dishwight",
+    "min": 86,
+    "max": 87,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 3,
@@ -142,5 +160,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A canteen of Sheffield cutlery, every knife stamped with the maker's name.",
+    "Stainless steel was first made in Sheffield, by Harry Brearley in 1913. Mrs Platt's husband never got over it, and neither has the city."
+   ],
+   "flag": "looked_platt_cutlery"
+  }
  ]
 }

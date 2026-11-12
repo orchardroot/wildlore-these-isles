@@ -113,7 +113,20 @@
    "script": "manchester_h3_0"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bogglet",
+    "min": 14,
+    "max": 16,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,

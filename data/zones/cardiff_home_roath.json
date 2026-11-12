@@ -76,7 +76,13 @@
    "variant": 0
   },
   {
-   "type": "plant_stand",
+   "type": "dartboard",
+   "x": 7,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
    "x": 1,
    "y": 5
   }
@@ -103,7 +109,22 @@
    "script": "roath_dad"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "marilwyd",
+    "min": 36,
+    "max": 38,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "season": [
+     "winter"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -119,5 +140,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A school rugby team photo, Ffion front and centre with a face that says do not tackle me.",
+    "The muddy boots under it are not from today. Or at least that is the story."
+   ]
+  }
  ]
 }

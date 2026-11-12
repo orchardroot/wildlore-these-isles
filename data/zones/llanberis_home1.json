@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 6
   },
@@ -79,6 +74,18 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "slate_heap",
+   "x": 1,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "window",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -100,7 +107,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "lh1_mam"
+   "script": "lh1_mam",
+   "name": "Eirlys Roberts"
   },
   {
    "id": "welsh_miner",
@@ -129,5 +137,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A poster of the Snowdon Mountain Railway, a little steam engine pushing a carriage up the slope.",
+    "It has run since 1896 on a rack and pinion track, and the engine pushes rather than pulls. A slate chip on the frame is rumoured to be lucky."
+   ],
+   "find": {
+    "item": "slate_chip"
+   }
+  }
  ]
 }

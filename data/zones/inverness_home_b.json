@@ -89,6 +89,12 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "cat_bowl",
+   "x": 6,
+   "y": 6,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +116,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "inv_home_b_grandad"
+   "script": "inv_home_b_grandad",
+   "name": "Hamish Munro"
   }
  ],
  "encounters": {},
@@ -129,5 +136,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A framed photograph of the memorial cairn on Culloden Moor, with rough stones for each clan beside it.",
+    "The battle in 1746 was the last pitched battle on British soil. Grandad takes visitors, and he talks quietly."
+   ]
+  }
  ]
 }

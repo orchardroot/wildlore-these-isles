@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 11,
    "y": 6
   },
@@ -51,17 +46,17 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
    "variant": 0,
    "rot": 90
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 11,
    "y": 3,
-   "variant": 5,
+   "variant": 1,
    "rot": 270
   },
   {
@@ -89,6 +84,17 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
+  },
+  {
+   "type": "wall_map",
+   "x": 11,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +135,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A map of Sheffield with the edge of the Peak District National Park shaded in, and a pin for home.",
+    "A good chunk of the city lies inside the park. The daughter cycles up the hill to school and arrives pink."
+   ]
+  }
  ]
 }

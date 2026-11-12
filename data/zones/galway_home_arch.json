@@ -89,6 +89,28 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 11,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "cat_bowl",
+   "x": 2,
+   "y": 2,
+   "walk": true
   }
  ],
  "warps": [
@@ -139,5 +161,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A pair of small worn shoes on the hearth, just in case.",
+    "The family says a cluricaun lives behind the boiler and mends shoes at night. Nobody has found one mended yet, but a lot go missing."
+   ]
+  }
  ]
 }

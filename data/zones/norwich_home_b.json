@@ -42,6 +42,16 @@
    "h": 2,
    "variant": 0,
    "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 9,
+   "y": 4
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 4
   }
  ],
  "warps": [
@@ -82,5 +92,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 3,
+   "text": [
+    "A knapper's hammer and a heap of flints split to show their glassy black hearts. One is squared off, ready for a wall.",
+    "Laid in patterns with pale stone this is flushwork, the East Anglian church-porch trick."
+   ]
+  }
  ]
 }

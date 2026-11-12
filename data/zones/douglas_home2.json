@@ -79,6 +79,17 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "wall_map",
+   "x": 5,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
   }
  ],
  "warps": [
@@ -129,5 +140,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "A framed photograph of an old Steam Packet ferry steaming into Douglas.",
+    "The company has run boats here since 1830, and Old Tom has crossed on most of them."
+   ]
+  }
  ]
 }

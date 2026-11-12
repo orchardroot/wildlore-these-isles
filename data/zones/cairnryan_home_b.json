@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 11,
-   "y": 3,
-   "variant": 3,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 8,
    "y": 1,
@@ -85,10 +78,21 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "wall_map",
+   "x": 11,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
    "x": 1,
-   "y": 6,
-   "variant": 0
+   "y": 6
+  },
+  {
+   "type": "window",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -130,5 +134,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A photograph of a basking shark's fin cutting the water off the coast, taken from a boat that looks rather too small.",
+    "They are the second largest fish in the sea, and they live on plankton. Gentle as a cushion, as Sandy says."
+   ]
+  }
  ]
 }

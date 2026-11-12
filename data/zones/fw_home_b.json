@@ -79,6 +79,11 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
   }
  ],
  "warps": [
@@ -100,10 +105,24 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "fw_home_b_mum"
+   "script": "fw_home_b_mum",
+   "name": "Morag MacDonald"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 72,
+    "max": 72,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,
@@ -119,5 +138,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of a boat climbing Neptune's Staircase, eight locks one after the other, with the Ben behind.",
+    "Telford's Caledonian Canal was finished in 1822. The climb takes about ninety minutes, which gives you plenty of time for a flask."
+   ]
+  }
  ]
 }

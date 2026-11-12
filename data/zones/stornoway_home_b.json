@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 6
   },
@@ -58,13 +53,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 5,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 4,
    "y": 1,
@@ -85,10 +73,32 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "range_cooker",
+   "x": 6,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 1,
+   "y": 6
+  },
+  {
+   "type": "lobster_pots",
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "cat_bowl",
+   "x": 3,
+   "y": 5,
+   "walk": true
   }
  ],
  "warps": [
@@ -130,5 +140,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A photograph of herring girls gutting at the quay, their fingers bound in rags against the knives.",
+    "They travelled the coast following the fish and worked twelve hours at a stretch. They sang while they did it, and they were quick."
+   ],
+   "flag": "looked_herring_girls"
+  }
  ]
 }

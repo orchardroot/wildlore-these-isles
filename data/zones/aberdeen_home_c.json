@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 6,
    "y": 1,
@@ -89,6 +82,12 @@
    "x": 1,
    "y": 6,
    "variant": 0
+  },
+  {
+   "type": "window",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +109,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "abdn_home_c_gran"
+   "script": "abdn_home_c_gran",
+   "name": "Davie Duthie"
   }
  ],
  "encounters": {},
@@ -130,5 +130,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A photograph of Footdee, the little fishing houses set round squares that face the sea.",
+    "It is written Footdee and said Fittie, and the neighbours will correct you if you get it wrong."
+   ],
+   "find": {
+    "item": "sea_glass"
+   }
+  }
  ]
 }

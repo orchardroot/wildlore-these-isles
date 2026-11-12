@@ -2,12 +2,12 @@
  "fw_home_b_mum": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Morag MacDonald",
    "text": "Telford's Neptune's Staircase is a ladder of eight locks at Banavie. A boat takes about ninety minutes to climb it."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Morag MacDonald",
    "text": "The Jacobite steam train crosses the Glenfinnan viaduct. Your friends will say it is from a famous wizard film. They will be right."
   },
   {
@@ -16,14 +16,14 @@
    "then": [
     {
      "do": "say",
-     "who": "Resident",
+     "who": "Morag MacDonald",
      "text": "I gave you a piece already. You have been very polite, so you may stay for tea."
     }
    ],
    "else": [
     {
      "do": "say",
-     "who": "Resident",
+     "who": "Morag MacDonald",
      "text": "Here, a bit of tablet for the road. Please do not tell the dentist."
     },
     {

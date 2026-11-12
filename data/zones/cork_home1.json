@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 10,
-   "y": 3,
-   "variant": 3,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 6,
    "y": 1,
@@ -89,6 +82,34 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 4,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 6,
+   "y": 4,
+   "walk": true
+  },
+  {
+   "type": "bookshelf",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "window",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -123,7 +144,19 @@
    "name": "Mam Deasy"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "cluricaun",
+    "min": 53,
+    "max": 54,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 3,
@@ -152,5 +185,16 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "Behind glass, the good china: gold-rimmed, never used, and dusted every Friday.",
+    "Nan Kelleher says it is for a great occasion. In forty years the great occasion has not yet turned up."
+   ],
+   "flag": "looked_kelleher_china"
+  }
  ]
 }

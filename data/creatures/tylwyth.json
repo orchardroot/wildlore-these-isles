@@ -1,6 +1,14 @@
 {
   "line": "tylwyth",
   "species": [
-    {"id": "tylwyth", "real": "In the tale of Llyn y Fan Fach, a fairy wife from the lake leaves her husband after he strikes her three times without cause, and their sons become the healers known as the Physicians of Myddfai.", "names": {"cy": "Tylwyth Teg"}, "name": "Tylwyth", "types": ["fae"], "base": {"hp": 72, "atk": 80, "def": 64, "lore": 86, "ward": 80, "spd": 70}, "growth": "medium", "catch_rate": 45, "legend": true, "base_xp": 200, "learnset": [[1, "fairy_pinch"], [1, "pixie_prick"], [4, "glamour"], [8, "fog_lure"], [12, "changeling_charm"], [16, "bad_luck_bump"], [20, "bewitching_hour"], [26, "hollow_hill_hammer"], [32, "ivy_tangle"]], "evolves": null, "habitat": ["llangollen", "ogwen", "dee_valley"], "dex": {"text": "Lives beneath the lake and under the hill, and only comes up when it can be bothered. Its gifts are always a little too generous.", "fact": "Tylwyth Teg means 'the fair family' in Welsh, a polite name for the fairies."}, "sprite": "tylwyth"}
+    {"id": "tylwyth", "real": "In the tale of Llyn y Fan Fach, a fairy wife from the lake leaves her husband after he strikes her three times without cause, and their sons become the healers known as the Physicians of Myddfai.", "names": {"cy": "Tylwyth Teg"}, "name": "Tylwyth", "types": ["fae"], "base": {"hp": 72, "atk": 80, "def": 64, "lore": 86, "ward": 80, "spd": 70}, "growth": "medium", "catch_rate": 45, "legend": true, "base_xp": 200, "learnset": [[1, "fairy_pinch"], [1, "pixie_prick"], [4, "glamour"], [8, "fog_lure"], [12, "changeling_charm"], [16, "bad_luck_bump"], [20, "bewitching_hour"], [26, "hollow_hill_hammer"], [32, "ivy_tangle"]], "evolves": null, "habitat": [
+   "aberystwyth_home_pier",
+   "anglesey_cottage",
+   "dee_valley",
+   "llanberis_home2",
+   "llangollen",
+   "llangollen_home1",
+   "ogwen"
+ ], "dex": {"text": "Lives beneath the lake and under the hill, and only comes up when it can be bothered. Its gifts are always a little too generous.", "fact": "Tylwyth Teg means 'the fair family' in Welsh, a polite name for the fairies."}, "sprite": "tylwyth"}
   ]
 }

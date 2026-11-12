@@ -76,9 +76,28 @@
    "variant": 1
   },
   {
-   "type": "plant_stand",
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "lobster_pots",
    "x": 1,
-   "y": 5
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 4,
+   "y": 5,
+   "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -113,7 +132,23 @@
    "name": "Fisherman"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "pixiedell",
+    "min": 46,
+    "max": 48,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "weather": [
+     "fog",
+     "drizzle"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 5,
@@ -142,5 +177,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "The clock stopped some time ago. A note taped to it says: Fixing it dreckly.",
+    "The note has been there longer than the clock was running."
+   ]
+  }
  ]
 }

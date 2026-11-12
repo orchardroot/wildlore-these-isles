@@ -103,7 +103,19 @@
    "script": "chester_h1_0"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "dishwight",
+    "min": 21,
+    "max": 23,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

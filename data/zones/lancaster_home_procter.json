@@ -56,10 +56,10 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
-   "variant": 3,
+   "variant": 1,
    "rot": 90
   },
   {
@@ -79,6 +79,17 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "window",
+   "x": 4,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -103,7 +114,20 @@
    "script": "lanhome_procter"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bogglet",
+    "min": 84,
+    "max": 85,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -119,5 +143,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A jug painted with roses and a castle, in the traditional style of canal boat families.",
+    "He kept it on the boat for years. It has never been moved far from the kettle."
+   ]
+  }
  ]
 }

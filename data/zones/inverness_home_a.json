@@ -89,6 +89,12 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 10,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +116,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "inv_home_a_mum"
+   "script": "inv_home_a_mum",
+   "name": "Isobel Fraser"
   },
   {
    "id": "highland_ghillie",
@@ -139,5 +146,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A small print of the Ness running through town, the castle above it on its bluff.",
+    "Inbhir Nis, mouth of the Ness. The river is the whole reason for the place, which the town is happy to admit."
+   ]
+  }
  ]
 }

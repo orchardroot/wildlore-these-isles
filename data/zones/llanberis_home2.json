@@ -79,6 +79,24 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "slate_heap",
+   "x": 9,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 7,
+   "y": 6,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 4,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -100,7 +118,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "lh2_dad"
+   "script": "lh2_dad",
+   "name": "Dewi Parry"
   },
   {
    "id": "cook_cawl",
@@ -113,7 +132,19 @@
    "name": "Nain Gwen"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "tylwyth",
+    "min": 27,
+    "max": 29,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -129,5 +160,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A row of wellies by the door, the smallest painted with sparkly stars.",
+    "Hwyl is written on a card above them in a child's best handwriting."
+   ]
+  }
  ]
 }

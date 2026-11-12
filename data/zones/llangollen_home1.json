@@ -79,6 +79,18 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "cat_bowl",
+   "x": 6,
+   "y": 5,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 2,
+   "y": 3,
+   "walk": true
   }
  ],
  "warps": [
@@ -100,10 +112,23 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "llh1_mam"
+   "script": "llh1_mam",
+   "name": "Bethan Davies"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "tylwyth",
+    "min": 25,
+    "max": 25,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -119,5 +144,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "Beside a lamp in the window, a saucer of milk that is not for the cat.",
+    "The tylwyth teg are better as friends than as neighbours who are not asked. Mam leaves the light on."
+   ]
+  }
  ]
 }

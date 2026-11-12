@@ -19,6 +19,7 @@ Society) still own their corners.
 | Standing at stud | once a real day, after a Breed Class win | half the stud fee: 30 x (100 + 90 badges) / 10 / 2 | badges |
 | Show classes, darts purse | once a real day | 10 to 40 | flat |
 | Gazetteer, Visitors' Book, quiz league | once | about 44k in all if you explore half the towns | exploration |
+| Residents' sightings and photographs | once each (`Wants`, kinds `seen` and `photo`) | 120 to 250, about 6k in all | visiting |
 | Deeds | passive, per in-game day, needs stock | see below | badges (price and takings) |
 | Cooking and selling dishes | foraging time, glut | a dish is 350 base, 175 at a shop, up to 567 at a festival | flat |
 | Trade Ledger | only shop-stocked goods can be bought low | jute fibre: about 990 for a full load at the festival cap | flat |

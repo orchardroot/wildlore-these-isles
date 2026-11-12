@@ -79,6 +79,18 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "dartboard",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -119,5 +131,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A revision timetable, with the rugby fixtures coloured in far more neatly than the lectures.",
+    "The Rec is a few minutes' walk. The exam is later. You can see which has the better handwriting."
+   ]
+  }
  ]
 }

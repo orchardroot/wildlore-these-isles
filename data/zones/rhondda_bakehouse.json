@@ -71,7 +71,22 @@
    "name": "Nan, the baker"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "marilwyd",
+    "min": 34,
+    "max": 36,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "season": [
+     "winter"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 5,
@@ -95,5 +110,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 3,
+   "text": [
+    "A loaf of bara brith on the counter, speckled with fruit that was soaked in tea overnight.",
+    "Nan cuts it thick and butters it thicker. There is a notice behind her: no crumbs on the floor, except the ones I put there."
+   ],
+   "find": {
+    "item": "bara_brith"
+   }
+  }
  ]
 }

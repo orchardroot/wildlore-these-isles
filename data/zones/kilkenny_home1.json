@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 10,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 7,
    "y": 1,
@@ -89,6 +82,28 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "range_cooker",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 3,
+   "y": 6,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -123,7 +138,19 @@
    "name": "Grandad Phelan"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "cluricaun",
+    "min": 50,
+    "max": 51,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,
@@ -139,5 +166,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A book about the Statutes of Kilkenny, passed in 1366 to stop the settlers speaking Irish and keeping Irish ways.",
+    "It did not work well. Plenty of the settlers carried on speaking Irish anyway."
+   ]
+  }
  ]
 }

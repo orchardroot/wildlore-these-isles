@@ -1,0 +1,434 @@
+{
+ "aberdeen_home_a|abdn_home_a_quine": {
+  "who": "Kirsty Cruickshank",
+  "again": [
+   "Fit like, back again? Sit yersel doon, ye're lettin the heat oot.",
+   "I thocht ye'd gone for good. Nae such luck, eh? Only teasin."
+  ],
+  "weather": {
+   "sunshine": [
+    "Look at that, the granite's fairly sparkling the day. Dinna say I never tell ye anything."
+   ]
+  }
+ },
+ "aberdeen_home_b|abdn_home_b_dad": {
+  "who": "Alan Mitchell",
+  "again": [
+   "A fresh pair of ears. I have run out of people to complain to about the bins.",
+   "You again. Fair enough, the kettle was getting lonely."
+  ],
+  "morning": [
+   "Mornings in this house are mostly me looking for my other shoe."
+  ]
+ },
+ "aberdeen_home_c|abdn_home_c_gran": {
+  "who": "Davie Duthie",
+  "again": [
+   "Och, ye're back. Gran would have put the kettle on before ye reached the door.",
+   "Ye'll wear a groove in the step. Mind, I dinna mind."
+  ],
+  "weather": {
+   "gale": [
+    "Listen to that wind off the sea. Fittie folk just nod at it, like an old neighbour."
+   ]
+  }
+ },
+ "aberdeen_home_d|abdn_home_d_mum": {
+  "who": "Jessie Ritchie",
+  "again": [
+   "Sit doon, sit doon, ye look like ye could dae wi a rowie.",
+   "Ye're back. I'd say I'm surprised, but ye've the look of a body that likes company."
+  ],
+  "morning": [
+   "Mornings I'm no fit to speak till the tea has gone in. After that, mind, I'm unstoppable."
+  ]
+ },
+ "aberdeen_townhouse|townhouse_clerk": {
+  "who": "Clerk",
+  "again": [
+   "Ah, the file reopens. The paperwork has not moved, but it has had a good rest.",
+   "Ah, a returning visitor. Please sign the book. It is more for my morale than anything."
+  ]
+ },
+ "aberystwyth_home_digs|digs_student": {
+  "who": "Student",
+  "again": [
+   "Oh, you again. Come in, the kettle works even if the radiator does not.",
+   "Someone to blame the washing up on. Perfect timing."
+  ],
+  "evening": [
+   "It is gone nine and I am only now thinking about the essay due tomorrow. Tradition, really."
+  ]
+ },
+ "aberystwyth_home_harbour|harbour_fisher": {
+  "who": "Idris",
+  "again": [
+   "I was just telling the tide about you. It was not impressed.",
+   "Ah, it is you. Sit down, I have a story, and it gets better each time I tell it."
+  ],
+  "weather": {
+   "gale": [
+    "Wind like this and I am glad to be indoors. I tell Mair it is wisdom. She says it is knees."
+   ]
+  }
+ },
+ "aberystwyth_home_harbour|harbour_wife": {
+  "who": "Mair",
+  "again": [
+   "Duw, bach, Idris has been sulking at the window all week. Cheer him up.",
+   "Come in, come in. He will say he never missed you. He did."
+  ]
+ },
+ "aberystwyth_home_pier|pierst_boy": {
+  "who": "Gethin",
+  "again": [
+   "You are back! Nain made more, and I am being very brave not eating the lot.",
+   "Are you staying? Keep an eye on the plate for me."
+  ],
+  "morning": [
+   "Mornings Nain has the bakestone out and the whole house smells like Sunday, whatever day it is."
+  ]
+ },
+ "aberystwyth_home_pier|pierst_nain": {
+  "who": "Nain",
+  "again": [
+   "Sit, sit, bach. You are looking thin, and I say that to everyone.",
+   "Well, look who it is. The kettle will not be a minute."
+  ]
+ },
+ "anglesey_cottage|angcottage_nain": {
+  "who": "Nain",
+  "again": [
+   "Cariad, you came back. The cat has been waiting by the door, or so she says.",
+   "Good, a fresh opinion. I have knitted something and nobody here will admit to liking it."
+  ],
+  "season": {
+   "winter": [
+    "Winter in this cottage means wool, tea and not answering the door before ten."
+   ]
+  }
+ },
+ "bath_home1|bath_home1_gran": {
+  "who": "Mrs Hale",
+  "again": [
+   "Wipe your feet, dear, I mean it this time.",
+   "Oh, it is you. The shortbread has been watching the door too."
+  ],
+  "weather": {
+   "rain": [
+    "Rain again. Never mind, the tea is better for it and so is the company."
+   ]
+  }
+ },
+ "bath_home2|bath_home2_stargazer": {
+  "who": "Old Tom",
+  "again": [
+   "Back, are you? Good. Clear nights make me chatty and nobody listens.",
+   "Ah, a visitor. Have a peer, but mind that eyepiece, it takes offence."
+  ],
+  "evening": [
+   "Evening is my morning, really. The sky starts its day and so do I."
+  ]
+ },
+ "bath_home3|bath_home3_nan": {
+  "who": "Nan",
+  "again": [
+   "Mind how you go, my lover, and sit down before you fall down.",
+   "There you are. I was just saying to the cat that someone nice would turn up."
+  ]
+ },
+ "bath_home4|bath_home4_student": {
+  "who": "Joss",
+  "again": [
+   "Oh good, a distraction. My revision timetable thanks you.",
+   "You are back. I have read the same page four times. Talk to me."
+  ],
+  "evening": [
+   "Evening is when I do my best work, or at least when I do any."
+  ]
+ },
+ "belfast_home_lisburn|bel_home_mairead": {
+  "who": "Mairead",
+  "again": [
+   "Back in? Come on, the kettle is still warm. Well, warm-ish.",
+   "Catch yourself on, I was only thinking about you. Come in, sit down."
+  ]
+ },
+ "belfast_home_riveter|bel_home_riveter": {
+  "who": "Mr Gillen",
+  "again": [
+   "Ah, you are back. Pull up a chair, I will tell you the story again and it will be better.",
+   "Another visit, is it? You have the look of someone who likes a good yarn."
+  ]
+ },
+ "belfast_home_wain|bel_home_family": {
+  "who": "Mrs Hanna",
+  "again": [
+   "It is half three, love, and nobody has done their homework, so excuse the wee racket.",
+   "In out of that, now. The tea is stewed, but sure it is the thought that counts."
+  ],
+  "evening": [
+   "Evenings here are tea, telly and the cat refusing to move off the best seat."
+  ]
+ },
+ "belfast_palmhouse|bel_palm_gardener": {
+  "who": "Gardener",
+  "again": [
+   "The ferns noticed your absence. They are very sensitive.",
+   "Ah, you return. Keep your coat on, the warm air will make you sleepy."
+  ],
+  "season": {
+   "winter": [
+    "Winter is the best time to be in here. Outside is grey, in here it is a different country."
+   ]
+  }
+ },
+ "bermuda_lighthouse|bm_climber": {
+  "who": "Out-of-Breath Visitor",
+  "again": [
+   "I'm back. I mean, I never left. I am still recovering on this step.",
+   "You came back up? Brave. I'm told there's a lift somewhere. There isn't, is there."
+  ]
+ },
+ "bermuda_lighthouse|bm_keeper": {
+  "who": "Lighthouse Keeper",
+  "again": [
+   "Twice up the stairs. Not many do that, so I take it as a compliment.",
+   "Watch the rail, and watch your knees, they will let you know tomorrow."
+  ],
+  "evening": [
+   "Evening is the best part of the job. The light comes on, and I pretend it was my idea."
+  ]
+ },
+ "birmingham_home1|brum_home1_nan": {
+  "who": "Nan Pat",
+  "again": [
+   "Sit yourself down, bab, the kettle never went off.",
+   "Well, look what the cat dragged in. Only joking, the cat dragged in a sock."
+  ],
+  "morning": [
+   "Mornings here start with tea, then more tea, then thinking about breakfast."
+  ]
+ },
+ "birmingham_home2|brum_home2_gramps": {
+  "who": "Grandad Harjit",
+  "again": [
+   "You are back! Sit, sit. The biscuits have been getting restless.",
+   "Ah, my friend. Come and sit. There is always room and always tea."
+  ]
+ },
+ "birmingham_home2|brum_home2_kid": {
+  "who": "Priya",
+  "again": [
+   "Oh, you again. Want to hear another word nobody else believes?",
+   "You came back! Gran says that means you like us."
+  ]
+ },
+ "birmingham_home3|brum_home3_mia": {
+  "who": "Mia",
+  "again": [
+   "You are back! My project is nearly done, and I need someone to be impressed.",
+   "Oh good, a visitor. Do you want to hear my presentation? It is mostly done."
+  ]
+ },
+ "birmingham_home4|brum_home4_driver": {
+  "who": "Mr Okafor",
+  "again": [
+   "Back, are you? Mind if I tell you about the delays on the old route? Everything was late.",
+   "Ah, a regular. Thirty years of that and I can spot one at fifty paces."
+  ],
+  "weather": {
+   "rain": [
+    "Rain like this and I remember every wet day I drove. Slow, steamy, and nobody cheerful."
+   ]
+  }
+ },
+ "borders_bakehouse|gran_haig": {
+  "who": "Gran Haig",
+  "again": [
+   "Well, come in, hen, and mind the bannocks.",
+   "Ach, ye're no lost, are ye? Sit doon a minute."
+  ],
+  "morning": [
+   "I'm up before the first loaf. The oven doesna wait for anybody, and neither do I."
+  ]
+ },
+ "borders_bakehouse|ma_haig": {
+  "who": "Ma Haig",
+  "again": [
+   "The oven's hot and my patience is hotter, hen. Only joking, mostly.",
+   "Come in, come in. Ye've the look of a body that needs a pie."
+  ],
+  "morning": [
+   "First batch is just out. Come in before it's all gone, hen."
+  ]
+ },
+ "bushmills_home_green|bush_home_nan": {
+  "who": "Nan Boyle",
+  "again": [
+   "Come away in. I was just going for a dander, but sure it can wait.",
+   "Well now, look who it is. The tea's wet, as they say."
+  ]
+ },
+ "bushmills_home_hill|bush_home_birder": {
+  "who": "Mr Wylie",
+  "again": [
+   "Quietly, please. Something has just landed and I do not want it spooked.",
+   "Ah, you. Sit, but stay still. Birds have long memories for bad manners."
+  ],
+  "morning": [
+   "Early light is the best for watching. I am usually at this window before the kettle boils."
+  ]
+ },
+ "cairnryan_home_a|cairnryan_home_a_morag": {
+  "who": "Morag",
+  "again": [
+   "Ye'll catch yer death in that smirr. Come in.",
+   "Ah, it's yersel. The boy's out the back pretending he isna cold."
+  ],
+  "weather": {
+   "fog": [
+    "Fog's sat on the loch the day. Ye canna see the far shore, and I like it that way."
+   ]
+  }
+ },
+ "cairnryan_home_b|cairnryan_home_b_sandy": {
+  "who": "Sandy",
+  "again": [
+   "Mind the glaur on yer boots, I've only just swept.",
+   "Ah, ye're back. Pull up a chair and tell me something I havena heard."
+  ],
+  "weather": {
+   "rain": [
+    "Ach, there's the rain on the window again. At least it's no snow. Yet."
+   ]
+  }
+ },
+ "cambridge_home_a|cam_landlady": {
+  "who": "Landlady",
+  "again": [
+   "Do wipe your feet. The last lodger did not, and I am still bitter.",
+   "Oh, it is you. I trust you have not been punting. They always come back damp."
+  ],
+  "morning": [
+   "Mornings I'm up for the post and the porridge. The lodgers are up for neither."
+  ]
+ },
+ "cambridge_home_b|cam_maths": {
+  "who": "Maths Student",
+  "again": [
+   "You are back. Good, I need someone who does not know what a lemma is.",
+   "Perfect timing. I am procrastinating beautifully."
+  ],
+  "evening": [
+   "It is late and I am still on problem four. Tell me it is normal."
+  ]
+ },
+ "cardiff_home_bute|bute_oldman": {
+  "who": "Old Dockworker",
+  "again": [
+   "Pull up a chair, butt, I'm not going anywhere.",
+   "Alright, butt. Good to see a face that stops to listen."
+  ]
+ },
+ "cardiff_home_grange|grange_mamgu": {
+  "who": "Mamgu",
+  "again": [
+   "Come here, cariad, and have a cwtch before you go.",
+   "Ah, you're back. The kettle's on, the cat's on the settee, all is well."
+  ],
+  "morning": [
+   "Mornings I do the crossword and pretend I haven't got it wrong."
+  ]
+ },
+ "cardiff_home_roath|roath_dad": {
+  "who": "Dad",
+  "again": [
+   "Sit down, mate, I'm just trying to find where my match ticket went.",
+   "Come in, come in. The telly is on but nobody is watching, as usual."
+  ],
+  "weather": {
+   "rain": [
+    "Rain on a Saturday and Ffion still wants to play outside. I admire it, really."
+   ]
+  }
+ },
+ "carlisle_home_armstrong|arm_mum": {
+  "who": "Mrs Armstrong",
+  "again": [
+   "Is it yourself, pet? You have the look of someone who left without saying goodbye.",
+   "Well, well. Come in, then. I'll count the spoons after."
+  ]
+ },
+ "carlisle_home_graham|gra_dad": {
+  "who": "Mr Graham",
+  "again": [
+   "Yes, I remember you. I never forget a face, family motto and all.",
+   "Ah, you've returned. I was just telling the dog about you. He didn't care."
+  ]
+ },
+ "central_belt_cottage|central_belt_cottage_bessie": {
+  "who": "Bessie",
+  "again": [
+   "Ye've the look of someone who could use a hot roll, hen.",
+   "Och, it's yersel. Sit doon, the canal's no going anywhere."
+  ],
+  "weather": {
+   "fog": [
+    "Fog on the canal this morning. Ye could hear the boats before ye saw them."
+   ]
+  }
+ },
+ "cork_home1|kelleher_nan": {
+  "who": "Nan Kelleher",
+  "again": [
+   "Sit down before I put the kettle on without asking, love.",
+   "Ah, there you are. I was only after saying you'd be back."
+  ]
+ },
+ "cork_home2|murphy_dad": {
+  "who": "Mr Murphy",
+  "again": [
+   "Grand, grand. The tea is on and so is the match, so it's a good day.",
+   "You're a sight for sore eyes, or at least a sight."
+  ],
+  "weather": {
+   "rain": [
+    "Rain again. Sure that's Cork for you. You get used to it, or you move to Spain."
+   ]
+  }
+ },
+ "cork_home2|murphy_kid": {
+  "who": "Aoife",
+  "again": [
+   "You came back! Do you want to hear the tin whistle? Please say no, I'm only warming up.",
+   "Oh, hi. Dad says I'm improving. He's lying, but kindly."
+  ]
+ },
+ "cork_home3|lynch_mrs": {
+  "who": "Mrs Lynch",
+  "again": [
+   "You're gas, you are. Come in, the kettle's still warm.",
+   "Ah sure, the door was only open for you. Sit down."
+  ]
+ },
+ "cotswolds_woolhouse|cw_fleecegirl": {
+  "who": "Spinner",
+  "again": [
+   "Careful, there's wool on everything. You will leave covered in it.",
+   "Oh good, you're back. Feel this one, it's softer than yesterday's, I swear."
+  ],
+  "season": {
+   "spring": [
+    "Spring means shearing and sore arms, but the new fleece smells lovely."
+   ]
+  }
+ },
+ "cotswolds_woolhouse|cw_woolman": {
+  "who": "Wool Stapler",
+  "again": [
+   "You return. Good. A man likes an audience, particularly one who appreciates a fine staple.",
+   "Just in time. I have been grading since dawn and my eyes have turned to wool."
+  ]
+ }
+}

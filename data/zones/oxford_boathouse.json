@@ -120,5 +120,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A photograph of punts lined up on the Cherwell below Magdalen Bridge, with a sign: THE POLE STAYS IN THE PUNT.",
+    "It is not always the pole that stays. Do not look when you hear a splash."
+   ]
+  }
  ]
 }

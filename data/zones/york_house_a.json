@@ -32,11 +32,6 @@
    "y": 6
   },
   {
-   "type": "potted_plant",
-   "x": 9,
-   "y": 6
-  },
-  {
    "type": "fireplace",
    "x": 5,
    "y": 1
@@ -51,17 +46,17 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
    "variant": 0,
    "rot": 90
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 9,
    "y": 3,
-   "variant": 3,
+   "variant": 0,
    "rot": 270
   },
   {
@@ -89,6 +84,17 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 9,
+   "y": 6
+  },
+  {
+   "type": "window",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -123,7 +129,20 @@
    "name": "Mrs Hartley"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "hobling",
+    "min": 84,
+    "max": 85,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 6,
@@ -152,5 +171,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A thin book, 'A Walk Round the Snickelways of York', first published in 1983.",
+    "Mark W. Jones coined the word, and now the whole city uses it. Ginnel, snicket, snickelway: the resident knows them all."
+   ]
+  }
  ]
 }

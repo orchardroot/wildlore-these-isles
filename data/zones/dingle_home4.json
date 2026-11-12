@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 10,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 5,
    "y": 1,
@@ -89,6 +82,39 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "range_cooker",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 10,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "cat_bowl",
+   "x": 9,
+   "y": 2,
+   "walk": true
+  },
+  {
+   "type": "bookshelf",
+   "x": 8,
+   "y": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 8,
+   "y": 5,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +155,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 1,
+   "y": 1,
+   "text": [
+    "A poster on the shelf: an madra, an cat, an capall, with a picture beside each word.",
+    "The cat has been labelled twice, once in Irish and once in Cat. He disagrees with both."
+   ]
+  }
  ]
 }

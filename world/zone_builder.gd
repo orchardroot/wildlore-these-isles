@@ -328,6 +328,7 @@ const POINT_PROPS := ["lamp_post", "bench", "bush", "birch", "oak", "pine", "roc
 	# a Sanctuary's furniture (SanctuaryProps)
 	"sanctuary_restorer", "sanctuary_shelf", "creature_basket", "sanctuary_noticeboard", "sanctuary_poster", "back_door",
 	"dartboard",  # the darts pubs (w51)
+	"range_cooker", "settle", "box_bed",  # regional homes (HomeProps, w53)
 	# the Keeper venues (Dressing.VENUE_PROPS)
 	"stadium_stand", "rugby_posts", "floodlight", "puddle", "pitch_line", "gantry_crane", "ship_ribs", "steel_plates",
 	"hall_stage", "tea_urn", "stacked_chairs", "currach", "lobster_pots", "harbour_arch", "fae_lantern", "toadstool_ring",
@@ -531,7 +532,7 @@ static func _add(buckets: Dictionary, key: String, tr: Transform3D) -> void:
 
 ## Furniture that gets a soft contact shadow on the floor (characters have their own blob).
 const CONTACT_SHADOWED := ["table", "bench", "sofa", "bed", "bookshelf", "kitchen_dresser", "piano", "display_case",
-	"specimen_shelf", "shop_shelf", "sanctuary_restorer", "sanctuary_shelf", "creature_basket", "plant_stand", "potted_plant", "kettle_table", "fryer", "telescope", "stacked_chairs", "tea_urn",
+	"specimen_shelf", "shop_shelf", "sanctuary_restorer", "sanctuary_shelf", "creature_basket", "plant_stand", "potted_plant", "kettle_table", "range_cooker", "settle", "box_bed", "fryer", "telescope", "stacked_chairs", "tea_urn",
 	"market_stall", "statue", "tomb_chest", "loom", "harp"]
 
 static var contact_material: StandardMaterial3D
@@ -737,6 +738,8 @@ static func _ctor(name: String, variant: int) -> ArrayMesh:
 		return DeepMeshes.mesh(name, variant)
 	if name in CaribStyles.PROPS:
 		return CaribStyles.prop(name, variant)
+	if name in HomeProps.NAMES:
+		return HomeProps.mesh(name, variant)
 	if name in Landmarks.COTS_PROPS:
 		return Landmarks.cots_prop(name, variant)
 	if name in Landmarks.EA_PROPS:

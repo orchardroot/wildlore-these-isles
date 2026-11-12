@@ -51,17 +51,17 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
-   "variant": 2,
+   "variant": 1,
    "rot": 90
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 9,
    "y": 3,
-   "variant": 3,
+   "variant": 0,
    "rot": 270
   },
   {
@@ -89,6 +89,17 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "window",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -113,7 +124,20 @@
    "script": "house_c_resident"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "hobling",
+    "min": 84,
+    "max": 85,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -129,5 +153,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A Terry's Chocolate Orange, unwrapped, waiting for a tap. It falls apart into segments just like a real one.",
+    "York is a city of sweets. Kit Kat began here as a Chocolate Crisp in 1935 and was renamed in 1937."
+   ]
+  }
  ]
 }

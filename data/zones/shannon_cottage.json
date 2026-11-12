@@ -93,6 +93,16 @@
    "type": "plant_stand",
    "x": 1,
    "y": 6
+  },
+  {
+   "type": "range_cooker",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 11,
+   "y": 2
   }
  ],
  "warps": [
@@ -128,7 +138,23 @@
    "name": "Old Farmer"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bansheen",
+    "min": 58,
+    "max": 59,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "weather": [
+     "gale",
+     "fog"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,
@@ -145,5 +171,18 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "The kettle hangs from the crane over the hearth, where the fire is raked over with ashes at night and blown back to life in the morning.",
+    "In the old days the fire was never let go out, only raked over for the night. A scoop of turf sits by the fender."
+   ],
+   "find": {
+    "item": "peat"
+   }
+  }
  ]
 }

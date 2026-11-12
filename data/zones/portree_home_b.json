@@ -79,6 +79,23 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "range_cooker",
+   "x": 8,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 6,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -100,7 +117,8 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "portree_home_b_man"
+   "script": "portree_home_b_man",
+   "name": "Norman MacAskill"
   }
  ],
  "encounters": {},
@@ -119,5 +137,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A chart of the Minch, the sea between Skye and the Outer Hebrides. Someone has written 'grumpy' on it in pencil.",
+    "Minchmen are said to turn up there. They are never lost, only on a long detour."
+   ]
+  }
  ]
 }

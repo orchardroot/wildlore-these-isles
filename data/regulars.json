@@ -1,5 +1,5 @@
 {
- "_doc": "The Regulars (core/regulars.gd): twelve recurring characters. home: the town they live in (an NPC all the time); away: a second town where they turn up once favour is 2; likes: the item that wins them over; intro / meet / letter / offer / chat / thanks: the lines for each beat ({player} is you). Flag reg_<id> holds {favour, pts, gift_day, met, letter, manager}.",
+ "_doc": "The Regulars (core/regulars.gd): recurring characters. home: the town they live in (an NPC all the time; or zone + npc: a home resident who is the Regular, no NPC spawned); away: a second town where they turn up once favour is 2; likes: the item that wins them over; intro / meet / letter / offer / chat / thanks: the lines for each beat ({player} is you). Flag reg_<id> holds {favour, pts, gift_day, met, letter, manager}.",
  "regulars": [
   {
    "id": "ned",
@@ -482,6 +482,2372 @@
    "y": 14,
    "ax": 7,
    "ay": 25
+  },
+  {
+   "id": "tom_bath",
+   "name": "Old Tom",
+   "short": "Old Tom",
+   "zone": "bath_home2",
+   "npc": "bath_home2_stargazer",
+   "sprite": "commuter",
+   "home": "bath",
+   "away": "bristol",
+   "likes": "tench",
+   "hint": "Old Tom says a tench from the Kennet and Avon is the only thing worth eating after a cold night at the eyepiece.",
+   "intro": [
+    "Old Tom: Not many people stop to ask what I'm looking at. It's the Moon. It's always the Moon. I'm very fond of it.",
+    "Old Tom: Tom, if you like. Everyone adds the Old. Bring me a tench from the canal some day and I'll let you have a go on the eyepiece."
+   ],
+   "meet": [
+    "Old Tom is on the Bristol waterfront with the telescope in a pram, pointing it at a gull.",
+    "Old Tom: It's a test. The gull is a very bad planet. Good to see you, though. Come home to Bath, the kettle's on and the sky's clearing."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Clear skies here for once. Caroline Herschel would have been out all night; I managed forty minutes and a biscuit. The Moon sends its regards.",
+    "Yours, Tom (Old)"
+   ],
+   "offer": [
+    "Old Tom: Now then, {player}. That business of yours. It wants someone to mind the shop while you're off looking at the sky, or whatever it is you do.",
+    "Old Tom: I've sat up all night with a telescope. A till won't frighten me."
+   ],
+   "chat": [
+    "Old Tom: Mars is up. Reddish. Sulking, I think.",
+    "Old Tom: Don't breathe on the lens. Herschel would have said so, and he was a polite man."
+   ],
+   "thanks": [
+    "Old Tom turns the tench over like a rare comet.",
+    "Old Tom: Well, that's a find. I'll name it. Gerald."
+   ],
+   "ax": 12,
+   "ay": 53
+  },
+  {
+   "id": "maureen_carlisle",
+   "name": "Maureen Armstrong",
+   "short": "Mrs Armstrong",
+   "zone": "carlisle_home_armstrong",
+   "npc": "arm_mum",
+   "sprite": "villager_5",
+   "home": "carlisle",
+   "away": "newcastle",
+   "likes": "home_cumberland_sausage",
+   "hint": "Mrs Armstrong says a proper Cumberland sausage, coiled and peppery, is the only thing she would ever accept from a visitor.",
+   "intro": [
+    "Mrs Armstrong: Now we're settled, I'll say it. Everyone expects a clan of reivers and gets a woman with a tea towel. Disappointing for them, restful for me.",
+    "Mrs Armstrong: Maureen, to my friends. Bring me a proper Cumberland sausage, the coiled sort, and I'll count you as one. Cousins get two."
+   ],
+   "meet": [
+    "Mrs Armstrong is outside a Newcastle department store, guarding a carrier bag from nobody in particular.",
+    "Mrs Armstrong: My sister married a Geordie. We don't discuss it. I counted the spoons on the way out, purely from habit.",
+    "Mrs Armstrong: Don't look like that, pet. I put them back."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The cat has stolen a sock and hidden it behind the settle. I have said nothing, on the grounds that it takes after the family. Nobody has been hanged this week, so I call it a success.",
+    "Yours, Maureen Armstrong (mostly)"
+   ],
+   "offer": [
+    "Mrs Armstrong: Your business wants minding while you're off tramping about. I've kept a house full of Armstrongs in order, and that's harder than any till.",
+    "Mrs Armstrong: Leave it with me. I'll count the takings twice. That's called being careful, pet, whatever the neighbours say."
+   ],
+   "chat": [
+    "Mrs Armstrong: Don't mind the cat. It has never hurt anyone who wasn't carrying fish.",
+    "Mrs Armstrong: An Armstrong never forgets a favour, or a slight. Luckily I'm not holding any against you.",
+    "Mrs Armstrong: Border weather is just the Debatable Land arguing with itself."
+   ],
+   "thanks": [
+    "Mrs Armstrong weighs the sausage in her hand, then sniffs it like a customs officer.",
+    "Mrs Armstrong: Cumberland, and not a crumb of a lie in it. You're welcome in this house any day, pet. Mind the cat."
+   ],
+   "ax": 30,
+   "ay": 18
+  },
+  {
+   "id": "walt_lake_district",
+   "name": "Walter Gibson",
+   "short": "Farmer Walt",
+   "zone": "lake_farmhouse",
+   "npc": "lakefarm_farmer",
+   "sprite": "farmer",
+   "home": "lake_district",
+   "away": "carlisle",
+   "likes": "arctic_charr",
+   "hint": "Farmer Walt says an Arctic charr out of the deep water is the one fish he would stop work for.",
+   "intro": [
+    "Farmer Walt: Walt. Walter if I'm in trouble.",
+    "Farmer Walt: Herdwicks, forty acres and a dog that doesn't listen. That's the lot. Bring me a charr from the lake some day. I'd be glad of it."
+   ],
+   "meet": [
+    "Farmer Walt is leaning on a pen at Carlisle mart, saying nothing to a great many sheep.",
+    "Farmer Walt: Selling tups. Or watching them not sell. Same day's work, really.",
+    "Farmer Walt: Folk talk too much at these things. I've said eleven words since dinner. All of them were 'no'."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Lambs are fine. Dog is not. It is exactly as it was. The kettle has been on all week, as per law.",
+    "Yours, Walt (Gibson, no relation to the dog)"
+   ],
+   "offer": [
+    "Farmer Walt: You've a business that wants minding. I mind sheep. They're worse than customers.",
+    "Farmer Walt: I'll do it. Shan't talk much, mind."
+   ],
+   "chat": [
+    "Farmer Walt: Rain's coming. Can tell by the dog. It's gone under the table.",
+    "Farmer Walt: Kettle's on.",
+    "Farmer Walt: Beatrix Potter had a good eye for a Herdwick. Better than mine, and I've had mine on them sixty years."
+   ],
+   "thanks": [
+    "Farmer Walt turns the charr over, grunts, and for once does not say no.",
+    "Farmer Walt: Well. That's a fish. Sit down, I'll put the kettle on. It's on. Sit down anyway."
+   ],
+   "ax": 28,
+   "ay": 43
+  },
+  {
+   "id": "harold_lancaster",
+   "name": "Harold Procter",
+   "short": "Mr Procter",
+   "zone": "lancaster_home_procter",
+   "npc": "lanhome_procter",
+   "sprite": "canal_boater",
+   "home": "lancaster",
+   "away": "llangollen",
+   "likes": "perch",
+   "hint": "Mr Procter says a perch off the towpath, striped and cheerful, is what a retired boatman really wants for his tea.",
+   "intro": [
+    "Mr Procter: Harold, I should say. Forty years on the cut, and I still look for a mooring when I sit down, and then I remember I live in a house.",
+    "Mr Procter: I'd say come back with a perch, bring a perch, any perch off the towpath, and we'll have it fried, with butter, and I'll tell you about the time I lost a whole barge. Briefly."
+   ],
+   "meet": [
+    "Mr Procter is in Llangollen, leaning on a rail above the canal and looking at the boats with one raised eyebrow.",
+    "Mr Procter: Very narrow, this one. And that aqueduct. Right up in the air. I went across it holding my breath, and not out of fear, mind, just respect.",
+    "Mr Procter: Forty miles with no locks at home, and here's a canal that has all of them. Lovely, though. Lovely. I got lost looking for the lock."
+   ],
+   "letter": [
+    "Dear {player},",
+    "I have been sat in the window all week saying 'aboard' to the postman, and he has finally started to answer 'aye aye'. I think it is a form of progress, though it may be a form of pity. Anyway the canal is restful.",
+    "Yours, Harold (Procter, Captain, retired, of the front room)"
+   ],
+   "offer": [
+    "Mr Procter: Now, {player}, I've been thinking. A business is like a boat. It needs a steady hand and a very long cup of tea.",
+    "Mr Procter: Let me mind it. I won't rock it. Forty years and never once rocked it, except the one time, which was a swan."
+   ],
+   "chat": [
+    "Mr Procter: Restful, a canal. The only thing that rushes on it is the ducks, and they're only pretending.",
+    "Mr Procter: I said 'port' to the milkman. He said 'what'. So I said 'left' and he understood. I miss the old days.",
+    "Mr Procter: Zigzlets? Still lost, I'd say. Same as me when someone moves the furniture."
+   ],
+   "thanks": [
+    "Mr Procter holds up the perch to the light like a man checking a gauge.",
+    "Mr Procter: Splendid. Stripes and all. Now I shall be a bore for the rest of the evening, and you are welcome to stay and enjoy it."
+   ],
+   "ax": 55,
+   "ay": 16
+  },
+  {
+   "id": "eddie_liverpool",
+   "name": "Eddie Kenny",
+   "short": "Eddie",
+   "zone": "liverpool_warehouse",
+   "npc": "keeper",
+   "sprite": "villager_3",
+   "home": "liverpool",
+   "away": "douglas",
+   "likes": "dublin_coddle",
+   "hint": "Eddie says a pot of Dublin coddle is what half of Liverpool grew up on, and the other half wishes it had.",
+   "intro": [
+    "Eddie: Eddie. Warden. I wardens things. Mostly pillars. They've not complained.",
+    "Eddie: My nan came over from Dublin on the boat. She said you've not lived till you've had a coddle on a wet Tuesday. Bring me one and I'll agree with her."
+   ],
+   "meet": [
+    "Eddie is on the ferry terminal at Douglas, looking at a pillar and seeming a little betrayed by it.",
+    "Eddie: Day trip. This one's stone. Not even iron. I was told it was sturdy. I'm not convinced.",
+    "Eddie: Don't tell the Albert Dock. It'd take it personally."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Nothing has fallen on anyone this week. I put that in the logbook, and the logbook has never looked so thin. The pillars send their regards, in that they have not moved.",
+    "Yours, Eddie (Kenny, Warden of the Pillars, unofficially)"
+   ],
+   "offer": [
+    "Eddie: Look, {player}. I stand in a building all day and make sure it doesn't fall. A shop's easier. It has a till.",
+    "Eddie: Give it here. I'll keep an eye on the roof and the stock. In that order."
+   ],
+   "chat": [
+    "Eddie: Cast iron. Not a stick of wood. Very sensible. I've nothing to add. I've said it about four thousand times.",
+    "Eddie: A man once asked me if the pillars were load-bearing. I said they were bearing it very well.",
+    "Eddie: Victorians built it to last. I'm here to make sure they're right."
+   ],
+   "thanks": [
+    "Eddie lifts the lid, breathes in, and nods slowly, like a man who has just been reunited with his nan.",
+    "Eddie: Coddle. Right. That'll do. You're all right, you. I'd say more, but I'd only get misty."
+   ],
+   "ax": 42,
+   "ay": 11
+  },
+  {
+   "id": "alf_wirral_way",
+   "name": "Alf Dutton",
+   "short": "Old Alf",
+   "zone": "wirral_boathouse",
+   "npc": "wirral_boathouse_0",
+   "sprite": "fisher",
+   "home": "wirral_way",
+   "away": "holyhead",
+   "likes": "european_bass",
+   "hint": "Old Alf says a sea bass, silver and sulky, is the only thing the Dee ever gave him that he'd call a fair swap.",
+   "intro": [
+    "Old Alf: Alf. Old Alf, if you're being kind. This used to be a harbour. Now it's a view. I'm in the view.",
+    "Old Alf: Bring me a sea bass some day. Proper one, off the shore. I'll let you sit in the boat. It doesn't go anywhere, but it's the thought."
+   ],
+   "meet": [
+    "Old Alf is on the quay at Holyhead, watching the Irish ferry as though it has overtaken his career.",
+    "Old Alf: The packet boats left Parkgate when the water went. They came here. Cheeky. Nobody asked me.",
+    "Old Alf: Mind you, this lot still has water. Proper water. I'm not bitter. I've just been standing here a while."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The tide came in on Thursday and I had a little cry. Not really. But the marsh looked grand, and the birds seemed pleased, and I thought of the ships. Then I had a sandwich.",
+    "Yours, Alf (Dutton, Harbourmaster of the Marsh)"
+   ],
+   "offer": [
+    "Old Alf: A business is only a boat that stays put. I know boats that stay put. I'm in one.",
+    "Old Alf: Give me the keys, {player}. I'll sit in your shop and watch it like a tide. It'll come in, I'm told."
+   ],
+   "chat": [
+    "Old Alf: Handel crossed to Dublin in 1741 with the Messiah in his luggage. Said nothing about the weather. Very polite.",
+    "Old Alf: The water went and the birds came. Better company, if you ask me. They don't talk back.",
+    "Old Alf: Tide's out. It's been out since 1800 or so. It might come back."
+   ],
+   "thanks": [
+    "Old Alf holds the bass up and looks it in the eye, like an old rival.",
+    "Old Alf: Well now. That's silver, that is. You've done me proud, {player}. I'll sit in the boat and think about it."
+   ],
+   "ax": 27,
+   "ay": 20
+  },
+  {
+   "id": "doreen_sheffield",
+   "name": "Doreen Marsh",
+   "short": "Doreen",
+   "zone": "sheffield_home_doreen",
+   "npc": "shfhome_doreen",
+   "sprite": "mum",
+   "home": "sheffield",
+   "away": "manchester",
+   "likes": "home_yorkshire_pudding",
+   "hint": "Doreen says a Yorkshire pudding that has risen properly is the one thing she would swap a Sunday for.",
+   "intro": [
+    "Doreen: Doreen. Sit, sit. My grandson's keeping goal in the garden and the washing is losing. I don't mind, I'd rather watch that than the telly.",
+    "Doreen: Do you cook? A Yorkshire pudding, home-made, risen high. That's all I want in this world, apart from a clean sheet for our Callum."
+   ],
+   "meet": [
+    "Doreen is in Manchester at a goalkeeping trial, with a flask and the face of a woman who has opinions.",
+    "Doreen: He let in six. I've told him it's the posts' fault. He's not buying it. Kids don't, these days.",
+    "Doreen: Sheffield FC, oldest in the world, and nobody here's even heard of it. I told the ref. He said 'who?'"
+   ],
+   "letter": [
+    "Dear {player},",
+    "Callum saved a penalty on Saturday. He leapt about eight feet, and landed on the washing, which was on the line, which still had my best tablecloth on it. I have never been prouder, or lost so many pegs.",
+    "Yours, Doreen (and the tablecloth)"
+   ],
+   "offer": [
+    "Doreen: You've a business, haven't you, love. Who's minding it while you're off? I'll do it.",
+    "Doreen: I've run a household of five on a Sunday. A till won't frighten me, and I'll keep it cleaner than the washing."
+   ],
+   "chat": [
+    "Doreen: The washing line's been a goal, a trampoline and a battleground. It's held up better than my knees.",
+    "Doreen: Sit down, sit down. You can't stand there like a vicar.",
+    "Doreen: Callum wants to play for England. I told him to start with the garden."
+   ],
+   "thanks": [
+    "Doreen peels back the foil, looks at the height of it and says nothing for a moment.",
+    "Doreen: It's risen. It's actually risen. Well done, love. Sit down, sit down. I'll get the gravy, and you can tell me everything."
+   ],
+   "ax": 24,
+   "ay": 27
+  },
+  {
+   "id": "emeka_birmingham",
+   "name": "Emeka Okafor",
+   "short": "Mr Okafor",
+   "zone": "birmingham_home4",
+   "npc": "brum_home4_driver",
+   "sprite": "villager_3",
+   "home": "birmingham",
+   "away": "blackpool",
+   "likes": "roach",
+   "hint": "Mr Okafor says a roach from the cut is a small, honest fish, and he has fished for them since the buses stopped.",
+   "intro": [
+    "Mr Okafor: Okafor. Emeka, on weekends. Thirty years on the Number 11, and I still signal at the kettle.",
+    "Mr Okafor: I fish the cut now. A roach is all I ask. Small, silver, no nonsense. Bring me one and I'll tell you the exact time every bus ought to have arrived."
+   ],
+   "meet": [
+    "Mr Okafor is on a coach outside Blackpool Tower, checking his watch against a timetable nobody gave him.",
+    "Mr Okafor: My wife's birthday. She wanted lights. I wanted a seat. We both got what we wanted, except the seat was her handbag.",
+    "Mr Okafor: A tram in front of the Tower is on time, I see. I'm impressed. I'm also annoyed."
+   ],
+   "letter": [
+    "Dear {player},",
+    "I caught nothing on Saturday, which is no worse than the 11 did to its timetable. The heron watched me the whole time, and I think it was judging. My wife says it was admiring.",
+    "Yours, Emeka (Okafor, Retired, Outer Circle)"
+   ],
+   "offer": [
+    "Mr Okafor: A business is a route, {player}. Same stops, same people, and a delay if you're not careful.",
+    "Mr Okafor: I'll drive it for you. Thirty years, no accidents. Well. One. It was a pigeon."
+   ],
+   "chat": [
+    "Mr Okafor: Mom, bus, dinner. Say it right. Whole mouth.",
+    "Mr Okafor: I still brake at corners. The wife has stopped complaining. She has started a tally.",
+    "Mr Okafor: A strutcoo outside my window has a view on the council. It's about as useful as the council."
+   ],
+   "thanks": [
+    "Mr Okafor takes the roach, looks it over for a good ten seconds, then nods like a man signing off a service.",
+    "Mr Okafor: On time and in good order. That's a good fish. Right, sit down. I'll tell you about the Number 11. It will not take long. It will."
+   ],
+   "ax": 30,
+   "ay": 59
+  },
+  {
+   "id": "cuthbert_cotswolds",
+   "name": "Cuthbert Haines",
+   "short": "Mr Haines",
+   "zone": "cotswolds_woolhouse",
+   "npc": "cw_woolman",
+   "sprite": "villager_6",
+   "home": "cotswolds",
+   "away": "london",
+   "likes": "irish_stew",
+   "hint": "Mr Haines says a mutton stew, onion and potato and nothing fancy, is what a wool man eats to remember the flock.",
+   "intro": [
+    "Mr Haines: Haines. Cuthbert, but nobody uses it. I grade wool, which is to say I rub it between my fingers and look disappointed. I am very good at it.",
+    "Mr Haines: A hot mutton stew would be most acceptable, if you were passing. Irish, they call it, though a sheep does not care where it is from."
+   ],
+   "meet": [
+    "Mr Haines is at a London wool warehouse, rubbing a swatch between finger and thumb and shaking his head at the ceiling.",
+    "Mr Haines: A merchant told me it was 'a very good fleece'. It was fine. Medium. Not a hint of lustre. I told him so, very gently, with a mallet.",
+    "Mr Haines: Not really a mallet. A look. It has the same effect."
+   ],
+   "letter": [
+    "Dear {player},",
+    "A bale came in this week which I would have called a masterpiece, had it not been put in the wrong shed. I have since said so to the shed. There is a lesson in it, and I intend to find it.",
+    "Yours, Cuthbert Haines (Stapler, Grader of Fleeces, Fusser)"
+   ],
+   "offer": [
+    "Mr Haines: A business is a bale, {player}. One needs to know the length of the fibre, and the price, and which of the two is lying.",
+    "Mr Haines: Let me manage yours. I shall be thorough, and slightly smug."
+   ],
+   "chat": [
+    "Mr Haines: A Cotswold sheep once had customers in Florence. I have had customers in Stroud, and it is not the same.",
+    "Mr Haines: Length, lustre, weight. That is all one needs to know about wool. And people.",
+    "Mr Haines: Never judge a fleece by its mud. Judge it afterwards, and be ready to be wrong."
+   ],
+   "thanks": [
+    "Mr Haines lifts the lid, inhales slowly and closes his eyes, as though grading it.",
+    "Mr Haines: Long, rich and heavy. The finest I have met in a pot. You have a good hand, {player}. I shall tell no one. Or everyone."
+   ],
+   "ax": 27,
+   "ay": 24
+  },
+  {
+   "id": "hetty_ironbridge",
+   "name": "Hetty Boycott",
+   "short": "Hetty",
+   "zone": "ironbridge_tollhouse",
+   "npc": "ib_tollkeeper",
+   "sprite": "villager_1",
+   "home": "ironbridge_gorge",
+   "away": "shrewsbury",
+   "likes": "home_cawl",
+   "hint": "Hetty says a bowl of cawl is the only toll she will accept from a friend.",
+   "intro": [
+    "Hetty: Hetty Boycott, Toll Keeper. I've no tolls to collect now, but I sit here with the little window open, in case old habits want a visit.",
+    "Hetty: Everyone pays something to cross, in the end. I'd take a bowl of cawl. Lamb, leek, nothing fussy. Call it the usual rate."
+   ],
+   "meet": [
+    "Hetty is in Shrewsbury, holding the door of a shop and asking each person who goes in for a penny. Several have paid.",
+    "Hetty: Habit. I give it back at the end. Mostly. Most of them don't even notice.",
+    "Hetty: Better than being asked for fifteen pounds to park."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Nobody has crossed the bridge without saying 'ooh' this week, and I've counted. It's a hundred and four ooohs, and four of them were genuine. I put the rest in the book under 'courtesy'.",
+    "Yours, Hetty (Boycott, Tolls, Retired, Still Counting)"
+   ],
+   "offer": [
+    "Hetty: A business is only a bridge with a till at one end. I know both ends.",
+    "Hetty: Let me mind yours, {player}. Nobody's ever got past me without paying, and nobody's ever minded."
+   ],
+   "chat": [
+    "Hetty: Pay up or ooh. Those are the two choices.",
+    "Hetty: It's iron, that bridge. It's held up better than I have, and it's older.",
+    "Hetty: A penny to cross. A smile to stay. That's the toll."
+   ],
+   "thanks": [
+    "Hetty takes the bowl in both hands and breathes it in, as though paying herself a small compliment.",
+    "Hetty: Cawl. You've paid in full, {player}, with interest. I'll put you down as a regular. I mean it. Sit."
+   ],
+   "ax": 24,
+   "ay": 24
+  },
+  {
+   "id": "hugh_lincoln",
+   "name": "Hugh Fenwick",
+   "short": "Hugh",
+   "zone": "lincoln_jewshouse",
+   "npc": "lin_historian",
+   "sprite": "poet",
+   "home": "lincoln",
+   "away": "york",
+   "likes": "european_eel",
+   "hint": "Hugh says a good eel from the Witham, stewed the old way, is the most honest medieval dish still going.",
+   "intro": [
+    "Hugh: Hugh Fenwick. I look after this house, or it looks after me. We've not agreed on which. Stone since the twelfth century. I find it very patient.",
+    "Hugh: I'd be glad of an eel from the Witham some time. Stewed, not jellied. A man can only take so much history on an empty stomach."
+   ],
+   "meet": [
+    "Hugh is in York, standing in front of a wall and apologising to it, for reasons he declines to explain.",
+    "Hugh: I'm here for a conference. Four hundred historians, one urn of tea. It is turning into a chapter of its own.",
+    "Hugh: I asked a man where the thirteenth century was. He said 'down the Shambles'. It may even be true."
+   ],
+   "letter": [
+    "Dear {player},",
+    "I have been in the archive all week and have discovered that a lot of people died, and several of them owed money. I find this oddly comforting. The house sends its regards, in the form of a draught.",
+    "Yours, Hugh (Fenwick, of the Stone House, in spirit)"
+   ],
+   "offer": [
+    "Hugh: A business is a very small archive that sells things. I can keep records. It's the selling I'd need to work on.",
+    "Hugh: Let me manage yours. I'll be accurate, if slow, and I'll footnote the till."
+   ],
+   "chat": [
+    "Hugh: The house remembers. I merely write it down. It's a good arrangement. It doesn't argue.",
+    "Hugh: Aaron of Lincoln lent to kings and abbeys. I lend people a chair. We each do what we can.",
+    "Hugh: Stone lasts. People, rather less. I try to remember both."
+   ],
+   "thanks": [
+    "Hugh unwraps the eel carefully and sets it on the table like an exhibit.",
+    "Hugh: A fine specimen. Medieval cooks would have wept. Thank you, {player}. I'll make notes, and then I'll eat it."
+   ],
+   "ax": 14,
+   "ay": 11
+  },
+  {
+   "id": "mavis_nottingham",
+   "name": "Mavis Hallam",
+   "short": "Nanna Mavis",
+   "zone": "nottingham_home1",
+   "npc": "not_home1_nanna",
+   "sprite": "mum",
+   "home": "nottingham",
+   "away": "lincoln",
+   "likes": "bakewell_pudding",
+   "hint": "Nanna Mavis says a Bakewell pudding, jam and almond, is what you bring to a Nottingham nan if you want to be asked back.",
+   "intro": [
+    "Nanna Mavis: Ay up, me duck. Mavis. Nanna Mavis to anyone under sixty and to a good few over. I've a mardy grandson and a clean jitty, and I keep both in order.",
+    "Nanna Mavis: Bring me a Bakewell pudding. Jam on the bottom, almond on top. That's all. Next door's is a tart and I won't hear otherwise."
+   ],
+   "meet": [
+    "Nanna Mavis is in Lincoln at the Christmas market, in a bobble hat, buying everything on a stall and explaining it to the stallholder.",
+    "Nanna Mavis: Up the hill, down the hill, up the hill. They've no jitties here, just hills. I said it to a bloke and he said 'it's Lincoln'. Cheeky.",
+    "Nanna Mavis: Gizza cob? I said it to the baker. He gave me a roll and a look. Don't say please, I said. It spoils the effect."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Our Kyle has been mardy since Tuesday and I've told him it'll wear off like a bad perm. I met the lions at the Council House on Saturday, and they didn't say owt, which I thought was rude.",
+    "Yours, Nanna Mavis (Hallam, of the jitty)"
+   ],
+   "offer": [
+    "Nanna Mavis: You've a business, me duck. Who's minding it while you're gadding about? I will.",
+    "Nanna Mavis: I've kept a house of four generations in line with a wooden spoon. A till is easy, and it doesn't answer back."
+   ],
+   "chat": [
+    "Nanna Mavis: Kettle's on, me duck. It's always on. Don't make me say it again.",
+    "Nanna Mavis: Left Lion, ten o'clock. Don't be late, and don't be mardy.",
+    "Nanna Mavis: A cob is a bread roll. I've said so to the vicar. He's not a cob person. Pity."
+   ],
+   "thanks": [
+    "Nanna Mavis lifts the lid, sniffs the almond and takes a very small, very proud step backwards.",
+    "Nanna Mavis: Bakewell pudding! Jam and all. You're a good 'un, me duck. Sit down. There's tea, and I've not finished telling you about the jitty."
+   ],
+   "ax": 2,
+   "ay": 34
+  },
+  {
+   "id": "wilf_cambridge",
+   "name": "Wilf Ashby",
+   "short": "Wilf",
+   "zone": "cambridge_home_b",
+   "npc": "cam_maths",
+   "sprite": "student",
+   "home": "cambridge",
+   "away": "lincoln",
+   "likes": "roach",
+   "hint": "Wilf says a roach from the Cam would be the best thing to happen to a long week of problem sets.",
+   "intro": [
+    "Wilf: Sorry, I was proving something. It turned out to be proved already, in 1750. I find that happens rather a lot.",
+    "Wilf: Wilf, by the way. Bring me a roach from the Cam some day. I fish between problem sets, and so far the roach are winning."
+   ],
+   "meet": [
+    "Wilf is on a street in Lincoln, holding a bag of washing and a train timetable as though both were unsolved problems.",
+    "Wilf: Home for the weekend. Newton came home to Lincolnshire to think. I came home to get my socks done.",
+    "Wilf: Same result, in fairness. Fewer apples."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Cambridge is quiet and the beetles are safe. I keep one hand free at all times, in case. Darwin would approve, or at least he would not bite. Last week's proof still only works on Tuesdays.",
+    "Yours, Wilf (QED, eventually)"
+   ],
+   "offer": [
+    "Wilf: I could mind your business while you walk, {player}. It is mostly stock, queues and margins. I have a supervision on queues.",
+    "Wilf: I would be quite sensible about it. I count things for fun. Ask my landlady."
+   ],
+   "chat": [
+    "Wilf: Newton had a plague. I have a deadline. I got the better deal, though not by much.",
+    "Wilf: Turing was at King's. I walk past it daily and feel suitably small.",
+    "Wilf: A good proof is like a good punt. It looks effortless and someone is quietly getting wet."
+   ],
+   "thanks": [
+    "Wilf lifts the roach by the tail and measures it against his thumb, then his forearm, then his thumb again.",
+    "Wilf: Excellent. Twelve centimetres, give or take, and nothing about it is irrational. Thank you, {player}."
+   ],
+   "ax": 3,
+   "ay": 34
+  },
+  {
+   "id": "marion_dover",
+   "name": "Marion Pettit",
+   "short": "Marion",
+   "zone": "dover_painted_house",
+   "npc": "ph_guide",
+   "sprite": "student",
+   "home": "dover",
+   "away": "canterbury",
+   "likes": "plaice",
+   "hint": "Marion says a fresh plaice from the Channel is her Friday treat after a week of schoolchildren.",
+   "intro": [
+    "Marion: Right, the quick version. Roman hotel, painted walls, heating under the floor, fort on top. Questions at the end. There are always questions about the toilets.",
+    "Marion: Marion, I do the tours. Bring me a plaice off the Dover shore and I will show you the best bit of wall. Nobody gets that."
+   ],
+   "meet": [
+    "Marion is in Canterbury with a clipboard, counting a coach party of Year Sevens in front of the cathedral.",
+    "Marion: Hands in pockets, nobody lick the cathedral. Oh, hello. I have been on my feet since seven.",
+    "Marion: Dover is easier. The walls stay where you put them. Well, where the Romans did."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Nobody has fallen off the walkway this term, a small victory. The Romans buried the lower walls by accident and I tell the children it was good planning. Nobody checks.",
+    "Yours, Marion (and the Mansio)"
+   ],
+   "offer": [
+    "Marion: I take forty children round a Roman hotel and have never lost one. A shop is a gentle morning.",
+    "Marion: Give me the keys, {player}. Queue to the left, questions at the end."
+   ],
+   "chat": [
+    "Marion: Heating under the floor, eighteen hundred years ago. My flat has a radiator that knocks.",
+    "Marion: Red, yellow and green. They knew what they were doing with a paintbrush.",
+    "Marion: Everything in Dover is buried under something else. I find it restful."
+   ],
+   "thanks": [
+    "Marion holds the plaice up to the light as if it might be painted on a wall.",
+    "Marion: Perfect. Flat, honest and from the Channel. Thank you, {player}. Now mind the step, there is always a step."
+   ],
+   "ax": 2,
+   "ay": 24
+  },
+  {
+   "id": "dolly_glastonbury",
+   "name": "Dolly Vowles",
+   "short": "Granny Vowles",
+   "zone": "glastonbury_home1",
+   "npc": "glaston_home1_gran",
+   "sprite": "mum",
+   "home": "glastonbury",
+   "away": "bristol",
+   "likes": "european_eel",
+   "hint": "Granny Vowles says a Levels eel, fried with a bit of bacon, is what her own granny put on the table.",
+   "intro": [
+    "Granny Vowles: Sit down, my lover, you are making the cat nervous. Dolly, if you must, but the postman calls me Granny and he is not even family.",
+    "Granny Vowles: I would be glad of an eel off the Levels, if you come by one. Fried with bacon. The cat can have the head."
+   ],
+   "meet": [
+    "Granny Vowles is on a bench in Bristol, handbag on her knee, watching a gull steal a chip.",
+    "Granny Vowles: My granddaughter lives up here, my lover. All this traffic. She says the same about my cat.",
+    "Granny Vowles: Ansum to see you. That is lovely, in case you had forgotten."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Holy Thorn is in bud early, so the children think Christmas is coming. I let them. The hazeldoze are still asleep and I am still jealous. The cat sends no regards. He never does.",
+    "Yours, Granny Vowles (and the cat, under protest)"
+   ],
+   "offer": [
+    "Granny Vowles: I raised four children and one very rude cat, my lover. A till will not frighten me.",
+    "Granny Vowles: Off you go walking. I will give short change a look, and no change at all."
+   ],
+   "chat": [
+    "Granny Vowles: The cat sat on the Thorn sprig again. I think he believes it is his.",
+    "Granny Vowles: A gurt big plate of anything, that is what a body wants. Mr Pomeroy taught me that.",
+    "Granny Vowles: Half a year asleep would suit me. I would have to feed the cat first."
+   ],
+   "thanks": [
+    "Granny Vowles takes the eel in a tea towel like a baby, and tells it it has had a very long journey.",
+    "Granny Vowles: Oh, that is a proper one. Ansum, my lover, ansum. Stay for supper, I insist."
+   ],
+   "ax": 6,
+   "ay": 53
+  },
+  {
+   "id": "alf_oxford",
+   "name": "Alf Rudge",
+   "short": "Alf",
+   "zone": "oxford_boathouse",
+   "npc": "ox_boatman",
+   "sprite": "sailor",
+   "home": "oxford",
+   "away": "cambridge",
+   "likes": "chub",
+   "hint": "Alf says a Thames chub fights harder than any student on the pole and he is not sure why he likes it so much.",
+   "intro": [
+    "Alf: Alf. Punts by the hour. Sloping end, remember. Stand where you like, I have seen worse.",
+    "Alf: I would be glad of a chub, if you chance on one. All fight and very little taste. I have never understood why I like them."
+   ],
+   "meet": [
+    "Alf is on the Backs in Cambridge, arms folded, watching a punt go by with the punter standing on the till.",
+    "Alf: Wrong end. Entirely the wrong end. And they say we are the odd ones.",
+    "Alf: I am here for the day. Industrial espionage. Do not tell anyone, I am very bad at it."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Business is steady. There was a splash at Magdalen Bridge on Tuesday. I did not look. It was not me. Possibly. The hat has not been recovered. The pole, I am glad to say, was.",
+    "Yours, Alf (at the sloping end)"
+   ],
+   "offer": [
+    "Alf: Running a business is like punting. Keep hold of the pole, pull it out smartly, and do not look when there is a splash.",
+    "Alf: I will mind yours, {player}. Standing at the right end."
+   ],
+   "chat": [
+    "Alf: Cambridge stand on the till. Poor souls. They cannot help it.",
+    "Alf: Rule one is keep hold of the pole. Most people forget rule one and then the others do not matter.",
+    "Alf: Quiet day. Only two in the river, and one of them meant it."
+   ],
+   "thanks": [
+    "Alf lays the chub across his knee and regards it with the slow respect of a man looking at an old rival.",
+    "Alf: Ugly beast. Marvellous. Thank you, {player}. You can have the good pole next time."
+   ],
+   "ax": 34,
+   "ay": 49
+  },
+  {
+   "id": "dougie_plymouth",
+   "name": "Dougie Tucker",
+   "short": "Dougie",
+   "zone": "plymouth_homepark",
+   "npc": "hp_kitman",
+   "sprite": "villager_1",
+   "home": "plymouth",
+   "away": "exeter",
+   "likes": "sardine",
+   "hint": "Dougie says a sardine on toast from the Barbican beats any half-time pie at Home Park.",
+   "intro": [
+    "Dougie: Dougie. Kit man. I wash the green shirts, I find the missing socks, and once I found a goalkeeper. Proper job, that.",
+    "Dougie: Bring me a sardine off the quay, my lover, and I will grill it on toast. Better than any pre-match talk in the tunnel."
+   ],
+   "meet": [
+    "Dougie is outside St James Park in Exeter, carrying a kit bag the size of a small dog and glaring at the sky.",
+    "Dougie: Devon derby. Same county, same weather, worse parking. We always win in my head.",
+    "Dougie: Do not tell the lads I am nervous. I am only nervous about the shirts."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The pitch is lovely. I rolled it twice, then once more for luck, then stood on the touchline and told it to behave. Do not walk on it. You will be tempted. We all are. The green army marches on.",
+    "Yours, Dougie (kit, not captain)"
+   ],
+   "offer": [
+    "Dougie: I fold forty shirts every Friday and not one has ever gone missing. Your business will be fine.",
+    "Dougie: Off you go, {player}. I will keep it tidy. I will even roll the doormat, in case."
+   ],
+   "chat": [
+    "Dougie: Argyle since 1886. Some seasons it has felt like every one of those years.",
+    "Dougie: Rain coming. I can feel it in the boots.",
+    "Dougie: Nobody knows where Argyle comes from. I just wash the shirts."
+   ],
+   "thanks": [
+    "Dougie sets the sardine on a slice of toast so quickly you suspect he had planned it.",
+    "Dougie: Proper job, {player}. Salt, smoke and butter. Match day starts here."
+   ],
+   "ax": 30,
+   "ay": 45
+  },
+  {
+   "id": "nesta_severn",
+   "name": "Nesta Hafren",
+   "short": "Mrs Hafren",
+   "zone": "severn_home_keeper",
+   "npc": "bridgekeeper_mum",
+   "sprite": "mum",
+   "home": "severn_crossing",
+   "away": "cardiff",
+   "likes": "welsh_cakes",
+   "hint": "Mrs Hafren says a warm Welsh cake is the one thing that stops her son talking about the bore for ten whole minutes.",
+   "intro": [
+    "Mrs Hafren: Nesta, if you like, though the whole bridge calls me Mrs Hafren. Come in, mind the telescope, it points at the mud for the birds.",
+    "Mrs Hafren: I would be glad of a Welsh cake, a warm one. My son stops talking about the bore while he eats. It is the only quiet we get."
+   ],
+   "meet": [
+    "Mrs Hafren is outside a shop window in Cardiff, holding a child's lifejacket at arm's length as though it might go off.",
+    "Mrs Hafren: He wants a board. I told him a bath comes first. He says he has had a bath. I said a long one.",
+    "Mrs Hafren: Lovely to see you, though. Welsh air and no bridge in sight. I can almost breathe."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Murmurants came over the mud at dusk again, a thousand of them with one idea. My son watched them all week and has not mentioned the bore once. I am afraid to say anything in case it starts him off.",
+    "Yours, Nesta Hafren (and the bridge)"
+   ],
+   "offer": [
+    "Mrs Hafren: I have watched a bridge and a boy for years. A little business will be a rest.",
+    "Mrs Hafren: Leave it with me, {player}. If the tide comes in I will simply move the stock."
+   ],
+   "chat": [
+    "Mrs Hafren: The wind off the estuary rattles every window. I call it conversation.",
+    "Mrs Hafren: My son says he will ride the bore after tea. He says it every day. Tea has not yet finished.",
+    "Mrs Hafren: At low tide the mud goes on for miles. Do not walk on it. I say this to everyone."
+   ],
+   "thanks": [
+    "Mrs Hafren holds the Welsh cake to her nose, still warm from the bakestone, and closes her eyes for a moment.",
+    "Mrs Hafren: Diolch, {player}. That is thank you, in case you wondered. The bridge will survive another week."
+   ],
+   "ax": 28,
+   "ay": 16
+  },
+  {
+   "id": "ellen_douglas",
+   "name": "Ellen Quayle",
+   "short": "Mrs Quayle",
+   "zone": "douglas_home1",
+   "npc": "dou_home1_quayle",
+   "sprite": "mum",
+   "home": "douglas",
+   "away": "liverpool",
+   "likes": "herring",
+   "hint": "Mrs Quayle says a fresh herring takes her back to Peel kippers and her mother's kitchen.",
+   "intro": [
+    "Mrs Quayle: Moghrey mie. Ellen, but Mrs Quayle will do, the whole street says so. Traa dy liooar, there is no hurry, sit.",
+    "Mrs Quayle: I would be glad of a herring if you pass the harbour. Kippers the Peel way, that is smoke and patience."
+   ],
+   "meet": [
+    "Mrs Quayle is on the Pier Head in Liverpool with a suitcase, counting the seagulls out loud.",
+    "Mrs Quayle: Over on the boat to see my sister. I said traa dy liooar to the ticket man and he did not laugh.",
+    "Mrs Quayle: My grandson is counting horns on the gulls. Gulls do not have horns. He is counting anyway."
+   ],
+   "letter": [
+    "Dear {player},",
+    "My grandson has counted the horns on every loaghtan in the field and arrived at a number I cannot repeat in company. He sleeps well, though. The language class goes on. Traa dy liooar, as ever.",
+    "Yours, Mrs Quayle (not mouse-brown)"
+   ],
+   "offer": [
+    "Mrs Quayle: I raised a family and a Manx grandson. A shop on the quay is a morning's work, and I have the afternoon, traa dy liooar.",
+    "Mrs Quayle: Go on, {player}. I will keep the books and the rest can wait."
+   ],
+   "chat": [
+    "Mrs Quayle: Fastyr mie, that is good afternoon. Practise it, the girl at the school says it is easy.",
+    "Mrs Quayle: Ned Maddrell would be pleased, you know. A whole school learning the old tongue.",
+    "Mrs Quayle: A loaghtan wants to be left alone. So do I, mostly, but with biscuits."
+   ],
+   "thanks": [
+    "Mrs Quayle turns the herring in the light, silver as a coin, and nods like a woman receiving a long-lost relative.",
+    "Mrs Quayle: Gura mie ayd, {player}. That is thank you. Put the kettle on, I will do the rest."
+   ],
+   "ax": 24,
+   "ay": 21
+  },
+  {
+   "id": "dave_adamstown",
+   "name": "Dave Warren",
+   "short": "Old Dave",
+   "zone": "pit_boathouse",
+   "npc": "pit_old_cox",
+   "sprite": "fisherman_north",
+   "home": "adamstown",
+   "away": "london",
+   "likes": "wahoo",
+   "hint": "Old Dave says a wahoo fresh off the line is the finest thing a longboat can bring home.",
+   "intro": [
+    "Old Dave: Dave. Cox of the longboat for longer than the boat has had paint. Sit, you have the look of someone who has never rowed through surf.",
+    "Old Dave: I would be glad of a wahoo, caught properly. Fried plain with a bit of salt, and not a word spoken until it is finished."
+   ],
+   "meet": [
+    "Old Dave is on a London street, standing very still and looking at a puddle as though he might have to row it.",
+    "Old Dave: Came for a family thing. Millions of people and not one of them can tell me where the sea is. I keep checking.",
+    "Old Dave: Do not tell them I have been aiming for the gap in the pavement. It is habit."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The longboat went out twice this week and came back both times. Fifty years on and the sea still surprises me. I aimed for the gap, I prayed and I rowed. Two out of three, as ever.",
+    "Yours, Dave (still cox)"
+   ],
+   "offer": [
+    "Old Dave: I take a boat through surf with six oars and a prayer. A business on dry land holds no fear for me.",
+    "Old Dave: Leave it with me, {player}. I will aim for the gap in the queue."
+   ],
+   "chat": [
+    "Old Dave: Sea is in a mood. It is always in a mood. You learn to be glad it is a mood and not a plan.",
+    "Old Dave: Fifty years on the boats and the only thing that has changed is the knees.",
+    "Old Dave: Two out of three is a fine day. I would take it over a perfect one, I would have to row twice."
+   ],
+   "thanks": [
+    "Old Dave lifts the wahoo, long and steel-blue, and weighs it in his hands like an old oar.",
+    "Old Dave: Now that is a fish. Thank you, {player}. Come by the boathouse and I will tell you about the one that got away."
+   ],
+   "ax": 29,
+   "ay": 24
+  },
+  {
+   "id": "cecil_bermuda",
+   "name": "Cecil Darrell",
+   "short": "Cecil",
+   "zone": "bermuda_lighthouse",
+   "npc": "bm_keeper",
+   "sprite": "lamplighter",
+   "home": "bermuda",
+   "away": "boston",
+   "likes": "yellowtail_snapper",
+   "hint": "Cecil says a yellowtail snapper, grilled plain, is the only thing that makes the steps worth climbing.",
+   "intro": [
+    "Cecil: Cecil Darrell. Keeper. Welcome to the hundred and eighty-odd steps. I say odd because I have counted, and it is odd every time. The number, I mean. Possibly the steps too.",
+    "Cecil: If you come by a yellowtail snapper I would be glad of one. A man gets hungry at about step forty and there is no snack bar. I have suggested one."
+   ],
+   "meet": [
+    "Cecil is on the waterfront in Boston, one hand shading his eyes, looking up at a very tall building and counting.",
+    "Cecil: Over to see my cousin. The hotel lift has a button for every floor and no steps at all. I took the stairs out of loyalty.",
+    "Cecil: Different number again, mind. It always is."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The light is burning well and the weather has been kind. A dark wall came in over the sea on Tuesday and I did as always. Kettle, then supper. I counted the steps and got a number. I am keeping it quiet in case it holds.",
+    "Yours, Cecil (one hundred and eighty-something)"
+   ],
+   "offer": [
+    "Cecil: I have kept a light burning for years. A shop that opens at nine is nothing to a man who stays up for ships.",
+    "Cecil: Leave it to me, {player}. I will even count the till twice. Differently, probably."
+   ],
+   "chat": [
+    "Cecil: The visitor has still not recovered. I told him the view is lovely. He will take my word for it.",
+    "Cecil: When the sky goes dark over the sea, put the kettle on. That is the whole of my weather forecasting.",
+    "Cecil: A hundred and ten metres up. On a good day you can see all the way to slightly dizzy."
+   ],
+   "thanks": [
+    "Cecil lifts the snapper, bright yellow along the flank, and nods slowly as if counting it.",
+    "Cecil: One. Lovely. Thank you, {player}. I may even get the same count twice."
+   ],
+   "ax": 22,
+   "ay": 19
+  },
+  {
+   "id": "rita_falklands",
+   "name": "Rita Summers",
+   "short": "Rita",
+   "zone": "falklands_farmhouse",
+   "npc": "fal_farmwife",
+   "sprite": "villager_6",
+   "home": "falklands_camp",
+   "away": "falklands_stanley",
+   "likes": "sea_trout",
+   "hint": "Rita says a fresh sea trout from the river would earn the biggest smile at the smoko table.",
+   "intro": [
+    "Rita: Rita. Sit, kettle is on. If you have come for smoko you will have a scone, and if you have come to talk you will have two.",
+    "Rita: A sea trout would be gladly received, if you have a rod and the patience. The men go quiet for a sea trout. It is the only time they do."
+   ],
+   "meet": [
+    "Rita is in Stanley outside a shop, balancing four bags of shopping, a box of scones and a tin of paint.",
+    "Rita: Flew in for the shops. A week's worth in a morning, and the paint is for the roof. Do not ask.",
+    "Rita: The stove is in good hands. I told it to behave. It never goes out and I would rather not test it."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The stove is still lit, thank goodness. I keep an eye on it the way other people keep an eye on the neighbours. The diddle-dee jam went well this year. Smoko is at eleven and four and I mean to keep it so.",
+    "Yours, Rita (and the stove)"
+   ],
+   "offer": [
+    "Rita: I feed six hungry men twice a day and keep a house warm in a gale. A business is easy. I will have it tidy by smoko.",
+    "Rita: Off you go, {player}. The kettle goes on first. That is how it begins."
+   ],
+   "chat": [
+    "Rita: Peat and a tin roof, and the wind outside trying its best. I would not swap it.",
+    "Rita: Diddle-dee jam on a warm scone. If that is not worth a gale, I do not know what is.",
+    "Rita: The men will eat anything with mince in. I have tested this. Repeatedly."
+   ],
+   "thanks": [
+    "Rita takes the sea trout in both hands and looks at it the way the men look at the weather.",
+    "Rita: Lovely, {player}. That will go on the table at four. Smoko, mind. Stay if you like."
+   ],
+   "ax": 35,
+   "ay": 21
+  },
+  {
+   "id": "joyce_st_helena",
+   "name": "Joyce Yon",
+   "short": "Joyce",
+   "zone": "st_helena_plantation_house",
+   "npc": "sth_aide",
+   "sprite": "villager_6",
+   "home": "st_helena_plantation",
+   "away": "ascension",
+   "likes": "yellowfin_tuna",
+   "hint": "Joyce says a fresh yellowfin tuna is the pride of any Saint's table and she is particular about the freshness.",
+   "intro": [
+    "Joyce: Joyce Yon. I look after the Governor's diary, the Governor's guests and, increasingly, the Governor's tortoise. Welcome.",
+    "Joyce: A yellowfin tuna would be warmly received. We Saints eat a good deal of it, and we are rather particular about the freshness."
+   ],
+   "meet": [
+    "Joyce is in Georgetown on Ascension with a clipboard, a stack of folders and the look of someone who would like her tea.",
+    "Joyce: Island business. St Helena and Ascension have much to say to each other, mostly by post. This meeting began at ten and ended, in spirit, at ten past.",
+    "Joyce: Do sit. The tortoise is not here, so you may relax."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Governor is well, the lawn is perfect and Jonathan has taken to sleeping in the shade by the office door, which has given a few guests a surprise. Sir Hudson Lowe is still not loved, I am pleased to say.",
+    "Yours, Joyce (and Jonathan, slowly)"
+   ],
+   "offer": [
+    "Joyce: I schedule a Governor. A business will not trouble me.",
+    "Joyce: I will have the diary, the till and the lawn in order, {player}. The tortoise has right of way, as ever."
+   ],
+   "chat": [
+    "Joyce: This house has had many lodgers. Few were as quiet as Jonathan.",
+    "Joyce: Sir Hudson Lowe lived here. If the walls could talk, I would ask them to be polite.",
+    "Joyce: On the hot afternoons the tortoise comes in. I do not ask why. I suspect the shade is better than it looks."
+   ],
+   "thanks": [
+    "Joyce takes the tuna, glances at it with the eye of someone who has judged many a plate, and nods.",
+    "Joyce: A Saint's fish, and a good one. Thank you, {player}. Do sit, the tortoise is off duty."
+   ],
+   "ax": 34,
+   "ay": 22
+  },
+  {
+   "id": "lloyd_turks_caicos",
+   "name": "Lloyd Handfield",
+   "short": "Lloyd",
+   "zone": "tci_lighthouse",
+   "npc": "tci_keeper",
+   "sprite": "lamplighter",
+   "home": "turks_caicos",
+   "away": "cayman",
+   "likes": "bonefish",
+   "hint": "Lloyd says a bonefish from the flats is the one fish the whole island respects.",
+   "intro": [
+    "Lloyd: Lloyd. Keeper. Take a seat in the shade. The wind will still be there when you are ready. It always is.",
+    "Lloyd: If you chance on a bonefish from the flats, bring it by. That is a fish with manners. It slips away and says nothing."
+   ],
+   "meet": [
+    "Lloyd is on a Grand Cayman beach, sandals in hand, looking at the sunset as though checking it against his own.",
+    "Lloyd: Over to see friends. Different sea, same blue tablecloth. I hold it up against mine, just to be sure.",
+    "Lloyd: Mine is better, but I would not say that to anyone here."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The salt ponds are shining and the wind is brisk. I climbed up this morning and saw the whole island, the town, the reef, and the blue tablecloth laid out for supper. Mind the wind if you visit. It borrows hats.",
+    "Yours, Lloyd (and the lamp)"
+   ],
+   "offer": [
+    "Lloyd: I have kept a light for ships for years. A business I can mind with half an eye, while the other half watches the horizon.",
+    "Lloyd: Go on your walking, {player}. I will be steady, I promise. Wind permitting."
+   ],
+   "chat": [
+    "Lloyd: Cast iron, shipped over from England in pieces. Built to last, and it has.",
+    "Lloyd: The reef is out there for ships to avoid. They do not always listen.",
+    "Lloyd: The salt ponds are glass today. Tomorrow they will look like something else."
+   ],
+   "thanks": [
+    "Lloyd turns the bonefish in his hands, silver and long, and smiles as at an old friend.",
+    "Lloyd: That is a fine one, {player}. Thank you. Sit down, the wind is gentle for once."
+   ],
+   "ax": 31,
+   "ay": 30
+  },
+  {
+   "id": "desmond_bushmills",
+   "name": "Desmond Wylie",
+   "short": "Mr Wylie",
+   "zone": "bushmills_home_hill",
+   "npc": "bush_home_birder",
+   "sprite": "birdwatcher",
+   "home": "bushmills",
+   "away": "belfast",
+   "likes": "home_ulster_fry",
+   "hint": "Mr Wylie says nothing sets him up for a six o'clock start at the window like a proper Ulster fry.",
+   "intro": [
+    "Mr Wylie: Mind the floorboard, it creaks, and the heron hears it. Wylie, Desmond Wylie. Forty years at this window and I have missed only the interesting bits.",
+    "Mr Wylie: Early starts are the whole trick. Dawn, binoculars, then breakfast. A proper Ulster fry, soda and potato bread included, and I will let you have the good chair."
+   ],
+   "meet": [
+    "Mr Wylie is on a bench in Belfast with his binoculars trained on a gull on a lamp post, notebook open.",
+    "Mr Wylie: A common gull, I am told. It is behaving very uncommonly. Visiting my sister. She says I am not to bird in her house, so here we are."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The heron did the same thing again this morning, at the same time, from the same stone. I have written it down for the four thousandth time. I still enjoy it. Come and wait with me.",
+    "Yours, Wylie (still at the window)"
+   ],
+   "offer": [
+    "Mr Wylie: Now, {player}. You want someone to mind that business of yours while you walk. I can sit still for six hours and notice everything that comes through the door.",
+    "Mr Wylie: I will not leave the till. Not even for a heron. Possibly for a very good heron."
+   ],
+   "chat": [
+    "Mr Wylie: Wait, wait. There. No, gone. That is how it goes.",
+    "Mr Wylie: The binoculars are by the window. Do not touch the focus, I have it just so.",
+    "Mr Wylie: Dunluce is west along the coast. The cook has never been found. I have my theories."
+   ],
+   "thanks": [
+    "Mr Wylie lays the fry down on the sill, then moves his binoculars so they do not get grease on them.",
+    "Mr Wylie: That is a breakfast. Five stars. I would write it in the notebook, but my hands are full."
+   ],
+   "ax": 28,
+   "ay": 27
+  },
+  {
+   "id": "breda_cork",
+   "name": "Breda Lynch",
+   "short": "Mrs Lynch",
+   "zone": "cork_home3",
+   "npc": "lynch_mrs",
+   "sprite": "mum",
+   "home": "cork",
+   "away": "kilkenny",
+   "likes": "colcannon",
+   "hint": "Mrs Lynch says a bowl of colcannon with the butter melting in a well in the middle is the only answer to a Cork November.",
+   "intro": [
+    "Mrs Lynch: Sit down there, you are making the place untidy standing. Breda, I am. You will not remember it, so call me Mrs Lynch like everyone else does.",
+    "Mrs Lynch: I will tell you what I like, and then you will know. A good bowl of colcannon, butter pooling in the middle. My husband makes it and then eats half of it before it gets to the table."
+   ],
+   "meet": [
+    "Mrs Lynch is on the Kilkenny side of a hurling pitch wearing red, with a flask and a look of grim contentment.",
+    "Mrs Lynch: I am surrounded by black and amber and I will not be moved. My husband is gas, he brought a sandwich for each of the three possible results. Sit down, mind my flask."
+   ],
+   "letter": [
+    "Dear {player},",
+    "My son was a header again this week and I have decided to be proud of it. The salmon are back in the Lee, still not asking for directions, and I do admire that in anything. Call in. The kettle is up.",
+    "Yours, Breda (Mrs Lynch, to you)"
+   ],
+   "offer": [
+    "Mrs Lynch: Now {player}, that business of yours. You cannot be walking about the country and minding it. Give it to me. I have run a house with a gas husband and a header son.",
+    "Mrs Lynch: A till is nothing after that."
+   ],
+   "chat": [
+    "Mrs Lynch: My husband says he will fix the gate. I have put it on the list under 'miracles'.",
+    "Mrs Lynch: A header is only a lovely lad with the brakes off. He will settle. I did, I think.",
+    "Mrs Lynch: If the Hushwing is out tonight, keep your voice down. The poor creature has enough to put up with."
+   ],
+   "thanks": [
+    "Mrs Lynch lifts the lid, breathes in, and says nothing for a good three seconds.",
+    "Mrs Lynch: Oh, you good thing. The butter is in the middle where it belongs. Sit, sit, you have earned the good chair."
+   ],
+   "ax": 26,
+   "ay": 19
+  },
+  {
+   "id": "francie_derry",
+   "name": "Francie Brogan",
+   "short": "Mr Brogan",
+   "zone": "derry_home_foyle",
+   "npc": "derry_home_boatman",
+   "sprite": "angler",
+   "home": "derry",
+   "away": "enniskillen",
+   "likes": "atlantic_salmon",
+   "hint": "Mr Brogan says that in all his years on the Foyle he has never landed a salmon, and would not say no to meeting one.",
+   "intro": [
+    "Mr Brogan: Brogan. Francie, if you must. Forty years on this river and I have a great many opinions about it, and no salmon.",
+    "Mr Brogan: I do not catch them and they do not catch me. But I would like to see one up close, just the once, in my own kitchen. Bring me an Atlantic salmon and we will call it even."
+   ],
+   "meet": [
+    "Mr Brogan is on the Enniskillen shore of Lough Erne, holding a rod with great composure and no bait.",
+    "Mr Brogan: Different water. Same result. I am told there is a very large fish in there. I thought we might have a chat."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Foyle went out for a walk at four and came back at ten. That is all the news. I sat there the entire time and the salmon, to a fish, held to our understanding. It is very restful.",
+    "Yours, Brogan (and the tide)"
+   ],
+   "offer": [
+    "Mr Brogan: I have a view on your business. It is that it wants minding. I am a very patient man. I have sat over the Foyle for forty years waiting on a salmon.",
+    "Mr Brogan: No customer will beat that."
+   ],
+   "chat": [
+    "Mr Brogan: The seals were out at the estuary again. Polite. They tip their heads at you, like a priest.",
+    "Mr Brogan: Tide is out. It will be back. It always says it will.",
+    "Mr Brogan: Never trust a man who tells you he has caught three salmon. Trust him who tells you none."
+   ],
+   "thanks": [
+    "Mr Brogan looks at the salmon for a long, quiet moment, like a man shaking hands with an old rival.",
+    "Mr Brogan: Well. So that is what they look like. I will say it, it is very well made."
+   ],
+   "ax": 43,
+   "ay": 31
+  },
+  {
+   "id": "mattie_galway",
+   "name": "Mattie Flaherty",
+   "short": "Old Mattie",
+   "zone": "galway_home_claddagh",
+   "npc": "home_claddagh_fisher",
+   "sprite": "fisher",
+   "home": "galway",
+   "away": "dingle",
+   "likes": "herring",
+   "hint": "Old Mattie says a herring, fresh and fried in butter, is what the old Claddagh men would have called a good dinner and no complaints.",
+   "intro": [
+    "Old Mattie: Ah, come in, come in, will you mind the net, it's drying, or it was meant to be. Mattie, they call me, Old Mattie, since I was about forty.",
+    "Old Mattie: My father fished, and his father before him, and they ate herring and thought nothing of it. Bring me a fresh one and I'll fry it up and tell you about the King of the Claddagh."
+   ],
+   "meet": [
+    "Old Mattie is on the pier in Dingle, supervising a boat that is not his.",
+    "Old Mattie: Ah, there you are, that's a lovely boat, isn't it. A man here owes me a favour and I'm collecting it in advice. Sit down, will you, I'll tell you about the time I went out in worse than this."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The view out the window is as long as ever and the water as wet. I saw a Pierlord on the wall yesterday and said nothing, as agreed. Bring a herring and I'll tell you the whole story, twice.",
+    "Yours, Mattie (Old, though I've been told not to say so)"
+   ],
+   "offer": [
+    "Old Mattie: Now, {player}, I've been thinking about that business of yours, and a man has to do something, and I've mended nets and kept a quay and I'd mind it.",
+    "Old Mattie: Go on away walking, I'll keep the place afloat. Mostly."
+   ],
+   "chat": [
+    "Old Mattie: The wind is coming round to the west. A good sign or a bad one, depending on who's asking.",
+    "Old Mattie: They cleared the cottages, but they couldn't clear the view. I still have it.",
+    "Old Mattie: Keep the sandwich in the bag. That's all I'll say about the Pierlords."
+   ],
+   "thanks": [
+    "Old Mattie holds the herring up to the window, like a man checking a banknote.",
+    "Old Mattie: Oh, that's grand, that's a beauty, silver as a new coin. My father would have wept. He'd have said it was too small, but he'd have wept."
+   ],
+   "ax": 28,
+   "ay": 19
+  },
+  {
+   "id": "nora_kilkenny",
+   "name": "Nora Daly",
+   "short": "Gran Daly",
+   "zone": "kilkenny_home2",
+   "npc": "daly_gran",
+   "sprite": "mum",
+   "home": "kilkenny",
+   "away": "dublin",
+   "likes": "home_soda_bread",
+   "hint": "Gran Daly says a warm soda bread with plenty of butter is the only fuel a Kilkenny supporter needs for a big match.",
+   "intro": [
+    "Gran Daly: Sit, sit, not on the hurley. Nora Daly, though it's Gran Daly to the whole street and half the county. Touch the hurley, it does no harm.",
+    "Gran Daly: Now, I'll tell you what gets me through a final. A good soda bread, warm, butter on it thick as a slate. Bring me one and I'll say a prayer for the Cats and a second one for you."
+   ],
+   "meet": [
+    "Gran Daly is in a Dublin street on the day of a big match, in black and amber, carrying a hurley she is absolutely not meant to have.",
+    "Gran Daly: Do not look at the hurley. It's for luck, it's not for use. Well, mostly. Good to see you, now off, I've a match to win."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The hurley is still over the fire and I touch it going past, whether it's working or not. It is lashing rain, so I have not left the kitchen. Come in and sit, and bring a loaf if you're passing.",
+    "Yours, Nora (Gran Daly, to the Cats)"
+   ],
+   "offer": [
+    "Gran Daly: Now, {player}. That business of yours wants someone with a bit of sense and a loud voice. I have both. I raised a hurling team, practically, and some of them were mine.",
+    "Gran Daly: I will run it. Bring the key and go."
+   ],
+   "chat": [
+    "Gran Daly: Two hares boxing in the field this morning. The lady won. They always know.",
+    "Gran Daly: I am not nervous about Sunday. I have only been sitting by the radio since Tuesday.",
+    "Gran Daly: Mind yourself on the wet road. 'Tis lashing again, and not the generous way."
+   ],
+   "thanks": [
+    "Gran Daly breaks off a corner, butters it, and eats it standing up, which she never does.",
+    "Gran Daly: Ah, that is the right one. Warm. You are a good child. Come here to me."
+   ],
+   "ax": 28,
+   "ay": 19
+  },
+  {
+   "id": "aidan_limerick",
+   "name": "Aidan Hannon",
+   "short": "Mr Hannon",
+   "zone": "limerick_home_pery",
+   "npc": "pery_owner",
+   "sprite": "villager_3",
+   "home": "limerick",
+   "away": "cork",
+   "likes": "atlantic_salmon",
+   "hint": "Mr Hannon says a Shannon salmon, plainly done, is the only dish fit to be served in a Georgian dining room.",
+   "intro": [
+    "Mr Hannon: Hannon, Aidan Hannon. I would show you the ballroom, but there are four storeys of stairs between us and I do not trust my knees. Sit, sit. The fox will not mind.",
+    "Mr Hannon: If you ever pass a good Atlantic salmon, I would be glad of one. The Shannon is only down the road, and a salmon in this house does feel as though it has come home."
+   ],
+   "meet": [
+    "Mr Hannon is in Cork in the foyer of a theatre, wearing a very good coat and the expression of a man guarding it.",
+    "Mr Hannon: You find me away from the ballroom. A cousin has a play on, and the foyer, I am pleased to say, is not as grand as mine. Good to see you. Say nothing to the cousin."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Georgian windows have been cleaned and the fox has been on the good rug again. I have stopped arguing. It sits better than I do. Come by and I shall give you the proper tour, all four storeys.",
+    "Yours, Aidan Hannon (of the fanlights)"
+   ],
+   "offer": [
+    "Mr Hannon: Now {player}. A business wants a steady hand and a good eye for a draught. I have kept four storeys of tall windows closed against a Limerick winter.",
+    "Mr Hannon: I can manage a till. It has only one floor."
+   ],
+   "chat": [
+    "Mr Hannon: Frank McCourt was a mile from here and a world away. I say it to everyone. I think he would have found it funny.",
+    "Mr Hannon: The fanlights were put in to catch the light. They catch the dust too.",
+    "Mr Hannon: The fox is not a pet. He does not think so either."
+   ],
+   "thanks": [
+    "Mr Hannon looks at the salmon as though it were about to be presented at court.",
+    "Mr Hannon: Well. We shall have it plain, with a little parsley, in the dining room. The fox may watch from the door."
+   ],
+   "ax": 30,
+   "ay": 22
+  },
+  {
+   "id": "ruth_newgrange",
+   "name": "Ruth Gannon",
+   "short": "Ruth",
+   "zone": "newgrange_home_dig",
+   "npc": "ng_home_digger",
+   "sprite": "student",
+   "home": "newgrange",
+   "away": "sligo",
+   "likes": "champ",
+   "hint": "Ruth says a bowl of champ with a well of butter in the middle is the only thing that gets her through a wet day in a trench.",
+   "intro": [
+    "Ruth: Ruth Gannon. Yes, the one who stayed. Fifteen years of a summer dig. The soil does not forgive you for leaving a trowel in it.",
+    "Ruth: If you want to thank me for the tour, the best thing is a bowl of champ, scallions, butter, plenty of salt. It is the only decent thing to come out of a wet trench."
+   ],
+   "meet": [
+    "Ruth is in Sligo, kneeling at the edge of a prehistoric tomb with her notebook on her knee and a flask on the ground.",
+    "Ruth: Carrowmore, my day off. I came to look at stones, because apparently I do not get enough of that. Do not tell my supervisor I am enjoying it."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Another summer, another trench, another beautiful pile of nothing in particular. Someone found a flint. We held a small, dignified party. The soil remembers everything, and I am trying to be a better listener.",
+    "Yours, Ruth (and the trowel)"
+   ],
+   "offer": [
+    "Ruth: Now, {player}. I have catalogued ten thousand shards of pottery. A till is not going to trouble me.",
+    "Ruth: I label everything. I will keep your shop in order, whether it asks me to or not."
+   ],
+   "chat": [
+    "Ruth: We found a spiral today. It is a very good spiral. Nobody has told us what it means, so I have decided it means 'hello'.",
+    "Ruth: The Pooka are out tonight, they say. I will keep my blackberries in the cupboard.",
+    "Ruth: Fifteen years and I am still the new girl. That is how it works around here."
+   ],
+   "thanks": [
+    "Ruth takes the champ and breathes in, the steam fogging her glasses.",
+    "Ruth: Oh, that is exactly right. I will log it. Find number one. Context, my kitchen. Condition, vanishing."
+   ],
+   "ax": 32,
+   "ay": 25
+  },
+  {
+   "id": "con_kerry",
+   "name": "Con Moriarty",
+   "short": "Old Con",
+   "zone": "kerry_cottage",
+   "npc": "kerry_cottager",
+   "sprite": "farmer",
+   "home": "ring_of_kerry",
+   "away": "galway",
+   "likes": "irish_stew",
+   "hint": "Old Con says a pot of Irish stew, with the lamb and the potatoes and nothing clever, is all a man needs after a day on the hill.",
+   "intro": [
+    "Old Con: Come in, sit down. Con Moriarty. Old Con, they say, though I was Young Con for a long time and it passed without ceremony. Sure look it.",
+    "Old Con: I do like a stew. Lamb, potatoes, onion, nothing clever. Bring me a pot of it and I will tell you the whole of Daniel O'Connell, and you can say 'who?' if you like."
+   ],
+   "meet": [
+    "Old Con is at Galway Races with a flat cap, a very small bet and a face of complete calm.",
+    "Old Con: I have a horse. I have not told it. Sure look it, it is only a bit of fun. You will not tell the wife."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The stags are roaring on the hill and the Fawnlets are hiding in the bracken, and I am sitting here with a cup of tea, watching it all go on without me. Sure look it. Come down for the stew.",
+    "Yours, Con (Old, since Tuesday)"
+   ],
+   "offer": [
+    "Old Con: Now {player}. About that business of yours. Somebody has to mind it. I have minded cattle, sheep and a mother-in-law.",
+    "Old Con: Sure look it, a till is nothing to that."
+   ],
+   "chat": [
+    "Old Con: Sure look it. That is the answer. I never needed another.",
+    "Old Con: The rain is on the hills. It will be on the hills tomorrow. It is a very loyal rain.",
+    "Old Con: O'Connell was born near Cahersiveen. Say that, and someone says 'who?'. It is a great game."
+   ],
+   "thanks": [
+    "Old Con lifts the lid, sniffs, and puts the lid back with a look of deep respect.",
+    "Old Con: That is a stew. No nonsense in it. Well, sure look it, you did well."
+   ],
+   "ax": 32,
+   "ay": 22
+  },
+  {
+   "id": "batt_shannon",
+   "name": "Batt Considine",
+   "short": "Old Batt",
+   "zone": "shannon_cottage",
+   "npc": "cottage_settle",
+   "sprite": "villager_4",
+   "home": "shannon_estuary",
+   "away": "limerick",
+   "likes": "european_eel",
+   "hint": "Old Batt says an eel from the Shannon, done the old way, is a dish his father would have called a feast.",
+   "intro": [
+    "Old Batt: Sit in, sit in. Batt Considine, they say, Old Batt now, since I got to a certain age. That is the settle bed, and I will not discuss who lost the argument.",
+    "Old Batt: If you are ever passing the river, I would not say no to an eel out of the Shannon. A dish my father loved, and my father had opinions."
+   ],
+   "meet": [
+    "Old Batt is wandering the stalls in Limerick, tasting nothing, buying nothing, and thoroughly enjoying himself.",
+    "Old Batt: A market is a great thing for the soul. You look at it all and you buy a single onion. Come back to the cottage some day. The kettle is on the crane."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The fire is lit and has been lit since morning. It will be lit after. I raked it over last night and blew it back to life, as is right. The half-door is open on top and shut below. The hens are furious.",
+    "Yours, Batt (Old, by the fire)"
+   ],
+   "offer": [
+    "Old Batt: Now {player}, listen. That business of yours. I have run a farm, a half-door and a houseful of children. A till does not frighten me.",
+    "Old Batt: Give me the key. I will mind it by the fire, mostly."
+   ],
+   "chat": [
+    "Old Batt: The hens are in a mood. I would not go near them, and they would not thank you.",
+    "Old Batt: They say the fire never went out for two hundred years. I do not doubt it. It would not dare.",
+    "Old Batt: The settle goes from bench to bed. The child who lost the argument goes with it."
+   ],
+   "thanks": [
+    "Old Batt takes the eel and holds it up to the firelight like a man appraising a good horse.",
+    "Old Batt: Well now. That is a Shannon eel, all right. My father would have taken his hat off to it."
+   ],
+   "ax": 40,
+   "ay": 22
+  },
+  {
+   "id": "peggy_sligo",
+   "name": "Peggy McGowan",
+   "short": "Nana",
+   "zone": "sligo_home_strand",
+   "npc": "home_sligo_nana",
+   "sprite": "villager_6",
+   "home": "sligo",
+   "away": "donegal_town",
+   "likes": "home_boxty",
+   "hint": "Nana says a boxty off the griddle, with butter, is the only thing that makes her stop giving out.",
+   "intro": [
+    "Nana: Sit down, sit down, you are blocking the light. Peggy McGowan, though it is Nana to everyone, even the postman. I give out about the weather, I give out about the postman, I am very well.",
+    "Nana: I do like a boxty off the griddle, with a bit of butter on it. Bring me one and I will give out a good deal less."
+   ],
+   "meet": [
+    "Nana is on a bench in Donegal Town, looking at the sky with an expression of deep personal disappointment.",
+    "Nana: My sister lives here and the weather is even worse. I am delighted. Have you ever seen such a sky? I have a list. Sit down, it is a long list."
+   ],
+   "letter": [
+    "Dear {player},",
+    "I have given out about the weather since 1971 and I see no reason to stop now. The Brocklings were in the garden again, behaving. The bins stayed shut. We are at peace. Come and have a cup of tea before the next shower.",
+    "Yours, Nana (and the kettle)"
+   ],
+   "offer": [
+    "Nana: Now, {player}. That business of yours wants a woman who gives out properly. I have given out to bank managers, bishops and a very stubborn goat.",
+    "Nana: Hand it over. I will have it shipshape in a week, and I will say so."
+   ],
+   "chat": [
+    "Nana: It is raining. I will say no more. I will say a great deal more, but not yet.",
+    "Nana: The kettle forgave me again this morning. It is a very generous kettle.",
+    "Nana: Keep the bins shut. The Brocklings will know. They always know."
+   ],
+   "thanks": [
+    "Nana turns the boxty over on the plate, sniffs, and gives an approving little nod.",
+    "Nana: Well, I will not say a word. That is a lovely one. I will say nothing at all. Sit down, I will pour you tea."
+   ],
+   "ax": 30,
+   "ay": 16
+  },
+  {
+   "id": "alec_aberdeen",
+   "name": "Alec Duthie",
+   "short": "Mr Duthie",
+   "zone": "aberdeen_townhouse",
+   "npc": "townhouse_clerk",
+   "sprite": "commuter",
+   "home": "aberdeen",
+   "away": "dundee",
+   "likes": "haddock",
+   "hint": "Mr Duthie says a good haddock is the only thing that ever made a council meeting feel worth the wait.",
+   "intro": [
+    "Mr Duthie: Alec Duthie, Clerk to nobody in particular. I have minuted forty years of meetings and the only decision anyone remembers is the biscuits.",
+    "Mr Duthie: Bon Accord, as the motto says, which is more than I can say for the agenda. Bring me a haddock some day and I will read you the good minutes."
+   ],
+   "meet": [
+    "Mr Duthie is on a Dundee pavement holding a lanyard and a sandwich, looking like a man who escaped a conference.",
+    "Mr Duthie: Clerks' day out. Four hours on procedure. I have taken minutes of my own lunch to cope.",
+    "Mr Duthie: Good to see you. Aberdeen is the one with the granite, in case you wander off."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The landing is quiet this week. The councillors are not as fast as they look, but they have found the tea trolley at last. I have minuted the occasion.",
+    "Yours, Alec (Clerk, and Duthie)"
+   ],
+   "offer": [
+    "Mr Duthie: A word, {player}. Your business wants someone with a steady hand and a filing system while you are off walking.",
+    "Mr Duthie: I have kept order among councillors. A till is very polite by comparison."
+   ],
+   "chat": [
+    "Mr Duthie: Item one, the weather. Item two, more weather. Carried.",
+    "Mr Duthie: Granite does not change its mind. I find that restful.",
+    "Mr Duthie: Three towers and two leopards on the arms. I have counted them twice, in case they moved."
+   ],
+   "thanks": [
+    "Mr Duthie holds the haddock at arm's length, as if reviewing it.",
+    "Mr Duthie: Approved without amendment. I shall not minute that I am delighted."
+   ],
+   "ax": 38,
+   "ay": 37
+  },
+  {
+   "id": "morag_edinburgh",
+   "name": "Morag Henderson",
+   "short": "Mrs Henderson",
+   "zone": "edinburgh_home_a",
+   "npc": "edinburgh_home_a_mrshenderson",
+   "sprite": "villager_3",
+   "home": "edinburgh",
+   "away": "glasgow",
+   "likes": "stovies",
+   "hint": "Mrs Henderson says a pot of stovies is the proper answer to any haar.",
+   "intro": [
+    "Mrs Henderson: Come in, dear, before the haar takes you. Morag Henderson, though everyone says Mrs Henderson, even my grandson.",
+    "Mrs Henderson: I make my stovies in a heavy pot and they cure most things. Bring me a plate of them and I will tell you what the Castle really does at night."
+   ],
+   "meet": [
+    "Mrs Henderson is on a Glasgow platform with a tartan bag the size of a toddler, scanning the crowd.",
+    "Mrs Henderson: My daughter stays here. Nice people, but they walk too fast and they say hen to me, and I am old enough to be several hens.",
+    "Mrs Henderson: Away you go, and mind the haar when you are back in Edinburgh."
+   ],
+   "letter": [
+    "Dear {player},",
+    "My wee grandson has decided the Castle follows him to school as well. I have told him it is just very tall. He says that is what the Castle wants us to think.",
+    "Yours, Morag (Mrs Henderson, to the grandchildren)"
+   ],
+   "offer": [
+    "Mrs Henderson: Now then, {player}. Your business wants someone with a firm hand and a pot of something hot on the go.",
+    "Mrs Henderson: I have raised a family and survived a Fringe. I can manage customers."
+   ],
+   "chat": [
+    "Mrs Henderson: The haar was in all morning. I could not see my own scone, so I ate it to be safe.",
+    "Mrs Henderson: The hootlets were at it again last night. Twit-twoo. They are in charge, I told you.",
+    "Mrs Henderson: My grandson says the Castle is following him. I have stopped arguing."
+   ],
+   "thanks": [
+    "Mrs Henderson lifts the lid, breathes in and closes her eyes for a moment.",
+    "Mrs Henderson: Oh, that will do nicely. You are a good soul, and do not let the haar tell you otherwise."
+   ],
+   "ax": 27,
+   "ay": 18
+  },
+  {
+   "id": "calum_inverness",
+   "name": "Calum Munro",
+   "short": "Old Calum",
+   "zone": "inverness_home_a",
+   "npc": "highland_ghillie",
+   "sprite": "ghillie",
+   "home": "inverness",
+   "away": "fort_william",
+   "likes": "atlantic_salmon",
+   "hint": "Old Calum says a salmon from a Highland river is the only fish he would walk a mile in the rain to look at.",
+   "intro": [
+    "Old Calum: Quiet, now. You will frighten the river. Calum, they call me Old Calum, I am told it is respect.",
+    "Old Calum: Forty years I have stood in cold water telling gentlemen to lift the rod. Bring me a salmon and I will say very little about it, which is the highest praise."
+   ],
+   "meet": [
+    "Old Calum is outside a Fort William outdoor shop, holding a pair of waders up to the light.",
+    "Old Calum: Ben Nevis is behind us. I am not looking at it. I have an arrangement with that hill.",
+    "Old Calum: Good to see you. Find a river on your way back, and do not splash."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The river is up and the gentlemen are down, which is the right way round. I have said nothing for three days and I feel very well on it.",
+    "Yours, Calum (Old, and quiet)"
+   ],
+   "offer": [
+    "Old Calum: You, {player}. Your business wants someone who can stand still and watch for trouble.",
+    "Old Calum: I can do that for eleven hours without a flask. Give me the flask as well."
+   ],
+   "chat": [
+    "Old Calum: The water is low. I have mentioned it to the sky.",
+    "Old Calum: A good fish is patient. So am I, mostly.",
+    "Old Calum: Lift the rod, you said. I did not say it twice."
+   ],
+   "thanks": [
+    "Old Calum weighs the salmon in one hand and nods once, slowly.",
+    "Old Calum: Aye. That is a fish. I will say no more, and I mean it kindly."
+   ],
+   "ax": 20,
+   "ay": 18
+  },
+  {
+   "id": "magnus_kirkwall",
+   "name": "Magnus Flett",
+   "short": "Magnus",
+   "zone": "kirkwall_home_a",
+   "npc": "island_storyteller",
+   "sprite": "fisherman_north",
+   "home": "kirkwall",
+   "away": "thurso",
+   "likes": "herring",
+   "hint": "Magnus says a herring, salted or fresh, is the only fish a good story should be served alongside.",
+   "intro": [
+    "Magnus: Sit down, sit down. Magnus Flett, and yes, there are a great many Fletts in Orkney, and most of us tell stories.",
+    "Magnus: A story is better on a full stomach. Bring me a herring some day and I will tell you one about the selkie that was not even a good swimmer."
+   ],
+   "meet": [
+    "Magnus is at Thurso with a rucksack, having come across the Pentland Firth on the boat and looking mildly betrayed by the sea.",
+    "Magnus: The firth was in a mood. I told it a story about a fisherman who talked too much, and it stopped. Mostly.",
+    "Magnus: Good to see you. Kirkwall is the one with the big red cathedral. You cannot miss it, though you will try."
+   ],
+   "letter": [
+    "Dear {player},",
+    "A new tale this week, of a man who took a boat out and came back with a sea-view and no fish. I told it in the shop and now everyone has an opinion.",
+    "Yours, Magnus (Flett, one of many)"
+   ],
+   "offer": [
+    "Magnus: I have an idea, {player}. Your business wants a person who can keep customers while the owner is off walking.",
+    "Magnus: I can talk to anyone for an hour. It is selling that I will have to learn."
+   ],
+   "chat": [
+    "Magnus: I have a story for it, whatever the weather. That is not a boast, it is a warning.",
+    "Magnus: A good tale gets better each telling. A poor one gets longer.",
+    "Magnus: The sea has been rude again. I put it in the next one."
+   ],
+   "thanks": [
+    "Magnus looks at the herring and begins to smile, slowly.",
+    "Magnus: Now that is a worthy fish. I will tell you a tale about it, but you will owe me another."
+   ],
+   "ax": 28,
+   "ay": 24
+  },
+  {
+   "id": "tammie_lerwick",
+   "name": "Tammie Isbister",
+   "short": "Old Tammie",
+   "zone": "lerwick_home_a",
+   "npc": "ls_fiddler_home",
+   "sprite": "fiddler",
+   "home": "lerwick",
+   "away": "aberdeen",
+   "likes": "mackerel",
+   "hint": "Old Tammie says nothing helps a fiddler's wrist like a fresh mackerel and a long sit down.",
+   "intro": [
+    "Old Tammie: Sixty years, I said. Maybe sixty-one. The fiddle does not mind and neither do I.",
+    "Old Tammie: Tammie Isbister, though everyone says Old Tammie. If you ever catch a mackerel, bring it to me and I will play you a reel, a short one."
+   ],
+   "meet": [
+    "Old Tammie is on the Aberdeen quay, fiddle case under his arm, looking at the NorthLink boat like a hall that has promised a wedding.",
+    "Old Tammie: A christening at Torry, they said. In a gale, I said. Sixty years and nothing changes.",
+    "Old Tammie: Good to see you. Come back to Lerwick when you can. The tune is waiting."
+   ],
+   "letter": [
+    "Dear {player},",
+    "I played at a wedding last Saturday. The bride was danced off her feet, so it was not a poor do. I may have broken a string, but only in the good bit.",
+    "Yours, Tammie (Old, and in tune)"
+   ],
+   "offer": [
+    "Old Tammie: I will be plain, {player}. Your business needs someone to mind it while you are walking.",
+    "Old Tammie: I have kept a hall dancing all night. A shop is a doddle."
+   ],
+   "chat": [
+    "Old Tammie: A reel is only a story with its feet moving.",
+    "Old Tammie: Granny said the best tunes came from the sea. It is a lie, I think. I still use it.",
+    "Old Tammie: My bow arm is better than yesterday. My knees are a different matter."
+   ],
+   "thanks": [
+    "Old Tammie turns the mackerel over, tapping it like a tuning fork.",
+    "Old Tammie: Well now. That deserves a tune. Sit down, and do not talk through the slow part."
+   ],
+   "ax": 2,
+   "ay": 22
+  },
+  {
+   "id": "ina_pentland",
+   "name": "Ina Sinclair",
+   "short": "Mrs Sinclair",
+   "zone": "jog_lasthouse",
+   "npc": "lasthouse_keeper",
+   "sprite": "shopkeeper",
+   "home": "pentland_coast",
+   "away": "kirkwall",
+   "likes": "queenie_scallops",
+   "hint": "Mrs Sinclair says a plate of queenie scallops is the only thing that makes the last cup of tea on the mainland feel like a send-off.",
+   "intro": [
+    "Mrs Sinclair: Welcome in. Ina Sinclair, though the postcards only know me as the Shopkeeper.",
+    "Mrs Sinclair: I would be glad of a few queenie scallops one day. Bring some, and I will do you the very last cup of tea, with a flourish."
+   ],
+   "meet": [
+    "Mrs Sinclair is in Kirkwall, standing at a shop window with a bag of postcards, comparing prices.",
+    "Mrs Sinclair: Market research. Their postcards are nicer than mine. I am furious, and I am buying six.",
+    "Mrs Sinclair: Good to see you. Do come back to the Last House. Nobody counts Dunnet Head."
+   ],
+   "letter": [
+    "Dear {player},",
+    "A coach party came through on Tuesday and bought forty postcards and no tea. I have not forgiven them. The groatie buckies are selling well, though.",
+    "Yours, Ina (Sinclair, last of the mainland)"
+   ],
+   "offer": [
+    "Mrs Sinclair: Listen, {player}. Your business wants someone who can keep a till and a smile, at the end of the road.",
+    "Mrs Sinclair: I have sold tea at the last house for years. Everything else is easy."
+   ],
+   "chat": [
+    "Mrs Sinclair: Haste ye back, I say, and I mean it, whatever the wind is doing.",
+    "Mrs Sinclair: Nobody counts Dunnet Head. I do, quietly.",
+    "Mrs Sinclair: The tea is hot, the postcards are damp and the view is free."
+   ],
+   "thanks": [
+    "Mrs Sinclair peers into the bag with the air of a woman checking a ledger.",
+    "Mrs Sinclair: Oh, they are lovely. You have just made my week, and I will not tell the coach party."
+   ],
+   "ax": 42,
+   "ay": 12
+  },
+  {
+   "id": "ishbel_thurso",
+   "name": "Ishbel Gunn",
+   "short": "Granny Gunn",
+   "zone": "thurso_cottage",
+   "npc": "gunn_gran",
+   "sprite": "villager_3",
+   "home": "thurso",
+   "away": "inverness",
+   "likes": "arbroath_smokie",
+   "hint": "Granny Gunn says a smokie is the only thing that tastes of a good fire and a bad winter in one go.",
+   "intro": [
+    "Granny Gunn: Come in, come in, mind the cat. Ishbel Gunn, though nobody has said it aloud since 1971.",
+    "Granny Gunn: I am fond of a smokie, with a bit of bread. Bring me one and I will not say you have had your tea."
+   ],
+   "meet": [
+    "Granny Gunn is outside Raigmore Hospital in Inverness with a flask, a knitting bag and a grudge about the car park.",
+    "Granny Gunn: Appointment. Perfectly fine. They tell me I am perfectly fine and charge me for the parking, which is not fine.",
+    "Granny Gunn: Good to see you. Get home to Thurso and keep the cat company."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Keiths have been mentioned at the church again. I have said nothing, loudly. The cat is well and sends nothing, as is her way.",
+    "Yours, Ishbel (Gunn, and proud of it)"
+   ],
+   "offer": [
+    "Granny Gunn: Now, {player}. Your business wants someone with Gunn blood and a kettle to keep it going.",
+    "Granny Gunn: We kept a feud going for centuries. A shop is nothing."
+   ],
+   "chat": [
+    "Granny Gunn: The flagstones held the heat again. Stone does, you see.",
+    "Granny Gunn: Have a crowdie oatcake. No? Aye, you will have had your tea.",
+    "Granny Gunn: Norse blood, I told you. It does not wash out, though the Keiths tried."
+   ],
+   "thanks": [
+    "Granny Gunn sniffs the smokie and nods like an old friend has called.",
+    "Granny Gunn: Now that is a fish. Sit down, you will have a cup of tea. You have not had your tea."
+   ],
+   "ax": 32,
+   "ay": 20
+  },
+  {
+   "id": "murdo_harris",
+   "name": "Murdo Macleod",
+   "short": "Murdo",
+   "zone": "harris_blackhouse",
+   "npc": "hb_guide",
+   "sprite": "tour_guide",
+   "home": "harris",
+   "away": "stornoway",
+   "likes": "clootie_dumpling",
+   "hint": "Murdo says a clootie dumpling is the proper answer to a long, damp afternoon beside a peat fire.",
+   "intro": [
+    "Murdo: Fàilte. Murdo Macleod, who shows folk around a house his granny would not have let them into without wiping their feet.",
+    "Murdo: A clootie dumpling would be very welcome beside the fire. Bring one, and I will say tapadh leibh, and mean it."
+   ],
+   "meet": [
+    "Murdo is on the Stornoway waterfront with an empty rucksack and the happy face of a man who has left his group behind.",
+    "Murdo: A day off from the black house. Peat all week and now I find I am looking for a hill to stand on.",
+    "Murdo: Good to see you. Come back to Harris. We promised not to tell the visitors about the chimney."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The visitors asked again whether the cattle really helped heat the house. I said yes, and they looked at the sofa in the next room with a new respect.",
+    "Yours, Murdo (Macleod, guide and chimney sweep)"
+   ],
+   "offer": [
+    "Murdo: A thought, {player}. Your business wants someone steady while you are away walking.",
+    "Murdo: I keep a house of strangers warm and informed. A shop is smaller than a black house."
+   ],
+   "chat": [
+    "Murdo: The smoke says it is cold, and it is.",
+    "Murdo: My granny read the weather in the peat reek. She was right more than the forecast.",
+    "Murdo: The village is quiet today. The wind has taken the rest."
+   ],
+   "thanks": [
+    "Murdo lifts the cloth and the warm smell of spice and fruit fills the room.",
+    "Murdo: Ah, now. That is a proper one. Tapadh leibh, and sit down by the fire."
+   ],
+   "ax": 28,
+   "ay": 19
+  },
+  {
+   "id": "ma_haig_borders",
+   "name": "Ma Haig",
+   "short": "Ma Haig",
+   "zone": "borders_bakehouse",
+   "npc": "ma_haig",
+   "sprite": "shopkeeper",
+   "home": "scottish_borders",
+   "away": "edinburgh",
+   "likes": "scotch_broth",
+   "hint": "Ma Haig says nobody bakes well on an empty stomach, and a bowl of Scotch broth is how she starts the day.",
+   "intro": [
+    "Ma Haig: Come in, hen, come in. Ma Haig, to the whole town, and my own mother called me worse.",
+    "Ma Haig: I am up at four with the ovens. A bowl of Scotch broth sets me up for the day, so if you have one, I will not say no."
+   ],
+   "meet": [
+    "Ma Haig is on a Waverley platform with a basket of bannocks, guarding it like a Reiver's loot.",
+    "Ma Haig: Wholesaler's meeting. They offered me a sandwich. I laughed so hard they gave me a second one.",
+    "Ma Haig: Good to see you. Get yourself to the Borders. The bakehouse is warm and the Common Riding is coming."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Selkirk bannock is going like the clappers. A woman from Hawick tried to say it was not the best in the Borders, and she has not been back since.",
+    "Yours, Ma (Haig, in flour)"
+   ],
+   "offer": [
+    "Ma Haig: Now then, {player}. Your business wants a firm hand and a hot oven. I am both.",
+    "Ma Haig: I have fed half the Borders. Folk who pay cash are a pleasure."
+   ],
+   "chat": [
+    "Ma Haig: The bannock is good, and so are you, and so is the pie. Eat.",
+    "Ma Haig: A pie that would stop a Reiver at forty paces. I have tested it, forty-one in fact.",
+    "Ma Haig: Mind the steps. The town is hungry again."
+   ],
+   "thanks": [
+    "Ma Haig lifts the lid, inhales and nods slowly, as if inspecting a rival bakery.",
+    "Ma Haig: Well. That is a decent pot. You can come in any time, hen."
+   ],
+   "ax": 30,
+   "ay": 23
+  },
+  {
+   "id": "idris_aberystwyth",
+   "name": "Idris Lloyd",
+   "short": "Idris",
+   "zone": "aberystwyth_home_harbour",
+   "npc": "harbour_fisher",
+   "sprite": "fisherman_north",
+   "home": "aberystwyth",
+   "away": "aberdeen",
+   "likes": "mackerel",
+   "hint": "Idris says a fresh mackerel from the bay is the nearest he gets to rowing out before dawn these days.",
+   "intro": [
+    "Idris: I used to row out of this harbour before dawn. Mair says I still do, in my sleep, and that I steer badly.",
+    "Idris: A fresh mackerel from the bay would make an old man feel useful. Bring me one and I will tell the tide you said hello."
+   ],
+   "meet": [
+    "Idris is on Aberdeen harbour, studying a trawler with the air of a man doing a stock check.",
+    "Idris: Mair said I should get out of the house. I said I would go to the harbour. She did not specify which one.",
+    "Idris: I have eleven boats in bottles at home. This one is full size. The scale is much better."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Mair says the new coat is a coat and not a sail. I have tested it on the harbour wall and the jury is out. The bottle count stands at twelve, and I am not discussing it.",
+    "Yours, Idris (and a twelfth boat)"
+   ],
+   "offer": [
+    "Idris: I have been getting up before dawn for years, even if I mostly say so now. A business at eight o'clock holds no terrors.",
+    "Idris: Leave it with me, {player}. I will count the takings. Mair will count them again."
+   ],
+   "chat": [
+    "Idris: The Ystwyth and the Rheidol are arguing again. The tide is taking notes.",
+    "Idris: Number thirteen has a very small anchor. I am quietly proud of it.",
+    "Idris: Mair says I talk to the boats. They never answer back, which I find restful."
+   ],
+   "thanks": [
+    "Idris holds the mackerel up to the light as if it were the last of the morning.",
+    "Idris: Now that is a proper fish. I will say I caught it. Mair will say I did not. We will both be right."
+   ],
+   "ax": 6,
+   "ay": 23
+  },
+  {
+   "id": "nain_anglesey",
+   "name": "Nain Olwen",
+   "short": "Nain",
+   "zone": "anglesey_cottage",
+   "npc": "angcottage_nain",
+   "sprite": "mum",
+   "home": "anglesey",
+   "away": "holyhead",
+   "likes": "welsh_cakes",
+   "hint": "Nain says a warm Welsh cake straight off the bakestone settles a tamping temper, a wispet fright and most other things.",
+   "intro": [
+    "Nain: Sit, cariad, and do not mind the cat, he thinks he owns that chair. I am Nain to everybody, even the postman, and he is forty.",
+    "Nain: I would be glad of a Welsh cake, if you come across one. A warm one, mind. A cold one is only a biscuit with ideas."
+   ],
+   "meet": [
+    "Nain is on the Holyhead quay with a flask and a tartan blanket, watching the Irish ferry as if it owes her money.",
+    "Nain: Our Sioned says I should not wait for ferries. I am not waiting, cariad. I am supervising.",
+    "Nain: Come back to the cottage for tea. The wispets are out along the hedge at dusk and they do like an audience."
+   ],
+   "letter": [
+    "Dear {player},",
+    "Sioned still says the long village name was a stunt. I told her stunts are how people find us, and she went quiet, which is rare. The cat sends a look. Come for a Welsh cake.",
+    "Yours, Nain (and the cat)"
+   ],
+   "offer": [
+    "Nain: I have run a kitchen, a family and a very opinionated cat. Your business will be no trouble, cariad.",
+    "Nain: Go and walk, {player}. I will put a Welsh cake in the till and a warning on the door."
+   ],
+   "chat": [
+    "Nain: A tamping temper is only hunger with a loud voice. Feed it and it passes.",
+    "Nain: Wispets were bobbing along the hedge again last night, showy as ever.",
+    "Nain: Sioned calls the long name a stunt. I call it a very long welcome mat."
+   ],
+   "thanks": [
+    "Nain takes the Welsh cake in both hands and holds it to her cheek like a hot water bottle.",
+    "Nain: Still warm. You have the touch, cariad. The cat will want a crumb and he will not get one."
+   ],
+   "ax": 28,
+   "ay": 20
+  },
+  {
+   "id": "wilf_cardiff",
+   "name": "Wilf Bevan",
+   "short": "Old Wilf",
+   "zone": "cardiff_home_bute",
+   "npc": "bute_oldman",
+   "sprite": "fisherman_north",
+   "home": "cardiff",
+   "away": "liverpool",
+   "likes": "home_glamorgan_sausage",
+   "hint": "Old Wilf says a proper Glamorgan sausage, all cheese and leek and not a scrap of meat, was the best thing a dock lunch box ever held.",
+   "intro": [
+    "Old Wilf: Alright, butt. It is Wilf, but everybody says Old Wilf, as if there is a young one hiding round the back. There is not.",
+    "Old Wilf: Best lunch I ever had on the docks was a Glamorgan sausage. All cheese and leek. Bring me a home-made one and I will tell you which crane I hated."
+   ],
+   "meet": [
+    "Old Wilf is on the Liverpool waterfront, looking at the Mersey like a man checking another man's homework.",
+    "Old Wilf: Big docks, Liverpool. Good ones. Do not tell anyone in Cardiff I said so.",
+    "Old Wilf: The sandwiches here are rubbish, mind. Come home to Butetown, butt, and I will find you a proper lunch."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The bay is quiet and the gulls are still after my chips. I told one it was a Cardiff gull and ought to know better. Shirley Bassey would have handled it with style. I handle it with a newspaper.",
+    "Yours, Wilf (the Old one)"
+   ],
+   "offer": [
+    "Old Wilf: Forty years I moved cargo from every corner of the world. A till and a queue will not trouble me, butt.",
+    "Old Wilf: Go and walk. I will keep the stock moving and the gulls out."
+   ],
+   "chat": [
+    "Old Wilf: Sailors came from everywhere to this bay. Everyone left something behind, mostly recipes and arguments.",
+    "Old Wilf: Mind the gulls, butt. They watch the dock like a union.",
+    "Old Wilf: Tiger Bay, they called it. We called it home. Still do."
+   ],
+   "thanks": [
+    "Old Wilf unwraps the Glamorgan sausage and sniffs it like a customs officer.",
+    "Old Wilf: Leek, cheese, crisp outside. Cleared for landing. Diolch, butt."
+   ],
+   "ax": 25,
+   "ay": 21
+  },
+  {
+   "id": "emrys_llanberis",
+   "name": "Emrys Roberts",
+   "short": "Emrys",
+   "zone": "llanberis_home_eglwys",
+   "npc": "eglwys_quarryman",
+   "sprite": "tin_miner",
+   "home": "llanberis",
+   "away": "llangollen",
+   "likes": "home_cawl",
+   "hint": "Emrys says nothing warmed a quarryman through a long shift like a bowl of cawl, and he has not found anything better since.",
+   "intro": [
+    "Emrys: Emrys is the name. I was at Dinorwic until it closed in 1969, and my back has been sending the bill ever since.",
+    "Emrys: Cawl is what kept us going up there. Bring me a bowl, home-made, and I will tell you where the good slate was."
+   ],
+   "meet": [
+    "Emrys is standing in a Llangollen street with his neck tipped back, staring at somebody's roof.",
+    "Emrys: Welsh slate. You can tell by the way it sits. Proud, like. Do not tell me it is Spanish, I will sit down and sulk.",
+    "Emrys: Someone is going to say it came off a church hall in Leeds. It might be mine. I stopped counting years ago."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The slatelets are about on the spoil heaps again, treating the whole quarry as a playground. I was never allowed to. I was paid to. Bring cawl, or at the very least an appetite.",
+    "Yours, Emrys (retired, allegedly)"
+   ],
+   "offer": [
+    "Emrys: I worked beside thousands of men at Dinorwic, give or take. A stall and a queue are a quiet afternoon.",
+    "Emrys: Go and walk, {player}. I will keep the books straight and the slate dry."
+   ],
+   "chat": [
+    "Emrys: Bryn Eglwys means church hill. The church has gone and the hill stayed. That is the Welsh way.",
+    "Emrys: Roofs all over Britain, and nobody ever thanks the slate.",
+    "Emrys: Stand still on the spoil heap and a slatelet will come and look at you. Rude, but honest."
+   ],
+   "thanks": [
+    "Emrys lifts the lid and breathes in as if it were mountain air.",
+    "Emrys: Cawl. Proper cawl. Diolch, {player}. You have the hands of a quarry wife and I mean that as the highest praise."
+   ],
+   "ax": 56,
+   "ay": 16
+  },
+  {
+   "id": "menna_pembroke",
+   "name": "Menna Rees",
+   "short": "Mrs Rees",
+   "zone": "pembroke_lhcottage",
+   "npc": "lhcottage_wife",
+   "sprite": "mum",
+   "home": "pembroke_coast",
+   "away": "st_davids",
+   "likes": "pollack",
+   "hint": "Mrs Rees says a pollack off the Strumble rocks, fried in butter, is the only dinner worth the walk back from the headland.",
+   "intro": [
+    "Mrs Rees: I am Mrs Rees, though out here it is mostly 'is there tea'. Mind the wind, it does for hairdos and for opinions.",
+    "Mrs Rees: Four flashes every fifteen seconds and I count along. Bring me a pollack off the rocks and I will count you as a friend."
+   ],
+   "meet": [
+    "Mrs Rees is outside the cathedral in St Davids, wearing a red shawl and looking a little too pleased with herself.",
+    "Mrs Rees: Do not laugh. The women at Fishguard wore red in 1797 and the French went home. I am only keeping up the family business.",
+    "Mrs Rees: Come out to Strumble when you can. The lighthouse is just across the footbridge and the kettle is always on."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The light flashed its four every fifteen seconds all night and I counted along, as ever. The child waved at the Irish ferry and still nobody waved back. I have started waving for them.",
+    "Yours, Mrs Rees (red shawl optional)"
+   ],
+   "offer": [
+    "Mrs Rees: I have kept house on a headland through every gale going. A business is a breeze.",
+    "Mrs Rees: I will keep the light on for you, {player}. Figuratively. The real one does it by itself."
+   ],
+   "chat": [
+    "Mrs Rees: The wind did for my hairdo again. I am told it is a look.",
+    "Mrs Rees: The Irish ferry went by at noon. The child waved. Nobody waved back. It is becoming a tradition.",
+    "Mrs Rees: The French mistook the women for soldiers in 1797. Fishguard has never been prouder or less surprised."
+   ],
+   "thanks": [
+    "Mrs Rees takes the pollack and weighs it in her palm like a woman who has seen many fish and been fooled by few.",
+    "Mrs Rees: A beauty. That is dinner and a story, {player}. The French would have surrendered over less."
+   ],
+   "ax": 18,
+   "ay": 14
+  },
+  {
+   "id": "dilys_rhondda",
+   "name": "Dilys Morgan",
+   "short": "Dilys",
+   "zone": "rhondda_home",
+   "npc": "rhn_home_mum",
+   "sprite": "mum",
+   "home": "rhondda",
+   "away": "blaenavon",
+   "likes": "welsh_cakes",
+   "hint": "Dilys says nothing beats a Welsh cake still warm from the range, eaten in the kitchen and never the parlour.",
+   "intro": [
+    "Dilys: Come in, cariad, mind the step, it is high, I told the vicar and he fell anyway. I am Dilys, Mrs Pugh's sister, which is a full-time job.",
+    "Dilys: If you ever have a Welsh cake going, a warm one, I would be glad of it. Kitchen, mind. Nobody is allowed in the parlour."
+   ],
+   "meet": [
+    "Dilys is outside Big Pit in Blaenavon, in a hard hat, which she is wearing over her good hat.",
+    "Dilys: They take you down in a cage, cariad. I said I would, then I said I would not, and now I am a woman who has done it.",
+    "Dilys: Down there they have a lamp and no parlour at all. Imagine."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The tin bath is still on its nail, the good clock is still ticking in the parlour, and nobody is still allowed in. I put the kettle on in the kitchen like everybody else. Come and sit.",
+    "Yours, Dilys (not in the parlour)"
+   ],
+   "offer": [
+    "Dilys: I fed a house full of men off one range and a lot of opinions. Your business is a Tuesday, cariad.",
+    "Dilys: Go on, off you walk. I will keep the accounts and the best china, and I will not let anyone in the parlour."
+   ],
+   "chat": [
+    "Dilys: Friday was bath night. You always wanted to be first, the water gets a grey look after the fifth man.",
+    "Dilys: They built the fireplace first and the house round it. Priorities, cariad.",
+    "Dilys: The good clock is in the parlour and it tells the time to nobody. Very dignified."
+   ],
+   "thanks": [
+    "Dilys holds the Welsh cake in a tea towel as if it were a small, golden, sleeping baby.",
+    "Dilys: Still warm! Not the parlour, mind, we will eat this at the kitchen table like normal people. Diolch, cariad."
+   ],
+   "ax": 2,
+   "ay": 20
+  },
+  {
+   "id": "emlyn_st_davids",
+   "name": "Emlyn Griffiths",
+   "short": "Mr Griffiths",
+   "zone": "stdavids_home_cottage",
+   "npc": "sd_fisher",
+   "sprite": "fisherman_north",
+   "home": "st_davids",
+   "away": "swansea",
+   "likes": "home_laverbread",
+   "hint": "Mr Griffiths says laverbread on hot toast is just what a man wants after a cold morning on the sound.",
+   "intro": [
+    "Mr Griffiths: Griffiths, and if you say Mister I will turn round to look for my father. That is Ramsey Island in the window. Ynys Dewi to the saint.",
+    "Mr Griffiths: Home-made laverbread on hot toast is what a man wants after a cold morning on the sound. Bring me some and I will show you where the seals pup."
+   ],
+   "meet": [
+    "Mr Griffiths is at Swansea Market, quietly arguing with a stallholder about the price of cockles.",
+    "Mr Griffiths: Laverbread is fine here, but the woman at the second stall will not tell me where she gets it. I respect that. I hate it.",
+    "Mr Griffiths: Do not tell Mrs Griffiths I am here. She thinks I am at the harbour. Swansea has one, so I am almost not lying."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The seals are pupping on Ramsey again, white and fluffy and furious, so I give them room and they take it as a compliment. A puffling by the cliff top still has not forgiven me.",
+    "Yours, Griffiths (the Mr one)"
+   ],
+   "offer": [
+    "Mr Griffiths: I have dealt with tides and gulls all my life. A till is quieter than the sound at spring tide.",
+    "Mr Griffiths: Off you go, {player}. I will mind the shop. The gulls will not get past me. Probably."
+   ],
+   "chat": [
+    "Mr Griffiths: Ramsey Island is much too small for how dramatic it is. I say so every morning.",
+    "Mr Griffiths: Seals on the beaches. Give them room. They are only furious because they are right.",
+    "Mr Griffiths: Seren calls it hwyl, when the sea and the choir agree. I call it a good tide."
+   ],
+   "thanks": [
+    "Mr Griffiths tips the laverbread onto toast without ceremony and eats it standing at the window.",
+    "Mr Griffiths: Ahh. That is the sea in a dish. Diolch, {player}. The seals will hear of this."
+   ],
+   "ax": 34,
+   "ay": 1
+  },
+  {
+   "id": "morag_cairnryan",
+   "name": "Morag Kerr",
+   "short": "Morag",
+   "zone": "cairnryan_home_a",
+   "npc": "cairnryan_home_a_morag",
+   "sprite": "fisher",
+   "home": "cairnryan",
+   "away": "belfast",
+   "likes": "haddock",
+   "hint": "Morag says a proper haddock on the plate would settle the argument over who is catching more, her son or his sister.",
+   "intro": [
+    "Morag: Morag. Mind the smirr, it gets in. My boy is learning to bait a hook and his sister is out-fishing him by a mile. He says it is the bait. It is not the bait.",
+    "Morag: A haddock would settle the argument and the tea. Bring me one and I will tell you about the ternlets."
+   ],
+   "meet": [
+    "Morag is on the Belfast quayside with a carrier bag and the look of a woman on a very rare day off.",
+    "Morag: Two hours on the ferry and I am still wearing the smirr. It followed me. Loyal, I suppose.",
+    "Morag: Do not tell the children I am enjoying myself. They will want a share."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The path down to the harbour is all glaur again. My boy blames the weather and his sister blames my boy. The ternlets dived at dawn and looked deeply serious about it. I looked serious too and caught nothing.",
+    "Yours, Morag (and the glaur)"
+   ],
+   "offer": [
+    "Morag: I run a house, a boy, his sister and a ferry timetable. A business is simple by comparison.",
+    "Morag: Off you go, {player}. I will have it in order and the till full, and nobody will argue."
+   ],
+   "chat": [
+    "Morag: Smirr again. You do not see it. You just find you are wearing it.",
+    "Morag: My boy swears it is the bait. His sister swears it is skill. I swear I am not getting involved.",
+    "Morag: The loch is flat as a plate and the ternlets are hovering. I will be quiet now."
+   ],
+   "thanks": [
+    "Morag turns the haddock over and gives it the look she gives a promising knot.",
+    "Morag: A proper haddock. Wait until my boy sees it. He will say it is the bait."
+   ],
+   "ax": 30,
+   "ay": 27
+  },
+  {
+   "id": "bessie_central_belt",
+   "name": "Bessie Dunn",
+   "short": "Bessie",
+   "zone": "central_belt_cottage",
+   "npc": "central_belt_cottage_bessie",
+   "sprite": "canal_boater",
+   "home": "central_belt",
+   "away": "edinburgh",
+   "likes": "stovies",
+   "hint": "Bessie says a plate of stovies is the stoater a canal boater needs at the end of a long day on the tiller.",
+   "intro": [
+    "Bessie: Bessie. Falkirk bairn, born and bred, and proud of it, which is the only way to be one.",
+    "Bessie: A plate of stovies after a day on the water is a stoater. Bring me some, home-made, and I am your friend for life."
+   ],
+   "meet": [
+    "Bessie is at the canal basin in Edinburgh, regarding a narrowboat with open professional disapproval.",
+    "Bessie: The Union Canal comes all the way from Falkirk to here, and this is where it stops. I just wanted to see it arrive.",
+    "Bessie: Edinburgh folk are very nice. They say it as if they were doing you a favour."
+   ],
+   "letter": [
+    "Dear {player},",
+    "A hot roll on a cold morning is a stoater, so I had two, and the cold lost. The bairns are in the canal again, shouting at ducks. I am told they are the neighbours' bairns. I have taken credit.",
+    "Yours, Bessie (a Falkirk bairn)"
+   ],
+   "offer": [
+    "Bessie: I have worked a lock with half the village watching. A till is a doddle.",
+    "Bessie: Away you go and walk, {player}. I will keep the books straight, and anyone who wants to meddle can speak to me."
+   ],
+   "chat": [
+    "Bessie: Better meddle wi' the de'il than the bairns o' Falkirk. I said it again only yesterday.",
+    "Bessie: A hot roll is a stoater. Two hot rolls is a morning.",
+    "Bessie: The canal never hurries. That is why it always arrives."
+   ],
+   "thanks": [
+    "Bessie lifts the lid, breathes the steam and closes her eyes like she has just been forgiven.",
+    "Bessie: Stovies! That is a stoater, {player}. You have the touch. Sit, and I will tell you who was talking about you."
+   ],
+   "ax": 31,
+   "ay": 23
+  },
+  {
+   "id": "isa_glasgow",
+   "name": "Isa Brodie",
+   "short": "Granny Isa",
+   "zone": "glasgow_home_e",
+   "npc": "glasgow_home_e_isa",
+   "sprite": "villager_5",
+   "home": "glasgow",
+   "away": "dundee",
+   "likes": "clootie_dumpling",
+   "hint": "Granny Isa says a slice of clootie dumpling and a cup of tea is the best reason she knows to sit down for an hour.",
+   "intro": [
+    "Granny Isa: Isa to my pals, Granny Isa to the rest, and Granny to anyone with a parcel. Sit, hen, sit.",
+    "Granny Isa: A clootie dumpling with a good skin on it, that is a Sunday. If you ever have one, I will count it as a green place."
+   ],
+   "meet": [
+    "Granny Isa is in Dundee, on a bench by the waterfront, eating chips with great dignity and one eye on the sky.",
+    "Granny Isa: A friend moved here and I came to see if it is as good as she says. It is. Do not tell her.",
+    "Granny Isa: The V and A is lovely and the wind is not. Mind your chips, hen. The gulls are professionals."
+   ],
+   "letter": [
+    "Dear {player},",
+    "I counted the parks on Sunday again and got to ninety-one, which means I have found a new one or counted the bowling green twice. The sootwings are back in the stonework, filthy and unrepentant as ever.",
+    "Yours, Isa (ninety-one and counting)"
+   ],
+   "offer": [
+    "Granny Isa: I have counted ninety parks and never lost one. A wee business of yours is no bother, hen.",
+    "Granny Isa: Away you go and walk. I will keep it tidy, and anyone who wants a stooshie can wait in the close."
+   ],
+   "chat": [
+    "Granny Isa: Dreich again. I will not complain. I will say it with feeling.",
+    "Granny Isa: Sootwings in the stonework. They love a good fog and have never apologised once.",
+    "Granny Isa: Put the kettle on and tell me a story. Preferably one about somebody else."
+   ],
+   "thanks": [
+    "Granny Isa cuts the clootie dumpling with the solemn care of a woman opening a new bridge.",
+    "Granny Isa: That is a skin done right. Ah, hen, you will go far. And you will come back for tea, I hope."
+   ],
+   "ax": 39,
+   "ay": 37
+  },
+  {
+   "id": "catriona_oban",
+   "name": "Catriona MacDougall",
+   "short": "Granny",
+   "zone": "oban_home_a",
+   "npc": "obn_gran",
+   "sprite": "mum",
+   "home": "oban",
+   "away": "tobermory",
+   "likes": "queenie_scallops",
+   "hint": "Granny says a plate of queenie scallops fresh off the Oban boats would forgive the whole west coast.",
+   "intro": [
+    "Granny: I have watched ferries from this window since 1958. Everybody on them is coming home or running away, and I can tell which.",
+    "Granny: A plate of queenies, fresh from the boats, and I would forgive the whole west coast. If you see any, remember an old woman."
+   ],
+   "meet": [
+    "Granny is on the front at Tobermory, wrapped in four layers, checking that the painted houses are all still there.",
+    "Granny: A ferry, Mull and a coat. That is my holiday. I have been told to relax, so I am doing it at speed.",
+    "Granny: Ciamar a tha thu. Do not worry, I will not test you on the spelling."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The ferry came in at ten past four, as it does. A man stood exactly where it was about to go. I will not say who. I told him the first rule of Oban and he was very good about it after.",
+    "Yours, Granny (with a coat)"
+   ],
+   "offer": [
+    "Granny: I have kept a house in a gale for decades and a ferry timetable in my head for longer. A business is small beer, dear.",
+    "Granny: Off you walk, {player}. I will mind it and I will mind the door, and nobody will stand where the ferry goes."
+   ],
+   "chat": [
+    "Granny: The first rule of Oban is do not stand where the ferry is about to go. People forget, regularly.",
+    "Granny: Madainn mhath, that is good morning. Say it back wrongly, I shall be delighted.",
+    "Granny: Bring a coat. That is the second rule. I will not say it again until I do."
+   ],
+   "thanks": [
+    "Granny weighs the bag of queenies as if it held the crown jewels.",
+    "Granny: Queenies! Fresh, I can tell by the smell. Thank you, dear. That is the ferry and the supper sorted."
+   ],
+   "ax": 31,
+   "ay": 22
+  },
+  {
+   "id": "ewen_fort_william",
+   "name": "Ewen MacMillan",
+   "short": "Ewen",
+   "zone": "fw_home_c",
+   "npc": "fw_home_c_man",
+   "sprite": "villager_6",
+   "home": "fort_william",
+   "away": "oban",
+   "likes": "scotch_broth",
+   "hint": "Ewen says a bowl of Scotch broth is what a person should be handed after a day on the hill, and not one minute before.",
+   "intro": [
+    "Ewen: Ewen MacMillan. Mountain rescue, on the quiet days. Before you ask, yes, I will ask where you are going. I ask everyone.",
+    "Ewen: A bowl of Scotch broth, hot, after a day up the Ben, is about the best thing there is. If you ever have one going spare, I will count it as a green place."
+   ],
+   "meet": [
+    "Ewen is on the esplanade at Oban with a flask, looking at the sea the way he would look at a hill he did not trust.",
+    "Ewen: A day off. I told my wife where I was going and when I would be back, as I always do. She says that is not a hobby, it is a condition.",
+    "Ewen: Mòran taing for stopping, that is many thanks. Tell someone where you are headed next. I will know if you do not."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The Ben had its hat on all week, so I stayed down and fixed the gate, and the snowhares stayed up and kept their own counsel. Tell someone where you are going. Always.",
+    "Yours, Ewen (gate fixed, kettle on)"
+   ],
+   "offer": [
+    "Ewen: Your business, {player}. I have spent years looking after people who did not plan the day, so a plan I can manage.",
+    "Ewen: Off you go. I will keep an eye on it, and I will want to know what time you are back."
+   ],
+   "chat": [
+    "Ewen: Snowhares go white in winter. Up on the Ben it is a decent trick, and it still works on most people.",
+    "Ewen: The forecast said fine. The Ben said otherwise. I go with the Ben.",
+    "Ewen: Mountain rescue are up the hill a lot. If you are going up, tell someone. I will keep saying it."
+   ],
+   "thanks": [
+    "Ewen takes the broth in both hands and has a careful sip, like a man checking a path.",
+    "Ewen: That is a proper broth. Barley and all. Mòran taing, {player}. And well done for telling me you were coming."
+   ],
+   "ax": 30,
+   "ay": 19
+  },
+  {
+   "id": "gethin_holyhead",
+   "name": "Gethin Hughes",
+   "short": "Gethin",
+   "zone": "holyhead_home3",
+   "npc": "hh3_lad",
+   "sprite": "student",
+   "home": "holyhead",
+   "away": "dublin",
+   "likes": "home_cawl",
+   "hint": "Gethin says a bowl of proper home-made cawl is the only thing that has ever made him close a book and eat at the table.",
+   "intro": [
+    "Gethin: Gethin. I am revising. By which I mean I am sitting near a book, and the book is winning.",
+    "Gethin: Mam makes cawl on Sundays and it is better on Monday. If you ever have some home-made cawl, I will say diolch like I mean it, because I will."
+   ],
+   "meet": [
+    "Gethin is by the ferry terminal in Dublin with a rucksack and a very tired face, watching the boats as if they might take him back by themselves.",
+    "Gethin: Over on the ferry for a look at the university. The Romans picked Holyhead for the harbour and I picked this for the pizza. Both fine decisions.",
+    "Gethin: Bore da, that is good morning, which it is, technically. Do not tell Mam I am not at the library."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The revision is going. I keep saying it, and Mam keeps saying 'is it', and Nan says she saw a selklet on the rocks again, which she did not. Probably. She is usually right about animals.",
+    "Yours, Gethin (near a book)"
+   ],
+   "offer": [
+    "Gethin: A business is a good idea, {player}. It is a lot more fun than anything with an exam in it.",
+    "Gethin: I will keep an eye on it. I will do it at the table, so I can say I am working."
+   ],
+   "chat": [
+    "Gethin: The old fort at Holyhead sits over the harbour for a reason. Same reason there is a ferry. I did learn something.",
+    "Gethin: Nan says there is a selklet on the rocks. Nan is right about animals and wrong about directions.",
+    "Gethin: Exams soon. I am calm. I am calm in the way of a lad about to be very busy."
+   ],
+   "thanks": [
+    "Gethin lifts the lid of the pot, breathes in, and forgets the book entirely.",
+    "Gethin: Cawl! Diolch, {player}. That is Monday sorted and Mam will say it was her idea."
+   ],
+   "ax": 10,
+   "ay": 20
+  },
+  {
+   "id": "gareth_llangollen",
+   "name": "Gareth Lloyd",
+   "short": "Gareth",
+   "zone": "llangollen_home2",
+   "npc": "llh2_dad",
+   "sprite": "canal_boater",
+   "home": "llangollen",
+   "away": "chester",
+   "likes": "perch",
+   "hint": "Gareth says a good perch off the canal bank is the nearest thing to a perfect afternoon, and he would not argue with you about it.",
+   "intro": [
+    "Gareth: Ahoy. Gareth Lloyd. Well, ahoy if you live on the canal. I live on land. Mostly.",
+    "Gareth: I own seven windlasses and can find one on a good day. A perch off the towpath, now, I can always find a place for. Bring me one and I will count it as a green place."
+   ],
+   "meet": [
+    "Gareth is on the Chester canal side, watching a boat go through a lock with his arms folded and his whole body leaning in to help.",
+    "Gareth: A day out for the boats. I came to watch somebody else do the paddles for once. It is not relaxing, it is supervising.",
+    "Gareth: Diolch for stopping. Mind the lock edge. That is the advice and the whole of it."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The canal was quiet, so I walked the towpath and looked at the water, and an elverlet crossed the meadow so quickly I could not have said what it was. Unimpressed, as ever. A windlass has turned up in the shed. That makes eight, or the same one twice.",
+    "Yours, Gareth (mostly on land)"
+   ],
+   "offer": [
+    "Gareth: A business, {player}. I have kept a lock in a hurry before now. A small business I can keep at a steady pace.",
+    "Gareth: Off you go. I will mind it, and I will find a windlass in a minute, I promise."
+   ],
+   "chat": [
+    "Gareth: A windlass winds the paddle on a lock. People ask. I tell them. Some of them even nod.",
+    "Gareth: Elverlets in the water meadows. Very fast, very unimpressed. I admire them.",
+    "Gareth: The kettle is quiet. That is worrying. Come in and we shall sort it out."
+   ],
+   "thanks": [
+    "Gareth holds the perch up to the light and inspects it like a man checking a lock gate.",
+    "Gareth: A proper fish. Diolch, {player}. That will do for tea, and for the story, which will get bigger."
+   ],
+   "ax": 30,
+   "ay": 20
+  },
+  {
+   "id": "peigi_skye",
+   "name": "Peigi MacKinnon",
+   "short": "Peigi",
+   "zone": "skye_house",
+   "npc": "skye_house_woman",
+   "sprite": "villager_2",
+   "home": "skye",
+   "away": "inverness",
+   "likes": "mackerel",
+   "hint": "Peigi says a mackerel grilled the same evening it is landed is a better supper than anything the shops of Inverness could offer.",
+   "intro": [
+    "Peigi: Fàilte. Peigi MacKinnon. Sit in by the stove, you look like you have walked.",
+    "Peigi: A mackerel, grilled the day it comes out of the sea, is the best supper there is. If you have one to spare, I will count it as a green place."
+   ],
+   "meet": [
+    "Peigi is in Inverness by the river, in a good coat, looking at the bridges as if checking they are all still there.",
+    "Peigi: I came over to the town for a day. There is a lot of it, and all of it in a hurry. I miss the loch already.",
+    "Peigi: Madainn mhath, that is good morning. I will not make you say it back, but I will notice if you do."
+   ],
+   "letter": [
+    "Dear {player},",
+    "The loch has been quiet and I have not minded. The Cuillin had snow on top, and an orcalet showed off the point on Tuesday. I did not mistake it for a seal. It would have sulked.",
+    "Yours, Peigi (by the stove)"
+   ],
+   "offer": [
+    "Peigi: A business, {player}? I have kept a croft house through a good few storms. A wee business is easy by comparison.",
+    "Peigi: Away you go and see the world. I will keep it tidy, and the stove will be on."
+   ],
+   "chat": [
+    "Peigi: The Cuillin is made of rough black rock. It grips boots wonderfully and shreds knees even better.",
+    "Peigi: Orcalets off the point on a calm day. Bring binoculars, and do not mistake a seal for one.",
+    "Peigi: Nothing happened on the loch today. It was lovely. I recommend it."
+   ],
+   "thanks": [
+    "Peigi turns the mackerel over, sniffs it once, and smiles like she has been told good news.",
+    "Peigi: Mòran taing, {player}. That is the supper sorted, and the stove will be glad of it."
+   ],
+   "ax": 46,
+   "ay": 18
   }
  ]
 }

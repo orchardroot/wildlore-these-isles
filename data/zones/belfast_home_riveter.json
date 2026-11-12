@@ -89,6 +89,23 @@
    "x": 1,
    "y": 6,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 2,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 10,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -130,5 +147,16 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "Granda's riveting hammer hangs under a photograph of the Harland and Wolff yard, the big yellow cranes behind.",
+    "A riveting gang had a heater, a catcher, a holder-on and a riveter. Samson and Goliath still stand over the yard."
+   ],
+   "flag": "looked_riveter_gun"
+  }
  ]
 }

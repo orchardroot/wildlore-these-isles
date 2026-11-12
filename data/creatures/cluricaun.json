@@ -69,8 +69,12 @@
    ],
    "evolves": null,
    "habitat": [
-    "cork",
-    "dublin"
+     "cork",
+     "cork_home1",
+     "dublin",
+     "galway_home_prom",
+     "kilkenny_home1",
+     "limerick_home_pery"
    ],
    "dex": {
     "text": "A tiny cobbler with quick hands and quicker excuses. Whatever has gone missing from the cellar, it definitely was not him, and he has a shoe to finish.",

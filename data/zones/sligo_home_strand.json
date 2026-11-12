@@ -79,6 +79,29 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "range_cooker",
+   "x": 4,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 6,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 6,
+   "y": 3,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +152,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A print of Benbulben, the flat-topped mountain over Sligo.",
+    "W. B. Yeats is buried in Drumcliff churchyard in its shadow. Nana gives out about the weather, but not about the view."
+   ]
+  }
  ]
 }

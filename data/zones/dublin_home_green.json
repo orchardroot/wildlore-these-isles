@@ -89,6 +89,17 @@
    "x": 1,
    "y": 6,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 11,
+   "y": 1
+  },
+  {
+   "type": "window",
+   "x": 2,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -143,5 +154,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "A postcard of the red and white Poolbeg chimneys, stuck up with a bit of tape.",
+    "On the back: Wish you were here. The student wrote it to themselves."
+   ]
+  }
  ]
 }

@@ -1,0 +1,420 @@
+{
+ "derry_home_flats|derry_home_flat": {
+  "who": "Mrs Doherty",
+  "again": [
+   "Good timing. The kettle has been doing nothing all afternoon and it was starting to sulk.",
+   "By the window, there is always a bit of light in here."
+  ],
+  "weather": {
+   "rain": [
+    "Rain on those big windows sounds like somebody tapping to be let in. Never is."
+   ]
+  }
+ },
+ "derry_home_foyle|derry_home_boatman": {
+  "who": "Mr Brogan",
+  "again": [
+   "You again. Have you come to watch me not catch anything? It is very restful.",
+   "My rod has seen more of this kitchen than it has of the river, to be honest."
+  ],
+  "morning": [
+   "Up before the tide, I was. The tide did not thank me."
+  ]
+ },
+ "derry_home_station|derry_home_railfan": {
+  "who": "Mr Cassidy",
+  "again": [
+   "Did you hear that one go by? I had the window open before the whistle."
+  ]
+ },
+ "derry_home_walls|derry_home_wains": {
+  "who": "Mrs Gallagher",
+  "again": [
+   "Wheesht a minute, the wains have gone quiet, which means trouble or sleep, and I am not sure which.",
+   "I will find you a biscuit before they do."
+  ],
+  "evening": [
+   "Teatime in this house is a contact sport. Stand back from the table."
+  ]
+ },
+ "dingle_home1|osullivan_ma": {
+  "who": "Mrs O'Sullivan",
+  "again": [
+   "The teapot is still warm, near enough, so sit down.",
+   "Cian is at his Irish again. I hear 'tá' coming out of the room like a sneeze."
+  ]
+ },
+ "dingle_home2|kennedy_nan": {
+  "who": "Nan Kennedy",
+  "again": [
+   "Well, look who it is. Come in, come in, you are letting the draught out.",
+   "I love a bit of company after a quiet day. The kettle is on, it is always on."
+  ]
+ },
+ "dingle_home3|moriarty_da": {
+  "who": "Mr Moriarty",
+  "again": [
+   "Good man yourself! I was only saying you would be in.",
+   "Sit in, there is a fire and a story, and I will do the story for free."
+  ],
+  "weather": {
+   "gale": [
+    "Listen to that wind. I have been in worse, but I was younger and a bit thick."
+   ]
+  }
+ },
+ "dingle_home4|fitzgerald_teacher": {
+  "who": "Mr Fitzgerald",
+  "again": [
+   "Back so soon? That is the spirit. Homework always gets done faster on a second visit.",
+   "I have a pile of copies to mark, so you have rescued me from a long evening."
+  ]
+ },
+ "douglas_home1|dou_home1_quayle": {
+  "who": "Mrs Quayle",
+  "again": [
+   "Traa dy liooar, there is no rush, sit down and have a cup.",
+   "I was just about to put the kettle on, which is how I know you were coming."
+  ]
+ },
+ "douglas_home2|dou_home2_tom": {
+  "who": "Old Tom",
+  "again": [
+   "Ah, the visitor. I was starting to think you had sailed off without a word.",
+   "I do my best stories after the second cup, and it is the second cup now."
+  ],
+  "weather": {
+   "gale": [
+    "A wind like that and I still look at the harbour. Fifty years of habit, that."
+   ]
+  }
+ },
+ "douglas_home3|dou_home3_jo": {
+  "who": "Aunty Jo",
+  "again": [
+   "The kettle is hot, lovely, so you have timed it well, as ever.",
+   "I have a fresh batch of something on the side. I will not say what, in case it burns."
+  ],
+  "morning": [
+   "Early for you! I have been up since dawn, with the cat, who is no conversation."
+  ]
+ },
+ "dover_painted_house|ph_guide": {
+  "who": "Guide",
+  "again": [
+   "Back for another look? The walls give a bit more each time. Look at the colours near the bottom.",
+   "Most visitors do the full circuit in five minutes. You are clearly a person of taste."
+  ]
+ },
+ "dublin_customhouse|dub_auctioneer": {
+  "who": "Auctioneer",
+  "again": [
+   "Back for a second look at the catalogue? Browsers always buy in the end. Eventually. Possibly."
+  ]
+ },
+ "dublin_customhouse|dub_bureau": {
+  "who": "Bureau Clerk",
+  "again": [
+   "Same rates as before, which is to say, ours."
+  ]
+ },
+ "dublin_customhouse|dub_custom_clerk": {
+  "who": "Clerk",
+  "again": [
+   "The building has not moved, I checked. It is very reliable.",
+   "If you ask nicely, I will point out a third carved head you may have missed."
+  ],
+  "morning": [
+   "The marble floor is coldest first thing. A good place to wake up."
+  ]
+ },
+ "dublin_customhouse|dub_exchange": {
+  "who": "Broker",
+  "again": [
+   "The numbers have changed since you were last here. They always do. It is the whole business."
+  ]
+ },
+ "dublin_customhouse|dub_lecturer": {
+  "who": "History Lecturer",
+  "again": [
+   "Nobody comes to the same building twice unless they are either curious or lost. Good.",
+   "If you want to understand Dublin, read a bit, then walk a bit, then read it again."
+  ]
+ },
+ "dublin_home_green|dub_home_student": {
+  "who": "Aoife",
+  "again": [
+   "Oh, you again. Grand. I have the kettle on and absolutely no reason to study.",
+   "I am avoiding an essay and you are an excellent excuse."
+  ],
+  "evening": [
+   "I do my best thinking at night. It is also when I do my best snacking."
+  ]
+ },
+ "dublin_home_park|dub_home_hurler": {
+  "who": "Ciaran",
+  "again": [
+   "Is that yourself? You would make a decent corner back with a bit of training.",
+   "I was out on the pitch earlier. It is amazing how a puck of the ball clears your head."
+  ]
+ },
+ "dublin_home_stone|dub_home_teacher": {
+  "who": "Mr Byrne",
+  "again": [
+   "Marvellous. I have been talking to the bicycle, and the bicycle has opinions.",
+   "There is always more to say about this city. I could go all night. Please stop me."
+  ]
+ },
+ "dublin_home_terrace|dub_home_orla": {
+  "who": "Orla",
+  "again": [
+   "Ah, you are back. Sit, sit. There is tea, and there is a plate of something, and I am not sorry.",
+   "I was only thinking someone should call round. You have saved me the phone call."
+  ],
+  "weather": {
+   "rain": [
+    "Soft day outside, as we say. Soft meaning it will soak you to the bone, but gently."
+   ]
+  }
+ },
+ "edinburgh_home_a|edinburgh_home_a_mrshenderson": {
+  "who": "Mrs Henderson",
+  "again": [
+   "Back already? Come in, come in, mind the stair. I have the oven on for the scones.",
+   "My wee grandson was asking about you. He wanted to know whether you had seen the Castle yet."
+  ],
+  "weather": {
+   "fog": [
+    "Aye, it is haar out there. Stay in, the scones will keep you right."
+   ]
+  }
+ },
+ "edinburgh_home_b|edinburgh_home_b_ferguson": {
+  "who": "Mr Ferguson",
+  "again": [
+   "Ah, you are back. I was telling the cat about the Old Town again. She has heard it, but she is polite.",
+   "These stairs are the best exercise I get. Do not tell my doctor I said that."
+  ]
+ },
+ "edinburgh_home_c|edinburgh_home_c_murray": {
+  "who": "Murray",
+  "again": [
+   "Oh, hello again! You are just in time. Mum is making enough food for a small festival.",
+   "My wee brother is still practising his juggling. I am keeping score on the breakages."
+  ]
+ },
+ "edinburgh_home_d|edinburgh_home_d_rintoul": {
+  "who": "Mrs Rintoul",
+  "again": [
+   "The kettle is on, dear, and I have nothing to say about the bridge.",
+   "I have the best view in the street, if you stand on the right chair."
+  ]
+ },
+ "edinburgh_home_e|edinburgh_home_e_archie": {
+  "who": "Archie",
+  "again": [
+   "Gran has been telling the same story again. I have the whole thing memorised.",
+   "Do not tell her I said that."
+  ],
+  "morning": [
+   "Mornings in this house are loud, because Gran is up first and she wants everyone to know it."
+  ]
+ },
+ "edinburgh_home_e|edinburgh_home_e_gran": {
+  "who": "Gran",
+  "again": [
+   "Archie needs somebody else to look glaikit at. Sit yourself there.",
+   "Have a cup of tea. I have a story about the neighbours and it needs an audience."
+  ]
+ },
+ "falklands_farmhouse|fal_farmwife": {
+  "who": "Farmer's Wife",
+  "again": [
+   "Come in, come in, there is always a spare cup. Out here you take any visitor you can get.",
+   "The wind has been at the windows all day. I stopped listening years ago."
+  ],
+  "weather": {
+   "gale": [
+    "That wind is nothing, you should hear it in July. Well, no, you should not. Have a scone."
+   ]
+  }
+ },
+ "fw_home_a|fw_home_a_woman": {
+  "who": "Catriona Cameron",
+  "again": [
+   "Get warm, it is a long walk from anywhere round here.",
+   "Sit yourself down. I have the kettle on and the midgies off, so it is a good day."
+  ]
+ },
+ "fw_home_b|fw_home_b_mum": {
+  "who": "Morag MacDonald",
+  "again": [
+   "The kettle is still warm, and so, I hope, are you.",
+   "I think the dentist is already suspicious of me. He asks what I have been eating."
+  ],
+  "morning": [
+   "Early start for the canal boats today. I could hear them from my pillow."
+  ]
+ },
+ "fw_home_c|fw_home_c_man": {
+  "who": "Ewen MacMillan",
+  "again": [
+   "Did you tell anyone where you were going? I will ask every time, you know.",
+   "The kettle is on. The weather up the Ben is never what the forecast said."
+  ],
+  "season": {
+   "winter": [
+    "Winter up there is serious. It looks lovely from here, and that is the trap."
+   ]
+  }
+ },
+ "galway_home_arch|home_arch_dad": {
+  "who": "Neighbour",
+  "again": [
+   "The kettle is on, and the cluricaun is quiet, so it is a good day.",
+   "If any more of my shoes go missing I am going to start charging him rent."
+  ]
+ },
+ "galway_home_bad|home_bad_kid": {
+  "who": "Boat Mad Kid",
+  "again": [
+   "You are back! Did you see any boats? I count them every day from the window.",
+   "I am going to be a skipper when I grow up. Dad says I will have to be taller first."
+  ],
+  "weather": {
+   "gale": [
+    "There is a big wind out. All the hookers will be tied up tight. I am not allowed out, which is rude."
+   ]
+  }
+ },
+ "galway_home_claddagh|home_claddagh_fisher": {
+  "who": "Retired Fisherman",
+  "again": [
+   "Sit in, the kettle is on. At my age a visitor is better than the radio.",
+   "I have had my share of good days on that water, and a few cold ones. The good ones were better."
+  ],
+  "weather": {
+   "gale": [
+    "Not a day for going out. I can smell it in my knee before it ever reaches the harbour."
+   ]
+  }
+ },
+ "galway_home_prom|home_prom_gran": {
+  "who": "Gran",
+  "again": [
+   "Sit in, love, mind the cat, she has no manners.",
+   "Did I tell you about the yoke I could not find? It was in my hand. It was the yoke I was holding."
+  ]
+ },
+ "galway_home_teacher|home_teacher": {
+  "who": "Teacher",
+  "again": [
+   "Have you come to help me mark? I will pay in tea.",
+   "Today was a very long lesson on the difference between 'there' and 'their'."
+  ],
+  "evening": [
+   "Evenings are for marking, and for pretending that I am not about to stop marking."
+  ]
+ },
+ "glasgow_home_a|glasgow_home_a_mrmackay": {
+  "who": "Mrs MacKay",
+  "again": [
+   "Wipe your feet, hen. I will not ask twice, but I will mention it.",
+   "I have the kettle on and a full tin of tablet, so you are in luck, hen."
+  ]
+ },
+ "glasgow_home_b|glasgow_home_b_gillespie": {
+  "who": "Mr Gillespie",
+  "again": [
+   "Well, come in out of the drizzle. Not that it ever stops.",
+   "A thousand trips on that Subway and it has never once been on time. I love it."
+  ],
+  "weather": {
+   "rain": [
+    "It is dreich out there, as per usual. Stay in, it is not going to improve."
+   ]
+  }
+ },
+ "glasgow_home_c|glasgow_home_c_aileen": {
+  "who": "Aileen",
+  "again": [
+   "Excuse the stooshie, the place is a state and I am not apologising.",
+   "Granda would have loved a visitor. He had a story for every single rivet."
+  ]
+ },
+ "glasgow_home_c|glasgow_home_c_rory": {
+  "who": "Rory",
+  "again": [
+   "The cooplets still have it in for my chips. I have lost a war of attrition.",
+   "I would give you one but there are none left. Do not look at me like that."
+  ]
+ },
+ "glasgow_home_d|glasgow_home_d_mrahmed": {
+  "who": "Mr Ahmed",
+  "again": [
+   "There is always a pot of tea going in this house, and usually something with it.",
+   "My brother has stopped saying he is fine. That is a worrying sign. He is better today."
+  ]
+ },
+ "glasgow_home_e|glasgow_home_e_isa": {
+  "who": "Granny Isa",
+  "again": [
+   "Back for a blether? Good. I was just wondering who I would talk at today.",
+   "Sit in by the fire, hen. The kettle has only just boiled, so you have timed it perfectly."
+  ],
+  "morning": [
+   "Morning, hen. I have been up since six. At my age sleep is mostly a rumour."
+  ]
+ },
+ "glastonbury_home1|glaston_home1_gran": {
+  "who": "Granny Vowles",
+  "again": [
+   "Sit, sit, my lover, I was only just saying the house was too quiet.",
+   "The cat has been sulking since breakfast. You will be an improvement."
+  ],
+  "season": {
+   "winter": [
+    "Winter and the Holy Thorn is in bud, they say. I have yet to see it do so on cue, mind."
+   ]
+  }
+ },
+ "glastonbury_home2|glaston_home2_farmer": {
+  "who": "Mr Pomeroy",
+  "again": [
+   "That dog has taken a shine to you. It will wear off.",
+   "Busy day on the farm, but there is always time for a cup. That is the secret of farming. Cups."
+  ],
+  "morning": [
+   "Up with the cows, I was. They do not care what day it is. Very restful, in a way."
+  ]
+ },
+ "glastonbury_home3|glaston_home3_student": {
+  "who": "Bryony",
+  "again": [
+   "Excuse the mess. It is not a mess, it is a system. A very messy system.",
+   "There is still mud in my boots from the clear-up, and that was weeks ago."
+  ]
+ },
+ "harris_blackhouse|hb_guide": {
+  "who": "Blackhouse Guide",
+  "again": [
+   "Back for a second look? The house reveals a bit more each time, mostly the smoke.",
+   "Stand by the hearth a minute. You will understand why they kept the peat fire going all day."
+  ],
+  "weather": {
+   "gale": [
+    "That is a proper Hebridean wind. The thick walls and low roof were built for exactly this."
+   ]
+  }
+ },
+ "holyhead_home3|hh3_lad": {
+  "who": "Gethin Hughes",
+  "again": [
+   "Oh, you are back. Good. I have done nothing since you left, and now I have company for it.",
+   "Mam keeps asking if the revision is going well. I keep saying 'it is going'."
+  ],
+  "evening": [
+   "Evening and I am finally in the mood to study. This happens every single night, just before bed."
+  ]
+ }
+}

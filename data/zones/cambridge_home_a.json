@@ -45,6 +45,30 @@
    "type": "cat_bowl",
    "x": 1,
    "y": 6
+  },
+  {
+   "type": "wall_picture",
+   "x": 6,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 1,
+   "y": 5,
+   "walk": true
   }
  ],
  "warps": [
@@ -85,5 +109,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "The chimney breast is the same pale gault brick as the street outside.",
+    "Cambridge clay bakes yellowish grey, not red. The landlady calls it Cambridge white. The tenants call it beige."
+   ]
+  }
  ]
 }

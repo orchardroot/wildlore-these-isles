@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 4,
    "y": 1,
@@ -89,6 +82,12 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -130,5 +129,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "The stove ticks quietly, and a neat stack of peat blocks sits beside it. It has not gone out in years.",
+    "Peat is cut on the Camp in the summer and dried through the winter. Diddle-dee jam is on the shelf above."
+   ],
+   "find": {
+    "item": "peat"
+   }
+  }
  ]
 }

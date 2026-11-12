@@ -172,5 +172,18 @@
   "x+++++++++++x",
   "x+++++D+++++x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 3,
+   "text": [
+    "A skein of Cotswold wool, long in the fibre and with a lustre like silk. A bale of it was a small fortune.",
+    "The Cotswold Lion, as the breed is called, paid for the great wool churches. Not bad for a sheep."
+   ],
+   "find": {
+    "item": "sheep_wool"
+   }
+  }
  ]
 }

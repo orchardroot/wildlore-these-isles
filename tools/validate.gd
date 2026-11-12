@@ -48,13 +48,20 @@ func _initialize() -> void:
 	errors.append_array(Looks.check(items_db))  # data/items/wear.json deltas the painter can draw; data/looks.json
 	errors.append_array(Poi.check(zones, dex, items_db))  # data/poi: dens, camps, stones and caches on the routes
 	errors.append_array(FieldSpots.check(zones, items_db))  # w48 F: data/field_spots on free tiles beside the path
-	errors.append_array(Wants.check(zones, items_db))  # w47 C: data/trades residents, wants, front-room shops
+	errors.append_array(FamilyDrawer.check(zones, items_db))  # w53: data/family_drawers.json
+	errors.append_array(Visits.check(zones))  # w53: data/visits return-visit lines for home residents
+	errors.append_array(Wants.check(zones, items_db, dex))  # w47 C: data/trades residents, wants, front-room shops
 	errors.append_array(Errands.check(zones, items_db))  # w47 C: errand npcs and rewards
+	errors.append_array(Regulars.problems(zones, items_db))  # w53: every Regular is a real person in a real place
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
 	errors.append_array(Letters.errors(zones, items_db))  # papers on tables and their treasure trails
 	errors.append_array(WorldConsistency.check(zones, StoryData.all_dialogue()))  # w50: the world matches what it says
 	errors.append_array(PartyPieces.problems(MoveDB.load_default()))  # w48 P: data/party_pieces and the moves they teach
+	errors.append_array(HomeLooks.errors(zones, items_db))  # w53: examine finds in homes are real items
+	var bare := HomeLooks.uncovered(zones)
+	if not bare.is_empty():
+		print("validate: warning: %d home(s) have no examine spot: %s" % [bare.size(), ", ".join(bare.slice(0, 12))])
 	for e in errors:
 		printerr("DATA: " + e)
 	print("validate: %d error(s)" % errors.size())

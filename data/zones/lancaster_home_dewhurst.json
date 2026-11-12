@@ -51,17 +51,17 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
-   "variant": 4,
+   "variant": 1,
    "rot": 90
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 9,
    "y": 3,
-   "variant": 3,
+   "variant": 1,
    "rot": 270
   },
   {
@@ -85,10 +85,9 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "kettle_table",
    "x": 1,
-   "y": 5,
-   "variant": 1
+   "y": 5
   }
  ],
  "warps": [
@@ -139,5 +138,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A print of the Lune Aqueduct, which carries the canal 62 feet above the river. John Rennie designed it, and it opened in 1797.",
+    "Mrs Dewhurst has a hotpot in the oven that has been a lot more reliable."
+   ]
+  }
  ]
 }

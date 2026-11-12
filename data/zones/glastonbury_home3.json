@@ -89,6 +89,12 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "window",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +135,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A row of festival wristbands pinned to a board, one for each year she has helped clear up.",
+    "Around two hundred thousand people come. Most of them leave a tent."
+   ]
+  }
  ]
 }

@@ -78,8 +78,11 @@
         "flag_text": "once you have passed an Irish lesson"
       },
       "habitat": [
+        "burren",
         "connemara",
-        "burren"
+        "dingle_home2",
+        "kerry_cottage",
+        "shannon_cottage"
       ],
       "dex": {
         "text": "Appears under a window at night with news nobody wanted, and a voice that could curdle milk. Tragic, but very musical.",

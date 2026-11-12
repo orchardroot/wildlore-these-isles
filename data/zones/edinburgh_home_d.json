@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 11,
-   "y": 3,
-   "variant": 3,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 7,
    "y": 1,
@@ -89,6 +82,25 @@
    "x": 1,
    "y": 6,
    "variant": 0
+  },
+  {
+   "type": "wall_picture",
+   "x": 10,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 1,
+   "y": 2,
+   "walk": true,
+   "rot": 90
+  },
+  {
+   "type": "window",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -130,5 +142,16 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A print of the Forth Bridge, which opened in 1890.",
+    "Mrs Rintoul has pencilled a tally on the frame. Twenty-five years of paint, then back to the bottom of the list."
+   ],
+   "flag": "looked_forth_bridge"
+  }
  ]
 }

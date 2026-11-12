@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 11,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 5,
    "y": 1,
@@ -89,6 +82,23 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "range_cooker",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 2,
+   "y": 2,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 6,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +139,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A cartoon of two cats at war, with only a pair of tails left at the end.",
+    "The Kilkenny cats fought until nothing remained but the tails. The tails have not been found."
+   ]
+  }
  ]
 }

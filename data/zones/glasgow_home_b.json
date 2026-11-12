@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 11,
-   "y": 3,
-   "variant": 5,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 4,
    "y": 1,
@@ -89,6 +82,12 @@
    "x": 1,
    "y": 6,
    "variant": 1
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -130,5 +129,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A framed map of the Subway, a single loop with no way of getting lost.",
+    "It opened in 1896, after London and Budapest, and the loop has gone round and round ever since. Orange is the colour of the trains."
+   ]
+  }
  ]
 }

@@ -2,6 +2,28 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.3.0: Houses
+
+Going into a house used to be talk-and-leave: the same room, the same few lines for ever. Ideas from issues #143 to
+#149.
+
+- **People notice you've been before.** Every home resident has something new to say when you come back, and about
+  half have lines for the morning, the evening, the season or the weather outside.
+- **Names, not "Resident".** Twenty-eight people who were only ever "Resident" now have proper local names: Gaelic in
+  the Western Isles, Norse surnames in Orkney, Welsh in Gwynedd.
+- **A Regular in every town.** Fifty-seven home residents, one in nearly every town, are now Regulars: bring them
+  what they like, and they turn up elsewhere, write to you, and offer to mind one of your Deeds. Seventy in all.
+- **No two homes alike.** Welsh dressers, Irish ranges, Orkney box beds, settles in the Dales and wall maps in the
+  harbour towns, plus a hint of who lives there: a fisher's creels, a weaver's loom, a dartboard, the cat's bowl.
+- **Something to look at.** Every home has one thing of its own to examine, about what its people talk about:
+  a Harland and Wolff riveter's gun in Belfast, the Caithness flagstone floor in Thurso, Herschel's Uranus in Bath.
+  About one in four holds a small find.
+- **The family drawer.** Search the right drawer and it always holds that household's own thing, once.
+- **Something lives here.** At night, a few houses in each region have a visitor out of local folklore: a brownie in
+  Scotland, a cluricaun in Ireland, the Mari Lwyd in south Wales in winter.
+- **Asks that use the rest of the game.** Residents want to see a page of your Fieldbook, a photograph of somewhere
+  they miss (photo mode finally has a use), or a proper dish cooked for them.
+
 ## 5.2.4: loose ends
 
 - **The map shows every place.** The info panel and the bottom strip used to cover Ireland, London and Cambridge; the

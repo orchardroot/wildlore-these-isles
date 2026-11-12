@@ -32,11 +32,6 @@
    "y": 6
   },
   {
-   "type": "potted_plant",
-   "x": 9,
-   "y": 6
-  },
-  {
    "type": "fireplace",
    "x": 5,
    "y": 1
@@ -56,13 +51,6 @@
    "y": 3,
    "variant": 2,
    "rot": 90
-  },
-  {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 5,
-   "rot": 270
   },
   {
    "type": "clock",
@@ -89,6 +77,11 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 9,
+   "y": 6
   }
  ],
  "warps": [
@@ -110,7 +103,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "abdn_home_a_quine"
+   "script": "abdn_home_a_quine",
+   "name": "Kirsty Cruickshank"
   },
   {
    "id": "cook_cullen_skink",
@@ -139,5 +133,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A framed photograph of Rubislaw Quarry, the great hole the granite came out of.",
+    "It closed in 1971. The city still sparkles a bit when the sun hits it, and now you know why."
+   ]
+  }
  ]
 }

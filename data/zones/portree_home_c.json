@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 10,
    "y": 6
   },
@@ -85,10 +80,25 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "range_cooker",
+   "x": 7,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 4,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
    "x": 1,
-   "y": 5,
-   "variant": 1
+   "y": 5
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
   }
  ],
  "warps": [
@@ -110,7 +120,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "portree_home_c_mum"
+   "script": "portree_home_c_mum",
+   "name": "Mairead MacLeod"
   }
  ],
  "encounters": {},
@@ -129,5 +140,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "Two little signs by the door: MADAINN MHATH on the way out, OIDHCHE MHATH on the way in.",
+    "Good morning and good night. The family wears them both out."
+   ]
+  }
  ]
 }

@@ -1,0 +1,412 @@
+{
+ "inverness_home_a|inv_home_a_mum": {
+  "who": "Isobel Fraser",
+  "again": [
+   "Right on cue. The kettle was getting ideas above its station.",
+   "Dreich or no, you keep turning up. I admire that in a person."
+  ],
+  "weather": {
+   "rain": [
+    "Listen to that. Proper dreich. Stay in and have a biscuit, it is the sensible thing."
+   ]
+  }
+ },
+ "inverness_home_b|inv_home_b_grandad": {
+  "who": "Hamish Munro",
+  "again": [
+   "Ah, it is yourself again. Sit down, I was just about to tidy something that is already tidy.",
+   "Back so soon? Good. The brownie likes a visitor, or so I tell myself."
+  ]
+ },
+ "inverness_home_c|inv_home_c_mum": {
+  "who": "Fiona Macrae",
+  "again": [
+   "You again! Have you been to see the locks yet? No? Well, off you go, then.",
+   "I do like a person who comes back. Mind, the kettle has not forgiven you for last time."
+  ]
+ },
+ "inverness_home_d|inv_home_d_man": {
+  "who": "Callum Ross",
+  "again": [
+   "Just saying to myself: I wonder who will want to hear about owls.",
+   "If you are staying, keep your voice down. I am trying to hear what the garden is doing."
+  ]
+ },
+ "ironbridge_tollhouse|ib_tollkeeper": {
+  "who": "Toll Keeper",
+  "again": [
+   "Back across the bridge, are you? Free of charge, as ever. Old habits, I keep looking for my coin tin.",
+   "I still say good morning to everybody who crosses. Nobody has complained yet."
+  ]
+ },
+ "jog_lasthouse|lasthouse_keeper": {
+  "who": "Shopkeeper",
+  "again": [
+   "You would make a grand regular. The postcards are still just as flat.",
+   "People do come back, up here. The wind sends them round again."
+  ],
+  "weather": {
+   "gale": [
+    "Hear that wind? It is the real welcome to Scotland. Shut the door behind you, mind."
+   ]
+  }
+ },
+ "kerry_cottage|kerry_cottager": {
+  "who": "Farmer",
+  "again": [
+   "Ah, it's yourself. Sit down, sit down, the tea is not going anywhere.",
+   "Sure look it, you are always welcome here."
+  ]
+ },
+ "keswick_guesthouse|bnb_keswick_desk": {
+  "who": "Herdwick Rest Desk",
+  "again": [
+   "The ledger says you are on the list of people who always return. I just wrote that.",
+   "Welcome back. The kettle is on the desk and the pen is on the string. Mostly."
+  ]
+ },
+ "keswick_guesthouse|guild_ramblers": {
+  "who": "Ramblers' Warden",
+  "again": [
+   "Walking again, I hope. The paths like to be used, and they keep a long memory.",
+   "Back so soon? Good. A stile that is climbed is a stile that stays."
+  ]
+ },
+ "keswick_guesthouse|kesguest_landlady": {
+  "who": "Landlady",
+  "again": [
+   "The drying room is empty, so your boots have the pick of the pegs.",
+   "If those boots are wet, you know where to put them. Not on my good carpet."
+  ],
+  "morning": [
+   "Morning. Breakfast is on if you want it, and the toast is the right shade of brown."
+  ],
+  "weather": {
+   "rain": [
+    "Wet out, is it? Boots in the drying room, and not a word of complaint. It is only Cumbria."
+   ]
+  }
+ },
+ "keswick_home_armstrong|keshome_armstrong": {
+  "who": "Mr Armstrong",
+  "again": [
+   "The sheep can wait. They always do.",
+   "Ah, hello. I have been staring at that wall all morning and the Herdlet still stares back."
+  ],
+  "season": {
+   "spring": [
+    "Lambing is about the only time of year I do not sleep, and I would not swap it."
+   ]
+  }
+ },
+ "keswick_home_lowther|keshome_lowther": {
+  "who": "Mr Lowther",
+  "again": [
+   "The Pipkin has had its toast and is not sharing the crumbs.",
+   "Hello! Come in. If you hear the word whoosh, it is a rehearsal and not a disaster."
+  ]
+ },
+ "keswick_home_lowther|keshome_lowther_kid": {
+  "who": "Kid",
+  "again": [
+   "I have a new line. It is still whoosh, but now it is louder.",
+   "Do you think a tree can be scared? Because I am not scared. I am just very rooted."
+  ]
+ },
+ "keswick_home_nicholson|keshome_nicholson": {
+  "who": "Mrs Nicholson",
+  "again": [
+   "You, is it? I was only gossiping with the kettle.",
+   "Another visit. You are becoming part of the furniture, and there are worse bits of furniture."
+  ],
+  "season": {
+   "autumn": [
+    "The bracken has gone copper on the fells. It is the best time of year for a walk, and a hot drink after."
+   ]
+  }
+ },
+ "keswick_home_tyson|keshome_tyson": {
+  "who": "Mrs Tyson",
+  "again": [
+   "If the pager goes, love, I will have to ask you to move your tea.",
+   "Mind the pile of boots by the door, there is always one pair missing."
+  ]
+ },
+ "kilkenny_home1|brennan_da": {
+  "who": "Mr Brennan",
+  "again": [
+   "Ah, it's yourself again. Come in, your man at the shop was asking after you.",
+   "Take a seat: I was only waiting for somebody to disagree with."
+  ]
+ },
+ "kilkenny_home2|daly_gran": {
+  "who": "Gran Daly",
+  "again": [
+   "Good girl. Or good boy, I have the eyes of a hawk, but not for faces.",
+   "Ah, there you are. Come in. I will not be asking for the match score, I know it already."
+  ],
+  "weather": {
+   "rain": [
+    "'Tis lashing out there. Come in to the fire and touch the hurley while you are at it."
+   ]
+  }
+ },
+ "kilkenny_home3|walsh_mrs": {
+  "who": "Mrs Walsh",
+  "again": [
+   "The kettle is not banjaxed, so sit down and have a cup.",
+   "Otters, I was promised. All I get from the river is ducks, love."
+  ]
+ },
+ "kilkenny_home4|cullen_grandad": {
+  "who": "Mr Cullen",
+  "again": [
+   "Back so soon. Grand. Come in and let me tell you something you already know.",
+   "The Binfox was at it again last night. I gave it a stern look through the window."
+  ]
+ },
+ "kirkwall_home_a|kwl_home_a_woman": {
+  "who": "Ingrid Flett",
+  "again": [
+   "Shut the door, you will let the peedie draught in.",
+   "Nothing ever happens here, and I like to talk about it."
+  ],
+  "season": {
+   "summer": [
+    "The light stays all night this time of year. I draw the curtains and the cat sulks anyway."
+   ]
+  }
+ },
+ "kirkwall_home_b|kwl_home_b_man": {
+  "who": "Magnus Rendall",
+  "again": [
+   "Ah, it's yourself. Sit in. I was just thinking about the sea, as ever.",
+   "Folk who come back once tend to keep coming. The islands do that."
+  ],
+  "weather": {
+   "gale": [
+    "Listen to that wind. No boat will go out today, and I am in no hurry to be told otherwise."
+   ]
+  }
+ },
+ "kirkwall_home_c|kwl_home_c_dad": {
+  "who": "Billy Drever",
+  "again": [
+   "Are you an Uppie or a Doonie? Do not answer, I will only argue.",
+   "If you hear shouting round Christmas, that is the Ba'. It is not a riot, probably."
+  ]
+ },
+ "kirkwall_home_d|kwl_home_d_mum": {
+  "who": "Thora Linklater",
+  "again": [
+   "Dusting, which here means doing nothing at all, very slowly.",
+   "The cliffs are noisy this week, so I am keeping my lunch indoors."
+  ]
+ },
+ "lake_farmhouse|lakefarm_farmer": {
+  "who": "Farmer",
+  "again": [
+   "Mind the dog, the dog is still not minding anybody.",
+   "Sit by the stove, love. The kettle is on, as the law demands."
+  ],
+  "morning": [
+   "Early start, is it? I have been up since the sheep told me to be."
+  ],
+  "season": {
+   "winter": [
+    "Hard frost on the fell and the wool is thick. Sit by the fire."
+   ]
+  }
+ },
+ "lancaster_home_birkett|lanhome_birkett": {
+  "who": "Mr Birkett",
+  "again": [
+   "The tide is not going to fetch you, so you may as well stay.",
+   "The bay has done nothing all day and looks wonderful. I have been watching it ever since."
+  ],
+  "weather": {
+   "fog": [
+    "It is a proper fog out there. Nobody goes near the sands in this, not if they have any sense."
+   ]
+  }
+ },
+ "lancaster_home_dewhurst|lanhome_dewhurst": {
+  "who": "Mrs Dewhurst",
+  "again": [
+   "Don't mither, I am only fussing over you a bit.",
+   "Back so soon. Good. Sit down and don't stand there like a coat stand."
+  ]
+ },
+ "lancaster_home_procter|lanhome_procter": {
+  "who": "Mr Procter",
+  "again": [
+   "Come aboard again. I mean come in. It is a habit I am trying to keep.",
+   "The towpath is quiet and so am I. Sit down, I am glad of a chat."
+  ]
+ },
+ "lancaster_home_rigby|lanhome_rigby": {
+  "who": "Mrs Rigby",
+  "again": [
+   "Our Jack has asked another daft question, so you are in luck, love.",
+   "Sit yourself down. The bin lorry has already gone, so we are safe."
+  ]
+ },
+ "lerwick_home_a|ls_fiddler_home": {
+  "who": "Old Fiddler",
+  "again": [
+   "Sit. I will play a tune if you do not tell me it is out of key.",
+   "Ah, it's you. The fiddle has been asking after you. Well, I have been asking on its behalf."
+  ]
+ },
+ "limerick_home_pery|pery_cat": {
+  "who": "The Fox in the Garden",
+  "again": [
+   "The fox is still on the rug. It looks at you, then at the door, as if you left it open."
+  ]
+ },
+ "limerick_home_pery|pery_owner": {
+  "who": "Householder",
+  "again": [
+   "Four storeys, and every one is a conversation. Watch the stairs.",
+   "All day up and down these stairs, and I blame the architect."
+  ]
+ },
+ "lincoln_jewshouse|lin_historian": {
+  "who": "Local Historian",
+  "again": [
+   "You came back. Most people only stand at the door and leave. Come in and look properly.",
+   "Old houses are patient, and stone remembers whether or not we do."
+  ]
+ },
+ "liverpool_warehouse|keeper": {
+  "who": "Dock Warden",
+  "again": [
+   "The pillars have been there a long while and they will not move for you.",
+   "It is calm in here, which is rare for a place so full of echoes."
+  ]
+ },
+ "llanberis_home1|lh1_mam": {
+  "who": "Eirlys Roberts",
+  "again": [
+   "Come in, cariad. The kettle is hot and the radiators are working, for once.",
+   "The tapping started again last night, love. I turned the radio up."
+  ],
+  "weather": {
+   "rain": [
+    "It is raining again, but that is Llanberis for you. Come in and dry off."
+   ]
+  }
+ },
+ "llanberis_home2|lh2_dad": {
+  "who": "Dewi Parry",
+  "again": [
+   "Mind the wellies, there are more than yesterday.",
+   "My little one asked after you. She said you had hwyl."
+  ]
+ },
+ "llanberis_home3|lh3_gran": {
+  "who": "Menna Owen",
+  "again": [
+   "Bach, I have been knitting the same sleeve since Monday.",
+   "You look like someone who has been up Snowdon twice. Well done."
+  ]
+ },
+ "llanberis_home4|lh4_lad": {
+  "who": "Rhys Evans",
+  "again": [
+   "Just been out for another run. Mum says I never sit down.",
+   "My legs are jelly, but the view was worth it."
+  ]
+ },
+ "llanberis_home5|lh5_nain": {
+  "who": "Olwen Thomas",
+  "again": [
+   "I made extra bara brith, bach, so sit down and eat it.",
+   "It is you. Come in. The kettle has been sulking in your absence."
+  ]
+ },
+ "llanberis_home_eglwys|eglwys_quarryman": {
+  "who": "Retired Quarryman",
+  "again": [
+   "Back again. Sit down. My knees tell me the weather and I tell them to be quiet.",
+   "Ah, it's you. Not many people come to ask an old man about slate. I am obliged."
+  ]
+ },
+ "llangollen_home1|llh1_mam": {
+  "who": "Bethan Davies",
+  "again": [
+   "The dog is learning not to jump, cariad. Slowly.",
+   "I left the light on, as you see. Never hurts to be polite."
+  ]
+ },
+ "llangollen_home2|llh2_dad": {
+  "who": "Gareth Lloyd",
+  "again": [
+   "Ahoy again. Sorry, habit. Come in and sit down. I will find a windlass in a minute.",
+   "The canal is quiet today. So is the kettle, which worries me a bit."
+  ]
+ },
+ "macc_home|mum": {
+  "who": "Mum",
+  "again": [
+   "Did you put your coat on? You did not. I can tell from your face.",
+   "Go on, love, sit down. Have you eaten? That is not a question, it is a plan."
+  ],
+  "morning": [
+   "Morning. Eat something before you go. Your head works better full."
+  ]
+ },
+ "newgrange_home_cottage|ng_home_siobhan": {
+  "who": "Siobhan",
+  "again": [
+   "Fáilte back, a chara. Sit down, I have the kettle on, as ever.",
+   "Ah, you're back. A cúpla focal and a cup of tea, that is the usual here."
+  ],
+  "season": {
+   "summer": [
+    "The evenings are long now. I sit out the back and listen to the long grass."
+   ]
+  }
+ },
+ "newgrange_home_dig|ng_home_digger": {
+  "who": "Ruth",
+  "again": [
+   "Fifteen years in and I still find something new in the soil every week.",
+   "Looking at my notes and wondering where the trowel went."
+  ]
+ },
+ "newgrange_home_farm|ng_home_farmer": {
+  "who": "Farmer Dunne",
+  "again": [
+   "Ah, you're back. Sit down and tell me nothing, I have the cattle for gossip.",
+   "My boots are the muddiest in Meath and proud of it, so watch the floor."
+  ],
+  "season": {
+   "autumn": [
+    "The harvest is in, thank God, and the hedge is full of blackberries for the birds."
+   ]
+  }
+ },
+ "norwich_home_a|nor_dialect": {
+  "who": "Norfolk Gran",
+  "again": [
+   "Come you in again, bor! Sit you down, you look wholly peckish.",
+   "I wondered where you'd got to, bor. The kettle has gone cold waiting."
+  ],
+  "weather": {
+   "rain": [
+    "It's hamming it down out there. Sit you down and get dry, bor."
+   ]
+  }
+ },
+ "norwich_home_b|nor_flintman": {
+  "who": "Flint Knapper",
+  "again": [
+   "Mind the dust, there's flint everywhere. It gets in everything, tea included.",
+   "I've split a good one today. Black and glassy as a beetle's back."
+  ],
+  "morning": [
+   "Early start. The hammer is warmed up and so am I. Come and have a look."
+  ]
+ }
+}

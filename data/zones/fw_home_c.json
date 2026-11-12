@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 5,
    "y": 1,
@@ -89,6 +82,12 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "window",
+   "x": 6,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +109,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "fw_home_c_man"
+   "script": "fw_home_c_man",
+   "name": "Ewen MacMillan"
   }
  ],
  "encounters": {},
@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A kit bag hangs ready by the door with a rope, a helmet and a whistle.",
+    "Six long blasts in a minute means help on a hill. Three back means someone heard you. It is the first thing he teaches anyone."
+   ]
+  }
  ]
 }

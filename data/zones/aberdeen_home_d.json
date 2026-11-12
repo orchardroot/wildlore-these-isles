@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 10,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 4,
    "y": 1,
@@ -89,6 +82,18 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 2,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 1,
+   "y": 4,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +115,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "abdn_home_d_mum"
+   "script": "abdn_home_d_mum",
+   "name": "Jessie Ritchie"
   }
  ],
  "encounters": {},
@@ -129,5 +135,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A tray of rowies cooling under a cloth. Flat, salty and a bit greasy, exactly as advertised.",
+    "One is missing. The cat looks innocent in the way only a guilty cat can."
+   ]
+  }
  ]
 }

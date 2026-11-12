@@ -161,6 +161,10 @@ func _dev_radio() -> void:
 			await get_tree().create_timer(0.6).timeout
 			await SearchScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
 			return
+		if a.begins_with("--examine="):  # dev: `--examine=x,y` reads the examine spot on that tile at once (screenshots)
+			await get_tree().create_timer(0.6).timeout
+			await ExamineScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
+			return
 
 ## Dark caves: keep the light circle on the player (and faint glows on every exit) each frame.
 func _process(_delta: float) -> void:
@@ -385,7 +389,8 @@ func _on_step(p: Vector2i) -> void:
 	if encounters.in_grace():
 		encounters.stepped()
 		return
-	var enc := Encounters.roll(zone, tile, Game.phase(), weather, Game.rng, TodaysWalk.featured_in(Game.data, zone.id), Game.data.flags)
+	var enc := IndoorFolk.roll(zone, Game.phase(), sky.weather, Game.rng, Game.data.flags) if zone.kind == "interior" else \
+			Encounters.roll(zone, tile, Game.phase(), weather, Game.rng, TodaysWalk.featured_in(Game.data, zone.id), Game.data.flags)
 	if not enc.is_empty() and Game.data.first_able() != null and not Repel.blocks(Game.data, int(enc.level)):
 		if enc.get("scaled", false):  # off the main line: grown up to suit the level
 			enc.species = ParLevel.stage(Game.dex, str(enc.species), int(enc.level))

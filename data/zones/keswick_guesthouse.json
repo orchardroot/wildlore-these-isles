@@ -139,5 +139,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "Wet boots steam in front of the fire beside a sign: DRYING ROOM. BOOTS ONLY. NOT YOU.",
+    "Castlerigg stone circle is just outside the town, thirty-eight stones about five thousand years old."
+   ]
+  }
  ]
 }

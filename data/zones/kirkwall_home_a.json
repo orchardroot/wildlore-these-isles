@@ -7,9 +7,10 @@
  "weather": {},
  "props": [
   {
-   "type": "bed",
+   "type": "box_bed",
    "x": 8,
-   "y": 1
+   "y": 1,
+   "variant": 0
   },
   {
    "type": "bookshelf",
@@ -85,10 +86,27 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "wall_map",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
    "x": 1,
-   "y": 5,
-   "variant": 1
+   "y": 5
+  },
+  {
+   "type": "cat_bowl",
+   "x": 7,
+   "y": 3,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 4,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +128,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "kwl_home_a_woman"
+   "script": "kwl_home_a_woman",
+   "name": "Ingrid Flett"
   },
   {
    "id": "island_storyteller",
@@ -152,5 +171,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "A peedie cat in a peedie frame, looking unimpressed.",
+    "In midsummer here it hardly gets dark at all, and nobody sleeps much either."
+   ],
+   "flag": "looked_peedie_cat"
+  }
  ]
 }

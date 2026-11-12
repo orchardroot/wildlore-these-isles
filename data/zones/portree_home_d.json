@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 6
   },
@@ -79,6 +74,27 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "range_cooker",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "bookshelf",
+   "x": 8,
+   "y": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
   }
  ],
  "warps": [
@@ -100,7 +116,8 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "portree_home_d_kid"
+   "script": "portree_home_d_kid",
+   "name": "Ruairidh Beaton"
   }
  ],
  "encounters": {},
@@ -119,5 +136,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A child's drawing of a dinosaur footprint, with a stick figure standing in it for scale.",
+    "The footprints at Staffin on Skye are about 170 million years old. The stick figure looks suitably small."
+   ],
+   "find": {
+    "item": "ammonite"
+   }
+  }
  ]
 }

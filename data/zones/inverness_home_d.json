@@ -32,11 +32,6 @@
    "y": 7
   },
   {
-   "type": "potted_plant",
-   "x": 9,
-   "y": 7
-  },
-  {
    "type": "fireplace",
    "x": 5,
    "y": 1
@@ -89,6 +84,17 @@
    "x": 1,
    "y": 6,
    "variant": 0
+  },
+  {
+   "type": "harp",
+   "x": 9,
+   "y": 7
+  },
+  {
+   "type": "window",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +116,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "inv_home_d_man"
+   "script": "inv_home_d_man",
+   "name": "Callum Ross"
   }
  ],
  "encounters": {},
@@ -130,5 +137,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of a caber caught in mid-flip, a very large man below it looking surprised.",
+    "The toss is not judged on distance. A perfect throw lands at twelve o'clock, straight out in front. Most do not."
+   ]
+  }
  ]
 }

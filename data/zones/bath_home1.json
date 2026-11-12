@@ -85,10 +85,15 @@
    "variant": 1
   },
   {
-   "type": "plant_stand",
+   "type": "cat_bowl",
+   "x": 7,
+   "y": 2,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
    "x": 1,
-   "y": 5,
-   "variant": 1
+   "y": 5
   }
  ],
  "warps": [
@@ -142,5 +147,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A shortbread tin on the mantelpiece, marked DO NOT TOUCH in capital letters.",
+    "The cat has read it and decided it is a challenge."
+   ]
+  }
  ]
 }

@@ -76,9 +76,32 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "range_cooker",
+   "x": 4,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "cat_bowl",
+   "x": 2,
+   "y": 4,
+   "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 7,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -103,7 +126,19 @@
    "script": "home_prom_gran"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "cluricaun",
+    "min": 56,
+    "max": 57,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [
   {
    "x": 3,
@@ -132,5 +167,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "A biscuit tin on the dresser, marked FOR THE MOOLET. The label has been crossed out and rewritten: FOR GRAN.",
+    "The moolet is believed to follow you home if you have a biscuit. So does Gran."
+   ]
+  }
  ]
 }

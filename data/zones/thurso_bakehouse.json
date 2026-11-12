@@ -83,5 +83,18 @@
   "x+++++++++x",
   "x++++D++++x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A slab of Caithness flagstone on the mantel with the ghost of a fish in it, hundreds of millions of years old.",
+    "Robert Dick baked here and hunted fossils on the hills. The baker says the fish is also a very good bookend."
+   ],
+   "find": {
+    "item": "slate_chip"
+   }
+  }
  ]
 }

@@ -78,6 +78,17 @@
    "x": 9,
    "y": 3,
    "rot": -90
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
   }
  ],
  "warps": [
@@ -131,5 +142,15 @@
   "x|+|||||||x",
   "x|||D|||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "Cups for swimming and netball, and one very small trophy for Most Improved.",
+    "Most of the dust is on the middle shelf. That is where the good ones are."
+   ]
+  }
  ]
 }

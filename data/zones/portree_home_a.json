@@ -32,11 +32,6 @@
    "y": 6
   },
   {
-   "type": "potted_plant",
-   "x": 9,
-   "y": 6
-  },
-  {
    "type": "fireplace",
    "x": 5,
    "y": 1
@@ -56,13 +51,6 @@
    "y": 3,
    "variant": 0,
    "rot": 90
-  },
-  {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 3,
-   "rot": 270
   },
   {
    "type": "clock",
@@ -85,10 +73,45 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "range_cooker",
+   "x": 9,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 9,
+   "y": 6
+  },
+  {
+   "type": "lobster_pots",
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "wall_picture",
+   "x": 7,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 9,
+   "y": 5,
+   "walk": true,
+   "rot": 270
+  },
+  {
+   "type": "cat_bowl",
+   "x": 8,
+   "y": 6,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +133,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "portree_home_a_mum"
+   "script": "portree_home_a_mum",
+   "name": "Seonaid Nicolson"
   }
  ],
  "encounters": {},
@@ -142,5 +166,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A painting of Portree harbour with its row of pastel houses, pink one in the middle.",
+    "One story says the colours let fishermen spot home from the sea. Mum thinks they just like pink."
+   ]
+  }
  ]
 }

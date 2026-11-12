@@ -216,6 +216,8 @@ static func quip(zone: ZoneData, data: GameStateData) -> String:
 static func take(zone: ZoneData, prop: Dictionary, data: GameStateData, items, rng_seed := 0) -> Dictionary:
 	var x := int(prop.get("x", 0))
 	var y := int(prop.get("y", 0))
+	if FamilyDrawer.is_drawer(zone, prop, data):  # the household's own thing, found once (wave 53)
+		return FamilyDrawer.take(zone, data, items)
 	if searched(data, String(zone.id), x, y):
 		return {"lines": ["You've already been through this one. Give it a week."], "gave": false, "curio": false, "rare": false, "again": true}
 	var s := stash(zone, prop, data, rng_seed)

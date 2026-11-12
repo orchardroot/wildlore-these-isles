@@ -79,6 +79,17 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "range_cooker",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "window",
+   "x": 6,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -103,7 +114,23 @@
    "script": "kerry_cottager"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "bansheen",
+    "min": 54,
+    "max": 55,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "weather": [
+     "gale",
+     "fog"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -119,5 +146,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A portrait of Daniel O'Connell, the Liberator, born near Cahersiveen in 1775.",
+    "Visitors ask who. The cottager tells them. They ask again."
+   ]
+  }
  ]
 }

@@ -52,6 +52,24 @@
    "x": 7,
    "y": 1,
    "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 2,
+   "y": 3,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 3,
+   "walk": true
   }
  ],
  "warps": [
@@ -77,7 +95,20 @@
    "name": "Granny Gunn"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 76,
+    "max": 77,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -92,5 +123,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "The hearthstone is a single Caithness flag, worn smooth, and the whole floor is cut from the same stone.",
+    "Flagstone splits into thin flat slabs, and it holds the heat. Granny Gunn says it has kept the family warm since her grandfather's day."
+   ],
+   "find": {
+    "item": "slate_chip"
+   }
+  }
  ]
 }

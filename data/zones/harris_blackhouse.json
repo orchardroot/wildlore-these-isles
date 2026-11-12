@@ -81,6 +81,22 @@
    "type": "bench",
    "x": 4,
    "y": 5
+  },
+  {
+   "type": "range_cooker",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 1,
+   "y": 5,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 11,
+   "y": 2
   }
  ],
  "warps": [
@@ -129,5 +145,18 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 4,
+   "text": [
+    "A peat fire burns in the middle of the floor. There is no chimney, so the smoke finds its own way out through the thatch.",
+    "The soot is why it is called a black house, or one of the reasons. The warm peat smell stays in your coat for days."
+   ],
+   "find": {
+    "item": "peat"
+   }
+  }
  ]
 }

@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 10,
    "y": 6
   },
@@ -56,10 +51,10 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
-   "variant": 3,
+   "variant": 1,
    "rot": 90
   },
   {
@@ -79,6 +74,29 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
+  },
+  {
+   "type": "dartboard",
+   "x": 9,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 9,
+   "y": 4,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -119,5 +137,16 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A framed newspaper cutting about the ospreys nesting at Bassenthwaite in 2001.",
+    "It was the first time in about 150 years. The Nicholsons cheered as if it was the football."
+   ],
+   "flag": "looked_ospreys"
+  }
  ]
 }

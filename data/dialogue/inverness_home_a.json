@@ -2,17 +2,17 @@
  "inv_home_a_mum": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Isobel Fraser",
    "text": "Och, come in. The river runs right through town, and the name means mouth of the Ness. Inbhir Nis, in Gaelic."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Isobel Fraser",
    "text": "When it is grey and wet we say dreich. When it is grey and wet and we are in a mood, crabbit. That is the whole forecast."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Isobel Fraser",
    "text": "Flittermice come out over the Ness Islands at dusk. Stand still and they zip past your ears. Frankly, rude."
   }
  ],

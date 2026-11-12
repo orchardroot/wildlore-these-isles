@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 3,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 6,
    "y": 1,
@@ -89,6 +82,12 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 5,
+   "walk": true
   }
  ],
  "warps": [
@@ -142,5 +141,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A kettle sits on the hob, and by the look of it, always has.",
+    "Nan Pat says the kettle is on in Birmingham the way the tide is in the sea. Tara-a-bit."
+   ]
+  }
  ]
 }

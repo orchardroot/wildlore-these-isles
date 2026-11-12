@@ -79,6 +79,12 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "wall_map",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -100,10 +106,24 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "inv_home_c_mum"
+   "script": "inv_home_c_mum",
+   "name": "Fiona Macrae"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 73,
+    "max": 74,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -119,5 +139,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A print of a boat in Muirtown locks, the lock gates open and the water still.",
+    "Telford's canal joins Inverness to Fort William through the Great Glen and Loch Ness, a road across the Highlands for boats."
+   ]
+  }
  ]
 }

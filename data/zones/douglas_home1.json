@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 9,
    "y": 6
   },
@@ -89,6 +84,29 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "wall_map",
+   "x": 9,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 1,
+   "y": 6
+  },
+  {
+   "type": "cat_bowl",
+   "x": 8,
+   "y": 5,
+   "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 2,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -142,5 +160,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of a Loaghtan ram, four horns, brown wool and an expression of enormous dignity.",
+    "Ned Maddrell, the last native Manx speaker, died in 1974. The language is being taught again, and the sheep will not be told."
+   ]
+  }
  ]
 }

@@ -85,10 +85,14 @@
    "variant": 1
   },
   {
-   "type": "plant_stand",
+   "type": "range_cooker",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "kettle_table",
    "x": 1,
-   "y": 5,
-   "variant": 1
+   "y": 5
   }
  ],
  "warps": [
@@ -129,5 +133,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "Her father's hurley hangs over the fire, the wood worn pale where hands have held it.",
+    "They touch it for luck before the big matches, whether it is working or not."
+   ]
+  }
  ]
 }

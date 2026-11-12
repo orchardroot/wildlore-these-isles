@@ -118,5 +118,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 9,
+   "y": 1,
+   "text": [
+    "A photograph of the Albert Dock being built. Jesse Hartley engineered it, and it opened in 1846.",
+    "Iron, brick and stone, with no wood in the structure to burn. You can still see the cast iron columns holding the roof up."
+   ]
+  }
  ]
 }

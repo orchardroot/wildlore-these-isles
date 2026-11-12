@@ -1,0 +1,1650 @@
+{
+ "aberdeen_home_a": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Wedged behind a row of atlases, a photograph of a granite terrace in bright sun, every wall glittering.",
+   "On the back, in pencil: 'Mica, not magic. Gran says it all came out of Rubislaw. Gran says a lot.'"
+  ]
+ },
+ "aberdeen_home_b": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Between two cookbooks, a recipe card for tablet in a neat hand, thumbed soft and speckled with sugar.",
+   "Along the bottom: 'Makes one tray. NOT for giving away.' Someone has underlined it twice and someone else has ignored it."
+  ]
+ },
+ "aberdeen_home_c": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel, a photograph of a small boat on a doorstep, a shed behind it, and the sea at the end of the square.",
+   "A gull sits on the shed roof looking at the camera. The caption reads: 'Fittie, nothing wasted. Including the gull.'"
+  ]
+ },
+ "aberdeen_home_d": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Under a pile of recipe books, a note on the back of a flour bag, written in a hurry.",
+   "'Rowies cooling on the sill. Dinna fash, I have counted them. The cat has not been told how many.'"
+  ]
+ },
+ "aberdeen_townhouse": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "Above the grate, a framed photograph of a civic procession in the street, chains of office glinting in a rare patch of sun.",
+   "A banner at the front shows three towers and two leopards. The clerk has labelled it in biro: 'Bon Accord. Mostly.'"
+  ]
+ },
+ "aberystwyth_home_digs": {
+  "kind": "letter",
+  "in": "bed",
+  "lines": [
+   "Under the pillow, a postcard from home with a picture of a lighthouse on it, folded in half.",
+   "'Have you eaten anything green? Have you kicked the bar yet? Your father says hello and wants his good umbrella back.'"
+  ]
+ },
+ "aberystwyth_home_harbour": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Behind the plates, a ship in a bottle, rigging as fine as cobweb, the glue still a bit proud at the neck.",
+   "It is not one of the eleven on the shelves. There is a label on the base: 'Number twelve. Do not tell her.'"
+  ]
+ },
+ "aberystwyth_home_pier": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Propped against the books, a lovespoon carved from a single piece of wood, with a heart and a tiny anchor on the handle.",
+   "It is a good deal older than the house. A label in the family hand says: 'Nain's, from before the hiraeth set in.'"
+  ],
+  "curio": "welsh_lovespoon"
+ },
+ "anglesey_cottage": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Stuck behind a jug on the dresser, a postcard in a young hand: 'Annwyl Nain, I bought you two tea towels with the long name on.'",
+   "'I know what you will say. Use them for the Welsh cakes. Love, Sioned. P.S. Do not tell the cat.'"
+  ]
+ },
+ "bath_home1": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "On the mantelpiece, a snapshot of a lanky boy in a rowing skiff on the Avon, grinning, soaked to the elbows.",
+   "On the back: 'Fall-in number one. Taken from the bank, before the rescue. Photographer: gran, who was laughing too hard to help.'"
+  ]
+ },
+ "bath_home2": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Among the astronomy books, a hand-painted glass lantern slide showing a ringed planet and a very small, very pleased man.",
+   "The label is in copperplate: 'Georgium Sidus'. Someone has added underneath, in biro: 'Rejected. See Uranus.'"
+  ],
+  "curio": "lantern_magic"
+ },
+ "bath_home3": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a coronation biscuit tin, lid a bit dented, rattling faintly when you pick it up.",
+   "No biscuits inside. It is full of odd buttons, all sizes, and a paper label: 'Bath Olivers, 1950s. Buttons, now.'"
+  ],
+  "curio": "coronation_tin"
+ },
+ "bath_home4": {
+  "kind": "letter",
+  "in": "bed",
+  "lines": [
+   "Under a revision timetable on the bed, a note from a dad with a pen that is running out.",
+   "'Bladud and the pigs are lovely, but please do NOT put them in the essay. Eat something. Dad. P.S. Ask the pigs if you need a reference.'"
+  ]
+ },
+ "belfast_home_lisburn": {
+  "kind": "letter",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, a scrap of envelope with a note in thick pencil, long forgotten.",
+   "'Back in a wee while.' It is dated three days ago. So far as anyone knows, the wee while has not finished."
+  ]
+ },
+ "belfast_home_riveter": {
+  "kind": "keepsake",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel sits a single iron rivet, mushroom-headed and heavy, used as a paperweight and a conversation piece.",
+   "A tag reads: 'Granda's. Caught in the bucket, he says. Never dropped. Never again, mind you, if you ask him why.'"
+  ]
+ },
+ "belfast_home_wain": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Stuck between the books, a child's school drawing of two big cranes with a hundred scribbled starlets on top.",
+   "Under it in wobbly capitals: 'WEE ANE'S PICTURE. THE BIRDS ARE LOUD.' The teacher has added a gold star."
+  ]
+ },
+ "belfast_palmhouse": {
+  "kind": "curio",
+  "in": "display_case",
+  "lines": [
+   "Pinned in the display case, a card of pressed flowers and a fern frond, flattened and brown at the edges.",
+   "The label is faded: 'Taken from a fallen frond, with the gardener's blessing. Humidity ruined three hairdos in the process.'"
+  ],
+  "curio": "pressed_flowers"
+ },
+ "bermuda_lighthouse": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a glass prism from an old lamp, heavy as a brick, throwing a small rainbow whenever the sun catches it.",
+   "Beside it a notebook of step counts: 183, 187, 181, 186. A note at the bottom says: 'The stairs are lying.'"
+  ],
+  "curio": "lighthouse_lens"
+ },
+ "birmingham_home1": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Propped on a shelf, a photograph of a woman in a headscarf on a narrowboat, holding a mug and not smiling at all.",
+   "Behind her, a heron on the towpath eyeing the biscuits. On the back: 'The cut, a Sunday. Kettle was on.'"
+  ]
+ },
+ "birmingham_home2": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel, a snapshot of a girl wobbling along a canal towpath on a bike with her tongue between her teeth.",
+   "A duck stands with great authority beside her. The caption says: 'Inspecting. Not fell in. That came later.'"
+  ]
+ },
+ "birmingham_home3": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Under the fruit bowl, a school project draft headed 'CANALS, by a Very Serious Person', with a ruler-drawn map.",
+   "The teacher has written on it: 'More than Venice? Source please.' Underneath, in red: 'Gran says so.' A second note: 'Not a source.'"
+  ]
+ },
+ "birmingham_home4": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Between a road atlas and a bus timetable, a Dinky toy bus, paint worn off at the nose from years of enthusiastic braking.",
+   "A scrap of paper tucked inside the stairs reads: 'Number 11. The long way round. Always the long way round.'"
+  ],
+  "curio": "dinky_bus"
+ },
+ "borders_bakehouse": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Propped against the flour jars, a faded photograph of a young man in his best on a horse, with a crowd and a flag behind.",
+   "On the back, in careful ink: 'Cornet, '62. Rode every march. The horse lost. We do not say which.'"
+  ]
+ },
+ "bushmills_home_green": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Slipped inside a book, an old photograph of a tram on a country road, passengers on top, a dog running alongside.",
+   "On the back, shakily: 'Told you. The river did it. Granda.' Someone has underlined 'river' three times."
+  ]
+ },
+ "bushmills_home_hill": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Between two bird guides, a postcard of a ruined castle on a cliff, sent by a friend with a very bad sense of humour.",
+   "'Dunluce. The kitchen is the bit you cannot see, because it is in the sea. Wish you were here. Not for the cooking.'"
+  ]
+ },
+ "buxton_h1": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser drawer, a recipe card for Bakewell tart with the word 'Pudding' written in capitals and crossed out.",
+   "'We make it here in Buxton and we call it tart. If anyone from Bakewell asks, it was a trial run.'"
+  ]
+ },
+ "buxton_h2": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Wedged in a book on walking, a snapshot of the Market Place under snow, in the middle of April, with a man in shorts looking resigned.",
+   "The back says: 'Highest market town in England, they say. Grandad insisted on shorts. He caught nothing but a cold.'"
+  ]
+ },
+ "buxton_h3": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "At the back of the dresser, a creased map with a long wobbly biro line drawn on it, all the way from the moors to the sea.",
+   "In the margin: 'Source to sea, with muddy boots and a flask. Never again. Next year, again.'"
+  ]
+ },
+ "buxton_h4": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Slotted behind a gardening book, a photograph of a woman at a stall in the Pavilion Gardens, a duck waiting patiently by her foot.",
+   "Her handwriting underneath reads: 'Ducks run the place. I just sell the cake.'"
+  ]
+ },
+ "buxton_h5": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a small crested china jug with the town's arms on it, no bigger than an egg cup.",
+   "Tucked in the spout, a folded note: 'Not for tea. For looking at. Do not mither it.'"
+  ],
+  "curio": "goss_pot_buxton"
+ },
+ "buxton_h6": {
+  "kind": "keepsake",
+  "in": "bed",
+  "lines": [
+   "Under the bed, a shoebox with a finisher's medal for a hill race, the ribbon fraying and a plaster still stuck to the back.",
+   "A note in pen says: 'The Slopes, again. Legs, you are not invited next week.'"
+  ]
+ },
+ "cairnryan_home_a": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Behind the teapot, a photograph of two children holding up fish, the girl's much bigger than the boy's.",
+   "On the back, in his handwriting: 'It was the bait.' Underneath, in hers: 'It was not the bait.'"
+  ]
+ },
+ "cairnryan_home_b": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Between two paperbacks, a letter on lined paper from a sister across the water, folded round a recipe.",
+   "'Farls sent by the ferry. Eat them hot with butter. Do not tell me how many. I counted what I left.'"
+  ]
+ },
+ "cambridge_home_a": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Between two old directories, a landlady's rent book with a list of rules in firm capitals.",
+   "'No candles. No pets. No cycling indoors.' Underneath, a later hand: 'And no Oxford men before ten.'"
+  ]
+ },
+ "cambridge_home_b": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "In a pile of exercise books, a battered maths notebook with a coffee ring on the cover.",
+   "In the margin of the last page: 'Newton did this in a plague year. I have a deadline. Same energy.'"
+  ]
+ },
+ "cardiff_home_bute": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Among the old books, a seven-inch single in a worn paper sleeve, played so often the label has a halo.",
+   "Written on it in marker: 'The girl from round the corner. Kept for the voice, not for the shouting.'"
+  ],
+  "curio": "vinyl_single"
+ },
+ "cardiff_home_grange": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel, a small photograph of a child curled up in a cupboard under the stairs, grinning, with a biscuit.",
+   "The back reads: 'The cwtch, the best seat in the house. Washing up is a long way from here.'"
+  ]
+ },
+ "cardiff_home_roath": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On top of the dresser, a velvet rugby cap with a tassel, faded and slightly too small for anyone now living here.",
+   "A card pinned to it: 'Our Ffion tried it on last week. Fits her better than the old man. Do not tell him.'"
+  ],
+  "curio": "rugby_cap"
+ },
+ "carlisle_home_armstrong": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a framed printed ballad sheet of Johnnie Armstrong, the paper yellow, the verses long.",
+   "A pencil note on the frame says: 'Family, loosely. Not a role model. Allegedly.'"
+  ]
+ },
+ "carlisle_home_graham": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Hanging on the dresser, an embroidered sampler in faded red wool: three words, a border of thistles, and a very small mistake.",
+   "The words are 'Ne oublie.' Someone has stitched underneath, in different thread: 'We do not.'"
+  ],
+  "curio": "sampler"
+ },
+ "central_belt_cottage": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Propped against the biscuit tin, a school-sized photograph of a gang of kids sitting on the canal bank, all legs and scabs.",
+   "In pencil: 'The Bairns, nobody agrees which year. One of them is a stoater. Nobody says which.'"
+  ]
+ },
+ "chester_h1": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser, a wooden cheese board with a wire cutter and a handwritten label hanging off the end.",
+   "The label says: 'Cheshire, crumbly. Older than your mother's recipes. Cut thin, pretend it was always there.'"
+  ]
+ },
+ "chester_h2": {
+  "kind": "photo",
+  "in": "sofa",
+  "lines": [
+   "Down the side of the sofa, a photograph of a dog on this very sofa, with an expression that says nothing, anywhere, ever happened.",
+   "Written on the back: 'Moats do not work on him either. Zoo, take notes.'"
+  ]
+ },
+ "chester_h3": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Under a pile of takeaway menus, a race card from a day at the Roodee, every horse ticked in biro.",
+   "None of them won. In the margin: 'Rood, island, cross, loss. Never again. See you next May.'"
+  ]
+ },
+ "chester_h4": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, an old copy of 'Alice in Wonderland' with a family inscription from a Christmas long ago.",
+   "In the margin of the Cheshire Cat page, someone has drawn a grin and written: 'Nobody can prove it.'"
+  ]
+ },
+ "chester_h5": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Under the clock-shaped trivet, a postcard from a cousin who has gone over the border and not yet come back.",
+   "'Annwyl cousin, croeso! I am the one in the hat. The swans here do not take tolls either. Love, ours.'"
+  ]
+ },
+ "cork_home1": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel, a black and white photograph of a woman at a wedding, mid-stride, one hip out and chin high.",
+   "The back says: 'Nan, in full gatch. Everyone is looking. She is not worried.'"
+  ]
+ },
+ "cork_home2": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Wedged between the books, a tin whistle with a strip of tape round the middle and a tooth mark in the mouthpiece.",
+   "A note in a child's hand: 'The squeaking one. Do NOT call it a yoke.'"
+  ]
+ },
+ "cork_home3": {
+  "kind": "curio",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel, a smooth grey pebble sitting in an egg cup, with a label tied round it in blue wool.",
+   "'From Blarney. For the gift of the gab. Himself does not need it. Our header definitely does.'"
+  ],
+  "curio": "blarney_pebble"
+ },
+ "cotswolds_woolhouse": {
+  "kind": "keepsake",
+  "in": "display_case",
+  "lines": [
+   "In the display case, a single long lock of Cotswold fleece pinned to a card, wavy and silky and nearly as long as a hand.",
+   "The card reads: 'A staple worth a fair. Florence would have paid well. Do not stroke the exhibits.'"
+  ]
+ },
+ "derry_home_flats": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a wooden bobbin with a few threads of grey-white linen still wound round it.",
+   "The tag says: 'From the mill below. Houl yer whisht and listen, you can still hear it working.'"
+  ],
+  "curio": "mill_bobbin"
+ },
+ "derry_home_foyle": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Between two atlases, a photograph of a small rowing boat on the Foyle at low tide, the mud shining like a tray.",
+   "On the back, in a firm hand: 'Out for a walk, 6 pm.' Someone has added an arrow pointing at a dark head in the water. 'Seal. Very polite.'"
+  ]
+ },
+ "derry_home_station": {
+  "kind": "keepsake",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, a card railway ticket, Derry to Coleraine, punched and kept for no reason anyone will admit.",
+   "On the back in pencil: 'Window seat. Sandwiches. Forget the phone.' The household takes this advice seriously."
+  ]
+ },
+ "derry_home_walls": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "On the bookshelf, a school photo of the wains sitting in a row on the Walls beside one of the old cannons, squinting into the sun.",
+   "One child is clearly mid-sentence. Under the picture: 'Yousens, say cheese. Two of yousens did not.'"
+  ]
+ },
+ "dingle_home1": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Folded into an Irish reader, a page of homework: 'Go raibh maith agat' written twenty times, each one a bit smaller than the last.",
+   "On the final line, in a different hand: 'Now say it to your sister.' Underneath, a single defiant 'No.'"
+  ]
+ },
+ "dingle_home2": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "In the bookshelf, a summer photograph of a long meadow, mown all round except for a square left standing in the corner.",
+   "On the back in biro: 'Their corner.' Below: 'Nobody here has ever seen one. Everybody has heard one at two in the morning.'"
+  ]
+ },
+ "dingle_home3": {
+  "kind": "curio",
+  "in": "clock",
+  "lines": [
+   "Beside the clock hangs an aneroid barometer, tapped every morning before anyone is allowed near a boat.",
+   "The needle has sat on 'Change' since before Fungie came to the harbour. A card on the back reads: 'Slán abhaile.'"
+  ],
+  "curio": "barometer"
+ },
+ "dingle_home4": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Kept between two textbooks, a note from a pupil: 'A Mhúinteoir, d'ith mo mhadra m'obair bhaile.' My dog ate my homework.",
+   "The reply, in red pen: 'And the cat?' Underneath, the pupil has written: 'The cat does not do Irish.'"
+  ]
+ },
+ "douglas_home1": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Folded flat in the bookshelf, an embroidered sampler: TRAA DY LIOOAR in wobbly cross-stitch, with a sheep below.",
+   "The sheep has four horns, because the stitcher, aged nine, was very firm about it. Time enough, indeed."
+  ],
+  "curio": "sampler"
+ },
+ "douglas_home2": {
+  "kind": "curio",
+  "in": "clock",
+  "lines": [
+   "Inside the clock case, a silver pocket watch in a tobacco tin, stopped at ten past four.",
+   "The inscription: 'To Tom from the lads, last sailing.' It loses a minute a day, which is more than the ferry ever did."
+  ],
+  "curio": "pocket_watch"
+ },
+ "douglas_home3": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Propped on the bookshelf, a blurred photograph of a small dark bird on a washing line, next to a peg.",
+   "On the back: 'My one swiftlet. 11.40 on a Tuesday.' Beneath: 'Not telling next door, who have seen none.'"
+  ]
+ },
+ "dover_painted_house": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a visitors' book open at a child's entry in felt tip: 'Best bit: the heating under the floor. The Romans had it before us.'",
+   "Below it, an adult has added in biro: 'And before our landlord.'"
+  ]
+ },
+ "dublin_customhouse": {
+  "kind": "photo",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, a staff photograph of clerks lined up under one of the stone river heads, nobody smiling, one looking up at it.",
+   "Pencilled on the back: 'Commerce is on the roof. Not pictured. Not working either.'"
+  ]
+ },
+ "dublin_home_green": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Tucked into a textbook, a letter from home: 'Your Da says the red and white chimneys are still standing, so you can stop worrying.'",
+   "It ends: 'Twenty euro enclosed for a proper dinner, not just tea. Though a sound, deadly cup of tea is also allowed.'"
+  ]
+ },
+ "dublin_home_park": {
+  "kind": "curio",
+  "in": "sofa",
+  "lines": [
+   "Down the back of the sofa, a child's hurley with the bas wrapped in tape and signed by a whole under-10s team in marker.",
+   "The sliotar it was bought for is long gone, probably in a neighbour's garden. Gas altogether."
+  ],
+  "curio": "hurley"
+ },
+ "dublin_home_stone": {
+  "kind": "letter",
+  "in": "clock",
+  "lines": [
+   "Folded in the back of the clock, a repair note: 'Mechanism banjaxed. Case lovely. Would advise keeping it as a cabinet.'",
+   "Underlined by the owner, firmly: 'Still right twice a day.'"
+  ]
+ },
+ "dublin_home_terrace": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Used as a bookmark in a cookery book, a grease-spotted card in careful handwriting: Gran's barmbrack. 'Soak the fruit in cold tea overnight.'",
+   "In pencil at the bottom: 'Mind the ring. Whoever finds it, we'll talk.' The card has clearly seen some baking."
+  ]
+ },
+ "edinburgh_home_a": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Framed on the shelf, a photograph of the Castle half swallowed by haar, only a flag and one corner of rock showing.",
+   "Written on the back: 'Sunny at breakfast.' The grandson says this is proof that the Castle follows him."
+  ]
+ },
+ "edinburgh_home_b": {
+  "kind": "curio",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel above the fireplace, a small silver quaich with two handles, polished every January for Burns Night.",
+   "A card tucked inside reads: 'For the dram. Not for the gravy.' The neeps, we are told, have heard worse."
+  ],
+  "curio": "quaich"
+ },
+ "edinburgh_home_c": {
+  "kind": "keepsake",
+  "in": "sofa",
+  "lines": [
+   "Wedged between the sofa cushions, a Fringe programme with nine shows ticked in pencil.",
+   "One line reads 'street juggler (free, but we paid anyway)'. A smaller note says 'Wee brother, rehearsing, hide the lamp.'"
+  ]
+ },
+ "edinburgh_home_d": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "In the bookshelf, a photograph of the Forth Bridge from the water, long and red against a pale sky, with the new paint gleaming.",
+   "On the back: '2011. They finished.' Underneath, in a different pen: 'Told you it would end, Dad.'"
+  ]
+ },
+ "edinburgh_home_e": {
+  "kind": "photo",
+  "in": "clock",
+  "lines": [
+   "Behind the mantel clock, a photograph of Archie aged about six with ice cream down his jumper and his mouth slightly open.",
+   "On the back Gran has written 'Glaikit' with great tenderness. The clock beside it is set, naturally, by the One O'Clock Gun."
+  ]
+ },
+ "falklands_farmhouse": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Stuck in a book on sheep, a postcard from a cousin in Stanley: 'Send diddle-dee jam. Everything here is shop jam.'",
+   "Postscript: 'Is the stove still lit?' Pencilled below, in the reply: 'It has not gone out. We have not tested it.'"
+  ]
+ },
+ "fw_home_a": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "In the bookshelf, a summer evening photograph of four people on a garden bench in hats and head nets, all smiling like hostages.",
+   "The back says: 'Midgies, 8 pm. We lasted eleven minutes.' The bench is still there. The midgies are still there."
+  ]
+ },
+ "fw_home_b": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Behind the plates, a photograph taken at the Banavie locks: a narrowboat halfway up Neptune's Staircase, a child on the lock beam.",
+   "On the back: 'Ninety minutes. Dad timed it.' Pinned next to it is a postcard of the steam train at Glenfinnan, with 'yes, THAT one' scribbled on it."
+  ]
+ },
+ "fw_home_c": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Pinned between two guidebooks, a thank-you card: 'You found us on the Ben at two in the morning. We cannot say thank you enough.'",
+   "Underneath: 'We have bought proper torches. And a map. And we have told someone where we are going.'"
+  ]
+ },
+ "galway_home_arch": {
+  "kind": "keepsake",
+  "in": "fireplace",
+  "lines": [
+   "Behind the fireplace screen, a tiny cobbler's hammer, about the size of a thumb, resting on a card that says 'For him. Boiler.'",
+   "The shoes in the hall still go missing. Nobody has proved the cluricaun innocent."
+  ]
+ },
+ "galway_home_bad": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a photograph of a Galway hooker, black hull, russet sails, tilting hard in a race, a child waving from the quay.",
+   "Back of the photo, in felt tip: 'Cruinniú na mBád, Kinvara, August.' The word 'bád' is written three times, in case anyone forgot."
+  ]
+ },
+ "galway_home_claddagh": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Wrapped in a handkerchief on the shelf, a Claddagh ring: two hands, a heart, a crown, worn almost smooth.",
+   "A note pinned to the hanky: 'Mam's. It is not the barmbrack ring. We checked.'"
+  ],
+  "curio": "claddagh_ring"
+ },
+ "galway_home_prom": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In a dresser drawer, a jam jar of assorted gadgets, labelled in marker: 'YOKES'. Inside: a nutcracker, a thing with a crank, and a key.",
+   "A note taped to the lid says: 'The cat likes the one with the crank.' Nobody knows what it does."
+  ]
+ },
+ "galway_home_teacher": {
+  "kind": "letter",
+  "in": "sofa",
+  "lines": [
+   "Under a pile of marking, one essay kept back and stapled: 'What I did at the weekend: Nothing. It was the best weekend of my life.'",
+   "The teacher has written in the margin: 'See me. Also, same.' It is graded an A."
+  ]
+ },
+ "glasgow_home_a": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Tucked in the bookshelf, a photograph of the back green: washing lines, a plastic paddling pool, six children and one very serious cat.",
+   "On the back: 'Summer. Mind the close door.' The cat is looking directly at the camera and has not forgiven it."
+  ]
+ },
+ "glasgow_home_b": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Kept in a book, an orange Subway ticket: the owner rode the whole circle just to say they'd done it.",
+   "Pencilled beside it: 'Clockwork Orange. Third oldest in the world. Still dreich.'"
+  ]
+ },
+ "glasgow_home_c": {
+  "kind": "photo",
+  "in": "clock",
+  "lines": [
+   "On the mantel by the clock, a photograph of a shipyard crew in flat caps under the hull of something enormous, one man circled in biro, holding a flask.",
+   "On the back: 'Launch day. Granda circled. He says he held the tea. We have no evidence to the contrary.'"
+  ]
+ },
+ "glasgow_home_d": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "In a cookery book, a recipe card in the family's writing: 'Chicken tikka masala. Invented in Glasgow in the 1970s (allegedly).'",
+   "Below, in a different pen: 'Invented in this kitchen in the 1990s (certainly).' A starling outside is practising the ringtone."
+  ]
+ },
+ "glasgow_home_e": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Slotted in the shelf, a school jotter where Sundays are spent: a numbered list of Glasgow parks, each one ticked, up to 61.",
+   "Beside number 62: 'Park or just a big garden? Ask at the blether.'"
+  ]
+ },
+ "glastonbury_home1": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Pressed flat in the biggest book on the shelf, a sprig of hawthorn with tiny leaves and a label: 'Holy Thorn, Christmas.'",
+   "Another label, in the same hand: 'Do not tell the children it is a hedge.'"
+  ],
+  "curio": "pressed_flowers"
+ },
+ "glastonbury_home2": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Behind the crockery, a photograph of St Michael's Tower on the Tor under snow, taken from the kitchen window.",
+   "In the foreground stands the dog, in boots, deeply unimpressed. On the back: 'Gurt big hill. Gurt cold dog.'"
+  ]
+ },
+ "glastonbury_home3": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Folded in the shelf, a clipboard sheet from last year's clear-up: 'Odd wellies: 212. Tents left behind: too many. Torches: one (mine).'",
+   "At the bottom: 'Wispet lights: none seen. Not looking very hard.'"
+  ]
+ },
+ "harris_blackhouse": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Behind the dresser plates, a black and white photograph of a woman at the door of a thatched blackhouse, a creel on her back, smoke leaking through the roof.",
+   "On the back: 'Granny, reading the weather.' Underlined twice: 'Tha i fuar.'"
+  ]
+ },
+ "holyhead_home3": {
+  "kind": "keepsake",
+  "in": "sofa",
+  "lines": [
+   "Under a sofa cushion, a revision timetable in four colours: every slot says 'revise' except one that says 'biscuit (essential)'.",
+   "The colour-coding was finished a week before any revising began. It is very neat."
+  ]
+ },
+ "inverness_home_a": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "On the bookshelf, a tartan shortbread tin holding no shortbread: just recipe cards for cranachan and heather honey labels.",
+   "Three generations of handwriting. The tablet card has been left blank on purpose, in case of dentists."
+  ],
+  "curio": "tartan_tin"
+ },
+ "inverness_home_b": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "In the bookshelf, a photograph of a grey memorial cairn on open moor, heather in the foreground, tiny walkers at its foot.",
+   "On the back: 'Culloden, 1746. Go quietly.' Beneath, in Grandfather's writing: 'Tidy up before bed. Just in case.'"
+  ]
+ },
+ "inverness_home_c": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Propped in the dresser, a photograph of a small boat rising in a lock at Muirtown, the water brown and full of sky.",
+   "On the back: 'Staircase made of water. 1822 and still going.' The tea ring on the corner is from the same afternoon."
+  ]
+ },
+ "inverness_home_d": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Used as a bookmark, a Highland Games programme with the caber event circled and 'STAND BACK' in capitals.",
+   "A child's pencil has added: 'Hootlet by the churchyard again. It sounded like our doorbell.'"
+  ]
+ },
+ "ironbridge_tollhouse": {
+  "kind": "photo",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, an undated photograph of a carter handing coins through the tollhouse hatch, his horse gazing at the river.",
+   "On the back: 'Free since 1950. The horse never paid anyway.'"
+  ]
+ },
+ "jog_lasthouse": {
+  "kind": "keepsake",
+  "in": "display_case",
+  "lines": [
+   "In the display case, a screw-top jar of groatie buckies, tiny shells from the shore, each picked over for a perfect ridge.",
+   "The label: 'Last jar of the season. Haste ye back.' Kept for luck, not for sale, as long as nobody offers enough."
+  ]
+ },
+ "kerry_cottage": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser, a small carving of a stag in bog oak, black as coal, antlers worn pale by thumbs.",
+   "A scrap tucked underneath says: 'Roars in autumn. Sure look it.' Which is the whole of Kerry philosophy."
+  ],
+  "curio": "bog_oak_carving"
+ },
+ "keswick_guesthouse": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "In the guest book, an entry in green ink: 'Best drying room in the Lakes. Our boots have never been happier.'",
+   "The next guest has added: 'Castlerigg at dawn. Thirty-eight stones and no signal. Perfect.'"
+  ]
+ },
+ "keswick_home_armstrong": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "In the bookshelf, a photograph of a nearly black newborn lamb on a stone wall, its grey mother standing watch behind.",
+   "Written underneath: 'Fades with age.' Someone has added: 'Like us.'"
+  ]
+ },
+ "keswick_home_lowther": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Propped on the dresser, a photograph of a small child in a cardboard tree costume with felt leaves, one arm raised mid-whoosh.",
+   "The programme next to it credits 'Tree'. Dad has added, in pen: 'Best tree. Ever.'"
+  ]
+ },
+ "keswick_home_nicholson": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a slate coaster engraved with BECK, FELL, TARN and YAT, a glossary for visitors who ask for 'the gate'.",
+   "Beside it, a notebook of osprey notes: 'Day 11: osprey! Opened a bottle. It was ten in the morning.'"
+  ],
+  "curio": "lakeland_slate"
+ },
+ "keswick_home_tyson": {
+  "kind": "curio",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, an engraved slate coaster: a thank-you from a family the mountain rescue team once brought down safe.",
+   "The back says 'Pack a torch.' Dinner has been kept warm under it more than once."
+  ],
+  "curio": "lakeland_slate"
+ },
+ "kilkenny_home1": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Between two cookbooks, a photograph of a small, stern Dexter cow at a show, rosette pinned to her halter.",
+   "On the back: 'Moolet, 2nd place. Judge was your man from Carlow. We will not be speaking of it.'"
+  ]
+ },
+ "kilkenny_home2": {
+  "kind": "curio",
+  "in": "fireplace",
+  "lines": [
+   "Propped by the hearth, a child's hurley, scuffed pale at the bas. The big one over the fire is Granda's, this is its understudy.",
+   "Touched for luck before every match. The record on results is, being honest, mixed."
+  ],
+  "curio": "hurley"
+ },
+ "kilkenny_home3": {
+  "kind": "letter",
+  "in": "sofa",
+  "lines": [
+   "Down the back of the sofa, a letter from a sister in Galway. 'The yoke is banjaxed again, send help or a screwdriver.'",
+   "P.S. 'Tell Mam the otter story is true. I have seen the droppings. They smell of tea.'"
+  ]
+ },
+ "kilkenny_home4": {
+  "kind": "keepsake",
+  "in": "bed",
+  "lines": [
+   "Under the pillow, a black and amber scarf, washed thin from forty summers of standing in the rain at Croke Park.",
+   "The knot has never been undone. A granddaughter claims it, and loses it, on a rolling basis."
+  ]
+ },
+ "kirkwall_home_a": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a jam jar of sea glass, green, white and one rare blue, each with a scrap of paper: 'tideline, a calm Tuesday'.",
+   "A note on the lid: 'Not for swapping. Well. Ask nicely.'"
+  ]
+ },
+ "kirkwall_home_b": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Folded into a book on the Flow, a letter from a cousin who dives: 'Cold, green, and the wrecks are enormous. You feel you are trespassing.'",
+   "He signs off: 'Come south and I will get you a drysuit. Do not argue, you will love it.'"
+  ]
+ },
+ "kirkwall_home_c": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel, a photograph of a Ba' Game scrum on Christmas Day, steam rising off a hundred backs, the ball somewhere in the middle.",
+   "In biro on the back: 'Dad in there, we think. Third from the left, possibly the elbow.'"
+  ]
+ },
+ "kirkwall_home_d": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Slipped into a guidebook, a faded postcard of the Skara Brae houses with the stone dressers still in place.",
+   "Written on it: 'Dusting is easy here. Wish I could say the same at home. Back Friday.'"
+  ]
+ },
+ "lake_farmhouse": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In a dresser drawer among the string and the rubber bands, a worn sheepdog whistle on a bootlace.",
+   "Teeth marks on the mouthpiece. The dog has been blamed for them. The dog has not confessed."
+  ],
+  "curio": "sheepdog_whistle"
+ },
+ "lancaster_home_birkett": {
+  "kind": "photo",
+  "in": "sofa",
+  "lines": [
+   "Under a cushion, a photograph of a line of walkers crossing the Bay sands behind the guide, wellies and all.",
+   "Written beneath: 'Kept to the guide's heels. Tide came in an hour later and we were on the far side, toasting it.'"
+  ]
+ },
+ "lancaster_home_dewhurst": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "In a cookbook, a recipe in a neat hand: 'Hotpot. Potatoes sliced thin, overlapped like roof slates. Do not mither it.'",
+   "Underneath, in a different pen: 'It is better the second day. This is a fact, not an opinion.'"
+  ]
+ },
+ "lancaster_home_procter": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser rail, a painted Roses and Castles jug, the kind that decorated narrowboat cabins, chipped but loved.",
+   "Scratched under the base: 'Home, wherever the mooring.' Still says 'aboard' for 'come in'."
+  ],
+  "curio": "canal_castle_jug"
+ },
+ "lancaster_home_rigby": {
+  "kind": "keepsake",
+  "in": "bed",
+  "lines": [
+   "Under the bed, a child's drawing of a bin lorry with a big red rose on its side, captioned 'The County Bin'.",
+   "Pinned to it: 'Our Jack, age 6. Framed, then unframed after the Thursday fox incident.'"
+  ]
+ },
+ "lerwick_home_a": {
+  "kind": "curio",
+  "in": "bed",
+  "lines": [
+   "Folded in a drawer under the bed, a fine lace shawl, light enough to pull through a wedding ring, wrapped in tissue.",
+   "A card: 'Played at her wedding till the sun was up. Never did stop humming.'"
+  ],
+  "curio": "shetland_shawl"
+ },
+ "limerick_home_pery": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "In a velvet box between the leather spines, a Claddagh ring: hands, heart and crown, worn smooth.",
+   "The note says: 'Heart toward you means spoken for. Heart outward, ask politely.' The fox has not offered an opinion."
+  ],
+  "curio": "claddagh_ring"
+ },
+ "lincoln_jewshouse": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Tucked in a history, a letter from a school class: 'Thank you for telling us about 1290. We did not know it was so close to home.'",
+   "A drawing of the house is pinned beside it, with one wobbly door. The teacher has underlined 'remember'."
+  ]
+ },
+ "liverpool_h1": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser drawer, a recipe card in Mam's hand: 'Scouse. Lamb, spuds, onions. Pan on low. Do not hurry. Do not call it stew.'",
+   "A grease thumbprint in the corner has become part of the recipe."
+  ]
+ },
+ "liverpool_h2": {
+  "kind": "curio",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, a yellowing telegram: 'Docked safe Wednesday. Love to all. Put the kettle on.'",
+   "Pinned with the wage slip that proves it was the only time he sent a message that short."
+  ],
+  "curio": "telegram"
+ },
+ "liverpool_h3": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Between folders, a photograph of the Overhead Railway running above the dock road, a wet day and a line of lorries below.",
+   "The caption: 'The Dockers' Umbrella. Project notes at the back. Still need a good ending.'"
+  ]
+ },
+ "liverpool_h4": {
+  "kind": "curio",
+  "in": "sofa",
+  "lines": [
+   "Down the side of the sofa, a worn seven-inch single in a paper sleeve, signed 'To Hope Street' in felt tip.",
+   "Never played in front of guests. Played every other day when they have gone."
+  ],
+  "curio": "vinyl_single"
+ },
+ "liverpool_h5": {
+  "kind": "keepsake",
+  "in": "clock",
+  "lines": [
+   "Inside a tea tin on the clock shelf, a coin hoard marked 'Our Jack: ferry across the Mersey'.",
+   "Nan has been topping it up with pound coins and has added a lolly stick: 'Interest'."
+  ]
+ },
+ "liverpool_warehouse": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Pinned inside the dresser door, a grainy photograph of the warehouse from the 1900s, carts out front and the cast-iron pillars just visible.",
+   "Someone has written 'No wood, no fire' in pencil, and then 'Fingers crossed'."
+  ]
+ },
+ "llanberis_home1": {
+  "kind": "curio",
+  "in": "fireplace",
+  "lines": [
+   "On the mantelpiece, a brass miner's lamp polished to a shine, next to a homemade one with a slate back.",
+   "A scrap of card: 'Forty years on the mountain. Knees remember. Lamp too.'"
+  ],
+  "curio": "brass_miners_lamp"
+ },
+ "llanberis_home2": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Between the picture books, a crayon drawing of a stage and a crowd, labelled in wobbly letters: 'HWYL'.",
+   "Below it, in adult handwriting: 'Eisteddfod practice, 7pm. She sang the whole thing twice.'"
+  ]
+ },
+ "llanberis_home3": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "Propped on the mantel, a black-and-white photograph of a small quarry loco on the lake line, steam up, a man waving.",
+   "On the back: 'Small and stubborn. Both of them. Hiraeth, even then.'"
+  ]
+ },
+ "llanberis_home4": {
+  "kind": "keepsake",
+  "in": "bed",
+  "lines": [
+   "Under the bed, a race number safety-pinned to a muddy vest, from a run up the long route to the summit.",
+   "The pin is bent. The finishing time on the back is crossed out and written again, smaller."
+  ]
+ },
+ "llanberis_home5": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser drawer, a photograph of a gang of quarrymen in their caban, flat caps and tin mugs, one fellow pulling a face.",
+   "Back of the print: 'Grandad, middle, with the whistle. Dinner at twelve, no argument.'"
+  ]
+ },
+ "llanberis_home_eglwys": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "In a drawer-sized book, a typed letter from the quarry, 1969, with a handwritten line at the bottom from the foreman.",
+   "It reads: 'Sorry, lad.' The reply was never sent. The envelope is kept anyway."
+  ]
+ },
+ "llangollen_home1": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Wrapped in a tea towel, a Welsh lovespoon, a heart carved into the handle, dated in biro on the tag.",
+   "The note: 'Made by a cousin who cannot whittle. The heart is a bit lopsided. That is the charm.'"
+  ],
+  "curio": "welsh_lovespoon"
+ },
+ "llangollen_home2": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "At the back of the dresser drawer, windlass number eight, which nobody knew existed.",
+   "A label on it: 'Found. Do not tell the others. Put it with the seven you lost.'"
+  ]
+ },
+ "macc_h1": {
+  "kind": "photo",
+  "in": "sofa",
+  "lines": [
+   "Under a cushion, a photograph of a man in a thick woolly jumper on a beach in July, scowling at the sunshine.",
+   "In pen: 'Nesh. Told you.' And, smaller: 'Ice cream was not offered. Mardy.'"
+  ]
+ },
+ "macc_h2": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a flattened Hovis bread bag from years back, kept for the colours and a note on the inside.",
+   "It says: 'Named in Macclesfield. Strength of man, strength of toast.' Dad has added a smiley face."
+  ]
+ },
+ "macc_h3": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In a biscuit tin, a wooden silk mill bobbin, wound with a few turns of faded thread.",
+   "The label: 'Mum's, from the mill. Soft hands, she said, or it would snag.'"
+  ],
+  "curio": "mill_bobbin"
+ },
+ "macc_h4": {
+  "kind": "photo",
+  "in": "clock",
+  "lines": [
+   "Beside the clock, a framed photograph of a figure on a pointed summit in anorak and sunshine, a flask raised.",
+   "The caption: 'Shutlingsloe, again. The Matterhorn, allegedly. Packed lunch: yes.'"
+  ]
+ },
+ "macc_h5": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Hung on a nail inside the dresser door, a polished horse brass, the sort that jangled on canal towpath horses.",
+   "A scrap of paper: 'Roving bridge, 1831 and every year since. Horse never had to be unhitched.'"
+  ],
+  "curio": "brass_horse"
+ },
+ "macc_home": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Pressed between the pages of Gran's recipe book, a bundle of dried flowers, labelled in her hand with names and dates.",
+   "'Elderflower, June. Rowan, September. Hands washed before touching.' Good advice, honestly."
+  ],
+  "curio": "pressed_flowers"
+ },
+ "manchester_h1": {
+  "kind": "keepsake",
+  "in": "bed",
+  "lines": [
+   "In a drawer under the bed, an enamel badge of a worker bee, slightly chipped, pinned to a card.",
+   "'Graft, our kid.' Hand-written: 'Wear it on a Friday. Bees do not take holidays.'"
+  ]
+ },
+ "manchester_h2": {
+  "kind": "keepsake",
+  "in": "sofa",
+  "lines": [
+   "Down the sofa, a telly remote held together with brown tape and a note: 'DO NOT LOSE. Last one in the house.'",
+   "Dad has added: 'First stored-program computer 1948. This remote, 1994. Equally mysterious.'"
+  ]
+ },
+ "manchester_h3": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Between two textbooks, a card from Mum with a tenner inside. 'Eat something that is not toast. Rutherford did not split atoms on toast.'",
+   "The tenner is long gone. The card is still here, to be fair."
+  ]
+ },
+ "manchester_h4": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser, a Coronation biscuit tin, lid dented. Opened, it holds buttons, not Eccles cakes, which is the great disappointment.",
+   "Nana's note: 'Hands off. Cakes are in the other tin.'"
+  ],
+  "curio": "coronation_tin"
+ },
+ "manchester_h5": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "In a book, a ribbon in purple, white and green, folded neatly in a paper wrapper.",
+   "Written on the wrapper: 'The colours of Nelson Street. Keep them where the front room can see.'"
+  ]
+ },
+ "manchester_h6": {
+  "kind": "photo",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, a photograph of a man in a flat cap standing outside a brick mill in the drizzle, umbrella on his arm.",
+   "'Good for the thread, bad for the hair', says the back, in marker pen."
+  ]
+ },
+ "manchester_h7": {
+  "kind": "letter",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel, a note on the back of an envelope: 'Owt for tea? Nowt in. Get owt. Not chips again. Chips again.'",
+   "Beneath it, a drawing of a narrowboat and the instruction 'Moor on time'."
+  ]
+ },
+ "manchester_h8": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Folded in sheet music, a petition: 'We the neighbours kindly request cornet practice end before nine.' Four signatures, one a smiley.",
+   "The daughter has replied below in felt tip: 'Noted. Practising the quiet one.'"
+  ]
+ },
+ "newgrange_home_cottage": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Between two books, a postcard from a cousin abroad: 'Only a cúpla focal left, but I say them to the kettle every morning.'",
+   "It ends: 'Slán go fóill. Mind the crex crex for me.'"
+  ]
+ },
+ "newgrange_home_dig": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a trowel worn down to a stump of steel, with a tag in marker: 'Fifteen summers.'",
+   "Beside it, a sticker from the first dig: 'Ask me about spirals. Then ask me again, I will have a new guess.'"
+  ]
+ },
+ "newgrange_home_farm": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Between two books, a photograph of Granda with a horse and plough, a flat field and a hawthorn hedge behind him.",
+   "'Flint on every furrow', the back reads. 'The field was winning.'"
+  ]
+ },
+ "norwich_home_a": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "On the mantel, a photograph of the same crooked picture, taken by someone who had clearly tried to straighten it first.",
+   "On the back: 'On the huh. Always has been. Leave it, bor.'"
+  ]
+ },
+ "norwich_home_b": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a flint nodule split by hand, black and glassy as a wet pebble inside, a rough chalk-white skin outside.",
+   "A label: 'Knapped on the beach. Took six goes and one thumb.'"
+  ]
+ },
+ "nottingham_home1": {
+  "kind": "photo",
+  "in": "sofa",
+  "lines": [
+   "Tucked down the sofa, a photograph of three friends under a stone lion at the Council House, all squinting into the sun.",
+   "The back says: 'Meet at the Left Lion. 1pm. Do not be late, me duck.'"
+  ]
+ },
+ "nottingham_home2": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Between two paperbacks on the shelf, a match photograph gone brown at the edges: a roaring crowd, one scarf circled in biro.",
+   "On the back, in careful capitals: 'Me, 1979. Do not lose.' The scarf, you suspect, is still around here somewhere."
+  ]
+ },
+ "nottingham_home3": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Propped against the teapot in the dresser, a note in felt tip: 'Mum, I have gone to bed. I left you a cob. I did not say please.'",
+   "Underneath, in smaller letters: 'Hootlet has not moved. Is that normal?' A night nurse's household, in one sheet of paper."
+  ]
+ },
+ "nottingham_home4": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Wedged behind a row of Sillitoe and Lawrence, a single typewriter key, the letter S, worn smooth by somebody's thumb.",
+   "A scrap of paper with it says 'Found at a car boot. Probably nothing to do with Nottingham. Probably.' It is a Typewriter Key, and a hopeful one."
+  ],
+  "curio": "typewriter_key"
+ },
+ "oban_home_a": {
+  "kind": "photo",
+  "in": "fireplace",
+  "lines": [
+   "On the mantelpiece, behind the candlestick, a black and white photograph of the quay with a ferry half out of the frame.",
+   "The back says 'First one I counted, 1958. Stood too close.' Nothing since has been counted, but everything has been watched."
+  ]
+ },
+ "oban_home_b": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser drawer, a folded team sheet from a Saturday match: twelve names in blotchy pencil, one crossed out.",
+   "Beside the crossed-out name someone has written 'broken wrist' and then, more bitterly, 'but he still turned up to watch'."
+  ]
+ },
+ "oxford_boathouse": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Pinned inside the dresser door, a lost property list in a hurried hand: one hat, one shoe, one phone, one wedding ring.",
+   "At the bottom: 'Plus one pole, returned by a man who said it was not his fault. They always say that.'"
+  ]
+ },
+ "pembroke_lhcottage": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser, wrapped in a tea towel, a Fresnel prism: a thick wedge of glass that throws a rainbow across the wall at noon.",
+   "The household swears it came off the lighthouse lens during a service. Nobody has paperwork, and nobody is asking."
+  ],
+  "curio": "lighthouse_lens"
+ },
+ "penzance_home1": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser drawer, a recipe card in pencil, grease-spotted at one corner: 'Nan's pasty. Crimp on the side, not the top.'",
+   "A hag stone on a bit of string hangs beside it, the hole big enough to see through. The card adds, 'Do the crimp dreckly. It will keep.'"
+  ]
+ },
+ "penzance_home2": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Behind a row of tide tables, a photograph of a boat nosing into Newlyn harbour, PZ painted on the bow and gulls over every rail.",
+   "A thumb has left a mark across one corner. On the back: 'Home before the weather. For once.'"
+  ]
+ },
+ "penzance_home3": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser sits Dad's brass miner's lamp, polished so often the pattern has worn off the lid.",
+   "Beside it, on a saucer, is a small pasty crust. Nobody in the house will say who it is for, but it is changed every week."
+  ],
+  "curio": "brass_miners_lamp"
+ },
+ "penzance_home4": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Tucked behind a seaside paperback, a snapshot of a man in a bobble hat standing waist-deep in the Jubilee Pool in January.",
+   "He is grinning with the grin of someone who has stopped feeling anything. The caption reads 'Proper job. Dad, aged brave.'"
+  ]
+ },
+ "pit_boathouse": {
+  "kind": "photo",
+  "in": "",
+  "lines": [
+   "Pinned to a roof beam, a photograph of a longboat crew mid-surf, every oar pointing in a different direction.",
+   "On the back, in the old cox's slanting hand: 'Two out of three. Do not ask which two.'"
+  ]
+ },
+ "plymouth_homepark": {
+  "kind": "curio",
+  "in": "",
+  "lines": [
+   "In the stewards' cupboard, taped under a shelf: a cup tie programme, the green cover soft as cloth from handling.",
+   "Someone has circled the team sheet and written 'We lost, but we sang'. It reads like the club motto, if a club could be that honest."
+  ],
+  "curio": "fa_cup_programme"
+ },
+ "portree_home_a": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Slid inside a cookbook, a card in a neat hand: 'Mòran taing for the scones. And for the second scones.'",
+   "On the back is a tally: nine scones, three of them 'for the road'. Whoever lives here is clearly a person other people go out of their way to thank."
+  ]
+ },
+ "portree_home_b": {
+  "kind": "curio",
+  "in": "clock",
+  "lines": [
+   "Beside the clock, an aneroid barometer in a dark wood case. Its needle has pointed at 'Change' since the spring.",
+   "Under it, a tag reads 'Tap gently. Do not believe a word it says about the Minch.' The household keeps it out of loyalty."
+  ],
+  "curio": "barometer"
+ },
+ "portree_home_c": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a Gaelic phrasebook with pencilled sounds above the hard words: 'madainn mhath' has a little 'matt-in va' scribbled over it.",
+   "On the flyleaf, 'Oidhche mhath' is written out eleven times, each one a bit more confident."
+  ]
+ },
+ "portree_home_d": {
+  "kind": "photo",
+  "in": "bed",
+  "lines": [
+   "Under the pillow, a printed photograph of a small child standing inside a huge dinosaur footprint at Staffin, arms out like a referee.",
+   "The child is bundled in a coat three sizes too big. On the back: 'For the school project. I am tiny. That was the point.'"
+  ]
+ },
+ "rhondda_bakehouse": {
+  "kind": "letter",
+  "in": "",
+  "lines": [
+   "Folded under the scales, a note on chapel paper: 'Rehearsal Tuesday, second row, tenors early. Bring Welsh cakes. Elwyn.'",
+   "Under the signature somebody has added, in pencil, 'Especially bring Welsh cakes.' The choir's priorities are clear."
+  ]
+ },
+ "rhondda_home": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser, among the good china, a miniature tin bath no bigger than a loaf, hung with a loop of string.",
+   "The household calls it 'the Friday one'. Whoever put it up has also scratched 'First in!' into the base, which is probably a joke."
+  ],
+  "curio": "tin_bath"
+ },
+ "severn_home_ferry": {
+  "kind": "curio",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, in a cloth bag, a silver pocket watch with a dent on the case and a ferry timetable folded inside the lid.",
+   "The timetable is from the days before the 1966 bridge. The watch has not been wound since, which is more than can be said for the ferryman."
+  ],
+  "curio": "pocket_watch"
+ },
+ "severn_home_keeper": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser drawer, a note in a boy's handwriting: 'To whom it may concern: I will be riding the Severn bore on Saturday.'",
+   "Below, in a parent's firm hand: 'You will be riding the bath first. Hafren will wait.'"
+  ]
+ },
+ "shannon_cottage": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Propped at the back of the dresser, a black and white photograph of a half-door, top open to the yard, a hen sitting calmly on the bottom half.",
+   "Behind the hen, a woman is laughing mid-sentence at someone off the edge of the picture. It is not clear whether the hen or the pig started it."
+  ]
+ },
+ "sheffield_home_ahmed": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Behind a stack of school books, a snapshot of the youngest, holding a paper bag of 'spice' in one hand and a football in the other.",
+   "Two front teeth are missing. The back says 'Sheffield for sweets. Not curry. We have explained this to the whole street.'"
+  ]
+ },
+ "sheffield_home_doreen": {
+  "kind": "keepsake",
+  "in": "sofa",
+  "lines": [
+   "Down the back of the sofa cushions, a single child's goalkeeping glove, pegged-up fingers still stiff from the washing line.",
+   "Its pair is, the household suspects, in the next garden. Sheffield FC began in 1857, and still nobody in this house can find the other glove."
+  ]
+ },
+ "sheffield_home_eze": {
+  "kind": "letter",
+  "in": "clock",
+  "lines": [
+   "Stuck to the front of the clock, a yellow sticky note: 'That ringing is the starlet. It is NOT me. Do not answer it.'",
+   "It is signed with a heavy underline. Half the street has stopped picking up, and at least one neighbour has begun to reply 'hello' to a bird."
+  ]
+ },
+ "sheffield_home_platt": {
+  "kind": "keepsake",
+  "in": "clock",
+  "lines": [
+   "Behind the clock, tucked in the frame, the husband's old clocking-in card from the steelworks, soft with years of pocket.",
+   "Scrawled across the back in pencil: 'Tha's late.' The household maintains this was not meant as a criticism."
+  ]
+ },
+ "skye_house": {
+  "kind": "curio",
+  "in": "bed",
+  "lines": [
+   "Under the bed, in a biscuit tin lid, a sheepdog whistle on a leather bootlace, the metal dulled to the colour of the loch.",
+   "It is blown once, and a very old dog on the other side of the wall gets up with a groan. The household claims he is deaf."
+  ],
+  "curio": "sheepdog_whistle"
+ },
+ "sligo_home_strand": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Wrapped in greaseproof paper in the dresser, a lucky sixpence with a label: 'Brack, Hallowe'en. Found by Auntie Peggy, who gave out about it.'",
+   "The ring from the barmbrack was never recovered. Auntie Peggy maintains that the sixpence is a lesser prize, and has said so for decades."
+  ],
+  "curio": "sixpence"
+ },
+ "st_helena_plantation_house": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "Slipped behind the book spines, a photograph of a very old tortoise crossing a lawn with the air of a man late for a meeting.",
+   "A caption in a governor's looping hand: 'Right of way. Always.' The lawn, as promised, is spotless."
+  ]
+ },
+ "stdavids_home_close": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Under the tea caddy, a postcard of the cliffs written in blue biro: 'Wish you were here. A gwylan took my chips and my dignity.'",
+   "It is signed 'Your cousin' with a small drawing of a gull looking smug. No stamp. It was clearly never sent, only enjoyed."
+  ]
+ },
+ "stdavids_home_cottage": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser, a lovespoon carved by hand, the bowl cut with a fish and a little cross-hatched wave.",
+   "Carved on the back in tiny letters is 'Ynys Dewi'. The household says it was made for a courtship, and then adds, 'Sort of. It was a long courtship.'"
+  ],
+  "curio": "welsh_lovespoon"
+ },
+ "stdavids_home_hollow": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Stuck between two school books, a page headed 'St David' in a child's wobbly hand: 'He lived on bread and water. I could do this.'",
+   "Underneath, a late addendum: 'Please send more bread. Cai.' The teacher has written 'Noted' in green pen."
+  ]
+ },
+ "stoke_h1": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser drawer, a dessert spoon with a strip of masking tape on the handle: 'Return to this house. We mean it.'",
+   "Four more spoons are in the drawer beneath, each with its own strip. Nobody has ever returned one, but the lobby keeps getting made."
+  ]
+ },
+ "stoke_h2": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a family snapshot on the terraces: dad, his dad, the children, everyone in a scarf and everyone mid-yell.",
+   "Written below in a shaky hand: 'Burslem. Not a choice, a condition.' The baby in the front looks utterly uninterested in the football."
+  ]
+ },
+ "stoke_h3": {
+  "kind": "curio",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Behind the plates on the dresser, a brightly painted saucer, a pattern of orange and yellow in sharp, cheerful stripes.",
+   "The placer says it was a 'second', which means a flaw somewhere. After an hour of staring, the household still cannot find it."
+  ],
+  "curio": "clarice_saucer"
+ },
+ "stornoway_home_a": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "Between two grammars, a pack of hand-written flashcards held with a hairband. The top one reads 'Am bheil thu sgìth?', and on the back, 'Tha.'",
+   "The next card says 'Chan eil.' The pack has been through many hands, and the corners are soft as cloth."
+  ]
+ },
+ "stornoway_home_b": {
+  "kind": "photo",
+  "in": "bookshelf",
+  "lines": [
+   "A black and white photograph in a cracked frame: a crowd of herring girls on a quay, sleeves rolled, knives flashing, mouths wide open in song.",
+   "On the back, in a fisherman's hand: 'Faster than the knife, some of them.' No one has ever disagreed."
+  ]
+ },
+ "tci_lighthouse": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Used as a bookmark, a postcard of the lighthouse: 'Windy. The salt ponds are pink. The sea looks like a blue tablecloth. Love to all.'",
+   "Beneath that, in a different pen, 'Hat now in the sea.' The sender has clearly relaxed into the holiday."
+  ]
+ },
+ "thurso_bakehouse": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "On the dresser, a slab of Caithness flagstone with the ghost of a fish pressed into it, scales like fine stitching.",
+   "The label reads 'Out on the hills by noon. Found it before the glasses.' The baker's habits are, it seems, a family tradition."
+  ]
+ },
+ "thurso_cottage": {
+  "kind": "letter",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser drawer, an unsent Christmas card with a robin on it: 'Dear Keiths. Peace? Gunns.'",
+   "It has been written, rewritten, and put back every winter. The stamp has fallen off. So, in a sense, has the feud."
+  ]
+ },
+ "wirral_boathouse": {
+  "kind": "photo",
+  "in": "kitchen_dresser",
+  "lines": [
+   "Tucked behind the kettle on the dresser, a photograph of the marsh in flood at a high autumn tide, the grass drowned and the birds piled onto what is left.",
+   "Someone has written a note on the back: 'Short-eared owl, left of the post. Honestly. No, left.'"
+  ]
+ },
+ "wirral_h1": {
+  "kind": "keepsake",
+  "in": "kitchen_dresser",
+  "lines": [
+   "In the dresser, a small cardboard ticket gone brown with age: Hooton to West Kirby, from before the line became a path.",
+   "The household keeps it in an old tobacco tin with a note: 'Never had to wait for it. Now we wait for the dog.'"
+  ]
+ },
+ "wirral_h2": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Used as a bookmark, a laundry ticket stub: 'Tablecloths, Tuesday. Damp. Smells faintly of brook.'",
+   "Next to the word 'brook' there is a long crossed-out line. Whoever lives here is a poor liar and a very thorough launderer."
+  ]
+ },
+ "wirral_h3": {
+  "kind": "keepsake",
+  "in": "clock",
+  "lines": [
+   "Stuck behind the clock, a tide table for the Dee with every high water ringed in pencil, and a cross beside the dangerous ones.",
+   "In the margin: 'Never on the marsh without checking.' Under it, smaller: 'Pupplash fed again. Do not tell.'"
+  ]
+ },
+ "york_house_a": {
+  "kind": "keepsake",
+  "in": "bookshelf",
+  "lines": [
+   "On the shelf, a thumbed-to-death paperback of city walks, a folded map tucked inside with every snickelway pencilled in.",
+   "A note on the flyleaf: 'Mind your head on the beam. And on the next three.' The map is more used than the book."
+  ]
+ },
+ "york_house_b": {
+  "kind": "letter",
+  "in": "bookshelf",
+  "lines": [
+   "Under a pile of paperbacks, a scrap of envelope: 'What is for tea?' 'Nowt.' 'Right.'",
+   "The answer is signed with a flourish. The household has been having this conversation since long before anyone dug up Coppergate."
+  ]
+ },
+ "york_house_c": {
+  "kind": "curio",
+  "in": "bookshelf",
+  "lines": [
+   "Between two paperbacks, a dented Coronation biscuit tin, now holding flattened foil wrappers from chocolate oranges of Christmases past.",
+   "Each wrapper has a year in pencil. The bairn is under strict instructions not to eat the lid."
+  ],
+  "curio": "coronation_tin"
+ }
+}

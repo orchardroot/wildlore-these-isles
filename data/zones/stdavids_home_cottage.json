@@ -79,6 +79,23 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "harp",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 2,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 6,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -138,5 +155,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of a grey seal pup on the beach at Ynys Dewi, white as a loaf and cross about it.",
+    "They pup there in autumn. Give them room, as the fisherman says. He has the scratch to prove it."
+   ],
+   "find": {
+    "item": "seaweed"
+   }
+  }
  ]
 }

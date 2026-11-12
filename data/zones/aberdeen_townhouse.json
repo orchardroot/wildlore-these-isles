@@ -94,6 +94,12 @@
    "type": "plant_stand",
    "x": 1,
    "y": 6
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -135,5 +141,15 @@
   "x+++++++++++x",
   "x+++++D+++++x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "The city arms, carved and painted: three towers, two leopards, and the motto Bon Accord.",
+    "It means good agreement. The council minutes suggest that is more of an aim than a habit."
+   ]
+  }
  ]
 }

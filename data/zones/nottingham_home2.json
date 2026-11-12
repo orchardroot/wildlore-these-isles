@@ -89,6 +89,18 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "dartboard",
+   "x": 9,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 2,
+   "y": 4,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +141,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A scarf in a frame, with the dates 1979 and 1980 on it. Nottingham Forest won the European Cup twice running.",
+    "Ken was there. He will tell you he was there. Notts County, the oldest league club in the world, founded in 1862, gets a smaller frame."
+   ],
+   "flag": "looked_forest_scarf"
+  }
  ]
 }

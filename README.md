@@ -43,7 +43,7 @@ update; they always have.
   Fair Isle, Aran, Welsh wool, a flat cap, a kilt in a public tartan, wellies in a colour of your choosing. Shopkeepers
   notice. Buy a chippy, run a B&B, work the markets, borrow from the Building Society and regret it honestly.
 - **Open every door.** Rummage the drawers for curios and loose change, read the letters left on the table (some
-  of them lead somewhere), swap things with the people who live there, run their errands, buy jam out of their front
+  of them lead somewhere), swap things with the people who live there (who remember you, and some become Regulars), run their errands, buy jam out of their front
   rooms, and play them at Trumps for the card in their pocket. Chapmen at the market sell chapbooks that teach your
   creatures new moves, and the neighbours will tell you what the Keeper keeps, if you ask.
 - **Play what the locals play.** Darts leagues, crown green bowls, curling, the caber, hurling and shinty, sea
@@ -56,6 +56,7 @@ update; they always have.
 
 | | |
 |---|---|
+| ![Herschel's Uranus, in a house in Bath](docs/screens/r53-bath-herschel.png) | ![A quarryman's home in Llanberis](docs/screens/r53-llanberis-home.png) |
 | ![Cheese rolling on Cooper's Hill](docs/screens/w48-g2-cheese-1.png) | ![The gurning contest](docs/screens/w48-g5-gurning.png) |
 | ![Trumps in a front room](docs/screens/r50-trumps.png) | ![Know your Keeper](docs/screens/r50-keepers.png) |
 | ![Who's setting off?](docs/screens/r46-creator.png) | ![Grassmarket Outfitters, Edinburgh](docs/screens/r46-boutique.png) |
@@ -80,10 +81,10 @@ for every timing minigame are under Settings, Accessibility.
 
 ## What's new
 
-5.2 "Lucky Strikes": critical hits get some edge, with high-crit moves such as Treble Twenty and a lucky White
-Heather charm. Creature portraits now move in the Summary and Fieldbook, there are 24 water crossings instead of 3,
-and the Party Pieces games are retuned so silver and gold feel fair. It builds on 5.1 "Party Pieces", where every
-minigame teaches a move. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
+5.3 "Houses": going indoors is worth it now. Residents remember you and say something new when you come back, a
+Regular in nearly every town, homes that look like where they are and who lives there, one thing in each to look at,
+the family drawer, folklore that visits at night, and asks for Fieldbook pages, photographs and home cooking. It
+builds on 5.2 "Lucky Strikes" (critical hits, moving portraits, water crossings). The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
 
 ## How it's made
 

@@ -79,6 +79,12 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -119,5 +125,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 2,
+   "y": 1,
+   "text": [
+    "A flask of tea left on the dresser, a nurse's fob watch beside it and a stack of Boots receipts under the clock.",
+    "Boots began with John Boot's herbalist's in Goosegate in 1849. Priya's tea has not gone cold yet."
+   ],
+   "find": {
+    "item": "cup_of_tea"
+   }
+  }
  ]
 }

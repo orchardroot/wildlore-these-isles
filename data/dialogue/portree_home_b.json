@@ -2,12 +2,12 @@
  "portree_home_b_man": [
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Norman MacAskill",
    "text": "The sea between us and the Outer Hebrides is called the Minch. In bad weather it is rather grumpy."
   },
   {
    "do": "say",
-   "who": "Resident",
+   "who": "Norman MacAskill",
    "text": "Minchmen turn up in the Minch, just as you would expect. They are never lost. They are just on a long detour."
   }
  ]

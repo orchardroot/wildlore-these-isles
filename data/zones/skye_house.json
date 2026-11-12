@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 3,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 4,
    "y": 1,
@@ -89,6 +82,17 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "range_cooker",
+   "x": 6,
+   "y": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 5,
+   "y": 2,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +114,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "skye_house_woman"
+   "script": "skye_house_woman",
+   "name": "Peigi MacKinnon"
   }
  ],
  "encounters": {},
@@ -129,5 +134,16 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A photograph of the Cuillin ridge, black against the sky.",
+    "The rock is rough and grips boots wonderfully. It also shreds knees, as the family will tell you."
+   ],
+   "flag": "looked_cuillin_photo"
+  }
  ]
 }

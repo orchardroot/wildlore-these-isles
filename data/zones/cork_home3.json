@@ -89,6 +89,23 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "range_cooker",
+   "x": 11,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 10,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 9,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +146,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "A framed print of the River Lee with a salmon leaping out of it, mid-air and rather pleased with itself.",
+    "Salmon go back to the river they were born in. They never ask for directions, as Mrs Lynch says."
+   ]
+  }
  ]
 }

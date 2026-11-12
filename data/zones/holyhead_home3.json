@@ -79,6 +79,34 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "wall_map",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 9,
+   "y": 5
+  },
+  {
+   "type": "wall_picture",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 7,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
   }
  ],
  "warps": [
@@ -100,7 +128,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "hh3_lad"
+   "script": "hh3_lad",
+   "name": "Gethin Hughes"
   }
  ],
  "encounters": {},
@@ -132,5 +161,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A photograph of the old Roman fort walls in Holyhead, with the church of St Cybi inside them.",
+    "Whoever chose the spot wanted to guard the harbour, and the ferry still does."
+   ]
+  }
  ]
 }

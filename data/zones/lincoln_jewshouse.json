@@ -129,5 +129,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A book left open on the table: the Jewish community of medieval Lincoln, who lived and worked along Steep Hill.",
+    "In 1290 they were expelled from England. The house kept the name, and it is one of the oldest still standing."
+   ]
+  }
  ]
 }

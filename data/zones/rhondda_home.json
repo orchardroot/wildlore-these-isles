@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 11,
-   "y": 3,
-   "variant": 1,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 6,
    "y": 1,
@@ -78,12 +71,6 @@
    "variant": 0
   },
   {
-   "type": "plant_stand",
-   "x": 1,
-   "y": 6,
-   "variant": 0
-  },
-  {
    "type": "tea_urn",
    "x": 2,
    "y": 2
@@ -92,6 +79,11 @@
    "type": "kitchen_dresser",
    "x": 8,
    "y": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
   }
  ],
  "warps": [
@@ -117,7 +109,22 @@
    "name": "Mrs Pugh's sister"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "marilwyd",
+    "min": 34,
+    "max": 36,
+    "weight": 10,
+    "time": [
+     "night"
+    ],
+    "season": [
+     "winter"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,
@@ -134,5 +141,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "The range is black-leaded until it shines, with an oven on one side and a kettle on the other. They built the fireplace first and the house round it.",
+    "A tin bath hangs on a nail outside, waiting for Friday."
+   ]
+  }
  ]
 }

@@ -85,10 +85,49 @@
    "variant": 0
   },
   {
-   "type": "plant_stand",
+   "type": "kitchen_dresser",
+   "x": 8,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 10,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
    "x": 1,
-   "y": 6,
-   "variant": 0
+   "y": 6
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
+  },
+  {
+   "type": "wall_picture",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 3,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_picture",
+   "x": 11,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 5,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -122,7 +161,19 @@
    "script": "pierst_boy"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "tylwyth",
+    "min": 30,
+    "max": 32,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,
@@ -139,5 +190,18 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A flat iron bakestone, the maen, waits by the fire. Picau ar y maen are cooked on it, a few minutes each side.",
+    "Nain keeps a tin of the finished ones on the mantel. It is lighter than it looks, the boy being the boy."
+   ],
+   "find": {
+    "item": "welsh_cakes_tin"
+   }
+  }
  ]
 }

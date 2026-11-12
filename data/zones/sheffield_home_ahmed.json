@@ -32,11 +32,6 @@
    "y": 6
   },
   {
-   "type": "potted_plant",
-   "x": 10,
-   "y": 6
-  },
-  {
    "type": "fireplace",
    "x": 6,
    "y": 1
@@ -51,17 +46,17 @@
    "walk": true
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 1,
    "y": 3,
-   "variant": 4,
+   "variant": 1,
    "rot": 90
   },
   {
-   "type": "sofa",
+   "type": "settle",
    "x": 10,
    "y": 3,
-   "variant": 3,
+   "variant": 0,
    "rot": 270
   },
   {
@@ -89,6 +84,23 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "kettle_table",
+   "x": 10,
+   "y": 6
+  },
+  {
+   "type": "dartboard",
+   "x": 10,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +141,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A jar of spice, which is what Sheffield calls sweets, and a stern notice for the bird feeder: NO HANGING UPSIDE DOWN.",
+    "The notice is addressed to the grizzlets. They have read it and carried on."
+   ]
+  }
  ]
 }

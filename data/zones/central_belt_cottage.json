@@ -79,6 +79,12 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "window",
+   "x": 1,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -103,7 +109,20 @@
    "script": "central_belt_cottage_bessie"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 69,
+    "max": 70,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -119,5 +138,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 4,
+   "y": 1,
+   "text": [
+    "A print of the Falkirk Wheel, the rotating boat lift that opened in 2002 and joins two canals at different heights.",
+    "Bessie says it is a stoater of an idea. A boat goes up one side, another comes down the other, and nobody spills their tea."
+   ]
+  }
  ]
 }

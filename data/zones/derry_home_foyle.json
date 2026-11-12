@@ -89,6 +89,17 @@
    "x": 1,
    "y": 6,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -140,5 +151,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 7,
+   "y": 1,
+   "text": [
+    "A tide table pinned beside the window. The Foyle is tidal, so it matters.",
+    "It is the only thing in the house that is reliably accurate."
+   ]
+  }
  ]
 }

@@ -7,9 +7,10 @@
  "weather": {},
  "props": [
   {
-   "type": "bed",
+   "type": "box_bed",
    "x": 9,
-   "y": 1
+   "y": 1,
+   "variant": 0
   },
   {
    "type": "bookshelf",
@@ -58,13 +59,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 10,
-   "y": 3,
-   "variant": 3,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 7,
    "y": 1,
@@ -89,6 +83,18 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 8,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "wall_map",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +116,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "kwl_home_b_man"
+   "script": "kwl_home_b_man",
+   "name": "Magnus Rendall"
   }
  ],
  "encounters": {},
@@ -129,5 +136,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A photograph of a diver coming up beside a rusty hull in Scapa Flow.",
+    "The German fleet was scuttled there in 1919, and divers still visit the wrecks. It is cold, dark and very popular."
+   ]
+  }
  ]
 }

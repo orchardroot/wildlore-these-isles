@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 11,
-   "y": 3,
-   "variant": 5,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 5,
    "y": 1,
@@ -89,6 +82,29 @@
    "x": 1,
    "y": 6,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 9,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 4,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 4,
+   "y": 2,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 11,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -153,5 +169,15 @@
   "x|||||||||||x",
   "x|||||D|||||x",
   "xxxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 10,
+   "y": 1,
+   "text": [
+    "A wall of school photographs, one for each year, gap-toothed grins in every row.",
+    "The wains are at school. The cat is on the radiator. Everyone is exactly where they ought to be."
+   ]
+  }
  ]
 }

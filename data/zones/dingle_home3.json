@@ -28,11 +28,6 @@
   },
   {
    "type": "potted_plant",
-   "x": 1,
-   "y": 6
-  },
-  {
-   "type": "potted_plant",
    "x": 10,
    "y": 6
   },
@@ -56,13 +51,6 @@
    "y": 3,
    "variant": 0,
    "rot": 90
-  },
-  {
-   "type": "sofa",
-   "x": 10,
-   "y": 3,
-   "variant": 5,
-   "rot": 270
   },
   {
    "type": "clock",
@@ -89,6 +77,22 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "range_cooker",
+   "x": 5,
+   "y": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 2,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 6
   }
  ],
  "warps": [
@@ -129,5 +133,18 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "A photograph of Fungie, the bottlenose dolphin who lived in Dingle harbour for decades and escorted boats out to sea.",
+    "He was a fond fixture of the town, and the harbour has not quite got used to the gap."
+   ],
+   "find": {
+    "item": "sea_glass"
+   }
+  }
  ]
 }

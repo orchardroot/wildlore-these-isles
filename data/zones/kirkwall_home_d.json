@@ -7,9 +7,10 @@
  "weather": {},
  "props": [
   {
-   "type": "bed",
+   "type": "box_bed",
    "x": 9,
-   "y": 1
+   "y": 1,
+   "variant": 1
   },
   {
    "type": "bookshelf",
@@ -89,6 +90,18 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "wall_map",
+   "x": 10,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "window",
+   "x": 5,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +123,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "kwl_home_d_mum"
+   "script": "kwl_home_d_mum",
+   "name": "Thora Linklater"
   }
  ],
  "encounters": {},
@@ -129,5 +143,15 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "A photograph of the stone dresser at Skara Brae, facing the door of the house like a welcome.",
+    "The village is about 5,000 years old. A storm in 1850 stripped away the sand and showed the houses, stone beds and all."
+   ]
+  }
  ]
 }

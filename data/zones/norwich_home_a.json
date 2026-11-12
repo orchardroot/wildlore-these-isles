@@ -45,6 +45,12 @@
    "h": 2,
    "variant": 2,
    "walk": true
+  },
+  {
+   "type": "window",
+   "x": 2,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -85,5 +91,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 3,
+   "text": [
+    "A pan of Norfolk dumplings, no suet, just flour, water and yeast, bobbing in the stew.",
+    "They are called swimmers because they float. Mostly."
+   ]
+  }
  ]
 }

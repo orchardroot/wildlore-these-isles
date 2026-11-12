@@ -69,7 +69,20 @@
    "name": "Shinty Kid"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "brownie",
+    "min": 69,
+    "max": 70,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   6,
@@ -85,5 +98,15 @@
   "x|||||||||||x",
   "x|||||||||||x",
   "xxxxxxDxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 1,
+   "text": [
+    "A caman leaning against the dresser, the bottom of it curved and the tape worn with use.",
+    "Shinty is twelve a side and the ball can be hit in the air. The kitchen is not a safe place to practise."
+   ]
+  }
  ]
 }

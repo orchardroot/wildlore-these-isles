@@ -32,11 +32,6 @@
    "y": 6
   },
   {
-   "type": "potted_plant",
-   "x": 9,
-   "y": 6
-  },
-  {
    "type": "fireplace",
    "x": 5,
    "y": 1
@@ -79,6 +74,22 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "wall_map",
+   "x": 1,
+   "y": 1,
+   "walk": true
+  },
+  {
+   "type": "telescope",
+   "x": 9,
+   "y": 6
+  },
+  {
+   "type": "kettle_table",
+   "x": 9,
+   "y": 2
   }
  ],
  "warps": [
@@ -138,5 +149,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 1,
+   "text": [
+    "Boats in bottles, shelf after shelf. Idris's handiwork, and Idris's wife has counted eleven.",
+    "A twelfth is half rigged on the table. It does not look as if it will fit the neck."
+   ]
+  }
  ]
 }

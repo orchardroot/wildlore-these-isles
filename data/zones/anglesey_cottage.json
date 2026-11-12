@@ -79,6 +79,17 @@
    "type": "plant_stand",
    "x": 1,
    "y": 5
+  },
+  {
+   "type": "cat_bowl",
+   "x": 3,
+   "y": 5,
+   "walk": true
+  },
+  {
+   "type": "kettle_table",
+   "x": 1,
+   "y": 2
   }
  ],
  "warps": [
@@ -103,7 +114,19 @@
    "script": "angcottage_nain"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "tylwyth",
+    "min": 47,
+    "max": 48,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,
@@ -119,5 +142,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A photograph of Nain as a girl on the Menai Bridge, holding her hat on with both hands.",
+    "Telford's suspension bridge opened in 1826 and joined Anglesey to the mainland. Before that, it was a ferry and a lot of patience."
+   ]
+  }
  ]
 }

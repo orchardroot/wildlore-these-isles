@@ -85,10 +85,21 @@
    "variant": 2
   },
   {
-   "type": "plant_stand",
+   "type": "kitchen_dresser",
+   "x": 7,
+   "y": 1
+  },
+  {
+   "type": "slate_heap",
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "window",
+   "x": 8,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +140,18 @@
   "x||||||||||x",
   "x|||||D||||x",
   "xxxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 1,
+   "text": [
+    "A faded photograph of Dinorwic quarry, cut into great steps down the mountainside.",
+    "It closed in 1969, after giving work to several thousand men at its peak. Welsh slate once roofed streets far beyond Wales."
+   ],
+   "find": {
+    "item": "slate_chip"
+   }
+  }
  ]
 }

@@ -103,7 +103,19 @@
    "script": "liverpool_h4_0"
   }
  ],
- "encounters": {},
+ "encounters": {
+  "indoor": [
+   {
+    "species": "dishwight",
+    "min": 18,
+    "max": 20,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   }
+  ]
+ },
  "signs": [],
  "spawn": [
   5,

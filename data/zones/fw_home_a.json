@@ -58,13 +58,6 @@
    "rot": 90
   },
   {
-   "type": "sofa",
-   "x": 9,
-   "y": 3,
-   "variant": 5,
-   "rot": 270
-  },
-  {
    "type": "clock",
    "x": 4,
    "y": 1,
@@ -89,6 +82,12 @@
    "x": 1,
    "y": 5,
    "variant": 0
+  },
+  {
+   "type": "window",
+   "x": 3,
+   "y": 1,
+   "walk": true
   }
  ],
  "warps": [
@@ -110,7 +109,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "fw_home_a_woman"
+   "script": "fw_home_a_woman",
+   "name": "Catriona Cameron"
   }
  ],
  "encounters": {},
@@ -129,5 +129,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 3,
+   "y": 3,
+   "text": [
+    "A midge net hangs on a peg by the door, with a tin of repellent beside it and a note: THINK BRAVE THOUGHTS.",
+    "An Gearasdan, the garrison, is a long way from a quiet life in July."
+   ]
+  }
  ]
 }

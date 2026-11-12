@@ -76,7 +76,7 @@
    "variant": 1
   },
   {
-   "type": "plant_stand",
+   "type": "kettle_table",
    "x": 1,
    "y": 5
   }
@@ -100,7 +100,8 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "llh2_dad"
+   "script": "llh2_dad",
+   "name": "Gareth Lloyd"
   }
  ],
  "encounters": {},
@@ -119,5 +120,15 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 5,
+   "y": 3,
+   "text": [
+    "A hook of windlasses by the door. Seven on it, none quite the one you need for this lock.",
+    "The eighth, as usual, is on the towpath where it was left."
+   ]
+  }
  ]
 }

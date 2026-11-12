@@ -89,6 +89,18 @@
    "x": 1,
    "y": 5,
    "variant": 1
+  },
+  {
+   "type": "cat_bowl",
+   "x": 3,
+   "y": 5,
+   "walk": true
+  },
+  {
+   "type": "cat_bowl",
+   "x": 4,
+   "y": 5,
+   "walk": true
   }
  ],
  "warps": [
@@ -129,5 +141,18 @@
   "x|||||||||x",
   "x||||D||||x",
   "xxxxxxxxxxx"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 1,
+   "text": [
+    "A sprig of Holy Thorn stands in a jar by the window. It is a hawthorn that flowers in winter as well as in spring.",
+    "A sprig is cut each Christmas and sent to the monarch. The children are still sure that it is magic."
+   ],
+   "find": {
+    "item": "hawthorn_berry"
+   }
+  }
  ]
 }
