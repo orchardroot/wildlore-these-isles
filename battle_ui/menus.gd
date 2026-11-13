@@ -193,7 +193,15 @@ func _row(d: Dictionary, i: int) -> PanelContainer:
 	var h := HBoxContainer.new()
 	h.add_theme_constant_override("separation", 8)
 	h.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	row.add_child(h)
+	if d.has("cues"):  # how the move will land sits on a line of its own under the name
+		var v := VBoxContainer.new()
+		v.add_theme_constant_override("separation", 0)
+		v.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		row.add_child(v)
+		v.add_child(h)
+		v.add_child(cue_line(d.cues))
+	else:
+		row.add_child(h)
 	if d.has("stripe"):
 		var s := ColorRect.new()
 		s.color = d.stripe
@@ -250,6 +258,30 @@ func _row(d: Dictionary, i: int) -> PanelContainer:
 		h.add_child(rl)
 	return row
 
+## The line under a move: shape and words for how it lands, one group per foe when they differ (MoveText.cues).
+static func cue_line(cues: Array) -> HBoxContainer:
+	var line := HBoxContainer.new()
+	line.add_theme_constant_override("separation", 14)
+	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for c in cues:
+		var grp := HBoxContainer.new()
+		grp.add_theme_constant_override("separation", 6)
+		grp.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		grp.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		grp.add_child(EffectMark.make(str(c.kind), 15))
+		var l := Label.new()
+		var who := str(c.get("who", ""))
+		l.text = "%s %s" % [c.words, who] if who != "" else str(c.words)
+		l.add_theme_font_size_override("font_size", 18)
+		l.add_theme_color_override("font_color", EffectMark.colour_of(str(c.kind)) if str(c.kind) != "even" else MUTED)
+		l.clip_text = true
+		l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		l.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		grp.add_child(l)
+		line.add_child(grp)
+	return line
+
 # --- the pickers ----------------------------------------------------------------
 
 ## "fight" | "bag" | "team" | "run"
@@ -267,22 +299,25 @@ func catch_destination() -> int:
 	var i := await _pick(Rect2(700, 566, 556, 134), "", [{"text": "Swap with a team member"}, {"text": "Send to the Ark"}], 1, "catch_dest", false)
 	return maxi(0, i)
 
-## hint_fn(slot) -> String: the type-effectiveness tag for that move ("" when there's nothing to say).
+## cue_fn(slot) -> Array: how that move lands on each foe standing (MoveText.cues; [] for a status move).
 ## weather: the battle's weather, so moves it helps or hinders carry a little sky glyph and arrow.
-func moves(c: Creature, move_db: MoveDB, hint_fn := Callable(), weather := "clear") -> int:
-	var rows := move_rows(c, move_db, weather)
+## chart: with it, the footer adds what the move's type is strong and weak against. Tab (the menu key) opens the
+## type chart, scoped to `chart_scope` (see `chart_scope_for`).
+func moves(c: Creature, move_db: MoveDB, cue_fn := Callable(), weather := "clear", chart: TypeChart = null) -> int:
+	var rows := move_rows(c, move_db, weather, cue_fn)
 	var footer := func(i: int) -> String:
-		return move_footer(c, i, move_db, hint_fn.call(i) if hint_fn.is_valid() else "", weather)
-	return await _pick(Rect2(470, 528, 786, 176), "", rows, 2, "moves", true, footer)
+		return move_footer(c, i, move_db, "", weather, chart)
+	return await _pick(Rect2(470, 478, 786, 226), "", rows, 2, "moves", true, footer)
 
 static func _all_out_of_pp(c: Creature) -> bool:
 	return c.moves.all(func(m): return int(m.pp) <= 0)
 
 ## The move picker's rows. A move the weather changes gets "weather" (the kind) and "weather_dir" (1 or -1).
-static func move_rows(c: Creature, move_db: MoveDB, weather := "clear") -> Array:
+static func move_rows(c: Creature, move_db: MoveDB, weather := "clear", cue_fn := Callable()) -> Array:
 	var rows := []
 	var all_empty := _all_out_of_pp(c)
-	for m in c.moves:
+	for i in c.moves.size():
+		var m: Dictionary = c.moves[i]
 		var mv := move_db.get_move(m.id)
 		var t := str(mv.get("type", ""))
 		var row := {"text": mv.get("name", m.id), "stripe": TypeColours.of(t), "chip": t, "glyph": t, "chip_colour": TypeColours.of(t), "chip_text": TypeColours.text_on(t),
@@ -291,12 +326,16 @@ static func move_rows(c: Creature, move_db: MoveDB, weather := "clear") -> Array
 		if not is_equal_approx(wm, 1.0):
 			row["weather"] = weather
 			row["weather_dir"] = 1 if wm > 1.0 else -1
+		if cue_fn.is_valid():
+			var cues: Array = cue_fn.call(i)
+			if not cues.is_empty():
+				row["cues"] = cues
 		rows.append(row)
 	return rows
 
 ## Two lines under the moves: the numbers (with the type hint up front), then what the move does, led by
 ## what today's weather does to it when the description doesn't already say.
-static func move_footer(c: Creature, i: int, move_db: MoveDB, hint := "", weather := "clear") -> String:
+static func move_footer(c: Creature, i: int, move_db: MoveDB, hint := "", weather := "clear", chart: TypeChart = null) -> String:
 	var mv := move_db.get_move(c.moves[i].id)
 	if int(c.moves[i].pp) <= 0:
 		return "No PP left for that one!" if not _all_out_of_pp(c) else "Out of PP: all that's left is a desperate flail."
@@ -306,8 +345,10 @@ static func move_footer(c: Creature, i: int, move_db: MoveDB, hint := "", weathe
 	if tag != "" and not MoveFX.bonus_applies(mv, weather):  # a move's own weather bonus is in its description
 		var pct := int(round((Weather.move_mult(weather, mv) - 1.0) * 100.0))
 		desc = "%s (%s%d%%). %s" % [tag, "+" if pct > 0 else "-", absi(pct), desc]
-	return "%s%s  ·  %s  ·  %s  ·  Accuracy %d\n%s" % [(hint.to_upper() + "  ·  ") if hint != "" else "", str(mv.get("type", "")).capitalize(),
-		str(mv.get("category", "")).capitalize(), ("Power %d" % power) if power > 0 else "No damage", int(mv.get("accuracy", 100)), desc]
+	var line := MoveText.matchup_line(mv, chart) if chart != null else ""
+	return "%s%s  ·  %s  ·  %s  ·  Accuracy %d\n%s%s" % [(hint.to_upper() + "  ·  ") if hint != "" else "", str(mv.get("type", "")).capitalize(),
+		str(mv.get("category", "")).capitalize(), ("Power %d" % power) if power > 0 else "No damage", int(mv.get("accuracy", 100)), desc,
+		("\n" + line) if line != "" else ""]
 
 ## entries from BattleFlow.battle_items(). Returns the index into entries, or -1.
 func bag(entries: Array) -> int:

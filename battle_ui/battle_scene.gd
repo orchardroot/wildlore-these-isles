@@ -294,7 +294,7 @@ func choose_action(f: BattleFlow) -> Dictionary:
 			cmd = await menus.command(f.is_wild())
 		match cmd:
 			"fight":
-				var slot := await menus.moves(me, Game.moves, func(i: int) -> String: return f.move_hint(me, i), b.weather)
+				var slot := await menus.moves(me, Game.moves, func(i: int) -> Array: return f.move_hint(me, i), b.weather, Game.chart)
 				if slot < 0:
 					continue
 				if not b.double:
