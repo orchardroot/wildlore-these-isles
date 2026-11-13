@@ -90,6 +90,44 @@
    "at": "llyn_tegid",
    "item": "cawl",
    "line": "A bottle-green flask wedged in a wall. Someone's lunch, kept warm for later. Sorry about that."
+  },
+  {
+   "id": "poi_glamorgan_coast_den",
+   "zone": "glamorgan_coast",
+   "near": [
+    10,
+    29
+   ],
+   "kind": "den",
+   "at": "glamorgan_coast",
+   "species": "pupplash"
+  },
+  {
+   "id": "poi_glamorgan_coast_stone",
+   "zone": "glamorgan_coast",
+   "near": [
+    47,
+    13
+   ],
+   "kind": "stone",
+   "at": "glamorgan_coast",
+   "stat": "def",
+   "lore": [
+    "It is a boulder of grey limestone with a spiral on it, tucked into the grass by the road.",
+    "The real thing is an ammonite fossil: the Blue Lias of the Glamorgan coast is full of them."
+   ]
+  },
+  {
+   "id": "poi_glamorgan_coast_cache",
+   "zone": "glamorgan_coast",
+   "near": [
+    58,
+    30
+   ],
+   "kind": "cache",
+   "at": "glamorgan_coast",
+   "item": "ammonite",
+   "line": "A jam jar under a stone. Inside, a spiral of grey rock, wrapped in a tea towel. Someone's pride and joy."
   }
  ]
 }

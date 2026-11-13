@@ -43,5 +43,20 @@
   },
   "flag": "field_llyn_tegid_line",
   "at": "llyn_tegid"
+ },
+ {
+  "id": "fs_glamorgan_coast_mend",
+  "zone": "glamorgan_coast",
+  "x": 7,
+  "y": 24,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Glamorgan Sausage in the hollow.",
+  "reward": {
+   "item": "glamorgan_sausage",
+   "qty": 1
+  },
+  "flag": "field_glamorgan_coast_mend",
+  "at": "glamorgan_coast"
  }
 ]

@@ -1,0 +1,32 @@
+{
+ "id": "gc_walker",
+ "name": "Walker Heulwen",
+ "class": "Walker",
+ "sprite": "hiker",
+ "party": [
+  {
+   "species": "kitelet",
+   "level": 34
+  },
+  {
+   "species": "swiftlet",
+   "level": 35
+  },
+  {
+   "species": "starlet",
+   "level": 35
+  }
+ ],
+ "ai": "trainer",
+ "money": 790,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Walker Heulwen",
+   "text": "I am walking the coast path in stages. This stage is Ogmore to Nash. It is mostly grass, with occasional drama."
+  }
+ ],
+ "win": "That was dramatic. I will include it in my diary.",
+ "after": "Wear proper boots. The coast path does not care about your trainers.",
+ "scaled_floor": 35
+}

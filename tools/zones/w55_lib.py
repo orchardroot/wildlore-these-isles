@@ -180,6 +180,13 @@ def open_gap(zid, side, at, to, width=3):
         rows[y][x] = "#"
         if hts is not None and land_h is not None:
             hts[y][x] = str(land_h)
+    # an edge turns every walkable tile on that border into an exit, so close any other one (a strip of sand along the map
+    # edge, say) with a tree: only the new gap leads on
+    gap_border = {t for t in cut if t in set(border_tiles(d, side))}
+    for t in border_tiles(d, side):
+        x, y = t
+        if t not in gap_border and t not in taken and tile_char_walkable(d, rows[y][x]):
+            rows[y][x] = "T"
     new_rows = ["".join(r) for r in rows]
     lines = text.split("\n")
     _replace_lines(lines, "rows", new_rows)
@@ -364,6 +371,10 @@ def check_route(z):
         for b in range(at - 1, at + 2):
             t = {"north": (b, 0), "south": (b, z.h - 1), "west": (0, b), "east": (z.w - 1, b)}[side]
             assert t in R, "%s: the %s gap tile %s is not reachable from the spawn" % (zid, side, t)
+    for side, (to, at) in z.edge_def.items():
+        for (x, y) in border_tiles(d, side):
+            gap = (at - 1 <= (x if side in ("north", "south") else y) <= at + 1)
+            assert gap or not tile_char_walkable(d, z.g[y][x]), "%s: a walkable tile on the %s edge outside the gap at %s,%s" % (zid, side, x, y)
     for side in OPP:
         if side in z.edge_def:
             continue

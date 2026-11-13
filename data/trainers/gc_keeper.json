@@ -1,0 +1,32 @@
+{
+ "id": "gc_keeper",
+ "name": "Lighthouse Keeper Aled",
+ "class": "Keeper",
+ "sprite": "sailor",
+ "party": [
+  {
+   "species": "polartern",
+   "level": 35
+  },
+  {
+   "species": "chipgull",
+   "level": 34
+  },
+  {
+   "species": "petrelash",
+   "level": 36
+  }
+ ],
+ "ai": "trainer",
+ "money": 840,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Lighthouse Keeper Aled",
+   "text": "I used to keep a light. Now it is automatic, and I keep a view. It is less work and more thinking."
+  }
+ ],
+ "win": "All right. I lost my footing and my pride. Both will return by evening.",
+ "after": "A good light flashes the same pattern for a hundred years. I admire that, in a way.",
+ "scaled_floor": 35
+}

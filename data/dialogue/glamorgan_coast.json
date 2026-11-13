@@ -1,0 +1,38 @@
+{
+ "gc_guide": [
+  {
+   "do": "say",
+   "who": "Path Warden",
+   "text": "The Wales Coast Path was opened in 2012. It goes the whole way round the country, all eight hundred and some miles of it."
+  },
+  {
+   "do": "say",
+   "who": "Path Warden",
+   "text": "You can walk it in sections. People do it in a summer. People also do it in a lifetime, in bits, with a flask."
+  }
+ ],
+ "gc_student": [
+  {
+   "do": "say",
+   "who": "Atlantic College Student",
+   "text": "Our college is in the castle. It is the most beautiful place to be homesick in."
+  },
+  {
+   "do": "say",
+   "who": "Atlantic College Student",
+   "text": "We all learn to do the coastguard and rescue work, if you can believe it. A castle and a lifeboat. Odd, but it works."
+  }
+ ],
+ "gc_fossil": [
+  {
+   "do": "say",
+   "who": "Fossil Hunter",
+   "text": "Stand back from the cliff and look at the rocks on the beach. Half of them have a spiral in them. That is a fossil, or a very decorative accident."
+  },
+  {
+   "do": "say",
+   "who": "Fossil Hunter",
+   "text": "I once found an ammonite the size of a dinner plate. I was so pleased I forgot my own sandwich."
+  }
+ ]
+}
