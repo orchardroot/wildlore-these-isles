@@ -1,0 +1,32 @@
+{
+ "id": "gv_pilgrim",
+ "name": "Pilgrim Declan",
+ "class": "Pilgrim",
+ "sprite": "pilgrim",
+ "party": [
+  {
+   "species": "cluricaun",
+   "level": 55
+  },
+  {
+   "species": "hushwing",
+   "level": 54
+  },
+  {
+   "species": "redbreast",
+   "level": 55
+  }
+ ],
+ "ai": "trainer",
+ "money": 1950,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Pilgrim Declan",
+   "text": "I walked up to the Rock the old way, in my boots, thinking about God. I've got as far as my boots."
+  }
+ ],
+ "win": "A humble loss. Very good for the soul.",
+ "after": "The road's the thing. The Rock is just where it happens to stop.",
+ "scaled_floor": 55
+}

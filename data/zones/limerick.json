@@ -472,6 +472,10 @@
   "south": {
    "to": "lough_gur",
    "offset": 0
+  },
+  "east": {
+   "to": "golden_vale",
+   "offset": 0
   }
  },
  "npcs": [
@@ -867,9 +871,9 @@
   "TTkBBBBBBBBBBBBkkq~~~~~qBBBBBBBBBBBBkkkkkkkBBBBBBBBBkkkkkkkkkkkkkkkkkkTT",
   "TTkBBBBBBDBBBBBkkq~~~~~qBBBBBBBBBBBBkkkkkkkBBBBDBBBBkkkkkkkkkkkkkkkkkkTT",
   "TT:::::::::::::::q~~~~~qBBBBBBDBBBBBkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
-  "TTkkkkkkk:kkkkkkkq~~~~~q::::::::::::::::::::::::::::::::::::::::::::::TT",
-  "TTkkkkkkk:kkkkkkkq~~~~~q::::::::::::::::::::::::::::::::::::::::::::::TT",
-  "TTkkkkkkk:kkkkkkkq~~~~~qkkkkkk:kkkkkkkkkkkkkkkk:kkkkkkkkkkkkkkk:kkkkkkTT",
+  "TTkkkkkkk:kkkkkkkq~~~~~q::::::::::::::::::::::::::::::::::::::::::::::##",
+  "TTkkkkkkk:kkkkkkkq~~~~~q::::::::::::::::::::::::::::::::::::::::::::::##",
+  "TTkkkkkkk:kkkkkkkq~~~~~qkkkkkk:kkkkkkkkkkkkkkkk:kkkkkkkkkkkkkkk:kkkkkk##",
   "TTkkkkkkk:kk:::::q~~~~~qfffffk:kkkkkkkkkkkkkkkk:kk,,,,,,,,,kkkk:kkkkkkTT",
   "TTkkkkkkk:kk:::::q~~~~~qfffffk:kkkkkkkkkkkkkkkk:kk,,,,,,,,,kkkk:kkkkkkTT",
   "TTkkkkkkk:kk:::::q~~~~~qfffffk:kkkkkkkkkkkkkkkk:kk,,,,,,,,,kkkk:kkkkkkTT",

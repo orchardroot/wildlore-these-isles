@@ -166,6 +166,44 @@
    "at": "healy_pass",
    "item": "bunratty_mead",
    "line": "A hip flask jammed behind a boulder. The label says 'for emergencies'. You have decided this counts."
+  },
+  {
+   "id": "poi_golden_vale_den",
+   "zone": "golden_vale",
+   "near": [
+    10,
+    28
+   ],
+   "kind": "den",
+   "at": "golden_vale",
+   "species": "dextera"
+  },
+  {
+   "id": "poi_golden_vale_stone",
+   "zone": "golden_vale",
+   "near": [
+    54,
+    40
+   ],
+   "kind": "stone",
+   "at": "golden_vale",
+   "stat": "ward",
+   "lore": [
+    "It is a long grey stone in a field, with a ring of cow-parsley round its foot.",
+    "The real thing is the standing stones of Tipperary and Limerick, which turn up in fields as if nobody had told the farmers."
+   ]
+  },
+  {
+   "id": "poi_golden_vale_cache",
+   "zone": "golden_vale",
+   "near": [
+    55,
+    18
+   ],
+   "kind": "cache",
+   "at": "golden_vale",
+   "item": "barmbrack",
+   "line": "A biscuit tin in the ditch with a slice of barmbrack in greaseproof paper. Whoever left it knew the road."
   }
  ]
 }

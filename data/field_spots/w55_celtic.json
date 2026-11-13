@@ -73,5 +73,20 @@
   },
   "flag": "field_healy_pass_mend",
   "at": "healy_pass"
+ },
+ {
+  "id": "fs_golden_vale_mend",
+  "zone": "golden_vale",
+  "x": 12,
+  "y": 25,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Boxty in the hollow.",
+  "reward": {
+   "item": "boxty",
+   "qty": 1
+  },
+  "flag": "field_golden_vale_mend",
+  "at": "golden_vale"
  }
 ]
