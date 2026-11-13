@@ -99,5 +99,19 @@
   },
   "flag": "field_trotternish_round_up",
   "at": "trotternish"
+ },
+ {
+  "id": "fs_uig_road_charm",
+  "zone": "uig_road",
+  "x": 50,
+  "y": 22,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A fresh molehill, and a hopeful hum. {lead} wriggles on the spot and up come the worms, in their dozens, to a crofter's applause: a few coins in the grass.",
+  "reward": {
+   "money": 2400
+  },
+  "flag": "field_uig_road_charm",
+  "at": "uig_road"
  }
 ]

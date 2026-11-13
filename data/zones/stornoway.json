@@ -705,6 +705,10 @@
   }
  ],
  "edges": {
+  "west": {
+   "to": "uig_road",
+   "offset": -24
+  },
   "south": {
    "to": "harris",
    "offset": 1
@@ -1125,9 +1129,9 @@
   "TTkkk,,,,,,,kkkkkkkkkkkkkkkkk===kkkkkkkk#kkkkkkkkkkkBkkkkkkkkkkkkkkkkkTT",
   "TTkkkk,,,,,,kkkkkkkkkkkkkkkkk===kkkkkkkk#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
   "TTkkkkkk,kkkkkkkkkkkkkkkkkkkk===kkkkkkkk#############kkkkkkkkkkkkkkkkkTT",
-  "TTkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
-  "TTkkkkkkkkkkkwwwwwwkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
-  "TTkkkkkkkkkkwww~~wwwwwkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
+  "##kkkkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
+  "##kkkkkkkkkkkwwwwwwkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
+  "##kkkkkkkkkkwww~~wwwwwkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
   "TTkkkkkkkkwww~~~~~~~~wwkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
   "TTkkkkkkkkww~~~~~~~~~wwkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
   "TTkkkkkkkwww~~~~~~~~~~wwkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",

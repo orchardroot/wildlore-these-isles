@@ -1,0 +1,436 @@
+{
+ "id": "uig_road",
+ "name": "The Uig Road",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_coast",
+ "weather": {
+  "drizzle": 30,
+  "clear": 22,
+  "downpour": 10,
+  "fog": 14,
+  "gale": 12,
+  "sunshine": 12
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 44,
+   "y": 6,
+   "w": 7,
+   "h": 6,
+   "label": "Dun Carloway"
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 8,
+   "y": 6,
+   "w": 6,
+   "h": 3,
+   "label": "Blackhouse"
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 16,
+   "y": 6,
+   "w": 6,
+   "h": 3,
+   "label": "Blackhouse"
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 8,
+   "y": 11,
+   "w": 6,
+   "h": 3,
+   "label": "Blackhouse"
+  },
+  {
+   "type": "standing_stone",
+   "x": 38,
+   "y": 20
+  },
+  {
+   "type": "standing_stone",
+   "x": 40,
+   "y": 21
+  },
+  {
+   "type": "standing_stone",
+   "x": 42,
+   "y": 20
+  },
+  {
+   "type": "boat",
+   "x": 40,
+   "y": 37,
+   "variant": 1
+  },
+  {
+   "type": "bollard",
+   "x": 33,
+   "y": 30
+  },
+  {
+   "type": "bush",
+   "x": 39,
+   "y": 25,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 8,
+   "y": 25,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 14,
+   "y": 28,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 53,
+   "y": 13,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 42,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 60,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 7,
+   "y": 44,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 13,
+   "y": 40,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 41,
+   "y": 21,
+   "variant": 1
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "east": {
+   "to": "stornoway",
+   "offset": 24
+  },
+  "west": {
+   "to": "harris",
+   "offset": 30
+  }
+ },
+ "npcs": [
+  {
+   "id": "uig_weaver",
+   "sprite": "villager_6",
+   "x": 12,
+   "y": 15,
+   "facing": "down",
+   "move": "still",
+   "script": "uig_weaver"
+  },
+  {
+   "id": "uig_guide",
+   "sprite": "tour_guide",
+   "x": 46,
+   "y": 14,
+   "facing": "down",
+   "move": "still",
+   "script": "uig_guide"
+  },
+  {
+   "id": "uig_chess",
+   "sprite": "poet",
+   "x": 38,
+   "y": 24,
+   "facing": "right",
+   "move": "still",
+   "script": "uig_chess"
+  },
+  {
+   "id": "uig_crofter",
+   "sprite": "farmer",
+   "x": 28,
+   "y": 20,
+   "facing": "left",
+   "move": "still",
+   "script": "uig_crofter"
+  },
+  {
+   "id": "uig_seal",
+   "sprite": "creature:selklet",
+   "x": 40,
+   "y": 29,
+   "facing": "down",
+   "move": "wander",
+   "script": "uig_seal"
+  },
+  {
+   "id": "uig_islander",
+   "sprite": "fisherman_north",
+   "x": 24,
+   "y": 26,
+   "facing": "up",
+   "move": "still",
+   "trainer": "uig_islander"
+  },
+  {
+   "id": "uig_birdwatcher",
+   "sprite": "birdwatcher",
+   "x": 6,
+   "y": 24,
+   "facing": "right",
+   "move": "still",
+   "trainer": "uig_birdwatcher"
+  },
+  {
+   "id": "uig_beachcomber",
+   "sprite": "fisher",
+   "x": 46,
+   "y": 24,
+   "facing": "left",
+   "move": "still",
+   "trainer": "uig_beachcomber"
+  },
+  {
+   "id": "uig_warden",
+   "sprite": "warden_grunt",
+   "x": 52,
+   "y": 16,
+   "facing": "down",
+   "move": "still",
+   "trainer": "uig_warden"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "heilan",
+    "min": 74,
+    "max": 75,
+    "weight": 12
+   },
+   {
+    "species": "crexling",
+    "min": 74,
+    "max": 75,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night",
+     "dawn"
+    ]
+   },
+   {
+    "species": "cragchough",
+    "min": 74,
+    "max": 75,
+    "weight": 10
+   },
+   {
+    "species": "buntling",
+    "min": 74,
+    "max": 75,
+    "weight": 8
+   },
+   {
+    "species": "hushwing",
+    "min": 74,
+    "max": 75,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "flittermouse",
+    "min": 74,
+    "max": 75,
+    "weight": 6,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "midgeswarm",
+    "min": 74,
+    "max": 75,
+    "weight": 10,
+    "weather": [
+     "drizzle",
+     "fog",
+     "clear"
+    ]
+   },
+   {
+    "species": "herdlet",
+    "min": 74,
+    "max": 75,
+    "weight": 8
+   },
+   {
+    "species": "eaglet",
+    "min": 74,
+    "max": 75,
+    "weight": 6,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "skaldling",
+    "min": 74,
+    "max": 75,
+    "weight": 6
+   }
+  ],
+  "water": [
+   {
+    "species": "selklet",
+    "min": 74,
+    "max": 75,
+    "weight": 16
+   },
+   {
+    "species": "greyhaul",
+    "min": 74,
+    "max": 75,
+    "weight": 14
+   },
+   {
+    "species": "dolphlet",
+    "min": 74,
+    "max": 75,
+    "weight": 12
+   },
+   {
+    "species": "chipgull",
+    "min": 74,
+    "max": 75,
+    "weight": 12
+   },
+   {
+    "species": "plungebeak",
+    "min": 74,
+    "max": 75,
+    "weight": 10
+   },
+   {
+    "species": "skaldling",
+    "min": 74,
+    "max": 75,
+    "weight": 10
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 36,
+   "y": 24,
+   "text": "THE LEWIS CHESSMEN. In 1831 a hoard of ninety-three carved chess pieces, made of walrus ivory and whale's tooth in the twelfth century, was found in the sands at Uig. Most are now in the British Museum and the rest in the National Museum of Scotland in Edinburgh. Some of the kings look frightened, which has always seemed fair.",
+   "plaque": "w55_sc_chessmen",
+   "title": "The Lewis Chessmen"
+  },
+  {
+   "x": 47,
+   "y": 13,
+   "text": "DUN CARLOWAY. A broch, a drystone tower built for defence about two thousand years ago and one of the best preserved in Scotland, standing on a rocky hill overlooking Loch Carloway. The walls are hollow, with stairs between the inner and outer skin, so the whole wall was lived in.",
+   "plaque": "w55_sc_carloway",
+   "title": "Dun Carloway"
+  },
+  {
+   "x": 15,
+   "y": 10,
+   "text": "GEARRANNAN. A village of blackhouses, the old thatched crofting houses of Lewis, on the shore at the end of a steep road. They were lived in until the 1970s and have since been restored. The thatch is held down with stones against the Atlantic, which has opinions."
+  },
+  {
+   "x": 34,
+   "y": 29,
+   "text": "UIG SANDS. A great tidal bay with a beach so wide and flat that the tide goes out and nearly forgets to come back. The Lewis Chessmen were found at Ardroil, at the south end. They had been waiting a long time to be found."
+  }
+ ],
+ "spawn": [
+  5,
+  34
+ ],
+ "stage": "coast",
+ "scaled_floor": 74,
+ "rows": [
+  "TTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT..................................................R.......TTT",
+  "TTT..R..................,,,,,,,,,,,,.........................TTT",
+  "TTTR....................,,,,,,,,,,,,.........................TTT",
+  "TTT.....BBBBBB..BBBBBB..,,,,,,,,,,,,........BBBBBBB..........TTT",
+  "TTT.....BBBBBB..BBBBBB..,,,,,,,,,,,,........BBBBBBB.....R....TTT",
+  "TTT.....BBBBBB..BBBBBB..,,,,,,,,,,,,........BBBBBBB...R......TTT",
+  "TTT.....::::::::::::::..,,,,,,,,,,,,.R......BBBBBBB..........TTT",
+  "TTT.....................,,,,,,,,,,,,........BBBBBBB..........TTT",
+  "TTT....RBBBBBB..........,,,,,,,,,,,,........BBBBBBB........R.TTT",
+  "TTT.....BBBBBB....................R.........#######..........TTT",
+  "TTT.....BBBBBB...................R........R...........R......TTT",
+  "TTT.........###............................................R.TTT",
+  "TTT.................############################################",
+  "TTT.................############################################",
+  "TTT...........R.....############################################",
+  "TTT.,,,,,,,,,,,,....###...,,,,,,,,................,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###...,,,,,,,,................,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###...,,,,,,,,................,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###...,,,,,,,,................,,,,,,,,R..TTT",
+  "TTT.,,,,,,,,,,,,....###...,,,,,,,,................,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###...,,,,,,,,................,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###...........................,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###..................R........,,,,,,,,...TTT",
+  "TTT.................###.......sssssssssssssssssssssssssssssssTTT",
+  "TTT.................###.......sssssssssssssssssssssssssssssssTTT",
+  "TTT.................###.......sssssssssssssssssssssssssssssssTTT",
+  "TTT.................###...R...sssssssssssssssssssssssssssssssTTT",
+  "TTT....R............###.......sssssssssssssssssssssssssssssssTTT",
+  "TTT.................###.......wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwTTT",
+  "TTT.................###.......$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "#######################.......$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "#######################.......$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "#######################.......$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT.,,,,,,,,,,,,........,,,,.R$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT.,,,,,,,,,,,,........,,,,..$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT.,,,,,,,,,,,,.R......,,,,..$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT.,,,,,,,,,,,,........,,,,..$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT.,,,,,,,,,,,,........,,,,..$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT.,,,,,,,,,,,,.R......,,,,..$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT...........................$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT.....................R.....$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT........................R..$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTPTTTTT"
+ ]
+}

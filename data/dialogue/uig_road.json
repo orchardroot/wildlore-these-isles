@@ -1,0 +1,57 @@
+{
+ "uig_weaver": [
+  {
+   "do": "say",
+   "who": "Tweed Weaver",
+   "text": "Everything here was done by hand. The cloth, the thatch, the dry stone. Do not look at me like that, I use a machine for some of it."
+  },
+  {
+   "do": "say",
+   "who": "Tweed Weaver",
+   "text": "M\u00f2ran taing for asking. Most visitors take a photograph of the loom and ask if it is for sale."
+  }
+ ],
+ "uig_guide": [
+  {
+   "do": "say",
+   "who": "Broch Guide",
+   "text": "The wall of the broch is hollow, with stairs inside. If you were an Iron Age family, you lived in the wall, and the cattle lived in the middle."
+  },
+  {
+   "do": "say",
+   "who": "Broch Guide",
+   "text": "A thousand years later they were still using it. I always say that is the highest praise a building can get."
+  }
+ ],
+ "uig_chess": [
+  {
+   "do": "say",
+   "who": "Chess Player",
+   "text": "The Lewis Chessmen are the most famous chess pieces in the world. Some of the queens have their hand on their cheek, as if the game has gone on too long."
+  },
+  {
+   "do": "say",
+   "who": "Chess Player",
+   "text": "The pieces were found in a sand dune. A man dug them up in 1831 and took them to Stornoway in a sack. They have not been in the same place since."
+  }
+ ],
+ "uig_crofter": [
+  {
+   "do": "say",
+   "who": "Crofter",
+   "text": "I could say something clever about the Atlantic. Instead I will tell you the wind has been working on my gate since March."
+  },
+  {
+   "do": "say",
+   "who": "Crofter",
+   "text": "Sl\u00e0inte mhath. That is a good-health toast. I say it with tea, since the tea is stronger."
+  }
+ ],
+ "uig_seal": [
+  {
+   "do": "say",
+   "who": "Selklet",
+   "text": "A selkie pup, or something very like one, lolls at the edge of the tide. It gives you a very long look, then a short one, then a yawn."
+  }
+ ]
+}

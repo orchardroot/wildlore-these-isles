@@ -1,0 +1,32 @@
+{
+ "id": "uig_birdwatcher",
+ "name": "Corncrake Watcher Peigi",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "crexling",
+   "level": 74
+  },
+  {
+   "species": "buntling",
+   "level": 75
+  },
+  {
+   "species": "eaglet",
+   "level": 75
+  }
+ ],
+ "ai": "trainer",
+ "money": 2420,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Corncrake Watcher Peigi",
+   "text": "Listen. That rasping noise in the grass is a corncrake. There are very few left, and here is a place they still turn up."
+  }
+ ],
+ "win": "That was a fine battle. I will stay and listen to the grass.",
+ "after": "Corncrakes are heard far more than seen. They are the introverts of the bird world.",
+ "scaled_floor": 74
+}

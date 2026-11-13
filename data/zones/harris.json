@@ -620,6 +620,10 @@
   }
  ],
  "edges": {
+  "east": {
+   "to": "uig_road",
+   "offset": -30
+  },
   "north": {
    "to": "stornoway",
    "offset": -1
@@ -1193,9 +1197,9 @@
   "$$$$wssskmfmmffffmmfmmm,,mmmfkkkkkkkBBBBBBkkBBBBBBkkBBBBssw$$$$$",
   "$$$$wssskmmmmmmmmmmfmmmmmmmmmkkkkkkkBBBBBBkkBBBBBBkkkkkssw$$$$$$",
   "$$$wssskmmmmfmffmmmfmfmfmmmfmkkkkkkkkkkkkkkkkkkkkkkkkkkssw$$$$$$",
-  "$$$wssskmfmmmmffmmmffmmfmmmmmkkkkkkkkkkkkkkkkkkkkkkkkkkssw$$$$$$",
-  "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+  "$$$wssskmfmmmmffmmmffmmfmmmmmkkkkkkkkkkkkkkkkkkkkkkkkkkssw$$$$##",
+  "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",

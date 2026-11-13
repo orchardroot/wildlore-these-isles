@@ -1,0 +1,32 @@
+{
+ "id": "uig_islander",
+ "name": "Islander Murdo",
+ "class": "Islander",
+ "sprite": "fisherman_north",
+ "party": [
+  {
+   "species": "heilan",
+   "level": 74
+  },
+  {
+   "species": "crexling",
+   "level": 74
+  },
+  {
+   "species": "skaldling",
+   "level": 75
+  }
+ ],
+ "ai": "trainer",
+ "money": 2400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Islander Murdo",
+   "text": "I have lived on Lewis all my life. I know where the road goes. I do not always know where it has been."
+  }
+ ],
+ "win": "A good battle. I will have tea on the strength of it.",
+ "after": "People ask if it is lonely. I say no. There is a lot of company in a place with that many sheep.",
+ "scaled_floor": 74
+}

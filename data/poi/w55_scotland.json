@@ -333,6 +333,44 @@
    "line": "The lamping's good here. Was good here.",
    "money": 3300,
    "item": "iron_snare"
+  },
+  {
+   "id": "poi_uig_road_cache",
+   "zone": "uig_road",
+   "near": [
+    21,
+    12
+   ],
+   "kind": "cache",
+   "at": "uig_road",
+   "item": "headscarf_tartan",
+   "line": "Someone's hiding place, and not as hidden as they hoped."
+  },
+  {
+   "id": "poi_uig_road_stone",
+   "zone": "uig_road",
+   "near": [
+    42,
+    6
+   ],
+   "kind": "stone",
+   "at": "uig_road",
+   "stat": "lore",
+   "lore": [
+    "It leans, slightly, like it has heard all this before.",
+    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."
+   ]
+  },
+  {
+   "id": "poi_uig_road_den",
+   "zone": "uig_road",
+   "near": [
+    44,
+    21
+   ],
+   "kind": "den",
+   "at": "uig_road",
+   "species": "orcalet"
   }
  ]
 }
