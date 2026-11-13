@@ -1,0 +1,36 @@
+{
+ "id": "sca_knitter",
+ "name": "Knitter Ina",
+ "class": "Knitter",
+ "sprite": "villager_5",
+ "party": [
+  {
+   "species": "foalmoor",
+   "level": 80
+  },
+  {
+   "species": "herdlet",
+   "level": 80
+  },
+  {
+   "species": "crexling",
+   "level": 81
+  },
+  {
+   "species": "hushwing",
+   "level": 80
+  }
+ ],
+ "ai": "trainer",
+ "money": 2600,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Knitter Ina",
+   "text": "Fair Isle, Shetland lace, you name it. I have been knitting since before you were born. You will lose. It is going to be very soft."
+  }
+ ],
+ "win": "Well fought. The wool is on the house.",
+ "after": "There is a pattern in a Shetland jumper for everything. Even the weather has a stitch.",
+ "scaled_floor": 80
+}

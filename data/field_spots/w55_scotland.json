@@ -113,5 +113,19 @@
   },
   "flag": "field_uig_road_charm",
   "at": "uig_road"
+ },
+ {
+  "id": "fs_scalloway_road_line",
+  "zone": "scalloway_road",
+  "x": 30,
+  "y": 34,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the harbour water. {lead} wades in, makes a few calm passes and fishes it out: a purse, a bit damp.",
+  "reward": {
+   "money": 2592
+  },
+  "flag": "field_scalloway_road_line",
+  "at": "scalloway_road"
  }
 ]

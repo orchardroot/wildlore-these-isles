@@ -234,6 +234,10 @@
  ],
  "warps": [],
  "edges": {
+  "east": {
+   "to": "scalloway_road",
+   "offset": 1
+  },
   "north": {
    "to": "lerwick",
    "offset": 0
@@ -587,9 +591,9 @@
   "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
   "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$$$k$$$",
   "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$kBBkk$",
-  "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$kBBkk$",
-  "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$$kkkk$",
-  "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$$$k$$$",
+  "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw#########",
+  "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw#########",
+  "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw#########",
   "$$$wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
   "$$$wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
   "$$$wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",

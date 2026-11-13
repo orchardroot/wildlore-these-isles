@@ -15,6 +15,7 @@ const NEW := {
 	"angus_coast": ["dundee", "aberdeen"],
 	"trotternish": ["skye", "portree"],
 	"uig_road": ["stornoway", "harris"],
+	"scalloway_road": ["lerwick", "shetland_mainland"],
 }
 
 func _baseline() -> Dictionary:

@@ -1,0 +1,32 @@
+{
+ "id": "sca_lawman",
+ "name": "Lawman Tormod",
+ "class": "Lawman",
+ "sprite": "poet",
+ "party": [
+  {
+   "species": "midgeswarm",
+   "level": 80
+  },
+  {
+   "species": "hushwing",
+   "level": 81
+  },
+  {
+   "species": "herdlet",
+   "level": 80
+  }
+ ],
+ "ai": "trainer",
+ "money": 2590,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Lawman Tormod",
+   "text": "I am here for the Law Ting. Someone has to be. Nobody has legislated on that holm for a few centuries, but I like to be ready."
+  }
+ ],
+ "win": "A fair judgement. I will report the finding to the loch.",
+ "after": "The Norse loved a good assembly. They would argue for days and then go home and not change anything. It is a tradition we have kept up.",
+ "scaled_floor": 80
+}

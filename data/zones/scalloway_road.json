@@ -1,0 +1,411 @@
+{
+ "id": "scalloway_road",
+ "name": "The Scalloway Road",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_coast",
+ "weather": {
+  "drizzle": 30,
+  "clear": 22,
+  "downpour": 10,
+  "fog": 14,
+  "gale": 12,
+  "sunshine": 12
+ },
+ "props": [
+  {
+   "type": "boat",
+   "x": 8,
+   "y": 38,
+   "variant": 0
+  },
+  {
+   "type": "boat",
+   "x": 20,
+   "y": 39,
+   "variant": 1
+  },
+  {
+   "type": "boat",
+   "x": 36,
+   "y": 38,
+   "variant": 0
+  },
+  {
+   "type": "bollard",
+   "x": 15,
+   "y": 34
+  },
+  {
+   "type": "bollard",
+   "x": 24,
+   "y": 34
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 28,
+   "y": 25,
+   "w": 8,
+   "h": 5,
+   "label": "Scalloway Castle"
+  },
+  {
+   "type": "flagpole",
+   "x": 37,
+   "y": 28
+  },
+  {
+   "type": "standing_stone",
+   "x": 43,
+   "y": 9
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 18,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 11,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 30,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 27,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 51,
+   "y": 17,
+   "variant": 2
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "east": {
+   "to": "lerwick",
+   "offset": 0
+  },
+  "west": {
+   "to": "shetland_mainland",
+   "offset": -1
+  }
+ },
+ "npcs": [
+  {
+   "id": "sca_fisher",
+   "sprite": "fisherman_north",
+   "x": 24,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "sca_fisher"
+  },
+  {
+   "id": "sca_bus",
+   "sprite": "villager_3",
+   "x": 17,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "sca_bus"
+  },
+  {
+   "id": "sca_castle",
+   "sprite": "tour_guide",
+   "x": 31,
+   "y": 31,
+   "facing": "left",
+   "move": "still",
+   "script": "sca_castle"
+  },
+  {
+   "id": "sca_pony",
+   "sprite": "farmer",
+   "x": 46,
+   "y": 24,
+   "facing": "left",
+   "move": "still",
+   "script": "sca_pony"
+  },
+  {
+   "id": "sca_foal",
+   "sprite": "creature:foalmoor",
+   "x": 44,
+   "y": 22,
+   "facing": "down",
+   "move": "wander",
+   "script": "sca_foal"
+  },
+  {
+   "id": "sca_boatman",
+   "sprite": "sailor",
+   "x": 18,
+   "y": 24,
+   "facing": "up",
+   "move": "still",
+   "trainer": "sca_boatman"
+  },
+  {
+   "id": "sca_knitter",
+   "sprite": "villager_5",
+   "x": 38,
+   "y": 20,
+   "facing": "left",
+   "move": "still",
+   "trainer": "sca_knitter"
+  },
+  {
+   "id": "sca_birder",
+   "sprite": "birdwatcher",
+   "x": 46,
+   "y": 14,
+   "facing": "down",
+   "move": "still",
+   "trainer": "sca_birder"
+  },
+  {
+   "id": "sca_lawman",
+   "sprite": "poet",
+   "x": 34,
+   "y": 32,
+   "facing": "left",
+   "move": "still",
+   "trainer": "sca_lawman"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "foalmoor",
+    "min": 80,
+    "max": 81,
+    "weight": 12
+   },
+   {
+    "species": "herdlet",
+    "min": 80,
+    "max": 81,
+    "weight": 10
+   },
+   {
+    "species": "puffling",
+    "min": 80,
+    "max": 81,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "cragchough",
+    "min": 80,
+    "max": 81,
+    "weight": 10
+   },
+   {
+    "species": "polartern",
+    "min": 80,
+    "max": 81,
+    "weight": 8
+   },
+   {
+    "species": "snowbunting",
+    "min": 80,
+    "max": 81,
+    "weight": 8,
+    "weather": [
+     "frost",
+     "fog"
+    ]
+   },
+   {
+    "species": "midgeswarm",
+    "min": 80,
+    "max": 81,
+    "weight": 10,
+    "weather": [
+     "drizzle",
+     "fog",
+     "clear"
+    ]
+   },
+   {
+    "species": "hushwing",
+    "min": 80,
+    "max": 81,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "haarling",
+    "min": 80,
+    "max": 81,
+    "weight": 8,
+    "weather": [
+     "fog",
+     "drizzle"
+    ]
+   },
+   {
+    "species": "crexling",
+    "min": 80,
+    "max": 81,
+    "weight": 6,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "rillotter",
+    "min": 80,
+    "max": 81,
+    "weight": 16
+   },
+   {
+    "species": "selklet",
+    "min": 80,
+    "max": 81,
+    "weight": 14
+   },
+   {
+    "species": "greyhaul",
+    "min": 80,
+    "max": 81,
+    "weight": 12
+   },
+   {
+    "species": "dolphlet",
+    "min": 80,
+    "max": 81,
+    "weight": 10
+   },
+   {
+    "species": "gannetling",
+    "min": 80,
+    "max": 81,
+    "weight": 14
+   },
+   {
+    "species": "plungebeak",
+    "min": 80,
+    "max": 81,
+    "weight": 10
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 33,
+   "y": 24,
+   "text": "SCALLOWAY CASTLE. Built in 1600 by Patrick Stewart, Earl of Orkney and Lord of Shetland, who was not much loved for how he raised the money, and who was executed in 1615. The castle stands above the harbour at what was, until 1708, the capital of Shetland. It has a roof of grey sky and walls of very stubborn stone.",
+   "plaque": "w55_sc_scalloway_castle",
+   "title": "Scalloway Castle"
+  },
+  {
+   "x": 17,
+   "y": 31,
+   "text": "THE SHETLAND BUS. In the war years, Norwegian crews ran small fishing boats from Shetland across the North Sea in the winter dark, landing agents and arms for the Norwegian resistance and bringing refugees back. A good part of that traffic ran from Scalloway, and the quay here is where the story is told.",
+   "plaque": "w55_sc_shetland_bus",
+   "title": "The Shetland Bus"
+  },
+  {
+   "x": 40,
+   "y": 15,
+   "text": "TINGWALL. The word means 'the field of the assembly', Norse for a place where people met to make laws. The islet in the loch here, the Law Ting Holm, was where Shetland's law-makers met for centuries, and it is joined to the shore by a causeway. Parliament, Shetland style: a loch, a gale and everyone talking at once.",
+   "plaque": "w55_sc_tingwall",
+   "title": "Tingwall"
+  },
+  {
+   "x": 22,
+   "y": 20,
+   "text": "THE LERWICK ROAD. The A970 runs over the hill and down to Scalloway, the old capital. It is a short road in miles and a long one in weather, since the weather on one side is never the weather on the other."
+  }
+ ],
+ "spawn": [
+  5,
+  29
+ ],
+ "stage": "coast",
+ "scaled_floor": 80,
+ "rows": [
+  "TTTTTTTTTPTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTPTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT....R.........................R..R...R............TTT",
+  "TTT................R....,,,,,,,,....wwwwwwwwwwwwwww..TTT",
+  "TTT.....................,,,,,,,,....w~~~~~~~~~~~~~w..TTT",
+  "TTT.....................,,,,,,,,....w~~~~~~~~~~~~~w..TTT",
+  "TTT....R................,,,,,,,,....w~~~~~~~~~~~~~w..TTT",
+  "TTT....................R,,,,,,,,....w~~~~~sss~~~~~w..TTT",
+  "TTT.....................,,,,,,,,....w~~~~~sss~~~~~w..TTT",
+  "TTT.,,,,,,,,,,,,........,,,,,,,,....w~~~~~sss~~~~~w..TTT",
+  "TTT.,,,,,,,,,,,,........,,,,,,,,....w~~~~~~~~~~~~~w..TTT",
+  "TTT.,,,,,,,,,,,,........,,,,,,,,....w~~~~~~~~~~~~~w..TTT",
+  "TTT.,,,,,,,,,,,,.R......,,,,,,,,....wwwwwwwwwwwwwww..TTT",
+  "TTT.,,,,,,,,,,,,........,,,,,,,,.....................TTT",
+  "TTT.,,,,,,,,,,,,........,,,,,,,,.....................TTT",
+  "TTT..................................................TTT",
+  "TTT.......................R.R.................R......TTT",
+  "TTT....R.................................R...........TTT",
+  "TTT..........R..R...####################################",
+  "TTT.,,,,,,,,,,,,....####################################",
+  "TTT.,,,,,,,,,,,,....####################################",
+  "TTT.,,,,,,,,,,,,R...###.,,,,............,,,,,,,,,,,,.TTT",
+  "TPT.,,,,,,,,,,,,....###.,,,,.........R..,,,,,,,,,,,,.TTP",
+  "TTT.,,,,,,,,,,,,....###.,,,,............,,,,,,,,,,,,.TTT",
+  "TTT.,,,,,,,,,,,,....###.,,,,BBBBBBBBR...,,,,,,,,,,,,.TTT",
+  "TTT.................###.....BBBBBBBB....,,,,,,,,,,,,.TTT",
+  "TTT.R...............###.....BBBBBBBB....,,,,,,,,,,,,.TTT",
+  "#######################.....BBBBBBBB....,,,,,,,,,,,,.TTT",
+  "#######################.....BBBBBBBB....,,,,,,,,,,,,.TTT",
+  "#######################.....::::::::,,,,,,,,,,,,,,,,.TTT",
+  "TTT.................................,,,,,,,,,,,,..R..TTT",
+  "TTT...........::::::::::::..........,,,,,,,,,,,,.R...TTT",
+  "TTT......R....::::::::::::..R........................TTT",
+  "TTT......R....::::::::::::...........................TPT",
+  "TTTwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwTTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$PTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTPTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTT"
+ ]
+}

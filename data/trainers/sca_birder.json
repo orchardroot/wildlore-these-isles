@@ -1,0 +1,32 @@
+{
+ "id": "sca_birder",
+ "name": "Birdwatcher Gideon",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "puffling",
+   "level": 80
+  },
+  {
+   "species": "cragchough",
+   "level": 80
+  },
+  {
+   "species": "snowbunting",
+   "level": 81
+  }
+ ],
+ "ai": "trainer",
+ "money": 2580,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Gideon",
+   "text": "Whooper swans in winter. If you have never heard a whooper swan, you will not believe it. It sounds like a trumpet that has had a long day."
+  }
+ ],
+ "win": "A good battle. The swans looked away.",
+ "after": "Shetland is the best place in Britain to find birds that are lost. I have a lot in common with them.",
+ "scaled_floor": 80
+}

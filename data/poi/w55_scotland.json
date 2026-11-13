@@ -371,6 +371,44 @@
    "kind": "den",
    "at": "uig_road",
    "species": "orcalet"
+  },
+  {
+   "id": "poi_scalloway_road_cache",
+   "zone": "scalloway_road",
+   "near": [
+    32,
+    18
+   ],
+   "kind": "cache",
+   "at": "scalloway_road",
+   "item": "bobble_hat_red",
+   "line": "A hollow in a drystone dyke, and something wrapped in oilcloth. The knitting is excellent."
+  },
+  {
+   "id": "poi_scalloway_road_stone",
+   "zone": "scalloway_road",
+   "near": [
+    26,
+    9
+   ],
+   "kind": "stone",
+   "at": "scalloway_road",
+   "stat": "hp",
+   "lore": [
+    "Lichen has been at it for a few thousand years and has barely got started.",
+    "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
+   ]
+  },
+  {
+   "id": "poi_scalloway_road_den",
+   "zone": "scalloway_road",
+   "near": [
+    50,
+    28
+   ],
+   "kind": "den",
+   "at": "scalloway_road",
+   "species": "ternlet"
   }
  ]
 }
