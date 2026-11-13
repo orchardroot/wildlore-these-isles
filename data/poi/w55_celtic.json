@@ -242,6 +242,44 @@
    "at": "clare_road",
    "item": "bunratty_mead",
    "line": "A flask in a hollow of the wall. The cork says 'Bunratty' and the smell says 'dangerous'. You decide to carry it carefully."
+  },
+  {
+   "id": "poi_hook_head_den",
+   "zone": "hook_head",
+   "near": [
+    20,
+    24
+   ],
+   "kind": "den",
+   "at": "hook_head",
+   "species": "stagmor"
+  },
+  {
+   "id": "poi_hook_head_stone",
+   "zone": "hook_head",
+   "near": [
+    58,
+    32
+   ],
+   "kind": "stone",
+   "at": "hook_head",
+   "stat": "ward",
+   "lore": [
+    "The salt wind has sanded it smooth, like a pebble the size of a calf.",
+    "The real thing is a Wexford boundary stone, one of many cut to mark the old parish limits."
+   ]
+  },
+  {
+   "id": "poi_hook_head_cache",
+   "zone": "hook_head",
+   "near": [
+    6,
+    28
+   ],
+   "kind": "cache",
+   "at": "hook_head",
+   "item": "barmbrack",
+   "line": "A biscuit tin in the hedge with a slice of barmbrack and a note: 'for whoever needs it'. You needed it."
   }
  ]
 }

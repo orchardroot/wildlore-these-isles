@@ -1,0 +1,32 @@
+{
+ "id": "hh_cyclist",
+ "name": "Cyclist Roisin",
+ "class": "Cyclist",
+ "sprite": "jogger",
+ "party": [
+  {
+   "species": "leveret",
+   "level": 50
+  },
+  {
+   "species": "stoatlet",
+   "level": 51
+  },
+  {
+   "species": "fawnlet",
+   "level": 51
+  }
+ ],
+ "ai": "trainer",
+ "money": 1680,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Cyclist Roisin",
+   "text": "I've forty kilometres in my legs and a flapjack in my pocket. Stand aside or race me."
+  }
+ ],
+ "win": "That's me beaten. I'll walk the last bit. And eat the flapjack.",
+ "after": "The tunnel on the Greenway's lit up by lights that come on as you pass. It's very Disney.",
+ "scaled_floor": 51
+}

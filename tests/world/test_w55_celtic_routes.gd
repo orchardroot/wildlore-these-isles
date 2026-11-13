@@ -26,7 +26,7 @@ func _built() -> Array:
 	return out
 
 ## Set once the wave's routes are in: the brief asks for eight to ten.
-const MIN_ROUTES := 0
+const MIN_ROUTES := 8
 
 func test_enough_routes_are_built() -> void:
 	assert_true(_built().size() >= MIN_ROUTES, "routes built: %d" % _built().size())

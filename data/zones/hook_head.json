@@ -1,0 +1,617 @@
+{
+ "id": "hook_head",
+ "name": "Hook Head and the Waterford Coast",
+ "region": "ireland",
+ "kind": "route",
+ "music": "route_ireland",
+ "weather": {
+  "drizzle": 28,
+  "clear": 20,
+  "fog": 10,
+  "sunshine": 16,
+  "downpour": 12,
+  "gale": 14
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "harbour_white",
+   "x": 34,
+   "y": 14,
+   "w": 6,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "harbour_white",
+   "x": 34,
+   "y": 20,
+   "w": 5,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 12,
+   "y": 37,
+   "w": 6,
+   "h": 3,
+   "label": "Greenway Cafe"
+  },
+  {
+   "type": "bollard",
+   "x": 40,
+   "y": 17
+  },
+  {
+   "type": "bollard",
+   "x": 40,
+   "y": 23
+  },
+  {
+   "type": "bench",
+   "x": 36,
+   "y": 18
+  },
+  {
+   "type": "lamp_post",
+   "x": 33,
+   "y": 22
+  },
+  {
+   "type": "bush",
+   "x": 9,
+   "y": 11,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 8,
+   "y": 10,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 11,
+   "y": 4,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 20,
+   "y": 23,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 26,
+   "y": 27,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 25,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 10,
+   "y": 27,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 45,
+   "y": 34,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 48,
+   "y": 33,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 53,
+   "y": 33,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 8,
+   "y": 43,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 13,
+   "y": 43,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 16,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 37,
+   "y": 29,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 39,
+   "y": 27,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 27,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 23,
+   "y": 35,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 19,
+   "y": 12,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 19,
+   "y": 8,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 35,
+   "y": 6,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 15,
+   "y": 35,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 55,
+   "y": 36,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 25,
+   "y": 41,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 40,
+   "y": 15,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 23,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 4,
+   "y": 18,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 18,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 22,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 16,
+   "y": 28,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 18,
+   "y": 9,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 7,
+   "y": 41,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 14,
+   "y": 25,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 37,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 22,
+   "y": 46,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 17,
+   "y": 27,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 8,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 26,
+   "y": 17,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 25,
+   "y": 40,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 8,
+   "y": 5,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 11,
+   "y": 13,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 11,
+   "y": 8,
+   "variant": 2
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "north": {
+   "to": "wicklow",
+   "offset": 0
+  },
+  "west": {
+   "to": "comeraghs",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "hh_keeper",
+   "sprite": "ghillie",
+   "x": 49,
+   "y": 33,
+   "facing": "right",
+   "move": "still",
+   "script": "hh_keeper"
+  },
+  {
+   "id": "hh_greenway",
+   "sprite": "student",
+   "x": 15,
+   "y": 41,
+   "facing": "left",
+   "move": "still",
+   "script": "hh_greenway"
+  },
+  {
+   "id": "hh_fisher",
+   "sprite": "fisher",
+   "x": 40,
+   "y": 20,
+   "facing": "right",
+   "move": "still",
+   "script": "hh_fisher"
+  },
+  {
+   "id": "hh_lighthouse",
+   "sprite": "sailor",
+   "x": 50,
+   "y": 36,
+   "facing": "down",
+   "move": "still",
+   "trainer": "hh_lighthouse"
+  },
+  {
+   "id": "hh_cyclist",
+   "sprite": "jogger",
+   "x": 20,
+   "y": 44,
+   "facing": "up",
+   "move": "still",
+   "trainer": "hh_cyclist"
+  },
+  {
+   "id": "hh_birder",
+   "sprite": "birdwatcher",
+   "x": 12,
+   "y": 12,
+   "facing": "right",
+   "move": "still",
+   "trainer": "hh_birder"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "pooka",
+    "min": 50,
+    "max": 52,
+    "weight": 12,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "gealhare",
+    "min": 50,
+    "max": 52,
+    "weight": 14
+   },
+   {
+    "species": "leveret",
+    "min": 50,
+    "max": 52,
+    "weight": 14
+   },
+   {
+    "species": "tormane",
+    "min": 50,
+    "max": 52,
+    "weight": 10
+   },
+   {
+    "species": "sikawhistle",
+    "min": 50,
+    "max": 52,
+    "weight": 10
+   },
+   {
+    "species": "hushwing",
+    "min": 51,
+    "max": 52,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "polartern",
+    "min": 50,
+    "max": 52,
+    "weight": 10,
+    "weather": [
+     "gale",
+     "frost",
+     "fog"
+    ]
+   },
+   {
+    "species": "chipgull",
+    "min": 50,
+    "max": 52,
+    "weight": 14,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "fawnlet",
+    "min": 50,
+    "max": 52,
+    "weight": 8
+   },
+   {
+    "species": "stoatlet",
+    "min": 50,
+    "max": 52,
+    "weight": 8
+   }
+  ],
+  "water": [
+   {
+    "species": "parrlet",
+    "min": 50,
+    "max": 52,
+    "weight": 18
+   },
+   {
+    "species": "bradan",
+    "min": 51,
+    "max": 52,
+    "weight": 18
+   },
+   {
+    "species": "stalklet",
+    "min": 50,
+    "max": 52,
+    "weight": 22
+   },
+   {
+    "species": "pierlord",
+    "min": 50,
+    "max": 52,
+    "weight": 16
+   },
+   {
+    "species": "rillotter",
+    "min": 50,
+    "max": 52,
+    "weight": 14
+   },
+   {
+    "species": "dipling",
+    "min": 50,
+    "max": 52,
+    "weight": 10
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 28,
+   "y": 3,
+   "text": "NORTH: the Wicklow Mountains and Dublin. The road south from the capital goes by Wexford and ends, if you let it, at a lighthouse."
+  },
+  {
+   "x": 5,
+   "y": 42,
+   "text": "WEST: Waterford and the Comeragh Mountains. The old railway line is a greenway now, forty-six kilometres of flat, which is a mercy after the mountains."
+  },
+  {
+   "x": 52,
+   "y": 33,
+   "text": "HOOK HEAD. Last bit of land before the Celtic Sea. There is a lighthouse at the end and a caf\u00e9 at the foot of it, and the caf\u00e9 is very glad of you."
+  },
+  {
+   "x": 37,
+   "y": 25,
+   "text": "KILMORE QUAY. A village of thatched cottages and a small harbour. Boats leave here for the Saltee Islands, which are full of birds and one-time princes."
+  },
+  {
+   "x": 49,
+   "y": 36,
+   "plaque": "hook_lighthouse",
+   "title": "Hook Lighthouse",
+   "text": "The tower on Hook Head is among the oldest working lighthouses in the world. It was built in the 1200s, probably by the Marshal family who held the lands hereabouts, and monks lived in it to keep the fire lit. It has been warning ships off the Wexford and Waterford shore for roughly eight hundred years, and the monks' beacon has become a laser, but the job is the same."
+  },
+  {
+   "x": 35,
+   "y": 24,
+   "plaque": "hook_crook",
+   "title": "By Hook or by Crook",
+   "text": "Local tradition says the phrase 'by hook or by crook' began here. Hook Head is on the Wexford side of Waterford Harbour and Crooke is on the Waterford side, and the story is that Cromwell's army swore to take the city by one or the other. Linguists point out that the phrase is older than Cromwell, but the lighthouse keepers have heard that and have decided to carry on regardless."
+  },
+  {
+   "x": 14,
+   "y": 43,
+   "plaque": "hook_waterford",
+   "title": "Waterford and the Vikings",
+   "text": "Waterford was founded by the Vikings in 914, which makes it the oldest city in Ireland. Reginald's Tower, which still stands by the quay, is named after the Viking leader said to have built the first tower there. The city's glassworks produced fine crystal from 1783, and its crusty bread rolls, called blaas, are a local passion, to be eaten fresh and with strong opinions."
+  }
+ ],
+ "spawn": [
+  31,
+  8
+ ],
+ "stage": "coast",
+ "scaled_floor": 51,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTggggggggggggggggggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gBBBBBBggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggggg===gBBBBBBggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTggggggggggggggggggggggggggg===gBBBBBBggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTggggggggggggggggggggggggggg====ggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTggggggggggggggg,,,,,,,,,,gg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTggggggggggggggg,,,,,,,,,,gg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTggggggggggggggg,,,,,,,,,,gg===gBBBBBgggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTggggggggggggggg,,,,,,,,,,gg===gBBBBBgggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggg,,,,,,,,,,gg===gBBBBBgggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggg,,,,,,,,,,gg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggg,,,,,,,,,,gg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggg,,,,,,,,,,gg===gggggggggsw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggg,,,,,,,,,,gg===g,,,,,,,,sw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggg,,,,,,,,,,gg===g,,,,,,,,sw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggg,,,,,,,,,,gg===g,,,,,,,,sw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggg,,,,,,,,,,gg===g,,,,,,,,sw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggggggggggggggg===g,,,,,,,,sw$$$$$$$$$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,gggggggggggggggg===g,,,,,,,,gggggggggggggggggggTTT",
+  "TTTggggggggggggggggggggggggggg===ggggggggggg,,,,,,,,,,,,,,gggTTT",
+  "TTTggggggggggggggggggggggggggg##############,,,,,,,,,,,,,,gggTTT",
+  "TTTggggggggggggggggggggggggggg##############,,,,,,,,,,,,,,gggTTT",
+  "TTTggggggggggggggggggggggggggg===gggggggggggggggg##ggggggggggTTT",
+  "TTTgHHHHHHHHHH..HHHHHHHHHHHHgg===gggggggggggggggg##ggggggggggTTT",
+  "TTTgggggggggBBBBBBgggggggggggg===gggggggggggggggg##gwwwwwwwwwTTT",
+  "TTTgggggggggBBBBBBgggggggggggg===gggggggggggggggg##w$$$$$$$$$TTT",
+  "TTTgggggggggBBBBBBgggggggggggg===gggggggggggggggg##w$$$$$$$$$TTT",
+  "TTTggggggggggggggggggggggggggg===gggggggggggggggg##w$$$$$$$$$TTT",
+  "TTTggggggggggggggggggggggggggg===gggggggggggggggg##w$$$$$$$$$TTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,gggg===ggggggggggggggggggw$$$$$$$$$TTT",
+  "====,,,,,,,,,,,,,,,,,,,,,,=======ggggggggggggggggggw$$$$$$$$$TTT",
+  "=================================ggggggggggggggggggw$$$$$$$$$TTT",
+  "=================================ggggggggggggggggggw$$$$$$$$$TTT",
+  "TTTggggggggggggggggggggggggggggggggggggggggggggggggw$$$$$$$$$TTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "legend_extra": {
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "g": {
+   "tile": "grass",
+   "colour": "#7fa04a"
+  }
+ }
+}

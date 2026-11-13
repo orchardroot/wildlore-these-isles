@@ -103,5 +103,20 @@
   },
   "flag": "field_clare_road_charm",
   "at": "clare_road"
+ },
+ {
+  "id": "fs_hook_head_mend",
+  "zone": "hook_head",
+  "x": 14,
+  "y": 34,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Colcannon in the hollow.",
+  "reward": {
+   "item": "colcannon",
+   "qty": 1
+  },
+  "flag": "field_hook_head_mend",
+  "at": "hook_head"
  }
 ]

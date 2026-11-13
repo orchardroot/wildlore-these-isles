@@ -1,0 +1,38 @@
+{
+ "hh_keeper": [
+  {
+   "do": "say",
+   "who": "Lighthouse Guide",
+   "text": "Eight hundred years, that tower. I'm only in it forty. But the stairs know me."
+  },
+  {
+   "do": "say",
+   "who": "Lighthouse Guide",
+   "text": "When the monks kept it, they burned a fire on the top. It's brighter now. It's also easier on the arms."
+  }
+ ],
+ "hh_greenway": [
+  {
+   "do": "say",
+   "who": "Greenway Cyclist",
+   "text": "I'm doing the Waterford Greenway. Forty-six kilometres, flat the whole way, and a tunnel with the lights on. I've never been happier."
+  },
+  {
+   "do": "say",
+   "who": "Greenway Cyclist",
+   "text": "It used to be a railway, and there was no bike in the whole thing. Now there are only bikes. It's a better arrangement."
+  }
+ ],
+ "hh_fisher": [
+  {
+   "do": "say",
+   "who": "Fisherman",
+   "text": "The Saltees are out there, a few miles. A Wexford man bought one in 1943 and crowned himself prince. Nobody argued. It was cheaper than an argument."
+  },
+  {
+   "do": "say",
+   "who": "Fisherman",
+   "text": "Gannets, puffins, seals. The islands are the best birdwatching in the south-east. And the prince's throne is still out there, a chair on a rock."
+  }
+ ]
+}

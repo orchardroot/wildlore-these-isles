@@ -1,0 +1,32 @@
+{
+ "id": "hh_lighthouse",
+ "name": "Lighthouse Keeper Eamon",
+ "class": "Keeper",
+ "sprite": "sailor",
+ "party": [
+  {
+   "species": "polartern",
+   "level": 50
+  },
+  {
+   "species": "chipgull",
+   "level": 51
+  },
+  {
+   "species": "pierlord",
+   "level": 51
+  }
+ ],
+ "ai": "trainer",
+ "money": 1680,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Lighthouse Keeper Eamon",
+   "text": "Ye can't go up in a gale. And ye can't go in a gale and have an argument either. So I'll have it now."
+  }
+ ],
+ "win": "Well hit. The beam is in your favour.",
+ "after": "The light's got eight hundred years on me. I'm just the one who dusts it.",
+ "scaled_floor": 51
+}
