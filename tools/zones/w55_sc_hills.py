@@ -275,7 +275,7 @@ def rob_roy_way():
     poi(z, "stone", at, b, stat="lore", lore=["Lichen has been at it for a few thousand years and has barely got started.", "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."])
     poi(z, "camp", at, c, names=[["Poacher Dilys", "Poacher"], ["Trapper Moira", "Trapper"]], party=["raidtail", "thistlet", "brockling"],
         line="This is a private camp. Private as in 'mind your own'.", money=300 + 40 * 70, item="cream_tea")
-    field(z, "line", "line", "glint", 12, 18, "Something glints in the shallows. {lead} wades in, makes a few calm passes and fishes it out: a tin of toffee, a bit damp.", {"money": 32 * 70}, at)
+    field(z, "line", "line", "glint", 15, 17, "Something glints in the shallows. {lead} wades in, makes a few calm passes and fishes it out: a tin of toffee, a bit damp.", {"money": 32 * 70}, at)
     place(at, 585, 445)
 
 

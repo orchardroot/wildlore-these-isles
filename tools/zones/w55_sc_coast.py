@@ -203,7 +203,7 @@ def uig_road():
          "A thousand years later they were still using it. I always say that is the highest praise a building can get."], "down", "still")
     chat(z, "uig_chess", "poet", 38, 24, "Chess Player", ["The Lewis Chessmen are the most famous chess pieces in the world. Some of the queens have their hand on their cheek, as if the game has gone on too long.",
          "The pieces were found in a sand dune. A man dug them up in 1831 and took them to Stornoway in a sack. They have not been in the same place since."], "right", "still")
-    chat(z, "uig_crofter", "farmer", 28, 20, "Crofter", ["I could say something clever about the Atlantic. Instead I will tell you the wind has been working on my gate since March.",
+    chat(z, "uig_crofter", "farmer", 28, 20, "Crofter", ["I could say something clever about the Atlantic. Instead I will tell you the weather has been working on my roof since March.",
          "Slàinte mhath. That is a good-health toast. I say it with tea, since the tea is stronger."], "left", "still")
     creature_npc(z, "uig_seal", "selklet", 40, 29, "A selkie pup, or something very like one, lolls at the edge of the tide. It gives you a very long look, then a short one, then a yawn.")
     trn(z, "uig_islander", "Islander Murdo", "Islander", "fisherman_north", [("heilan", 74), ("crexling", 74), ("skaldling", 75)],
@@ -241,37 +241,37 @@ def scalloway_road():
     z = scaffold(zid, "The Scalloway Road", 56, 44, "route_coast", WX_COAST, "coast", 80, seed=111)
     z.rect(3, 3, 50, 38, ".")
     z.scatter(3, 3, 50, 38, "R", 50, 112, only=".")
-    link(z, "east", 20, "lerwick", "west", 20)
-    link(z, "west", 29, "shetland_mainland", "east", 28)
-    path(z, [(3, 28), (20, 28), (20, 19), (52, 19)], "#", 3)
-    # the harbour at Scalloway, below the castle
-    z.rect(3, 36, 50, 5, "$"); z.rect(3, 35, 50, 1, "w"); z.rect(14, 32, 12, 3, ":")
-    z.prop("boat", 8, 38, variant=0); z.prop("boat", 20, 39, variant=1); z.prop("boat", 36, 38, variant=0); z.prop("bollard", 15, 34); z.prop("bollard", 24, 34)
-    z.building(28, 25, 8, 5, "stone", "Scalloway Castle"); z.rect(28, 30, 8, 1, ":")
-    z.prop("flagpole", 37, 28)
+    link(z, "south", 20, "lerwick", "north", 20)
+    link(z, "east", 29, "shetland_mainland", "west", 31)
+    path(z, [(19, 41), (19, 28), (52, 28)], "#", 3)
+    # the harbour at Scalloway, west of the road, and the castle above it
+    z.rect(3, 34, 13, 7, "$"); z.rect(3, 33, 13, 1, "w"); z.rect(16, 34, 1, 7, "w"); z.rect(12, 31, 5, 2, ":")
+    z.prop("boat", 6, 36, variant=0); z.prop("boat", 10, 38, variant=1); z.prop("boat", 13, 35, variant=0); z.prop("bollard", 13, 32); z.prop("bollard", 15, 32)
+    z.building(27, 33, 8, 5, "stone", "Scalloway Castle"); z.rect(27, 38, 8, 1, ":")
+    z.prop("flagpole", 36, 35)
     # Tingwall: the loch and the Law Ting Holm
     z.rect(36, 4, 15, 10, "w"); z.rect(37, 5, 13, 8, "~"); z.rect(42, 8, 3, 3, "s"); z.prop("standing_stone", 43, 9)
-    plaque(z, 33, 24, "w55_sc_scalloway_castle", "Scalloway Castle",
+    plaque(z, 30, 31, "w55_sc_scalloway_castle", "Scalloway Castle",
            "SCALLOWAY CASTLE. Built in 1600 by Patrick Stewart, Earl of Orkney and Lord of Shetland, who was not much loved for how he raised the money, and who was executed in 1615. The castle stands above the harbour at what was, until 1708, the capital of Shetland. It has a roof of grey sky and walls of very stubborn stone.")
-    plaque(z, 17, 31, "w55_sc_shetland_bus", "The Shetland Bus",
+    plaque(z, 17, 30, "w55_sc_shetland_bus", "The Shetland Bus",
            "THE SHETLAND BUS. In the war years, Norwegian crews ran small fishing boats from Shetland across the North Sea in the winter dark, landing agents and arms for the Norwegian resistance and bringing refugees back. A good part of that traffic ran from Scalloway, and the quay here is where the story is told.")
     plaque(z, 40, 15, "w55_sc_tingwall", "Tingwall",
            "TINGWALL. The word means 'the field of the assembly', Norse for a place where people met to make laws. The islet in the loch here, the Law Ting Holm, was where Shetland's law-makers met for centuries, and it is joined to the shore by a causeway. Parliament, Shetland style: a loch, a gale and everyone talking at once.")
-    z.sign(22, 20, "THE LERWICK ROAD. The A970 runs over the hill and down to Scalloway, the old capital. It is a short road in miles and a long one in weather, since the weather on one side is never the weather on the other.")
+    z.sign(23, 27, "THE LERWICK ROAD. The A970 runs over the hill and down to Scalloway, the old capital. It is a short road in miles and a long one in weather, since the weather on one side is never the weather on the other.")
     scatter_props(z, "bush", 3, 3, 50, 38, 8, 113, avoid=("."))
-    grass_patches(z, [(24, 4, 8, 12), (4, 20, 12, 6), (40, 22, 12, 9), (4, 10, 12, 6), (36, 30, 12, 3), (24, 22, 4, 4)])
-    z.d["spawn"] = [5, 29]
-    chat(z, "sca_fisher", "fisherman_north", 24, 33, "Quay Fisherman", ["Scalloway has the fish market, and the fish market has the fishermen, and the fishermen have all the opinions. I will not tell you which ones are right.",
+    grass_patches(z, [(24, 4, 8, 12), (4, 20, 12, 6), (40, 18, 12, 8), (4, 10, 12, 6), (38, 33, 12, 4), (24, 20, 6, 4)])
+    z.d["spawn"] = [20, 40]
+    chat(z, "sca_fisher", "fisherman_north", 14, 30, "Quay Fisherman", ["Scalloway has the fish market, and the fish market has the fishermen, and the fishermen have all the opinions. I will not tell you which ones are right.",
          "Mòran taing, they say in the west. Here we say 'tank you'. It is the same, only more windy."], "down", "still")
-    chat(z, "sca_bus", "villager_3", 17, 33, "Memorial Volunteer", ["The Shetland Bus is a proper story. Small boats, long nights, men who could have stayed at home. My grandfather said nothing about it. I am told that was the point.",
+    chat(z, "sca_bus", "villager_3", 18, 31, "Memorial Volunteer", ["The Shetland Bus is a proper story. Small boats, long nights, men who could have stayed at home. My grandfather said nothing about it. I am told that was the point.",
          "Ask at the museum if you want the proper telling. I only know the bit I have been allowed to."], "down", "still")
-    chat(z, "sca_castle", "tour_guide", 31, 31, "Castle Guide", ["Patrick Stewart built this castle with forced labour and a lot of timber. He did not get to enjoy it for long. History is not always kind to men with a good eye for a view.",
+    chat(z, "sca_castle", "tour_guide", 31, 32, "Castle Guide", ["Patrick Stewart built this castle with forced labour and a lot of timber. He did not get to enjoy it for long. History is not always kind to men with a good eye for a view.",
          "It was the capital of Shetland until 1708. After that, Lerwick took over, and Scalloway has been getting its own back ever since, mostly at the fish market."], "left", "still")
     chat(z, "sca_pony", "farmer", 46, 24, "Pony Keeper", ["Shetland ponies are small, hardy and thoroughly aware of both. Do not try to tell one what to do. Offer an apple and ask nicely.",
          "They were bred to carry peat and children. They are very good at the first and have strong views on the second."], "left", "still")
     creature_npc(z, "sca_foal", "foalmoor", 44, 22, "A small, very round pony trots up, takes in your pockets, and walks off with its dignity intact.")
     trn(z, "sca_boatman", "Boatman Magnie", "Boatman", "sailor", [("haarling", 80), ("gannetling", 80), ("polartern", 81)],
-        18, 24, "up", ["I take the boat out when the weather says I should not. That is called knowing the weather."],
+        15, 25, "up", ["I take the boat out when the weather says I should not. That is called knowing the weather."],
         "A good fight. The weather was on your side.", "A boat is always a bit smaller than the sea. The skill is knowing how much.", 2560)
     trn(z, "sca_knitter", "Knitter Ina", "Knitter", "villager_5", [("foalmoor", 80), ("herdlet", 80), ("crexling", 81), ("hushwing", 80)],
         38, 20, "left", ["Fair Isle, Shetland lace, you name it. I have been knitting since before you were born. You will lose. It is going to be very soft."],
@@ -280,7 +280,7 @@ def scalloway_road():
         46, 14, "down", ["Whooper swans in winter. If you have never heard a whooper swan, you will not believe it. It sounds like a trumpet that has had a long day."],
         "A good battle. The swans looked away.", "Shetland is the best place in Britain to find birds that are lost. I have a lot in common with them.", 2580)
     trn(z, "sca_lawman", "Lawman Tormod", "Lawman", "poet", [("midgeswarm", 80), ("hushwing", 81), ("herdlet", 80)],
-        34, 32, "left", ["I am here for the Law Ting. Someone has to be. Nobody has legislated on that holm for a few centuries, but I like to be ready."],
+        38, 31, "left", ["I am here for the Law Ting. Someone has to be. Nobody has legislated on that holm for a few centuries, but I like to be ready."],
         "A fair judgement. I will report the finding to the loch.", "The Norse loved a good assembly. They would argue for days and then go home and not change anything. It is a tradition we have kept up.", 2590)
     wild(z, [("foalmoor", 80, 81, 12, {}), ("herdlet", 80, 81, 10, {}), ("puffling", 80, 81, 8, {"time": ["day"]}), ("cragchough", 80, 81, 10, {}),
              ("polartern", 80, 81, 8, {}), ("snowbunting", 80, 81, 8, {"weather": ["frost", "fog"]}), ("midgeswarm", 80, 81, 10, {"weather": ["drizzle", "fog", "clear"]}),
@@ -293,7 +293,7 @@ def scalloway_road():
     poi(z, "cache", at, a, item="bobble_hat_red", line="A hollow in a drystone dyke, and something wrapped in oilcloth. The knitting is excellent.")
     poi(z, "stone", at, b, stat="hp", lore=["Lichen has been at it for a few thousand years and has barely got started.", "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."])
     poi(z, "den", at, c, species="ternlet")
-    field(z, "line", "line", "glint", 30, 34, "Something glints in the harbour water. {lead} wades in, makes a few calm passes and fishes it out: a purse, a bit damp.", {"money": 32 * 81}, at)
+    field(z, "line", "line", "glint", 14, 31, "Something glints in the harbour water. {lead} wades in, makes a few calm passes and fishes it out: a purse, a bit damp.", {"money": 32 * 81}, at)
     place(at, 688, 40)
 
 

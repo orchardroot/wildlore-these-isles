@@ -488,7 +488,7 @@
   }
  ],
  "edges": {
-  "west": {
+  "north": {
    "to": "scalloway_road",
    "offset": 0
   },
@@ -887,8 +887,8 @@
   "route": "kirkwall_lerwick"
  },
  "rows": [
-  "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRw$$$$$$$$$$",
-  "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRw$$$$$$$$$$",
+  "RRRRRRRRRRRRRRRRRRR###RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR$$$$$$$$$$",
+  "RRRRRRRRRRRRRRRRRRR###RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRw$$$$$$$$$$",
   "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$$$$",
   "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$$$",
   "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$$$",
@@ -906,9 +906,9 @@
   "RRk::::::::::::::::::::::::::::::::::::::::::::::::::::kkkkkw$$$$$$$$$$$",
   "RRk::::::::::::::::::::::::::::::::::::::::::::::::::::kkkkkw$$$$$$$$$$$",
   "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk:::kkkkkkkkk:::::kkkkkw$$$$$$$$$$$",
-  "##kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk:::kkkkkkkkk:::::BBBkkw$$$$$$$$$$$",
-  "##kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk:::kkkkkkkkk:::::BBBkkw$$$$$$kk$$$",
-  "##kkBBBBBBkBBBBBkBBBBBBBBkBBBBBBBBkkkk:::kBBBBBBBB:::::BBBkkw$$$$$$kkkk$",
+  "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk:::kkkkkkkkk:::::BBBkkw$$$$$$$$$$$",
+  "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk:::kkkkkkkkk:::::BBBkkw$$$$$$kk$$$",
+  "RRkkBBBBBBkBBBBBkBBBBBBBBkBBBBBBBBkkkk:::kBBBBBBBB:::::BBBkkw$$$$$$kkkk$",
   "RRkkBBBBBBkBBBBBkBBBBBBBBkBBBBBBBBkkkk:::kBBBBBBBB:::::kkkkkw$$$$$kkkkk$",
   "RRkkBBBBBBkBBBBBkBBBBBBBBkBBBBBBBBkkkk:::kBBBBBBBB:::::kkkkkw$$$$$kkkkk$",
   "RRkkBBBDBBkBBDBBkBBBDBBBBkBBBDBBBBkkkk:::kBBBDBBBB:::::kkkkkkw$$$$kkkkk$",

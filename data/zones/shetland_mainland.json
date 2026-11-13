@@ -234,9 +234,9 @@
  ],
  "warps": [],
  "edges": {
-  "east": {
+  "west": {
    "to": "scalloway_road",
-   "offset": 1
+   "offset": -2
   },
   "north": {
    "to": "lerwick",
@@ -591,12 +591,12 @@
   "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
   "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$$$k$$$",
   "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$kBBkk$",
-  "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw#########",
-  "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw#########",
-  "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw#########",
-  "$$$wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
-  "$$$wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
-  "$$$wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
+  "$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$kBBkk$",
+  "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$$kkkk$",
+  "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkw$$$$$k$$$",
+  "###wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
+  "###wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
+  "###wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkw$$$$$$$$$",
   "$$$wkkkkkkkkkkBBBBBBBBkkkkkkkkkkkkkkkkkkk===kkkw$$$$$$$$",
   "$$$wkkkkkkk###############################==kkkw$$$$$$$$",
   "$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk===kkkw$$$$$$$$",
@@ -624,7 +624,7 @@
   "$$$$$$$wkkhhhkkkkkkhkkkkkhkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$",
   "$$$$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$",
   "$$$$$$$wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$$",
-  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww$",
+  "$wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"

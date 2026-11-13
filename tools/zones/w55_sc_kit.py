@@ -98,7 +98,7 @@ def _merge(path, new, key, wrap=None):
     if os.path.exists(path):
         d = json.load(open(path))
         old = d[wrap] if wrap else d
-    out = [e for e in old if e["zone"] not in mine] + new
+    out = sorted([e for e in old if e["zone"] not in mine] + new, key=lambda e: (e["zone"], e["id"]))
     json.dump({wrap: out} if wrap else out, open(path, "w"), indent=1)
 
 

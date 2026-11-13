@@ -1,97 +1,42 @@
 {
  "pois": [
   {
-   "id": "poi_southern_upland_way_cache",
-   "zone": "southern_upland_way",
+   "id": "poi_angus_coast_cache",
+   "zone": "angus_coast",
    "near": [
-    6,
-    35
+    16,
+    31
    ],
    "kind": "cache",
-   "at": "southern_upland_way",
-   "item": "miners_lamp",
-   "line": "A flat tin under a slate slab, left by someone who knew these hills well and trusted nobody else to."
+   "at": "angus_coast",
+   "item": "sou_wester_yellow",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes."
   },
   {
-   "id": "poi_southern_upland_way_stone",
-   "zone": "southern_upland_way",
+   "id": "poi_angus_coast_den",
+   "zone": "angus_coast",
    "near": [
-    37,
-    36
-   ],
-   "kind": "stone",
-   "at": "southern_upland_way",
-   "stat": "def",
-   "lore": [
-    "The wind drops when you stand beside it. You do not mention this to anyone.",
-    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."
-   ]
-  },
-  {
-   "id": "poi_southern_upland_way_camp",
-   "zone": "southern_upland_way",
-   "near": [
-    24,
-    28
-   ],
-   "kind": "camp",
-   "at": "southern_upland_way",
-   "names": [
-    [
-     "Poacher Rab",
-     "Poacher"
-    ],
-    [
-     "Poacher Bronwen",
-     "Poacher"
-    ]
-   ],
-   "party": [
-    "leveret",
-    "fawnlet",
-    "stoatlet"
-   ],
-   "line": "This is a private camp. Private as in 'mind your own'.",
-   "money": 3100,
-   "item": "flask_of_tea"
-  },
-  {
-   "id": "poi_west_highland_way_cache",
-   "zone": "west_highland_way",
-   "near": [
-    43,
-    20
-   ],
-   "kind": "cache",
-   "at": "west_highland_way",
-   "item": "flask_of_tea",
-   "line": "A flask-sized tin under a flat stone, tied with garden twine. Someone's emergency tea. You are an emergency."
-  },
-  {
-   "id": "poi_west_highland_way_stone",
-   "zone": "west_highland_way",
-   "near": [
-    17,
-    41
-   ],
-   "kind": "stone",
-   "at": "west_highland_way",
-   "stat": "hp",
-   "lore": [
-    "Sheep have rubbed one side smooth. Even the sheep come here.",
-    "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
-   ]
-  },
-  {
-   "id": "poi_west_highland_way_den",
-   "zone": "west_highland_way",
-   "near": [
-    46,
-    5
+    8,
+    39
    ],
    "kind": "den",
-   "at": "west_highland_way",
-   "species": "caperling"
+   "at": "angus_coast",
+   "species": "redbreast"
+  },
+  {
+   "id": "poi_angus_coast_stone",
+   "zone": "angus_coast",
+   "near": [
+    29,
+    15
+   ],
+   "kind": "stone",
+   "at": "angus_coast",
+   "stat": "ward",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
+   ]
   },
   {
    "id": "poi_devils_staircase_cache",
@@ -149,21 +94,6 @@
    ]
   },
   {
-   "id": "poi_pass_of_brander_stone",
-   "zone": "pass_of_brander",
-   "near": [
-    13,
-    38
-   ],
-   "kind": "stone",
-   "at": "pass_of_brander",
-   "stat": "atk",
-   "lore": [
-    "You put a hand on it. It is older than your whole family tree, put together.",
-    "The real thing is the Clava Cairns, near Inverness: ring cairns inside circles of standing stones, among old beech trees."
-   ]
-  },
-  {
    "id": "poi_pass_of_brander_cache",
    "zone": "pass_of_brander",
    "near": [
@@ -187,6 +117,21 @@
    "species": "snowhare"
   },
   {
+   "id": "poi_pass_of_brander_stone",
+   "zone": "pass_of_brander",
+   "near": [
+    13,
+    38
+   ],
+   "kind": "stone",
+   "at": "pass_of_brander",
+   "stat": "atk",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is the Clava Cairns, near Inverness: ring cairns inside circles of standing stones, among old beech trees."
+   ]
+  },
+  {
    "id": "poi_rob_roy_way_cache",
    "zone": "rob_roy_way",
    "near": [
@@ -197,21 +142,6 @@
    "at": "rob_roy_way",
    "item": "burns_tam",
    "line": "Behind the rock there is a gap, and in the gap there is a lunchbox. Inside, a bonnet, folded very neatly."
-  },
-  {
-   "id": "poi_rob_roy_way_stone",
-   "zone": "rob_roy_way",
-   "near": [
-    47,
-    26
-   ],
-   "kind": "stone",
-   "at": "rob_roy_way",
-   "stat": "lore",
-   "lore": [
-    "Lichen has been at it for a few thousand years and has barely got started.",
-    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."
-   ]
   },
   {
    "id": "poi_rob_roy_way_camp",
@@ -242,56 +172,149 @@
    "item": "cream_tea"
   },
   {
-   "id": "poi_angus_coast_cache",
-   "zone": "angus_coast",
+   "id": "poi_rob_roy_way_stone",
+   "zone": "rob_roy_way",
    "near": [
-    16,
-    31
-   ],
-   "kind": "cache",
-   "at": "angus_coast",
-   "item": "sou_wester_yellow",
-   "line": "A biscuit tin, wedged behind the rock. The lid took three goes."
-  },
-  {
-   "id": "poi_angus_coast_den",
-   "zone": "angus_coast",
-   "near": [
-    8,
-    39
-   ],
-   "kind": "den",
-   "at": "angus_coast",
-   "species": "redbreast"
-  },
-  {
-   "id": "poi_angus_coast_stone",
-   "zone": "angus_coast",
-   "near": [
-    29,
-    15
+    47,
+    26
    ],
    "kind": "stone",
-   "at": "angus_coast",
-   "stat": "ward",
+   "at": "rob_roy_way",
+   "stat": "lore",
    "lore": [
-    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "Lichen has been at it for a few thousand years and has barely got started.",
+    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."
+   ]
+  },
+  {
+   "id": "poi_scalloway_road_cache",
+   "zone": "scalloway_road",
+   "near": [
+    39,
+    18
+   ],
+   "kind": "cache",
+   "at": "scalloway_road",
+   "item": "bobble_hat_red",
+   "line": "A hollow in a drystone dyke, and something wrapped in oilcloth. The knitting is excellent."
+  },
+  {
+   "id": "poi_scalloway_road_den",
+   "zone": "scalloway_road",
+   "near": [
+    5,
+    10
+   ],
+   "kind": "den",
+   "at": "scalloway_road",
+   "species": "ternlet"
+  },
+  {
+   "id": "poi_scalloway_road_stone",
+   "zone": "scalloway_road",
+   "near": [
+    34,
+    7
+   ],
+   "kind": "stone",
+   "at": "scalloway_road",
+   "stat": "hp",
+   "lore": [
+    "Lichen has been at it for a few thousand years and has barely got started.",
     "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
    ]
   },
   {
-   "id": "poi_trotternish_stone",
-   "zone": "trotternish",
+   "id": "poi_southern_upland_way_cache",
+   "zone": "southern_upland_way",
    "near": [
-    41,
-    30
+    6,
+    35
+   ],
+   "kind": "cache",
+   "at": "southern_upland_way",
+   "item": "miners_lamp",
+   "line": "A flat tin under a slate slab, left by someone who knew these hills well and trusted nobody else to."
+  },
+  {
+   "id": "poi_southern_upland_way_camp",
+   "zone": "southern_upland_way",
+   "near": [
+    24,
+    28
+   ],
+   "kind": "camp",
+   "at": "southern_upland_way",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "leveret",
+    "fawnlet",
+    "stoatlet"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3100,
+   "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_southern_upland_way_stone",
+   "zone": "southern_upland_way",
+   "near": [
+    37,
+    36
    ],
    "kind": "stone",
-   "at": "trotternish",
+   "at": "southern_upland_way",
    "stat": "def",
    "lore": [
-    "It is cold, and it hums very faintly, the way a fridge does.",
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
     "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."
+   ]
+  },
+  {
+   "id": "poi_the_machars_cache",
+   "zone": "the_machars",
+   "near": [
+    26,
+    24
+   ],
+   "kind": "cache",
+   "at": "the_machars",
+   "item": "horseshoe",
+   "line": "A hollow tree has been used as a post box by someone with no postman."
+  },
+  {
+   "id": "poi_the_machars_den",
+   "zone": "the_machars",
+   "near": [
+    20,
+    5
+   ],
+   "kind": "den",
+   "at": "the_machars",
+   "species": "leveret"
+  },
+  {
+   "id": "poi_the_machars_stone",
+   "zone": "the_machars",
+   "near": [
+    54,
+    9
+   ],
+   "kind": "stone",
+   "at": "the_machars",
+   "stat": "spd",
+   "lore": [
+    "Someone has left a single conker on top. Sensible.",
+    "The real thing is Machrie Moor, on the Isle of Arran: a moor full of rings, one with a tall granite slab."
    ]
   },
   {
@@ -335,6 +358,21 @@
    "item": "iron_snare"
   },
   {
+   "id": "poi_trotternish_stone",
+   "zone": "trotternish",
+   "near": [
+    41,
+    30
+   ],
+   "kind": "stone",
+   "at": "trotternish",
+   "stat": "def",
+   "lore": [
+    "It is cold, and it hums very faintly, the way a fridge does.",
+    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."
+   ]
+  },
+  {
    "id": "poi_uig_road_cache",
    "zone": "uig_road",
    "near": [
@@ -345,6 +383,17 @@
    "at": "uig_road",
    "item": "headscarf_tartan",
    "line": "Someone's hiding place, and not as hidden as they hoped."
+  },
+  {
+   "id": "poi_uig_road_den",
+   "zone": "uig_road",
+   "near": [
+    44,
+    21
+   ],
+   "kind": "den",
+   "at": "uig_road",
+   "species": "orcalet"
   },
   {
    "id": "poi_uig_road_stone",
@@ -362,90 +411,41 @@
    ]
   },
   {
-   "id": "poi_uig_road_den",
-   "zone": "uig_road",
+   "id": "poi_west_highland_way_cache",
+   "zone": "west_highland_way",
    "near": [
-    44,
-    21
-   ],
-   "kind": "den",
-   "at": "uig_road",
-   "species": "orcalet"
-  },
-  {
-   "id": "poi_scalloway_road_cache",
-   "zone": "scalloway_road",
-   "near": [
-    32,
-    18
+    43,
+    20
    ],
    "kind": "cache",
-   "at": "scalloway_road",
-   "item": "bobble_hat_red",
-   "line": "A hollow in a drystone dyke, and something wrapped in oilcloth. The knitting is excellent."
+   "at": "west_highland_way",
+   "item": "flask_of_tea",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine. Someone's emergency tea. You are an emergency."
   },
   {
-   "id": "poi_scalloway_road_stone",
-   "zone": "scalloway_road",
+   "id": "poi_west_highland_way_den",
+   "zone": "west_highland_way",
    "near": [
-    26,
-    9
-   ],
-   "kind": "stone",
-   "at": "scalloway_road",
-   "stat": "hp",
-   "lore": [
-    "Lichen has been at it for a few thousand years and has barely got started.",
-    "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
-   ]
-  },
-  {
-   "id": "poi_scalloway_road_den",
-   "zone": "scalloway_road",
-   "near": [
-    50,
-    28
-   ],
-   "kind": "den",
-   "at": "scalloway_road",
-   "species": "ternlet"
-  },
-  {
-   "id": "poi_the_machars_cache",
-   "zone": "the_machars",
-   "near": [
-    26,
-    24
-   ],
-   "kind": "cache",
-   "at": "the_machars",
-   "item": "horseshoe",
-   "line": "A hollow tree has been used as a post box by someone with no postman."
-  },
-  {
-   "id": "poi_the_machars_den",
-   "zone": "the_machars",
-   "near": [
-    20,
+    46,
     5
    ],
    "kind": "den",
-   "at": "the_machars",
-   "species": "leveret"
+   "at": "west_highland_way",
+   "species": "caperling"
   },
   {
-   "id": "poi_the_machars_stone",
-   "zone": "the_machars",
+   "id": "poi_west_highland_way_stone",
+   "zone": "west_highland_way",
    "near": [
-    54,
-    9
+    17,
+    41
    ],
    "kind": "stone",
-   "at": "the_machars",
-   "stat": "spd",
+   "at": "west_highland_way",
+   "stat": "hp",
    "lore": [
-    "Someone has left a single conker on top. Sensible.",
-    "The real thing is Machrie Moor, on the Isle of Arran: a moor full of rings, one with a tall granite slab."
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
    ]
   }
  ]
