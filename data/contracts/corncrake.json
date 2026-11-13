@@ -1,0 +1,185 @@
+{
+ "id": "corncrake",
+ "title": "Nobody Is Sleeping on the Township",
+ "town": "portree",
+ "nation": "scotland",
+ "group": "crofters",
+ "badges": 9,
+ "pay": 4,
+ "poster": {
+  "name": "Catriona MacLeod",
+  "role": "crofter, with a baby and a hay field",
+  "idle": [
+   "Tea? I'm up at all hours, I may as well be sociable. But I've a thing with the hay field that wants somebody with a few more badges. Come back when you've got them."
+  ],
+  "taken": [
+   "Any luck? It's started again. All night, from the long grass at the bottom of the field. Crex, crex, crex. The baby's up, the whole township's up, and I've forty bales to get in before the weather turns."
+  ],
+  "decided": [
+   "You've got the hay field on your boots. Tell me what you've decided, and I'll tell you what the neighbours will say."
+  ],
+  "closed": "That's the hay in, one way or another. We'll see how the neighbours feel about it by winter.",
+  "haggle": "You've the face of a woman who's sold a cow, or a man who has. Fair enough. Done."
+ },
+ "notice": [
+  "Something rasps all night from the long grass at the bottom of my hay field. It goes on until dawn, from dusk, every night for a month. Nobody in the township has slept.",
+  "I've had it called a rusty gate, an owl and an electrician. I'd like it called something before the hay needs cutting."
+ ],
+ "trouble": [
+  "It's on the croft land on the Skye and Harris side, out on the machair and the hay meadows. The hay is late and my patience isn't.",
+  "I've been told there's money for leaving it. I've also been told there's no money in a field of nettles. I'd like to know who's right."
+ ],
+ "hypotheses": [
+  {"id": "corncrake", "name": "A corncrake, calling in the iris bed", "types": ["hedgerow", "gale"]},
+  {"id": "owl", "name": "An owl, with a nasty temper", "types": ["night", "gale"]},
+  {"id": "gate", "name": "A rusty gate, swung by the wind", "types": ["iron"]}
+ ],
+ "truth": "corncrake",
+ "clues": [
+  {
+   "id": "iris",
+   "kind": "look",
+   "zone": "harris",
+   "hint": "the tangle of iris and nettles at the field edge",
+   "text": "At the bottom of the field a bed of yellow flag iris and tall nettles has been left standing, and in the middle of it the stems are flattened into a little bowl lined with dry grass. A bird that nests on the ground in hay, in cover. An owl nests in a tree. A gate does not nest.",
+   "points": ["corncrake"],
+   "rules_out": ["owl", "gate"]
+  },
+  {
+   "id": "call",
+   "kind": "look",
+   "zone": "harris",
+   "hint": "the field edge, listened to after dark",
+   "text": "You sit by the dyke in the dusk. From the long grass comes a rasp like a comb drawn over a matchbox: crex-crex, crex-crex, over and over, just as loud from a hundred yards as from ten. It moves about without any trace of the grass moving. You never see it. You hear it for a long, long time.",
+   "hint_wait": "Wind in the hay, sheep, and nothing like a call. Whatever shouts in this field does it in the dusk or the dark.",
+   "points": ["corncrake"],
+   "when": {"phase": ["dusk", "night"]}
+  },
+  {
+   "id": "neighbour",
+   "kind": "ask",
+   "zone": "harris",
+   "who": "Donald Morrison",
+   "hint": "ask the neighbour down the road",
+   "text": [
+    "An owl, and the sooner somebody shoots it the better. It's not been right since the new wind turbines went up, I tell you. And the gate at the bottom is hanging by a thread.",
+    "Mind, I've never heard an owl that goes on for six hours without stopping. That's more of a rattle."
+   ],
+   "idle": ["It's an owl. It's an owl, and that's all I have to say."],
+   "after": "A corncrake. In my township. And not a word to the neighbours about the owl.",
+   "points": ["owl"]
+  },
+  {
+   "id": "adviser",
+   "kind": "ask",
+   "zone": "harris",
+   "who": "Corncrake Adviser",
+   "hint": "ask the corncrake adviser",
+   "text": [
+    "That's a corncrake. They were once all over Britain and Ireland, and now they're mostly out here on the islands, where crofters still cut late. Early mowing with machines killed them.",
+    "It's not a pest, Catriona, it's a guest, and it has a very large number of friends in a lot of offices. There's money for letting it be. And ways to cut the hay that give the chicks a chance."
+   ],
+   "idle": ["I'm counting calling males. It's like counting a very loud ghost."],
+   "after": "Whatever you decided, the crofts are better for talking about it. That's the main thing.",
+   "points": ["corncrake"],
+   "rules_out": ["gate"]
+  }
+ ],
+ "lair": {
+  "zone": "harris",
+  "name": "Crex",
+  "species": "corncrake",
+  "level": 79,
+  "floor_par": 76,
+  "intro": [
+   "The bottom of the hay field, where the grass is shoulder high and the iris stands in a yellow wall. The call comes from just in front of you, loud enough to shake the air, and you cannot see a thing.",
+   "Then the grass parts and a small, sandy brown bird with chestnut wings strides out and stands in front of you, neck stretched, calling straight in your face, with the confidence of a bird that has no idea how small it is."
+  ],
+  "beaten": [
+   "Crex sits down in the grass with its feathers ruffled and its beak wide, and for the first time in a month there is not a sound out of it. The silence is enormous."
+  ]
+ },
+ "choices": [
+  {
+   "id": "early",
+   "label": "Tell her to cut the hay now, and save the crop",
+   "say": [
+    "You tell Catriona to get the mower out. By evening the long grass is down, the bales are rolled, and the field is a neat stubble the colour of a biscuit. The bird has gone, and the call with it.",
+    "The township sleeps. The baby sleeps. In the quiet at the bottom of the field, there is a lot to be said for the hay."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_corncrake_cut": true, "ct_corncrake_silent": true},
+   "repute": {"crofters": 2, "wardens": -2},
+   "standing": {"scotland": 2},
+   "poster": ["Forty bales in and the baby asleep. I'll never forget this summer. Here's your fee, and a jar of my best jam. And don't mention the bird."],
+   "after": ["The field's cut and the township sleeps. I've not heard a corncrake since. It's very peaceful. I try to be glad about it."],
+   "journal": "You told Catriona to cut the hay early. The crop is saved and the township sleeps, and the corncrake has gone from the bottom of the field."
+  },
+  {
+   "id": "late",
+   "label": "Leave the field uncut until August and take the scheme's payment",
+   "say": [
+    "You sign Catriona up to the corncrake payment, and the field stays long until the first of August. The calling goes on all night, but now it is a paid-for noise, and the township is a little more forgiving. Everybody gets earplugs from the adviser.",
+    "The hay is thin and late and not what it might have been. There are four chicks in the iris by the end of July."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_corncrake_late": true, "ct_corncrake_calls": true},
+   "repute": {"wardens": 2, "crofters": -1},
+   "standing": {"scotland": 1},
+   "poster": ["Late hay, a cheque from the scheme and a township in earplugs. I'm paid for my sleepless nights, which is a funny thing to say. Seventy per cent."],
+   "after": ["The crex goes on all night and the baby has learned to sleep through it, God help us. Four chicks in the iris by the end of July."],
+   "journal": "You left the hay uncut until August and took the corncrake payment. The calling goes on all night, the hay is thin, and there are four new chicks in the iris."
+  },
+  {
+   "id": "centre",
+   "label": "Cut from the middle outwards, in stages, and leave the cover",
+   "say": [
+    "It is slow and awkward and takes three evenings. You mow from the middle of the field outwards, at walking pace, with the adviser at the edge. The chicks run ahead of the blade into the iris, instead of under it.",
+    "A little of the hay is lost, and a little of the calling goes on. Everybody has something to complain about, which Catriona says is the sign of a deal that has been done properly."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_corncrake_centre": true, "ct_corncrake_calls": true},
+   "repute": {"crofters": 1, "wardens": 1},
+   "standing": {"scotland": 1},
+   "poster": ["Three evenings, a mower at walking pace, and the chicks walked off into the iris like a school trip. I've never worked so hard for so little hay. Eighty per cent."],
+   "after": ["We cut from the middle now, and slowly. The chicks get away every year. It adds a day to the hay and it takes a year off my temper."],
+   "journal": "You mowed from the middle outwards, slowly, and left the cover. The hay was a little thinner, the chicks ran to safety, and the crofters have copied you ever since."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes over Crex, and from inside it, very faintly, comes a rasp: crex, crex, crex. Out in the field there is a silence you could cut with a mower."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_corncrake_kept": true, "ct_corncrake_silent": true},
+   "repute": {"crofters": 1, "wardens": -3},
+   "standing": {"scotland": 1},
+   "poster": ["You've put it in a charm. It's still calling. I can hear it from here. Well. At least it's in a different parish. Eighty per cent."],
+   "after": ["The field's quiet. The charm in the Keeper's pocket is not. We hear it from the road."],
+   "journal": "You caught Crex. It calls inside your charm, all night, and your team has stopped sleeping. The field is quiet."
+  }
+ ],
+ "real": "The corncrake is a secretive, sandy brown bird whose call, crex-crex, carries a mile and goes on all night. It was once common across Britain and Ireland in hay meadows, but mechanical mowing in early summer killed the nests, and it is now mostly found in the Hebrides, Orkney and the north west of Ireland. In the Hebrides crofters are paid through a conservation scheme to delay mowing until August, to cut from the centre of the field outwards so the chicks can escape into cover, and to leave patches of iris and nettles. It works: the number of calling males rose again. It is also a bird that no one has ever seen on cue.",
+ "places": {
+  "poster": {"sprite": "mum", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "neighbour", "sprite": "villager_2", "near": [20, 40]},
+   {"clue": "adviser", "sprite": "birdwatcher", "near": [40, 50]}
+  ],
+  "looks": [
+   {"clue": "iris", "near": [30, 44], "on": "any", "text": ["The edge of a hay field with a patch of iris and nettles left standing. Somebody has been looking after it."]},
+   {"clue": "call", "near": [34, 50], "on": "any", "text": ["The dyke at the field edge. It is peaceful out here, in the daytime."]}
+  ],
+  "lair": {"near": [30, 56]},
+  "folk": [
+   {"id": "silent", "zone": "portree", "near": [20, 20], "sprite": "mum", "name": "Neighbour", "show_if": "ct_corncrake_silent", "says": [
+     ["ct_corncrake_is_caught", ["The field's quiet. The Keeper's charm isn't. You can hear it from the road. Crex, crex, crex."]]
+    ], "else": ["Not a peep from the bottom field. I haven't slept so well in years. I'd feel guilty, if I weren't so well rested."]},
+   {"id": "calls", "zone": "portree", "near": [28, 24], "sprite": "villager_6", "name": "Crofter", "show_if": "ct_corncrake_calls", "says": [
+     ["ct_corncrake_is_centre", ["We cut from the middle now, and slowly. It adds a day to the hay and takes a year off my temper. The chicks get away."]]
+    ], "else": ["Four chicks in the iris by the end of July. The calling goes on all night, and I've learned to love it. I hope the neighbours have, too."]}
+  ]
+ }
+}

@@ -874,6 +874,38 @@
    "facing": "down",
    "move": "still",
    "script": "arts_librarian"
+  },
+  {
+   "id": "ct_corncrake_poster",
+   "sprite": "mum",
+   "x": 30,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_poster",
+   "name": "Catriona MacLeod"
+  },
+  {
+   "id": "ct_corncrake_silent",
+   "sprite": "mum",
+   "x": 21,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_silent",
+   "name": "Neighbour",
+   "show_if": "ct_corncrake_silent"
+  },
+  {
+   "id": "ct_corncrake_calls",
+   "sprite": "villager_6",
+   "x": 28,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_calls",
+   "name": "Crofter",
+   "show_if": "ct_corncrake_calls"
   }
  ],
  "encounters": {

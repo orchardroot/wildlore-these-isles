@@ -805,6 +805,56 @@
    "facing": "down",
    "move": "still",
    "trainer": "harris_deckhand"
+  },
+  {
+   "id": "ct_corncrake_neighbour",
+   "sprite": "villager_2",
+   "x": 19,
+   "y": 39,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_neighbour",
+   "name": "Donald Morrison"
+  },
+  {
+   "id": "ct_corncrake_adviser",
+   "sprite": "birdwatcher",
+   "x": 39,
+   "y": 49,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_adviser",
+   "name": "Corncrake Adviser"
+  },
+  {
+   "id": "ct_corncrake_lair",
+   "sprite": "creature:corncrake",
+   "x": 30,
+   "y": 56,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_lair",
+   "name": "Crex",
+   "show_if": "ct_corncrake_state",
+   "hide_if": "ct_corncrake_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 29,
+   "y": 41,
+   "text": [
+    "The edge of a hay field with a patch of iris and nettles left standing. Somebody has been looking after it."
+   ],
+   "clue": "corncrake.iris"
+  },
+  {
+   "x": 35,
+   "y": 56,
+   "text": [
+    "The dyke at the field edge. It is peaceful out here, in the daytime."
+   ],
+   "clue": "corncrake.call"
   }
  ],
  "encounters": {

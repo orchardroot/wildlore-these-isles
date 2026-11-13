@@ -408,5 +408,28 @@
     }
    ]
   }
+ ],
+ "ct_corncrake_neighbour": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "corncrake",
+   "clue": "neighbour"
+  }
+ ],
+ "ct_corncrake_adviser": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "corncrake",
+   "clue": "adviser"
+  }
+ ],
+ "ct_corncrake_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "corncrake"
+  }
  ]
 }
