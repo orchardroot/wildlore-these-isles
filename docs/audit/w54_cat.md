@@ -41,4 +41,4 @@
 - Leaving her at home is only through Mum, once a day (not the Ark by design).
 
 ## For the integrator
-Run the full suite once merged. The slice playtest was run with the scene active (see handoff reply).
+Run the full suite once merged. `tools/playtest.sh slice 2`: PLAYTEST PASS (Sootkit L9 joined on the road, badge_brook won, 91/3 W/L).
