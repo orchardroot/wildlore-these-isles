@@ -1,0 +1,186 @@
+{
+ "id": "giant",
+ "title": "The Giant Is Moving the Stones",
+ "town": "bushmills",
+ "nation": "northern_ireland",
+ "group": "townsfolk",
+ "badges": 8,
+ "pay": 4,
+ "poster": {
+  "name": "Colm McAteer",
+  "role": "keeps the guesthouse in Bushmills",
+  "idle": [
+   "Full up till September, and not a minute to talk. Come back when you've been round a few more of the Stones, and I'll tell you what's up on the shore."
+  ],
+  "taken": [
+   "Anything? Three mornings now the columns on the shore are in a different order. My guests have photographs of the old order. They're asking for their money back."
+  ],
+  "decided": [
+   "Well? I can hear the sea in your boots. What did you do about the stones?"
+  ],
+  "closed": "That's the shore settled. The stones are where they are, and so, God help me, is the story.",
+  "haggle": "A haggler with a guesthouse of her own, I'd say. Or his. Fair enough. Done."
+ },
+ "notice": [
+  "Stones moved on the Causeway three nights running. Whole columns shifted, and a line of them laid out toward the sea like a road, in a place where nobody could lift them without a crane.",
+  "The Trust says it's the sea. The tour guides say it's Fionn. I say somebody should look before the guests do."
+ ],
+ "trouble": [
+  "It's on the shore below the cliffs, on the Causeway side of the coast road. Go at dusk. It's quieter then, and the light is better for a person who's frightened.",
+  "I'm not saying it's a giant. I'm saying that when a thing needs a giant to explain it, I like to look at the thing."
+ ],
+ "hypotheses": [
+  {"id": "giant", "name": "A giant, Fionn himself", "types": ["brawn", "stone"]},
+  {"id": "sea", "name": "The sea, and the weather", "types": ["tide", "storm"]},
+  {"id": "visitors", "name": "Visitors stacking and carrying stones", "types": ["urban"]}
+ ],
+ "truth": "giant",
+ "clues": [
+  {
+   "id": "stones",
+   "kind": "look",
+   "zone": "causeway",
+   "hint": "the columns on the shore",
+   "text": "The columns have been moved, not toppled. They are set end to end in a line pointing out to sea, with wet sand heaped neatly round their feet, and the scrape marks run the wrong way for a wave. The sea does not do tidy. It does not do straight.",
+   "points": ["giant", "visitors"],
+   "rules_out": ["sea"]
+  },
+  {
+   "id": "night",
+   "kind": "look",
+   "zone": "causeway",
+   "hint": "the shore at dusk or after dark",
+   "text": "You wait on the rocks as the light goes. Out in the shallows a vast shape wades slowly, up to the knee in a sea that comes only to the shin of a mountain, carrying a six-sided column the way a man carries a fence post. It sets it down, looks at it, nudges it a hand's breadth to the left, and straightens up to look at Scotland.",
+   "hint_wait": "Waves, wind and wet rock. Whatever works on this shore does it in the dusk or the dark. Try again then.",
+   "points": ["giant"],
+   "rules_out": ["visitors"],
+   "when": {"phase": ["dusk", "night"]}
+  },
+  {
+   "id": "guide",
+   "kind": "ask",
+   "zone": "causeway",
+   "who": "Tour Guide",
+   "hint": "ask the tour guide",
+   "text": [
+    "Fionn mac Cumhaill built it, the whole of it, to walk across to Scotland and fight the giant Benandonner. And when he got there, Benandonner was far bigger than he was, so Fionn turned and ran home.",
+    "His wife Oonagh dressed him as a baby and tucked him in a cradle. Benandonner took one look at the size of the baby and fled, tearing up the road behind him. It's why the Causeway stops."
+   ],
+   "idle": ["Tours at ten, twelve and two. Ask me at ten."],
+   "after": "He'll get there in the end. They always do, in my stories.",
+   "points": ["giant"]
+  },
+  {
+   "id": "warden",
+   "kind": "ask",
+   "zone": "causeway",
+   "who": "Trust Warden",
+   "hint": "ask the warden",
+   "text": [
+    "It's the sea and the weather, and the thousands of feet. The cliff path's been closed after falls. And visitors take the odd stone home as a souvenir, God help them.",
+    "It's about forty thousand columns, and every one of them formed in the cooling of a lava flow sixty million years ago. I find that more astonishing than a giant, myself. I may be in the minority."
+   ],
+   "idle": ["I'm counting the columns. I'm up to eleven. Don't talk to me."],
+   "after": "Whatever you did, the shore is quieter. That's my only measure.",
+   "points": ["sea", "visitors"]
+  }
+ ],
+ "lair": {
+  "zone": "causeway",
+  "name": "Fionn",
+  "species": "finnmacool",
+  "level": 68,
+  "floor_par": 65,
+  "intro": [
+   "The end of the Causeway, where the columns march out into the surf and go under. The tide is going out. In the shallows, a long way out, something very large is arranging stones with great concentration.",
+   "It comes wading in toward you, knee-deep in the sea, a vast and shaggy figure the colour of wet basalt, and sits down on a column with a gentle bump that you can feel in your feet."
+  ],
+  "beaten": [
+   "Fionn leans back against the cliff with his great hands open on his knees, rubbing a bruise, and looks out to sea. He is still looking at Scotland. He has been looking at it for a very long time."
+  ]
+ },
+ "choices": [
+  {
+   "id": "rail",
+   "label": "Fence off the stones and close the cliff path, the Trust's way",
+   "say": [
+    "The Trust puts up a rope line, a few signs and a warden at the head of the path. It closes the cliff section until the next survey. The Causeway looks tidier, and the stones stay where they are, mostly.",
+    "Fionn watches the fence from the water. He does not like fences. He moves a column anyway, once, a hand's breadth to the left."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_giant_fenced": true, "ct_giant_closed": true},
+   "repute": {"wardens": 2, "townsfolk": -2},
+   "standing": {"northern_ireland": 1},
+   "poster": ["Roped off and a path closed, and half my bookings on the phone asking why. It's the right thing and I hate it. Ninety per cent, and a bed for the night if you ever need it."],
+   "after": ["There's a rope and a sign. The guests ask me what's behind it and I tell them, a legend. They never believe me."],
+   "journal": "You had the stones fenced and the cliff path closed. The Causeway is safer and quieter, the guesthouses are emptier, and Fionn still moves a column now and then."
+  },
+  {
+   "id": "night",
+   "label": "Keep it open, and let Fionn be the draw: guided night walks",
+   "say": [
+    "You and the guides set up a night walk with a lantern and a torch: sunset at the Causeway, a story at the Wishing Chair, a hot drink at the end. Fionn does not turn up on cue. He does not need to.",
+    "The guesthouses fill. A few visitors go home with a photograph of a large, blurred figure in the shallows, and a very firm opinion."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_giant_nights": true, "ct_giant_open": true},
+   "repute": {"townsfolk": 2, "wardens": -1},
+   "standing": {"northern_ireland": 2},
+   "poster": ["A queue for the night walk, and every room full. I know it's a bit cheap. I know. Eighty per cent, and I'll tell my guests you invented it."],
+   "after": ["Night walks sell out in a minute. The guides do the Fionn story at the Chair. And one of the guests said she'd seen him, and I believe her."],
+   "journal": "You kept the Causeway open and started guided night walks. The guesthouses are full, the Trust is worried about the crowds, and Fionn is no stranger to an audience."
+  },
+  {
+   "id": "scotland",
+   "label": "Show him the Larne ferry, and send him on to Scotland",
+   "say": [
+    "It takes a long afternoon and a great deal of patience. You show Fionn a timetable, and a ferry, and a ramp. You explain tickets. You explain the car deck. He stands on the quay for a long time with his arms folded, and nods.",
+    "The next night the columns are all back in their old places, and a very large shape is wading north through the dark, toward a boat with its lights on, and a Scottish quay where somebody is going to have a very odd morning."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_giant_ferried": true, "ct_giant_gone": true},
+   "repute": {"townsfolk": 1, "wardens": 1},
+   "standing": {"northern_ireland": 1},
+   "poster": ["On the ferry. On the ferry! To Scotland. And the stones are back in their rows. I've a feeling that's the end of the Causeway as a mystery, but it's a grand end. Ninety per cent."],
+   "after": ["The stones haven't moved since. The ferry's delayed twice, though, and nobody will say why."],
+   "journal": "You showed Fionn the ferry and he went to Scotland. The stones have not moved since. Benandonner, presumably, has been told."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes on Fionn, and for a moment the whole shore holds its breath. Then the tide turns, a great sigh comes out of the sea, and the stones stay where they are. In your charm something very large turns over to go to sleep."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_giant_kept": true, "ct_giant_open": true},
+   "repute": {"townsfolk": 1, "wardens": -2},
+   "standing": {"northern_ireland": 1},
+   "poster": ["He's in a charm. Fionn mac Cumhaill is in your pocket. I'll thank you not to let the guests find out. Eighty per cent."],
+   "after": ["Quiet shore. Quiet stones. Quiet pocket, I hope, for your sake."],
+   "journal": "You caught Fionn and he sleeps in your team, dreaming of Scotland. The shore is quiet, and the guides tell the story as if he were still out there."
+  }
+ ],
+ "real": "The Giant's Causeway is about forty thousand basalt columns, mostly six-sided, formed about sixty million years ago when a lava flow cooled and cracked. The same lava made the columns of Fingal's Cave on Staffa, across the water in Scotland, which is why the old story has a road between them. In the tale the Irish giant Fionn mac Cumhaill builds the Causeway to fight the Scottish giant Benandonner, and is saved by his wife Oonagh's trick of dressing him as a baby. The Causeway and its coast were made a World Heritage Site in 1986, and the National Trust looks after it. The trouble now is feet, weather and souvenirs: wear on the stones, falls on the cliff path, and a great many visitors.",
+ "places": {
+  "poster": {"sprite": "villager_3", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "guide", "sprite": "tour_guide", "near": [20, 20]},
+   {"clue": "warden", "sprite": "warden_grunt", "near": [40, 24]}
+  ],
+  "looks": [
+   {"clue": "stones", "near": [30, 20], "on": "any", "text": ["Six-sided columns of dark stone, a path between them, a sea beyond. Everything is wet and orderly."]},
+   {"clue": "night", "near": [34, 30], "on": "any", "text": ["The foot of the cliffs, where the columns go down into the sea. The water breathes in and out."]}
+  ],
+  "lair": {"near": [44, 34]},
+  "folk": [
+   {"id": "closed", "zone": "bushmills", "near": [20, 20], "sprite": "villager_1", "name": "Resident", "show_if": "ct_giant_closed", "says": [],
+    "else": ["Roped off and a path closed, and the guests ask why. I say it's the legend. They say a legend doesn't need a rope. Nobody's right."]},
+   {"id": "open", "zone": "bushmills", "near": [30, 22], "sprite": "festival_goer", "name": "Night Walker", "show_if": "ct_giant_open", "says": [
+     ["ct_giant_is_caught", ["Somebody caught Fionn mac Cumhaill, they say. I told them it was a story. It's a very good story, is it not."]]
+    ], "else": ["The night walk's fantastic. A lantern, a story, a hot drink. And a shape in the shallows that wasn't in the brochure."]},
+   {"id": "ferry", "zone": "bushmills", "near": [26, 28], "sprite": "sailor", "name": "Ferry Hand", "show_if": "ct_giant_gone", "says": [],
+    "else": ["The Larne boat was twenty minutes late and nobody on it would say why. There was a very large wet footprint on the car deck, I'll tell you that."]}
+  ]
+ }
+}

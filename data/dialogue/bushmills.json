@@ -244,5 +244,46 @@
     }
    ]
   }
+ ],
+ "ct_giant_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "giant"
+  }
+ ],
+ "ct_giant_closed": [
+  {
+   "do": "say",
+   "who": "Resident",
+   "text": "Roped off and a path closed, and the guests ask why. I say it's the legend. They say a legend doesn't need a rope. Nobody's right."
+  }
+ ],
+ "ct_giant_open": [
+  {
+   "do": "if",
+   "flag": "ct_giant_is_caught",
+   "then": [
+    {
+     "do": "say",
+     "who": "Night Walker",
+     "text": "Somebody caught Fionn mac Cumhaill, they say. I told them it was a story. It's a very good story, is it not."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Night Walker",
+     "text": "The night walk's fantastic. A lantern, a story, a hot drink. And a shape in the shallows that wasn't in the brochure."
+    }
+   ]
+  }
+ ],
+ "ct_giant_ferry": [
+  {
+   "do": "say",
+   "who": "Ferry Hand",
+   "text": "The Larne boat was twenty minutes late and nobody on it would say why. There was a very large wet footprint on the car deck, I'll tell you that."
+  }
  ]
 }

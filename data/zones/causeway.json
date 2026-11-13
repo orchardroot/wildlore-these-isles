@@ -431,6 +431,38 @@
    "facing": "up",
    "move": "still",
    "script": "landsky_atlantic"
+  },
+  {
+   "id": "ct_giant_guide",
+   "sprite": "tour_guide",
+   "x": 19,
+   "y": 21,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_giant_guide",
+   "name": "Tour Guide"
+  },
+  {
+   "id": "ct_giant_warden",
+   "sprite": "warden_grunt",
+   "x": 40,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_giant_warden",
+   "name": "Trust Warden"
+  },
+  {
+   "id": "ct_giant_lair",
+   "sprite": "creature:finnmacool",
+   "x": 43,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_giant_lair",
+   "name": "Fionn",
+   "show_if": "ct_giant_state",
+   "hide_if": "ct_giant_end"
   }
  ],
  "encounters": {
@@ -688,6 +720,22 @@
    ],
    "flag": "case_causeway_stone_track",
    "evidence": "trolley_track"
+  },
+  {
+   "x": 28,
+   "y": 16,
+   "text": [
+    "Six-sided columns of dark stone, a path between them, a sea beyond. Everything is wet and orderly."
+   ],
+   "clue": "giant.stones"
+  },
+  {
+   "x": 34,
+   "y": 26,
+   "text": [
+    "The foot of the cliffs, where the columns go down into the sea. The water breathes in and out."
+   ],
+   "clue": "giant.night"
   }
  ]
 }
