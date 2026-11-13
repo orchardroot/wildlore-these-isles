@@ -150,5 +150,7 @@ func test_a_gated_road_without_its_wardens_would_be_a_sequence_break() -> void:
 		var beyond := str(BEYOND[id])
 		assert_false(Reach.reach(zones, flags, steps[at].seeds, cache).has(beyond), "%s: %s stays shut before %s" % [id, beyond, flag])
 		var z: ZoneData = zones[id]
-		z.npcs = z.npcs.filter(func(n): return str(n.get("script", "")) != "gate_" + id)
+		var wardens: Array = z.npcs
+		z.npcs = wardens.filter(func(n): return str(n.get("script", "")) != "gate_" + id)
 		assert_true(Reach.reach(zones, flags, steps[at].seeds, cache).has(beyond), "%s: without Wardens %s would open early" % [id, beyond])
+		z.npcs = wardens  # the next road is judged with this one back in place

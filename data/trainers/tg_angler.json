@@ -1,0 +1,32 @@
+{
+ "id": "tg_angler",
+ "name": "Angler Elis",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "elverlet",
+   "level": 30
+  },
+  {
+   "species": "ductling",
+   "level": 31
+  },
+  {
+   "species": "afanc",
+   "level": 32
+  }
+ ],
+ "ai": "trainer",
+ "money": 660,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Elis",
+   "text": "Quiet, please. There is a gwyniad out there and it has not yet decided to be impressed by me."
+  }
+ ],
+ "win": "Hm. That is the fish I was hoping for, and it did not come.",
+ "after": "The gwyniad only lives here. If you ever see one, say hello and put it back.",
+ "scaled_floor": 31
+}

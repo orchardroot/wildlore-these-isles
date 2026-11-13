@@ -52,6 +52,44 @@
    "at": "pen_y_gwryd",
    "item": "bog_myrtle_sprig",
    "line": "A flask in a crack in the rock. Someone's emergency tea. They will not be needing it now that you have found it."
+  },
+  {
+   "id": "poi_llyn_tegid_den",
+   "zone": "llyn_tegid",
+   "near": [
+    9,
+    28
+   ],
+   "kind": "den",
+   "at": "llyn_tegid",
+   "species": "afanc"
+  },
+  {
+   "id": "poi_llyn_tegid_stone",
+   "zone": "llyn_tegid",
+   "near": [
+    56,
+    38
+   ],
+   "kind": "stone",
+   "at": "llyn_tegid",
+   "stat": "ward",
+   "lore": [
+    "It is cold, round and quietly smug, like a stone that has been polished by a glacier and knows it.",
+    "The real thing is a Welsh erratic: a boulder the ice carried and left behind in the valley."
+   ]
+  },
+  {
+   "id": "poi_llyn_tegid_cache",
+   "zone": "llyn_tegid",
+   "near": [
+    20,
+    40
+   ],
+   "kind": "cache",
+   "at": "llyn_tegid",
+   "item": "cawl",
+   "line": "A bottle-green flask wedged in a wall. Someone's lunch, kept warm for later. Sorry about that."
   }
  ]
 }

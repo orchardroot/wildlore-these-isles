@@ -28,5 +28,20 @@
   },
   "flag": "field_pen_y_gwryd_charm",
   "at": "pen_y_gwryd"
+ },
+ {
+  "id": "fs_llyn_tegid_line",
+  "zone": "llyn_tegid",
+  "x": 19,
+  "y": 26,
+  "field": "line",
+  "prop": "glint",
+  "text": "A glint under the water at the lake's edge. {lead} hooks it with patience and a bit of reed. It is Brown Trout.",
+  "reward": {
+   "item": "brown_trout",
+   "qty": 1
+  },
+  "flag": "field_llyn_tegid_line",
+  "at": "llyn_tegid"
  }
 ]

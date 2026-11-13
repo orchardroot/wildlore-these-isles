@@ -1,0 +1,32 @@
+{
+ "id": "tg_walker",
+ "name": "Walker Mari",
+ "class": "Walker",
+ "sprite": "hiker",
+ "party": [
+  {
+   "species": "kidgruff",
+   "level": 30
+  },
+  {
+   "species": "wispet",
+   "level": 31
+  },
+  {
+   "species": "brockling",
+   "level": 31
+  }
+ ],
+ "ai": "trainer",
+ "money": 620,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Walker Mari",
+   "text": "I am walking to Bala the way Mary Jones did. It is about twenty-five miles. She did it in a day, in 1800, with a bit of bread and a plan."
+  }
+ ],
+ "win": "Right. That is a lesson in endurance. I am glad it was yours.",
+ "after": "Twenty-five miles on foot for one book. It makes a late train look like a minor inconvenience.",
+ "scaled_floor": 31
+}
