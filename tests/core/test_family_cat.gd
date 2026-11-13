@@ -243,7 +243,7 @@ func test_par_never_lifts_her_above_the_team() -> void:
 	var d := _data({"badge_storm": true, "visited_buxton": true}, ["kindlet"], 12)
 	assert_eq(FamilyCat.par_level(d), 12)
 	var late := _data({"game_complete": true, "visited_buxton": true}, ["kindlet"], 80)
-	assert_eq(FamilyCat.par_level(late), ParLevel.par(late.flags))
+	assert_eq(FamilyCat.par_level(late), 80, "par 97 held to the best of the team")
 	assert_eq(FamilyCat.species_at(dex, 80), "catsith")
 	assert_eq(FamilyCat.species_at(dex, 20), "grimalkin")
 	assert_eq(FamilyCat.species_at(dex, 6), "sootkit")
