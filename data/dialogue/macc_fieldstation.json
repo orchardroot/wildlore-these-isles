@@ -521,7 +521,7 @@
           {
            "do": "say",
            "who": "{rival}",
-           "text": "Fire beats hedgerow. That's not cheating, that's science."
+           "text": "Hearth beats Hedgerow. That's not cheating, that's science."
           }
          ],
          "eq": "spikkin"
@@ -538,7 +538,7 @@
           {
            "do": "say",
            "who": "{rival}",
-           "text": "Spines beat otters. Probably. Let's find out."
+           "text": "Hedgerow beats Brook. Probably. Let's find out."
           }
          ],
          "eq": "holtling"
@@ -555,7 +555,7 @@
           {
            "do": "say",
            "who": "{rival}",
-           "text": "Water beats fire. See? I did revise."
+           "text": "Brook beats Hearth. See? I did revise."
           }
          ],
          "eq": "kindlet"

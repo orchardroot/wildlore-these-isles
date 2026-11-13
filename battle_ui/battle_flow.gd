@@ -38,7 +38,6 @@ var _exhibition := false  # a County Show or Open Moot bout: no XP (the team is 
 var _no_items := false    # the "No Items" ruleset: the bag stays shut
 var acting_pos := 0  # doubles: the field position the ui is choosing for
 var _switching := []  # doubles: party indices already picked to switch in this turn
-var _known := {}  # species the player had seen before this battle began (run() marks the foes seen)
 
 func _init(p_data: GameStateData, p_dex: Dex, p_moves: MoveDB, p_chart: TypeChart, p_items: ItemDB, p_rng: Rng, foe_party: Array, opts: Dictionary, p_ui) -> void:
 	data = p_data
@@ -54,7 +53,6 @@ func _init(p_data: GameStateData, p_dex: Dex, p_moves: MoveDB, p_chart: TypeChar
 		"season": Calendar.season_today(), "zone": data.zone_id, "flags": data.flags}
 	ai_tier = str(opts.get("ai", "wild"))
 	bag = Bag.new(data.bag)
-	_known = data.seen.duplicate()
 	battle = Battle.new(data.party, foe_party, {
 		"chart": p_chart, "move_db": p_moves, "item_db": p_items, "rng": p_rng,
 		"kind": opts.get("kind", "wild"), "weather": opts.get("weather", "clear"), "time": opts.get("time", "day"),
@@ -70,16 +68,20 @@ func is_wild() -> bool:
 func is_caught_species(id: String) -> bool:
 	return data.caught.has(id)
 
-## The move picker's type hint for move `slot` of `me`: "Super effective", "No effect on X"... ("" if unknown).
-## Only foes the player had met before this battle are judged, so a first encounter stays a surprise.
-func move_hint(me: Creature, slot: int) -> String:
-	if slot < 0 or slot >= me.moves.size():
-		return ""
+## The foes standing now, as MoveText wants them: [{"name", "types"}].
+func foe_views() -> Array:
 	var foes := []
 	for c in battle.actives(Battle.FOE):
 		if not c.is_fainted():
-			foes.append({"name": c.display_name(), "types": c.types(), "known": _known.has(c.species.id)})
-	return MoveText.versus(move_db.get_move(str(me.moves[slot].id)), foes, battle.chart)
+			foes.append({"name": c.display_name(), "types": c.types()})
+	return foes
+
+## The move picker's matchup cue for move `slot` of `me`: MoveText.cues against every foe standing, from the very
+## first meeting (types are plain on the plate, so there is nothing to keep secret). [] for a status move.
+func move_hint(me: Creature, slot: int) -> Array:
+	if slot < 0 or slot >= me.moves.size():
+		return []
+	return MoveText.cues(move_db.get_move(str(me.moves[slot].id)), foe_views(), battle.chart)
 
 ## 1 to 3 wobbles: a likelier snare wobbles more before it either clicks or breaks. A caught creature always wobbles thrice.
 static func wobbles_for(chance: float, success: bool) -> int:

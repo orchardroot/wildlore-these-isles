@@ -26,11 +26,13 @@ const TEXT := {
 	"pairing": "Two fond creatures can leave a basket. It hatches once you have walked enough steps.",
 	"battle_wild": "Weaken a wild creature first, then throw a Snare from the Bag to catch it.",
 	"battle_keeper": "A Keeper's creatures can't be caught. Win by tiring out their whole team.",
+	"types": "Types decide fights: Hearth beats Hedgerow beats Brook beats Hearth. Menu in a fight shows the whole chart.",
+	"typechart": "Sixteen types. Pick one to see what it hits hard, what it can't hurt, and what hits it back.",
 }
 ## Menu name (as the Router knows it) to the card it shows.
 const MENUS := {"pedia": "pedia", "bag": "bag", "party": "party", "ark": "ark", "map": "map", "quests": "quests",
 	"stats": "stats", "almanac": "almanac", "shop": "shop", "jobs": "jobs", "craft": "craft", "society": "society",
-	"deed": "deed", "market": "market", "pairing": "pairing"}
+	"deed": "deed", "market": "market", "pairing": "pairing", "typechart": "typechart"}
 
 ## The card for `id` if Hints are on and it has not been shown ("" otherwise); showing it marks it seen.
 static func take(d: GameStateData, id: String, enabled: bool) -> String:

@@ -101,19 +101,18 @@ static func effectiveness_label(mult: float) -> String:
 		return "Not very effective"
 	return ""
 
-## How a damaging move will land. foes: the standing foes, each {"name", "types", "known"}; only species the
-## player has met before ("known") are judged. One foe (or the same answer for every known foe): just the label.
-## Otherwise each known foe that isn't a plain hit is named. "" when there is nothing useful to say.
+## How a damaging move will land. foes: the standing foes, each {"name", "types"}. One foe (or the same answer for
+## every foe): just the label. Otherwise each foe that isn't a plain hit is named. "" when there is nothing useful
+## to say (status moves, and plain hits: the move picker marks those itself, see `cues`).
 static func versus(mv: Dictionary, foes: Array, chart: TypeChart) -> String:
 	if str(mv.get("category", "status")) == "status" or int(mv.get("power", 0)) <= 0:
 		return ""
 	var labels := []
 	for f in foes:
-		if bool(f.get("known", false)):
-			labels.append([str(f.name), effectiveness_label(chart.effectiveness(str(mv.get("type", "")), f.types))])
+		labels.append([str(f.name), effectiveness_label(chart.effectiveness(str(mv.get("type", "")), f.types))])
 	if labels.is_empty():
 		return ""
-	var same := labels.size() == foes.size() and labels.all(func(l): return l[1] == labels[0][1])
+	var same := labels.all(func(l): return l[1] == labels[0][1])
 	if foes.size() == 1 or same:
 		return labels[0][1]
 	var bits := []
@@ -121,6 +120,112 @@ static func versus(mv: Dictionary, foes: Array, chart: TypeChart) -> String:
 		if l[1] != "":
 			bits.append("%s on %s" % [l[1] if bits.is_empty() else str(l[1]).to_lower(), l[0]])
 	return ", ".join(bits)
+
+## The shape a multiplier gets (EffectMark): up1/up2 for x2/x4, dn1/dn2 for x1/2 and x1/4, none, or even.
+static func cue_kind(mult: float) -> String:
+	if mult == 0.0:
+		return "none"
+	if mult >= 4.0:
+		return "up2"
+	if mult > 1.0:
+		return "up1"
+	if mult <= 0.25:
+		return "dn2"
+	if mult < 1.0:
+		return "dn1"
+	return "even"
+
+## The words beside the shape. `short` leaves off the verdict ("x2" for "Super effective x2"), for crowded rows.
+static func cue_words(mult: float, short := false) -> String:
+	if mult == 0.0:
+		return "No effect"
+	if is_equal_approx(mult, 1.0):
+		return "x1" if short else "Normal hit"
+	return TypeChart.mult_words(mult) if short else "%s %s" % [effectiveness_label(mult), TypeChart.mult_words(mult)]
+
+## What the move picker shows under each move that does damage: one {"kind", "words", "who"} per foe standing
+## ("who" is "" when one answer covers every foe), and [] for a status move. foes: [{"name", "types"}].
+static func cues(mv: Dictionary, foes: Array, chart: TypeChart) -> Array:
+	if str(mv.get("category", "status")) == "status" or int(mv.get("power", 0)) <= 0 or foes.is_empty():
+		return []
+	var out := []
+	for f in foes:
+		out.append(chart.effectiveness(str(mv.get("type", "")), f.types))
+	var same: bool = out.all(func(m): return is_equal_approx(m, out[0]))
+	if same:
+		return [{"kind": cue_kind(out[0]), "words": cue_words(out[0]), "who": ""}]
+	var rows := []
+	for i in foes.size():
+		rows.append({"kind": cue_kind(out[i]), "words": cue_words(out[i], true), "who": str(foes[i].name)})
+	return rows
+
+## Who suits this fight, for the switch menu: {"kind", "words"} for a party member's attack (its best damaging move
+## it still has PP for, against the foes standing) and for its defence (the worst the foes' own types do to it).
+## Same shapes as the move picker: up is good for the member, down is bad, a cross is no effect.
+## foes: [{"name", "types"}]. Both are {} when there are no foes to judge against.
+static func suit_attack(c: Creature, foes: Array, move_db: MoveDB, chart: TypeChart) -> Dictionary:
+	if foes.is_empty():
+		return {}
+	var best := -1.0
+	for m in c.moves:
+		var mv := move_db.get_move(str(m.id))
+		if int(m.pp) <= 0 or str(mv.get("category", "status")) == "status" or int(mv.get("power", 0)) <= 0:
+			continue
+		for f in foes:
+			best = maxf(best, chart.effectiveness(str(mv.get("type", "")), f.types))
+	if best < 0.0:
+		return {"kind": "even", "words": "No attack moves"}
+	if best == 0.0:
+		return {"kind": "none", "words": "Can't hurt it"}
+	if best > 1.0:
+		return {"kind": "up2" if best >= 4.0 else "up1", "words": "Hits hard"}
+	if best < 1.0:
+		return {"kind": "dn1", "words": "Hits weakly"}
+	return {"kind": "even", "words": "Hits evenly"}
+
+static func suit_defence(c: Creature, foes: Array, chart: TypeChart) -> Dictionary:
+	if foes.is_empty():
+		return {}
+	var worst := 0.0
+	for f in foes:
+		for t in f.types:
+			worst = maxf(worst, chart.effectiveness(str(t), c.types()))
+	if worst == 0.0:
+		return {"kind": "up2", "words": "Immune"}
+	if worst > 1.0:
+		return {"kind": "dn2" if worst >= 4.0 else "dn1", "words": "Weak to it"}
+	if worst < 1.0:
+		return {"kind": "up1", "words": "Resists it"}
+	return {"kind": "even", "words": "Holds even"}
+
+## The two cues as the rows' cue list ([] with no foes).
+static func suits(c: Creature, foes: Array, move_db: MoveDB, chart: TypeChart) -> Array:
+	var a := suit_attack(c, foes, move_db, chart)
+	if a.is_empty():
+		return []
+	var d := suit_defence(c, foes, chart)
+	return [{"kind": a.kind, "words": a.words, "who": ""}, {"kind": d.kind, "words": d.words, "who": ""}]
+
+## "Strong against Hedgerow, Frost and Iron. Weak against ..." for a move's description, from its type alone ("" for
+## a move with no type or no damage). Type names are the game's own (Hearth, Brook), capitalised.
+static func matchup_line(mv: Dictionary, chart: TypeChart) -> String:
+	var t := str(mv.get("type", ""))
+	if t == "" or str(mv.get("category", "status")) == "status" or int(mv.get("power", 0)) <= 0:
+		return ""
+	var bits := []
+	var strong := chart.strong_against(t)
+	if not strong.is_empty():
+		bits.append("Strong against %s" % _names(strong))
+	var weak := chart.weak_against(t)
+	if not weak.is_empty():
+		bits.append("Weak against %s" % _names(weak))
+	var none := chart.no_effect_on(t)
+	if not none.is_empty():
+		bits.append("No effect on %s" % _names(none))
+	return ". ".join(bits) + ("." if not bits.is_empty() else "")
+
+static func _names(ids: Array) -> String:
+	return ", ".join(ids.map(func(i): return str(i).capitalize()))
 
 ## The odds of one snare holding, in words rather than numbers.
 static func catch_band(chance: float) -> String:
