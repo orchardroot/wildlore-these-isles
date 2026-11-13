@@ -6,6 +6,7 @@ const WALK_SPEED := 4.0   # tiles per second
 const RUN_SPEED := 7.0
 const BIKE_SPEED := 9.0
 const TURN_GRACE := 0.09  # a quick tap turns on the spot, holding walks
+const PADDLE_SPEED := 5.0 # a coracle at a brisk stroke (the run key); easy paddling is WALK_SPEED
 const HOP_SECS := 0.35    # a ledge hop, two tiles
 
 signal step_finished(p: Vector2i)
@@ -27,7 +28,7 @@ var on_bike := false
 var _run_latched := false   # run mode "toggle": running stays on until the run key is pressed again
 var wading := false
 var _bike: Node3D
-var _coracle: MeshInstance3D
+var _coracle: CoracleBoat
 var _was_running := false   # for the dust puff on breaking into a run
 var _dust: CPUParticles3D
 # the step under way: advanced in _process (not a tween) so a held direction runs straight on into the next step
@@ -46,18 +47,9 @@ func setup(ow: Node, sprite_id: String) -> void:
 	sprite.setup(sprite_id)
 	_bike = _make_bike()
 	add_child(_bike)
-	_coracle = MeshInstance3D.new()
-	var cyl := CylinderMesh.new()
-	cyl.top_radius = 0.42
-	cyl.bottom_radius = 0.3
-	cyl.height = 0.18
-	cyl.radial_segments = 10
-	_coracle.mesh = cyl
-	var m := StandardMaterial3D.new()
-	m.albedo_color = Color("6b4a32")
-	_coracle.material_override = m
-	_coracle.position = Vector3(0, 0.02, 0)
+	_coracle = CoracleBoat.new()
 	add_child(_coracle)
+	_coracle.setup(sprite)
 	_refresh_ride()
 
 ## A little bicycle under the sprite: two wheels and a frame, turned with the rider (see face).
@@ -96,7 +88,7 @@ func _refresh_ride() -> void:
 	if _bike:
 		_bike.visible = on_bike
 	if _coracle:
-		_coracle.visible = wading
+		_coracle.set_afloat(wading)
 
 func place(p: Vector2i, dir: String, y: float) -> void:
 	grid_pos = p
@@ -244,7 +236,7 @@ func try_step(dir: String, running := false) -> bool:
 	if run_on_foot and not _was_running and verdict != "ledge":
 		_puff()
 	_was_running = run_on_foot
-	var speed := BIKE_SPEED if on_bike else (RUN_SPEED if running else WALK_SPEED)
+	var speed := BIKE_SPEED if on_bike else ((PADDLE_SPEED if wading else RUN_SPEED) if running else WALK_SPEED)
 	var secs := 1.0 / speed
 	var hop := verdict == "ledge"
 	if hop:

@@ -48,11 +48,13 @@ func _initialize() -> void:
 	errors.append_array(Looks.check(items_db))  # data/items/wear.json deltas the painter can draw; data/looks.json
 	errors.append_array(Poi.check(zones, dex, items_db))  # data/poi: dens, camps, stones and caches on the routes
 	errors.append_array(FieldSpots.check(zones, items_db))  # w48 F: data/field_spots on free tiles beside the path
+	errors.append_array(Flotsam.check(zones, items_db))  # w54: data/flotsam.json finds for the coracle
 	errors.append_array(FamilyDrawer.check(zones, items_db))  # w53: data/family_drawers.json
 	errors.append_array(Visits.check(zones))  # w53: data/visits return-visit lines for home residents
 	errors.append_array(Wants.check(zones, items_db, dex))  # w47 C: data/trades residents, wants, front-room shops
 	errors.append_array(Errands.check(zones, items_db))  # w47 C: errand npcs and rewards
 	errors.append_array(Regulars.problems(zones, items_db))  # w53: every Regular is a real person in a real place
+	errors.append_array(RideCheck.problems(zones))  # w54: the coracle never skips a story gate (no_ride rects close the leaks)
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
 	errors.append_array(Letters.errors(zones, items_db))  # papers on tables and their treasure trails
