@@ -553,6 +553,64 @@
    "script": "gate_tintagel",
    "hide_if": "ashcombe1_done",
    "name": "Warden"
+  },
+  {
+   "id": "ct_bodmin_neighbour",
+   "sprite": "villager_2",
+   "x": 17,
+   "y": 17,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bodmin_neighbour",
+   "name": "Wilf Hocking"
+  },
+  {
+   "id": "ct_bodmin_keeper",
+   "sprite": "hillwalker",
+   "x": 39,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bodmin_keeper",
+   "name": "Retired Zookeeper"
+  },
+  {
+   "id": "ct_bodmin_lair",
+   "sprite": "creature:bodminax",
+   "x": 48,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bodmin_lair",
+   "name": "The Beast",
+   "show_if": "ct_bodmin_state",
+   "hide_if": "ct_bodmin_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 23,
+   "y": 15,
+   "text": [
+    "A muddy gateway, churned by sheep and a quad bike. There are prints in it, and most of them are boots."
+   ],
+   "clue": "bodmin.prints"
+  },
+  {
+   "x": 33,
+   "y": 28,
+   "text": [
+    "Thick gorse and bramble. There's a smell, and a lot of buzzing."
+   ],
+   "clue": "bodmin.kill"
+  },
+  {
+   "x": 48,
+   "y": 18,
+   "text": [
+    "The edge of the moor, where the gorse runs down to the wall. It is very dark out here after dusk."
+   ],
+   "clue": "bodmin.night"
   }
  ],
  "encounters": {

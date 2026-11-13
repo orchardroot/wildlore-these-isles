@@ -1,0 +1,196 @@
+{
+ "id": "bodmin",
+ "title": "The Beast of Bodmin",
+ "town": "penzance",
+ "nation": "england",
+ "group": "farmers",
+ "badges": 5,
+ "pay": 4,
+ "poster": {
+  "name": "Jory Tregenza",
+  "role": "sheep farmer, up from Bodmin Moor for market",
+  "idle": [
+   "Market day, my lover, and I'm all out of patience. There's something on my moor, but you've not the look of someone who's ready for it. Come back with a few more badges."
+  ],
+  "taken": [
+   "Anything? Two more ewes last night. Not eaten. Dragged under the gorse and covered over like a dog hides a bone, only tidier. Dogs aren't tidy."
+  ],
+  "decided": [
+   "You've got moor on your boots. Right. Out with it."
+  ],
+  "closed": "That's the moor settled, one way or another. I don't talk about it in the pub any more. Mostly.",
+  "haggle": "A hard bargain, for a visitor. You'll do well in Cornwall. Done."
+ },
+ "notice": [
+  "Eleven sheep lost since Candlemas, and not a fox's work. Big, clean kills, and the carcasses hidden. People say it's the Beast. I say I'd like to know what it is before the whole parish does something daft.",
+  "I'll pay the going rate. Ask for Jory Tregenza at the market."
+ ],
+ "trouble": [
+  "It's out on the moor country above Tintagel, in the rough fields. The walkers see something, the pub sees something, and the Western Morning News wants a photograph.",
+  "Nobody wants to hurt it. Nobody wants to lose another ewe either. I want you to look first."
+ ],
+ "hypotheses": [
+  {"id": "cat", "name": "A big cat, loose from somewhere", "types": ["night", "brawn"]},
+  {"id": "dogs", "name": "A pack of loose dogs", "types": ["kin", "brawn"]},
+  {"id": "fox", "name": "Foxes and a great deal of imagination", "types": ["kin"]}
+ ],
+ "truth": "cat",
+ "clues": [
+  {
+   "id": "prints",
+   "kind": "look",
+   "zone": "tintagel",
+   "hint": "the soft mud by the sheep gate",
+   "text": "A paw print in the soft mud, wide as a saucer: four toes, a big pad, and no claw marks. A dog's claws always show. A cat keeps them pulled in. Whatever came through this gate walked like a cat.",
+   "points": ["cat"],
+   "rules_out": ["dogs"]
+  },
+  {
+   "id": "kill",
+   "kind": "look",
+   "zone": "tintagel",
+   "hint": "the carcass under the gorse",
+   "text": "The ewe has been dragged a long way under the gorse and covered with grass and bracken. The neck is bitten through, clean as scissors, and the body is hardly touched. A fox mauls and leaves. A cat kills cleanly and hides its meal to come back for.",
+   "points": ["cat"],
+   "rules_out": ["fox"]
+  },
+  {
+   "id": "night",
+   "kind": "look",
+   "zone": "tintagel",
+   "hint": "the edge of the moor, watched after dark",
+   "text": "You wait in the gorse with the wind in your face. A long, low shape slides along the wall in the dark, a tail curved behind it like a question mark, and two green lamps turn toward you. It looks at you for a long time. It is not afraid. It decides you are not worth the effort, and goes.",
+   "hint_wait": "Sheep, wind and gorse. Whatever hunts here does it after dark. Try again then.",
+   "points": ["cat"],
+   "when": {"phase": ["night"]}
+  },
+  {
+   "id": "neighbour",
+   "kind": "ask",
+   "zone": "tintagel",
+   "who": "Wilf Hocking",
+   "hint": "ask the neighbouring farmer",
+   "text": [
+    "Dogs. I saw two of them, collie crosses off a council estate, out for the night. They'd worry a flock for sport and be home for breakfast. Put a gun to them, I say.",
+    "Mind, it's a daft sort of collie that buries what it kills."
+   ],
+   "idle": ["I've seen nothing, and I'm very sure of it."],
+   "after": "A cat. A real one. Well, I never said the dogs weren't about as well.",
+   "points": ["dogs"]
+  },
+  {
+   "id": "keeper",
+   "kind": "ask",
+   "zone": "tintagel",
+   "who": "Retired Zookeeper",
+   "hint": "ask the retired zookeeper",
+   "text": [
+    "Forty years with big cats, and I know a clean kill when I see one. A leopard hauls a carcass up a tree, and a puma covers it with leaf litter. Where there's no tree, it'll use the gorse.",
+    "I'm not saying what it is. I'm saying that's not a fox or a dog, and I'd stake my pension on it."
+   ],
+   "idle": ["Don't mind me. I'm just watching the sheep. Professionally."],
+   "after": "Whatever you did, I hope it got a decent dinner. They do eat well, the big ones.",
+   "points": ["cat"],
+   "rules_out": ["fox", "dogs"]
+  }
+ ],
+ "lair": {
+  "zone": "tintagel",
+  "name": "The Beast",
+  "species": "bodminax",
+  "level": 48,
+  "floor_par": 44,
+  "intro": [
+   "A hollow in the gorse above a rock outcrop, flattened bracken, a smell like a warm barn, and a scatter of old bones tidied into a corner. Nobody has ever got a photograph of this place.",
+   "Something black and lean unfolds from the shadow of the outcrop, a long tail swinging, and stands there looking at you as if you had come to the wrong house."
+  ],
+  "beaten": [
+   "The Beast crouches on the rock with its flanks heaving, and its green eyes never leave you. It seems to be waiting to see what sort of person you are."
+  ]
+ },
+ "choices": [
+  {
+   "id": "watch",
+   "label": "Organise a night watch with the farmers",
+   "say": [
+    "You and Jory and a dozen neighbours spend a week of nights in the gorse with torches and a flask each. The flocks come in at dusk. The Beast, which is not stupid, goes to the next parish, where nobody is watching.",
+    "The farmers feel better. The Beast has not been asked."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_bodmin_watch": true, "ct_bodmin_barns": true},
+   "repute": {"farmers": 2, "townsfolk": -1},
+   "standing": {"england": 2},
+   "poster": ["Not a sheep lost since the watch started. It's gone off east, they say, and that's somebody else's worry. Here's your money, and a pasty."],
+   "after": ["We bring the flock in at dusk now. It's a nuisance and it works. Whatever it was has gone to bother Somerset."],
+   "journal": "You organised a night watch, and the flocks come in at dusk now. The sheep are safe. The Beast has gone elsewhere, and the pub is quieter without it."
+  },
+  {
+   "id": "leave",
+   "label": "Say nothing, and leave the Beast a rumour",
+   "say": [
+    "You tell the farmers there is nothing to see and nothing to shoot, and you tell the paper the same. It is not quite a lie. The Beast stays a rumour, the walkers keep walking and the tea shops keep selling.",
+    "Jory loses two more ewes before the summer. He loses them quietly, with his jaw set."
+   ],
+   "fee": 0.5,
+   "flags": {"ct_bodmin_rumour": true, "ct_bodmin_tourists": true},
+   "repute": {"townsfolk": 2, "farmers": -2},
+   "standing": {"england": 1},
+   "poster": ["You say there's nothing to be done. I can't prove you're wrong. I can count my ewes. Half the fee, and I'll thank you not to come to the market for a bit."],
+   "after": ["The tea towels sell. I lose a sheep or two. They don't put that on the tea towels."],
+   "journal": "You left the Beast a rumour and said nothing. The Cornish tea shops did very well and Jory lost two more ewes. He has not forgiven you."
+  },
+  {
+   "id": "sanctuary",
+   "label": "Report it, and have it taken to a sanctuary",
+   "say": [
+    "A licensed team and a very large cage take the Beast away in a lorry with the blinds down. It goes to a sanctuary two hundred miles from here, where it is given a field, a tree and a reliable dinner.",
+    "The moor falls quiet. People say it has never been so quiet, and they sound a little bereaved."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_bodmin_sanctuary": true, "ct_bodmin_quiet": true},
+   "repute": {"farmers": 1, "townsfolk": -2},
+   "standing": {"england": 1},
+   "poster": ["Safe, you say, with a tree, and a vet? And my sheep are safe too. Well, that's about the best that could be said. Eighty per cent. And the pub's furious."],
+   "after": ["They took it off in a lorry. Sheep are safe. Pub is quiet. The tea shops are looking for a new legend."],
+   "journal": "You had the Beast taken to a sanctuary. The sheep are safe, the moor is quiet, and Cornwall has lost its famous monster, which several shopkeepers want to discuss with you."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes. The Beast goes in with a long, indignant exhalation, and from the inside it watches you through the glass with large green eyes. You have, officially, caught the Beast of Bodmin. You have no idea what to tell the newspaper."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_bodmin_kept": true, "ct_bodmin_quiet": true},
+   "repute": {"farmers": 1, "townsfolk": -1},
+   "standing": {"england": 2},
+   "poster": ["It's in your team? It's in your team. Well, it won't be eating my ewes. Don't tell the newspaper. Don't tell anyone. Don't let it out in Cornwall."],
+   "after": ["Whatever's in your team, keep it out of Cornwall. I've enough sheep to worry about."],
+   "journal": "You caught the Beast of Bodmin, and it travels with you. The sheep are safe, nobody believes you, and Jory has asked you not to say a word."
+  }
+ ],
+ "real": "Reports of a big cat prowling Bodmin Moor go back to the 1970s and grew in the 1990s, with sheep found dead and a good many blurred photographs. In 1995 a government inquiry from the Ministry of Agriculture looked into it and found no verifiable evidence that a big cat lived wild on the moor. Dogs and foxes can kill sheep, and a hidden carcass is not proof of anything. A popular theory is that owners released exotic cats after the Dangerous Wild Animals Act of 1976 made keeping them costly and licensed. Sightings go on, and the tale is good for tourism: Jamaica Inn, the old coaching inn on the moor, trades on its smugglers and on the Beast.",
+ "places": {
+  "poster": {"sprite": "farmer", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "neighbour", "sprite": "villager_2", "near": [20, 20]},
+   {"clue": "keeper", "sprite": "hillwalker", "near": [40, 30]}
+  ],
+  "looks": [
+   {"clue": "prints", "near": [24, 14], "on": "any", "text": ["A muddy gateway, churned by sheep and a quad bike. There are prints in it, and most of them are boots."]},
+   {"clue": "kill", "near": [34, 26], "on": "any", "text": ["Thick gorse and bramble. There's a smell, and a lot of buzzing."]},
+   {"clue": "night", "near": [44, 20], "on": "any", "text": ["The edge of the moor, where the gorse runs down to the wall. It is very dark out here after dusk."]}
+  ],
+  "lair": {"near": [48, 30]},
+  "folk": [
+   {"id": "towels", "zone": "penzance", "near": [30, 26], "sprite": "shopkeeper", "name": "Stallholder", "show_if": "ct_bodmin_tourists", "says": [],
+    "else": ["Beast of Bodmin tea towels, three for a tenner. Nobody's seen it in years, and that's very good for trade. Mind, Jory won't buy one."]},
+   {"id": "barns", "zone": "penzance", "near": [24, 20], "sprite": "farmer", "name": "Farmer", "show_if": "ct_bodmin_barns", "says": [],
+    "else": ["The flocks come in at dusk now. It's a nuisance, but it works. Whatever it was has gone off to bother Somerset."]},
+   {"id": "gone", "zone": "penzance", "near": [38, 26], "sprite": "villager_3", "name": "Pub Regular", "show_if": "ct_bodmin_quiet", "says": [
+     ["ct_bodmin_is_caught", ["Somebody caught the Beast of Bodmin, they say, and put it in a team. I told them it was a hoax. I'm wrong, aren't I?"]]
+    ], "else": ["They took the Beast off in a lorry with the blinds down. The moor's never been so quiet. The pub's never been so empty."]}
+  ]
+ }
+}
