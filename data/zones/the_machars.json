@@ -1,0 +1,477 @@
+{
+ "id": "the_machars",
+ "name": "The Machars",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_forest",
+ "weather": {
+  "drizzle": 38,
+  "clear": 20,
+  "downpour": 14,
+  "fog": 10,
+  "gale": 8,
+  "sunshine": 10
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "cream_render",
+   "x": 5,
+   "y": 12,
+   "w": 6,
+   "h": 3,
+   "label": "Bookshop"
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 12,
+   "y": 12,
+   "w": 6,
+   "h": 3,
+   "label": "Bookshop"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 5,
+   "y": 22,
+   "w": 6,
+   "h": 3,
+   "label": "Bookshop"
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 12,
+   "y": 22,
+   "w": 6,
+   "h": 3,
+   "label": "Bookshop"
+  },
+  {
+   "type": "bench",
+   "x": 9,
+   "y": 17
+  },
+  {
+   "type": "lamp_post",
+   "x": 13,
+   "y": 17
+  },
+  {
+   "type": "lamp_post",
+   "x": 8,
+   "y": 20
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 36,
+   "y": 12,
+   "w": 10,
+   "h": 5,
+   "label": "Whithorn Priory"
+  },
+  {
+   "type": "standing_stone",
+   "x": 48,
+   "y": 14
+  },
+  {
+   "type": "headstone",
+   "x": 34,
+   "y": 20
+  },
+  {
+   "type": "headstone",
+   "x": 38,
+   "y": 21
+  },
+  {
+   "type": "bush",
+   "x": 20,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 6,
+   "y": 29,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 53,
+   "y": 26,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 23,
+   "y": 13,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 33,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 30,
+   "y": 4,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 23,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 27,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 52,
+   "y": 25,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 52,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 31,
+   "y": 8,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 50,
+   "y": 27,
+   "variant": 0
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "cairnryan",
+   "offset": 0
+  },
+  "east": {
+   "to": "galloway",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "mac_bookseller",
+   "sprite": "villager_2",
+   "x": 8,
+   "y": 18,
+   "facing": "right",
+   "move": "still",
+   "script": "mac_bookseller"
+  },
+  {
+   "id": "mac_prior",
+   "sprite": "pilgrim",
+   "x": 41,
+   "y": 19,
+   "facing": "left",
+   "move": "still",
+   "script": "mac_prior"
+  },
+  {
+   "id": "mac_kite",
+   "sprite": "birdwatcher",
+   "x": 30,
+   "y": 25,
+   "facing": "right",
+   "move": "still",
+   "script": "mac_kite"
+  },
+  {
+   "id": "mac_farmer",
+   "sprite": "farmer",
+   "x": 45,
+   "y": 28,
+   "facing": "left",
+   "move": "still",
+   "script": "mac_farmer"
+  },
+  {
+   "id": "mac_kite_c",
+   "sprite": "creature:hootlet",
+   "x": 28,
+   "y": 12,
+   "facing": "down",
+   "move": "wander",
+   "script": "mac_kite_c"
+  },
+  {
+   "id": "mac_reader",
+   "sprite": "student",
+   "x": 14,
+   "y": 26,
+   "facing": "up",
+   "move": "still",
+   "trainer": "mac_reader"
+  },
+  {
+   "id": "mac_farmer_t",
+   "sprite": "farmer",
+   "x": 34,
+   "y": 34,
+   "facing": "left",
+   "move": "still",
+   "trainer": "mac_farmer_t"
+  },
+  {
+   "id": "mac_pilgrim",
+   "sprite": "pilgrim",
+   "x": 44,
+   "y": 20,
+   "facing": "left",
+   "move": "still",
+   "trainer": "mac_pilgrim"
+  },
+  {
+   "id": "mac_angler",
+   "sprite": "angler",
+   "x": 24,
+   "y": 35,
+   "facing": "up",
+   "move": "still",
+   "trainer": "mac_angler"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "fawnlet",
+    "min": 67,
+    "max": 69,
+    "weight": 10,
+    "time": [
+     "dawn",
+     "dusk",
+     "day"
+    ]
+   },
+   {
+    "species": "stagmor",
+    "min": 68,
+    "max": 69,
+    "weight": 6,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "natterjack",
+    "min": 67,
+    "max": 69,
+    "weight": 10,
+    "weather": [
+     "drizzle",
+     "downpour"
+    ]
+   },
+   {
+    "species": "whiffhorn",
+    "min": 67,
+    "max": 69,
+    "weight": 8
+   },
+   {
+    "species": "zigzlet",
+    "min": 67,
+    "max": 69,
+    "weight": 8
+   },
+   {
+    "species": "thornsow",
+    "min": 67,
+    "max": 69,
+    "weight": 8
+   },
+   {
+    "species": "brockling",
+    "min": 67,
+    "max": 69,
+    "weight": 8,
+    "time": [
+     "night",
+     "dusk"
+    ]
+   },
+   {
+    "species": "martling",
+    "min": 67,
+    "max": 69,
+    "weight": 8
+   },
+   {
+    "species": "hootlet",
+    "min": 67,
+    "max": 69,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "flittermouse",
+    "min": 67,
+    "max": 69,
+    "weight": 6,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "chipgull",
+    "min": 67,
+    "max": 68,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "day"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "greyhaul",
+    "min": 67,
+    "max": 68,
+    "weight": 14
+   },
+   {
+    "species": "plungebeak",
+    "min": 67,
+    "max": 68,
+    "weight": 12
+   },
+   {
+    "species": "dolphlet",
+    "min": 67,
+    "max": 68,
+    "weight": 10
+   },
+   {
+    "species": "selklet",
+    "min": 67,
+    "max": 68,
+    "weight": 10
+   },
+   {
+    "species": "chipgull",
+    "min": 67,
+    "max": 68,
+    "weight": 12
+   },
+   {
+    "species": "baskling",
+    "min": 67,
+    "max": 68,
+    "weight": 8
+   },
+   {
+    "species": "rillotter",
+    "min": 67,
+    "max": 69,
+    "weight": 12
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 15,
+   "y": 18,
+   "text": "WIGTOWN. In 1998 this small town in Galloway was chosen as Scotland's National Book Town, to give a new life to a place that had lost much of its business. It now has a good dozen bookshops, and a book festival every autumn, in a town of under a thousand people. The books have never once asked for a bigger shop.",
+   "plaque": "w55_sc_wigtown",
+   "title": "Wigtown, Scotland's National Book Town"
+  },
+  {
+   "x": 40,
+   "y": 18,
+   "text": "WHITHORN. Tradition says St Ninian came here about the year 397 and built a stone church, Candida Casa, the White House, which makes Whithorn the cradle of Christianity in Scotland. Pilgrims came to his shrine for centuries after, including, it is said, kings. The priory here is a ruin and the story is still standing.",
+   "plaque": "w55_sc_ninian",
+   "title": "Whithorn and St Ninian"
+  },
+  {
+   "x": 24,
+   "y": 32,
+   "text": "THE MACHARS. A broad green peninsula between Wigtown Bay and Luce Bay, the south end of Galloway. It is farmland, bog and long shore, and it has one road in and out and a great many bookshops."
+  },
+  {
+   "x": 30,
+   "y": 36,
+   "text": "RED KITES. Reintroduced to Galloway from 2001 after being gone from Scotland for over a century. Watch the sky above the farmland for a forked tail that twists to steer. If you see one, say hello."
+  }
+ ],
+ "spawn": [
+  5,
+  10
+ ],
+ "stage": "coast",
+ "scaled_floor": 67,
+ "rows": [
+  "TTTTTTTPPTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTPTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT....P.....P.........P.................T...............TTT",
+  "TTT.....................,,,,,,,,,,,,......T...,,,,,,,,,,.TTT",
+  "TTT..P..................,,,,,,,,,,,,..........,,,,,,,,,,.TTT",
+  "TTT..........T..........,,,,,,,,,,,,..........,,,,,,,,,,.TTT",
+  "TTT...........................T............T.P,,,,,,,,,,.TTT",
+  "TTT...P.........T.............................,,,,,,,,,,.TTT",
+  "#######################..........P.T......T...,,,,,,,,,,.TTT",
+  "#######################..................T.....PT.......TTTT",
+  "#######################......P...P.......................TTT",
+  "TTT.PBBBBBB.BBBBBB..###.............BBBBBBBBBB.......T...TTT",
+  "PTT..BBBBBBPBBBBBB..###.P...........BBBBBBBBBB......T....TTT",
+  "TTT..BBBBBB:BBBBBB..###.,,,,,,,,,,..BBBBBBBBBBT.....T....TTT",
+  "TTT..P::::::::::::#####T,,,,,,,,,,..BBBBBBBBBB...........TTT",
+  "TTT...::::::::::::#####.,,,,,,,,,,.PBBBBBBBBBB...........TTT",
+  "TTT...::::::::::::..###.,,,,,,,,,,##::::::::::...........TTT",
+  "TTT...::::::::::::..###.,,,,,,,,,,....................T.PTTT",
+  "TTT...::::::::::::..###.,,,,,,,,,,.........P.............TTT",
+  "TTT...::::::::::::..###.,,,,,,,,,,...P........P..........TTT",
+  "TTT...::::::::::::..###.,,,,,,,,,,...............T.......TTT",
+  "TTT..BBBBBB.BBBBBB..###.,,,,,,,,,,......,,,,,,,,,,,,,,.P.TTT",
+  "TTT..BBBBBB.BBBBBB..###.,,,,,,,,,,..T...,,,,,,,,,,,,,,...TTT",
+  "TTTT.BBBBBB.BBBBBB..###.,,,,,,,,........,,,,,,,,,,,,,,..TTTT",
+  "TTT.................###.,,,,,,,,........,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###P,,,,,,,,........,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###.,,,,,,,,........,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###.,,,,,,,,....P..P,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,,,....###.,,,,,,,,.P......,,,,,,,,,,,,,,...TTT",
+  "TPT.,,,,,,,,,,,,..T.###..............T...T...............TTT",
+  "TTT.,,,,,,,,,,,,....###.....P.....T.......T..............TTT",
+  "TTT.................###..................T...............TTT",
+  "TTT.................########################################",
+  "TTT.................########################################",
+  "PTTssssssssssssssssssssssssssssssssssssssssssssssssssssss###",
+  "TTTssssssssssssssssssssssssssssssssssssssssssssssssssssssTTP",
+  "TTTwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwTTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TPT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TTT",
+  "TTTTTTTTTPTPTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ]
+}

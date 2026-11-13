@@ -1,0 +1,32 @@
+{
+ "id": "mac_reader",
+ "name": "Reader Morven",
+ "class": "Reader",
+ "sprite": "student",
+ "party": [
+  {
+   "species": "natterjack",
+   "level": 67
+  },
+  {
+   "species": "whiffhorn",
+   "level": 67
+  },
+  {
+   "species": "zigzlet",
+   "level": 68
+  }
+ ],
+ "ai": "trainer",
+ "money": 2240,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Reader Morven",
+   "text": "I have read twelve books this week. I am ahead on points. Shall we?"
+  }
+ ],
+ "win": "A good battle. I will put it in a footnote.",
+ "after": "The trick is to buy more books than you can read, and then be very calm about it.",
+ "scaled_floor": 67
+}

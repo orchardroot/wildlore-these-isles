@@ -1,0 +1,32 @@
+{
+ "id": "mac_pilgrim",
+ "name": "Pilgrim Ailsa",
+ "class": "Pilgrim",
+ "sprite": "pilgrim",
+ "party": [
+  {
+   "species": "martling",
+   "level": 67
+  },
+  {
+   "species": "hootlet",
+   "level": 67
+  },
+  {
+   "species": "pinewraith",
+   "level": 68
+  }
+ ],
+ "ai": "trainer",
+ "money": 2260,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Pilgrim Ailsa",
+   "text": "I am walking St Ninian's Way. I have been at it for six days. I need something to push against."
+  }
+ ],
+ "win": "A good battle. Pilgrims are not meant to win.",
+ "after": "A pilgrimage is a long walk with a good excuse. I have both.",
+ "scaled_floor": 67
+}

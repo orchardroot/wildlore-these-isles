@@ -1,0 +1,57 @@
+{
+ "mac_bookseller": [
+  {
+   "do": "say",
+   "who": "Bookseller",
+   "text": "Scotland's National Book Town, and I run the smallest shop in it. A customer buys a book here and I know the title and their dog's name."
+  },
+  {
+   "do": "say",
+   "who": "Bookseller",
+   "text": "F\u00e0ilte, and mind the step. The step is the best-read in the building."
+  }
+ ],
+ "mac_prior": [
+  {
+   "do": "say",
+   "who": "Pilgrim",
+   "text": "St Ninian came to Whithorn about 397, they say, and built a white stone church. Pilgrims have been walking here ever since. I took the bus for the last bit, to be honest."
+  },
+  {
+   "do": "say",
+   "who": "Pilgrim",
+   "text": "Beannachd leibh, that is 'blessings with you', which is what the monks would say as you left. They did not say it if you left with the silverware."
+  }
+ ],
+ "mac_kite": [
+  {
+   "do": "say",
+   "who": "Kite Watcher",
+   "text": "A red kite has a forked tail and a very elegant way of showing off. Back in the nineteenth century they were all but gone. Now you can count them on a good day."
+  },
+  {
+   "do": "say",
+   "who": "Kite Watcher",
+   "text": "I have watched them since they were let go. I like to think they remember me. They do not."
+  }
+ ],
+ "mac_farmer": [
+  {
+   "do": "say",
+   "who": "Machars Farmer",
+   "text": "The Machars is a place where nothing happens, slowly, in a very green way. I would not live anywhere else, because nowhere else would put up with me."
+  },
+  {
+   "do": "say",
+   "who": "Machars Farmer",
+   "text": "If a bookshop and a priory and a kite all turn up in one afternoon, that is a good day on the Machars."
+  }
+ ],
+ "mac_kite_c": [
+  {
+   "do": "say",
+   "who": "Hootlet",
+   "text": "A hootlet, sleepy and wide-eyed, sits on a book shelf in a window and looks very much like it is reading."
+  }
+ ]
+}

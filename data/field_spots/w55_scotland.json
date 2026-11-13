@@ -127,5 +127,19 @@
   },
   "flag": "field_scalloway_road_line",
   "at": "scalloway_road"
+ },
+ {
+  "id": "fs_the_machars_loft",
+  "zone": "the_machars",
+  "x": 28,
+  "y": 34,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: a farmer's tip.",
+  "reward": {
+   "money": 2208
+  },
+  "flag": "field_the_machars_loft",
+  "at": "the_machars"
  }
 ]

@@ -297,6 +297,10 @@
   }
  ],
  "edges": {
+  "west": {
+   "to": "the_machars",
+   "offset": 0
+  },
   "east": {
    "to": "southern_upland_way",
    "offset": 1
@@ -667,9 +671,9 @@
   "TT.PPP,,,,,,..PP.......P,,,,P.###fffffff,,,,,fTT",
   "TT....,,,,,,..P.PPPP.P..,,,,P.###fffffffffffffTT",
   "TTPT..,,,,,,P.PP.....P...P.P..###fffffffffffffTT",
-  "TTP...,,,,,,P.....P.....P.PPP.###.......P.T.P.TT",
-  "TT..PP,,,,,,..###################....P..P.....TT",
-  "TT.T......P...###################P.....TP.PP..TT",
+  "###...,,,,,,P.....P.....P.PPP.###.......P.T.P.TT",
+  "##..PP,,,,,,..###################....P..P.....TT",
+  "##.T......P...###################P.....TP.PP..TT",
   "TT.TP.......P.############BBBBBBBB..PP........TT",
   "TT.P.........P###.......PPBBBBBBBB............TT",
   "TTPWWWWWWWWWWP##,,,,,,T..PBBBBBBBB.PP..P..P...TT",

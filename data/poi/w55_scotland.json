@@ -409,6 +409,44 @@
    "kind": "den",
    "at": "scalloway_road",
    "species": "ternlet"
+  },
+  {
+   "id": "poi_the_machars_cache",
+   "zone": "the_machars",
+   "near": [
+    26,
+    24
+   ],
+   "kind": "cache",
+   "at": "the_machars",
+   "item": "horseshoe",
+   "line": "A hollow tree has been used as a post box by someone with no postman."
+  },
+  {
+   "id": "poi_the_machars_den",
+   "zone": "the_machars",
+   "near": [
+    20,
+    5
+   ],
+   "kind": "den",
+   "at": "the_machars",
+   "species": "leveret"
+  },
+  {
+   "id": "poi_the_machars_stone",
+   "zone": "the_machars",
+   "near": [
+    54,
+    9
+   ],
+   "kind": "stone",
+   "at": "the_machars",
+   "stat": "spd",
+   "lore": [
+    "Someone has left a single conker on top. Sensible.",
+    "The real thing is Machrie Moor, on the Isle of Arran: a moor full of rings, one with a tall granite slab."
+   ]
   }
  ]
 }
