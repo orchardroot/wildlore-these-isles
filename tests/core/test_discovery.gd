@@ -92,3 +92,45 @@ func test_note_visit_hooks_discovery() -> void:
 	var z := ZoneData.from_dict({"id": "t", "name": "T", "kind": "route", "rows": ["..."], "spawn": [0, 0]})
 	Travel.note_visit(d, z)
 	assert_true(Discovery.is_found(d, "t"))
+
+# --- the sense cue ---------------------------------------------------------------------
+
+func _spot_zone() -> Array:
+	for s in FieldSpots.all():
+		var z := ZoneData.load_id(str(s.zone))
+		if z.kind == "route":
+			return [z, s]
+	return []
+
+func test_nearby_unfound_sees_a_field_spot_within_range() -> void:
+	var zs := _spot_zone()
+	assert_false(zs.is_empty(), "some route has a field spot")
+	var z: ZoneData = zs[0]
+	var s: Dictionary = zs[1]
+	var at := FieldSpots.tile(s)
+	var d := GameStateData.new()
+	var near := Discovery.nearby_unfound(z, at + Vector2i(Discovery.SENSE_RANGE, 0), d)
+	assert_true(near.any(func(n): return n.id == str(s.id) and n.kind == "field"), "five tiles away is near")
+	var far := Discovery.nearby_unfound(z, at + Vector2i(Discovery.SENSE_RANGE + 1, 0), d)
+	assert_false(far.any(func(n): return n.id == str(s.id)), "six tiles is not")
+
+func test_nearby_unfound_is_once_per_find() -> void:
+	var zs := _spot_zone()
+	var z: ZoneData = zs[0]
+	var s: Dictionary = zs[1]
+	var d := GameStateData.new()
+	var here := FieldSpots.tile(s)
+	d.set_flag(Discovery.sensed_key(str(s.id)), true)
+	assert_false(Discovery.nearby_unfound(z, here, d).any(func(n): return n.id == str(s.id)), "sensed once, never again")
+	var d2 := GameStateData.new()
+	d2.set_flag(str(s.flag), true)
+	assert_false(Discovery.nearby_unfound(z, here, d2).any(func(n): return n.id == str(s.id)), "dealt with: nothing to notice")
+
+func test_nearby_unfound_sees_points_of_interest_and_never_in_towns() -> void:
+	var p: Dictionary = Poi.all()[0]
+	var z := ZoneData.load_id(str(p.zone))
+	var d := GameStateData.new()
+	var near := Discovery.nearby_unfound(z, Vector2i(int(p.near[0]), int(p.near[1])), d)
+	assert_true(near.any(func(n): return n.id == str(p.id) and n.kind == "poi"))
+	var town := ZoneData.from_dict({"id": z.id, "name": "T", "kind": "town", "rows": ["..."], "spawn": [0, 0]})
+	assert_eq(Discovery.nearby_unfound(town, Vector2i(int(p.near[0]), int(p.near[1])), d), [], "not in towns")

@@ -124,6 +124,24 @@ static func reward(d: GameStateData, zone_id: String) -> String:
 static func _name_of(c: Creature) -> String:
 	return c.nickname if c.nickname != "" else str(c.species.get("name", "Your creature"))
 
+# --- the map ------------------------------------------------------------------------
+
+## The map's marks for Deep Places: once a place that has a way into a cave system is found, the cave mouth is
+## ringed ("deep", at the cave's entry zone), and ticked once you have been in. One mark per system.
+static func deep_marks(d: GameStateData, idx: Dictionary) -> Array:
+	var out := []
+	var zones: Dictionary = idx.get("zones", {})
+	for id in zones:
+		var z: Dictionary = zones[id]
+		if bool(z.get("deep", false)) or str(z.kind) == "interior":
+			continue
+		if not is_found(d, str(id)):
+			continue
+		for to in z.get("links", []):
+			if bool(zones.get(to, {}).get("deep", false)) and not out.any(func(m): return m.at == to):
+				out.append({"kind": "deep", "at": str(to), "done": is_found(d, str(to)), "ring": true})
+	return out
+
 # --- the sense cue ------------------------------------------------------------------
 
 static func sensed_key(id: String) -> String:

@@ -193,3 +193,115 @@ static func build(data: GameStateData, idx: Dictionary, species_info: Dictionary
 				b.entry.get("season", []))})
 	out.sort_custom(func(a, b): return a.dist < b.dist if a.dist != b.dist else a.species < b.species)
 	return out
+
+# --- the legend hunt (5.4) ------------------------------------------------------------
+## data/legend_hunts.json (tools/explore/gen_legend_hunts.py): for each legend stood in the world, one or two rumours of
+## its real folklore, each told once by a named resident of its region (ScriptHooks.wrap calls `hook`). Hearing one sets
+## a flag, rings the legend's place on the map (`marks`) and gives the Fieldbook a clue (`clue`) in place of "somewhere
+## secret". A hunt: {id, species, zone, rumours: [{zone, npc, text, clue}]}. Absent flag = not heard.
+
+const HUNTS_PATH := "res://data/legend_hunts.json"
+const HEARD := "legend_"
+
+static var _hunts: Array = []
+static var _tellers: Dictionary = {}   # "zone|npc" -> [hunt index, rumour index]
+static var _hunts_loaded := false
+
+static func hunts() -> Array:
+	if not _hunts_loaded:
+		_hunts_loaded = true
+		var j: Variant = JSON.parse_string(FileAccess.get_file_as_string(HUNTS_PATH)) if FileAccess.file_exists(HUNTS_PATH) else null
+		_hunts = j if j is Array else []
+		for h in _hunts.size():
+			var rs: Array = _hunts[h].get("rumours", [])
+			for i in rs.size():
+				_tellers["%s|%s" % [rs[i].get("zone", ""), rs[i].get("npc", "")]] = [h, i]
+	return _hunts
+
+static func heard_key(hunt_id: String, i: int) -> String:
+	return "%s%s_%d" % [HEARD, hunt_id, i]
+
+## How many of a hunt's rumours the player has heard.
+static func heard_count(data: GameStateData, hunt: Dictionary) -> int:
+	var n := 0
+	for i in hunt.get("rumours", []).size():
+		if data.flag(heard_key(str(hunt.id), i)) == true:
+			n += 1
+	return n
+
+static func hunt_of(species: String) -> Dictionary:
+	for h in hunts():
+		if str(h.species) == species:
+			return h
+	return {}
+
+## The Fieldbook's clue for a legend: the clue of the last rumour you have heard of it, or "".
+static func clue(data: GameStateData, species: String) -> String:
+	var h := hunt_of(species)
+	var best := ""
+	var rs: Array = h.get("rumours", [])
+	for i in rs.size():
+		if data.flag(heard_key(str(h.id), i)) == true:
+			best = str(rs[i].get("clue", ""))
+	return best
+
+## ScriptHooks line: a resident who has a rumour tells it once, after what they would have said. Nothing for a legend
+## you have already caught.
+static func hook(zone_id: String, npc_id: String, commands: Array, data: GameStateData) -> Array:
+	hunts()
+	var hit = _tellers.get("%s|%s" % [zone_id, npc_id])
+	if hit == null:
+		return commands
+	var h: Dictionary = _hunts[int(hit[0])]
+	var i := int(hit[1])
+	if data.flag(heard_key(str(h.id), i)) == true or data.caught.has(str(h.species)):
+		return commands
+	return commands + [{"do": "say", "who": "", "text": str(h.rumours[i].text)}, {"do": "set", "flag": heard_key(str(h.id), i)}]
+
+## The map's marks for legends you have heard of: ringed until caught, then ticked. {kind "legend", at (a zone id), done}.
+static func marks(data: GameStateData) -> Array:
+	var out := []
+	for h in hunts():
+		if heard_count(data, h) > 0:
+			out.append({"kind": "legend", "at": str(h.zone), "done": data.caught.has(str(h.species)), "ring": true})
+	return out
+
+## The validator: every hunt names a real legend and place, every teller is a free-standing resident of a real zone
+## (no gate on them, so the rumour is always there to hear), no two tellers are the same person, no dashes.
+static func check(zones: Dictionary, dex: Dex) -> Array:
+	var errs := []
+	var ids := {}
+	var who := {}
+	for h in hunts():
+		var id := str(h.get("id", ""))
+		if id == "" or ids.has(id):
+			errs.append("legend hunt '%s': missing or duplicate id" % id)
+		ids[id] = true
+		if not dex.has(str(h.get("species", ""))):
+			errs.append("legend hunt %s: species '%s' does not exist" % [id, h.get("species", "")])
+		if not zones.has(str(h.get("zone", ""))):
+			errs.append("legend hunt %s: zone '%s' does not exist" % [id, h.get("zone", "")])
+		var rs: Array = h.get("rumours", [])
+		if rs.is_empty() or rs.size() > 2:
+			errs.append("legend hunt %s: wants one or two rumours" % id)
+		for r in rs:
+			var z: ZoneData = zones.get(str(r.get("zone", "")))
+			var key := "%s|%s" % [r.get("zone", ""), r.get("npc", "")]
+			var npc: Dictionary = {}
+			if z != null:
+				for n in z.npcs:
+					if str(n.get("id", "")) == str(r.get("npc", "")):
+						npc = n
+			if npc.is_empty():
+				errs.append("legend hunt %s: teller %s is not a resident" % [id, key])
+			elif npc.has("hide_if") or npc.has("show_if") or npc.has("shop"):
+				errs.append("legend hunt %s: teller %s is gated or a shop, so the rumour may never be heard" % [id, key])
+			if who.has(key):
+				errs.append("legend hunt %s: teller %s already tells another rumour" % [id, key])
+			who[key] = true
+			for t in [str(r.get("text", "")), str(r.get("clue", ""))]:
+				if t == "" or "—" in t or "–" in t:
+					errs.append("legend hunt %s: empty text or a dash" % id)
+			if str(r.get("text", "")).length() > 300 or str(r.get("clue", "")).length() > 110:
+				errs.append("legend hunt %s: a rumour or clue is too long to read comfortably" % id)
+	return errs

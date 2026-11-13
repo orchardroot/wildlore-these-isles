@@ -47,6 +47,7 @@ func _initialize() -> void:
 	errors.append_array(Leases.problems(zones, dex))  # data/leases: anchors, cul-de-sac zones, rewild blocks, letters
 	errors.append_array(Looks.check(items_db))  # data/items/wear.json deltas the painter can draw; data/looks.json
 	errors.append_array(Poi.check(zones, dex, items_db))  # data/poi: dens, camps, stones and caches on the routes
+	errors.append_array(Rumours.check(zones, dex))  # w54: data/legend_hunts.json, the folklore rumours behind each legend
 	errors.append_array(FieldSpots.check(zones, items_db))  # w48 F: data/field_spots on free tiles beside the path
 	errors.append_array(FamilyDrawer.check(zones, items_db))  # w53: data/family_drawers.json
 	errors.append_array(Visits.check(zones))  # w53: data/visits return-visit lines for home residents
