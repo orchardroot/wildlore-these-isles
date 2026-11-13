@@ -493,7 +493,11 @@
    "x": 18,
    "y": 24,
    "facing": "right",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "spp_donkey"
   },
   {
@@ -502,7 +506,11 @@
    "x": 8,
    "y": 34,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "spp_gache_lady"
   },
   {
@@ -511,7 +519,11 @@
    "x": 26,
    "y": 14,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "spp_hugo_fan"
   },
   {

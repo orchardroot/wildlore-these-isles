@@ -397,7 +397,11 @@
    "x": 26,
    "y": 18,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "gai_abuela"
   },
   {
@@ -406,7 +410,8 @@
    "x": 34,
    "y": 27,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "gai_gaucho"
   },
   {
@@ -433,7 +438,11 @@
    "x": 42,
    "y": 18,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "gai_kid"
   },
   {

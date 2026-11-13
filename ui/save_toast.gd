@@ -9,6 +9,7 @@ const CREAM := Color(0.949, 0.91, 0.812)
 const GROUP := "save_toast"
 const EDGE := 20.0
 const STACK_GAP := 8.0
+const QUIET_MSEC := 60000  # autosaves say "Saved" at most this often; the file is still written every time
 
 var _panel: PanelContainer
 var _label: Label
@@ -83,6 +84,10 @@ func _seat() -> void:
 	_panel.offset_right = -EDGE
 	_panel.offset_top = y if top else -y - sz.y
 	_panel.offset_bottom = y + sz.y if top else -y
+
+## Is an autosave note due? `last` and `now` are Time.get_ticks_msec() values.
+static func due(last: int, now: int) -> bool:
+	return now - last >= QUIET_MSEC
 
 ## Is a dialogue box up?
 static func talking(tree: SceneTree) -> bool:

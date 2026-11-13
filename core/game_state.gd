@@ -14,6 +14,7 @@ var autosave_enabled := true
 var skip_next_autosave := false  # set by the title: the first zone after New Game or Load must not overwrite "auto"
 var _in_battle := false
 var _toast: SaveToast
+var _toast_msec := -SaveToast.QUIET_MSEC  # when the autosave note last showed
 var parish: Parish
 var quest_news: QuestNews
 
@@ -67,8 +68,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	data.play_seconds += delta
-	if clock_running and not Router.busy:
-		_minute_acc += delta
+	if clock_running and (not Router.busy or time_boost > 1.0):
+		_minute_acc += delta * time_boost
 		while _minute_acc >= 1.0:
 			_minute_acc -= 1.0
 			data.clock_minutes = GameClock.wrap(data.clock_minutes + 1)
@@ -88,6 +89,7 @@ func _process(delta: float) -> void:
 				Performance.get_monitor(Performance.OBJECT_NODE_COUNT)])
 
 var _minute_acc := 0.0
+var time_boost := 1.0  # game minutes per second while sitting on a bench (see BenchSit); 1 otherwise
 var _fps_acc := 0.0
 
 func new_game() -> void:
@@ -119,6 +121,10 @@ func autosave() -> void:
 func _show_saved_toast() -> void:
 	if DisplayServer.get_name() == "headless":
 		return
+	var now := Time.get_ticks_msec()
+	if not SaveToast.due(_toast_msec, now):  # every door autosaves; say so once a minute at most
+		return
+	_toast_msec = now
 	if _toast == null or not is_instance_valid(_toast):
 		_toast = SaveToast.new()
 		add_child(_toast)

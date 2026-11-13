@@ -457,7 +457,11 @@
    "x": 17,
    "y": 27,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "poole_fisher"
   },
   {
@@ -466,7 +470,11 @@
    "x": 24,
    "y": 24,
    "facing": "right",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "poole_scout"
   },
   {
@@ -475,7 +483,11 @@
    "x": 42,
    "y": 27,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "poole_yachtie"
   },
   {

@@ -504,7 +504,8 @@
    "x": 36,
    "y": 32,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "sth_fishwife"
   },
   {
@@ -522,7 +523,11 @@
    "x": 18,
    "y": 39,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "sth_runner"
   },
   {
@@ -531,7 +536,11 @@
    "x": 44,
    "y": 36,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "sth_coffee"
   },
   {

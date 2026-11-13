@@ -817,7 +817,11 @@
    "x": 26,
    "y": 9,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bp_landlady"
   },
   {

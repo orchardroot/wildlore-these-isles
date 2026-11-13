@@ -411,7 +411,11 @@
    "x": 54,
    "y": 26,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "btn_porch"
   },
   {

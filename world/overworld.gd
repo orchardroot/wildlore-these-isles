@@ -125,6 +125,7 @@ func load_zone(zone_id: String, pos: Vector2i, facing: String) -> void:
 	sky.set_weather(outdoor, zone.kind == "interior")
 	ambient.setup(zone, _zone_node, sky)
 	RoamingCreatures.attach(self)
+	Footfalls.attach(self)  # grass parts, ripples, prints
 	follower = Follower.attach(self)  # the party lead, one tile behind
 	rig.configure(zone.width, zone.height, zone.kind == "interior")
 	if _edge_facing != "":
@@ -406,6 +407,8 @@ func _on_step(p: Vector2i) -> void:
 		return
 	var enc := IndoorFolk.roll(zone, Game.phase(), sky.weather, Game.rng, Game.data.flags) if zone.kind == "interior" else \
 			Encounters.roll(zone, tile, Game.phase(), weather, Game.rng, TodaysWalk.featured_in(Game.data, zone.id), Game.data.flags)
+	if not enc.is_empty() and tile == "tall_grass" and has_node("RoamingCreatures"):
+		await $RoamingCreatures.spring_out(enc, player.grid_pos)  # a roamer close by is the one you meet
 	if not enc.is_empty() and Game.data.first_able() != null and not Repel.blocks(Game.data, int(enc.level)):
 		if enc.get("scaled", false):  # off the main line: grown up to suit the level
 			enc.species = ParLevel.stage(Game.dex, str(enc.species), int(enc.level))
@@ -516,6 +519,8 @@ func interact(p: Vector2i) -> void:
 	if await PostBox.interact(self, p):  # post from Kit (or just a post box)
 		return
 	if await FlotsamScene.interact(self, p):  # a crate, pot, bottle or cache for the coracle (w54)
+		return
+	if BenchSit.interact(self, p):  # a bench: sit a while
 		return
 	if await FishingScene.interact(self, p):  # open water and a rod
 		return

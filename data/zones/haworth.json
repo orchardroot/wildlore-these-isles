@@ -611,7 +611,11 @@
    "x": 7,
    "y": 10,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bronte_keeper_tale",
    "name": "Dog Walker"
   },

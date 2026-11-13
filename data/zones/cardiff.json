@@ -131,7 +131,11 @@
   {
    "facing": "left",
    "id": "bay_sailor",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bay_sailor",
    "sprite": "sailor",
    "x": 31.0,

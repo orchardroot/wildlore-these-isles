@@ -450,7 +450,8 @@
    "x": 33,
    "y": 28,
    "facing": "right",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "asc_saint"
   },
   {
@@ -459,7 +460,11 @@
    "x": 47,
    "y": 24,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "asc_marine"
   },
   {
@@ -468,7 +473,11 @@
    "x": 12,
    "y": 40,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "asc_birder"
   },
   {

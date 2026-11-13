@@ -551,7 +551,11 @@
    "x": 20,
    "y": 40,
    "facing": "right",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "sth_hermit_fan"
   },
   {
@@ -560,7 +564,8 @@
    "x": 20,
    "y": 26,
    "facing": "right",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "sth_crapaud"
   },
   {
@@ -569,7 +574,11 @@
    "x": 38,
    "y": 24,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "sth_langtry"
   },
   {

@@ -569,7 +569,11 @@
    "x": 21,
    "y": 32,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "flagstone_mason",
    "name": "Drystone Mason"
   },

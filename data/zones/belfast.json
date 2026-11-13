@@ -323,7 +323,11 @@
    "x": 31,
    "y": 22,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "arts_harper"
   }
  ],

@@ -6,9 +6,14 @@ extends Node3D
 ## Idle life: a still townsperson glances about now and then and turns to look at the player passing close by.
 ## An optional `"routine"` (core/routines.gd) moves them between spots in the zone by weekday, hour and season.
 ## An optional `"times": ["dawn", "day", "dusk", "night"]` keeps hours: they are only out in those phases.
+## Close to the player they may wear a bubble (NpcBubble: an errand, a Regular's heart, a child spotting your
+## follower), and outdoors in drizzle or a downpour they put an umbrella up.
 
 const STEP_SPEED := 3.0      # tiles per second
 const NOTICE_RANGE := 2      # tiles: a still NPC turns to look at the player this close
+const REACT_EVERY := 0.35    # seconds between looks at bubbles and umbrella (never per frame)
+const BUBBLE_Y := 1.95
+const BROLLY_Y := 1.55
 const SCHEDULE_FAR := 9      # tiles: someone coming out or going home only does it out of the player's sight
 
 static var _dev_talk_done := false
@@ -31,6 +36,13 @@ var _rest := "down"          # the way a still NPC stands when nothing has caugh
 var _looking := false        # turned away from `_rest` by idle life
 var _look_t := 0.0           # seconds until turning back to `_rest`
 var _glance_t := 6.0         # seconds until the next idle glance
+var _react_t := 0.0          # seconds until bubbles and umbrella are looked at again
+var _sign: Sprite3D
+var _sign_kind := ""
+var _sign_tween: Tween
+var _umbrella: Node3D
+var _spot_left := 0.0        # seconds the sparkle still has to show
+var _spot_cool := 0.0        # seconds before this child notices the follower again
 
 func setup(d: Dictionary, overworld: Node) -> void:
 	def = d
@@ -47,6 +59,7 @@ func setup(d: Dictionary, overworld: Node) -> void:
 	sprite.set_facing(facing)
 	position = Vector3(grid_pos.x + 0.5, ow.ground_y(grid_pos), grid_pos.y + 0.5)
 	_timer = randf_range(2.0, 5.0)
+	_react_t = randf_range(0.0, REACT_EVERY)
 	if _mode == "pace":
 		_build_pace()
 	_dev_talk()
@@ -144,6 +157,7 @@ func is_trainer() -> bool:
 	return str(def.get("trainer", "")) != ""
 
 func _process(delta: float) -> void:
+	_react(delta)
 	if _mode == "still":
 		_idle(delta)
 		return
@@ -164,6 +178,67 @@ func _process(delta: float) -> void:
 		_timer = randf_range(0.5, 1.0)
 		if await _step(_pace_dirs[_pace_i]):
 			_pace_i = (_pace_i + 1) % _pace_dirs.size()
+
+## Every REACT_EVERY seconds: an umbrella if it is raining, and the bubble that suits who they are to you.
+func _react(delta: float) -> void:
+	_spot_left -= delta
+	_spot_cool -= delta
+	_react_t -= delta
+	if _react_t > 0.0:
+		return
+	_react_t = REACT_EVERY
+	var umbrella := NpcBubble.umbrella_for(str(ow.weather), ow.zone.kind, def)
+	if umbrella != (_umbrella != null):
+		if umbrella:
+			_umbrella = NpcBubble.make_umbrella(str(def.get("id", "")), BROLLY_Y)
+			add_child(_umbrella)
+		else:
+			_umbrella.queue_free()
+			_umbrella = null
+	var want := ""
+	var pp: Vector2i = ow.player.grid_pos
+	if not (_talking or _challenging or Router.busy) and NpcBubble.in_range(grid_pos, pp):
+		want = NpcBubble.kind_for(ow.zone.id, def, Game.data)
+		if want == "" and _spotted_follower():
+			want = NpcBubble.SPARK
+	_set_sign(want)
+
+## A child within sight of your follower notices it: a sparkle for a few seconds, then not again for a while.
+func _spotted_follower() -> bool:
+	if _spot_left > 0.0:
+		return true
+	if _spot_cool > 0.0 or not NpcBubble.is_child(def) or not Settings.follower:
+		return false
+	var f: Follower = ow.follower
+	if f == null or not f.visible or not NpcBubble.in_range(grid_pos, f.tile, NpcBubble.SPOT_RANGE):
+		return false
+	_spot_left = NpcBubble.SPOT_SECS
+	_spot_cool = NpcBubble.SPOT_COOL
+	if _mode == "still" and not _looking and f.tile != grid_pos:
+		_turn(GridMotion.facing_from(f.tile - grid_pos))
+		_looking = true
+		_look_t = 1.5
+	return true
+
+func _set_sign(kind: String) -> void:
+	if kind == _sign_kind:
+		return
+	_sign_kind = kind
+	if _sign_tween:
+		_sign_tween.kill()
+		_sign_tween = null
+	if _sign:
+		_sign.queue_free()
+		_sign = null
+	if kind == "":
+		return
+	var y := BUBBLE_Y + (0.3 if _umbrella else 0.0)
+	_sign = NpcBubble.make_bubble(kind, y)
+	add_child(_sign)
+	if not Settings.reduce_flashing:  # a gentle bob
+		_sign_tween = create_tween().set_loops()
+		_sign_tween.tween_property(_sign, "position:y", y + 0.08, 0.7).set_trans(Tween.TRANS_SINE)
+		_sign_tween.tween_property(_sign, "position:y", y, 0.7).set_trans(Tween.TRANS_SINE)
 
 ## A still townsperson: look at the player when they come close, glance about now and then, and settle back.
 ## Trainers never do this (their facing is their line of sight).

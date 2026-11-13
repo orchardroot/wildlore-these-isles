@@ -354,7 +354,11 @@
    "x": 36,
    "y": 12,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "ros_fisher"
   },
   {
@@ -363,7 +367,11 @@
    "x": 44,
    "y": 18,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "ros_dancer"
   },
   {
@@ -372,7 +380,11 @@
    "x": 20,
    "y": 30,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "ros_farmer"
   },
   {

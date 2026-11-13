@@ -172,7 +172,8 @@
    "x": 41,
    "y": 17,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "bat_pilot",
    "name": "Twin Otter Pilot",
    "departure": true
@@ -201,7 +202,11 @@
    "x": 30,
    "y": 17,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bat_fitter",
    "name": "Station Mechanic"
   },

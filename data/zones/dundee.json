@@ -399,7 +399,11 @@
    "x": 66,
    "y": 43,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "dun_dolphins"
   },
   {

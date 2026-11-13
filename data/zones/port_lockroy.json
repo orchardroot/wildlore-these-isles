@@ -310,7 +310,11 @@
    "x": 39,
    "y": 16,
    "facing": "right",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bat_zodiac",
    "name": "Zodiac Driver",
    "departure": true
@@ -321,7 +325,11 @@
    "x": 20,
    "y": 19,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bat_visitor",
    "name": "Cruise Visitor"
   }
