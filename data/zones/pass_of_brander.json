@@ -1,0 +1,540 @@
+{
+ "id": "pass_of_brander",
+ "name": "The Pass of Brander",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_highlands",
+ "weather": {
+  "fog": 30,
+  "drizzle": 28,
+  "downpour": 12,
+  "clear": 14,
+  "gale": 8,
+  "frost": 4,
+  "sunshine": 4
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 33,
+   "y": 22,
+   "w": 5,
+   "h": 4,
+   "label": "Kilchurn Castle"
+  },
+  {
+   "type": "boat",
+   "x": 44,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "bench",
+   "x": 27,
+   "y": 12
+  },
+  {
+   "type": "standing_stone",
+   "x": 26,
+   "y": 14
+  },
+  {
+   "type": "rock",
+   "x": 33,
+   "y": 34,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 17,
+   "y": 31,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 16,
+   "y": 15,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 34,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 41,
+   "y": 8,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 20,
+   "y": 37,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 9,
+   "y": 44,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 20,
+   "y": 31,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 5,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 20,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 4,
+   "y": 47,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 31,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 14,
+   "y": 31,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 55,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 8,
+   "y": 15,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 8,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 37,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 23,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 52,
+   "y": 43,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 48,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 32,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 27,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 15,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 55,
+   "y": 29,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 32,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 13,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 55,
+   "y": 47,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 29,
+   "y": 33,
+   "variant": 2
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "north": {
+   "to": "loch_lomond",
+   "offset": 0
+  },
+  "south": {
+   "to": "oban",
+   "offset": -14
+  }
+ },
+ "npcs": [
+  {
+   "id": "brn_walker",
+   "sprite": "hiker",
+   "x": 26,
+   "y": 16,
+   "facing": "right",
+   "move": "still",
+   "script": "brn_walker"
+  },
+  {
+   "id": "brn_ranger",
+   "sprite": "villager_2",
+   "x": 36,
+   "y": 33,
+   "facing": "left",
+   "move": "still",
+   "script": "brn_ranger"
+  },
+  {
+   "id": "brn_hydro",
+   "sprite": "steelworker",
+   "x": 24,
+   "y": 30,
+   "facing": "right",
+   "move": "still",
+   "script": "brn_hydro"
+  },
+  {
+   "id": "brn_historian",
+   "sprite": "tour_guide",
+   "x": 31,
+   "y": 41,
+   "facing": "left",
+   "move": "still",
+   "script": "brn_historian"
+  },
+  {
+   "id": "brn_stalker",
+   "sprite": "ghillie",
+   "x": 15,
+   "y": 20,
+   "facing": "right",
+   "move": "still",
+   "trainer": "brn_stalker"
+  },
+  {
+   "id": "brn_angler",
+   "sprite": "angler",
+   "x": 37,
+   "y": 12,
+   "facing": "left",
+   "move": "still",
+   "trainer": "brn_angler"
+  },
+  {
+   "id": "brn_forester",
+   "sprite": "farmer",
+   "x": 20,
+   "y": 36,
+   "facing": "up",
+   "move": "still",
+   "trainer": "brn_forester"
+  },
+  {
+   "id": "brn_piper",
+   "sprite": "piper",
+   "x": 11,
+   "y": 44,
+   "facing": "right",
+   "move": "still",
+   "trainer": "brn_piper"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "fawnlet",
+    "min": 69,
+    "max": 70,
+    "weight": 10,
+    "time": [
+     "dawn",
+     "dusk",
+     "day"
+    ]
+   },
+   {
+    "species": "stagmor",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "lekling",
+    "min": 69,
+    "max": 70,
+    "weight": 8
+   },
+   {
+    "species": "pinewraith",
+    "min": 69,
+    "max": 70,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "brockling",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "night",
+     "dusk"
+    ]
+   },
+   {
+    "species": "martling",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "hootlet",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "midgie",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "weather": [
+     "drizzle",
+     "fog",
+     "clear"
+    ]
+   },
+   {
+    "species": "wildkit",
+    "min": 69,
+    "max": 70,
+    "weight": 6
+   },
+   {
+    "species": "ospret",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "caperling",
+    "min": 69,
+    "max": 70,
+    "weight": 8
+   }
+  ],
+  "water": [
+   {
+    "species": "rillotter",
+    "min": 69,
+    "max": 70,
+    "weight": 20
+   },
+   {
+    "species": "dipling",
+    "min": 69,
+    "max": 70,
+    "weight": 16
+   },
+   {
+    "species": "ospret",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "heronarch",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "bradan",
+    "min": 69,
+    "max": 70,
+    "weight": 16
+   },
+   {
+    "species": "stalklet",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "minkshade",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 33,
+   "y": 16,
+   "text": "REST AND BE THANKFUL. At the top of the pass out of Glen Croe is a stone seat with those words cut on it, put up by the soldiers who built the military road here under Major William Caulfeild. The modern road still slides off the hill in heavy rain, so the name has never been more useful.",
+   "plaque": "w55_sc_rest",
+   "title": "Rest and Be Thankful"
+  },
+  {
+   "x": 33,
+   "y": 40,
+   "text": "THE PASS OF BRANDER. In 1308 Robert the Bruce, fighting the MacDougalls of Lorn, held the narrow pass between Ben Cruachan and Loch Awe and had his archers on the slopes above it. Rocks and arrows from above did the rest, as they have in Scotland on more than one occasion.",
+   "plaque": "w55_sc_brander",
+   "title": "The Pass of Brander"
+  },
+  {
+   "x": 24,
+   "y": 36,
+   "text": "CRUACHAN. The 'hollow mountain': a power station was blasted out of the inside of Ben Cruachan and opened in 1965. At night, water is pumped up to a loch high above, and in the day it runs back down through the turbines. The mountain is a giant battery with sheep on it."
+  },
+  {
+   "x": 36,
+   "y": 29,
+   "text": "KILCHURN CASTLE. A tower house on a point of Loch Awe, begun about 1450 by Sir Colin Campbell of Glenorchy. It was left to fall into ruin in the eighteenth century, and has been the most photographed thing on the loch ever since."
+  }
+ ],
+ "spawn": [
+  30,
+  5
+ ],
+ "stage": "forest",
+ "scaled_floor": 69,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTPTTPTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTPTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTPTTTTTTTTT",
+  "TTT..................P.......###...........PPP...........TPT",
+  "TTT.^^^^^^^^^^^^^^RRR........###........,,,,,,,,,,,,,,...TTT",
+  "TTT.^^^^^^^^^^^^^^RRR.......P###P.......,,,,,,,,,,,,,,...TTT",
+  "TTT.^^^^^^^^^^^^^^RRR........###........,,,,,,,,,,,,,,...TTT",
+  "TTT.^^^^^^^^^^^^^^RRR........###........,,,,,,,,,,,,,,...TTT",
+  "TTT.^^^^^^^^^^^^^^RRR......P.###.........................TTT",
+  "TTT.^^^^^^^^^^^^^^RRR........###......wwwwwwwwwwwwwwwww..TTT",
+  "TTT.^^^^^^^^^^^^^^RRR........###......w~~~~~~~~~~~~~~~w..TTT",
+  "TTT.^^^^^^^^^^^^^^RRR....T...###....PPw~~~~~~~~~~~~~~~w.PTTT",
+  "TTT.^^^^^^^^^^^^^^..T........###......w~~~~~~~~~~~~~~~wP.TPT",
+  "TTT.RRRRRRRRRRRRRR...........###......w~~~~~~~~~~~~~~~w..TTT",
+  "TTT.RRRRRRRRRRRRRR...........###......w~~~~~~~~~~~~~~~w.PTTT",
+  "TTT.P..............P.........###......w~~~~~~~~~~~~~~~w..TTT",
+  "TTTP..............P..........###......w~~~~~~~~~~~~~~~w..TTT",
+  "TTT......P................T..###......w~~~~~~~~~~~~~~~w.PPTT",
+  "TTTP.......#####################......w~~~~~~~~~~~~~~~w..TTT",
+  "TTT.....P..#####################......w~~~~~~~~~~~~~~~w..TTT",
+  "TPT........#####################......w~~~~~~~~~~~~~~~w..TTT",
+  "TTT........###........................w~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,..###,,,,,,,,,,,,,,.....BBBBBw~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,..###,,,,,,,,,,,,,,.....BBBBBw~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,..###,,,,,,,,,,,,,,...##BBBBBw~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,..###,,,,,,,,,,,,,,...##BBBBBw~~~~~~~~~~~~~~~w..TTT",
+  "TTTP..,,,..###,,,,,,,,,,,,,,.....P....w~~~~~~~~~~~~~~~w..TTP",
+  "TTT...,,,..###,,,,,,,,,,,,,,..........w~~~~~~~~~~~~~~~w..TTT",
+  "TPT...,,,..###,,,,,,,,,,,,,,........sss~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,..###,,,,,,,,,,,,,,........sss~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,..###......................sss~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,..###...........P.P..........w~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,..###..........P.T......P....w~~~~~~~~~~~~~~~w..TTT",
+  "TTT...,,,.P###........................w~~~~~~~~~~~~~~~wT.TTT",
+  "TPT...,,,..#####################......w~~~~~~~~~~~~~~~w..TTP",
+  "TTT...,,,.P#####################T.....w~~~~~~~~~~~~~~~w..TTT",
+  "TTT........#####################......wwwwwwwwwwwwwwwww.PTTT",
+  "TTT..P.........T.............###.........................TTT",
+  "TTT....P......,,,,,,,,,,,,..T###.........................TTT",
+  "TTT...........,,,,,,,,,,,,...###.......................P.TTT",
+  "TTT...........,,,,,,,,,,,,...###..,,,,,,,,,,,,,,,,,,.....TTT",
+  "TTT...........,,,,,,,,,,,,...###..,,,,,,,,,,,,,,,,,,.....TTT",
+  "TTT..P........,,,,,,,,,,,,...###..,,,,,,,,,,,,,,,,,,.....TTT",
+  "TTT...........,,,,,,,,,,,,...###..,,,,,,,,,,,,,,,,,,.....TTT",
+  "TTT.......P...,,,,,,,,,,,,...###..,,,,,,,,,,,,,,,,,,.....TTT",
+  "TTT...........,,,,,,,,,,,,...###..,,,,,,,,,,,,,,,,,,.....TTT",
+  "TTT..T..T....P...............###....P.........P........P.TTT",
+  "TTT...P.......P..P...........###.........................TTT",
+  "TTT....P.....P...............###....P........P...........TTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTPTTTTTTTTTTTTTTTTTTTTTP###TTTTTTTTTTTTTTTTTTTTPTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ]
+}

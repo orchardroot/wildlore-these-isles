@@ -1,0 +1,36 @@
+{
+ "id": "brn_stalker",
+ "name": "Stalker Hamish",
+ "class": "Stalker",
+ "sprite": "ghillie",
+ "party": [
+  {
+   "species": "stagmor",
+   "level": 69
+  },
+  {
+   "species": "fawnlet",
+   "level": 69
+  },
+  {
+   "species": "lekling",
+   "level": 70
+  },
+  {
+   "species": "brockling",
+   "level": 69
+  }
+ ],
+ "ai": "trainer",
+ "money": 2260,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Stalker Hamish",
+   "text": "Quiet. There is a stag on the hill. He has heard worse than you, but not often."
+  }
+ ],
+ "win": "Well hunted, if that is the word. The stag has gone.",
+ "after": "You do not stalk a deer. You let the hill do it for you.",
+ "scaled_floor": 69
+}

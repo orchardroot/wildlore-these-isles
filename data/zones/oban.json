@@ -736,6 +736,10 @@
   }
  ],
  "edges": {
+  "north": {
+   "to": "pass_of_brander",
+   "offset": 14
+  },
   "east": {
    "to": "loch_lomond",
    "offset": 0
@@ -1170,8 +1174,8 @@
  ],
  "stage": "coast",
  "rows": [
-  "$$$$$$$$$$$$$TTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTT",
-  "$$$$$$$$$$$$$TTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTT",
+  "$$$$$$$$$$$$$TT###TTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTT",
+  "$$$$$$$$$$$$$TT###TTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTT",
   "$$$$$$$$$$$$$s.................P...P......P.BBBBBBBBB...P.............TT",
   "$$$$$$$$$$$$$s......BBBBBBBBB.,..PP.......P.BBBBBBBBB..........P......TP",
   "$$$$$$$$$$$$$s......BBBBBBBBB,,,,,,....P....BBBBBBBBB.......P....P....TT",

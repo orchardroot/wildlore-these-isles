@@ -147,6 +147,44 @@
     "It is cold, and it hums very faintly, the way a fridge does.",
     "The real thing is Machrie Moor, on the Isle of Arran: a moor full of rings, one with a tall granite slab."
    ]
+  },
+  {
+   "id": "poi_pass_of_brander_stone",
+   "zone": "pass_of_brander",
+   "near": [
+    13,
+    38
+   ],
+   "kind": "stone",
+   "at": "pass_of_brander",
+   "stat": "atk",
+   "lore": [
+    "You put a hand on it. It is older than your whole family tree, put together.",
+    "The real thing is the Clava Cairns, near Inverness: ring cairns inside circles of standing stones, among old beech trees."
+   ]
+  },
+  {
+   "id": "poi_pass_of_brander_cache",
+   "zone": "pass_of_brander",
+   "near": [
+    50,
+    37
+   ],
+   "kind": "cache",
+   "at": "pass_of_brander",
+   "item": "rowan_sprig",
+   "line": "A hollow in the old tree, and something wrapped in oilcloth."
+  },
+  {
+   "id": "poi_pass_of_brander_den",
+   "zone": "pass_of_brander",
+   "near": [
+    48,
+    8
+   ],
+   "kind": "den",
+   "at": "pass_of_brander",
+   "species": "wildkit"
   }
  ]
 }

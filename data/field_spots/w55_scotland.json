@@ -41,5 +41,20 @@
   },
   "flag": "field_devils_staircase_topple",
   "at": "devils_staircase"
+ },
+ {
+  "id": "fs_pass_of_brander_mend",
+  "zone": "pass_of_brander",
+  "x": 12,
+  "y": 30,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "{lead} nudges the loose stones of the drystone wall back into line, one at a time. The farmer leaves a flask of tea on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_pass_of_brander_mend",
+  "at": "pass_of_brander"
  }
 ]

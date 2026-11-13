@@ -753,6 +753,10 @@
   }
  ],
  "edges": {
+  "south": {
+   "to": "pass_of_brander",
+   "offset": 0
+  },
   "north": {
    "to": "west_highland_way",
    "offset": 32
@@ -1197,8 +1201,8 @@
   "TT......................,,,,,,,,,,,,,..P......,,,,,,,,,T...P..TP",
   "TT.T..........................,............P......,...........TT",
   "TT..........T....T...P...TP.........PP........................TT",
-  "TTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTT",
-  "PTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTT"
+  "TTPTTTTTTTTTTPTTTTTTTTTTPTTTT###TTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTT",
+  "PTTTTTTTTTTPTTTTTTTTTTPTTTTTT###TPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTT"
  ],
  "scaled_floor": 69
 }
