@@ -101,6 +101,16 @@
    "facing": "down",
    "move": "still",
    "script": "rosedale_wife"
+  },
+  {
+   "id": "w55e_joe",
+   "name": "Joe Hartley",
+   "sprite": "villager_1",
+   "x": 7,
+   "y": 4,
+   "facing": "left",
+   "script": "w55e_joe",
+   "move": "still"
   }
  ],
  "encounters": {},

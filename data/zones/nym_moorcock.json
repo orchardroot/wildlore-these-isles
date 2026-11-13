@@ -101,6 +101,40 @@
    "facing": "down",
    "move": "still",
    "script": "moorcock_landlord"
+  },
+  {
+   "id": "w55e_ranger",
+   "name": "Ranger",
+   "sprite": "birdwatcher",
+   "x": 9,
+   "y": 4,
+   "facing": "down",
+   "script": "w55e_ranger",
+   "hide_if": "q_stories_england_world_scheme",
+   "move": "still"
+  },
+  {
+   "id": "w55e_postie",
+   "name": "Postwoman",
+   "sprite": "villager_6",
+   "x": 4,
+   "y": 6,
+   "facing": "right",
+   "script": "w55e_postie",
+   "show_if": "q_stories_england_decided",
+   "hide_if": "q_stories_england_done",
+   "move": "still"
+  },
+  {
+   "id": "w55e_dale_pub",
+   "name": "Dale",
+   "sprite": "farmer",
+   "x": 4,
+   "y": 4,
+   "facing": "right",
+   "script": "w55e_dale_pub",
+   "show_if": "q_stories_england_world_joe",
+   "move": "still"
   }
  ],
  "encounters": {},

@@ -42,5 +42,274 @@
     }
    ]
   }
+ ],
+ "w55e_ranger": [
+  {
+   "do": "if",
+   "flag": "q_stories_england_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_england_pick_scheme",
+     "then": [
+      {
+       "do": "say",
+       "who": "Ranger",
+       "text": "Nine pairs of curlew on Moor Farm this spring, where I found five. I am not saying it is the sheep. I am saying it is not nothing."
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Ranger",
+       "text": "Still counting. Curlew numbers on the moors are down, and every nest that gets off is a small argument won."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_england_decided",
+     "then": [
+      {
+       "do": "say",
+       "who": "Ranger",
+       "text": "Whatever Dale chooses, I will be counting on his hill come April. A farmed moor and a watched moor are both better than one nobody walks."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_england_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_england_ranger",
+         "then": [
+          {
+           "do": "say",
+           "who": "Ranger",
+           "text": "Tell Dale it is his hill and his say. I would just like him to know the offer is a real one."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Ranger",
+           "text": "I count birds on contract, which means I am paid in flasks of tea. Curlew, lapwing, golden plover on the tops. All of them are fewer than they were."
+          },
+          {
+           "do": "say",
+           "who": "Ranger",
+           "text": "The estate has offered Moor Farm a scheme: payments for fewer sheep, drains blocked, heather left to grow. It is not charity. It is a modest, steady income for fifteen years, and in return the moor does what a moor does."
+          },
+          {
+           "do": "say",
+           "who": "Ranger",
+           "text": "I would like to see it signed, and I would be lying if I said I was neutral. But a hill with nobody living on it is a hill with nobody watching it. A farmer paid to farm for the birds still has to be a farmer."
+          },
+          {
+           "do": "say",
+           "who": "Ranger",
+           "text": "Hefting survives, by the way. Fewer sheep means a thinner flock, but it is the same flock. Dale would keep his own."
+          },
+          {
+           "do": "set",
+           "flag": "q_stories_england_ranger",
+           "value": true
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Ranger",
+         "text": "Do not mind me. I am counting. Curlews are the sound of the moor in spring, and there are fewer each year."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55e_postie": [
+  {
+   "do": "if",
+   "flag": "q_stories_england_done",
+   "then": [
+    {
+     "do": "say",
+     "who": "Postwoman",
+     "text": "That was the last of yours. I have the whole moor's post to get round, and a pasty to finish."
+    }
+   ],
+   "else": [
+    {
+     "do": "when",
+     "cond": "later_q_stories_england_when_3",
+     "then": [
+      {
+       "do": "say",
+       "who": "Postwoman",
+       "text": "There you are. A letter for you, care of the Moorcock. I have kept it out of the rain."
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_england_pick_hannah",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. It is the end of April and I am writing this on the back of a feed bill, because the kitchen table is covered in lambing kit."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "We lost eleven ewes in the March snow and Dad has not said I told you so, which is how I know he was worried. The rest scanned better than he feared, and the vet said nothing, which I am told is a compliment."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I kept the Leeds job two days a week from this table, which I did not know a job could do. The money is thin. The hill is not."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Thank you for being the one who said it out loud. Dad would not have asked and I would not have offered. Come and see the lambs. P.S. Dad has taught me to say 'gimmer' without laughing."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_moor_notebook",
+         "n": 1
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_england_pick_joe",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. Dale here. I am writing from a flat in the village, which has a bathroom indoors and a view of a wall."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Joe took the flock in March and drove them up himself. They went back to their own bit of hill without being told. I wept, and I blame the wind."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The house is let to Joe's shepherd, who is a decent lad and puts his boots in the porch. Hannah rang. She was kind about it, and that was worse."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I am up at the Moorcock most days now, and at the gate on Sundays. It is a farm. Somebody is still farming it. That has to be worth something."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_moor_crook",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_england_world_joe",
+         "value": true
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_england_away",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_england_pick_scheme",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. The scheme man came in February with a clipboard and a good flask. I signed."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "We run forty ewes on the hill now instead of a hundred and thirty, and the heather is coming back thick on the south side. The lass counted curlews in April: nine pairs, where she found five."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The payments cover the rent and not much else. Hannah comes and helps with the lambing, and Joe Hartley says I have gone soft. He is not wrong. He is not right, either."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "It is a quiet hill. I find I do not mind it as much as I thought I would."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_moor_tally",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_england_world_scheme",
+         "value": true
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_england_away",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Postwoman",
+       "text": "Tucked inside was a thing for you, and a note on how to bake it: Dale's mother's parkin. She would want the credit."
+      },
+      {
+       "do": "recipe",
+       "id": "parkin"
+      },
+      {
+       "do": "give_item",
+       "item": "w55_hill_cap",
+       "n": 1
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_england_done",
+       "value": true
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Postwoman",
+       "text": "Nothing for you yet. Letters from the dale take their time, and so does the weather. Try after a night's sleep."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55e_dale_pub": [
+  {
+   "do": "say",
+   "who": "Dale",
+   "text": "I come down for the Yorkshire pudding the landlord is too mean to charge me for."
+  },
+  {
+   "do": "say",
+   "who": "Dale",
+   "text": "I go up to the gate on Sundays. They knew me fine the first week. By May they only knew Joe's whistle, which is as it should be, and I will not pretend I like it."
+  }
  ]
 }

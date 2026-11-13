@@ -1,0 +1,56 @@
+{
+ "quests": [
+  {
+   "id": "stories_england",
+   "title": "Who Takes the Moor Farm",
+   "region": "stories_england",
+   "town": "north_york_moors",
+   "giver": "Hannah, at Moor Farm",
+   "summary": "Farmer Dale's tenancy comes up at lambing and nobody has said who takes the hill farm on. Hear everyone, then tell him straight.",
+   "start_flag": "q_stories_england_started",
+   "steps": [
+    {
+     "flag": "q_stories_england_dale",
+     "text": "Talk to Farmer Dale at Moor Farm.",
+     "zone": "nym_moorfarm"
+    },
+    {
+     "flag": "q_stories_england_joe",
+     "text": "Ask Joe Hartley at Rosedale Farm what he would do with it.",
+     "zone": "nym_rosedale"
+    },
+    {
+     "flag": "q_stories_england_ranger",
+     "text": "Hear the moor ranger at the Moorcock Inn.",
+     "zone": "nym_moorcock"
+    },
+    {
+     "flag": "q_stories_england_decided",
+     "text": "Tell Farmer Dale what you think.",
+     "zone": "nym_moorfarm"
+    },
+    {
+     "flag": "q_stories_england_done",
+     "text": "Wait for word. The post for this end of the moor waits at the Moorcock Inn, a night's sleep or a day later.",
+     "zone": "nym_moorcock"
+    }
+   ],
+   "done_flag": "q_stories_england_done",
+   "reward": "A hill farmer's flat cap, a keepsake of how it went, and Dale's mother's parkin recipe.",
+   "endings": [
+    {
+     "flag": "q_stories_england_pick_hannah",
+     "text": "Hannah took Moor Farm on, with a part-time job to keep the roof on. Hill farms have long leaned on a second income, and on flocks that know their own hill."
+    },
+    {
+     "flag": "q_stories_england_pick_joe",
+     "text": "Joe Hartley took the flock and the tenancy and the flock stayed on its hill. Dale moved to the village, and a shepherd lives in the farmhouse."
+    },
+    {
+     "flag": "q_stories_england_pick_scheme",
+     "text": "Moor Farm went into a habitat scheme: forty ewes, not a hundred and thirty, more heather, and curlews nesting where there were fewer."
+    }
+   ]
+  }
+ ]
+}

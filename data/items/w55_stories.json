@@ -1,0 +1,44 @@
+[
+ {
+  "id": "w55_moor_notebook",
+  "name": "Hannah's Lambing Notebook",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": true,
+  "desc": "A school exercise book, spattered. Dates, ewes, a column headed 'Dad says' and a column headed 'Actually'. The second column is winning."
+ },
+ {
+  "id": "w55_moor_crook",
+  "name": "Dale's Old Crook",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": true,
+  "desc": "An ash crook worn pale where one hand held it for forty years. Dale did not want it left in the farmhouse porch. 'Somebody ought to carry it,' he said."
+ },
+ {
+  "id": "w55_moor_tally",
+  "name": "Curlew Tally Sheet",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": true,
+  "desc": "A ranger's tally sheet for Moor Farm: nine pairs of curlew in a neat column, five in the last. Somebody has drawn a very small bird in the margin."
+ },
+ {
+  "id": "w55_hill_cap",
+  "name": "Hill farmer's flat cap",
+  "kind": "wear",
+  "slot": "hat",
+  "price": 300,
+  "desc": "Dale's spare cap, tweed gone soft at the peak. Hill farmers have worn these on the moors for generations because a cap stays on in a wind a hat does not.",
+  "look": {
+   "hat": "flat_cap",
+   "palette": {
+    "hat": "#5a6a48",
+    "accent2": "#3a4630"
+   }
+  }
+ }
+]

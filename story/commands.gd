@@ -103,7 +103,8 @@ func _exec(c: Dictionary) -> void:
 			var branch: Array = c.get("then", []) if _test(c) else c.get("else", [])
 			await _run_list(branch)
 		"set":
-			_set_flag(str(c.get("flag", "")), c.get("value", true))
+			var sv: Variant = c.get("value", true)
+			_set_flag(str(c.get("flag", "")), Quests.stamp(data) if sv is String and sv == "@now" else sv)  # w55: "@now" stamps the day (Quests.later)
 		"give_item":
 			var id := str(c.get("item", ""))
 			var n := int(c.get("n", 1))
@@ -712,6 +713,9 @@ func _when(cond: String) -> bool:
 	var arc := _arc_cond(cond)
 	if arc != "":
 		return arc == "yes"
+	var lat := Quests.later_cond(host.data, cond)  # w55: later_<flag>_<n>, a stamped choice has ripened
+	if lat >= 0:
+		return lat == 1
 	push_warning("Commands: unknown condition '%s'" % cond)
 	return false
 

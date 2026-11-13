@@ -100,7 +100,41 @@
    "y": 2,
    "facing": "down",
    "move": "still",
-   "script": "moorfarm_farmer"
+   "script": "moorfarm_farmer",
+   "hide_if": "q_stories_england_world_joe"
+  },
+  {
+   "id": "w55e_hannah",
+   "name": "Hannah",
+   "sprite": "villager_2",
+   "x": 8,
+   "y": 4,
+   "facing": "left",
+   "script": "w55e_hannah",
+   "hide_if": "q_stories_england_away",
+   "move": "still"
+  },
+  {
+   "id": "w55e_sam",
+   "name": "Sam",
+   "sprite": "villager_3",
+   "x": 3,
+   "y": 5,
+   "facing": "right",
+   "script": "w55e_sam",
+   "show_if": "q_stories_england_world_joe",
+   "move": "still"
+  },
+  {
+   "id": "w55e_ranger_farm",
+   "name": "Ranger",
+   "sprite": "birdwatcher",
+   "x": 9,
+   "y": 3,
+   "facing": "left",
+   "script": "w55e_ranger_farm",
+   "show_if": "q_stories_england_world_scheme",
+   "move": "still"
   }
  ],
  "encounters": {},
