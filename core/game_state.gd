@@ -255,6 +255,10 @@ func _dev_cues() -> void:
 			for f in a.substr(6).split(",", false):
 				data.set_flag(f, true)
 				Bus.flag_changed.emit(f, true)
+		elif a == "--sense":  # dev: your creature notices what is near, and the mark stays put (SenseCue, screenshots)
+			SenseCue.dev_hold = true
+			for _i in SenseCue.LOOK_EVERY:
+				SenseCue.on_step(Router.overworld, Router.overworld.player.grid_pos)
 		elif a.begins_with("--read="):
 			var id := a.substr(7)
 			var t := ""

@@ -26,11 +26,16 @@ const TEXT := {
 	"pairing": "Two fond creatures can leave a basket. It hatches once you have walked enough steps.",
 	"battle_wild": "Weaken a wild creature first, then throw a Snare from the Bag to catch it.",
 	"battle_keeper": "A Keeper's creatures can't be caught. Win by tiring out their whole team.",
+	"atlas": "The Atlas shows how much of each region you have seen, with a stamp at half and another at all of it.",
+	"poi": "Points of interest sit off the road: a den, a camp, a standing stone or a hidden cache. Walk up and have a look.",
+	"field_spot": "A field spot is a small job for a creature with the right party piece: a gap in a wall, a molehill, a glint in the water.",
+	"plaque": "A plaque tells you what happened here. Read one and it goes in the Gazetteer, and enough of them earn a prize.",
+	"visitors_book": "Every room you walk into goes in the Visitor's Book. See every room in a town and the tourist board sends a thank-you.",
 }
 ## Menu name (as the Router knows it) to the card it shows.
 const MENUS := {"pedia": "pedia", "bag": "bag", "party": "party", "ark": "ark", "map": "map", "quests": "quests",
 	"stats": "stats", "almanac": "almanac", "shop": "shop", "jobs": "jobs", "craft": "craft", "society": "society",
-	"deed": "deed", "market": "market", "pairing": "pairing"}
+	"deed": "deed", "market": "market", "pairing": "pairing", "atlas": "atlas"}
 
 ## The card for `id` if Hints are on and it has not been shown ("" otherwise); showing it marks it seen.
 static func take(d: GameStateData, id: String, enabled: bool) -> String:
