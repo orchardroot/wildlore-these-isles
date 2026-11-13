@@ -134,5 +134,280 @@
    "who": "Knitter's Cousin",
    "text": "Come back when you want something else. We don't close, we just get sleepier."
   }
+ ],
+ "w55k_eila": [
+  {
+   "do": "if",
+   "flag": "q_stories_islands_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_islands_pick_full",
+     "then": [
+      {
+       "do": "say",
+       "who": "Eila",
+       "text": "I am at the stall every day now. The boat runs, and the wool goes out and the yarn comes back. It was dear, and it was worth it. Ask me again in five years."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_islands_pick_lean",
+     "then": [
+      {
+       "do": "say",
+       "who": "Eila",
+       "text": "Tuesday, Thursday, Saturday. You learn to plan by it, like tides. It is not the end of anything. It is only the end of a Wednesday."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_islands_pick_small",
+     "then": [
+      {
+       "do": "say",
+       "who": "Eila",
+       "text": "We have a boat. It is smaller and faster and warm. It will not take a sheep, and the sheep have noticed."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_islands_decided",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_islands_pick",
+       "eq": 0,
+       "then": [
+        {
+         "do": "say",
+         "who": "Eila",
+         "text": "The full boat. I will say it at the meeting. And then someone will ask who pays, and I will have to say that too."
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_islands_pick",
+       "eq": 1,
+       "then": [
+        {
+         "do": "say",
+         "who": "Eila",
+         "text": "The lean timetable. Three days. I will say it at the meeting, and I will not say it kindly, because I will not feel it kindly."
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_islands_pick",
+       "eq": 2,
+       "then": [
+        {
+         "do": "say",
+         "who": "Eila",
+         "text": "A smaller boat. New, and fewer things it can do. I will say it at the meeting, and I will watch Magnie's face."
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Eila",
+       "text": "The isle's post comes in with the boat hand, who has his tea at the harbour tearoom. Word will come, one way or another."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_islands_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_islands_magnie",
+         "then": [
+          {
+           "do": "if",
+           "flag": "q_stories_islands_ruth",
+           "then": [
+            {
+             "do": "say",
+             "who": "Eila",
+             "text": "Well? You have heard the skipper and you have heard the council. Tell me straight. I am to speak for the isle and I am not allowed to be sure."
+            },
+            {
+             "do": "choice",
+             "text": "What should the isle ask for?",
+             "options": [
+              "The full boat, whatever it costs",
+              "A lean timetable, and the old boat kept going",
+              "A smaller, newer boat",
+              "I need to think"
+             ],
+             "set": "q_stories_islands_pick"
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_islands_pick",
+             "eq": 0,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_islands_pick_full",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_islands_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_islands_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_islands_pick",
+             "eq": 1,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_islands_pick_lean",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_islands_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_islands_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_islands_pick",
+             "eq": 2,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_islands_pick_small",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_islands_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_islands_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_islands_pick",
+             "eq": 3,
+             "then": [
+              {
+               "do": "say",
+               "who": "Eila",
+               "text": "Take your time. The council will not, but you can."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_islands_decided",
+             "then": [
+              {
+               "do": "say",
+               "who": "Eila",
+               "text": "I will say it at the meeting. Come back for the post when it is done."
+              }
+             ]
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Eila",
+             "text": "Ruth Leask, in the Town Hall. She has the spreadsheet. She is not the enemy, she only has the spreadsheet."
+            }
+           ]
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Eila",
+           "text": "Magnie Tulloch has the harbour tearoom most dinnertimes when he is not at sea. Hear him first."
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Eila",
+         "text": "Eila Jamieson. I knit, and I sell it here, and I come from the isle, a long way out. The boat takes my jumpers in and the yarn out, and the doctor, and the post, and the cheese."
+        },
+        {
+         "do": "say",
+         "who": "Eila",
+         "text": "The boat is old, and it is dear to run, and it will need replacing, and the council has to decide what to do about it. The isle meeting was split down the middle and nobody could agree on a word."
+        },
+        {
+         "do": "say",
+         "who": "Eila",
+         "text": "I am to speak for the isle and I cannot be sure. Would you hear the skipper and the council, and tell me what you think we should ask for? You are nobody's cousin."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_islands_started",
+         "value": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55k_robbie": [
+  {
+   "do": "say",
+   "who": "Robbie",
+   "text": "I am back from Aberdeen. Eila's cousin, not that anyone will let me forget. I crew on the boat now, five days a week."
+  },
+  {
+   "do": "say",
+   "who": "Robbie",
+   "text": "I went away to be a welder and I came home to tie ropes. My mother says it is the same thing, if you do it properly."
+  }
+ ],
+ "w55k_lorna": [
+  {
+   "do": "say",
+   "who": "Lorna",
+   "text": "I board in Lerwick Monday to Friday. I am fourteen. I like it and I do not like it, and I have not told my mother which."
+  },
+  {
+   "do": "say",
+   "who": "Lorna",
+   "text": "The Tuesday boat is the best boat. I stand at the rail for the whole of it. I would like that written down."
+  }
  ]
 }

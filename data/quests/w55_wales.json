@@ -1,0 +1,51 @@
+{
+ "quests": [
+  {
+   "id": "stories_wales",
+   "title": "The Keys to Bethania",
+   "region": "stories_wales",
+   "town": "rhondda",
+   "giver": "Eirlys Bevan, at Bethania Chapel",
+   "summary": "A Rhondda chapel with nine members has an offer from a local builder to turn it into flats. The choir wants to keep singing there. Hear everyone, then tell the secretary what you think.",
+   "start_flag": "q_stories_wales_started",
+   "steps": [
+    {
+     "flag": "q_stories_wales_kieran",
+     "text": "Hear Kieran Rees, the builder, at the Miners' Institute.",
+     "zone": "rhondda_institute"
+    },
+    {
+     "flag": "q_stories_wales_elwyn",
+     "text": "Ask Elwyn Prosser what the choir would lose.",
+     "zone": "rhondda_chapel"
+    },
+    {
+     "flag": "q_stories_wales_decided",
+     "text": "Tell Eirlys what you think the members should do.",
+     "zone": "rhondda_chapel"
+    },
+    {
+     "flag": "q_stories_wales_done",
+     "text": "Wait for word. The terrace post comes to Bryn Terrace, a night's sleep or a day later.",
+     "zone": "rhondda_home"
+    }
+   ],
+   "done_flag": "q_stories_wales_done",
+   "reward": "A choir blazer, a keepsake of how it went, and the chapel teas' Welsh cake recipe.",
+   "endings": [
+    {
+     "flag": "q_stories_wales_pick_sell",
+     "text": "Bethania became six flats, four let to people from the valley, and the choir moved to the Miners' Institute."
+    },
+    {
+     "flag": "q_stories_wales_pick_keep",
+     "text": "Bethania stayed a chapel: nine members, a roof fund at forty per cent and a choir singing under scaffolding."
+    },
+    {
+     "flag": "q_stories_wales_pick_split",
+     "text": "The old schoolroom became two flats and the money mended the roof. The chapel is still a chapel, and the choir stops at nine."
+    }
+   ]
+  }
+ ]
+}

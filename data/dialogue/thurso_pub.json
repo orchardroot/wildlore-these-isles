@@ -58,5 +58,589 @@
    "who": "Retired Engineer",
    "text": "Now they're taking it all apart, very slowly and very carefully. My grandson works on the decommissioning. He's undoing my work. I've told him to be gentle with it."
   }
+ ],
+ "w55s_isobel": [
+  {
+   "do": "if",
+   "flag": "q_stories_scotland_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_support",
+     "then": [
+      {
+       "do": "say",
+       "who": "Isobel",
+       "text": "The lunch club has doubled. Thursday is soup and a seat by a radiator that works. I will not tell you it was an easy answer, but I will tell you the roof is dry."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_object",
+     "then": [
+      {
+       "do": "say",
+       "who": "Isobel",
+       "text": "The tarpaulin stays and the raffle goes on. We were asked, and we answered. I have decided that is worth something, on the days I can manage it."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_compromise",
+     "then": [
+      {
+       "do": "say",
+       "who": "Isobel",
+       "text": "Everyone is a bit cross, about equally. I am told that is what a fair answer feels like. I am not convinced, but I am too tired to argue."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_decided",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_pick_support",
+       "then": [
+        {
+         "do": "say",
+         "who": "Isobel",
+         "text": "I will tell the meeting what you said. They will not all like it. Somebody will have to say it out loud, and you have made it easier that it was not one of us."
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_pick_object",
+       "then": [
+        {
+         "do": "say",
+         "who": "Isobel",
+         "text": "I will read your letter out on Thursday. There will be a silence, and then Hamish Gunn will say 'aye', and then the rest."
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_pick_compromise",
+       "then": [
+        {
+         "do": "say",
+         "who": "Isobel",
+         "text": "Move them off the deep peat. Yes. That might be both of our answers at once, or it might be neither. We shall find out when the developer reads it."
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Isobel",
+       "text": "The post for this end of the strath waits at the Flagstone Bar. Word will come, one way or another."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_scotland_calum",
+         "then": [
+          {
+           "do": "if",
+           "flag": "q_stories_scotland_warden",
+           "then": [
+            {
+             "do": "say",
+             "who": "Isobel",
+             "text": "Well? You have heard Calum and you have heard the Flows. We are four against four on the committee and the chair would sooner have a straight answer from someone who is nobody's cousin."
+            },
+            {
+             "do": "choice",
+             "text": "What do you tell the committee?",
+             "options": [
+              "Back the wind farm as planned",
+              "Object to it",
+              "Back it, but move it off the deep peat",
+              "I need to think"
+             ],
+             "set": "q_stories_scotland_pick"
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_scotland_pick",
+             "eq": 0,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_pick_support",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_when",
+               "value": "@now"
+              },
+              {
+               "do": "say",
+               "who": "Isobel",
+               "text": "Back it. Fourteen turbines on the Flats, the hall roof, the lunch club, the minibus. And a skyline I will see every morning from the kitchen window."
+              },
+              {
+               "do": "say",
+               "who": "Isobel",
+               "text": "I will write it up. Come back for the post when the committee has met."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_scotland_pick",
+             "eq": 1,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_pick_object",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_when",
+               "value": "@now"
+              },
+              {
+               "do": "say",
+               "who": "Isobel",
+               "text": "Object. The peat stays as it is and the waders keep their ridge. And the hall keeps its tarpaulin, and the minibus stays a drawing."
+              },
+              {
+               "do": "say",
+               "who": "Isobel",
+               "text": "I will write it up. Come back for the post when the committee has met."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_scotland_pick",
+             "eq": 2,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_pick_compromise",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_scotland_when",
+               "value": "@now"
+              },
+              {
+               "do": "say",
+               "who": "Isobel",
+               "text": "Move the turbines that stand on the deep peat. A smaller scheme, a smaller fund, and the developer may say no and take the lot away."
+              },
+              {
+               "do": "say",
+               "who": "Isobel",
+               "text": "Fair is not the same as safe. I will write it up. Come back for the post when the committee has met."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_scotland_pick",
+             "eq": 3,
+             "then": [
+              {
+               "do": "say",
+               "who": "Isobel",
+               "text": "Take your time. The consultation will not, but you can."
+              }
+             ]
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Isobel",
+             "text": "The Flows Warden, at Forsinard. Ask what the ground under the wind farm actually is. Then come back."
+            }
+           ]
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Isobel",
+           "text": "Calum is the estate manager. He is at the back table most dinner times. Hear his side, then the Warden's."
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Isobel",
+         "text": "Isobel Mackay. I do the books for the hall up the strath, so I am used to being the one with the bad news."
+        },
+        {
+         "do": "say",
+         "who": "Isobel",
+         "text": "A developer wants to put fourteen turbines on the Flats, the high ground behind us. There is a community fund in it: the hall roof, a lunch club for the old folk, a minibus for the school run. We have a tarpaulin over the roof and two buckets in the kitchen."
+        },
+        {
+         "do": "say",
+         "who": "Isobel",
+         "text": "We are four against four. The chair says nobody here can settle it without losing a friend. Would you hear us all out, and then tell us what you think? You are nobody's cousin."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_scotland_started",
+         "value": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55s_calum": [
+  {
+   "do": "if",
+   "flag": "q_stories_scotland_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_support",
+     "then": [
+      {
+       "do": "say",
+       "who": "Calum",
+       "text": "The lease pays for the three jobs the estate had, and a fourth. I would be lying if I said that was not on my mind. It was not the only thing on my mind."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_object",
+     "then": [
+      {
+       "do": "say",
+       "who": "Calum",
+       "text": "We are looking at trees instead. The Flow has been planted before, in the eighties, and regretted. So we shall see. I do not like it any better than you do."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_compromise",
+     "then": [
+      {
+       "do": "say",
+       "who": "Calum",
+       "text": "A smaller lease. A smaller fund. A smaller row about it. I am too tired to be cross, and I have been cross about worse."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_decided",
+     "then": [
+      {
+       "do": "say",
+       "who": "Calum",
+       "text": "Whatever the committee decides, the estate will live with it. It is their strath too. It is only that it is our ground."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_scotland_calum",
+         "then": [
+          {
+           "do": "say",
+           "who": "Calum",
+           "text": "Tell the committee I am not their enemy, and not their friend either. I am the man who has to find the wages."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Calum",
+           "text": "Calum Ross. I run the estate. Three jobs, a lot of hill, and a roof of my own that needs doing."
+          },
+          {
+           "do": "say",
+           "who": "Calum",
+           "text": "The turbines go on our ground, and the lease would pay for the three jobs and more. Estates like ours have not had a good year since the price of lamb went where it went."
+          },
+          {
+           "do": "say",
+           "who": "Calum",
+           "text": "The developer comes from the south, and I have not got used to it, but they have been straight with me and they have been straight with the committee. The fund is real money. I do not say that to buy anyone."
+          },
+          {
+           "do": "say",
+           "who": "Calum",
+           "text": "What I will say is that if it is not turbines then it is trees, or it is selling. I have no wish to sell to anyone who has never seen the place in January."
+          },
+          {
+           "do": "set",
+           "flag": "q_stories_scotland_calum",
+           "value": true
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Calum",
+         "text": "Estate business. Do not mind me. I am working out a rota with a pencil and a very short pencil at that."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55s_kirsty": [
+  {
+   "do": "if",
+   "flag": "q_stories_scotland_done",
+   "then": [
+    {
+     "do": "say",
+     "who": "Kirsty",
+     "text": "The minibus. The minibus is the thing, and it is not a wind farm thing, it is a money thing, and I do not know any more which."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Kirsty",
+     "text": "Mind the pram. My boy starts school in August and the school is eleven miles away. There is a bus on the timetable that does not, as it happens, go."
+    },
+    {
+     "do": "say",
+     "who": "Kirsty",
+     "text": "I would not stay for a wind farm. I would not leave for one either. But I might leave for the school run, and nobody is counting that."
+    }
+   ]
+  }
+ ],
+ "w55s_postie": [
+  {
+   "do": "if",
+   "flag": "q_stories_scotland_done",
+   "then": [
+    {
+     "do": "say",
+     "who": "Postie",
+     "text": "That was yours. The rest of the strath's post is in the van, and the van is double-parked."
+    }
+   ],
+   "else": [
+    {
+     "do": "when",
+     "cond": "later_q_stories_scotland_when_3",
+     "then": [
+      {
+       "do": "say",
+       "who": "Postie",
+       "text": "There you are. A letter for you, care of the Flagstone Bar. It has come all the way down the strath in a plastic bag, since you ask."
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_pick_support",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. The roof is on. Slates, and not a tarpaulin in sight. It was the first thing the fund paid for, and the lunch club has doubled."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "There are fourteen turbines on the Flats now, and from the hall car park you can see every one. Some days I think they look like a row of people waiting for a bus. Some days Hamish Gunn will not look at them."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The warden writes that the greenshank have moved their nests back from the nearest ridge. He is not cross. He is only measured, and that is worse."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I voted the way you wrote. I would do it again, and I would not blame anyone who would not. Come for the soup."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_hall_slate",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_scotland_world_built",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_pick_object",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. It was refused in the spring. The tarpaulin stays and the raffle goes on. Kirsty has gone to Inverness. She says it was the school run and not the turbines, and I believe her, mostly."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Calum says the estate is looking at trees instead. The Flow has been planted before and regretted, so we shall see."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The warden counted greenshank on the ridge, and it was the same as last year. Same is a good number when you have seen what different looks like."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I do not know if we were right. I do know that we were asked, and that we answered. Come for the soup."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_hall_feather",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_scotland_world_object",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_pick_compromise",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. They moved the turbines off the deep peat. Six had to go, which cost the developer a good deal of temper, and the other eight were built. The fund is smaller. The roof is on, and the minibus is still a drawing."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Calum is cross because the lease is smaller. The warden is cross because there are any. Hamish says it is a wind farm done as badly as everything done halfway."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I think it is the first thing in this strath that everyone has been a bit cross about, equally. That may be what a fair answer feels like. Come for the soup."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_hall_minute",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_scotland_world_built",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Postie",
+       "text": "There was something else in the bag. A dumpling in a cloth, and a note on how it is done, for a person with a pudding cloth. The strath's recipe, it says."
+      },
+      {
+       "do": "recipe",
+       "id": "clootie_dumpling"
+      },
+      {
+       "do": "give_item",
+       "item": "w55_peat_cap",
+       "n": 1
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_scotland_done",
+       "value": true
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Postie",
+       "text": "Nothing yet. The committee has to meet, and the post has to come down the strath. Try after a night's sleep."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55s_tech": [
+  {
+   "do": "if",
+   "flag": "q_stories_scotland_pick_support",
+   "then": [
+    {
+     "do": "say",
+     "who": "Technician",
+     "text": "I am here for the annual service. You can hear them from the car park on a calm night: a sort of long breath. The locals say it grows on you."
+    },
+    {
+     "do": "say",
+     "who": "Technician",
+     "text": "I will say this: the ones I like best are the ones nobody argues about. That is not these ones. They are well built, though."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Technician",
+     "text": "Eight machines on the thin ground, and the north side left alone. A smaller job than it was meant to be, and I am told that is the point."
+    },
+    {
+     "do": "say",
+     "who": "Technician",
+     "text": "I did hear the warden say it was the first time he had been consulted before the diggers, not after. I would not put that on a poster, but I would not forget it."
+    }
+   ]
+  }
  ]
 }

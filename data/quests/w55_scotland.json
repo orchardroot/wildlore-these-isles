@@ -1,0 +1,51 @@
+{
+ "quests": [
+  {
+   "id": "stories_scotland",
+   "title": "The Hall Roof and the Flows",
+   "region": "stories_scotland",
+   "town": "thurso",
+   "giver": "Isobel Mackay, at the Flagstone Bar",
+   "summary": "A wind farm on the hill behind a Caithness strath would pay for the hall roof and a school minibus, on ground the Flows Warden worries about. The committee is split. Hear everyone, then tell them what you think.",
+   "start_flag": "q_stories_scotland_started",
+   "steps": [
+    {
+     "flag": "q_stories_scotland_calum",
+     "text": "Hear Calum, the estate manager, in the Flagstone Bar.",
+     "zone": "thurso_pub"
+    },
+    {
+     "flag": "q_stories_scotland_warden",
+     "text": "Ask the Flows Warden what the ground is.",
+     "zone": "forsinard_centre"
+    },
+    {
+     "flag": "q_stories_scotland_decided",
+     "text": "Tell Isobel what you think the committee should answer.",
+     "zone": "thurso_pub"
+    },
+    {
+     "flag": "q_stories_scotland_done",
+     "text": "Wait for word. The strath's post waits at the Flagstone Bar, a night's sleep or a day later.",
+     "zone": "thurso_pub"
+    }
+   ],
+   "done_flag": "q_stories_scotland_done",
+   "reward": "A peat-brown bunnet, a keepsake from the hall, and the strath's clootie dumpling recipe.",
+   "endings": [
+    {
+     "flag": "q_stories_scotland_pick_support",
+     "text": "The wind farm went ahead, the hall roof is slated and the lunch club has doubled. The greenshank moved their nests back from the nearest ridge."
+    },
+    {
+     "flag": "q_stories_scotland_pick_object",
+     "text": "The application was refused. The peat and the ridge are as they were, the hall roof is still tarpaulin and the minibus is still a drawing."
+    },
+    {
+     "flag": "q_stories_scotland_pick_compromise",
+     "text": "The scheme was moved off the deep peat and made smaller. The fund is smaller too: the roof is mended, the minibus is not."
+    }
+   ]
+  }
+ ]
+}

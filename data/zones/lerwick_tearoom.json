@@ -105,6 +105,39 @@
    "move": "still",
    "script": "ls_soup_fan",
    "name": "Fisherman"
+  },
+  {
+   "id": "w55k_magnie",
+   "name": "Magnie Tulloch",
+   "sprite": "fisherman_north",
+   "x": 4,
+   "y": 4,
+   "facing": "right",
+   "script": "w55k_magnie",
+   "move": "still"
+  },
+  {
+   "id": "w55k_hand",
+   "name": "Boat hand",
+   "sprite": "sailor",
+   "x": 3,
+   "y": 5,
+   "facing": "right",
+   "script": "w55k_hand",
+   "show_if": "q_stories_islands_decided",
+   "hide_if": "q_stories_islands_done",
+   "move": "still"
+  },
+  {
+   "id": "w55k_skipper",
+   "name": "Ingrid",
+   "sprite": "sailor",
+   "x": 5,
+   "y": 5,
+   "facing": "left",
+   "script": "w55k_skipper",
+   "show_if": "q_stories_islands_world_small",
+   "move": "still"
   }
  ],
  "encounters": {},

@@ -15,5 +15,78 @@
    "who": "Shopkeeper",
    "text": "We have postcards and tea towels with giants on them. It is the closest you will get to a giant today."
   }
+ ],
+ "w55n_joanne": [
+  {
+   "do": "if",
+   "flag": "q_stories_northern_ireland_decided",
+   "then": [
+    {
+     "do": "say",
+     "who": "Joanne",
+     "text": "Whatever Maeve decides, the kettle is still on. I am only the woman with the spare room and a very good cake tin."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_northern_ireland_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_northern_ireland_joanne",
+       "then": [
+        {
+         "do": "say",
+         "who": "Joanne",
+         "text": "Tell her I will keep the hatch warm, and the chair is better than the one she has."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Joanne",
+         "text": "Joanne Hill. I have the craft shop across the green, and I have a spare room that does nothing but hold tea towels."
+        },
+        {
+         "do": "say",
+         "who": "Joanne",
+         "text": "I could host the counter in it: a hatch, a chair, Tuesday to Saturday ten till three. People would queue past the tea towels, and I am not stupid, I know that is good for me. It is also the only way I can afford to take it on."
+        },
+        {
+         "do": "say",
+         "who": "Joanne",
+         "text": "No Mondays and no evenings. I cannot do more than five days and still be a craft shop. Someone will lose out, and I would like to know it will not be me alone."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_northern_ireland_joanne",
+         "value": true
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Joanne",
+       "text": "Just looking at the premises. The light in here is lovely and the radiator is a crime."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55n_hatch": [
+  {
+   "do": "say",
+   "who": "Joanne",
+   "text": "The hatch is a window I cut myself. There is a queue past the tea towels, and the tea towels have never sold so well."
+  },
+  {
+   "do": "say",
+   "who": "Joanne",
+   "text": "No Mondays. I have put a sign up. A lot of people have put 'Tuesday' on their calendar, and I have a very small, very guilty smile."
+  }
  ]
 }

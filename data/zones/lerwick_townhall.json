@@ -117,6 +117,16 @@
    "move": "still",
    "script": "ls_provost",
    "name": "Hall Keeper"
+  },
+  {
+   "id": "w55k_ruth",
+   "name": "Ruth Leask",
+   "sprite": "commuter",
+   "x": 9,
+   "y": 5,
+   "facing": "left",
+   "script": "w55k_ruth",
+   "move": "still"
   }
  ],
  "encounters": {},

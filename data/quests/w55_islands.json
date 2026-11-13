@@ -1,0 +1,51 @@
+{
+ "quests": [
+  {
+   "id": "stories_islands",
+   "title": "The Isle Boat",
+   "region": "stories_islands",
+   "town": "lerwick",
+   "giver": "Eila Jamieson, in the wool shop",
+   "summary": "The council is deciding what to do about the old boat to a small Shetland isle. The skipper, the council officer and the isle itself want different things. Hear them, then tell Eila what to ask for.",
+   "start_flag": "q_stories_islands_started",
+   "steps": [
+    {
+     "flag": "q_stories_islands_magnie",
+     "text": "Hear Magnie Tulloch, the skipper, in the Harbour Tea Room.",
+     "zone": "lerwick_tearoom"
+    },
+    {
+     "flag": "q_stories_islands_ruth",
+     "text": "Hear Ruth Leask, the transport officer, in the Town Hall.",
+     "zone": "lerwick_townhall"
+    },
+    {
+     "flag": "q_stories_islands_decided",
+     "text": "Tell Eila what the isle should ask for.",
+     "zone": "lerwick_wool"
+    },
+    {
+     "flag": "q_stories_islands_done",
+     "text": "Wait for word. The isle's post comes in with the boat hand at the Harbour Tea Room, a night's sleep or a day later.",
+     "zone": "lerwick_tearoom"
+    }
+   ],
+   "done_flag": "q_stories_islands_done",
+   "reward": "A Fair Isle tammy, a keepsake from the boat, and the isle's stovies recipe.",
+   "endings": [
+    {
+     "flag": "q_stories_islands_pick_full",
+     "text": "The isle kept the full boat, five days a week, paid for by putting off a road scheme on the north Mainland. The old boat will still need replacing."
+    },
+    {
+     "flag": "q_stories_islands_pick_lean",
+     "text": "The isle took a lean timetable: three days a week, and the old boat kept going for a few more years. The school bairns board in Lerwick in the week."
+    },
+    {
+     "flag": "q_stories_islands_pick_small",
+     "text": "The isle got a smaller, newer boat: faster, with a heated cabin, and no room for sheep, which now go by charter twice a year."
+    }
+   ]
+  }
+ ]
+}

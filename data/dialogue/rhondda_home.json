@@ -15,5 +15,165 @@
    "who": "Mrs Pugh's sister",
    "text": "Parlour's the best room and nobody's allowed in it. It's the one with the good china and the good clock. We use the kitchen like everybody else."
   }
+ ],
+ "w55w_postman": [
+  {
+   "do": "if",
+   "flag": "q_stories_wales_done",
+   "then": [
+    {
+     "do": "say",
+     "who": "Postman",
+     "text": "That was your letter. Terrace post is the only post that stops for tea, by agreement."
+    }
+   ],
+   "else": [
+    {
+     "do": "when",
+     "cond": "later_q_stories_wales_when_3",
+     "then": [
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "There you are. A letter for you, care of Bryn Terrace. Mrs Pugh's sister said I was to watch for you."
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_wales_pick_sell",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. It is done. Six flats, and the front of Bethania as it always was, with the date over the door and a number beside it."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Four are let to people from the valley, to folk who grew up within a mile of here. One is Kieran's. He has asked me to say he does not sleep well, and that is the closest I have had to an apology from a builder."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The choir rehearses in the Institute. The organ went to a chapel in Swansea that wanted it. I went to hear it. It sounded the same, which was somehow worse."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I am glad, and I am not glad. I have noticed that is a thing a person can be, at my age. Come for a cup of tea. E.B."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_bethania_key",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_wales_world_sell",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_wales_pick_keep",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. We kept it. Nine of us, and a tin, and a rota that has been written on the back of an order of service because nobody could find paper."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "We have raised enough for the roof over the vestry end. The rest is a thermometer in the porch that Mrs Pugh's sister painted. It is at forty per cent and has not moved since Easter."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Elwyn says the choir sings better under scaffolding. I think he is being kind, and I think he knows I know."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I will not say we were right. I will say the door is open on Sundays and there is a hymn at eleven. E.B."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_bethania_thermometer",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_wales_world_keep",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_wales_pick_split",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. Done. Two flats in the old Sunday school and the chapel still a chapel. The money did the roof."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Both flats are let, to young couples from the valley. One of them has a baby, and on Thursday evenings the baby and the choir are in a competition. The choir stops at nine. The baby does not."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The teas have moved into the vestry and everyone says they miss the old schoolroom. They mean they miss being twenty."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I have noticed that nobody is entirely happy, and I have decided to take it as a good sign. E.B."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_bethania_keys",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_wales_world_split",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "There was something else in the envelope. A recipe, on the back of a hymn sheet, in a very upright hand. Welsh cakes. The chapel teas, it says. She wants you to have it."
+      },
+      {
+       "do": "recipe",
+       "id": "welsh_cakes"
+      },
+      {
+       "do": "give_item",
+       "item": "w55_choir_blazer",
+       "n": 1
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_wales_done",
+       "value": true
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "Nothing yet. These things take a few days to get down the valley, and the members have to meet. Try after a night's sleep."
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

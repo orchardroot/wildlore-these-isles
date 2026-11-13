@@ -169,3 +169,134 @@ func test_england_need_to_think_does_not_decide() -> void:
 	h.choices = [1]
 	await _talk(h, "nym_moorfarm", "moorfarm_farmer")
 	assert_true(h.data.flag(E + "pick_joe") == true, "and he can still be told later")
+
+# --- the other five chains, played the same way ----------------------------------------------------------
+## Each spec: quest id, flag prefix, who starts it, who to hear (in order), who takes the answer, who brings the post,
+## the flag each branch sets, the keepsake of each branch, what everyone gets, and who stands where: [zone, npc, there
+## before the chain has ended, there afterwards in each of the three worlds].
+
+const CHAINS := [
+	{"id": "stories_scotland", "p": "q_stories_scotland_", "start": ["thurso_pub", "w55s_isobel"],
+		"voices": [["thurso_pub", "w55s_calum"], ["forsinard_centre", "flows_warden"]], "decide": ["thurso_pub", "w55s_isobel"],
+		"post": ["thurso_pub", "w55s_postie"], "picks": ["support", "object", "compromise"],
+		"keep": ["w55_hall_slate", "w55_hall_feather", "w55_hall_minute"], "gift": ["w55_peat_cap"], "recipe": "clootie_dumpling",
+		"seen": [["thurso_pub", "w55s_tech", false, [true, false, true]], ["thurso_pub", "w55s_kirsty", true, [true, false, true]]]},
+	{"id": "stories_wales", "p": "q_stories_wales_", "start": ["rhondda_chapel", "w55w_eirlys"],
+		"voices": [["rhondda_institute", "w55w_kieran"], ["rhondda_chapel", "rhn_conductor"]], "decide": ["rhondda_chapel", "w55w_eirlys"],
+		"post": ["rhondda_home", "w55w_postman"], "picks": ["sell", "keep", "split"],
+		"keep": ["w55_bethania_key", "w55_bethania_thermometer", "w55_bethania_keys"], "gift": ["w55_choir_blazer"], "recipe": "welsh_cakes",
+		"seen": [["rhondda_institute", "w55w_chorister", false, [true, false, false]], ["rhondda_chapel", "w55w_ladder", false, [false, true, false]],
+			["rhondda_chapel", "w55w_father", false, [false, false, true]]]},
+	{"id": "stories_ireland", "p": "q_stories_ireland_", "start": ["gweedore_pub", "gp_barman"],
+		"voices": [["gweedore_pub", "w55i_niamh"], ["gweedore_pub", "w55i_brid"], ["gweedore_pub", "w55i_orla"]], "decide": ["gweedore_pub", "gp_barman"],
+		"post": ["gweedore_pub", "w55i_postman"], "picks": ["couple", "coop", "hotel"],
+		"keep": ["w55_snug_latch", "w55_coop_share", "w55_last_orders_bell"], "gift": ["w55_gaeltacht_shawl"], "recipe": "boxty",
+		"seen": [["gweedore_pub", "gp_barman", true, [false, false, false]], ["gweedore_pub", "w55i_retired", false, [true, true, true]],
+			["gweedore_pub", "w55i_couple", false, [true, false, false]], ["gweedore_pub", "w55i_coop", false, [false, true, false]],
+			["gweedore_pub", "w55i_hotel", false, [false, false, true]], ["gweedore_pub", "w55i_brid", true, [true, true, true]]]},
+	{"id": "stories_northern_ireland", "p": "q_stories_northern_ireland_", "start": ["bushmills_postoffice", "bush_postmaster"],
+		"voices": [["bushmills_postoffice", "w55n_margaret"], ["bushmills_postoffice", "w55n_gareth"], ["bushmills_craftshop", "w55n_joanne"]],
+		"decide": ["bushmills_postoffice", "bush_postmaster"], "post": ["bushmills_postoffice", "w55n_postman"], "picks": ["community", "franchise", "hosted"],
+		"keep": ["w55_counter_tin", "w55_counter_scales", "w55_counter_sign"], "gift": ["w55_ulster_cardigan"], "recipe": "soda_farl",
+		"seen": [["bushmills_postoffice", "bush_postmaster", true, [false, false, false]], ["bushmills_postoffice", "w55n_retired", false, [true, true, true]],
+			["bushmills_postoffice", "w55n_vol", false, [true, false, false]], ["bushmills_postoffice", "w55n_till", false, [false, true, false]],
+			["bushmills_craftshop", "w55n_hatch", false, [false, false, true]], ["bushmills_craftshop", "w55n_joanne", true, [false, false, false]],
+			["bushmills_postoffice", "w55n_margaret", true, [false, false, false]], ["bushmills_postoffice", "w55n_gareth", true, [false, false, false]]]},
+	{"id": "stories_islands", "p": "q_stories_islands_", "start": ["lerwick_wool", "w55k_eila"],
+		"voices": [["lerwick_tearoom", "w55k_magnie"], ["lerwick_townhall", "w55k_ruth"]], "decide": ["lerwick_wool", "w55k_eila"],
+		"post": ["lerwick_tearoom", "w55k_hand"], "picks": ["full", "lean", "small"],
+		"keep": ["w55_isle_plate", "w55_isle_timetable", "w55_isle_lifebelt"], "gift": ["w55_isle_tammy"], "recipe": "stovies",
+		"seen": [["lerwick_wool", "w55k_robbie", false, [true, false, false]], ["lerwick_wool", "w55k_lorna", false, [false, true, false]],
+			["lerwick_tearoom", "w55k_skipper", false, [false, false, true]]]},
+]
+
+func _play_chain(c: Dictionary, pick: int, think_first := false) -> FakeStoryHost:
+	var h := FakeStoryHost.new()
+	var q := _q(str(c.id))
+	assert_false(q.is_empty(), str(c.id))
+	assert_eq(Quests.status(h.data, q), Quests.NOT_STARTED)
+	await _talk(h, c.start[0], c.start[1])
+	assert_eq(Quests.status(h.data, q), Quests.ACTIVE, "%s starts" % c.id)
+	h.choices = [pick]
+	await _talk(h, c.decide[0], c.decide[1])
+	assert_eq(h.data.flag(c.p + "decided"), null, "%s: not decided before everyone has been heard" % c.id)
+	for v in c.voices:
+		await _talk(h, v[0], v[1])
+	for i in c.voices.size():
+		assert_true(h.data.flag(str(q.steps[i].flag)) == true, "%s: step %d ticked" % [c.id, i + 1])
+	assert_eq(Quests.step_index(h.data, q), c.voices.size(), "%s: now it is for you to say" % c.id)
+	if think_first:
+		h.choices = [3]
+		await _talk(h, c.decide[0], c.decide[1])
+		assert_eq(h.data.flag(c.p + "decided"), null, "%s: 'I need to think' decides nothing" % c.id)
+	h.choices = [pick]
+	await _talk(h, c.decide[0], c.decide[1])
+	return h
+
+func _chain_every_branch(c: Dictionary) -> void:
+	for i in 3:
+		var h := await _play_chain(c, i, i == 0)
+		var q := _q(str(c.id))
+		assert_true(h.data.flag(c.p + "decided") == true, "%s/%d decided" % [c.id, i])
+		assert_true(h.data.flag(c.p + "pick_" + c.picks[i]) == true, "%s/%d: the choice is kept" % [c.id, i])
+		assert_eq(Quests.status(h.data, q), Quests.ACTIVE, "%s/%d: not done in the same conversation" % [c.id, i])
+		assert_eq(_bag(h, c.keep[i]), 0)
+		_reload(h)
+		for s in c.seen:
+			assert_eq(_present(s[0], s[1], h.data), bool(s[2]), "%s/%d: %s is as before until the letter" % [c.id, i, s[1]])
+		assert_true(_present(c.post[0], c.post[1], h.data), "%s/%d: the post is waiting" % [c.id, i])
+		await _talk(h, c.post[0], c.post[1])
+		assert_eq(Quests.status(h.data, q), Quests.ACTIVE, "%s/%d: the same night, nothing" % [c.id, i])
+		_sleep(h, 3)
+		await _talk(h, c.post[0], c.post[1])
+		assert_eq(Quests.status(h.data, q), Quests.DONE, "%s/%d: the letter comes" % [c.id, i])
+		assert_eq(_bag(h, c.keep[i]), 1)
+		for j in 3:
+			if j != i:
+				assert_eq(_bag(h, c.keep[j]), 0, "only the keepsake of the choice made")
+		for g in c.gift:
+			assert_eq(_bag(h, g), 1)
+		assert_true(Crafting.is_known(h.data, c.recipe))
+		assert_eq(Quests.outcome(h.data, q), str(q.endings[i].text))
+		await _talk(h, c.post[0], c.post[1])
+		assert_eq(_bag(h, c.keep[i]), 1, "the letter is not read twice")
+		_reload(h)
+		assert_eq(Quests.status(h.data, q), Quests.DONE, "done survives a save")
+		assert_false(_present(c.post[0], c.post[1], h.data), "the post has been collected")
+		for s in c.seen:
+			assert_eq(_present(s[0], s[1], h.data), bool(s[3][i]), "%s/%d: %s afterwards" % [c.id, i, s[1]])
+
+func test_scotland_every_branch() -> void:
+	await _chain_every_branch(CHAINS[0])
+
+func test_wales_every_branch() -> void:
+	await _chain_every_branch(CHAINS[1])
+
+func test_ireland_every_branch() -> void:
+	await _chain_every_branch(CHAINS[2])
+
+func test_northern_ireland_every_branch() -> void:
+	await _chain_every_branch(CHAINS[3])
+
+func test_islands_every_branch() -> void:
+	await _chain_every_branch(CHAINS[4])
+
+func test_fresh_saves_are_untouched_until_a_chain_is_started() -> void:
+	for c in CHAINS:
+		var h := FakeStoryHost.new()
+		for v in c.voices:
+			await _talk(h, v[0], v[1])
+		assert_eq(Quests.status(h.data, _q(str(c.id))), Quests.NOT_STARTED, "%s: hearing the neighbours first starts nothing" % c.id)
+		assert_eq(h.data.flag(c.p + "decided"), null)
+		assert_eq(h.data.flag(c.p + "started"), null)
+		for s in c.seen:
+			assert_eq(_present(s[0], s[1], h.data), bool(s[2]), "%s: %s on a save that has not started it" % [c.id, s[1]])
+
+func test_every_w55_step_and_ending_flag_is_set_somewhere() -> void:
+	var settable := Quests.all_settable()
+	for c in CHAINS:
+		var q := _q(str(c.id))
+		for s in q.steps:
+			assert_true(settable.has(str(s.flag)), "%s: %s" % [c.id, s.flag])
+		for e in q.endings:
+			assert_true(settable.has(str(e.flag)), "%s: %s" % [c.id, e.flag])

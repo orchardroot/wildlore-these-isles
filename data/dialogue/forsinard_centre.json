@@ -2,6 +2,120 @@
  "flows_warden": [
   {
    "do": "if",
+   "flag": "q_stories_scotland_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_support",
+     "then": [
+      {
+       "do": "say",
+       "who": "Flows Warden",
+       "text": "The greenshank moved their nests back from the nearest ridge. I count them every April. I will say what I counted and no more."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_object",
+     "then": [
+      {
+       "do": "say",
+       "who": "Flows Warden",
+       "text": "Same number on the ridge as last year. Same is a good number, when you have seen what different looks like."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_pick_compromise",
+     "then": [
+      {
+       "do": "say",
+       "who": "Flows Warden",
+       "text": "They moved them off the deep peat, and I am a little bit cross about the ones that are left, and I have decided to be cross in a measured way."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_scotland_decided",
+     "then": [
+      {
+       "do": "say",
+       "who": "Flows Warden",
+       "text": "I hear the strath has made up its mind. Whatever it is, I will be out on the ridge counting come April."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_scotland_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_scotland_warden",
+         "then": [],
+         "else": [
+          {
+           "do": "if",
+           "flag": "q_stories_scotland_calum",
+           "then": [
+            {
+             "do": "say",
+             "who": "Flows Warden",
+             "text": "Ah. They sent you. Good, they usually send me a lawyer."
+            },
+            {
+             "do": "say",
+             "who": "Flows Warden",
+             "text": "I do not oppose wind. I oppose it in the wrong place. Deep blanket bog is a bad place to build: roads and foundations cut the drainage, the peat dries, and it gives back the carbon it has held for thousands of years."
+            },
+            {
+             "do": "say",
+             "who": "Flows Warden",
+             "text": "The Flats are mostly thinner ground on the south side and deep on the north. Greenshank and golden plover nest across the lot. Turbines do not kill many of them; what happens is they move off and do not come back. It is the quiet kind of loss."
+            },
+            {
+             "do": "say",
+             "who": "Flows Warden",
+             "text": "The peat of the Flows holds more carbon than all the forests in Britain put together. Turbines on thin ground are a different conversation."
+            },
+            {
+             "do": "say",
+             "who": "Flows Warden",
+             "text": "And I will tell you the other thing, because I would want to be told. The fund is real. A village with a leaking roof and a school bus that does not run is not an abstraction. Anyone who tells you the peat is simple is selling something. So is anyone who says the roof is."
+            },
+            {
+             "do": "set",
+             "flag": "q_stories_scotland_warden",
+             "value": true
+            },
+            {
+             "do": "end"
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Flows Warden",
+             "text": "About the wind farm on the Flats? Hear the estate manager first, he will be in the Flagstone Bar at the back. Then come and ask me what the ground is."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "_w55": "scotland"
+  },
+  {
+   "do": "if",
    "flag": "q_farnorth_bog_done",
    "then": [
     {

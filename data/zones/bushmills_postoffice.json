@@ -73,7 +73,75 @@
    "y": 3,
    "facing": "down",
    "move": "still",
-   "script": "bush_postmaster"
+   "script": "bush_postmaster",
+   "hide_if": "q_stories_northern_ireland_world"
+  },
+  {
+   "id": "w55n_margaret",
+   "name": "Margaret Cuthbert",
+   "sprite": "villager_3",
+   "x": 8,
+   "y": 4,
+   "facing": "left",
+   "script": "w55n_margaret",
+   "hide_if": "q_stories_northern_ireland_world",
+   "move": "still"
+  },
+  {
+   "id": "w55n_gareth",
+   "name": "Gareth Boyd",
+   "sprite": "commuter",
+   "x": 2,
+   "y": 3,
+   "facing": "right",
+   "script": "w55n_gareth",
+   "hide_if": "q_stories_northern_ireland_world",
+   "move": "still"
+  },
+  {
+   "id": "w55n_postman",
+   "name": "Postman",
+   "sprite": "rail_guard",
+   "x": 7,
+   "y": 5,
+   "facing": "left",
+   "script": "w55n_postman",
+   "show_if": "q_stories_northern_ireland_decided",
+   "hide_if": "q_stories_northern_ireland_done",
+   "move": "still"
+  },
+  {
+   "id": "w55n_retired",
+   "name": "Maeve",
+   "sprite": "villager_4",
+   "x": 3,
+   "y": 5,
+   "facing": "right",
+   "script": "w55n_retired",
+   "show_if": "q_stories_northern_ireland_world",
+   "move": "still"
+  },
+  {
+   "id": "w55n_till",
+   "name": "Caitlin",
+   "sprite": "villager_6",
+   "x": 5,
+   "y": 3,
+   "facing": "down",
+   "script": "w55n_till",
+   "show_if": "q_stories_northern_ireland_world_franchise",
+   "move": "still"
+  },
+  {
+   "id": "w55n_vol",
+   "name": "Margaret",
+   "sprite": "villager_3",
+   "x": 5,
+   "y": 3,
+   "facing": "down",
+   "script": "w55n_vol",
+   "show_if": "q_stories_northern_ireland_world_community",
+   "move": "still"
   }
  ],
  "encounters": {},

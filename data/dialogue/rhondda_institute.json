@@ -27,5 +27,124 @@
    "who": "Reader",
    "text": "I'll tell you the secret of the Institute: it was warm. A reading room with a coal fire and no draught beats most things, and I include the pub."
   }
+ ],
+ "w55w_kieran": [
+  {
+   "do": "if",
+   "flag": "q_stories_wales_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_sell",
+     "then": [
+      {
+       "do": "say",
+       "who": "Kieran",
+       "text": "Six flats. Four are let to people who grew up within a mile. One is mine. I lie awake sometimes and think about the pew I sat in, and then I go to sleep in the room that has the pulpit's window."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_keep",
+     "then": [
+      {
+       "do": "say",
+       "who": "Kieran",
+       "text": "I put my plans in a drawer. They are still in the drawer. If the roof fund ever gives up, I will still be here, and I will still not be the villain."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_split",
+     "then": [
+      {
+       "do": "say",
+       "who": "Kieran",
+       "text": "Two flats in the old Sunday school and both let. I did them for less than I would have done the lot. Do not tell the bank."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_wales_decided",
+     "then": [
+      {
+       "do": "say",
+       "who": "Kieran",
+       "text": "Whatever Eirlys decides, I will be civil. It is only a building. It is only the building where I was baptised, but it is only a building."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_wales_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_wales_kieran",
+         "then": [
+          {
+           "do": "say",
+           "who": "Kieran",
+           "text": "Tell her I would sooner it was kept, if it could be. And tell her I cannot do it for love."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Kieran",
+           "text": "Kieran Rees. I do conversions. I was in Bethania's Sunday school until I was fourteen, and I did not like it much, and I would rather like it not to fall in."
+          },
+          {
+           "do": "say",
+           "who": "Kieran",
+           "text": "Six flats, kept in the old shell with the front left as it is. I live in the valley and I know what it costs to rent here, and what it costs to buy. The lads I went to school with are in Cardiff because there was nothing for them here."
+          },
+          {
+           "do": "say",
+           "who": "Kieran",
+           "text": "The chapel is not going to be a chapel for much longer: you can see it from the road. The choice is flats, or the roof coming in. Nobody is paying for the third thing."
+          },
+          {
+           "do": "say",
+           "who": "Kieran",
+           "text": "I would give the choir a room. Not the room, a room. I know that is not the same."
+          },
+          {
+           "do": "set",
+           "flag": "q_stories_wales_kieran",
+           "value": true
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Kieran",
+         "text": "Sorry, plans. Do not mind the drawings. I have been told to be gentle with the margins."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55w_chorister": [
+  {
+   "do": "say",
+   "who": "Chorister",
+   "text": "We rehearse here now, Thursdays and Saturdays. The Institute has a good heater and an acoustic like a wardrobe."
+  },
+  {
+   "do": "say",
+   "who": "Chorister",
+   "text": "Elwyn says we will get used to it. Elwyn has said that about a great many things, and he has been right about most."
+  }
  ]
 }

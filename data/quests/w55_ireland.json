@@ -1,0 +1,56 @@
+{
+ "quests": [
+  {
+   "id": "stories_ireland",
+   "title": "Sell the Pub",
+   "region": "stories_ireland",
+   "town": "gweedore",
+   "giver": "Pádraig Ó Gallchóir, behind the bar",
+   "summary": "Pádraig is seventy-one and wants to sell the pub. A young couple, the community co-op and a hotelier each want it, and each would run it differently. Hear them all, then tell him straight.",
+   "start_flag": "q_stories_ireland_started",
+   "steps": [
+    {
+     "flag": "q_stories_ireland_niamh",
+     "text": "Hear Niamh, by the door with the high chair.",
+     "zone": "gweedore_pub"
+    },
+    {
+     "flag": "q_stories_ireland_brid",
+     "text": "Hear Bríd of the community co-op, by the fire.",
+     "zone": "gweedore_pub"
+    },
+    {
+     "flag": "q_stories_ireland_orla",
+     "text": "Hear Orla the hotelier, in the corner.",
+     "zone": "gweedore_pub"
+    },
+    {
+     "flag": "q_stories_ireland_decided",
+     "text": "Tell Pádraig who you think should buy.",
+     "zone": "gweedore_pub"
+    },
+    {
+     "flag": "q_stories_ireland_done",
+     "text": "Wait for word. The parish post comes in at the pub, a night's sleep or a day later.",
+     "zone": "gweedore_pub"
+    }
+   ],
+   "done_flag": "q_stories_ireland_done",
+   "reward": "A Donegal tweed shawl, a keepsake from the pub, and Pádraig's mother's boxty recipe.",
+   "endings": [
+    {
+     "flag": "q_stories_ireland_pick_couple",
+     "text": "Niamh and Ciarán took the pub on as a pub with a kitchen. The snug is gone, the Tuesday session stays, and the first January decides it."
+    },
+    {
+     "flag": "q_stories_ireland_pick_coop",
+     "text": "The community co-op bought the pub: three hundred and forty shares and a rota. It opens four nights, and the Sunday session is fuller than it ever was."
+    },
+    {
+     "flag": "q_stories_ireland_pick_hotel",
+     "text": "Orla's hotel took the pub on as a bar with six rooms. It is open every day of the year, with local staff, and it is not Pádraig's any more."
+    }
+   ]
+  }
+ ]
+}

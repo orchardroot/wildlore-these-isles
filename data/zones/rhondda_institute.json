@@ -146,6 +146,27 @@
    "move": "still",
    "script": "rhn_reader",
    "name": "Reader"
+  },
+  {
+   "id": "w55w_chorister",
+   "name": "Chorister",
+   "sprite": "choir_singer",
+   "x": 6,
+   "y": 5,
+   "facing": "down",
+   "script": "w55w_chorister",
+   "show_if": "q_stories_wales_world_sell",
+   "move": "still"
+  },
+  {
+   "id": "w55w_kieran",
+   "name": "Kieran Rees",
+   "sprite": "villager_1",
+   "x": 10,
+   "y": 6,
+   "facing": "left",
+   "script": "w55w_kieran",
+   "move": "still"
   }
  ],
  "encounters": {},

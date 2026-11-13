@@ -1,0 +1,56 @@
+{
+ "quests": [
+  {
+   "id": "stories_northern_ireland",
+   "title": "The Counter",
+   "region": "stories_northern_ireland",
+   "town": "bushmills",
+   "giver": "Maeve Hanna, at the post counter",
+   "summary": "The postmaster at Bushmills retires at Easter, and the counter goes with her unless somebody takes it on. Volunteers, a convenience group and the craft shop each have a plan. Hear them all, then tell her what you think.",
+   "start_flag": "q_stories_northern_ireland_started",
+   "steps": [
+    {
+     "flag": "q_stories_northern_ireland_margaret",
+     "text": "Hear Margaret Cuthbert, the retired teacher, in the post office.",
+     "zone": "bushmills_postoffice"
+    },
+    {
+     "flag": "q_stories_northern_ireland_gareth",
+     "text": "Hear Gareth Boyd, from the convenience group.",
+     "zone": "bushmills_postoffice"
+    },
+    {
+     "flag": "q_stories_northern_ireland_joanne",
+     "text": "Hear Joanne Hill at the craft shop.",
+     "zone": "bushmills_craftshop"
+    },
+    {
+     "flag": "q_stories_northern_ireland_decided",
+     "text": "Tell Maeve what you think.",
+     "zone": "bushmills_postoffice"
+    },
+    {
+     "flag": "q_stories_northern_ireland_done",
+     "text": "Wait for word. The post comes through the van and the post office, a night's sleep or a day later.",
+     "zone": "bushmills_postoffice"
+    }
+   ],
+   "done_flag": "q_stories_northern_ireland_done",
+   "reward": "An Ulster cardigan, a keepsake of the counter, and Maeve's soda farl recipe.",
+   "endings": [
+    {
+     "flag": "q_stories_northern_ireland_pick_community",
+     "text": "Volunteers took the counter on, three mornings a week from a biscuit tin. The shop shelves are gone, and so far the rota has held."
+    },
+    {
+     "flag": "q_stories_northern_ireland_pick_franchise",
+     "text": "A convenience group took the counter and the shop. It is open seven days, three people from the town have jobs and the parcels are on time."
+    },
+    {
+     "flag": "q_stories_northern_ireland_pick_hosted",
+     "text": "The counter moved to a hatch in the back of the craft shop, open Tuesday to Saturday. Mondays are quiet, and the craft shop has had its best summer."
+    }
+   ]
+  }
+ ]
+}

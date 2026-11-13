@@ -58,5 +58,264 @@
    "who": "Fisherman",
    "text": "Now we've got tasting menus. I had a lamb the size of a thumb on a plate the size of a hat. I paid thirty pounds and went home for a sandwich."
   }
+ ],
+ "w55k_magnie": [
+  {
+   "do": "if",
+   "flag": "q_stories_islands_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_islands_pick_full",
+     "then": [
+      {
+       "do": "say",
+       "who": "Magnie",
+       "text": "She is still on. Five days. In March she broke down and we had a charter for three weeks, which cost more than the engine. I do not say it is an argument. I say it is a fact."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_islands_pick_lean",
+     "then": [
+      {
+       "do": "say",
+       "who": "Magnie",
+       "text": "Three days. I have the crew on part-time and the old girl has two years left in her. I am proud of her and I am not blind."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_islands_pick_small",
+     "then": [
+      {
+       "do": "say",
+       "who": "Magnie",
+       "text": "The little new one is a fine boat. I will not say otherwise. She is not mine, and she is not hers, and the sheep go by charter. I have gone into the harbour office and been very civil."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_islands_decided",
+     "then": [
+      {
+       "do": "say",
+       "who": "Magnie",
+       "text": "Whatever the isle asks, I will sail what I am given. I have never had a boat I did not love, and I have had some I should not have."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_islands_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_islands_magnie",
+         "then": [
+          {
+           "do": "say",
+           "who": "Magnie",
+           "text": "Tell Eila I will be at the meeting, and I will keep my mouth shut, which is not like me."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Magnie",
+           "text": "Magnie Tulloch. Twenty-six years on the isle boat, and fourteen before that on worse. She is old, but she is sound."
+          },
+          {
+           "do": "say",
+           "who": "Magnie",
+           "text": "The council would cut my days, and the crew with them. I would be lying if I said I did not mind. I would also be lying if I said the boat was not dear to run. Everyone has seen the figures. I have seen them upside down, across a desk."
+          },
+          {
+           "do": "say",
+           "who": "Magnie",
+           "text": "What I will say is this: a boat that carries sheep, a doctor and a coffin is not a bus. It is how the isle stays an isle and not a holiday cottage. Whatever else you hear, hear that."
+          },
+          {
+           "do": "set",
+           "flag": "q_stories_islands_magnie",
+           "value": true
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Magnie",
+         "text": "Soup, a roll and the weather forecast. In that order. Do not talk to me before the forecast."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55k_hand": [
+  {
+   "do": "if",
+   "flag": "q_stories_islands_done",
+   "then": [
+    {
+     "do": "say",
+     "who": "Boat hand",
+     "text": "That was yours. The rest of the mailbag is for the isle, and the isle can wait for its tea."
+    }
+   ],
+   "else": [
+    {
+     "do": "when",
+     "cond": "later_q_stories_islands_when_3",
+     "then": [
+      {
+       "do": "say",
+       "who": "Boat hand",
+       "text": "There you are. A letter for you, off the boat. Eila put it in with the post for Lerwick and told me not to let it fall in the harbour."
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_islands_pick_full",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. The committee voted for the full boat. The council found the money by putting off a road scheme in the north Mainland, and the north Mainland wrote a number of letters to the paper."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The boat runs five days. In March the old engine failed and we had a charter for three weeks, which cost more than the engine. The old boat will need replacing in any case."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I think we bought time. Time is what a small place needs most, and what it is always asked to give up first. Come and see the isle. The boat will take you. It is still allowed to."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_isle_plate",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_islands_world_full",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_islands_pick_lean",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. Three sailings a week: Tuesday, Thursday and Saturday. The vet comes on Tuesday and the nurse on Thursday, and nobody is ill on a Wednesday, by agreement."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The school bairns board in Lerwick Monday to Friday, which some did anyway and which Lorna hates. Two families left in the autumn. I will not say it was the boat, and I will not say it was not."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The old boat has two more years in her, Magnie says. After that we shall all have a conversation we have been avoiding. Come on a Tuesday. We are best on a Tuesday."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_isle_timetable",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_islands_world_lean",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_islands_pick_small",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. A new little boat, from the spring: twelve passengers, faster, with a heated cabin, which has been a revelation. Nobody has been sick in it, which is a first for the isle."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "It will not carry sheep. The sheep go on a charter twice a year, and the crofters mutter, and rightly. The council kept the flight for emergencies."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "We have a boat. We have fewer things the boat can do. I think that is what a fair answer is, in a place like this. Come in the spring. Bring the wind."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_isle_lifebelt",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_islands_world_small",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Boat hand",
+       "text": "And there was a jar, wrapped in a towel, and a note on how it is done. Stovies. The isle way, it says, with the dripping. You will not get it from a book."
+      },
+      {
+       "do": "recipe",
+       "id": "stovies"
+      },
+      {
+       "do": "give_item",
+       "item": "w55_isle_tammy",
+       "n": 1
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_islands_done",
+       "value": true
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Boat hand",
+       "text": "Nothing off the boat yet. It comes when the boat comes, and the boat comes when it can. Try after a night's sleep."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55k_skipper": [
+  {
+   "do": "say",
+   "who": "Ingrid",
+   "text": "The new boat. Twelve passengers, a heated cabin, and a very clean deck. I came in from the mainland ferries and I have not stopped being surprised that people wave."
+  },
+  {
+   "do": "say",
+   "who": "Ingrid",
+   "text": "I know about the sheep. I have been told, by a number of crofters, in a number of tones. I intend to learn the tone before the lambing."
+  }
  ]
 }

@@ -46,51 +46,51 @@ dale = [
         pick(0, [say("Farmer Dale", "Lambing's going better than I let on. She has a way with the ewes. Don't tell her I said.")]),
         pick(1, [say("Farmer Dale", "Joe has the flock and I have the view.")]),
         pick(2, [say("Farmer Dale", "Forty ewes and a clipboard. It is a quiet hill. I find I do not mind it as much as I thought.")]),
-        END,
-    ]),
-    iff(P + "decided", [
-        pick(0, [say("Farmer Dale", "I have asked her properly. Out loud, in the kitchen, with my hat in my hand. I have not felt that daft since I proposed to her mother.")]),
-        pick(1, [say("Farmer Dale", "I have told Joe. The flock goes up the hill in March, on its own two legs, and I shall not watch.")]),
-        pick(2, [say("Farmer Dale", "The scheme man is coming in the new year with a clipboard and a flask. I will sign.")]),
-        say("Farmer Dale", "The post for this end of the moor waits at the Moorcock. Word will come, one way or another, after lambing."),
-        END,
-    ]),
-    iff(P + "dale", [
-        iff(P + "joe", [
-            iff(P + "ranger", [
-                say("Farmer Dale", "Well? You have seen the lot of them. Tell me straight."),
-                choice("What do you tell Dale?", ["Let Hannah try it", "Let Joe Hartley take the flock", "Take the habitat scheme", "I need to think"], P + "pick"),
-                pick(0, [
-                    setf(P + "pick_hannah"), setf(P + "decided"), stamp(WHEN),
-                    say("Farmer Dale", "Hannah. Aye. I think I knew you would say that, and I think I wanted you to. Mind, it is me that has to ring her, and ask properly, which I have never been good at."),
-                    say("Farmer Dale", "It is a hard hill for someone learning it. I will be there. My hip and me."),
-                ]),
-                pick(1, [
-                    setf(P + "pick_joe"), setf(P + "decided"), stamp(WHEN),
-                    say("Farmer Dale", "Joe. Aye. He will keep the flock together and keep them on our hill, and that is the part I could not bear to lose."),
-                    say("Farmer Dale", "It does leave the house. And it leaves Hannah where she is, which was her own choice, I suppose, if anyone had asked her."),
-                ]),
-                pick(2, [
-                    setf(P + "pick_scheme"), setf(P + "decided"), stamp(WHEN),
-                    say("Farmer Dale", "The scheme. Fewer ewes, more heather, folk with clipboards. Paid to look after the place the way I always did, and told how."),
-                    say("Farmer Dale", "I will sleep on it. No, I will not. But I will sign."),
-                ]),
-                pick(3, [say("Farmer Dale", "Take your time. The estate will not, but you can.")]),
-                iff(P + "decided", [
-                    say("Farmer Dale", "Come back to the Moorcock after lambing. That is where the post waits, for half the moor. Somebody will write."),
-                ]),
-                END,
-            ], [say("Farmer Dale", "Have a word with the lass who counts the curlews. She is in the Moorcock most dinner times. Then come back."), END]),
-        ], [say("Farmer Dale", "Joe Hartley, at Rosedale. Ask him what he would do with it. Then the curlew lass, then me."), END]),
     ], [
-        iff(P + "started", [
-            say("Farmer Dale", "Ey up. Hannah has been at you, has she? She means well. She always has."),
-            say("Farmer Dale", "Moor Farm has been let to us since before the war. The estate wrote in the winter: the tenancy comes up at lambing, and they want to know who is taking it on. I am sixty-seven and my hip has opinions."),
-            say("Farmer Dale", "The ewes are hefted. Each flock learns its own bit of open hill, and the lambs learn it off their mothers. Sell the flock and that knowledge goes off in the lorry. You cannot buy it back."),
-            say("Farmer Dale", "Hannah would come home if I asked. That is why I have not asked. She has a job she is good at and a flat with a radiator that works."),
-            say("Farmer Dale", "Go and ask Joe Hartley at Rosedale what he would do with it, and have a word with the lass who counts the curlews, she is in the Moorcock most dinner times. Then come back and tell me straight. I will not hear it from folk who want something."),
-            setf(P + "dale"),
+        iff(P + "decided", [
+            pick(0, [say("Farmer Dale", "I have asked her properly. Out loud, in the kitchen, with my hat in my hand. I have not felt that daft since I proposed to her mother.")]),
+            pick(1, [say("Farmer Dale", "I have told Joe. The flock goes up the hill in March, on its own two legs, and I shall not watch.")]),
+            pick(2, [say("Farmer Dale", "The scheme man is coming in the new year with a clipboard and a flask. I will sign.")]),
+            say("Farmer Dale", "The post for this end of the moor waits at the Moorcock. Word will come, one way or another, after lambing."),
             END,
+        ]),
+        iff(P + "dale", [
+            iff(P + "joe", [
+                iff(P + "ranger", [
+                    say("Farmer Dale", "Well? You have seen the lot of them. Tell me straight."),
+                    choice("What do you tell Dale?", ["Let Hannah try it", "Let Joe Hartley take the flock", "Take the habitat scheme", "I need to think"], P + "pick"),
+                    pick(0, [
+                        setf(P + "pick_hannah"), setf(P + "decided"), stamp(WHEN),
+                        say("Farmer Dale", "Hannah. Aye. I think I knew you would say that, and I think I wanted you to. Mind, it is me that has to ring her, and ask properly, which I have never been good at."),
+                        say("Farmer Dale", "It is a hard hill for someone learning it. I will be there. My hip and me."),
+                    ]),
+                    pick(1, [
+                        setf(P + "pick_joe"), setf(P + "decided"), stamp(WHEN),
+                        say("Farmer Dale", "Joe. Aye. He will keep the flock together and keep them on our hill, and that is the part I could not bear to lose."),
+                        say("Farmer Dale", "It does leave the house. And it leaves Hannah where she is, which was her own choice, I suppose, if anyone had asked her."),
+                    ]),
+                    pick(2, [
+                        setf(P + "pick_scheme"), setf(P + "decided"), stamp(WHEN),
+                        say("Farmer Dale", "The scheme. Fewer ewes, more heather, folk with clipboards. Paid to look after the place the way I always did, and told how."),
+                        say("Farmer Dale", "I will sleep on it. No, I will not. But I will sign."),
+                    ]),
+                    pick(3, [say("Farmer Dale", "Take your time. The estate will not, but you can.")]),
+                    iff(P + "decided", [
+                        say("Farmer Dale", "Come back to the Moorcock after lambing. That is where the post waits, for half the moor. Somebody will write."),
+                    ]),
+                    END,
+                ], [say("Farmer Dale", "Have a word with the lass who counts the curlews. She is in the Moorcock most dinner times. Then come back."), END]),
+            ], [say("Farmer Dale", "Joe Hartley, at Rosedale. Ask him what he would do with it. Then the curlew lass, then me."), END]),
+        ], [
+            iff(P + "started", [
+                say("Farmer Dale", "Ey up. Hannah has been at you, has she? She means well. She always has."),
+                say("Farmer Dale", "Moor Farm has been let to us since before the war. The estate wrote in the winter: the tenancy comes up at lambing, and they want to know who is taking it on. I am sixty-seven and my hip has opinions."),
+                say("Farmer Dale", "The ewes are hefted. Each flock learns its own bit of open hill, and the lambs learn it off their mothers. Sell the flock and that knowledge goes off in the lorry. You cannot buy it back."),
+                say("Farmer Dale", "Hannah would come home if I asked. That is why I have not asked. She has a job she is good at and a flat with a radiator that works."),
+                say("Farmer Dale", "Go and ask Joe Hartley at Rosedale what he would do with it, and have a word with the lass who counts the curlews, she is in the Moorcock most dinner times. Then come back and tell me straight. I will not hear it from folk who want something."),
+                setf(P + "dale"),
+                END,
+            ]),
         ]),
     ]),
 ]

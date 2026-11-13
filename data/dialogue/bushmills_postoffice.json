@@ -14,6 +14,562 @@
    "do": "say",
    "who": "Postmaster",
    "text": "The trams are gone, but you can still follow their old route along the coast towards the Causeway. Do give it a go."
+  },
+  {
+   "do": "if",
+   "flag": "q_stories_northern_ireland_decided",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_northern_ireland_pick",
+     "eq": 0,
+     "then": [
+      {
+       "do": "say",
+       "who": "Maeve",
+       "text": "Margaret's ladies, then. They will do it properly or they will do it loudly, and probably both."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_northern_ireland_pick",
+     "eq": 1,
+     "then": [
+      {
+       "do": "say",
+       "who": "Maeve",
+       "text": "Gareth's group. Seven days and a till. I will not pretend it is not a wrench, but there will be someone there at eight in the morning, and that is more than I have managed since 1998."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_northern_ireland_pick",
+     "eq": 2,
+     "then": [
+      {
+       "do": "say",
+       "who": "Maeve",
+       "text": "Joanne's spare room, then. Tuesday to Saturday, a hatch and a chair. Better a hatch than a shutter."
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "who": "Maeve",
+     "text": "The post for this end of the town comes through the van, and the van comes here. Word will come, one way or another."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_northern_ireland_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_northern_ireland_margaret",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_northern_ireland_gareth",
+         "then": [
+          {
+           "do": "if",
+           "flag": "q_stories_northern_ireland_joanne",
+           "then": [
+            {
+             "do": "say",
+             "who": "Maeve",
+             "text": "Well? You have heard the three of them. Tell me straight. I will be passing whoever it is every day of my life."
+            },
+            {
+             "do": "choice",
+             "text": "What do you tell Maeve?",
+             "options": [
+              "Hand it to Margaret's volunteers",
+              "Hand it to the convenience group",
+              "Move the counter into Joanne's craft shop",
+              "I need to think"
+             ],
+             "set": "q_stories_northern_ireland_pick"
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_northern_ireland_pick",
+             "eq": 0,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_pick_community",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_northern_ireland_pick",
+             "eq": 1,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_pick_franchise",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_northern_ireland_pick",
+             "eq": 2,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_pick_hosted",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_northern_ireland_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_northern_ireland_pick",
+             "eq": 3,
+             "then": [
+              {
+               "do": "say",
+               "who": "Maeve",
+               "text": "Take your time. The counter will not, but you can."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_northern_ireland_decided",
+             "then": [
+              {
+               "do": "say",
+               "who": "Maeve",
+               "text": "I will tell them tonight. Come back for the post when it is settled."
+              }
+             ]
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Maeve",
+             "text": "Joanne has the craft shop across the green. She has a proposal and a very good kettle."
+            }
+           ]
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Maeve",
+           "text": "Gareth is here in the corner with a lanyard. Hear him out. He is not what you think either."
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Maeve",
+         "text": "Margaret is here by the table, with her notes. Hear her first. She will be offended if you do not."
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Maeve",
+       "text": "Maeve Hanna. I have been at this counter for thirty-eight years. I know who gets what pension and which dog belongs to whom."
+      },
+      {
+       "do": "say",
+       "who": "Maeve",
+       "text": "I am retiring at Easter, and the counter goes with me unless somebody takes it on. It is the only reason half the back roads come into town. If it shuts, the shop shuts with it, and so, in time, does the rest."
+      },
+      {
+       "do": "say",
+       "who": "Maeve",
+       "text": "Three people have asked for it, each with a different idea. I cannot choose among friends. Would you hear them out and tell me what you think?"
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_northern_ireland_started",
+       "value": true
+      }
+     ]
+    }
+   ],
+   "_w55": "northern_ireland"
+  }
+ ],
+ "w55n_margaret": [
+  {
+   "do": "if",
+   "flag": "q_stories_northern_ireland_decided",
+   "then": [
+    {
+     "do": "say",
+     "who": "Margaret",
+     "text": "Whatever Maeve decides, I will have the kettle on. That is the whole of my policy."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_northern_ireland_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_northern_ireland_margaret",
+       "then": [
+        {
+         "do": "say",
+         "who": "Margaret",
+         "text": "Tell her we are ready, and we are scared, and we are both of those at the same time."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Margaret",
+         "text": "Margaret Cuthbert. I taught for thirty-four years and I have never once been short of volunteers for anything involving a biscuit."
+        },
+        {
+         "do": "say",
+         "who": "Margaret",
+         "text": "We could run the counter ourselves: a rota of eleven, three mornings a week, in this same room. The grant would cover the setup. The shop shelves could not stay, I will be honest. You would buy your milk across the road."
+        },
+        {
+         "do": "say",
+         "who": "Margaret",
+         "text": "Its strength is that it belongs to the town. Its weakness is that it belongs to eleven people, and eleven people get colds. If the grant does not renew, we go."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_northern_ireland_margaret",
+         "value": true
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Margaret",
+       "text": "I am reading the form. It has a question about 'sustainability', and I intend to answer it honestly."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55n_gareth": [
+  {
+   "do": "if",
+   "flag": "q_stories_northern_ireland_decided",
+   "then": [
+    {
+     "do": "say",
+     "who": "Gareth",
+     "text": "Whatever Maeve decides, I wish her a long retirement. I mean that. Nobody here has ever said I did not."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_northern_ireland_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_northern_ireland_gareth",
+       "then": [
+        {
+         "do": "say",
+         "who": "Gareth",
+         "text": "Tell her I will not pretend we are the same as her. We would be there when she is not. That is the only promise I can make that I can keep."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Gareth",
+         "text": "Gareth Boyd. I look after a group of convenience stores across the north coast, and I will say it plainly: I am here to make an offer, not a speech."
+        },
+        {
+         "do": "say",
+         "who": "Gareth",
+         "text": "We would take the counter and the shop together. Open seven till ten, seven days. The counter stays; the staff are on a rota, with a uniform, and three jobs for people from the town. The building stays Maeve's to rent."
+        },
+        {
+         "do": "say",
+         "who": "Gareth",
+         "text": "It would be a shop first and a counter second. The counter would not close for lunch or a funeral. It might not know your dog's name. I would train them to try."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_northern_ireland_gareth",
+         "value": true
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Gareth",
+       "text": "Sorry, lanyard. I am told it looks officious. It is only so they know where I am."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55n_postman": [
+  {
+   "do": "if",
+   "flag": "q_stories_northern_ireland_done",
+   "then": [
+    {
+     "do": "say",
+     "who": "Postman",
+     "text": "That was your letter. I am the last to know anything in this town, and I deliver the news."
+    }
+   ],
+   "else": [
+    {
+     "do": "when",
+     "cond": "later_q_stories_northern_ireland_when_3",
+     "then": [
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "There you are. A letter for you, in Maeve's own hand. I was told not to leave it with anyone else."
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_northern_ireland_pick_community",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. The ladies run it Tuesday, Thursday and Saturday mornings. Margaret keeps the rota in a biscuit tin and the tin has not been wrong yet."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The shop shelves went, and you buy your milk across the road. One week in March the cover fell through and the shutter stayed down. The whole street came and stood about in the wet, and somebody put a note on the door: 'Back at 2'. They were."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Mr Ferris comes every Thursday at ten sharp, and has done for a decade, and is not about to change for a rota. I am told the counter is warmer than it was. I would not have believed that."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_counter_tin",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_northern_ireland_world_community",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_northern_ireland_pick_franchise",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. It is open seven days, eight hours, in bright light, and the counter and the till sit side by side. Three girls from the town have jobs. The parcels come on time. I never could say that."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Mr Ferris says the new lad is very civil and does not know his dog's name. I said give him time. I said it as a person who took thirty-eight years."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "It is better. It is not the same, and it was never going to be. I went in on Saturday for a stamp I did not need, and nobody noticed, and that was the worst of it."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_counter_scales",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_northern_ireland_world_franchise",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_northern_ireland_pick_hosted",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "Dear {player}. The counter is a hatch at the back of Joanne's, with a chair, and the queue sometimes goes out the door past the tea towels. It is open Tuesday to Saturday."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "On Mondays nothing is posted anywhere in the town, and a number of people have taken to treating Tuesday as the new Monday. It is not a catastrophe. It is a rearrangement."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The craft shop has had its best summer. Joanne asked me to say that, and she asked me not to say it too loudly. I have said it quietly, to you."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_counter_sign",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_northern_ireland_world_hosted",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "There was a note in the envelope. A recipe, on the back of a pension form that has been well used. Her soda farls. She said they would see you right on a long walk."
+      },
+      {
+       "do": "recipe",
+       "id": "soda_farl"
+      },
+      {
+       "do": "give_item",
+       "item": "w55_ulster_cardigan",
+       "n": 1
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_northern_ireland_world",
+       "value": true
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_northern_ireland_done",
+       "value": true
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "Nothing yet. Maeve writes by hand, and she writes it twice. Try after a night's sleep."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55n_retired": [
+  {
+   "do": "say",
+   "who": "Maeve",
+   "text": "I come in every week for a stamp I do not need. Nobody has noticed. I think that is the point of retirement."
+  },
+  {
+   "do": "if",
+   "flag": "q_stories_northern_ireland_pick_community",
+   "then": [
+    {
+     "do": "say",
+     "who": "Maeve",
+     "text": "Margaret has put a cushion on my old chair. I have said nothing, and I have sat in it."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_northern_ireland_pick_franchise",
+     "then": [
+      {
+       "do": "say",
+       "who": "Maeve",
+       "text": "They have bright lights and a till, and it is the first time in my life I have seen the corners of this room."
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Maeve",
+       "text": "I walk past Joanne's hatch on a Tuesday and wave. Nobody is more surprised than I am by how much I mean it."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55n_till": [
+  {
+   "do": "say",
+   "who": "Caitlin",
+   "text": "Counter and till. Seven till ten, I do the early. Mr Ferris told me his dog's name on Tuesday, and I wrote it on my hand."
+  },
+  {
+   "do": "say",
+   "who": "Caitlin",
+   "text": "I am from the town. My mother says that makes it all right. Maeve says it makes it a start."
+  }
+ ],
+ "w55n_vol": [
+  {
+   "do": "say",
+   "who": "Margaret",
+   "text": "Behind the counter, Tuesday, Thursday and Saturday. I have given the biscuit tin a number. The tin is not amused."
+  },
+  {
+   "do": "say",
+   "who": "Margaret",
+   "text": "The rota is eleven names and a space for a twelfth. You are welcome to it. I only say that."
   }
  ]
 }

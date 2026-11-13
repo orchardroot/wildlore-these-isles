@@ -10,5 +10,66 @@
    "who": "Hall Keeper",
    "text": "By the end, it's a sight. Dozens of squads, a dozen halls. Everyone ends up in the wrong hall at least once. Nobody minds."
   }
+ ],
+ "w55k_ruth": [
+  {
+   "do": "if",
+   "flag": "q_stories_islands_decided",
+   "then": [
+    {
+     "do": "say",
+     "who": "Ruth",
+     "text": "Whatever the isle asks, I will put it to the committee with my name on it. I will recommend what I can defend, and I will say what I could not."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_islands_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_islands_ruth",
+       "then": [
+        {
+         "do": "say",
+         "who": "Ruth",
+         "text": "Tell Eila I would give her the full boat if the pot allowed. That is not a line. That is arithmetic."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Ruth",
+         "text": "Ruth Leask. I do transport for the council, which means I say no to people who are right."
+        },
+        {
+         "do": "say",
+         "who": "Ruth",
+         "text": "The isle boat is old and costs more per passenger than anything else we run. It needs replacing within a few years, and the money for lifeline services is one pot, shared between a dozen isles. Every pound for this boat is a pound I cannot give to another isle's boat, or to the school bus on the north Mainland."
+        },
+        {
+         "do": "say",
+         "who": "Ruth",
+         "text": "I am not asking the isle to be grateful. I am asking them to tell me which loss they can live with. A smaller boat, or fewer days, or the full service and somebody else's bus. There is no fourth option, and I have looked."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_islands_ruth",
+         "value": true
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Ruth",
+       "text": "Please, sit. I have thirty-one emails and six of them are polite."
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

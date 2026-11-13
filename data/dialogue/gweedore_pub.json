@@ -9,6 +9,228 @@
    "do": "say",
    "who": "Barman",
    "text": "There's been music in this parish forever. The bands that came out of these hills sang in Irish on stages all over the world. We're quietly very proud. Loudly, after nine."
+  },
+  {
+   "do": "if",
+   "flag": "q_stories_ireland_decided",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_ireland_pick",
+     "eq": 0,
+     "then": [
+      {
+       "do": "say",
+       "who": "Pádraig",
+       "text": "Niamh and Ciarán, then. Food in the day and the session on a Tuesday. I will tell them, and I will tell them they are mad, and I will wish them well."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_ireland_pick",
+     "eq": 1,
+     "then": [
+      {
+       "do": "say",
+       "who": "Pádraig",
+       "text": "The co-op. Bríd will be unbearable about it. I will tell them tonight, and then I will go home and not sleep."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_ireland_pick",
+     "eq": 2,
+     "then": [
+      {
+       "do": "say",
+       "who": "Pádraig",
+       "text": "Orla. I will tell her yes. It is the price, and it is January, and it is that the lights will be on. I know what that sounds like."
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "who": "Pádraig",
+     "text": "The post for this end of the parish comes in here. I will make sure it does. Word will come, one way or another."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_ireland_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_ireland_niamh",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_ireland_brid",
+         "then": [
+          {
+           "do": "if",
+           "flag": "q_stories_ireland_orla",
+           "then": [
+            {
+             "do": "say",
+             "who": "Pádraig",
+             "text": "Well? You have heard the three of them. Tell me straight, a chara. Who do I sell to?"
+            },
+            {
+             "do": "choice",
+             "text": "Who should Pádraig sell to?",
+             "options": [
+              "Niamh and Ciarán, to run it as a pub with food",
+              "The community co-op",
+              "Orla, the hotelier",
+              "I need to think"
+             ],
+             "set": "q_stories_ireland_pick"
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_ireland_pick",
+             "eq": 0,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_pick_couple",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_ireland_pick",
+             "eq": 1,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_pick_coop",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_ireland_pick",
+             "eq": 2,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_pick_hotel",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_ireland_when",
+               "value": "@now"
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_ireland_pick",
+             "eq": 3,
+             "then": [
+              {
+               "do": "say",
+               "who": "Pádraig",
+               "text": "Take your time. The licence will not run off, but I might."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_ireland_decided",
+             "then": [
+              {
+               "do": "say",
+               "who": "Pádraig",
+               "text": "I will tell her tonight. Slán go fóill. Come back for the post when it is settled."
+              }
+             ]
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Pádraig",
+             "text": "Orla is the hotelier, over at the table in the corner. Hear her out too."
+            }
+           ]
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Pádraig",
+           "text": "Bríd is at the table by the fire. She is not shy. You will hear her before you see her."
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Pádraig",
+         "text": "Niamh is at the table by the door with the high chair. Start with her, so as not to be rude."
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Pádraig",
+       "text": "Pádraig Ó Gallchóir. I am seventy-one, and my father pulled pints behind this bar, and so did his. The youngest of my regulars is fifty-three."
+      },
+      {
+       "do": "say",
+       "who": "Pádraig",
+       "text": "The licence is the only valuable thing I own, and I cannot hold on to it any more. I have three people wanting it, each of them honest, each of them a different pub."
+      },
+      {
+       "do": "say",
+       "who": "Pádraig",
+       "text": "I would sooner ask someone who is not selling, buying or drinking. Would you hear them all out, and tell me what you think?"
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_ireland_started",
+       "value": true
+      }
+     ]
+    }
+   ],
+   "_w55": "ireland"
   }
  ],
  "gp_quizmaster": [
@@ -121,6 +343,418 @@
    "do": "say",
    "who": "Local",
    "text": "Gaoth Dobhair is spread out along the coast like jam that didn't quite reach the edges. Derrybeg, Bunbeg, Meenaleck, Dunlewey. All one parish, all one argument about whose townland's best."
+  }
+ ],
+ "w55i_niamh": [
+  {
+   "do": "if",
+   "flag": "q_stories_ireland_decided",
+   "then": [
+    {
+     "do": "say",
+     "who": "Niamh",
+     "text": "Whatever Pádraig decides, we will be civil, and we will have a soup on. It is the one thing I can promise in advance."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_ireland_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_ireland_niamh",
+       "then": [
+        {
+         "do": "say",
+         "who": "Niamh",
+         "text": "Tell him we would be good to the place. Tell him we have a baby and a bank manager and no plan B."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Niamh",
+         "text": "Niamh Ní Fhearraigh. Ciarán cooks in a restaurant kitchen in Letterkenny five days a week and he hates it. We came home so our daughter could grow up in Irish."
+        },
+        {
+         "do": "say",
+         "who": "Niamh",
+         "text": "We would do food, lunches and the early evening, and a proper kitchen. We would keep the Tuesday session and the Irish on the quiz night. The snug would have to go to make room, and the telly with it."
+        },
+        {
+         "do": "say",
+         "who": "Niamh",
+         "text": "We need a loan to do it. If the January trade does not come, the bank gets a pub, and Pádraig gets a letter. I would rather you knew that now."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_ireland_niamh",
+         "value": true
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Niamh",
+       "text": "Sorry, I am doing the sums on a napkin, and the napkin is winning."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55i_brid": [
+  {
+   "do": "if",
+   "flag": "q_stories_ireland_decided",
+   "then": [
+    {
+     "do": "say",
+     "who": "Bríd",
+     "text": "Whatever he decides, the co-op is still the co-op. It will be a shop or a hall or a pub, and we will take what the parish gives us."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_ireland_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_ireland_brid",
+       "then": [
+        {
+         "do": "say",
+         "who": "Bríd",
+         "text": "Tell him it would not be Pádraig's, and it would not be anybody's, and that is the whole point of it."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Bríd",
+         "text": "Bríd Nic Giolla Bhríde. I run the shop and chair the community co-op, and I will tell you, no one ever made a living out of a pub in this part of the parish. It makes a place, which is not the same."
+        },
+        {
+         "do": "say",
+         "who": "Bríd",
+         "text": "Shares in the parish, a rota of volunteers, open four nights and the Sunday session. We could not pay him what the hotel would, and we would pay it in instalments."
+        },
+        {
+         "do": "say",
+         "who": "Bríd",
+         "text": "The pub stays ours. If it fails it fails in front of everyone. If it works there will be a pub for the next fifty years, whoever is behind the bar."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_ireland_brid",
+         "value": true
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Bríd",
+       "text": "I am counting shares in my head. Do not ask me to stop, I will lose my place."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55i_orla": [
+  {
+   "do": "if",
+   "flag": "q_stories_ireland_decided",
+   "then": [
+    {
+     "do": "say",
+     "who": "Orla",
+     "text": "I wish him well whatever he does. I would only say that the offer is not an insult, and a pub in January with the lights on is not nothing."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_ireland_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_ireland_orla",
+       "then": [
+        {
+         "do": "say",
+         "who": "Orla",
+         "text": "Tell him the price is the price, and the pub stays a pub. I would sooner be told no kindly than yes unkindly."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Orla",
+         "text": "Orla Gallagher. I have a small hotel in Letterkenny and a bit of capital, and I will not pretend I do not want a second place. Everybody does."
+        },
+        {
+         "do": "say",
+         "who": "Orla",
+         "text": "I would pay the full price, in one go. Six rooms in the loft, the bar kept as a bar and open every day of the year, with staff from the parish. I would hire a manager from here."
+        },
+        {
+         "do": "say",
+         "who": "Orla",
+         "text": "It would not be Pádraig's. It would be open in January. I would say those are different things, and both of them are real."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_ireland_orla",
+         "value": true
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Orla",
+       "text": "Just passing through, with a notebook. I am told it is a very good pint."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55i_postman": [
+  {
+   "do": "if",
+   "flag": "q_stories_ireland_done",
+   "then": [
+    {
+     "do": "say",
+     "who": "Postman",
+     "text": "That was yours. The rest of the parish's post is in the van, and the van is outside the chipper."
+    }
+   ],
+   "else": [
+    {
+     "do": "when",
+     "cond": "later_q_stories_ireland_when_3",
+     "then": [
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "There you are. A letter for you, care of the pub. Pádraig said I was to put it in your hand, and not on the bar."
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_ireland_pick_couple",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "A chara. Ciarán has put in a kitchen, and the smell of onions has got into the old curtains, which is not the worst thing to happen to them. The snug is gone. The lads miss it, and the high chair has gone where the snug was, which is a kind of justice."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The session is still on a Tuesday. The bank manager came in for his dinner, which Niamh says is the right sort of pressure."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "We will see how January treats them. I sit on the stool by the door and say nothing, like a man who has sold a pub."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_snug_latch",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_ireland_world_couple",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_ireland_pick_coop",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "A chara. They have shares now: three hundred and forty at the last count, and a rota written on the back of the toilet door. They open Thursday to Sunday, and on the other nights the light is off, and I pass it, and it hurts."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The price was less, and I have said nothing about it, and Bríd has said nothing about it, loudly. I go in on the Sunday session. There are more people in it than there ever were when I owned it. I do not know what to do with that."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "Come and have a pint. Bring a few coins for the kitty. They will give you a receipt."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_coop_share",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_ireland_world_coop",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_ireland_pick_hotel",
+       "then": [
+        {
+         "do": "say",
+         "who": "",
+         "text": "A chara. The pub is open every day now, even in January, which I did not think possible. There is a man from Germany asking for a hot whiskey, which I am told is progress."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "The rooms are full from May to September and the staff are from the parish, three of them, and one is my niece. Orla paid the price in one go, and my pension is sorted for the first time in a decade."
+        },
+        {
+         "do": "say",
+         "who": "",
+         "text": "I would be lying if I said it feels like mine. It never was, I suppose, only mine to keep open. It is open."
+        },
+        {
+         "do": "give_item",
+         "item": "w55_last_orders_bell",
+         "n": 1
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_ireland_world_hotel",
+         "value": true
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "There was a note folded in with it. A recipe, for boxty, on the back of a beer mat. Pádraig's mother's, it says. She would want the credit."
+      },
+      {
+       "do": "recipe",
+       "id": "boxty"
+      },
+      {
+       "do": "give_item",
+       "item": "w55_gaeltacht_shawl",
+       "n": 1
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_ireland_world",
+       "value": true
+      },
+      {
+       "do": "set",
+       "flag": "q_stories_ireland_done",
+       "value": true
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Postman",
+       "text": "Nothing yet. A letter from Pádraig takes a few days, and he writes them twice. Try after a night's sleep."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55i_retired": [
+  {
+   "do": "if",
+   "flag": "q_stories_ireland_pick_hotel",
+   "then": [
+    {
+     "do": "say",
+     "who": "Pádraig",
+     "text": "I sit here and people bring me a drink and tell me how it was in my day. I tell them it was the same, only emptier."
+    },
+    {
+     "do": "say",
+     "who": "Pádraig",
+     "text": "The rooms are full. I never thought I would say a bad word against a full house, and I have not."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Pádraig",
+     "text": "I sit here and people bring me a drink and tell me how it was in my day. I tell them it was the same, only emptier."
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_ireland_pick_coop",
+     "then": [
+      {
+       "do": "say",
+       "who": "Pádraig",
+       "text": "I stand behind Tadhg on a Thursday and say nothing. He tells me it is the most expensive nothing he has ever heard."
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Pádraig",
+       "text": "Ciarán asks me about the cellar every week. I tell him the cellar is a cellar. He writes it down."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55i_couple": [
+  {
+   "do": "say",
+   "who": "Ciarán",
+   "text": "A bowl of soup? Pádraig's mother's recipe, with a few liberties. He told me which ones, in detail."
+  },
+  {
+   "do": "say",
+   "who": "Ciarán",
+   "text": "I miss the kitchen in Letterkenny about as much as I miss a toothache. I like this one. It has a window."
+  }
+ ],
+ "w55i_coop": [
+  {
+   "do": "say",
+   "who": "Tadhg",
+   "text": "I do Thursdays on the rota. I have never poured a pint in my life, so Pádraig comes in and stands behind me and says nothing."
+  },
+  {
+   "do": "say",
+   "who": "Tadhg",
+   "text": "There are three hundred and forty of us who own this, and none of us can find the key. It is the best pub I have ever been in."
+  }
+ ],
+ "w55i_hotel": [
+  {
+   "do": "say",
+   "who": "Sinéad",
+   "text": "Duty manager. The hot whiskeys are a disgrace to nobody, the rooms are full, and the old regulars have the corner by the fire. That was in the contract, I am told, and Orla does not break a contract."
+  },
+  {
+   "do": "say",
+   "who": "Sinéad",
+   "text": "My mother says it is not Pádraig's pub. I say it is open. We are both right, and one of us pays more tax."
   }
  ]
 }

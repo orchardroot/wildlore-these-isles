@@ -100,6 +100,38 @@
    "move": "still",
    "script": "lerwick_boutique_keeper",
    "name": "Knitter's Cousin"
+  },
+  {
+   "id": "w55k_eila",
+   "name": "Eila Jamieson",
+   "sprite": "villager_4",
+   "x": 3,
+   "y": 5,
+   "facing": "right",
+   "script": "w55k_eila",
+   "move": "still"
+  },
+  {
+   "id": "w55k_robbie",
+   "name": "Robbie",
+   "sprite": "villager_1",
+   "x": 10,
+   "y": 4,
+   "facing": "left",
+   "script": "w55k_robbie",
+   "show_if": "q_stories_islands_world_full",
+   "move": "still"
+  },
+  {
+   "id": "w55k_lorna",
+   "name": "Lorna",
+   "sprite": "student",
+   "x": 9,
+   "y": 5,
+   "facing": "left",
+   "script": "w55k_lorna",
+   "show_if": "q_stories_islands_world_lean",
+   "move": "still"
   }
  ],
  "encounters": {},

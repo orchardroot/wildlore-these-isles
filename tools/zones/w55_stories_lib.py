@@ -97,25 +97,28 @@ def add_script(zone, name, commands):
     save("dialogue", zone, d)
 
 
+def _tagged(commands, tag):
+    out = []
+    for c in commands:
+        c = dict(c)
+        c[TAG] = tag
+        out.append(c)
+    return out
+
+
 def prepend(zone, name, tag, commands):
-    """Put commands in front of an old script. Re-running replaces the block it put there before."""
+    """Put commands in front of an old script. Re-running replaces the blocks it put there before."""
     d = load("dialogue", zone)
-    old = d[name]
-    if old and isinstance(old[0], dict) and old[0].get(TAG) == tag:
-        old = old[1:]
-    block = dict(commands[0])
-    block[TAG] = tag
-    d[name] = [block] + commands[1:] + old
+    old = [c for c in d[name] if not (isinstance(c, dict) and c.get(TAG) == tag)]
+    d[name] = _tagged(commands, tag) + old
     save("dialogue", zone, d)
 
 
 def append(zone, name, tag, commands):
-    """Put commands after an old script's lines (its own welcome first). Re-running replaces the block it added."""
+    """Put commands after an old script's lines (its own welcome first). Re-running replaces what it added."""
     d = load("dialogue", zone)
     old = [c for c in d[name] if not (isinstance(c, dict) and c.get(TAG) == tag)]
-    block = dict(commands[0])
-    block[TAG] = tag
-    d[name] = old + [block] + commands[1:]
+    d[name] = old + _tagged(commands, tag)
     save("dialogue", zone, d)
 
 

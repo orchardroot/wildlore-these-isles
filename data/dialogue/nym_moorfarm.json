@@ -39,219 +39,227 @@
        "text": "Forty ewes and a clipboard. It is a quiet hill. I find I do not mind it as much as I thought."
       }
      ]
-    },
-    {
-     "do": "end"
     }
    ],
-   "_w55": "england"
-  },
-  {
-   "do": "if",
-   "flag": "q_stories_england_decided",
-   "then": [
+   "else": [
     {
      "do": "if",
-     "flag": "q_stories_england_pick",
-     "eq": 0,
-     "then": [
-      {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "I have asked her properly. Out loud, in the kitchen, with my hat in my hand. I have not felt that daft since I proposed to her mother."
-      }
-     ]
-    },
-    {
-     "do": "if",
-     "flag": "q_stories_england_pick",
-     "eq": 1,
-     "then": [
-      {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "I have told Joe. The flock goes up the hill in March, on its own two legs, and I shall not watch."
-      }
-     ]
-    },
-    {
-     "do": "if",
-     "flag": "q_stories_england_pick",
-     "eq": 2,
-     "then": [
-      {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "The scheme man is coming in the new year with a clipboard and a flask. I will sign."
-      }
-     ]
-    },
-    {
-     "do": "say",
-     "who": "Farmer Dale",
-     "text": "The post for this end of the moor waits at the Moorcock. Word will come, one way or another, after lambing."
-    },
-    {
-     "do": "end"
-    }
-   ]
-  },
-  {
-   "do": "if",
-   "flag": "q_stories_england_dale",
-   "then": [
-    {
-     "do": "if",
-     "flag": "q_stories_england_joe",
+     "flag": "q_stories_england_decided",
      "then": [
       {
        "do": "if",
-       "flag": "q_stories_england_ranger",
+       "flag": "q_stories_england_pick",
+       "eq": 0,
        "then": [
         {
          "do": "say",
          "who": "Farmer Dale",
-         "text": "Well? You have seen the lot of them. Tell me straight."
-        },
+         "text": "I have asked her properly. Out loud, in the kitchen, with my hat in my hand. I have not felt that daft since I proposed to her mother."
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_england_pick",
+       "eq": 1,
+       "then": [
         {
-         "do": "choice",
-         "text": "What do you tell Dale?",
-         "options": [
-          "Let Hannah try it",
-          "Let Joe Hartley take the flock",
-          "Take the habitat scheme",
-          "I need to think"
+         "do": "say",
+         "who": "Farmer Dale",
+         "text": "I have told Joe. The flock goes up the hill in March, on its own two legs, and I shall not watch."
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_england_pick",
+       "eq": 2,
+       "then": [
+        {
+         "do": "say",
+         "who": "Farmer Dale",
+         "text": "The scheme man is coming in the new year with a clipboard and a flask. I will sign."
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Farmer Dale",
+       "text": "The post for this end of the moor waits at the Moorcock. Word will come, one way or another, after lambing."
+      },
+      {
+       "do": "end"
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_england_dale",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_england_joe",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_england_ranger",
+         "then": [
+          {
+           "do": "say",
+           "who": "Farmer Dale",
+           "text": "Well? You have seen the lot of them. Tell me straight."
+          },
+          {
+           "do": "choice",
+           "text": "What do you tell Dale?",
+           "options": [
+            "Let Hannah try it",
+            "Let Joe Hartley take the flock",
+            "Take the habitat scheme",
+            "I need to think"
+           ],
+           "set": "q_stories_england_pick"
+          },
+          {
+           "do": "if",
+           "flag": "q_stories_england_pick",
+           "eq": 0,
+           "then": [
+            {
+             "do": "set",
+             "flag": "q_stories_england_pick_hannah",
+             "value": true
+            },
+            {
+             "do": "set",
+             "flag": "q_stories_england_decided",
+             "value": true
+            },
+            {
+             "do": "set",
+             "flag": "q_stories_england_when",
+             "value": "@now"
+            },
+            {
+             "do": "say",
+             "who": "Farmer Dale",
+             "text": "Hannah. Aye. I think I knew you would say that, and I think I wanted you to. Mind, it is me that has to ring her, and ask properly, which I have never been good at."
+            },
+            {
+             "do": "say",
+             "who": "Farmer Dale",
+             "text": "It is a hard hill for someone learning it. I will be there. My hip and me."
+            }
+           ]
+          },
+          {
+           "do": "if",
+           "flag": "q_stories_england_pick",
+           "eq": 1,
+           "then": [
+            {
+             "do": "set",
+             "flag": "q_stories_england_pick_joe",
+             "value": true
+            },
+            {
+             "do": "set",
+             "flag": "q_stories_england_decided",
+             "value": true
+            },
+            {
+             "do": "set",
+             "flag": "q_stories_england_when",
+             "value": "@now"
+            },
+            {
+             "do": "say",
+             "who": "Farmer Dale",
+             "text": "Joe. Aye. He will keep the flock together and keep them on our hill, and that is the part I could not bear to lose."
+            },
+            {
+             "do": "say",
+             "who": "Farmer Dale",
+             "text": "It does leave the house. And it leaves Hannah where she is, which was her own choice, I suppose, if anyone had asked her."
+            }
+           ]
+          },
+          {
+           "do": "if",
+           "flag": "q_stories_england_pick",
+           "eq": 2,
+           "then": [
+            {
+             "do": "set",
+             "flag": "q_stories_england_pick_scheme",
+             "value": true
+            },
+            {
+             "do": "set",
+             "flag": "q_stories_england_decided",
+             "value": true
+            },
+            {
+             "do": "set",
+             "flag": "q_stories_england_when",
+             "value": "@now"
+            },
+            {
+             "do": "say",
+             "who": "Farmer Dale",
+             "text": "The scheme. Fewer ewes, more heather, folk with clipboards. Paid to look after the place the way I always did, and told how."
+            },
+            {
+             "do": "say",
+             "who": "Farmer Dale",
+             "text": "I will sleep on it. No, I will not. But I will sign."
+            }
+           ]
+          },
+          {
+           "do": "if",
+           "flag": "q_stories_england_pick",
+           "eq": 3,
+           "then": [
+            {
+             "do": "say",
+             "who": "Farmer Dale",
+             "text": "Take your time. The estate will not, but you can."
+            }
+           ]
+          },
+          {
+           "do": "if",
+           "flag": "q_stories_england_decided",
+           "then": [
+            {
+             "do": "say",
+             "who": "Farmer Dale",
+             "text": "Come back to the Moorcock after lambing. That is where the post waits, for half the moor. Somebody will write."
+            }
+           ]
+          },
+          {
+           "do": "end"
+          }
          ],
-         "set": "q_stories_england_pick"
-        },
-        {
-         "do": "if",
-         "flag": "q_stories_england_pick",
-         "eq": 0,
-         "then": [
-          {
-           "do": "set",
-           "flag": "q_stories_england_pick_hannah",
-           "value": true
-          },
-          {
-           "do": "set",
-           "flag": "q_stories_england_decided",
-           "value": true
-          },
-          {
-           "do": "set",
-           "flag": "q_stories_england_when",
-           "value": "@now"
-          },
+         "else": [
           {
            "do": "say",
            "who": "Farmer Dale",
-           "text": "Hannah. Aye. I think I knew you would say that, and I think I wanted you to. Mind, it is me that has to ring her, and ask properly, which I have never been good at."
+           "text": "Have a word with the lass who counts the curlews. She is in the Moorcock most dinner times. Then come back."
           },
           {
-           "do": "say",
-           "who": "Farmer Dale",
-           "text": "It is a hard hill for someone learning it. I will be there. My hip and me."
+           "do": "end"
           }
          ]
-        },
-        {
-         "do": "if",
-         "flag": "q_stories_england_pick",
-         "eq": 1,
-         "then": [
-          {
-           "do": "set",
-           "flag": "q_stories_england_pick_joe",
-           "value": true
-          },
-          {
-           "do": "set",
-           "flag": "q_stories_england_decided",
-           "value": true
-          },
-          {
-           "do": "set",
-           "flag": "q_stories_england_when",
-           "value": "@now"
-          },
-          {
-           "do": "say",
-           "who": "Farmer Dale",
-           "text": "Joe. Aye. He will keep the flock together and keep them on our hill, and that is the part I could not bear to lose."
-          },
-          {
-           "do": "say",
-           "who": "Farmer Dale",
-           "text": "It does leave the house. And it leaves Hannah where she is, which was her own choice, I suppose, if anyone had asked her."
-          }
-         ]
-        },
-        {
-         "do": "if",
-         "flag": "q_stories_england_pick",
-         "eq": 2,
-         "then": [
-          {
-           "do": "set",
-           "flag": "q_stories_england_pick_scheme",
-           "value": true
-          },
-          {
-           "do": "set",
-           "flag": "q_stories_england_decided",
-           "value": true
-          },
-          {
-           "do": "set",
-           "flag": "q_stories_england_when",
-           "value": "@now"
-          },
-          {
-           "do": "say",
-           "who": "Farmer Dale",
-           "text": "The scheme. Fewer ewes, more heather, folk with clipboards. Paid to look after the place the way I always did, and told how."
-          },
-          {
-           "do": "say",
-           "who": "Farmer Dale",
-           "text": "I will sleep on it. No, I will not. But I will sign."
-          }
-         ]
-        },
-        {
-         "do": "if",
-         "flag": "q_stories_england_pick",
-         "eq": 3,
-         "then": [
-          {
-           "do": "say",
-           "who": "Farmer Dale",
-           "text": "Take your time. The estate will not, but you can."
-          }
-         ]
-        },
-        {
-         "do": "if",
-         "flag": "q_stories_england_decided",
-         "then": [
-          {
-           "do": "say",
-           "who": "Farmer Dale",
-           "text": "Come back to the Moorcock after lambing. That is where the post waits, for half the moor. Somebody will write."
-          }
-         ]
-        },
-        {
-         "do": "end"
         }
        ],
        "else": [
         {
          "do": "say",
          "who": "Farmer Dale",
-         "text": "Have a word with the lass who counts the curlews. She is in the Moorcock most dinner times. Then come back."
+         "text": "Joe Hartley, at Rosedale. Ask him what he would do with it. Then the curlew lass, then me."
         },
         {
          "do": "end"
@@ -261,57 +269,48 @@
      ],
      "else": [
       {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "Joe Hartley, at Rosedale. Ask him what he would do with it. Then the curlew lass, then me."
-      },
-      {
-       "do": "end"
+       "do": "if",
+       "flag": "q_stories_england_started",
+       "then": [
+        {
+         "do": "say",
+         "who": "Farmer Dale",
+         "text": "Ey up. Hannah has been at you, has she? She means well. She always has."
+        },
+        {
+         "do": "say",
+         "who": "Farmer Dale",
+         "text": "Moor Farm has been let to us since before the war. The estate wrote in the winter: the tenancy comes up at lambing, and they want to know who is taking it on. I am sixty-seven and my hip has opinions."
+        },
+        {
+         "do": "say",
+         "who": "Farmer Dale",
+         "text": "The ewes are hefted. Each flock learns its own bit of open hill, and the lambs learn it off their mothers. Sell the flock and that knowledge goes off in the lorry. You cannot buy it back."
+        },
+        {
+         "do": "say",
+         "who": "Farmer Dale",
+         "text": "Hannah would come home if I asked. That is why I have not asked. She has a job she is good at and a flat with a radiator that works."
+        },
+        {
+         "do": "say",
+         "who": "Farmer Dale",
+         "text": "Go and ask Joe Hartley at Rosedale what he would do with it, and have a word with the lass who counts the curlews, she is in the Moorcock most dinner times. Then come back and tell me straight. I will not hear it from folk who want something."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_england_dale",
+         "value": true
+        },
+        {
+         "do": "end"
+        }
+       ]
       }
      ]
     }
    ],
-   "else": [
-    {
-     "do": "if",
-     "flag": "q_stories_england_started",
-     "then": [
-      {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "Ey up. Hannah has been at you, has she? She means well. She always has."
-      },
-      {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "Moor Farm has been let to us since before the war. The estate wrote in the winter: the tenancy comes up at lambing, and they want to know who is taking it on. I am sixty-seven and my hip has opinions."
-      },
-      {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "The ewes are hefted. Each flock learns its own bit of open hill, and the lambs learn it off their mothers. Sell the flock and that knowledge goes off in the lorry. You cannot buy it back."
-      },
-      {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "Hannah would come home if I asked. That is why I have not asked. She has a job she is good at and a flat with a radiator that works."
-      },
-      {
-       "do": "say",
-       "who": "Farmer Dale",
-       "text": "Go and ask Joe Hartley at Rosedale what he would do with it, and have a word with the lass who counts the curlews, she is in the Moorcock most dinner times. Then come back and tell me straight. I will not hear it from folk who want something."
-      },
-      {
-       "do": "set",
-       "flag": "q_stories_england_dale",
-       "value": true
-      },
-      {
-       "do": "end"
-      }
-     ]
-    }
-   ]
+   "_w55": "england"
   },
   {
    "do": "say",

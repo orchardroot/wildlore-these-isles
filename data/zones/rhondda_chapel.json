@@ -129,6 +129,38 @@
    "move": "still",
    "script": "rhn_organist",
    "name": "Organist"
+  },
+  {
+   "id": "w55w_ladder",
+   "name": "Volunteer",
+   "sprite": "villager_3",
+   "x": 9,
+   "y": 6,
+   "facing": "left",
+   "script": "w55w_ladder",
+   "show_if": "q_stories_wales_world_keep",
+   "move": "still"
+  },
+  {
+   "id": "w55w_father",
+   "name": "Young father",
+   "sprite": "villager_6",
+   "x": 11,
+   "y": 4,
+   "facing": "left",
+   "script": "w55w_father",
+   "show_if": "q_stories_wales_world_split",
+   "move": "still"
+  },
+  {
+   "id": "w55w_eirlys",
+   "name": "Eirlys Bevan",
+   "sprite": "villager_4",
+   "x": 3,
+   "y": 6,
+   "facing": "right",
+   "script": "w55w_eirlys",
+   "move": "still"
   }
  ],
  "encounters": {},
