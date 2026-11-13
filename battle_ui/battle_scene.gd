@@ -231,6 +231,10 @@ func play_events(events: Array, ctx: Dictionary) -> void:
 		_cue_task(cue, b, flag)
 		for l in lines:
 			await msg.say(l)
+		if not auto and (ev.type == "no_effect" or (ev.type == "damage" and float(ev.get("effectiveness", 1.0)) != 1.0)):
+			var tip := Intros.take(Game.data, "types", Settings.hints)  # the first hit that lands hard or soft: one line on types
+			if tip != "":
+				await msg.say(tip, 1.5)
 		while flag[0]:
 			await get_tree().process_frame
 	_sync_hud(b)
