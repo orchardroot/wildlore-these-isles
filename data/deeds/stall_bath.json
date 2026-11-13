@@ -112,7 +112,7 @@
    "cost": 1800,
    "tier": 1,
    "group": "trade",
-   "takings": 1.08,
+   "takings": 1.1,
    "boom": 0.5,
    "upkeep": 15
   }

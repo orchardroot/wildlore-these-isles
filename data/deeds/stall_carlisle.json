@@ -110,13 +110,12 @@
   {
    "id": "second_day",
    "name": "A second market day a week",
-   "text": "More takings, more baking, and no day off.",
-   "cost": 2800,
+   "text": "More takings, a second batch of baking and a helper to mind the stall. No day off for anyone.",
+   "cost": 1800,
    "tier": 1,
    "group": "trade",
-   "takings": 1.1,
-   "use": 1.2,
-   "upkeep": 20
+   "takings": 1.2,
+   "upkeep": 25
   }
  ],
  "asks": [

@@ -96,7 +96,7 @@
    "cost": 9000,
    "tier": 1,
    "group": "wing",
-   "takings": 1.12,
+   "takings": 1.18,
    "use": 1.25,
    "upkeep": 30
   },
@@ -107,7 +107,7 @@
    "cost": 9000,
    "tier": 1,
    "group": "wing",
-   "takings": 1.08,
+   "takings": 1.12,
    "boom": 0.4,
    "use": 1.15,
    "upkeep": 45
@@ -117,7 +117,7 @@
    "name": "A place in the walking guides",
    "text": "Your name in the books people carry up hills.",
    "cost": 3500,
-   "takings": 1.05,
+   "takings": 1.06,
    "boom": 0.3
   }
  ],

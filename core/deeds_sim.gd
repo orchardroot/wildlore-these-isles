@@ -17,7 +17,7 @@ static func net_per_day(data: GameStateData, id: String, tier: int, managed: boo
 	var units := 0.0
 	for inp in deed.inputs:
 		var eff := DeedChoices.use_of(int(inp.per_day), float(fx.use))
-		units += maxi(eff, int(inp.per_day))
+		units += int(inp.per_day)   # the sold units stay the plain day's; the stock a fryer eats extra is only cost
 		cost += eff * cheapest_buy(str(inp.item))
 	var o: Dictionary = deed.output
 	var infl := Deeds.inflation(data)

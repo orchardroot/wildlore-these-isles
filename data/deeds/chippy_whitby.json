@@ -99,9 +99,9 @@
    "id": "second_fryer",
    "name": "A second fryer",
    "text": "Twice the chips an hour, and twice the oil to heat.",
-   "cost": 6000,
+   "cost": 4500,
    "tier": 1,
-   "takings": 1.1,
+   "takings": 1.18,
    "use": 1.35
   },
   {
@@ -122,7 +122,7 @@
    "cost": 3000,
    "tier": 2,
    "group": "terms",
-   "takings": 1.1,
+   "takings": 1.14,
    "upkeep": 40,
    "shield": -0.1
   }

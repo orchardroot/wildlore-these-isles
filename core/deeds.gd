@@ -342,15 +342,15 @@ static func _stock_fraction(st: Dictionary, deed: Dictionary, use := 1.0) -> flo
 		f += minf(1.0, float(_i(st.store, str(inp.item))) / maxf(1.0, float(DeedChoices.use_of(int(inp.per_day), use))))
 	return f / inputs.size()
 
-## Takes a day's stock out and returns the units it sold as: the goods used, but a thrifty hand that gets a day out of
-## less (use under 1) still sells the full day's worth.
+## Takes a day's stock out and returns the units it sold as: always the plain day's worth. A second fryer eats more stock
+## for its takings multiplier and a thrifty hand gets the same day out of less; neither changes what a unit sells for.
 static func _consume(st: Dictionary, deed: Dictionary, use := 1.0) -> float:
 	var used := 0.0
 	for inp in deed.get("inputs", []):
 		var eff := DeedChoices.use_of(int(inp.per_day), use)
 		var u := mini(_i(st.store, str(inp.item)), eff)
 		st.store[str(inp.item)] = _i(st.store, str(inp.item)) - u
-		used += float(u) * (float(inp.per_day) / float(eff) if eff < int(inp.per_day) else 1.0)
+		used += float(u) * float(inp.per_day) / float(eff)   # sells the plain day's worth: the rest is waste or wage, not trade
 	return used
 
 ## One quiet day's takings with a full store at tier 0, before events: for the sim and the screen.

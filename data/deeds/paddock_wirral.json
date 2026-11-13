@@ -107,12 +107,11 @@
   {
    "id": "more_livery",
    "name": "Stabling for six more",
-   "text": "More horses, more carrots, more muck.",
-   "cost": 2600,
+   "text": "More horses, more muck, and a stable hand to shift it.",
+   "cost": 2000,
    "tier": 1,
    "group": "yard",
-   "takings": 1.1,
-   "use": 1.25,
+   "takings": 1.2,
    "upkeep": 20
   },
   {

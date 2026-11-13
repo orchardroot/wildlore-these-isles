@@ -161,32 +161,33 @@
    "id": "bigger_nets",
    "name": "Bigger nets and a second hand",
    "text": "A bigger haul, and a wage to pay whether the fish come or not.",
-   "cost": 5500,
+   "cost": 5000,
    "tier": 1,
    "group": "gear",
-   "takings": 1.1,
+   "takings": 1.15,
    "use": 1.2,
    "shield": -0.1,
-   "upkeep": 35
+   "upkeep": 25
   },
   {
    "id": "ice_hold",
    "name": "An ice hold and a cold store",
    "text": "The catch arrives fresher, and a rough week costs you less.",
-   "cost": 6500,
+   "cost": 4500,
    "tier": 1,
    "group": "gear",
-   "takings": 1.05,
+   "takings": 1.08,
    "shield": 0.25,
    "carry": 20
   },
   {
    "id": "pier_berth",
    "name": "A permanent berth on the pier",
-   "text": "No more circling for a space. Harbour dues, though.",
-   "cost": 3000,
-   "rates": -0.02,
-   "upkeep": 15
+   "text": "No more circling for a space, and the wall between you and the weather. Harbour dues, though.",
+   "cost": 2500,
+   "rates": -0.03,
+   "shield": 0.1,
+   "upkeep": 10
   }
  ],
  "asks": [
