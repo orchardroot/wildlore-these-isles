@@ -54,6 +54,44 @@
    "line": "This is a private camp. Private as in 'mind your own'.",
    "money": 3100,
    "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_west_highland_way_cache",
+   "zone": "west_highland_way",
+   "near": [
+    43,
+    20
+   ],
+   "kind": "cache",
+   "at": "west_highland_way",
+   "item": "flask_of_tea",
+   "line": "A flask-sized tin under a flat stone, tied with garden twine. Someone's emergency tea. You are an emergency."
+  },
+  {
+   "id": "poi_west_highland_way_stone",
+   "zone": "west_highland_way",
+   "near": [
+    17,
+    41
+   ],
+   "kind": "stone",
+   "at": "west_highland_way",
+   "stat": "hp",
+   "lore": [
+    "Sheep have rubbed one side smooth. Even the sheep come here.",
+    "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
+   ]
+  },
+  {
+   "id": "poi_west_highland_way_den",
+   "zone": "west_highland_way",
+   "near": [
+    46,
+    5
+   ],
+   "kind": "den",
+   "at": "west_highland_way",
+   "species": "snowhare"
   }
  ]
 }

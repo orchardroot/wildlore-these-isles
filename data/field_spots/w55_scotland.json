@@ -13,5 +13,19 @@
   },
   "flag": "field_southern_upland_way_mend",
   "at": "southern_upland_way"
+ },
+ {
+  "id": "fs_west_highland_way_glint",
+  "zone": "west_highland_way",
+  "x": 24,
+  "y": 29,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in a lochan. {lead} wades in, makes a few calm passes and fishes it out: a walker's purse, a bit damp.",
+  "reward": {
+   "money": 2272
+  },
+  "flag": "field_west_highland_way_glint",
+  "at": "west_highland_way"
  }
 ]

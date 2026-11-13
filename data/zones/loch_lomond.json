@@ -753,6 +753,10 @@
   }
  ],
  "edges": {
+  "north": {
+   "to": "west_highland_way",
+   "offset": 32
+  },
   "east": {
    "to": "glasgow",
    "offset": 0
@@ -1139,8 +1143,8 @@
  ],
  "stage": "forest",
  "rows": [
-  "PTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTT",
-  "TTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTT",
+  "PTTTTTT###TPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTT",
+  "TTTTTTT###TTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTT",
   "TT........P...T..............T.....................^^^^/^^^^^^PT",
   "TT.......P.....................w...................^^^^^^^^/^/TT",
   "TT...P.......P.........wwwwwwww~wwwwwwww...P.......^^^^^^^/^^^TT",

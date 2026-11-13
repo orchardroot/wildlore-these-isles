@@ -1,0 +1,64 @@
+{
+ "whw_walker": [
+  {
+   "do": "say",
+   "who": "Way Walker",
+   "text": "Milngavie to Fort William, ninety-six miles. Everyone tells you the Rannoch Moor day is the long one. Everyone is right and nobody tells you what to do about it."
+  },
+  {
+   "do": "say",
+   "who": "Way Walker",
+   "text": "M\u00f2ran taing for the biscuit, by the way. That is how you say 'many thanks'. I learned it three days ago."
+  }
+ ],
+ "whw_hotelier": [
+  {
+   "do": "say",
+   "who": "Hotelier",
+   "text": "We get a lot of boots at the door and a lot of mud on the carpet. I wouldn't change it."
+  },
+  {
+   "do": "say",
+   "who": "Hotelier",
+   "text": "Last week a man asked me if the moor was always this empty. I said it is never empty. It is just very quiet about who is in it."
+  }
+ ],
+ "whw_stalker": [
+  {
+   "do": "say",
+   "who": "Deer Watcher",
+   "text": "Red deer on the hill. Look for the ones that do not move. They have seen you and do not care."
+  },
+  {
+   "do": "say",
+   "who": "Deer Watcher",
+   "text": "They come down in winter, when the snow stays on the tops. In summer they go back up to get away from the midges, which tells you how bad the midges are."
+  }
+ ],
+ "whw_signalman": [
+  {
+   "do": "say",
+   "who": "Railway Walker",
+   "text": "I walk the line by the railway when I can. The track floats on the moor. I like to think of it as a very long boat."
+  },
+  {
+   "do": "say",
+   "who": "Railway Walker",
+   "text": "The line over the moor was built floating on brushwood. The bit I like is that nobody told the brushwood it was a foundation."
+  }
+ ],
+ "whw_stag": [
+  {
+   "do": "say",
+   "who": "Stagmor",
+   "text": "A stag stands on the skyline, doing a very good impression of a statue of a stag."
+  }
+ ],
+ "whw_hare": [
+  {
+   "do": "say",
+   "who": "Snowhare",
+   "text": "A mountain hare sits up, considers you, and decides the nearest rock is the safest place in Scotland."
+  }
+ ]
+}

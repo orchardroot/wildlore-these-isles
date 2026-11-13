@@ -1,0 +1,36 @@
+{
+ "id": "whw_drover",
+ "name": "Drover Callum",
+ "class": "Drover",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "herdlet",
+   "level": 70
+  },
+  {
+   "species": "kidgruff",
+   "level": 70
+  },
+  {
+   "species": "stagmor",
+   "level": 71
+  },
+  {
+   "species": "wildkit",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2340,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Drover Callum",
+   "text": "My grandfather walked cattle over this moor. I walk Keepers into the ground."
+  }
+ ],
+ "win": "A fair drive. I will tip my cap and my dog.",
+ "after": "A good drover knows three things: the road, the weather and when to stop talking. I am working on the third.",
+ "scaled_floor": 70
+}

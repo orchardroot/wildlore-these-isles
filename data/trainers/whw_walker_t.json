@@ -1,0 +1,32 @@
+{
+ "id": "whw_walker_t",
+ "name": "Hillwalker Struan",
+ "class": "Hillwalker",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "kidgruff",
+   "level": 70
+  },
+  {
+   "species": "midgie",
+   "level": 70
+  },
+  {
+   "species": "martling",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2300,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Hillwalker Struan",
+   "text": "Munros are a state of mind. I am in a state. Fancy a battle?"
+  }
+ ],
+ "win": "Well walked. I will go and have a sit on the moor.",
+ "after": "I have done the Way three times, and every time it is longer than the last. The moor insists on it.",
+ "scaled_floor": 70
+}

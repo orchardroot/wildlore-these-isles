@@ -1,0 +1,36 @@
+{
+ "id": "whw_photographer",
+ "name": "Photographer Kirsty",
+ "class": "Photographer",
+ "sprite": "explorer",
+ "party": [
+  {
+   "species": "midgie",
+   "level": 71
+  },
+  {
+   "species": "snowhare",
+   "level": 70
+  },
+  {
+   "species": "fawnlet",
+   "level": 70
+  },
+  {
+   "species": "hootlet",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2320,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Photographer Kirsty",
+   "text": "Hold still. I am waiting for the light. I have been waiting since Tuesday. Battle while I wait?"
+  }
+ ],
+ "win": "Lovely. I got the shot. You are in it, sorry.",
+ "after": "The light on the moor lasts about four minutes. I spend the other eleven hours in a layby.",
+ "scaled_floor": 70
+}

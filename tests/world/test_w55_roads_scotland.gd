@@ -8,6 +8,7 @@ extends TestCase
 ## The zones this session adds, with the existing places each one joins.
 const NEW := {
 	"southern_upland_way": ["scottish_borders", "galloway"],
+	"west_highland_way": ["loch_lomond", "glencoe"],
 }
 
 func _baseline() -> Dictionary:
