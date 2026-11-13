@@ -1,0 +1,50 @@
+{
+ "dev_walker": [
+  {
+   "do": "say",
+   "who": "Weary Walker",
+   "text": "The staircase is the highest point, and it is not even the hardest bit. The hardest bit is the sign that says how far to go."
+  },
+  {
+   "do": "say",
+   "who": "Weary Walker",
+   "text": "I am going to Fort William. I have said that for three days. It still sounds like a joke."
+  }
+ ],
+ "dev_climber": [
+  {
+   "do": "say",
+   "who": "Ice Climber",
+   "text": "There is an indoor ice wall in the old works. It is the one place in Scotland where you can be cold on purpose and pay for it."
+  },
+  {
+   "do": "say",
+   "who": "Ice Climber",
+   "text": "Sl\u00e0inte mhath, that is 'good health'. We say it with a mug of tea here."
+  }
+ ],
+ "dev_hydro": [
+  {
+   "do": "say",
+   "who": "Dam Keeper",
+   "text": "The smelter needed a lot of power, so they built a dam up here and sent the water down in pipes. You can still see where it ran."
+  },
+  {
+   "do": "say",
+   "who": "Dam Keeper",
+   "text": "The works are gone, but the loch is still full. The hills have a long memory for water."
+  }
+ ],
+ "dev_cafe": [
+  {
+   "do": "say",
+   "who": "Cafe Owner",
+   "text": "Everyone comes in off the Way looking like they have been through a hedge. A bacon roll fixes about half of them."
+  },
+  {
+   "do": "say",
+   "who": "Cafe Owner",
+   "text": "The Staircase is not as bad as it sounds. It is worse. But it is over quickly, and the cake is good."
+  }
+ ]
+}

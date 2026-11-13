@@ -27,5 +27,19 @@
   },
   "flag": "field_west_highland_way_glint",
   "at": "west_highland_way"
+ },
+ {
+  "id": "fs_devils_staircase_topple",
+  "zone": "devils_staircase",
+  "x": 36,
+  "y": 31,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} leans into the leaning trunk and it comes down with a thump, right across the burn, which makes a bridge. On the far side, a few coins in a tin.",
+  "reward": {
+   "money": 2304
+  },
+  "flag": "field_devils_staircase_topple",
+  "at": "devils_staircase"
  }
 ]

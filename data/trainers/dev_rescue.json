@@ -1,0 +1,32 @@
+{
+ "id": "dev_rescue",
+ "name": "Rescue Volunteer Mairi",
+ "class": "Rescue Volunteer",
+ "sprite": "fell_runner",
+ "party": [
+  {
+   "species": "eaglet",
+   "level": 71
+  },
+  {
+   "species": "snowhare",
+   "level": 71
+  },
+  {
+   "species": "kidgruff",
+   "level": 71
+  }
+ ],
+ "ai": "trainer",
+ "money": 2380,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Rescue Volunteer Mairi",
+   "text": "Mountain rescue. We turn out at three in the morning for people who have not read the forecast. Have you read the forecast?"
+  }
+ ],
+ "win": "Well fought. Do read the forecast.",
+ "after": "We have helped a lot of people down this hill. They always say they were fine. They always say it while being carried.",
+ "scaled_floor": 70
+}

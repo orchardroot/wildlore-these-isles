@@ -92,6 +92,61 @@
    "kind": "den",
    "at": "west_highland_way",
    "species": "snowhare"
+  },
+  {
+   "id": "poi_devils_staircase_cache",
+   "zone": "devils_staircase",
+   "near": [
+    43,
+    17
+   ],
+   "kind": "cache",
+   "at": "devils_staircase",
+   "item": "hag_stone",
+   "line": "A hollow behind a rock, and a lunchbox in the hollow. Whoever left it knew what they were doing, and was not coming back for it."
+  },
+  {
+   "id": "poi_devils_staircase_camp",
+   "zone": "devils_staircase",
+   "near": [
+    44,
+    29
+   ],
+   "kind": "camp",
+   "at": "devils_staircase",
+   "names": [
+    [
+     "Lamper Ged",
+     "Lamper"
+    ],
+    [
+     "Poacher Rab",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "wildkit",
+    "kidgruff",
+    "snowhare"
+   ],
+   "line": "You didn't see us. We didn't see you. Except now we have.",
+   "money": 3180,
+   "item": "silver_snare"
+  },
+  {
+   "id": "poi_devils_staircase_stone",
+   "zone": "devils_staircase",
+   "near": [
+    6,
+    13
+   ],
+   "kind": "stone",
+   "at": "devils_staircase",
+   "stat": "spd",
+   "lore": [
+    "It is cold, and it hums very faintly, the way a fridge does.",
+    "The real thing is Machrie Moor, on the Isle of Arran: a moor full of rings, one with a tall granite slab."
+   ]
   }
  ]
 }
