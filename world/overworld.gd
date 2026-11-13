@@ -353,6 +353,7 @@ func _on_step(p: Vector2i) -> void:
 	if not zone.in_bounds(p):
 		_cross_edge(p)
 		return
+	SenseCue.on_step(self, p)  # your creature notices a point of interest or field spot nearby (w54)
 	var w := zone.warp_at(p)
 	var wstate := ZoneData.warp_state(w, Game.data) if not w.is_empty() else "open"
 	if wstate == "locked":

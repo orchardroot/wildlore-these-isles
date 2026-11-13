@@ -79,6 +79,9 @@ func _select(town: String) -> void:
 	_asking = false
 	view.cursor = town
 	view.named_unvisited = MapLogic.named_unvisited(Game.data, _objective_town)
+	for t in MapLogic.promised_towns(Game.data):  # "Buxton?": next door to somewhere you have been
+		if t not in view.named_unvisited:
+			view.named_unvisited.append(t)
 	if town != "":
 		var t: Dictionary = Travel.world_map().towns[town]
 		view.centre = Vector2(float(t.x), float(t.y))

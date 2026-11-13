@@ -12,7 +12,7 @@ const SCREENS := [
 	"quests", "quests:done", "quests:gazetteer", "quests:gazetteer:macclesfield", "quests:gazetteer:isles_work",
 	"almanac", "typechart", "typechart:Holtling=brook+kin;Kindlet=hearth", "almanac:pieces", "almanac:ledger:guilds", "almanac:ledger:deeds", "almanac:ledger:society", "papers",
 	"stats", "stats:standing", "stats:trades", "stats:weekly", "jobs", "jobs:first", "craft", "craft:workbench",
-	"postcard:album", "keepers", "curios", "economist", "invention", "lang", "biology", "selection", "pairing:pick",
+	"postcard:album", "keepers", "curios", "atlas", "economist", "invention", "lang", "biology", "selection", "pairing:pick",
 	"pairing:cross", "pairing:predict", "quiz", "quiz:all:answered", "crossword", "crossword:filled",
 	"bureau", "exchange:london", "crypto:london", "market:leeds_kirkgate", "society:manchester_society",
 	"deed:allotment_york", "lease", "cards", "trumps:dev",

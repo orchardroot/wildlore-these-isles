@@ -25,7 +25,7 @@ static func get_index() -> Dictionary:
 		_cached = build(zones, m if m is Dictionary else {}, f if f is Dictionary else {})
 	return _cached
 
-## {zones: {id: {name, region, kind, town, pos (Vector2, or (-1, -1)), enc: [{species, table, time, weather, season}]}},
+## {zones: {id: {name, region, kind, town, pos (Vector2, or (-1, -1)), enc: [{species, table, time, weather, season}], deep (a Deep Place), links (doors and edges out)}},
 ##  adj: {region: [regions next door]}, town_rooms: {town: [interior ids]}, room_town: {interior: town},
 ##  region_species: {region: [species ids]}}
 static func build(zones: Array, world_map := {}, ferries := {}) -> Dictionary:
@@ -49,7 +49,8 @@ static func build(zones: Array, world_map := {}, ferries := {}) -> Dictionary:
 						enc.append({"species": str(e.species), "table": str(table), "time": e.get("time", []), "weather": e.get("weather", []), "season": e.get("season", [])})
 		var p: Dictionary = towns.get(id, places.get(id, {}))
 		out.zones[id] = {"name": str(z.get("name", id)), "region": str(z.get("region", "")), "kind": str(z.get("kind", "route")),
-			"town": str(z.get("town_id", "")), "pos": Vector2(float(p.x), float(p.y)) if p.has("x") else Vector2(-1, -1), "enc": enc}
+			"town": str(z.get("town_id", "")), "pos": Vector2(float(p.x), float(p.y)) if p.has("x") else Vector2(-1, -1), "enc": enc,
+			"deep": z.get("deep") is Dictionary and not (z.deep as Dictionary).is_empty(), "links": _links(z)}
 	_fill_regions_and_rooms(raw, out)
 	_fill_positions(raw, out)
 	_fill_adjacency(raw, out, ferries)
@@ -62,6 +63,15 @@ static func build(zones: Array, world_map := {}, ferries := {}) -> Dictionary:
 		for e in zd.enc:
 			if e.species not in out.region_species[zd.region]:
 				out.region_species[zd.region].append(e.species)
+	return out
+
+## Every zone a zone leads to, by door or by edge.
+static func _links(z: Dictionary) -> Array:
+	var out := _targets(z)
+	for e in z.get("edges", {}).values():
+		var to := str(e.get("to", ""))
+		if to != "" and to not in out:
+			out.append(to)
 	return out
 
 static func _targets(z: Dictionary) -> Array:

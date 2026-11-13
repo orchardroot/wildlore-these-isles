@@ -391,6 +391,9 @@ func _show(id: String) -> void:
 			info.add_child(fl)
 	else:
 		var u := UIKit.label("Not met yet. Out there somewhere, being elusive.", 22, UIKit.MUTED)
+		var rumour := Rumours.clue(Game.data, id)  # a legend you have only heard of: the clue
+		if rumour != "":
+			u.text = "Not met yet. Rumour: " + rumour
 		u.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		u.custom_minimum_size = Vector2(300, 0)
 		info.add_child(u)
@@ -416,7 +419,7 @@ func _show(id: String) -> void:
 	elif Crossbreeds.is_id(id):  # each parent shown, and the biology of why it could happen
 		UIKit.add_words(words, Crossbreeds.parents_line(sp), -4, FACT_INK)
 	else:
-		UIKit.add_words(words, found_in(MenuLogic.habitats(habitat_index(), id)), -4, FACT_INK)
+		UIKit.add_words(words, found_in(MenuLogic.habitats(habitat_index(), id), Rumours.clue(Game.data, id)), -4, FACT_INK)
 	var dex: Dictionary = sp.get("dex", {})
 	if st == "caught":
 		UIKit.add_words(words, str(dex.get("text", "")), 0)
@@ -471,13 +474,14 @@ static func add_sexes(words: VBoxContainer, data: GameStateData, id: String) -> 
 	return added
 
 ## "Found in: Dee Valley, Ogwen and 2 more": the first few of a species' habitat labels (the rest are on the map).
-static func found_in(zones: Array) -> String:
+## A legend you have heard a rumour of gets the clue ("Rumour: ...") instead of "somewhere secret", or after the places.
+static func found_in(zones: Array, clue := "") -> String:
 	if zones.is_empty():
-		return "Found in: somewhere secret"
+		return "Found in: somewhere secret" if clue == "" else "Rumour: " + clue
 	var where := ", ".join(zones.slice(0, MAX_PLACES))
 	if zones.size() > MAX_PLACES:
 		where += " and %d more" % (zones.size() - MAX_PLACES)
-	return "Found in: " + where
+	return "Found in: " + where + ("" if clue == "" else ". Rumour: " + clue)
 
 ## "Evolves into X at Lv 20" for a species; the target's name stays hidden until you've seen one.
 static func evolution_line(sp: Dictionary) -> String:

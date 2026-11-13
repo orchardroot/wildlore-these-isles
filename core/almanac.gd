@@ -6,12 +6,14 @@ extends RefCounted
 ## appears once its system has something to show, so old saves need nothing.
 
 ## The menus behind each page, in tab order. "ledger:<kind>" opens the Almanac's own read-only ledger.
-const ORDER := ["journal", "fieldbook", "typechart", "gazetteer", "poets", "casebook", "studbook", "biology", "words", "invention", "rumours", "trades", "standing", "stats", "pieces", "guilds", "deeds", "society", "landsky", "economist", "worth", "papers", "cards", "keepers", "curios"]
-const NAMES := {"journal": "Quest log", "fieldbook": "Fieldbook", "typechart": "Type chart", "gazetteer": "Gazetteer", "poets": "Poets' Corner", "casebook": "Casebook", "studbook": "Stud Book", "biology": "Biology", "words": "Words of the Isles", "invention": "Timeline of Invention", "rumours": "Rumours", "trades": "Trades", "standing": "Standing", "stats": "Tallies", "pieces": "Party Pieces", "guilds": "Guilds", "deeds": "Deeds", "society": "Building Society", "landsky": "Land and Sky", "economist": "Economist's notebook", "worth": "Things worth knowing", "papers": "Papers", "cards": "Trumps cards", "keepers": "Keepers", "curios": "Curios"}
-const MENUS := {"journal": "quests", "fieldbook": "pedia", "typechart": "typechart", "gazetteer": "quests:gazetteer", "poets": "ledger:poets", "casebook": "pedia:casebook", "studbook": "pedia:studbook", "biology": "biology", "words": "pedia:words", "invention": "invention", "rumours": "pedia:rumours", "trades": "stats:trades", "standing": "stats:standing", "stats": "stats", "pieces": "ledger:pieces", "guilds": "ledger:guilds", "deeds": "ledger:deeds", "society": "ledger:society", "landsky": "ledger:landsky", "economist": "economist", "worth": "ledger:worth", "papers": "ledger:papers", "cards": "cards", "keepers": "keepers", "curios": "curios"}
+const ORDER := ["journal", "atlas", "fieldbook", "typechart", "gazetteer", "poets", "casebook", "studbook", "biology", "words", "invention", "rumours", "trades", "standing", "stats", "pieces", "guilds", "deeds", "society", "landsky", "economist", "worth", "papers", "cards", "keepers", "curios"]
+const NAMES := {"journal": "Quest log", "atlas": "Atlas", "fieldbook": "Fieldbook", "typechart": "Type chart", "gazetteer": "Gazetteer", "poets": "Poets' Corner", "casebook": "Casebook", "studbook": "Stud Book", "biology": "Biology", "words": "Words of the Isles", "invention": "Timeline of Invention", "rumours": "Rumours", "trades": "Trades", "standing": "Standing", "stats": "Tallies", "pieces": "Party Pieces", "guilds": "Guilds", "deeds": "Deeds", "society": "Building Society", "landsky": "Land and Sky", "economist": "Economist's notebook", "worth": "Things worth knowing", "papers": "Papers", "cards": "Trumps cards", "keepers": "Keepers", "curios": "Curios"}
+const MENUS := {"journal": "quests", "atlas": "atlas", "fieldbook": "pedia", "typechart": "typechart", "gazetteer": "quests:gazetteer", "poets": "ledger:poets", "casebook": "pedia:casebook", "studbook": "pedia:studbook", "biology": "biology", "words": "pedia:words", "invention": "invention", "rumours": "pedia:rumours", "trades": "stats:trades", "standing": "stats:standing", "stats": "stats", "pieces": "ledger:pieces", "guilds": "ledger:guilds", "deeds": "ledger:deeds", "society": "ledger:society", "landsky": "ledger:landsky", "economist": "economist", "worth": "ledger:worth", "papers": "ledger:papers", "cards": "cards", "keepers": "keepers", "curios": "curios"}
 
 static func sprouted(d: GameStateData, id: String) -> bool:
 	match id:
+		"atlas":
+			return Discovery.tally(d, ZoneIndex.get_index()).x > 0  # the first place found (5.4)
 		"poets":
 			return PoetsCorner.count(d) > 0  # the first plaque on the arts read (4.5)
 		"casebook":
@@ -73,6 +75,8 @@ static func blurb(d: GameStateData, id: String) -> String:
 			return Letters.blurb(d)
 		"journal":
 			return "%d under way, %d done" % [Quests.active(d).size(), Quests.done(d).size()]
+		"atlas":
+			return Atlas.blurb(d, ZoneIndex.get_index())
 		"fieldbook":
 			return "%d seen, %d caught" % [d.seen.size(), d.caught.size()]
 		"typechart":

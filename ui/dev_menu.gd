@@ -135,6 +135,15 @@ static func boot(game: Node, menu: String) -> void:
 	d.bag["rail_pass"] = 1
 	if menu.begins_with("pedia:") and (Dex.in_appendix(menu.substr(6)) or Dex.is_hybrid(menu.substr(6)) or Crossbreeds.is_id(menu.substr(6)) or game.dex.has(menu.substr(6))):  # `--menu=pedia:flyling` (any species or a hybrid): that entry, caught
 		d.mark_caught(menu.substr(6))
+	if menu in ["pedia:shuck", "pedia:nessie", "pedia:lambton"]:  # a legend in the Fieldbook with the rumour of where it stands
+		d.set_flag(Rumours.heard_key(menu.substr(6), 0))
+	if menu == "map:rumours":  # `--menu=map:rumours`: rumours of six legends and a Deep Place's way in, a few towns visited
+		for rk in ["shuck_1", "lambton_0", "cusith_0", "nessie_0", "ddraig_0", "tylwyth_0", "hereward_0"]:
+			d.set_flag(Rumours.heard_key(rk.get_slice("_", 0), int(rk.get_slice("_", 1))))
+		for t in ["york", "newcastle", "inverness", "llanberis", "cambridge", "glastonbury"]:
+			d.set_flag("visited_" + t)
+		d.set_flag(Discovery.found_key("castleton"))  # the way into Blue John Cavern
+		d.set_flag("last_town", "york")
 	if menu == "bag:chapbook":  # `--menu=bag:chapbook`: chapbooks in the bag, the picker up on Haymaker
 		d.bag = {"chapbook_haymaker": 1, "chapbook_glare": 1, "chapbook_kindle": 1, "chapbook_swoop": 1, "cup_of_tea": 2}
 	if menu == "bag:first":  # `--menu=bag:first`: a first-hour bag (tea, snares, the map and the Fieldbook)
@@ -279,6 +288,20 @@ static func boot(game: Node, menu: String) -> void:
 			d.set_flag("visited_" + t)
 		for kg in ["kg_maud_0", "kg_maud_2", "kg_morwen_1", "kg_ray_0", "kg_ray_1"]:
 			d.set_flag(kg, true)
+	if menu == "atlas":  # `--menu=atlas`: Cheshire finished, the Peak half done, a few places elsewhere
+		var aidx := ZoneIndex.get_index()
+		d.play_seconds = 9000.0
+		for aid in Discovery.places(aidx):
+			var ar := str(aidx.zones[aid].region)
+			if ar == "cheshire" or (ar == "peak" and aid < "l") or (ar == "scotland" and aid < "c") or ar == "ireland_west" and aid < "g":
+				d.set_flag(Discovery.found_key(str(aid)))
+		for ar in ["cheshire", "peak"]:
+			for rid in Atlas.contents(aidx)[ar].rooms:
+				d.set_flag(VisitorsBook.seen_flag(str(rid)))
+		for sp in Atlas.contents(aidx)["cheshire"].species:
+			d.seen[sp] = true
+		for pid in Atlas.contents(aidx)["cheshire"].plaques:
+			d.set_flag(Gazetteer.flag_key(str(pid)), true)
 	if menu == "curios":  # `--menu=curios`: twelve curios found
 		for id in Search.curio_ids().slice(0, 12):
 			d.set_flag(Search.FOUND_PREFIX + str(id), true)

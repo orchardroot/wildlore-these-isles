@@ -29,8 +29,11 @@ static func town_name(town: String) -> String:
 		return Overseas.name_of(town)
 	return str(world_map().get("towns", {}).get(town, {}).get("name", town.capitalize()))
 
-## Call on entering any zone: marks the town visited (world map), its station (rail) and the last town.
+## Call on entering any zone: records a first visit (the Discovery tally and its small reward, before the town's own
+## visited flag so an old save's towns are caught up first), marks the town visited (world map), its station (rail)
+## and the last town.
 static func note_visit(data: GameStateData, zone: ZoneData) -> void:
+	Discovery.note(data, zone, ZoneIndex.get_index())
 	if zone.town_id == "":
 		return
 	data.set_flag("visited_" + zone.town_id)

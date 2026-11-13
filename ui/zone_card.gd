@@ -39,6 +39,8 @@ var _panel: PanelContainer
 var _name: Label
 var _sub: Label
 var _local: Label
+var _new: Label    # "New place", and how many you have found (Discovery)
+var _gain: Label   # what the party made of it
 var _tween: Tween
 
 static func subtitle(zone_id: String, region: String) -> String:
@@ -76,6 +78,10 @@ func _ready() -> void:
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 2)
 	_panel.add_child(v)
+	_new = UIKit.label("", 20, UIKit.GOLD)
+	_new.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_new.visible = false
+	v.add_child(_new)
 	_name = UIKit.label("", 38, UIKit.CREAM)
 	_name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(_name)
@@ -90,6 +96,10 @@ func _ready() -> void:
 	_sub = UIKit.label("", 22, UIKit.MUTED)
 	_sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(_sub)
+	_gain = UIKit.label("", 19, UIKit.MUTED)
+	_gain.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_gain.visible = false
+	v.add_child(_gain)
 	_panel.modulate.a = 0.0
 	Bus.zone_entered.connect(_on_zone_entered)
 
@@ -99,13 +109,16 @@ func _on_zone_entered(zone_id: String) -> void:
 		z = Router.overworld.zone
 	elif Game.zone_exists(zone_id):
 		z = ZoneData.load_id(zone_id)
-	if z == null or not note(z.kind, zone_id):
+	if z == null:
+		return
+	var found := Discovery.take(zone_id)  # a first visit (Travel.note_visit); a Deep Place gets its card too
+	if not note(z.kind, zone_id) and found.is_empty():
 		return
 	var idx := ZoneIndex.get_index()
 	var b := Langs.banner(zone_id, z.name, Settings.languages_on(), idx)
 	if str(b[1]) != "":
 		Langs.note_place(Game.data, zone_id, z.name, idx)
-	show_card(z.name, subtitle(zone_id, z.region), str(b[1]))
+	show_card(z.name, subtitle(zone_id, z.region), str(b[1]), found)
 
 ## On screen, or about to be (the card waits for the fade in).
 func showing() -> bool:
@@ -115,7 +128,13 @@ func showing() -> bool:
 func rect() -> Rect2:
 	return _panel.get_global_rect() if showing() else Rect2()
 
-func show_card(title: String, sub: String, local := "") -> void:
+## `found` (Discovery.note's result) makes it a "New place" card, with a sting and a line for the party.
+func show_card(title: String, sub: String, local := "", found := {}) -> void:
+	_new.visible = not found.is_empty()
+	_gain.visible = not found.is_empty() and str(found.get("gain", "")) != ""
+	if not found.is_empty():
+		_new.text = "NEW PLACE  ·  %d of %d found" % [int(found.count), int(found.total)]
+		_gain.text = str(found.get("gain", ""))
 	_name.text = title
 	_name.add_theme_font_size_override("font_size", UIKit.fit_size(title, MAX_W, Access.scaled(38, Settings.text_size), 28))
 	_local.text = local
@@ -126,6 +145,8 @@ func show_card(title: String, sub: String, local := "") -> void:
 		_tween.kill()
 	_tween = create_tween()
 	_tween.tween_interval(0.35)  # let the screen fade in first
+	if not found.is_empty():
+		_tween.tween_callback(func() -> void: Audio.sfx("harp_gliss"))  # the sting: a harp run, soft
 	_tween.tween_property(_panel, "modulate:a", 1.0, FADE_IN)
-	_tween.tween_interval(HOLD)
+	_tween.tween_interval(HOLD + (0.8 if not found.is_empty() else 0.0))
 	_tween.tween_property(_panel, "modulate:a", 0.0, FADE_OUT)
