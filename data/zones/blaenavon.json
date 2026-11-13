@@ -492,6 +492,60 @@
    "move": "still",
    "script": "arc_choir",
    "show_if": "q_arc_wales_10"
+  },
+  {
+   "id": "ct_knockers_poster",
+   "sprite": "villager_6",
+   "x": 21,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_knockers_poster",
+   "name": "Gwen Pritchard"
+  },
+  {
+   "id": "ct_knockers_guide",
+   "sprite": "tin_miner",
+   "x": 20,
+   "y": 21,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_knockers_guide",
+   "name": "Tour Guide",
+   "show_if": "ct_knockers_tour"
+  },
+  {
+   "id": "ct_knockers_sealed",
+   "sprite": "villager_5",
+   "x": 31,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_knockers_sealed",
+   "name": "Resident",
+   "show_if": "ct_knockers_sealed"
+  },
+  {
+   "id": "ct_knockers_crust",
+   "sprite": "villager_4",
+   "x": 22,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_knockers_crust",
+   "name": "Resident",
+   "show_if": "ct_knockers_crust"
+  },
+  {
+   "id": "ct_knockers_kept",
+   "sprite": "villager_2",
+   "x": 33,
+   "y": 25,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_knockers_kept",
+   "name": "Old Collier",
+   "show_if": "ct_knockers_kept"
   }
  ],
  "encounters": {

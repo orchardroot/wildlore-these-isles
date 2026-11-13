@@ -820,6 +820,56 @@
    "facing": "left",
    "move": "still",
    "trainer": "rhn_prop"
+  },
+  {
+   "id": "ct_knockers_elwyn",
+   "sprite": "tin_miner",
+   "x": 30,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_knockers_elwyn",
+   "name": "Elwyn Bevan"
+  },
+  {
+   "id": "ct_knockers_surveyor",
+   "sprite": "student",
+   "x": 18,
+   "y": 40,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_knockers_surveyor",
+   "name": "Dilys Morgan"
+  },
+  {
+   "id": "ct_knockers_lair",
+   "sprite": "creature:tapknock",
+   "x": 38,
+   "y": 34,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_knockers_lair",
+   "name": "Old Three-Taps",
+   "show_if": "ct_knockers_state",
+   "hide_if": "ct_knockers_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 35,
+   "y": 25,
+   "text": [
+    "The old level goes back into the hill. The air from it is cold and tastes of coins."
+   ],
+   "clue": "knockers.props"
+  },
+  {
+   "x": 39,
+   "y": 36,
+   "text": [
+    "Bare rock at the foot of the old workings. It is quiet enough to hear your own boots."
+   ],
+   "clue": "knockers.tapping"
   }
  ],
  "encounters": {

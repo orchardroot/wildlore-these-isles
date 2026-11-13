@@ -208,5 +208,40 @@
    "who": "Chorister",
    "text": "Daniel James wrote the words, and John Hughes the tune, a hundred years or so ago. It's the hymn the crowd at the rugby sings with its hand on its heart and its mouth full of pie."
   }
+ ],
+ "ct_knockers_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "knockers"
+  }
+ ],
+ "ct_knockers_guide": [
+  {
+   "do": "say",
+   "who": "Tour Guide",
+   "text": "Tours leave the Institute at ten. Helmets provided. The knockers don't do the same thing twice, which the visitors love."
+  }
+ ],
+ "ct_knockers_sealed": [
+  {
+   "do": "say",
+   "who": "Resident",
+   "text": "Level's sealed. Concrete and a grille. It's quiet at night now. Too quiet, Elwyn says, but Elwyn would."
+  }
+ ],
+ "ct_knockers_crust": [
+  {
+   "do": "say",
+   "who": "Resident",
+   "text": "There's a crust on that stone every Friday. Gone by Saturday. I'm told it's a fox. I don't ask what kind."
+  }
+ ],
+ "ct_knockers_kept": [
+  {
+   "do": "say",
+   "who": "Old Collier",
+   "text": "A knocker in a team. In a team! Forty years underground and not once did I think to ask one for a lift."
+  }
  ]
 }

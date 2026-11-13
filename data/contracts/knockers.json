@@ -1,0 +1,186 @@
+{
+ "id": "knockers",
+ "title": "Knocking in the Old Level",
+ "town": "blaenavon",
+ "nation": "wales",
+ "group": "miners",
+ "badges": 3,
+ "pay": 3,
+ "poster": {
+  "name": "Gwen Pritchard",
+  "role": "secretary of the Workmen's Institute",
+  "idle": [
+   "The Institute's open, love, and the tea's strong. I've a worry about the old level up the valley, but I'll keep it for someone with a bit more Wales behind them. Come back when you've earned a few more badges."
+  ],
+  "taken": [
+   "Any luck? It started again last night. Three taps, a stop, three taps, and then every light in the Institute goes out at once. The electrician says it's the wiring. The electrician has not been here at night."
+  ],
+  "decided": [
+   "You've been up the level. You've got stone dust on your good coat. Tell me."
+  ],
+  "closed": "That's done now, one way or another. You can't un-decide a level.",
+  "haggle": "Mm. You've been in Wales long enough to know the price of everything. Go on, then."
+ },
+ "notice": [
+  "Tapping from the old level above the town at night, and the Institute's lights go out when it starts. The children dare each other to go up there.",
+  "The council wants it sealed. The old boys want it left alone. I would like to know what it is before somebody gets hurt."
+ ],
+ "trouble": [
+  "It's an old level on the Rhondda side, driven before my grandfather's time. Walkers have heard it too. Don't go in. Whatever it is, don't go in.",
+  "I can pay a little. The Institute's raffle has been good this year."
+ ],
+ "hypotheses": [
+  {"id": "coblyn", "name": "Coblynau, the knockers", "types": ["spirit", "stone"]},
+  {"id": "timbers", "name": "Rotten timbers settling", "types": ["stone"]},
+  {"id": "water", "name": "Water knocking in old pipes", "types": ["brook", "iron"]}
+ ],
+ "truth": "coblyn",
+ "clues": [
+  {
+   "id": "props",
+   "kind": "look",
+   "zone": "rhondda",
+   "hint": "the mouth of the old level",
+   "text": "At the mouth of the old level the pit props are black and soft as cake: a thumb goes straight in. They creak in the wind and water drips from the roof. It could all be settling, or pipes. Creaking is not tapping, though.",
+   "points": ["timbers", "water"]
+  },
+  {
+   "id": "tapping",
+   "kind": "look",
+   "zone": "rhondda",
+   "hint": "the rock face at the level, listened to at dusk or after dark",
+   "text": "You put your ear to the rock after dark. Three taps. A pause. Three taps. Settling stone is random and water drips without a plan, but this has a rhythm, and it waits, as if for an answer. It stops when you breathe in.",
+   "hint_wait": "Silence, and the sound of water. Whatever knocks here keeps its own hours: try again at dusk or after dark.",
+   "points": ["coblyn"],
+   "rules_out": ["timbers", "water"],
+   "when": {"phase": ["dusk", "night"]}
+  },
+  {
+   "id": "elwyn",
+   "kind": "ask",
+   "zone": "rhondda",
+   "who": "Elwyn Bevan",
+   "hint": "ask the old collier",
+   "text": [
+    "Knockers. Coblynau, my nain called them. They knock to show you where the good seam is, and they get cross if you whistle underground or don't leave them a crust.",
+    "Forty years down the pit and I never saw one, and I never once ate the last bit of my pasty either."
+   ],
+   "idle": ["Forty years underground. Ask me again when I've had my tea."],
+   "after": "Whatever you did, I hope you did it kindly. They remember.",
+   "points": ["coblyn"]
+  },
+  {
+   "id": "surveyor",
+   "kind": "ask",
+   "zone": "rhondda",
+   "who": "Dilys Morgan",
+   "hint": "hear the council's surveyor",
+   "text": [
+    "Old timber and water. The level floods after rain and the pipes bang like a drum. I'm sorry to be dull about it.",
+    "And the thing is dangerous whatever it is. Rotten props, bad air, an old fall. Seal it. Please."
+   ],
+   "idle": ["I've forty old mine entries on my list this year. Don't make it forty-one."],
+   "after": "Sealed or not, I'll go on reading the ground every month. That's the job.",
+   "points": ["water", "timbers"]
+  }
+ ],
+ "lair": {
+  "zone": "rhondda",
+  "name": "Old Three-Taps",
+  "species": "tapknock",
+  "level": 31,
+  "floor_par": 28,
+  "intro": [
+   "The level goes back into the hill under a lintel of black stone. In the dark just inside, something small and grey sits on a ledge of coal, waiting, with a pick no bigger than a teaspoon.",
+   "It taps the rock three times and looks at you. It is waiting for you to say something. You are not sure what."
+  ],
+  "beaten": [
+   "Old Three-Taps sags against the rock face. It looks tired, and a very long way from home, which is odd, since it is exactly where it has always been."
+  ]
+ },
+ "choices": [
+  {
+   "id": "seal",
+   "label": "Let the council seal the level",
+   "say": [
+    "A lorry of concrete, a steel grille and a sign in English and Welsh. The tapping stops that night. Nobody can say whether that is because the level is sealed or because somebody is offended.",
+    "Gwen's lights stay on. Elwyn sits on the wall of the Institute and does not say anything at all."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_knockers_sealed": true, "ct_knockers_quiet": true},
+   "repute": {"townsfolk": 2, "miners": -2},
+   "standing": {"wales": 1},
+   "poster": ["Sealed. Safe. Quiet. Exactly what I asked for, and I feel dreadful. Here you are, love. Thank you."],
+   "after": ["Lights stay on now. Mind, the quiet's a bit loud."],
+   "journal": "You let the council seal the old level. The Institute's lights stay on and the children cannot dare each other any more. The old colliers are not talking to you."
+  },
+  {
+   "id": "crust",
+   "label": "Fence the level and leave the knockers a crust",
+   "say": [
+    "You fence the mouth of the level, hang a notice, and leave the corner of a pasty on a flat stone. In the morning it has gone. Probably a fox.",
+    "The tapping goes on, but softer, and the lights in the Institute stay on. Elwyn takes his cap off at the fence on his way past."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_knockers_crust": true, "ct_knockers_fenced": true},
+   "repute": {"miners": 2, "townsfolk": -1},
+   "standing": {"wales": 1},
+   "poster": ["A crust and a fence. I'll have the committee minute that as 'precautionary measures'. Seventy per cent, because the committee would have my head otherwise."],
+   "after": ["There's a crust on the stone every Friday and gone by Saturday. I'm told it's a fox. I don't ask what sort."],
+   "journal": "You fenced the old level and left the knockers a crust. The tapping goes on softly, the Institute's lights have not gone out since, and the council has put it down as a precaution."
+  },
+  {
+   "id": "tour",
+   "label": "Open the level to guided visits, with Elwyn as the guide",
+   "say": [
+    "It takes six weeks and a great many forms. Then Elwyn stands at the front of a line of helmeted visitors and says 'And this, ladies and gentlemen, is where the knockers live.' He has never looked happier.",
+    "The surveyor shores up the props. The tapping goes on, a bit louder if the audience is good."
+   ],
+   "fee": 0.6,
+   "flags": {"ct_knockers_tour": true, "ct_knockers_guide": true},
+   "repute": {"miners": 1, "townsfolk": 1},
+   "standing": {"wales": 2},
+   "poster": ["Tours. In my Institute's name. Well. It's an honest bit of money and it's Elwyn's best year in a long while. Sixty per cent, and I'll take the rest in tea."],
+   "after": ["Tours leave from the Institute at ten. Elwyn does the voices. The knockers never do the same thing twice, which the visitors love."],
+   "journal": "You opened the level to guided visits. Elwyn has a second career, the surveyor has a lot of forms, and the knockers have an audience."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes on Old Three-Taps, and from inside it comes a small, patient tapping: three taps, a pause, three taps. The level behind you falls silent."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_knockers_quiet": true, "ct_knockers_kept": true},
+   "repute": {"townsfolk": 1, "miners": -3},
+   "standing": {"wales": 1},
+   "poster": ["It's in your charm? It's knocking in your pocket? That's... I'm not sure what that is. The lights stay on, anyway. Here."],
+   "after": ["Elwyn says you've robbed the hill. Elwyn says it kindly, which is worse."],
+   "journal": "You caught Old Three-Taps. It taps its rhythm inside your charm and the old level has fallen silent. The colliers think you have robbed the hill."
+  }
+ ],
+ "real": "Blaenavon grew round an ironworks founded in 1789, and its coal and iron landscape became a World Heritage Site in 2000. Big Pit, closed as a working colliery in 1980, now takes visitors underground, and many of its guides are former miners. Miners across Britain told of spirits that knocked where the ore was: knockers in Cornwall, coblynau in Wales. They could be kind or spiteful, and the custom was to leave them a crust and never to whistle underground. Old workings are a real danger, with rotten timber, bad air, floods and falls. The Coal Authority still seals and monitors old mine entries, and the folk tales and the safety rules agree on one thing: do not go in.",
+ "places": {
+  "poster": {"sprite": "villager_6", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "elwyn", "sprite": "tin_miner", "near": [30, 30]},
+   {"clue": "surveyor", "sprite": "student", "near": [18, 40]}
+  ],
+  "looks": [
+   {"clue": "props", "near": [40, 30], "on": "any", "text": ["The old level goes back into the hill. The air from it is cold and tastes of coins."]},
+   {"clue": "tapping", "near": [38, 36], "on": "any", "text": ["Bare rock at the foot of the old workings. It is quiet enough to hear your own boots."]}
+  ],
+  "lair": {"near": [38, 34]},
+  "folk": [
+   {"id": "guide", "zone": "blaenavon", "near": [20, 20], "sprite": "tin_miner", "name": "Tour Guide", "show_if": "ct_knockers_tour", "says": [],
+    "else": ["Tours leave the Institute at ten. Helmets provided. The knockers don't do the same thing twice, which the visitors love."]},
+   {"id": "sealed", "zone": "blaenavon", "near": [30, 20], "sprite": "villager_5", "name": "Resident", "show_if": "ct_knockers_sealed", "says": [],
+    "else": ["Level's sealed. Concrete and a grille. It's quiet at night now. Too quiet, Elwyn says, but Elwyn would."]},
+   {"id": "crust", "zone": "blaenavon", "near": [24, 26], "sprite": "villager_4", "name": "Resident", "show_if": "ct_knockers_crust", "says": [],
+    "else": ["There's a crust on that stone every Friday. Gone by Saturday. I'm told it's a fox. I don't ask what kind."]},
+   {"id": "kept", "zone": "blaenavon", "near": [34, 26], "sprite": "villager_2", "name": "Old Collier", "show_if": "ct_knockers_kept", "says": [],
+    "else": ["A knocker in a team. In a team! Forty years underground and not once did I think to ask one for a lift."]}
+  ]
+ }
+}
