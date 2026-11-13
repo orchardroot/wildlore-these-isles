@@ -1,0 +1,32 @@
+{
+ "id": "hb_angler",
+ "name": "Angler Sid",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "pupplash",
+   "level": 86
+  },
+  {
+   "species": "pinchkin",
+   "level": 86
+  },
+  {
+   "species": "chipgull",
+   "level": 86
+  }
+ ],
+ "ai": "trainer",
+ "money": 3600,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Sid",
+   "text": "Waiting for a flounder. Been waiting since Tuesday. The Humber's got a lot of mud and not a lot of urgency."
+  }
+ ],
+ "win": "Well. The flounder's not the only one who's been beaten today.",
+ "after": "Grey seals come right up the estuary some winters. I've never seen one. I assume they're avoiding me.",
+ "scaled_floor": 86
+}

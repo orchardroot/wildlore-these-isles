@@ -1,0 +1,32 @@
+{
+ "id": "hb_legionary",
+ "name": "Centurion Dai",
+ "class": "Re-enactor",
+ "sprite": "hiker",
+ "party": [
+  {
+   "species": "legionette",
+   "level": 87
+  },
+  {
+   "species": "hootlet",
+   "level": 86
+  },
+  {
+   "species": "spikkin",
+   "level": 86
+  }
+ ],
+ "ai": "trainer",
+ "money": 3800,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Centurion Dai",
+   "text": "Form up! Shields! Well, a sort of shield. It's mostly a cardboard cut-out of one, but it's a lot of fun."
+  }
+ ],
+ "win": "The Ninth Legion vanished round here, they say. I know how they felt.",
+ "after": "Eboracum, Lindum, Londinium. I've walked them all, over a very long weekend.",
+ "scaled_floor": 86
+}

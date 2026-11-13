@@ -442,6 +442,10 @@
   "west": {
    "to": "nottingham",
    "offset": -4
+  },
+  "north": {
+   "to": "humber_bridge",
+   "offset": -5
   }
  },
  "npcs": [
@@ -804,8 +808,8 @@
   "y": 50
  },
  "rows": [
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
   "TT....................................................................TT",
   "TT...BBBBBBBBBBBBBB.:::...............BBBBBBBBBBBBBBBBBB..............TT",
   "TT...BBBBBBBBBBBBBB.:::...............BBBBBBBBBBBBBBBBBB..............TT",

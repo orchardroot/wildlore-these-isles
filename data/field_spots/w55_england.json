@@ -28,5 +28,19 @@
   },
   "flag": "field_swaledale_wall",
   "at": "swaledale"
+ },
+ {
+  "id": "fs_humber_roll",
+  "zone": "humber_bridge",
+  "x": 24,
+  "y": 48,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A wheel of Lincolnshire Poacher, stuck in a rut. {lead} gives it a shove and down the slope it goes, round and round, and out of the hollow comes an old bus pass and a lot of loose change.",
+  "reward": {
+   "money": 380
+  },
+  "flag": "field_humber_roll",
+  "at": "humber_bridge"
  }
 ]

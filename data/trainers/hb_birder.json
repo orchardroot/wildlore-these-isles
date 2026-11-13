@@ -1,0 +1,32 @@
+{
+ "id": "hb_birder",
+ "name": "Birdwatcher Elsa",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "bittling",
+   "level": 86
+  },
+  {
+   "species": "stalklet",
+   "level": 86
+  },
+  {
+   "species": "dipling",
+   "level": 86
+  }
+ ],
+ "ai": "trainer",
+ "money": 3600,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Elsa",
+   "text": "Quiet! A bittern booms in spring. It sounds like somebody blowing across a bottle, a mile off. Marvellous. Now hush."
+  }
+ ],
+ "win": "That's every bittern for a mile gone. Oh well. I'll count the pigeons.",
+ "after": "Bitterns nearly died out in Britain in the 1990s. They have come back, and I like to think we deserve some of the credit.",
+ "scaled_floor": 86
+}

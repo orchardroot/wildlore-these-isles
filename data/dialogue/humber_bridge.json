@@ -1,0 +1,45 @@
+{
+ "hb_toll": [
+  {
+   "do": "say",
+   "who": "Bridge Keeper",
+   "text": "The tolls are what they are. Take it up with the Humber Bridge Board, or the Queen. She opened it."
+  },
+  {
+   "do": "say",
+   "who": "Bridge Keeper",
+   "text": "It moves a little in a gale. It is meant to. Don't look down, and don't look at the cyclists either, they look at nobody."
+  }
+ ],
+ "hb_historian": [
+  {
+   "do": "say",
+   "who": "Roman Re-enactor",
+   "text": "This is Ermine Street. Legions marched up it to York, in a straight line, with their own pots and pans on a pole."
+  },
+  {
+   "do": "say",
+   "who": "Roman Re-enactor",
+   "text": "A legionary carried about forty kilos. And you complain about a rucksack."
+  }
+ ],
+ "hb_farmer": [
+  {
+   "do": "say",
+   "who": "Wolds Farmer",
+   "text": "Wolds soil is chalk and flint. Not a lot grows in it, except barley, and Lord, does barley grow. Half of what you drink started in a field like this."
+  },
+  {
+   "do": "say",
+   "who": "Wolds Farmer",
+   "text": "That chap Tennyson grew up near here, at Somersby. Even the poets couldn't stay away from the Wolds."
+  }
+ ],
+ "hb_birdman": [
+  {
+   "do": "say",
+   "who": "Reed Cutter",
+   "text": "Reed beds don't look after themselves. I cut them each winter so the bitterns have something to hide in. Roof thatchers love the leftovers."
+  }
+ ]
+}

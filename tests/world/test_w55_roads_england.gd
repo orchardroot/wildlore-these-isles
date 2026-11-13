@@ -12,6 +12,7 @@ const GOLDEN := "res://tests/world/w55_england_golden.json"
 const NEW_ZONES := {
 	"pendle_hill": ["haworth", "west", "blackpool", "east", ""],
 	"swaledale": ["lake_district", "east", "north_york_moors", "west", ""],
+	"humber_bridge": ["hull", "south", "lincoln", "north", ""],
 }
 
 func _golden() -> Dictionary:

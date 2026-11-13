@@ -92,6 +92,61 @@
    "line": "Looking for old lead on the spoil heaps. It's not illegal. It's very nearly rude.",
    "money": 2500,
    "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_humber_stone",
+   "zone": "humber_bridge",
+   "near": [
+    50,
+    54
+   ],
+   "kind": "stone",
+   "at": "humber_bridge",
+   "stat": "spd",
+   "lore": [
+    "It is a milestone, and it points two ways at once. You decide it is just being diplomatic.",
+    "The real thing is the line of Ermine Street itself: the Romans ran the road dead straight from Lincoln to the Humber, and the A15 still follows much of it today."
+   ]
+  },
+  {
+   "id": "poi_humber_cache",
+   "zone": "humber_bridge",
+   "near": [
+    6,
+    30
+   ],
+   "kind": "cache",
+   "at": "humber_bridge",
+   "item": "field_mushrooms",
+   "line": "A thermos, a bag of sandwiches, and a note: 'Back at four. Do NOT touch the pickled onions.'"
+  },
+  {
+   "id": "poi_humber_camp",
+   "zone": "humber_bridge",
+   "near": [
+    54,
+    20
+   ],
+   "kind": "camp",
+   "at": "humber_bridge",
+   "names": [
+    [
+     "Fisher Gav",
+     "Poacher"
+    ],
+    [
+     "Fisher Lin",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "pinchkin",
+    "pupplash",
+    "chipgull"
+   ],
+   "line": "Just a spot of unofficial netting. Nobody's looking. Except you.",
+   "money": 2600,
+   "item": "water_snare"
   }
  ]
 }

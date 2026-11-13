@@ -1,0 +1,32 @@
+{
+ "id": "hb_cyclist",
+ "name": "Cyclist Pru",
+ "class": "Cyclist",
+ "sprite": "jogger",
+ "party": [
+  {
+   "species": "peregrin",
+   "level": 86
+  },
+  {
+   "species": "starlet",
+   "level": 86
+  },
+  {
+   "species": "rooklet",
+   "level": 87
+  }
+ ],
+ "ai": "trainer",
+ "money": 3700,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Cyclist Pru",
+   "text": "Humber Bridge has a cycle lane. The wind off the estuary has a view on that. I ride it anyway."
+  }
+ ],
+ "win": "Blown off. I'd say it was the wind.",
+ "after": "Across the bridge into a headwind is the best training there is. And the worst. Same thing.",
+ "scaled_floor": 86
+}
