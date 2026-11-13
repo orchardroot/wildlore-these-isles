@@ -160,7 +160,7 @@ static func rows(data: GameStateData) -> Array:
 		out.append(["Nothing heard", "Listen to the wireless, or ask at a stall"])
 	for e in news:
 		var when := ("now, %d day%s left" % [TradeNews.ends(e) - day, "" if TradeNews.ends(e) - day == 1 else "s"]) if bool(e.on) else ("from tomorrow" if int(e.start) - day == 1 else "in %d days" % (int(e.start) - day))
-		out.append(["%s (%s)" % [str(e.board), _event_where(e)], "%s, %s" % [_event_what(e), when]])
+		out.append([str(e.board), "%s: %s, %s" % [_event_where(e), _event_what(e), when]])
 	var orders := TradeOrders.heard_open(data)
 	out.append(["Orders", ""])
 	if orders.is_empty():
@@ -178,7 +178,7 @@ static func rows(data: GameStateData) -> Array:
 		out.append([_name(str(r.item)), "%s at %s, %s" % [Wallet.fmt(int(r.sell)), _town(str(r.town)), _ago(data, int(r.day))]])
 	var sp := best_spread(data)
 	if not sp.is_empty():
-		out.append(["Widest gap you know of", "%s: %s at %s, %s at %s (%s)" % [_name(str(sp.item)), Wallet.fmt(int(sp.high)), _town(str(sp.high_town)), Wallet.fmt(int(sp.low)), _town(str(sp.low_town)), _ago(data, int(sp.day))]])
+		out.append(["Widest gap: %s" % _name(str(sp.item)), "%s at %s, %s at %s, %s" % [Wallet.fmt(int(sp.high)), _town(str(sp.high_town)), Wallet.fmt(int(sp.low)), _town(str(sp.low_town)), _ago(data, int(sp.day))]])
 	out.append(["In season", ""])
 	var season := in_season()
 	if season.is_empty():
