@@ -28,7 +28,8 @@ static func describe(detail: VBoxContainer, c: Dictionary) -> void:
 	t.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	detail.add_child(t)
 	_words(detail, "%s, %s. %s." % [str(c.poster.name), _place(str(c.town)), str(c.poster.role)], 20, UIKit.MUTED)
-	var status := "Taken. Fee agreed: %s." % Purse.text(Contracts.fee(d, id))
+	var cur := Wallet.currency_for_zone(str(c.town))   # an Irish fee is paid in euros
+	var status := "Taken. Fee agreed: %s." % Wallet.fmt(Wallet.localise(Contracts.fee(d, id), cur), cur)
 	if st == Contracts.DECIDED:
 		status = "Decided. Go and tell %s." % str(c.poster.name)
 	elif st >= Contracts.CLOSED:

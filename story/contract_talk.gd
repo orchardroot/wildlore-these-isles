@@ -150,7 +150,7 @@ static func theory_line(data: GameStateData, c: Dictionary) -> String:
 	if not t.sure:
 		return "You think it is one of these: %s." % " or ".join(names)
 	var h := Contracts.hypothesis(c, str(t.lead[0]))
-	return "You have worked it out: %s. %s. Bring something that is strong against %s." % [str(h.name), _types_text(h.types), _types_text(Contracts.weak_to(h.types), true)]
+	return "You have worked it out: %s. %s. Moves of these types hit it hardest: %s." % [str(h.name), _types_text(h.types), _types_text(Contracts.weak_to(h.types), true)]
 
 static func _types_text(types: Array, plain := false) -> String:
 	var names: Array = types.map(func(t): return str(t).capitalize())

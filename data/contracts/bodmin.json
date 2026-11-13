@@ -46,15 +46,6 @@
    "rules_out": ["dogs"]
   },
   {
-   "id": "kill",
-   "kind": "look",
-   "zone": "tintagel",
-   "hint": "the carcass under the gorse",
-   "text": "The ewe has been dragged a long way under the gorse and covered with grass and bracken. The neck is bitten through, clean as scissors, and the body is hardly touched. A fox mauls and leaves. A cat kills cleanly and hides its meal to come back for.",
-   "points": ["cat"],
-   "rules_out": ["fox"]
-  },
-  {
    "id": "night",
    "kind": "look",
    "zone": "tintagel",
@@ -179,7 +170,6 @@
   ],
   "looks": [
    {"clue": "prints", "near": [24, 14], "on": "any", "text": ["A muddy gateway, churned by sheep and a quad bike. There are prints in it, and most of them are boots."]},
-   {"clue": "kill", "near": [34, 26], "on": "any", "text": ["Thick gorse and bramble. There's a smell, and a lot of buzzing."]},
    {"clue": "night", "near": [44, 20], "on": "any", "text": ["The edge of the moor, where the gorse runs down to the wall. It is very dark out here after dusk."]}
   ],
   "lair": {"near": [48, 30]},

@@ -343,15 +343,21 @@ static func report(data: GameStateData, id: String, zone_id: String) -> Dictiona
 
 # --- money for the sim --------------------------------------------------------------
 
-## Every contract's fee, haggled by a Regular and best-paying ending: an upper bound for the economy sim.
-static func fees_total() -> float:
+## The fees of every contract whose notice is up at this many badges, each haggled by a Regular and paid at the
+## best-paying ending: an upper bound for the economy sim, which pays them as the badges come in.
+static func fees_through(badges: int) -> float:
 	var t := 0.0
 	for c in all():
+		if int(c.get("badges", 0)) > badges:
+			continue
 		var best := 0.0
 		for ch in c.get("choices", []):
 			best = maxf(best, float(ch.get("fee", 1.0)))
 		t += float(base_fee(c)) * (1.0 + float(HAGGLE[2])) * best
 	return t
+
+static func fees_total() -> float:
+	return fees_through(10)
 
 # --- validation ---------------------------------------------------------------------
 
