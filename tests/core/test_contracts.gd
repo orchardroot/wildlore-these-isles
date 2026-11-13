@@ -309,6 +309,19 @@ func test_the_creature_only_stands_in_its_lair_while_the_contract_is_live() -> v
 		d.set_flag(Contracts.flag(str(c.id), "end"), "x")
 		assert_false(Npc.should_spawn(lair, d, "day"), "%s is gone once decided" % c.id)
 
+func test_a_later_contract_waits_for_an_ending() -> void:
+	var a := {"id": "a", "town": "x", "badges": 0, "choices": [{"id": "yes"}, {"id": "no"}]}
+	var b := {"id": "b", "town": "x", "badges": 0, "needs": [{"contract": "a", "ending": "yes"}]}
+	Contracts.use([a, b])
+	var d := GameStateData.new()
+	assert_eq(Contracts.offered(d, "x").map(func(c): return c.id), ["a"], "b is not on the board yet")
+	d.set_flag(Contracts.flag("a", "state"), Contracts.CLOSED)
+	d.set_flag(Contracts.flag("a", "end"), "no")
+	assert_eq(Contracts.offered(d, "x"), [], "the other ending never brings it")
+	d.set_flag(Contracts.flag("a", "end"), "yes")
+	assert_eq(Contracts.offered(d, "x").map(func(c): return c.id), ["b"], "this ending does")
+	Contracts.reset()
+
 func test_the_total_of_the_fees_is_modest() -> void:
 	assert_true(Contracts.fees_total() > 0.0)
 	assert_true(Contracts.fees_total() < 80000.0, "all twelve together are a lump, not a living")

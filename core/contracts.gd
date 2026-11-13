@@ -397,7 +397,7 @@ static func validate(zones: Dictionary, dialogue: Dictionary, dex: Dex, items: I
 				errors.append(tag + "needs an ending that does not exist")
 		errors.append_array(_validate_poster(c, tag, zones, dialogue))
 		for s in _strings(c):
-			if "—" in s or "–" in s:
+			if "—" in s or "–" in s:   # no em or en dashes in anything a player reads
 				errors.append(tag + "dash in text: " + s.left(40))
 	return errors
 
