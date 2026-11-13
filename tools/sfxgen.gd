@@ -8,7 +8,8 @@ const MUSIC_IDS := ["title", "town_cheshire", "route_forest", "route_moor", "bat
 	"town_ireland", "route_ireland", "town_cornwall", "route_moor_south", "battle_double", "legend_green", "legend_crow", "ferry_irish_sea",
 	"town_scotland", "route_highlands", "town_belfast", "route_north_coast", "legend_sea", "legend_hound", "ferry_north_channel",
 	"town_york", "route_moors", "town_north", "town_london", "route_lakes", "dungeon_underground", "battle_moot", "battle_champion", "battle_final", "legend_hound2", "ending", "credits",
-	"town_wales_choir", "town_ireland_session", "town_scotland_pipes", "town_pennine", "town_man", "town_kernow", "town_caribbean"]
+	"town_wales_choir", "town_ireland_session", "town_scotland_pipes", "town_pennine", "town_man", "town_kernow", "town_caribbean",
+	"pub", "church", "museum", "castle"]
 
 func _initialize() -> void:
 	var want: Array = Array(OS.get_cmdline_user_args())
