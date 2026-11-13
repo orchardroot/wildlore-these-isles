@@ -11,6 +11,7 @@ static var _running := false
 
 ## The overworld's one hook in load_zone, after the zone is built: keeps her flags true, then plays whatever is due.
 static func arrive(ow: Node) -> void:
+	_dev_lead()
 	FamilyCat.sync(Game.data, Game.dex)
 	if FamilyCat.scene_due(Game.data, str(ow.zone.id)) and not _running:
 		_running = true
@@ -19,6 +20,15 @@ static func arrive(ow: Node) -> void:
 		var n := FamilyCat.note(Game.data)
 		Game.data.set_flag(FamilyCat.NOTE, true)  # once, ever: the note is a nudge, not a nag
 		Game.parish.news(str(n[0]), str(n[1]))
+
+## Dev switch `--cat=lead`: she is already with you, at the front of the party (screenshots of her following).
+static func _dev_lead() -> void:
+	if "--cat=lead" in DevArgs.user_args() and not FamilyCat.has(Game.data) and not Game.data.party.is_empty():
+		var c := FamilyCat.make(Game.dex, Game.moves, Game.rng, 12)
+		FamilyCat.join(Game.data, c)
+		Game.data.party.erase(c)
+		Game.data.party.push_front(c)
+		Bus.settings_changed.emit()  # the follower looks again at who leads
 
 static func _road(ow: Node) -> void:
 	for _i in 600:  # the zone card and fade first (up to ten seconds)
@@ -36,19 +46,28 @@ static func _road(ow: Node) -> void:
 	await ScriptRunner.start(ow, StoryData.script(str(ow.zone.id), "cat_scene"), ID)
 	_running = false
 
-## A free tile a few steps ahead of the player on a path she can really walk, or (-1, -1).
+## A free tile a few steps off in a straight, clear line from the player (the way they face first), so she is in view
+## and trots straight up; failing that any free tile near on a path she can walk. (-1, -1) if there is none.
 static func _spot(ow: Node) -> Vector2i:
 	var here: Vector2i = ow.player.grid_pos
-	var ahead := GridMotion.dir_vec(ow.player.facing)
-	var tries: Array = [here + ahead * REACH, here + ahead * (REACH - 1), here + ahead * (REACH + 1)]
+	var dirs: Array = [GridMotion.dir_vec(ow.player.facing)]
+	for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+		if d not in dirs:
+			dirs.append(d)
+	for d in dirs:
+		for n in [REACH, REACH - 1, REACH + 1, REACH - 2]:
+			var line := true
+			for i in range(1, n + 1):
+				if not _free(ow, here + d * i):
+					line = false
+			if line:
+				return here + d * n
 	for r in range(3, 7):
 		for dy in range(-r, r + 1):
 			for dx in range(-r, r + 1):
-				if absi(dx) + absi(dy) == r:
-					tries.append(here + Vector2i(dx, dy))
-	for p in tries:
-		if _free(ow, p) and not Pathfinder.within(ow.zone, p, here, {}).is_empty():
-			return p
+				var p := here + Vector2i(dx, dy)
+				if absi(dx) + absi(dy) == r and _free(ow, p) and not Pathfinder.within(ow.zone, p, here, {}).is_empty():
+					return p
 	return Vector2i(-1, -1)
 
 static func _free(ow: Node, p: Vector2i) -> bool:
