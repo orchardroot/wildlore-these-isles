@@ -13,7 +13,7 @@ const STEP_SPEED := 3.0      # tiles per second
 const NOTICE_RANGE := 2      # tiles: a still NPC turns to look at the player this close
 const REACT_EVERY := 0.35    # seconds between looks at bubbles and umbrella (never per frame)
 const BUBBLE_Y := 1.95
-const BROLLY_Y := 1.7
+const BROLLY_Y := 1.55
 const SCHEDULE_FAR := 9      # tiles: someone coming out or going home only does it out of the player's sight
 
 static var _dev_talk_done := false
