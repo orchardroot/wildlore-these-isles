@@ -5,11 +5,15 @@ extends Node3D
 ## the tile the player has just left, in time with the player's own step, and bobs a little when stood still.
 ## Locked in step: each stride starts on the player's step_started and runs on the player's own step_fraction(),
 ## so it starts and ends on the same frame as the player's, at the same speed, with nothing to fall behind.
-## Purely cosmetic: no grid presence, never in anyone's way. Hidden on the bike or the water, in cramped
-## interiors, while the player is hidden (journeys, arrival scenes) and while anyone stands on its tile.
+## Stand still a few seconds by a fire, or at night, and it curls up (wave 54). Purely cosmetic: no grid presence, never in anyone's way. Hidden on the bike or the water, in cramped
+## interiors under SMALL_INTERIOR tiles, while the player is hidden (journeys, arrival scenes) and while anyone stands on its tile.
 ## Talk to it by facing it and pressing interact: a short mood line and its cry. Settings.follower turns it off.
 
-const SMALL_INTERIOR := 200    # interiors with fewer tiles than this are too cramped to bring it in
+const SMALL_INTERIOR := 60     # interiors with fewer tiles than this are too cramped to bring it in
+const CURL_AFTER := 5.0        # seconds the player stands still before it settles down
+const CURL_RADIUS := 7         # how close a fire must be (tiles) to count as "by the fire"
+const CURL_SPEED := 2.5        # how quickly it settles and rises again
+const FIRE_PROPS := ["fireplace", "brazier"]
 const BOB_HEIGHT := 0.035
 const BOB_SPEED := 4.2         # radians per second
 const LEAD_CHECK_FRAMES := 15  # how often to look for a new party lead
@@ -27,6 +31,10 @@ var _stride_hop := false
 var _bob_t := 0.0
 var _idle_phase := randf() * 3.0
 var _rng := RandomNumberGenerator.new()
+var _still := 0.0   # seconds the player has stood still
+var _curl := 0.0    # 0 up and about .. 1 curled up
+var _base_scale := Vector3.ONE
+var _fires: Array[Vector2i] = []  # this zone's hearths and braziers
 var _walked := 0  # steps walked as the follower, towards the next bit of friendship
 
 ## The overworld's one hook in load_zone: called after each zone is built. Reuses the node between zones.
@@ -43,6 +51,9 @@ static func attach(ow: Node) -> Follower:
 	if not ow.player.step_started.is_connected(f._follow):
 		ow.player.step_started.connect(f._follow)
 	f._check_lead()
+	f._fires = fire_tiles(ow.zone)
+	f._still = 0.0
+	f._curl = 0.0
 	f._place_behind()
 	return f
 
@@ -85,6 +96,27 @@ static func should_show(enabled: bool, has_lead: bool, kind: String, area: int, 
 	if not enabled or not has_lead or not placed or on_bike or wading or not player_shown or npc_here:
 		return false
 	return kind != "interior" or area >= SMALL_INTERIOR
+
+## Where the zone keeps a fire going (interiors only).
+static func fire_tiles(z: ZoneData) -> Array[Vector2i]:
+	var out: Array[Vector2i] = []
+	if z == null or z.kind != "interior":
+		return out
+	for pr in z.props:
+		if str(pr.get("type", "")) in FIRE_PROPS:
+			out.append(Vector2i(int(pr.get("x", 0)), int(pr.get("y", 0))))
+	return out
+
+## Is a fire within CURL_RADIUS tiles of `p`?
+static func by_fire(fires: Array[Vector2i], p: Vector2i) -> bool:
+	for f in fires:
+		if absi(f.x - p.x) + absi(f.y - p.y) <= CURL_RADIUS:
+			return true
+	return false
+
+## Settles down once the player has stood still a while, by a fire or when it is night.
+static func curls_up(still_secs: float, near_fire: bool, phase: String) -> bool:
+	return still_secs >= CURL_AFTER and (near_fire or phase == "night")
 
 ## Billboard scale from Cries.size_of (0 small .. 1 legend-sized): a touch smaller than the player at most.
 static func scale_for(size: float) -> float:
@@ -223,7 +255,9 @@ func _check_lead() -> void:
 	add_child(_sprite)
 	_sprite.setup("creature:" + str(lead.species.id))
 	_sprite.set_coat(lead.variant)
-	_sprite.scale = Vector3.ONE * scale_for(Cries.size_of(lead.species))
+	_base_scale = Vector3.ONE * scale_for(Cries.size_of(lead.species))
+	_sprite.scale = _base_scale
+	_curl = 0.0
 	_sprite.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 
 func _stand_ok(p: Vector2i) -> bool:
@@ -261,15 +295,33 @@ func _process(delta: float) -> void:
 			_arrived(pl)
 	visible = should_show(Settings.follower, _sprite != null, _ow.zone.kind, _ow.zone.width * _ow.zone.height,
 		pl.on_bike, pl.wading, pl.visible, _npc_here(), _tile_ok)
+	if visible:
+		_settle(pl, delta)
 	if visible and not _moving and not Router.busy:
 		_bob_t += delta
-		if _lead != null:  # idles in its own manner (wave 48 A): a wisp hovers, a frog hops, a golem shifts its weight
+		if _curl > 0.01:  # curled up: a slow breath, nothing more
+			_sprite.position = Vector3(0.0, sin(_bob_t * 1.6) * 0.008 - 0.03 * _curl, 0.0)
+		elif _lead != null:  # idles in its own manner (wave 48 A): a wisp hovers, a frog hops, a golem shifts its weight
 			var idle := Motion.idle(Motion.style_for(_lead.species), _bob_t, _idle_phase)
 			var off: Vector2 = idle.pos
 			_sprite.position.y = off.y * 0.6
 			_sprite.position.x = off.x * 0.5
 		else:
 			_sprite.position.y = absf(sin(_bob_t * BOB_SPEED)) * BOB_HEIGHT
+
+## Curls up while the player stands still by a fire or at night; any step and it is on its feet again.
+func _settle(pl: Player, delta: float) -> void:
+	if pl.moving or _moving or Router.busy:
+		_still = 0.0
+	else:
+		_still += delta
+	var want := curls_up(_still, by_fire(_fires, tile), Game.phase()) if _still >= CURL_AFTER else false
+	var target := 1.0 if want else 0.0
+	if is_equal_approx(_curl, target):
+		return
+	_curl = move_toward(_curl, target, delta * CURL_SPEED)
+	_sprite.walking = false
+	_sprite.scale = Vector3(_base_scale.x * (1.0 + 0.12 * _curl), _base_scale.y * (1.0 - 0.38 * _curl), _base_scale.z)
 
 ## The player has just set off from `from`: step onto it, in time with them.
 func _follow(from: Vector2i, to: Vector2i) -> void:

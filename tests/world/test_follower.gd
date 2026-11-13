@@ -62,7 +62,8 @@ func test_visibility_rules() -> void:
 	assert_false(_show({"player_shown": false}), "journeys and arrival scenes hide the player")
 	assert_false(_show({"npc_here": true}), "someone walked onto its tile")
 	assert_false(_show({"placed": false}), "nowhere to stand yet")
-	assert_false(_show({"kind": "interior", "area": 11 * 9}), "a cottage is too cramped")
+	assert_false(_show({"kind": "interior", "area": 7 * 8}), "a box room is too cramped")
+	assert_true(_show({"kind": "interior", "area": 11 * 9}), "a cottage has room now")
 	assert_true(_show({"kind": "interior", "area": 30 * 24}), "a big hall has room")
 
 func test_lead_is_first_healthy_creature() -> void:
@@ -110,3 +111,15 @@ func test_mood_line_is_deterministic_per_pick() -> void:
 	var a := Follower.mood_line("Kindlet", 0.5, "fog", "dusk", "Buxton", "route", 7)
 	var b := Follower.mood_line("Kindlet", 0.5, "fog", "dusk", "Buxton", "route", 7)
 	assert_eq(a, b)
+
+func test_curls_up_by_the_fire_or_at_night() -> void:
+	assert_false(Follower.curls_up(1.0, true, "day"), "not until the player has stood still a while")
+	assert_true(Follower.curls_up(6.0, true, "day"), "by a fire")
+	assert_true(Follower.curls_up(6.0, false, "night"), "at night")
+	assert_false(Follower.curls_up(6.0, false, "day"), "daytime, no fire: it stays up")
+
+func test_fire_must_be_close() -> void:
+	var fires: Array[Vector2i] = [Vector2i(3, 3)]
+	assert_true(Follower.by_fire(fires, Vector2i(5, 4)))
+	assert_false(Follower.by_fire(fires, Vector2i(20, 20)))
+	assert_false(Follower.by_fire([] as Array[Vector2i], Vector2i(0, 0)))
