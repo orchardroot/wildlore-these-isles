@@ -1,0 +1,36 @@
+{
+ "id": "ang_birder_t",
+ "name": "Warden Isobel",
+ "class": "Warden",
+ "sprite": "warden_grunt",
+ "party": [
+  {
+   "species": "clownbill",
+   "level": 70
+  },
+  {
+   "species": "polartern",
+   "level": 70
+  },
+  {
+   "species": "puffling",
+   "level": 70
+  },
+  {
+   "species": "haarling",
+   "level": 69
+  }
+ ],
+ "ai": "trainer",
+ "money": 2300,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Warden Isobel",
+   "text": "Please keep off the ledge. The ledge is for the kittiwakes. The kittiwakes have a better lawyer than you."
+  }
+ ],
+ "win": "Fair play. I will report you to the puffins.",
+ "after": "A seabird colony is a city with no police. We are the nearest thing, and nobody takes us seriously.",
+ "scaled_floor": 69
+}

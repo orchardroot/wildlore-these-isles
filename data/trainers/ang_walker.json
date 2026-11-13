@@ -1,0 +1,32 @@
+{
+ "id": "ang_walker",
+ "name": "Coastal Walker Fraser",
+ "class": "Walker",
+ "sprite": "hiker",
+ "party": [
+  {
+   "species": "starlet",
+   "level": 69
+  },
+  {
+   "species": "binfox",
+   "level": 69
+  },
+  {
+   "species": "clownbill",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2250,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Coastal Walker Fraser",
+   "text": "Cliff path, sea air, bacon roll. That is a good day, and you are not in it."
+  }
+ ],
+ "win": "A good battle. The bacon roll is on me.",
+ "after": "The best bit of this coast is the bit you do not walk, because the cliff is not there any more.",
+ "scaled_floor": 69
+}

@@ -1,0 +1,62 @@
+{
+ "gate_angus": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "Road closed at Stonehaven. Resurfacing, apparently, though I have not seen a single steamroller."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "It reopens once the Keeper at the Inverness ice rink has had a word with you. Don't ask me how I know. I only hold the cones."
+  }
+ ],
+ "ang_smokie": [
+  {
+   "do": "say",
+   "who": "Smokie Maker",
+   "text": "Two haddock tied by the tails, hung over a barrel fire. That is it. That is the secret. The other secret is not to tell the tourists it is that simple."
+  },
+  {
+   "do": "say",
+   "who": "Smokie Maker",
+   "text": "M\u00f2ran taing for asking. Most people just ask where the chip shop is."
+  }
+ ],
+ "ang_birder": [
+  {
+   "do": "say",
+   "who": "Birdwatcher",
+   "text": "Fowlsheugh is a good wall of birds. Kittiwakes, guillemots, razorbills. If anyone says the puffin is hiding, they are lying. It is just thinking."
+  },
+  {
+   "do": "say",
+   "who": "Birdwatcher",
+   "text": "A kittiwake is named for its own call. Whoever came up with the name had an easy day."
+  }
+ ],
+ "ang_honours": [
+  {
+   "do": "say",
+   "who": "Castle Guide",
+   "text": "The Honours of Scotland were hidden from Cromwell here, carried out under the besiegers' noses, and buried in a kirk. The story is better than any film they have made of it."
+  },
+  {
+   "do": "say",
+   "who": "Castle Guide",
+   "text": "A woman in the kirkyard hid them, they say, in plain sight, with a basket of flax. That is the sort of bravery you do not put in a poster."
+  }
+ ],
+ "ang_lifeboat": [
+  {
+   "do": "say",
+   "who": "Lifeboat Volunteer",
+   "text": "I am on the crew. Two hours' warning, usually. The pager goes at the worst moment. It is always the worst moment."
+  },
+  {
+   "do": "say",
+   "who": "Lifeboat Volunteer",
+   "text": "The sea off Angus has taken ships for a very long time. We have been taking them back out, a little more often, ever since."
+  }
+ ]
+}

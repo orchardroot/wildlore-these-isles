@@ -387,6 +387,10 @@
   }
  ],
  "edges": {
+  "east": {
+   "to": "angus_coast",
+   "offset": -2
+  },
   "west": {
    "to": "rob_roy_way",
    "offset": 2
@@ -721,9 +725,9 @@
   "TT..............................BBBBBBBBBBBBBB......BBBBDBBB..........TT",
   "TT..............................BBBBBBBBBBBBBB..::::::::::::::........TT",
   "TT....BBBBBBBBBB................BBBBBBBBBBBBBB..:.....................TT",
-  "TT....BBBBBBBBBB................................:...BBBBBBBBBB........TT",
-  "TT....BBBBBBBBBB..............:::::::::::::::::::...BBBBBBBBBB........TT",
-  "TT....BBBBBBBBBB..............:::::::::::::::::::...BBBBBBBBBB........TP",
+  "TT....BBBBBBBBBB................................:...BBBBBBBBBB........##",
+  "TT....BBBBBBBBBB..............:::::::::::::::::::...BBBBBBBBBB........##",
+  "TT....BBBBBBBBBB..............:::::::::::::::::::...BBBBBBBBBB........##",
   "TT....BBBBDBBBBB..BBBBBBBB....:::::::::::::::::::...BBBBBBBBBB........TT",
   "TT................BBBBBBBB....:::::::::::::::::::...BBBBBDBBBB........TT",
   "TT................BBBBBBBB....::::::::::::::::::::::::::::::::::......TT",

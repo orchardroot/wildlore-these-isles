@@ -1,5 +1,9 @@
 {
  "edges": {
+  "north": {
+   "to": "angus_coast",
+   "offset": 16
+  },
   "south": {
    "offset": 0,
    "to": "northumberland_coast"
@@ -905,8 +909,8 @@
  ],
  "region": "scotland",
  "rows": [
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTsssw$$$$$$$$$$$$",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTsssw$$$$$$$$$$$$",
+  "TTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTsssw$$$$$$$$$$$$",
+  "TTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTsssw$$$$$$$$$$$$",
   "TTgg,,,,,,,,,,,,,,,,,,gggggggg,,,,,ggggggggggggg,,,,sssw$$$$$$$$$$$$",
   "TTgg,,,,,,,,,,,,,,,,,,gggggggg,,,,,ggggggggggggg,,,,sssw$$$$$$$$$$$$",
   "TTgg,,,,,,,,,,,,,,,,,,gggggggg,,,,,ggggggggggggg,,,,sssw$$$$$$$$$$$$",

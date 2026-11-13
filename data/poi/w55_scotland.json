@@ -240,6 +240,44 @@
    "line": "This is a private camp. Private as in 'mind your own'.",
    "money": 3100,
    "item": "cream_tea"
+  },
+  {
+   "id": "poi_angus_coast_cache",
+   "zone": "angus_coast",
+   "near": [
+    16,
+    31
+   ],
+   "kind": "cache",
+   "at": "angus_coast",
+   "item": "sou_wester_yellow",
+   "line": "A biscuit tin, wedged behind the rock. The lid took three goes."
+  },
+  {
+   "id": "poi_angus_coast_den",
+   "zone": "angus_coast",
+   "near": [
+    8,
+    39
+   ],
+   "kind": "den",
+   "at": "angus_coast",
+   "species": "redbreast"
+  },
+  {
+   "id": "poi_angus_coast_stone",
+   "zone": "angus_coast",
+   "near": [
+    29,
+    15
+   ],
+   "kind": "stone",
+   "at": "angus_coast",
+   "stat": "ward",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."
+   ]
   }
  ]
 }

@@ -70,5 +70,19 @@
   },
   "flag": "field_rob_roy_way_line",
   "at": "rob_roy_way"
+ },
+ {
+  "id": "fs_angus_coast_line",
+  "zone": "angus_coast",
+  "x": 46,
+  "y": 26,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the surf. {lead} wades in, makes a few calm passes and fishes it out: a purse, a bit salty.",
+  "reward": {
+   "money": 2240
+  },
+  "flag": "field_angus_coast_line",
+  "at": "angus_coast"
  }
 ]
