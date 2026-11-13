@@ -278,7 +278,7 @@
       {
        "do": "say",
        "who": "Boat hand",
-       "text": "And there was a jar, wrapped in a towel, and a note on how it is done. Stovies. The isle way, it says, with the dripping. You will not get it from a book."
+       "text": "And a shawl, folded small enough to pull through a ring, Eila says, so it will go in your bag. And a note on how to do stovies. The isle way, it says, with the dripping. You will not get it from a book."
       },
       {
        "do": "recipe",
@@ -286,7 +286,7 @@
       },
       {
        "do": "give_item",
-       "item": "w55_isle_tammy",
+       "item": "shetland_lace_shawl",
        "n": 1
       },
       {

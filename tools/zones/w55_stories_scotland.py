@@ -143,9 +143,9 @@ postie = [
             iff(P + "pick_support", [say("", t) for t in LETTERS["support"]] + [give("w55_hall_slate"), setf(P + "world_built")]),
             iff(P + "pick_object", [say("", t) for t in LETTERS["object"]] + [give("w55_hall_feather"), setf(P + "world_object")]),
             iff(P + "pick_compromise", [say("", t) for t in LETTERS["compromise"]] + [give("w55_hall_minute"), setf(P + "world_built")]),
-            say("Postie", "There was something else in the bag. A dumpling in a cloth, and a note on how it is done, for a person with a pudding cloth. The strath's recipe, it says."),
+            say("Postie", "There was a parcel too. A pair of green wellies, Isobel's guess at your size, and a label: 'For the Flats.' And a note on how to do a clootie dumpling, for a person with a pudding cloth. The strath's recipe, it says."),
             recipe("clootie_dumpling"),
-            give("w55_peat_cap"),
+            give("wellies_green"),
             setf(P + "done"),
         ], [
             say("Postie", "Nothing yet. The committee has to meet, and the post has to come down the strath. Try after a night's sleep."),
@@ -178,7 +178,7 @@ quest = {
         {"flag": P + "done", "text": "Wait for word. The strath's post waits at the Flagstone Bar, a night's sleep or a day later.", "zone": PUB},
     ],
     "done_flag": P + "done",
-    "reward": "A peat-brown bunnet, a keepsake from the hall, and the strath's clootie dumpling recipe.",
+    "reward": "A pair of green wellies, a keepsake from the hall, and the strath's clootie dumpling recipe.",
     "endings": [
         {"flag": P + "pick_support", "text": "The wind farm went ahead, the hall roof is slated and the lunch club has doubled. The greenshank moved their nests back from the nearest ridge."},
         {"flag": P + "pick_object", "text": "The application was refused. The peat and the ridge are as they were, the hall roof is still tarpaulin and the minibus is still a drawing."},
@@ -190,9 +190,6 @@ items = [
     key_item("w55_hall_slate", "Slate from the Hall Roof", "A spare Caithness slate from the first batch for the hall roof, signed on the back in pencil by about forty people, one of whom drew a very small turbine."),
     key_item("w55_hall_feather", "Greenshank Feather", "A grey-brown feather, moulted and not taken, found on the ridge by the warden. 'They were here again this year,' says the card."),
     key_item("w55_hall_minute", "A Page of Hall Minutes", "The minute of the meeting that moved the turbines. Four people abstained, three said 'aye' and one wrote 'under protest' and then crossed it out."),
-    {"id": "w55_peat_cap", "name": "Peat-brown bunnet", "kind": "wear", "slot": "hat", "price": 300,
-     "desc": "A Scottish flat cap, a bunnet, in the brown of peat water. It sheds the rain on a wet hill, which is the whole of its argument.",
-     "look": {"hat": "flat_cap", "palette": {"hat": "#4a3a28", "accent2": "#2a2218"}}},
 ]
 
 add_items(items)

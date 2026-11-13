@@ -272,7 +272,7 @@
       {
        "do": "say",
        "who": "Postwoman",
-       "text": "Tucked inside was a thing for you, and a note on how to bake it: Dale's mother's parkin. She would want the credit."
+       "text": "And a flat cap, brown paper round it. Dale's spare, it says, the one with the sweat stain. And a note on how to bake his mother's parkin. She would want the credit."
       },
       {
        "do": "recipe",
@@ -280,7 +280,7 @@
       },
       {
        "do": "give_item",
-       "item": "w55_hill_cap",
+       "item": "flat_cap_yorkshire",
        "n": 1
       },
       {

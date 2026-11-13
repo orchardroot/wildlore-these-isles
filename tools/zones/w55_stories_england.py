@@ -176,9 +176,9 @@ postie = [
             iff(P + "pick_hannah", letter("hannah") + [give("w55_moor_notebook")]),
             iff(P + "pick_joe", letter("joe") + [give("w55_moor_crook"), setf(P + "world_joe"), setf(P + "away")]),
             iff(P + "pick_scheme", letter("scheme") + [give("w55_moor_tally"), setf(P + "world_scheme"), setf(P + "away")]),
-            say("Postwoman", "Tucked inside was a thing for you, and a note on how to bake it: Dale's mother's parkin. She would want the credit."),
+            say("Postwoman", "And a flat cap, brown paper round it. Dale's spare, it says, the one with the sweat stain. And a note on how to bake his mother's parkin. She would want the credit."),
             recipe("parkin"),
-            give("w55_hill_cap"),
+            give("flat_cap_yorkshire"),
             setf(P + "done"),
         ], [
             say("Postwoman", "Nothing for you yet. Letters from the dale take their time, and so does the weather. Try after a night's sleep."),
@@ -216,7 +216,7 @@ quest = {
         {"flag": P + "done", "text": "Wait for word. The post for this end of the moor waits at the Moorcock Inn, a night's sleep or a day later.", "zone": INN},
     ],
     "done_flag": P + "done",
-    "reward": "A hill farmer's flat cap, a keepsake of how it went, and Dale's mother's parkin recipe.",
+    "reward": "A Yorkshire flat cap, a keepsake of how it went, and Dale's mother's parkin recipe.",
     "endings": [
         {"flag": P + "pick_hannah", "text": "Hannah took Moor Farm on, with a part-time job to keep the roof on. Hill farms have long leaned on a second income, and on flocks that know their own hill."},
         {"flag": P + "pick_joe", "text": "Joe Hartley took the flock and the tenancy and the flock stayed on its hill. Dale moved to the village, and a shepherd lives in the farmhouse."},
@@ -228,9 +228,6 @@ items = [
     key_item("w55_moor_notebook", "Hannah's Lambing Notebook", "A school exercise book, spattered. Dates, ewes, a column headed 'Dad says' and a column headed 'Actually'. The second column is winning."),
     key_item("w55_moor_crook", "Dale's Old Crook", "An ash crook worn pale where one hand held it for forty years. Dale did not want it left in the farmhouse porch. 'Somebody ought to carry it,' he said."),
     key_item("w55_moor_tally", "Curlew Tally Sheet", "A ranger's tally sheet for Moor Farm: nine pairs of curlew in a neat column, five in the last. Somebody has drawn a very small bird in the margin."),
-    {"id": "w55_hill_cap", "name": "Hill farmer's flat cap", "kind": "wear", "slot": "hat", "price": 300,
-     "desc": "Dale's spare cap, tweed gone soft at the peak. Hill farmers have worn these on the moors for generations because a cap stays on in a wind a hat does not.",
-     "look": {"hat": "flat_cap", "palette": {"hat": "#5a6a48", "accent2": "#3a4630"}}},
 ]
 
 # --- go ----------------------------------------------------------------------------------------

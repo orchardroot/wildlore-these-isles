@@ -106,9 +106,9 @@ hand = [
             iff(P + "pick_full", [say("", t) for t in LETTERS["full"]] + [give("w55_isle_plate"), setf(P + "world_full")]),
             iff(P + "pick_lean", [say("", t) for t in LETTERS["lean"]] + [give("w55_isle_timetable"), setf(P + "world_lean")]),
             iff(P + "pick_small", [say("", t) for t in LETTERS["small"]] + [give("w55_isle_lifebelt"), setf(P + "world_small")]),
-            say("Boat hand", "And there was a jar, wrapped in a towel, and a note on how it is done. Stovies. The isle way, it says, with the dripping. You will not get it from a book."),
+            say("Boat hand", "And a shawl, folded small enough to pull through a ring, Eila says, so it will go in your bag. And a note on how to do stovies. The isle way, it says, with the dripping. You will not get it from a book."),
             recipe("stovies"),
-            give("w55_isle_tammy"),
+            give("shetland_lace_shawl"),
             setf(P + "done"),
         ], [
             say("Boat hand", "Nothing off the boat yet. It comes when the boat comes, and the boat comes when it can. Try after a night's sleep."),
@@ -144,7 +144,7 @@ quest = {
         {"flag": P + "done", "text": "Wait for word. The isle's post comes in with the boat hand at the Harbour Tea Room, a night's sleep or a day later.", "zone": TEA},
     ],
     "done_flag": P + "done",
-    "reward": "A Fair Isle tammy, a keepsake from the boat, and the isle's stovies recipe.",
+    "reward": "A Shetland lace shawl, a keepsake from the boat, and the isle's stovies recipe.",
     "endings": [
         {"flag": P + "pick_full", "text": "The isle kept the full boat, five days a week, paid for by putting off a road scheme on the north Mainland. The old boat will still need replacing."},
         {"flag": P + "pick_lean", "text": "The isle took a lean timetable: three days a week, and the old boat kept going for a few more years. The school bairns board in Lerwick in the week."},
@@ -156,9 +156,6 @@ items = [
     key_item("w55_isle_plate", "The Old Boat's Engine Plate", "A brass plate off the old boat's engine, polished, with a maker's name and a date from the year the boat came on the run. Magnie says she has earned a plate and a pension."),
     key_item("w55_isle_timetable", "The Three-Day Timetable", "A laminated timetable: Tuesday, Thursday, Saturday. In pen across the top, in Eila's hand: 'Lorna says it is not a timetable, it is a sentence'."),
     key_item("w55_isle_lifebelt", "The Old Lifebelt", "A cork-and-canvas lifebelt, painted with the name of the old boat in red. The new boat has a better one. Nobody could throw this one away."),
-    {"id": "w55_isle_tammy", "name": "Fair Isle tammy", "kind": "wear", "slot": "hat", "price": 600,
-     "desc": "A tammy knitted in the Fair Isle way, bands of pattern with never more than two colours in a row, made by a knitter from out in the isles.",
-     "look": {"hat": "tam", "palette": {"hat": "#b04a3a", "accent2": "#2a3a5a"}}},
 ]
 
 add_items(items)

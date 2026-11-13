@@ -112,9 +112,9 @@ postman = [
             iff(P + "pick_couple", [say("", t) for t in LETTERS["couple"]] + [give("w55_snug_latch"), setf(P + "world_couple")]),
             iff(P + "pick_coop", [say("", t) for t in LETTERS["coop"]] + [give("w55_coop_share"), setf(P + "world_coop")]),
             iff(P + "pick_hotel", [say("", t) for t in LETTERS["hotel"]] + [give("w55_last_orders_bell"), setf(P + "world_hotel")]),
-            say("Postman", "There was a note folded in with it. A recipe, for boxty, on the back of a beer mat. Pádraig's mother's, it says. She would want the credit."),
+            say("Postman", "He sent a cap with it, the one he wore behind the bar for forty years, says he has no more use for it. And a recipe for boxty on the back of a beer mat. His mother's, it says. She would want the credit."),
             recipe("boxty"),
-            give("w55_gaeltacht_shawl"),
+            give("donegal_tweed_cap"),
             setf(P + "world"),
             setf(P + "done"),
         ], [
@@ -163,7 +163,7 @@ quest = {
         {"flag": P + "done", "text": "Wait for word. The parish post comes in at the pub, a night's sleep or a day later.", "zone": PUB},
     ],
     "done_flag": P + "done",
-    "reward": "A Donegal tweed shawl, a keepsake from the pub, and Pádraig's mother's boxty recipe.",
+    "reward": "A Donegal tweed cap, a keepsake from the pub, and Pádraig's mother's boxty recipe.",
     "endings": [
         {"flag": P + "pick_couple", "text": "Niamh and Ciarán took the pub on as a pub with a kitchen. The snug is gone, the Tuesday session stays, and the first January decides it."},
         {"flag": P + "pick_coop", "text": "The community co-op bought the pub: three hundred and forty shares and a rota. It opens four nights, and the Sunday session is fuller than it ever was."},
@@ -175,9 +175,6 @@ items = [
     key_item("w55_snug_latch", "The Snug Latch", "A brass latch off the snug door, which has gone. Pádraig kept it. 'For the next one who wants a bit of privacy,' says the label, in biro."),
     key_item("w55_coop_share", "Co-op Share No. 1", "A share certificate in a pub co-op, number one of three hundred and forty. The cheque stub has been framed. Pádraig has signed the back, and added 'cheap at the price'."),
     key_item("w55_last_orders_bell", "The Last Orders Bell", "A small brass bell that rang last orders for sixty years. The new management has a clock. Pádraig took the bell, and then, kindly, lent it to you."),
-    {"id": "w55_gaeltacht_shawl", "name": "Donegal tweed shawl", "kind": "wear", "slot": "neck", "price": 900,
-     "desc": "A shawl woven from Donegal tweed, the flecks, or neps, spun into the yarn in bright dots. It has been round more shoulders in more wet pubs than anyone has counted.",
-     "look": {"accessories": ["shawl"], "palette": {"accent": "#6a7a5a", "accent2": "#c8a060"}}},
 ]
 
 add_items(items)

@@ -34,9 +34,12 @@ what it will mean for them. The world changes later, in two stages:
    post is read: a letter in the voice of the person, the keepsake, an outfit piece and a recipe, and the rooms change
    (people gone, people arrived, a new person behind the bar or the counter).
 
-**Rewards are things.** Per branch a keepsake (key item, 18 in all). For everyone who finishes: an outfit piece (hill
-farmer's flat cap, peat-brown bunnet, choir blazer, Donegal tweed shawl, Ulster cardigan, Fair Isle tammy) and an existing
-recipe (parkin, clootie dumpling, Welsh cakes, boxty, soda farl, stovies). No money, no standing.
+**Rewards are things.** Per branch a keepsake (key item, 18 in all, `data/items/w55_stories.json`). For everyone who
+finishes, an existing outfit piece from `wear.json` handed over by the letter (a Yorkshire flat cap, green wellies, a Welsh
+wool shawl, a Donegal tweed cap, a Belfast linen shirt, a Shetland lace shawl) and an existing recipe (parkin, clootie
+dumpling, Welsh cakes, boxty, soda farl, stovies). No money, no standing. (I first wrote six new wear items. The
+boutique tests require every wear item to be `wear.json`'s and sold in a boutique, so I used the existing ones rather
+than touch the boutiques.)
 
 ## What I added to the quest code
 
@@ -55,8 +58,8 @@ Nothing in the save format changed. Every flag is absent until a chain is starte
 
 - Old NPCs with a flag gate added (`hide_if` on the world flag set when the letter is read): `moorfarm_farmer`
   (Dale, hidden when Joe has the farm), `gp_barman` (Pádraig, retired), `bush_postmaster` (Maeve, retired).
-- Lines added to old scripts: put in front, ending the script while a chain is in progress: `moorfarm_farmer`,
-  `rhn_conductor` (Elwyn), `flows_warden`; put after the old welcome: `gp_barman`, `bush_postmaster`. Each block carries
+- Lines added to old scripts: put in front (the new part runs once and ends the talk; after that, and while the chain is
+  not yet at that person, the old talk plays as before): `moorfarm_farmer`, `rhn_conductor` (Elwyn), `flows_warden`; put after the old welcome: `gp_barman`, `bush_postmaster`. Each block carries
   a `_w55` tag; `tools/zones/w55_stories_lib.py` replaces its own block when re-run and leaves the rest alone.
 - The zones changed are interiors only: `nym_moorfarm`, `nym_rosedale`, `nym_moorcock`, `thurso_pub`,
   `forsinard_centre`, `rhondda_chapel`, `rhondda_institute`, `rhondda_home`, `gweedore_pub`, `bushmills_postoffice`,
@@ -74,10 +77,10 @@ or gate.
 
 ## Numbers
 
-- Money: none paid or taken, so the economy simulation is unchanged (not re-run). The six outfit pieces have a shop
-  `price` like the rest of `wear.json`; they are only given, never stocked.
-- 6 quests, 6 chains, 18 branches, 40 scripts, 30 NPCs added, 3 existing NPCs gated, 3 old scripts with lines in front, 2
-  with lines after, 24 items (18 keepsakes, 6 wear).
+- Money: none paid or taken, so the economy simulation is unchanged (not re-run). The six outfit pieces already exist
+  in the boutiques; getting one free from a letter is a one-off.
+- 6 quests (4 to 5 steps each), 18 branches, 41 new scripts and 41 new NPCs (about 7 per chain), 3 existing NPCs gated,
+  3 old scripts with lines in front, 2 with lines after, 18 new items (all keepsakes).
 
 ## Tests
 
@@ -89,7 +92,16 @@ shared gifts and recipe, no second letter, the choice and the finish survive a s
 each world (`Npc.should_spawn` on the real zone data). A fresh save: hearing the neighbours starts nothing, and every
 new person is where they were.
 
-TEST_RESULTS
+**Results.** `tests/story/test_w55_stories.gd` (fragment `w55_stories`): see the last line below. Earlier on this branch,
+before the reward items were swapped to existing wear items and Dale/Elwyn/the Warden were made to fall through, the same
+file gave `14 passed, 0 failed` and the validator gave `validate: 0 error(s)` after two data fixes it found (an NPC on an
+unwalkable tile in `rhondda_home`, the phrase "the back room" in a one-door room). The full `tools/test.sh` found one
+failure of mine, `tests/looks/test_boutiques.gd` (wear items must be `wear.json`'s), fixed by using existing wear items.
+
+**Skipped, by the integrator's instruction:** the full `tools/test.sh`, the validator after the final edits, and
+`tools/playtest.sh slice 2`. Please run them once after merging. Things worth watching: `test_boutiques`,
+`test_world_consistency` / the `world:` validator rules (they read every NPC line), `test_quests`.
+Final fragment runs: `w55_stories` 14 passed, 0 failed; `test_boutiques` 11 passed, 0 failed. The economy simulation was not run: no money moves.
 
 ## What I was unsure of
 
@@ -102,8 +114,9 @@ TEST_RESULTS
   Scottish chain is a wind farm.
 - "Later" is in-game days or a real day, so a player who sleeps three times gets the letter in minutes, and one who quits
   and returns tomorrow always does. Months later is in the voice of the letters ("the end of April"), not the clock.
-- The Sanctuary and `testbed` zones are untouched. Hannah, Dale and Sam are in the same room for only part of the story
-  by design; the farm has two doors of gating (`hide_if` and `show_if`) that only take effect when the zone loads.
+- NPC gating (`hide_if`, `show_if`) only takes effect when a zone loads, so the people in a room change the next time the
+  player walks in, not while they stand there. The post is read where the Postwoman, Postie and the rest stand, and she
+  vanishes on the next visit.
 - Irish in the Gweedore chain is a few words ("a chara", "Slán go fóill", names with fadas), all well known.
 
 ## Notes for the integrator
@@ -111,6 +124,5 @@ TEST_RESULTS
 - Shared files touched: `core/quests.gd`, `story/commands.gd`, `data_api/story_validator.gd`, plus the zones and dialogue
   files listed above (each only the keys named). New files: `data/quests/w55_*.json`, `data/items/w55_stories.json`,
   `tests/story/test_w55_stories.gd`, `tools/zones/w55_stories_*.py` (a library and one script per chain).
-- No `.uid` file was generated for the new test (the import did not finish on my machine); Godot will make it.
 - Wave 54 touches no file I touched. If a later session adds NPCs to these interiors, check the free tiles named in the
   generators.

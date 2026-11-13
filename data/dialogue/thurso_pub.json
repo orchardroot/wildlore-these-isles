@@ -585,7 +585,7 @@
       {
        "do": "say",
        "who": "Postie",
-       "text": "There was something else in the bag. A dumpling in a cloth, and a note on how it is done, for a person with a pudding cloth. The strath's recipe, it says."
+       "text": "There was a parcel too. A pair of green wellies, Isobel's guess at your size, and a label: 'For the Flats.' And a note on how to do a clootie dumpling, for a person with a pudding cloth. The strath's recipe, it says."
       },
       {
        "do": "recipe",
@@ -593,7 +593,7 @@
       },
       {
        "do": "give_item",
-       "item": "w55_peat_cap",
+       "item": "wellies_green",
        "n": 1
       },
       {

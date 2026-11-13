@@ -1,5 +1,32 @@
 [
  {
+  "id": "w55_moor_notebook",
+  "name": "Hannah's Lambing Notebook",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": true,
+  "desc": "A school exercise book, spattered. Dates, ewes, a column headed 'Dad says' and a column headed 'Actually'. The second column is winning."
+ },
+ {
+  "id": "w55_moor_crook",
+  "name": "Dale's Old Crook",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": true,
+  "desc": "An ash crook worn pale where one hand held it for forty years. Dale did not want it left in the farmhouse porch. 'Somebody ought to carry it,' he said."
+ },
+ {
+  "id": "w55_moor_tally",
+  "name": "Curlew Tally Sheet",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": true,
+  "desc": "A ranger's tally sheet for Moor Farm: nine pairs of curlew in a neat column, five in the last. Somebody has drawn a very small bird in the margin."
+ },
+ {
   "id": "w55_hall_slate",
   "name": "Slate from the Hall Roof",
   "kind": "key",
@@ -25,21 +52,6 @@
   "battle": false,
   "field": true,
   "desc": "The minute of the meeting that moved the turbines. Four people abstained, three said 'aye' and one wrote 'under protest' and then crossed it out."
- },
- {
-  "id": "w55_peat_cap",
-  "name": "Peat-brown bunnet",
-  "kind": "wear",
-  "slot": "hat",
-  "price": 300,
-  "desc": "A Scottish flat cap, a bunnet, in the brown of peat water. It sheds the rain on a wet hill, which is the whole of its argument.",
-  "look": {
-   "hat": "flat_cap",
-   "palette": {
-    "hat": "#4a3a28",
-    "accent2": "#2a2218"
-   }
-  }
  },
  {
   "id": "w55_bethania_key",
@@ -69,23 +81,6 @@
   "desc": "One brass, one iron, on a loop of string. Flats at the back, chapel at the front. The label says 'do not lose either'."
  },
  {
-  "id": "w55_choir_blazer",
-  "name": "Choir blazer",
-  "kind": "wear",
-  "slot": "coat",
-  "price": 900,
-  "desc": "A maroon blazer of the kind a Welsh male voice choir wears on stage. Choirs like these grew out of the chapels of the coalfield, and a good many are still singing.",
-  "look": {
-   "accessories": [
-    "tweed_jacket"
-   ],
-   "palette": {
-    "accent": "#6a1f2a",
-    "accent2": "#d8c8a0"
-   }
-  }
- },
- {
   "id": "w55_snug_latch",
   "name": "The Snug Latch",
   "kind": "key",
@@ -111,23 +106,6 @@
   "battle": false,
   "field": true,
   "desc": "A small brass bell that rang last orders for sixty years. The new management has a clock. Pádraig took the bell, and then, kindly, lent it to you."
- },
- {
-  "id": "w55_gaeltacht_shawl",
-  "name": "Donegal tweed shawl",
-  "kind": "wear",
-  "slot": "neck",
-  "price": 900,
-  "desc": "A shawl woven from Donegal tweed, the flecks, or neps, spun into the yarn in bright dots. It has been round more shoulders in more wet pubs than anyone has counted.",
-  "look": {
-   "accessories": [
-    "shawl"
-   ],
-   "palette": {
-    "accent": "#6a7a5a",
-    "accent2": "#c8a060"
-   }
-  }
  },
  {
   "id": "w55_counter_tin",
@@ -157,24 +135,6 @@
   "desc": "A hand-lettered card from the shutter of the old counter, the one that went up the week the cover fell through. Underneath, someone has written 'And we were'."
  },
  {
-  "id": "w55_ulster_cardigan",
-  "name": "Ulster cardigan",
-  "kind": "wear",
-  "slot": "top",
-  "price": 700,
-  "desc": "A thick navy cardigan of the kind worn behind counters all over the north coast in January. It is warmer than it looks, and the elbows have been proudly mended.",
-  "look": {
-   "accessories": [
-    "aran"
-   ],
-   "palette": {
-    "top": "#2a3a5a",
-    "accent": "#d8d0c0",
-    "accent2": "#7a8aa0"
-   }
-  }
- },
- {
   "id": "w55_isle_plate",
   "name": "The Old Boat's Engine Plate",
   "kind": "key",
@@ -200,62 +160,5 @@
   "battle": false,
   "field": true,
   "desc": "A cork-and-canvas lifebelt, painted with the name of the old boat in red. The new boat has a better one. Nobody could throw this one away."
- },
- {
-  "id": "w55_isle_tammy",
-  "name": "Fair Isle tammy",
-  "kind": "wear",
-  "slot": "hat",
-  "price": 600,
-  "desc": "A tammy knitted in the Fair Isle way, bands of pattern with never more than two colours in a row, made by a knitter from out in the isles.",
-  "look": {
-   "hat": "tam",
-   "palette": {
-    "hat": "#b04a3a",
-    "accent2": "#2a3a5a"
-   }
-  }
- },
- {
-  "id": "w55_moor_notebook",
-  "name": "Hannah's Lambing Notebook",
-  "kind": "key",
-  "price": 0,
-  "battle": false,
-  "field": true,
-  "desc": "A school exercise book, spattered. Dates, ewes, a column headed 'Dad says' and a column headed 'Actually'. The second column is winning."
- },
- {
-  "id": "w55_moor_crook",
-  "name": "Dale's Old Crook",
-  "kind": "key",
-  "price": 0,
-  "battle": false,
-  "field": true,
-  "desc": "An ash crook worn pale where one hand held it for forty years. Dale did not want it left in the farmhouse porch. 'Somebody ought to carry it,' he said."
- },
- {
-  "id": "w55_moor_tally",
-  "name": "Curlew Tally Sheet",
-  "kind": "key",
-  "price": 0,
-  "battle": false,
-  "field": true,
-  "desc": "A ranger's tally sheet for Moor Farm: nine pairs of curlew in a neat column, five in the last. Somebody has drawn a very small bird in the margin."
- },
- {
-  "id": "w55_hill_cap",
-  "name": "Hill farmer's flat cap",
-  "kind": "wear",
-  "slot": "hat",
-  "price": 300,
-  "desc": "Dale's spare cap, tweed gone soft at the peak. Hill farmers have worn these on the moors for generations because a cap stays on in a wind a hat does not.",
-  "look": {
-   "hat": "flat_cap",
-   "palette": {
-    "hat": "#5a6a48",
-    "accent2": "#3a4630"
-   }
-  }
  }
 ]

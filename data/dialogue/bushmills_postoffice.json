@@ -477,7 +477,7 @@
       {
        "do": "say",
        "who": "Postman",
-       "text": "There was a note in the envelope. A recipe, on the back of a pension form that has been well used. Her soda farls. She said they would see you right on a long walk."
+       "text": "There was a parcel, ironed and folded: a linen shirt. Maeve says it is the one she wore on the days she wanted to be taken seriously. And a recipe on the back of a well-used form. Her soda farls. She said they would see you right on a long walk."
       },
       {
        "do": "recipe",
@@ -485,7 +485,7 @@
       },
       {
        "do": "give_item",
-       "item": "w55_ulster_cardigan",
+       "item": "belfast_linen_shirt",
        "n": 1
       },
       {

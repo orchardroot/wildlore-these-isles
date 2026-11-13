@@ -645,7 +645,7 @@
       {
        "do": "say",
        "who": "Postman",
-       "text": "There was a note folded in with it. A recipe, for boxty, on the back of a beer mat. Pádraig's mother's, it says. She would want the credit."
+       "text": "He sent a cap with it, the one he wore behind the bar for forty years, says he has no more use for it. And a recipe for boxty on the back of a beer mat. His mother's, it says. She would want the credit."
       },
       {
        "do": "recipe",
@@ -653,7 +653,7 @@
       },
       {
        "do": "give_item",
-       "item": "w55_gaeltacht_shawl",
+       "item": "donegal_tweed_cap",
        "n": 1
       },
       {

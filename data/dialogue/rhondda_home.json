@@ -148,7 +148,7 @@
       {
        "do": "say",
        "who": "Postman",
-       "text": "There was something else in the envelope. A recipe, on the back of a hymn sheet, in a very upright hand. Welsh cakes. The chapel teas, it says. She wants you to have it."
+       "text": "There was a parcel under my arm, tied with string: a wool shawl from the vestry cupboard, which Eirlys says has outlived three ministers. And a recipe on the back of a hymn sheet, in a very upright hand. Welsh cakes. The chapel teas, it says. She wants you to have it."
       },
       {
        "do": "recipe",
@@ -156,7 +156,7 @@
       },
       {
        "do": "give_item",
-       "item": "w55_choir_blazer",
+       "item": "welsh_wool_shawl",
        "n": 1
       },
       {

@@ -122,7 +122,7 @@ func test_england_every_branch_finishes_and_arrives_later() -> void:
 		await _talk(h, "nym_moorcock", "w55e_postie")
 		assert_eq(Quests.status(h.data, q), Quests.DONE, "the letter comes")
 		assert_eq(_bag(h, keepsake[i]), 1)
-		assert_eq(_bag(h, "w55_hill_cap"), 1)
+		assert_eq(_bag(h, "flat_cap_yorkshire"), 1)
 		assert_true(Crafting.is_known(h.data, "parkin"))
 		assert_eq(Quests.outcome(h.data, q), str(q.endings[i].text))
 		for j in 3:
@@ -179,25 +179,25 @@ const CHAINS := [
 	{"id": "stories_scotland", "p": "q_stories_scotland_", "start": ["thurso_pub", "w55s_isobel"],
 		"voices": [["thurso_pub", "w55s_calum"], ["forsinard_centre", "flows_warden"]], "decide": ["thurso_pub", "w55s_isobel"],
 		"post": ["thurso_pub", "w55s_postie"], "picks": ["support", "object", "compromise"],
-		"keep": ["w55_hall_slate", "w55_hall_feather", "w55_hall_minute"], "gift": ["w55_peat_cap"], "recipe": "clootie_dumpling",
+		"keep": ["w55_hall_slate", "w55_hall_feather", "w55_hall_minute"], "gift": ["wellies_green"], "recipe": "clootie_dumpling",
 		"seen": [["thurso_pub", "w55s_tech", false, [true, false, true]], ["thurso_pub", "w55s_kirsty", true, [true, false, true]]]},
 	{"id": "stories_wales", "p": "q_stories_wales_", "start": ["rhondda_chapel", "w55w_eirlys"],
 		"voices": [["rhondda_institute", "w55w_kieran"], ["rhondda_chapel", "rhn_conductor"]], "decide": ["rhondda_chapel", "w55w_eirlys"],
 		"post": ["rhondda_home", "w55w_postman"], "picks": ["sell", "keep", "split"],
-		"keep": ["w55_bethania_key", "w55_bethania_thermometer", "w55_bethania_keys"], "gift": ["w55_choir_blazer"], "recipe": "welsh_cakes",
+		"keep": ["w55_bethania_key", "w55_bethania_thermometer", "w55_bethania_keys"], "gift": ["welsh_wool_shawl"], "recipe": "welsh_cakes",
 		"seen": [["rhondda_institute", "w55w_chorister", false, [true, false, false]], ["rhondda_chapel", "w55w_ladder", false, [false, true, false]],
 			["rhondda_chapel", "w55w_father", false, [false, false, true]]]},
 	{"id": "stories_ireland", "p": "q_stories_ireland_", "start": ["gweedore_pub", "gp_barman"],
 		"voices": [["gweedore_pub", "w55i_niamh"], ["gweedore_pub", "w55i_brid"], ["gweedore_pub", "w55i_orla"]], "decide": ["gweedore_pub", "gp_barman"],
 		"post": ["gweedore_pub", "w55i_postman"], "picks": ["couple", "coop", "hotel"],
-		"keep": ["w55_snug_latch", "w55_coop_share", "w55_last_orders_bell"], "gift": ["w55_gaeltacht_shawl"], "recipe": "boxty",
+		"keep": ["w55_snug_latch", "w55_coop_share", "w55_last_orders_bell"], "gift": ["donegal_tweed_cap"], "recipe": "boxty",
 		"seen": [["gweedore_pub", "gp_barman", true, [false, false, false]], ["gweedore_pub", "w55i_retired", false, [true, true, true]],
 			["gweedore_pub", "w55i_couple", false, [true, false, false]], ["gweedore_pub", "w55i_coop", false, [false, true, false]],
 			["gweedore_pub", "w55i_hotel", false, [false, false, true]], ["gweedore_pub", "w55i_brid", true, [true, true, true]]]},
 	{"id": "stories_northern_ireland", "p": "q_stories_northern_ireland_", "start": ["bushmills_postoffice", "bush_postmaster"],
 		"voices": [["bushmills_postoffice", "w55n_margaret"], ["bushmills_postoffice", "w55n_gareth"], ["bushmills_craftshop", "w55n_joanne"]],
 		"decide": ["bushmills_postoffice", "bush_postmaster"], "post": ["bushmills_postoffice", "w55n_postman"], "picks": ["community", "franchise", "hosted"],
-		"keep": ["w55_counter_tin", "w55_counter_scales", "w55_counter_sign"], "gift": ["w55_ulster_cardigan"], "recipe": "soda_farl",
+		"keep": ["w55_counter_tin", "w55_counter_scales", "w55_counter_sign"], "gift": ["belfast_linen_shirt"], "recipe": "soda_farl",
 		"seen": [["bushmills_postoffice", "bush_postmaster", true, [false, false, false]], ["bushmills_postoffice", "w55n_retired", false, [true, true, true]],
 			["bushmills_postoffice", "w55n_vol", false, [true, false, false]], ["bushmills_postoffice", "w55n_till", false, [false, true, false]],
 			["bushmills_craftshop", "w55n_hatch", false, [false, false, true]], ["bushmills_craftshop", "w55n_joanne", true, [false, false, false]],
@@ -205,7 +205,7 @@ const CHAINS := [
 	{"id": "stories_islands", "p": "q_stories_islands_", "start": ["lerwick_wool", "w55k_eila"],
 		"voices": [["lerwick_tearoom", "w55k_magnie"], ["lerwick_townhall", "w55k_ruth"]], "decide": ["lerwick_wool", "w55k_eila"],
 		"post": ["lerwick_tearoom", "w55k_hand"], "picks": ["full", "lean", "small"],
-		"keep": ["w55_isle_plate", "w55_isle_timetable", "w55_isle_lifebelt"], "gift": ["w55_isle_tammy"], "recipe": "stovies",
+		"keep": ["w55_isle_plate", "w55_isle_timetable", "w55_isle_lifebelt"], "gift": ["shetland_lace_shawl"], "recipe": "stovies",
 		"seen": [["lerwick_wool", "w55k_robbie", false, [true, false, false]], ["lerwick_wool", "w55k_lorna", false, [false, true, false]],
 			["lerwick_tearoom", "w55k_skipper", false, [false, false, true]]]},
 ]

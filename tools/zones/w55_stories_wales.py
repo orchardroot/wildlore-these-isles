@@ -125,9 +125,9 @@ postman = [
                 "The teas have moved into the vestry and everyone says they miss the old schoolroom. They mean they miss being twenty.",
                 "I have noticed that nobody is entirely happy, and I have decided to take it as a good sign. E.B.",
             ]] + [give("w55_bethania_keys"), setf(P + "world_split")]),
-            say("Postman", "There was something else in the envelope. A recipe, on the back of a hymn sheet, in a very upright hand. Welsh cakes. The chapel teas, it says. She wants you to have it."),
+            say("Postman", "There was a parcel under my arm, tied with string: a wool shawl from the vestry cupboard, which Eirlys says has outlived three ministers. And a recipe on the back of a hymn sheet, in a very upright hand. Welsh cakes. The chapel teas, it says. She wants you to have it."),
             recipe("welsh_cakes"),
-            give("w55_choir_blazer"),
+            give("welsh_wool_shawl"),
             setf(P + "done"),
         ], [
             say("Postman", "Nothing yet. These things take a few days to get down the valley, and the members have to meet. Try after a night's sleep."),
@@ -163,7 +163,7 @@ quest = {
         {"flag": P + "done", "text": "Wait for word. The terrace post comes to Bryn Terrace, a night's sleep or a day later.", "zone": HOME},
     ],
     "done_flag": P + "done",
-    "reward": "A choir blazer, a keepsake of how it went, and the chapel teas' Welsh cake recipe.",
+    "reward": "A Welsh wool shawl, a keepsake of how it went, and the chapel teas' Welsh cake recipe.",
     "endings": [
         {"flag": P + "pick_sell", "text": "Bethania became six flats, four let to people from the valley, and the choir moved to the Miners' Institute."},
         {"flag": P + "pick_keep", "text": "Bethania stayed a chapel: nine members, a roof fund at forty per cent and a choir singing under scaffolding."},
@@ -175,9 +175,6 @@ items = [
     key_item("w55_bethania_key", "Bethania Door Key", "A black iron chapel key, heavy as a spanner. The chapel has a new key now, brass, for the flats. This one hung in the vestry for about a century."),
     key_item("w55_bethania_thermometer", "Roof Fund Thermometer Card", "A painted card thermometer from the chapel porch, red up to forty per cent. Mrs Pugh's sister did the lettering. Someone has added a very small ladder."),
     key_item("w55_bethania_keys", "Two Keys on One Ring", "One brass, one iron, on a loop of string. Flats at the back, chapel at the front. The label says 'do not lose either'."),
-    {"id": "w55_choir_blazer", "name": "Choir blazer", "kind": "wear", "slot": "coat", "price": 900,
-     "desc": "A maroon blazer of the kind a Welsh male voice choir wears on stage. Choirs like these grew out of the chapels of the coalfield, and a good many are still singing.",
-     "look": {"accessories": ["tweed_jacket"], "palette": {"accent": "#6a1f2a", "accent2": "#d8c8a0"}}},
 ]
 
 add_items(items)

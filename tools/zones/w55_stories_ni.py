@@ -110,9 +110,9 @@ postman = [
             iff(P + "pick_community", [say("", t) for t in LETTERS["community"]] + [give("w55_counter_tin"), setf(P + "world_community")]),
             iff(P + "pick_franchise", [say("", t) for t in LETTERS["franchise"]] + [give("w55_counter_scales"), setf(P + "world_franchise")]),
             iff(P + "pick_hosted", [say("", t) for t in LETTERS["hosted"]] + [give("w55_counter_sign"), setf(P + "world_hosted")]),
-            say("Postman", "There was a note in the envelope. A recipe, on the back of a pension form that has been well used. Her soda farls. She said they would see you right on a long walk."),
+            say("Postman", "There was a parcel, ironed and folded: a linen shirt. Maeve says it is the one she wore on the days she wanted to be taken seriously. And a recipe on the back of a well-used form. Her soda farls. She said they would see you right on a long walk."),
             recipe("soda_farl"),
-            give("w55_ulster_cardigan"),
+            give("belfast_linen_shirt"),
             setf(P + "world"),
             setf(P + "done"),
         ], [
@@ -158,7 +158,7 @@ quest = {
         {"flag": P + "done", "text": "Wait for word. The post comes through the van and the post office, a night's sleep or a day later.", "zone": OFFICE},
     ],
     "done_flag": P + "done",
-    "reward": "An Ulster cardigan, a keepsake of the counter, and Maeve's soda farl recipe.",
+    "reward": "A Belfast linen shirt, a keepsake of the counter, and Maeve's soda farl recipe.",
     "endings": [
         {"flag": P + "pick_community", "text": "Volunteers took the counter on, three mornings a week from a biscuit tin. The shop shelves are gone, and so far the rota has held."},
         {"flag": P + "pick_franchise", "text": "A convenience group took the counter and the shop. It is open seven days, three people from the town have jobs and the parcels are on time."},
@@ -170,9 +170,6 @@ items = [
     key_item("w55_counter_tin", "The Rota Biscuit Tin", "A shortbread tin with eleven names on the lid in biro, and a twelfth space left blank. Margaret keeps it on the counter and says it has never been wrong."),
     key_item("w55_counter_scales", "The Old Brass Scales", "Maeve's brass parcel scales, with a set of weights that went missing in 1986 and came back in 1991. They are accurate to a gram, and have never been told."),
     key_item("w55_counter_sign", "A Sign: 'Back at 2'", "A hand-lettered card from the shutter of the old counter, the one that went up the week the cover fell through. Underneath, someone has written 'And we were'."),
-    {"id": "w55_ulster_cardigan", "name": "Ulster cardigan", "kind": "wear", "slot": "top", "price": 700,
-     "desc": "A thick navy cardigan of the kind worn behind counters all over the north coast in January. It is warmer than it looks, and the elbows have been proudly mended.",
-     "look": {"accessories": ["aran"], "palette": {"top": "#2a3a5a", "accent": "#d8d0c0", "accent2": "#7a8aa0"}}},
 ]
 
 add_items(items)
