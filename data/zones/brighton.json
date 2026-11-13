@@ -692,7 +692,11 @@
    "x": 12,
    "y": 43,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "br_starling_watcher"
   },
   {
@@ -701,7 +705,11 @@
    "x": 46,
    "y": 29,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "br_pride_steward"
   },
   {
@@ -710,7 +718,11 @@
    "x": 30,
    "y": 43,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "br_old_salt"
   },
   {

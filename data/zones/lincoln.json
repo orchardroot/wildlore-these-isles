@@ -471,7 +471,11 @@
    "x": 28,
    "y": 14,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "lin_yellowbelly"
   },
   {
@@ -489,7 +493,11 @@
    "x": 26,
    "y": 42,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "lin_swans"
   },
   {
@@ -498,7 +506,11 @@
    "x": 57,
    "y": 56,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "lin_spire_guide"
   },
   {

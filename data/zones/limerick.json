@@ -500,7 +500,11 @@
    "x": 11,
    "y": 11,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "lim_rugby_fan",
    "name": "Munster Supporter"
   },
@@ -520,7 +524,11 @@
    "x": 31,
    "y": 43,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "lim_lace_maker",
    "name": "Lace Maker"
   },
@@ -530,7 +538,11 @@
    "x": 23,
    "y": 26,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "lim_river_warden",
    "name": "River Warden"
   },
@@ -540,7 +552,8 @@
    "x": 48,
    "y": 36,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "lim_verse_scholar",
    "name": "Student of Verse"
   },

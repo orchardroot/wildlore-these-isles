@@ -320,7 +320,11 @@
    "x": 36,
    "y": 15,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "nn_dede",
    "name": "Dede Mehmet"
   },
@@ -330,7 +334,8 @@
    "x": 22,
    "y": 28,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "nn_student",
    "name": "Student"
   },

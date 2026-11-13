@@ -377,7 +377,11 @@
    "x": 17,
    "y": 28,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "pit_gardener",
    "name": "Gardener"
   },
@@ -387,7 +391,11 @@
    "x": 22,
    "y": 15,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "pit_teacher",
    "name": "Schoolteacher"
   },

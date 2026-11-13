@@ -157,7 +157,8 @@
    "x": 24,
    "y": 17,
    "facing": "right",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "srk_cyclist"
   },
   {
@@ -166,7 +167,11 @@
    "x": 33,
    "y": 10,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "srk_astronomer"
   },
   {
@@ -175,7 +180,11 @@
    "x": 16,
    "y": 12,
    "facing": "right",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "srk_dame"
   },
   {

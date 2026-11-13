@@ -405,7 +405,11 @@
    "x": 24,
    "y": 26,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bla_old"
   },
   {
@@ -414,7 +418,8 @@
    "x": 38,
    "y": 26,
    "facing": "left",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "bla_kid"
   },
   {
@@ -423,7 +428,11 @@
    "x": 22,
    "y": 30,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bla_walker"
   },
   {

@@ -217,7 +217,11 @@
   {
    "facing": "left",
    "id": "boat_hirer",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "boat_hirer",
    "sprite": "angler",
    "x": 51.0,

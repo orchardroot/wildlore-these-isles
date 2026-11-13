@@ -365,7 +365,11 @@
    "x": 21,
    "y": 21,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "dv_old_soldier"
   },
   {

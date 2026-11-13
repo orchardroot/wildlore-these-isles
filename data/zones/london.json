@@ -1035,7 +1035,11 @@
    "x": 52,
    "y": 5,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "moon_hoodie",
    "name": "Man in a Hoodie"
   },
