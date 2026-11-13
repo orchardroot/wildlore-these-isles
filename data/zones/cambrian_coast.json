@@ -428,6 +428,67 @@
    "facing": "down",
    "move": "still",
    "script": "arts_ysgwrn_guide"
+  },
+  {
+   "id": "ct_kites_dai",
+   "sprite": "villager_2",
+   "x": 14,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kites_dai",
+   "name": "Dai the Shepherd"
+  },
+  {
+   "id": "ct_kites_warden",
+   "sprite": "birdwatcher",
+   "x": 30,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kites_warden",
+   "name": "Kite Warden"
+  },
+  {
+   "id": "ct_kites_lair",
+   "sprite": "creature:forkwing",
+   "x": 27,
+   "y": 41,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kites_lair",
+   "name": "Tag Seven",
+   "show_if": "ct_kites_state",
+   "hide_if": "ct_kites_end"
+  },
+  {
+   "id": "ct_kites_gate",
+   "sprite": "farmer",
+   "x": 14,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kites_gate",
+   "name": "Hill Farmer",
+   "show_if": "ct_kites_state"
+  }
+ ],
+ "examine": [
+  {
+   "x": 16,
+   "y": 25,
+   "text": [
+    "Fence wire along the lambing field, with the odd tuft of wool on it."
+   ],
+   "clue": "kites.feather"
+  },
+  {
+   "x": 24,
+   "y": 33,
+   "text": [
+    "A sloping field, and a lot of sky."
+   ],
+   "clue": "kites.sky"
   }
  ],
  "encounters": {

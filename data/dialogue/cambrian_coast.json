@@ -87,5 +87,87 @@
    "who": "Guide",
    "text": "When they called the winner's name three times and nobody stood, the whole pavilion knew. They draped the chair in black. His nephew Gerald kept the farm and showed the chair to anybody who knocked, for sixty years. Now it is my turn."
   }
+ ],
+ "ct_kites_dai": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "kites",
+   "clue": "dai"
+  }
+ ],
+ "ct_kites_warden": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "kites",
+   "clue": "warden"
+  }
+ ],
+ "ct_kites_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "kites"
+  }
+ ],
+ "ct_kites_gate": [
+  {
+   "do": "if",
+   "flag": "ct_kites_is_scare",
+   "then": [
+    {
+     "do": "say",
+     "who": "Hill Farmer",
+     "text": "No kites over the top fields this spring. I keep looking up. You'd think I'd be pleased."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_kites_is_truth",
+     "then": [
+      {
+       "do": "say",
+       "who": "Hill Farmer",
+       "text": "I've a kite on my gate most mornings. We've reached an understanding. I'm not telling anyone."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_kites_is_station",
+       "then": [
+        {
+         "do": "say",
+         "who": "Hill Farmer",
+         "text": "Kites over the feeding post by the dozen. The neighbours without a shed are not speaking to us."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "flag": "ct_kites_is_caught",
+         "then": [
+          {
+           "do": "say",
+           "who": "Hill Farmer",
+           "text": "Tag Seven's off in somebody's team. The sky's gone quiet, and I haven't decided how I feel."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Hill Farmer",
+           "text": "Lambing. Mind the ewes."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

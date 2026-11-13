@@ -227,5 +227,12 @@
    "harbour": "aberystwyth",
    "who": "Harbour Warden"
   }
+ ],
+ "ct_kites_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "kites"
+  }
  ]
 }

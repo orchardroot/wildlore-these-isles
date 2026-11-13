@@ -169,6 +169,16 @@
    "move": "still",
    "script": "aberystwyth_crab_warden",
    "name": "Harbour Warden"
+  },
+  {
+   "id": "ct_kites_poster",
+   "sprite": "farmer",
+   "x": 28,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kites_poster",
+   "name": "Gwilym Rees"
   }
  ],
  "props": [

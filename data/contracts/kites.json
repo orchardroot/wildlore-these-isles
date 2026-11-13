@@ -1,0 +1,195 @@
+{
+ "id": "kites",
+ "title": "Who's Taking the Lambs",
+ "town": "aberystwyth",
+ "nation": "wales",
+ "group": "farmers",
+ "badges": 3,
+ "pay": 3,
+ "poster": {
+  "name": "Gwilym Rees",
+  "role": "hill farmer, up the valley from Aberystwyth",
+  "idle": [
+   "Lambing's on, bach, and I've no time to talk. Come back when you've seen a bit more of Wales and I'll tell you what's been going on up my hill."
+  ],
+  "taken": [
+   "Anything yet? Four lambs this week. I go out at six and there's a lamb in the corner of the field and something sitting by it, big as a hat. I know what I saw."
+  ],
+  "decided": [
+   "You've been up the hill. I can tell by the mud. Go on."
+  ],
+  "closed": "Lambing's over and the ewes are on the tops. That's all I'll say about it.",
+  "haggle": "My wife said you'd do that. Fair enough. A fair price for a fair look."
+ },
+ "notice": [
+  "Four lambs found dead in the top fields in a week, and every time a big brown bird on the spot. Red kite, I say. My neighbour says raven. My wife says fox.",
+  "I say somebody ought to look before I do something I can't take back."
+ ],
+ "trouble": [
+  "They're protected, I know. They were down to a handful of pairs in these hills once, and everyone's very proud of them. But it's my lambs.",
+  "Come up the valley to the coast road fields. Be quiet about it, and don't tell my wife I asked."
+ ],
+ "hypotheses": [
+  {"id": "kite", "name": "A red kite", "types": ["gale", "hearth"]},
+  {"id": "raven", "name": "A raven", "types": ["gale", "night"]},
+  {"id": "fox", "name": "A fox", "types": ["kin"]}
+ ],
+ "truth": "kite",
+ "clues": [
+  {
+   "id": "feather",
+   "kind": "look",
+   "zone": "cambrian_coast",
+   "hint": "the wire round the lambing field",
+   "text": "On the wire by the lamb field: a long russet feather with a pale tip, a wisp of grey wool, and no blood anywhere. The lamb was cold before anything came to it. A fox would have left bones and a mess.",
+   "points": ["kite"],
+   "rules_out": ["fox"]
+  },
+  {
+   "id": "sky",
+   "kind": "look",
+   "zone": "cambrian_coast",
+   "hint": "the sky above the field, on a bright morning or day",
+   "text": "High over the field, riding the warm air: a pale-headed bird with a long forked tail that twists like a rudder at every turn. Not a raven, whose tail is a wedge. It hangs there for a long time, making up its mind, and then it comes down on something that was not moving.",
+   "hint_wait": "Cloud and no lift. Nothing is flying but the rain. Kites hunt the warm air: try on a bright morning or day.",
+   "points": ["kite"],
+   "rules_out": ["raven"],
+   "when": {"phase": ["dawn", "day"], "weather": ["sunshine", "clear"]}
+  },
+  {
+   "id": "dai",
+   "kind": "ask",
+   "zone": "cambrian_coast",
+   "who": "Dai the Shepherd",
+   "hint": "hear what the shepherd saw",
+   "text": [
+    "Raven. I've seen it with my own eyes. A raven will have the eyes out of a lamb that can't stand yet, and then it's the kite that gets the blame because the kite is the one everybody looks at.",
+    "Mind, ravens are very clever. It could be both. I wouldn't put anything past them."
+   ],
+   "idle": ["Lambing. Don't talk to me. Talk to a ewe, they'll be gladder of it."],
+   "after": "Not the kite, then? Well. I never said it was the kite.",
+   "points": ["raven"]
+  },
+  {
+   "id": "warden",
+   "kind": "ask",
+   "zone": "cambrian_coast",
+   "who": "Kite Warden",
+   "hint": "ask the warden who tags the kites",
+   "text": [
+    "A kite is a scavenger, not a hunter. Dead lambs, afterbirth, worms, a stray vole. It will take a dead lamb for a feast and be gone in an hour.",
+    "A wet, cold snap kills lambs by itself. What you find is nearly always a kite finding a lamb that was dead first. It is a rotten thing to tell a farmer, mind."
+   ],
+   "idle": ["Watching a nest through a telescope, which is mostly sitting. Ask me anything in a week and a half."],
+   "after": "The Rees lambs are doing better this year. Whatever you said, thank you.",
+   "points": ["kite"],
+   "rules_out": ["fox"]
+  }
+ ],
+ "lair": {
+  "zone": "cambrian_coast",
+  "name": "Tag Seven",
+  "species": "forkwing",
+  "level": 31,
+  "floor_par": 28,
+  "intro": [
+   "The top corner of the field above the road. A small dead lamb in the grass, a ring of flattened wool, and a bird on the wall above it, long-winged and russet, with a numbered tag on one wing and an expression of pure innocence.",
+   "The warden calls it Tag Seven. Gwilym Rees calls it other things."
+  ],
+  "beaten": [
+   "Tag Seven sits on the wall with its wings half open, and looks at you with the dignity of a bird that has been called a lot of things and meant none of them."
+  ]
+ },
+ "choices": [
+  {
+   "id": "scare",
+   "label": "Scare the kites off the lambing fields",
+   "say": [
+    "You and Gwilym set up bird scarers along the top wall and walk the lambing fields at dawn. Tag Seven watches for two days, then wheels away over the next ridge with the whole local wing behind it.",
+    "The Rees lambs are safe. The next valley will find out."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_kites_scarers": true, "ct_kites_gone": true},
+   "repute": {"farmers": 2, "wardens": -2},
+   "standing": {"wales": 2},
+   "poster": ["Gone? Not a feather? Good. I didn't want to be the man who shot a kite. Thank you, cariad. Here."],
+   "after": ["Quiet on the top fields this spring. No sky at all. I keep looking up. Funny, that."],
+   "journal": "You scared the kites off the Rees lambing fields. The lambs are safe. The sky above the top fields is empty, and the warden does not speak to you."
+  },
+  {
+   "id": "truth",
+   "label": "Tell Gwilym the kite didn't kill them",
+   "say": [
+    "You tell Gwilym Rees what the lambs died of, and what the kite did afterwards. It takes a quarter of an hour, a flask of tea, and a long silence. He does not thank you. He does not shoot anything, either.",
+    "At dawn the next day a kite is sitting on his gate, with its feathers fluffed up in the cold. He looks at it for a long time."
+   ],
+   "fee": 0.6,
+   "flags": {"ct_kites_truth": true, "ct_kites_stay": true},
+   "repute": {"farmers": -1, "wardens": 3},
+   "standing": {"wales": 1},
+   "poster": ["So it was the weather. The weather, and a bird that eats what it's given. Well. I'll pay you the half, and I'll thank you when I've stopped being cross."],
+   "after": ["There's a kite on my gate most mornings now. It knows I know. We've come to an understanding."],
+   "journal": "You told Gwilym Rees the truth and he took it badly and kept his gun in the cupboard. A kite sits on his gate now. The warden says you are all right."
+  },
+  {
+   "id": "station",
+   "label": "Ask the Trust for a lambing shed and a feeding post for the kites",
+   "say": [
+    "The Trust finds money for a lambing shed on the Rees farm and sets a feeding post for the kites half a mile away, with the offal from the abattoir. It costs a surprising amount of paperwork. Within a month there are dozens of kites over the post, and the neighbour who has no shed is furious.",
+    "Everyone gets something. Nobody gets what they wanted."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_kites_post": true, "ct_kites_shed": true},
+   "repute": {"farmers": 1, "wardens": 1},
+   "standing": {"wales": 1},
+   "poster": ["A shed. A shed, and a car park for kites. I've gone from a farmer to a tourist attraction. Seventy per cent of your fee, and not a penny more."],
+   "after": ["Walkers stop on the road to watch the kites at the post. I've sold six thermos flasks of tea this month. I've no complaints, which is a new feeling."],
+   "journal": "You got the Trust to pay for a lambing shed and a feeding post for the kites. Both sides came out a little ahead, a neighbour came out behind, and the kites are now a tourist attraction."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes and Tag Seven goes quiet inside it, a numbered tag clicking against the glass. Gwilym stands in the lane with his cap in his hand and no idea what he has just seen."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_kites_gone": true, "ct_kites_kept": true},
+   "repute": {"farmers": 1, "wardens": -3},
+   "standing": {"wales": 1},
+   "poster": ["You put it in a... team? It was a protected... Oh, never mind. Never mind. Don't tell the warden."],
+   "after": ["The warden's been up three times asking where Tag Seven went. I've told him I'm very sorry and I haven't a clue."],
+   "journal": "You caught Tag Seven and it travels with you now. Gwilym's lambs are safe, and the Kite Warden has stopped answering your letters."
+  }
+ ],
+ "real": "Red kites were once so common that they scavenged in the streets of Tudor London. Persecution wiped them out across most of Britain, and by the 1930s a handful of pairs hung on in the hills of mid Wales. They were protected, watched over, and slowly recovered. From 1989, birds from Spain and Sweden were released in England and Scotland. A kite is a scavenger: it lives on carrion, worms and small animals, and what looks like a kite killing a lamb is almost always a kite finding one already dead. Ravens and crows are the ones that peck at weak newborn lambs. Poisoned baits laid for other animals are still a danger to kites.",
+ "places": {
+  "poster": {"sprite": "farmer", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "dai", "sprite": "villager_2", "near": [20, 30]},
+   {"clue": "warden", "sprite": "birdwatcher", "near": [30, 20]}
+  ],
+  "looks": [
+   {"clue": "feather", "near": [18, 24], "on": "any", "text": ["Fence wire along the lambing field, with the odd tuft of wool on it."]},
+   {"clue": "sky", "near": [24, 34], "on": "any", "text": ["A sloping field, and a lot of sky."]}
+  ],
+  "lair": {"near": [28, 40]},
+  "folk": [
+   {
+    "id": "gate",
+    "zone": "cambrian_coast",
+    "near": [14, 20],
+    "sprite": "farmer",
+    "name": "Hill Farmer",
+    "show_if": "ct_kites_state",
+    "says": [
+     ["ct_kites_is_scare", ["No kites over the top fields this spring. I keep looking up. You'd think I'd be pleased."]],
+     ["ct_kites_is_truth", ["I've a kite on my gate most mornings. We've reached an understanding. I'm not telling anyone."]],
+     ["ct_kites_is_station", ["Kites over the feeding post by the dozen. The neighbours without a shed are not speaking to us."]],
+     ["ct_kites_is_caught", ["Tag Seven's off in somebody's team. The sky's gone quiet, and I haven't decided how I feel."]]
+    ],
+    "else": ["Lambing. Mind the ewes."]
+   }
+  ]
+ }
+}
