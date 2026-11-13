@@ -1,0 +1,30 @@
+{
+ "pois": [
+  {
+   "id": "poi_aberglaslyn_den",
+   "zone": "aberglaslyn",
+   "near": [
+    8,
+    34
+   ],
+   "kind": "den",
+   "at": "aberglaslyn",
+   "species": "afanc"
+  },
+  {
+   "id": "poi_aberglaslyn_stone",
+   "zone": "aberglaslyn",
+   "near": [
+    33,
+    33
+   ],
+   "kind": "stone",
+   "at": "aberglaslyn",
+   "stat": "ward",
+   "lore": [
+    "It rings faintly when you tap it, like a bell with a cold.",
+    "The real thing is a glacial erratic: Snowdonia has thousands, dropped by the ice."
+   ]
+  }
+ ]
+}

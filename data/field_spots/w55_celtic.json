@@ -1,0 +1,17 @@
+[
+ {
+  "id": "fs_aberglaslyn_mend",
+  "zone": "aberglaslyn",
+  "x": 50,
+  "y": 29,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Bara Brith in the hollow.",
+  "reward": {
+   "item": "bara_brith",
+   "qty": 1
+  },
+  "flag": "field_aberglaslyn_mend",
+  "at": "aberglaslyn"
+ }
+]

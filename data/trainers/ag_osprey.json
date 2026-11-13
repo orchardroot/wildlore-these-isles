@@ -1,0 +1,32 @@
+{
+ "id": "ag_osprey",
+ "name": "Osprey Watcher Bethan",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "kitelet",
+   "level": 31
+  },
+  {
+   "species": "cragchough",
+   "level": 31
+  },
+  {
+   "species": "hootlet",
+   "level": 32
+  }
+ ],
+ "ai": "trainer",
+ "money": 660,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Osprey Watcher Bethan",
+   "text": "Shh. There is a bird on the nest and it has not noticed me. Do not make it notice me."
+  }
+ ],
+ "win": "Right. You have scared everything for a mile. Congratulations.",
+ "after": "Ospreys are the bird that brings a fish home like a weekly shop.",
+ "scaled_floor": 31
+}
