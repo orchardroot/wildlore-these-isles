@@ -563,6 +563,56 @@
    "facing": "down",
    "move": "still",
    "trainer": "pc_windfarm"
+  },
+  {
+   "id": "ct_seal_netsman",
+   "sprite": "fisher",
+   "x": 20,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_seal_netsman",
+   "name": "Net Fisher"
+  },
+  {
+   "id": "ct_seal_biologist",
+   "sprite": "student",
+   "x": 43,
+   "y": 27,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_seal_biologist",
+   "name": "Seal Biologist"
+  },
+  {
+   "id": "ct_seal_lair",
+   "sprite": "creature:greyhaul",
+   "x": 52,
+   "y": 32,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_seal_lair",
+   "name": "Auld Willie",
+   "show_if": "ct_seal_state",
+   "hide_if": "ct_seal_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 31,
+   "y": 22,
+   "text": [
+    "Salmon nets on the shore, drying. They smell strongly of the sea."
+   ],
+   "clue": "seal.bites"
+  },
+  {
+   "x": 40,
+   "y": 28,
+   "text": [
+    "The river mouth, brown water spreading into green. Quiet, at the moment."
+   ],
+   "clue": "seal.dawn"
   }
  ],
  "signs": [

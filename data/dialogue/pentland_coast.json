@@ -379,5 +379,28 @@
     }
    ]
   }
+ ],
+ "ct_seal_netsman": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "seal",
+   "clue": "netsman"
+  }
+ ],
+ "ct_seal_biologist": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "seal",
+   "clue": "biologist"
+  }
+ ],
+ "ct_seal_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "seal"
+  }
  ]
 }
