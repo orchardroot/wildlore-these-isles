@@ -213,7 +213,7 @@ func ground_y(p: Vector2i) -> float:
 		return ZoneBuilder.water_y(zone, p) - 0.08  # afloat: the coracle sits on the surface, on a river, lake or sea alike
 	return ZoneBuilder.ground_y(zone, p)
 
-## "ok", "blocked", "edge" (walking off into a neighbour) or "ledge" (hop down).
+## "ok", "blocked", "edge" (walking off into a neighbour), "ledge" (hop down) or "wade" (afloat in the coracle).
 func can_enter(p: Vector2i, dir: Vector2i) -> String:
 	if not zone.in_bounds(p):
 		var side := GridMotion.edge_side(p, zone.width, zone.height)
@@ -236,7 +236,7 @@ func can_enter(p: Vector2i, dir: Vector2i) -> String:
 		return "blocked"
 	if traffic and traffic.closed(p):
 		return "blocked"  # the level crossing is shut: a train is coming
-	return "ok"
+	return "wade" if zone.tile_at(p) in ZoneData.RIDE_TILES else "ok"  # only the player goes afloat: people and the like want "ok"
 
 ## Bumped into a tile that wants an ability you lack: say which, once per tile per visit.
 func blocked_hint(p: Vector2i) -> void:
