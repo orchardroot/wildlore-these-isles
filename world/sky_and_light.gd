@@ -60,6 +60,12 @@ var _fog: CPUParticles3D
 var _leaves: CPUParticles3D
 var _flecks: CPUParticles3D
 var _splash: CPUParticles3D
+var _sky_mat: ShaderMaterial    # the backdrop: stars and the moon after dark (art/shaders/night_sky.gdshader, NightSky)
+var _flash: ColorRect           # a gentle lift of the whole picture as lightning strikes (never with Reduce Flashing)
+var _flash_t := -1.0            # seconds since the strike; < 0 when none
+var _strike_in := -1.0          # seconds to the next strike of thunder; < 0 when the weather has none
+var _dice := RandomNumberGenerator.new()  # its own dice: the game's rng stays deterministic
+const FLASH_PEAK := 0.09
 
 func _ready() -> void:
 	sun = DirectionalLight3D.new()
@@ -81,10 +87,67 @@ func _ready() -> void:
 	env.adjustment_enabled = true
 	env.adjustment_saturation = 1.0
 	env.adjustment_contrast = 1.04
+	env.reflected_light_source = Environment.REFLECTION_SOURCE_DISABLED  # the sky is only a backdrop: nothing reflects it
+	env.fog_sky_affect = 0.0  # and fog does not paint over it (the haze is the zone's own, in front of the world)
+	_sky_mat = ShaderMaterial.new()
+	_sky_mat.shader = load("res://art/shaders/night_sky.gdshader")
+	var sky_res := Sky.new()
+	sky_res.sky_material = _sky_mat
+	sky_res.radiance_size = Sky.RADIANCE_SIZE_32
+	env.sky = sky_res
 	we.environment = env
 	add_child(we)
+	_build_flash()
+	_dice.randomize()
 	_build_particles()
 	apply_quality(Settings.quality)
+
+# --- lightning -------------------------------------------------------------------
+
+func _build_flash() -> void:
+	var layer := CanvasLayer.new()
+	layer.layer = 0
+	add_child(layer)
+	_flash = ColorRect.new()
+	_flash.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_flash.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_flash.color = Color(0.86, 0.91, 1.0, 0.0)
+	var cm := CanvasItemMaterial.new()
+	cm.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+	_flash.material = cm
+	_flash.visible = false
+	layer.add_child(_flash)
+
+## The lift at `t` seconds into a strike: a soft flash and a smaller second one a moment after. Zero by 1.2 s.
+static func flash_alpha(t: float) -> float:
+	if t < 0.0 or t > 1.2:
+		return 0.0
+	return FLASH_PEAK * minf(t / 0.03, 1.0) * (exp(-t * 7.0) + 0.55 * exp(-pow((t - 0.17) * 12.0, 2.0)))
+
+## Thunder is timed here (it has the weather and the clock): the next strike comes after a gap that suits the weather.
+func _arm_strike(first := false) -> void:
+	var gap := Ambience.thunder_gap(weather, _dice.randf())
+	_strike_in = gap * (0.4 if first else 1.0) if gap > 0.0 else -1.0
+
+func _tick_thunder(delta: float) -> void:
+	if _flash_t >= 0.0:
+		_flash_t += delta
+		_flash.color.a = flash_alpha(_flash_t)
+		if _flash_t > 1.2:
+			_flash_t = -1.0
+			_flash.visible = false
+	if _strike_in < 0.0 or _zone == null:
+		return
+	_strike_in -= delta
+	if _strike_in > 0.0:
+		return
+	var close := _dice.randf() < (0.6 if weather == "downpour" else 0.35)
+	var delay := _dice.randf_range(0.3, 1.2) if close else _dice.randf_range(1.5, 3.5)  # light is quicker than sound
+	if not interior and not Settings.reduce_flashing:
+		_flash_t = 0.0
+		_flash.visible = true
+	Audio.thunder(close, interior, delay)
+	_arm_strike()
 
 # --- particles -------------------------------------------------------------------
 
@@ -203,8 +266,11 @@ func set_weather(w: String, is_interior: bool, smooth := false) -> void:
 	else:
 		_from = w
 		_blend = 1.0
+	var changed := w != weather
 	weather = w
 	interior = is_interior
+	if changed or _strike_in < 0.0:
+		_arm_strike(true)
 	var want := maxi(_rain_amount(_from), _rain_amount(w))
 	if want > 0 and _rain.amount != want:
 		_rain.amount = want  # changing the amount restarts the emitter, so only when it must
@@ -409,6 +475,36 @@ func apply_time(minutes: int) -> void:
 	_fx_now()
 	_apply_fx()
 	_apply_detail(ph, bg, amb)
+	_apply_stars(minutes, bg)
+
+## Stars and the moon behind the diorama once it is dark: a sky backdrop (instead of a flat colour) only while there is
+## something to show, so the day costs nothing. Interiors have none. The moon is in its real phase for the date.
+func _apply_stars(minutes: int, bg: Color) -> void:
+	var t := Calendar.today()
+	var look := NightSky.look(minutes, NightSky.moon_phase(Calendar.year(), t.x, t.y), weather)
+	var show: bool = not interior and (float(look.stars) > 0.01 or float(look.moon_on) > 0.01)
+	env.background_mode = Environment.BG_SKY if show else Environment.BG_COLOR
+	if not show:
+		return
+	_sky_mat.set_shader_parameter("base_colour", bg)
+	_sky_mat.set_shader_parameter("top_colour", bg.darkened(0.55))
+	_sky_mat.set_shader_parameter("stars", look.stars)
+	_sky_mat.set_shader_parameter("twinkle", 0.0 if _low or Settings.reduce_flashing else 1.0)
+	_sky_mat.set_shader_parameter("moon_on", look.moon_on)
+	_sky_mat.set_shader_parameter("moon_phase", look.moon_phase)
+	_sky_mat.set_shader_parameter("moon_pos", look.moon_pos)
+	_aim_sky()
+
+## Tells the sky shader where the camera is looking (it lays the stars on the picture, not the world).
+func _aim_sky() -> void:
+	var cam := get_viewport().get_camera_3d() if is_inside_tree() else null
+	if cam == null:
+		return
+	var b := cam.global_transform.basis
+	_sky_mat.set_shader_parameter("cam_right", b.x)
+	_sky_mat.set_shader_parameter("cam_up", b.y)
+	_sky_mat.set_shader_parameter("cam_fwd", -b.z)
+	_sky_mat.set_shader_parameter("half_tan", tan(deg_to_rad(cam.fov) * 0.5))
 
 ## The Medium and High touches that follow the clock and the weather: cloud shadows, the sky in the water, the
 ## haze over the far side of the screen. Low sets them all to nothing.
@@ -433,6 +529,9 @@ func _apply_detail(ph: String, bg: Color, amb: Color) -> void:
 		post.set_shader_parameter("vignette", 0.0 if _low else (0.32 if interior else 0.22))
 
 func _process(delta: float) -> void:
+	_tick_thunder(delta)
+	if env.background_mode == Environment.BG_SKY:
+		_aim_sky()  # the camera glides about; the stars stay on the picture
 	if follow:
 		var at := follow.global_position
 		_rain.global_position = at + Vector3(0, 9, 2)

@@ -291,7 +291,7 @@ static func render(id: String) -> PackedFloat32Array:
 			_sum(bed, talk_b, 0.25)
 			var st := [145]
 			for k in 7:
-				var t := (k + 0.2 + 0.6 * _rand(st)) * float(LENGTHS[id]) / 7.0
+				var t := 0.8 + (k + 0.2 + 0.6 * _rand(st)) * (float(LENGTHS[id]) - 1.6) / 7.0
 				var f := 2600.0 + 1400.0 * _rand(st)
 				Synth.mix_wrap(ev, _blip(f, f * 0.98, 0.09, 38.0, 0.0005), _at(t), 2.2 + _rand(st))
 				Synth.mix_wrap(ev, _blip(f * 1.5, f * 1.5, 0.06, 55.0, 0.0005), _at(t + 0.003), 0.9)
@@ -458,8 +458,8 @@ static func render(id: String) -> PackedFloat32Array:
 				var ck := Synth.noise(0.03, SR, 231 + k)
 				Synth.bandpass(ck, f, 4.0, SR)
 				Synth.pluck_env(ck, SR, 0.0004, 120.0)
-				Synth.mix_wrap(ev, ck, _at(k * 1.0), 3.0)
-				Synth.mix_wrap(ev, _blip(f * 0.5, f * 0.45, 0.05, 90.0, 0.0004), _at(k * 1.0), 1.4)
+				Synth.mix_wrap(ev, ck, _at(0.5 + k * 1.0), 3.0)
+				Synth.mix_wrap(ev, _blip(f * 0.5, f * 0.45, 0.05, 90.0, 0.0004), _at(0.5 + k * 1.0), 1.4)
 		"em_stream":
 			# Running water: a bright babble that never settles, and little bubbles rising through it.
 			var bab := _noise(m, 241, 3200.0, 500.0)
