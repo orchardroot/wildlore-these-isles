@@ -56,5 +56,19 @@
   },
   "flag": "field_pass_of_brander_mend",
   "at": "pass_of_brander"
+ },
+ {
+  "id": "fs_rob_roy_way_line",
+  "zone": "rob_roy_way",
+  "x": 12,
+  "y": 18,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the shallows. {lead} wades in, makes a few calm passes and fishes it out: a tin of toffee, a bit damp.",
+  "reward": {
+   "money": 2240
+  },
+  "flag": "field_rob_roy_way_line",
+  "at": "rob_roy_way"
  }
 ]

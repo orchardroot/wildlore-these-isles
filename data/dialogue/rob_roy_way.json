@@ -1,0 +1,57 @@
+{
+ "rrw_boatman": [
+  {
+   "do": "say",
+   "who": "Loch Boatman",
+   "text": "The steamship has been sailing since 1900. I keep telling it to retire and it keeps coming in on time."
+  },
+  {
+   "do": "say",
+   "who": "Loch Boatman",
+   "text": "Glasgow drinks this loch. Every time a Glaswegian pours a glass of water, a Trossachs sheep gets a bit more famous."
+  }
+ ],
+ "rrw_minister": [
+  {
+   "do": "say",
+   "who": "Kirk Visitor",
+   "text": "Rob Roy is buried here with his wife and two of his sons. The stone is plain. He would have approved: he did not like a fuss, unless it was the other side's."
+  },
+  {
+   "do": "say",
+   "who": "Kirk Visitor",
+   "text": "There is a very good tearoom down the road. I would put it on the list ahead of the grave, to be honest."
+  }
+ ],
+ "rrw_film": [
+  {
+   "do": "say",
+   "who": "Film Buff",
+   "text": "They shot a silly film about a grail here. A very silly film. The coconuts were not the castle's idea."
+  },
+  {
+   "do": "say",
+   "who": "Film Buff",
+   "text": "It is a fine castle. It has been in more films than I have, and it has not once asked for a better trailer."
+  }
+ ],
+ "rrw_walker": [
+  {
+   "do": "say",
+   "who": "Way Walker",
+   "text": "Drymen to Pitlochry on foot. I am doing it in my own time, which is a polite way of saying I stop for tea."
+  },
+  {
+   "do": "say",
+   "who": "Way Walker",
+   "text": "F\u00e0ilte to the Trossachs. That is 'welcome'. Walter Scott gave the place a reputation. It has been living off it since."
+  }
+ ],
+ "rrw_osprey": [
+  {
+   "do": "say",
+   "who": "Ospret",
+   "text": "An osprey hangs over the water, then drops like a dropped umbrella and comes up with lunch. It looks at you as if you had not seen anything."
+  }
+ ]
+}

@@ -1,0 +1,555 @@
+{
+ "id": "rob_roy_way",
+ "name": "The Rob Roy Way",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_forest",
+ "weather": {
+  "fog": 30,
+  "drizzle": 28,
+  "downpour": 12,
+  "clear": 14,
+  "gale": 8,
+  "frost": 4,
+  "sunshine": 4
+ },
+ "props": [
+  {
+   "type": "boat",
+   "x": 14,
+   "y": 9,
+   "variant": 1
+  },
+  {
+   "type": "bench",
+   "x": 24,
+   "y": 18
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 40,
+   "y": 34,
+   "w": 6,
+   "h": 4,
+   "label": "Balquhidder Kirk"
+  },
+  {
+   "type": "standing_stone",
+   "x": 48,
+   "y": 35
+  },
+  {
+   "type": "standing_stone",
+   "x": 50,
+   "y": 37
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 46,
+   "y": 16,
+   "w": 8,
+   "h": 5,
+   "label": "Doune Castle"
+  },
+  {
+   "type": "flagpole",
+   "x": 44,
+   "y": 20
+  },
+  {
+   "type": "rock",
+   "x": 43,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 37,
+   "y": 46,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 16,
+   "y": 20,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 54,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 58,
+   "y": 29,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 46,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 40,
+   "y": 5,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 19,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 55,
+   "y": 4,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 28,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 22,
+   "y": 26,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 34,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 29,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 36,
+   "y": 31,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 24,
+   "y": 43,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 60,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 59,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 44,
+   "y": 33,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 47,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 46,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 11,
+   "y": 47,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 42,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 17,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 51,
+   "y": 4,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 39,
+   "y": 37,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 50,
+   "y": 23,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 15,
+   "variant": 1
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "south": {
+   "to": "central_belt",
+   "offset": 16
+  },
+  "east": {
+   "to": "dundee",
+   "offset": -2
+  }
+ },
+ "npcs": [
+  {
+   "id": "rrw_boatman",
+   "sprite": "sailor",
+   "x": 12,
+   "y": 18,
+   "facing": "down",
+   "move": "still",
+   "script": "rrw_boatman"
+  },
+  {
+   "id": "rrw_minister",
+   "sprite": "pilgrim",
+   "x": 44,
+   "y": 39,
+   "facing": "up",
+   "move": "still",
+   "script": "rrw_minister"
+  },
+  {
+   "id": "rrw_film",
+   "sprite": "festival_goer",
+   "x": 40,
+   "y": 22,
+   "facing": "left",
+   "move": "still",
+   "script": "rrw_film"
+  },
+  {
+   "id": "rrw_walker",
+   "sprite": "hiker",
+   "x": 22,
+   "y": 31,
+   "facing": "right",
+   "move": "still",
+   "script": "rrw_walker"
+  },
+  {
+   "id": "rrw_osprey",
+   "sprite": "creature:ospret",
+   "x": 30,
+   "y": 6,
+   "facing": "down",
+   "move": "wander",
+   "script": "rrw_osprey"
+  },
+  {
+   "id": "rrw_clansman",
+   "sprite": "piper",
+   "x": 28,
+   "y": 30,
+   "facing": "left",
+   "move": "still",
+   "trainer": "rrw_clansman"
+  },
+  {
+   "id": "rrw_angler",
+   "sprite": "angler",
+   "x": 26,
+   "y": 12,
+   "facing": "right",
+   "move": "still",
+   "trainer": "rrw_angler"
+  },
+  {
+   "id": "rrw_stalker",
+   "sprite": "ghillie",
+   "x": 46,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "trainer": "rrw_stalker"
+  },
+  {
+   "id": "rrw_historian",
+   "sprite": "poet",
+   "x": 54,
+   "y": 12,
+   "facing": "left",
+   "move": "still",
+   "trainer": "rrw_historian"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "thistlet",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "raidtail",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "grizzlet",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "starlet",
+    "min": 69,
+    "max": 70,
+    "weight": 10,
+    "time": [
+     "day",
+     "dawn"
+    ]
+   },
+   {
+    "species": "swiftlet",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "sootwing",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "day",
+     "dusk"
+    ]
+   },
+   {
+    "species": "bobbin",
+    "min": 69,
+    "max": 70,
+    "weight": 8
+   },
+   {
+    "species": "flittermouse",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "brockling",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "night",
+     "dusk"
+    ]
+   },
+   {
+    "species": "strutcoo",
+    "min": 69,
+    "max": 70,
+    "weight": 6
+   }
+  ],
+  "water": [
+   {
+    "species": "stalklet",
+    "min": 69,
+    "max": 70,
+    "weight": 18
+   },
+   {
+    "species": "rillotter",
+    "min": 69,
+    "max": 70,
+    "weight": 16
+   },
+   {
+    "species": "dipling",
+    "min": 69,
+    "max": 70,
+    "weight": 16
+   },
+   {
+    "species": "heronarch",
+    "min": 69,
+    "max": 70,
+    "weight": 12
+   },
+   {
+    "species": "minkshade",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "pierlord",
+    "min": 69,
+    "max": 70,
+    "weight": 8
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 17,
+   "y": 20,
+   "text": "LOCH KATRINE. Since 1859 this loch has supplied Glasgow with its drinking water, piped some twenty-six miles to the city, and it was opened by Queen Victoria. A steamship, the Sir Walter Scott, has carried visitors on the loch since 1900, and is still sailing. Glasgow has never forgotten who to thank.",
+   "plaque": "w55_sc_katrine",
+   "title": "Loch Katrine"
+  },
+  {
+   "x": 43,
+   "y": 38,
+   "text": "ROB ROY MACGREGOR. Born in 1671, a cattle dealer turned outlaw and folk hero who spent his last years at Balquhidder. He is buried in the kirkyard here, and the grave is the thing visitors come to see. Walter Scott gave him a novel in 1817 and the legend never looked back.",
+   "plaque": "w55_sc_rob_roy",
+   "title": "Rob Roy at Balquhidder"
+  },
+  {
+   "x": 41,
+   "y": 22,
+   "text": "DOUNE CASTLE. A fourteenth-century courtyard castle built for Robert Stewart, Duke of Albany. It has played a castle in a great many films, and a very silly one about a grail. It has never once complained about the extras."
+  },
+  {
+   "x": 22,
+   "y": 29,
+   "text": "THE ROB ROY WAY. About eighty miles from Drymen, on the edge of the Trossachs, to Pitlochry, through glens, lochs and places that have had a bad deal from the weather and a good one from Walter Scott."
+  }
+ ],
+ "spawn": [
+  20,
+  46
+ ],
+ "stage": "forest",
+ "scaled_floor": 69,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT..........P...................P..............T...........PTTT",
+  "TTT..wwwwwwwwwwwwwwwwwwww.,,,,,,,,.....P.P....T..............TTT",
+  "TTT..w~~~~~~~~~~~~~~~~~~w.,,,,,,,,................T....P.....TTT",
+  "TTT..w~~~~~~~~~~~~~~~~~~w.,,,,,,,,...........................TTP",
+  "TTT..w~~~~~~~~~~~~~~~~~~w.,,,,,,,,...........................TTT",
+  "TTT..w~~~~~~~~~~~~~~~~~~w.,,,,,,,,................T..........TTT",
+  "TTT..w~~~~~~~~~~~~~~~~~~w.,,,,,,,,...........................TTT",
+  "TTT..w~~~~~~~~~~~~~~~~~~w.,,,,,,,,.................T.........TTT",
+  "TTT..w~~~~~~~~~~~~~~~~~~w.,,,,,,,,..############################",
+  "TTTP.w~~~~~~~~~~~~~~~~~~w.,,,,,,,,..############################",
+  "TTT..w~~~~~~~~~~~~~~~~~~wP,,,,,,,,..############################",
+  "TTT..w~~~~~~~~~~~~~~~~~~w..........P###P.....................TTT",
+  "TTT..w~~~~~~~~~~~~~~~~~~w...........###.P....................TTT",
+  "TTT..wwwwwwwwwwwwwwwwwwww...........###.......BBBBBBBB.......TTT",
+  "TTT..TT...ssssssss.................T###.......BBBBBBBB.......TPT",
+  "TTT....P................T.........T.###.......BBBBBBBB.......TTT",
+  "TTT..................T..............###.......BBBBBBBB.......TTT",
+  "TTT.................................###...P..PBBBBBBBB.......TTT",
+  "TTT.........T..T......P.............##########::::::::......TTTT",
+  "TTT...,,,,,,,,,,....................###......................TTT",
+  "TTT...,,,,,,,,,,....................###......................TTT",
+  "TTT.PT,,,,,,,,,,......P.............###...,,,,,,,,,,,,,,.....TTT",
+  "TTT...,,,,,,,,,,............P.......###...,,,,,,,,,,,,,,.....TTT",
+  "TTT...,,,,,,,,,,....................###...,,,,,,,,,,,,,,.....TTT",
+  "TTT...,,,,,,,,,,....................###...,,,,,,,,,,,,,,.....TTT",
+  "TTTT..,,,,,,,,,,T..####################...,,,,,,,,,,,,,,.....TTT",
+  "TTT...,,,,,,,,,,...####################T..,,,,,,,,,,,,,,.....TTT",
+  "TTT................####################..P................T..TTT",
+  "TTT................###....P....T.....P...................T...TTT",
+  "PTT................###..,,,,,,,,,,..........................PTTT",
+  "TTT.P..............###..,,,,,,,,,,......T...................TTTT",
+  "TPT................###..,,,,,,,,,,......BBBBBB.......P......PTTT",
+  "TTT................###..,,,,,,,,,,......BBBBBB........T......TTT",
+  "TTT.....,,,,,,,,,,.###..,,,,,,,,,,......BBBBBB.........P.....TTT",
+  "TTT.....,,,,,,,,,,.###..,,,,,,,,,,.T....BBBBBBT....T.........TTT",
+  "TTT.....,,,,,,,,,,.###..,,,,,,,,,,......::::::...............TTT",
+  "TTT.T...,,,,,,,,,,P###..,,,,,,,,,,.....P............P........TTT",
+  "TTT.....,,,,,,,,,,.###...T........................,,,,,,,,...TPT",
+  "TTT..T..,,,,,,,,,,.###............................,,,,,,,,...TTT",
+  "TTT.....,,,,,,,,,,.###T...................T.......,,,,,,,,...TTT",
+  "TTT....T,,,,,,,,,,.###.......TT.P.................,,,,,,,,...TTT",
+  "TTT.P....P.........###..................P.........,,,,,,,,...TTT",
+  "TTT....T...........###P..........T...............P,,,,,,,,...TTT",
+  "TTT................###..P....................................TTT",
+  "TTT....T.....P....P###.....P.................................TTT",
+  "TTT.............P..###.......................................TTT",
+  "TTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTT###PTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTT###TTTTPPTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTT"
+ ]
+}

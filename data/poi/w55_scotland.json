@@ -185,6 +185,61 @@
    "kind": "den",
    "at": "pass_of_brander",
    "species": "snowhare"
+  },
+  {
+   "id": "poi_rob_roy_way_cache",
+   "zone": "rob_roy_way",
+   "near": [
+    13,
+    42
+   ],
+   "kind": "cache",
+   "at": "rob_roy_way",
+   "item": "burns_tam",
+   "line": "Behind the rock there is a gap, and in the gap there is a lunchbox. Inside, a bonnet, folded very neatly."
+  },
+  {
+   "id": "poi_rob_roy_way_stone",
+   "zone": "rob_roy_way",
+   "near": [
+    47,
+    26
+   ],
+   "kind": "stone",
+   "at": "rob_roy_way",
+   "stat": "lore",
+   "lore": [
+    "Lichen has been at it for a few thousand years and has barely got started.",
+    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."
+   ]
+  },
+  {
+   "id": "poi_rob_roy_way_camp",
+   "zone": "rob_roy_way",
+   "near": [
+    19,
+    25
+   ],
+   "kind": "camp",
+   "at": "rob_roy_way",
+   "names": [
+    [
+     "Poacher Dilys",
+     "Poacher"
+    ],
+    [
+     "Trapper Moira",
+     "Trapper"
+    ]
+   ],
+   "party": [
+    "raidtail",
+    "thistlet",
+    "brockling"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3100,
+   "item": "cream_tea"
   }
  ]
 }

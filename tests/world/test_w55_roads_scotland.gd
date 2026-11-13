@@ -11,6 +11,7 @@ const NEW := {
 	"west_highland_way": ["loch_lomond", "glencoe"],
 	"devils_staircase": ["glencoe", "fort_william"],
 	"pass_of_brander": ["loch_lomond", "oban"],
+	"rob_roy_way": ["central_belt", "dundee"],
 }
 
 func _baseline() -> Dictionary:
