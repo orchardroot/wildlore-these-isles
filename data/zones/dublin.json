@@ -298,6 +298,49 @@
    "facing": "up",
    "move": "still",
    "script": "arts_davy_byrnes"
+  },
+  {
+   "id": "ct_puca_poster",
+   "sprite": "villager_1",
+   "x": 31,
+   "y": 27,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_puca_poster",
+   "name": "Eilis Kavanagh"
+  },
+  {
+   "id": "ct_puca_stone",
+   "sprite": "villager_5",
+   "x": 30,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_puca_stone",
+   "name": "Tour Guide",
+   "show_if": "ct_puca_marked"
+  },
+  {
+   "id": "ct_puca_indoors",
+   "sprite": "farmer",
+   "x": 40,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_puca_indoors",
+   "name": "Stable Hand",
+   "show_if": "ct_puca_indoors"
+  },
+  {
+   "id": "ct_puca_lads",
+   "sprite": "festival_goer",
+   "x": 25,
+   "y": 35,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_puca_lads",
+   "name": "Teenager",
+   "show_if": "ct_puca_blamed"
   }
  ],
  "props": [

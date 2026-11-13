@@ -567,6 +567,56 @@
    "facing": "right",
    "move": "still",
    "trainer": "wic_singer"
+  },
+  {
+   "id": "ct_puca_seamus",
+   "sprite": "farmer",
+   "x": 20,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_puca_seamus",
+   "name": "Seamus Doyle"
+  },
+  {
+   "id": "ct_puca_noreen",
+   "sprite": "villager_6",
+   "x": 40,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_puca_noreen",
+   "name": "Noreen Byrne"
+  },
+  {
+   "id": "ct_puca_lair",
+   "sprite": "creature:pooka",
+   "x": 32,
+   "y": 44,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_puca_lair",
+   "name": "The Pooka",
+   "show_if": "ct_puca_state",
+   "hide_if": "ct_puca_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 32,
+   "y": 40,
+   "text": [
+    "Churned mud on the lake shore, trampled by cows and walkers."
+   ],
+   "clue": "puca.prints"
+  },
+  {
+   "x": 36,
+   "y": 37,
+   "text": [
+    "The lake shore in the evening. The water is dead flat."
+   ],
+   "clue": "puca.eyes"
   }
  ],
  "encounters": {
