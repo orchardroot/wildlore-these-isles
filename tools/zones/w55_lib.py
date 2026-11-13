@@ -232,6 +232,20 @@ def _patch_block(lines, key, changes):
         lines[start + 1 + y] = '  "' + new + '"' + tail
 
 
+def seal_tile(zid, x, y, ch):
+    """Change one tile of an existing zone, in its own text (used to turn a stray walkable border tile, like a shallow
+    sea edge, into deep water so it cannot lead anywhere the validator cannot follow)."""
+    path = os.path.join(OUT, zid + ".json")
+    text = open(path, encoding="utf-8").read()
+    d = json.loads(text)
+    row = d["rows"][y]
+    if row[x] == ch:
+        return
+    lines = text.split("\n")
+    _patch_block(lines, "rows", {y: row[:x] + ch + row[x + 1:]})
+    open(path, "w", encoding="utf-8").write("\n".join(lines))
+
+
 def cut_gap(zid, side, at, cut, other, offset, path_char="#"):
     """Carve `cut` tiles as path and put an edge `side` -> other with `offset` on zone zid, editing the file's own
     text (rows, heights, edges) so that nothing else about its formatting moves. Idempotent."""

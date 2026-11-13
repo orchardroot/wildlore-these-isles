@@ -329,6 +329,10 @@
   "north": {
    "to": "canterbury",
    "offset": 10
+  },
+  "west": {
+   "to": "romney_marsh",
+   "offset": -7
   }
  },
  "npcs": [
@@ -703,9 +707,9 @@
   "TTgggggggggggg.BBBBBBB:BBBBBB:===.....gggggggggg#gggBDBBggggggTT",
   "TTgggggggggggg.BBBBBBB:BBBBBB:===.....ggggqqgqqq########qqqgqqTT",
   "TTgggggggggggg.BBBDBBB:BBDBBB:===.....ggggqqqgqqqqgqqqqgqqqqgqTT",
-  "TTgggggggggggg.:::::::::::::::===.....ggggqqqqgqqqqgqqqqgqqqqgTT",
-  "TTgggggggggggg.:::::::::::::::===.....gggggqqqqgqqqqgqqqqgqqqqTT",
-  "TT.BBBBBBBBBB..BBBBBBB:BBBBBB:===.....ggggqgqqqqgqqqqgqqqqgqqqTT",
+  "##gggggggggggg.:::::::::::::::===.....ggggqqqqgqqqqgqqqqgqqqqgTT",
+  "##gggggggggggg.:::::::::::::::===.....gggggqqqqgqqqqgqqqqgqqqqTT",
+  "##.BBBBBBBBBB..BBBBBBB:BBBBBB:===.....ggggqgqqqqgqqqqgqqqqgqqqTT",
   "TT.BBBBBBBBBB..BBBBBBB:BBBBBB:===.....ggggqqgqqqqgqqqqgqqqqgqqTT",
   "TT.BBBBBBBBBB..BBBDBBB:BBBBBB:===.....ggggqqqgqqqqgqqqqgqqqqgqTT",
   "TT.............:::::::::::::::===.....ggggqqqqgqqqqgqqqqgqqqqgTT",

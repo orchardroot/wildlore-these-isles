@@ -388,6 +388,44 @@
    "line": "Reclaiming old rail. It's called heritage when somebody else does it.",
    "money": 2700,
    "item": "iron_snare"
+  },
+  {
+   "id": "poi_romney_stone",
+   "zone": "romney_marsh",
+   "near": [
+    30,
+    6
+   ],
+   "kind": "stone",
+   "at": "romney_marsh",
+   "stat": "hp",
+   "lore": [
+    "It leans into the wind and smells faintly of brandy. A very old marker, to a very old business.",
+    "The real thing is the Romney Marsh smuggling trade of the 1700s: the Owlers moved wool out and brandy and tea in, and nearly the whole marsh looked the other way."
+   ]
+  },
+  {
+   "id": "poi_romney_cache",
+   "zone": "romney_marsh",
+   "near": [
+    10,
+    40
+   ],
+   "kind": "cache",
+   "at": "romney_marsh",
+   "item": "sea_glass",
+   "line": "Under the shingle bank, in the lee of a boat: a biscuit tin, a pocketful of sea glass, and a note in a child's hand: 'Treasure. Do not tell Dad.'"
+  },
+  {
+   "id": "poi_romney_den",
+   "zone": "romney_marsh",
+   "near": [
+    40,
+    8
+   ],
+   "kind": "den",
+   "at": "romney_marsh",
+   "species": "longman"
   }
  ]
 }

@@ -1,0 +1,32 @@
+{
+ "id": "rm_martello",
+ "name": "Coastguard Carol",
+ "class": "Coastguard",
+ "sprite": "sailor",
+ "party": [
+  {
+   "species": "petrelash",
+   "level": 94
+  },
+  {
+   "species": "gannetling",
+   "level": 95
+  },
+  {
+   "species": "dolphlet",
+   "level": 94
+  }
+ ],
+ "ai": "trainer",
+ "money": 4100,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Coastguard Carol",
+   "text": "I watch the Channel. Busiest shipping lane in the world, five hundred ships a day. I love every one of them from here, a safe distance."
+  }
+ ],
+ "win": "A grey day. I'll have another cup of tea.",
+ "after": "Martello towers were never attacked. Some people think it's because the French saw them and gave up. Others think the French never knew.",
+ "scaled_floor": 94
+}

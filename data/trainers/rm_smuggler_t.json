@@ -1,0 +1,32 @@
+{
+ "id": "rm_smuggler_t",
+ "name": "Owler Dougal",
+ "class": "Smuggler",
+ "sprite": "sailor",
+ "party": [
+  {
+   "species": "barnling",
+   "level": 94
+  },
+  {
+   "species": "hushwing",
+   "level": 95
+  },
+  {
+   "species": "leveret",
+   "level": 94
+  }
+ ],
+ "ai": "trainer",
+ "money": 4000,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Owler Dougal",
+   "text": "Nothing to declare. Nothing at all. This barrel is for a friend, and you didn't see it, because owls don't have friends."
+  }
+ ],
+ "win": "A fair cop. The marsh gives, the marsh takes.",
+ "after": "They used to say an owl hooted when the excise men were out. Owlers were clever. They'd have done well in a bank.",
+ "scaled_floor": 94
+}

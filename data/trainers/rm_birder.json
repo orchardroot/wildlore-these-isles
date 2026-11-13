@@ -1,0 +1,32 @@
+{
+ "id": "rm_birder",
+ "name": "Reserve Warden Haf",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "ternlet",
+   "level": 94
+  },
+  {
+   "species": "bittling",
+   "level": 95
+  },
+  {
+   "species": "stalklet",
+   "level": 94
+  }
+ ],
+ "ai": "trainer",
+ "money": 4100,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Reserve Warden Haf",
+   "text": "Dungeness RSPB: shingle, scrub, gravel pits and a good number of rare birds that don't know they're rare. I'm very fond of all of them."
+  }
+ ],
+ "win": "I'll note this as 'vigorous behaviour'.",
+ "after": "Little terns nest on the open shingle and rely on camouflage and luck. We rely on tape and signs.",
+ "scaled_floor": 94
+}

@@ -114,5 +114,19 @@
   },
   "flag": "field_varsity_roundup",
   "at": "varsity_line"
+ },
+ {
+  "id": "fs_romney_glint",
+  "zone": "romney_marsh",
+  "x": 38,
+  "y": 38,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the shallows by the net shops. {lead} dips in and comes up with an old tobacco tin, a lead token from a ferry that no longer runs, and a quite surprising amount of change.",
+  "reward": {
+   "money": 480
+  },
+  "flag": "field_romney_glint",
+  "at": "romney_marsh"
  }
 ]

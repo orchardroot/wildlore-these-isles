@@ -647,6 +647,10 @@
   "north": {
    "to": "south_downs",
    "offset": -14
+  },
+  "east": {
+   "to": "romney_marsh",
+   "offset": 0
   }
  },
  "npcs": [
@@ -1064,9 +1068,9 @@
   "TT::::::::::::::::::::::::::::::::===:ggggg##ggggg:BBBBBBBBBBBBBBBBB::TT",
   "TT::::::::::::::::::::::::::::::::===:gfffg##ggggg::::::::::::::::::::TT",
   "TT:BBBBBBB:BBBBBBB:BBBBBB:BBBBBB::===:ggggg##ggggg::::::::::::::::::::TT",
-  "TT:BBBBBBB:BBBBBBB:BBBBBB:BBBBBB::===:::::::::::::::::::::::::::::::::TT",
-  "TT:BBBBBBB:BBBBBBB:BBBBBB:BBBBBB::===:::::::::::::::::::::::::::::::::TT",
-  "TT::::::::::::::::::::::::::::::::===:BBBBBBBBB:BBBBBBBBB:BBBBBB:BBBB:TT",
+  "TT:BBBBBBB:BBBBBBB:BBBBBB:BBBBBB::===:::::::::::::::::::::::::::::::::##",
+  "TT:BBBBBBB:BBBBBBB:BBBBBB:BBBBBB::===:::::::::::::::::::::::::::::::::##",
+  "TT::::::::::::::::::::::::::::::::===:BBBBBBBBB:BBBBBBBBB:BBBBBB:BBBB:##",
   "TT::::::::::::::::::::::::::::::::===:BBBBBBBBB:BBBBBBBBB:BBBBBB:BBBB:TT",
   "TT:BBBBBBBBBBBBBB::BBBBBBBBBBBBB::===:BBBBBBBBB:BBBBBBBBB:BBBBBB:BBBB:TT",
   "TT:BBBBBBBBBBBBBB::BBBBBBBBBBBBB::===:BBBBDBBBB:BBBBBBBBB:BBBDBB:BBBB:TT",
@@ -1083,7 +1087,7 @@
   "FFppppppppppppppppppppppppppppppprjjjrpppppppp_____pppppppppppppppppppFF",
   "FFppppppppppppppppppppppppppppppprjjjrppppppp!!!!!!!!!!!!&!!!!!!!!!!!pFF",
   "FFppppppppppppppppppppppppppppppprjjjrppppppppppppppppppppppppppppppppFF",
-  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwrjjjrwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwrjjjrwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$rjjjr$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$rjjjr$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$rjjjjjjjjjjjjjjjr$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
