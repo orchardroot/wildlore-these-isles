@@ -73,3 +73,10 @@ New: `tests/ui/test_type_chart_screen.gd`; extended `tests/data_api/test_type_ch
   the explore session adds its atlas page in the same lists), `core/intros.gd` (two cards and a MENUS entry),
   `core/scene_router.gd` (one MENUS entry), `ui/pause_menu.gd` and `ui/menu_logic.gd` (Types row).
 - Not done: the Relearner screen's move description has no matchup line (not in the brief).
+
+## Screenshots
+All of the brief's list was taken before the integrator's limit arrived (picker against a dual-type foe, doubles, switch
+menu, chart plain and scoped, Fieldbook rows, Large text for the picker and the chart), plus the Summary, starter
+picker and pause menu. No further shots were taken after it. Not shot at all: the chapbook description with the new
+matchup line (the dev menu opens it with the teach-picker up), the Summary at Large text (checked with the text audit
+instead, clean), the types card in the message box, and the pause menu with the Ark row.
