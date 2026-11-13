@@ -608,6 +608,10 @@
   "south": {
    "to": "shropshire_hills",
    "offset": 0
+  },
+  "west": {
+   "to": "offas_dyke",
+   "offset": 16
   }
  },
  "npcs": [
@@ -1036,9 +1040,9 @@
   "TT..============:::::::::::::::::::::::::::..............w~~BBBBBBBBB.TT",
   "TT..============:::::::::::::::::::::::::::..............w~~BBBBBBBBB.TT",
   "TT..============:::::::::::::::::::::::::::..............w~~BBBBDBBBB.TT",
-  "TT........#.w~~w.BBBBBBBB.BBBBB.BBBBBBBB:::..............w~~w...:.....TT",
-  "TT........#.w~~w.BBBBBBBB.BBBBB.BBBBBBBB:::..............w~~w...:.....TT",
-  "TT.BBBBBBB#.w~~w.BBBBDBBB.BBDBB.BBBBBBBB:::..............w~~w...:.....TT",
+  "##........#.w~~w.BBBBBBBB.BBBBB.BBBBBBBB:::..............w~~w...:.....TT",
+  "##........#.w~~w.BBBBBBBB.BBBBB.BBBBBBBB:::..............w~~w...:.....TT",
+  "##.BBBBBBB#.w~~w.BBBBDBBB.BBDBB.BBBBBBBB:::..............w~~w...:.....TT",
   "TT.BBBBBBB#.w~~w:::::::::::::::::::::::::::..............w~~w...:.....TT",
   "TT.BBBBBBB#.w~~w:BBBBBBBBBBBBBBBBBBBBBBB:::::::::::::::::===============",
   "TT.#########w~~w:BBBBBBBBBBBBBBBBBBBBBBB:::::::::::::::::===============",

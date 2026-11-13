@@ -1,0 +1,32 @@
+{
+ "id": "od_castle",
+ "name": "Castle Warden Gethin",
+ "class": "Warden",
+ "sprite": "warden_grunt",
+ "party": [
+  {
+   "species": "martling",
+   "level": 23
+  },
+  {
+   "species": "brockling",
+   "level": 22
+  },
+  {
+   "species": "slatelet",
+   "level": 22
+  }
+ ],
+ "ai": "trainer",
+ "money": 440,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Castle Warden Gethin",
+   "text": "I look after the castle for the National Trust. It looks after me, mostly by being cold."
+  }
+ ],
+ "win": "I'll lock up. Slowly.",
+ "after": "The Mortimers built it, the Myddeltons bought it, and now the Trust has it. And every one of them has had a go at the plumbing.",
+ "scaled_floor": 22
+}

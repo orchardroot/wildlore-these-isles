@@ -1,0 +1,50 @@
+{
+ "od_walker": [
+  {
+   "do": "say",
+   "who": "Dyke Walker",
+   "text": "All hundred and seventy-seven miles. Chepstow to Prestatyn, or the other way round, if you like going down hills."
+  },
+  {
+   "do": "say",
+   "who": "Dyke Walker",
+   "text": "You cross the border more than twenty times on the Path. The border doesn't seem to mind."
+  }
+ ],
+ "od_bargee": [
+  {
+   "do": "say",
+   "who": "Narrowboat Skipper",
+   "text": "Across Pontcysyllte at four miles an hour. Thirty-eight metres up. I don't look down. My wife does it for me, and describes it."
+  },
+  {
+   "do": "say",
+   "who": "Narrowboat Skipper",
+   "text": "Telford built it in iron and stone. The mortar was lime and ox blood, they say. Nobody likes to think about the ox blood, but it's still holding up."
+  }
+ ],
+ "od_singer": [
+  {
+   "do": "say",
+   "who": "Eisteddfod Singer",
+   "text": "The International Eisteddfod began in 1947. Choirs from all over the world came to sing in a tent in a Welsh field, just two years after the war. People thought it a very odd idea. It's been going ever since."
+  },
+  {
+   "do": "say",
+   "who": "Eisteddfod Singer",
+   "text": "Every July the town fills up with folk dancers and the smell of chip fat. Lovely."
+  }
+ ],
+ "od_railman": [
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "The Welshpool and Llanfair is a narrow gauge line, two foot six, opened in 1903. It was nearly lost in the sixties, and a lot of enthusiasts saved it with sandwiches and shovels."
+  },
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "It runs through the border country at a walking pace. It's the only way to see the Dyke without getting your boots dirty."
+  }
+ ]
+}

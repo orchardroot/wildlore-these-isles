@@ -152,9 +152,9 @@ def _reachable(d):
     ws = _walk_chars(d)
     rows = d["rows"]
     H, W = len(rows), len(rows[0])
-    blocked = {(p["x"], p["y"]) for p in d.get("props", []) if p["type"] != "building" and not p.get("walk")}
-    blocked |= {(s["x"], s["y"]) for s in d.get("signs", [])}
-    start = tuple(d["spawn"])
+    blocked = {(int(p["x"]), int(p["y"])) for p in d.get("props", []) if p["type"] != "building" and not p.get("walk")}
+    blocked |= {(int(s["x"]), int(s["y"])) for s in d.get("signs", [])}
+    start = tuple(int(v) for v in d["spawn"])
     seen = {start}
     q = [start]
     while q:
@@ -179,10 +179,10 @@ def plan_gap(zid, side, want=None, width=3, max_depth=26, water_ok=False):
     length = W if horiz else H
     mid = want if want is not None else length // 2
     cands = sorted(range(2, length - 2), key=lambda a: abs(a - mid))
-    occupied = {(p["x"], p["y"]) for p in d.get("props", []) if p["type"] != "building"}
-    occupied |= {(s["x"], s["y"]) for s in d.get("signs", [])}
-    occupied |= {(n["x"], n["y"]) for n in d.get("npcs", [])}
-    occupied |= {(w["x"], w["y"]) for w in d.get("warps", [])}
+    occupied = {(int(p["x"]), int(p["y"])) for p in d.get("props", []) if p["type"] != "building"}
+    occupied |= {(int(s["x"]), int(s["y"])) for s in d.get("signs", [])}
+    occupied |= {(int(n["x"]), int(n["y"])) for n in d.get("npcs", [])}
+    occupied |= {(int(w["x"]), int(w["y"])) for w in d.get("warps", [])}
     best = None
     for a in cands:
         cut = []

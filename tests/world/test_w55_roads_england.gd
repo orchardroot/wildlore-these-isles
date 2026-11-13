@@ -19,6 +19,7 @@ const NEW_ZONES := {
 	"cranborne_chase": ["stonehenge", "south", "poole", "north", "badge_spirit"],
 	"varsity_line": ["bletchley_park", "east", "cambridge", "west", ""],
 	"romney_marsh": ["brighton", "east", "dover", "west", "moot_won"],
+	"offas_dyke": ["shrewsbury", "west", "llangollen", "south", ""],
 }
 
 func _golden() -> Dictionary:

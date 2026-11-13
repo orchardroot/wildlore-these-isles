@@ -1,144 +1,128 @@
-# Road 10 (wave 55): Offa's Dyke Path. The Shropshire Hills (south side) by Clun, Knighton, Hay-on-Wye and the Black
-# Mountains into the Brecon Beacons (north side). A border crossing: England to Wales. The Shropshire Hills open at
-# the Urban Stone and the Welsh south only after the dragon on Yr Wyddfa (the Cambrian gate), so the road carries
-# the same gate: Wardens, until ch3_ddraig_woke.
+# Road 10 (wave 55): Offa's Dyke Path, the northern end. Shrewsbury (west side) over the border by Welshpool, Chirk and the
+# Pontcysyllte Aqueduct to Llangollen (south side). A border crossing: England to Wales. Shrewsbury and Llangollen both
+# open at the Urban Stone (data/objectives.json), so there is no gate.
 from w55_lib import *
 
 ZID = "offas_dyke"
-W, H = 64, 64
-FLOOR = 21   # the Shropshire Hills 21: the end that can be walked into first
-GATE = "ch3_ddraig_woke"
+W, H = 64, 60
+FLOOR = 22   # Shrewsbury 21, Llangollen 25
 
 
 def build():
-    z = route_zone(ZID, "Offa's Dyke", W, H, "mid_wales", "route_moor", "moor", FLOOR,
-                   {"drizzle": 32, "clear": 20, "fog": 16, "downpour": 12, "gale": 8, "sunshine": 12})
+    z = route_zone(ZID, "Offa's Dyke", W, H, "north_wales", "route_forest", "valley", FLOOR,
+                   {"drizzle": 32, "clear": 20, "fog": 14, "downpour": 12, "gale": 8, "sunshine": 14})
     z.legend.update({
         "g": {"tile": "grass", "colour": "#7b8c4c"},
         "m": {"tile": "grass", "colour": "#879a52"},
         "q": {"tile": "tall_grass", "colour": "#7a8947", "prop": "short"},
         "h": {"tile": "tall_grass", "colour": "#6e5a5c", "prop": "heather"},
-        "b": {"tile": "tall_grass", "colour": "#8a6a44", "prop": "short"},
         "r": {"tile": "shallow", "prop": "reeds"},
-        "G": {"tile": "rock", "colour": "#6f6852"},
         "c": {"tile": "path", "colour": "#b9a98a"},
     })
     z.rect(0, 0, W, H, "g")
-    z.border("T", 3, gaps=[(31, 0, 3, 3), (31, 61, 3, 3)])
-    z.scatter(0, 0, W, H, "P", 30, 8, only="T")
-    # --- Clun forest in the north, the Black Mountains rising in the south-east
-    hills(z, [(14, 8, 3, 12), (52, 52, 6, 16), (14, 54, 3, 10)])
-    for y in range(3, 16):
-        for x in range(3, W - 3):
-            if z.g[y][x] == "g" and (x * 7 + y) % 5 == 0:
-                z.set(x, y, "P")
-    for (cx, cy, rx, ry) in [(52, 52, 9, 5), (14, 8, 6, 3), (44, 10, 6, 3)]:
-        blob(z, cx, cy, rx, ry, "h", only="gm", seed=cx + cy, jitter=0.5)
-    for (cx, cy, rx, ry) in [(30, 30, 8, 3), (46, 30, 6, 3), (18, 44, 7, 3)]:
-        blob(z, cx, cy, rx, ry, "q", only="g", seed=cx * cy, jitter=0.5)
-    for y in range(16, 60):
+    z.border("T", 3, gaps=[(61, 45, 3, 3), (31, 0, 3, 3)])
+    z.scatter(0, 0, W, H, "P", 28, 8, only="T")
+    # --- Castell Dinas Bran's hill in the north-west, the Berwyn foothills, flatter farmland round Welshpool
+    hills(z, [(12, 10, 5, 12), (50, 12, 3, 12)])
+    for (cx, cy, rx, ry) in [(12, 10, 7, 4), (50, 10, 6, 3), (20, 50, 6, 3)]:
+        blob(z, cx, cy, rx, ry, "h", only="g", seed=cx * cy, jitter=0.5)
+    for (cx, cy, rx, ry) in [(30, 40, 8, 3), (12, 30, 6, 3), (46, 28, 6, 3)]:
+        blob(z, cx, cy, rx, ry, "q", only="g", seed=cx + cy, jitter=0.5)
+    for y in range(18, 58):
         for x in range(3, W - 3):
             if z.g[y][x] == "g" and (x * 3 + y * 5) % 4:
                 z.set(x, y, "m")
-    # --- the River Wye across the middle, and the border bridge at Hay
+    # --- the valley of the Dee across the north with the aqueduct
     for x in range(3, W - 3):
-        y = 38 + int(round(1.5 * math.sin(x / 6.0)))
+        y = 13 + int(round(1.2 * math.sin(x / 7.0)))
         z.set(x, y - 1, "w"); z.set(x, y, "~"); z.set(x, y + 1, "w")
     # --- the road
-    ROUTE = [(32, 1), (32, 12), (18, 12), (18, 24), (44, 24), (44, 32), (32, 32), (32, 62)]
+    ROUTE = [(62, 46), (46, 46), (46, 36), (20, 36), (20, 24), (32, 24), (32, 1)]
     road(z, ROUTE, "c", 3)
-    # --- the Dyke: a hedge-and-bank line running north to south along x = 24, gaps where the road crosses
-    for y in range(3, 59):
-        if not (11 <= y <= 13 or 23 <= y <= 25) and z.g[y][24] not in "w~c":
-            z.set(24, y, "H"); z.hg[y][24] = max(z.hg[y][24], 1)
-    # --- Knighton: the Offa's Dyke Centre, houses on the bank
-    z.building(36, 8, 4, 3, "white_render", "Offa's Dyke Centre", show_label=True)
-    sign(z, 34, 12, "KNIGHTON. In Welsh, Tref-y-clawdd: the town on the dyke. The Offa's Dyke Path has its midpoint here, and the Centre will give you a certificate for it.")
-    z.building(42, 9, 4, 3, "slate_cottage", "", show_label=False)
-    z.building(8, 16, 4, 3, "stone", "Clun Castle (ruin)", show_label=True)
-    # --- Hay-on-Wye: the bookshop row on the Welsh bank
-    z.building(36, 41, 5, 3, "red_brick", "Booksellers", show_label=True)
-    z.building(42, 41, 5, 3, "stone", "Hay Castle", show_label=True)
-    z.building(36, 46, 5, 3, "tudor", "Booksellers", show_label=False)
-    z.building(42, 46, 5, 3, "white_render", "", show_label=False)
-    z.prop("bench", 40, 40); z.prop("lamp_post", 41, 45)
-    # --- Llanthony Priory in its valley
-    z.building(8, 46, 9, 5, "chapel", "Llanthony Priory (ruin)")
-    for (x, y) in [(10, 20), (22, 30), (50, 18), (56, 40), (14, 40), (48, 56)]:
+    # --- the Dyke: a hedge-and-bank line along x = 40, gaps where the road crosses it
+    for y in range(3, 58):
+        if not (35 <= y <= 37) and z.g[y][40] not in "w~c":
+            z.set(40, y, "H"); z.hg[y][40] = max(z.hg[y][40], 1)
+    # --- places along the road
+    z.building(51, 38, 9, 5, "castle", "Powis Castle")
+    z.building(52, 48, 4, 2, "tin_cottage", "Welshpool & Llanfair Halt", show_label=True)
+    z.building(6, 28, 10, 5, "castle", "Chirk Castle")
+    z.building(8, 4, 6, 4, "castle", "Castell Dinas Bran (ruin)")
+    z.building(42, 5, 7, 4, "chapel", "Valle Crucis Abbey (ruin)")
+    z.building(22, 8, 4, 3, "tudor", "Plas Newydd", show_label=True)
+    z.prop("canal_boat", 24, 13, variant=0); z.prop("canal_boat", 38, 13, variant=0)
+    z.prop("standing_stone", 50, 9, variant=1)
+    for (x, y) in [(8, 40), (26, 42), (36, 28), (54, 28), (14, 48), (48, 54)]:
         z.prop("sheep", x, y, variant=(x + y) % 3)
-    # --- the gate: a bank across the zone at y = 50, Wardens in the gap; the Beacons lie behind it
-    gate_wall(z, "y", 50, 31, 33)
-    gate_npcs(z, "od_gate", 31, 50, 3, "x", GATE, "Warden", "warden_grunt",
-              ["The road south is closed. Heritage Assessment. We're waiting for Director Pryce to come back with the results.",
-               "He went up Yr Wyddfa, up in Eryri, some while back. If you're passing, tell him we're still here. We're always here."], "down")
     # --- signs and plaques
-    sign(z, 28, 3, "NORTH: the Shropshire Hills, Church Stretton and Shrewsbury. SOUTH: Wales, by way of Offa's Dyke. The Dyke is older than any border on a map. It is one of the few borders with a footpath.")
-    plaque(z, 36, 14, "w55e_offas_dyke", "Offa's Dyke",
-           "A great earthwork bank and ditch built along the Welsh border in the 8th century, probably on the orders of Offa, king of Mercia from 757 to 796. The ditch lies on the Welsh side, the bank on the English, and in places it still stands higher than a man. The Offa's Dyke Path, a National Trail opened in 1971, follows it for 177 miles from Prestatyn on the north Wales coast to Sedbury Cliffs near Chepstow.")
-    plaque(z, 14, 28, "w55e_clun", "Clun and Housman",
-           "Clun, on the Shropshire side of the Dyke, is the village in A. E. Housman's poem: 'Clunton and Clunbury, Clungunford and Clun, are the quietest places under the sun.' Housman published A Shropshire Lad in 1896. He grew up near Bromsgrove and never lived in Shropshire at all, but he could see its hills from home, and wrote about them from London.")
-    sign(z, 26, 34, "CROESO I GYMRU. WELCOME TO WALES. The Wye is the border here, and the bridge is the only frontier post. No passport needed. A sandwich is advised.")
-    plaque(z, 38, 39, "w55e_hay", "Hay-on-Wye",
-           "A small Welsh border town that has more second-hand bookshops than almost anywhere. Richard Booth opened the first in 1961 and on 1 April 1977 declared Hay an independent kingdom, with himself as king. The joke stuck: Hay has a Festival every spring, begun in 1988, and a good twenty bookshops in a town of fewer than two thousand people.")
-    sign(z, 30, 44, "THE BLACK MOUNTAINS. The big whaleback ridge of Hay Bluff, 677 metres, with ponies on top and weather nobody asked for. The Dyke Path runs along it or very near it. Ponies have right of way.")
-    plaque(z, 14, 52, "w55e_llanthony", "Llanthony Priory",
-           "The ruins of an Augustinian priory in the lonely Vale of Ewyas, in the Black Mountains. Monks founded it around 1100 after a Norman knight, William de Lacy, found a quiet chapel there while hunting. It was closed in 1538 by Henry VIII's commissioners, and part of it became a house and a hotel. The priory church's west towers still stand.")
-    sign(z, 28, 50, "ROAD CLOSED. HERITAGE ASSESSMENT. ANYBODY WITH QUESTIONS SHOULD APPLY TO THE DIRECTOR IN WRITING. THE DIRECTOR IS NOT AVAILABLE.")
+    sign(z, 60, 43, "EAST: Shrewsbury and England. WEST: Welshpool, Chirk and Llangollen, and the Dyke. The Dyke is older than any border on a map. It is one of the few borders with a footpath.")
+    plaque(z, 43, 33, "w55e_offas_dyke", "Offa's Dyke",
+           "A great earthwork bank and ditch built along the Welsh border in the 8th century, probably on the orders of Offa, king of Mercia from 757 to 796. The ditch lies on the Welsh side, the bank on the English, and in places it still stands higher than a man. The Offa's Dyke Path, a National Trail opened in 1971, follows it for 177 miles from Sedbury Cliffs near Chepstow to Prestatyn on the north Wales coast.")
+    sign(z, 38, 40, "CROESO I GYMRU. WELCOME TO WALES. Somewhere about here the Dyke and the border part company and then meet again. Nobody has told the sheep.")
+    plaque(z, 12, 34, "w55e_chirk", "Chirk Castle",
+           "A fortress built for Edward I in the 1290s by Roger Mortimer, to hold the Welsh border after his conquest of Wales. It has been lived in ever since, which makes it unusual among the Marcher castles, most of which fell to ruin. The families who held it made it comfortable, with a long gallery, tapestries and some of the finest wrought iron gates in Britain.")
+    sign(z, 26, 26, "CHIRK. A castle, a railway viaduct and a canal aqueduct all within a few hundred yards of the border, each from a different century. Telford built the canal one, and nobody could say it didn't last.")
+    plaque(z, 34, 17, "w55e_pontcysyllte", "Pontcysyllte Aqueduct",
+           "Thomas Telford's aqueduct carries the Llangollen Canal across the Dee valley on eighteen stone piers, 38 metres above the river. It opened in 1805, 307 metres long, and is still the highest navigable aqueduct in the world. The iron trough has a towpath on one side and nothing at all between the boat and the drop on the other. It became a World Heritage Site in 2009.")
+    plaque(z, 46, 11, "w55e_eliseg", "Eliseg's Pillar",
+           "A weathered stone column in a field above Valle Crucis Abbey, the remains of a cross raised in the 9th century by Cyngen, king of Powys, in memory of his great-grandfather Elisedd. Its long Latin inscription, which told the family's history, wore away over the centuries and was copied down in 1696 while it could still be read. The Cistercian abbey below was founded in 1201.")
+    sign(z, 18, 6, "CASTELL DINAS BRAN. A medieval castle on an Iron Age hillfort above Llangollen, built in the 1260s by the princes of Powys and ruined soon after. Legend says it burned itself rather than fall to Edward I.")
+    sign(z, 28, 4, "NORTH: Llangollen, the Dee and the International Eisteddfod every July. SOUTH: Chirk, Welshpool and the Dyke. Mind the narrowboats, they have no brakes and right of way.")
     # --- people
-    chat(z, "od_walker", "hiker", 30, 22, "Dyke Walker",
-         ["All hundred and seventy-seven miles. Prestatyn to Chepstow, or the other way, if you like walking uphill the whole time.",
+    chat(z, "od_walker", "hiker", 30, 38, "Dyke Walker",
+         ["All hundred and seventy-seven miles. Chepstow to Prestatyn, or the other way round, if you like going down hills.",
           "You cross the border more than twenty times on the Path. The border doesn't seem to mind."], "right", "still")
-    chat(z, "od_bookseller", "poet", 38, 43, "Hay Bookseller",
-         ["Booth started it. Said the town could be a kingdom of books and appointed his horse Prime Minister. He was right about the books.",
-          "We've got everything. Cookery, ghost stories, fifty copies of last year's best-seller, a very thin volume on how to be modest."], "down", "still")
-    chat(z, "od_kitewatcher", "birdwatcher", 52, 20, "Kite Watcher",
-         ["Red kites. By the 1900s there were only a few left in Britain, all in mid Wales. They came back from a handful of nests. Now there are thousands.",
-          "Stand still and look up. Forked tail, reddish, rocking from side to side. That's a red kite."], "left", "still")
-    chat(z, "od_pony", "villager_2", 52, 48, "Pony Trekker",
-         ["Welsh mountain ponies, hardy as boots. They roam the Black Mountains, and they remember every sandwich you've ever had.",
-          "Don't feed them. I say that every day. Then I feed them."], "down", "still")
+    chat(z, "od_bargee", "canal_boater", 31, 15, "Narrowboat Skipper",
+         ["Across Pontcysyllte at four miles an hour. Thirty-eight metres up. I don't look down. My wife does it for me, and describes it.",
+          "Telford built it in iron and stone. The mortar was lime and ox blood, they say. Nobody likes to think about the ox blood, but it's still holding up."], "down", "still")
+    chat(z, "od_singer", "choir_singer", 24, 22, "Eisteddfod Singer",
+         ["The International Eisteddfod began in 1947. Choirs from all over the world came to sing in a tent in a Welsh field, just two years after the war. People thought it a very odd idea. It's been going ever since.",
+          "Every July the town fills up with folk dancers and the smell of chip fat. Lovely."], "right", "still")
+    chat(z, "od_railman", "rail_guard", 54, 46, "Railway Volunteer",
+         ["The Welshpool and Llanfair is a narrow gauge line, two foot six, opened in 1903. It was nearly lost in the sixties, and a lot of enthusiasts saved it with sandwiches and shovels.",
+          "It runs through the border country at a walking pace. It's the only way to see the Dyke without getting your boots dirty."], "left", "still")
     # --- trainers
-    tr(z, "od_walker_t", "Walker Haf", "Hillwalker", "hillwalker", [("squibbet", 21), ("foalmoor", 22), ("tapknock", 21)], 26, 21, "right",
-       ["Two sides to the Dyke: England on one, Wales on the other. I'm on the English side. For now. My mum's from Brecon."],
-       "Chwarae teg. That was fair play.", "Offa had the Dyke built to show who owned what. It's still working, but only just.", 450, FLOOR)
-    tr(z, "od_farmer", "Hill Farmer Emlyn", "Farmer", "farmer", [("leveret", 21), ("kitelet", 22), ("slatelet", 21)], 40, 17, "left",
+    tr(z, "od_walker_t", "Walker Haf", "Hillwalker", "hillwalker", [("squibbet", 22), ("foalmoor", 23), ("tylwyth", 22)], 36, 38, "right",
+       ["Two sides to the Dyke: England on one, Wales on the other. I'm on the English side. For now. My mum's from Wrexham."],
+       "Chwarae teg. That was fair play.", "Offa had the Dyke built to show who owned what. It still works, but only just.", 450, FLOOR)
+    tr(z, "od_castle", "Castle Warden Gethin", "Warden", "warden_grunt", [("martling", 23), ("brockling", 22), ("slatelet", 22)], 14, 34, "up",
+       ["I look after the castle for the National Trust. It looks after me, mostly by being cold."],
+       "I'll lock up. Slowly.", "The Mortimers built it, the Myddeltons bought it, and now the Trust has it. And every one of them has had a go at the plumbing.", 440, FLOOR)
+    tr(z, "od_boater", "Boatman Idris", "Canal Boater", "canal_boater", [("ductling", 22), ("afanc", 23), ("elverlet", 22)], 28, 16, "right",
+       ["It's narrow, the boat. It's narrow, the canal. It's narrow, the aqueduct. Everything round here is narrow except the views."],
+       "I'll steer clear next time.", "Beavers have been reintroduced in Wales, so I'm told. I haven't seen one. They've probably got a better view than I have.", 440, FLOOR)
+    tr(z, "od_farmer", "Hill Farmer Emlyn", "Farmer", "farmer", [("leveret", 22), ("kitelet", 23), ("flyling", 22)], 48, 24, "left",
        ["Sheep on one side of the Dyke, sheep on the other. They don't know which country they're in. It's a lot less stressful that way."],
        "I'll go and count my sheep. Slowly.", "My grandad got a letter from the council in 1974 telling him which county he lived in. He said he'd always known.", 430, FLOOR)
-    tr(z, "od_bookshop", "Bookseller Arthur", "Bookseller", "poet", [("brammel", 21), ("zigzlet", 22), ("sphagnet", 21)], 34, 45, "up",
-       ["Looking for something in particular? I probably have it. If not, I have something else you didn't know you wanted."],
-       "That's a first edition of a defeat.", "I read three books a week and sell two. The maths doesn't add up, but nor does anything in Hay.", 440, FLOOR)
-    tr(z, "od_kites", "Kite Keeper Ceri", "Ranger", "villager_2", [("kitelet", 22), ("ptarmlet", 21), ("gwyllgi", 22)], 56, 28, "left",
-       ["The kites were nearly lost. Now there's a feeding station, a hide and a flask. We take it in turns to wave at them."],
-       "A fair fall. Kites are tolerant.", "It takes a kite seven years to learn all the tricks. I'm on my eighth and still learning.", 460, FLOOR)
-    tr(z, "od_priory", "Guide Brother Idris", "Guide", "druid", [("tapknock", 22), ("marilwyd", 21), ("sphagnet", 21)], 10, 44, "right",
-       ["Llanthony. A priory for the quiet, in a valley that wouldn't be found on a map until 1800. We still prefer to be left alone."],
-       "Peace be with you. And a better game next time.", "Walter Savage Landor owned the old priory buildings in 1807 and tried to improve the estate. He was bankrupted. Peace be with him.", 440, FLOOR)
+    tr(z, "od_choir", "Choirmaster Rhian", "Singer", "choir_singer", [("wispet", 23), ("gwyllgi", 23), ("pipkin", 22)], 44, 16, "down",
+       ["A male voice choir has more power than a brass band and costs less. Warm up? We've been warmed up since Christmas."],
+       "Harmony restored. Mostly.", "Sing in the open air up here and the hills give it back to you a second later. Every Welshman knows that.", 450, FLOOR)
     # --- wildlife
-    wild(z, [("squibbet", 21, 23, 10, {"weather": ["drizzle", "downpour"]}), ("foalmoor", 21, 23, 10, {}), ("tapknock", 21, 23, 8, {}),
-             ("slatelet", 21, 23, 8, {}), ("kitelet", 21, 23, 12, {"time": ["day"]}), ("ptarmlet", 21, 23, 6, {"weather": ["fog", "gale"]}),
-             ("leveret", 21, 23, 10, {"time": ["dawn", "dusk"]}), ("brammel", 21, 23, 8, {}), ("gwyllgi", 21, 23, 6, {"time": ["dusk", "night"]}),
-             ("sphagnet", 21, 23, 8, {"weather": ["drizzle", "downpour", "fog"]}), ("zigzlet", 21, 23, 8, {"time": ["day"], "weather": ["sunshine", "clear"]}),
-             ("hootlet", 21, 23, 8, {"time": ["dusk", "night"]}), ("puffkin", 21, 23, 6, {"season": ["autumn"]})])
-    wild(z, [("dipling", 21, 23, 26, {}), ("volet", 21, 23, 22, {}), ("pollanet", 21, 22, 16, {}), ("elverlet", 21, 23, 16, {}), ("stalklet", 21, 23, 14, {})], "water")
-    offN = link("shropshire_hills", "south", ZID, 32)
-    offS = link("beacons", "north", ZID, 32)
-    z.d["edges"] = {"north": {"to": "shropshire_hills", "offset": offN}, "south": {"to": "beacons", "offset": offS}}
-    z.d["spawn"] = [32, 4]
+    wild(z, [("squibbet", 22, 24, 10, {"weather": ["drizzle", "downpour"]}), ("foalmoor", 22, 24, 8, {}), ("tylwyth", 22, 24, 10, {"time": ["dusk", "night"]}),
+             ("martling", 22, 24, 10, {}), ("brockling", 22, 24, 10, {"time": ["dusk", "night"]}), ("flittermouse", 22, 24, 8, {"time": ["dusk", "night"]}),
+             ("kitelet", 22, 24, 12, {"time": ["day"]}), ("leveret", 22, 24, 8, {"time": ["dawn", "dusk"]}), ("pipkin", 22, 24, 8, {"time": ["dawn", "day"]}),
+             ("wispet", 22, 24, 8, {"weather": ["fog"]}), ("brammel", 22, 24, 6, {"season": ["summer", "autumn"]}), ("gwyllgi", 22, 24, 5, {"time": ["night"]}),
+             ("flyling", 22, 24, 6, {"time": ["dusk"], "weather": ["drizzle", "fog"]})])
+    wild(z, [("elverlet", 22, 24, 22, {}), ("afanc", 22, 24, 12, {}), ("minkshade", 22, 24, 14, {"time": ["dusk", "night"]}), ("ratty", 22, 24, 20, {}), ("ductling", 22, 24, 18, {}), ("dipling", 22, 24, 18, {})], "water")
+    offE = link("shrewsbury", "west", ZID, 46)
+    offN = link("llangollen", "south", ZID, 32)
+    z.d["edges"] = {"east": {"to": "shrewsbury", "offset": offE}, "north": {"to": "llangollen", "offset": offN}}
+    z.d["spawn"] = [60, 46]
     scenery(z, 1200, bushes=22, rocks=16, trees=8, ground=("g", "m"))
     finish_zone(z, ZID)
-    for p in check_route(z, [(32, 0), (32, 63)]):
+    for p in check_route(z, [(62, 46), (32, 0)]):
         print("PROBLEM:", p)
-    add_place(ZID, 606, 975)
+    add_place(ZID, 590, 915)
     add_data("poi", [
-        poi(ZID, "offas_stone", (28, 18), "stone", stat="def",
+        poi(ZID, "offas_stone", (42, 20), "stone", stat="def",
             lore=["You put a hand on the bank. It is cold, and exactly as wide as one very determined king.",
                   "The real thing is Offa's Dyke itself: a bank and ditch, still higher than a man in places, built in the 8th century along the border and walked today by a National Trail."]),
-        poi(ZID, "offas_cache", (46, 6), "cache", item="hag_stone",
-            line="In the dry-stone wall, a slate with a hole through it, on a string. A Welsh lucky stone, from a time when luck was the cheapest thing on a farm."),
-        poi(ZID, "offas_den", (6, 34), "den", species="tormane")])
+        poi(ZID, "offas_cache", (46, 54), "cache", item="hag_stone",
+            line="In the dry-stone wall, a slate with a hole through it, on a string. A lucky stone, from a time when luck was the cheapest thing on a farm."),
+        poi(ZID, "offas_den", (6, 52), "den", species="tormane")])
     add_data("field_spots", [
-        fspot(ZID, "offas_wall", 36, 20, "mend", "wall_gap",
-              "A gap in the drystone wall on the border, a few stones short of being a good afternoon's work. {lead} lifts them back into place one by one. Whoever owns the wall, England or Wales, tips a cap from the next field.",
+        fspot(ZID, "offas_wall", 34, 30, "mend", "wall_gap",
+              "A gap in the drystone wall on the border, a few stones short of a good afternoon's work. {lead} lifts them back into place one by one. Whoever owns the wall, England or Wales, tips a cap from the next field.",
               {"item": "flask_of_tea", "qty": 1})])
     return z
 

@@ -128,5 +128,20 @@
   },
   "flag": "field_romney_glint",
   "at": "romney_marsh"
+ },
+ {
+  "id": "fs_offas_wall",
+  "zone": "offas_dyke",
+  "x": 34,
+  "y": 30,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in the drystone wall on the border, a few stones short of a good afternoon's work. {lead} lifts them back into place one by one. Whoever owns the wall, England or Wales, tips a cap from the next field.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_offas_wall",
+  "at": "offas_dyke"
  }
 ]

@@ -1,0 +1,32 @@
+{
+ "id": "od_boater",
+ "name": "Boatman Idris",
+ "class": "Canal Boater",
+ "sprite": "canal_boater",
+ "party": [
+  {
+   "species": "ductling",
+   "level": 22
+  },
+  {
+   "species": "afanc",
+   "level": 23
+  },
+  {
+   "species": "elverlet",
+   "level": 22
+  }
+ ],
+ "ai": "trainer",
+ "money": 440,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Boatman Idris",
+   "text": "It's narrow, the boat. It's narrow, the canal. It's narrow, the aqueduct. Everything round here is narrow except the views."
+  }
+ ],
+ "win": "I'll steer clear next time.",
+ "after": "Beavers have been reintroduced in Wales, so I'm told. I haven't seen one. They've probably got a better view than I have.",
+ "scaled_floor": 22
+}

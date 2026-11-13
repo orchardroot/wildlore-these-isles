@@ -1,0 +1,32 @@
+{
+ "id": "od_walker_t",
+ "name": "Walker Haf",
+ "class": "Hillwalker",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "squibbet",
+   "level": 22
+  },
+  {
+   "species": "foalmoor",
+   "level": 23
+  },
+  {
+   "species": "tylwyth",
+   "level": 22
+  }
+ ],
+ "ai": "trainer",
+ "money": 450,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Walker Haf",
+   "text": "Two sides to the Dyke: England on one, Wales on the other. I'm on the English side. For now. My mum's from Wrexham."
+  }
+ ],
+ "win": "Chwarae teg. That was fair play.",
+ "after": "Offa had the Dyke built to show who owned what. It still works, but only just.",
+ "scaled_floor": 22
+}

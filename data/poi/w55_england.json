@@ -426,6 +426,44 @@
    "kind": "den",
    "at": "romney_marsh",
    "species": "longman"
+  },
+  {
+   "id": "poi_offas_stone",
+   "zone": "offas_dyke",
+   "near": [
+    42,
+    20
+   ],
+   "kind": "stone",
+   "at": "offas_dyke",
+   "stat": "def",
+   "lore": [
+    "You put a hand on the bank. It is cold, and exactly as wide as one very determined king.",
+    "The real thing is Offa's Dyke itself: a bank and ditch, still higher than a man in places, built in the 8th century along the border and walked today by a National Trail."
+   ]
+  },
+  {
+   "id": "poi_offas_cache",
+   "zone": "offas_dyke",
+   "near": [
+    46,
+    54
+   ],
+   "kind": "cache",
+   "at": "offas_dyke",
+   "item": "hag_stone",
+   "line": "In the dry-stone wall, a slate with a hole through it, on a string. A lucky stone, from a time when luck was the cheapest thing on a farm."
+  },
+  {
+   "id": "poi_offas_den",
+   "zone": "offas_dyke",
+   "near": [
+    6,
+    52
+   ],
+   "kind": "den",
+   "at": "offas_dyke",
+   "species": "tormane"
   }
  ]
 }
