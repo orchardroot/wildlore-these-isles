@@ -503,6 +503,8 @@ func interact(p: Vector2i) -> void:
 		return
 	if await PostBox.interact(self, p):  # post from Kit (or just a post box)
 		return
+	if await BenchSit.interact(self, p):  # a bench: sit a while
+		return
 	if await FishingScene.interact(self, p):  # open water and a rod
 		return
 	if await CrabbingScene.interact(self, p):  # a harbour wall and a crabbing kit

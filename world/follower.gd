@@ -311,9 +311,9 @@ func _process(delta: float) -> void:
 
 ## Curls up while the player stands still by a fire or at night; any step and it is on its feet again.
 func _settle(pl: Player, delta: float) -> void:
-	if pl.moving or _moving or Router.busy:
+	if pl.moving or _moving:
 		_still = 0.0
-	else:
+	elif not Router.busy or BenchSit.sitting:  # sitting on a bench counts as stood still
 		_still += delta
 	var want := curls_up(_still, by_fire(_fires, tile), Game.phase()) if _still >= CURL_AFTER else false
 	var target := 1.0 if want else 0.0

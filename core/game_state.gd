@@ -68,8 +68,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	data.play_seconds += delta
-	if clock_running and not Router.busy:
-		_minute_acc += delta
+	if clock_running and (not Router.busy or time_boost > 1.0):
+		_minute_acc += delta * time_boost
 		while _minute_acc >= 1.0:
 			_minute_acc -= 1.0
 			data.clock_minutes = GameClock.wrap(data.clock_minutes + 1)
@@ -89,6 +89,7 @@ func _process(delta: float) -> void:
 				Performance.get_monitor(Performance.OBJECT_NODE_COUNT)])
 
 var _minute_acc := 0.0
+var time_boost := 1.0  # game minutes per second while sitting on a bench (see BenchSit); 1 otherwise
 var _fps_acc := 0.0
 
 func new_game() -> void:
