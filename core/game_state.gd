@@ -14,6 +14,7 @@ var autosave_enabled := true
 var skip_next_autosave := false  # set by the title: the first zone after New Game or Load must not overwrite "auto"
 var _in_battle := false
 var _toast: SaveToast
+var _toast_msec := -SaveToast.QUIET_MSEC  # when the autosave note last showed
 var parish: Parish
 var quest_news: QuestNews
 
@@ -119,6 +120,10 @@ func autosave() -> void:
 func _show_saved_toast() -> void:
 	if DisplayServer.get_name() == "headless":
 		return
+	var now := Time.get_ticks_msec()
+	if not SaveToast.due(_toast_msec, now):  # every door autosaves; say so once a minute at most
+		return
+	_toast_msec = now
 	if _toast == null or not is_instance_valid(_toast):
 		_toast = SaveToast.new()
 		add_child(_toast)
