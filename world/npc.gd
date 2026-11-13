@@ -37,9 +37,9 @@ var _looking := false        # turned away from `_rest` by idle life
 var _look_t := 0.0           # seconds until turning back to `_rest`
 var _glance_t := 6.0         # seconds until the next idle glance
 var _react_t := 0.0          # seconds until bubbles and umbrella are looked at again
-var _bubble: Sprite3D
-var _bubble_kind := ""
-var _bubble_tween: Tween
+var _sign: Sprite3D
+var _sign_kind := ""
+var _sign_tween: Tween
 var _umbrella: Node3D
 var _spot_left := 0.0        # seconds the sparkle still has to show
 var _spot_cool := 0.0        # seconds before this child notices the follower again
@@ -201,7 +201,7 @@ func _react(delta: float) -> void:
 		want = NpcBubble.kind_for(ow.zone.id, def, Game.data)
 		if want == "" and _spotted_follower():
 			want = NpcBubble.SPARK
-	_set_bubble(want)
+	_set_sign(want)
 
 ## A child within sight of your follower notices it: a sparkle for a few seconds, then not again for a while.
 func _spotted_follower() -> bool:
@@ -220,25 +220,25 @@ func _spotted_follower() -> bool:
 		_look_t = 1.5
 	return true
 
-func _set_bubble(kind: String) -> void:
-	if kind == _bubble_kind:
+func _set_sign(kind: String) -> void:
+	if kind == _sign_kind:
 		return
-	_bubble_kind = kind
-	if _bubble_tween:
-		_bubble_tween.kill()
-		_bubble_tween = null
-	if _bubble:
-		_bubble.queue_free()
-		_bubble = null
+	_sign_kind = kind
+	if _sign_tween:
+		_sign_tween.kill()
+		_sign_tween = null
+	if _sign:
+		_sign.queue_free()
+		_sign = null
 	if kind == "":
 		return
 	var y := BUBBLE_Y + (0.3 if _umbrella else 0.0)
-	_bubble = NpcBubble.make_bubble(kind, y)
-	add_child(_bubble)
+	_sign = NpcBubble.make_bubble(kind, y)
+	add_child(_sign)
 	if not Settings.reduce_flashing:  # a gentle bob
-		_bubble_tween = create_tween().set_loops()
-		_bubble_tween.tween_property(_bubble, "position:y", y + 0.08, 0.7).set_trans(Tween.TRANS_SINE)
-		_bubble_tween.tween_property(_bubble, "position:y", y, 0.7).set_trans(Tween.TRANS_SINE)
+		_sign_tween = create_tween().set_loops()
+		_sign_tween.tween_property(_sign, "position:y", y + 0.08, 0.7).set_trans(Tween.TRANS_SINE)
+		_sign_tween.tween_property(_sign, "position:y", y, 0.7).set_trans(Tween.TRANS_SINE)
 
 ## A still townsperson: look at the player when they come close, glance about now and then, and settle back.
 ## Trainers never do this (their facing is their line of sight).

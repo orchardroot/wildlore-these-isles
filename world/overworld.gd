@@ -125,6 +125,7 @@ func load_zone(zone_id: String, pos: Vector2i, facing: String) -> void:
 	sky.set_weather(outdoor, zone.kind == "interior")
 	ambient.setup(zone, _zone_node, sky)
 	RoamingCreatures.attach(self)
+	Footfalls.attach(self)  # grass parts, ripples, prints
 	follower = Follower.attach(self)  # the party lead, one tile behind
 	rig.configure(zone.width, zone.height, zone.kind == "interior")
 	if _edge_facing != "":
