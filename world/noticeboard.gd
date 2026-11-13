@@ -32,6 +32,8 @@ static func interact(ow: Node, p: Vector2i) -> bool:
 	if not at(ow.zone, p):
 		return false
 	Audio.sfx("confirm")
+	if not Contracts.offered(Game.data, str(ow.zone.id)).is_empty():  # a contract notice pinned on top (core/contracts.gd)
+		await ScriptRunner.start(ow, [{"do": "contract", "as": "board", "town": str(ow.zone.id)}])
 	await Router.open_menu("jobs:" + str(ow.zone.id))
 	return true
 

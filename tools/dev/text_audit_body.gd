@@ -9,7 +9,7 @@ const SCREENS := [
 	"pedia:words", "pedia:rumours", "pedia:stamps", "bag", "bag:first", "bag:chapbook", "bag:tab:key", "bag:hold:0",
 	"shop", "shop:macc_corner_shop:sell", "shop:boutique_edinburgh", "wardrobe", "wardrobe:mirror", "ark", "ark:sorted",
 	"starter", "relearn:0", "map", "map:post", "map:route", "travel", "travel:all", "travel:fly", "travel:overseas",
-	"quests", "quests:done", "quests:gazetteer", "quests:gazetteer:macclesfield", "quests:gazetteer:isles_work",
+	"quests", "quests:done", "quests:contracts", "quests:gazetteer", "quests:gazetteer:macclesfield", "quests:gazetteer:isles_work",
 	"almanac", "almanac:pieces", "almanac:ledger:guilds", "almanac:ledger:deeds", "almanac:ledger:society", "papers",
 	"stats", "stats:standing", "stats:trades", "stats:weekly", "jobs", "jobs:first", "craft", "craft:workbench",
 	"postcard:album", "keepers", "curios", "economist", "invention", "lang", "biology", "selection", "pairing:pick",

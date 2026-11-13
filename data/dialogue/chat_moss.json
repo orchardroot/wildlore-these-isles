@@ -125,5 +125,42 @@
     }
    ]
   }
+ ],
+ "ct_mink_ted": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "mink",
+   "clue": "ted"
+  }
+ ],
+ "ct_mink_volunteer": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "mink",
+   "clue": "volunteer"
+  }
+ ],
+ "ct_mink_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "mink"
+  }
+ ],
+ "ct_mink_voles": [
+  {
+   "do": "say",
+   "who": "Vole Counter",
+   "text": "The raft's pad had prints on it by Thursday. The Trust sets traps by them, not by guesswork. Third week running there's been a vole on the bank. A vole! I nearly cried."
+  }
+ ],
+ "ct_mink_fence": [
+  {
+   "do": "say",
+   "who": "Neighbour",
+   "text": "Maureen's got a shed like a bunker and I've got a mink. Two hens, then three. I'm not speaking to her. I'm also building a better shed."
+  }
  ]
 }

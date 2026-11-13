@@ -110,6 +110,7 @@ static func lump_total() -> float:
 	var ql := QuizLeague.cfg()
 	t += float(ql.get("title_prize", 0)) * 3 + float(ql.get("cup_prize", 0))
 	t += float(Wants.visit_asks_total())   # residents' sightings and photographs, once each (wave 53)
+	t += Contracts.fees_total()   # notice-board contracts, once each, haggled by a Regular (wave 55)
 	return t
 
 # --- the Trade Ledger ---

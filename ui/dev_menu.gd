@@ -188,6 +188,12 @@ static func boot(game: Node, menu: String) -> void:
 		d.set_flag("q_macclesfield_silk_started")
 		d.set_flag("q_macclesfield_silk_1")
 		d.set_flag("last_town", "macclesfield")
+		if menu == "quests:contracts":  # a contract under way (two leads followed) and the Journal's other tabs behind it
+			for i in 2:
+				d.badges.append("b%d" % i)
+			Contracts.take(d, "mink", false)
+			Contracts.note_clue(d, "mink", "tracks")
+			Contracts.note_clue(d, "mink", "volunteer")
 		var n := 0
 		for p in Gazetteer.all():
 			if str(p.town) == "macclesfield" or n % 4 == 0:
