@@ -15,7 +15,8 @@ CRATE_ITEMS = ["pasty", "flask_of_tea", "tablet", "parkin", "cup_of_tea", "wicke
 SEA_POTS = ["mackerel", "herring", "whiting", "pollack", "plaice", "haddock", "cod", "ballan_wrasse"]
 FRESH_POTS = ["roach", "perch", "rudd", "chub", "tench", "brown_trout", "european_eel"]
 CACHE_ITEMS = ["heather_honey", "honeycomb", "hazelnuts", "truffle", "ammonite", "hawthorn_berry", "rowan_berry", "bakewell_tart", "lavender_sachet", "wicker_snare"]
-BOTTLE_ITEMS = ["sea_glass", "sea_glass", "crab_bait"]
+BOTTLE_ITEMS = ["sea_glass", "sea_glass", "crab_bait"]  # a bottle at sea
+BOTTLE_RIVER_ITEMS = ["slate_chip"]  # in a river: a pebble of grit the sender enclosed
 
 CRATE_TEXT = [
     "A wooden crate, adrift and unclaimed. The lid is nailed down, and the stencil says it came from a port nobody can place.",
@@ -212,7 +213,8 @@ def main():
         if zid in BOTTLES and cand[zid]["floats"]:
             p = pick(cand[zid]["floats"], zid, "bottle", used.get(zid, []))
             if p:
-                add(zid, "bottle", p, BOTTLES[zid], BOTTLE_ITEMS[h(zid, "bi") % len(BOTTLE_ITEMS)])
+                items = BOTTLE_ITEMS if zones[zid].tile(*p) == "sea" else BOTTLE_RIVER_ITEMS
+                add(zid, "bottle", p, BOTTLES[zid], items[h(zid, "bi") % len(items)])
     # caches on islets and far banks
     for zid in order:
         if count["cache"] >= TARGET["cache"]:

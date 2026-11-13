@@ -5,11 +5,12 @@ extends Node3D
 ## player is afloat (Player.wading); the rider stands in it, and the hull is the same on a river, a lake or the sea.
 
 const SEGMENTS := 14
-const TAR := Color("2f2118")
+const TAR := Color("3b2a1d")
 const WICKER := Color("a07a4c")
 const WITHY := Color("7d5c38")
 const PADDLE_WOOD := Color("8c6a3f")
-const BLADE_WOOD := Color("b99a63")
+const BLADE_WOOD := Color("d2b06d")
+const LIFT := 0.12             # the boat rides this far over the player's origin, which sits a little under the surface
 const BOB_HEIGHT := 0.022
 const BOB_SPEED := 2.3         # radians per second
 const PADDLE_RATE := 9.0       # radians per second of the stroke while moving
@@ -34,6 +35,7 @@ func setup(rider: Node3D) -> void:
 	add_child(hull)
 	_paddle = _make_paddle()
 	add_child(_paddle)
+	scale = Vector3.ONE * 1.12  # a touch roomy, so the rider reads as sitting in it
 	visible = false
 	set_process(false)
 
@@ -54,7 +56,7 @@ func _process(delta: float) -> void:
 	var pl := get_parent() as Player
 	var going := pl != null and pl.moving
 	var swell := sin(_t * BOB_SPEED)
-	position.y = swell * BOB_HEIGHT
+	position.y = LIFT + swell * BOB_HEIGHT
 	rotation.z = sin(_t * 1.7) * 0.025
 	rotation.x = cos(_t * 1.3) * 0.025
 	if _rider:
@@ -64,7 +66,7 @@ func _process(delta: float) -> void:
 	_stroke += delta * (PADDLE_RATE if going else 1.2)
 	_paddle.rotation.x = sin(_stroke) * (0.5 if going else 0.06)
 	if _wake:
-		_wake.speed_scale = 1.5 if going else 0.35
+		_wake.speed_scale = 1.5 if going else 0.5
 
 # --- the hull: a lathe over a profile, flat-shaded in vertex colours -----------------
 
@@ -112,23 +114,23 @@ static func _make_paddle() -> Node3D:
 	var pivot := Node3D.new()
 	pivot.position = Vector3(0.44, 0.24, 0.0)
 	var arm := Node3D.new()  # tipped outwards so the blade clears the hull
-	arm.rotation.z = 0.62
+	arm.rotation.z = 0.95
 	pivot.add_child(arm)
 	var shaft := MeshInstance3D.new()
 	var c := CylinderMesh.new()
 	c.top_radius = 0.014
 	c.bottom_radius = 0.014
-	c.height = 0.5
+	c.height = 0.42
 	c.radial_segments = 6
 	shaft.mesh = c
-	shaft.position = Vector3(0, -0.2, 0)
+	shaft.position = Vector3(0, -0.17, 0)
 	shaft.material_override = _flat(PADDLE_WOOD)
 	arm.add_child(shaft)
 	var blade := MeshInstance3D.new()
 	var b := BoxMesh.new()
-	b.size = Vector3(0.1, 0.17, 0.02)
+	b.size = Vector3(0.12, 0.2, 0.025)
 	blade.mesh = b
-	blade.position = Vector3(0, -0.5, 0)
+	blade.position = Vector3(0, -0.42, 0)
 	blade.material_override = _flat(BLADE_WOOD)
 	arm.add_child(blade)
 	for n in [shaft, blade]:
@@ -174,11 +176,11 @@ func _make_wake() -> CPUParticles3D:
 	grow.add_point(Vector2(1, 2.4))
 	p.scale_amount_curve = grow
 	var fade := Gradient.new()
-	fade.colors = PackedColorArray([Color(0.92, 0.98, 1.0, 0.0), Color(0.92, 0.98, 1.0, 0.5), Color(0.92, 0.98, 1.0, 0.0)])
+	fade.colors = PackedColorArray([Color(0.92, 0.98, 1.0, 0.0), Color(0.92, 0.98, 1.0, 0.65), Color(0.92, 0.98, 1.0, 0.0)])
 	fade.offsets = PackedFloat32Array([0.0, 0.15, 1.0])
 	p.color_ramp = fade
 	var q := QuadMesh.new()
-	q.size = Vector2(0.5, 0.5)
+	q.size = Vector2(0.6, 0.6)
 	q.orientation = PlaneMesh.FACE_Y
 	var m := StandardMaterial3D.new()
 	m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED

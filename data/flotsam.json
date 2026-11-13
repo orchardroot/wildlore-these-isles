@@ -9,7 +9,7 @@
    "The cliff railway on Constitution Hill is said to be the longest in Britain. It is very slow and I love it."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_aberystwyth_1"
@@ -39,7 +39,7 @@
    "To whoever finds this: the Romans called this place Aquae Sulis and built a spa. We have a weir and a great many tourists. Please send soap."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_bath_1"
@@ -159,7 +159,7 @@
    "Chester's Roodee racecourse says it is among the oldest in the world. The horses have yet to confirm."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_chester_1"
@@ -174,7 +174,7 @@
    "The middle of Cork is an island, because the Lee splits round it. Ask a Corkonian and you will get a longer answer than you wanted."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_cork_1"
@@ -204,7 +204,7 @@
    "Fungie the dolphin lived in Dingle harbour for nearly forty years and charged nobody a penny. The boats charged you."
   ],
   "reward": {
-   "item": "crab_bait",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_dingle_1"
@@ -249,7 +249,7 @@
    "Exeter's canal dates from the 1560s, one of the oldest in England. Nobody has told the swans."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_exeter_1"
@@ -264,7 +264,7 @@
    "Neptune's Staircase is eight locks on the Caledonian Canal and takes about an hour and a half to climb. Be patient. The mountain will wait."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_fort_william_1"
@@ -294,7 +294,7 @@
    "The Spanish Arch is part of the old city wall, put up in 1584, and named for the Spanish trade. It is very good at standing there."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_galway_1"
@@ -429,7 +429,7 @@
    "The Humber Bridge was the longest single-span suspension bridge in the world when it opened in 1981. It isn't any more. I am still proud of it. Hull."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_hull_1"
@@ -459,7 +459,7 @@
    "The Iron Bridge opened in 1781, the first big bridge made of cast iron. It has not given up, which is better than I can say for my knees."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_ironbridge_gorge_1"
@@ -549,7 +549,7 @@
    "King John's Castle was built in the early 1200s and has had a lot of visitors since. A few of them brought cannon."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_limerick_1"
@@ -624,7 +624,7 @@
    "The summer of 1858 was so hot the Thames smelled terrible and they called it the Great Stink. Parliament hung curtains soaked in lime. Sincerely, a bottle."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_london_1"
@@ -639,7 +639,7 @@
    "Seven bridges over the Tyne between Newcastle and Gateshead, and I still managed to end up on the wrong side of it."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "slate_chip",
    "qty": 1
   },
   "flag": "flotsam_newcastle_1"

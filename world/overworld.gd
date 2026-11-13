@@ -161,6 +161,14 @@ func _dev_radio() -> void:
 			await get_tree().create_timer(0.6).timeout
 			await SearchScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
 			return
+		if a.begins_with("--find="):  # dev: `--find=x,y` takes the flotsam on that tile at once (screenshots of a find)
+			await get_tree().create_timer(0.8).timeout
+			await FlotsamScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
+			return
+		if a.begins_with("--hint="):  # dev: `--hint=x,y` bumps that tile at once (screenshots of a block hint)
+			await get_tree().create_timer(0.8).timeout
+			await blocked_hint(Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
+			return
 		if a.begins_with("--examine="):  # dev: `--examine=x,y` reads the examine spot on that tile at once (screenshots)
 			await get_tree().create_timer(0.6).timeout
 			await ExamineScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
