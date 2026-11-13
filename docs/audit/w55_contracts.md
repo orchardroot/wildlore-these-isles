@@ -208,7 +208,23 @@ and the lease guard rails in `test_economy.gd` still hold (see Tests).
 
 ## Tests
 
-TEST_RESULTS
+- `tests/core/test_contracts.gd` (final tree): `21 passed, 0 failed`. It covers: the data validates against the real zones and
+  dialogue, every branch of every contract finishing (take, every clue, lair, fight, decision, report, pay once, save
+  round trip), wrong-guess levels, clues solving every contract, hour-gated look-spots, fees, haggling, the board
+  notice, witnesses, a lost fight, a beaten-but-undecided creature, residents showing each choice, standing, the
+  lair NPC's `show_if`/`hide_if`, and a contract that waits on another's ending.
+- Full `tools/test.sh` run once earlier on the tree two commits before the last, with one Bodmin clue too many:
+  `3119 passed, 2 failed`, `validate: 0 error(s)`, no `SCRIPT ERROR`. The two failures: `test_contracts::test_the_files_validate`
+  (Bodmin had five clues, limit four; **fixed** since, and the final `test_contracts` run above is green) and
+  `test_text_fit::test_worst_screens_fit_with_large_text_and_the_readable_font`, which reports only `races:dev`
+  at Large text (screens I did not touch; I did not check it against `int-w55` and believe it is not mine).
+- `tools/dev/text_audit.gd -- quests:contracts quests quests:done`: `text_audit: 0 problem(s) on 3 screen(s)`.
+- `tools/dev/economy_sim.gd -- 20` before and after: see Economy.
+
+**Skipped, by the integrator's instruction:** the full suite on the final commit, and `tools/playtest.sh slice 2`
+(Manchester and Chat Moss are on the England route; only NPCs were added, none cut anything off by the generator's
+own reachability check, but the bot has not walked them). Please run both after merging, and
+`tools/test.sh test_zone_data` for the 24 zones.
 
 ## What I was unsure of
 
