@@ -476,6 +476,10 @@
   "east": {
    "to": "golden_vale",
    "offset": 0
+  },
+  "north": {
+   "to": "clare_road",
+   "offset": 0
   }
  },
  "npcs": [
@@ -861,8 +865,8 @@
   "y": 48
  },
  "rows": [
-  "TTTTTTTTTTTTTTTTTT~~~~~TTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTT~~~~~TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTT",
+  "TTTTTTTTTTTTTTTTTT~~~~~TTTTTTTTPTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTT~~~~~TTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTPTTTT",
   "TTkkkkkkkkkkkkkkkq~~~~~qkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
   "TTkBBBBBBBBBBBBkkq~~~~~qBBBBBBBBBBBBkkkkkkkBBBBBBBBBkkkkkkkkkkkkkkkkkkTT",
   "TTkBBBBBBBBBBBBkkq~~~~~qBBBBBBBBBBBBkkkkkkkBBBBBBBBBkkkBBBBBkBBBBBkkkkTT",

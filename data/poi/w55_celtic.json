@@ -204,6 +204,44 @@
    "at": "golden_vale",
    "item": "barmbrack",
    "line": "A biscuit tin in the ditch with a slice of barmbrack in greaseproof paper. Whoever left it knew the road."
+  },
+  {
+   "id": "poi_clare_road_den",
+   "zone": "clare_road",
+   "near": [
+    6,
+    8
+   ],
+   "kind": "den",
+   "at": "clare_road",
+   "species": "horseshoe"
+  },
+  {
+   "id": "poi_clare_road_stone",
+   "zone": "clare_road",
+   "near": [
+    58,
+    6
+   ],
+   "kind": "stone",
+   "at": "clare_road",
+   "stat": "def",
+   "lore": [
+    "It is a flat grey slab, and when you press your hand against it the cold goes up your arm like an apology.",
+    "The real thing is the Burren limestone: a pavement of bare rock that once lay under a tropical sea."
+   ]
+  },
+  {
+   "id": "poi_clare_road_cache",
+   "zone": "clare_road",
+   "near": [
+    56,
+    40
+   ],
+   "kind": "cache",
+   "at": "clare_road",
+   "item": "bunratty_mead",
+   "line": "A flask in a hollow of the wall. The cork says 'Bunratty' and the smell says 'dangerous'. You decide to carry it carefully."
   }
  ]
 }

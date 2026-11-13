@@ -1,0 +1,32 @@
+{
+ "id": "cr_musician",
+ "name": "Musician Aoife",
+ "class": "Musician",
+ "sprite": "fiddler",
+ "party": [
+  {
+   "species": "redbreast",
+   "level": 56
+  },
+  {
+   "species": "starlet",
+   "level": 57
+  },
+  {
+   "species": "versling",
+   "level": 57
+  }
+ ],
+ "ai": "trainer",
+ "money": 2100,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Musician Aoife",
+   "text": "I'm on my way to a session in Doolin. Play the tune. Tip the fiddler. In that order."
+  }
+ ],
+ "win": "Lovely. That'll go in the next set.",
+ "after": "A session isn't a gig. It's a conversation with a drink in it.",
+ "scaled_floor": 57
+}

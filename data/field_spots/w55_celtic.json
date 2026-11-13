@@ -88,5 +88,20 @@
   },
   "flag": "field_golden_vale_mend",
   "at": "golden_vale"
+ },
+ {
+  "id": "fs_clare_road_charm",
+  "zone": "clare_road",
+  "x": 12,
+  "y": 17,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_clare_road_charm",
+  "at": "clare_road"
  }
 ]

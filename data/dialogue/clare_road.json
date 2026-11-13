@@ -1,0 +1,38 @@
+{
+ "cr_steward": [
+  {
+   "do": "say",
+   "who": "Castle Steward",
+   "text": "Welcome to Bunratty. Sit anywhere. Tonight's menu is mead and meat. Sl\u00e1inte!"
+  },
+  {
+   "do": "say",
+   "who": "Castle Steward",
+   "text": "The castle was falling down in the 1950s, and Lord Gort bought it and put the walls back on. He'd the money, he'd the notion, and he'd the taste, which is rare in all three."
+  }
+ ],
+ "cr_ennis_local": [
+  {
+   "do": "say",
+   "who": "Ennis Local",
+   "text": "O'Connell's statue is up on the column. Fair play to him. A Catholic, a Clareman, and a lawyer. The English never saw it coming."
+  },
+  {
+   "do": "say",
+   "who": "Ennis Local",
+   "text": "Ennis is the music town. Every second pub has a session going, and the third has a better one."
+  }
+ ],
+ "cr_fiddler": [
+  {
+   "do": "say",
+   "who": "Fiddler",
+   "text": "Kilfenora has a c\u00e9il\u00ed band that's been going since 1909. Eight or ten of them, and you could hear them in the next parish."
+  },
+  {
+   "do": "say",
+   "who": "Fiddler",
+   "text": "A reel is a reel and a jig is a jig. But a Clare reel has a lift in it you won't get elsewhere. I'm not biased. I'm from Clare."
+  }
+ ]
+}

@@ -1,0 +1,668 @@
+{
+ "id": "clare_road",
+ "name": "Bunratty and Ennis",
+ "region": "ireland_west",
+ "kind": "route",
+ "music": "route_ireland",
+ "weather": {
+  "drizzle": 30,
+  "clear": 22,
+  "fog": 10,
+  "sunshine": 16,
+  "downpour": 12,
+  "gale": 10
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "chapel",
+   "x": 8,
+   "y": 22,
+   "w": 7,
+   "h": 4,
+   "label": "Ennis Friary"
+  },
+  {
+   "type": "building",
+   "style": "irish_shopfront",
+   "x": 28,
+   "y": 22,
+   "w": 6,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "irish_shopfront",
+   "x": 10,
+   "y": 31,
+   "w": 6,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "ulster_terrace",
+   "x": 28,
+   "y": 31,
+   "w": 6,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 50,
+   "y": 14,
+   "w": 7,
+   "h": 5,
+   "label": "Bunratty Castle"
+  },
+  {
+   "type": "building",
+   "style": "thatch_cottage",
+   "x": 50,
+   "y": 22,
+   "w": 5,
+   "h": 3,
+   "label": "Folk Park Cottage"
+  },
+  {
+   "type": "building",
+   "style": "thatch_cottage",
+   "x": 56,
+   "y": 22,
+   "w": 4,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "chapel",
+   "x": 10,
+   "y": 38,
+   "w": 6,
+   "h": 3,
+   "label": "Quin Abbey"
+  },
+  {
+   "type": "bush",
+   "x": 15,
+   "y": 11,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 13,
+   "y": 10,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 4,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 24,
+   "y": 18,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 24,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 32,
+   "y": 19,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 31,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 58,
+   "y": 39,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 31,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 15,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 7,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 14,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 24,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 20,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 36,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 55,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 52,
+   "y": 6,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 8,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 34,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 16,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 34,
+   "y": 25,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 7,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 60,
+   "y": 35,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 30,
+   "y": 12,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 42,
+   "y": 26,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 43,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 42,
+   "y": 19,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 6,
+   "y": 37,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 27,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 3,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 9,
+   "y": 32,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 48,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 42,
+   "y": 25,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 60,
+   "y": 28,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 43,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 58,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 52,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 59,
+   "y": 33,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 33,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 55,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 42,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 46,
+   "y": 4,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 60,
+   "y": 41,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 51,
+   "y": 42,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 30,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 5,
+   "y": 24,
+   "variant": 2
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "north": {
+   "to": "burren",
+   "offset": 0
+  },
+  "south": {
+   "to": "limerick",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "cr_steward",
+   "sprite": "tour_guide",
+   "x": 53,
+   "y": 20,
+   "facing": "left",
+   "move": "still",
+   "script": "cr_steward"
+  },
+  {
+   "id": "cr_ennis_local",
+   "sprite": "villager_2",
+   "x": 24,
+   "y": 30,
+   "facing": "right",
+   "move": "still",
+   "script": "cr_ennis_local"
+  },
+  {
+   "id": "cr_fiddler",
+   "sprite": "fiddler",
+   "x": 40,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "cr_fiddler"
+  },
+  {
+   "id": "cr_hurler",
+   "sprite": "hurler",
+   "x": 40,
+   "y": 34,
+   "facing": "up",
+   "move": "still",
+   "trainer": "cr_hurler"
+  },
+  {
+   "id": "cr_musician",
+   "sprite": "fiddler",
+   "x": 30,
+   "y": 20,
+   "facing": "right",
+   "move": "still",
+   "trainer": "cr_musician"
+  },
+  {
+   "id": "cr_farmer",
+   "sprite": "farmer",
+   "x": 58,
+   "y": 32,
+   "facing": "left",
+   "move": "still",
+   "trainer": "cr_farmer"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "gentlet",
+    "min": 56,
+    "max": 58,
+    "weight": 14
+   },
+   {
+    "species": "gealhare",
+    "min": 56,
+    "max": 58,
+    "weight": 14
+   },
+   {
+    "species": "corncrake",
+    "min": 56,
+    "max": 58,
+    "weight": 12,
+    "time": [
+     "dusk",
+     "night",
+     "dawn"
+    ]
+   },
+   {
+    "species": "horselet",
+    "min": 56,
+    "max": 58,
+    "weight": 10
+   },
+   {
+    "species": "crexling",
+    "min": 56,
+    "max": 58,
+    "weight": 8
+   },
+   {
+    "species": "versling",
+    "min": 57,
+    "max": 58,
+    "weight": 10
+   },
+   {
+    "species": "rooklet",
+    "min": 56,
+    "max": 58,
+    "weight": 14,
+    "time": [
+     "dawn",
+     "day",
+     "dusk"
+    ]
+   },
+   {
+    "species": "strutcoo",
+    "min": 56,
+    "max": 58,
+    "weight": 10
+   },
+   {
+    "species": "redbreast",
+    "min": 56,
+    "max": 58,
+    "weight": 8
+   },
+   {
+    "species": "starlet",
+    "min": 56,
+    "max": 58,
+    "weight": 8
+   },
+   {
+    "species": "cluricaun",
+    "min": 57,
+    "max": 58,
+    "weight": 6,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "heronarch",
+    "min": 56,
+    "max": 58,
+    "weight": 16
+   },
+   {
+    "species": "rillotter",
+    "min": 56,
+    "max": 58,
+    "weight": 18
+   },
+   {
+    "species": "bradan",
+    "min": 57,
+    "max": 58,
+    "weight": 18
+   },
+   {
+    "species": "spatelord",
+    "min": 57,
+    "max": 58,
+    "weight": 12
+   },
+   {
+    "species": "estuarch",
+    "min": 57,
+    "max": 58,
+    "weight": 8
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 33,
+   "y": 3,
+   "text": "NORTH: the Burren, Kilfenora and the cliffs. The grey country: stone to the horizon, and a flower growing in every crack."
+  },
+  {
+   "x": 48,
+   "y": 43,
+   "text": "SOUTH: Limerick and the Shannon. Shannon Airport is the other way, out the road. The Atlantic is thirty minutes beyond and a little cross."
+  },
+  {
+   "x": 26,
+   "y": 26,
+   "text": "ENNIS. The name comes from the Irish 'Inis', which can mean an island or a river meadow, and the Fergus has made both here. It has opinions about that."
+  },
+  {
+   "x": 52,
+   "y": 12,
+   "text": "BUNRATTY. A castle of the 1400s on the Shannon side of the road, with a folk park of thatched cottages beside it. Beware the medieval banquet. It has mead."
+  },
+  {
+   "x": 56,
+   "y": 15,
+   "plaque": "clare_bunratty",
+   "title": "Bunratty Castle",
+   "text": "Bunratty is a tall tower house, built around 1425 by the MacNamara family and held later by the O'Briens, Earls of Thomond. It was left to decay and was bought in 1954 by Lord Gort, who restored it with furniture and tapestries from the same centuries. The folk park beside it re-creates a village of thatched cottages, and a banquet of mead and meat is served in the great hall in the evenings."
+  },
+  {
+   "x": 32,
+   "y": 29,
+   "plaque": "clare_oconnell",
+   "title": "O'Connell's Election, 1828",
+   "text": "In 1828 Daniel O'Connell, a Catholic, stood for the House of Commons in a by-election in County Clare. By law he could not take his seat if he won, and he won handsomely, in a vote held in Ennis. Parliament was frightened of what might happen next, and in 1829 it passed Catholic Emancipation. Clare is known as the Banner County, and it has never let anyone forget it."
+  },
+  {
+   "x": 14,
+   "y": 40,
+   "plaque": "clare_quin",
+   "title": "Quin Abbey",
+   "text": "Quin Abbey is a Franciscan friary built in the 1430s inside the walls of a Norman castle, so that its cloister sits between the old towers. It is a very handsome ruin and a good place to eat a sandwich in the rain. The friars kept a strict rule and a patient eye on the weather."
+  },
+  {
+   "x": 47,
+   "y": 40,
+   "plaque": "clare_shannon",
+   "title": "The First Duty Free",
+   "text": "Shannon Airport, a few miles from this road, became in 1947 the first duty-free airport in the world. It was built for transatlantic flights, which had to refuel here, and the fuel stops became an excuse to sell passengers cigarettes and tweed. The idea was copied by airports all over the world, and nobody was ever asked for royalties."
+  }
+ ],
+ "spawn": [
+  36,
+  8
+ ],
+ "stage": "grass",
+ "scaled_floor": 57,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTT===TTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTgggggggggggggggggr~~~rgggggggggg===gggggggggggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg===ggggggggggg,,,,,,,,ggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg===ggggggggggg,,,,,,,,ggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg===ggggggggggg,,,,,,,,ggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg===ggggggggggg,,,,,,,,ggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg===ggggggggggg,,,,,,,,ggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg===ggggggggggg,,,,,,,,ggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg===ggggggggggg,,,,,,,,ggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg============ggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg============ggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~~rggggggggg============#gggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~,,,,,,,,,,gggggggggg===#ggBBBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~,,,,,,,,,,gggggggggg===#ggBBBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~~,,,,,,,,,,gggggggggg===#ggBBBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,~r,,,,,,,,,,gggggggggg===#ggBBBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,gr~~~r,,,,,,,,,,gggggggggg===#ggBBBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,gr~~~r,,,,,,,,,,gggggggggg===#g#gggggggggggTTT",
+  "TTTgHHHHHH..HHHHHHgr~~~rgggggggggggggggggggg===#############gTTT",
+  "TTTggggggggggggggggr~~~rgggggggggggggggggggg===ggggggggggggggTTT",
+  "TTTgggggBBBBBBBggggr~~~rggggBBBBBBgggggggggg===gggBBBBBgBBBBgTTT",
+  "TTTgggggBBBBBBBggggr~~~rggggBBBBBBgggggggggg===gggBBBBBgBBBBgTTT",
+  "TTTgggggBBBBBBBggggr~~~rggggBBBBBBgggggggggg===gggBBBBBgBBBBgTTT",
+  "TTTgggggBBBBBBBggggr~~~rggggBBBBBBgggggggggg===ggggggggggggggTTT",
+  "TTTggggg::::::::::::::::::::::::::::gggggggg===ggggggggggggggTTT",
+  "TTTgggggggggg::::::WWWWWWWW:::::::::::gggggg===ggggggggggggggTTT",
+  "TTTgggggggggg:::::::::::::::::::::::::gggggg===gg,,,,,,,,,,,gTTT",
+  "TTTgggggggggg:::::::::::::::::::::::::gggggg===gg,,,,,,,,,,,gTTT",
+  "TTTgggggggggggggggg::::::::ggggggggggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTgggggggBBBBBBgggWWWWWWWWgBBBBBBgggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTgggggggBBBBBBgggggr~~~rggBBBBBBgggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTgggggggBBBBBBgggggr~~~rggBBBBBBgggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTgggggggBBBBBBgg,,,,,,,,,,BBBBBBgggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTggggggggggggggg,,,,,,,,,,gggggggggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTggggggggggggggg,,,,,,,,,,gggggggggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTggggggggggggggg,,,,,,,,,,gggggggggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTgggggggBBBBBBgggggr~~~rgggggggggggggggggg===gg,,,,,,,,,,,gTTT",
+  "TTTgggggggBBBBBB#############################==gg,,,,,,,,,,,gTTT",
+  "TTTgggggggBBBBBBggggr~~~rggggggggggggggggggg===ggggggggggggggTTT",
+  "TTTggggggg.gggggggggr~~~rggggggggggggggggggg===ggggggggggggggTTT",
+  "TTTgggggggggggggggggr~~~rggggggggggggggggggg===ggggggggggggggTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTT"
+ ],
+ "legend_extra": {
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "g": {
+   "tile": "grass",
+   "colour": "#7fa04a"
+  }
+ }
+}

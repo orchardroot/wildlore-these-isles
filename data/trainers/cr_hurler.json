@@ -1,0 +1,32 @@
+{
+ "id": "cr_hurler",
+ "name": "Banner Hurler Cian",
+ "class": "Hurler",
+ "sprite": "hurler",
+ "party": [
+  {
+   "species": "rooklet",
+   "level": 56
+  },
+  {
+   "species": "strutcoo",
+   "level": 57
+  },
+  {
+   "species": "gealhare",
+   "level": 57
+  }
+ ],
+ "ai": "trainer",
+ "money": 2100,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Banner Hurler Cian",
+   "text": "I've a hurley in the boot and a point to prove. You'll do. Hold on while I find the ball."
+  }
+ ],
+ "win": "That was a point. A good one. The Banner County's proud of you.",
+ "after": "Clare hurlers are the only ones who can lose a final with grace. We practise.",
+ "scaled_floor": 57
+}
