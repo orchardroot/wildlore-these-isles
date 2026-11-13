@@ -13,5 +13,20 @@
   },
   "flag": "field_pendle_round_up",
   "at": "pendle_hill"
+ },
+ {
+  "id": "fs_swaledale_wall",
+  "zone": "swaledale",
+  "x": 36,
+  "y": 30,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in a Swaledale wall, one stone short of a good afternoon. {lead} nudges the capstone back in, snug as a key in a lock, and the farmer, watching from the barn door, tips his cap.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_swaledale_wall",
+  "at": "swaledale"
  }
 ]

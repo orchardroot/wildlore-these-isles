@@ -1,0 +1,32 @@
+{
+ "id": "sw_c2c",
+ "name": "Walker Imogen",
+ "class": "Hillwalker",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "kitelet",
+   "level": 84
+  },
+  {
+   "species": "brockling",
+   "level": 84
+  },
+  {
+   "species": "slatelet",
+   "level": 85
+  }
+ ],
+ "ai": "trainer",
+ "money": 3600,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Walker Imogen",
+   "text": "Wainwright did it in eleven days. I've allowed fourteen and a long lunch. Fancy a fight at a sensible pace?"
+  }
+ ],
+ "win": "Fair play. Blisters and defeat in one afternoon.",
+ "after": "I only carry the pebble. It's the principle.",
+ "scaled_floor": 84
+}

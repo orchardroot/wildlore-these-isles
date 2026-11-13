@@ -37,6 +37,61 @@
    "kind": "den",
    "at": "pendle_hill",
    "species": "hobthrust"
+  },
+  {
+   "id": "poi_swaledale_stone",
+   "zone": "swaledale",
+   "near": [
+    24,
+    10
+   ],
+   "kind": "stone",
+   "at": "swaledale",
+   "stat": "def",
+   "lore": [
+    "The cairn is warm on one side. Probably the sun. You decide not to check.",
+    "The real thing is Nine Standards Rigg above Kirkby Stephen, where nobody knows who built the big cairns, or why."
+   ]
+  },
+  {
+   "id": "poi_swaledale_mintcake",
+   "zone": "swaledale",
+   "near": [
+    31,
+    6
+   ],
+   "kind": "cache",
+   "at": "swaledale",
+   "item": "kendal_mint_cake",
+   "line": "Under a flat stone on the ridge: a tin, a dry sandwich, and a bar of mint cake in a wrapper from before you were born."
+  },
+  {
+   "id": "poi_swaledale_camp",
+   "zone": "swaledale",
+   "near": [
+    68,
+    30
+   ],
+   "kind": "camp",
+   "at": "swaledale",
+   "names": [
+    [
+     "Lead Hunter Pat",
+     "Poacher"
+    ],
+    [
+     "Lead Hunter Ed",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "brockling",
+    "stoatlet",
+    "kitelet"
+   ],
+   "line": "Looking for old lead on the spoil heaps. It's not illegal. It's very nearly rude.",
+   "money": 2500,
+   "item": "flask_of_tea"
   }
  ]
 }

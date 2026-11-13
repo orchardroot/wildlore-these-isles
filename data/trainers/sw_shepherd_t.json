@@ -1,0 +1,32 @@
+{
+ "id": "sw_shepherd_t",
+ "name": "Shepherd Dale",
+ "class": "Shepherd",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "herdlet",
+   "level": 84
+  },
+  {
+   "species": "kidgruff",
+   "level": 85
+  },
+  {
+   "species": "stoatlet",
+   "level": 84
+  }
+ ],
+ "ai": "trainer",
+ "money": 3500,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Shepherd Dale",
+   "text": "Swaledales, these. Black faces, white noses, horns like a Roman helmet. They'll survive anything the weather throws at them. Unlike me."
+  }
+ ],
+ "win": "Ah, well. The ewes weren't looking.",
+ "after": "A Swaledale ewe will happily lamb in a blizzard and look cross about it afterwards.",
+ "scaled_floor": 84
+}

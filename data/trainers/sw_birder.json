@@ -1,0 +1,32 @@
+{
+ "id": "sw_birder",
+ "name": "Birdwatcher Moira",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "ospret",
+   "level": 84
+  },
+  {
+   "species": "starlet",
+   "level": 85
+  },
+  {
+   "species": "zigzlet",
+   "level": 84
+  }
+ ],
+ "ai": "trainer",
+ "money": 3600,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Moira",
+   "text": "Curlews, lapwings, redshank, all nesting in the hay meadows. We stay out till June to let them. Now, shh."
+  }
+ ],
+ "win": "That'll have put the curlews off. I've never been so embarrassed.",
+ "after": "A curlew's call is the sound of the moor. I'd miss it more than my own phone.",
+ "scaled_floor": 84
+}

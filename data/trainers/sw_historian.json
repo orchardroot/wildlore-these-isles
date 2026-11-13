@@ -1,0 +1,32 @@
+{
+ "id": "sw_historian",
+ "name": "Castle Warden Hugh",
+ "class": "Warden",
+ "sprite": "warden_grunt",
+ "party": [
+  {
+   "species": "tapknock",
+   "level": 85
+  },
+  {
+   "species": "scorchbun",
+   "level": 84
+  },
+  {
+   "species": "brockling",
+   "level": 85
+  }
+ ],
+ "ai": "trainer",
+ "money": 3700,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Castle Warden Hugh",
+   "text": "The castle has stood for about nine hundred years. I intend to keep it standing."
+  }
+ ],
+ "win": "The walls held. I'm less sure about me.",
+ "after": "They say King Arthur sleeps under Richmond Castle with his knights. A drummer boy found the tunnel once, and never came back.",
+ "scaled_floor": 84
+}

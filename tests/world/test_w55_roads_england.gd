@@ -11,6 +11,7 @@ const GOLDEN := "res://tests/world/w55_england_golden.json"
 ## story flag of the existing gate between the two ends; "" where both ends open at the same step.
 const NEW_ZONES := {
 	"pendle_hill": ["haworth", "west", "blackpool", "east", ""],
+	"swaledale": ["lake_district", "east", "north_york_moors", "west", ""],
 }
 
 func _golden() -> Dictionary:
