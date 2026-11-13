@@ -1,0 +1,62 @@
+{
+ "cc_gate": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The Chase road is closed. It is being inspected. We have been inspecting it since Easter, and very thoroughly."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The Spirit Stone, they say. Down in the crypt at York, with Keeper Hester. Come back when you've seen a bit more of the country."
+  }
+ ],
+ "cc_archaeologist": [
+  {
+   "do": "say",
+   "who": "Student Archaeologist",
+   "text": "Every field in this part of Dorset has something under it. We just dig a trench and wait for the farmer to stop shouting."
+  },
+  {
+   "do": "say",
+   "who": "Student Archaeologist",
+   "text": "Pitt Rivers set the standard here. Draw it, number it, record where it was. We still do that. Mostly."
+  }
+ ],
+ "cc_keeper": [
+  {
+   "do": "say",
+   "who": "Gamekeeper",
+   "text": "Fallow deer all over the Chase. They've been here since the Normans, give or take. Muntjac too, tiny and shy. You hear them barking at night."
+  },
+  {
+   "do": "say",
+   "who": "Gamekeeper",
+   "text": "Walk quietly at dusk and you might get a sighting. Or a ticking-off from a roe, which is worse."
+  }
+ ],
+ "cc_walker": [
+  {
+   "do": "say",
+   "who": "Ridgeway Walker",
+   "text": "I'm walking the whole Ridgeway. Marlborough to Lyme Regis. Day six. Chalk, flint, chalk, flint. I'm becoming a hill."
+  },
+  {
+   "do": "say",
+   "who": "Ridgeway Walker",
+   "text": "The old ridgeways kept to the high ground to stay dry and out of the forest. They were drovers' roads. They knew things."
+  }
+ ],
+ "cc_ranger": [
+  {
+   "do": "say",
+   "who": "Down Warden",
+   "text": "Chalk grassland is one of the richest habitats we have. A square metre can hold forty kinds of plant. The sheep keep it that way."
+  },
+  {
+   "do": "say",
+   "who": "Down Warden",
+   "text": "Nightjars come in May. You can hear them at dusk, a long churring like a very small tractor."
+  }
+ ]
+}

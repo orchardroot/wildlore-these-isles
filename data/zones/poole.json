@@ -439,6 +439,10 @@
   "west": {
    "to": "exe_estuary",
    "offset": 0
+  },
+  "north": {
+   "to": "cranborne_chase",
+   "offset": 6
   }
  },
  "npcs": [
@@ -762,8 +766,8 @@
   "route": "poole_st_helier"
  },
  "rows": [
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTT",
   "TT........,,.,................................TT",
   "TT...,,,,,,,,,,,,,,...............BBBBBBBB....TT",
   "TT...,,,,,,,,,,,,,,,..............BBBDBBBB....TT",

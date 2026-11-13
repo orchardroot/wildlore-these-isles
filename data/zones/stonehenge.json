@@ -555,6 +555,10 @@
   "east": {
    "to": "london",
    "offset": 0
+  },
+  "south": {
+   "to": "cranborne_chase",
+   "offset": 0
   }
  },
  "npcs": [
@@ -966,8 +970,8 @@
   "TTcggggggggggggccccccccccccccccccccccccc=================cTT",
   "TTcggggggggggggccccccccccccccccccccccccc=================cTT",
   "TTcggggggggggggcccccccccccccccccccccccccccccccccccccccccccTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT"
  ],
  "heights": [
   "000000000000000000000000000000000000000000000000000000000000",

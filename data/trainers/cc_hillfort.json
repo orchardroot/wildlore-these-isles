@@ -1,0 +1,32 @@
+{
+ "id": "cc_hillfort",
+ "name": "Digger Rhiannon",
+ "class": "Archaeologist",
+ "sprite": "student",
+ "party": [
+  {
+   "species": "flintling",
+   "level": 40
+  },
+  {
+   "species": "tunneller",
+   "level": 41
+  },
+  {
+   "species": "chalkling",
+   "level": 40
+  }
+ ],
+ "ai": "trainer",
+ "money": 1450,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Digger Rhiannon",
+   "text": "Hillforts aren't forts, strictly. More fortified villages. Some people lived here for centuries. Think of it as the first estate agent's dream."
+  }
+ ],
+ "win": "Well, that's a trench I'd rather not have dug.",
+ "after": "Badbury Rings has three banks and no one can say why three. Probably a sign of how worried they were.",
+ "scaled_floor": 40
+}

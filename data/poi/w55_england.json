@@ -295,6 +295,44 @@
    "line": "Reclaimed lead from the church roof. It's called recycling when you're me.",
    "money": 700,
    "item": "iron_snare"
+  },
+  {
+   "id": "poi_cranborne_stone",
+   "zone": "cranborne_chase",
+   "near": [
+    14,
+    34
+   ],
+   "kind": "stone",
+   "at": "cranborne_chase",
+   "stat": "ward",
+   "lore": [
+    "The stone is cold and faintly humming. Then you realise that's you.",
+    "The real thing is Knowlton Church: a Norman church in the middle of a Neolithic henge, left to decay in the 1700s and standing roofless since."
+   ]
+  },
+  {
+   "id": "poi_cranborne_cache",
+   "zone": "cranborne_chase",
+   "near": [
+    6,
+    22
+   ],
+   "kind": "cache",
+   "at": "cranborne_chase",
+   "item": "ammonite",
+   "line": "Where the chalk has slumped, something curled and grey is sticking out of the bank. An ammonite, perfectly round, with a very old look about it."
+  },
+  {
+   "id": "poi_cranborne_den",
+   "zone": "cranborne_chase",
+   "near": [
+    48,
+    48
+   ],
+   "kind": "den",
+   "at": "cranborne_chase",
+   "species": "megalorn"
   }
  ]
 }

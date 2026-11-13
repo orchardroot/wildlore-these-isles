@@ -1,0 +1,32 @@
+{
+ "id": "cc_deerman",
+ "name": "Deerstalker Hugh",
+ "class": "Gamekeeper",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "barkdeer",
+   "level": 40
+  },
+  {
+   "species": "brockling",
+   "level": 41
+  },
+  {
+   "species": "hootlet",
+   "level": 40
+  }
+ ],
+ "ai": "trainer",
+ "money": 1450,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Deerstalker Hugh",
+   "text": "A fine fallow buck and I'll have you know it. Don't mess with a stag in the rut. Or me. I'm about as flexible."
+  }
+ ],
+ "win": "That's a hit to the pride. And my hat.",
+ "after": "Cranborne Chase was hunted for centuries by kings and lords. Now it's just me and a pair of binoculars.",
+ "scaled_floor": 40
+}

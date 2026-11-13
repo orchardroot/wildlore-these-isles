@@ -85,5 +85,19 @@
   },
   "flag": "field_blackcountry_line",
   "at": "black_country"
+ },
+ {
+  "id": "fs_cranborne_loft",
+  "zone": "cranborne_chase",
+  "x": 36,
+  "y": 36,
+  "field": "loft",
+  "prop": "bale",
+  "text": "A bend in the old drove road, a straw bale for a target and a grassy verge. {lead} lobs the bowl and it sails over the bend like it knew the way. In the grass beyond: a handful of loose coins.",
+  "reward": {
+   "money": 450
+  },
+  "flag": "field_cranborne_loft",
+  "at": "cranborne_chase"
  }
 ]

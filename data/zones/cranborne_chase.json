@@ -1,0 +1,792 @@
+{
+ "id": "cranborne_chase",
+ "name": "Cranborne Chase",
+ "region": "south_england",
+ "kind": "route",
+ "music": "route_moors",
+ "weather": {
+  "clear": 28,
+  "sunshine": 16,
+  "drizzle": 22,
+  "fog": 14,
+  "gale": 8,
+  "downpour": 12
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "chapel",
+   "x": 43,
+   "y": 26,
+   "w": 3,
+   "h": 3,
+   "label": "Knowlton Church (ruin)",
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "flint_cottage",
+   "x": 8,
+   "y": 10,
+   "w": 5,
+   "h": 3,
+   "label": "Keeper's Cottage"
+  },
+  {
+   "type": "building",
+   "style": "field_barn",
+   "x": 46,
+   "y": 42,
+   "w": 6,
+   "h": 3,
+   "label": "Flint Barn",
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "chapel",
+   "x": 6,
+   "y": 16,
+   "w": 5,
+   "h": 4,
+   "label": "Larmer Tree Temple"
+  },
+  {
+   "type": "sheep",
+   "x": 10,
+   "y": 18,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 20,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 40,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 22,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 54,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 34,
+   "y": 44,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 26,
+   "y": 51,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 49,
+   "y": 24,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 17,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 36,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 39,
+   "y": 10,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 36,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 6,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 46,
+   "y": 16,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 38,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 14,
+   "y": 18,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 10,
+   "y": 15,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 26,
+   "y": 25,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 36,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 10,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 24,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 24,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 41,
+   "y": 54,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 16,
+   "y": 54,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 20,
+   "y": 23,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 21,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 12,
+   "y": 27,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 46,
+   "y": 23,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 34,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 39,
+   "y": 47,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 35,
+   "y": 10,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 27,
+   "y": 46,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 45,
+   "y": 4,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 56,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 37,
+   "y": 46,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 20,
+   "y": 44,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 7,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 12,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 51,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 41,
+   "y": 46,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 20,
+   "y": 54,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 45,
+   "y": 13,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 41,
+   "y": 22,
+   "variant": 2
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "north": {
+   "to": "stonehenge",
+   "offset": 0
+  },
+  "south": {
+   "to": "poole",
+   "offset": -6
+  }
+ },
+ "npcs": [
+  {
+   "id": "cc_gate_0",
+   "sprite": "warden_grunt",
+   "x": 29,
+   "y": 14,
+   "facing": "down",
+   "move": "still",
+   "script": "cc_gate",
+   "name": "Warden",
+   "hide_if": "badge_spirit"
+  },
+  {
+   "id": "cc_gate_1",
+   "sprite": "warden_grunt",
+   "x": 30,
+   "y": 14,
+   "facing": "down",
+   "move": "still",
+   "script": "cc_gate",
+   "name": "Warden",
+   "hide_if": "badge_spirit"
+  },
+  {
+   "id": "cc_gate_2",
+   "sprite": "warden_grunt",
+   "x": 31,
+   "y": 14,
+   "facing": "down",
+   "move": "still",
+   "script": "cc_gate",
+   "name": "Warden",
+   "hide_if": "badge_spirit"
+  },
+  {
+   "id": "cc_archaeologist",
+   "sprite": "student",
+   "x": 26,
+   "y": 33,
+   "facing": "right",
+   "move": "still",
+   "script": "cc_archaeologist"
+  },
+  {
+   "id": "cc_keeper",
+   "sprite": "farmer",
+   "x": 34,
+   "y": 28,
+   "facing": "left",
+   "move": "still",
+   "script": "cc_keeper"
+  },
+  {
+   "id": "cc_walker",
+   "sprite": "hiker",
+   "x": 33,
+   "y": 41,
+   "facing": "right",
+   "move": "still",
+   "script": "cc_walker"
+  },
+  {
+   "id": "cc_ranger",
+   "sprite": "villager_2",
+   "x": 22,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "cc_ranger"
+  },
+  {
+   "id": "cc_hillfort",
+   "sprite": "student",
+   "x": 34,
+   "y": 52,
+   "facing": "left",
+   "move": "still",
+   "trainer": "cc_hillfort"
+  },
+  {
+   "id": "cc_deerman",
+   "sprite": "farmer",
+   "x": 22,
+   "y": 36,
+   "facing": "right",
+   "move": "still",
+   "trainer": "cc_deerman"
+  },
+  {
+   "id": "cc_nightjar",
+   "sprite": "birdwatcher",
+   "x": 12,
+   "y": 32,
+   "facing": "down",
+   "move": "still",
+   "trainer": "cc_nightjar"
+  },
+  {
+   "id": "cc_rider",
+   "sprite": "hillwalker",
+   "x": 38,
+   "y": 6,
+   "facing": "down",
+   "move": "still",
+   "trainer": "cc_rider"
+  },
+  {
+   "id": "cc_shepherd",
+   "sprite": "farmer",
+   "x": 46,
+   "y": 38,
+   "facing": "up",
+   "move": "still",
+   "trainer": "cc_shepherd"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "barkdeer",
+    "min": 40,
+    "max": 42,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night",
+     "dawn"
+    ]
+   },
+   {
+    "species": "churrjar",
+    "min": 40,
+    "max": 42,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ],
+    "season": [
+     "summer"
+    ]
+   },
+   {
+    "species": "hushwing",
+    "min": 40,
+    "max": 42,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "leveret",
+    "min": 40,
+    "max": 42,
+    "weight": 10,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "chalkling",
+    "min": 40,
+    "max": 42,
+    "weight": 10
+   },
+   {
+    "species": "kitelet",
+    "min": 40,
+    "max": 42,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "flintling",
+    "min": 40,
+    "max": 42,
+    "weight": 8
+   },
+   {
+    "species": "pipkin",
+    "min": 40,
+    "max": 42,
+    "weight": 10,
+    "time": [
+     "dawn",
+     "day"
+    ]
+   },
+   {
+    "species": "stoatlet",
+    "min": 40,
+    "max": 42,
+    "weight": 8
+   },
+   {
+    "species": "tunneller",
+    "min": 40,
+    "max": 42,
+    "weight": 6
+   },
+   {
+    "species": "zigzlet",
+    "min": 40,
+    "max": 42,
+    "weight": 8,
+    "time": [
+     "day"
+    ],
+    "weather": [
+     "sunshine",
+     "clear"
+    ]
+   },
+   {
+    "species": "brockling",
+    "min": 40,
+    "max": 42,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "flittermouse",
+    "min": 40,
+    "max": 42,
+    "weight": 6,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "croakle",
+    "min": 40,
+    "max": 42,
+    "weight": 20
+   },
+   {
+    "species": "stalklet",
+    "min": 40,
+    "max": 42,
+    "weight": 20
+   },
+   {
+    "species": "dipling",
+    "min": 40,
+    "max": 42,
+    "weight": 20
+   },
+   {
+    "species": "volet",
+    "min": 40,
+    "max": 42,
+    "weight": 16
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 28,
+   "y": 54,
+   "text": "SOUTH: Poole, Wimborne and the sea. NORTH: Cranborne Chase, Salisbury and Stonehenge. The Wessex Ridgeway runs this way, all the way from Marlborough to the Dorset coast at Lyme Regis."
+  },
+  {
+   "x": 24,
+   "y": 50,
+   "text": "An Iron Age hill fort with three concentric banks and ditches, with entrances on opposite sides, standing on a chalk ridge near Wimborne. The Romans later built roads that met close by. It is one of several places that have been suggested as the site of King Arthur's victory at Mons Badonicus, though nobody knows.",
+   "plaque": "w55e_badbury",
+   "title": "Badbury Rings"
+  },
+  {
+   "x": 36,
+   "y": 27,
+   "text": "A group of Neolithic henges, ring-shaped banks and ditches built about 4,500 years ago. In the 12th century the Normans built a church inside the biggest ring, perhaps to claim a place that was already holy. It was left to decay in the 1700s and stands roofless now, with the sheep for a congregation.",
+   "plaque": "w55e_knowlton",
+   "title": "Knowlton Circles"
+  },
+  {
+   "x": 26,
+   "y": 36,
+   "text": "THE WESSEX RIDGEWAY. About 136 miles from Marlborough to Lyme Regis, mostly on old chalk ridgeways and green lanes. Walkers say the Dorset end is the best, and they are all from Dorset."
+  },
+  {
+   "x": 32,
+   "y": 24,
+   "text": "Augustus Pitt Rivers inherited the Cranborne Chase estates in 1880 and spent the next two decades digging them, Roman villages, barrows and hill forts. He recorded every find in place and published the lot with plans and drawings, which made him one of the founders of modern archaeology. The Larmer Tree Gardens he made for the pleasure of his tenants are still open.",
+   "plaque": "w55e_pitt_rivers",
+   "title": "General Pitt Rivers"
+  },
+  {
+   "x": 34,
+   "y": 6,
+   "text": "TOLLARD ROYAL. A village in a fold of the chalk, named for a royal hunting lodge. Pitt Rivers once lived at Rushmore, over the hill. Do take the road slowly. It is lined with deer."
+  },
+  {
+   "x": 26,
+   "y": 15,
+   "text": "WARDENS. NO THROUGH ROAD. (Bridge inspection.) With thanks for your patience."
+  }
+ ],
+ "spawn": [
+  30,
+  52
+ ],
+ "stage": "grass",
+ "scaled_floor": 40,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTPTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTmmmmmgmmmmmmgmmmmmmgmmmmmmcccmmmmgmmmmmmgmmmmmmgmmmmmmTTT",
+  "TTTmmmgmmmmmmgmmmmmmgmmmmmmgmcccmmgmmmmmmgmmmmmmgmmmmmmgmTTT",
+  "TTTmgmmmmmmgmmmmmmgmmmmmmgmmmcccgmmmmmmgmmmmmmgmmmmmmgmmmTTT",
+  "TTTmmmmmmgmmmmmmgmmmmmmgmmmmmcccmmmmmgmmmmmmgmmmmmmgmmmmmTTT",
+  "TTTmmmmgmmmmmmgmmmmmmgmmmmmmgcccccccccccccccccccccccmmmmgTTT",
+  "TTTmmgmmmmmmgmmmmmmgmmmmmmgmmcccccccccccccccccccccccmmgmmTTT",
+  "PTTgmmmmmmgmmmmmmgmmmmmmgmmmmcccccccccccccccccccccccgmmmmTTT",
+  "TTTmmmmmBBBBBmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmqqcccqqqmmTTT",
+  "TTTmmmgmBBBBBgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmqqqcccqqqgmTTT",
+  "TTTmgmmmBBBBBmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmqqqqcccqqqqmTTT",
+  "TTTmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmqqqcccqqqmmTTT",
+  "TTTHHHHHHHHHHHHHHHHHHHHHHHHHHmmmHHHHHHHHHHHHHHHHHHHHHHHHHTTT",
+  "TTTmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmcccmmgmmTTT",
+  "TTTgmmBBBBBmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmcccgmmmmTTT",
+  "TPTmmmBBBBBmmmmgmmmmmmgmmmmmmcccccccccccccccccccccccmmmmmTTT",
+  "TTTmmmBBBBBmmgmmmmmmgmmmmmmgmcccccccccccccccccccccccmmmgmTTT",
+  "TTTmgmBBBBBgmmmmmmgmmmmmmgmmmcccccccccccccccccccccccmgmmmTTT",
+  "TTTmmqqqqqqqqqqqgmmmmmmgmmmmmcccmmmmmgmmmmmmgmmmmmmgmmmmmTTT",
+  "TTTmqqqqqqqqqqqqmmmmmgmmmmmmgcccmmmgmmmmmmgmmmmmmgmmmmmmgTTT",
+  "TTTqqqqqqqqqqqqqqmmgmmmmmmgmmcccmgmmmmmmgmmmmmmgmmmmmmgmmTTT",
+  "TTTgqqqqqqqqqqqqqgmmmmmmgmmmmcccmmmmmmgmmmmmRgmmmmmmgmmmmTTT",
+  "TTTmmqqqqqqqqqqgmmmmmmgmmmmmmcccmmmmgmmmmRRRmRRRmmgmmmmmmTTT",
+  "TTTmmmgmqmqqmqmmmmmmgmmmmmmgmcccmmgmmmmmRRmmmmmRRmmmmmmgmTTT",
+  "TTTmgmmmmmmgmmmmmmgmmmmmmgmmmcccgmmmmmmgRmmBBBmmRmmmmgmmmTTT",
+  "TTTmmmmmmgmmmcccccccccccccccccccmmmmmgmmRmmBBBmmRRmgmmmmmTTT",
+  "TTTmmmmgmmmmmcccccccccccccccccccmmmgmmmmRmmBBBmmRgmmmmmmgTTT",
+  "TTTmmgmmmmmmgcccccccccccccccccccmgmmmmmmRRmmmmmRRmmmmmgmmTTT",
+  "TTTgmmmmmmgmmcccmgmmmmmqgqmmmmmgmmmmmmgmmRRRmRRRmmmmgmmmmTTT",
+  "TTTmmmmmgmmmmcccmmmmmqqqqqqqqgmmmmmmgmmmmmmgmmmmmmgmmmmmmTTT",
+  "TTTmmmgmmmmmmcccmmmqqqqqqqqqqqmmmmgmmmmmmgmmmmmmgmmmmmmgmTTT",
+  "TTTmgmmmmmmgmcccmmgmqqqqqqqqqmmmgmmmmmmgmmmmmmgmmmmmmgmmmTTT",
+  "TTTmmmmmmgmmmcccgmmmmmqgqmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmTPT",
+  "TTTmmmmgmmmmmcccccccccccccccccccmmmgmmmmmmgmmmmmmgmmmmmmgTTT",
+  "TTTmmgmmmmmmgcccccccccccccccccccmgmmmmmmgmmmmmmgmmmmmmgmmTTT",
+  "TTTgmmmmmmgmmcccccccccccccccccccmmmmmmgqqmqqmgmmmmmmgmmmmTTT",
+  "TTTmmmmmgmmmRRRgmmRRRmgmmmmmmcccmmmqgqqqqqqqqqmmmmgmmmmmmTTT",
+  "TTTmmmgmmmmRRgRmmmRmRRmmmmmgmcccmqqqqqqqqqqqqqqmgmmmmmmgmTTT",
+  "TTTmgmmmmmRgRRRmmmRRRmRmmgmmmcccgmqqqqqqqqqqqqqqmmmmmgmmmTTT",
+  "TTTmmmmmmRmRRmRmgmRmRRmRmmmmmcccmmqqqqqqqqqqqqqmmmmgmmmmmTTT",
+  "TTTmmmmgRmRRRRgmmmmRRRRmRmmmgcccmmmgqqqqqqqqqqBBBBBBmmmmgTTT",
+  "TTTmmgmmmmmmgmmmmmmgmmmmmmgmmcccmgmmmmmmqqmmmmBBBBBBmmgmmTTT",
+  "TTTgmmmmmmgmmmmmmgmmmmmmgmmmmcccmmmmmmgmmmmmmgBBBBBBgmmmmTTT",
+  "TTTmmmmmgmmmmmmgmmmmmmgmmmmmmcccmmmmgmmmmmmgmmmmmmgmmmmmmTTT",
+  "TTTmmmgmRmRRRRmmmmmRRRRmRmmgmcccmmgmmmmmmgmmmmmmgmmmmmmgmTTT",
+  "TTTmgmmmmRmRRmRmmmRmRRmRmgmmmcccgmmmmmmgmmmmmmgmmmmmmgmmmTTT",
+  "TTTmmmmmmgRmRRRmgmRRRmRgmmmmmcccmmmmmgmmmmmmgmmmmmmgmmmmmTTT",
+  "TTTmmmmgmmmRRmRmmmRmRRmmmmmmgcccmmmgmmmmmmgmmmmmmgmmmmmmgTTT",
+  "TTTmmgmmmmmmRRRmmmRRRmmmmmgmmcccmgmmmmmmgmmmmmmgmmmmmmgmmTTT",
+  "TTTgmmmmmmgmmmmmmgmmmmmmgmmmmcccmmmmmmgmmmmmmgmmmmmmgmmmmTTT",
+  "TTTmmmmmgmmmmmmgmmmmmmgmmmmmmcccmmmmgmmmmmmgmmmmmmgmmmmmmTTT",
+  "TTTmmmgmmmmmmgmmmmmmgmmmmmmgmcccmmgmmmmmmgmmmmmmgmmmmmmgmTTT",
+  "TTTmgmmmmmmgmmmmmmgmmmmmmgmmmcccgmmmmmmgmmmmmmgmmmmmmgmmmTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "heights": [
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000001111111110000000000000000000000000",
+  "000000000000000000000000011111111111000000000000000000000000",
+  "000000000000000000000001111111111111110000000000000000000000",
+  "000000000000000000000001111122222111110000000000000000000000",
+  "000000000000000000000011112222222221111000000000000000000000",
+  "000000000000000000000111122222222222111100000000000000000000",
+  "000000000000000000000111122223332222111100000000000000000000",
+  "000000000000000000000111222233333222211100000000000000000000",
+  "000000000000000000000111222333333322211111111111110000000000",
+  "000000000000000000000111222333333322211111111111111100000000",
+  "000000000000000000000111222333333322211111111111111110000000",
+  "000000000000000000000111222233333222211112222222111111000000",
+  "000000000000000000000111122223332222111222222222221111100000",
+  "000000000000000000000111122222222222112222222222222111110000",
+  "000000000000000000000011112222222221122222222222222211111000",
+  "000000000000000000000001111122222111222223333333222221111000",
+  "000000000000000000000001111111111112222233333333322222111100",
+  "000000000000000000000000011111111112222333333333332222111100",
+  "000000000000000000000000001111111122223333344433333222211100",
+  "000000000000000000000000000000011122223333444443333222211100",
+  "000000000000000000000000000000011122223334444444333222211100",
+  "000000000000000000000000000000011122223334444444333222211100",
+  "000000000000000000000000000000011122223334444444333222211100",
+  "000000000000000000000000000000011122223333444443333222211100",
+  "000000000000000000000000000000011122223333344433333222211100",
+  "000000000000000000000000000000011112222333333333332222111100",
+  "000000000000000000000000000000011112222233333333322222111100",
+  "000000000000000000000000000000001111222223333333222221111000",
+  "000000000000000000000000000000001111122222222222222211111000",
+  "000000000000000000000000000000000111112222222222222111110000",
+  "000000000000000000000000000000000011111222222222221111100000",
+  "000000000000000000000000000000000001111112222222111111000000",
+  "000000000000111111111000000000000000111111111111111110000000",
+  "000000000011111111111110000000000000011111111111111100000000",
+  "000000000111122222221111000000000000000111111111110000000000",
+  "000000001112222222222211100000000000000000000000000000000000",
+  "000000011122222333222221110000000000000000000000000000000000",
+  "000000111222233333332222111000000000000000000000000000000000",
+  "000000112223333333333322211000000000000000000000000000000000",
+  "000001112223334444433322211100000000000000000000000000000000",
+  "000001122233344444443332221100000000000000000000000000000000",
+  "000001122233444555444332221100000000000000000000000000000000",
+  "000001122333445555544333221100000000000000000000000000000000",
+  "000001122333445555544333221100000000000000000000000000000000",
+  "000001122333445555544333221100000000000000000000000000000000",
+  "000001122233444555444332221100000000000000000000000000000000",
+  "000001122233344444443332221100000000000000000000000000000000",
+  "000001112223334444433322211100000000000000000000000000000000",
+  "000000112223333333333322211000000000000000000000000000000000",
+  "000000111222233333332222111000000000000000000000000000000000",
+  "000000011122222333222221110000000000000000000000000000000000",
+  "000000001112222222222211100000000000000000000000000000000000",
+  "000000000111122222221111000000000000000000000000000000000000",
+  "000000000011111111111110000000000000000000000000000000000000",
+  "000000000000111111111000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000"
+ ],
+ "legend_extra": {
+  "g": {
+   "tile": "grass",
+   "colour": "#82964f"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#8fa457"
+  },
+  "q": {
+   "tile": "tall_grass",
+   "colour": "#7f9650",
+   "prop": "short"
+  },
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "c": {
+   "tile": "path",
+   "colour": "#e0dccb"
+  },
+  "R": {
+   "tile": "rock",
+   "colour": "#9a9482"
+  }
+ }
+}

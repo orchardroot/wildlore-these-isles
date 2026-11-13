@@ -16,6 +16,7 @@ const NEW_ZONES := {
 	"hadrians_wall_path": ["carlisle", "east", "hadrians_wall", "west", ""],
 	"reivers_road": ["carlisle", "north", "scottish_borders", "south", ""],
 	"black_country": ["ironbridge_gorge", "east", "birmingham", "west", "badge_spirit"],
+	"cranborne_chase": ["stonehenge", "south", "poole", "north", "badge_spirit"],
 }
 
 func _golden() -> Dictionary:

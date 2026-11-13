@@ -1,0 +1,32 @@
+{
+ "id": "cc_shepherd",
+ "name": "Shepherd Netta",
+ "class": "Shepherd",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "herdlet",
+   "level": 40
+  },
+  {
+   "species": "zigzlet",
+   "level": 41
+  },
+  {
+   "species": "puffkin",
+   "level": 40
+  }
+ ],
+ "ai": "trainer",
+ "money": 1450,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Shepherd Netta",
+   "text": "Chalk downland sheep. They keep the turf short, and the flowers come. I'm doing my bit for the butterflies. Don't tell the ewes."
+  }
+ ],
+ "win": "Righto. The ewes will be so cross with me.",
+ "after": "The chalkhill blue only lives where the horseshoe vetch grows, and that only grows on grazed turf. It all depends on sheep.",
+ "scaled_floor": 40
+}
