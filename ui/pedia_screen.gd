@@ -364,6 +364,7 @@ func _show(id: String) -> void:
 		cry.pressed.connect(func(): play_cry(id))
 		type_row.add_child(cry)
 		info.add_child(type_row)
+		TypeRows.add_rows(info, sp.get("types", []), Game.chart, 16, 17)  # what beats it, what it shrugs off (w54)
 		var kid := Knacks.id_for_species(sp)
 		var knack_row := HBoxContainer.new()  # the line's knack once caught, and any uncommon coats
 		knack_row.add_theme_constant_override("separation", 16)
