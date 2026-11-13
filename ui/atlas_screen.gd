@@ -5,7 +5,9 @@ extends MenuBase
 
 const ROW_H := 30
 
+var _scroll: ScrollContainer
 var _col: VBoxContainer
+var _last := 0
 var _detail: VBoxContainer
 var _buttons: Array = []
 var _regions: Array = []
@@ -40,14 +42,20 @@ func _build() -> void:
 		b.add_theme_font_size_override("font_size", 19)
 		UIKit.compact(b, 1)
 		b.focus_entered.connect(_show.bind(str(r.region)))
+		b.focus_entered.connect(func(): _last = _buttons.find(b))
 		list.add_child(b)
 		_buttons.append(b)
 	var rp := UIKit.panel(Color("1d2230f0"), 18)
 	rp.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(rp)
+	_scroll = ScrollContainer.new()  # Large text outgrows the panel: Right moves in and up and down scroll it
+	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_scroll.set_meta("pages", true)
+	rp.add_child(_scroll)
 	_col = VBoxContainer.new()
+	_col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_col.add_theme_constant_override("separation", 8)
-	rp.add_child(_col)
+	_scroll.add_child(_col)
 	_detail = VBoxContainer.new()  # the region on show; the note about stamps just paid sits under it, kept when you move
 	_detail.add_theme_constant_override("separation", 8)
 	_col.add_child(_detail)
@@ -59,6 +67,10 @@ func _build() -> void:
 		_detail.add_child(e)
 		return
 	UIKit.wrap_focus(_buttons)
+	UIKit.key_scroll(_scroll, _buttons[0])
+	_scroll.focus_entered.connect(func(): _scroll.set_meta("back_to", weakref(_buttons[_last])))
+	for b in _buttons:
+		b.focus_neighbor_right = b.get_path_to(_scroll)
 	UIKit.focus_later(_buttons[0])
 	_show(str(_regions[0].region))
 	if not paid.is_empty():
