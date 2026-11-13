@@ -1,0 +1,837 @@
+{
+ "id": "black_country",
+ "name": "The Black Country",
+ "region": "midlands",
+ "kind": "route",
+ "music": "route_forest",
+ "weather": {
+  "drizzle": 34,
+  "clear": 20,
+  "fog": 12,
+  "downpour": 12,
+  "sunshine": 10,
+  "gale": 6,
+  "snow": 6
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "mill_brick",
+   "x": 5,
+   "y": 17,
+   "w": 8,
+   "h": 4,
+   "label": "Anchor Forge"
+  },
+  {
+   "type": "building",
+   "style": "red_brick",
+   "x": 17,
+   "y": 16,
+   "w": 6,
+   "h": 4,
+   "label": "Chain Shop"
+  },
+  {
+   "type": "building",
+   "style": "grit_terrace",
+   "x": 30,
+   "y": 16,
+   "w": 5,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "grit_terrace",
+   "x": 36,
+   "y": 16,
+   "w": 5,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "red_brick",
+   "x": 55,
+   "y": 16,
+   "w": 6,
+   "h": 5,
+   "label": "Glassworks"
+  },
+  {
+   "type": "building",
+   "style": "terrace",
+   "x": 5,
+   "y": 36,
+   "w": 9,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "backtoback",
+   "x": 18,
+   "y": 37,
+   "w": 6,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "weavers_cottage",
+   "x": 30,
+   "y": 38,
+   "w": 4,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 36,
+   "y": 38,
+   "w": 12,
+   "h": 6,
+   "label": "Dudley Castle"
+  },
+  {
+   "type": "flagpole",
+   "x": 49,
+   "y": 38
+  },
+  {
+   "type": "canal_boat",
+   "x": 20,
+   "y": 32,
+   "variant": 0
+  },
+  {
+   "type": "canal_boat",
+   "x": 38,
+   "y": 32,
+   "variant": 1
+  },
+  {
+   "type": "canal_boat",
+   "x": 8,
+   "y": 32,
+   "variant": 0
+  },
+  {
+   "type": "statue",
+   "x": 20,
+   "y": 28
+  },
+  {
+   "type": "bush",
+   "x": 45,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 31,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 48,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 16,
+   "y": 42,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 5,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 48,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 35,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 41,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 44,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 41,
+   "y": 20,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 41,
+   "y": 46,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 23,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 43,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 29,
+   "y": 41,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 35,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 9,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 10,
+   "y": 34,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 34,
+   "y": 42,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 12,
+   "y": 43,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 22,
+   "y": 47,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 21,
+   "y": 9,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 24,
+   "y": 20,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 41,
+   "y": 48,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 21,
+   "y": 36,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 28,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 38,
+   "y": 12,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 25,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 14,
+   "y": 45,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 27,
+   "y": 7,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 53,
+   "y": 48,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 13,
+   "y": 35,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 54,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 31,
+   "y": 6,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 26,
+   "y": 4,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 6,
+   "variant": 0
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "ironbridge_gorge",
+   "offset": 6
+  },
+  "east": {
+   "to": "birmingham",
+   "offset": 3
+  }
+ },
+ "npcs": [
+  {
+   "id": "bc_gate_0",
+   "sprite": "warden_grunt",
+   "x": 52,
+   "y": 23,
+   "facing": "left",
+   "move": "still",
+   "script": "bc_gate",
+   "name": "Warden",
+   "hide_if": "badge_spirit"
+  },
+  {
+   "id": "bc_gate_1",
+   "sprite": "warden_grunt",
+   "x": 52,
+   "y": 24,
+   "facing": "left",
+   "move": "still",
+   "script": "bc_gate",
+   "name": "Warden",
+   "hide_if": "badge_spirit"
+  },
+  {
+   "id": "bc_gate_2",
+   "sprite": "warden_grunt",
+   "x": 52,
+   "y": 25,
+   "facing": "left",
+   "move": "still",
+   "script": "bc_gate",
+   "name": "Warden",
+   "hide_if": "badge_spirit"
+  },
+  {
+   "id": "bc_boater",
+   "sprite": "canal_boater",
+   "x": 10,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "bc_boater"
+  },
+  {
+   "id": "bc_museum",
+   "sprite": "tour_guide",
+   "x": 19,
+   "y": 24,
+   "facing": "right",
+   "move": "still",
+   "script": "bc_museum"
+  },
+  {
+   "id": "bc_pigeon",
+   "sprite": "villager_4",
+   "x": 33,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "bc_pigeon"
+  },
+  {
+   "id": "bc_ironmaster",
+   "sprite": "steelworker",
+   "x": 44,
+   "y": 26,
+   "facing": "right",
+   "move": "still",
+   "script": "bc_ironmaster"
+  },
+  {
+   "id": "bc_chainmaker",
+   "sprite": "steelworker",
+   "x": 15,
+   "y": 27,
+   "facing": "up",
+   "move": "still",
+   "trainer": "bc_chainmaker"
+  },
+  {
+   "id": "bc_boater_t",
+   "sprite": "canal_boater",
+   "x": 29,
+   "y": 30,
+   "facing": "up",
+   "move": "still",
+   "trainer": "bc_boater_t"
+  },
+  {
+   "id": "bc_foundry",
+   "sprite": "steelworker",
+   "x": 47,
+   "y": 26,
+   "facing": "left",
+   "move": "still",
+   "trainer": "bc_foundry"
+  },
+  {
+   "id": "bc_pigeon_t",
+   "sprite": "villager_5",
+   "x": 24,
+   "y": 38,
+   "facing": "up",
+   "move": "still",
+   "trainer": "bc_pigeon_t"
+  },
+  {
+   "id": "bc_dudley_t",
+   "sprite": "student",
+   "x": 42,
+   "y": 35,
+   "facing": "up",
+   "move": "still",
+   "trainer": "bc_dudley_t"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "pigling",
+    "min": 21,
+    "max": 23,
+    "weight": 12
+   },
+   {
+    "species": "binfox",
+    "min": 21,
+    "max": 23,
+    "weight": 12,
+    "time": [
+     "dusk",
+     "night",
+     "dawn"
+    ]
+   },
+   {
+    "species": "cooplet",
+    "min": 21,
+    "max": 23,
+    "weight": 14,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "starlet",
+    "min": 21,
+    "max": 23,
+    "weight": 12
+   },
+   {
+    "species": "grizzlet",
+    "min": 21,
+    "max": 23,
+    "weight": 10,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "rooklet",
+    "min": 21,
+    "max": 23,
+    "weight": 10
+   },
+   {
+    "species": "sootwing",
+    "min": 21,
+    "max": 23,
+    "weight": 6,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "bobbin",
+    "min": 21,
+    "max": 22,
+    "weight": 8
+   },
+   {
+    "species": "squibbet",
+    "min": 21,
+    "max": 23,
+    "weight": 8,
+    "weather": [
+     "drizzle",
+     "downpour"
+    ]
+   },
+   {
+    "species": "brockling",
+    "min": 21,
+    "max": 23,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "zigzlet",
+    "min": 21,
+    "max": 23,
+    "weight": 8,
+    "time": [
+     "day"
+    ],
+    "weather": [
+     "sunshine",
+     "clear"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 21,
+    "max": 23,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "ductling",
+    "min": 21,
+    "max": 23,
+    "weight": 24
+   },
+   {
+    "species": "elverlet",
+    "min": 21,
+    "max": 23,
+    "weight": 20
+   },
+   {
+    "species": "stalklet",
+    "min": 21,
+    "max": 23,
+    "weight": 18
+   },
+   {
+    "species": "dipling",
+    "min": 21,
+    "max": 23,
+    "weight": 18
+   },
+   {
+    "species": "pollanet",
+    "min": 21,
+    "max": 22,
+    "weight": 14
+   },
+   {
+    "species": "rillotter",
+    "min": 21,
+    "max": 23,
+    "weight": 10
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 3,
+   "y": 20,
+   "text": "WEST: Ironbridge Gorge and the Severn. EAST: Dudley, Netherton and Birmingham, assuming the road is open. It may not be."
+  },
+  {
+   "x": 8,
+   "y": 22,
+   "text": "The name arrived in the 19th century, when coal seams, ironworks, foundries and furnaces filled the country west of Birmingham with smoke. The American visitor Elihu Burritt called it 'black by day and red by night'. The seam under Dudley was ten metres thick in places, among the thickest in England. It is a country of small workshops, canals and a famous accent.",
+   "plaque": "w55e_black_country",
+   "title": "The Black Country"
+  },
+  {
+   "x": 21,
+   "y": 28,
+   "text": "The centre anchor of the Titanic, about fifteen and a half tonnes, was forged at Netherton by Noah Hingley and Sons in 1910 or 1911 and carried to Dudley station behind a team of horses. Netherton made anchors and chain for great ships for generations, and the Black Country's ironmasters led the world in both.",
+   "plaque": "w55e_titanic_anchor",
+   "title": "The Anchor of the Titanic"
+  },
+  {
+   "x": 24,
+   "y": 22,
+   "text": "In 1910 the women chainmakers of Cradley Heath went on strike for a minimum wage under the new Trade Boards Act. They worked at hearths in their back sheds, swinging heavy hammers for very little. The trade union leader Mary Macarthur backed them, and after ten weeks the employers gave in. It was one of the first wins for low-paid women workers in Britain.",
+   "plaque": "w55e_chainmakers",
+   "title": "The Women Chainmakers"
+  },
+  {
+   "x": 14,
+   "y": 28,
+   "text": "THE CANAL. Birmingham boasts more miles of canal than Venice, and the Black Country has plenty of them too. The Birmingham Canal Navigations were among Britain's busiest waterways in their day."
+  },
+  {
+   "x": 40,
+   "y": 36,
+   "text": "A castle on the hill above Dudley, begun about 1070 as a motte and bailey and rebuilt in stone from the 12th century. A Royalist garrison held it for the king in the Civil War until it surrendered in 1646, and it was made unusable the following year. Today it stands beside Dudley Zoo.",
+   "plaque": "w55e_dudley_castle",
+   "title": "Dudley Castle"
+  },
+  {
+   "x": 49,
+   "y": 21,
+   "text": "THE ROAD EAST. Birmingham, the city of a thousand trades, and the Bull Ring. Don't ask the Wardens, they only know the one word."
+  },
+  {
+   "x": 50,
+   "y": 27,
+   "text": "BRIDGE INSPECTION IN PROGRESS. Please do not walk on the bridge, over the bridge, or in the vicinity of the bridge. Thank you."
+  },
+  {
+   "x": 5,
+   "y": 28,
+   "text": "LOCAL SPEAKING. A 'bostin' tea is a very good one. Say 'ow bin ya?' and you'll be told. Do not ask about the football."
+  }
+ ],
+ "spawn": [
+  3,
+  24
+ ],
+ "stage": "town",
+ "scaled_floor": 21,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTgggggggggggggggggggggggggggggggggggggggggggggggggHggggggggTTT",
+  "TTTgggggggggggggggggggggggggggggggggggggggggggggggggHggggggggTTT",
+  "TTTgggggggggggggggggggggggggggggggggggggggggggggggggHqgggggggTTT",
+  "TTTggggggggggggggggggggggggggggggggqgqggggggggggqqqqHqqqgggggTTT",
+  "TTTggggggggqqggggggggggggggggggggqqqqqqqgggggggqqqqqHqqqqggggTTT",
+  "TTTggggqqqqqqqqggggggggggggggggggqqqqqqqqgggggggqqqqHqqqqggggTTT",
+  "TTTggqqqqqqqqqqggggggggggggggggggqqqqqqqggggggggqqqqHqqqqqgggTTT",
+  "TTTgggqqqqqqqqqqgggggggggggggggggggggqgggggggggggqqqHqqggggggTTT",
+  "TTTgggqqqqqqqqqgggggggggggggggggggggggggggggggggggggHggggggggTTT",
+  "TTTgggqqqqqqqqggggggggggggggggggggggggggggggggggggggHggggggggTTT",
+  "TTTgggggggqgggggggRRRRRgggggggggggggggggggggggggggggHRRRgggggTTT",
+  "TTTgggggggggggggggRRRRRgggggggggggggggggggggggggggggHRRRRggggTTT",
+  "TTTggggggggggggggggRRRggggggggggggggggggggggggggggggHRRRRggggTTT",
+  "TTTggggggggggggggBBBBBBgggggggBBBBBgBBBBBgggggggggggHggBBBBBBTTT",
+  "TTTggBBBBBBBBggggBBBBBBgggggggBBBBBgBBBBBgggggggggggHggBBBBBBTTT",
+  "TTTggBBBBBBBBggggBBBBBBgggggggBBBBBgBBBBBgggggggggggHggBBBBBBTTT",
+  "TTTggBBBBBBBBggggBBBBBBgggggggBBBBBgBBBBBgggggggggggHggBBBBBBTTT",
+  "TTTggBBBBBBBBgggggggggggggggggggggggggggggggggggggggHggBBBBBBTTT",
+  "TTTgggggggggggggggggggggggggggggggggggggggggggggggggHggggggggTTT",
+  "TTTgggggggggggggggggggggggggggggggggggggggggggggggggHggggggggTTT",
+  "ccccccccccccccccgggggggggggggccccccccccccccccccccccccccccccccccc",
+  "ccccccccccccccccgggggggggggggccccccccccccccccccccccccccccccccccc",
+  "ccccccccccccccccgggggggggggggccccccccccccccccccccccccccccccccccc",
+  "TTTggggggggggcccgggggggggggggcccggggggggcccgggggggggHggggggggTTT",
+  "TTTggggggggggcccccccccccccccccccggggggggcccgggggggggHggggggggTTT",
+  "TTTggggggggggcccccccccccccccccccggggggggcccgggggggggHggggggggTTT",
+  "TTTggggggggggcccccccccccccccccccggggggggcccgggggggggHggggggggTTT",
+  "TTTgggggggggggggggggggcccgggggggggggggggcccgggggggggHggggggggTTT",
+  "TTTwwwwwwwwwwwwwwwwwwwcccwwwwwwwwwwwwwwwcccwwwwwwwwwHwwwwwwwwTTT",
+  "TTT~~~~~~~~~~~~~~~~~~~ccc~~~~~~~~~~~~~~~ccc~~~~~~~~~H~~~~~~~~TTT",
+  "TTTwwwwwwwwwwwwwwwwwwwcccwwwwwwwwwwwwwwwcccwwwwwwwwwHwwwwwwwwTTT",
+  "TTTgggggggggggggggggggcccgggggggggggggggcccgggggggggHggggggggTTT",
+  "TTTgggggggggggggggggggcccgggggggggRRRRRgcccgggggggggHggggggggTTT",
+  "TTTggBBBBBBBBBggggggggcccgggggggggRRRRRgcccgggggggggHggggggggTTT",
+  "TTTggBBBBBBBBBggggBBBBBBgggggggggggRRRRgggggggggggggHggggggggTTT",
+  "TTTggBBBBBBBBBggggBBBBBBggggggBBBBggBBBBBBBBBBBBggggHggggggggTTT",
+  "TTTggBBBBBBBBBggggBBBBBBggggggBBBBggBBBBBBBBBBBBggggHggggggggTTT",
+  "TTTgggggggggggggggBBBBBBggggggBBBBggBBBBBBBBBBBBggggHggggggggTTT",
+  "TTTgggggggggggggggggggqqqgggggggggggBBBBBBBBBBBBggggHggggggggTTT",
+  "TTTggggggggggggggggqgqqqqqqqggggggggBBBBBBBBBBBBggggHggggggggTTT",
+  "TTTggggggggggggggggqqqqqqqqqqqggggggBBBBBBBBBBBBggggHggggggggTTT",
+  "TTTggggggggggggggggqqqqqqqqqqqggggggggggggggggggggggHggggggggTTT",
+  "TTTggggggggggggggggqqqqqqqqqqqqgggggggggggggggggggggHggggggggTTT",
+  "TTTgggggggggggggggggqqqqqqqqqqggggggggggggggggggggggHggggggggTTT",
+  "TTTggggggggggggggggggggggqqgggggggggggggggggggggggggHggggggggTTT",
+  "TTTgggggggggggggggggggggggggggggggggggggggggggggggggHggggggggTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "heights": [
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000001111111000000000000000000000000000000000000000000000000",
+  "0000000111111111110000000000000000000000000000000000000000000000",
+  "0000001111111111111000000000000000000000000000000000000000000000",
+  "0000001111111111111000000000000000000000000000000000000000000000",
+  "0000011111222221111100000000000000000000000000000000000000000000",
+  "0000011112222222111100000000000000000000000000000000000000000000",
+  "0000011112222222111100000000000000000000000000000000000000000000",
+  "0000011112222222111100000000000000000000000000000000000000000000",
+  "0000011112222222111100000000000000000000000000000000000000000000",
+  "0000011112222222111100000000000000000000000000000000000000000000",
+  "0000011111222221111100000000000000000000000000000000000000000000",
+  "0000001111111111111000000000000000000000000000000000000000000000",
+  "0000001111111111111000000000000000000000000000000000000000000000",
+  "0000000111111111110000000000000000000000000000000000000000000000",
+  "0000000001111111000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000011111111100000000000000000",
+  "0000000000000000000000000000000000001111111111111000000000000000",
+  "0000000000000000000000000000000000011111111111111100000000000000",
+  "0000000000000000000000000000000000111122222222211110000000000000",
+  "0000000000000000000000000000000001111222222222221111000000000000",
+  "0000000000000000000000000000000011112222222222222111100000000000",
+  "0000000000000000000000000000000011122223333333222211100000000000",
+  "0000000000000000000000000000000111222233333333322221110000000000",
+  "0000000000000000000000000001111111222333333333332221110000000000",
+  "0000000000000000000000000111111111222333444443332221110000000000",
+  "0000000000000000000000001111111111222333444443332221110000000000",
+  "0000000000000000000000001111111111222333444443332221110000000000",
+  "0000000000000000000000011111222221222333444443332221110000000000",
+  "0000000000000000000000011112222222222333444443332221110000000000",
+  "0000000000000000000000011112222222222333333333332221110000000000",
+  "0000000000000000000000011112222222222233333333322221110000000000",
+  "0000000000000000000000011112222222122223333333222211100000000000",
+  "0000000000000000000000011112222222112222222222222111100000000000",
+  "0000000000000000000000011111222221111222222222221111000000000000",
+  "0000000000000000000000001111111111111122222222211110000000000000",
+  "0000000000000000000000001111111111111111111111111100000000000000",
+  "0000000000000000000000000111111111111111111111111000000000000000",
+  "0000000000000000000000000001111111000011111111100000000000000000"
+ ],
+ "legend_extra": {
+  "g": {
+   "tile": "grass",
+   "colour": "#6f7a45"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#7a8450"
+  },
+  "q": {
+   "tile": "tall_grass",
+   "colour": "#6c7743",
+   "prop": "short"
+  },
+  "c": {
+   "tile": "cobbles",
+   "colour": "#7b7468"
+  },
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "R": {
+   "tile": "rock",
+   "colour": "#5a554c"
+  }
+ }
+}

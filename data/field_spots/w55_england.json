@@ -71,5 +71,19 @@
   },
   "flag": "field_reivers_roundup",
   "at": "reivers_road"
+ },
+ {
+  "id": "fs_blackcountry_line",
+  "zone": "black_country",
+  "x": 26,
+  "y": 34,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the canal: a lost shilling, a lump of tin, the kind of thing that sits in the silt for a hundred years. {lead} dips in, and up comes a handful of old pennies and a surprise.",
+  "reward": {
+   "money": 320
+  },
+  "flag": "field_blackcountry_line",
+  "at": "black_country"
  }
 ]

@@ -1,0 +1,32 @@
+{
+ "id": "bc_dudley_t",
+ "name": "Zookeeper Gwen",
+ "class": "Zookeeper",
+ "sprite": "student",
+ "party": [
+  {
+   "species": "binfox",
+   "level": 22
+  },
+  {
+   "species": "grizzlet",
+   "level": 21
+  },
+  {
+   "species": "raidtail",
+   "level": 22
+  }
+ ],
+ "ai": "trainer",
+ "money": 420,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Zookeeper Gwen",
+   "text": "Dudley Zoo is in the castle grounds. We have the lot: penguins, okapis, a very loud peacock. It's the only zoo I know with a castle."
+  }
+ ],
+ "win": "That's bad for morale. Not for the peacock, though.",
+ "after": "Some of the zoo buildings were designed by the same architect who did London Zoo's penguin pool. They look like very modern concrete bunkers, in the best way.",
+ "scaled_floor": 21
+}

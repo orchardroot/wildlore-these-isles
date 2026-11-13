@@ -240,6 +240,61 @@
    "kind": "den",
    "at": "reivers_road",
    "species": "eildonmare"
+  },
+  {
+   "id": "poi_blackcountry_stone",
+   "zone": "black_country",
+   "near": [
+    30,
+    12
+   ],
+   "kind": "stone",
+   "at": "black_country",
+   "stat": "atk",
+   "lore": [
+    "It is warm, which is unreasonable in this weather. A cinder, perhaps, from the great ironworks that fed the Black Country for a century.",
+    "The real thing is the Black Country's pig iron and chain: Netherton anchors, Cradley Heath chain, and the forges that glowed red every night."
+   ]
+  },
+  {
+   "id": "poi_blackcountry_cache",
+   "zone": "black_country",
+   "near": [
+    40,
+    48
+   ],
+   "kind": "cache",
+   "at": "black_country",
+   "item": "miners_lamp",
+   "line": "At the back of a ruined pit-head shed: a Davy lamp, still half full of paraffin, and a chalk note that reads 'DON'T'."
+  },
+  {
+   "id": "poi_blackcountry_camp",
+   "zone": "black_country",
+   "near": [
+    10,
+    46
+   ],
+   "kind": "camp",
+   "at": "black_country",
+   "names": [
+    [
+     "Scrap Merchant Colin",
+     "Scavenger"
+    ],
+    [
+     "Scrap Merchant Maureen",
+     "Scavenger"
+    ]
+   ],
+   "party": [
+    "pigling",
+    "bobbin",
+    "binfox"
+   ],
+   "line": "Reclaimed lead from the church roof. It's called recycling when you're me.",
+   "money": 700,
+   "item": "iron_snare"
   }
  ]
 }

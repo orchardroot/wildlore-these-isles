@@ -1,0 +1,32 @@
+{
+ "id": "bc_pigeon_t",
+ "name": "Fancier Stan",
+ "class": "Pigeon Fancier",
+ "sprite": "villager_5",
+ "party": [
+  {
+   "species": "cooplet",
+   "level": 21
+  },
+  {
+   "species": "starlet",
+   "level": 21
+  },
+  {
+   "species": "murmurant",
+   "level": 22
+  }
+ ],
+ "ai": "trainer",
+ "money": 400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Fancier Stan",
+   "text": "I'll bet you a pint my bird gets home before yours does. Mine's quicker. And she's got a better accent."
+  }
+ ],
+ "win": "She'll be home before me. But you'll need a pint.",
+ "after": "Pigeon racing in the Black Country goes back well over a century. Some birds have flown from France.",
+ "scaled_floor": 21
+}
