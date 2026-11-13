@@ -1,0 +1,36 @@
+{
+ "id": "trt_guide",
+ "name": "Guide Calum",
+ "class": "Guide",
+ "sprite": "tour_guide",
+ "party": [
+  {
+   "species": "goldeneyrie",
+   "level": 75
+  },
+  {
+   "species": "highlynx",
+   "level": 74
+  },
+  {
+   "species": "ptarmigan",
+   "level": 75
+  },
+  {
+   "species": "forkwing",
+   "level": 74
+  }
+ ],
+ "ai": "trainer",
+ "money": 2460,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Guide Calum",
+   "text": "The Storr is the most photographed rock in Skye, and I give the talk four times a day. Tell me you are not in a hurry."
+  }
+ ],
+ "win": "Well fought. I will give the talk again, but shorter.",
+ "after": "The real secret of Trotternish is the weather. It will be a different place in five minutes, and you will like it more.",
+ "scaled_floor": 74
+}

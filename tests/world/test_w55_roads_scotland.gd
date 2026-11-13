@@ -13,6 +13,7 @@ const NEW := {
 	"pass_of_brander": ["loch_lomond", "oban"],
 	"rob_roy_way": ["central_belt", "dundee"],
 	"angus_coast": ["dundee", "aberdeen"],
+	"trotternish": ["skye", "portree"],
 }
 
 func _baseline() -> Dictionary:

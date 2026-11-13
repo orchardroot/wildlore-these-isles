@@ -84,5 +84,20 @@
   },
   "flag": "field_angus_coast_line",
   "at": "angus_coast"
+ },
+ {
+  "id": "fs_trotternish_round_up",
+  "zone": "trotternish",
+  "x": 36,
+  "y": 24,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep at the gate, and no sheep will go first. {lead} comes round the back, low and quiet, and the flock files through. The crofter's thanks: a pasty.",
+  "reward": {
+   "item": "pasty",
+   "qty": 1
+  },
+  "flag": "field_trotternish_round_up",
+  "at": "trotternish"
  }
 ]

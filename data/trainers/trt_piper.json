@@ -1,0 +1,36 @@
+{
+ "id": "trt_piper",
+ "name": "Piper Donald",
+ "class": "Piper",
+ "sprite": "piper",
+ "party": [
+  {
+   "species": "heilan",
+   "level": 75
+  },
+  {
+   "species": "midgeswarm",
+   "level": 74
+  },
+  {
+   "species": "cragchough",
+   "level": 74
+  },
+  {
+   "species": "hushwing",
+   "level": 74
+  }
+ ],
+ "ai": "trainer",
+ "money": 2420,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Piper Donald",
+   "text": "I play on the hill so the sound carries. It carries all the way to Portree, which is the complaint."
+  }
+ ],
+ "win": "A grand fight. I will write a tune about it. It will be sad.",
+ "after": "A pipe tune over a landslip is the sound of the island remembering itself.",
+ "scaled_floor": 74
+}

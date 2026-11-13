@@ -648,6 +648,10 @@
   }
  ],
  "edges": {
+  "south": {
+   "to": "trotternish",
+   "offset": -30
+  },
   "east": {
    "to": "inverness",
    "offset": 0
@@ -1043,8 +1047,8 @@
   "$$$wskkkkkkkkqqkkkkkkkkkkkkkkkkkkkkw$$$$$$$$$$$$$$$$wkkkkkkkkkkkkkkk,,,,,,,kkkTT",
   "$$$kkkkkkkkkkqqkkkkkkkkkkkkkkkkkkkkw$$$$$$$$$$$$$$$$wkkkkkkkkkkkkkkkkkk,kkkkkkTT",
   "$$$kkkkkkkkkkqqkkkkkkkkkkkkkkkkkkkkk$$$$$$$$$$$$$$$$kkkkkkkkkkkkkkkkkkkkkkkkkkTT",
-  "$$$TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT$$$$$$$$$$$$$$$$TTTTTTTTTTTTTTTTTTTTTTTTPTTT",
-  "$$$TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT$$$$$$$$$$$$$$$$TTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+  "$$$TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT$$$$$$$$$$$$$$$$TTTTTTT###TTTTTTTTTTTTTTPTTT",
+  "$$$TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT$$$$$$$$$$$$$$$$TTTTTTT###TTTTTTTTTTTTTTTTTT"
  ],
  "heights": [
   "00000000000000000000000000000000000000000000000000000001111122222222222221111100",
