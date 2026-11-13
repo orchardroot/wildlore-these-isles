@@ -1,0 +1,32 @@
+{
+ "id": "hp_angler",
+ "name": "Angler Lorna",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "bradan",
+   "level": 84
+  },
+  {
+   "species": "dipling",
+   "level": 84
+  },
+  {
+   "species": "ratty",
+   "level": 85
+  }
+ ],
+ "ai": "trainer",
+ "money": 3400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Lorna",
+   "text": "The Irthing runs fast and cold, and the salmon run it every autumn. Today the salmon are doing better than me."
+  }
+ ],
+ "win": "Fair play. I'll go back to the other end of the river.",
+ "after": "A salmon will go back to the river it was born in, years later, and leap a weir to do it. I couldn't get back to my own birthplace if there was a bus.",
+ "scaled_floor": 84
+}

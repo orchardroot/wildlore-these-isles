@@ -13,6 +13,7 @@ const NEW_ZONES := {
 	"pendle_hill": ["haworth", "west", "blackpool", "east", ""],
 	"swaledale": ["lake_district", "east", "north_york_moors", "west", ""],
 	"humber_bridge": ["hull", "south", "lincoln", "north", ""],
+	"hadrians_wall_path": ["carlisle", "east", "hadrians_wall", "west", ""],
 }
 
 func _golden() -> Dictionary:

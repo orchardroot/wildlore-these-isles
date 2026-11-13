@@ -455,6 +455,10 @@
   "south": {
    "to": "keswick",
    "offset": 23
+  },
+  "east": {
+   "to": "hadrians_wall_path",
+   "offset": 7
   }
  },
  "npcs": [
@@ -843,9 +847,9 @@
   "TT...::::::::::::::::::::::::::::::::::::::::::::::::::::::...TT",
   "TT...::::::::::::::::::::::::::::::::::::::::::::::::::::::...TT",
   "TT......................:::::::::::::::.......................TT",
-  "TT.TTTTT................:::::::::::::::...................TTT.TT",
-  "TT.TTTTT................:::::::::::::::...........BBBBBBBBTTT.TT",
-  "TT.TTTTT................:::::::::::::::..BBBBBB...BBBBBBBBTTT.TT",
+  "TT.TTTTT................:::::::::::::::...................TTT.##",
+  "TT.TTTTT................:::::::::::::::...........BBBBBBBBTTT.##",
+  "TT.TTTTT................:::::::::::::::..BBBBBB...BBBBBBBBTTT.##",
   "TT.TTTTTBBBBBB..BBBBBB..:::::::::::::::..BBBBBB...BBBBBBBBTTT.TT",
   "TT.TTTTTBBBBBB..BBBBBB..:::::::::::::::..BBBBBB...BBBBBBBBTTT.TT",
   "TT.TTTTTBBBDBB..BBBDBB..:::::::::::::::..BBBDBB...BBBBDBBBTTT.TT",

@@ -1,0 +1,32 @@
+{
+ "id": "hp_birder",
+ "name": "Birdwatcher Joan",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "kitelet",
+   "level": 84
+  },
+  {
+   "species": "ospret",
+   "level": 85
+  },
+  {
+   "species": "zigzlet",
+   "level": 84
+  }
+ ],
+ "ai": "trainer",
+ "money": 3400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Joan",
+   "text": "Pied flycatchers nest in the oak woods in the gorge. Look, that's one! No, that's a leaf. Look, that's a leaf!"
+  }
+ ],
+ "win": "Oh, I missed a flycatcher for that.",
+ "after": "A pied flycatcher can find its way from West Africa back to the same oak. I find my way back to the car park with a map.",
+ "scaled_floor": 84
+}

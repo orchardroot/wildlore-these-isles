@@ -1,0 +1,50 @@
+{
+ "hp_walker": [
+  {
+   "do": "say",
+   "who": "Wall Walker",
+   "text": "Hadrian's Wall, ninety-odd miles from sea to sea, and not one of them flat. I'm having a lovely time. It says so on my blister plaster."
+  },
+  {
+   "do": "say",
+   "who": "Wall Walker",
+   "text": "People have been walking this line for two thousand years. Some were in sandals. They had a point."
+  }
+ ],
+ "hp_volunteer": [
+  {
+   "do": "say",
+   "who": "Fort Volunteer",
+   "text": "Dig down under the granary and you find the timber halls that came after the Romans. Wood over stone. It's the wrong way round, but it's what happened."
+  },
+  {
+   "do": "say",
+   "who": "Fort Volunteer",
+   "text": "After they left, a family built a timber hall inside the old fort. People never really leave a good place. They just change the furniture."
+  }
+ ],
+ "hp_monk": [
+  {
+   "do": "say",
+   "who": "Priory Guide",
+   "text": "Edward I wintered here. He had the whole court in. Imagine the bills. Imagine the bacon."
+  },
+  {
+   "do": "say",
+   "who": "Priory Guide",
+   "text": "Lanercost has been repaired and added to many times. Half of it is used as a parish church today. The other half is roofless, which suits some of us."
+  }
+ ],
+ "hp_farmer": [
+  {
+   "do": "say",
+   "who": "Bastle Farmer",
+   "text": "Bastles are fortified farmhouses: thick walls, a ground floor for the cattle, the family up a ladder. All because the Border Reivers came by night."
+  },
+  {
+   "do": "say",
+   "who": "Bastle Farmer",
+   "text": "Cattle on the ground floor was good for heating and bad for visitors."
+  }
+ ]
+}

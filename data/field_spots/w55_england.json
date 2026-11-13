@@ -42,5 +42,19 @@
   },
   "flag": "field_humber_roll",
   "at": "humber_bridge"
+ },
+ {
+  "id": "fs_wallpath_wall",
+  "zone": "hadrians_wall_path",
+  "x": 52,
+  "y": 12,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in a drystone dyke, a few stones short. {lead} lifts them back, one by one, and the farmer waves a stick from the next field. Under the last stone: a handful of loose change from the 1950s.",
+  "reward": {
+   "money": 330
+  },
+  "flag": "field_wallpath_wall",
+  "at": "hadrians_wall_path"
  }
 ]

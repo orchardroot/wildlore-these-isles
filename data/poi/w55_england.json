@@ -147,6 +147,61 @@
    "line": "Just a spot of unofficial netting. Nobody's looking. Except you.",
    "money": 2600,
    "item": "water_snare"
+  },
+  {
+   "id": "poi_wallpath_stone",
+   "zone": "hadrians_wall_path",
+   "near": [
+    44,
+    9
+   ],
+   "kind": "stone",
+   "at": "hadrians_wall_path",
+   "stat": "def",
+   "lore": [
+    "It is a squared stone, with a groove cut in one face. Somebody's initials, you suspect, and a long way before the Normans.",
+    "The real thing is the Wall itself: begun about AD 122 on the orders of Hadrian, 73 miles from the Tyne to the Solway, and later plundered for farms, bridges and abbeys all along its length."
+   ]
+  },
+  {
+   "id": "poi_wallpath_cache",
+   "zone": "hadrians_wall_path",
+   "near": [
+    28,
+    14
+   ],
+   "kind": "cache",
+   "at": "hadrians_wall_path",
+   "item": "miners_lamp",
+   "line": "Tucked in a gap between two stones, a very old-looking lantern. Or a very new one with a good story."
+  },
+  {
+   "id": "poi_wallpath_camp",
+   "zone": "hadrians_wall_path",
+   "near": [
+    62,
+    42
+   ],
+   "kind": "camp",
+   "at": "hadrians_wall_path",
+   "names": [
+    [
+     "Reiver Dougie",
+     "Poacher"
+    ],
+    [
+     "Reiver Beth",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "reivling",
+    "stoatlet",
+    "brockling"
+   ],
+   "line": "Borrowing a few sheep. Strictly, it's tradition. Not that tradition holds up in court.",
+   "money": 2500,
+   "item": "flask_of_tea"
   }
  ]
 }
