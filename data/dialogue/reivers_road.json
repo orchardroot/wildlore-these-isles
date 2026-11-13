@@ -1,0 +1,50 @@
+{
+ "rr_clerk": [
+  {
+   "do": "say",
+   "who": "Gretna Guide",
+   "text": "Come in, come in. This is the anvil. Couples would clasp hands over it and a blacksmith would hit it with a hammer. Whack. That was the wedding. Cheaper than a church."
+  },
+  {
+   "do": "say",
+   "who": "Gretna Guide",
+   "text": "The blacksmiths were called anvil priests. They are in the village records, with all their fees."
+  }
+ ],
+ "rr_walker": [
+  {
+   "do": "say",
+   "who": "Border Walker",
+   "text": "Which side of the border am I on? I've gone back and forth five times this morning. The signs have an opinion. My boots don't."
+  },
+  {
+   "do": "say",
+   "who": "Border Walker",
+   "text": "They say a Reiver's wife would serve her man a spur on a dish when the larder was bare. That was her way of saying 'time to go and steal dinner'."
+  }
+ ],
+ "rr_historian": [
+  {
+   "do": "say",
+   "who": "Border Historian",
+   "text": "A reiver was a rider: light horse, a steel cap, a long spear and no scruples. They called a good night's raid 'Hot Trod' when the injured chased them back across the border. Good law on one side, no law on the other."
+  },
+  {
+   "do": "say",
+   "who": "Border Historian",
+   "text": "The Union of the Crowns in 1603 ended it. King James VI and I called the borders 'the Middle Shires' to stop people being so sensitive."
+  }
+ ],
+ "rr_stationman": [
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "There was a line here once, the Waverley Route: Edinburgh, Galashiels, Hawick, Carlisle. It closed in January 1969, to a great deal of regret."
+  },
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "Part of it came back in 2015. Edinburgh to Tweedbank. Not as far as Hawick, but folk live in hope."
+  }
+ ]
+}

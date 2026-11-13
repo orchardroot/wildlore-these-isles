@@ -202,6 +202,44 @@
    "line": "Borrowing a few sheep. Strictly, it's tradition. Not that tradition holds up in court.",
    "money": 2500,
    "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_reivers_stone",
+   "zone": "reivers_road",
+   "near": [
+    23,
+    22
+   ],
+   "kind": "stone",
+   "at": "reivers_road",
+   "stat": "atk",
+   "lore": [
+    "It is a boundary stone, and it leans slightly Scottish. Or you are leaning slightly English. Hard to say.",
+    "The real thing is the Scotch Dyke, the ditch and bank dug in 1552 to divide the Debatable Land between England and Scotland after generations of argument."
+   ]
+  },
+  {
+   "id": "poi_reivers_cache",
+   "zone": "reivers_road",
+   "near": [
+    8,
+    46
+   ],
+   "kind": "cache",
+   "at": "reivers_road",
+   "item": "horseshoe",
+   "line": "In the hollow of an old wall, wrapped in oilskin: a horseshoe, a handful of copper coins and a very short list of other people's cows."
+  },
+  {
+   "id": "poi_reivers_den",
+   "zone": "reivers_road",
+   "near": [
+    50,
+    50
+   ],
+   "kind": "den",
+   "at": "reivers_road",
+   "species": "eildonmare"
   }
  ]
 }

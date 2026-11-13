@@ -1,0 +1,32 @@
+{
+ "id": "rr_birder",
+ "name": "Birdwatcher Moira",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "ospret",
+   "level": 78
+  },
+  {
+   "species": "starlet",
+   "level": 78
+  },
+  {
+   "species": "kitelet",
+   "level": 79
+  }
+ ],
+ "ai": "trainer",
+ "money": 3000,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Moira",
+   "text": "Solway marshes, just south. The pink-footed geese come in their tens of thousands each winter. Not today, though. Today it's just me."
+  }
+ ],
+ "win": "Well. I've learned something. Keep an eye on you.",
+ "after": "Solway is the sort of estuary where you can see a mile and still not see where the sea has gone.",
+ "scaled_floor": 78
+}

@@ -459,6 +459,10 @@
   "east": {
    "to": "hadrians_wall_path",
    "offset": 7
+  },
+  "north": {
+   "to": "reivers_road",
+   "offset": -1
   }
  },
  "npcs": [
@@ -823,10 +827,10 @@
   45
  ],
  "rows": [
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TT",
-  "TT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TT~~~~~~~~~~~~~~~~~~~~~~~~~~~~###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TT",
+  "TT~~~~~~~~~~~~~~~~~~~~~~~~~~~~###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TT",
   "TT............................................................TT",
   "TT....................,,,,,,,,,,,,,.fffffffff.,,,,,,,,,,,,,...TT",
   "TT....BBBBBBBBBBBBBB..,,,,,,,,,,,,,.fffffffff.,,,,,,,,,,,,,...TT",

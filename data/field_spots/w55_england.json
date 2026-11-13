@@ -56,5 +56,20 @@
   },
   "flag": "field_wallpath_wall",
   "at": "hadrians_wall_path"
+ },
+ {
+  "id": "fs_reivers_roundup",
+  "zone": "reivers_road",
+  "x": 14,
+  "y": 34,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Blackface sheep, all facing the border and none crossing it. {lead} nips round the back, low and quick, and the lot of them stream through the gate into England, or possibly Scotland. The farmer will not say which. He leaves a flask on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_reivers_roundup",
+  "at": "reivers_road"
  }
 ]

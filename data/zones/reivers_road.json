@@ -1,0 +1,879 @@
+{
+ "id": "reivers_road",
+ "name": "The Debatable Land",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_moors",
+ "weather": {
+  "drizzle": 30,
+  "clear": 22,
+  "fog": 14,
+  "downpour": 12,
+  "gale": 8,
+  "sunshine": 14
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 42,
+   "y": 36,
+   "w": 6,
+   "h": 4,
+   "label": "Old Blacksmith's Shop"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 49,
+   "y": 37,
+   "w": 4,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 36,
+   "y": 40,
+   "w": 4,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "lamp_post",
+   "x": 41,
+   "y": 41
+  },
+  {
+   "type": "bench",
+   "x": 45,
+   "y": 41
+  },
+  {
+   "type": "building",
+   "style": "field_barn",
+   "x": 8,
+   "y": 40,
+   "w": 4,
+   "h": 3,
+   "label": "Bastle House"
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 10,
+   "y": 16,
+   "w": 5,
+   "h": 4,
+   "label": "Reiver Tower (ruin)"
+  },
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 46,
+   "y": 14,
+   "w": 8,
+   "h": 5,
+   "label": "Hermitage Castle"
+  },
+  {
+   "type": "flagpole",
+   "x": 55,
+   "y": 14
+  },
+  {
+   "type": "sheep",
+   "x": 6,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 11,
+   "y": 32,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 26,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 50,
+   "y": 28,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 48,
+   "y": 42,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 16,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "standing_stone",
+   "x": 25,
+   "y": 21,
+   "variant": 0
+  },
+  {
+   "type": "standing_stone",
+   "x": 35,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 13,
+   "y": 60,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 16,
+   "y": 56,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 23,
+   "y": 57,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 38,
+   "y": 8,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 13,
+   "y": 55,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 60,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 42,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 49,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 18,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 36,
+   "y": 8,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 26,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 44,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 8,
+   "y": 55,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 36,
+   "y": 58,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 9,
+   "y": 27,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 29,
+   "y": 29,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 26,
+   "y": 39,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 43,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 40,
+   "y": 42,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 31,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 50,
+   "y": 20,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 53,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 18,
+   "y": 37,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 33,
+   "y": 37,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 5,
+   "y": 21,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 41,
+   "y": 60,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 12,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 5,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 26,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 22,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 37,
+   "y": 36,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 7,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 15,
+   "y": 4,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 6,
+   "y": 49,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 11,
+   "y": 4,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 56,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 53,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 7,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 14,
+   "y": 55,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 27,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 55,
+   "y": 48,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 39,
+   "y": 39,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 18,
+   "y": 16,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 26,
+   "y": 42,
+   "variant": 1
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "south": {
+   "to": "carlisle",
+   "offset": 1
+  },
+  "north": {
+   "to": "scottish_borders",
+   "offset": 2
+  }
+ },
+ "npcs": [
+  {
+   "id": "rr_clerk",
+   "sprite": "tour_guide",
+   "x": 43,
+   "y": 33,
+   "facing": "right",
+   "move": "still",
+   "script": "rr_clerk"
+  },
+  {
+   "id": "rr_walker",
+   "sprite": "hiker",
+   "x": 27,
+   "y": 49,
+   "facing": "down",
+   "move": "still",
+   "script": "rr_walker"
+  },
+  {
+   "id": "rr_historian",
+   "sprite": "villager_4",
+   "x": 12,
+   "y": 21,
+   "facing": "right",
+   "move": "still",
+   "script": "rr_historian"
+  },
+  {
+   "id": "rr_stationman",
+   "sprite": "rail_guard",
+   "x": 33,
+   "y": 28,
+   "facing": "left",
+   "move": "still",
+   "script": "rr_stationman"
+  },
+  {
+   "id": "rr_reiver",
+   "sprite": "hillwalker",
+   "x": 31,
+   "y": 41,
+   "facing": "left",
+   "move": "still",
+   "trainer": "rr_reiver"
+  },
+  {
+   "id": "rr_blacksmith",
+   "sprite": "steelworker",
+   "x": 39,
+   "y": 37,
+   "facing": "up",
+   "move": "still",
+   "trainer": "rr_blacksmith"
+  },
+  {
+   "id": "rr_birder",
+   "sprite": "birdwatcher",
+   "x": 28,
+   "y": 36,
+   "facing": "right",
+   "move": "still",
+   "trainer": "rr_birder"
+  },
+  {
+   "id": "rr_shepherd",
+   "sprite": "farmer",
+   "x": 45,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "trainer": "rr_shepherd"
+  },
+  {
+   "id": "rr_rider",
+   "sprite": "hillwalker",
+   "x": 24,
+   "y": 14,
+   "facing": "right",
+   "move": "still",
+   "trainer": "rr_rider"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "reivling",
+    "min": 78,
+    "max": 80,
+    "weight": 12,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "foalmoor",
+    "min": 78,
+    "max": 80,
+    "weight": 10
+   },
+   {
+    "species": "thistlet",
+    "min": 78,
+    "max": 80,
+    "weight": 10
+   },
+   {
+    "species": "herdlet",
+    "min": 78,
+    "max": 80,
+    "weight": 10
+   },
+   {
+    "species": "leveret",
+    "min": 78,
+    "max": 80,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "stoatlet",
+    "min": 78,
+    "max": 80,
+    "weight": 8
+   },
+   {
+    "species": "hootlet",
+    "min": 78,
+    "max": 80,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "ospret",
+    "min": 78,
+    "max": 80,
+    "weight": 6,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "reiver",
+    "min": 78,
+    "max": 80,
+    "weight": 5,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "tattybogle",
+    "min": 78,
+    "max": 80,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "starlet",
+    "min": 78,
+    "max": 80,
+    "weight": 8
+   },
+   {
+    "species": "kitelet",
+    "min": 78,
+    "max": 80,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "midgie",
+    "min": 78,
+    "max": 80,
+    "weight": 6,
+    "time": [
+     "dawn",
+     "dusk"
+    ],
+    "weather": [
+     "drizzle",
+     "fog"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "bradan",
+    "min": 78,
+    "max": 80,
+    "weight": 20
+   },
+   {
+    "species": "ratty",
+    "min": 78,
+    "max": 80,
+    "weight": 20
+   },
+   {
+    "species": "dipling",
+    "min": 78,
+    "max": 80,
+    "weight": 24
+   },
+   {
+    "species": "stalklet",
+    "min": 78,
+    "max": 80,
+    "weight": 16
+   },
+   {
+    "species": "ospret",
+    "min": 78,
+    "max": 80,
+    "weight": 12
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 28,
+   "y": 59,
+   "text": "SOUTH: Carlisle and England. NORTH: the Debatable Land, Gretna and the Scottish Borders. Cattle prices have not changed. The reivers' views on them have."
+  },
+  {
+   "x": 33,
+   "y": 55,
+   "text": "For about three hundred years, from the end of the 13th century until the Union of the Crowns in 1603, families on both sides of the Anglo-Scottish border raided each other for cattle and goods. They included Armstrongs, Elliots, Grahams and Nixons, and many were loyal to their family before either crown. Our word 'blackmail' comes from the protection money farmers paid to be left alone.",
+   "plaque": "w55e_border_reivers",
+   "title": "The Border Reivers"
+  },
+  {
+   "x": 25,
+   "y": 44,
+   "text": "A strip of land between the rivers Esk and Sark that both England and Scotland claimed, and neither governed. It became a refuge for outlaws and reivers. In 1552 a border commission divided it with a ditch and bank, the Scotch Dyke, and the Debatable Land ceased to be debatable, at least on paper.",
+   "plaque": "w55e_debatable_land",
+   "title": "The Debatable Land"
+  },
+  {
+   "x": 20,
+   "y": 38,
+   "text": "SARK. The river is the boundary here. The Sark was a name for trouble long before the toll bridge. Don't mind the dyke, it's mostly grass now."
+  },
+  {
+   "x": 44,
+   "y": 34,
+   "text": "In 1754 Lord Hardwicke's Marriage Act tightened the rules for marrying in England, but Scotland's law stayed looser: young couples could marry there without a parent's consent. Gretna was the first village across the border on the main road north, and runaway couples hurried to the blacksmith's, who was as good as any priest. Thousands were married here, and people still are.",
+   "plaque": "w55e_gretna",
+   "title": "Gretna Green"
+  },
+  {
+   "x": 36,
+   "y": 28,
+   "text": "BORDER. A sign, a stone, a lay-by and a slightly different type of rain. You are in Scotland, or you will be in about eleven steps."
+  },
+  {
+   "x": 44,
+   "y": 21,
+   "text": "A brooding fortress in Liddesdale, rebuilt in the 14th century and held by powerful border families. In October 1566 Mary, Queen of Scots, rode here from Jedburgh to visit her wounded favourite, the Earl of Bothwell, and back again, a round trip of about fifty miles. She fell dangerously ill soon after. The castle has a bad name for ghosts.",
+   "plaque": "w55e_hermitage",
+   "title": "Hermitage Castle"
+  },
+  {
+   "x": 28,
+   "y": 3,
+   "text": "NORTH: the Scottish Borders. Melrose, the Eildon Hills and a pig with a lot of opinions. SOUTH: Gretna, Longtown and Carlisle."
+  }
+ ],
+ "spawn": [
+  30,
+  60
+ ],
+ "stage": "valley",
+ "scaled_floor": 78,
+ "rows": [
+  "TTTTTTTTTTTPTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTgggggggggggggggggggggggggg###hggggggggggggggggggggggggTTT",
+  "TTTggggggggggggggggggggghhhhh###hhhhgggggggggggggggggggggTTT",
+  "TTTggggggggggggggggggghhhhhhh###hhhhhhhgggghggggghgggggggTTT",
+  "TTTgggggggggggggggggghhhhhhhh###hhhhhhhghghhhhhhhhhhhggggTTT",
+  "TTTggggggggggggggggggghhhhhhh###hhhhhhhhhhhhhhhhhhhhhhgggTTT",
+  "TTTgggggggghghghgggggggghhhhh###hhhhggghhhhhhhhhhhhhhhhggTTT",
+  "TTTgggggghhhhhhhhhhghgggggghg###hggggghghhhhhhhhhhhhhhhggTTT",
+  "TTTgggghhhhhhhhhhhhhhhggggggg###ggggggggghhhhhhhhhhghhgggPTT",
+  "TTTggggghhhhhhhhhhhhhgggggggg###ggggggggggghghgghhgggggggTTT",
+  "TTTggggghhhhhhhhhhhhhhhgggggg###gggggggggggggggggggggggggTTT",
+  "TTTggghhhhhhhhhhhhhhhhhgggggg###gggggggggggggggggggggggggTTT",
+  "TTTggggghhhhhhhhhhhhhgggggggg###ggggggggggggggBBBBBBBBgggTTT",
+  "TTTggggghhhhhhhhhhgghgggggggg###ggggggggggggggBBBBBBBBgggTTT",
+  "TTTgggggggBBBBBgggggggggggggg###ggggggggggggggBBBBBBBBgggTTT",
+  "TTTgggggggBBBBBgggggggggggggg###ggggggggggggggBBBBBBBBgggTTT",
+  "TTTgggggggBBBBBgggggggggggggg###ggggggggggggggBBBBBBBBgggTTT",
+  "TTTgggggggBBBBBgggggggggggggg###gggggggggggggggggggggggggTTT",
+  "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",
+  "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",
+  "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",
+  "TTTgggggggggggggggggggggggggg#############gggggggggggggggTTT",
+  "TTTgggggggggggggggggggggggggg#############gggggggggggggggTTT",
+  "TTTgggggggggggggggggggggggggg#############ggqggggggggggggTTT",
+  "TTTmmmmmmmmmmmwmmmmmmmmmmmmmmmmmmmmmmmm###qqqqqqqqqmmmmmmTTT",
+  "TTTmmmmmmmmmmmwqqmqmmmmmmmmmmmmmmmmmmmq###qqqqqqqqqqmmmmmTTT",
+  "TTTmmmmmmmmqqqwqqqqqqmmmmmmmmmmmmmmmqqq###qqqqqqqqqqmmmmmTTT",
+  "TTTmmmmmmqqqqqwqqqqqqqqmmmmmmmmmmmmmmqq###qqqqqqqqqqqmmmmTTT",
+  "TTTmmmmmmmqqqqwqqqqqqqqqmmmmmmmmmmmmmmm###qqqqqqqqqmmmmmmTTT",
+  "TTTmmmmmmqqqqqwqqqqqqqqmmmmmmmmmmmmmmmm###mqqqqmmmmmmmmmmTTT",
+  "TTTmmmmmmmmmqqwqqqqqqqmmmmmmmmmmmmmmmmm###mmmmmmmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmwmqqmmm#####################mmmmmmmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm#####################mmmmmmmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm#####################mmmmmmmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm###mmmmmmmmmmmmmmmmmmBBBBBBmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm###mmmmmmmmmmmmmmmmmmBBBBBBmBBBBmmmmTPT",
+  "TTTmmmmmmmmmmmwmmmmmm###mmmmmmmmmmmmmmmmmmBBBBBBmBBBBmmmmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm###mmmmmmmmmmmmmmmmmmBBBBBBmBBBBmmmmTTT",
+  "TTTmmmmmBBBBmmwmmmmmm###mmmmmmmmmmmmBBBBmmmmmmmmmmmmmmmmmTTT",
+  "TTTmmmmmBBBBmmwmmmmmm###mmmmmmmmmmmmBBBBmmmmmmmmmmmmmmmmmTTT",
+  "TTTmmmmmBBBBmmwmmmmmm###mmmmmmmmmmmmBBBBmmmmmmmmmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm###mmmmmmmmmmmmmmmmmmmmmmmmmmhmhmmmmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm###mmmmmmmmmmmmmmmmmmmmmmhhhhhhhhhmmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm###########mmmmmmmmmmmmmmhhhhhhhhhhmTTT",
+  "TTTmmmmmmmmmmmwmmmmmm###########mmmmmmmmmmmmmmhhhhhhhhhmmTTT",
+  "TTTmmmmmmmqmqmwmmmmmm###########mmmmmmmmmmmmmmhhhhhhhhhmmTTT",
+  "TTTmmmmmqqqqqqwqqmmmmmmmmmmmm###mmmmmmmmmmmmmmhmhhhhhhmmmTTT",
+  "TTTmmmmqqqqqqqwqqqmmmmmmmmmmm###mmmmmmmmmmmmmmmmhmmmmmmmmTTT",
+  "TTTmmmqqqqqqqqqqqqwwwwwwwwwww###mmmmmmmmmmmmmmmmmwwwwwwwwTTT",
+  "TTTmmmmqqqqqqqqwww~~~~~~~~~~~###wwmmmmmmmmmmmmwww~~~~~~~~TTT",
+  "TTTwwwwwwwwwwww~~~wwwwwwwwwww###~~wwwwwwwwwwww~~~wwwwwwwwTTT",
+  "TTT~~~~~~~~~~~~wwwmmmmmmmmmmm###ww~~~~~~~~~~~~wwwmmmmmmmmTTT",
+  "TTTwwwwwwwwwwwwmmmmmmmmmmmmmm###qqwwwwwwwwwwwwqmmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmmmmmmmm###mmqqqqqqqqqqqqqqmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmmmmmmmm###mmmmmmqmqqqmmmmmmmmmmmmmmTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmmmmmmmm###mmmmmmmmmmmmmmmmmmmmmmmmmTTT",
+  "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",
+  "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",
+  "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "heights": [
+  "000011111122222222211111222222222222211122222222222221111100",
+  "000111112222222222222112222233333222221222222222222222111110",
+  "001111122222222222222212222333333322222222233333332222211110",
+  "011112222223333333222222222333333322222222333333333222221111",
+  "011112222333333333332222222333333322222223333333333322221111",
+  "111122223333333333333222222333333322222233333444333332222111",
+  "111222233333444443333322222333333322222233334444433332222111",
+  "111222333334444444333332222233333222222233344444443332222111",
+  "112222333344444444433332222222222222222233344444443332222111",
+  "112223333444455544443333222222222222222233344444443332222111",
+  "112223334444555554444333222222222222222233334444433332222111",
+  "112223334445555555444333222222222211222233333444333332222111",
+  "112223334445555555444333222111111111122223333333333322221111",
+  "112223334445555555444333222111111111122222333333333222221111",
+  "112223334444555554444333222111111111112222233333332222211110",
+  "112223333444455544443333222111111111111222222222222222111110",
+  "112222333344444444433332222111000001111122222222222221111100",
+  "111222333334444444333332221111000000111112222222222211111000",
+  "111222233333444443333322221110000000011111122222221111110000",
+  "111122223333333333333222211110000000001111111111111111100000",
+  "011112222333333333332222111100000000000111111111111111000000",
+  "011112222223333333222222111100000000000001111111111100000000",
+  "001111122222222222222211111000000000000000000000000000000000",
+  "000111112222222222222111110000000000000000000000000000000000",
+  "000011111122222222211111100000000000000000000000000000000000",
+  "000001111111111111111111000000000000000000000000000000000000",
+  "000000011111111111111100000000000000000000000000000000000000",
+  "000000000111111111110000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000"
+ ],
+ "legend_extra": {
+  "g": {
+   "tile": "grass",
+   "colour": "#7b8c4c"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#879a52"
+  },
+  "q": {
+   "tile": "tall_grass",
+   "colour": "#7b8a49",
+   "prop": "short"
+  },
+  "h": {
+   "tile": "tall_grass",
+   "colour": "#6e5a5c",
+   "prop": "heather"
+  },
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "W": {
+   "tile": "drystone_wall",
+   "colour": "#8a8470"
+  }
+ }
+}
