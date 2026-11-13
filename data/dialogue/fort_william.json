@@ -361,5 +361,59 @@
     }
    ]
   }
+ ],
+ "ct_kelpie_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "kelpie"
+  }
+ ],
+ "ct_kelpie_bridge": [
+  {
+   "do": "if",
+   "flag": "ct_kelpie_is_bridge",
+   "then": [
+    {
+     "do": "say",
+     "who": "Walker",
+     "text": "New footbridge over the burn, steel and a handrail. Whoever put it in, thank you. I used to be a wet-boots-at-three-in-the-morning woman."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_kelpie_is_caught",
+     "then": [
+      {
+       "do": "say",
+       "who": "Walker",
+       "text": "The water horse is in somebody's team, they say. The ford's quiet. I keep my boots dry and my eyes open."
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Walker",
+       "text": "The burn's quiet."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "ct_kelpie_sign": [
+  {
+   "do": "say",
+   "who": "Walker",
+   "text": "There's a sign at the ford now, and a rope. It says no, and in smaller print it says there may be a horse. I'm not crossing."
+  }
+ ],
+ "ct_kelpie_bridled": [
+  {
+   "do": "say",
+   "who": "Estate Hand",
+   "text": "There's a bridle on the estate office wall that's never dry. I try not to look at it. It isn't looking at me, but I have my doubts."
+  }
  ]
 }

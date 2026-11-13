@@ -1,0 +1,186 @@
+{
+ "id": "kelpie",
+ "title": "The Grey Horse at the Ford",
+ "town": "fort_william",
+ "nation": "scotland",
+ "group": "walkers",
+ "badges": 8,
+ "pay": 4,
+ "poster": {
+  "name": "Morag Cameron",
+  "role": "volunteer with the mountain rescue team",
+  "idle": [
+   "Kettle's on, and the team's out. I've a worry about a river crossing, but you've not the badges for the hills yet. Come back when you've been round a bit more of Scotland."
+  ],
+  "taken": [
+   "Anything? Another walker last night. She says she was offered a lift across the water by a grey horse, and woke up on the far bank with her boots full. She was lucky, and she knows it."
+  ],
+  "decided": [
+   "You've been up to the ford. It's in the way you're standing. Tell me."
+  ],
+  "closed": "That's the ford sorted, and the team's quieter for it. We'll take it.",
+  "haggle": "You'll make a rescue volunteer yet, with that tongue. Fair enough. Done."
+ },
+ "notice": [
+  "Three walkers pulled out of the river at the same ford in a month. Every one of them says a grey horse was standing at the water's edge, and every one of them said she looked tame.",
+  "The team has seen the river come up a metre in an hour. We have also seen a horse that isn't there in the morning. Come and look."
+ ],
+ "trouble": [
+  "It's down the glen, on the Great Glen side, where the hill burn comes in. There's no bridge. There used to be a bridge. The spate took it.",
+  "If it's the river, I need to know how to warn people. If it's the other thing, I need to know what to warn them about."
+ ],
+ "hypotheses": [
+  {"id": "kelpie", "name": "A kelpie, the water horse", "types": ["brook", "spirit"]},
+  {"id": "spate", "name": "The river in spate, and nothing else", "types": ["storm", "brook"]},
+  {"id": "pony", "name": "A stray estate pony", "types": ["kin"]}
+ ],
+ "truth": "kelpie",
+ "clues": [
+  {
+   "id": "hooves",
+   "kind": "look",
+   "zone": "great_glen",
+   "hint": "the muddy bank at the ford",
+   "text": "Hoofprints at the ford, deep and fresh, going into the water. None come out. There are no droppings, no dragged grass and no shoe marks, and the bank at the water's edge is slick with weed that doesn't grow here. A stray pony wanders. This stands and waits.",
+   "points": ["kelpie"],
+   "rules_out": ["pony"]
+  },
+  {
+   "id": "spate",
+   "kind": "look",
+   "zone": "great_glen",
+   "hint": "the ford in rain, when the burn is up",
+   "text": "In the rain the burn comes up brown and loud. At the ford a grey horse stands in the white water, perfectly calm, mane streaming the wrong way. When the spate rises it does not. The river would drown you in an hour. The horse seems very patient about it.",
+   "hint_wait": "A neat little burn, very polite. Whatever the river does here, it does it in the rain. Try again when it's wet.",
+   "points": ["kelpie", "spate"],
+   "when": {"weather": ["rain"]}
+  },
+  {
+   "id": "ghillie",
+   "kind": "ask",
+   "zone": "great_glen",
+   "who": "Old Ghillie",
+   "hint": "ask the old ghillie",
+   "text": [
+    "A kelpie. A grey horse standing too still by a ford, looking for a rider. It's the kind that smiles at you. Get on, and your hands stick to the hide, and it takes you under.",
+    "There's an old way with it. A bridle with a cross on it, and a man who doesn't mind getting wet. But my father said you were better off finding another way over."
+   ],
+   "idle": ["I'm waiting on a salmon. They don't do what they're told, either."],
+   "after": "A horse by the water isn't just a horse. Whatever you did, I hope you were polite.",
+   "points": ["kelpie"]
+  },
+  {
+   "id": "hydro",
+   "kind": "ask",
+   "zone": "great_glen",
+   "who": "River Surveyor",
+   "hint": "ask the river surveyor",
+   "text": [
+    "A hill burn like this can come up a metre in an hour after heavy rain, and a ford that's knee-deep at breakfast will kill you by lunch. There's no horse. There's a river.",
+    "I know what the old stories say. They were a good way of keeping children off the water, and they did the job for a long time."
+   ],
+   "idle": ["Measuring the burn. It's got opinions."],
+   "after": "A bridge, a sign or a bridle. Whatever you chose, the river is still a river.",
+   "points": ["spate"]
+  }
+ ],
+ "lair": {
+  "zone": "great_glen",
+  "name": "The Water Horse",
+  "species": "kelpie",
+  "level": 70,
+  "floor_par": 65,
+  "intro": [
+   "The ford, where the hill burn spreads out over a bed of flat stones on its way to the loch. The water is cold and smooth, and a grey horse is standing in the middle of it up to its fetlocks, not drinking, not moving, wet to the shoulder.",
+   "It turns its long face to you. It has a soft nose and a kind eye and a mane that streams in a current that isn't there. It is, very politely, offering you a lift."
+  ],
+  "beaten": [
+   "The Water Horse stands in the shallows with its head low, flanks steaming, mane hanging dead. It looks at you with a kind eye, and you remind yourself very firmly that it is not a kind animal."
+  ]
+ },
+ "choices": [
+  {
+   "id": "bridge",
+   "label": "Have a footbridge built, and take the ford away from it",
+   "say": [
+    "It takes the council two months and one very large crane. A steel footbridge goes in a hundred yards upstream, with a handrail and a sign. The ford is left to the burn.",
+    "The Water Horse stands on the stones and watches the walkers go over its head. It does not look pleased. It looks, if anything, hungry."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_kelpie_bridge": true, "ct_kelpie_crossing": true},
+   "repute": {"walkers": 2, "crofters": -1},
+   "standing": {"scotland": 2},
+   "poster": ["A proper bridge. A proper bridge! No more wet boots at three in the morning. I'll never think badly of a council again. Here's your fee."],
+   "after": ["Steel bridge, handrail, a sign. Nobody's been in the burn since. Though the ghillie says the horse has moved on to the next one down."],
+   "journal": "You had a footbridge built across the burn. Nobody has needed rescuing at the ford since. The old ghillie says the water horse has gone to find another."
+  },
+  {
+   "id": "sign",
+   "label": "Mark the ford with a warning, and leave the kelpie its water",
+   "say": [
+    "The team puts up a post at the ford with a laminated sign, a rope, and a line of stones to mark where it is safe. The sign says it is not. In smaller print it adds that there may be a horse.",
+    "The Water Horse stays where it is, and one or two walkers over the summer report a pleasant grey animal that did not offer them a lift, since they did not accept the offer."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_kelpie_sign": true, "ct_kelpie_stays": true},
+   "repute": {"walkers": 1, "crofters": 1},
+   "standing": {"scotland": 1},
+   "poster": ["A sign and a rope. It's cheap and it works as long as people read signs, which they don't. Seventy per cent. And we'll keep an eye on the ford."],
+   "after": ["Sign says don't cross. Walkers read it, the way people read terms and conditions. The team stays on the bank with a flask, just in case."],
+   "journal": "You marked the ford with a warning and left the Water Horse its river. People mostly read the sign. The team keeps a flask on the bank."
+  },
+  {
+   "id": "bridle",
+   "label": "Take the old way: bridle it, and set it to carry stone for the new bridge",
+   "say": [
+    "It is a night's work, a bridle with a cross on it, and a good deal of nerve. The Water Horse takes the bit with the face of a creature that has done this before, and carries stone from the quarry to the ford all week, saying nothing.",
+    "On the last day the bridge is built, and the bridle is hung on the estate office wall, where it drips, faintly, onto the floor."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_kelpie_bridled": true, "ct_kelpie_bridge": true},
+   "repute": {"crofters": 2, "walkers": -1},
+   "standing": {"scotland": 1},
+   "poster": ["A bridle in the estate office, dripping, and a bridge built in a week by a horse nobody will mention. I don't know what to put on the invoice. Ninety per cent."],
+   "after": ["There's a bridle on the estate wall that's never dry. We built a bridge with its help. I try not to think about who owes who."],
+   "journal": "You bridled the Water Horse the old way and had it carry the stones for the bridge. The bridle hangs wet on the estate wall, and somebody, somewhere, expects it back."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes. The Water Horse goes in as a long grey streak and settles at the bottom of it like a stone in a pond. Out in the glen, the burn is just a burn."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_kelpie_kept": true, "ct_kelpie_crossing": true},
+   "repute": {"walkers": 1, "crofters": 0},
+   "standing": {"scotland": 2},
+   "poster": ["The water horse is in your team. In a charm. Well. It can't be less safe than a ford in spate. Eighty per cent, and I'll thank you not to take it near the loch."],
+   "after": ["Burn's quiet. Ghillie says it's the quiet that follows a very big thing taken out of a very small stream."],
+   "journal": "You caught the Water Horse, which now rides in your team and drips. The ford is quiet, and the old ghillie will not shake your hand."
+  }
+ ],
+ "real": "A kelpie is the water horse of Scottish folklore: a shape-shifter that stands by a river or loch as a handsome grey horse, tempts a traveller to ride, and carries them under when their hands stick to its hide. In the tales a bridle can bind it, and it is made to haul stones for a laird. Stories like these kept children away from fast, deep water, which was a real danger: hill burns can rise a metre in an hour after heavy rain, and fords that are knee-deep in the morning can drown a person by afternoon. Mountain rescue teams still pull walkers out of rivers they tried to cross. The Kelpies at Falkirk, two enormous horse heads, are Andy Scott's sculptures, finished in 2013.",
+ "places": {
+  "poster": {"sprite": "hillwalker", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "ghillie", "sprite": "ghillie", "near": [20, 36]},
+   {"clue": "hydro", "sprite": "student", "near": [36, 44]}
+  ],
+  "looks": [
+   {"clue": "hooves", "near": [28, 40], "on": "any", "text": ["The bank of the burn, grey stone and soft mud, trampled by hillwalkers' boots."]},
+   {"clue": "spate", "near": [34, 50], "on": "any", "text": ["A broad, shallow, stony ford. In dry weather you could cross it in your socks."]}
+  ],
+  "lair": {"near": [30, 54]},
+  "folk": [
+   {"id": "bridge", "zone": "fort_william", "near": [20, 20], "sprite": "hillwalker", "name": "Walker", "show_if": "ct_kelpie_crossing", "says": [
+     ["ct_kelpie_is_bridge", ["New footbridge over the burn, steel and a handrail. Whoever put it in, thank you. I used to be a wet-boots-at-three-in-the-morning woman."]],
+     ["ct_kelpie_is_caught", ["The water horse is in somebody's team, they say. The ford's quiet. I keep my boots dry and my eyes open."]]
+    ], "else": ["The burn's quiet."]},
+   {"id": "sign", "zone": "fort_william", "near": [28, 22], "sprite": "hiker", "name": "Walker", "show_if": "ct_kelpie_stays", "says": [],
+    "else": ["There's a sign at the ford now, and a rope. It says no, and in smaller print it says there may be a horse. I'm not crossing."]},
+   {"id": "bridled", "zone": "fort_william", "near": [24, 28], "sprite": "ghillie", "name": "Estate Hand", "show_if": "ct_kelpie_bridled", "says": [],
+    "else": ["There's a bridle on the estate office wall that's never dry. I try not to look at it. It isn't looking at me, but I have my doubts."]}
+  ]
+ }
+}

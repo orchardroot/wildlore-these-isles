@@ -357,6 +357,49 @@
    "facing": "down",
    "move": "still",
    "script": "arc_scot_captain"
+  },
+  {
+   "id": "ct_kelpie_poster",
+   "sprite": "hillwalker",
+   "x": 33,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kelpie_poster",
+   "name": "Morag Cameron"
+  },
+  {
+   "id": "ct_kelpie_bridge",
+   "sprite": "hillwalker",
+   "x": 18,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kelpie_bridge",
+   "name": "Walker",
+   "show_if": "ct_kelpie_crossing"
+  },
+  {
+   "id": "ct_kelpie_sign",
+   "sprite": "hiker",
+   "x": 28,
+   "y": 23,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kelpie_sign",
+   "name": "Walker",
+   "show_if": "ct_kelpie_stays"
+  },
+  {
+   "id": "ct_kelpie_bridled",
+   "sprite": "ghillie",
+   "x": 24,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kelpie_bridled",
+   "name": "Estate Hand",
+   "show_if": "ct_kelpie_bridled"
   }
  ],
  "props": [
