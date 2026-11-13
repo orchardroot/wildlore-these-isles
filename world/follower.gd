@@ -5,7 +5,8 @@ extends Node3D
 ## the tile the player has just left, in time with the player's own step, and bobs a little when stood still.
 ## Locked in step: each stride starts on the player's step_started and runs on the player's own step_fraction(),
 ## so it starts and ends on the same frame as the player's, at the same speed, with nothing to fall behind.
-## Purely cosmetic: no grid presence, never in anyone's way. Hidden on the bike or the water, in cramped
+## Purely cosmetic: no grid presence, never in anyone's way. Hidden on the bike or the water (unless it is a brook,
+## tide or gale creature, which swims or flies alongside the coracle), in cramped
 ## interiors, while the player is hidden (journeys, arrival scenes) and while anyone stands on its tile.
 ## Talk to it by facing it and pressing interact: a short mood line and its cry. Settings.follower turns it off.
 
@@ -14,6 +15,9 @@ const BOB_HEIGHT := 0.035
 const BOB_SPEED := 4.2         # radians per second
 const LEAD_CHECK_FRAMES := 15  # how often to look for a new party lead
 const NOWHERE := Vector2i(-1, -1)
+const SWIM_TYPES := ["brook", "tide", "gale"]  # at home over water: they keep pace with the coracle
+const SWIM_DIP := -0.1   # a swimmer rides low in the water
+const FLY_LIFT := 0.14   # a flier hovers over it
 
 var tile := NOWHERE
 var _ow: Node
@@ -28,6 +32,7 @@ var _bob_t := 0.0
 var _idle_phase := randf() * 3.0
 var _rng := RandomNumberGenerator.new()
 var _walked := 0  # steps walked as the follower, towards the next bit of friendship
+var _dip := 0.0   # how far its sprite sits above (or below) the tile's surface: over water, a swimmer or a flier
 
 ## The overworld's one hook in load_zone: called after each zone is built. Reuses the node between zones.
 static func attach(ow: Node) -> Follower:
@@ -81,10 +86,23 @@ static func behind_tile(player_pos: Vector2i, facing: String, ok: Callable) -> V
 	return NOWHERE
 
 static func should_show(enabled: bool, has_lead: bool, kind: String, area: int, on_bike: bool, wading: bool,
-		player_shown: bool, npc_here: bool, placed: bool) -> bool:
-	if not enabled or not has_lead or not placed or on_bike or wading or not player_shown or npc_here:
+		player_shown: bool, npc_here: bool, placed: bool, swims := false) -> bool:
+	if not enabled or not has_lead or not placed or on_bike or (wading and not swims) or not player_shown or npc_here:
 		return false
 	return kind != "interior" or area >= SMALL_INTERIOR
+
+## Does this species belong over water (a brook, tide or gale creature)? Then it swims or flies by the coracle.
+static func swims(types: Array) -> bool:
+	for t in types:
+		if t in SWIM_TYPES:
+			return true
+	return false
+
+## Sprite height over a tile's surface for a swimmer (below), a flier (above) or anything else (0) on water.
+static func water_dip(types: Array, afloat: bool) -> float:
+	if not afloat or not swims(types):
+		return 0.0
+	return FLY_LIFT if "gale" in types and "brook" not in types and "tide" not in types else SWIM_DIP
 
 ## Billboard scale from Cries.size_of (0 small .. 1 legend-sized): a touch smaller than the player at most.
 static func scale_for(size: float) -> float:
@@ -246,7 +264,12 @@ func _place_behind() -> void:
 func _set_tile(p: Vector2i) -> void:
 	tile = p
 	var z: ZoneData = _ow.zone
-	_tile_ok = p != NOWHERE and z.in_bounds(p) and z.tile_at(p) != "deep_water"
+	var afloat := z.tile_at(p) in ZoneData.RIDE_TILES
+	_tile_ok = p != NOWHERE and z.in_bounds(p) and (not afloat or _swims())
+	_dip = water_dip(_lead.types(), afloat) if _lead != null else 0.0
+
+func _swims() -> bool:
+	return _lead != null and swims(_lead.types())
 
 func _world(p: Vector2i) -> Vector3:
 	return Vector3(p.x + 0.5, _ow.ground_y(p), p.y + 0.5)
@@ -263,16 +286,16 @@ func _process(delta: float) -> void:
 		if t >= 1.0:
 			_arrived(pl)
 	visible = should_show(Settings.follower, _sprite != null, _ow.zone.kind, _ow.zone.width * _ow.zone.height,
-		pl.on_bike, pl.wading, pl.visible, _npc_here(), _tile_ok)
+		pl.on_bike, pl.wading, pl.visible, _npc_here(), _tile_ok, _swims())
 	if visible and not _moving and not Router.busy:
 		_bob_t += delta
 		if _lead != null:  # idles in its own manner (wave 48 A): a wisp hovers, a frog hops, a golem shifts its weight
 			var idle := Motion.idle(Motion.style_for(_lead.species), _bob_t, _idle_phase)
 			var off: Vector2 = idle.pos
-			_sprite.position.y = off.y * 0.6
+			_sprite.position.y = off.y * 0.6 + _dip
 			_sprite.position.x = off.x * 0.5
 		else:
-			_sprite.position.y = absf(sin(_bob_t * BOB_SPEED)) * BOB_HEIGHT
+			_sprite.position.y = absf(sin(_bob_t * BOB_SPEED)) * BOB_HEIGHT + _dip
 
 ## The player has just set off from `from`: step onto it, in time with them.
 func _follow(from: Vector2i, to: Vector2i) -> void:
@@ -304,7 +327,7 @@ func _follow(from: Vector2i, to: Vector2i) -> void:
 	_stride_hop = hops(prev, dest)
 	_sprite.walking = true
 	_sprite.walk_rate = pl.sprite.walk_rate
-	_sprite.position = Vector3.ZERO
+	_sprite.position = Vector3(0, _dip, 0)
 
 func _arrived(pl: Player) -> void:
 	position = _stride_to

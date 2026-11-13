@@ -206,6 +206,9 @@ func _dev_boot() -> void:
 			data.clock_minutes = args.clock
 		data.party = [Creature.create(dex.get_species("kindlet"), 10, rng, moves)]
 		data.party[0].variant = str(args.get("coat", ""))
+		for a in DevArgs.user_args():
+			if a.begins_with("--lead=") and dex.has(a.substr(7)):  # dev: the lead is this species (a swimmer beside the coracle)
+				data.party[0] = Creature.create(dex.get_species(a.substr(7)), 10, rng, moves)
 		HomeBase.dev_setup(data, str(args.get("home", "")), dex)
 		for a in DevArgs.user_args():
 			if a.begins_with("--rewild="):  # dev: every rewilding site at this stage, 0..3 (screenshots)
@@ -230,7 +233,7 @@ func _dev_boot() -> void:
 					data.badges.append("dev_%d" % i)
 		if args.ride != "":
 			data.bag["bike"] = 1
-			data.badges = ["brook", "urban", "stone", "iron"] if args.ride == "lantern" else ["brook", "urban", "stone"]
+			data.badges = ["brook", "urban", "stone", "iron"] if args.ride == "lantern" else (["brook", "urban", "tide"] if args.ride == "coracle" else ["brook", "urban", "stone"])
 		await Router.goto_zone(args.boot_zone, args.boot_pos, "down")
 		if args.ride == "bike":
 			Router.overworld.player.set_bike(true)

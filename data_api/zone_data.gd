@@ -17,7 +17,14 @@ const LEGEND := {
 const WALKABLE_TILES := ["grass", "tall_grass", "path", "road", "cobbles", "sand", "flowers", "shallow", "door", "floor_wood", "floor_tile", "platform", "level_crossing"]
 ## Tiles a field ability lets you cross (bramble is different: Hedge-lay removes it for good).
 const ABILITY_TILES := {"deep_water": "brook_wade", "scree": "fell_scramble", "bog": "bog_cross"}
-const GATE_ABILITIES := ["hedge_lay", "brook_wade", "fell_scramble", "bog_cross"]
+const GATE_NAMES := ["hedge_lay", "brook_wade", "fell_scramble", "bog_cross"]
+## The coracle: Brook-wade paddles every `~` as well as `o`, and Tide-ride the sea within SEA_REACH tiles of a shore.
+## An ability list carrying NO_RIDE turns both off, and GATE_ABILITIES (every gate's ability, on foot) carries it,
+## so the validator's layout checks never count a river as a route; RideCheck compares it with the coracle on.
+const RIDE_TILES := ["water", "sea", "deep_water"]
+const SEA_REACH := 3
+const NO_RIDE := "no_ride"
+const GATE_ABILITIES := ["hedge_lay", "brook_wade", "fell_scramble", "bog_cross", "no_ride"]
 ## Track: a level crossing is rail you can walk over. Every line end needs one of RAIL_CAPS (or the map edge).
 const RAIL_TILES := ["rail", "level_crossing"]
 const RAIL_CAPS := ["buffer_stop", "tunnel_portal"]
@@ -60,6 +67,8 @@ var scaled_floor := -1        # off the main line: encounters authored at this p
 var dark := false              # a cave: only a circle of light round the player (wider with the Lantern)
 var deep_solid: Array = []    # tiles DeepPlace made solid (levers, crates), cleared on each re-apply
 var deep: Dictionary = {}     # a Deep Place's puzzle pieces (see DeepPlace)
+var no_ride: Array = []        # [x, y, w, h] rects where the current is too strong to paddle (see RideCheck)
+var _sea_near := {}            # Vector2i -> bool, memo for sea_near_shore
 var ambience := ""             # ambience bed override (an Ambience.BEDS id, or "none"); "" = pick from kind/stage
 
 static func load_id(zone_id: String) -> ZoneData:
@@ -103,6 +112,7 @@ static func from_dict(d: Dictionary) -> ZoneData:
 	z.scaled_floor = int(d.get("scaled_floor", -1))
 	z.viaducts = d.get("viaducts", [])
 	z.ambience = str(d.get("ambience", ""))
+	z.no_ride = d.get("no_ride", [])
 	var sp: Array = d.get("spawn", [0, 0])
 	z.spawn = Vector2i(int(sp[0]), int(sp[1]))
 	if sp.size() != 2:
@@ -175,6 +185,8 @@ func walkable(p: Vector2i, from_dir := Vector2i.ZERO, abilities: Array = []) -> 
 	if t == "ledge_south":
 		return from_dir == Vector2i(0, 1)
 	var by_ability: bool = ABILITY_TILES.has(t) and ABILITY_TILES[t] in abilities
+	if not by_ability and (t == "water" or t == "sea"):
+		by_ability = can_ride(p, abilities)
 	if (t not in WALKABLE_TILES and not by_ability) or blocked.has(p):
 		return false
 	if from_dir != Vector2i.ZERO:
@@ -182,6 +194,51 @@ func walkable(p: Vector2i, from_dir := Vector2i.ZERO, abilities: Array = []) -> 
 		if in_bounds(prev) and absi(height_at(prev) - height_at(p)) > 1:
 			return false
 	return true
+
+## Can a coracle go on `p` (a `~` or a `$` tile) with these abilities? Never indoors or in a Deep Place, never
+## in a no_ride rect, never on a border tile whose side has an edge (the current's too strong to be swept into the
+## next zone), and the sea only within SEA_REACH tiles of a shore.
+func can_ride(p: Vector2i, abilities: Array) -> bool:
+	var t := tile_at(p)
+	if t == "water":
+		if "brook_wade" not in abilities:
+			return false
+	elif t == "sea":
+		if "tide_ride" not in abilities or not sea_near_shore(p):
+			return false
+	else:
+		return false
+	return NO_RIDE not in abilities and ride_zone() and not in_no_ride(p) and not _edge_border(p)
+
+## Zones with water you may ever paddle: outdoors, and not a Deep Place (its floods are puzzle pieces).
+func ride_zone() -> bool:
+	return kind != "interior" and deep.is_empty()
+
+func in_no_ride(p: Vector2i) -> bool:
+	for r in no_ride:
+		if p.x >= int(r[0]) and p.y >= int(r[1]) and p.x < int(r[0]) + int(r[2]) and p.y < int(r[1]) + int(r[3]):
+			return true
+	return false
+
+func _edge_border(p: Vector2i) -> bool:
+	return (p.x == 0 and edges.has("west")) or (p.x == width - 1 and edges.has("east")) \
+			or (p.y == 0 and edges.has("north")) or (p.y == height - 1 and edges.has("south"))
+
+## Is there anything but sea within SEA_REACH tiles (a square) of p? (Void is the edge of the drawing, not a shore.)
+func sea_near_shore(p: Vector2i) -> bool:
+	if _sea_near.has(p):
+		return _sea_near[p]
+	var near := false
+	for dy in range(-SEA_REACH, SEA_REACH + 1):
+		for dx in range(-SEA_REACH, SEA_REACH + 1):
+			var q := p + Vector2i(dx, dy)
+			if in_bounds(q) and tiles[q.y][q.x] not in ["sea", "void"]:
+				near = true
+				break
+		if near:
+			break
+	_sea_near[p] = near
+	return near
 
 ## Where to set the player down for an arrival at p. Overlays applied on load (a lease's fence across the anchor's
 ## gap, a closed Deep Place gate on a warp's landing tile) can leave p unstandable; this is the nearest tile that
@@ -229,6 +286,10 @@ func reachable(from: Vector2i, abilities: Array = [], also_blocked: Dictionary =
 				seen[q] = true
 				queue.append(q)
 	return seen
+
+## The abilities a "gate" names (none for ""), on foot: the coracle never counts towards a gate.
+static func _gate_set(g: String) -> Array:
+	return [NO_RIDE] if g == "" else [g, NO_RIDE]
 
 ## A warp lands you on `p`: can you take even one step from there that isn't on to a warp? Stepping on to a
 ## warp sends you straight back out, so a doorstep hemmed in by signs, props and walls makes the whole zone
@@ -506,18 +567,18 @@ func validate(all: Dictionary) -> Array:
 		var cache := {}
 		for w in warps:
 			var g: String = str(w.get("gate", ""))
-			if g != "" and g not in GATE_ABILITIES:
+			if g != "" and g not in GATE_NAMES:
 				e.append(tag + "warp at %d,%d has unknown gate '%s'" % [int(w.x), int(w.y), g])
 			if not cache.has(g):
-				cache[g] = reachable(spawn, [] if g == "" else [g])
+				cache[g] = reachable(spawn, _gate_set(g))
 			if not cache[g].has(Vector2i(int(w.x), int(w.y))):
 				e.append(tag + "can't reach the warp at %d,%d from the spawn%s" % [int(w.x), int(w.y), "" if g == "" else " even with " + g])
 		for side in edges:
 			var g: String = str(edges[side].get("gate", ""))
-			if g != "" and g not in GATE_ABILITIES:
+			if g != "" and g not in GATE_NAMES:
 				e.append(tag + "%s edge has unknown gate '%s'" % [side, g])
 			if not cache.has(g):
-				cache[g] = reachable(spawn, [] if g == "" else [g])
+				cache[g] = reachable(spawn, _gate_set(g))
 			if side in OPPOSITE and not _side_reached(side, cache[g]):
 				e.append(tag + "can't reach the %s edge from the spawn%s" % [side, "" if g == "" else " even with " + g])
 	# corks: a beaten trainer stays where it stood, so trainers that never move must not wall off
@@ -531,21 +592,21 @@ func validate(all: Dictionary) -> Array:
 		var cork_cache := {}  # gate -> what's reachable with only that gate's ability and the corks in place
 		for w in warps:
 			var g: String = str(w.get("gate", ""))
-			if g != "" and g not in GATE_ABILITIES:
+			if g != "" and g not in GATE_NAMES:
 				continue  # already reported above
 			if not cork_cache.has(g):
-				cork_cache[g] = reachable(spawn, [] if g == "" else [g], corks)
+				cork_cache[g] = reachable(spawn, _gate_set(g), corks)
 			if cork_cache[g].has(Vector2i(int(w.x), int(w.y))):
 				continue
-			if reachable(spawn, [] if g == "" else [g]).has(Vector2i(int(w.x), int(w.y))):
+			if reachable(spawn, _gate_set(g)).has(Vector2i(int(w.x), int(w.y))):
 				e.append(tag + "the warp at %d,%d is walled off by trainers that never move" % [int(w.x), int(w.y)])
 		for side in edges:
 			var g: String = str(edges[side].get("gate", ""))
-			if side not in OPPOSITE or (g != "" and g not in GATE_ABILITIES):
+			if side not in OPPOSITE or (g != "" and g not in GATE_NAMES):
 				continue
 			if not cork_cache.has(g):
-				cork_cache[g] = reachable(spawn, [] if g == "" else [g], corks)
-			if not _side_reached(side, cork_cache[g]) and _side_reached(side, reachable(spawn, [] if g == "" else [g])):
+				cork_cache[g] = reachable(spawn, _gate_set(g), corks)
+			if not _side_reached(side, cork_cache[g]) and _side_reached(side, reachable(spawn, _gate_set(g))):
 				e.append(tag + "the %s edge is walled off by trainers that never move" % side)
 		var seen: Dictionary = reachable(spawn, GATE_ABILITIES, corks)
 		for n in npcs:

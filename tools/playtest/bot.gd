@@ -529,6 +529,9 @@ func _routing_zones() -> Dictionary:
 			for f in FieldSpots.for_zone(id):  # field spots stand solid until they're done (see FieldSpot.dress)
 				if not FieldSpots.gone(Game.data, f):
 					z.blocked[FieldSpots.tile(f)] = true
+			for fl in Flotsam.for_zone(id):  # flotsam stands solid on its tile until it's taken (see FlotsamScene.dress)
+				if not Flotsam.found(Game.data, fl):
+					z.blocked[Flotsam.tile(fl)] = true
 	return _rz
 
 ## Legs from here to a tile: first over only the zones near the shortest zone-hop path (fast), then the whole map.

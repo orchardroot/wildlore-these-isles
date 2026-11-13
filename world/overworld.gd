@@ -103,7 +103,7 @@ func load_zone(zone_id: String, pos: Vector2i, facing: String) -> void:
 	arrival_scene = ""
 	# hidden only while a travel scene's train stands here for you to step off (Journey.arrive shows you again)
 	player.visible = not (arriving == "train" and traffic.stand_at_station())
-	var wading_here := zone.tile_at(pos) == "deep_water"
+	var wading_here := zone.tile_at(pos) in ZoneData.RIDE_TILES
 	if zone.kind == "interior":
 		_rode_in = _rode_in or player.on_bike  # remember riding in, to hop back on outside
 		player.set_bike(false)
@@ -162,6 +162,14 @@ func _dev_radio() -> void:
 			await get_tree().create_timer(0.6).timeout
 			await SearchScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
 			return
+		if a.begins_with("--find="):  # dev: `--find=x,y` takes the flotsam on that tile at once (screenshots of a find)
+			await get_tree().create_timer(0.8).timeout
+			await FlotsamScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
+			return
+		if a.begins_with("--hint="):  # dev: `--hint=x,y` bumps that tile at once (screenshots of a block hint)
+			await get_tree().create_timer(0.8).timeout
+			await blocked_hint(Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
+			return
 		if a.begins_with("--examine="):  # dev: `--examine=x,y` reads the examine spot on that tile at once (screenshots)
 			await get_tree().create_timer(0.6).timeout
 			await ExamineScene.interact(self, Vector2i(int(a.get_slice("=", 1).get_slice(",", 0)), int(a.get_slice(",", 1))))
@@ -202,11 +210,11 @@ func _process(_delta: float) -> void:
 func ground_y(p: Vector2i) -> float:
 	if not zone.in_bounds(p):
 		return 0.0
-	if zone.tile_at(p) == "deep_water":
-		return ZoneBuilder.water_y(zone, p) - 0.08  # wading: float on the surface, coracle just under
+	if zone.tile_at(p) in ZoneData.RIDE_TILES:
+		return ZoneBuilder.water_y(zone, p) - 0.08  # afloat: the coracle sits on the surface, on a river, lake or sea alike
 	return ZoneBuilder.ground_y(zone, p)
 
-## "ok", "blocked", "edge" (walking off into a neighbour) or "ledge" (hop down).
+## "ok", "blocked", "edge" (walking off into a neighbour), "ledge" (hop down) or "wade" (afloat in the coracle).
 func can_enter(p: Vector2i, dir: Vector2i) -> String:
 	if not zone.in_bounds(p):
 		var side := GridMotion.edge_side(p, zone.width, zone.height)
@@ -229,14 +237,15 @@ func can_enter(p: Vector2i, dir: Vector2i) -> String:
 		return "blocked"
 	if traffic and traffic.closed(p):
 		return "blocked"  # the level crossing is shut: a train is coming
-	return "ok"
+	return "wade" if zone.tile_at(p) in ZoneData.RIDE_TILES else "ok"  # only the player goes afloat: people and the like want "ok"
 
 ## Bumped into a tile that wants an ability you lack: say which, once per tile per visit.
 func blocked_hint(p: Vector2i) -> void:
 	var why := FieldMoves.block_hint(Game.data, zone, p)
-	if why == "" or _hinted.has(p):
+	var key = FieldMoves.hint_key(zone, p)
+	if why == "" or _hinted.has(key):
 		return
-	_hinted[p] = true
+	_hinted[key] = true
 	await say([why])
 
 ## Hedge-lay: clear the bramble for good and rebuild the scenery.
@@ -257,6 +266,7 @@ func _build_zone_node() -> void:
 	OccluderFade.dress(zone, _zone_node, player)  # buildings between the camera and you go see-through
 	PoiScene.dress(zone, _zone_node, Game.data, self)  # question marks: dens, camps, stones, caches
 	FieldSpot.dress(zone, _zone_node, Game.data, self)  # field pieces: a gap in a wall, sheep at a gate, a molehill
+	FlotsamScene.dress(zone, _zone_node, Game.data)  # crates, pots, bottles and island caches only the coracle reaches (w54)
 	Forage.dress(zone, _zone_node, Game.data)  # hedgerow pickings and crafting benches
 	TrailsScene.dress(zone, _zone_node, Game.data)  # a paper on the table, a dig spot where a trail ends
 	CreatureJobsScene.dress(zone, _zone_node, Game.data)  # spots where your lead creature can do a job
@@ -371,9 +381,11 @@ func _on_step(p: Vector2i) -> void:
 	stepped.emit(p, tile)
 	Audio.footstep(tile, player.on_bike, Input.is_action_pressed("run"))
 	var was_wading := player.wading
-	player.set_wading(tile == "deep_water")
+	player.set_wading(tile in ZoneData.RIDE_TILES)
 	if player.wading and not was_wading:
 		Audio.sfx("splash")
+	elif player.wading:
+		Audio.sfx_at("splash", -15.0, 1.6 + 0.25 * float((p.x + p.y) % 2))  # the paddle dips, softly, the pitch alternating with each stroke
 	if tile == "tall_grass":
 		Audio.sfx("step_grass")
 	elif tile == "scree":
@@ -501,6 +513,8 @@ func interact(p: Vector2i) -> void:
 	if await RewildScene.interact(self, p):  # a marked spot on a rewilding site
 		return
 	if await PostBox.interact(self, p):  # post from Kit (or just a post box)
+		return
+	if await FlotsamScene.interact(self, p):  # a crate, pot, bottle or cache for the coracle (w54)
 		return
 	if await FishingScene.interact(self, p):  # open water and a rod
 		return
