@@ -161,3 +161,30 @@ func _exit_tree() -> void:
 	if sitting:  # torn down mid-sit (a whiteout, a scene change): leave nothing stuck
 		sitting = false
 		Game.time_boost = 1.0
+
+static var _dev_done := false
+
+## Dev switch: `-- --sit` walks the player to the nearest bench once the zone is ready and sits (screenshots).
+static func dev_sit(ow: Node) -> void:
+	if _dev_done or "--sit" not in DevArgs.user_args():
+		return
+	_dev_done = true
+	await ow.get_tree().create_timer(0.8).timeout
+	while Router.busy:
+		await ow.get_tree().process_frame
+	var pl: Player = ow.player
+	var best := Vector2i(-1, -1)
+	for pr in ow.zone.props:
+		if str(pr.get("type", "")) == "bench":
+			var b := Vector2i(int(pr.x), int(pr.y))
+			if best.x < 0 or (b - pl.grid_pos).length_squared() < (best - pl.grid_pos).length_squared():
+				best = b
+	if best.x < 0:
+		return
+	for d in ["down", "up", "left", "right"]:
+		var stand := best - GridMotion.dir_vec(d)  # standing here, facing `d`, looks at the bench
+		if ow.zone.walkable(stand) and not ow.occupied(stand):
+			Game.clock_running = true
+			pl.place(stand, d, ow.ground_y(stand))
+			interact(ow, best)
+			return

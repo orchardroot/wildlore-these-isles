@@ -40,6 +40,7 @@ static func attach(ow: Node) -> Footfalls:
 		Bus.settings_changed.connect(f._settings)
 	f._ow = ow
 	f._clear()
+	BenchSit.dev_sit(ow)
 	return f
 
 # --- rules (pure, tested) ------------------------------------------------------------
