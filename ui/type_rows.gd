@@ -9,6 +9,8 @@ const LABELS := {"weak": "Weak to", "resists": "Resists", "immune": "No effect f
 ## The rows for `types`, as [{"key", "label", "items": [{"type", "mult"}]}], empty ones left out.
 static func rows_for(types: Array, chart: TypeChart) -> Array:
 	var out := []
+	if chart == null:  # a screen built without one (tests, previews)
+		chart = TypeChart.load_default()
 	for pair in [["weak", chart.weak_to(types)], ["resists", chart.resists(types)], ["immune", chart.immune(types)]]:
 		if not pair[1].is_empty():
 			out.append({"key": pair[0], "label": LABELS[pair[0]], "items": pair[1]})

@@ -6,7 +6,7 @@ func _ids(d: GameStateData) -> Array:
 
 func test_a_fresh_save_has_the_always_pages_in_order() -> void:
 	var ids := _ids(GameStateData.new())
-	assert_eq(ids, ["journal", "fieldbook", "gazetteer", "trades", "standing", "stats", "pieces"])
+	assert_eq(ids, ["journal", "fieldbook", "typechart", "gazetteer", "trades", "standing", "stats", "pieces"])
 
 func test_pages_sprout_with_play() -> void:
 	var d := GameStateData.new()

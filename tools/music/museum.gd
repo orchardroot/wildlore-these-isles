@@ -15,12 +15,12 @@ static func build() -> Composer:
 	c.upb = 6
 	c.seam_fade = 0.012
 	c.bars = 16
-	c.lead("pan", A, 0, 8, 0.55)
-	c.lead("pan", B, 8, 8, 0.55)
-	c.arp("harp", CA, 0, "012321", 0.35)
-	c.arp("harp", CB, 8, "012321", 0.35)
-	c.lead("bell", BELL, 0, 8, 0.35, -12)
-	c.lead("bell", BELL, 8, 8, 0.35, -12)
-	c.bass(CA, 0, "x.....", 0.35)
-	c.bass(CB, 8, "x.....", 0.35)
+	c.lead("pan", A, 0, 8, 0.66)
+	c.lead("pan", B, 8, 8, 0.66)
+	c.arp("harp", CA, 0, "012321", 0.42)
+	c.arp("harp", CB, 8, "012321", 0.42)
+	c.lead("bell", BELL, 0, 8, 0.42, -12)
+	c.lead("bell", BELL, 8, 8, 0.42, -12)
+	c.bass(CA, 0, "x.....", 0.42)
+	c.bass(CB, 8, "x.....", 0.42)
 	return c

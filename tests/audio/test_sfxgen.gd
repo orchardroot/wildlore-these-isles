@@ -14,6 +14,7 @@ const EXPECTED := {
 	"atk_thud": 0.32, "atk_rustle": 0.4, "atk_splash": 0.45, "atk_crackle": 0.5, "atk_whoosh": 0.45, "atk_zap": 0.4,
 	"atk_ice": 0.5, "atk_crunch": 0.4, "atk_squelch": 0.42, "atk_clang": 0.55, "atk_shimmer": 0.6, "atk_wail": 0.6,
 	"encounter": 1.1, "stat_up": 0.45, "stat_down": 0.45, "weather_call": 1.3,
+	"thunder": 6.0, "thunder_far": 6.5, "text_blip": 0.045,
 }
 const LOOPING := ["title", "town_cheshire", "route_forest", "route_moor", "battle_wild", "battle_trainer", "battle_keeper", "sanctuary",
 	"town_city", "town_wales", "route_coast", "route_mountain", "battle_enclosure", "legend"]
