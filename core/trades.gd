@@ -33,8 +33,12 @@ const TITLES := {
 const PERKS := {
 	"rambler_repel": ["rambler", 2, "Lavender Sachets last a quarter longer."],
 	"rambler_repel_more": ["rambler", 4, "Lavender Sachets last half as long again."],
+	"trader_early": ["trader", 2, "You hear the trade news two days before anyone else."],
 	"trader_haggle": ["trader", 3, "Shopkeepers pay 5% more for your goods."],
+	"trader_pannier": ["trader", 3, "A bigger pannier: your pack takes 15 more of a trade good."],
+	"trader_credit": ["trader", 4, "Credit at the markets: a hall will advance you a quarter of an order's worth."],
 	"trader_haggle_more": ["trader", 5, "Shopkeepers pay 10% more for your goods."],
+	"trader_pitch": ["trader", 5, "A pitch of your own on market day: your first twelve of a good sell with no glut."],
 	"cook_second": ["cook", 2, "Every sixth dish you cook makes a second portion."],
 	"cook_second_more": ["cook", 4, "Every fourth dish you cook makes a second portion."],
 	"naturalist_sky": ["naturalist", 3, "The weather brings out its favourites a touch more."],
@@ -93,6 +97,10 @@ static func sell_mult(data: GameStateData) -> float:
 	if has_perk(data, "trader_haggle_more"):
 		return 1.10 + guild
 	return (1.05 if has_perk(data, "trader_haggle") else 1.0) + guild
+
+## Extra room in the pack for a trade good (the Trader's bigger pannier). The real Trader's Pannier still takes it to 99.
+static func carry_bonus(data: GameStateData) -> int:
+	return 15 if has_perk(data, "trader_pannier") else 0
 
 ## Extra portions for the dish just counted (call after dishes_cooked has gone up): a fixed rhythm, not luck.
 static func extra_portions(data: GameStateData) -> int:

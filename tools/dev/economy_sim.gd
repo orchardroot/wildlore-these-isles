@@ -15,7 +15,7 @@ func _initialize() -> void:
 			tot += float(dl[k])
 		print(line, "  = ", int(tot))
 	print("Shop-stocked trade goods, a full load at the festival cap: ", EconomySim.shop_runs())
-	print("Dishes a real day: sold where you stand %.0f, hauled to where they are wanted %.0f" % [EconomySim.dish_pay(false), EconomySim.dish_pay(true)])
+	print("Dishes a real day: sold where you stand %.0f, hauled to where they are wanted %.0f, hauled with news and orders %.0f" % [EconomySim.dish_pay(false), EconomySim.dish_pay(true), EconomySim.dish_pay(true, true)])
 	print("Lumps (Gazetteer, Visitors' Book, quiz league): %.0f   leases: %s   recipe taps: %s" % [EconomySim.lump_total(), EconomySim.lease_average(), EconomySim.recipe_loops()])
 	for strategy in EconomySim.STRATEGIES:
 		var at := {30: 0.0, 78: 0.0, 90: 0.0, 180: 0.0, 360: 0.0}

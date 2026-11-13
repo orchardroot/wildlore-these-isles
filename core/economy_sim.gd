@@ -31,6 +31,11 @@ const LEASE_BID := 1.25       # a winning bid over the reserve
 const CHARM_CAP := 12         # charms you bother to buy: a party and spares
 const PAYBACK_MAX := 60.0     # days a Deed purchase may take to pay back and still be bought
 const CASINO_BETS := 10       # even-money roulette bets a visit, the limit split between them
+# wave 55, the trader who reads the news and takes orders (all generous: a diligent player, every perk earned)
+const NEWS_SHARE := 0.4       # share of real days the dishes in the bag are what the news says is short somewhere
+const NEWS_BOOST := 1.35      # what a shortage does to the price, before the festival cap
+const ORDER_FILLS := 1        # delivery orders handed in per real day (the cap is three an in-game day)
+const ORDER_UNITS := 4        # dishes in each
 
 static func badges_at(day: int) -> int:
 	return clampi(day / DAYS_PER_BADGE, 0, 10)
@@ -153,7 +158,9 @@ static func shop_runs() -> Dictionary:
 
 ## Dishes cooked from forage and sold: DISHES_PER_PLAY units into one town a real day. `haul` sends them to a region
 ## that wants them (a train fare away, with the demand of a season in hand); otherwise wherever you happen to be.
-static func dish_pay(haul := false) -> float:
+## `traded` is the wave 55 trader: news puts the demand up on NEWS_SHARE of days (never past the cap), and ORDER_FILLS orders of
+## ORDER_UNITS dishes a day go to their own town (a second glut) at the order premium: base, fast and fresh all earned.
+static func dish_pay(haul := false, traded := false) -> float:
 	var bases := []
 	for r in Crafting.all():
 		if str(Trade.items().get_item(str(r.out)).get("kind", "")) == "meal":
@@ -167,9 +174,19 @@ static func dish_pay(haul := false) -> float:
 	var step := float(Trade.config().get("glut_step", 0.92))
 	var reg := float(Trade.config().get("wants_factor", 1.8)) if haul else 1.0
 	var dem := 1.15 if haul else 1.0
-	var glut := 1.0
+	if traded:
+		dem = lerpf(dem, minf(float(Trade.config().get("demand_cap", 1.8)), dem * NEWS_BOOST), NEWS_SHARE)
+	var ordered := mini(DISHES_PER_PLAY, ORDER_FILLS * ORDER_UNITS) if traded else 0
+	var oc := TradeOrders.cfg()
+	var premium := float(oc.get("base", 1.1)) + float(oc.get("fast", 0.15)) + float(oc.get("fresh", 0.1))
 	var total := 0.0
-	for i in DISHES_PER_PLAY:
+	for f in ORDER_FILLS if traded else 0:
+		var og := 1.0
+		for i in ORDER_UNITS:
+			total += float(_sell_unit(base, reg, dem, og)) * premium
+			og *= step
+	var glut := 1.0
+	for i in DISHES_PER_PLAY - ordered:
 		total += _sell_unit(base, reg, dem, glut)
 		glut *= step
 	return total
@@ -292,7 +309,7 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 			inc["lumps"] = due - lumps_paid
 			lumps_paid = due
 		if cook_on or trade_on:
-			inc["cooking"] = dish_pay(trade_on)
+			inc["cooking"] = dish_pay(trade_on, trade_on)
 		if deeds_on and not tiers.is_empty():
 			var net := 0.0
 			for id in tiers:

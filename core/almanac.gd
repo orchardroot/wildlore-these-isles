@@ -6,9 +6,9 @@ extends RefCounted
 ## appears once its system has something to show, so old saves need nothing.
 
 ## The menus behind each page, in tab order. "ledger:<kind>" opens the Almanac's own read-only ledger.
-const ORDER := ["journal", "fieldbook", "gazetteer", "poets", "casebook", "studbook", "biology", "words", "invention", "rumours", "trades", "standing", "stats", "pieces", "guilds", "deeds", "society", "landsky", "economist", "worth", "papers", "cards", "keepers", "curios"]
-const NAMES := {"journal": "Quest log", "fieldbook": "Fieldbook", "gazetteer": "Gazetteer", "poets": "Poets' Corner", "casebook": "Casebook", "studbook": "Stud Book", "biology": "Biology", "words": "Words of the Isles", "invention": "Timeline of Invention", "rumours": "Rumours", "trades": "Trades", "standing": "Standing", "stats": "Tallies", "pieces": "Party Pieces", "guilds": "Guilds", "deeds": "Deeds", "society": "Building Society", "landsky": "Land and Sky", "economist": "Economist's notebook", "worth": "Things worth knowing", "papers": "Papers", "cards": "Trumps cards", "keepers": "Keepers", "curios": "Curios"}
-const MENUS := {"journal": "quests", "fieldbook": "pedia", "gazetteer": "quests:gazetteer", "poets": "ledger:poets", "casebook": "pedia:casebook", "studbook": "pedia:studbook", "biology": "biology", "words": "pedia:words", "invention": "invention", "rumours": "pedia:rumours", "trades": "stats:trades", "standing": "stats:standing", "stats": "stats", "pieces": "ledger:pieces", "guilds": "ledger:guilds", "deeds": "ledger:deeds", "society": "ledger:society", "landsky": "ledger:landsky", "economist": "economist", "worth": "ledger:worth", "papers": "ledger:papers", "cards": "cards", "keepers": "keepers", "curios": "curios"}
+const ORDER := ["journal", "fieldbook", "gazetteer", "poets", "casebook", "studbook", "biology", "words", "invention", "rumours", "trades", "trade", "standing", "stats", "pieces", "guilds", "deeds", "society", "landsky", "economist", "worth", "papers", "cards", "keepers", "curios"]
+const NAMES := {"journal": "Quest log", "fieldbook": "Fieldbook", "gazetteer": "Gazetteer", "poets": "Poets' Corner", "casebook": "Casebook", "studbook": "Stud Book", "biology": "Biology", "words": "Words of the Isles", "invention": "Timeline of Invention", "rumours": "Rumours", "trades": "Trades", "trade": "Trader's Ledger", "standing": "Standing", "stats": "Tallies", "pieces": "Party Pieces", "guilds": "Guilds", "deeds": "Deeds", "society": "Building Society", "landsky": "Land and Sky", "economist": "Economist's notebook", "worth": "Things worth knowing", "papers": "Papers", "cards": "Trumps cards", "keepers": "Keepers", "curios": "Curios"}
+const MENUS := {"journal": "quests", "fieldbook": "pedia", "gazetteer": "quests:gazetteer", "poets": "ledger:poets", "casebook": "pedia:casebook", "studbook": "pedia:studbook", "biology": "biology", "words": "pedia:words", "invention": "invention", "rumours": "pedia:rumours", "trades": "stats:trades", "trade": "ledger:trade", "standing": "stats:standing", "stats": "stats", "pieces": "ledger:pieces", "guilds": "ledger:guilds", "deeds": "ledger:deeds", "society": "ledger:society", "landsky": "ledger:landsky", "economist": "economist", "worth": "ledger:worth", "papers": "ledger:papers", "cards": "cards", "keepers": "keepers", "curios": "curios"}
 
 static func sprouted(d: GameStateData, id: String) -> bool:
 	match id:
@@ -26,6 +26,8 @@ static func sprouted(d: GameStateData, id: String) -> bool:
 			return Invention.found_count(d) > 0
 		"rumours":
 			return not d.seen.is_empty()
+		"trade":
+			return TradeLedger.visible(d)  # prices seen, news heard, or goods sold before the page existed (wave 55)
 		"guilds":
 			return not joined_guilds(d).is_empty()
 		"deeds":
@@ -96,6 +98,8 @@ static func blurb(d: GameStateData, id: String) -> String:
 			return "%d of %d found, %d gadget%s" % [Invention.found_count(d), Invention.entries().size(), g, "" if g == 1 else "s"]
 		"rumours":
 			return "Local gossip and region stamps"
+		"trade":
+			return TradeLedger.blurb(d)
 		"trades":
 			var best := ""
 			var lv := 0
@@ -167,4 +171,6 @@ static func ledger(d: GameStateData, kind: String) -> Array:
 			out = LifeLessons.rows(d)
 		"landsky":
 			out = LandSky.rows(d)
+		"trade":
+			out = TradeLedger.rows(d)
 	return out

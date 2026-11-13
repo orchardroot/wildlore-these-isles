@@ -161,11 +161,17 @@ static func stamp(data: GameStateData, item_id: String, held: int, n: int) -> vo
 	stamps[item_id] = int(round((float(old) * held + float(data.day_count) * n) / float(held + n)))
 	data.set_flag(FRESH_FLAG, stamps)
 
-static func _sell_unit(item_id: String, zone_id: String, fresh: float, glut: float) -> int:
+## `news` is TradeNews.factor: a boost may only lift the seasonal demand up to its cap (never past it), a glut always bites.
+static func _sell_unit(item_id: String, zone_id: String, fresh: float, glut: float, news := 1.0) -> int:
 	var base := base_price(item_id)
 	if base <= 0:
 		return 0
-	var v := base * 0.5 * regional(item_id, group_of(zone_id)) * demand(item_id, zone_id) * fresh * glut
+	var dem := demand(item_id, zone_id)
+	if news > 1.0:
+		dem = maxf(dem, minf(dem * news, float(config().get("demand_cap", 1.8))))
+	else:
+		dem *= news
+	var v := base * 0.5 * regional(item_id, group_of(zone_id)) * dem * fresh * glut
 	return maxi(1, int(v))  # floored, as the corner shop's half price always was
 
 static func buy_price(_data: GameStateData, item_id: String, zone_id: String) -> int:
@@ -175,16 +181,21 @@ static func buy_price(_data: GameStateData, item_id: String, zone_id: String) ->
 	return maxi(1, int(round(base * regional(item_id, group_of(zone_id)))))
 
 static func sell_price(data: GameStateData, item_id: String, zone_id: String) -> int:
-	return _sell_unit(item_id, zone_id, freshness(data, item_id) * Trades.sell_mult(data), glut_factor(data, item_id, zone_id))
+	return _sell_unit(item_id, zone_id, freshness(data, item_id) * Trades.sell_mult(data), glut_factor(data, item_id, zone_id), TradeNews.factor(data, item_id, zone_id))
 
 ## What n units fetch in all, each sale poorer than the last. Nothing is recorded: follow with record_sale.
-static func sell_total(data: GameStateData, item_id: String, zone_id: String, n: int) -> int:
+## `free` is how many of the n go at the glut-free price (the Trader's market-day pitch): they do not build a glut.
+static func sell_total(data: GameStateData, item_id: String, zone_id: String, n: int, free := 0) -> int:
 	var fresh := freshness(data, item_id) * Trades.sell_mult(data)  # the Trader perks
 	var step := float(config().get("glut_step", 0.92))
 	var g := glut_factor(data, item_id, zone_id)
+	var news := TradeNews.factor(data, item_id, zone_id)
 	var total := 0
 	for i in n:
-		total += _sell_unit(item_id, zone_id, fresh, g)
+		if i < free:
+			total += _sell_unit(item_id, zone_id, fresh, 1.0, news)
+			continue
+		total += _sell_unit(item_id, zone_id, fresh, g, news)
 		g *= step
 	return total
 
@@ -196,6 +207,9 @@ static func price_note(data: GameStateData, item_id: String, zone_id: String) ->
 		return "glut"
 	if freshness(data, item_id) < 0.7:
 		return "a bit off"
+	var heard := TradeNews.note(data, item_id, zone_id)
+	if heard != "":
+		return heard
 	var r := regional(item_id, group_of(zone_id))
 	if r > 1.0 or demand(item_id, zone_id) >= 1.3:
 		return "they're crying out for it"
@@ -208,7 +222,7 @@ static func price_note(data: GameStateData, item_id: String, zone_id: String) ->
 static func carry_cap(data: GameStateData, item_id: String) -> int:
 	if not is_trade_good(item_id) or int(data.bag.get(str(config().get("pannier", "")), 0)) > 0:
 		return Bag.MAX_STACK
-	return mini(Bag.MAX_STACK, int(config().get("carry_cap", 30)) + Guilds.carry_bonus(data))   # the Traders' Guild
+	return mini(Bag.MAX_STACK, int(config().get("carry_cap", 30)) + Guilds.carry_bonus(data) + Trades.carry_bonus(data))   # the Traders' Guild, the Trader trade
 
 ## How many more you may take on (0 when over the cap already, e.g. a stack from before).
 static func room(data: GameStateData, item_id: String) -> int:
@@ -229,6 +243,8 @@ static func money_box(data: GameStateData, _zone_id: String) -> Array:
 	var monday := data.day_count % 7 == 0
 	if monday:
 		lines.append(str(r.get("monday", "")))
+	lines.append_array(TradeNews.wireless_lines(data, 3 if monday else 2))   # what is really moving prices this week
+	lines.append_array(TradeOrders.wireless_lines(data, 1))                    # a market that is after something
 	for i in (2 if monday else 1):
 		var id := str(goods[_pick(data.day_count, "tip%d" % i, goods.size())])
 		var g: Dictionary = config().goods[id]

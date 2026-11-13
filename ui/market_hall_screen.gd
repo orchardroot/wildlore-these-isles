@@ -75,7 +75,8 @@ func setup(arg: String) -> void:
 	set_title(str(_hall_data.name))
 	_mc = Wallet.local(Game.data)
 	_money()
-	_say.text = "Have a look at the board. Prices are chalked up fresh."
+	var talk := MarketHall.talk(Game.data, _hall)   # the news, or an order elsewhere, in the stall-holder's words
+	_say.text = talk if talk != "" else "Have a look at the board. Prices are chalked up fresh."
 	_refresh()
 
 func _money() -> void:
@@ -89,6 +90,12 @@ func _set_hint() -> void:
 
 func _refresh() -> void:
 	_rows = MarketHall.board(Game.data, _bag.store, func(i): return Game.items.get_item(i), _hall)
+	TradeLedger.note_board(Game.data, _hall, _rows)   # the ledger remembers what the board said today
+	var order_rows := []
+	for o in TradeOrders.see_hall(Game.data, _hall):
+		order_rows.append({"id": str(o.id), "name": "Order: %d x %s" % [int(o.qty), TradeOrders.item_name(o)], "n": _bag.count(str(o.item)),
+			"sell": TradeOrders.gross(Game.data, o), "buy": 0, "note": "", "order": o})
+	_rows = order_rows + _rows
 	UIKit.clear(_list_col)
 	_item_buttons.clear()
 	if _rows.is_empty():
@@ -113,7 +120,10 @@ func _refresh() -> void:
 		h.offset_left = 14
 		h.offset_right = -14
 		h.add_theme_constant_override("separation", 10)
-		h.add_child(UIKit.label("%s  x%d" % [r.name, r.n], 26))
+		if r.has("order"):
+			h.add_child(UIKit.fit_label(str(r.name), 400, 26, 16, UIKit.CREAM))
+		else:
+			h.add_child(UIKit.label("%s  x%d" % [r.name, r.n], 26))
 		h.add_child(UIKit.fill())
 		h.add_child(UIKit.label(UIKit.money_text(_local(int(r.sell)), _mc), 26, UIKit.GOLD))
 		for c in h.get_children():
@@ -136,6 +146,9 @@ func _describe(i: int) -> void:
 	if i < 0 or i >= _rows.size():
 		return
 	var r: Dictionary = _rows[i]
+	if r.has("order"):
+		_describe_order(r.order, int(r.n))
+		return
 	var it: Dictionary = Game.items.get_item(str(r.id))
 	_desc.add_child(UIKit.label(str(r.name), 36))
 	_desc.add_child(UIKit.chip(UIKit.kind_name(str(it.get("kind", ""))), Color("4a4f5e"), UIKit.CREAM, 18))
@@ -148,10 +161,63 @@ func _describe(i: int) -> void:
 	_desc.add_child(UIKit.label("Stall pays %s each, you'd pay %s" % [UIKit.money_text(_local(int(r.sell)), _mc), UIKit.money_text(_local(int(r.buy)), _mc)], 22, UIKit.MUTED))
 	_desc.add_child(UIKit.label("You have %d" % int(r.n), 24, UIKit.MUTED))
 
+## An order on this hall's board: what is wanted, by when, what it pays and why, and what you can do about it.
+func _describe_order(o: Dictionary, held: int) -> void:
+	_desc.add_child(UIKit.label("An order", 36))
+	_desc.add_child(UIKit.chip("DELIVERY", Color("4a4f5e"), UIKit.CREAM, 18))
+	var d := UIKit.label("%d x %s, by %s." % [int(o.qty), TradeOrders.item_name(o), TradeOrders.weekday(int(o.last))], 26)
+	d.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_desc.add_child(d)
+	_desc.add_child(UIKit.fill())
+	var extra := int(round((TradeOrders.premium(Game.data, o) - 1.0) * 100.0))
+	var pays := UIKit.label("Pays about %s: the board price and %d%% on top for speed and freshness" % [UIKit.money_text(_local(TradeOrders.gross(Game.data, o)), _mc), extra], 22, UIKit.GOLD)
+	pays.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_desc.add_child(pays)
+	var why := TradeOrders.blocked(Game.data, o, held)
+	if why == "" or why.begins_with("You need"):
+		why = "You have %d." % held + (" Pick to deliver." if why == "" else "")
+		if held < int(o.qty) and TradeOrders.can_advance(Game.data, o):
+			why += " Pick for an advance of %s." % UIKit.money_text(_local(TradeOrders.advance_amount(Game.data, o)), _mc)
+	var note := UIKit.label(why, 22, UIKit.MUTED)
+	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_desc.add_child(note)
+	if TradeOrders.owed(Game.data) > 0:
+		var debt := UIKit.label("You owe the halls %s, off your next delivery." % UIKit.money_text(_local(TradeOrders.owed(Game.data)), _mc), 20, UIKit.MUTED)
+		debt.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_desc.add_child(debt)
+
+## Pick on an order: deliver if you have the goods, else take an advance if the Trader's credit offers one.
+func _pick_order(o: Dictionary) -> void:
+	var held := _bag.count(str(o.item))
+	var why := TradeOrders.blocked(Game.data, o, held)
+	if why == "":
+		if not _bag.remove(str(o.item), int(o.qty)):
+			return
+		var gbp := TradeOrders.deliver(Game.data, o)
+		var paid := _local(gbp)
+		Wallet.earn(Game.data, paid, _mc)
+		TrainerStats.earned(Game.data, gbp)
+		_say.text = "Delivered. %s for the lot, and thanks for coming." % UIKit.money_text(paid, _mc)
+		econ_tip()
+		Audio.sfx("confirm")
+	elif why.begins_with("You need") and TradeOrders.can_advance(Game.data, o):
+		var adv := TradeOrders.take_advance(Game.data, o)
+		Wallet.earn(Game.data, _local(adv), _mc)
+		_say.text = "On account, then: %s now, and the rest when you bring them." % UIKit.money_text(_local(adv), _mc)
+		Audio.sfx("confirm")
+	else:
+		_say.text = why
+		Audio.sfx("bump")
+	_money()
+	_refresh()
+
 func _pick(i: int) -> void:
 	if i < 0 or i >= _rows.size():
 		return
 	_cur = _rows[i]
+	if _cur.has("order"):
+		_pick_order(_cur.order)
+		return
 	if int(_cur.sell) <= 0:
 		_say.text = "Not worth the chalk, that. Keep it."
 		Audio.sfx("bump")
