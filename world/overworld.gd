@@ -263,6 +263,7 @@ func _build_zone_node() -> void:
 	add_child(_zone_node)
 	InteriorLight.dress(zone, _zone_node, player, Settings.quality)  # rooms lit by their hearths and windows (Medium, High)
 	Seasonal.dress(zone, _zone_node, player)  # festivals and falling leaves from the real date
+	SoundEmitters.dress(zone, _zone_node, player)  # hearths, clocks, streams and the shore, louder as you near them
 	Viaduct.dress(zone, _zone_node)  # railway viaducts striding across (Castlefield)
 	OccluderFade.dress(zone, _zone_node, player)  # buildings between the camera and you go see-through
 	PoiScene.dress(zone, _zone_node, Game.data, self)  # question marks: dens, camps, stones, caches

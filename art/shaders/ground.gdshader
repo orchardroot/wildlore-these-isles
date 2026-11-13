@@ -9,6 +9,11 @@ uniform float frost = 0.0;
 uniform float ao = 0.0;
 uniform float detail = 0.0;
 uniform float clouds = 0.0;
+// The season on the soft ground (Seasonal.tint_ground sets these from the date, as it does for the trees): spring freshens
+// the grass and scatters daisies, autumn burns it to ochre, winter bleaches it pale. Roads and floors (UV.y 0) never change.
+uniform float spring = 0.0;
+uniform float autumn = 0.0;
+uniform float winter = 0.0;
 uniform vec2 cloud_drift = vec2(0.35, 0.12);  // world units a second
 
 varying float up;
@@ -43,6 +48,17 @@ void fragment() {
 		vec3 dry = c * vec3(1.06, 1.02, 0.84);
 		c = mix(c, mix(lush, dry, smoothstep(0.3, 0.75, patches)), soft * detail * 0.45);
 		c *= 1.0 + (speck - 0.5) * 0.16 * soft * detail;
+	}
+	float grass = smoothstep(0.7, 1.0, UV.y) * level;
+	if (grass > 0.0) {
+		float lum = dot(c, vec3(0.299, 0.587, 0.114));
+		c = mix(c, c * vec3(0.9, 1.12, 0.78) + vec3(0.0, 0.025, 0.0), spring * 0.45 * grass);
+		c = mix(c, vec3(0.62, 0.4, 0.14) * (0.55 + lum * 1.7), autumn * 0.62 * grass);
+		c = mix(c, vec3(lum) * vec3(1.12, 1.16, 1.18) + vec3(0.07, 0.075, 0.085), winter * 0.55 * grass);
+		if (spring > 0.0 && detail > 0.0) {
+			float daisy = step(0.985, vnoise(world_pos.xz * 7.3 + 11.0));
+			c = mix(c, mix(vec3(0.95, 0.95, 0.88), vec3(0.97, 0.85, 0.3), step(0.5, hash(floor(world_pos.xz * 7.3)))), daisy * spring * grass * 0.7);
+		}
 	}
 	if (ao > 0.0) {
 		float occ = smoothstep(0.0, 1.0, UV.x);
