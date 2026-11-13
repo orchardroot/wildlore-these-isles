@@ -637,8 +637,8 @@ func set_double(on: bool) -> void:
 			p.visible = false
 	plates[Battle.FOE].position = Vector2(24, 20)
 	extra_plates[Battle.FOE].position = Vector2(366, 20)
-	plates[Battle.PLAYER].position = Vector2(568, 424)
-	extra_plates[Battle.PLAYER].position = Vector2(918, 424)
+	plates[Battle.PLAYER].position = Vector2(568, 396)
+	extra_plates[Battle.PLAYER].position = Vector2(918, 396)
 	for side in 2:
 		for p in [plates[side], extra_plates[side]]:
 			p.custom_minimum_size = Vector2(338 if side == Battle.PLAYER else 330, 0)

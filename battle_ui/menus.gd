@@ -23,6 +23,7 @@ var _footer: Label
 var _footer_fn := Callable()
 static var _mem := {}  # menu key -> last cursor index; outlives the battle, not the session
 var _panel: PanelContainer
+var chart_arg := ""  # the creatures in front of you as the type chart's argument ("" = no chart from here); set by the scene each turn
 var _footer_panel: PanelContainer  # a picker whose footer sits in a panel of its own (the moves: it takes the message box's place)
 
 ## A new battle: keep every remembered cursor except the command menu's, which opens on Fight.
@@ -56,6 +57,8 @@ func _input(event: InputEvent) -> void:
 		_step(1, 0)
 	elif event.is_action_pressed("confirm") or event.is_action_pressed("ui_accept"):
 		_choose(_idx)
+	elif event.is_action_pressed("menu") and chart_arg != "":
+		_open_chart.call_deferred()
 	elif event.is_action_pressed("cancel") or event.is_action_pressed("ui_cancel"):
 		if _cancel_ok:
 			Audio.sfx("cancel")
@@ -64,6 +67,15 @@ func _input(event: InputEvent) -> void:
 	else:
 		return
 	get_viewport().set_input_as_handled()
+
+## The type chart over the battle, scoped to the creatures in front of you. The picker waits underneath.
+func _open_chart() -> void:
+	if not _active:
+		return
+	_active = false
+	await Router.open_menu("typechart:" + chart_arg)
+	await get_tree().process_frame
+	_active = true
 
 func _step(dx: int, dy: int) -> void:
 	var n := _rows.size()
@@ -161,7 +173,16 @@ func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, 
 			_footer_panel.position = footer_rect.position
 			_footer_panel.size = footer_rect.size
 			_footer_panel.add_theme_stylebox_override("panel", sb)
-			_footer_panel.add_child(_footer)
+			var fv := VBoxContainer.new()
+			fv.add_child(_footer)
+			_footer.size_flags_vertical = Control.SIZE_EXPAND_FILL
+			if chart_arg != "":
+				var hint := Label.new()
+				hint.text = "%s: type chart" % UIKit.key_for("menu")
+				hint.add_theme_font_size_override("font_size", 16)
+				hint.modulate = Color(1, 1, 1, 0.6)
+				fv.add_child(hint)
+			_footer_panel.add_child(fv)
 			add_child(_footer_panel)
 		else:
 			vb.add_child(_footer)
@@ -210,7 +231,7 @@ func _row(d: Dictionary, i: int) -> PanelContainer:
 	var h := HBoxContainer.new()
 	h.add_theme_constant_override("separation", 8)
 	h.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	if d.has("cues"):  # how the move will land sits on a line of its own under the name
+	if d.has("cues") and not d.get("cues_inline", false):  # how the move will land sits on a line of its own under the name
 		var v := VBoxContainer.new()
 		v.add_theme_constant_override("separation", 0)
 		v.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -262,6 +283,10 @@ func _row(d: Dictionary, i: int) -> PanelContainer:
 		else:
 			chip.add_theme_stylebox_override("normal", sb)
 			h.add_child(chip)
+	if d.get("cues_inline", false):  # the switch menu: how well each member suits this fight, between name and HP
+		var cl := cue_line(d.cues)
+		cl.custom_minimum_size.x = 250
+		h.add_child(cl)
 	if d.has("weather"):  # the sky helps (or hinders) this move today
 		h.add_child(BattleHUD.WeatherIcon.tag(str(d.weather), int(d.get("weather_dir", 1))))
 	if d.has("right") and str(d.right) != "":
@@ -390,7 +415,7 @@ static func bag_footer(e: Dictionary) -> String:
 
 ## mode "switch" (fainted and active are greyed), "forced" (as switch but cannot cancel) or "item" (anyone; revive needs fainted).
 ## active: the party index out on the field, or an Array of them (double battles).
-func party(creatures: Array, active: Variant, mode: String, item: Dictionary = {}, move_db: MoveDB = null) -> int:
+func party(creatures: Array, active: Variant, mode: String, item: Dictionary = {}, move_db: MoveDB = null, foes := [], chart: TypeChart = null) -> int:
 	var out_now: Array = active if active is Array else [active]
 	var rows := []
 	for i in creatures.size():
@@ -407,6 +432,11 @@ func party(creatures: Array, active: Variant, mode: String, item: Dictionary = {
 		rows.append({"text": "%s  Lv %d" % [c.display_name(), c.level], "right": right, "right_warn": c.is_fainted(),
 			"stripe": TypeColours.of(str(c.types()[0])), "chip": chip, "chip_colour": HEATHER if chip == "out" else BattleHUD.STATUS_COLOURS.get(chip, MUTED),
 			"chip_text": CREAM if chip == "out" else Color("14161c"), "disabled": dis})
+		if (mode == "switch" or mode == "forced") and not dis and move_db != null and chart != null:  # who suits this fight
+			var suits := MoveText.suits(c, foes, move_db, chart)
+			if not suits.is_empty():
+				rows[-1]["cues"] = suits
+				rows[-1]["cues_inline"] = true
 	var title: String = {"switch": "SEND OUT WHO?", "forced": "SEND OUT WHO?", "item": "USE ON WHOM?", "swap": "SWAP WITH WHO?"}.get(mode, "TEAM")
 	var h := creatures.size() * 46 + 56
 	return await _pick(Rect2(20, 560 - h, 696, h), title, rows, 1, "party_" + mode, mode != "forced")  # left, as the bag

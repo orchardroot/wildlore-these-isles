@@ -159,6 +159,53 @@ static func cues(mv: Dictionary, foes: Array, chart: TypeChart) -> Array:
 		rows.append({"kind": cue_kind(out[i]), "words": cue_words(out[i], true), "who": str(foes[i].name)})
 	return rows
 
+## Who suits this fight, for the switch menu: {"kind", "words"} for a party member's attack (its best damaging move
+## it still has PP for, against the foes standing) and for its defence (the worst the foes' own types do to it).
+## Same shapes as the move picker: up is good for the member, down is bad, a cross is no effect.
+## foes: [{"name", "types"}]. Both are {} when there are no foes to judge against.
+static func suit_attack(c: Creature, foes: Array, move_db: MoveDB, chart: TypeChart) -> Dictionary:
+	if foes.is_empty():
+		return {}
+	var best := -1.0
+	for m in c.moves:
+		var mv := move_db.get_move(str(m.id))
+		if int(m.pp) <= 0 or str(mv.get("category", "status")) == "status" or int(mv.get("power", 0)) <= 0:
+			continue
+		for f in foes:
+			best = maxf(best, chart.effectiveness(str(mv.get("type", "")), f.types))
+	if best < 0.0:
+		return {"kind": "even", "words": "No attack moves"}
+	if best == 0.0:
+		return {"kind": "none", "words": "Can't hurt it"}
+	if best > 1.0:
+		return {"kind": "up2" if best >= 4.0 else "up1", "words": "Hits hard"}
+	if best < 1.0:
+		return {"kind": "dn1", "words": "Hits weakly"}
+	return {"kind": "even", "words": "Hits evenly"}
+
+static func suit_defence(c: Creature, foes: Array, chart: TypeChart) -> Dictionary:
+	if foes.is_empty():
+		return {}
+	var worst := 0.0
+	for f in foes:
+		for t in f.types:
+			worst = maxf(worst, chart.effectiveness(str(t), c.types()))
+	if worst == 0.0:
+		return {"kind": "up2", "words": "Immune"}
+	if worst > 1.0:
+		return {"kind": "dn2" if worst >= 4.0 else "dn1", "words": "Weak to it"}
+	if worst < 1.0:
+		return {"kind": "up1", "words": "Resists it"}
+	return {"kind": "even", "words": "Holds even"}
+
+## The two cues as the rows' cue list ([] with no foes).
+static func suits(c: Creature, foes: Array, move_db: MoveDB, chart: TypeChart) -> Array:
+	var a := suit_attack(c, foes, move_db, chart)
+	if a.is_empty():
+		return []
+	var d := suit_defence(c, foes, chart)
+	return [{"kind": a.kind, "words": a.words, "who": ""}, {"kind": d.kind, "words": d.words, "who": ""}]
+
 ## "Strong against Hedgerow, Frost and Iron. Weak against ..." for a move's description, from its type alone ("" for
 ## a move with no type or no damage). Type names are the game's own (Hearth, Brook), capitalised.
 static func matchup_line(mv: Dictionary, chart: TypeChart) -> String:

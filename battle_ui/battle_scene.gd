@@ -250,6 +250,7 @@ func choose_action(f: BattleFlow) -> Dictionary:
 		return Engine.get_meta("autopilot").choose_action(f)
 	var b := f.battle
 	var me := b.current_at(Battle.PLAYER, f.acting_pos)
+	menus.chart_arg = TypeChartScreen.scope_arg(f.foe_views(), [{"name": me.display_name(), "types": me.types()}])
 	if not auto:  # the first battle of each kind says what it is about, once (the Hints setting)
 		var tip := Intros.take(Game.data, "battle_wild" if b.kind == "wild" else "battle_keeper", Settings.hints)
 		if tip != "":
@@ -317,7 +318,7 @@ func choose_action(f: BattleFlow) -> Dictionary:
 				if t >= 0:
 					return {"kind": "item", "item": e.id, "target": t}
 			"team":
-				var s := await menus.party(b.parties[Battle.PLAYER], b.active[Battle.PLAYER], "switch")
+				var s := await menus.party(b.parties[Battle.PLAYER], b.active[Battle.PLAYER], "switch", {}, Game.moves, f.foe_views(), Game.chart)
 				if s >= 0:
 					return {"kind": "switch", "index": s}
 			"run":
@@ -359,7 +360,7 @@ func choose_replacement(f: BattleFlow) -> int:
 	msg.prompt("Who will you send out next?")
 	var r := -1
 	while r < 0:
-		r = await menus.party(party, b.active[Battle.PLAYER], "forced")
+		r = await menus.party(party, b.active[Battle.PLAYER], "forced", {}, Game.moves, f.foe_views(), Game.chart)
 	return r
 
 func choose_forget(c: Creature, move_id: String, _f: BattleFlow) -> int:
