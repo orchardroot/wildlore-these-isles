@@ -306,6 +306,49 @@
    "trainer": "sligo_hurler",
    "x": 12.0,
    "y": 29.0
+  },
+  {
+   "id": "ct_marten_poster",
+   "sprite": "farmer",
+   "x": 26,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_marten_poster",
+   "name": "Declan Gallagher"
+  },
+  {
+   "id": "ct_marten_eggs",
+   "sprite": "farmer",
+   "x": 31,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_marten_eggs",
+   "name": "Egg Seller",
+   "show_if": "ct_marten_hens_safe"
+  },
+  {
+   "id": "ct_marten_squirrel",
+   "sprite": "birdwatcher",
+   "x": 18,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_marten_squirrel",
+   "name": "Birdwatcher",
+   "show_if": "ct_marten_welcome"
+  },
+  {
+   "id": "ct_marten_wood",
+   "sprite": "villager_6",
+   "x": 36,
+   "y": 34,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_marten_wood",
+   "name": "Neighbour",
+   "show_if": "ct_marten_wood"
   }
  ],
  "props": [

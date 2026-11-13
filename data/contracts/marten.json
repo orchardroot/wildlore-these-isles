@@ -1,0 +1,187 @@
+{
+ "id": "marten",
+ "title": "The Hens on the Roof",
+ "town": "sligo",
+ "nation": "ireland",
+ "group": "farmers",
+ "badges": 7,
+ "pay": 3,
+ "poster": {
+  "name": "Declan Gallagher",
+  "role": "small farmer from the Donegal side, in for the mart",
+  "idle": [
+   "Ah, you've the look of someone with a lot on. So have I, and mine has feathers. Come back when you've a few more Stones in your pocket and I'll tell you about it."
+  ],
+  "taken": [
+   "Any news? Eleven hens now, and the eggs gone too. The door was bolted. The wire was up. And the roof was pulled apart like a sandwich."
+  ],
+  "decided": [
+   "I can hear it in the way you're walking. You've decided. Out with it."
+  ],
+  "closed": "That's the hens sorted. For now. A hen is never sorted, only waiting.",
+  "haggle": "You've the cheek of a Dubliner, and you're not even from there. Fair enough. Go on."
+ },
+ "notice": [
+  "Eleven hens and a season's eggs gone, and the henhouse barred, bolted and wired. Whatever it was came in through the roof, up where a fox could never get. I'm sleeping in the shed with a torch and a hurley.",
+  "A fox, says my neighbour. A hawk, says the postman. I say come and look."
+ ],
+ "trouble": [
+  "It's up in the glen, the wooded part, in the hills of Donegal. I'm told the creature is protected. I'm told many things.",
+  "I'm not asking you to hurt anything. I'm asking you to tell me what to do before I do something I shouldn't."
+ ],
+ "hypotheses": [
+  {"id": "fox", "name": "A fox", "types": ["kin"]},
+  {"id": "hawk", "name": "A hawk, on the roof by daylight", "types": ["gale"]},
+  {"id": "marten", "name": "A pine marten", "types": ["hedgerow", "night"]}
+ ],
+ "truth": "marten",
+ "clues": [
+  {
+   "id": "scat",
+   "kind": "look",
+   "zone": "glenveagh",
+   "hint": "the henhouse roof and the beams under it",
+   "text": "On the roof beam, in plain view where a fox could never reach: dark, twisted droppings, full of berry seed and bits of eggshell. A marten leaves its droppings in prominent places, like a notice. It climbs, and it has a sweet tooth.",
+   "points": ["marten"],
+   "rules_out": ["fox"]
+  },
+  {
+   "id": "dusk",
+   "kind": "look",
+   "zone": "glenveagh",
+   "hint": "the henhouse roof, watched at dusk or after dark",
+   "text": "You wait in the ferns with a flask. At dusk something glides along a branch above the henhouse: a chocolate brown body as long as a cat, a bushy tail, and a creamy bib under its chin. It lowers itself to the roof like a drop of oil, and takes the roof apart with its teeth.",
+   "hint_wait": "Wind in the ferns, and nothing on the roof. Whatever works here keeps to the dusk and the dark.",
+   "points": ["marten"],
+   "rules_out": ["hawk"],
+   "when": {"phase": ["dusk", "night"]}
+  },
+  {
+   "id": "neighbour",
+   "kind": "ask",
+   "zone": "glenveagh",
+   "who": "Brendan Boyle",
+   "hint": "ask the neighbour",
+   "text": [
+    "A fox. It's a fox. Anything that goes for hens is a fox. I'd have it shot by Friday if I were him.",
+    "What do you mean, how did it get on the roof? Foxes are clever, so they are."
+   ],
+   "idle": ["I've nothing to say about foxes. Nothing at all. Well, a bit."],
+   "after": "A marten. A marten! They've the nerve of a bishop. Sure, I never said it wasn't.",
+   "points": ["fox"]
+  },
+  {
+   "id": "ranger",
+   "kind": "ask",
+   "zone": "glenveagh",
+   "who": "Park Ranger",
+   "hint": "ask the park ranger",
+   "text": [
+    "Pine marten, so. They were nearly gone from Ireland, and now they're back all over the country, and the foxes and the grey squirrels are having a bad time of it. It's protected by law, you see.",
+    "The red squirrels have come back in the places the martens have. Don't tell the hen farmers I said it's a good thing."
+   ],
+   "idle": ["I'm counting deer. And listening for anyone doing anything I'll have to write a report about."],
+   "after": "The glen's had a quiet week. I hope that's your doing.",
+   "points": ["marten"],
+   "rules_out": ["hawk"]
+  }
+ ],
+ "lair": {
+  "zone": "glenveagh",
+  "name": "Gallagher's Ghost",
+  "species": "pinewraith",
+  "level": 64,
+  "floor_par": 60,
+  "intro": [
+   "A hollow oak at the edge of the wood, above the farm, with a tangle of bramble round its roots and feathers drifting out of a knothole. The air smells of musk and berries.",
+   "Something dark and silky looks out of the hole, with a cream bib and a clever, gleaming face. Declan calls it the Ghost, because he has never once heard it come, and it has never once left."
+  ],
+  "beaten": [
+   "The Ghost sits in the mouth of the oak, panting and glaring, a smear of dust on its glossy coat. It is the very picture of a creature who has been insulted by somebody who does not understand it."
+  ]
+ },
+ "choices": [
+  {
+   "id": "move",
+   "label": "Trap it and take it to another wood, well away",
+   "say": [
+    "You set a box trap and take the Ghost forty miles away to a wood with no hens in it. It sits on a branch for a minute, offended, and then climbs out of sight.",
+    "Declan sleeps in his own bed. Nobody thinks to ask who has the problem now."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_marten_moved": true, "ct_marten_hens_safe": true},
+   "repute": {"farmers": 2, "wardens": -1},
+   "standing": {"ireland": 2},
+   "poster": ["Forty miles, and not a hen in it? I'll sleep for a week. There's your fee, and a dozen eggs, which is more than the Ghost ever left me."],
+   "after": ["A hundred hens now, and every one sleeping through the night. I've a bad conscience about a wood forty miles away."],
+   "journal": "You trapped the marten and moved it forty miles. Declan's hens are safe and his neighbours forty miles away will have a new problem. The ranger thought you might have asked."
+  },
+  {
+   "id": "proof",
+   "label": "Marten-proof the henhouse with wire and a new roof",
+   "say": [
+    "You and Declan spend a weekend with a roll of fine wire and a new corrugated roof, closing every gap smaller than a fist. It costs more than a fox ever would. It is the dullest thing you have done in Ireland.",
+    "The Ghost tries the roof for three nights, then goes back to the berries and the woods."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_marten_proofed": true, "ct_marten_wood": true},
+   "repute": {"farmers": 1, "wardens": 1},
+   "standing": {"ireland": 1},
+   "poster": ["It works! It works, God help us. And I never thought I'd say I was glad to have a pine marten in the parish. Eighty per cent, and a lot of thanks."],
+   "after": ["The Ghost goes by the henhouse every evening and tries the roof. Then it sighs, I swear it, and goes off to the wood. We've an understanding."],
+   "journal": "You marten-proofed the henhouse. The hens are safe and the Ghost is still in the wood. It tests the roof every evening, and it has never once got in."
+  },
+  {
+   "id": "squirrels",
+   "label": "Leave it, and tell the parish what the martens do for the squirrels",
+   "say": [
+    "You stand up at the parish hall and tell forty hen keepers that the creature on their roofs is also the reason the red squirrels are back and the grey ones are going. It is not a popular speech. A man at the back mutters about his hens. A woman in the front row says she has seen a red squirrel on her bird table for the first time in thirty years.",
+    "It ends in a long, cross, honest argument, and a vote to put up wire."
+   ],
+   "fee": 0.6,
+   "flags": {"ct_marten_welcome": true, "ct_marten_squirrels": true},
+   "repute": {"wardens": 3, "farmers": -2},
+   "standing": {"ireland": 1},
+   "poster": ["You've made me the villain of the parish for being sensible. Well. I'd rather a marten than a mink. Sixty per cent, and I'll see you in the mart."],
+   "after": ["Red squirrels at the feeder. A marten on the roof. I've wire up and a new view of the world, and I can't say I liked the speech."],
+   "journal": "You told the parish what the martens do for the red squirrels. They voted to put up wire, grumbled for a month, and now there is a red squirrel on half the bird tables in the parish."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The Ghost goes into the charm like silk into a drawer, and sits inside with a berry in its paws, looking out with deep contempt. Declan stares at the henhouse roof as if he has just heard bad news."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_marten_kept": true, "ct_marten_hens_safe": true},
+   "repute": {"farmers": 1, "wardens": -2},
+   "standing": {"ireland": 2},
+   "poster": ["Is it in there? It's in a charm. Well. Mind it doesn't have a fit of the vapours and eat your team. Eighty per cent."],
+   "after": ["The roof is quiet now. Mind, I'm told there are more martens in the glen. There's always more martens."],
+   "journal": "You caught Gallagher's Ghost. It rides in your team and eats the berries you give it. Declan's hens are safe, for the moment."
+  }
+ ],
+ "real": "Pine martens were hunted and trapped almost to nothing in Ireland and Britain, and are protected by law today. In Ireland they have made a comeback since the late twentieth century, and researchers found that where martens recovered, grey squirrels declined and red squirrels returned, probably because the heavier greys are easier for a marten to catch. A marten climbs anything, eats berries and eggs as readily as birds and mice, and can open a poorly built henhouse like a tin. The answer for hen keepers is wire, a sound roof and a bolt, since killing a marten is an offence.",
+ "places": {
+  "poster": {"sprite": "farmer", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "neighbour", "sprite": "villager_2", "near": [20, 20]},
+   {"clue": "ranger", "sprite": "hiker", "near": [44, 28]}
+  ],
+  "looks": [
+   {"clue": "scat", "near": [30, 20], "on": "any", "text": ["The henhouse, a leaning wooden shed with a tarred roof. Feathers hang from the wire like washing."]},
+   {"clue": "dusk", "near": [34, 24], "on": "any", "text": ["Ferns and old oaks above the henhouse. It's very quiet."]}
+  ],
+  "lair": {"near": [38, 36]},
+  "folk": [
+   {"id": "eggs", "zone": "sligo", "near": [30, 25], "sprite": "farmer", "name": "Egg Seller", "show_if": "ct_marten_hens_safe", "says": [
+     ["ct_marten_is_caught", ["Gallagher's eggs, a dozen a tray. He says there's a marten in somebody's Keeper team that used to be on his roof. He's very quiet about it."]]
+    ], "else": ["Gallagher's eggs, a dozen a tray. Forty miles from here there's a hen keeper with a marten problem. I don't ask."]},
+   {"id": "squirrel", "zone": "sligo", "near": [20, 30], "sprite": "birdwatcher", "name": "Birdwatcher", "show_if": "ct_marten_welcome", "says": [],
+    "else": ["A red squirrel on my bird table, first one in thirty years. They say it's the martens' doing. I'll take it, and I'll put wire on the henhouse."]},
+   {"id": "wood", "zone": "sligo", "near": [36, 34], "sprite": "villager_6", "name": "Neighbour", "show_if": "ct_marten_wood", "says": [],
+    "else": ["The Ghost goes by Gallagher's henhouse every dusk and tries the roof. He swears it sighs. I've heard it myself."]}
+  ]
+ }
+}

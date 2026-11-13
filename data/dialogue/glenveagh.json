@@ -335,5 +335,28 @@
     }
    ]
   }
+ ],
+ "ct_marten_neighbour": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "marten",
+   "clue": "neighbour"
+  }
+ ],
+ "ct_marten_ranger": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "marten",
+   "clue": "ranger"
+  }
+ ],
+ "ct_marten_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "marten"
+  }
  ]
 }
