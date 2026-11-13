@@ -88,5 +88,77 @@
    "line": "The new cheese stall next door sent people over for something sweet."
   }
  ],
+ "upgrades": [
+  {
+   "id": "card_reader",
+   "name": "A card reader",
+   "text": "Nobody carries cash. The fees are the price of being easy to pay.",
+   "cost": 700,
+   "takings": 1.07,
+   "upkeep": 5
+  },
+  {
+   "id": "standing_orders",
+   "name": "Standing orders from the cafes",
+   "text": "A steady order every week, and a bad week stings less.",
+   "cost": 1500,
+   "tier": 1,
+   "group": "trade",
+   "shield": 0.2,
+   "carry": 30
+  },
+  {
+   "id": "second_day",
+   "name": "A second market day a week",
+   "text": "More takings, more baking, and no day off.",
+   "cost": 2800,
+   "tier": 1,
+   "group": "trade",
+   "takings": 1.1,
+   "use": 1.2,
+   "upkeep": 20
+  }
+ ],
+ "asks": [
+  {
+   "id": "licence",
+   "title": "The trader's licence",
+   "text": "The council has written to {deed}: the trader's licence is up for renewal, and so, in a separate paragraph, are the fees.",
+   "options": [
+    {
+     "id": "renew",
+     "tag": "safe",
+     "label": "Renew it, pay the fee and be done",
+     "cost": 0.4,
+     "say": "Stamped, filed and valid for another year.",
+     "rep": 1
+    },
+    {
+     "id": "early",
+     "tag": "frugal",
+     "label": "Renew it on the last day, the form is a nightmare",
+     "cost": 0.15,
+     "say": "You make it with an hour to spare and a sore wrist.",
+     "risk": {
+      "chance": 0.3,
+      "say": "Late by one day, which is, as it turns out, a full week.",
+      "mult": 0.7,
+      "days": 7,
+      "rep": -1
+     }
+    },
+    {
+     "id": "later",
+     "tag": "ignore",
+     "label": "Leave it on the pile",
+     "cost": 0.0,
+     "say": "A very polite letter turns into a less polite one. You are closed for a week while it is sorted.",
+     "mult": 0.6,
+     "days": 8,
+     "rep": -1
+    }
+   ]
+  }
+ ],
  "manager_slot": true
 }

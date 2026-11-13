@@ -98,7 +98,6 @@
    "season": "summer"
   }
  ],
- "manager_slot": true,
  "yield": {
   "winter": [
    {
@@ -156,5 +155,75 @@
     "n": 1
    }
   ]
- }
+ },
+ "upgrades": [
+  {
+   "id": "bigger_nets",
+   "name": "Bigger nets and a second hand",
+   "text": "A bigger haul, and a wage to pay whether the fish come or not.",
+   "cost": 5500,
+   "tier": 1,
+   "group": "gear",
+   "takings": 1.1,
+   "use": 1.2,
+   "shield": -0.1,
+   "upkeep": 35
+  },
+  {
+   "id": "ice_hold",
+   "name": "An ice hold and a cold store",
+   "text": "The catch arrives fresher, and a rough week costs you less.",
+   "cost": 6500,
+   "tier": 1,
+   "group": "gear",
+   "takings": 1.05,
+   "shield": 0.25,
+   "carry": 20
+  },
+  {
+   "id": "pier_berth",
+   "name": "A permanent berth on the pier",
+   "text": "No more circling for a space. Harbour dues, though.",
+   "cost": 3000,
+   "rates": -0.02,
+   "upkeep": 15
+  }
+ ],
+ "asks": [
+  {
+   "id": "ice_machine",
+   "title": "The ice machine on the pier",
+   "text": "The ice machine on the pier has broken down again, and the fish will not wait for it. {deed} is in for a warm week.",
+   "options": [
+    {
+     "id": "fix",
+     "tag": "safe",
+     "label": "Hire a van of ice from the next harbour",
+     "cost": 0.8,
+     "say": "Costly, cold and it works. The fish go to market looking like they have been on holiday.",
+     "rep": 1
+    },
+    {
+     "id": "sell",
+     "tag": "frugal",
+     "label": "Sell the catch the same day at the quay",
+     "cost": 0.1,
+     "say": "Sold by the afternoon at a lower price. Nobody on the quay is sorry.",
+     "mult": 0.9,
+     "days": 4
+    },
+    {
+     "id": "wait",
+     "tag": "ignore",
+     "label": "Wait for the council to mend it",
+     "cost": 0.0,
+     "say": "The council mends it on Thursday of the following week.",
+     "mult": 0.8,
+     "days": 8,
+     "rep": -1
+    }
+   ]
+  }
+ ],
+ "manager_slot": true
 }

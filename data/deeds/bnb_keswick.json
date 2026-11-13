@@ -88,5 +88,76 @@
    "line": "A breakfast inspector tried your black pudding, nodded gravely and left a form."
   }
  ],
+ "upgrades": [
+  {
+   "id": "extra_rooms",
+   "name": "Two more rooms in the loft",
+   "text": "More beds and more breakfasts, and a longer list of things that can go wrong on a Sunday night.",
+   "cost": 9000,
+   "tier": 1,
+   "group": "wing",
+   "takings": 1.12,
+   "use": 1.25,
+   "upkeep": 30
+  },
+  {
+   "id": "restaurant",
+   "name": "Evening meals for the house",
+   "text": "Walkers off the fell will pay for a hot dinner. They will also tell you how it compares.",
+   "cost": 9000,
+   "tier": 1,
+   "group": "wing",
+   "takings": 1.08,
+   "boom": 0.4,
+   "use": 1.15,
+   "upkeep": 45
+  },
+  {
+   "id": "listings",
+   "name": "A place in the walking guides",
+   "text": "Your name in the books people carry up hills.",
+   "cost": 3500,
+   "takings": 1.05,
+   "boom": 0.3
+  }
+ ],
+ "asks": [
+  {
+   "id": "wet_walkers",
+   "title": "A drenched party",
+   "text": "Eight walkers have come down off the fell at {deed} wetter than anyone should be, asking, in the voice of the damp, whether there is a drying room.",
+   "options": [
+    {
+     "id": "drying",
+     "tag": "safe",
+     "label": "Open the boiler room and put the kettle on",
+     "cost": 0.3,
+     "say": "Steam, tea and grateful strangers. One of them leaves a review that mentions the biscuits.",
+     "mult": 1.15,
+     "days": 5,
+     "rep": 1
+    },
+    {
+     "id": "charge",
+     "tag": "frugal",
+     "label": "Offer the airing cupboard for a small fee",
+     "cost": 0.0,
+     "say": "They pay, they dry and nobody is quite as grateful as they might be.",
+     "mult": 1.05,
+     "days": 3
+    },
+    {
+     "id": "sorry",
+     "tag": "ignore",
+     "label": "Say you are full, which is true on a technicality",
+     "cost": 0.0,
+     "say": "They squelch off up the road. Word of that gets about too.",
+     "mult": 0.95,
+     "days": 8,
+     "rep": -1
+    }
+   ]
+  }
+ ],
  "manager_slot": true
 }

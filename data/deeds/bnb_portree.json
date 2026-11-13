@@ -89,5 +89,78 @@
    "line": "Landscape photographers asked for breakfast at four in the morning. They paid well for the privilege."
   }
  ],
+ "upgrades": [
+  {
+   "id": "extra_rooms",
+   "name": "Rooms in the old stable block",
+   "text": "More beds and more breakfasts, and a longer list of things that can go wrong on a Sunday night.",
+   "cost": 9000,
+   "tier": 1,
+   "group": "wing",
+   "takings": 1.12,
+   "use": 1.25,
+   "upkeep": 30
+  },
+  {
+   "id": "restaurant",
+   "name": "Evening meals with the local catch",
+   "text": "Visitors will pay for a proper dinner on an island. They will also tell you how it compares.",
+   "cost": 9000,
+   "tier": 1,
+   "group": "wing",
+   "takings": 1.08,
+   "boom": 0.4,
+   "use": 1.15,
+   "upkeep": 45
+  },
+  {
+   "id": "listings",
+   "name": "A place in the island's visitor guide",
+   "text": "Your name where the ferry passengers look.",
+   "cost": 3500,
+   "takings": 1.05,
+   "boom": 0.3
+  }
+ ],
+ "asks": [
+  {
+   "id": "games_weekend",
+   "title": "The Highland Games weekend",
+   "season": "summer",
+   "text": "It is the weekend of the Skye Highland Games and every bed in Portree has been spoken for, twice. {deed} has had a dozen calls today.",
+   "options": [
+    {
+     "id": "full",
+     "tag": "bold",
+     "label": "Take every booking and put camp beds in the lounge",
+     "cost": 0.4,
+     "say": "A house full of pipers, tossers of cabers and one very polite cyclist. The camp beds are a hit.",
+     "mult": 1.5,
+     "days": 3,
+     "risk": {
+      "chance": 0.25,
+      "say": "Two double-bookings, a lost key and a pipe band in the hall at six. The reviews are mixed.",
+      "rep": -1
+     }
+    },
+    {
+     "id": "fair",
+     "tag": "safe",
+     "label": "Take what the rooms hold and no more",
+     "cost": 0.0,
+     "say": "Full, calm and everyone has a bed. A very ordinary triumph.",
+     "mult": 1.2,
+     "days": 3
+    },
+    {
+     "id": "skip",
+     "tag": "ignore",
+     "label": "Leave the phone off the hook",
+     "cost": 0.0,
+     "say": "The phone rings on without you. Someone else's guests get the shortbread."
+    }
+   ]
+  }
+ ],
  "manager_slot": true
 }

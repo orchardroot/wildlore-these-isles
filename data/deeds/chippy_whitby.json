@@ -94,5 +94,77 @@
    "line": "A rival chippy opens at the end of the road with a banner and a free scraps offer. Trade is down until the novelty wears off."
   }
  ],
+ "upgrades": [
+  {
+   "id": "second_fryer",
+   "name": "A second fryer",
+   "text": "Twice the chips an hour, and twice the oil to heat.",
+   "cost": 6000,
+   "tier": 1,
+   "takings": 1.1,
+   "use": 1.35
+  },
+  {
+   "id": "quay_lease",
+   "name": "A ten-year lease on the quay",
+   "text": "Nobody puts the rent up on the trade you built. The council likes you less for it.",
+   "cost": 5200,
+   "tier": 2,
+   "group": "terms",
+   "rates": -0.03,
+   "shield": 0.15,
+   "carry": 15
+  },
+  {
+   "id": "late_licence",
+   "name": "A late-night licence",
+   "text": "Open until the pubs turn out. The pubs turn out loud.",
+   "cost": 3000,
+   "tier": 2,
+   "group": "terms",
+   "takings": 1.1,
+   "upkeep": 40,
+   "shield": -0.1
+  }
+ ],
+ "asks": [
+  {
+   "id": "goth_weekend",
+   "title": "The Goth Weekend",
+   "text": "It is the Whitby Goth Weekend, and the pavement outside {deed} is full of people in black who are, you find, extremely polite and very hungry.",
+   "options": [
+    {
+     "id": "late",
+     "tag": "bold",
+     "label": "Stay open until midnight",
+     "cost": 0.5,
+     "say": "Midnight comes and goes in a queue of velvet and eyeliner. They tip in coins and compliments.",
+     "mult": 1.6,
+     "days": 3,
+     "rep": 1,
+     "risk": {
+      "chance": 0.2,
+      "say": "Rain at ten, and the queue goes with it. You fry for the seagulls."
+     }
+    },
+    {
+     "id": "usual",
+     "tag": "safe",
+     "label": "Open the usual hours and put a menu board out",
+     "cost": 0.15,
+     "say": "A good steady weekend, and not one complaint about the peas.",
+     "mult": 1.25,
+     "days": 3
+    },
+    {
+     "id": "shut",
+     "tag": "ignore",
+     "label": "Put the sign on 'closed' and go to the pictures",
+     "cost": 0.0,
+     "say": "You miss the best weekend of the year. Somebody else's chips sell very well."
+    }
+   ]
+  }
+ ],
  "manager_slot": true
 }

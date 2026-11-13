@@ -50,7 +50,8 @@ func test_the_daily_purses_stay_in_their_lane() -> void:
 func test_deeds_are_the_engine_but_not_a_runaway_before_the_story_ends() -> void:
 	var plain: Dictionary = _run("dailies")
 	var rich: Dictionary = _run("deed_rush")
-	assert_true(float(rich.at[78]) < 3.5 * float(plain.at[78]), "the Deeds roughly double a pure saver by the credits: %d against %d" % [rich.at[78], plain.at[78]])
+	# cash plus what has gone into the towns (the town projects are a sink for both, which would skew a plain cash ratio)
+	assert_true(float(rich.held[78]) < 3.5 * float(plain.held[78]), "the Deeds roughly double a pure saver by the credits: %d against %d" % [rich.held[78], plain.held[78]])
 	assert_true(float(rich.at[30]) < 15000.0, "nobody is rich a month in: %d" % rich.at[30])
 	assert_true(float(rich.spent.tax) > 0.0, "the taxman notices")
 

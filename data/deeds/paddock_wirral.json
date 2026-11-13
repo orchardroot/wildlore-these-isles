@@ -95,5 +95,77 @@
    "line": "A hard frost split the trough. The ice came out in one piece and was admired for some time."
   }
  ],
+ "upgrades": [
+  {
+   "id": "vet_contract",
+   "name": "A vet on a retainer",
+   "text": "A fixed fee a month and nobody panics at midnight.",
+   "cost": 1000,
+   "shield": 0.3,
+   "upkeep": 20
+  },
+  {
+   "id": "more_livery",
+   "name": "Stabling for six more",
+   "text": "More horses, more carrots, more muck.",
+   "cost": 2600,
+   "tier": 1,
+   "group": "yard",
+   "takings": 1.1,
+   "use": 1.25,
+   "upkeep": 20
+  },
+  {
+   "id": "show_yard",
+   "name": "A little show yard",
+   "text": "Gymkhanas and clinics bring a better class of visitor. And a worse class of weather.",
+   "cost": 1500,
+   "tier": 1,
+   "group": "yard",
+   "takings": 1.06,
+   "boom": 0.5
+  }
+ ],
+ "asks": [
+  {
+   "id": "pony_club",
+   "title": "The pony club rally",
+   "text": "The local pony club would like to use {deed} for its summer rally. There will be forty children, thirty ponies and an unspecified number of parents.",
+   "options": [
+    {
+     "id": "host",
+     "tag": "bold",
+     "label": "Host it properly, with a tea tent",
+     "cost": 0.5,
+     "say": "Forty children, thirty ponies and a tea tent that runs out of squash at eleven. A great success.",
+     "mult": 1.5,
+     "days": 3,
+     "rep": 1,
+     "risk": {
+      "chance": 0.2,
+      "say": "It rains, the tea tent floods, and a pony eats the bunting. Memorable for the wrong reasons.",
+      "mult": 0.9,
+      "days": 5
+     }
+    },
+    {
+     "id": "field",
+     "tag": "safe",
+     "label": "Let them have the far field and leave them to it",
+     "cost": 0.1,
+     "say": "The children are happy. The field is mostly intact.",
+     "mult": 1.2,
+     "days": 3
+    },
+    {
+     "id": "no",
+     "tag": "ignore",
+     "label": "Say you are fully booked",
+     "cost": 0.0,
+     "say": "The rally goes to a farm up the road."
+    }
+   ]
+  }
+ ],
  "manager_slot": true
 }

@@ -1234,6 +1234,28 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "facing": "right",
+   "hidden": {
+    "reveal": "project_inverness_footbridge"
+   },
+   "to": "inverness",
+   "tx": 27.0,
+   "ty": 34.0,
+   "x": 21.0,
+   "y": 34.0
+  },
+  {
+   "facing": "left",
+   "hidden": {
+    "reveal": "project_inverness_footbridge"
+   },
+   "to": "inverness",
+   "tx": 20.0,
+   "ty": 34.0,
+   "x": 26.0,
+   "y": 34.0
   }
  ],
  "weather": {

@@ -97,7 +97,6 @@
    "line": "A coach of Captain Cook enthusiasts wanted a boat to photograph. You were the prettiest."
   }
  ],
- "manager_slot": true,
  "yield": {
   "winter": [
    {
@@ -155,5 +154,74 @@
     "n": 1
    }
   ]
- }
+ },
+ "upgrades": [
+  {
+   "id": "bigger_nets",
+   "name": "Bigger nets and a second hand",
+   "text": "A bigger haul, and a wage to pay whether the fish come or not.",
+   "cost": 5500,
+   "tier": 1,
+   "group": "gear",
+   "takings": 1.1,
+   "use": 1.2,
+   "shield": -0.1,
+   "upkeep": 35
+  },
+  {
+   "id": "ice_hold",
+   "name": "An ice hold and a cold store",
+   "text": "The catch arrives fresher, and a rough week costs you less.",
+   "cost": 6500,
+   "tier": 1,
+   "group": "gear",
+   "takings": 1.05,
+   "shield": 0.25,
+   "carry": 20
+  },
+  {
+   "id": "quay_berth",
+   "name": "A permanent berth by the quay",
+   "text": "No more circling for a space. Harbour dues, though.",
+   "cost": 3000,
+   "rates": -0.02,
+   "upkeep": 15
+  }
+ ],
+ "asks": [
+  {
+   "id": "anglers",
+   "title": "Anglers want a day out",
+   "text": "A party of anglers on the quay has asked whether {deed} would take them out for the day, and whether the boat is, in the circumstances, clean.",
+   "options": [
+    {
+     "id": "charter",
+     "tag": "safe",
+     "label": "Run a proper charter and wash the deck first",
+     "cost": 0.3,
+     "say": "A good day out, five bass, a story that gets bigger every time it is told.",
+     "mult": 1.3,
+     "days": 3,
+     "rep": 1
+    },
+    {
+     "id": "fish",
+     "tag": "frugal",
+     "label": "Take them out on your normal rounds",
+     "cost": 0.0,
+     "say": "They watch you work and pay for the privilege. The fish are less impressed.",
+     "mult": 1.1,
+     "days": 3
+    },
+    {
+     "id": "no",
+     "tag": "ignore",
+     "label": "Say the tide is against you",
+     "cost": 0.0,
+     "say": "It is not. They find another boat."
+    }
+   ]
+  }
+ ],
+ "manager_slot": true
 }

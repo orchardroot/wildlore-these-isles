@@ -310,6 +310,8 @@ func _exec(c: Dictionary) -> void:
 				await host.say("", line + ".")
 		"regular":
 			await RegularTalk.run(self, c)  # one of the Regulars (story/regular_talk.gd)
+		"project":
+			await ProjectTalk.run(self, c)  # a town project (story/project_talk.gd)
 		"evidence":
 			await CasebookTalk.evidence(self, c)  # a clue for the Casebook (story/casebook_talk.gd)
 		"casebook":

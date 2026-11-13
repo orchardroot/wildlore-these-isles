@@ -15,7 +15,7 @@ const SCREENS := [
 	"postcard:album", "keepers", "curios", "economist", "invention", "lang", "biology", "selection", "pairing:pick",
 	"pairing:cross", "pairing:predict", "quiz", "quiz:all:answered", "crossword", "crossword:filled",
 	"bureau", "exchange:london", "crypto:london", "market:leeds_kirkgate", "society:manchester_society",
-	"deed:allotment_york", "lease", "cards", "trumps:dev",
+	"deed:allotment_york", "project:inverness_footbridge", "lease", "cards", "trumps:dev",
 	"cage:dev", "fruit:dev", "blackjack:dev", "roulette:dev", "hilo:dev", "races:dev", "arcade:dev", "arcade:dev:claw",
 	"arcade:dev:falls", "darts", "crabbing:dev", "bowls:dev", "skim:dev", "sheepdog:dev", "worms:dev", "ringing:dev",
 	"walling:dev", "games:caber:dev", "games:tug:dev", "games:hurling:dev", "shanty:dev", "conkers:dev", "cheese:dev",

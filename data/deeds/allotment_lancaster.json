@@ -119,7 +119,6 @@
    "season": "summer"
   }
  ],
- "manager_slot": true,
  "yield": {
   "spring": [
    {
@@ -186,5 +185,73 @@
    }
   ]
  },
- "picks": 2
+ "picks": 2,
+ "upgrades": [
+  {
+   "id": "water_butts",
+   "name": "A row of water butts",
+   "text": "A dry spell does less harm when you have kept the rain.",
+   "cost": 500,
+   "shield": 0.3
+  },
+  {
+   "id": "raised_beds",
+   "name": "More raised beds",
+   "text": "More veg, more seed, more weeding.",
+   "cost": 800,
+   "tier": 1,
+   "group": "beds",
+   "takings": 1.1,
+   "use": 1.25
+  },
+  {
+   "id": "wormery",
+   "name": "A wormery and compost bays",
+   "text": "Nothing goes to waste, and nothing grows quite as fast.",
+   "cost": 700,
+   "tier": 1,
+   "group": "beds",
+   "takings": 1.05,
+   "use": 0.8
+  }
+ ],
+ "asks": [
+  {
+   "id": "committee",
+   "title": "The allotment committee",
+   "text": "The committee at {deed} has a waiting list of forty and a plot you are not using to the full. It has been mentioned at the meeting, in the passive voice.",
+   "options": [
+    {
+     "id": "share",
+     "tag": "safe",
+     "label": "Offer a corner to the next on the list",
+     "cost": 0.1,
+     "say": "A grateful neighbour with a bag of onion sets and a lot of opinions. The committee approves.",
+     "mult": 1.05,
+     "days": 20,
+     "rep": 1
+    },
+    {
+     "id": "plant",
+     "tag": "frugal",
+     "label": "Put more in and prove you are using it",
+     "cost": 0.4,
+     "say": "Rows of everything. The committee comes to see, and says nothing, which is as good as a rosette.",
+     "mult": 1.12,
+     "days": 12
+    },
+    {
+     "id": "ignore",
+     "tag": "ignore",
+     "label": "Say you will come to the next meeting",
+     "cost": 0.0,
+     "say": "You do not come to the next meeting.",
+     "mult": 0.9,
+     "days": 12,
+     "rep": -1
+    }
+   ]
+  }
+ ],
+ "manager_slot": true
 }

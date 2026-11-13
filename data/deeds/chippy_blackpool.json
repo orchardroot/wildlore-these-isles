@@ -95,5 +95,77 @@
    "line": "The Illuminations are on and the whole prom is hungry. You run out of paper twice."
   }
  ],
+ "upgrades": [
+  {
+   "id": "second_fryer",
+   "name": "A second fryer",
+   "text": "Twice the chips an hour, and twice the oil to heat.",
+   "cost": 6000,
+   "tier": 1,
+   "takings": 1.1,
+   "use": 1.35
+  },
+  {
+   "id": "long_lease",
+   "name": "A long lease on the unit",
+   "text": "A landlord who cannot put the rent up and a council that has noticed.",
+   "cost": 5200,
+   "tier": 2,
+   "group": "terms",
+   "rates": -0.03,
+   "shield": 0.15,
+   "carry": 15
+  },
+  {
+   "id": "neon_sign",
+   "name": "A neon sign you can see from the prom",
+   "text": "Visitors find you from half a mile away. So do the electricity bills.",
+   "cost": 3000,
+   "tier": 2,
+   "group": "terms",
+   "takings": 1.05,
+   "boom": 0.5,
+   "upkeep": 25
+  }
+ ],
+ "asks": [
+  {
+   "id": "illuminations",
+   "title": "The Illuminations",
+   "season": "autumn",
+   "text": "The Illuminations are on, and half of Lancashire has come to look at the lights along the front. {deed} is on the way to all of them.",
+   "options": [
+    {
+     "id": "late",
+     "tag": "bold",
+     "label": "Open late and put chips in cones for the walk",
+     "cost": 0.5,
+     "say": "Cones of chips by the thousand. The sea wind does the rest.",
+     "mult": 1.6,
+     "days": 3,
+     "risk": {
+      "chance": 0.25,
+      "say": "The wind takes the cones, the sauce and your hat."
+     }
+    },
+    {
+     "id": "usual",
+     "tag": "safe",
+     "label": "Keep the usual hours and the usual queue",
+     "cost": 0.1,
+     "say": "Steady all week. The lights are very pretty and the takings are not bad.",
+     "mult": 1.25,
+     "days": 3
+    },
+    {
+     "id": "shut",
+     "tag": "ignore",
+     "label": "Shut early, the lights make you tired",
+     "cost": 0.0,
+     "say": "The lights go on without you."
+    }
+   ]
+  }
+ ],
  "manager_slot": true
 }

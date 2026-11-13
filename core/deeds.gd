@@ -9,6 +9,7 @@ extends RefCounted
 ##   deed_<id>  {owned, tier, store {item: n}, till, rates_due, manager, last_day, coll, paid, accrue, bill, stmt, log}
 ## and the post (rates bills, monthly statements, the tax envelope) in a single flag:
 ##   deeds_post {mail [{k, d, day, a, c}], income {cur: {year: gbp}}, taxed {cur: year}, owed {cur: n}}
+## Wave 55 adds more keys to the same flag, all absent on an old save (see DeedChoices): ups, ask, next_ask, mods, rep.
 ## All sums are STERLING whole pounds as the data authors them; Wallet converts at the Deed's own zone.
 ## Takings are seeded per Deed and day (no state to walk), and nothing here can make money from nothing: the stock
 ## costs real goods, the tiers cost more than they return for many days, and selling back pays 60% of what went in
@@ -94,7 +95,23 @@ static func _st(data: GameStateData, id: String) -> Dictionary:
 	if not (st.get("log") is Array):
 		st["log"] = []
 	st["manager"] = str(st.get("manager", ""))
+	if not (st.get("ups") is Array):
+		st["ups"] = []
 	return st
+
+## The Deed's live books, normalised in place (DeedChoices writes its decisions here).
+static func books(data: GameStateData, id: String) -> Dictionary:
+	return _st(data, id)
+
+## A line in the Deed's recent log.
+static func note(st: Dictionary, day: int, text: String) -> void:
+	_log(st, day, text)
+
+## Queues the letter that says something at the Deed wants an answer.
+static func post_ask(data: GameStateData, id: String, day: int, title: String) -> void:
+	_mail(data, "ask", id, day, 0)
+	var m: Array = _post_st(data, true).mail
+	m[m.size() - 1]["x"] = title
 
 static func state(data: GameStateData, id: String) -> Dictionary:
 	return _peek(data, id).duplicate(true)
@@ -219,9 +236,10 @@ static func supply(data: GameStateData, id: String, item_id: String, n: int) -> 
 	if not is_owned(data, id) or n <= 0:
 		return 0
 	var per_day := 0
+	var use: float = float(DeedChoices.fx(data, id).use)
 	for inp in get_deed(id).get("inputs", []):
 		if str(inp.item) == item_id:
-			per_day = int(inp.per_day)
+			per_day = DeedChoices.use_of(int(inp.per_day), use)
 	if per_day <= 0:
 		return 0
 	var st := _st(data, id)
@@ -238,6 +256,14 @@ static func supply(data: GameStateData, id: String, item_id: String, n: int) -> 
 static func set_manager(data: GameStateData, id: String, npc_id: String) -> void:
 	if is_owned(data, id):
 		_st(data, id).manager = npc_id
+
+## Lets the manager go: the Deed goes back to filling its till for a month away, and the Regular is free to be asked again.
+static func release_manager(data: GameStateData, id: String) -> void:
+	if not is_owned(data, id):
+		return
+	var st := _st(data, id)
+	Regulars.release(data, str(st.manager))
+	st.manager = ""
 
 ## Pays the next tier. "" or a reason.
 static func upgrade(data: GameStateData, id: String) -> String:
@@ -307,21 +333,24 @@ static func event_on(data: GameStateData, id: String, day: int) -> Dictionary:
 	return {}
 
 ## Units of an input that a day would use right now.
-static func _stock_fraction(st: Dictionary, deed: Dictionary) -> float:
+static func _stock_fraction(st: Dictionary, deed: Dictionary, use := 1.0) -> float:
 	var inputs: Array = deed.get("inputs", [])
 	if inputs.is_empty():
 		return 1.0
 	var f := 0.0
 	for inp in inputs:
-		f += minf(1.0, float(_i(st.store, str(inp.item))) / maxf(1.0, float(inp.per_day)))
+		f += minf(1.0, float(_i(st.store, str(inp.item))) / maxf(1.0, float(DeedChoices.use_of(int(inp.per_day), use))))
 	return f / inputs.size()
 
-static func _consume(st: Dictionary, deed: Dictionary) -> int:
-	var used := 0
+## Takes a day's stock out and returns the units it sold as: the goods used, but a thrifty hand that gets a day out of
+## less (use under 1) still sells the full day's worth.
+static func _consume(st: Dictionary, deed: Dictionary, use := 1.0) -> float:
+	var used := 0.0
 	for inp in deed.get("inputs", []):
-		var u := mini(_i(st.store, str(inp.item)), int(inp.per_day))
+		var eff := DeedChoices.use_of(int(inp.per_day), use)
+		var u := mini(_i(st.store, str(inp.item)), eff)
 		st.store[str(inp.item)] = _i(st.store, str(inp.item)) - u
-		used += u
+		used += float(u) * (float(inp.per_day) / float(eff) if eff < int(inp.per_day) else 1.0)
 	return used
 
 ## One quiet day's takings with a full store at tier 0, before events: for the sim and the screen.
@@ -341,6 +370,7 @@ static func tick(data: GameStateData, day: int) -> Array:
 	var lines := []
 	for deed in owned(data):
 		lines.append_array(_tick_one(data, deed, day))
+	lines.append_array(TownProjects.tick(data, day))   # w55: town projects open on the same daily tick
 	_tax_check(data)
 	return lines
 
@@ -351,21 +381,23 @@ static func _tick_one(data: GameStateData, deed: Dictionary, day: int) -> Array:
 	var from := _i(st, "last_day") + 1
 	if day - from + 1 > MAX_CATCH_UP:
 		from = day - MAX_CATCH_UP + 1
+	var fx := DeedChoices.fx(data, id)   # upgrades and the manager's character, the same for every day of the walk
+	var rate := float(deed.get("rates", 0.0)) + float(fx.rates)
 	for dd in range(from, day + 1):
+		lines.append_array(DeedChoices.daily(data, deed, st, dd))
 		var ev := event_on(data, id, dd)
 		var mult := 1.0
 		if not ev.is_empty():
-			mult = float(ev.get("mult", 1.0))
+			mult = DeedChoices.bend(float(ev.get("mult", 1.0)), float(fx.shield), float(fx.boom))
 		var takings := 0.0
 		if mult > 0.0:                          # a closed day uses nothing and takes nothing
-			var f := _stock_fraction(st, deed)
-			var used := _consume(st, deed)
+			var f := _stock_fraction(st, deed, float(fx.use))
+			var used := _consume(st, deed, float(fx.use))
 			var o: Dictionary = deed.get("output", {})
 			var base := float(o.get("base", 0)) * (NO_STOCK + (1.0 - NO_STOCK) * f) + float(o.get("per_input", 0)) * used
-			takings = base * tier_mult(data, id) * mult * inflation(data, dd) * band_scale(data)
-			if str(st.manager) != "":
-				takings *= MANAGER_BONUS
-		var window := MANAGED_DAYS if str(st.manager) != "" else UNATTENDED_DAYS
+			takings = base * tier_mult(data, id) * mult * inflation(data, dd) * band_scale(data) * float(fx.takings) * DeedChoices.day_mult(st, dd)
+			takings = maxf(0.0, takings - float(fx.upkeep) * inflation(data, dd))
+		var window := (MANAGED_DAYS if str(st.manager) != "" else UNATTENDED_DAYS) + int(fx.carry)
 		var t := roundi(takings) if dd - _i(st, "coll") <= window else 0
 		st.till = _i(st, "till") + t
 		st.accrue = _i(st, "accrue") + t
@@ -374,9 +406,9 @@ static func _tick_one(data: GameStateData, deed: Dictionary, day: int) -> Array:
 			_log(st, dd, str(ev.get("line", "")))
 			lines.append(line)
 		if dd >= _i(st, "bill"):
-			var due := ceili(float(_i(st, "accrue")) * float(deed.get("rates", 0.0)))
-			st.rates_due = _i(st, "rates_due") + due
+			var due := ceili(float(_i(st, "accrue")) * rate)
 			st.accrue = 0
+			st.rates_due = _i(st, "rates_due") + due
 			st.bill = _i(st, "bill") + WEEK
 			if due > 0:
 				_mail(data, "rates", id, dd, _i(st, "rates_due"))
@@ -442,7 +474,7 @@ static func collect_letters(data: GameStateData) -> Array:
 static func _fill(t: String, m: Dictionary, name: String) -> String:
 	var cur := str(m.get("c", "")) if str(m.get("c", "")) != "" else Wallet.GBP
 	var amount := Wallet.fmt(Wallet.localise(int(m.get("a", 0)), cur), cur)
-	return t.replace("{deed}", name).replace("{amount}", amount).replace("{day}", str(int(m.get("day", 0))))
+	return t.replace("{deed}", name).replace("{amount}", amount).replace("{day}", str(int(m.get("day", 0)))).replace("{title}", str(m.get("x", "")))
 
 static func letter_lines(_data: GameStateData, m: Dictionary) -> Array:
 	var l: Dictionary = post_text().get("letters", {}).get(str(m.k) + ("_eur" if str(m.get("c", "")) == Wallet.EUR else ""), {})
@@ -532,5 +564,12 @@ static func summary(data: GameStateData, id: String) -> Array:
 		stock.append("%s %d" % [str(Trade.items().get_item(str(inp.item)).get("name", inp.item)), store_of(data, id, str(inp.item))])
 	if not stock.is_empty():
 		out.append("Store: " + ", ".join(stock))
-	out.append("Manager: %s" % (str(Regulars.get_reg(manager(data, id)).get("name", manager(data, id))) if manager(data, id) != "" else "none"))
+	var who := manager(data, id)
+	var traits := DeedChoices.manager_traits(data, id)
+	out.append("Manager: %s" % (str(Regulars.get_reg(who).get("name", who)) if who != "" else "none"))
+	if not traits.is_empty() and str(traits.temper) != "":
+		out.append("Their way: %s" % str(traits.label))
+	var ups := DeedChoices.owned_ups(data, id)
+	if not ups.is_empty():
+		out.append("Fitted: " + ", ".join(ups.map(func(u): return str(DeedChoices.get_upgrade(id, str(u)).get("name", u)))))
 	return out

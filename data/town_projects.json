@@ -1,0 +1,779 @@
+{
+ "_doc": "Town projects (core/town_projects.gd). Each: id, zone, npc (the resident who speaks for it, in that zone), who (the name their lines are said under), badges (open from this many Stones), cost (sterling at par 60, shared out by the stages' share), name, title, text, stages [{name, share (adds up to 100), days (building time), line}], change (the screen's promise), ask / progress / done (lines the resident adds to their talk), opened (the wireless), plaque ({player}), effects {standing, item (a keepsake), deed {deed id: {takings, shield, ...}}, warps [{x, y}] (hidden warps in the zone that reveal on project_<id>)}. {player} is the player's name.",
+ "projects": [
+  {
+   "id": "whitby_lifeboat",
+   "zone": "whitby",
+   "npc": "wby_skipper",
+   "who": "Skipper",
+   "badges": 3,
+   "cost": 37000,
+   "name": "Whitby Lifeboat House",
+   "title": "A new house for the lifeboat",
+   "text": "The lifeboat is crewed by volunteers and paid for by people who put coins in tins. The house it launches from is older than most of the crew, and the winters have not been kind to its doors. A new launch house, dry and tall and big enough for a modern boat, would see Whitby through the next fifty years.",
+   "stages": [
+    {
+     "name": "Survey and foundations",
+     "share": 25,
+     "days": 4,
+     "line": "The surveyor arrives with a clipboard and leaves with a very long list."
+    },
+    {
+     "name": "Frame and roof",
+     "share": 35,
+     "days": 6,
+     "line": "The frame goes up in a week of good weather, which in Whitby is a rumour."
+    },
+    {
+     "name": "Doors, slipway and fitting out",
+     "share": 40,
+     "days": 8,
+     "line": "The last stage is paid for. Somebody is already polishing the brass."
+    }
+   ],
+   "change": "Finished, the crew move in and the boats go out with a safer harbour behind them. Your name goes on the wall.",
+   "ask": [
+    "The lifeboat house wants rebuilding, {player}. Roof, doors, slipway, the lot. The crew can launch the boat in any weather but not, it turns out, the building.",
+    "There's a fund. It's mostly pennies in a tin and Mrs Hodgson's jam sales. If you could see your way to the rest, nobody on this quay would ever forget it."
+   ],
+   "progress": [
+    "The builders are in on the quay. It's noisier than it was, and nobody is complaining."
+   ],
+   "done": [
+    "The new lifeboat house is open, {player}. The crew say thank you. The crew's cook says it twice and means it more."
+   ],
+   "opened": "The new lifeboat house is open on the quay, and the crew have already got the kettle on.",
+   "plaque": "This lifeboat house was rebuilt by {player}, who was not asked to and did anyway.",
+   "effects": {
+    "standing": 8,
+    "item": "parkin",
+    "deed": {
+     "boat_whitby": {
+      "shield": 0.15
+     }
+    }
+   }
+  },
+  {
+   "id": "keswick_launch",
+   "zone": "keswick",
+   "npc": "kes_boatman",
+   "who": "Boatman",
+   "badges": 3,
+   "cost": 16000,
+   "name": "Keswick Landing Stage",
+   "title": "A proper landing stage for the Launch",
+   "text": "Boats have carried people across Derwentwater for a very long time, and the landing stage on the shore is a few planks and some optimism. A proper one, with a ramp and a rail and a roof for the rain, would put more of the lake within reach of the whole town.",
+   "stages": [
+    {
+     "name": "Piles and decking",
+     "share": 25,
+     "days": 4,
+     "line": "The piles go in on the one still day of the month."
+    },
+    {
+     "name": "Ramp and handrails",
+     "share": 35,
+     "days": 6,
+     "line": "A ramp wide enough for a pushchair and a wheelchair side by side."
+    },
+    {
+     "name": "Shelter and signs",
+     "share": 40,
+     "days": 8,
+     "line": "The shelter has a bench, a roof and a rail. It looks as if it had always been there."
+    }
+   ],
+   "change": "Finished, more people take the boats, and more of them need a bed. Your B&B notices, and your name goes on the post.",
+   "ask": [
+    "The landing stage is a disgrace, if you don't mind my saying. Folk with sticks and pushchairs stand and look at the water and go to the pencil museum instead.",
+    "A proper stage would cost a bit. But I'd say it would pay for itself in cups of tea alone."
+   ],
+   "progress": [
+    "The new piles are in, and the old planks are doing the one thing they're good at, which is being firewood."
+   ],
+   "done": [
+    "The new stage is the best thing that's happened to the lake in years, {player}. We've had a coach party that came for the boats and stayed for the cake."
+   ],
+   "opened": "The new landing stage is open, and the first boat is already full.",
+   "plaque": "The landing stage was built in {player}'s name, with a ramp so that everyone can get to the boats.",
+   "effects": {
+    "standing": 6,
+    "item": "kendal_mint_cake",
+    "deed": {
+     "bnb_keswick": {
+      "takings": 1.04
+     }
+    }
+   }
+  },
+  {
+   "id": "bath_bandstand",
+   "zone": "bath",
+   "npc": "bridge_busker",
+   "who": "Busker",
+   "badges": 3,
+   "cost": 9500,
+   "name": "Bath Bandstand",
+   "title": "Bring the bandstand back",
+   "text": "A city of buskers and brass bands has a bandstand that is mostly a place to eat sandwiches in the rain. Mend the roof, repaint the ironwork and put in the electrics, and the Sunday concerts can start again.",
+   "stages": [
+    {
+     "name": "The roof and the ironwork",
+     "share": 25,
+     "days": 4,
+     "line": "The ironwork comes back from the paint shop the colour it was meant to be."
+    },
+    {
+     "name": "Electrics and a proper floor",
+     "share": 35,
+     "days": 6,
+     "line": "The floor has been laid so that nobody's cello falls through it."
+    },
+    {
+     "name": "The first season of concerts",
+     "share": 40,
+     "days": 8,
+     "line": "The first season is booked, the first band is booked, and the bunting has been ordered."
+    }
+   ],
+   "change": "Finished, the band plays on Sundays and the crowd finds the stalls. Your name goes on the bandstand.",
+   "ask": [
+    "The bandstand, {player}. Lovely thing, that. Hasn't heard a band since before I took up the busking.",
+    "A new roof, a floor and a bit of wiring, and we'd have a brass band in it by the summer. I'd play in the front row myself, if they'd have me."
+   ],
+   "progress": [
+    "The scaffolding's up round the bandstand, and the busker's been rehearsing in a very small space."
+   ],
+   "done": [
+    "Did you hear the band on Sunday, {player}? A full brass section, a crowd and a man selling ice cream out of a bucket. That's all you."
+   ],
+   "opened": "The bandstand is open again, and the first brass band plays on Sunday.",
+   "plaque": "The bandstand was brought back to life by {player}, for whoever has a tune.",
+   "effects": {
+    "standing": 5,
+    "deed": {
+     "stall_bath": {
+      "takings": 1.04
+     }
+    }
+   }
+  },
+  {
+   "id": "lancaster_mill",
+   "zone": "lancaster",
+   "npc": "lan_boater",
+   "who": "Boater",
+   "badges": 4,
+   "cost": 30000,
+   "name": "Lancaster Mill",
+   "title": "The old mill by the water",
+   "text": "A big brick mill by the water has stood empty since the last of the looms went quiet. Workshops for makers, a cafe that opens before the walkers do and a long barn for the allotment society would give it a second life, and a footbridge would bring the far bank into the town.",
+   "stages": [
+    {
+     "name": "Roof and windows",
+     "share": 25,
+     "days": 4,
+     "line": "The mill gets a roof for the first time in a generation, and the pigeons file a complaint."
+    },
+    {
+     "name": "Workshops, cafe and barn",
+     "share": 35,
+     "days": 6,
+     "line": "The workshops fill with the noise of people making things, which is what a mill is for."
+    },
+    {
+     "name": "The footbridge",
+     "share": 40,
+     "days": 8,
+     "line": "A footbridge over the water at the east end of the town, to save everyone the long way round."
+    }
+   ],
+   "change": "Finished, the mill is full, the allotment society has a barn and a footbridge opens over the water at the east end of the town.",
+   "ask": [
+    "See the old mill? Forty years empty, and the council would rather knock it down than argue about it. It's a fine building. It's a roof short of being a very fine one.",
+    "Someone with a bit of money and a bit of vision could turn it into workshops, a cafe and a barn for the allotments. And a footbridge, so you'd not have to go round by the road."
+   ],
+   "progress": [
+    "The mill's full of builders, and the allotment society is measuring up the barn."
+   ],
+   "done": [
+    "The mill is open, {player}, and so's the footbridge at the east end of town. I've crossed it six times today just to hear the boards."
+   ],
+   "opened": "The mill is open, with workshops, a cafe and a barn, and a footbridge at the east end of town.",
+   "plaque": "The mill was given back to Lancaster by {player}: workshops, a cafe, a barn and a footbridge.",
+   "effects": {
+    "standing": 8,
+    "item": "lancashire_hotpot",
+    "deed": {
+     "allotment_lancaster": {
+      "takings": 1.05
+     }
+    },
+    "warps": [
+     {
+      "x": 57,
+      "y": 34
+     },
+     {
+      "x": 57,
+      "y": 41
+     }
+    ]
+   }
+  },
+  {
+   "id": "york_floodgate",
+   "zone": "york",
+   "npc": "yrk_guide",
+   "who": "Guide",
+   "badges": 3,
+   "cost": 21000,
+   "name": "York Flood Gate",
+   "title": "A flood gate for the river path",
+   "text": "The Ouse and the Foss have never entirely agreed about where the river ends, and the riverside path floods at the first serious rain. A proper flood gate and a raised walkway, built with the people whose cellars it protects, would keep the path and a good many cellars dry.",
+   "stages": [
+    {
+     "name": "Surveying the water",
+     "share": 25,
+     "days": 4,
+     "line": "Four men in waders and a woman with a very large map."
+    },
+    {
+     "name": "The gate and the wall",
+     "share": 35,
+     "days": 6,
+     "line": "The gate goes in. It looks like a door and it has a very serious attitude."
+    },
+    {
+     "name": "The raised walkway",
+     "share": 40,
+     "days": 8,
+     "line": "The walkway opens above the line where the water has always stopped."
+    }
+   ],
+   "change": "Finished, the path stays open when the river does not, and the allotments by the water take less harm. Your name goes on the gate.",
+   "ask": [
+    "The river's up again, {player}. It's always up. The path under the bridge is a lake by Tuesday and the cellars along the front are not much better.",
+    "The council has a plan. The council also has a form for the plan. A bit of money from somebody with a spade would get it going faster."
+   ],
+   "progress": [
+    "The gate is going in, and there's a notice about the path being closed, which is, on this one occasion, good news."
+   ],
+   "done": [
+    "We had the river in on Thursday, {player}, right up to the gate, and not a drop got past. The cellars stayed dry. Two grown men cried."
+   ],
+   "opened": "The flood gate is in, and the riverside path stays open when the water is up.",
+   "plaque": "The flood gate was paid for by {player}. The river is still welcome, as long as it knocks.",
+   "effects": {
+    "standing": 6,
+    "item": "parkin",
+    "deed": {
+     "allotment_york": {
+      "shield": 0.2
+     }
+    }
+   }
+  },
+  {
+   "id": "carlisle_library",
+   "zone": "carlisle",
+   "npc": "carl_reader",
+   "who": "Reader",
+   "badges": 3,
+   "cost": 5500,
+   "name": "Carlisle Library",
+   "title": "The library, open on Saturdays again",
+   "text": "The library has been shut on Saturdays since the cuts, which is the one day the people who work all week can get there. Paying for a librarian's Saturdays, a story hour and a good heater would put the doors open again.",
+   "stages": [
+    {
+     "name": "A librarian for the Saturdays",
+     "share": 25,
+     "days": 4,
+     "line": "A librarian is found, with a cardigan and a stamp, and a wish to help."
+    },
+    {
+     "name": "The story hour and the heating",
+     "share": 35,
+     "days": 6,
+     "line": "The heating works. The story hour has been advertised in letters a foot high."
+    },
+    {
+     "name": "The new shelves",
+     "share": 40,
+     "days": 8,
+     "line": "The new shelves are in, and nobody has yet put anything on the wrong one."
+    }
+   ],
+   "change": "Finished, the doors are open on Saturdays and the children come in for the story hour. Your name goes on the first shelf.",
+   "ask": [
+    "They've shut the library on Saturdays, {player}. The one day anybody could get in. I've sat on the step with a book once or twice and I don't mind telling you it's not the same.",
+    "A librarian for the Saturdays and a decent heater, that's all it wants."
+   ],
+   "progress": [
+    "The library's got a new librarian on trial, and the step has fewer people on it than it did."
+   ],
+   "done": [
+    "Saturday mornings are the best thing about this town now, {player}. Come in and see the children with the picture books. It's only your fault."
+   ],
+   "opened": "The library is open on Saturdays again, and the first story hour has a queue.",
+   "plaque": "The Saturday opening was paid for by {player}, so that the doors are open to everyone who works all week.",
+   "effects": {
+    "standing": 4
+   }
+  },
+  {
+   "id": "penzance_lido",
+   "zone": "penzance",
+   "npc": "lido_swimmer",
+   "who": "Swimmer",
+   "badges": 3,
+   "cost": 26000,
+   "name": "Penzance Sea Pool",
+   "title": "Mend the lido",
+   "text": "The art deco sea-water lido on the front takes the full weight of the Atlantic every winter, and every winter it loses a little more. A new sea wall on the seaward side and the cracks in the pool sealed would let it open on the first warm day, and the swimmers who have waited since October.",
+   "stages": [
+    {
+     "name": "The sea wall",
+     "share": 25,
+     "days": 4,
+     "line": "The sea wall is rebuilt in the lee of a promise that it won't be needed."
+    },
+    {
+     "name": "The pool and its steps",
+     "share": 35,
+     "days": 6,
+     "line": "The cracks are sealed and the pool refilled. It is, officially, freezing."
+    },
+    {
+     "name": "The changing rooms and the cafe",
+     "share": 40,
+     "days": 8,
+     "line": "The cafe has a view of the sea and a menu that says 'tea' and 'cake' and 'more tea'."
+    }
+   ],
+   "change": "Finished, the pool opens for the summer and the swimmers have somewhere to be brave. Your name goes on the wall.",
+   "ask": [
+    "I swim every day the pool's open, {player}, and every day it's shut I look at it. It's the loveliest empty pool in Cornwall and it ought to be full.",
+    "The sea does what the sea does. A good wall and a bit of cement, and we'd have it back."
+   ],
+   "progress": [
+    "There's concrete on the front, and nobody is allowed in the pool, which makes it, for once, the quietest it's ever been."
+   ],
+   "done": [
+    "The pool's open, {player}. The water is cold enough to take your breath and the swimmers are all grinning. It's the best thing on the front."
+   ],
+   "opened": "The sea pool is open for the summer, and the first swimmers are in before the paint is dry.",
+   "plaque": "The pool was mended by {player}, and the sea has been told.",
+   "effects": {
+    "standing": 7,
+    "item": "pasty"
+   }
+  },
+  {
+   "id": "portree_pontoon",
+   "zone": "portree",
+   "npc": "por_harbourhand",
+   "who": "Harbour Hand",
+   "badges": 6,
+   "cost": 20000,
+   "name": "Portree Pontoon",
+   "title": "A pontoon for the visiting boats",
+   "text": "Portree harbour is lovely and busy, and in the summer visiting boats raft up three deep against the pier. A pontoon along the harbour wall, with water and electricity on it, would bring the yachts in, and yachts eat ashore.",
+   "stages": [
+    {
+     "name": "The anchors and the chains",
+     "share": 25,
+     "days": 4,
+     "line": "The anchors go down on a day when the sea is, for once, civilised."
+    },
+    {
+     "name": "The pontoon sections",
+     "share": 35,
+     "days": 6,
+     "line": "The pontoon arrives in sections on a lorry, and is put together with a great deal of advice."
+    },
+    {
+     "name": "Water, power and a harbour office",
+     "share": 40,
+     "days": 8,
+     "line": "The harbour office has a kettle and a notice that says 'Welcome, mind the gap'."
+    }
+   ],
+   "change": "Finished, yachts come in and tie up, and their crews go looking for beds and dinner. Your B&B feels it.",
+   "ask": [
+    "It's the rafting that gets me, {player}. Three boats deep in July, a lad stepping over two decks to get ashore with his shopping.",
+    "A pontoon along the wall, now. Water, power, a place for people to tie up. They'd come from all round the Minch."
+   ],
+   "progress": [
+    "The pontoon's going in section by section. The seals have come to see, which is how you know it's important."
+   ],
+   "done": [
+    "It's a grand sight, {player}. Twelve yachts in on Saturday and every one of them wanting a dinner. You'd not believe the bacon."
+   ],
+   "opened": "The pontoon is in, and the first yacht of the season has tied up alongside.",
+   "plaque": "The pontoon was paid for by {player}, so that boats of every size can come in to Portree.",
+   "effects": {
+    "standing": 6,
+    "item": "tablet",
+    "deed": {
+     "bnb_portree": {
+      "takings": 1.04
+     }
+    }
+   }
+  },
+  {
+   "id": "kirkwall_ferry",
+   "zone": "kirkwall",
+   "npc": "kwl_sailor",
+   "who": "Sailor",
+   "badges": 8,
+   "cost": 23500,
+   "name": "Kirkwall Winter Ferry",
+   "title": "A winter ferry to the island across the bay",
+   "text": "The little ferry across the bay stops sailing in the winter, which is when the island has the most need of the mainland and the least way of getting there. A second, smaller vessel and a crew's wages for the dark months would keep the island's bread, post and hospital appointments running all year.",
+   "stages": [
+    {
+     "name": "The boat",
+     "share": 25,
+     "days": 4,
+     "line": "A second-hand boat arrives with a good hull and a name nobody can say aloud."
+    },
+    {
+     "name": "The refit and the crew",
+     "share": 35,
+     "days": 6,
+     "line": "A crew is found. They have a combined seventy years at sea and no tolerance for fuss."
+    },
+    {
+     "name": "The timetable",
+     "share": 40,
+     "days": 8,
+     "line": "The timetable is printed. It's the first one in years that anyone has believed."
+    }
+   ],
+   "change": "Finished, the ferry sails every day of the year and the island is no longer an island in winter. Your name goes in the wheelhouse.",
+   "ask": [
+    "The ferry's off for the winter, {player}, and the island's left with the post by the Saturday boat and a dentist it can't get to.",
+    "A second boat and a crew for the dark months would see them through. It's not a fortune, not on the scale of what they pay for what they lose."
+   ],
+   "progress": [
+    "The new boat's in the yard, and there's a smell of paint and a sound of men who disagree about the paint."
+   ],
+   "done": [
+    "The winter sailings began on Monday, {player}. In the first week there were three hospital runs and a wedding. They sent a cake."
+   ],
+   "opened": "The winter ferry is sailing, and the first crossing was full.",
+   "plaque": "The winter sailings were paid for by {player}, so that the island is never cut off.",
+   "effects": {
+    "standing": 8,
+    "item": "tablet"
+   }
+  },
+  {
+   "id": "inverness_footbridge",
+   "zone": "inverness",
+   "npc": "castle_walker",
+   "who": "Walker",
+   "badges": 8,
+   "cost": 28000,
+   "name": "Inverness Footbridge",
+   "title": "A footbridge over the Ness",
+   "text": "The river Ness has bridges, but not where the people who walk want them. A new footbridge by the Ness Islands would save the long way round to the far bank and put the islands a few steps from the town.",
+   "stages": [
+    {
+     "name": "The abutments",
+     "share": 25,
+     "days": 4,
+     "line": "The stonework goes in on both banks. It is, by the standard of the river, very straight."
+    },
+    {
+     "name": "The span",
+     "share": 35,
+     "days": 6,
+     "line": "The span is lifted into place in a single morning, to the applause of two dogs."
+    },
+    {
+     "name": "The rails and the lamps",
+     "share": 40,
+     "days": 8,
+     "line": "The last rail is on. The lamps are lit on a trial basis, and are very pretty."
+    }
+   ],
+   "change": "Finished, there is a footbridge across the Ness by the Ness Islands sign, and the far bank is a few steps away. Your name goes on the rail.",
+   "ask": [
+    "The river's a lovely thing, {player}, but if you want to be on the other side you walk for ten minutes up the road to find a bridge, and ten back.",
+    "A footbridge by the Ness Islands would suit me and every dog in the town. There's a man at the council with a plan. He's missing only the money."
+   ],
+   "progress": [
+    "The abutments are in on both banks, and the river is behaving, which is not like it."
+   ],
+   "done": [
+    "The new bridge is a joy, {player}. You step across by the Ness Islands sign and you're over before you've made up your mind. Mind the lamps, they're hot."
+   ],
+   "opened": "The footbridge is open over the Ness, by the Ness Islands sign.",
+   "plaque": "The footbridge was given to Inverness by {player}, so that nobody has to take the long way round.",
+   "effects": {
+    "standing": 8,
+    "item": "tablet",
+    "warps": [
+     {
+      "x": 21,
+      "y": 34
+     },
+     {
+      "x": 26,
+      "y": 34
+     }
+    ]
+   }
+  },
+  {
+   "id": "blaenavon_hall",
+   "zone": "blaenavon",
+   "npc": "bla_old",
+   "who": "Old Resident",
+   "badges": 5,
+   "cost": 22500,
+   "name": "Blaenavon Workmen's Hall",
+   "title": "The workmen's hall, open again",
+   "text": "The workmen's hall was built from pennies out of the miners' wages: a library, a reading room, a hall for the choir and a cinema. It has been shut for years. Reopened, it would be a library and a cinema and a place for the choir again.",
+   "stages": [
+    {
+     "name": "The roof and the damp",
+     "share": 25,
+     "days": 4,
+     "line": "The roof is the first thing. The damp is the second. The hall is, as ever, a long job."
+    },
+    {
+     "name": "The hall and the reading room",
+     "share": 35,
+     "days": 6,
+     "line": "The hall floor has been sanded, and the reading room has tables again."
+    },
+    {
+     "name": "The cinema and the library",
+     "share": 40,
+     "days": 8,
+     "line": "The projector is installed. The first film is a comedy, because the committee voted."
+    }
+   ],
+   "change": "Finished, there is a library, a cinema and a choir at home in the middle of the town. Your name goes in the porch.",
+   "ask": [
+    "My father paid his pennies a week into that hall, {player}, and so did his. They built it so the men could read after the pit and sing before the supper.",
+    "It's boarded up now. We'd give anything to see it open again. We've not got anything, mind. But we'd give it."
+   ],
+   "progress": [
+    "There's a skip outside the hall and a hum of electric saws. The choir has been seen on the pavement looking hopeful."
+   ],
+   "done": [
+    "The choir sang in the hall on Sunday, {player}. The sound! I stood at the back and I could have wept, and I did, a bit."
+   ],
+   "opened": "The workmen's hall is open again, with a library, a cinema and a choir at home.",
+   "plaque": "The workmen's hall was reopened by {player}, in the spirit of the pennies that built it.",
+   "effects": {
+    "standing": 7,
+    "item": "bara_brith"
+   }
+  },
+  {
+   "id": "aberystwyth_cliff",
+   "zone": "aberystwyth",
+   "npc": "cliff_op",
+   "who": "Cliff Railway Operator",
+   "badges": 4,
+   "cost": 25000,
+   "name": "Aberystwyth Cliff Railway",
+   "title": "A winter overhaul for the Cliff Railway",
+   "text": "The Cliff Railway up Constitution Hill has been carrying people to the top since Victorian days, and its cars, rails and winding gear are older than anyone's grandmother. Winter takes a little more of it every year. An overhaul of the machinery and new cars with a ramp would keep it climbing for another generation.",
+   "stages": [
+    {
+     "name": "The winding gear",
+     "share": 25,
+     "days": 4,
+     "line": "The old gear is stripped down, oiled and put back, which takes a lot of men and a very small spanner."
+    },
+    {
+     "name": "The rails and the new cars",
+     "share": 35,
+     "days": 6,
+     "line": "The new cars have the old look and a ramp. Nobody can say how they did it."
+    },
+    {
+     "name": "The top station",
+     "share": 40,
+     "days": 8,
+     "line": "The station at the top is repainted. The view has not been touched."
+    }
+   ],
+   "change": "Finished, the railway runs all year with a ramp for chairs and prams. Your name goes on the first car.",
+   "ask": [
+    "Every winter she has a cold, {player}, and every spring she's a bit slower. I've run her for years. She's older than I am, and I'm not the youngest.",
+    "A proper overhaul and a ramp for the chairs and prams, and she'll climb that hill for another hundred years. But it's not cheap."
+   ],
+   "progress": [
+    "The cars are in pieces on the prom, and I'm having my sandwiches in the sun, which I'm told is what they call a break."
+   ],
+   "done": [
+    "She's running like new, {player}. A woman in a wheelchair went up on Saturday and said it was the best day of her year. I had to look at the rails for a while."
+   ],
+   "opened": "The Cliff Railway is running again, with new cars and a ramp.",
+   "plaque": "The Cliff Railway was overhauled by {player}, so that everyone can get to the top.",
+   "effects": {
+    "standing": 7,
+    "item": "welsh_cakes"
+   }
+  },
+  {
+   "id": "dingle_pier",
+   "zone": "dingle",
+   "npc": "boat_skipper",
+   "who": "Skipper",
+   "badges": 6,
+   "cost": 21000,
+   "name": "Dingle Pier",
+   "title": "An ice plant and a slipway for the pier",
+   "text": "A boat that lands its fish at Dingle needs ice to keep them and a slipway to haul out on, and the pier has the one in a failing machine and the other in memory. A new ice plant and a proper slipway would keep the boats working and the catch fresher.",
+   "stages": [
+    {
+     "name": "The slipway",
+     "share": 25,
+     "days": 4,
+     "line": "The slipway goes in at low water, and is the first thing in the harbour to be straight."
+    },
+    {
+     "name": "The ice plant",
+     "share": 35,
+     "days": 6,
+     "line": "The ice plant hums. It's the first time in a year that the pier has not smelt of warm fish."
+    },
+    {
+     "name": "The fish store",
+     "share": 40,
+     "days": 8,
+     "line": "A fish store with a floor that drains. Nobody had thought of it, and everybody should have."
+    }
+   ],
+   "change": "Finished, the boats work all year with fresher fish, and a rough week costs them less. Your name goes on the pier.",
+   "ask": [
+    "The ice machine broke again, {player}, and the fish don't wait for the engineer. We've had it in bits since the spring.",
+    "A new plant and a slipway to haul out on, and we'd have a harbour that's the equal of any. It'd take a few of those pound notes you have."
+   ],
+   "progress": [
+    "The pier's full of diggers and men with coffee. They tell me the slipway will be a thing of beauty."
+   ],
+   "done": [
+    "The ice is flowing, {player}. We landed a catch on Friday that looked like it had been caught that minute. And it was, near enough."
+   ],
+   "opened": "The ice plant and the slipway are working, and the boats are landing the best fish in years.",
+   "plaque": "The pier's ice plant and slipway were paid for by {player}, for the boats and the fish.",
+   "effects": {
+    "standing": 7,
+    "item": "barmbrack",
+    "deed": {
+     "boat_dingle": {
+      "shield": 0.1,
+      "takings": 1.04
+     }
+    }
+   }
+  },
+  {
+   "id": "galway_hookers",
+   "zone": "galway",
+   "npc": "hooker_skipper",
+   "who": "Hooker Skipper",
+   "badges": 6,
+   "cost": 17500,
+   "name": "Galway Boat Shed",
+   "title": "A boat shed for the hookers",
+   "text": "The Galway hooker, with her black tarred hull and her brown sails, was a working boat before she was a sight. The people who build and mend them work in a shed that lets in the rain. A new boat shed and a sail loft would keep the old craft alive and teach the young ones how.",
+   "stages": [
+    {
+     "name": "The shed",
+     "share": 25,
+     "days": 4,
+     "line": "The shed goes up. It has doors big enough for a boat, which is the main thing."
+    },
+    {
+     "name": "The slip and the sail loft",
+     "share": 35,
+     "days": 6,
+     "line": "The sail loft is on the first floor and smells of tar and good canvas."
+    },
+    {
+     "name": "The apprentices",
+     "share": 40,
+     "days": 8,
+     "line": "Six apprentices are signed on. The oldest is fifteen, and the youngest is already giving advice."
+    }
+   ],
+   "change": "Finished, the boat-builders have a dry shed and six apprentices, and the hookers keep racing. Your name goes on the door.",
+   "ask": [
+    "She's a lovely boat, the hooker, {player}. The tarred hull, the brown sail. She'd outsail anything her size. But the shed is held up by habit.",
+    "A good roof, a good slip and a sail loft, and the young ones would learn what the old ones know."
+   ],
+   "progress": [
+    "The new shed's frame is up, and the apprentices are already arguing about how to tie a knot."
+   ],
+   "done": [
+    "The hookers raced on Sunday, {player}, and every sail in that bay was one we'd mended. The young lad at the tiller is nine and has a face like thunder. A natural."
+   ],
+   "opened": "The boat shed is open, with a sail loft and a slip, and the apprentices have started.",
+   "plaque": "The boat shed was built by {player}, so that the hookers will sail on.",
+   "effects": {
+    "standing": 7,
+    "item": "barmbrack"
+   }
+  },
+  {
+   "id": "enniskillen_boathouse",
+   "zone": "enniskillen",
+   "npc": "en_canoeist",
+   "who": "Canoeist",
+   "badges": 7,
+   "cost": 16000,
+   "name": "Enniskillen Boathouse",
+   "title": "A boathouse on the Erne",
+   "text": "The Erne is the best thing about Enniskillen, and for most people the only way onto it is a muddy bank. A boathouse for the rowing and canoe club, with a launching ramp that anybody can use, would put the water within reach of the whole town.",
+   "stages": [
+    {
+     "name": "The ramp",
+     "share": 25,
+     "days": 4,
+     "line": "The ramp goes in, with a handrail, so you can get into a boat if you've legs or not."
+    },
+    {
+     "name": "The boathouse",
+     "share": 35,
+     "days": 6,
+     "line": "The boathouse goes up with room for forty boats and a drying room, which is the best room."
+    },
+    {
+     "name": "Boats for the school",
+     "share": 40,
+     "days": 8,
+     "line": "Eight new boats arrive for the school, in colours that are visible from space."
+    }
+   ],
+   "change": "Finished, anyone can launch on the Erne from the new ramp and the club has a boathouse to itself. Your name goes on the first boat.",
+   "ask": [
+    "It's a shame, {player}. The loveliest water in the county and you get on it by a muddy bank and a prayer.",
+    "A boathouse for the club and a ramp for anyone with a boat and a notion, and the whole town would be out on the lake by the summer."
+   ],
+   "progress": [
+    "The ramp's down and the boathouse is a frame. The club has taken to standing in it and imagining things."
+   ],
+   "done": [
+    "We have forty boats out on a Saturday now, {player}, and some of the paddlers are in their eighties. We named a boat after you. It's the one that leaks."
+   ],
+   "opened": "The boathouse and the ramp are open, and the first club boats are on the water.",
+   "plaque": "The boathouse and the launching ramp were given to Enniskillen by {player}, so that the Erne belongs to everyone.",
+   "effects": {
+    "standing": 7,
+    "item": "ulster_fry"
+   }
+  }
+ ]
+}
