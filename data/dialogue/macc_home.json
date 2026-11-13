@@ -131,6 +131,11 @@
       {
        "do": "say",
        "who": "Mum",
+       "text": "And the cat's not touched her breakfast since the night they hummed. Went up the moor that night and hasn't been seen since. If you see her out there, tell her there's a saucer."
+      },
+      {
+       "do": "say",
+       "who": "Mum",
        "text": "I said you were busy being asleep. She said that was 'not an excuse'."
       },
       {
@@ -235,6 +240,55 @@
      "text": "All ten Wardstones on one shelf. I had to move the good china to the back bedroom. Worth it. Don't tell your nan."
     }
    ]
+  },
+  {
+   "do": "if",
+   "flag": "cat_waiting",
+   "then": [
+    {
+     "do": "say",
+     "who": "Mum",
+     "text": "Oh, and that cat of ours has been sat in the window since you left. Hasn't moved, hasn't touched her tea. I think she's waiting for you, love. She's by her bowl."
+    }
+   ]
+  },
+  {
+   "do": "if",
+   "flag": "cat_with_you",
+   "then": [
+    {
+     "do": "daily",
+     "key": "cat_mum_offer",
+     "then": [
+      {
+       "do": "family_cat",
+       "op": "say",
+       "who": "Mum",
+       "text": "Want me to keep {cat} here a while? She does like the window. I'd only talk to her."
+      },
+      {
+       "do": "choice",
+       "text": "Leave her at home?",
+       "options": [
+        "Keep her with me",
+        "Leave her by the bowl"
+       ],
+       "set": "cat_leave"
+      },
+      {
+       "do": "if",
+       "flag": "cat_leave",
+       "eq": 1,
+       "then": [
+        {
+         "do": "family_cat",
+         "op": "leave"
+        }
+       ]
+      }
+     ]
+    }
+   ]
   }
  ],
  "cold_open": [
@@ -300,6 +354,83 @@
   {
    "do": "wardrobe",
    "mirror": true
+  }
+ ],
+ "cat": [
+  {
+   "do": "if",
+   "flag": "cat_waiting",
+   "then": [
+    {
+     "do": "family_cat",
+     "op": "say",
+     "who": "",
+     "text": "She is sat in the window with her tail round her feet and the look of someone who has been kept waiting and wants it known."
+    },
+    {
+     "do": "say",
+     "who": "{player}",
+     "text": "Hello, you."
+    },
+    {
+     "do": "family_cat",
+     "op": "say",
+     "who": "",
+     "text": "She hops down and sniffs your hand, then your shoes, which have clearly been places. Her eyes are a green they were not before you left."
+    },
+    {
+     "do": "family_cat",
+     "op": "say",
+     "who": "",
+     "text": "The old cat is still in there somewhere. There is also something older, looking out of her."
+    },
+    {
+     "do": "family_cat",
+     "op": "join",
+     "how": "waiting"
+    },
+    {
+     "do": "say",
+     "who": "Mum",
+     "text": "I heard that! I knew she'd come round. I said so, didn't I? I said so."
+    }
+   ],
+   "else": [
+    {
+     "do": "family_cat",
+     "op": "say",
+     "who": "",
+     "text": "{cat} is curled up by her bowl, one ear turning to follow you round the room."
+    },
+    {
+     "do": "choice",
+     "text": "Take her with you?",
+     "options": [
+      "Take her along",
+      "Let her sleep"
+     ],
+     "set": "cat_take"
+    },
+    {
+     "do": "if",
+     "flag": "cat_take",
+     "eq": 0,
+     "then": [
+      {
+       "do": "family_cat",
+       "op": "collect"
+      }
+     ],
+     "else": [
+      {
+       "do": "family_cat",
+       "op": "say",
+       "who": "",
+       "text": "{cat} closes her eyes, with the air of a cat who would have said no anyway."
+      }
+     ]
+    }
+   ]
   }
  ]
 }

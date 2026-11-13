@@ -1,0 +1,249 @@
+{
+  "line": "sootkit",
+  "species": [
+    {
+      "id": "sootkit",
+      "real": "In Britain a black cat crossing your path has long been taken as a sign of good luck, the other way round from the old American belief.",
+      "names": {"cy": "cath ddu", "ga": "cat dubh", "gd": "cat dubh"},
+      "name": "Sootkit",
+      "types": [
+        "night"
+      ],
+      "base": {
+        "hp": 38,
+        "atk": 56,
+        "def": 38,
+        "lore": 54,
+        "ward": 44,
+        "spd": 80
+      },
+      "growth": "medium",
+      "catch_rate": 45,
+      "base_xp": 62,
+      "learnset": [
+        [
+          1,
+          "shadow_nip"
+        ],
+        [
+          1,
+          "quick_nip"
+        ],
+        [
+          5,
+          "fairy_pinch"
+        ],
+        [
+          9,
+          "moth_dust"
+        ],
+        [
+          12,
+          "black_cat_crossing"
+        ],
+        [
+          15,
+          "moonlit_pounce"
+        ],
+        [
+          19,
+          "glamour"
+        ],
+        [
+          23,
+          "vixen_scream"
+        ],
+        [
+          27,
+          "bad_luck_bump"
+        ],
+        [
+          32,
+          "fog_lure"
+        ],
+        [
+          38,
+          "dark_of_the_moon"
+        ],
+        [
+          44,
+          "bewitching_hour"
+        ]
+      ],
+      "evolves": {
+        "to": "grimalkin",
+        "level": 16,
+        "bond": 220
+      },
+      "habitat": [],
+      "appendix": true,
+      "dex": {
+        "text": "Small, black and entirely sure the house is hers. Went up on the moor the night the stones hummed and came home with opinions. Sits on whatever you were about to use.",
+        "fact": "In Britain a black cat crossing your path is traditionally lucky, the reverse of the belief in the United States."
+      },
+      "sprite": "sootkit"
+    },
+    {
+      "id": "grimalkin",
+      "real": "Grimalkin is an old word for a cat, from grey and malkin, a pet form of Matilda. Shakespeare's first witch in Macbeth answers to Graymalkin.",
+      "names": {"cy": "cath ddu", "ga": "cat dubh", "gd": "cat dubh"},
+      "name": "Grimalkin",
+      "types": [
+        "night",
+        "fae"
+      ],
+      "base": {
+        "hp": 54,
+        "atk": 76,
+        "def": 52,
+        "lore": 78,
+        "ward": 62,
+        "spd": 108
+      },
+      "growth": "medium",
+      "catch_rate": 45,
+      "base_xp": 142,
+      "learnset": [
+        [
+          1,
+          "shadow_nip"
+        ],
+        [
+          1,
+          "quick_nip"
+        ],
+        [
+          5,
+          "fairy_pinch"
+        ],
+        [
+          9,
+          "moth_dust"
+        ],
+        [
+          12,
+          "black_cat_crossing"
+        ],
+        [
+          15,
+          "moonlit_pounce"
+        ],
+        [
+          19,
+          "glamour"
+        ],
+        [
+          23,
+          "vixen_scream"
+        ],
+        [
+          27,
+          "bad_luck_bump"
+        ],
+        [
+          32,
+          "fog_lure"
+        ],
+        [
+          38,
+          "dark_of_the_moon"
+        ],
+        [
+          44,
+          "bewitching_hour"
+        ]
+      ],
+      "evolves": {
+        "to": "catsith",
+        "level": 32,
+        "bond": 240
+      },
+      "habitat": [],
+      "appendix": true,
+      "dex": {
+        "text": "Her eyes have gone the green of a traffic light, and the dark leans in when she walks past. Still wants her tea at six, and will say so at five.",
+        "fact": "Grimalkin is an old word for a cat. In Macbeth the first witch calls out to her familiar, Graymalkin."
+      },
+      "sprite": "grimalkin"
+    },
+    {
+      "id": "catsith",
+      "real": "The cat-sith of Highland folklore was a fairy cat as big as a dog, black with a white spot on its chest, said to steal a soul before the burial.",
+      "names": {"cy": "cath ddu", "ga": "cat dubh", "gd": "cat-sìth"},
+      "name": "Cat-Sìth",
+      "types": [
+        "fae",
+        "night"
+      ],
+      "base": {
+        "hp": 66,
+        "atk": 96,
+        "def": 62,
+        "lore": 100,
+        "ward": 78,
+        "spd": 128
+      },
+      "growth": "medium",
+      "catch_rate": 45,
+      "base_xp": 236,
+      "learnset": [
+        [
+          1,
+          "shadow_nip"
+        ],
+        [
+          1,
+          "quick_nip"
+        ],
+        [
+          5,
+          "fairy_pinch"
+        ],
+        [
+          9,
+          "moth_dust"
+        ],
+        [
+          12,
+          "black_cat_crossing"
+        ],
+        [
+          15,
+          "moonlit_pounce"
+        ],
+        [
+          19,
+          "glamour"
+        ],
+        [
+          23,
+          "vixen_scream"
+        ],
+        [
+          27,
+          "bad_luck_bump"
+        ],
+        [
+          32,
+          "fog_lure"
+        ],
+        [
+          38,
+          "dark_of_the_moon"
+        ],
+        [
+          44,
+          "bewitching_hour"
+        ]
+      ],
+      "evolves": null,
+      "habitat": [],
+      "appendix": true,
+      "dex": {
+        "text": "A great black fairy cat with a white spot on her chest, crossing the moor so quietly that the heather forgets to rustle. Still knows exactly which chair is yours.",
+        "fact": "In Highland folklore the cat-sìth is a great black fairy cat with a white spot on its chest. It was said to steal a soul before the burial, so the dead were watched over all night."
+      },
+      "sprite": "catsith"
+    }
+  ]
+}

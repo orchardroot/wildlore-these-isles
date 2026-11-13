@@ -162,6 +162,11 @@ class Host extends RefCounted:
 		if a:
 			a.face(dir)
 
+	## The family cat's moves in the world: "approach", "gone" or "home" (see FamilyCatScene).
+	func family_cat(op: String) -> void:
+		close_box()
+		await FamilyCatScene.act(_ow, op)
+
 	func face_player(npc: String) -> void:
 		var a := _actor(npc)
 		if a and a != _ow.player:

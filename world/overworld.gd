@@ -135,6 +135,7 @@ func load_zone(zone_id: String, pos: Vector2i, facing: String) -> void:
 		Audio.play_music(zone.music)
 	Audio.enter_zone(self, zone, weather)  # ambience bed, weather layer, muffled music indoors, town bells
 	_dark.visible = zone.dark
+	FamilyCatScene.arrive(self)  # w54: the family cat's flags, her scene on the Cat and Fiddle road, her note
 	_dev_radio()
 
 ## Dev switch `--talk=radio[:n]`: the wireless reads Today's Walk as soon as the zone is ready, from line n (screenshots).
@@ -319,6 +320,7 @@ func _side_npcs() -> Array:
 	Festivals.rollover(Game.data)  # a festival that has come round again starts its quest afresh
 	var out := SideStories.npcs_for(zone.id, Game.data) + Festivals.npcs_for(zone.id) + Regulars.npcs_for(zone.id, Game.data)  # plus whoever's festival is on, and the Regulars
 	out.append_array(LangLessons.npcs_for(zone.id))  # language teachers (4.5)
+	out.append_array(FamilyCat.npcs_for(zone.id, Game.data, Game.dex))  # w54: the family cat, in the window by her bowl
 	var taken := {}
 	for d in out:
 		var p := SideStories.nearest_free(zone, Vector2i(int(d.x), int(d.y)), taken)

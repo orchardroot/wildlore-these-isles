@@ -40,7 +40,7 @@ const ENTRANCE_STYLES := ["cave_mouth", "marble_arch_cave", "canal_tunnel", "pas
 const ENTRANCE_PROPS := ["tunnel_portal", "cave_cleft", "crypt_arch", "brick_arch", "harbour_arch"]
 ## Text tokens the dialogue runner fills in (Commands, Looks).
 const TOKENS := ["{player}", "{rival}", "{greeting}", "{caught}", "{left}", "{total}", "{he}", "{him}", "{his}", "{Mr}", "{man}",
-	"{He}", "{Him}", "{His}", "{Man}", "{worn_top}", "{worn_shoes}", "{worn_neck}", "{worn_hat}", "{worn_coat}"]
+	"{He}", "{Him}", "{His}", "{Man}", "{worn_top}", "{worn_shoes}", "{worn_neck}", "{worn_hat}", "{worn_coat}", "{cat}", "{lead}"]  # {cat} and {lead}: CatTalk
 const HINT_RADIUS := 8
 ## "<thing> by the <place>": where each can be, as for OBJECTS but only things with a tile (see _spots).
 const THINGS := {"lever": ["deep:levers", "prop:lever"], "handle": ["deep:levers"], "switch": ["deep:levers"],

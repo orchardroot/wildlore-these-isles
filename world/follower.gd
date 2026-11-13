@@ -206,6 +206,9 @@ func talk() -> void:
 			place = ZoneData.load_id(str(town)).name
 	var hp_frac := float(_lead.hp) / maxf(1.0, float(_lead.max_hp()))
 	Bond.talk(Game.data, _lead)  # a chat now and then brings you closer (once an in-game hour)
+	if FamilyCat.is_family(_lead):  # w54: the family cat has her own things to say
+		await _ow.say([FamilyCat.mood_line(_lead, hp_frac, str(_ow.weather), Game.phase(), place, kind, _rng.randi())])
+		return
 	await _ow.say([mood_line(_lead.display_name(), hp_frac, str(_ow.weather), Game.phase(), place, kind, _rng.randi() % 1000, _lead.friendship)])
 
 ## A new lead (or the setting changed): swap the sprite for the new creature's.
