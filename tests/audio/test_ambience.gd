@@ -228,6 +228,29 @@ func test_ambience_volume_defaults_and_round_trips() -> void:
 	Settings.path = saved_path
 	Settings.ambience_volume = saved
 
+func test_text_blip_is_on_by_default_and_round_trips() -> void:
+	var saved_path := Settings.path
+	var saved := Settings.text_blip
+	Settings.path = TMP
+	var f := FileAccess.open(TMP, FileAccess.WRITE)
+	f.store_string('{"text_speed": "normal"}')  # an old file without the key
+	f.close()
+	Settings.text_blip = true
+	Settings.load_settings()
+	assert_true(Settings.text_blip, "an old file keeps the blips on")
+	Settings.text_blip = false
+	Settings.save_settings()
+	Settings.text_blip = true
+	Settings.load_settings()
+	assert_false(Settings.text_blip, "turned off and read back")
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(TMP))
+	Settings.path = saved_path
+	Settings.text_blip = saved
+
+func test_the_blip_and_thunder_sounds_exist() -> void:
+	for id in ["text_blip", "thunder", "thunder_far"]:
+		assert_true(ResourceLoader.exists("res://audio/sfx/%s.wav" % id), id)
+
 # --- levels -------------------------------------------------------------------------------------------------------
 
 func _music_median() -> float:

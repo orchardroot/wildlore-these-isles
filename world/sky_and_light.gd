@@ -88,7 +88,6 @@ func _ready() -> void:
 	env.adjustment_saturation = 1.0
 	env.adjustment_contrast = 1.04
 	env.reflected_light_source = Environment.REFLECTION_SOURCE_DISABLED  # the sky is only a backdrop: nothing reflects it
-	env.fog_sky_affect = 0.0  # and fog does not paint over it (the haze is the zone's own, in front of the world)
 	_sky_mat = ShaderMaterial.new()
 	_sky_mat.shader = load("res://art/shaders/night_sky.gdshader")
 	var sky_res := Sky.new()
@@ -484,6 +483,7 @@ func _apply_stars(minutes: int, bg: Color) -> void:
 	var look := NightSky.look(minutes, NightSky.moon_phase(Calendar.year(), t.x, t.y), weather)
 	var show: bool = not interior and (float(look.stars) > 0.01 or float(look.moon_on) > 0.01)
 	env.background_mode = Environment.BG_SKY if show else Environment.BG_COLOR
+	env.fog_sky_affect = 0.0 if show else 1.0  # fog would paint the stars out; by day it is the backdrop's own haze
 	if not show:
 		return
 	_sky_mat.set_shader_parameter("base_colour", bg)

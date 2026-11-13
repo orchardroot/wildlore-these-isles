@@ -53,7 +53,7 @@ void fragment() {
 	if (grass > 0.0) {
 		float lum = dot(c, vec3(0.299, 0.587, 0.114));
 		c = mix(c, c * vec3(0.9, 1.12, 0.78) + vec3(0.0, 0.025, 0.0), spring * 0.45 * grass);
-		c = mix(c, vec3(0.62, 0.4, 0.14) * (0.55 + lum * 1.7), autumn * 0.7 * grass);
+		c = mix(c, vec3(0.62, 0.4, 0.14) * (0.55 + lum * 1.7), autumn * 0.62 * grass);
 		c = mix(c, vec3(lum) * vec3(1.12, 1.16, 1.18) + vec3(0.07, 0.075, 0.085), winter * 0.55 * grass);
 		if (spring > 0.0 && detail > 0.0) {
 			float daisy = step(0.985, vnoise(world_pos.xz * 7.3 + 11.0));

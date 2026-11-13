@@ -282,8 +282,8 @@ static func render(id: String) -> PackedFloat32Array:
 			_sum(bed, _noise(m, 141, 220.0, 40.0), 0.5)
 			var talk_a := _noise(m, 142, 1100.0, 280.0)
 			var talk_b := _noise(m, 143, 2200.0, 700.0)
-			var sylla := _lfo(m, n, [[37, 0.4, 0.0], [23, 0.3, 1.2], [9, 0.25, 2.4]])
-			var syllb := _lfo(m, n, [[29, 0.4, 0.7], [17, 0.3, 2.0], [5, 0.25, 0.3]])
+			var sylla := _lfo(m, n, [[37, 0.4, PI / 2.0], [23, 0.3, PI / 2.0], [9, 0.25, PI / 2.0]])
+			var syllb := _lfo(m, n, [[29, 0.4, PI / 2.0], [17, 0.3, PI / 2.0], [5, 0.25, PI / 2.0]])
 			for i in m:
 				talk_a[i] *= clampf(0.55 + sylla[i], 0.05, 1.3)
 				talk_b[i] *= clampf(0.5 + syllb[i], 0.0, 1.2)
