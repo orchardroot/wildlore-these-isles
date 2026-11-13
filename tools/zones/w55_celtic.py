@@ -9,7 +9,7 @@ import os, sys, importlib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import w55_lib as L
 
-ROUTES = ["aberglaslyn", "pen_y_gwryd", "llyn_tegid", "glamorgan_coast"]
+ROUTES = ["aberglaslyn", "pen_y_gwryd", "llyn_tegid", "glamorgan_coast", "healy_pass"]
 
 
 def main(names):

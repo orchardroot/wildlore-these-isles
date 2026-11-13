@@ -1,0 +1,32 @@
+{
+ "id": "hp_cornish",
+ "name": "Heritage Volunteer Jago",
+ "class": "Volunteer",
+ "sprite": "explorer",
+ "party": [
+  {
+   "species": "tormane",
+   "level": 53
+  },
+  {
+   "species": "sikawhistle",
+   "level": 54
+  },
+  {
+   "species": "hushwing",
+   "level": 54
+  }
+ ],
+ "ai": "trainer",
+ "money": 1880,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Heritage Volunteer Jago",
+   "text": "I'm from Cornwall, originally. My great-great-grandad dug here. I came to see his name on a list and stayed for the tea."
+  }
+ ],
+ "win": "That's the thing about a good fight. It reminds you of your ancestors, and then you apologise to them.",
+ "after": "Copper and tin, same men, same engines. Different weather.",
+ "scaled_floor": 54
+}

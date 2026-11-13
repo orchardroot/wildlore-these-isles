@@ -128,6 +128,44 @@
    "at": "glamorgan_coast",
    "item": "ammonite",
    "line": "A jam jar under a stone. Inside, a spiral of grey rock, wrapped in a tea towel. Someone's pride and joy."
+  },
+  {
+   "id": "poi_healy_pass_den",
+   "zone": "healy_pass",
+   "near": [
+    8,
+    20
+   ],
+   "kind": "den",
+   "at": "healy_pass",
+   "species": "corncrake"
+  },
+  {
+   "id": "poi_healy_pass_stone",
+   "zone": "healy_pass",
+   "near": [
+    58,
+    32
+   ],
+   "kind": "stone",
+   "at": "healy_pass",
+   "stat": "ward",
+   "lore": [
+    "It is a standing stone, green with lichen, leaning like it has been told a long story.",
+    "The real thing is the standing stones of Beara and west Cork: the peninsula has dozens, many of them older than the roads."
+   ]
+  },
+  {
+   "id": "poi_healy_pass_cache",
+   "zone": "healy_pass",
+   "near": [
+    6,
+    14
+   ],
+   "kind": "cache",
+   "at": "healy_pass",
+   "item": "bunratty_mead",
+   "line": "A hip flask jammed behind a boulder. The label says 'for emergencies'. You have decided this counts."
   }
  ]
 }

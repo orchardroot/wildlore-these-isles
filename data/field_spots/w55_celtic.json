@@ -58,5 +58,20 @@
   },
   "flag": "field_glamorgan_coast_mend",
   "at": "glamorgan_coast"
+ },
+ {
+  "id": "fs_healy_pass_mend",
+  "zone": "healy_pass",
+  "x": 43,
+  "y": 28,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Barmbrack in the hollow.",
+  "reward": {
+   "item": "barmbrack",
+   "qty": 1
+  },
+  "flag": "field_healy_pass_mend",
+  "at": "healy_pass"
  }
 ]

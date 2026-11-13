@@ -416,6 +416,7 @@ POIS = []
 SPOTS = []
 
 def poi_den(zid, x, y, species, at, mentioned_by=None):
+    need_species(species)
     p = {"id": "poi_%s_den" % zid, "zone": zid, "near": [x, y], "kind": "den", "at": at, "species": species}
     if mentioned_by:
         p["mentioned_by"] = mentioned_by
