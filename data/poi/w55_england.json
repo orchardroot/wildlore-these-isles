@@ -333,6 +333,61 @@
    "kind": "den",
    "at": "cranborne_chase",
    "species": "megalorn"
+  },
+  {
+   "id": "poi_varsity_stone",
+   "zone": "varsity_line",
+   "near": [
+    60,
+    6
+   ],
+   "kind": "stone",
+   "at": "varsity_line",
+   "stat": "spd",
+   "lore": [
+    "The old milepost still says Oxford on one side and Cambridge on the other. Someone has added a small sticker: 'DELAYED'.",
+    "The real thing is the Varsity Line itself: the railway between Oxford and Cambridge, most of it closed in the late 1960s, now being rebuilt in stages as East West Rail."
+   ]
+  },
+  {
+   "id": "poi_varsity_cache",
+   "zone": "varsity_line",
+   "near": [
+    6,
+    40
+   ],
+   "kind": "cache",
+   "at": "varsity_line",
+   "item": "four_leaf_clover",
+   "line": "In the old platform edging: a flask, a ticket for the 7.42 to Cambridge, and a clover, pressed in a Ladybird book."
+  },
+  {
+   "id": "poi_varsity_camp",
+   "zone": "varsity_line",
+   "near": [
+    34,
+    40
+   ],
+   "kind": "camp",
+   "at": "varsity_line",
+   "names": [
+    [
+     "Scrap Dealer Vic",
+     "Scavenger"
+    ],
+    [
+     "Scrap Dealer Jan",
+     "Scavenger"
+    ]
+   ],
+   "party": [
+    "railspark",
+    "shuttlecog",
+    "binfox"
+   ],
+   "line": "Reclaiming old rail. It's called heritage when somebody else does it.",
+   "money": 2700,
+   "item": "iron_snare"
   }
  ]
 }

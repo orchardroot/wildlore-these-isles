@@ -30,7 +30,7 @@ func test_poole_hangs_off_the_estuary_and_the_islands_are_cul_de_sacs() -> void:
 	assert_eq(all["exe_estuary"].edges["east"].to, "poole")
 	assert_eq(all["exe_estuary"].edges["north"].to, "exeter", "the estuary's old edges are untouched")
 	assert_eq(all["exe_estuary"].edges["west"].to, "dartmoor")
-	assert_eq(all["poole"].edges.keys(), ["west"])
+	assert_eq(all["poole"].edges.keys(), ["west", "north"], "Poole: the estuary road, and wave 55's Cranborne Chase road")
 	assert_eq(all["st_helier"].edges.keys(), ["north"])
 	assert_eq(all["jersey_country"].edges.keys(), ["south"])
 	assert_eq(all["st_peter_port"].edges.keys(), ["west"])

@@ -99,5 +99,20 @@
   },
   "flag": "field_cranborne_loft",
   "at": "cranborne_chase"
+ },
+ {
+  "id": "fs_varsity_roundup",
+  "zone": "varsity_line",
+  "x": 22,
+  "y": 38,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep on the old trackbed, all facing the wrong way and all convinced the next train is theirs. {lead} circles, low and quick, and the flock files through the gate like passengers. A signalman's flask is left on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_varsity_roundup",
+  "at": "varsity_line"
  }
 ]

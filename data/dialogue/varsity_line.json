@@ -1,0 +1,50 @@
+{
+ "vl_cyclist": [
+  {
+   "do": "say",
+   "who": "Sustrans Cyclist",
+   "text": "It's a national cycle route now, where the trains used to be. National Route 51. Bletchley to Oxford one way and Cambridge the other."
+  },
+  {
+   "do": "say",
+   "who": "Sustrans Cyclist",
+   "text": "You can still see where the platforms were. And the signal boxes. And the pie shops that have not noticed."
+  }
+ ],
+ "vl_volunteer": [
+  {
+   "do": "say",
+   "who": "Airship Volunteer",
+   "text": "The R101 was the biggest flying thing in the world. It was nearly as long as the Titanic. It carried fifty-odd people out over France in bad weather, and that was the last we ever knew of her."
+  },
+  {
+   "do": "say",
+   "who": "Airship Volunteer",
+   "text": "We were so proud of her. Then, in a field near Beauvais, we had a funeral."
+  }
+ ],
+ "vl_pilgrim": [
+  {
+   "do": "say",
+   "who": "Meeting House Guide",
+   "text": "They locked Bunyan up for preaching. He was in Bedford gaol twelve years, off and on. He made shoelaces to support his family and wrote in between."
+  },
+  {
+   "do": "say",
+   "who": "Meeting House Guide",
+   "text": "Pilgrim's Progress. Christian, a heavy pack, a long road. You can see why he'd be a Varsity Line man."
+  }
+ ],
+ "vl_codebreaker": [
+  {
+   "do": "say",
+   "who": "Codebreaker's Granddaughter",
+   "text": "My nan worked at Bletchley Park. She never told us what she did, not till she was eighty. Then she said: 'I broke a very big code'. And went to put the kettle on."
+  },
+  {
+   "do": "say",
+   "who": "Codebreaker's Granddaughter",
+   "text": "There were about ten thousand people there at the peak, and three out of four were women."
+  }
+ ]
+}

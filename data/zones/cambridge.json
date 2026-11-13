@@ -593,6 +593,10 @@
   "north": {
    "to": "the_fens",
    "offset": 0
+  },
+  "west": {
+   "to": "varsity_line",
+   "offset": -12
   }
  },
  "npcs": [
@@ -1077,9 +1081,9 @@
   "TTkkkkkg~~~~##ggggggggggggggggggggg.::..:::::::::::::::::.............TT",
   "TTkkkkkg~~~~##ggggggggggggggggggggg.::..:::::::::::::::::.............TT",
   "TTkkkkkg~~~~##ggggggggggggggggggggg.::..:::::::::::::::::.............TT",
-  "TTkkkkkg~~~~##ggggggggggggggggggggg.::..:::::::::::::::::.............TT",
-  "TTgggggg~~~~##ggggggggggggggggggggg.::................................TT",
-  "TTgggggg~~~~##ggggggggggggggggggggg.::................................TT",
+  "##kkkkkg~~~~##ggggggggggggggggggggg.::..:::::::::::::::::.............TT",
+  "##gggggg~~~~##ggggggggggggggggggggg.::................................TT",
+  "##gggggg~~~~##ggggggggggggggggggggg.::................................TT",
   "TTgggggg~~~~##......................::................................TT",
   "TTgggggg~~~~##..BBBBBBBB...BBBBBBB..::..BBBBBBB..BBBBB..BBBBBBBBB.....TT",
   "TTgggggg~~~~##..BBBBBBBB...BBBBBBB..::..BBBBBBB..BBBBB..BBBBBBBBB.....TT",

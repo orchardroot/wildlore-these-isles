@@ -1,0 +1,32 @@
+{
+ "id": "vl_cardington",
+ "name": "Airman Dawn",
+ "class": "Airman",
+ "sprite": "student",
+ "party": [
+  {
+   "species": "stormswift",
+   "level": 91
+  },
+  {
+   "species": "bleeplet",
+   "level": 90
+  },
+  {
+   "species": "starlet",
+   "level": 90
+  }
+ ],
+ "ai": "trainer",
+ "money": 3700,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Airman Dawn",
+   "text": "They flew airships here, you know. Very big. Very slow. Very flammable, in the early days. I like a plane myself."
+  }
+ ],
+ "win": "You've shot me out of the sky. Clean.",
+ "after": "R100 flew to Canada and back in 1930. A lot better than R101, and a lot less talked about.",
+ "scaled_floor": 90
+}
