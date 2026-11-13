@@ -799,6 +799,38 @@
    "facing": "right",
    "move": "still",
    "script": "landsky_forecaster"
+  },
+  {
+   "id": "ct_beavers_poster",
+   "sprite": "farmer",
+   "x": 29,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_beavers_poster",
+   "name": "Roger Hockin"
+  },
+  {
+   "id": "ct_beavers_cider",
+   "sprite": "farmer",
+   "x": 30,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_beavers_cider",
+   "name": "Cider Seller",
+   "show_if": "ct_beavers_pond"
+  },
+  {
+   "id": "ct_beavers_empty",
+   "sprite": "angler",
+   "x": 26,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_beavers_empty",
+   "name": "Angler",
+   "show_if": "ct_beavers_gone"
   }
  ],
  "signs": [

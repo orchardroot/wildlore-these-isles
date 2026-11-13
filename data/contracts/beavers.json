@@ -1,0 +1,187 @@
+{
+ "id": "beavers",
+ "title": "The Orchard Under Water",
+ "town": "exeter",
+ "nation": "england",
+ "group": "farmers",
+ "badges": 4,
+ "pay": 3,
+ "poster": {
+  "name": "Roger Hockin",
+  "role": "cider apple grower on the river, east of Exeter",
+  "idle": [
+   "Apples, friend? Not at the moment. I've a flooded field and a bad temper, and neither's good company. Come back when you've got a few more badges than you have."
+  ],
+  "taken": [
+   "Found it yet? Another tree down this morning. Not cut, mind. Chewed, like a pencil. And the water's up to the second row again."
+  ],
+  "decided": [
+   "I can see you've been in the river. You smell of it. Sit down. What did you do?"
+  ],
+  "closed": "That's the river settled, for now. Rivers are never done, you know."
+  ,
+  "haggle": "Ha. You've been listening to the Cider Society. Fine. A fair price for a fair look."
+ },
+ "notice": [
+  "Four cider apple trees chewed through since Michaelmas, and the bottom field's gone to a pond overnight. Somebody has built a dam on my stream and I haven't a notion who.",
+  "I'm told it's a bit of bad luck, a bit of vandalism, or the wildlife people. I want it looked at before I look at it with a chainsaw."
+ ],
+ "trouble": [
+  "It's down in the river meadows by the estuary. There's a wide stretch where the stream goes through my bottom orchard. Come at dusk if you like, but mind the mud.",
+  "I'll pay a fair fee. I'm not a hard man. I just like my trees standing."
+ ],
+ "hypotheses": [
+  {"id": "beaver", "name": "A beaver", "types": ["brook", "brawn"]},
+  {"id": "otter", "name": "An otter", "types": ["brook"]},
+  {"id": "deer", "name": "Deer, stripping the bark", "types": ["kin"]}
+ ],
+ "truth": "beaver",
+ "clues": [
+  {
+   "id": "stumps",
+   "kind": "look",
+   "zone": "exe_estuary",
+   "hint": "the felled apple trees by the water",
+   "text": "The stumps are gnawed to a neat pencil point, with a cone of pale chips on the ground like wood shavings, and the fallen trunk has been stripped and dragged toward the stream. A deer strips bark but cannot fell a tree. An otter does not chew wood at all.",
+   "points": ["beaver"],
+   "rules_out": ["otter"]
+  },
+  {
+   "id": "dusk",
+   "kind": "look",
+   "zone": "exe_estuary",
+   "hint": "the dam on the stream, watched at dusk or after dark",
+   "text": "You sit on the bank as the light goes. A broad dark head slides along the new pond, trailing a V of ripples. It reaches the dam, hauls up a branch, shoves it in place with its forepaws, and slaps a flat tail on the water that goes off like a gunshot. It does not hurry, and it does not look at you.",
+   "hint_wait": "Still water and a lot of sticks. Whoever built this is not working now. Beavers keep to the dusk and the dark.",
+   "points": ["beaver"],
+   "when": {"phase": ["dusk", "night"]}
+  },
+  {
+   "id": "pidgeon",
+   "kind": "ask",
+   "zone": "exe_estuary",
+   "who": "Maureen Pidgeon",
+   "hint": "ask the angler on the bank",
+   "text": [
+    "Deer. Roe deer strip the bark off young trees in winter, and then the trees die. I've seen them. As for the dam, it's kids, or somebody with a grudge against Roger.",
+    "Beavers? In Devon? Don't be silly. They've been gone for four hundred years."
+   ],
+   "idle": ["I'm trying to fish. Any minute now, the fish will care."],
+   "after": "A beaver. Well, well. And they say the fishing's better for it. I'll believe that when I've caught something.",
+   "points": ["deer"]
+  },
+  {
+   "id": "ranger",
+   "kind": "ask",
+   "zone": "exe_estuary",
+   "who": "Trust Ranger",
+   "hint": "ask the Wildlife Trust ranger",
+   "text": [
+    "Wild beavers, on this river, yes. Nobody knows where from. They've been here for years, and the Trust and the university have been counting them.",
+    "A dam slows the water. The village downstream stayed dry in the last wet winter, which is rather the point. But it costs somebody a field, and it's usually somebody who didn't ask for it."
+   ],
+   "idle": ["Counting lodges. Don't tell anyone how many. It's rather exciting."],
+   "after": "Nobody ever gets it all their own way with a beaver. That's the whole lesson, I think.",
+   "points": ["beaver"],
+   "rules_out": ["deer"]
+  }
+ ],
+ "lair": {
+  "zone": "exe_estuary",
+  "name": "Brunel",
+  "species": "afanc",
+  "level": 44,
+  "floor_par": 40,
+  "intro": [
+   "The new pond at the bottom of Roger's orchard, black and still, with a lodge of sticks and mud in the middle of it as tall as a man. Four apple trees lie in the water like fallen guests.",
+   "Something big and chestnut-brown sits on the dam with a branch in its forepaws, orange teeth showing. Roger calls it Brunel, on the grounds that it builds things nobody asked for."
+  ],
+  "beaten": [
+   "Brunel slumps on the dam, orange teeth bared and its great flat tail dripping, and then goes on looking at the stream as though you were the one in the way."
+  ]
+ },
+ "choices": [
+  {
+   "id": "remove",
+   "label": "Have the beavers caught and taken away",
+   "say": [
+    "A licensed team traps the family one cold night and drives them off to an enclosure on a Cornish estate, where they are given a very large pond and no opinions about it. The dam is breached by morning.",
+    "The meadow drains in a week. Roger plants four new trees and does not look at the stream."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_beavers_removed": true, "ct_beavers_gone": true},
+   "repute": {"farmers": 2, "wardens": -2},
+   "standing": {"england": 2},
+   "poster": ["Gone. Well, they're alive and somebody's gardening round them. Good. Here's your fee, and a bottle of the good stuff."],
+   "after": ["Four new trees, standing. I look at the stream most mornings. It's a quiet stream. I don't know whether I like that."],
+   "journal": "You had the beavers caught and rehoused. Roger's orchard is saved and the stream is empty. The Trust never really forgave you."
+  },
+  {
+   "id": "stay",
+   "label": "Back the Trust: let them stay and have Roger paid for his trees",
+   "say": [
+    "The Trust takes the trial's side, writes a letter that has a great many signatures on it, and finds a grant for the lost trees and the flooded field. Roger signs the form the way a man signs a cheque.",
+    "The pond stays. In the spring there are frogs in it, and two young beavers, and a heron that is clearly in on the deal."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_beavers_stay": true, "ct_beavers_pond": true},
+   "repute": {"wardens": 2, "farmers": -1},
+   "standing": {"england": 1},
+   "poster": ["There are frogs in my orchard, I've been paid for the apples, and I've got a lodge in my garden. I don't know who I am any more. Eighty per cent and my thanks."],
+   "after": ["There's a family on the pond now. Walkers come to look. Walkers drink cider. I'm a man in two minds, and one of them has an order book."],
+   "journal": "You backed the beavers and had Roger compensated. The pond stays, the frogs have moved in, and cider sales have not gone down."
+  },
+  {
+   "id": "wire",
+   "label": "Wire the trees, lower the dam, and live alongside",
+   "say": [
+    "You and Roger wrap the trunks in wire and fit a flow device through the dam to hold the pond to a sensible height. It is fiddly and it is dull and it works, mostly.",
+    "The orchard dries by half. The beavers rebuild the dam twice, and then go back to ignoring you. Roger keeps a spare roll of wire in the shed, just in case."
+   ],
+   "fee": 0.6,
+   "flags": {"ct_beavers_wired": true, "ct_beavers_pond": true},
+   "repute": {"farmers": 1, "wardens": 1},
+   "standing": {"england": 1},
+   "poster": ["Wire on the trunks and a pipe through the dam. It's not what I wanted and it's not what the Trust wanted. I expect that's a good sign. Sixty per cent, and a bottle."],
+   "after": ["The pipe works. The wire works. The beavers have not read the manual and keep trying new things. Last week it was my gate."],
+   "journal": "You wired the trees and fitted a flow device to the dam. Nobody got what they wanted, everybody got what they needed, and the beavers have been testing the arrangements ever since."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes on Brunel, who goes into it with the weary air of a very old engineer who has seen worse specifications. The pond is quiet for a minute, and then, behind you, something large begins to repair the dam."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_beavers_kept": true, "ct_beavers_pond": true},
+   "repute": {"farmers": 1, "wardens": -2},
+   "standing": {"england": 1},
+   "poster": ["You've pocketed the beaver. The dam is going back up behind you, and there's another one. Of course there's another one. Eighty per cent."],
+   "after": ["There's still a dam. It turns out beavers come in families. I should have known that."],
+   "journal": "You caught Brunel, but beavers come in families and the pond has not noticed. Roger has a beaver of his own in your team, and a dam in his orchard."
+  }
+ ],
+ "real": "Beavers were hunted out of Britain by the sixteenth century, for fur and for a scent oil. In 2014 wild ones were found on the River Otter in Devon, and nobody knew where they had come from. The Devon Wildlife Trust and the University of Exeter ran a five year trial from 2015, and in 2020 the government decided they could stay: the first time a mammal lost from England was officially allowed to live wild again. Beavers fell trees, dig burrows in banks and build dams that can flood fields. Their ponds also slow floodwater, clean the river and hold fish and frogs, and the university found that the Otter beavers helped the village downstream. It is licensed management now, with wire on trees and pipes through dams.",
+ "places": {
+  "poster": {"sprite": "farmer", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "pidgeon", "sprite": "angler", "near": [20, 20]},
+   {"clue": "ranger", "sprite": "hiker", "near": [46, 24]}
+  ],
+  "looks": [
+   {"clue": "stumps", "near": [30, 28], "on": "any", "text": ["Apple trees, a few of them down, some of them very green still. Somebody has been busy."]},
+   {"clue": "dusk", "near": [36, 20], "on": "any", "text": ["The new pond is black and still. The sticks across the stream look almost tidy."]}
+  ],
+  "lair": {"near": [32, 22]},
+  "folk": [
+   {"id": "cider", "zone": "exeter", "near": [30, 24], "sprite": "farmer", "name": "Cider Seller", "show_if": "ct_beavers_pond", "says": [
+     ["ct_beavers_is_wire", ["Hockin's cider. The beavers are still in the orchard, and so are his apples. Hockin calls it a tricky settlement."]],
+     ["ct_beavers_is_stay", ["Hockin's cider, with a little beaver on the label. Walkers love it. He pretends to hate that."]],
+     ["ct_beavers_is_caught", ["Hockin's cider. He's got a beaver that moved in on its own and a Keeper with another one. He says that's the family."]]
+    ], "else": ["Hockin's cider."]},
+   {"id": "empty", "zone": "exeter", "near": [26, 28], "sprite": "angler", "name": "Angler", "show_if": "ct_beavers_gone", "says": [],
+    "else": ["Quiet stretch on the river these days. No dam, no beavers, no frogs. I'm not sure it was an improvement."]}
+  ]
+ }
+}
