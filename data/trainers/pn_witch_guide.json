@@ -1,0 +1,32 @@
+{
+ "id": "pn_witch_guide",
+ "name": "Walker Morag",
+ "class": "Hillwalker",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "wispet",
+   "level": 17
+  },
+  {
+   "species": "hootlet",
+   "level": 16
+  },
+  {
+   "species": "sphagnet",
+   "level": 17
+  }
+ ],
+ "ai": "trainer",
+ "money": 480,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Walker Morag",
+   "text": "Pendle at dusk, in a fog? Wonderful. Terrifying. I carry a flask, and a very small kitchen knife for apples."
+  }
+ ],
+ "win": "I thought you'd cast a spell. It was only footwork.",
+ "after": "If you hear a cackle on the hill, it is probably the grouse. Probably.",
+ "scaled_floor": 16
+}

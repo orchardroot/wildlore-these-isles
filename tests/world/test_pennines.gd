@@ -24,13 +24,14 @@ func test_joined_at_manchester_only() -> void:
 	assert_eq(all.saddleworth_moor.edges.east.to, "leeds")
 	assert_eq(all.leeds.edges.west.to, "saddleworth_moor")
 	assert_eq(all.leeds.edges.north.to, "haworth")
-	assert_eq(all.haworth.edges.keys(), ["south"], "Haworth is the end of the road")
+	assert_eq(all.haworth.edges.keys(), ["south", "west"], "Haworth is the end of the road, bar the wave 55 road over Pendle Hill")
 	# no shortcut back into the existing world: every edge out of the region stays inside it, bar Manchester's
+	# and wave 55's Pendle Hill road (Haworth west, same story step as Blackpool, see test_w55_roads_england)
 	for zid in OUTDOOR:
 		for side in all[zid].edges:
 			var to: String = all[zid].edges[side].to
 			var lease := not Leases.in_zone(to).is_empty()  # an Enclosure lease is a cul-de-sac off the moor (Leases)
-			assert_true(to in OUTDOOR or to == "manchester" or lease, "%s %s edge goes to %s" % [zid, side, to])
+			assert_true(to in OUTDOOR or to == "manchester" or lease or to == "pendle_hill", "%s %s edge goes to %s" % [zid, side, to])
 
 func test_scaled_to_manchester_band() -> void:
 	var all := _all()

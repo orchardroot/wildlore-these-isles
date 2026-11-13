@@ -1,0 +1,32 @@
+{
+ "id": "pn_birdwatcher",
+ "name": "Birdwatcher Phil",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "kitelet",
+   "level": 17
+  },
+  {
+   "species": "starlet",
+   "level": 16
+  },
+  {
+   "species": "stoatlet",
+   "level": 17
+  }
+ ],
+ "ai": "trainer",
+ "money": 520,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Phil",
+   "text": "Hen harriers breed in Bowland, just up the road. Not that I'd tell you where. Not that I'd be allowed."
+  }
+ ],
+ "win": "A fair fight. I'll note it in the logbook, under 'unusual behaviour'.",
+ "after": "In my day we didn't have binoculars like these. We had a hanky and hope.",
+ "scaled_floor": 16
+}

@@ -1,0 +1,965 @@
+{
+ "id": "pendle_hill",
+ "name": "Pendle Hill",
+ "region": "yorkshire",
+ "kind": "route",
+ "music": "route_moor",
+ "weather": {
+  "drizzle": 32,
+  "clear": 22,
+  "fog": 16,
+  "downpour": 10,
+  "gale": 8,
+  "sunshine": 12
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 52,
+   "y": 36,
+   "w": 5,
+   "h": 3,
+   "label": "Top Withens (ruin)"
+  },
+  {
+   "type": "sheep",
+   "x": 50,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 53,
+   "y": 31,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 62,
+   "y": 29,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 64,
+   "y": 36,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 47,
+   "y": 34,
+   "variant": 0
+  },
+  {
+   "type": "standing_stone",
+   "x": 36,
+   "y": 9,
+   "variant": 0
+  },
+  {
+   "type": "bench",
+   "x": 34,
+   "y": 11
+  },
+  {
+   "type": "building",
+   "style": "lancs_limestone",
+   "x": 22,
+   "y": 24,
+   "w": 5,
+   "h": 3,
+   "label": "Barley Cottages",
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 28,
+   "y": 25,
+   "w": 4,
+   "h": 3,
+   "label": "The Pendle Inn"
+  },
+  {
+   "type": "building",
+   "style": "mill_brick",
+   "x": 6,
+   "y": 31,
+   "w": 9,
+   "h": 5,
+   "label": "Weavers' Mill"
+  },
+  {
+   "type": "canal_boat",
+   "x": 14,
+   "y": 38,
+   "variant": 0
+  },
+  {
+   "type": "canal_boat",
+   "x": 19,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 64,
+   "y": 39,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 65,
+   "y": 20,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 21,
+   "y": 5,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 4,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 67,
+   "y": 21,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 9,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 7,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 8,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 23,
+   "y": 4,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 59,
+   "y": 23,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 26,
+   "y": 19,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 33,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 51,
+   "y": 10,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 9,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 65,
+   "y": 28,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 12,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 67,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 43,
+   "y": 41,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 13,
+   "y": 19,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 25,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 55,
+   "y": 23,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 64,
+   "y": 19,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 36,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 42,
+   "y": 16,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 68,
+   "y": 11,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 46,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 30,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 20,
+   "y": 42,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 66,
+   "y": 40,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 54,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 61,
+   "y": 19,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 27,
+   "y": 41,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 65,
+   "y": 16,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 52,
+   "y": 8,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 60,
+   "y": 37,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 58,
+   "y": 14,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 25,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 50,
+   "y": 38,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 36,
+   "y": 5,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 57,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 28,
+   "y": 7,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 48,
+   "y": 12,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 59,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 59,
+   "y": 25,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 56,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 68,
+   "y": 22,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 44,
+   "y": 37,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 56,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 67,
+   "y": 22,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 32,
+   "y": 18,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 16,
+   "y": 36,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 21,
+   "y": 20,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 19,
+   "y": 33,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 13,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 8,
+   "y": 29,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 8,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 5,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 16,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 10,
+   "y": 41,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 3,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 12,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 19,
+   "y": 6,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 15,
+   "y": 11,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 13,
+   "y": 7,
+   "variant": 0
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "east": {
+   "to": "haworth",
+   "offset": -9
+  },
+  "west": {
+   "to": "blackpool",
+   "offset": 19
+  }
+ },
+ "npcs": [
+  {
+   "id": "pn_walker",
+   "sprite": "hiker",
+   "x": 50,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "pn_walker"
+  },
+  {
+   "id": "pn_guide",
+   "sprite": "tour_guide",
+   "x": 31,
+   "y": 20,
+   "facing": "right",
+   "move": "still",
+   "script": "pn_guide"
+  },
+  {
+   "id": "pn_ranger",
+   "sprite": "villager_2",
+   "x": 38,
+   "y": 17,
+   "facing": "left",
+   "move": "still",
+   "script": "pn_ranger"
+  },
+  {
+   "id": "pn_miller",
+   "sprite": "villager_5",
+   "x": 10,
+   "y": 36,
+   "facing": "down",
+   "move": "still",
+   "script": "pn_miller"
+  },
+  {
+   "id": "pn_fellrunner",
+   "sprite": "fell_runner",
+   "x": 60,
+   "y": 31,
+   "facing": "left",
+   "move": "still",
+   "trainer": "pn_fellrunner"
+  },
+  {
+   "id": "pn_witch_guide",
+   "sprite": "hillwalker",
+   "x": 43,
+   "y": 29,
+   "facing": "up",
+   "move": "still",
+   "trainer": "pn_witch_guide"
+  },
+  {
+   "id": "pn_farmer",
+   "sprite": "farmer",
+   "x": 14,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "trainer": "pn_farmer"
+  },
+  {
+   "id": "pn_weaver",
+   "sprite": "villager_6",
+   "x": 5,
+   "y": 32,
+   "facing": "up",
+   "move": "still",
+   "trainer": "pn_weaver"
+  },
+  {
+   "id": "pn_birdwatcher",
+   "sprite": "birdwatcher",
+   "x": 22,
+   "y": 13,
+   "facing": "right",
+   "move": "still",
+   "trainer": "pn_birdwatcher"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "sphagnet",
+    "min": 16,
+    "max": 18,
+    "weight": 14,
+    "weather": [
+     "drizzle",
+     "downpour",
+     "fog"
+    ]
+   },
+   {
+    "species": "pipkin",
+    "min": 16,
+    "max": 18,
+    "weight": 12,
+    "time": [
+     "dawn",
+     "day"
+    ]
+   },
+   {
+    "species": "scuttlet",
+    "min": 16,
+    "max": 18,
+    "weight": 14,
+    "time": [
+     "dawn",
+     "day",
+     "dusk"
+    ]
+   },
+   {
+    "species": "snowhare",
+    "min": 16,
+    "max": 18,
+    "weight": 10
+   },
+   {
+    "species": "hootlet",
+    "min": 16,
+    "max": 18,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "barnling",
+    "min": 16,
+    "max": 18,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "wispet",
+    "min": 16,
+    "max": 18,
+    "weight": 8,
+    "weather": [
+     "fog"
+    ]
+   },
+   {
+    "species": "leveret",
+    "min": 16,
+    "max": 18,
+    "weight": 10,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "kitelet",
+    "min": 16,
+    "max": 18,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "starlet",
+    "min": 16,
+    "max": 18,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "zigzlet",
+    "min": 16,
+    "max": 18,
+    "weight": 8,
+    "time": [
+     "day"
+    ],
+    "weather": [
+     "sunshine",
+     "clear"
+    ]
+   },
+   {
+    "species": "croakle",
+    "min": 16,
+    "max": 17,
+    "weight": 8,
+    "weather": [
+     "drizzle",
+     "downpour"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "dipling",
+    "min": 16,
+    "max": 18,
+    "weight": 26
+   },
+   {
+    "species": "volet",
+    "min": 16,
+    "max": 18,
+    "weight": 22
+   },
+   {
+    "species": "croakle",
+    "min": 16,
+    "max": 18,
+    "weight": 20
+   },
+   {
+    "species": "stalklet",
+    "min": 16,
+    "max": 18,
+    "weight": 18
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 68,
+   "y": 30,
+   "text": "EAST: Haworth, the Parsonage and a great many Bront\u00eb tea towels. WEST: Pendle Hill, Clitheroe and the Fylde coast. Mind the sheep, they have right of way."
+  },
+  {
+   "x": 56,
+   "y": 31,
+   "text": "A ruined farmhouse on the moor above Haworth, long said to be the model for Wuthering Heights, though the real house was a good deal smaller than the one in the book. The Bront\u00eb children walked these moors all the time. Emily Bront\u00eb's novel came out in 1847, and she died the next year at the parsonage in the village.",
+   "plaque": "w55e_top_withens",
+   "title": "Top Withens"
+  },
+  {
+   "x": 46,
+   "y": 24,
+   "text": "THE PENDLE WAY. Forty-five miles in a loop round Pendle Hill, waymarked with a witch on a broomstick. Nobody has asked her to move."
+  },
+  {
+   "x": 32,
+   "y": 19,
+   "text": "In 1612 twelve people from the villages round Pendle Hill were accused of witchcraft. One died in Lancaster Castle before her trial, one was tried and hanged at York, and ten were hanged at Lancaster on 20 August 1612. It is one of the best documented witch trials in English history, mainly because the court clerk wrote it all down.",
+   "plaque": "w55e_pendle_witches",
+   "title": "The Pendle Witches"
+  },
+  {
+   "x": 38,
+   "y": 11,
+   "text": "In 1652 the preacher George Fox climbed Pendle Hill and had a vision of a great people to be gathered. That summer he went on to Firbank Fell and Sedbergh and drew crowds. Quakers count it as the beginning of their movement.",
+   "plaque": "w55e_george_fox",
+   "title": "George Fox on Pendle Hill"
+  },
+  {
+   "x": 24,
+   "y": 12,
+   "text": "PENDLE HILL, the Big End. 557 metres of gritstone and heather, standing on its own above the Ribble Valley. On a clear day you can see Blackpool Tower. On most days you can see your own hand."
+  },
+  {
+   "x": 12,
+   "y": 36,
+   "text": "Opened in 1816 after more than forty years of building, at 127 miles the longest canal in Britain built as a single waterway. It carried coal east and wool and cotton west, and it still crosses the Pennines. Through Burnley it rides a mile-long embankment above the mill roofs.",
+   "plaque": "w55e_leeds_liverpool",
+   "title": "The Leeds and Liverpool Canal"
+  },
+  {
+   "x": 4,
+   "y": 16,
+   "text": "WEST: Clitheroe, Preston and the Fylde coast. Blackpool is thirty miles on, give or take a stag party."
+  },
+  {
+   "x": 18,
+   "y": 30,
+   "text": "WEAVERS' MILL. Cotton, until the 1960s. Nowadays a craft centre, a cafe and a very large flock of pigeons."
+  },
+  {
+   "x": 38,
+   "y": 15,
+   "text": "SUMMIT PATH. The Big End, then back down the same way. Please don't hurry the witches."
+  }
+ ],
+ "spawn": [
+  68,
+  33
+ ],
+ "stage": "moor",
+ "scaled_floor": 16,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmggggggggggghhgghhggwwggggggggggggggggggggggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmggggghhhhhhhhhhhhhhwwgGGgggggggggggggggggggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmgkgkGGhhhhhhhhhhhhhwwGGGhhgggggggggggggggggggggTPT",
+  "TTTmmmmmmmmmmmmmmmmmkkkkkkkkkhhhhhhhhhhhhwwhGhhhhggggggggggggggggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmkkkkkkkkkhhhhhhhhhhhhwwhhhhhhghggggggggggggggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmkkkkkkkkkkkhhhhhhhhhhhwwhhhhhhhghggggggghghgggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmkkkkkkkkkkGGhhhhhhhhwwhhhhhhhgggggggghhhhhhhhhgggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmkkkkkkkhGGGGhhh#hhhwwhhhhhhhhhggghhhhhhhhhhhhhggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmgkkkkhhhGhhhhh#hhwwhGGhhhhhhhghhhhhhhhhhhhhhhggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmgggggghhhhhhhh#hhwwGGGhhhhhhhhhhhhhhhhhhhhhhhhgTTT",
+  "################################hhhh#ggwwGGGhhhhhhhhhhhhhhhhhhhhhhhggTTT",
+  "#####################################hhwwghhhhhhhhhhhhhhhhhhhhhhhhhggTTT",
+  "################################hhhhhhhwwghhhhhhhhhhhhgghhhhhhhhhggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmghhhhhh###hhhhhhkwwkgghhhhhhhhhggggggghggggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmgghhhhh###hhkkkkkwwkkkkkkhhhhhhggggggggggggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmggggggg###hkkkkkkkwwkkkkkkgggggggggggggggggggggTTT",
+  "TTTmHHHHHHHHmmmHHHHHmmggggggg###ggkkkkkkwwkkkkkggggggggggggggggggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmHmmggggggg###gggggggkwwgggggggggggggggggggggggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmHmmggggggg#################gggggggggggggggggggghggTTT",
+  "TTTmmmmmmmmmmmmmmmmHmmggggggg#################ggggkkggggggggggghhhhhhTTT",
+  "TTTmmmmmmmmmmmmmmmmHmmggggggg#################gkkkkkkkggggggggghhhhhhTTT",
+  "TTTmmmmmmmmmmmmmmmmHmmBBBBBggggggggggggggww###gkkkkkkkkgggggggghhhhhhTTT",
+  "TTTmmmmmmmmmmmmmmmmHmmBBBBBgBBBBgggggggggww###gkkkkkkkggggggggghhhhhhTTT",
+  "TTTmmmmmmmmmmmmmmmmHmmBBBBBgBBBBgggggggggww#################gggghhhhhTTT",
+  "TTTmmmmmmmmmmmmmmmmHmmggggggBBBBggggggggwwg#################ggggghghgTTT",
+  "TTTmHHHHHHHHHHHHHHHHHmggggggggggggggggggwwg#################gkkggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmggggggggggggggggggwwggggggggggggggg###kkkkkkkggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmgggggggggggggggggwwgggggggggggggggg###kkkkkkkggTTT",
+  "TTTmmmBBBBBBBBBmmmmmmmgggggggggggggggggwwgggggggggggggggg###kkkkkkkggTTT",
+  "TTTmmmBBBBBBBBBmmmmmmmgggggggggggggggggwwgggggggggggggggg###############",
+  "TPTmmmBBBBBBBBBmmmmmmmgggggggggggggggggwwgggggggggggggggg###############",
+  "TTTmmmBBBBBBBBBmmmmmmmgggggggggggggggggwwgggggggggggggggh###############",
+  "TTTmmmBBBBBBBBBmmmmmmmgggggggggggggggggwwgggghggggghhhhhhhhhhhhggggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmgggggggggggggggggwwgghhhhhhhhhBBBBBhhhhhhggggggTTT",
+  "TTTwwwww###wwwwwwwwwwwwgggggggggggggggggwwhhhhhhhhhhBBBBBhhhhhhhgggggTTT",
+  "TTT~~~~~###~~~~~~~~~~~~gggggggggggggggggwwhhhhhhhhhhBBBBBhhhhhhhhggggTTT",
+  "TTTwwwww###wwwwwwwwwwwwggggggggggggggggggwwhhhhhhhhhGGGGGhhhhhhhgggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmgggggggggggggggggggwwhhhhhhghGGGGGGhhhhhhhgggggTTT",
+  "TTTmmmmmmmmmmmmmmmmmmmgggggggggggggggggggwwgggghgggggGGGGhhhhggggggggTTT",
+  "PTTmmmmmmmmmmmmmmmmmmmgggggggggggggggggggwwggggggggggghhhghggggggggggTTT",
+  "TTPTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "heights": [
+  "000000000000001111122223333344444444444443333322221111100000000000000000",
+  "000000000000001111222233333444444444444444333332222111100000000000000000",
+  "000000000000001111222233334444445555544444433332222111100000000000000000",
+  "000000000000011112222333344444555555555444443333222211110000000000000000",
+  "000000000000011112222333344445555555555544443333222211110000000000000000",
+  "000000000000011112223333444455555555555554444333322211110000000000000000",
+  "000000000000011122223333444455556666655554444333322221110000000000000000",
+  "000000001111111122223333444555566666665555444333322221110000000000000000",
+  "000000011111111122223333444555566666665555444333322221110000000000000000",
+  "000001111111111122223333444555566666665555444333322221111111111100000000",
+  "000001111111111122223333444555566666665555444333322221111111111111000000",
+  "000011111111111122223333444555566666665555444333322221111111111111100000",
+  "000111111111111122223333444455556666655554444333322221111111111111110000",
+  "000111111111111112223333444455555555555554444333322211111111111111111000",
+  "000111111111111112222333344445555555555544443333222211111111111111111100",
+  "000111111111111112222333344444555555555444443333222211111111111111111110",
+  "000111111111111111222233334444445555544444433332222111122222221111111110",
+  "000111111111111111222233333444444444444444333332222111222222222111111111",
+  "000111111111111111122223333344444444444443333322221112222222222211111111",
+  "000111111111111111122222333333444444444333333222221122222222222221111111",
+  "000111111111111111112222233333333333333333332222211122222222222221111111",
+  "000011111111111111111222223333333333333333322222111122222222222221111111",
+  "000001111111111111111122222233333333333332222221111122222222222221111111",
+  "000001111111111111111112222222333333333222222211111122222222222221111111",
+  "000000011111111111111111222222222222222222222111111122222222222221111111",
+  "000000001111111110011111112222222222222222211111111122222222222221111111",
+  "000000000000000000000111111122222222222221111111111112222222222211111111",
+  "000000000000000000000011111111122222221111111111111111222222222111111111",
+  "000000000000000000000001111111111111111111111111111111122222221111111110",
+  "000000000000000000000000011111111111111111110011111111111111111111111110",
+  "000000000000000000000000000011111111111110000001111111111111111111111100",
+  "000000000000000000000000000000000000000000000000111111111111111111111000",
+  "000000000000000000000000000000000000000000000000011111111111111111110000",
+  "000000000000000000000000000000000000000000000000001111111111111111100000",
+  "000000000000000000000000000000000000000000000000000111111111111111000000",
+  "000000000000000000000000000000000000000000000000000001111111111100000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000"
+ ],
+ "legend_extra": {
+  "g": {
+   "tile": "grass",
+   "colour": "#7f7b49"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#77804a"
+  },
+  "h": {
+   "tile": "tall_grass",
+   "colour": "#655060",
+   "prop": "heather"
+  },
+  "k": {
+   "tile": "tall_grass",
+   "colour": "#7c7a47",
+   "prop": "short"
+  },
+  "G": {
+   "tile": "rock",
+   "colour": "#6f6852",
+   "prop": "gritstone"
+  },
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  }
+ }
+}

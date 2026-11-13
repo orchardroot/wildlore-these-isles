@@ -16,6 +16,10 @@
   "south": {
    "to": "leeds",
    "offset": 0
+  },
+  "west": {
+   "to": "pendle_hill",
+   "offset": 9
   }
  },
  "encounters": {
@@ -811,9 +815,9 @@
   "TThhhhhhh#hGh.mmmm..mmsssmnemmmm.evvvvvvvvvTTm..mmnm!mmmmmTT",
   "TThhhhhhh#hhhmnBBBBBB.sss.BBBBBBm.vvvvvvvvvTTemnmm.m!mmmmmTT",
   "TThh~~hhh#hhh..BBBBBBnsssnBBBBBBe.vvvvvvvvvTTm.em.mm!mmmmmTT",
-  "TThh~~hhh#hhhmmBBBBBBnsss.BBBBBBnmvvvvvvvvvTTm.m.m..!mmmmmTT",
-  "TThh~~hhh#hhhmmBBDBBBmsssmBBDBBB.mvvvvvvvvvTTm..n.mm!mmmmmTT",
-  "TThh~~hhh#hhhmsssssssssssssssssssmvvvvvvvvvTTm.memmm!mmmmmTT",
+  "##hh~~hhh#hhhmmBBBBBBnsss.BBBBBBnmvvvvvvvvvTTm.m.m..!mmmmmTT",
+  "##hh~~hhh#hhhmmBBDBBBmsssmBBDBBB.mvvvvvvvvvTTm..n.mm!mmmmmTT",
+  "##hh~~hhh#hhhmsssssssssssssssssssmvvvvvvvvvTTm.memmm!mmmmmTT",
   "TTho~~hhh#hhhmm.n.mmmesssmmnm.mmm.vvvvvvvvvTTmm.mnmm!mmmmmTT",
   "TTho~~hhh#hhGnmmmne.nmsssmmmm.em.mvvvvvvvvvTTm.mmm.m!mmmmmTT",
   "TTho~~hhh#hhhmmBBBBBBmsssnBBBBBB.mvvvvvvvvvTTmmmm.__!mmmmmTT",

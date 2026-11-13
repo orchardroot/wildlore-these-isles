@@ -1,0 +1,32 @@
+{
+ "id": "pn_farmer",
+ "name": "Farmer Dennis",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "leveret",
+   "level": 16
+  },
+  {
+   "species": "zigzlet",
+   "level": 17
+  },
+  {
+   "species": "croakle",
+   "level": 16
+  }
+ ],
+ "ai": "trainer",
+ "money": 500,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Farmer Dennis",
+   "text": "Lambs are late, the beck's up and the dog's lost her marbles. And you want a fight. Right."
+  }
+ ],
+ "win": "Right. That's the day properly gone.",
+ "after": "Ribble Valley lamb is the best lamb in England. I will fight anyone who says otherwise. Except you. You've already won.",
+ "scaled_floor": 16
+}

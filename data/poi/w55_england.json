@@ -1,0 +1,42 @@
+{
+ "pois": [
+  {
+   "id": "poi_pendle_stone",
+   "zone": "pendle_hill",
+   "near": [
+    37,
+    8
+   ],
+   "kind": "stone",
+   "at": "pendle_hill",
+   "stat": "lore",
+   "lore": [
+    "You put a hand on it. The wind drops. Somewhere below you a very small sheep says something rude.",
+    "The real thing is the trig point on Pendle Hill's summit, the Big End, 557 metres up. George Fox is said to have climbed it in 1652 before the vision that began the Quakers."
+   ]
+  },
+  {
+   "id": "poi_pendle_hagstone",
+   "zone": "pendle_hill",
+   "near": [
+    21,
+    31
+   ],
+   "kind": "cache",
+   "at": "pendle_hill",
+   "item": "hag_stone",
+   "line": "A flat stone by the wall, with a hole worn clean through it. Hung over a door, they say, it keeps witches out. It has not kept you out."
+  },
+  {
+   "id": "poi_pendle_den",
+   "zone": "pendle_hill",
+   "near": [
+    27,
+    7
+   ],
+   "kind": "den",
+   "at": "pendle_hill",
+   "species": "hobthrust"
+  }
+ ]
+}

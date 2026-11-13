@@ -1,0 +1,32 @@
+{
+ "id": "pn_weaver",
+ "name": "Mill Hand Janet",
+ "class": "Weaver",
+ "sprite": "villager_6",
+ "party": [
+  {
+   "species": "starlet",
+   "level": 17
+  },
+  {
+   "species": "barnling",
+   "level": 16
+  },
+  {
+   "species": "rooklet",
+   "level": 17
+  }
+ ],
+ "ai": "trainer",
+ "money": 470,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Mill Hand Janet",
+   "text": "I do the Saturday tours of the mill. Cotton, steam, a hundred looms. You've no idea how loud, love."
+  }
+ ],
+ "win": "Well, that's me deafened and beaten.",
+ "after": "The canal carried the cotton in and the cloth out. Every week.",
+ "scaled_floor": 16
+}

@@ -739,6 +739,10 @@
   "south": {
    "to": "sefton_coast",
    "offset": -4
+  },
+  "east": {
+   "to": "pendle_hill",
+   "offset": -19
   }
  },
  "npcs": [
@@ -1183,9 +1187,9 @@
   "$BBBB$$wssssss::::==::::::::::::::::==::::::::::::::::::::::::==::::::::::TT",
   "$BBBBFFFFFFFFF::::==::::::::::::::::==::::::::::::::::::::::::==::::::::::TT",
   "$:::::::::::::::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:TT",
-  "$:::::::::::::::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:TT",
-  "$$$$$FFFFFFFFF::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:TT",
-  "$$$$$$$wssssss::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:TT",
+  "$:::::::::::::::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:##",
+  "$$$$$FFFFFFFFF::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:##",
+  "$$$$$$$wssssss::::==::::::::::::::::==::BBBBBBBBB::BBBBBBBBB::==:BBBBBBBB:##",
   "$$$$$$$wssssss::::==::::::::::::::::==::BBBBBBBBB::BBBBDBBBB::==:BBBBBBBB:TT",
   "$$$$$$$wssssss::::==::::::::::::::::==::::::::::::::::::::::::==::::::::::TT",
   "$$$$$$$wssssss::::==::::::::::::::::==::::::::::::::::::::::::==::::::::::TT",

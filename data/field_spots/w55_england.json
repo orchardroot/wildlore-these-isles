@@ -1,0 +1,17 @@
+[
+ {
+  "id": "fs_pendle_round_up",
+  "zone": "pendle_hill",
+  "x": 17,
+  "y": 22,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Bowland sheep, all facing the wrong way and each convinced it is the one who is right. {lead} circles once, low, and the whole flock goes through the gate like water. The farmer leaves a flask on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_pendle_round_up",
+  "at": "pendle_hill"
+ }
+]
