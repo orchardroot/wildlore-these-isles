@@ -333,6 +333,8 @@ class Plate extends PanelContainer:
 	var name_l: Label
 	var level_l: Label
 	var chip: Label
+	var types_row: HBoxContainer  # the creature's type chips, glyph and name (a shape as well as a colour)
+	var type_px := 16
 	var caught: CaughtMark
 	var sex_m: SexMark
 	var sex_px := 20
@@ -391,6 +393,10 @@ class Plate extends PanelContainer:
 		level_l = Label.new()
 		level_l.add_theme_font_size_override("font_size", maxi(19, int(24 * k)))
 		top.add_child(level_l)
+		type_px = maxi(16, int(18 * k))
+		types_row = HBoxContainer.new()
+		types_row.add_theme_constant_override("separation", 6)
+		col.add_child(types_row)
 		var hp_row := HBoxContainer.new()
 		hp_row.add_theme_constant_override("separation", 8)
 		col.add_child(hp_row)
@@ -445,6 +451,7 @@ class Plate extends PanelContainer:
 		name_l.text = c.display_name()
 		sex_m.set_sex(c.sex, sex_px)
 		level_l.text = "Lv %d" % c.level
+		_set_types(c)
 		hp_max = float(c.max_hp())
 		if _hp_tween and _hp_tween.is_valid():
 			_hp_tween.kill()  # a drain still running for the creature that left would overwrite the new one's HP
@@ -457,11 +464,42 @@ class Plate extends PanelContainer:
 			xp_shown = xp_fraction(c)
 			xp_bar.value = xp_shown
 
+	## One chip per type: its glyph and name on the type's colour.
+	func _set_types(c: Creature) -> void:
+		for old in types_row.get_children():
+			types_row.remove_child(old)
+			old.queue_free()
+		for t in c.types():
+			var bg := TypeColours.of(str(t))
+			var fg := TypeColours.text_on(str(t))
+			var pc := PanelContainer.new()
+			var sb := StyleBoxFlat.new()
+			sb.bg_color = bg
+			sb.set_corner_radius_all(4)
+			sb.content_margin_left = 5
+			sb.content_margin_right = 5
+			sb.content_margin_top = 1
+			sb.content_margin_bottom = 1
+			pc.add_theme_stylebox_override("panel", sb)
+			var h := HBoxContainer.new()
+			h.add_theme_constant_override("separation", 4)
+			h.add_child(TypeGlyph.make(str(t), fg, type_px - 2))
+			var l := Label.new()
+			l.text = str(t).to_upper()
+			l.add_theme_font_size_override("font_size", type_px)
+			l.add_theme_color_override("font_color", fg)
+			l.add_theme_constant_override("shadow_offset_x", 0)
+			l.add_theme_constant_override("shadow_offset_y", 0)
+			h.add_child(l)
+			pc.add_child(h)
+			types_row.add_child(pc)
+
 	## A new nickname or an evolution. Not the level: XP is given before its bar fills, and the level goes up
 	## with the bar (animate_xp), not as "gained XP" comes up.
 	func refresh_names() -> void:
 		if creature != null:
 			name_l.text = creature.display_name()
+			_set_types(creature)
 
 	## After a level-up: the new level, and the bar grows with the new maximum and the HP it brought (the bar
 	## and the max together, so it never dips first, as it would with the new max under the old HP).
@@ -560,7 +598,7 @@ func _ready() -> void:
 		p.visible = false
 	plates[Battle.FOE].position = Vector2(40, 40)
 	plates[Battle.FOE].custom_minimum_size = Vector2(430, 0)
-	plates[Battle.PLAYER].position = Vector2(790, 372)
+	plates[Battle.PLAYER].position = Vector2(790, 350)  # clear of the move picker (the type chips made the plate taller)
 	plates[Battle.PLAYER].custom_minimum_size = Vector2(450, 0)
 	weather_plate = WeatherPlate.new()
 	weather_plate.build()

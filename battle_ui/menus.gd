@@ -23,6 +23,7 @@ var _footer: Label
 var _footer_fn := Callable()
 static var _mem := {}  # menu key -> last cursor index; outlives the battle, not the session
 var _panel: PanelContainer
+var _footer_panel: PanelContainer  # a picker whose footer sits in a panel of its own (the moves: it takes the message box's place)
 
 ## A new battle: keep every remembered cursor except the command menu's, which opens on Fight.
 static func new_battle() -> void:
@@ -108,7 +109,7 @@ func _highlight() -> void:
 	cursor_moved.emit(_idx)
 
 ## rows: [{"text", "right", "stripe": Color, "chip": String, "chip_colour": Color, "disabled", "sub"}]
-func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, cancel_ok: bool, footer_fn := Callable()) -> int:
+func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, cancel_ok: bool, footer_fn := Callable(), footer_rect := Rect2()) -> int:
 	_clear()
 	_cols = cols
 	_cancel_ok = cancel_ok
@@ -153,7 +154,17 @@ func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, 
 		_footer.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		_footer.custom_minimum_size = Vector2(0, 26)
 		_footer.modulate = Color(1, 1, 1, 0.85)
-		vb.add_child(_footer)
+		if footer_rect.size != Vector2.ZERO:
+			_footer.add_theme_font_size_override("font_size", 18)
+			_footer.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+			_footer_panel = PanelContainer.new()
+			_footer_panel.position = footer_rect.position
+			_footer_panel.size = footer_rect.size
+			_footer_panel.add_theme_stylebox_override("panel", sb)
+			_footer_panel.add_child(_footer)
+			add_child(_footer_panel)
+		else:
+			vb.add_child(_footer)
 	_idx = clampi(recall(mem_key), 0, maxi(0, rows.size() - 1))
 	if _disabled.size() > 0 and _disabled[_idx]:
 		for i in rows.size():
@@ -163,6 +174,9 @@ func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, 
 	_highlight()
 	_panel.modulate.a = 0.0
 	create_tween().tween_property(_panel, "modulate:a", 1.0, 0.12)
+	if _footer_panel:
+		_footer_panel.modulate.a = 0.0
+		create_tween().tween_property(_footer_panel, "modulate:a", 1.0, 0.12)
 	_active = true
 	var r: int = await _picked
 	_active = false
@@ -175,6 +189,9 @@ func _clear() -> void:
 		_panel.queue_free()
 		closed.emit()
 	_panel = null
+	if _footer_panel and is_instance_valid(_footer_panel):
+		_footer_panel.queue_free()
+	_footer_panel = null
 	_rows = []
 	_footer = null
 
@@ -307,7 +324,7 @@ func moves(c: Creature, move_db: MoveDB, cue_fn := Callable(), weather := "clear
 	var rows := move_rows(c, move_db, weather, cue_fn)
 	var footer := func(i: int) -> String:
 		return move_footer(c, i, move_db, "", weather, chart)
-	return await _pick(Rect2(470, 478, 786, 226), "", rows, 2, "moves", true, footer)
+	return await _pick(Rect2(470, 540, 786, 164), "", rows, 2, "moves", true, footer, Rect2(24, 524, 436, 176))
 
 static func _all_out_of_pp(c: Creature) -> bool:
 	return c.moves.all(func(m): return int(m.pp) <= 0)
