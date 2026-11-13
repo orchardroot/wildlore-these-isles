@@ -77,7 +77,7 @@ def west_highland_way():
     a, b, c = spots(z, 3, 41)
     poi(z, "cache", at, a, item="flask_of_tea", line="A flask-sized tin under a flat stone, tied with garden twine. Someone's emergency tea. You are an emergency.")
     poi(z, "stone", at, b, stat="hp", lore=["Sheep have rubbed one side smooth. Even the sheep come here.", "The real thing is the Ring of Brodgar, on Orkney: a huge ring of upright slabs on a spit between two lochs."])
-    poi(z, "den", at, c, species="snowhare")
+    poi(z, "den", at, c, species="caperling")
     field(z, "glint", "line", "glint", 24, 29, "Something glints in a lochan. {lead} wades in, makes a few calm passes and fishes it out: a walker's purse, a bit damp.", {"money": 32 * 71}, at)
     place(at, 480, 420)
 
@@ -205,7 +205,7 @@ def pass_of_brander():
     a, b, c = spots(z, 3, 61)
     poi(z, "stone", at, a, stat="atk", lore=["You put a hand on it. It is older than your whole family tree, put together.", "The real thing is the Clava Cairns, near Inverness: ring cairns inside circles of standing stones, among old beech trees."])
     poi(z, "cache", at, b, item="rowan_sprig", line="A hollow in the old tree, and something wrapped in oilcloth.")
-    poi(z, "den", at, c, species="wildkit")
+    poi(z, "den", at, c, species="snowhare")
     field(z, "mend", "mend", "wall_gap", 12, 30, "{lead} nudges the loose stones of the drystone wall back into line, one at a time. The farmer leaves a flask of tea on the post.", {"item": "flask_of_tea", "qty": 1}, at)
     place(at, 455, 440)
 
