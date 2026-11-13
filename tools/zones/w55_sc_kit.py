@@ -22,6 +22,7 @@ def link(z, side, at, other, oside, oat, width=3):
     z.rect(x, y, w, h, "#")
     z.d["edges"][side] = {"to": other, "offset": oat - at}
     carve(other, oside, oat, z.d["id"], at - oat, width)
+    seal(other, oside, oat, width)
 
 
 def trn(z, tid, name, cls, sprite, party, x, y, facing, intro, win, after, money):

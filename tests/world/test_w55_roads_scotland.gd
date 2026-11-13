@@ -129,7 +129,7 @@ func test_the_validator_is_happy_with_the_new_roads_and_the_places_they_cut_into
 	errs.append_array(Gazetteer.validate(Gazetteer.all()))
 	errs.append_array(WorldConsistency.check(all, StoryData.all_dialogue()).filter(func(e): return _about(JSON.stringify(e), mine)))
 	errs.append_array(Coverage.reachability(all, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()).filter(func(e): return _about(str(e), mine)))
-	assert_eq(errs.size(), 0, str(errs.slice(0, 5)))
+	assert_eq(errs.size(), 0, str(errs.slice(0, 12)))
 
 func _about(text: String, zones: Dictionary) -> bool:
 	for z in zones:

@@ -117,6 +117,44 @@ def carve(zid, side, at, to, offset, width=3, force_depth=None):
     return lo
 
 
+def seal(zid, side, at, width=3):
+    """Once `side` of an existing zone has an edge, every walkable tile on that border leads somewhere. A zone that
+    had no edge there may have a stray walkable tile on it (a bit of beach, a pier end): turn each one outside the
+    new gap into whatever the nearest blocked border tile is, so the only way off that side is the gap. Idempotent."""
+    p = zpath(zid)
+    text = open(p, encoding="utf-8").read()
+    d = json.loads(text)
+    walk = _walk_chars(d)
+    rows = [list(r) for r in d["rows"]]
+    h = len(rows); w = len(rows[0])
+    lo = at - width // 2
+    if side in ("north", "south"):
+        y = 0 if side == "north" else h - 1
+        cells = [(x, y) for x in range(w)]
+        pos = lambda c: c[0]
+    else:
+        x = 0 if side == "west" else w - 1
+        cells = [(x, y) for y in range(h)]
+        pos = lambda c: c[1]
+    changed = set()
+    for c in cells:
+        if rows[c[1]][c[0]] in walk and not (lo <= pos(c) < lo + width):
+            best = None
+            for o in cells:
+                if rows[o[1]][o[0]] not in walk and (best is None or abs(pos(o) - pos(c)) < abs(pos(best) - pos(c))):
+                    best = o
+            rows[c[1]][c[0]] = rows[best[1]][best[0]] if best else "T"
+            changed.add(c[1])
+    if not changed:
+        return
+    lines = text.split("\n")
+    ri, _ = _find_block(lines, "rows")
+    for y in changed:
+        lines[ri + 1 + y] = '  "%s"%s' % ("".join(rows[y]), "," if y < h - 1 else "")
+    open(p, "w", encoding="utf-8").write("\n".join(lines))
+    json.loads("\n".join(lines))
+
+
 def place(pid, x, y):
     """add `pid` to the world map's places (a text patch of the one-line object)."""
     p = os.path.join(ROOT, "data", "world_map.json")
