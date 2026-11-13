@@ -1,0 +1,614 @@
+{
+ "id": "southern_upland_way",
+ "name": "The Southern Upland Way",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_moors",
+ "weather": {
+  "drizzle": 30,
+  "clear": 22,
+  "downpour": 10,
+  "fog": 14,
+  "gale": 8,
+  "sunshine": 12,
+  "frost": 4
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 7,
+   "y": 18,
+   "w": 8,
+   "h": 4,
+   "label": "Museum of Lead Mining"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 15,
+   "y": 19,
+   "w": 5,
+   "h": 4
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 7,
+   "y": 24,
+   "w": 5,
+   "h": 3
+  },
+  {
+   "type": "slate_heap",
+   "x": 5,
+   "y": 20
+  },
+  {
+   "type": "slate_heap",
+   "x": 5,
+   "y": 22
+  },
+  {
+   "type": "slate_heap",
+   "x": 19,
+   "y": 25
+  },
+  {
+   "type": "bench",
+   "x": 15,
+   "y": 17
+  },
+  {
+   "type": "lamp_post",
+   "x": 13,
+   "y": 17
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 46,
+   "y": 24,
+   "w": 8,
+   "h": 4,
+   "label": "Tibbie Shiels Inn"
+  },
+  {
+   "type": "bench",
+   "x": 44,
+   "y": 23
+  },
+  {
+   "type": "bench",
+   "x": 52,
+   "y": 22
+  },
+  {
+   "type": "boat",
+   "x": 38,
+   "y": 12,
+   "variant": 1
+  },
+  {
+   "type": "statue",
+   "x": 33,
+   "y": 22
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 21,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 52,
+   "y": 3,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 32,
+   "y": 43,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 46,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 42,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 46,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 44,
+   "y": 26,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 16,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 60,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 45,
+   "y": 41,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 55,
+   "y": 34,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 20,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 12,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 35,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 8,
+   "y": 43,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 23,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 37,
+   "y": 44,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 26,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 27,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 58,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 33,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 35,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 38,
+   "y": 25,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 9,
+   "y": 43,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 40,
+   "y": 25,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 25,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 13,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 17,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 54,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 35,
+   "y": 44,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 6,
+   "y": 29,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 4,
+   "y": 33,
+   "variant": 0
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "galloway",
+   "offset": -1
+  },
+  "east": {
+   "to": "scottish_borders",
+   "offset": -6
+  }
+ },
+ "npcs": [
+  {
+   "id": "sw_walker",
+   "sprite": "hiker",
+   "x": 18,
+   "y": 16,
+   "facing": "right",
+   "move": "still",
+   "script": "sw_walker"
+  },
+  {
+   "id": "sw_librarian",
+   "sprite": "villager_4",
+   "x": 12,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "sw_librarian"
+  },
+  {
+   "id": "sw_landlady",
+   "sprite": "villager_2",
+   "x": 50,
+   "y": 29,
+   "facing": "down",
+   "move": "still",
+   "script": "sw_landlady"
+  },
+  {
+   "id": "sw_shepherd",
+   "sprite": "farmer",
+   "x": 30,
+   "y": 22,
+   "facing": "left",
+   "move": "still",
+   "script": "sw_shepherd"
+  },
+  {
+   "id": "swy_walker",
+   "sprite": "hillwalker",
+   "x": 22,
+   "y": 20,
+   "facing": "right",
+   "move": "still",
+   "trainer": "swy_walker"
+  },
+  {
+   "id": "swy_shepherd",
+   "sprite": "farmer",
+   "x": 28,
+   "y": 21,
+   "facing": "down",
+   "move": "still",
+   "trainer": "swy_shepherd"
+  },
+  {
+   "id": "swy_angler",
+   "sprite": "angler",
+   "x": 40,
+   "y": 21,
+   "facing": "left",
+   "move": "still",
+   "trainer": "swy_angler"
+  },
+  {
+   "id": "swy_stalker",
+   "sprite": "ghillie",
+   "x": 30,
+   "y": 38,
+   "facing": "up",
+   "move": "still",
+   "trainer": "swy_stalker"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "leveret",
+    "min": 69,
+    "max": 70,
+    "weight": 14,
+    "time": [
+     "dawn",
+     "dusk",
+     "day"
+    ]
+   },
+   {
+    "species": "herdlet",
+    "min": 69,
+    "max": 70,
+    "weight": 12
+   },
+   {
+    "species": "thistlet",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "stoatlet",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "ospret",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "tattybogle",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "weather": [
+     "fog",
+     "drizzle"
+    ]
+   },
+   {
+    "species": "fawnlet",
+    "min": 69,
+    "max": 70,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "whiffhorn",
+    "min": 69,
+    "max": 70,
+    "weight": 6
+   },
+   {
+    "species": "pinewraith",
+    "min": 69,
+    "max": 70,
+    "weight": 6,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "bradan",
+    "min": 69,
+    "max": 70,
+    "weight": 20
+   },
+   {
+    "species": "ratty",
+    "min": 69,
+    "max": 70,
+    "weight": 16
+   },
+   {
+    "species": "dipling",
+    "min": 69,
+    "max": 70,
+    "weight": 16
+   },
+   {
+    "species": "stalklet",
+    "min": 69,
+    "max": 70,
+    "weight": 10
+   },
+   {
+    "species": "rillotter",
+    "min": 69,
+    "max": 70,
+    "weight": 14,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "heronarch",
+    "min": 69,
+    "max": 70,
+    "weight": 8
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 12,
+   "y": 17,
+   "text": "WANLOCKHEAD. About 467 metres above the sea, the highest village in Scotland. Lead was dug out of these hills for centuries, and the old workings are kept as the Museum of Lead Mining. The miners paid a subscription to keep a library of their own, and the Miners' Library is still here. Books were the other thing they dug for.",
+   "plaque": "w55_sc_wanlockhead",
+   "title": "Wanlockhead"
+  },
+  {
+   "x": 19,
+   "y": 17,
+   "text": "SOUTHERN UPLAND WAY. 212 miles, Portpatrick to Cockburnspath, opened in 1984 as Scotland's first coast-to-coast long-distance path. The waymarks are a thistle in a hexagon. You are on the bit between the lead hills and the Borders, and it is as good as the rest."
+  },
+  {
+   "x": 43,
+   "y": 22,
+   "text": "TIBBIE SHIELS. A widow called Isabella Richardson, known as Tibbie Shiels, took in lodgers at this cottage on St Mary's Loch from the 1820s and went on doing it for the rest of a long life. Walter Scott and James Hogg are both said to have called, and so did a great many walkers who were glad of the fire. The inn still has her name.",
+   "plaque": "w55_sc_tibbie",
+   "title": "Tibbie Shiels"
+  },
+  {
+   "x": 34,
+   "y": 23,
+   "text": "JAMES HOGG, THE ETTRICK SHEPHERD. Shepherd turned poet, who wrote The Private Memoirs and Confessions of a Justified Sinner in 1824. The statue looks across the loch he grew up beside, with a dog at his feet, because of course."
+  }
+ ],
+ "spawn": [
+  5,
+  14
+ ],
+ "stage": "valley",
+ "scaled_floor": 69,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTP",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTPTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTT",
+  "TTT.........................T.................P..............TTT",
+  "TTT..........TT..........P..PP.........TT...................PTPT",
+  "TTT...,,,,,,,,,,,,......,,,,,,,,,...wwwwwwwwwwwwww..,,,,,,,.TTTT",
+  "TTT..P,,,,,,,,,,,,......,,,,,,,,,...w~~~~~~~~~~~~w..,,,,,,,..TTT",
+  "TTT..P,,,,,,,,,,,,......,,,,,,,,,T..w~~~~~~~~~~~~w..,,,,,,,..TTT",
+  "TTT...,,,,,,,,,,,,......,,,,,,,,,...w~~~~~~~~~~~~wP.,,,,,,,.PTTT",
+  "TTT...,,,,,,,,,,,,..T...,,,,,,,,,...w~~~~~~~~~~~~w..,,,,,,,..TPT",
+  "TTT..T,,,,,,,,,,,,.T....,,,,,,,,,...w~~~~~~~~~~~~w..,,,,,,,..TTT",
+  "TTT.....................,,,,,,,,,...w~~~~~~~~~~~~w..,,,,,,,..TTT",
+  "TTT................P....,,,,,,,,,..Tw~~~~~~~~~~~~w..,,,,,,,..TTT",
+  "#######################.............w~~~~~~~~~~~~w..,,,,,,,..TTT",
+  "#######################..T..T..T....w~~~~~~~~~~~~w..,,,,,,,..TTT",
+  "#######################...........P.w~~~~~~~~~~~~wT.,,,,,,,.TTTT",
+  "TTT.................###.............w~~~~~~~~~~~~w..,,,,,,,..TTT",
+  "TTTP................###.WWWWWWWWWWWWw~~~~~~~~~~~~w...........TTT",
+  "TTT....BBBBBBBB.....###.W,,,,,,,,,,,w~~~~~~~~~~~~w...........TTT",
+  "TTT....BBBBBBBBBBBBB###.W,,,,,,,,,,,wwwwwwwwwwwwww...........TTT",
+  "TTT....BBBBBBBBBBBBB###.W,,,,,,,,,,,ssssssssssssssss.........TTT",
+  "TTT....BBBBBBBBBBBBB###.W,,,,,,,,,,,ssssssssssssssssP........TTT",
+  "TPT...........:BBBBB###.W,,,,,,,,,,,.P.......................TTT",
+  "TPT...........:.....###.W,,,,,,,,,,,.P.......P...............TTT",
+  "TTT....BBBBB..:.....###.WWWWWWWWWWWW......T...BBBBBBBB.......TPT",
+  "TTT....BBBBB..:.....###.T..........T........T.BBBBBBBB.....T.TTT",
+  "TTT....BBBBB::::::::###................PP.....BBBBBBBB.......TTT",
+  "TTT......P..........###..............T........BBBBBBBB.......TTT",
+  "TTT.................###...T...T...............::::::::.......TTT",
+  "TTP.................############################################",
+  "TTT......P..........############################################",
+  "TTT.....T....P......############################################",
+  "TTT......T.........P....,,,,,,,,,,,,,,..,,,,,,,,,,,,........PTPT",
+  "TTT...........P......T..,,,,,,,,,,,,,,..,,,,,,,,,,,,...P.....TTT",
+  "TTT...,,,,,,,,,,,,.T....,,,,,,,,,,,,,,..,,,,,,,,,,,,.........TTT",
+  "TTT...,,,,,,,,,,,,......,,,,,,,,,,,,,,..,,,,,,,,,,,,.........TTT",
+  "TTT...,,,,,,,,,,,,......,,,,,,,,,,,,,,..,,,,,,,,,,,,.........TTT",
+  "TTT...,,,,,,,,,,,,......,,,,,,,,,,,,,,..,,,,,,,,,,,,.........TTT",
+  "TTT...,,,,,,,,,,,,......,,,,,,,,,,,,,,..,,,,,,,,,,,,.........TTT",
+  "TTT..P,,,,,,,,,,,,..P.T.,,,,,,,,,,,,,,..,,,,,,,,,,,,.........TTT",
+  "TTT.P.,,,,,,,,,,,,..,,,,,,,,,,,,..................P..........TTT",
+  "TTT...,,,,,,,,,,,,..,,,,,,,,,,,,...............T.......T.....TTT",
+  "TTT.T....P..........,,,,,,,,,,,,.............................TTT",
+  "TTT..........T......,,,,,,,,,,,,...P.........................TTT",
+  "TTT........T..................................P...T.........TTTP",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTPPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTT"
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "id": "swy_stalker",
+ "name": "Deerstalker Anne",
+ "class": "Stalker",
+ "sprite": "ghillie",
+ "party": [
+  {
+   "species": "fawnlet",
+   "level": 69
+  },
+  {
+   "species": "stagmor",
+   "level": 70
+  },
+  {
+   "species": "martling",
+   "level": 70
+  },
+  {
+   "species": "pinewraith",
+   "level": 69
+  }
+ ],
+ "ai": "trainer",
+ "money": 2320,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Deerstalker Anne",
+   "text": "Quiet on the hill. Ah. A Keeper. Quiet is off the table, then."
+  }
+ ],
+ "win": "Well stalked. You have a good eye. Do not tell the deer.",
+ "after": "The trick is to be downwind of everything, including your own opinions.",
+ "scaled_floor": 69
+}

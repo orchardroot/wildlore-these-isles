@@ -1,0 +1,50 @@
+{
+ "sw_walker": [
+  {
+   "do": "say",
+   "who": "Way Walker",
+   "text": "Portpatrick to Cockburnspath, two hundred and twelve miles. I am doing it in sections, which is what you call it when you keep going home for a bath."
+  },
+  {
+   "do": "say",
+   "who": "Way Walker",
+   "text": "The best bit is the day nobody warned me about. It is different every time."
+  }
+ ],
+ "sw_librarian": [
+  {
+   "do": "say",
+   "who": "Museum Guide",
+   "text": "The miners here set up their own library, and paid for it themselves. I like to say they dug for lead by day and for ideas by night. It does not always go down well."
+  },
+  {
+   "do": "say",
+   "who": "Museum Guide",
+   "text": "Down the mine they worked by candle. Up here we have electricity, but we have not let it go to our heads."
+  }
+ ],
+ "sw_landlady": [
+  {
+   "do": "say",
+   "who": "Innkeeper",
+   "text": "We have had walkers, writers and a surprising number of wet dogs. The fire has seen them all. Tibbie would have approved of the fire."
+  },
+  {
+   "do": "say",
+   "who": "Innkeeper",
+   "text": "M\u00f2ran taing for stopping. Mind the sheep on your way out. They have opinions."
+  }
+ ],
+ "sw_shepherd": [
+  {
+   "do": "say",
+   "who": "Hill Shepherd",
+   "text": "There are more sheep on this hill than people in the whole county, and they all know where the gap in the wall is. It is a gift."
+  },
+  {
+   "do": "say",
+   "who": "Hill Shepherd",
+   "text": "If one of them looks at you, that is not an invitation to conversation. It is an invitation to leave."
+  }
+ ]
+}

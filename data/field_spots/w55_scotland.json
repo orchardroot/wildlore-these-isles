@@ -1,0 +1,17 @@
+[
+ {
+  "id": "fs_southern_upland_way_mend",
+  "zone": "southern_upland_way",
+  "x": 23,
+  "y": 21,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "{lead} nudges the loose stones back into the gap in the drystone wall, one at a time, and the sheep, who had been about to leave, change their minds. The shepherd leaves a flask of tea on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_southern_upland_way_mend",
+  "at": "southern_upland_way"
+ }
+]

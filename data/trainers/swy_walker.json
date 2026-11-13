@@ -1,0 +1,32 @@
+{
+ "id": "swy_walker",
+ "name": "Walker Isobel",
+ "class": "Hillwalker",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "herdlet",
+   "level": 69
+  },
+  {
+   "species": "leveret",
+   "level": 69
+  },
+  {
+   "species": "thistlet",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2240,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Walker Isobel",
+   "text": "Waymarks, boots and flapjacks. Have you got all three? No? Then you will be easy to beat."
+  }
+ ],
+ "win": "Well walked. I will rest my feet and your result.",
+ "after": "I met a man who has done it three times. He said it was a different path every time. I did not believe him until the fourth day.",
+ "scaled_floor": 69
+}

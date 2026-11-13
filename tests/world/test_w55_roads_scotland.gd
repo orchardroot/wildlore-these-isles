@@ -6,7 +6,9 @@ extends TestCase
 ## reachable once at least one place it joins is.
 
 ## The zones this session adds, with the existing places each one joins.
-const NEW := {}
+const NEW := {
+	"southern_upland_way": ["scottish_borders", "galloway"],
+}
 
 func _baseline() -> Dictionary:
 	return JsonUtil.read("res://tests/world/w55_walk_baseline.json")
@@ -100,6 +102,31 @@ func test_each_road_has_wildlife_trainers_plaques_and_a_nook() -> void:
 		assert_true(Poi.for_zone(zid).size() >= 2, "%s: things to find off the path" % zid)
 		var spots := FieldSpots.all().filter(func(s): return str(s.zone) == zid)
 		assert_true(spots.size() >= 1, "%s: a field spot" % zid)
+
+func test_the_validator_is_happy_with_the_new_roads_and_the_places_they_cut_into() -> void:
+	var all := ZoneData.load_all()
+	var dex := Dex.load_default()
+	var items := ItemDB.load_default()
+	var mine := {}
+	for zid in NEW:
+		mine[zid] = true
+		for j in NEW[zid]:
+			mine[j] = true
+	var errs := []
+	for zid in mine:
+		errs.append_array(all[zid].validate(all))
+	errs.append_array(Poi.check(all, dex, items).filter(func(e): return _about(str(e), mine)))
+	errs.append_array(FieldSpots.check(all, items).filter(func(e): return _about(str(e), mine)))
+	errs.append_array(Gazetteer.validate(Gazetteer.all()))
+	errs.append_array(WorldConsistency.check(all, StoryData.all_dialogue()).filter(func(e): return _about(JSON.stringify(e), mine)))
+	errs.append_array(Coverage.reachability(all, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()).filter(func(e): return _about(str(e), mine)))
+	assert_eq(errs.size(), 0, str(errs.slice(0, 5)))
+
+func _about(text: String, zones: Dictionary) -> bool:
+	for z in zones:
+		if text.contains(str(z)):
+			return true
+	return false
 
 func test_no_dash_in_what_the_player_reads() -> void:
 	for zid in NEW:

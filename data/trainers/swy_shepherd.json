@@ -1,0 +1,36 @@
+{
+ "id": "swy_shepherd",
+ "name": "Shepherd Wattie",
+ "class": "Shepherd",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "herdlet",
+   "level": 70
+  },
+  {
+   "species": "foalmoor",
+   "level": 69
+  },
+  {
+   "species": "hootlet",
+   "level": 69
+  },
+  {
+   "species": "tattybogle",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2300,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Shepherd Wattie",
+   "text": "Away you go. This is a working hill, and the work has just shown up."
+  }
+ ],
+ "win": "Well, that was a bit of a handful. My dogs are insulted.",
+ "after": "A good dog is worth three men and eats less. I will not say which dog I mean.",
+ "scaled_floor": 69
+}

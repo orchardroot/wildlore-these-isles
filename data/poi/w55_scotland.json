@@ -1,0 +1,59 @@
+{
+ "pois": [
+  {
+   "id": "poi_southern_upland_way_cache",
+   "zone": "southern_upland_way",
+   "near": [
+    6,
+    35
+   ],
+   "kind": "cache",
+   "at": "southern_upland_way",
+   "item": "miners_lamp",
+   "line": "A flat tin under a slate slab, left by someone who knew these hills well and trusted nobody else to."
+  },
+  {
+   "id": "poi_southern_upland_way_stone",
+   "zone": "southern_upland_way",
+   "near": [
+    37,
+    36
+   ],
+   "kind": "stone",
+   "at": "southern_upland_way",
+   "stat": "def",
+   "lore": [
+    "The wind drops when you stand beside it. You do not mention this to anyone.",
+    "The real thing is Callanish, on the Isle of Lewis: a cross of standing stones about 5,000 years old."
+   ]
+  },
+  {
+   "id": "poi_southern_upland_way_camp",
+   "zone": "southern_upland_way",
+   "near": [
+    24,
+    28
+   ],
+   "kind": "camp",
+   "at": "southern_upland_way",
+   "names": [
+    [
+     "Poacher Rab",
+     "Poacher"
+    ],
+    [
+     "Poacher Bronwen",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "leveret",
+    "fawnlet",
+    "stoatlet"
+   ],
+   "line": "This is a private camp. Private as in 'mind your own'.",
+   "money": 3100,
+   "item": "flask_of_tea"
+  }
+ ]
+}
