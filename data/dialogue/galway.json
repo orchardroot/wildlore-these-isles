@@ -415,5 +415,52 @@
    "who": "Rafael",
    "text": "I play Gaelic football now too. It's like football, but you can pick the ball up, and everyone is very angry."
   }
+ ],
+ "ct_bog_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "bog"
+  }
+ ],
+ "ct_bog_turf": [
+  {
+   "do": "if",
+   "flag": "ct_bog_is_caught",
+   "then": [
+    {
+     "do": "say",
+     "who": "Turf Seller",
+     "text": "Joyce's turf, dry as a bone. They say Padraig's Jack is in somebody's Keeper team. The bog's very quiet. Mikey is not."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Turf Seller",
+     "text": "Joyce's turf, dry as a bone, cut from a bank with white stakes on it. The Park people sent a letter. It went on the fire."
+    }
+   ]
+  }
+ ],
+ "ct_bog_lights": [
+  {
+   "do": "if",
+   "flag": "ct_bog_is_walk",
+   "then": [
+    {
+     "do": "say",
+     "who": "Walker",
+     "text": "There's a boardwalk now, and a light on the moss at night. I saw it from the planks. I've never been so glad to be scared."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Walker",
+     "text": "The bog's rewetting and there's a board about the lights. It says gas. I say fine, gas. Then I look again."
+    }
+   ]
+  }
  ]
 }
