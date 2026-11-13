@@ -125,3 +125,30 @@ func test_every_edge_arrival_is_walkable() -> void:
 			for b in z._border(side):
 				if z.walkable(b):
 					assert_true(target.walkable(z.edge_arrival(side, b, target)), "%s %s edge %s lands on foot" % [id, side, b])
+
+const Reach := preload("res://tests/support/w55_reach.gd")
+## The place on the far side of each gated road, the one the story has not opened yet.
+const BEYOND := {"aberglaslyn": "cambrian_coast", "llyn_tegid": "aberystwyth", "lower_bann": "bushmills", "erne_shore": "donegal_town"}
+
+## The sequence test has teeth: take the Wardens off a gated road and the place beyond it opens a step early.
+func test_a_gated_road_without_its_wardens_would_be_a_sequence_break() -> void:
+	var zones := ZoneData.load_all()
+	var steps := Reach.story_steps(zones)
+	var cache := {}
+	for id in _built():
+		var flag := str(ROUTES[id][1])
+		if flag == "":
+			continue
+		var at := 0
+		for i in steps.size():
+			if flag in steps[i].flags:
+				at = i - 1
+				break
+		var flags := {}
+		for f in steps[at].flags:
+			flags[f] = true
+		var beyond := str(BEYOND[id])
+		assert_false(Reach.reach(zones, flags, steps[at].seeds, cache).has(beyond), "%s: %s stays shut before %s" % [id, beyond, flag])
+		var z: ZoneData = zones[id]
+		z.npcs = z.npcs.filter(func(n): return str(n.get("script", "")) != "gate_" + id)
+		assert_true(Reach.reach(zones, flags, steps[at].seeds, cache).has(beyond), "%s: without Wardens %s would open early" % [id, beyond])

@@ -13,5 +13,20 @@
   },
   "flag": "field_aberglaslyn_mend",
   "at": "aberglaslyn"
+ },
+ {
+  "id": "fs_pen_y_gwryd_charm",
+  "zone": "pen_y_gwryd",
+  "x": 7,
+  "y": 22,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "Soft ground, a patient creature, and a lot of worms. {lead} brings up the lot, and under them: Four-Leaf Clover.",
+  "reward": {
+   "item": "four_leaf_clover",
+   "qty": 1
+  },
+  "flag": "field_pen_y_gwryd_charm",
+  "at": "pen_y_gwryd"
  }
 ]

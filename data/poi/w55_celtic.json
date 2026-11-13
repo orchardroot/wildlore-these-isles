@@ -25,6 +25,33 @@
     "It rings faintly when you tap it, like a bell with a cold.",
     "The real thing is a glacial erratic: Snowdonia has thousands, dropped by the ice."
    ]
+  },
+  {
+   "id": "poi_pen_y_gwryd_stone",
+   "zone": "pen_y_gwryd",
+   "near": [
+    8,
+    36
+   ],
+   "kind": "stone",
+   "at": "pen_y_gwryd",
+   "stat": "def",
+   "lore": [
+    "It is sharp and cold and has been left exactly where the glacier dropped it.",
+    "The real thing is the glacial erratics of Eryri, boulders the ice carried and dropped across Snowdonia."
+   ]
+  },
+  {
+   "id": "poi_pen_y_gwryd_cache",
+   "zone": "pen_y_gwryd",
+   "near": [
+    52,
+    40
+   ],
+   "kind": "cache",
+   "at": "pen_y_gwryd",
+   "item": "bog_myrtle_sprig",
+   "line": "A flask in a crack in the rock. Someone's emergency tea. They will not be needing it now that you have found it."
   }
  ]
 }

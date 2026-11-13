@@ -1,0 +1,32 @@
+{
+ "id": "pyg_instructor_t",
+ "name": "Instructor Rhian",
+ "class": "Instructor",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "kidgruff",
+   "level": 27
+  },
+  {
+   "species": "slatelet",
+   "level": 28
+  },
+  {
+   "species": "cragchough",
+   "level": 28
+  }
+ ],
+ "ai": "trainer",
+ "money": 510,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Instructor Rhian",
+   "text": "Right. Compass out. Which way is north? It is a trick question, the cloud has taken it."
+  }
+ ],
+ "win": "Fair enough. You went the right way and you did not even look at the map.",
+ "after": "Always pack for the weather you did not forecast.",
+ "scaled_floor": 28
+}
