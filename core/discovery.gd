@@ -117,14 +117,17 @@ static func take(zone_id: String) -> Dictionary:
 ## the place so a long walk spreads them about. Returns the line for the card ("" when the party is empty).
 static func reward(d: GameStateData, zone_id: String) -> String:
 	var n := 0
+	var trained := 0
 	var stat: String = Rules.STATS[absi(hash(zone_id)) % Rules.STATS.size()]
 	for c in d.party:
 		c.friendship = mini(255, c.friendship + FRIENDSHIP)
-		Poi.train(c, stat)
+		trained += Poi.train(c, stat)
 		n += 1
 	if n == 0:
 		return ""
-	return "Your team is chuffed to be somewhere new." if n > 1 else "%s is chuffed to be somewhere new." % _name_of(d.party[0])
+	var who := "Your team is" if n > 1 else "%s is" % _name_of(d.party[0])
+	# say what they got, in a few words (the stat is left out once everyone is trained to the cap)
+	return "%s chuffed: friendship up%s." % [who, ", a little more %s" % Poi.stat_name(stat) if trained > 0 else ""]
 
 static func _name_of(c: Creature) -> String:
 	return c.nickname if c.nickname != "" else str(c.species.get("name", "Your creature"))

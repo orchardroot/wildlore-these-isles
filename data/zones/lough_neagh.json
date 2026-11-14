@@ -20,6 +20,10 @@
   "west": {
    "to": "enniskillen",
    "offset": 0
+  },
+  "north": {
+   "to": "lower_bann",
+   "offset": 0
   }
  },
  "spawn": [
@@ -49,8 +53,8 @@
   }
  },
  "rows": [
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
   "TTgggggggggggggggggggggggggwwwwwwwggggggggggggggggggggggggggggTT",
   "TTggggggggggggggggwwwwwwwooooooooooowwwwwwwgggggggggggggggggggTT",
   "TTggggggggggggwwwwooooooooooooooooooooooooowwwwgggggggggggggggTT",

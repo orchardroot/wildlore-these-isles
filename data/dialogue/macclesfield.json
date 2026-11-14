@@ -484,5 +484,58 @@
    "venue": "willaston",
    "who": "Plot Judge"
   }
+ ],
+ "ct_mare_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "mare"
+  }
+ ],
+ "ct_mare_tea": [
+  {
+   "do": "if",
+   "flag": "ct_mare_is_legend",
+   "then": [
+    {
+     "do": "say",
+     "who": "Tea Room Owner",
+     "text": "Sheila's scones, and a white horse on the pub sign. I've had three Americans ask for the Wizard. I told them he's at Alderley."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_mare_is_box",
+     "then": [
+      {
+       "do": "say",
+       "who": "Tea Room Owner",
+       "text": "There's an owl box up at Sheila's now. They come for a look at dusk and stand about like a church. I sell a lot of tea."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_mare_is_kept",
+       "then": [
+        {
+         "do": "say",
+         "who": "Tea Room Owner",
+         "text": "Someone has a barn owl in their team that used to be the Mare. Sheila says it still screams. The pub doesn't know yet."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Tea Room Owner",
+         "text": "Sheila's scones. She says the top field's quiet now. She says it quietly, in case the owl is listening."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

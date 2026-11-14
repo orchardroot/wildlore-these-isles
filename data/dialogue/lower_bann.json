@@ -1,0 +1,50 @@
+{
+ "lb_eelman": [
+  {
+   "do": "say",
+   "who": "Eel Fisherman",
+   "text": "The eels come out of the sea as glass-clear things the size of your finger, and they spend their whole lives in the lough. Then they go back to the Sargasso to breed. Fifteen years in Neagh, and off for the big finale."
+  },
+  {
+   "do": "say",
+   "who": "Eel Fisherman",
+   "text": "We fish for them here at Toome. It's a co-op. Nobody's got rich, but nobody's gone hungry either."
+  }
+ ],
+ "lb_hedges": [
+  {
+   "do": "say",
+   "who": "Hedge Guide",
+   "text": "Ye'll want the photograph at dawn, before the buses. Stand in the middle of the road, so ye will. Ye'll not be knocked down. They're all taking the same photo."
+  },
+  {
+   "do": "say",
+   "who": "Hedge Guide",
+   "text": "Some of the old trees have come down in the storms. The ones that are left are the survivors. A bit like the rest of us."
+  }
+ ],
+ "lb_walker": [
+  {
+   "do": "say",
+   "who": "Bann Way Walker",
+   "text": "I'm walking it end to end. Slow river, flat path, and a flask. The Bann doesn't do drama. It does a very fine line in being there."
+  },
+  {
+   "do": "say",
+   "who": "Bann Way Walker",
+   "text": "Eleven miles a day, and a pint at the end of each. That's the rule."
+  }
+ ],
+ "gate_lower_bann": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "Road's closed. Works on the Bann. Very serious works. We've a cone."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The Keeper at the shipyard in Belfast has the say on this road, and he hasn't said it yet. Ask Ruair\u00ed. Past the cranes, the big shed."
+  }
+ ]
+}

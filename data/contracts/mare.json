@@ -1,0 +1,193 @@
+{
+ "id": "mare",
+ "title": "The Mare on the Moor Road",
+ "town": "macclesfield",
+ "nation": "england",
+ "group": "farmers",
+ "badges": 1,
+ "pay": 1,
+ "poster": {
+  "name": "Sheila Bostock",
+  "role": "hill farm above Macclesfield Forest",
+  "idle": [
+   "Looking for work, love? I've a small bother up at the farm, but it can wait until you've a badge in your pocket. Folk listen to a badge."
+  ],
+  "taken": [
+   "Anything yet? My dog Moss won't cross the top field after teatime. He's a brave dog. He fetched a ewe out of a drain last spring."
+  ],
+  "decided": [
+   "Sit down, pet. Kettle's on. Tell me what you made of it."
+  ],
+  "closed": "That's the top field sorted. Moss crossed it on Tuesday. I think he did it to be polite.",
+  "haggle": "Ha. You know your worth, and I know a good dog when I see one. Go on, then."
+ },
+ "notice": [
+  "Something big and white goes over the wall at the top field at dusk, no sound at all, then lets out a scream fit to curdle the milk.",
+  "Two walkers rang me in a state. The pub says it's the Wizard's mare, loose from the Edge. I say the Wizard can fetch his own horse."
+ ],
+ "trouble": [
+  "It's in the Forest, on the lane up to the farm. Go at dusk, when it's about, and bring a torch you don't mind dropping.",
+  "I can't pay much. Moss and I just want the footpath back. The walkers have stopped coming and I miss the tea money."
+ ],
+ "hypotheses": [
+  {"id": "mare", "name": "The Wizard's white mare", "types": ["kin"]},
+  {"id": "hare", "name": "A hare in a temper", "types": ["kin", "fae"]},
+  {"id": "owl", "name": "A barn owl", "types": ["night", "gale"]}
+ ],
+ "truth": "owl",
+ "clues": [
+  {
+   "id": "pellets",
+   "kind": "look",
+   "zone": "macc_forest",
+   "hint": "the ground under a post by the lane",
+   "text": "No hoofprints anywhere, which is odd for a horse. But under the post lie little black pellets, glossy as liquorice, packed with tiny bones and a vole's skull. A mare does not bring up bones.",
+   "points": ["owl"],
+   "rules_out": ["mare"]
+  },
+  {
+   "id": "dusk",
+   "kind": "look",
+   "zone": "macc_forest",
+   "hint": "the top of the lane, watched at dusk or after dark",
+   "text": "You stand very still as the light goes. A pale shape drifts along the wall at head height, wings wide and utterly silent, and turns its flat white heart of a face towards you. Then it screams. It is smaller than a pony and a good deal ruder.",
+   "hint_wait": "Wall, sheep, a cold wind. Whatever comes here keeps late hours. Try again at dusk or after dark.",
+   "points": ["owl"],
+   "when": {"phase": ["dusk", "night"]}
+  },
+  {
+   "id": "regular",
+   "kind": "ask",
+   "zone": "macc_forest",
+   "who": "Eric Dunkerley",
+   "hint": "hear what the walker at the gate makes of it",
+   "text": [
+    "The mare. Course it's the mare. White horse, no rider, comes over the wall like smoke. It's all in the story, a farmer and a white mare on the road to Macclesfield fair.",
+    "The old man in the cloak got that mare, and one of them has got out. You mark my words."
+   ],
+   "idle": ["I walk this lane every Sunday. I'm not scared. I just walk a bit faster at the top."],
+   "after": "An owl. Well, I never. Don't tell the pub. They'll be so disappointed.",
+   "points": ["mare"]
+  },
+  {
+   "id": "birder",
+   "kind": "ask",
+   "zone": "macc_forest",
+   "who": "Marjorie Wilde",
+   "hint": "ask the bird watcher with the binoculars",
+   "text": [
+    "Pale from underneath, silent wings, a face like a heart, and a scream? Hares scream when they are caught, but they do not fly. That is a barn owl.",
+    "They do not hoot, you know. That is the tawny. The barn owl shrieks, and it has been frightening people in the dark for a very long time."
+   ],
+   "idle": ["Counting owls. There are fewer than there were. I'll tell you if I find one, but I'll not tell the pub."],
+   "after": "I'd rather folk were frightened of an owl than rid of one. I shall be putting that on a poster.",
+   "points": ["owl"],
+   "rules_out": ["hare"]
+  }
+ ],
+ "lair": {
+  "zone": "macc_forest",
+  "name": "The Mare",
+  "species": "barnling",
+  "level": 16,
+  "floor_par": 13,
+  "intro": [
+   "The top of the lane, a drystone wall, and a gatepost as grey as the sky. A heap of black pellets sits underneath, and a smell of old hay.",
+   "Something pale and round-faced sits on the post and looks down at you without blinking. Sheila calls it the Mare. It has the air of a creature that has been called worse."
+  ],
+  "beaten": [
+   "The Mare puffs up on the post, white face flat with outrage, and then goes silent and rather small. Down the lane, a dog barks once, bravely."
+  ]
+ },
+ "choices": [
+  {
+   "id": "legend",
+   "label": "Say nothing: let the Wizard's mare ride on",
+   "say": [
+    "You tell Sheila it is only a ghost story and cannot be helped, and she says that is what she thought. By Sunday the pub has put a white horse on its sign, and the tea money is back.",
+    "The owl goes on hunting the top field, screaming at whoever walks into its evening. Nobody tells it that it is a horse."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_mare_done": true, "ct_mare_legend": true},
+   "repute": {"townsfolk": 1, "wardens": -1},
+   "standing": {"england": 1},
+   "poster": ["A mare, and not a word said? Grand. The pub's full, and I've sold forty scones to people looking for a ghost. Here's your fee."],
+   "after": ["Walkers ask me where the mare is. I point at the top field and say mind the wall. It's nearly true."],
+   "journal": "You let the legend stand. The footpath is full again and the pub has a white horse on its sign. The owl has never been told."
+  },
+  {
+   "id": "box",
+   "label": "Put up a barn owl box and a sign saying what it is",
+   "say": [
+    "You and Sheila fix an owl box high in the hay barn and a small notice on the gate: BARN OWL. SILENT, SCREAMS, HARMLESS. Please do not look for the Wizard.",
+    "The walkers read the sign and stand very still at dusk. Half of them go home with the wrong end of a ghost story and the right end of an owl."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_mare_done": true, "ct_mare_box": true},
+   "repute": {"wardens": 2, "townsfolk": -1},
+   "standing": {"england": 1},
+   "poster": ["An owl box and a sign. Folk stand at the gate with their phones out at dusk and say nothing. I can't believe how quiet it's got. Eighty per cent."],
+   "after": ["The owl uses the box. Moss has stopped minding the top field, and the tea money has come back for good. The pub is annoyed with me."],
+   "journal": "You fixed up a barn owl box and put a sign on the gate. The owl has a home, the walkers have a pastime, and the pub has lost its ghost."
+  },
+  {
+   "id": "alone",
+   "label": "Leave it be: it is only an owl, and it will mind its own business",
+   "say": [
+    "You tell Sheila what it is and walk away. She stands at the gate a long while, and then says she'll go up the top field after teatime herself, with Moss, and see.",
+    "Nothing eats anyone. The owl screams once, Moss growls once, and after a week they have come to an arrangement."
+   ],
+   "fee": 0.6,
+   "flags": {"ct_mare_done": true, "ct_mare_alone": true},
+   "repute": {"farmers": 1, "wardens": 1},
+   "standing": {"england": 1},
+   "poster": ["An owl, and no fuss. Well, it's a relief. I'll go up with the dog and have a look myself. Sixty per cent, and a scone."],
+   "after": ["The owl and Moss have an understanding. He stays out of its way and it stays out of his. That's more than I can say for the pub."],
+   "journal": "You told Sheila it was an owl and left it at that. She faced it herself with her dog, and nobody was hurt."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes round the Mare, who goes in with a look of long-suffering dignity and a single, outraged hiss. A little way off, a dog barks once and then, very carefully, crosses the top field."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_mare_done": true, "ct_mare_kept": true},
+   "repute": {"farmers": 1, "wardens": -1},
+   "standing": {"england": 1},
+   "poster": ["It's in your team? A silent white owl that screams, in your team. Well, the top field's quiet. Eighty per cent. Don't let it near Moss."],
+   "after": ["Moss walks the top field like a lord now. I hear you've a barn owl with you. Does it still scream? I'd pay to see the Wizard's face."],
+   "journal": "You caught the Mare and now travel with a barn owl that screams. The top field is quiet, the pub is mournful, and Moss is insufferable."
+  }
+ ],
+ "real": "Barn owls are pale underneath and fly almost silently, because the front edges of their feathers are soft and comb-like. They do not hoot: that is the tawny owl. A barn owl shrieks, and the white shape and the scream have probably started a good few haunting stories. Alderley Edge, near Macclesfield, has a legend of a farmer on his way to the fair with a white horse, who met an old man who led him into a cavern of sleeping knights, each with a white horse, with one short. Alan Garner built a children's book on it. Barn owls have lost many nesting sites as old barns are converted, and a box in a barn, set up high, is the usual help.",
+ "places": {
+  "poster": {"sprite": "farmer", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "regular", "sprite": "hiker", "near": [30, 22]},
+   {"clue": "birder", "sprite": "birdwatcher", "near": [47, 12]}
+  ],
+  "looks": [
+   {"clue": "pellets", "near": [36, 28], "on": "any", "text": ["A fence post at the top of the lane, with a scatter of dark pellets at its foot."]},
+   {"clue": "dusk", "near": [44, 20], "on": "any", "text": ["The drystone wall at the top of the lane. The sheep have moved well away from it."]}
+  ],
+  "lair": {"near": [40, 14]},
+  "folk": [
+   {
+    "id": "tea",
+    "zone": "macclesfield",
+    "near": [30, 24],
+    "sprite": "villager_3",
+    "name": "Tea Room Owner",
+    "show_if": "ct_mare_done",
+    "says": [
+     ["ct_mare_is_legend", ["Sheila's scones, and a white horse on the pub sign. I've had three Americans ask for the Wizard. I told them he's at Alderley."]],
+     ["ct_mare_is_box", ["There's an owl box up at Sheila's now. They come for a look at dusk and stand about like a church. I sell a lot of tea."]],
+     ["ct_mare_is_kept", ["Someone has a barn owl in their team that used to be the Mare. Sheila says it still screams. The pub doesn't know yet."]]
+    ],
+    "else": ["Sheila's scones. She says the top field's quiet now. She says it quietly, in case the owl is listening."]
+   }
+  ]
+ }
+}

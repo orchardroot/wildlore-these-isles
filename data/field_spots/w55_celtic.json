@@ -118,5 +118,35 @@
   },
   "flag": "field_hook_head_mend",
   "at": "hook_head"
+ },
+ {
+  "id": "fs_lower_bann_mend",
+  "zone": "lower_bann",
+  "x": 8,
+  "y": 27,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Armagh Bramley in the hollow.",
+  "reward": {
+   "item": "armagh_bramley",
+   "qty": 1
+  },
+  "flag": "field_lower_bann_mend",
+  "at": "lower_bann"
+ },
+ {
+  "id": "fs_erne_shore_mend",
+  "zone": "erne_shore",
+  "x": 12,
+  "y": 37,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Champ in the hollow.",
+  "reward": {
+   "item": "champ",
+   "qty": 1
+  },
+  "flag": "field_erne_shore_mend",
+  "at": "erne_shore"
  }
 ]

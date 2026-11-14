@@ -285,7 +285,9 @@ func test_favour_five_waits_at_mums_and_nowhere_else_new() -> void:
 	assert_eq(defs[0].id, "reg_ned_mums")
 	assert_eq(defs[0].script, "regular_ned")
 	assert_eq(Regulars.next_beat(d, "ned", "macc_home"), "mums")
-	assert_eq(Regulars.npcs_for("whitby", d).size(), 1, "still at home in Whitby, nothing else added")
+	assert_eq(Regulars.npcs_for("whitby", d).size(), 0, "waiting at Mum's, so not also standing in Whitby")
+	Regulars.complete(d, "ned", "mums")
+	assert_eq(Regulars.npcs_for("whitby", d).size(), 1, "back home once the scene has played")
 
 func test_one_visitor_at_a_time_earliest_first() -> void:
 	var d := _data()

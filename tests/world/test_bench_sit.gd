@@ -33,3 +33,13 @@ func test_which_inputs_stand_you_up() -> void:
 	r.pressed = false
 	assert_false(BenchSit.is_stand_event(r), "a release isn't either")
 	assert_false(BenchSit.is_stand_event(InputEventMouseMotion.new()))
+
+func test_the_street_carries_on_while_you_sit() -> void:
+	var was := Router.busy
+	Router.busy = true
+	BenchSit.sitting = false
+	assert_true(Npc.street_stopped(), "a scene still freezes everyone")
+	BenchSit.sitting = true
+	assert_false(Npc.street_stopped(), "a seated player does not")
+	BenchSit.sitting = false
+	Router.busy = was

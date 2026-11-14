@@ -1,0 +1,32 @@
+{
+ "id": "lb_eelfisher",
+ "name": "Eel Fisher Brendan",
+ "class": "Eel Fisher",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "neagheen",
+   "level": 65
+  },
+  {
+   "species": "pollanet",
+   "level": 66
+  },
+  {
+   "species": "rillotter",
+   "level": 66
+  }
+ ],
+ "ai": "trainer",
+ "money": 2810,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Eel Fisher Brendan",
+   "text": "Ye've the look of a person who's never held an eel. Here, mind this one. No? Fight so."
+  }
+ ],
+ "win": "Slippery. And clever. Fair play.",
+ "after": "An eel will get out of anything. The ones I've kept have all been very good escapists.",
+ "scaled_floor": 65
+}

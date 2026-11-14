@@ -1,0 +1,32 @@
+{
+ "id": "es_angler",
+ "name": "Angler Declan",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "elverlet",
+   "level": 65
+  },
+  {
+   "species": "cranelet",
+   "level": 66
+  },
+  {
+   "species": "pollanet",
+   "level": 66
+  }
+ ],
+ "ai": "trainer",
+ "money": 2810,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Declan",
+   "text": "The pike in Erne are the size of small dogs. I'm not joking. I've a photograph, and the dog's in it for scale."
+  }
+ ],
+ "win": "Bit. That's the first bite I've had all week.",
+ "after": "Roach, bream, pike, and the odd tale. Mostly tales.",
+ "scaled_floor": 65
+}
