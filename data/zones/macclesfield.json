@@ -680,6 +680,27 @@
    "move": "still",
    "script": "macc_worm_charmer",
    "name": "Plot Judge"
+  },
+  {
+   "id": "ct_mare_poster",
+   "sprite": "farmer",
+   "x": 27,
+   "y": 15,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mare_poster",
+   "name": "Sheila Bostock"
+  },
+  {
+   "id": "ct_mare_tea",
+   "sprite": "villager_3",
+   "x": 32,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mare_tea",
+   "name": "Tea Room Owner",
+   "show_if": "ct_mare_done"
   }
  ],
  "encounters": {},

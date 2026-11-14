@@ -10,5 +10,28 @@
    "venue": "longshaw",
    "who": "Trials Steward"
   }
+ ],
+ "ct_mare_regular": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "mare",
+   "clue": "regular"
+  }
+ ],
+ "ct_mare_birder": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "mare",
+   "clue": "birder"
+  }
+ ],
+ "ct_mare_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "mare"
+  }
  ]
 }
