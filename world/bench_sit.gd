@@ -3,7 +3,8 @@ extends Node
 ## Sit down (wave 54). Face a bench and press confirm: you settle onto it, the camera eases in, and the clock runs
 ## fast so dusk comes on, the lamps light and the windows glow. Any key stands you up again. The fast clock is
 ## capped: DAY_CAP game minutes a day, never across midnight, so a bench is for watching the evening, not for
-## skipping days. The playtest bot never sits. While you sit the world is busy (nobody wanders, the pause menu waits).
+## skipping days. The playtest bot never sits. While you sit the router is busy (you can't walk, the pause menu waits) but the street
+## carries on: Npc.street_stopped() ignores a sitting player, so people still wander and glance about.
 
 const SEAT := 0.17            # how far above the ground you sit
 const SETTLE_SECS := 0.4
