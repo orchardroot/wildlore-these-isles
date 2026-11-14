@@ -45,6 +45,10 @@ static func _run(ref: WeakRef) -> void:
 				var fs: int = maxi(UIKit.MIN_TEXT, roundi(int(l.get_meta("sq_want")) * k))
 				l.add_theme_font_size_override("font_size", fs)
 				l.set_meta("sq_now", fs)
+				if l is Button and l.custom_minimum_size.y > 0:  # a row sized for the full text gives its height back too
+					if not l.has_meta("sq_minh"):
+						l.set_meta("sq_minh", l.custom_minimum_size.y)
+					l.custom_minimum_size.y = maxf(float(UIKit.line_height(UIKit.MIN_TEXT)) + 4.0, float(l.get_meta("sq_minh")) * k)
 		await tree.process_frame
 		await tree.process_frame
 		c = ref.get_ref() as Control

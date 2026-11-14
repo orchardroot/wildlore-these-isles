@@ -186,7 +186,7 @@ static func fit_column(col: VBoxContainer, room: float) -> void:
 	if not col.has_meta("sep"):
 		col.set_meta("sep", col.get_theme_constant("separation"))
 	col.add_theme_constant_override("separation", int(col.get_meta("sep")))
-	for k in [1.0, 0.92, 0.85, 0.78, 0.72]:
+	for k in [1.0, 0.92, 0.85, 0.78, 0.72, 0.64, 0.56, 0.5, 0.45, 0.4]:  # the last few are for Largest text
 		for l in labels:
 			l.add_theme_font_size_override("font_size", maxi(MIN_TEXT, roundi(int(l.get_meta("want")) * k)))
 		if _column_height(col) <= room:

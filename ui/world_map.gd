@@ -91,6 +91,8 @@ func _select(town: String) -> void:
 	_panel.visible = town != ""
 	_refresh_ask()
 	_place_panel()
+	if UIKit.largest():
+		_place_panel.call_deferred()  # laid out now, so the card's words can step down to the room
 	view.queue_redraw()
 
 func _flyable(town: String) -> bool:
@@ -130,7 +132,10 @@ func _place_panel() -> void:
 	var top := 14.0 + (60.0 if _can_fly else 0.0)  # clear of the Fly button
 	var bottom: float = _panel.get_parent().size.y - 12.0
 	if _objective_panel != null and _panel.get_parent() == _objective_panel.get_parent():
-		bottom -= _objective_panel.get_combined_minimum_size().y + 8.0
+		var strip := _objective_panel.get_combined_minimum_size().y
+		if _objective_panel.size.y < _panel.get_parent().size.y * 0.5:
+			strip = maxf(strip, _objective_panel.size.y)  # its wrapped height, once it has been laid out
+		bottom -= strip + 8.0
 	UIKit.fit_column(_panel.get_child(0), bottom - top - 28.0)  # a town with a lot on (or Large text) steps its words down
 	_panel.reset_size()
 	var y := maxf(top, minf(96.0, bottom - _panel.size.y))
