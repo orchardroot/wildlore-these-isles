@@ -444,7 +444,8 @@
    "y": 36,
    "facing": "right",
    "move": "still",
-   "trainer": "hb_legionary"
+   "trainer": "hb_legionary",
+   "champion": "hb_legionary"
   },
   {
    "id": "hb_birder",

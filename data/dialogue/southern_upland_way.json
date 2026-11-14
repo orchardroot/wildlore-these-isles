@@ -46,5 +46,22 @@
    "who": "Hill Shepherd",
    "text": "If one of them looks at you, that is not an invitation to conversation. It is an invitation to leave."
   }
+ ],
+ "champ_swy_stalker": [
+  {
+   "do": "say",
+   "who": "Deerstalker Anne",
+   "text": "Quiet. There's a stag over that ridge and he thinks I haven't seen him. I have. Hello again."
+  },
+  {
+   "do": "rchamp",
+   "id": "swy_stalker",
+   "intro": [
+    "I've been still for an hour. A battle will get the blood moving.",
+    "The wind is in my favour, and I've picked a team to match."
+   ],
+   "win": "Well stalked. You came up on me quietly, I'll give you that.",
+   "tired": "Once a week, and the deer have had enough noise. Monday."
+  }
  ]
 }

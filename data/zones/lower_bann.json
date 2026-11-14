@@ -369,7 +369,8 @@
    "y": 34,
    "facing": "right",
    "move": "still",
-   "trainer": "lb_eelfisher"
+   "trainer": "lb_eelfisher",
+   "champion": "lb_eelfisher"
   },
   {
    "id": "lb_farmer",

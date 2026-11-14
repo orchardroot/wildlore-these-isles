@@ -58,5 +58,22 @@
    "who": "Shingle Gardener",
    "text": "The gardens at Prospect Cottage are laid out with stones and driftwood like a poem. People come from all over to stand at the fence and say nothing."
   }
+ ],
+ "champ_rm_martello": [
+  {
+   "do": "say",
+   "who": "Coastguard Carol",
+   "text": "Quiet today. The tower has been standing guard for two hundred years against a threat that never arrived. Dedication."
+  },
+  {
+   "do": "rchamp",
+   "id": "rm_martello",
+   "intro": [
+    "I'll be honest: this is the most exciting thing all week.",
+    "Let me check the weather. Ah. Yes. That's my team picked."
+   ],
+   "win": "Well done. Napoleon would've lost too, and he'd not have taken it so well.",
+   "tired": "Once a week, and I've an actual duty to get to. Monday."
+  }
  ]
 }

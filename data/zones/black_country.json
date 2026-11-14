@@ -470,7 +470,8 @@
    "y": 26,
    "facing": "left",
    "move": "still",
-   "trainer": "bc_foundry"
+   "trainer": "bc_foundry",
+   "champion": "bc_foundry"
   },
   {
    "id": "bc_pigeon_t",

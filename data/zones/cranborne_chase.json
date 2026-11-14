@@ -404,7 +404,8 @@
    "y": 52,
    "facing": "left",
    "move": "still",
-   "trainer": "cc_hillfort"
+   "trainer": "cc_hillfort",
+   "champion": "cc_hillfort"
   },
   {
    "id": "cc_deerman",

@@ -41,5 +41,22 @@
    "who": "Dales Ranger",
    "text": "Mind the becks after rain. They come up fast, and they take hats."
   }
+ ],
+ "champ_sw_historian": [
+  {
+   "do": "say",
+   "who": "Castle Warden Hugh",
+   "text": "Mind the stones. They've been here since the eleventh century and they'd like to see the twelfth."
+  },
+  {
+   "do": "rchamp",
+   "id": "sw_historian",
+   "intro": [
+    "Another challenge? The castle has stood worse, so I'll risk it.",
+    "Let me see what the season has brought me."
+   ],
+   "win": "A fair fight, fairly won. Put that in the guidebook.",
+   "tired": "Once a week, I'm afraid. The castle needs me, mostly to stand next to. Monday."
+  }
  ]
 }

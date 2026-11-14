@@ -41,5 +41,22 @@
    "who": "Reed Cutter",
    "text": "Reed beds don't look after themselves. I cut them each winter so the bitterns have something to hide in. Roof thatchers love the leftovers."
   }
+ ],
+ "champ_hb_legionary": [
+  {
+   "do": "say",
+   "who": "Centurion Dai",
+   "text": "Ave. Or hello. The helmet makes both of them sound the same. It's no longer comfortable, but it's accurate."
+  },
+  {
+   "do": "rchamp",
+   "id": "hb_legionary",
+   "intro": [
+    "Form up! No? Fair enough, it's just you and me.",
+    "The Roman army marched on its stomach. I march on a flask of tea."
+   ],
+   "win": "Well fought. Rome would have given you a laurel. I can offer a sausage roll.",
+   "tired": "A legion rests, you know. Back on Monday, and I'll polish the helmet."
+  }
  ]
 }

@@ -370,7 +370,8 @@
    "y": 18,
    "facing": "right",
    "move": "still",
-   "trainer": "es_boatman"
+   "trainer": "es_boatman",
+   "champion": "es_boatman"
   },
   {
    "id": "gate_erne_shore_a",

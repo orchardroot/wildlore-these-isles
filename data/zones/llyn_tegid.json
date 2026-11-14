@@ -500,7 +500,8 @@
    "y": 33,
    "facing": "right",
    "move": "still",
-   "trainer": "tg_angler"
+   "trainer": "tg_angler",
+   "champion": "tg_angler"
   },
   {
    "id": "tg_walker",

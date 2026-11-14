@@ -62,6 +62,7 @@ func _initialize() -> void:
 	errors.append_array(RideCheck.problems(zones))  # w54: the coracle never skips a story gate (no_ride rects close the leaks)
 	errors.append_array(Contracts.validate(zones, StoryData.all_dialogue(), dex, items_db))  # w55: notice-board contracts (data/contracts)
 	errors.append_array(TownProjects.problems(zones, items_db))  # w55: town projects: real towns, residents, stages, hidden warps
+	errors.append_array(RouteChampions.problems(zones, dex))  # w57: the Walkers' League: a champion on each new road
 	errors.append_array(DeedChoices.problems(items_db))  # w55: Deed upgrades, monthly matters and manager temperaments
 	errors.append_array(Secrets.problems(zones, Quests.all_settable(), items_db, dex))  # w56: the fifteen hidden places
 	errors.append_array(Coverage.check(dex, zones))

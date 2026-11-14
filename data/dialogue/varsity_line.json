@@ -58,5 +58,22 @@
    "who": "Warden",
    "text": "See Keeper Hester in the crypt at York about the Spirit Stone, and we'll see about the points."
   }
+ ],
+ "champ_vl_scholar": [
+  {
+   "do": "say",
+   "who": "Don Priscilla",
+   "text": "Ah, a visitor. You're not on the timetable, but then neither is the line."
+  },
+  {
+   "do": "rchamp",
+   "id": "vl_scholar",
+   "intro": [
+    "A debate or a battle? I'll take the battle, it has fewer footnotes.",
+    "I've read the weather, and I've chosen my team on the evidence."
+   ],
+   "win": "Compelling. I'd submit that for peer review, if the reviewers could keep up.",
+   "tired": "Once a week, as per the regulations. Monday, and do bring a reading list."
+  }
  ]
 }

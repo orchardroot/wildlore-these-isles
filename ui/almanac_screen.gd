@@ -88,6 +88,10 @@ func _show_ledger(kind: String) -> void:
 		_tab = PiecesTab.new(self)
 		_tab.build(col)
 		return
+	if kind == "walkers":  # w57: the Walkers' League, a list of road champions with the focused one beside it (ui/league_tab.gd)
+		_tab = LeagueTab.new(self)
+		_tab.build(col)
+		return
 	if kind == "papers":  # a list with the paper beside it (ui/papers_tab.gd)
 		_tab = PapersTab.new(self)
 		_tab.build(col)

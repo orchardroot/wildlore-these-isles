@@ -62,6 +62,7 @@ static func _build() -> Array:
 		if k is Dictionary:
 			out.append({"id": PROJECT_PREFIX + str(p.id), "town": "", "project": str(p.id), "name": str(k.name), "shape": str(k.shape),
 				"col": Color(str(k.col)), "col2": Color(str(k.col2)), "line": str(k.line)})
+	out.append_array(RouteChampions.keepsakes())  # w57: each Walkers' League title leaves a keepsake too
 	return out
 
 static func souvenir(id: String) -> Dictionary:
@@ -79,7 +80,7 @@ static func unlocked(d: GameStateData, plaques: Array = []) -> Array:
 	for p in list:
 		if Gazetteer.is_read(d, str(p.id)):
 			towns[str(p.town)] = true
-	return SOUVENIRS.filter(func(s): return towns.has(s.town) or (s.has("project") and TownProjects.is_done(d, str(s.project)))).map(func(s): return s.id)
+	return SOUVENIRS.filter(func(s): return towns.has(s.town) or (s.has("project") and TownProjects.is_done(d, str(s.project))) or (s.has("league") and RouteChampions.beaten_count(d) >= int(s.league))).map(func(s): return s.id)
 
 static func slot(d: GameStateData, n: int) -> String:
 	var v: Variant = d.flag(SLOT_PREFIX + str(n))

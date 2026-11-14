@@ -58,5 +58,22 @@
    "who": "Ironworker",
    "text": "My grandad made chain at Cradley Heath. My gran made it too. She was better at it."
   }
+ ],
+ "champ_bc_foundry": [
+  {
+   "do": "say",
+   "who": "Foundryman Ken",
+   "text": "Alright, bab. It's quiet now, isn't it? I keep expecting somebody to start up a hammer."
+  },
+  {
+   "do": "rchamp",
+   "id": "bc_foundry",
+   "intro": [
+    "Hot work, this. Stand back, then.",
+    "I've picked a team for the day. They're not as loud as the old foundry, but they try."
+   ],
+   "win": "Well hit, bab. Reet on the nail. That's a compliment, round here.",
+   "tired": "Once a week, that's the rule. I'd say it were the union's, but it's only mine. Monday."
+  }
  ]
 }

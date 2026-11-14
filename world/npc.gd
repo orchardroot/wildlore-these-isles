@@ -317,6 +317,10 @@ func interact(player: Node) -> void:
 		if Game.data.flag("trainer_" + tid):
 			var t := StoryData.trainer(tid)
 			cmds = [{"do": "say", "who": t.name, "text": t.after if t.after != "" else "..."}]
+			if str(def.get("champion", "")) == tid:  # w57: a road's champion offers a weekly rematch (data/route_champions.json)
+				var rematch := StoryData.script(ow.zone.id, "champ_" + tid)
+				if not rematch.is_empty():
+					cmds = rematch
 		else:
 			cmds = StoryData.trainer_script(tid)
 	elif def.has("script"):

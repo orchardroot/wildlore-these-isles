@@ -34,5 +34,79 @@
    "who": "Fisherman",
    "text": "Gannets, puffins, seals. The islands are the best birdwatching in the south-east. And the prince's throne is still out there, a chair on a rock."
   }
+ ],
+ "champ_hh_lighthouse": [
+  {
+   "do": "say",
+   "who": "Lighthouse Keeper Éamon",
+   "text": "Ah, you're back. You'll have noticed the lighthouse. It's had a few hundred years' practice at being noticed."
+  },
+  {
+   "do": "rchamp",
+   "id": "hh_lighthouse",
+   "intro": [
+    "Right so. The light never goes out, and nor do I.",
+    "Let me see what the weather's sent me this morning."
+   ],
+   "win": "Fair play. That was as bright as the beam.",
+   "tired": "Once a week now. Even the light has its off-duty hours. See you Monday."
+  }
+ ],
+ "kit_hook": [
+  {
+   "do": "if",
+   "flag": "trainer_kit_road_hook",
+   "then": [
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "The lighthouse has seen worse losses than mine. Probably. Go on, off you go."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "{player}! This lighthouse is one of the oldest working ones in the world. I got the shot, and then a seagull walked into it. Mid-peck. Viral, honestly."
+    },
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "Have you noticed the Irish say 'ah, go on' to mean four different things? I've filmed all four."
+    },
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "Go on, then. A battle, if you fancy it. I'll hold the camera in my teeth."
+    },
+    {
+     "do": "choice",
+     "text": "A battle with Kit?",
+     "options": [
+      "Go on, then",
+      "Not now"
+     ],
+     "set": "kit_road_pick"
+    },
+    {
+     "do": "if",
+     "flag": "kit_road_pick",
+     "eq": 0,
+     "then": [
+      {
+       "do": "battle",
+       "trainer": "kit_road_hook"
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "{rival}",
+       "text": "Fair enough. Save it for when I'm less sweaty."
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

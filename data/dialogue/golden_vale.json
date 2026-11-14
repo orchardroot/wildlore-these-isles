@@ -34,5 +34,22 @@
    "who": "Hurling Fan",
    "text": "The sliotar is the ball. The hurley, we call a cam\u00e1n, is the stick. And you hold it like it owes you money."
   }
+ ],
+ "champ_gv_hurler": [
+  {
+   "do": "say",
+   "who": "Hurler Se\u00e1n",
+   "text": "Ah, it's yourself. Did you know the GAA was founded in Thurles? I'd say I mentioned it."
+  },
+  {
+   "do": "rchamp",
+   "id": "gv_hurler",
+   "intro": [
+    "A rematch, is it? I'll put down the cam\u00e1n so. Not far down.",
+    "Go easy on me. I've a match to talk about on Sunday."
+   ],
+   "win": "Well hit! Not a bad bit of hurling, and you didn't even need the stick.",
+   "tired": "Once a week, and you've had yours. Come back Monday, and bring a better excuse."
+  }
  ]
 }

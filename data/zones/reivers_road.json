@@ -516,7 +516,8 @@
    "y": 14,
    "facing": "right",
    "move": "still",
-   "trainer": "rr_rider"
+   "trainer": "rr_rider",
+   "champion": "rr_rider"
   },
   {
    "id": "rr_gate_0",

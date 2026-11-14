@@ -88,5 +88,22 @@
     }
    ]
   }
+ ],
+ "champ_rrw_historian": [
+  {
+   "do": "say",
+   "who": "Historian Margaret",
+   "text": "Ah, a reader. Or someone who walked past. Either way, welcome to Rob Roy country. Mind the footnotes."
+  },
+  {
+   "do": "rchamp",
+   "id": "rrw_historian",
+   "intro": [
+    "Everyone thinks Rob Roy was a hero. He was a cattle dealer who got a very good publicist in Walter Scott.",
+    "A battle, then. I've the sky's measure and a team to suit it."
+   ],
+   "win": "Well fought. History will record it, but I'll get the dates wrong.",
+   "tired": "I'm only allowed once a week by the committee, which is me. Monday."
+  }
  ]
 }

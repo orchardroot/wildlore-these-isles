@@ -418,7 +418,8 @@
    "y": 24,
    "facing": "left",
    "move": "still",
-   "trainer": "vl_scholar"
+   "trainer": "vl_scholar",
+   "champion": "vl_scholar"
   },
   {
    "id": "vl_farmer",

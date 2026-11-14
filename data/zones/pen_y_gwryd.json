@@ -394,7 +394,8 @@
    "y": 31,
    "facing": "right",
    "move": "still",
-   "trainer": "pyg_climber"
+   "trainer": "pyg_climber",
+   "champion": "pyg_climber"
   },
   {
    "id": "pyg_runner",
@@ -404,6 +405,18 @@
    "facing": "left",
    "move": "still",
    "trainer": "pyg_runner"
+  },
+  {
+   "id": "kit_pyg",
+   "sprite": "kit",
+   "x": 29,
+   "y": 23,
+   "facing": "down",
+   "move": "still",
+   "script": "kit_pyg",
+   "name": "Kit",
+   "show_if": "ch3_ddraig_woke",
+   "hide_if": "badge_storm"
   }
  ],
  "encounters": {

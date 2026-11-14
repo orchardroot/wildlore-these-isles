@@ -293,7 +293,8 @@
    "y": 36,
    "facing": "up",
    "move": "still",
-   "trainer": "brn_forester"
+   "trainer": "brn_forester",
+   "champion": "brn_forester"
   },
   {
    "id": "brn_piper",

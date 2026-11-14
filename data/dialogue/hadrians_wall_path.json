@@ -46,5 +46,22 @@
    "who": "Bastle Farmer",
    "text": "Cattle on the ground floor was good for heating and bad for visitors."
   }
+ ],
+ "champ_hp_warden": [
+  {
+   "do": "say",
+   "who": "Wall Warden Fiona",
+   "text": "Off the Wall, please. Oh, it's you. Alright, carry on, but you'll hold my flask."
+  },
+  {
+   "do": "rchamp",
+   "id": "hp_warden",
+   "intro": [
+    "The Romans built a wall. I'd like to build a good reputation, so let's go.",
+    "I've got what the weather has handed me. Shall we?"
+   ],
+   "win": "Fair fight. You'd have made a decent legionary, if you didn't talk so much.",
+   "tired": "Rules are rules, and mine say once a week. Monday, and bring a sandwich."
+  }
  ]
 }

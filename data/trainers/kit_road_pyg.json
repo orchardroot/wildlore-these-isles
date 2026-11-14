@@ -1,0 +1,26 @@
+{
+ "id": "kit_road_pyg",
+ "name": "Kit",
+ "class": "Rival",
+ "sprite": "kit",
+ "party": [
+  {
+   "species": "redbreast",
+   "level": 27
+  },
+  {
+   "species": "warrender",
+   "level": 28
+  },
+  {
+   "species": "bramblehog",
+   "level": 28
+  }
+ ],
+ "ai": "trainer",
+ "money": 700,
+ "intro": [],
+ "win": "Right. Cut. We are not keeping that one.",
+ "after": "Episode two will be a lot more dignified. I've promised the camera.",
+ "scaled_floor": 28
+}

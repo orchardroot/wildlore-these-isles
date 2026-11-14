@@ -34,5 +34,22 @@
    "who": "Fossil Hunter",
    "text": "I once found an ammonite the size of a dinner plate. I was so pleased I forgot my own sandwich."
   }
+ ],
+ "champ_gc_keeper": [
+  {
+   "do": "say",
+   "who": "Lighthouse Keeper Aled",
+   "text": "Evening. I'm not here to check the light. I'm just standing near it, in case."
+  },
+  {
+   "do": "rchamp",
+   "id": "gc_keeper",
+   "intro": [
+    "The sea doesn't take a day off, so why should I?",
+    "Let's see what the tide has left in my pockets."
+   ],
+   "win": "That's the way. Straight and steady, like a good beam.",
+   "tired": "Once a week, I'm afraid. Even a lighthouse has to blink. Back on Monday."
+  }
  ]
 }

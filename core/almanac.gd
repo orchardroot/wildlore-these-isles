@@ -6,9 +6,9 @@ extends RefCounted
 ## appears once its system has something to show, so old saves need nothing.
 
 ## The menus behind each page, in tab order. "ledger:<kind>" opens the Almanac's own read-only ledger.
-const ORDER := ["journal", "atlas", "fieldbook", "typechart", "gazetteer", "poets", "casebook", "studbook", "biology", "words", "invention", "rumours", "trades", "trade", "standing", "stats", "pieces", "guilds", "deeds", "society", "landsky", "economist", "worth", "papers", "cards", "keepers", "curios"]
-const NAMES := {"journal": "Quest log", "atlas": "Atlas", "fieldbook": "Fieldbook", "typechart": "Type chart", "gazetteer": "Gazetteer", "poets": "Poets' Corner", "casebook": "Casebook", "studbook": "Stud Book", "biology": "Biology", "words": "Words of the Isles", "invention": "Timeline of Invention", "rumours": "Rumours", "trades": "Trades", "trade": "Trader's Ledger", "standing": "Standing", "stats": "Tallies", "pieces": "Party Pieces", "guilds": "Guilds", "deeds": "Deeds", "society": "Building Society", "landsky": "Land and Sky", "economist": "Economist's notebook", "worth": "Things worth knowing", "papers": "Papers", "cards": "Trumps cards", "keepers": "Keepers", "curios": "Curios"}
-const MENUS := {"journal": "quests", "atlas": "atlas", "fieldbook": "pedia", "typechart": "typechart", "gazetteer": "quests:gazetteer", "poets": "ledger:poets", "casebook": "pedia:casebook", "studbook": "pedia:studbook", "biology": "biology", "words": "pedia:words", "invention": "invention", "rumours": "pedia:rumours", "trades": "stats:trades", "trade": "ledger:trade", "standing": "stats:standing", "stats": "stats", "pieces": "ledger:pieces", "guilds": "ledger:guilds", "deeds": "ledger:deeds", "society": "ledger:society", "landsky": "ledger:landsky", "economist": "economist", "worth": "ledger:worth", "papers": "ledger:papers", "cards": "cards", "keepers": "keepers", "curios": "curios"}
+const ORDER := ["journal", "atlas", "fieldbook", "typechart", "gazetteer", "poets", "casebook", "studbook", "biology", "words", "invention", "rumours", "trades", "trade", "standing", "stats", "pieces", "guilds", "deeds", "society", "landsky", "economist", "worth", "papers", "cards", "keepers", "curios", "walkers"]
+const NAMES := {"journal": "Quest log", "atlas": "Atlas", "fieldbook": "Fieldbook", "typechart": "Type chart", "gazetteer": "Gazetteer", "poets": "Poets' Corner", "casebook": "Casebook", "studbook": "Stud Book", "biology": "Biology", "words": "Words of the Isles", "invention": "Timeline of Invention", "rumours": "Rumours", "trades": "Trades", "trade": "Trader's Ledger", "standing": "Standing", "stats": "Tallies", "pieces": "Party Pieces", "guilds": "Guilds", "deeds": "Deeds", "society": "Building Society", "landsky": "Land and Sky", "economist": "Economist's notebook", "worth": "Things worth knowing", "papers": "Papers", "cards": "Trumps cards", "keepers": "Keepers", "curios": "Curios", "walkers": "Walkers' League"}
+const MENUS := {"journal": "quests", "atlas": "atlas", "fieldbook": "pedia", "typechart": "typechart", "gazetteer": "quests:gazetteer", "poets": "ledger:poets", "casebook": "pedia:casebook", "studbook": "pedia:studbook", "biology": "biology", "words": "pedia:words", "invention": "invention", "rumours": "pedia:rumours", "trades": "stats:trades", "trade": "ledger:trade", "standing": "stats:standing", "stats": "stats", "pieces": "ledger:pieces", "guilds": "ledger:guilds", "deeds": "ledger:deeds", "society": "ledger:society", "landsky": "ledger:landsky", "economist": "economist", "worth": "ledger:worth", "papers": "ledger:papers", "cards": "cards", "keepers": "keepers", "curios": "curios", "walkers": "ledger:walkers"}
 
 static func sprouted(d: GameStateData, id: String) -> bool:
 	match id:
@@ -48,6 +48,8 @@ static func sprouted(d: GameStateData, id: String) -> bool:
 			return Economist.count(d) > 0
 		"curios":
 			return Search.found_count(d) > 0
+		"walkers":
+			return RouteChampions.beaten_count(d) > 0  # w57: the first road champion beaten
 		"landsky":
 			return LandSky.met_count(d) > 0  # the geology, weather and climate page (4.5)
 	return true
@@ -140,6 +142,8 @@ static func blurb(d: GameStateData, id: String) -> String:
 			return "%d of %d ideas met" % [Economist.count(d), Economist.total()]
 		"curios":
 			return "%d of %d found" % [Search.found_count(d), Search.curio_ids().size()]
+		"walkers":
+			return RouteChampions.blurb(d)
 		"landsky":
 			return LandSky.blurb(d)
 		"cards":

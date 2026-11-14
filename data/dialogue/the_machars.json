@@ -53,5 +53,22 @@
    "who": "Hootlet",
    "text": "A hootlet, sleepy and wide-eyed, sits on a book shelf in a window and looks very much like it is reading."
   }
+ ],
+ "champ_mac_farmer_t": [
+  {
+   "do": "say",
+   "who": "Farmer Jock",
+   "text": "Hello again. Mind the muck. And the cattle. And, if you can, the sheep. They all have views."
+  },
+  {
+   "do": "rchamp",
+   "id": "mac_farmer_t",
+   "intro": [
+    "A fight, is it? I'll put the stick down. Not far.",
+    "I've the weather's measure and a team to match it."
+   ],
+   "win": "A grand bit of work. You'd do for the harvest.",
+   "tired": "Once a week, and I've the cows to see to. Monday."
+  }
  ]
 }

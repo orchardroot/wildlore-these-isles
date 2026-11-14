@@ -66,6 +66,14 @@ static func boot(game: Node, menu: String) -> void:
 		for q in plain + trails:
 			d.set_flag(Letters.read_flag(str(q.id)), true)
 		menu = "almanac:ledger:papers"
+	if menu == "walkers":  # `--menu=walkers`: the Walkers' League page with a dozen road champions beaten, one rematch won this week
+		var champs := RouteChampions.ids()
+		for i in mini(champs.size(), 12):
+			d.set_flag("trainer_" + str(champs[i]), true)
+			if i % 3 != 2:
+				d.set_flag(RouteChampions.FIRST_PREFIX + str(champs[i]), "2026-11-%02d" % (i + 1))
+		RouteChampions.record_rematch(d, str(champs[0]))
+		menu = "almanac:ledger:walkers"
 	if menu == "cards" or menu.begins_with("trumps"):  # `--menu=cards`: an album part filled (Cheshire done, the Peak half); `--menu=trumps:dev`: a game under way
 		Trumps.use_dex(game.dex)
 		Trumps.give_starter(d)

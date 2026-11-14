@@ -182,7 +182,8 @@
    "y": 20,
    "facing": "left",
    "move": "still",
-   "trainer": "sca_knitter"
+   "trainer": "sca_knitter",
+   "champion": "sca_knitter"
   },
   {
    "id": "sca_birder",
