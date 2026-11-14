@@ -31,16 +31,23 @@ CRATE_TEXT = [
     "A sealed tin box, tarred at the seams, floating low off {place}. Somebody's emergency rations, and somebody's loss.",
     "A fish box with a crew's initials burned into the lid. Somebody from {place} is going to be cross about this, but not today.",
     "A crate roped to a plastic float and let go, by the look of it, somewhere near {place}. You decide it counts as a gift from the water.",
+    "A packing case with a stranger's name stencilled on it and a lid held on by one ambitious nail. It floats better than it has any right to, near {place}.",
+    "A crate swollen with water and good intentions, drifting at {place}. It opens with a sound like a sigh.",
+    "A lidded box wedged against the reeds near {place}. Whoever lost it has had a long week already.",
 ]
 POT_SEA_TEXT = [
     "A lobster pot, adrift off {place}, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner.",
     "A creel bobbing on its own float off {place}, with no one's name on it. Inside, a fish with the look of someone who has given up arguing.",
     "A lobster pot snagged on a ring of weed near {place}. No lobster. One surprised fish, which is something.",
+    "A pot with a faded orange float, rolling in the swell near {place}. Someone left a good supper in it, and then left.",
+    "A creel caught on a rock off {place}, the line frayed through. It has been holding one fish for longer than the fish would have liked.",
 ]
 POT_FRESH_TEXT = [
     "An eel trap, forgotten and half sunk near {place}, its owner long gone. One fish in it, sulking.",
     "A wicker fish trap hanging from a branch in the water at {place}. It has caught something and is a little embarrassed about it.",
     "A keepnet left out in the water at {place} by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly.",
+    "A creel hooked on a root at {place}, with one fish in it and a look of mild disbelief.",
+    "A drowned keep-sack tied to a post at {place}. There is still a fish in it, and an opinion.",
 ]
 CACHE_TEXT = [
     "A cairn on the far bank at {place}, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it.",
@@ -48,6 +55,8 @@ CACHE_TEXT = [
     "Dry sand above the tide line near {place} and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here.",
     "Whoever hid this at {place} had a boat and a plan. You have a boat, and now the plan has been found.",
     "A crate lashed under an overhang at {place}, tied with fisherman's knots you do not know. It opens at the second try.",
+    "A biscuit tin wedged under a root at {place}, where nobody on foot would think to look. The lid says DO NOT OPEN, in the hand of someone who did.",
+    "Under a flat stone near {place}, a dry bag and a pencilled note: 'For the next one, from the last one.'",
 ]
 PLACE_NAMES = {"gweedore": "Gweedore", "shetland_mainland": "Shetland", "poole": "Poole", "guernsey_country": "Guernsey"}
 WITH_THE = {"beacons", "causeway", "lake_district", "yorkshire_dales", "pembroke_coast", "pentland_coast", "severn_crossing",
