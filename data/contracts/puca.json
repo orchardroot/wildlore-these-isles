@@ -113,7 +113,7 @@
    "flags": {"ct_puca_stone": true, "ct_puca_marked": true},
    "repute": {"townsfolk": 2, "farmers": -1},
    "standing": {"ireland": 2},
-   "poster": ["A stone, with a name on it, and a tart on top. It's very odd. It's the best idea anyone's had. Eighty per cent, with my thanks."],
+   "poster": ["A stone, with a name on it, and a tart on top. It's very odd. It's the best idea anyone's had. With my thanks."],
    "after": ["There's a stone at the shore now with the old name on it. The tourists take photographs. The horses won't walk past it, but that's another matter."],
    "journal": "You marked the drowned pool with a stone and left the Pooka alone. The paddocks are quiet, the old name is back on the shore, and the horses will not walk past it."
   },
@@ -158,7 +158,7 @@
    "flags": {"ct_puca_kept": true, "ct_puca_indoors": true},
    "repute": {"farmers": 1, "townsfolk": -1},
    "standing": {"ireland": 2},
-   "poster": ["In a charm? The Pooka's in your team? Heaven preserve us. Don't let it out near my horses. Eighty per cent, and a great deal of respect."],
+   "poster": ["In a charm? The Pooka's in your team? Heaven preserve us. Don't let it out near my horses. And a great deal of respect."],
    "after": ["The lake's very quiet now. Whatever you do, never let the Pooka off the lead. I'm only saying."],
    "journal": "You caught the Pooka and now travel with it. It changes shape when it is bored, and it is often bored."
   }

@@ -125,7 +125,7 @@
    "flags": {"ct_kelpie_sign": true, "ct_kelpie_stays": true},
    "repute": {"walkers": 1, "crofters": 1},
    "standing": {"scotland": 1},
-   "poster": ["A sign and a rope. It's cheap and it works as long as people read signs, which they don't. Seventy per cent. And we'll keep an eye on the ford."],
+   "poster": ["A sign and a rope. It's cheap and it works as long as people read signs, which they don't. And we'll keep an eye on the ford."],
    "after": ["Sign says don't cross. Walkers read it, the way people read terms and conditions. The team stays on the bank with a flask, just in case."],
    "journal": "You marked the ford with a warning and left the Water Horse its river. People mostly read the sign. The team keeps a flask on the bank."
   },
@@ -140,7 +140,7 @@
    "flags": {"ct_kelpie_bridled": true, "ct_kelpie_bridge": true},
    "repute": {"crofters": 2, "walkers": -1},
    "standing": {"scotland": 1},
-   "poster": ["A bridle in the estate office, dripping, and a bridge built in a week by a horse nobody will mention. I don't know what to put on the invoice. Ninety per cent."],
+   "poster": ["A bridle in the estate office, dripping, and a bridge built in a week by a horse nobody will mention. I don't know what to put on the invoice."],
    "after": ["There's a bridle on the estate wall that's never dry. We built a bridge with its help. I try not to think about who owes who."],
    "journal": "You bridled the Water Horse the old way and had it carry the stones for the bridge. The bridle hangs wet on the estate wall, and somebody, somewhere, expects it back."
   },
@@ -155,7 +155,7 @@
    "flags": {"ct_kelpie_kept": true, "ct_kelpie_crossing": true},
    "repute": {"walkers": 1, "crofters": 0},
    "standing": {"scotland": 2},
-   "poster": ["The water horse is in your team. In a charm. Well. It can't be less safe than a ford in spate. Eighty per cent, and I'll thank you not to take it near the loch."],
+   "poster": ["The water horse is in your team. In a charm. Well. It can't be less safe than a ford in spate. I'll thank you not to take it near the loch."],
    "after": ["Burn's quiet. Ghillie says it's the quiet that follows a very big thing taken out of a very small stream."],
    "journal": "You caught the Water Horse, which now rides in your team and drips. The ford is quiet, and the old ghillie will not shake your hand."
   }

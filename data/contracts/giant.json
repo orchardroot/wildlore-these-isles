@@ -114,7 +114,7 @@
    "flags": {"ct_giant_fenced": true, "ct_giant_closed": true},
    "repute": {"wardens": 2, "townsfolk": -2},
    "standing": {"northern_ireland": 1},
-   "poster": ["Roped off and a path closed, and half my bookings on the phone asking why. It's the right thing and I hate it. Ninety per cent, and a bed for the night if you ever need it."],
+   "poster": ["Roped off and a path closed, and half my bookings on the phone asking why. It's the right thing and I hate it. And a bed for the night if you ever need it."],
    "after": ["There's a rope and a sign. The guests ask me what's behind it and I tell them, a legend. They never believe me."],
    "journal": "You had the stones fenced and the cliff path closed. The Causeway is safer and quieter, the guesthouses are emptier, and Fionn still moves a column now and then."
   },
@@ -129,7 +129,7 @@
    "flags": {"ct_giant_nights": true, "ct_giant_open": true},
    "repute": {"townsfolk": 2, "wardens": -1},
    "standing": {"northern_ireland": 2},
-   "poster": ["A queue for the night walk, and every room full. I know it's a bit cheap. I know. Eighty per cent, and I'll tell my guests you invented it."],
+   "poster": ["A queue for the night walk, and every room full. I know it's a bit cheap. I know. I'll tell my guests you invented it."],
    "after": ["Night walks sell out in a minute. The guides do the Fionn story at the Chair. And one of the guests said she'd seen him, and I believe her."],
    "journal": "You kept the Causeway open and started guided night walks. The guesthouses are full, the Trust is worried about the crowds, and Fionn is no stranger to an audience."
   },
@@ -144,7 +144,7 @@
    "flags": {"ct_giant_ferried": true, "ct_giant_gone": true},
    "repute": {"townsfolk": 1, "wardens": 1},
    "standing": {"northern_ireland": 1},
-   "poster": ["On the ferry. On the ferry! To Scotland. And the stones are back in their rows. I've a feeling that's the end of the Causeway as a mystery, but it's a grand end. Ninety per cent."],
+   "poster": ["On the ferry. On the ferry! To Scotland. And the stones are back in their rows. I've a feeling that's the end of the Causeway as a mystery, but it's a grand end."],
    "after": ["The stones haven't moved since. The ferry's delayed twice, though, and nobody will say why."],
    "journal": "You showed Fionn the ferry and he went to Scotland. The stones have not moved since. Benandonner, presumably, has been told."
   },
@@ -159,7 +159,7 @@
    "flags": {"ct_giant_kept": true, "ct_giant_open": true},
    "repute": {"townsfolk": 1, "wardens": -2},
    "standing": {"northern_ireland": 1},
-   "poster": ["He's in a charm. Fionn mac Cumhaill is in your pocket. I'll thank you not to let the guests find out. Eighty per cent."],
+   "poster": ["He's in a charm. Fionn mac Cumhaill is in your pocket. I'll thank you not to let the guests find out."],
    "after": ["Quiet shore. Quiet stones. Quiet pocket, I hope, for your sake."],
    "journal": "You caught Fionn and he sleeps in your team, dreaming of Scotland. The shore is quiet, and the guides tell the story as if he were still out there."
   }

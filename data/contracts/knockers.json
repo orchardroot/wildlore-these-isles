@@ -125,7 +125,7 @@
    "flags": {"ct_knockers_crust": true, "ct_knockers_fenced": true},
    "repute": {"miners": 2, "townsfolk": -1},
    "standing": {"wales": 1},
-   "poster": ["A crust and a fence. I'll have the committee minute that as 'precautionary measures'. Seventy per cent, because the committee would have my head otherwise."],
+   "poster": ["A crust and a fence. I'll have the committee minute that as 'precautionary measures'. I'll pay up, because the committee would have my head otherwise."],
    "after": ["There's a crust on the stone every Friday and gone by Saturday. I'm told it's a fox. I don't ask what sort."],
    "journal": "You fenced the old level and left the knockers a crust. The tapping goes on softly, the Institute's lights have not gone out since, and the council has put it down as a precaution."
   },
@@ -140,7 +140,7 @@
    "flags": {"ct_knockers_tour": true, "ct_knockers_guide": true},
    "repute": {"miners": 1, "townsfolk": 1},
    "standing": {"wales": 2},
-   "poster": ["Tours. In my Institute's name. Well. It's an honest bit of money and it's Elwyn's best year in a long while. Sixty per cent, and I'll take the rest in tea."],
+   "poster": ["Tours. In my Institute's name. Well. It's an honest bit of money and it's Elwyn's best year in a long while. I'll pay what I can, and take the rest in tea."],
    "after": ["Tours leave from the Institute at ten. Elwyn does the voices. The knockers never do the same thing twice, which the visitors love."],
    "journal": "You opened the level to guided visits. Elwyn has a second career, the surveyor has a lot of forms, and the knockers have an audience."
   },

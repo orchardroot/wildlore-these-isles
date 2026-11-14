@@ -140,7 +140,7 @@
    "flags": {"ct_mink_raft": true, "ct_mink_hens_safe": true},
    "repute": {"wardens": 2, "farmers": 0},
    "standing": {"england": 1},
-   "poster": ["The Trust? Well. It's slower than I wanted, and cheaper than I feared. I'll give you half now, and the rest in eggs."],
+   "poster": ["The Trust? Well. It's slower than I wanted, and cheaper than I feared. I'll pay you something now, and the rest in eggs."],
    "after": ["The Trust girl comes every Thursday and counts feet. The hens are still alive, so I'm not complaining."],
    "journal": "You gave the problem to the Wildlife Trust's mink raft scheme. It is slower than a trap, and fairer on every ditch it covers, including the ones nobody has complained about."
   },

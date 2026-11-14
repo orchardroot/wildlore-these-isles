@@ -130,7 +130,7 @@
    "flags": {"ct_beavers_stay": true, "ct_beavers_pond": true},
    "repute": {"wardens": 2, "farmers": -1},
    "standing": {"england": 1},
-   "poster": ["There are frogs in my orchard, I've been paid for the apples, and I've got a lodge in my garden. I don't know who I am any more. Eighty per cent and my thanks."],
+   "poster": ["There are frogs in my orchard, I've been paid for the apples, and I've got a lodge in my garden. I don't know who I am any more. And my thanks."],
    "after": ["There's a family on the pond now. Walkers come to look. Walkers drink cider. I'm a man in two minds, and one of them has an order book."],
    "journal": "You backed the beavers and had Roger compensated. The pond stays, the frogs have moved in, and cider sales have not gone down."
   },
@@ -145,7 +145,7 @@
    "flags": {"ct_beavers_wired": true, "ct_beavers_pond": true},
    "repute": {"farmers": 1, "wardens": 1},
    "standing": {"england": 1},
-   "poster": ["Wire on the trunks and a pipe through the dam. It's not what I wanted and it's not what the Trust wanted. I expect that's a good sign. Sixty per cent, and a bottle."],
+   "poster": ["Wire on the trunks and a pipe through the dam. It's not what I wanted and it's not what the Trust wanted. I expect that's a good sign. And a bottle."],
    "after": ["The pipe works. The wire works. The beavers have not read the manual and keep trying new things. Last week it was my gate."],
    "journal": "You wired the trees and fitted a flow device to the dam. Nobody got what they wanted, everybody got what they needed, and the beavers have been testing the arrangements ever since."
   },
@@ -160,7 +160,7 @@
    "flags": {"ct_beavers_kept": true, "ct_beavers_pond": true},
    "repute": {"farmers": 1, "wardens": -2},
    "standing": {"england": 1},
-   "poster": ["You've pocketed the beaver. The dam is going back up behind you, and there's another one. Of course there's another one. Eighty per cent."],
+   "poster": ["You've pocketed the beaver. The dam is going back up behind you, and there's another one. Of course there's another one."],
    "after": ["There's still a dam. It turns out beavers come in families. I should have known that."],
    "journal": "You caught Brunel, but beavers come in families and the pond has not noticed. Roger has a beaver of his own in your team, and a dam in his orchard."
   }
