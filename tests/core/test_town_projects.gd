@@ -303,3 +303,27 @@ func test_the_footbridges_promise_what_a_coracle_cannot_do() -> void:
 		var p := TownProjects.get_project(id)
 		assert_true(str(p.change).contains("bike"), id + " says the bike crosses")
 		assert_false(str(p.plaque).contains("long way round"), id + " does not promise a short cut the coracle already gives")
+
+func test_every_project_leaves_a_keepsake_for_the_shelf() -> void:
+	for p in TownProjects.all():
+		var id := "kp_" + str(p.id)
+		var s := HomeExtras.souvenir(id)
+		assert_false(s.is_empty(), id + " is on the souvenir list")
+		var d := _data()
+		d.euros = 2000000   # the Irish ones are paid in euros
+		assert_false(id in HomeExtras.unlocked(d, []), "not before the work is done")
+		_finish(d, str(p.id))
+		assert_true(id in HomeExtras.unlocked(d, []), id + " once it is")
+		assert_true(HomeExtras.place(d, 1, id, []), id + " can be set on the shelf")
+		assert_false("—" in str(s.line))
+
+func test_a_finished_project_shows_its_deed_bonus_in_words() -> void:
+	var d := _data()
+	assert_eq(TownProjects.deed_lines(d, "allotment_lancaster"), [])
+	_finish(d, "lancaster_mill")
+	var lines := TownProjects.deed_lines(d, "allotment_lancaster")
+	assert_eq(lines.size(), 1)
+	assert_true(str(lines[0]).contains("takings +5%"), str(lines))
+	_finish(d, "york_floodgate")
+	assert_true(str(TownProjects.deed_lines(d, "allotment_york")[0]).contains("bad days bite less"))
+	assert_eq(TownProjects.deed_lines(d, "carlisle_nothing"), [])

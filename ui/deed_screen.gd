@@ -96,6 +96,8 @@ func _refresh_books() -> void:
 		var rep := DeedChoices.reputation(d, _id)
 		if rep != 0:
 			_line("Its name in the town: %s." % _name_word(rep), 20, UIKit.MUTED)
+		for t in TownProjects.deed_lines(d, _id):
+			_line("Town project, %s." % str(t), 20, UIKit.MUTED)
 		var rec := Deeds.recent(d, _id)
 		if not rec.is_empty():
 			_stmt.add_child(UIKit.spacer(6))
