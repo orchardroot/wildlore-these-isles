@@ -36,7 +36,7 @@ update; they always have.
   Irish and Gaelic. Males and females look different where the real animals do, and they breed with real genetics.
 - **Beat ten Keepers** in venues built from real places, from a rugby terrace in Cardiff to a candlelit crypt under
   York Minster, then the Moot at Stonehenge and a word with Lord Vane about his tower in London.
-- **Walk the whole thing.** Seventy-odd towns and over eighty routes, hills and shores across the UK and Ireland,
+- **Walk the whole thing.** Seventy-odd towns and well over a hundred routes, hills and shores across the UK and Ireland,
   each built from the real place: its buildings, its food, its weather, its wildlife. Trains, ferries, a bike, a
   coracle, and eventually a raven. Then eighteen overseas destinations, from Gibraltar to the Falklands.
 - **Be someone there.** Pick who you are and what you look like, then dress from fourteen boutiques: Harris Tweed,
@@ -82,10 +82,10 @@ for every timing minigame are under Settings, Accessibility.
 
 ## What's new
 
-5.4 "Off the Beaten Track": the family cat joins you on the Cat and Fiddle road, a coracle takes you across every
-river and lake (and later the sea near shore), every move says how it will land, new places are a moment, legends
-have clues to hunt by, and the world answers back: walkers in the streets, grass that parts, fires you can hear. It
-builds on 5.3 "Houses", where going indoors became worth it. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
+5.5 "Roads and Reasons": twenty-eight new routes along real roads and paths, so there is a choice of way; twelve
+notice-board contracts where you investigate, face the creature and decide what becomes of it; six side quests that
+turn on a decision; trade that follows the news; businesses with decisions in them; and fifteen town projects worth
+saving for. It builds on 5.4 "Off the Beaten Track" (the family cat, the coracle, type matchups you can read). The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
 
 ## How it's made
 
