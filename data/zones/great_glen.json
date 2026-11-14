@@ -498,6 +498,60 @@
    "name": "The Water Horse",
    "show_if": "ct_kelpie_state",
    "hide_if": "ct_kelpie_end"
+  },
+  {
+   "id": "ct_bridge_otter_dugald",
+   "sprite": "ghillie",
+   "x": 25,
+   "y": 37,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bridge_otter_dugald",
+   "name": "Dugald MacRae"
+  },
+  {
+   "id": "ct_bridge_otter_fiona",
+   "sprite": "student",
+   "x": 32,
+   "y": 46,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bridge_otter_fiona",
+   "name": "Fiona Bell"
+  },
+  {
+   "id": "ct_bridge_otter_lair",
+   "sprite": "creature:holtling",
+   "x": 33,
+   "y": 53,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bridge_otter_lair",
+   "name": "Bridie",
+   "show_if": "ct_bridge_otter_state",
+   "hide_if": "ct_bridge_otter_end"
+  },
+  {
+   "id": "ct_bridge_otter_bench",
+   "sprite": "birdwatcher",
+   "x": 26,
+   "y": 43,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bridge_otter_bench",
+   "name": "Dusk Watcher",
+   "show_if": "ct_bridge_otter_watch"
+  },
+  {
+   "id": "ct_bridge_otter_stalker",
+   "sprite": "ghillie",
+   "x": 22,
+   "y": 40,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bridge_otter_stalker",
+   "name": "Stalker",
+   "show_if": "ct_bridge_otter_tale"
   }
  ],
  "examine": [
@@ -524,6 +578,31 @@
     "A buoy, riding at the end of its chain far out on the loch. Nobody on the bank could read it."
    ],
    "clue": "kelpie.ripple",
+   "coracle": true
+  },
+  {
+   "x": 31,
+   "y": 43,
+   "text": [
+    "The planks of the new footbridge, grey and dry and a little bit shiny. A sign says KEEP TO THE PATH."
+   ],
+   "clue": "bridge_otter.prints"
+  },
+  {
+   "x": 29,
+   "y": 46,
+   "text": [
+    "A flat stone by the burn, under the bridge. It would make a good place to sit down. Someone has beaten you to it."
+   ],
+   "clue": "bridge_otter.spraint"
+  },
+  {
+   "x": 10,
+   "y": 12,
+   "text": [
+    "A buoy, riding at the end of its chain far out on the loch. Behind it the far shore goes dark, a bit at a time."
+   ],
+   "clue": "bridge_otter.family",
    "coracle": true
   }
  ],

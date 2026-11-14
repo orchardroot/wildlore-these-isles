@@ -293,7 +293,10 @@ def place(c, zones):
         k = next(k for k in c["clues"] if k["id"] == lk["clue"])
         z = zone(k["zone"])
         x, y = tuple(lk["at"]) if "at" in lk else z.find_spot(z.anchor(lk["near"]), lk.get("on", "any"))  # "at": an exact tile (wave 57)
-        z.add_examine({"x": x, "y": y, "text": lk["text"], "clue": "%s.%s" % (cid, lk["clue"])})
+        ex = {"x": x, "y": y, "text": lk["text"], "clue": "%s.%s" % (cid, lk["clue"])}
+        if k.get("from") == "coracle":
+            ex["coracle"] = True  # reached afloat: ZoneData.validate finds somewhere on the water to face it from
+        z.add_examine(ex)
     lair = c["lair"]
     key = "ct_%s_lair" % cid
     ln = pl.get("lair", {})

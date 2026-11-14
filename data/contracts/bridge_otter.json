@@ -1,0 +1,241 @@
+{
+ "id": "bridge_otter",
+ "title": "Wet Prints on the New Bridge",
+ "town": "fort_william",
+ "nation": "scotland",
+ "group": "walkers",
+ "badges": 8,
+ "pay": 3,
+ "needs": [{"contract": "kelpie", "ending": "bridge"}],
+ "poster": {
+  "name": "Callum Rennie",
+  "role": "estate ranger, and the man who signed off the bridge",
+  "idle": [
+   "Bridge? It's grand, thanks, you can see it from the road. Nothing to report. Come back if anything wakes me in the night."
+  ],
+  "taken": [
+   "Any luck? There were prints on the planks again at first light, wet as a Monday. I've had two walkers ask if the horse has come back to see who built the bridge."
+  ],
+  "decided": [
+   "That's the look of a man with an answer. Go on."
+  ],
+  "closed": "That's the bridge sorted, and my phone's quieter for it. Thank you.",
+  "haggle": "A fair price, and a sharp tongue. I like that in a contractor. Done."
+ },
+ "notice": [
+  "Wet prints across the new footbridge at first light, every morning this month. Dry prints on the planks the rest of the day, if you look close.",
+  "The bridge was meant to end the business at the ford. Now half the village thinks it has started it all over again."
+ ],
+ "trouble": [
+  "Dugald says the water horse is back and offended. Dugald would say that if it had been a rabbit. I need to know what is crossing my bridge before the walkers' forum decides for me.",
+  "It's the stretch of the Glen by the burn. The fee is modest. It's the estate's money, and the estate has opinions about money."
+ ],
+ "hypotheses": [
+  {"id": "otter", "name": "An otter, using the new bridge", "types": ["brook"]},
+  {"id": "kelpie", "name": "The water horse, come back to look", "types": ["brook", "spirit"]},
+  {"id": "deer", "name": "A deer, crossing at night", "types": ["kin"]}
+ ],
+ "truth": "otter",
+ "clues": [
+  {
+   "id": "prints",
+   "kind": "look",
+   "zone": "great_glen",
+   "hint": "the planks of the bridge, at first light",
+   "text": [
+    "On the planks, in the first grey light, a line of wet prints: five toes, a broad pad, and between two of them a smear where something webbed has dragged. A tail has left a faint line down the middle.",
+    "No hooves. A deer would leave split prints, and a horse would leave a very obvious horseshoe."
+   ],
+   "hint_wait": "Dry planks, a handrail and a sign about not leaving the path. Whatever walks here does it before the day gets going. Try again at first light.",
+   "points": ["otter"],
+   "rules_out": ["deer"],
+   "when": {"phase": ["dawn"]}
+  },
+  {
+   "id": "spraint",
+   "kind": "look",
+   "zone": "great_glen",
+   "hint": "under the bridge, once you have seen the prints",
+   "text": [
+    "Under the bridge, on a flat stone just above the water, there is a small black heap packed with fish scales and little bones. It smells of fish, and then, oddly, a little sweet.",
+    "That is how an otter leaves a note. Somebody has chosen the best spot on the burn for it, which is, of course, under your new bridge."
+   ],
+   "needs_clue": "prints",
+   "points": ["otter"]
+  },
+  {
+   "id": "dugald",
+   "kind": "ask",
+   "zone": "great_glen",
+   "who": "Dugald MacRae",
+   "hint": "hear what the retired stalker makes of it",
+   "text": [
+    "It's the horse. It's back, and it is not pleased. You build a bridge across its water and you think it'll say thank you? A horse has its pride.",
+    "I've been telling Callum for a week. A wet print is a wet print. I have it on the best authority, which is my own."
+   ],
+   "idle": ["It's the horse. It's always the horse."],
+   "after": "Well. I said it was the horse and nobody believed me, and you've still not proved me wrong, have you?",
+   "wrong": true,
+   "points": ["kelpie"]
+  },
+  {
+   "id": "fiona",
+   "kind": "ask",
+   "zone": "great_glen",
+   "who": "Fiona Bell",
+   "hint": "ask the volunteer who counts the otters",
+   "text": [
+    "Otters. They were nearly gone from most of Britain by the 1970s, the pesticides got into the fish, and now they are in every river and a good many ditches. They love a bridge. It is dry, it is private and it is on the way.",
+    "Look under it, and look for spraint. It is the least romantic way to find an animal, and it has never once failed me."
+   ],
+   "idle": ["I'm counting spraint on the stones. It is not a glamorous hobby. It is a lovely one."],
+   "after": "A bridge is a gift to an otter. You do not have to do anything about it, but it is nice to say thank you.",
+   "points": ["otter"],
+   "rules_out": ["deer"]
+  },
+  {
+   "id": "family",
+   "kind": "look",
+   "zone": "great_glen",
+   "from": "coracle",
+   "optional": true,
+   "when": {"phase": ["dusk", "night"]},
+   "hint": "the shore by the burn mouth, at dusk, from a boat",
+   "hint_ashore": "Something is moving along the far shore of the loch, too far off to make out from the bank. You would need to be out on the water, and it would need to be getting dark.",
+   "hint_wait": "The loch is flat and quiet, and nothing on the shore is stirring. This looks like a dusk job.",
+   "text": [
+    "From the coracle, in the last of the light, you watch the mouth of the burn. A long dark shape comes down the bank, slides into the water without a ripple, and surfaces with a fish. Two smaller shapes follow it, squeaking.",
+    "They climb out under the bridge, one after another, shake themselves like three wet dogs, and go up the burn to sleep. Not a single hoof."
+   ],
+   "needs_clue": "spraint",
+   "points": ["otter"]
+  }
+ ],
+ "lair": {
+  "zone": "great_glen",
+  "name": "Bridie",
+  "species": "holtling",
+  "level": 66,
+  "floor_par": 60,
+  "intro": [
+   "A flat stone under the bridge, the water slow and clear, and a smell of fish with a hint of something sweet. A wet, whiskered face comes up out of the burn and considers you at length.",
+   "She seems to have decided the bridge is hers, and she has the look of someone who has never once wondered whether she should ask."
+  ],
+  "beaten": [
+   "Bridie flops against the stone, whiskers drooping, and looks up at you as if you had been very rude, and she was going to mention it to somebody."
+  ]
+ },
+ "choices": [
+  {
+   "id": "ledge",
+   "label": "Fit a dry ledge under the bridge, and leave her to it",
+   "say": [
+    "Callum and a man from the Trust screw a plank shelf to the underside of the bridge, just above the high-water mark. It takes an afternoon. It is, as these things go, very cheap.",
+    "By the weekend the prints are on the ledge, and not on the planks. Nobody on the bridge notices a thing, and that is the point."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_bridge_otter_ledge": true, "ct_bridge_otter_wild": true},
+   "repute": {"walkers": 0, "crofters": 1},
+   "standing": {"scotland": 1},
+   "poster": ["A plank under a bridge, and it solves the whole business. I could have done that myself. I'd like it noted that I didn't."],
+   "after": ["Otters on the ledge, walkers on the planks, and nobody the wiser. I check it on Sundays."],
+   "journal": "You had a dry ledge fitted under the bridge, so the otters keep to it and the walkers keep to the planks. Nobody has had to be told anything, and the water horse is, for once, nobody's fault."
+  },
+  {
+   "id": "watch",
+   "label": "Put up a sign and a bench, and let the walkers watch at dusk",
+   "say": [
+    "A bench goes up on the bank, with a small sign: quiet please, no torches, no dogs. Callum, who has never once had a good idea in front of the committee, takes the credit for it at the committee.",
+    "By the end of the week there are a dozen people on the bank at dusk with flasks, whispering. Bridie ignores all of them."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_bridge_otter_watch": true, "ct_bridge_otter_wild": true},
+   "repute": {"walkers": 2, "crofters": -1},
+   "standing": {"scotland": 2},
+   "poster": ["A bench and a sign, and half of Fort William on my bank at dusk with a thermos. I've never been so popular. I'll be tired of it by Tuesday."],
+   "after": ["Dusk is quite the social occasion. There's a man who comes up from Glasgow for it. Bridie, so far as I can tell, is entirely unmoved."],
+   "journal": "You put a bench and a sign by the bridge so that walkers can watch the otters at dusk. It has become something of an event. The otters have been, so far, completely unimpressed."
+  },
+  {
+   "id": "tale",
+   "label": "Say nothing and let the water horse story do the work",
+   "say": [
+    "You tell Callum it is the horse. He looks at you for a long moment, and then, very slowly, he nods.",
+    "By the end of the month nobody goes near the burn after dark. The otter family has the bridge to itself, and the old stalker has been proved right, which he finds almost unbearable."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_bridge_otter_tale": true, "ct_bridge_otter_wild": true},
+   "repute": {"crofters": 2, "walkers": -1},
+   "standing": {"scotland": 1},
+   "poster": ["A tale to keep folk off the bank, and an otter with a bridge to herself. Well. It is not true, but it does the job. I'll make sure that Dugald hears nothing."],
+   "after": ["Nobody comes down after dark any more. Dugald is insufferable about it. The otters have the best address on the burn."],
+   "journal": "You let the water horse story stand, so that nobody goes near the burn after dark. The otters keep the bridge to themselves. It is not strictly true, and it works, and the old stalker is unbearable about it."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch her",
+   "say": [
+    "Bridie goes into the charm with a squeak of outrage, and then, almost at once, starts to rearrange it."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_bridge_otter_kept": true, "ct_bridge_otter_wild": true},
+   "repute": {"walkers": 1, "crofters": 0},
+   "standing": {"scotland": 2},
+   "poster": ["She's in the charm. The wet prints are on your boots, not my bridge. Well. That's one way to solve the problem."],
+   "after": ["The bridge is dry and the walkers are baffled. Dugald says he's winning. I haven't the strength."],
+   "journal": "You caught Bridie, and the prints stopped. The bridge is dry, and half of Fort William is convinced the water horse has been quietly put away."
+  }
+ ],
+ "real": "Otters were close to vanishing from most of Britain by the 1970s, because of pesticides in the rivers, and have come back since, helped by clean water and by being protected: it is an offence to disturb an otter or its holt. They use bridges and culverts to cross and to mark their territory with spraint, which smells faintly sweet, and surveyors use it to count them. Where roads cross otter rivers, planners fit a dry ledge or a pipe under the bridge so the otters do not have to cross the traffic. The water horse, meanwhile, has been used to keep children off dangerous water for a long time, and is still very good at it.",
+ "places": {
+  "poster": {"sprite": "hillwalker", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "dugald", "sprite": "ghillie", "near": [24, 38]},
+   {"clue": "fiona", "sprite": "student", "near": [32, 46]}
+  ],
+  "looks": [
+   {"clue": "prints", "near": [30, 42], "on": "any", "text": ["The planks of the new footbridge, grey and dry and a little bit shiny. A sign says KEEP TO THE PATH."]},
+   {"clue": "spraint", "near": [30, 46], "on": "any", "text": ["A flat stone by the burn, under the bridge. It would make a good place to sit down. Someone has beaten you to it."]},
+   {"clue": "family", "at": [10, 12], "text": ["A buoy, riding at the end of its chain far out on the loch. Behind it the far shore goes dark, a bit at a time."]}
+  ],
+  "lair": {"near": [36, 52]},
+  "folk": [
+   {
+    "id": "walker",
+    "zone": "fort_william",
+    "near": [22, 22],
+    "sprite": "hillwalker",
+    "name": "Walker",
+    "show_if": "ct_bridge_otter_end",
+    "says": [
+     ["ct_bridge_otter_is_ledge", ["Nothing on the bridge but boots, and the ranger says there are otters underneath on a little plank. I have never once seen one. I am assured they are there. I'm choosing to believe it."]],
+     ["ct_bridge_otter_is_watch", ["There's a bench at the bridge now, and a sign about being quiet. I went at dusk. I saw an otter. I have never been so happy to be shushed."]],
+     ["ct_bridge_otter_is_tale", ["Nobody goes down to the burn after dark. They say it's the horse. I say it's probably an otter, but I'm not going to be the one to say so."]],
+     ["ct_bridge_otter_is_caught", ["The prints stopped, and they say a ranger caught the thing, and it's in somebody's team. I'd put a lot of money on it being a lot smaller than anyone thinks."]]
+    ],
+    "else": ["The bridge is dry and so are my boots."]
+   },
+   {
+    "id": "bench",
+    "zone": "great_glen",
+    "near": [26, 44],
+    "sprite": "birdwatcher",
+    "name": "Dusk Watcher",
+    "show_if": "ct_bridge_otter_watch",
+    "says": [],
+    "else": ["Shhh. Three of them tonight. Two cubs and a mother, and one of the cubs is doing a sort of headstand. This is the best bench in the Highlands."]
+   },
+   {
+    "id": "stalker",
+    "zone": "great_glen",
+    "near": [22, 40],
+    "sprite": "ghillie",
+    "name": "Stalker",
+    "show_if": "ct_bridge_otter_tale",
+    "says": [],
+    "else": ["I said it was the horse, and look. Nobody goes down there after dark. That's a result. I do not need a notebook to tell me I'm right."]
+   }
+  ]
+ }
+}

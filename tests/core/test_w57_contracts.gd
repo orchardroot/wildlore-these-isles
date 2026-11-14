@@ -190,3 +190,45 @@ func test_a_poster_never_says_a_share_of_the_fee() -> void:
 		for ch in c.choices:
 			for l in ch.poster:
 				assert_false("per cent" in str(l).to_lower() or "%" in str(l), "%s/%s quotes a number the pay may not match" % [c.id, ch.id])
+
+func test_the_follow_ups_wait_for_their_ending() -> void:
+	for pair in [["mink_next", "mink", "fence", ["trap", "fence", "trust", "caught"], "manchester"],
+			["bridge_otter", "kelpie", "bridge", ["bridge", "sign", "bridle", "caught"], "fort_william"]]:
+		var c := Contracts.get_contract(pair[0])
+		assert_false(c.is_empty(), "%s exists" % pair[0])
+		assert_eq(c.needs, [{"contract": pair[1], "ending": pair[2]}])
+		var d := GameStateData.new()
+		for i in int(c.badges):
+			d.badges.append("b%d" % i)
+		assert_false(Contracts.offered(d, pair[4]).any(func(x): return str(x.id) == pair[0]), "not on the board for a fresh save")
+		assert_false(Contracts.take(d, pair[0], false).ok)
+		for end in pair[3]:
+			var d2 := GameStateData.new()
+			for i in int(c.badges):
+				d2.badges.append("b%d" % i)
+			d2.set_flag(Contracts.flag(pair[1], "state"), Contracts.CLOSED)
+			d2.set_flag(Contracts.flag(pair[1], "end"), end)
+			var up := Contracts.offered(d2, pair[4]).any(func(x): return str(x.id) == pair[0])
+			assert_eq(up, end == pair[2], "%s after %s/%s" % [pair[0], pair[1], end])
+
+func test_a_follow_up_notice_is_read_off_the_board_once_the_first_is_done() -> void:
+	var c := Contracts.get_contract("mink_next")
+	var h := FakeStoryHost.new()
+	h.dex = Dex.load_default()
+	h.zone = "manchester"
+	for i in int(c.badges):
+		h.data.badges.append("b%d" % i)
+	h.data.set_flag(Contracts.flag("mink", "state"), Contracts.CLOSED)
+	h.data.set_flag(Contracts.flag("mink", "end"), "fence")
+	h.choices = [0, 0]
+	await Commands.new(h).run([{"do": "contract", "as": "board", "town": "manchester"}])
+	assert_eq(Contracts.state(h.data, "mink_next"), Contracts.TAKEN)
+
+func test_old_saves_with_the_first_contract_decided_other_ways_see_no_follow_up() -> void:
+	var d := GameStateData.new()
+	d.set_flag(Contracts.flag("mink", "end"), "trap")
+	d.set_flag(Contracts.flag("kelpie", "end"), "sign")
+	for i in 10:
+		d.badges.append("b%d" % i)
+	assert_false(Contracts.offered(d, "manchester").any(func(x): return str(x.id) == "mink_next"))
+	assert_false(Contracts.offered(d, "fort_william").any(func(x): return str(x.id) == "bridge_otter"))
