@@ -1,0 +1,32 @@
+{
+ "id": "hp_warden",
+ "name": "Wall Warden Fiona",
+ "class": "Warden",
+ "sprite": "warden_grunt",
+ "party": [
+  {
+   "species": "slatelet",
+   "level": 85
+  },
+  {
+   "species": "tapknock",
+   "level": 84
+  },
+  {
+   "species": "thistlet",
+   "level": 85
+  }
+ ],
+ "ai": "trainer",
+ "money": 3500,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Wall Warden Fiona",
+   "text": "I look after this stretch of Wall for the National Trust. It looks after me, mostly by raining on me."
+  }
+ ],
+ "win": "I'll put the Wall back, and you can put yourself back.",
+ "after": "Every year someone tries to take a stone home. I put it back. The stones have a better memory than the people.",
+ "scaled_floor": 84
+}

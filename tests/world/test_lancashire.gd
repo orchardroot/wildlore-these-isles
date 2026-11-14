@@ -49,8 +49,9 @@ func test_joined_at_liverpool_north_only_a_cul_de_sac() -> void:
 	assert_eq(str(sef.edges.south.to), "liverpool")
 	assert_eq(str(sef.edges.north.to), "blackpool")
 	var bp := ZoneData.load_id("blackpool")
-	assert_eq(bp.edges.keys(), ["south"], "Blackpool is the end of the line")
+	assert_eq(bp.edges.keys(), ["south", "east"], "Blackpool is the end of the line, bar the wave 55 road over Pendle Hill")
 	assert_eq(str(bp.edges.south.to), "sefton_coast")
+	assert_eq(str(bp.edges.east.to), "pendle_hill")
 	assert_eq(liv.spawn, Vector2i(27, 24), "Liverpool's spawn is unchanged")
 
 func test_every_trainer_here_is_scaled() -> void:

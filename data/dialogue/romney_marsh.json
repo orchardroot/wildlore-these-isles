@@ -1,0 +1,62 @@
+{
+ "rm_gate": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The coast road to Dover is closed. Dungeness lorries. Don't ask."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "There's a Moot at Stonehenge for those with all ten Stones. Win that and the road to Kent will open, I'm told. In the meantime I can offer you a very nice view of the sea."
+  }
+ ],
+ "rm_fisher": [
+  {
+   "do": "say",
+   "who": "Net Shop Fisherman",
+   "text": "Those tall black huts are net shops. Tarred wood, built tall because there's no room on the beach. They kept the nets dry for 400 years. Hastings is the biggest beach-launched fishing fleet in the country."
+  },
+  {
+   "do": "say",
+   "who": "Net Shop Fisherman",
+   "text": "No harbour here, you see. We launch off the shingle. It is not the easy way, but it is ours."
+  }
+ ],
+ "rm_smuggler": [
+  {
+   "do": "say",
+   "who": "Marsh Historian",
+   "text": "The Owlers: they smuggled wool out and brandy in, and the marsh gave them the best cover in England. Churchyards, creeks, and a whole village looking the other way."
+  },
+  {
+   "do": "say",
+   "who": "Marsh Historian",
+   "text": "Russell Thorndike made a hero out of a smuggling parson, Doctor Syn. It's the sort of story the marsh invites."
+  }
+ ],
+ "rm_railman": [
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "Fifteen-inch gauge, thirteen and a half miles, and every one of them manufactured at one third of the usual scale. Captain Howey wanted the best miniature railway in the world. He got it."
+  },
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "The little trains carry real passengers and there's a proper timetable. Mind your head on the station roof."
+  }
+ ],
+ "rm_gardener": [
+  {
+   "do": "say",
+   "who": "Shingle Gardener",
+   "text": "Everyone says it can't be done. A garden on a pebble beach. Sea kale, sea holly, viper's bugloss, rock rose. They like a bad day."
+  },
+  {
+   "do": "say",
+   "who": "Shingle Gardener",
+   "text": "The gardens at Prospect Cottage are laid out with stones and driftwood like a poem. People come from all over to stand at the fence and say nothing."
+  }
+ ]
+}

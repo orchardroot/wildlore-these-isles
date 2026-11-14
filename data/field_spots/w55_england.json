@@ -1,0 +1,147 @@
+[
+ {
+  "id": "fs_pendle_round_up",
+  "zone": "pendle_hill",
+  "x": 17,
+  "y": 22,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Bowland sheep, all facing the wrong way and each convinced it is the one who is right. {lead} circles once, low, and the whole flock goes through the gate like water. The farmer leaves a flask on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_pendle_round_up",
+  "at": "pendle_hill"
+ },
+ {
+  "id": "fs_swaledale_wall",
+  "zone": "swaledale",
+  "x": 36,
+  "y": 30,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in a Swaledale wall, one stone short of a good afternoon. {lead} nudges the capstone back in, snug as a key in a lock, and the farmer, watching from the barn door, tips his cap.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_swaledale_wall",
+  "at": "swaledale"
+ },
+ {
+  "id": "fs_humber_roll",
+  "zone": "humber_bridge",
+  "x": 24,
+  "y": 48,
+  "field": "roll",
+  "prop": "cheese",
+  "text": "A wheel of Lincolnshire Poacher, stuck in a rut. {lead} gives it a shove and down the slope it goes, round and round, and out of the hollow comes an old bus pass and a lot of loose change.",
+  "reward": {
+   "money": 380
+  },
+  "flag": "field_humber_roll",
+  "at": "humber_bridge"
+ },
+ {
+  "id": "fs_wallpath_wall",
+  "zone": "hadrians_wall_path",
+  "x": 52,
+  "y": 12,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in a drystone dyke, a few stones short. {lead} lifts them back, one by one, and the farmer waves a stick from the next field. Under the last stone: a handful of loose change from the 1950s.",
+  "reward": {
+   "money": 330
+  },
+  "flag": "field_wallpath_wall",
+  "at": "hadrians_wall_path"
+ },
+ {
+  "id": "fs_reivers_roundup",
+  "zone": "reivers_road",
+  "x": 14,
+  "y": 34,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Blackface sheep, all facing the border and none crossing it. {lead} nips round the back, low and quick, and the lot of them stream through the gate into England, or possibly Scotland. The farmer will not say which. He leaves a flask on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_reivers_roundup",
+  "at": "reivers_road"
+ },
+ {
+  "id": "fs_blackcountry_line",
+  "zone": "black_country",
+  "x": 26,
+  "y": 34,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the canal: a lost shilling, a lump of tin, the kind of thing that sits in the silt for a hundred years. {lead} dips in, and up comes a handful of old pennies and a surprise.",
+  "reward": {
+   "money": 320
+  },
+  "flag": "field_blackcountry_line",
+  "at": "black_country"
+ },
+ {
+  "id": "fs_cranborne_loft",
+  "zone": "cranborne_chase",
+  "x": 36,
+  "y": 36,
+  "field": "loft",
+  "prop": "bale",
+  "text": "A bend in the old drove road, a straw bale for a target and a grassy verge. {lead} lobs the bowl and it sails over the bend like it knew the way. In the grass beyond: a handful of loose coins.",
+  "reward": {
+   "money": 450
+  },
+  "flag": "field_cranborne_loft",
+  "at": "cranborne_chase"
+ },
+ {
+  "id": "fs_varsity_roundup",
+  "zone": "varsity_line",
+  "x": 22,
+  "y": 38,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep on the old trackbed, all facing the wrong way and all convinced the next train is theirs. {lead} circles, low and quick, and the flock files through the gate like passengers. A signalman's flask is left on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_varsity_roundup",
+  "at": "varsity_line"
+ },
+ {
+  "id": "fs_romney_glint",
+  "zone": "romney_marsh",
+  "x": 38,
+  "y": 38,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the shallows by the net shops. {lead} dips in and comes up with an old tobacco tin, a lead token from a ferry that no longer runs, and a quite surprising amount of change.",
+  "reward": {
+   "money": 480
+  },
+  "flag": "field_romney_glint",
+  "at": "romney_marsh"
+ },
+ {
+  "id": "fs_offas_wall",
+  "zone": "offas_dyke",
+  "x": 34,
+  "y": 30,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "A gap in the drystone wall on the border, a few stones short of a good afternoon's work. {lead} lifts them back into place one by one. Whoever owns the wall, England or Wales, tips a cap from the next field.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_offas_wall",
+  "at": "offas_dyke"
+ }
+]

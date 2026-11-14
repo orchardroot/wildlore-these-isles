@@ -1,0 +1,32 @@
+{
+ "id": "vl_farmer",
+ "name": "Market Gardener Pete",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "leveret",
+   "level": 90
+  },
+  {
+   "species": "pipkin",
+   "level": 90
+  },
+  {
+   "species": "barkdeer",
+   "level": 91
+  }
+ ],
+ "ai": "trainer",
+ "money": 3600,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Market Gardener Pete",
+   "text": "Bedfordshire clay, brick pits and the best sprouts in England. Everyone laughs. They laugh until they've tried them."
+  }
+ ],
+ "win": "Right. I'll have a lie-down in the sprouts.",
+ "after": "The brick pits north of Bedford fed the London building trade for a hundred years. They're lakes now. Nature moves in fast.",
+ "scaled_floor": 90
+}

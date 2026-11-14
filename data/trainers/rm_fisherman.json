@@ -1,0 +1,32 @@
+{
+ "id": "rm_fisherman",
+ "name": "Beach Fisher Lionel",
+ "class": "Fisherman",
+ "sprite": "fisherman_north",
+ "party": [
+  {
+   "species": "pinchkin",
+   "level": 94
+  },
+  {
+   "species": "chipgull",
+   "level": 95
+  },
+  {
+   "species": "pupplash",
+   "level": 94
+  }
+ ],
+ "ai": "trainer",
+ "money": 4100,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Beach Fisher Lionel",
+   "text": "Launching off the shingle with a tractor, a boat and a good deal of swearing. You're welcome to help, as long as you don't ask what the swearing is for."
+  }
+ ],
+ "win": "That's me washed ashore.",
+ "after": "A Hastings fisherman used to be able to tell you the week by the fish. Now it's the fish telling us.",
+ "scaled_floor": 94
+}

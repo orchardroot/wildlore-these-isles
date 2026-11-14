@@ -1,0 +1,32 @@
+{
+ "id": "vl_birder",
+ "name": "Birdwatcher Imran",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "kitelet",
+   "level": 90
+  },
+  {
+   "species": "starlet",
+   "level": 90
+  },
+  {
+   "species": "hootlet",
+   "level": 91
+  }
+ ],
+ "ai": "trainer",
+ "money": 3600,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Imran",
+   "text": "Sandy Heath has a heath, a hill and a very silly number of birds. I've got a list as long as my arm and a worse back."
+  }
+ ],
+ "win": "I've seen worse. But not today.",
+ "after": "The Lodge at Sandy is the RSPB's headquarters. I went on a school trip and never really went home.",
+ "scaled_floor": 90
+}

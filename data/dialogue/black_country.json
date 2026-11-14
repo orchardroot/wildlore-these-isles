@@ -1,0 +1,62 @@
+{
+ "bc_gate": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The road to Birmingham is closed. Bridge inspection. We are inspecting it very thoroughly."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "Spirit Stone, they say. Hester in York has it. Something about a crypt. Come back when you've seen a bit more of the country."
+  }
+ ],
+ "bc_boater": [
+  {
+   "do": "say",
+   "who": "Narrowboat Skipper",
+   "text": "She's called the Mildred. I'm called Dave. I've been up and down these canals for thirty years and I still can't get the lock gate to stop squeaking."
+  },
+  {
+   "do": "say",
+   "who": "Narrowboat Skipper",
+   "text": "The Dudley Tunnel is nearly two miles long and the old boatmen walked the boats through on their backs, legging it along the roof. Imagine your hamstrings."
+  }
+ ],
+ "bc_museum": [
+  {
+   "do": "say",
+   "who": "Museum Guide",
+   "text": "Over at the Living Museum in Dudley they've moved real Black Country buildings brick by brick. A chip shop, a chapel, a pub. The chip shop does a very good faggot and peas."
+  },
+  {
+   "do": "say",
+   "who": "Museum Guide",
+   "text": "Our dialect has a thousand years behind it. Black Country speech has kept some old English forms the rest of England dropped. Some say 'thee' and 'thou' still."
+  }
+ ],
+ "bc_pigeon": [
+  {
+   "do": "say",
+   "who": "Pigeon Fancier",
+   "text": "Racing pigeons. A good bird will fly five hundred miles home in a day. They know the way back to the loft better than I do to the pub."
+  },
+  {
+   "do": "say",
+   "who": "Pigeon Fancier",
+   "text": "Half the lofts in the Black Country are on allotments. The other half are in someone's back garden, behind a fence and a dog."
+  }
+ ],
+ "bc_ironmaster": [
+  {
+   "do": "say",
+   "who": "Ironworker",
+   "text": "Iron's in our blood. Coal under the ground, ironstone, limestone, all within a few miles of each other. That's why the Black Country happened here, and not in Cornwall."
+  },
+  {
+   "do": "say",
+   "who": "Ironworker",
+   "text": "My grandad made chain at Cradley Heath. My gran made it too. She was better at it."
+  }
+ ]
+}

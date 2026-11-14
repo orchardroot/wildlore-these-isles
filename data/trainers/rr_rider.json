@@ -1,0 +1,32 @@
+{
+ "id": "rr_rider",
+ "name": "Rider Joanne",
+ "class": "Rider",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "foalmoor",
+   "level": 78
+  },
+  {
+   "species": "reivling",
+   "level": 78
+  },
+  {
+   "species": "hootlet",
+   "level": 78
+  }
+ ],
+ "ai": "trainer",
+ "money": 3100,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Rider Joanne",
+   "text": "Common Riding season! We ride the bounds of the town on horseback. Hundreds of us. Half a day of mud and then a very big tea."
+  }
+ ],
+ "win": "Well ridden. I'll write it down in the standing orders.",
+ "after": "The Common Ridings have been going since the 1500s. They never really stopped, whatever the Union said.",
+ "scaled_floor": 78
+}

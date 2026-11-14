@@ -1,0 +1,32 @@
+{
+ "id": "bc_chainmaker",
+ "name": "Chainmaker Doreen",
+ "class": "Chainmaker",
+ "sprite": "steelworker",
+ "party": [
+  {
+   "species": "pigling",
+   "level": 21
+  },
+  {
+   "species": "bobbin",
+   "level": 22
+  },
+  {
+   "species": "brockling",
+   "level": 21
+  }
+ ],
+ "ai": "trainer",
+ "money": 400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Chainmaker Doreen",
+   "text": "Heavy hammer, hot iron, a very small shed. We made chain for ships, for farms, for the Navy. Mind your fingers."
+  }
+ ],
+ "win": "Hot work. I need a cuppa and a sit.",
+ "after": "My gran made chain at home with a hammer and a baby on her hip. It was how it was.",
+ "scaled_floor": 21
+}

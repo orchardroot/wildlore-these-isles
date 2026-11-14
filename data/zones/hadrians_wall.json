@@ -475,6 +475,10 @@
   "south": {
    "to": "newcastle",
    "offset": 0
+  },
+  "west": {
+   "to": "hadrians_wall_path",
+   "offset": -6
   }
  },
  "npcs": [
@@ -728,9 +732,9 @@
   "TTgWgggggggggggggggW###WggggggggggggggggggggggggggggggggggggggggggggggggggggWgTT",
   "TTgWWgggggWWWWWWWWWW###WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWgTT",
   "TTgWggg#gggggggggggW###WggggggggggggggggggggggggggggggggggggggggggggggggggggWgTT",
-  "TTggggg#gggggggggggg###gggggggggggggggggggggggggggggggggggggggggggggggggggggggTT",
-  "TTgggg###ggggggggggg###gggggggggggggggggggggggggggggggggggggggggggggggggggggggTT",
-  "TTggggg################gggggggggggggggggggggggggggggggggggggggggggggggggggggggTT",
+  "##ggggg#gggggggggggg###gggggggggggggggggggggggggggggggggggggggggggggggggggggggTT",
+  "##gggg###ggggggggggg###gggggggggggggggggggggggggggggggggggggggggggggggggggggggTT",
+  "##ggggg################gggggggggggggggggggggggggggggggggggggggggggggggggggggggTT",
   "TTgggggggggggggggggg###gggggggggggggggggWWWWWWWWWgggWWWWWWWWWWggggggggggggggggTT",
   "TTgggggggggggggggggg###gggggggggggggggggWgggggggg###gggggggggWggggggggggggggggTT",
   "TTgggggggggggggggggg###gggggggggggggggggWggBBBBBB###gBBBBBBggWggggggggggggggggPT",

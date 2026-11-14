@@ -1,0 +1,32 @@
+{
+ "id": "rm_railman_t",
+ "name": "Driver Barry",
+ "class": "Engine Driver",
+ "sprite": "rail_guard",
+ "party": [
+  {
+   "species": "steamlet",
+   "level": 94
+  },
+  {
+   "species": "railspark",
+   "level": 95
+  },
+  {
+   "species": "sailet",
+   "level": 94
+  }
+ ],
+ "ai": "trainer",
+ "money": 4000,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Driver Barry",
+   "text": "Steam engine, miniature. Scale one to three, nearly a century old and still doing the job. I've driven her longer than I've known my wife."
+  }
+ ],
+ "win": "Whistle blown. I'll shunt off.",
+ "after": "The tiny trains are more reliable than the proper ones, and more cheerful, but I would say that.",
+ "scaled_floor": 94
+}

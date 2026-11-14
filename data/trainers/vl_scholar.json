@@ -1,0 +1,32 @@
+{
+ "id": "vl_scholar",
+ "name": "Don Priscilla",
+ "class": "Scholar",
+ "sprite": "gown_student",
+ "party": [
+  {
+   "species": "tickhopper",
+   "level": 90
+  },
+  {
+   "species": "stagbeet",
+   "level": 91
+  },
+  {
+   "species": "cranelet",
+   "level": 90
+  }
+ ],
+ "ai": "trainer",
+ "money": 3800,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Don Priscilla",
+   "text": "Between the two universities. A rail journey that should be done in an hour. In practice it took an afternoon. We did our best thinking en route."
+  }
+ ],
+ "win": "Defeat. I'll write it up with footnotes.",
+ "after": "A fellow of St John's once told me you could do your whole degree on the Varsity Line, if you got the timings wrong.",
+ "scaled_floor": 90
+}

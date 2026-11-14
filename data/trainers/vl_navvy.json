@@ -1,0 +1,32 @@
+{
+ "id": "vl_navvy",
+ "name": "Rail Volunteer Rob",
+ "class": "Railwayman",
+ "sprite": "rail_guard",
+ "party": [
+  {
+   "species": "railspark",
+   "level": 90
+  },
+  {
+   "species": "tickhopper",
+   "level": 91
+  },
+  {
+   "species": "shuttlecog",
+   "level": 90
+  }
+ ],
+ "ai": "trainer",
+ "money": 3700,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Rail Volunteer Rob",
+   "text": "I'm a volunteer on the heritage line. I wave a flag. Occasionally a train waves back. I'm happy."
+  }
+ ],
+ "win": "Signal's at danger. I'll stand down.",
+ "after": "They rebuilt the Marston Vale line and half the stations. It's amazing what you can do if you have enough enthusiasts.",
+ "scaled_floor": 90
+}

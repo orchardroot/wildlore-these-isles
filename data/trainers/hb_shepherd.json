@@ -1,0 +1,32 @@
+{
+ "id": "hb_shepherd",
+ "name": "Shepherd Rhona",
+ "class": "Shepherd",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "herdlet",
+   "level": 86
+  },
+  {
+   "species": "tattybogle",
+   "level": 86
+  },
+  {
+   "species": "leveret",
+   "level": 87
+  }
+ ],
+ "ai": "trainer",
+ "money": 3700,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Shepherd Rhona",
+   "text": "Wolds lambs are the best-looking in the county. I wouldn't know about the other counties. I have never left."
+  }
+ ],
+ "win": "I'll need a cup of tea after that. And possibly a sit-down.",
+ "after": "The wind up here could take your hat to Lincoln before you'd said goodbye.",
+ "scaled_floor": 86
+}

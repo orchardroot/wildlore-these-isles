@@ -1,0 +1,32 @@
+{
+ "id": "bc_boater_t",
+ "name": "Boatman Terry",
+ "class": "Canal Boater",
+ "sprite": "canal_boater",
+ "party": [
+  {
+   "species": "ductling",
+   "level": 21
+  },
+  {
+   "species": "stalklet",
+   "level": 22
+  },
+  {
+   "species": "elverlet",
+   "level": 21
+  }
+ ],
+ "ai": "trainer",
+ "money": 400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Boatman Terry",
+   "text": "Horse-drawn, that was. Shire horses on the towpath, a boatman at the tiller. Now it's a diesel and a lot of cups of tea."
+  }
+ ],
+ "win": "I'll get my coat. And the boat.",
+ "after": "The towpaths are the only quiet places in the Black Country. That's why we walk them.",
+ "scaled_floor": 21
+}

@@ -1,0 +1,769 @@
+{
+ "id": "varsity_line",
+ "name": "The Varsity Line",
+ "region": "east_anglia",
+ "kind": "route",
+ "music": "route_moor_south",
+ "weather": {
+  "clear": 28,
+  "drizzle": 22,
+  "sunshine": 16,
+  "fog": 12,
+  "gale": 8,
+  "downpour": 14
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "red_brick",
+   "x": 46,
+   "y": 22,
+   "w": 14,
+   "h": 7,
+   "label": "Cardington Airship Sheds"
+  },
+  {
+   "type": "building",
+   "style": "red_brick",
+   "x": 46,
+   "y": 31,
+   "w": 14,
+   "h": 6,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "chapel",
+   "x": 6,
+   "y": 30,
+   "w": 6,
+   "h": 4,
+   "label": "Bunyan Meeting"
+  },
+  {
+   "type": "building",
+   "style": "terrace",
+   "x": 14,
+   "y": 36,
+   "w": 8,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "red_brick",
+   "x": 8,
+   "y": 8,
+   "w": 6,
+   "h": 3,
+   "label": "Station (closed)"
+  },
+  {
+   "type": "bench",
+   "x": 10,
+   "y": 12
+  },
+  {
+   "type": "lamp_post",
+   "x": 15,
+   "y": 12
+  },
+  {
+   "type": "sheep",
+   "x": 10,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 22,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 36,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 52,
+   "y": 14,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 64,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 24,
+   "y": 37,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 26,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 61,
+   "y": 14,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 65,
+   "y": 12,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 37,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 30,
+   "y": 37,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 16,
+   "y": 19,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 39,
+   "y": 8,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 43,
+   "y": 4,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 15,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 32,
+   "y": 17,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 61,
+   "y": 26,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 45,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 21,
+   "y": 31,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 17,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 6,
+   "y": 26,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 29,
+   "y": 11,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 67,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 46,
+   "y": 21,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 7,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 44,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 10,
+   "y": 15,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 51,
+   "y": 13,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 50,
+   "y": 39,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 54,
+   "y": 39,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 9,
+   "y": 4,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 66,
+   "y": 42,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 22,
+   "y": 4,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 15,
+   "y": 29,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 21,
+   "y": 11,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 14,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 9,
+   "y": 18,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 8,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 19,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 42,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 38,
+   "y": 8,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 59,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 11,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 22,
+   "y": 41,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 11,
+   "y": 34,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 25,
+   "y": 5,
+   "variant": 0
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "bletchley_park",
+   "offset": -10
+  },
+  "east": {
+   "to": "cambridge",
+   "offset": 12
+  }
+ },
+ "npcs": [
+  {
+   "id": "vl_cyclist",
+   "sprite": "jogger",
+   "x": 24,
+   "y": 25,
+   "facing": "down",
+   "move": "still",
+   "script": "vl_cyclist"
+  },
+  {
+   "id": "vl_volunteer",
+   "sprite": "villager_2",
+   "x": 56,
+   "y": 20,
+   "facing": "left",
+   "move": "still",
+   "script": "vl_volunteer"
+  },
+  {
+   "id": "vl_pilgrim",
+   "sprite": "pilgrim",
+   "x": 10,
+   "y": 34,
+   "facing": "right",
+   "move": "still",
+   "script": "vl_pilgrim"
+  },
+  {
+   "id": "vl_codebreaker",
+   "sprite": "student",
+   "x": 4,
+   "y": 24,
+   "facing": "right",
+   "move": "still",
+   "script": "vl_codebreaker"
+  },
+  {
+   "id": "vl_navvy",
+   "sprite": "rail_guard",
+   "x": 28,
+   "y": 21,
+   "facing": "right",
+   "move": "still",
+   "trainer": "vl_navvy"
+  },
+  {
+   "id": "vl_birder",
+   "sprite": "birdwatcher",
+   "x": 62,
+   "y": 12,
+   "facing": "down",
+   "move": "still",
+   "trainer": "vl_birder"
+  },
+  {
+   "id": "vl_scholar",
+   "sprite": "gown_student",
+   "x": 38,
+   "y": 24,
+   "facing": "left",
+   "move": "still",
+   "trainer": "vl_scholar"
+  },
+  {
+   "id": "vl_farmer",
+   "sprite": "farmer",
+   "x": 48,
+   "y": 40,
+   "facing": "up",
+   "move": "still",
+   "trainer": "vl_farmer"
+  },
+  {
+   "id": "vl_cardington",
+   "sprite": "student",
+   "x": 50,
+   "y": 21,
+   "facing": "down",
+   "move": "still",
+   "trainer": "vl_cardington"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "barkdeer",
+    "min": 90,
+    "max": 92,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night",
+     "dawn"
+    ]
+   },
+   {
+    "species": "stagbeet",
+    "min": 90,
+    "max": 92,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ],
+    "season": [
+     "summer"
+    ]
+   },
+   {
+    "species": "tickhopper",
+    "min": 90,
+    "max": 92,
+    "weight": 10
+   },
+   {
+    "species": "leveret",
+    "min": 90,
+    "max": 92,
+    "weight": 10,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "kitelet",
+    "min": 90,
+    "max": 92,
+    "weight": 10,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "starlet",
+    "min": 90,
+    "max": 92,
+    "weight": 10
+   },
+   {
+    "species": "swiftlet",
+    "min": 90,
+    "max": 92,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "rooklet",
+    "min": 90,
+    "max": 92,
+    "weight": 8
+   },
+   {
+    "species": "pipkin",
+    "min": 90,
+    "max": 92,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "day"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 90,
+    "max": 92,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "flittermouse",
+    "min": 90,
+    "max": 92,
+    "weight": 6,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "binfox",
+    "min": 90,
+    "max": 92,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night",
+     "dawn"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "volet",
+    "min": 90,
+    "max": 92,
+    "weight": 20
+   },
+   {
+    "species": "elverlet",
+    "min": 90,
+    "max": 92,
+    "weight": 20
+   },
+   {
+    "species": "stalklet",
+    "min": 90,
+    "max": 92,
+    "weight": 20
+   },
+   {
+    "species": "cranelet",
+    "min": 90,
+    "max": 92,
+    "weight": 14
+   },
+   {
+    "species": "pollanet",
+    "min": 90,
+    "max": 92,
+    "weight": 12
+   },
+   {
+    "species": "minkshade",
+    "min": 90,
+    "max": 92,
+    "weight": 10
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 3,
+   "y": 18,
+   "text": "WEST: Bletchley, Milton Keynes and Oxford. EAST: Bedford, Sandy and Cambridge. This was the Varsity Line. The trains would take you between the two universities, in the end with a change at Bletchley and a long wait."
+  },
+  {
+   "x": 16,
+   "y": 27,
+   "text": "A railway that once ran 77 miles from Oxford to Cambridge, by way of Bletchley and Bedford, so that dons, undergraduates and the occasional spy could travel between the two universities. Most of it closed in the late 1960s. Parts survive in use, and the missing parts are being rebuilt as East West Rail, which is why you will find a cycle track and a lot of men in hi-vis.",
+   "plaque": "w55e_varsity_line",
+   "title": "The Varsity Line"
+  },
+  {
+   "x": 32,
+   "y": 18,
+   "text": "THE GREAT OUSE. The fourth-longest river in the UK. It rises in Northamptonshire, wanders through Bedford and Ely, and reaches the Wash at King's Lynn after about 140 miles of not being in a hurry."
+  },
+  {
+   "x": 44,
+   "y": 30,
+   "text": "Two enormous airship hangars stand on the Bedfordshire flat. The first was built in 1917 and the second, bigger, in 1927, for the government's R100 and R101 airships. The R101 left Cardington for India in October 1930 and crashed in France on the way. Forty-eight of the fifty-four people aboard died. Britain gave up airships, and the sheds have since been used for storage, research and film sets.",
+   "plaque": "w55e_cardington",
+   "title": "The Cardington Sheds"
+  },
+  {
+   "x": 12,
+   "y": 35,
+   "text": "Bunyan, a tinker from Elstow, was jailed in Bedford for preaching without a licence in 1660 and spent most of the next twelve years in the county gaol. His great book, The Pilgrim's Progress, grew out of those years and came out in 1678. It has never been out of print. The Bunyan Meeting in Bedford stands where his congregation met.",
+   "plaque": "w55e_bunyan",
+   "title": "John Bunyan"
+  },
+  {
+   "x": 66,
+   "y": 18,
+   "text": "EAST: Sandy, the Lodge, and Cambridge in the distance. The RSPB's headquarters is at The Lodge, Sandy. Expect a lot of binoculars and a very good flapjack."
+  },
+  {
+   "x": 38,
+   "y": 12,
+   "text": "CONCRETE COWS. Milton Keynes, to the west, has had its famous concrete cows since 1978. They have been moved about the town and painted more than once. They have never produced any milk."
+  }
+ ],
+ "spawn": [
+  3,
+  22
+ ],
+ "stage": "grass",
+ "scaled_floor": 90,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTgmmmmgmmmmgmmmmgmmmmgmmmmgmmw~wmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgTTT",
+  "TTTmgmmmmgmmmmgmmmmgmmmmgmmmmgmw~wgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmTTT",
+  "TTTmmgmmmmgmmmmgmmmmgmmmmgmmmmgmw~wgmmmmgmmmmgmmmmgmmmmgmmmmrrrrrgmmmTTT",
+  "TTTmmmgmmmmgmmmmgmmmmgmmmmgmmmmgw~wmgmmmmgmmmmgmmmmgmmmmgmrrwwwwwrrmmTTT",
+  "TTTmmmmgmmmmgmmmmgmmmmgmmmmgmmmmw~wmmgmmmmgmmmmgmmmmgmmmmrww~~~~~wwrmTTT",
+  "TTTgmmmmBBBBBBmmmmgmmmmgmmmmgmmmw~wmmmgmmmmgmmmmgmmmmgmmmrw~~~~~~~wrgTTT",
+  "TTTmgmmmBBBBBBgmmmmgmmmmgmmmmgmmw~wmmmmgmmmmgmmmmgmmmmgmmrww~~~~~wwrmTTT",
+  "TTTmmgmmBBBBBBqqqmmmgmmmmgmmmmgmw~wgmmmmgmmmmgmmmmgmmmmgmmrrwwwwwrrmmTTT",
+  "TTTmmmgqqqqqqqqqqqmmmgmmmmgmmmmw~wmmgmmmmgmmmmgmmmmgmmmmgmmmrrrrrmgmmTTT",
+  "TTTmmmqqqqqqqqqqqqmmmmgmmmmgmmmw~wmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmTTT",
+  "TTTgmmmqqqqqqqqqqqgmmmmgmmmmgmmw~wmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgTTT",
+  "TTTmgmmmmqqqqqqqqmmgmmmmgmmmmgw~wmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmTTT",
+  "TTTmmgmmmmgmmqqgmmmmgmmmmgmmmw~wmmmgmmmccccccccccccccccccccccccccccccccc",
+  "TTTmmmgmmmmgmmmmgmmmmgmmmmgmmw~wmmmmgmmccccccccccccccccccccccccccccccccc",
+  "TTTmmmmgmmmmgmmmmgmmmmgmmmmgw~wmgmmmmgmccccccccccccccccccccccccccccccccc",
+  "TTTgmmmmgmmmmgmmmmgmmmmgmmmmw~wmmgmmmmgcccmgmmmmgmmmmgmmmmgmmmmgmmmmgTTT",
+  "TTTmgmmmmgmmmmgmmmmgmmmmgmmw~wmmmmgmmmmcccmmgmmmmgmmmmgmmmmgmmmmgmmmmTTT",
+  "TTTmmgmmmmgmmmmgmmmmgmmmqgmw~wgmmmmgmmmcccmmmgmmmmgmmmmgmmmmgmmmmgmmmTTT",
+  "ccccccccccccccccccccccqqqcccccccccccgmmcccmmmmgmmmmgmmmmgmmmmgmmmmgmmTTT",
+  "ccccccccccccccccccccccqqqcccccccccccmgmcccgmmmBBBBBBBBBBBBBBmmgmmmmgmTTT",
+  "ccccccccccccccccccccccqqqcccccccccccmmgcccmgmmBBBBBBBBBBBBBBmmmgmmmmgTTT",
+  "TTTmgmmmmgmmmmgmmmmcccmmqmw~wgmmmmgmmmmcccmmgmBBBBBBBBBBBBBBmmmmgmmmmTTT",
+  "TTTmmgmmmmgmmmmgmmmcccmmmgw~wmgmmmmgmmmcccmmmgBBBBBBBBBBBBBBgmmmmgmmmTTT",
+  "TTTmmmgmmmmgmmmmgmmcccmmmmw~wmmgmmmmgmmcccmmmmBBBBBBBBBBBBBBmgmmmmgmmTTT",
+  "TTTmmmmgmmmmgmmmmgmcccccccccccccccccccccccgmmmBBBBBBBBBBBBBBmmgmmmmgmTTT",
+  "TTTgmmmmgmmmmgmmmmgcccccccccccccccccccccccmgmmBBBBBBBBBBBBBBmmmgmmmmgTTT",
+  "TTTmgmmmmgmmmmgmmmmcccccccccccccccccccccccmmgmmmmgmmmmgmmqqqmmmmgmmmmTTT",
+  "TTTmmgBBBBBBmmmgmmmmgmmmmgmmw~wmmmmgmmmmgmmmmgmmmmgmmmqqqqqqqqmqmgmmmTTT",
+  "TTTmmmBBBBBBmmmmgmmmmgmmmmgmmw~wmmqmgmmmmgmmmmBBBBBBBBBBBBBBqqqqmmgmmTTT",
+  "TTTmmmBBBBBBgmmmmgmmmmgmmmmgmw~wqqqqqqqqmmgmmmBBBBBBBBBBBBBBqqqqmmmgmTTT",
+  "TTTgmmBBBBBBmgmmmmgmmmmgmmmqqqw~wqqqqqqqqqmgmmBBBBBBBBBBBBBBqqqqqmmmgTTT",
+  "TTTmgmmmmgmmmmgmmmmgmmmmgmmmqqw~wqqqqqqqqqmmgmBBBBBBBBBBBBBBqqqqqqmmmTTT",
+  "TTTmmgmmmmgmmmmgmmmmgmmmmgmqqqqw~wqqqqqqgmmmmgBBBBBBBBBBBBBBqqqqqqqmmTTT",
+  "TTTmmmgmmmmgmmBBBBBBBBmmmmgmmqqw~wqqqqqqmgmmmmBBBBBBBBBBBBBBqqqqqqqmmTTT",
+  "TTTmmmmgmmmmgmBBBBBBBBgmmmmgmmmmw~wqqgmmmmgmmmmgmmmmgmmqqqqqqqqqqqmgmTTT",
+  "TTTgmmmmgmmmmgBBBBBBBBmgmmmmgmmmw~wmmmgmmmmgmmmmgmmmmgmqqqqqqqqqmmmmgTTT",
+  "TTTmgmmmmgmmmmgmmmmgmmmmgmmmmgmmw~wmmmmgmmmmgmmmmgmmmmgmmmqqqqmmgmmmmTTT",
+  "TTTmmgmmmmgmmmmgmmmmgmmmmgmmmmgmw~wgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmTTT",
+  "TTTmmmgmmmmgmmmmgmmmmgmmmmgmmmmgw~wmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmmTTT",
+  "TTTmmmmgmmmmgmmmmgmmmmgmmmmgmmmmw~wmmgmmmmgmmmmgmmmmgmmmmgmmmmgmmmmgmTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "heights": [
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000011111111100000000000",
+  "000000000000000000000000000000000000000000000000000111111111110000000000",
+  "000000000000000000000000000000000000000000000000011111111111111100000000",
+  "000000000000000000000000000000000000000000000000011111111111111100000000",
+  "000000000000000000000000000000000000000000000000111111111111111110000000",
+  "000000000000000000000000000000000000000000000001111111222221111111000000",
+  "000000000000000000000000000000000000000000000001111112222222111111000000",
+  "000000000000000000000000000000000000000000000001111122222222211111000000",
+  "000000000000000000000000000000000000000000000001111122222222211111000000",
+  "000000000000000000000000000000000000000000000001111122222222211111000000",
+  "000000000000000000000000000000000000000000000001111122222222211111000000",
+  "000000000000000000000000000000000000000000000001111122222222211111000000",
+  "000000000000000000000000000000000000000000000001111112222222111111000000",
+  "000000000000000000000000000000000000000000000001111111222221111111000000",
+  "000000000000000000000000000000000000000000000000111111111111111110000000",
+  "000000000000000000000000000000000000000000000000011111111111111100000000",
+  "000000000000000000000000000000000000000000000000011111111111111100000000",
+  "000000000000000000000000000000000000000000000000000111111111110000000000",
+  "000000000000000000000000000000000000000000000000000011111111100000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000011111111100000000000000000000000000000000000000000000000000000",
+  "000000000111111111110000000000000000000000000000000000000000000000000000",
+  "000000011111111111111100000000000000000000000000000000000000000000000000",
+  "000000011111111111111100000000000000000000000000000000000000000000000000",
+  "000000111111111111111110000000000000000000000000000000000000000000000000",
+  "000001111111222221111111000000000000000000000000000000000000000000000000",
+  "000001111112222222111111000000000000000000000000000000000000000000000000",
+  "000001111122222222211111000000000000000000000000000000000000000000000000",
+  "000001111122222222211111000000000000000000000000000000000000000000000000",
+  "000001111122222222211111000000000000000000000000000000000000000000000000",
+  "000001111122222222211111000000000000000000000000000000000000000000000000",
+  "000001111122222222211111000000000000000000000000000000000000000000000000",
+  "000001111112222222111111000000000000000000000000000000000000000000000000",
+  "000001111111222221111111000000000000000000000000000000000000000000000000",
+  "000000111111111111111110000000000000000000000000000000000000000000000000",
+  "000000011111111111111100000000000000000000000000000000000000000000000000",
+  "000000011111111111111100000000000000000000000000000000000000000000000000",
+  "000000000111111111110000000000000000000000000000000000000000000000000000",
+  "000000000011111111100000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000",
+  "000000000000000000000000000000000000000000000000000000000000000000000000"
+ ],
+ "legend_extra": {
+  "g": {
+   "tile": "grass",
+   "colour": "#86994f"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#92a65a"
+  },
+  "q": {
+   "tile": "tall_grass",
+   "colour": "#7f9650",
+   "prop": "short"
+  },
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "c": {
+   "tile": "path",
+   "colour": "#b9a98a"
+  }
+ }
+}

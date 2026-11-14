@@ -1,0 +1,32 @@
+{
+ "id": "od_choir",
+ "name": "Choirmaster Rhian",
+ "class": "Singer",
+ "sprite": "choir_singer",
+ "party": [
+  {
+   "species": "wispet",
+   "level": 23
+  },
+  {
+   "species": "gwyllgi",
+   "level": 23
+  },
+  {
+   "species": "pipkin",
+   "level": 22
+  }
+ ],
+ "ai": "trainer",
+ "money": 450,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Choirmaster Rhian",
+   "text": "A male voice choir has more power than a brass band and costs less. Warm up? We've been warmed up since Christmas."
+  }
+ ],
+ "win": "Harmony restored. Mostly.",
+ "after": "Sing in the open air up here and the hills give it back to you a second later. Every Welshman knows that.",
+ "scaled_floor": 22
+}

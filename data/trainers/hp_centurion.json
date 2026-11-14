@@ -1,0 +1,32 @@
+{
+ "id": "hp_centurion",
+ "name": "Centurion Titus",
+ "class": "Re-enactor",
+ "sprite": "hiker",
+ "party": [
+  {
+   "species": "legionette",
+   "level": 84
+  },
+  {
+   "species": "tapknock",
+   "level": 85
+  },
+  {
+   "species": "fawnlet",
+   "level": 84
+  }
+ ],
+ "ai": "trainer",
+ "money": 3500,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Centurion Titus",
+   "text": "I'm a legionary. Twenty-five years' service and a discharge bonus. Well, I'm a volunteer. But I do it properly."
+  }
+ ],
+ "win": "Stand down. I need a long sit and a short wine.",
+ "after": "Garrison life was dull, mostly. Cold, damp, and then some very cross barbarians. Same as a bank holiday.",
+ "scaled_floor": 84
+}

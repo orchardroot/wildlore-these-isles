@@ -1,0 +1,469 @@
+{
+ "pois": [
+  {
+   "id": "poi_pendle_stone",
+   "zone": "pendle_hill",
+   "near": [
+    37,
+    8
+   ],
+   "kind": "stone",
+   "at": "pendle_hill",
+   "stat": "lore",
+   "lore": [
+    "You put a hand on it. The wind drops. Somewhere below you a very small sheep says something rude.",
+    "The real thing is the trig point on Pendle Hill's summit, the Big End, 557 metres up. George Fox is said to have climbed it in 1652 before the vision that began the Quakers."
+   ]
+  },
+  {
+   "id": "poi_pendle_hagstone",
+   "zone": "pendle_hill",
+   "near": [
+    21,
+    31
+   ],
+   "kind": "cache",
+   "at": "pendle_hill",
+   "item": "hag_stone",
+   "line": "A flat stone by the wall, with a hole worn clean through it. Hung over a door, they say, it keeps witches out. It has not kept you out."
+  },
+  {
+   "id": "poi_pendle_den",
+   "zone": "pendle_hill",
+   "near": [
+    27,
+    7
+   ],
+   "kind": "den",
+   "at": "pendle_hill",
+   "species": "hobthrust"
+  },
+  {
+   "id": "poi_swaledale_stone",
+   "zone": "swaledale",
+   "near": [
+    24,
+    10
+   ],
+   "kind": "stone",
+   "at": "swaledale",
+   "stat": "def",
+   "lore": [
+    "The cairn is warm on one side. Probably the sun. You decide not to check.",
+    "The real thing is Nine Standards Rigg above Kirkby Stephen, where nobody knows who built the big cairns, or why."
+   ]
+  },
+  {
+   "id": "poi_swaledale_mintcake",
+   "zone": "swaledale",
+   "near": [
+    31,
+    6
+   ],
+   "kind": "cache",
+   "at": "swaledale",
+   "item": "kendal_mint_cake",
+   "line": "Under a flat stone on the ridge: a tin, a dry sandwich, and a bar of mint cake in a wrapper from before you were born."
+  },
+  {
+   "id": "poi_swaledale_camp",
+   "zone": "swaledale",
+   "near": [
+    68,
+    30
+   ],
+   "kind": "camp",
+   "at": "swaledale",
+   "names": [
+    [
+     "Lead Hunter Pat",
+     "Poacher"
+    ],
+    [
+     "Lead Hunter Ed",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "brockling",
+    "stoatlet",
+    "kitelet"
+   ],
+   "line": "Looking for old lead on the spoil heaps. It's not illegal. It's very nearly rude.",
+   "money": 2500,
+   "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_humber_stone",
+   "zone": "humber_bridge",
+   "near": [
+    50,
+    54
+   ],
+   "kind": "stone",
+   "at": "humber_bridge",
+   "stat": "spd",
+   "lore": [
+    "It is a milestone, and it points two ways at once. You decide it is just being diplomatic.",
+    "The real thing is the line of Ermine Street itself: the Romans ran the road dead straight from Lincoln to the Humber, and the A15 still follows much of it today."
+   ]
+  },
+  {
+   "id": "poi_humber_cache",
+   "zone": "humber_bridge",
+   "near": [
+    6,
+    30
+   ],
+   "kind": "cache",
+   "at": "humber_bridge",
+   "item": "field_mushrooms",
+   "line": "A thermos, a bag of sandwiches, and a note: 'Back at four. Do NOT touch the pickled onions.'"
+  },
+  {
+   "id": "poi_humber_camp",
+   "zone": "humber_bridge",
+   "near": [
+    54,
+    20
+   ],
+   "kind": "camp",
+   "at": "humber_bridge",
+   "names": [
+    [
+     "Fisher Gav",
+     "Poacher"
+    ],
+    [
+     "Fisher Lin",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "pinchkin",
+    "pupplash",
+    "chipgull"
+   ],
+   "line": "Just a spot of unofficial netting. Nobody's looking. Except you.",
+   "money": 2600,
+   "item": "water_snare"
+  },
+  {
+   "id": "poi_wallpath_stone",
+   "zone": "hadrians_wall_path",
+   "near": [
+    44,
+    9
+   ],
+   "kind": "stone",
+   "at": "hadrians_wall_path",
+   "stat": "def",
+   "lore": [
+    "It is a squared stone, with a groove cut in one face. Somebody's initials, you suspect, and a long way before the Normans.",
+    "The real thing is the Wall itself: begun about AD 122 on the orders of Hadrian, 73 miles from the Tyne to the Solway, and later plundered for farms, bridges and abbeys all along its length."
+   ]
+  },
+  {
+   "id": "poi_wallpath_cache",
+   "zone": "hadrians_wall_path",
+   "near": [
+    28,
+    14
+   ],
+   "kind": "cache",
+   "at": "hadrians_wall_path",
+   "item": "miners_lamp",
+   "line": "Tucked in a gap between two stones, a very old-looking lantern. Or a very new one with a good story."
+  },
+  {
+   "id": "poi_wallpath_camp",
+   "zone": "hadrians_wall_path",
+   "near": [
+    62,
+    42
+   ],
+   "kind": "camp",
+   "at": "hadrians_wall_path",
+   "names": [
+    [
+     "Reiver Dougie",
+     "Poacher"
+    ],
+    [
+     "Reiver Beth",
+     "Poacher"
+    ]
+   ],
+   "party": [
+    "reivling",
+    "stoatlet",
+    "brockling"
+   ],
+   "line": "Borrowing a few sheep. Strictly, it's tradition. Not that tradition holds up in court.",
+   "money": 2500,
+   "item": "flask_of_tea"
+  },
+  {
+   "id": "poi_reivers_stone",
+   "zone": "reivers_road",
+   "near": [
+    23,
+    22
+   ],
+   "kind": "stone",
+   "at": "reivers_road",
+   "stat": "atk",
+   "lore": [
+    "It is a boundary stone, and it leans slightly Scottish. Or you are leaning slightly English. Hard to say.",
+    "The real thing is the Scotch Dyke, the ditch and bank dug in 1552 to divide the Debatable Land between England and Scotland after generations of argument."
+   ]
+  },
+  {
+   "id": "poi_reivers_cache",
+   "zone": "reivers_road",
+   "near": [
+    8,
+    46
+   ],
+   "kind": "cache",
+   "at": "reivers_road",
+   "item": "horseshoe",
+   "line": "In the hollow of an old wall, wrapped in oilskin: a horseshoe, a handful of copper coins and a very short list of other people's cows."
+  },
+  {
+   "id": "poi_reivers_den",
+   "zone": "reivers_road",
+   "near": [
+    50,
+    50
+   ],
+   "kind": "den",
+   "at": "reivers_road",
+   "species": "eildonmare"
+  },
+  {
+   "id": "poi_blackcountry_stone",
+   "zone": "black_country",
+   "near": [
+    30,
+    12
+   ],
+   "kind": "stone",
+   "at": "black_country",
+   "stat": "atk",
+   "lore": [
+    "It is warm, which is unreasonable in this weather. A cinder, perhaps, from the great ironworks that fed the Black Country for a century.",
+    "The real thing is the Black Country's pig iron and chain: Netherton anchors, Cradley Heath chain, and the forges that glowed red every night."
+   ]
+  },
+  {
+   "id": "poi_blackcountry_cache",
+   "zone": "black_country",
+   "near": [
+    40,
+    48
+   ],
+   "kind": "cache",
+   "at": "black_country",
+   "item": "miners_lamp",
+   "line": "At the back of a ruined pit-head shed: a Davy lamp, still half full of paraffin, and a chalk note that reads 'DON'T'."
+  },
+  {
+   "id": "poi_blackcountry_camp",
+   "zone": "black_country",
+   "near": [
+    10,
+    46
+   ],
+   "kind": "camp",
+   "at": "black_country",
+   "names": [
+    [
+     "Scrap Merchant Colin",
+     "Scavenger"
+    ],
+    [
+     "Scrap Merchant Maureen",
+     "Scavenger"
+    ]
+   ],
+   "party": [
+    "pigling",
+    "bobbin",
+    "binfox"
+   ],
+   "line": "Reclaimed lead from the church roof. It's called recycling when you're me.",
+   "money": 700,
+   "item": "iron_snare"
+  },
+  {
+   "id": "poi_cranborne_stone",
+   "zone": "cranborne_chase",
+   "near": [
+    14,
+    34
+   ],
+   "kind": "stone",
+   "at": "cranborne_chase",
+   "stat": "ward",
+   "lore": [
+    "The stone is cold and faintly humming. Then you realise that's you.",
+    "The real thing is Knowlton Church: a Norman church in the middle of a Neolithic henge, left to decay in the 1700s and standing roofless since."
+   ]
+  },
+  {
+   "id": "poi_cranborne_cache",
+   "zone": "cranborne_chase",
+   "near": [
+    6,
+    22
+   ],
+   "kind": "cache",
+   "at": "cranborne_chase",
+   "item": "ammonite",
+   "line": "Where the chalk has slumped, something curled and grey is sticking out of the bank. An ammonite, perfectly round, with a very old look about it."
+  },
+  {
+   "id": "poi_cranborne_den",
+   "zone": "cranborne_chase",
+   "near": [
+    48,
+    48
+   ],
+   "kind": "den",
+   "at": "cranborne_chase",
+   "species": "megalorn"
+  },
+  {
+   "id": "poi_varsity_stone",
+   "zone": "varsity_line",
+   "near": [
+    60,
+    6
+   ],
+   "kind": "stone",
+   "at": "varsity_line",
+   "stat": "spd",
+   "lore": [
+    "The old milepost still says Oxford on one side and Cambridge on the other. Someone has added a small sticker: 'DELAYED'.",
+    "The real thing is the Varsity Line itself: the railway between Oxford and Cambridge, most of it closed in the late 1960s, now being rebuilt in stages as East West Rail."
+   ]
+  },
+  {
+   "id": "poi_varsity_cache",
+   "zone": "varsity_line",
+   "near": [
+    6,
+    40
+   ],
+   "kind": "cache",
+   "at": "varsity_line",
+   "item": "four_leaf_clover",
+   "line": "In the old platform edging: a flask, a ticket for the 7.42 to Cambridge, and a clover, pressed in a Ladybird book."
+  },
+  {
+   "id": "poi_varsity_camp",
+   "zone": "varsity_line",
+   "near": [
+    34,
+    40
+   ],
+   "kind": "camp",
+   "at": "varsity_line",
+   "names": [
+    [
+     "Scrap Dealer Vic",
+     "Scavenger"
+    ],
+    [
+     "Scrap Dealer Jan",
+     "Scavenger"
+    ]
+   ],
+   "party": [
+    "railspark",
+    "shuttlecog",
+    "binfox"
+   ],
+   "line": "Reclaiming old rail. It's called heritage when somebody else does it.",
+   "money": 2700,
+   "item": "iron_snare"
+  },
+  {
+   "id": "poi_romney_stone",
+   "zone": "romney_marsh",
+   "near": [
+    30,
+    6
+   ],
+   "kind": "stone",
+   "at": "romney_marsh",
+   "stat": "hp",
+   "lore": [
+    "It leans into the wind and smells faintly of brandy. A very old marker, to a very old business.",
+    "The real thing is the Romney Marsh smuggling trade of the 1700s: the Owlers moved wool out and brandy and tea in, and nearly the whole marsh looked the other way."
+   ]
+  },
+  {
+   "id": "poi_romney_cache",
+   "zone": "romney_marsh",
+   "near": [
+    10,
+    40
+   ],
+   "kind": "cache",
+   "at": "romney_marsh",
+   "item": "sea_glass",
+   "line": "Under the shingle bank, in the lee of a boat: a biscuit tin, a pocketful of sea glass, and a note in a child's hand: 'Treasure. Do not tell Dad.'"
+  },
+  {
+   "id": "poi_romney_den",
+   "zone": "romney_marsh",
+   "near": [
+    40,
+    8
+   ],
+   "kind": "den",
+   "at": "romney_marsh",
+   "species": "longman"
+  },
+  {
+   "id": "poi_offas_stone",
+   "zone": "offas_dyke",
+   "near": [
+    42,
+    20
+   ],
+   "kind": "stone",
+   "at": "offas_dyke",
+   "stat": "def",
+   "lore": [
+    "You put a hand on the bank. It is cold, and exactly as wide as one very determined king.",
+    "The real thing is Offa's Dyke itself: a bank and ditch, still higher than a man in places, built in the 8th century along the border and walked today by a National Trail."
+   ]
+  },
+  {
+   "id": "poi_offas_cache",
+   "zone": "offas_dyke",
+   "near": [
+    46,
+    54
+   ],
+   "kind": "cache",
+   "at": "offas_dyke",
+   "item": "hag_stone",
+   "line": "In the dry-stone wall, a slate with a hole through it, on a string. A lucky stone, from a time when luck was the cheapest thing on a farm."
+  },
+  {
+   "id": "poi_offas_den",
+   "zone": "offas_dyke",
+   "near": [
+    6,
+    52
+   ],
+   "kind": "den",
+   "at": "offas_dyke",
+   "species": "tormane"
+  }
+ ]
+}

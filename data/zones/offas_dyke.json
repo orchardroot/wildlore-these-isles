@@ -1,0 +1,876 @@
+{
+ "id": "offas_dyke",
+ "name": "Offa's Dyke",
+ "region": "north_wales",
+ "kind": "route",
+ "music": "route_forest",
+ "weather": {
+  "drizzle": 32,
+  "clear": 20,
+  "fog": 14,
+  "downpour": 12,
+  "gale": 8,
+  "sunshine": 14
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 51,
+   "y": 38,
+   "w": 9,
+   "h": 5,
+   "label": "Powis Castle"
+  },
+  {
+   "type": "building",
+   "style": "tin_cottage",
+   "x": 52,
+   "y": 48,
+   "w": 4,
+   "h": 2,
+   "label": "Welshpool & Llanfair Halt"
+  },
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 6,
+   "y": 28,
+   "w": 10,
+   "h": 5,
+   "label": "Chirk Castle"
+  },
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 8,
+   "y": 4,
+   "w": 6,
+   "h": 4,
+   "label": "Castell Dinas Bran (ruin)"
+  },
+  {
+   "type": "building",
+   "style": "chapel",
+   "x": 42,
+   "y": 5,
+   "w": 7,
+   "h": 4,
+   "label": "Valle Crucis Abbey (ruin)"
+  },
+  {
+   "type": "building",
+   "style": "tudor",
+   "x": 22,
+   "y": 8,
+   "w": 4,
+   "h": 3,
+   "label": "Plas Newydd"
+  },
+  {
+   "type": "canal_boat",
+   "x": 24,
+   "y": 13,
+   "variant": 0
+  },
+  {
+   "type": "canal_boat",
+   "x": 38,
+   "y": 13,
+   "variant": 0
+  },
+  {
+   "type": "standing_stone",
+   "x": 50,
+   "y": 9,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 8,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 26,
+   "y": 42,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 36,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 54,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 14,
+   "y": 48,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 48,
+   "y": 54,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 22,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 9,
+   "y": 51,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 42,
+   "y": 41,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 15,
+   "y": 3,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 43,
+   "y": 15,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 30,
+   "y": 45,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 41,
+   "y": 24,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 51,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 33,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 46,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 48,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 18,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 60,
+   "y": 55,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 48,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 27,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 23,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 27,
+   "y": 44,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 52,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 20,
+   "y": 5,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 27,
+   "y": 31,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 29,
+   "y": 5,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 22,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 20,
+   "y": 19,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 12,
+   "y": 41,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 13,
+   "y": 50,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 22,
+   "y": 27,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 4,
+   "y": 19,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 57,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 18,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 39,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 30,
+   "y": 26,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 30,
+   "y": 9,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 58,
+   "y": 5,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 32,
+   "y": 33,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 43,
+   "y": 52,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 22,
+   "y": 33,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 58,
+   "y": 16,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 30,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 25,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 31,
+   "y": 31,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 36,
+   "y": 53,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 22,
+   "y": 22,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 16,
+   "y": 56,
+   "variant": 2
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "east": {
+   "to": "shrewsbury",
+   "offset": -16
+  },
+  "north": {
+   "to": "llangollen",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "od_walker",
+   "sprite": "hiker",
+   "x": 30,
+   "y": 38,
+   "facing": "right",
+   "move": "still",
+   "script": "od_walker"
+  },
+  {
+   "id": "od_bargee",
+   "sprite": "canal_boater",
+   "x": 31,
+   "y": 15,
+   "facing": "down",
+   "move": "still",
+   "script": "od_bargee"
+  },
+  {
+   "id": "od_singer",
+   "sprite": "choir_singer",
+   "x": 24,
+   "y": 22,
+   "facing": "right",
+   "move": "still",
+   "script": "od_singer"
+  },
+  {
+   "id": "od_railman",
+   "sprite": "rail_guard",
+   "x": 54,
+   "y": 46,
+   "facing": "left",
+   "move": "still",
+   "script": "od_railman"
+  },
+  {
+   "id": "od_walker_t",
+   "sprite": "hillwalker",
+   "x": 36,
+   "y": 38,
+   "facing": "right",
+   "move": "still",
+   "trainer": "od_walker_t"
+  },
+  {
+   "id": "od_castle",
+   "sprite": "warden_grunt",
+   "x": 14,
+   "y": 34,
+   "facing": "up",
+   "move": "still",
+   "trainer": "od_castle"
+  },
+  {
+   "id": "od_boater",
+   "sprite": "canal_boater",
+   "x": 28,
+   "y": 16,
+   "facing": "right",
+   "move": "still",
+   "trainer": "od_boater"
+  },
+  {
+   "id": "od_farmer",
+   "sprite": "farmer",
+   "x": 48,
+   "y": 24,
+   "facing": "left",
+   "move": "still",
+   "trainer": "od_farmer"
+  },
+  {
+   "id": "od_choir",
+   "sprite": "choir_singer",
+   "x": 44,
+   "y": 16,
+   "facing": "down",
+   "move": "still",
+   "trainer": "od_choir"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "squibbet",
+    "min": 22,
+    "max": 24,
+    "weight": 10,
+    "weather": [
+     "drizzle",
+     "downpour"
+    ]
+   },
+   {
+    "species": "foalmoor",
+    "min": 22,
+    "max": 24,
+    "weight": 8
+   },
+   {
+    "species": "tylwyth",
+    "min": 22,
+    "max": 24,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "martling",
+    "min": 22,
+    "max": 24,
+    "weight": 10
+   },
+   {
+    "species": "brockling",
+    "min": 22,
+    "max": 24,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "flittermouse",
+    "min": 22,
+    "max": 24,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "kitelet",
+    "min": 22,
+    "max": 24,
+    "weight": 12,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "leveret",
+    "min": 22,
+    "max": 24,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "pipkin",
+    "min": 22,
+    "max": 24,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "day"
+    ]
+   },
+   {
+    "species": "wispet",
+    "min": 22,
+    "max": 24,
+    "weight": 8,
+    "weather": [
+     "fog"
+    ]
+   },
+   {
+    "species": "brammel",
+    "min": 22,
+    "max": 24,
+    "weight": 6,
+    "season": [
+     "summer",
+     "autumn"
+    ]
+   },
+   {
+    "species": "gwyllgi",
+    "min": 22,
+    "max": 24,
+    "weight": 5,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "flyling",
+    "min": 22,
+    "max": 24,
+    "weight": 6,
+    "time": [
+     "dusk"
+    ],
+    "weather": [
+     "drizzle",
+     "fog"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "elverlet",
+    "min": 22,
+    "max": 24,
+    "weight": 22
+   },
+   {
+    "species": "afanc",
+    "min": 22,
+    "max": 24,
+    "weight": 12
+   },
+   {
+    "species": "minkshade",
+    "min": 22,
+    "max": 24,
+    "weight": 14,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "ratty",
+    "min": 22,
+    "max": 24,
+    "weight": 20
+   },
+   {
+    "species": "ductling",
+    "min": 22,
+    "max": 24,
+    "weight": 18
+   },
+   {
+    "species": "dipling",
+    "min": 22,
+    "max": 24,
+    "weight": 18
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 60,
+   "y": 43,
+   "text": "EAST: Shrewsbury and England. WEST: Welshpool, Chirk and Llangollen, and the Dyke. The Dyke is older than any border on a map. It is one of the few borders with a footpath."
+  },
+  {
+   "x": 43,
+   "y": 33,
+   "text": "A great earthwork bank and ditch built along the Welsh border in the 8th century, probably on the orders of Offa, king of Mercia from 757 to 796. The ditch lies on the Welsh side, the bank on the English, and in places it still stands higher than a man. The Offa's Dyke Path, a National Trail opened in 1971, follows it for 177 miles from Sedbury Cliffs near Chepstow to Prestatyn on the north Wales coast.",
+   "plaque": "w55e_offas_dyke",
+   "title": "Offa's Dyke"
+  },
+  {
+   "x": 38,
+   "y": 40,
+   "text": "CROESO I GYMRU. WELCOME TO WALES. Somewhere about here the Dyke and the border part company and then meet again. Nobody has told the sheep."
+  },
+  {
+   "x": 12,
+   "y": 34,
+   "text": "A fortress built for Edward I in the 1290s by Roger Mortimer, to hold the Welsh border after his conquest of Wales. It has been lived in ever since, which makes it unusual among the Marcher castles, most of which fell to ruin. The families who held it made it comfortable, with a long gallery, tapestries and some of the finest wrought iron gates in Britain.",
+   "plaque": "w55e_chirk",
+   "title": "Chirk Castle"
+  },
+  {
+   "x": 26,
+   "y": 26,
+   "text": "CHIRK. A castle, a railway viaduct and a canal aqueduct all within a few hundred yards of the border, each from a different century. Telford built the canal one, and nobody could say it didn't last."
+  },
+  {
+   "x": 34,
+   "y": 17,
+   "text": "Thomas Telford's aqueduct carries the Llangollen Canal across the Dee valley on eighteen stone piers, 38 metres above the river. It opened in 1805, 307 metres long, and is still the highest navigable aqueduct in the world. The iron trough has a towpath on one side and nothing at all between the boat and the drop on the other. It became a World Heritage Site in 2009.",
+   "plaque": "w55e_pontcysyllte",
+   "title": "Pontcysyllte Aqueduct"
+  },
+  {
+   "x": 46,
+   "y": 11,
+   "text": "A weathered stone column in a field above Valle Crucis Abbey, the remains of a cross raised in the 9th century by Cyngen, king of Powys, in memory of his great-grandfather Elisedd. Its long Latin inscription, which told the family's history, wore away over the centuries and was copied down in 1696 while it could still be read. The Cistercian abbey below was founded in 1201.",
+   "plaque": "w55e_eliseg",
+   "title": "Eliseg's Pillar"
+  },
+  {
+   "x": 18,
+   "y": 6,
+   "text": "CASTELL DINAS BRAN. A medieval castle on an Iron Age hillfort above Llangollen, built in the 1260s by the princes of Powys and ruined soon after. Legend says it burned itself rather than fall to Edward I."
+  },
+  {
+   "x": 28,
+   "y": 4,
+   "text": "NORTH: Llangollen, the Dee and the International Eisteddfod every July. SOUTH: Chirk, Welshpool and the Dyke. Mind the narrowboats, they have no brakes and right of way."
+  }
+ ],
+ "spawn": [
+  60,
+  46
+ ],
+ "stage": "valley",
+ "scaled_floor": 22,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTcccTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTggggggggggggggggggggggggggggcccggggggHggggggggggggggggggggTTT",
+  "TTTgggggBBBBBBgggggggggggggggggcccggggggHggggggggggggggggggggTTT",
+  "TTTgggggBBBBBBgggggggggggggggggcccggggggHgBBBBBBBggggggggggggTTT",
+  "TTTgggggBBBBBBgggggggggggggggggcccggggggHgBBBBBBBggggggggggggTTT",
+  "TTTgggggBBBBBBhhhggggggggggggggcccggggggHgBBBBBBBghggggggggggTTT",
+  "TTTggghhhhhhhhhhhhggggBBBBgggggcccggggggHgBBBBBBBhhhhhhggggggTTT",
+  "TTTggghhhhhhhhhhhhhgggBBBBgggggcccggggggHgggghhhhhhhhhhhgggggTTT",
+  "TTTggghhhhhhhhhhhhhhggBBBBgggggcccggggggHggghhhhhhhhhhhhgggggTTT",
+  "TTTgghhhhhhhhhhhhhhhgggggwwwwwwcccwwwwwwwgggghhhhhhhhhhhhggggTTT",
+  "TTTwgghhhhhhhhhhhhgwwwwww~~~~~~ccc~~~~~~~wwwwwwhhhhhhhhggggggTTT",
+  "TTT~wwwwwwwwwwwwwww~~~~~~wwwwwwcccwwwwwww~~~~~~wwwwwwwwwwwwwwTTT",
+  "TTTw~~~~~~~~~~~~~~~wwwwwwggggggcccggggggHwwwwww~~~~~~~~~~~~~~TPT",
+  "TTTgwwwwwwwwwwwwwwwggggggggggggcccggggggHggggggwwwwwwwwwwwwwwTTT",
+  "TTTggggggggggggggggggggggggggggcccggggggHggggggggggggggggggggTTT",
+  "TTTggggggggggggggggggggggggggggcccggggggHggggggggggggggggggggTTT",
+  "TTTmmmgmmmgmmmgmmmgmmmgmmmgmmmgcccgmmmgmHmgmmmgmmmgmmmgmmmgmmTTT",
+  "TTTgmmmgmmmgmmmgmmmgmmmgmmmgmmmcccmgmmmgHmmgmmmgmmmgmmmgmmmgmTTT",
+  "TTTmgmmmgmmmgmmmgmmmgmmmgmmmgmmcccmmgmmmHmmmgmmmgmmmgmmmgmmmgTTT",
+  "TTTmmgmmmgmmmgmmmgmmmgmmmgmmmgmcccmmmgmmHgmmmgmmmgmmmgmmmgmmmTTT",
+  "TTTmmmgmmmgmmmgmmmgmmmgmmmgmmmgcccgmmmgmHmgmmmgmmmgmmmgmmmgmmTTT",
+  "TTTgmmmgmmmgmmmgmmmcccccccccccccccmgmmmgHmmgmmmgmmmgmmmgmmmgmTTT",
+  "TTTmgmmmgmmmgmmmgmmcccccccccccccccmmgmmmHmmmgmmmgmmmgmmmgmmmgTTT",
+  "TTTmmgmmmgmmmgmmmgmcccccccccccccccmmmgmmHgmmmgqqmgmmmgmmmgmmmTTT",
+  "TTTmmmgmmmgmmmgmmmgcccgmmmgmmmgmmmgmmmgmHmqqqqqqqqqmmmgmmmgmmTTT",
+  "TTTgmmmgmmqqmmqgmmmcccmgmmmgmmmgmmmgmmmgHmqqqqqqqqqqmmmgmmmgmTTT",
+  "TTTmgmBBBBBBBBBBgmmcccmmgmmmgmmmgmmmgmmmHqqqqqqqqqqqgmmmgmmmgTTT",
+  "TTTmmgBBBBBBBBBBqqmcccmmmgmmmgmmmgmmmgmmHqqqqqqqqqqqmgmmmgmmmTPT",
+  "TTTmmmBBBBBBBBBBqqgcccgmmmgmmmgmmmgmmmgmHmqqqqqqqqqqmmgmmmgmmTTT",
+  "TTTgmmBBBBBBBBBBqqmcccmgmmmgmmmgmmmgmmmgHmmgmqmgmmmgmmmgmmmgmTTT",
+  "TTTmgmBBBBBBBBBBqmmcccmmgmmmgmmmgmmmgmmmHmmmgmmmgmmmgmmmgmmmgTTT",
+  "TTTmmgmmmgqmqgqmmgmcccmmmgmmmgmmmgmmmgmmHgmmmgmmmgmmmgmmmgmmmTTT",
+  "TTTmmmgmmmgmmmgmmmgcccgmmmgmmmgmmmgmmmgmHmgmmmgmmmgmmmgmmmgmmTTT",
+  "TTTgmmmgmmmgmmmgmmmcccccccccccccccccccccccccccccmmmgmmmgmmmgmTTT",
+  "TTTmgmmmgmmmgmmmgmmcccccccccccccccccccccccccccccgmmmgmmmgmmmgTTT",
+  "TTTmmgmmmgmmmgmmmgmcccccccccccccccccccccccccccccmgmmmgmmmgmmmTTT",
+  "TTTmmmgmmmgmmmgmmmgmmmgmmqqqqqqqqqqqmmgmHmgmmcccmmgBBBBBBBBBmTTT",
+  "TTTgmmmgmmmgmmmgmmmgmmmgqqqqqqqqqqqqqqmgHmmgmcccmmmBBBBBBBBBmTTT",
+  "TTTmgmmmgmmmgmmmgmmmgmmqqqqqqqqqqqqqqqmmHmmmgcccgmmBBBBBBBBBgTTT",
+  "TTTmmgmmmgmmmgmmmgmmmgmqqqqqqqqqqqqqqqqmHgmmmcccmgmBBBBBBBBBmTTT",
+  "TTTmmmgmmmgmmmgmmmgmmmgmqqqqqqqqqqqqqmgmHmgmmcccmmgBBBBBBBBBmTTT",
+  "TTTgmmmgmmmgmmmgmmmgmmmgmmmgqqmqmqmgmmmgHmmgmcccmmmgmmmgmmmgmTTT",
+  "TTPmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmHmmmgcccgmmmgmmmgmmmgTTT",
+  "TTTmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmHgmmmccccccccccccccccccc",
+  "TTTmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmHmgmmccccccccccccccccccc",
+  "TTTgmmmgmmmgmmmgmmmhmhmgmmmgmmmgmmmgmmmgHmmgmccccccccccccccccccc",
+  "TTTmgmmmgmmmgmmmhhhhhhhhhmmmgmmmgmmmgmmmHmmmgmmmgmmmBBBBgmmmgTTT",
+  "TTTmmgmmmgmmmghhhhhhhhhhhhhmmgmmmgmmmgmmHgmmmgmmmgmmBBBBmgmmmTTT",
+  "TTTmmmgmmmgmmmghhhhhhhhhhhhmmmgmmmgmmmgmHmgmmmgmmmgmmmgmmmgmmTTT",
+  "TTTgmmmgmmmgmmhhhhhhhhhhhhhgmmmgmmmgmmmgHmmgmmmgmmmgmmmgmmmgmTTT",
+  "TTTmgmmmgmmmgmmmhhhhhhhhhmmmgmmmgmmmgmmmHmmmgmmmgmmmgmmmgmmmgTTT",
+  "TTTmmgmmmgmmmgmmmgmhmghmmgmmmgmmmgmmmgmmHgmmmgmmmgmmmgmmmgmmmTTT",
+  "TTTmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmHmgmmmgmmmgmmmgmmmgmmTTT",
+  "TTTgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgHmmgmmmgmmmgmmmgmmmgmTTT",
+  "TTTmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmgmmmHmmmgmmmgmmmgmmmgmmmgTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTHTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "heights": [
+  "0000001111111111111000000000000000000000000000000000000000000000",
+  "0000011112222222111100000000000000000000000000111111111000000000",
+  "0000111222222222221110000000000000000000000011111111111110000000",
+  "0001112222233322222111000000000000000000100111111111111111000000",
+  "0011122223333333222211100000000000000000101111111111111111100000",
+  "0011222333333333332221100000000000000000111111122222221111110000",
+  "0111222333444443332221110000000000000000111112222222222211111000",
+  "0112223334444444333222110000000000000000111122222222222221111000",
+  "0112223344455544433222110000000000000001111122222222222221111100",
+  "0112233344555554433322110000000000000001111222223333322222111100",
+  "0112233344555554433322110000000000000001111222233333332222111100",
+  "0112233344555554433322110000000000000001111222233333332222111100",
+  "0112223344455544433222110000000000000001111222233333332222111100",
+  "0112223334444444333222110000000000000001111222233333332222111100",
+  "0111222333444443332221110000000000000001111222233333332222111100",
+  "0011222333333333332221100000000000000001111222223333322222111100",
+  "0011122223333333222211100000000000000001111122222222222221111100",
+  "0001112222233322222111000000000000000000111122222222222221111000",
+  "0000111222222222221110000000000000000000111112222222222211111000",
+  "0000011112222222111100000000000000000000111111122222221111110000",
+  "0000001111111111111000000000000000000000101111111111111111100000",
+  "0000000011111111100000000000000000000000100111111111111111000000",
+  "0000000000000000000000000000000000000000100011111111111110000000",
+  "0000000000000000000000000000000000000000100000111111111000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000100000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000",
+  "0000000000000000000000000000000000000000000000000000000000000000"
+ ],
+ "legend_extra": {
+  "g": {
+   "tile": "grass",
+   "colour": "#7b8c4c"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#879a52"
+  },
+  "q": {
+   "tile": "tall_grass",
+   "colour": "#7a8947",
+   "prop": "short"
+  },
+  "h": {
+   "tile": "tall_grass",
+   "colour": "#6e5a5c",
+   "prop": "heather"
+  },
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "c": {
+   "tile": "path",
+   "colour": "#b9a98a"
+  }
+ }
+}
