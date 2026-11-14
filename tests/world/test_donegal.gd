@@ -58,9 +58,16 @@ func test_plaques_are_unique_and_plentiful() -> void:
 
 func test_trainers_are_scaled_and_exist() -> void:
 	var n := 0
+	# Only trainers standing in the Donegal zones: wave 55's Golden Vale also uses a gv_ prefix, and it is scaled
+	# from Kilkenny and Limerick (55), not from Derry's band.
+	var all := _zones()
+	var placed := {}
+	for zid in OUTDOOR:
+		for npc in all[zid].npcs:
+			if npc.has("trainer"):
+				placed[str(npc.trainer)] = true
 	for tid in StoryData.trainer_ids():
-		var t := StoryData.trainer(tid)
-		if tid.begins_with("gv_") or tid.begins_with("gw_") or tid.begins_with("tory_") or tid.begins_with("dt_"):
+		if placed.has(tid) and (tid.begins_with("gv_") or tid.begins_with("gw_") or tid.begins_with("tory_") or tid.begins_with("dt_")):
 			n += 1
 			var raw = JsonUtil.read(StoryData.TRAINER_DIR.path_join(tid + ".json"))
 			assert_eq(int(raw.get("scaled_floor", -1)), FLOOR, tid)
