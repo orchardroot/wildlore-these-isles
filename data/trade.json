@@ -83,7 +83,7 @@
     "stall": "Lerwick has landed so much herring that nobody up here will pay for any. Take it somewhere that has to go without."},
    {"id": "gales_hull", "kind": "shortage", "factor": 1.4, "days": 4, "lead": 1, "towns": ["hull", "newcastle", "whitby"], "kinds": ["fish"], "seasons": ["autumn", "winter"],
     "board": "Gales, boats kept in", "wire": "Gales are keeping the boats in at Hull, Whitby and the Tyne, and the stalls there are crying out for fish.",
-    "stall": "Nothing has gone out of Hull for days, with this wind. If you have fish, the north east will pay for it."},
+    "stall": "Nothing has gone out of the harbour for days, with this wind. If you have fish, the north east will pay for it."},
    {"id": "rhubarb_sheds", "kind": "glut", "factor": 0.75, "days": 5, "lead": 1, "towns": ["leeds", "york", "hull"], "items": ["rhubarb"], "seasons": ["winter", "spring"],
     "board": "Rhubarb in by the barrow", "wire": "The forcing sheds of the Rhubarb Triangle are in full cry and Yorkshire is up to its ears in rhubarb. Do not bring any.",
     "stall": "It is rhubarb, rhubarb, rhubarb at the Yorkshire stalls this week. I would not carry coals to Newcastle, or sticks to Leeds."},
