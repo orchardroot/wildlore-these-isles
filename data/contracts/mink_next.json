@@ -1,0 +1,220 @@
+{
+ "id": "mink_next",
+ "title": "The Next Farm Along",
+ "town": "manchester",
+ "nation": "england",
+ "group": "farmers",
+ "badges": 3,
+ "pay": 2,
+ "needs": [{"contract": "mink", "ending": "fence"}],
+ "poster": {
+  "name": "Ted Barlow",
+  "role": "hens and a bad temper, further down Maureen's lane",
+  "idle": [
+   "Eggs? No. I've nothing to say to anybody who's seen Maureen's shed and not been rude about it."
+  ],
+  "taken": [
+   "Found anything? I've counted the hens twice a night since Tuesday. Three, then five. I'm not a man who loses count."
+  ],
+  "decided": [
+   "Well? I can tell by your face it's not a fox. Go on, say it."
+  ],
+  "closed": "That's all done with. Not a word to Maureen about who was right.",
+  "haggle": "Fair enough. I'd rather pay a decent price than say I was wrong twice in one year."
+ },
+ "notice": [
+  "Five hens gone this month, and not a mark on the shed door. Left in a heap by the water butt, like somebody was making a point.",
+  "Maureen built a shed like a bank vault and now it's my turn. I'm not saying it's her fault. I'm saying it was her mink first."
+ ],
+ "trouble": [
+  "Alan, my cousin, says it's rats at the feed. Alan says a lot of things. Something is getting into my shed through a gap I can't find.",
+  "It's the far end of the Moss, past the drains. I'll pay what's fair. I'll pay more if you don't tell Maureen I asked."
+ ],
+ "hypotheses": [
+  {"id": "houdini", "name": "The same mink, moved along the lane", "types": ["brook", "night"]},
+  {"id": "fox", "name": "A fox, this time", "types": ["kin"]},
+  {"id": "rats", "name": "Rats, at the feed bins", "types": ["urban"]}
+ ],
+ "truth": "houdini",
+ "clues": [
+  {
+   "id": "gap",
+   "kind": "look",
+   "zone": "chat_moss",
+   "hint": "the back of Ted's shed, behind the water butt",
+   "text": [
+    "Behind the water butt, where the boards meet the ground, there is a gap no wider than your wrist. The wood round it is rubbed smooth and dark with oil, as if something sleek has been through it many times.",
+    "A fox could never get through that. A rat could, but a rat does not leave five hens in a neat row."
+   ],
+   "points": ["houdini"],
+   "rules_out": ["fox"]
+  },
+  {
+   "id": "prints",
+   "kind": "look",
+   "zone": "chat_moss",
+   "hint": "the lane ditch, once you know about the gap",
+   "text": [
+    "In the mud of the lane ditch there is a line of prints, five toes and claws showing, running from the culvert at the far end of the lane to Ted's yard. They go one way and none come back, because the animal went home by the water.",
+    "They start at the drain behind Maureen's shed. Whatever she bolted out has simply walked to the next farm."
+   ],
+   "needs_clue": "gap",
+   "points": ["houdini"]
+  },
+  {
+   "id": "alan",
+   "kind": "ask",
+   "zone": "chat_moss",
+   "who": "Alan Barlow",
+   "hint": "hear what Ted's cousin makes of it",
+   "text": [
+    "Rats. It's rats, at the feed. The hens panic, pile up in a corner and smother one another. I've seen it happen.",
+    "Ted won't have it. Ted would rather have a conspiracy than a rat."
+   ],
+   "idle": ["Rats. I'll say it again if you like."],
+   "after": "Well. Still say there's rats, and now there's less of everything else.",
+   "wrong": true,
+   "points": ["rats"]
+  },
+  {
+   "id": "dev",
+   "kind": "ask",
+   "zone": "chat_moss",
+   "who": "Dev Anand",
+   "hint": "ask the Wildlife Trust volunteer who checks the rafts",
+   "text": [
+    "Block one shed and a mink does not give up. It works along the water to the next one. A single animal can range over a mile or two of bank, so a lane of farms is one big larder to it.",
+    "Count the prints, not the hens. The clay pad on a raft tells you whether it is still about."
+   ],
+   "idle": ["I'm checking a clay pad on a raft. Do not breathe on it."],
+   "after": "A lane works best as one decision, not six sheds. That is the whole of what I know.",
+   "points": ["houdini"],
+   "rules_out": ["fox"]
+  }
+ ],
+ "lair": {
+  "zone": "chat_moss",
+  "name": "Houdini",
+  "species": "minkshade",
+  "level": 28,
+  "floor_par": 24,
+  "intro": [
+   "The culvert at the end of the lane, a heap of grey feathers, and the smell of a wet dog and a fishmonger's. Different feathers this time. Same smell.",
+   "Something sleek and dark sits on the bank with a white patch under its chin, and regards you with the composure of an animal that has been bolted out of one farm and has moved on to the next without a backward glance."
+  ],
+  "beaten": [
+   "Houdini lies against the culvert, sides heaving, and glares at you as if the bolt on the last shed had been your idea. It was, a little."
+  ]
+ },
+ "choices": [
+  {
+   "id": "trap",
+   "label": "Have it trapped properly, and be told what that means",
+   "say": [
+    "Dev brings a licensed cage trap and a long explanation. A mink caught alive cannot be let go again: it is against the law to release one, and it has to be put down humanely. Dev says so, plainly, and does not enjoy it.",
+    "By morning the trap is shut, and the shed door is just a door. Ted looks at the empty ditch for a long time, and then at you."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_mink_next_trapped": true, "ct_mink_next_hens_safe": true},
+   "repute": {"farmers": 2, "wardens": 0},
+   "standing": {"england": 1},
+   "poster": ["It's done, then. Not moved, not taken off somewhere kind. Done. I thought I'd be pleased. I'm mostly just tired."],
+   "after": ["The hens are fine. I keep a trap by the culvert now, and Dev checks it on Thursdays. Don't tell Maureen about the Thursdays."],
+   "journal": "You had the mink trapped, and learnt what that has to mean: a live mink cannot be released, because it is against the law. Ted's hens are safe. Dev thinks another one will come along the water within a year or two."
+  },
+  {
+   "id": "rota",
+   "label": "Get both farms on one scheme: a raft, a rota and traps where the prints are",
+   "say": [
+    "It takes a whole evening and a pot of tea in Maureen's kitchen, with Ted sitting very upright and saying nothing. By the end he has agreed to a raft at his end of the lane, and Maureen has agreed to check it on Mondays.",
+    "Dev floats the clay pad on the Thursday. By the weekend it has prints on it, and a trap goes where the prints are, and nowhere else."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_mink_next_rota": true, "ct_mink_next_friends": true},
+   "repute": {"wardens": 2, "farmers": 1},
+   "standing": {"england": 2},
+   "poster": ["Mondays, Maureen. Thursdays, me. It's like a rota for the bins, only with more feathers. I'll give you something now and some of Maureen's eggs, and we are not to speak of it."],
+   "after": ["Maureen and I have a rota. She leaves a note on the raft and I leave one back. We've not had a cross word since Easter, which is a record."],
+   "journal": "You got Ted and Maureen on to one scheme: a raft, a rota and traps only where the prints are. It is slower than a trap and fairer than a bolt, and the two of them are, a little against their will, friends."
+  },
+  {
+   "id": "bolt",
+   "label": "Bolt Ted's shed as well and leave Houdini alone",
+   "say": [
+    "You and Ted bury wire a foot down and patch every board, and fit a bolt on the door that would shame a prison. Ted holds the nails and says nothing for three hours, which is a record.",
+    "Houdini watches from the ditch. By the end of the week the lane is a row of bunkers, and the prints go along the water to the farm after that."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_mink_next_bolted": true, "ct_mink_next_loose": true},
+   "repute": {"farmers": 1, "wardens": -1},
+   "standing": {"england": 1},
+   "poster": ["It works, but I'll tell you what, I've heard the Harpers' hens have gone. I feel terrible about it. I'm going to feel terrible about it quietly."],
+   "after": ["Two bunkers on one lane and a mink on its way to the Harpers'. I am beginning to see what the girl from the Trust meant."],
+   "journal": "You mink-proofed Ted's shed and left the mink alone. Both sheds on the lane are safe now, and the mink has gone on to the farm after that. It will go on until somebody counts prints instead of hens."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "Houdini goes into the charm with a look of mild surprise, and then settles in, the way a cat does on a freshly made bed."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_mink_next_kept": true, "ct_mink_next_hens_safe": true},
+   "repute": {"farmers": 1, "wardens": 0},
+   "standing": {"england": 2},
+   "poster": ["Both of them, Maureen's and mine, in one charm? Well. I hope it's a long journey. Somewhere with no hens."],
+   "after": ["I've told Maureen. She laughed so hard she had to sit down on the egg crate."],
+   "journal": "You caught Houdini, who had already got through two sheds, and now travel with it. Ted and Maureen have something to laugh about together, which is more than either expected."
+  }
+ ],
+ "real": "American mink are not native: they were farmed for fur from the late 1920s and escaped or were released, and now live along most British rivers. A mink caught alive cannot lawfully be released again, because it is an offence to release or allow to escape an animal of a non-native species, so a trap means more than moving the problem. One animal can work a mile or two of bank, and when you block one farm it simply tries the next. That is why the Wildlife Trusts float rafts with a clay pad on top: you count the prints, not the hens, and put the traps where the mink actually go.",
+ "places": {
+  "poster": {"sprite": "farmer", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "alan", "sprite": "farmer", "near": [52, 26]},
+   {"clue": "dev", "sprite": "fox_watcher", "near": [46, 30]}
+  ],
+  "looks": [
+   {"clue": "gap", "near": [58, 24], "on": "any", "text": ["The back of a henhouse, a water butt and a lot of mud. Ted has painted the door a defiant green."]},
+   {"clue": "prints", "near": [50, 22], "on": "any", "text": ["The lane ditch, brown and slow. It is full of reeds and the occasional shopping trolley."]}
+  ],
+  "lair": {"near": [60, 28]},
+  "folk": [
+   {
+    "id": "eggs",
+    "zone": "manchester",
+    "near": [32, 29],
+    "sprite": "shopkeeper",
+    "name": "Egg Stall",
+    "show_if": "ct_mink_next_end",
+    "says": [
+     ["ct_mink_next_is_rota", ["Eggs, forty to a tray, half of them Maureen's and half of them Ted's, and the two of them split the takings and are quite civil about it. It is deeply suspicious."]],
+     ["ct_mink_next_is_trap", ["Barlow's eggs, forty to a tray. He had the mink dealt with, properly, and he doesn't enjoy talking about it. Buy a tray and say nothing."]],
+     ["ct_mink_next_is_caught", ["Barlow's eggs. They say that mink that did two farms in one summer is in some Keeper's party now. I have no idea who. It is probably very polite."]]
+    ],
+    "else": ["Barlow's eggs, forty to a tray, and two bunkers' worth of sheds on the lane. He says the Harpers have lost some. He says it very quietly."]
+   },
+   {
+    "id": "lane",
+    "zone": "chat_moss",
+    "near": [48, 28],
+    "sprite": "birdwatcher",
+    "name": "Raft Checker",
+    "show_if": "ct_mink_next_rota",
+    "says": [],
+    "else": ["Monday's the raft. Maureen's note says three prints, and a rude word about Ted. Ted's note back says four prints and a ruder one. It is the best system I have ever worked in."]
+   },
+   {
+    "id": "harpers",
+    "zone": "chat_moss",
+    "near": [64, 24],
+    "sprite": "farmer",
+    "name": "Harper",
+    "show_if": "ct_mink_next_loose",
+    "says": [],
+    "else": ["Bolted shed on one side, bolted shed on the other, and now it's my turn. I know whose mink it is. I know whose fault it is. I'm going to build a better shed than both of them, and I'm not telling them."]
+   }
+  ]
+ }
+}

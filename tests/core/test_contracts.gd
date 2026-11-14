@@ -9,6 +9,8 @@ func _host(c: Dictionary) -> FakeStoryHost:
 	h.zone = str(c.town)
 	for i in int(c.badges):
 		h.data.badges.append("b%d" % i)
+	for n in c.get("needs", []):   # a follow-up's notice is up once the earlier one ended that way
+		h.data.set_flag(Contracts.flag(str(n.contract), "end"), str(n.ending))
 	return h
 
 func _lair(h: FakeStoryHost, c: Dictionary) -> void:
