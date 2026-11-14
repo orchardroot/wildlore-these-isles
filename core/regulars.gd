@@ -293,3 +293,8 @@ static func appoint(data: GameStateData, id: String, deed_id: String) -> bool:
 	Deeds.set_manager(data, deed_id, id)
 	_st(data, id)["manager"] = deed_id
 	return true
+
+## They stop managing (the Deed lets them go, see Deeds.release_manager): free to be asked again.
+static func release(data: GameStateData, id: String) -> void:
+	if id != "" and data.flag(flag_key(id)) is Dictionary:
+		_st(data, id)["manager"] = ""

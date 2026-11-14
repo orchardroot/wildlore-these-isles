@@ -60,6 +60,8 @@ func _initialize() -> void:
 	errors.append_array(FamilyCat.problems(dex, zones))  # w54: only her own scenes may produce the family cat's line
 	errors.append_array(RideCheck.problems(zones))  # w54: the coracle never skips a story gate (no_ride rects close the leaks)
 	errors.append_array(Contracts.validate(zones, StoryData.all_dialogue(), dex, items_db))  # w55: notice-board contracts (data/contracts)
+	errors.append_array(TownProjects.problems(zones, items_db))  # w55: town projects: real towns, residents, stages, hidden warps
+	errors.append_array(DeedChoices.problems(items_db))  # w55: Deed upgrades, monthly matters and manager temperaments
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
 	errors.append_array(Letters.errors(zones, items_db))  # papers on tables and their treasure trails

@@ -1,0 +1,45 @@
+{
+ "_doc": "What a Regular is like as a manager (core/deed_choices.gd). `order` is the list a Regular is dealt from by the letters of their id, unless `assign` names them. Keys: bonus (takings multiplier; the five average about the old flat 1.15), use (stock a day), shield (share of a bad day's loss they avoid, negative makes it worse), boom (extra from a good day), carry (days the till keeps filling when you are away), style (which answer they give when the monthly matter is left to them: safe, bold, frugal), cost (what their answers cost, as a share), rep (reputation they build a month). Knowing the town (+0.03), the goods (+0.02) and favour 5 (+0.02) come on top, in the code.",
+ "order": ["careful", "showman", "thrifty", "charmer", "steady"],
+ "assign": {},
+ "temperaments": {
+  "careful": {
+   "label": "careful",
+   "bonus": 1.10,
+   "shield": 0.35,
+   "style": "safe",
+   "blurb": "Never takes a chance with the books, and a bad day hardly shows. Nothing exciting happens on their watch, which is the idea."
+  },
+  "showman": {
+   "label": "a bit of a showman",
+   "bonus": 1.21,
+   "boom": 0.5,
+   "shield": -0.15,
+   "style": "bold",
+   "cost": 1.3,
+   "blurb": "Makes the most of a good day and the most of a bad one too. Answers every letter with a flourish, and the flourish costs."
+  },
+  "thrifty": {
+   "label": "thrifty",
+   "bonus": 1.12,
+   "use": 0.85,
+   "style": "frugal",
+   "cost": 0.7,
+   "blurb": "Wastes nothing, reuses everything, and answers every problem with the cheapest sensible thing. Takes a little less than the others, and keeps a lot more."
+  },
+  "charmer": {
+   "label": "a charmer",
+   "bonus": 1.14,
+   "rep": 1,
+   "style": "safe",
+   "blurb": "Knows every regular by name and their order by heart. The place gets a better name month by month, without anyone planning it."
+  },
+  "steady": {
+   "label": "steady as a rock",
+   "bonus": 1.15,
+   "carry": 30,
+   "style": "frugal",
+   "blurb": "Turns up on time, locks up properly and keeps the till filling a month longer than anyone else would while you are off in another country."
+  }
+ }
+}

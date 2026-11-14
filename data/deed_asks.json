@@ -1,0 +1,511 @@
+{
+ "_doc": "Shared monthly matters for Deeds (core/deed_choices.gd). Each: id, kinds (empty = all), season, title, text, options. An option: id, tag (safe, bold, frugal, ignore), label, cost (in quiet days of takings), say, mult and days (a spell of better or worse days), rep (the Deed's name, -5 to 5), risk {chance, say, mult, days, rep}. {deed} and the nouns below fill in for the kind of Deed. A Deed's own matters are in its file under asks.",
+ "nouns": {
+  "supplier": {
+   "chippy": "fish merchant",
+   "bnb": "wholesaler",
+   "stall": "flour merchant",
+   "allotment": "seed merchant",
+   "boat": "chandler",
+   "paddock": "feed merchant"
+  },
+  "staff": {
+   "chippy": "frier",
+   "bnb": "cook",
+   "stall": "helper",
+   "boat": "deckhand",
+   "allotment": "helper",
+   "paddock": "stable hand"
+  }
+ },
+ "asks": [
+  {
+   "id": "inspector",
+   "kinds": [
+    "chippy",
+    "bnb",
+    "stall"
+   ],
+   "title": "The inspector calls",
+   "text": "The council's food hygiene inspector is at the door of {deed} with a clipboard and the expression of someone who has seen worse and remembers all of it.",
+   "options": [
+    {
+     "id": "scrub",
+     "tag": "safe",
+     "label": "Close for a day and scrub it from top to bottom",
+     "cost": 1.0,
+     "say": "Five out of five on the door by teatime. You can see your face in the counter, which is not entirely a compliment to your face.",
+     "rep": 1
+    },
+    {
+     "id": "tidy",
+     "tag": "frugal",
+     "label": "Tidy up while the inspector looks round",
+     "cost": 0.2,
+     "say": "A four, and a useful word about the drain.",
+     "risk": {
+      "chance": 0.4,
+      "say": "He finds the thing behind the fridge. A three on the door, a follow-up visit and a regular who reads such things.",
+      "mult": 0.85,
+      "days": 12,
+      "rep": -1
+     }
+    },
+    {
+     "id": "busy",
+     "tag": "ignore",
+     "label": "Say you are busy and could he come back Tuesday",
+     "cost": 0.0,
+     "say": "He comes back Tuesday, unamused, and so does the score.",
+     "mult": 0.85,
+     "days": 10,
+     "rep": -1
+    }
+   ]
+  },
+  {
+   "id": "supplier",
+   "title": "Prices up at the {supplier}",
+   "text": "The {supplier} has written to {deed}: prices are going up from the first. The letter says 'unprecedented' twice and 'sorry' not at all.",
+   "options": [
+    {
+     "id": "pay",
+     "tag": "safe",
+     "label": "Pay it and keep the peace",
+     "cost": 0.8,
+     "say": "You pay up. They send you a calendar. Relations are excellent."
+    },
+    {
+     "id": "haggle",
+     "tag": "bold",
+     "label": "Haggle, and mention you have seen other prices",
+     "cost": 0.2,
+     "say": "They knock a little off and call you a hard bargainer, which you take as a compliment.",
+     "mult": 1.04,
+     "days": 20,
+     "risk": {
+      "chance": 0.45,
+      "say": "The haggling goes badly. Deliveries become 'when we can'.",
+      "mult": 0.92,
+      "days": 8
+     }
+    },
+    {
+     "id": "switch",
+     "tag": "frugal",
+     "label": "Find another {supplier} further off",
+     "cost": 0.4,
+     "say": "A new supplier, forty minutes away and slightly cheaper. The first delivery is an adventure.",
+     "mult": 0.95,
+     "days": 7
+    },
+    {
+     "id": "ignore",
+     "tag": "ignore",
+     "label": "Pretend you did not see it",
+     "cost": 0.0,
+     "say": "They stop answering the phone. The next delivery is short.",
+     "mult": 0.9,
+     "days": 14
+    }
+   ]
+  },
+  {
+   "id": "coach",
+   "kinds": [
+    "chippy",
+    "bnb",
+    "stall",
+    "paddock"
+   ],
+   "title": "A coach party",
+   "text": "Someone has rung to say a coach party of fifty will be passing through on Saturday and would {deed} 'be a bother'. They say it in the voice of people for whom it is always a bother.",
+   "options": [
+    {
+     "id": "welcome",
+     "tag": "safe",
+     "label": "Lay on a proper welcome",
+     "cost": 0.8,
+     "say": "Fifty people, one photograph and a collection for the driver. They will talk about it all the way home.",
+     "mult": 1.6,
+     "days": 2,
+     "rep": 1
+    },
+    {
+     "id": "asthey",
+     "tag": "frugal",
+     "label": "Take them as they come",
+     "cost": 0.0,
+     "say": "They come, they eat, they ask where the toilets are. A good day.",
+     "mult": 1.15,
+     "days": 2
+    },
+    {
+     "id": "deal",
+     "tag": "bold",
+     "label": "Offer a group price to get a second coach",
+     "cost": 0.4,
+     "say": "A second coach, from a different town, and a rumour of a third.",
+     "mult": 1.5,
+     "days": 4,
+     "rep": 1,
+     "risk": {
+      "chance": 0.5,
+      "say": "The second coach goes to a garden centre instead."
+     }
+    },
+    {
+     "id": "later",
+     "tag": "ignore",
+     "label": "Say you will let them know",
+     "cost": 0.0,
+     "say": "They never hear back, so they eat in a motorway services."
+    }
+   ]
+  },
+  {
+   "id": "review",
+   "kinds": [
+    "chippy",
+    "bnb",
+    "stall",
+    "boat",
+    "paddock"
+   ],
+   "title": "A bad review",
+   "text": "Someone has written two paragraphs online about {deed}, and one of them is about the tea. It has been read, by the look of it, by everyone you have ever met.",
+   "options": [
+    {
+     "id": "reply",
+     "tag": "safe",
+     "label": "Reply politely and fix what is fair",
+     "cost": 0.3,
+     "say": "A calm reply, a small fix and a better score the next month."
+    },
+    {
+     "id": "long",
+     "tag": "bold",
+     "label": "Reply at length, with receipts",
+     "cost": 0.2,
+     "say": "Your reply is shared far and wide, and for once kindly.",
+     "mult": 1.1,
+     "days": 10,
+     "rep": 1,
+     "risk": {
+      "chance": 0.5,
+      "say": "Your reply is shared far and wide, and not kindly. It becomes a thing.",
+      "mult": 0.85,
+      "days": 10,
+      "rep": -1
+     }
+    },
+    {
+     "id": "free",
+     "tag": "frugal",
+     "label": "Offer the writer a free meal and hear them out",
+     "cost": 0.4,
+     "say": "They come, they eat, they amend the review. A convert, with a notebook.",
+     "mult": 1.05,
+     "days": 10,
+     "rep": 1
+    },
+    {
+     "id": "ignore",
+     "tag": "ignore",
+     "label": "Ignore it, it will blow over",
+     "cost": 0.0,
+     "say": "It does not blow over.",
+     "mult": 0.9,
+     "days": 14,
+     "rep": -1
+    }
+   ]
+  },
+  {
+   "id": "staff",
+   "kinds": [
+    "chippy",
+    "bnb",
+    "stall",
+    "boat",
+    "paddock",
+    "allotment"
+   ],
+   "title": "A rise for the {staff}",
+   "text": "Your best {staff} at {deed} has had an offer from down the road, and has mentioned it in the way people mention things they want you to hear.",
+   "options": [
+    {
+     "id": "match",
+     "tag": "safe",
+     "label": "Match the offer",
+     "cost": 1.2,
+     "say": "They stay, and they work as though the offer was a compliment.",
+     "mult": 1.05,
+     "days": 30
+    },
+    {
+     "id": "share",
+     "tag": "bold",
+     "label": "Offer a share of the Saturday takings",
+     "cost": 0.5,
+     "say": "They like the idea and they like the Saturdays even more.",
+     "mult": 1.03,
+     "days": 30,
+     "rep": 1
+    },
+    {
+     "id": "half",
+     "tag": "frugal",
+     "label": "Meet them halfway",
+     "cost": 0.6,
+     "say": "They think about it for a week. They take the other job.",
+     "risk": {
+      "chance": 0.3,
+      "say": "They take the other job and send a postcard.",
+      "mult": 0.9,
+      "days": 14
+     }
+    },
+    {
+     "id": "go",
+     "tag": "ignore",
+     "label": "Say you cannot afford it",
+     "cost": 0.0,
+     "say": "They go. The next one needs training.",
+     "mult": 0.9,
+     "days": 20
+    }
+   ]
+  },
+  {
+   "id": "paper",
+   "title": "The local paper",
+   "text": "A reporter from the local paper would like to write about {deed}. They have said 'human interest' three times.",
+   "options": [
+    {
+     "id": "tour",
+     "tag": "bold",
+     "label": "Give the full tour and a photograph",
+     "cost": 0.5,
+     "say": "A full page and a front page photograph. Several regulars buy two copies.",
+     "mult": 1.25,
+     "days": 6,
+     "rep": 1,
+     "risk": {
+      "chance": 0.25,
+      "say": "The photograph is not your best angle. It is also the front page.",
+      "mult": 0.95,
+      "days": 7,
+      "rep": -1
+     }
+    },
+    {
+     "id": "quote",
+     "tag": "safe",
+     "label": "Give a quote and a free sample",
+     "cost": 0.2,
+     "say": "A neat paragraph and a better Saturday.",
+     "mult": 1.1,
+     "days": 6
+    },
+    {
+     "id": "no",
+     "tag": "ignore",
+     "label": "Say not today, thanks",
+     "cost": 0.0,
+     "say": "They write about somebody else."
+    }
+   ]
+  },
+  {
+   "id": "do_in_town",
+   "kinds": [
+    "chippy",
+    "bnb",
+    "stall",
+    "boat",
+    "paddock",
+    "allotment"
+   ],
+   "title": "A do in town",
+   "text": "There is a do in town on Saturday, with a band, bunting and the cheerful kind of crowd. {deed} could do very well out of it, with a bit of effort.",
+   "options": [
+    {
+     "id": "late",
+     "tag": "bold",
+     "label": "Open late and put on a special",
+     "cost": 0.6,
+     "say": "A special, a queue and a tune that stays in your head for a week.",
+     "mult": 1.7,
+     "days": 2,
+     "risk": {
+      "chance": 0.25,
+      "say": "Rained off. You are left with forty unsold specials and the tune."
+     }
+    },
+    {
+     "id": "longer",
+     "tag": "safe",
+     "label": "Stay open a bit later than usual",
+     "cost": 0.2,
+     "say": "A little later, a little busier, a little richer.",
+     "mult": 1.3,
+     "days": 2
+    },
+    {
+     "id": "usual",
+     "tag": "ignore",
+     "label": "Keep to the usual hours",
+     "cost": 0.0,
+     "say": "The band plays on without you."
+    }
+   ]
+  },
+  {
+   "id": "neighbour",
+   "title": "A word from a neighbour",
+   "text": "A neighbour has come to {deed} with a complaint, a cup of tea and a very long pause before the complaint.",
+   "options": [
+    {
+     "id": "listen",
+     "tag": "safe",
+     "label": "Listen, apologise and put it right",
+     "cost": 0.4,
+     "say": "You listen, you apologise, you move the bins. They leave with a biscuit and a better opinion of you.",
+     "rep": 1
+    },
+    {
+     "id": "gift",
+     "tag": "frugal",
+     "label": "Offer them something for their trouble",
+     "cost": 0.1,
+     "say": "A small gift and a smaller argument.",
+     "risk": {
+      "chance": 0.3,
+      "say": "The gift is taken, the complaint is kept, and the whole street hears about it.",
+      "mult": 0.95,
+      "days": 8,
+      "rep": -1
+     }
+    },
+    {
+     "id": "stand",
+     "tag": "bold",
+     "label": "Stand your ground, politely",
+     "cost": 0.0,
+     "say": "You are courteous and immovable. It works, or it seems to.",
+     "risk": {
+      "chance": 0.5,
+      "say": "It does not work. A letter goes to the council, which is worse than the complaint.",
+      "mult": 0.9,
+      "days": 10,
+      "rep": -1
+     }
+    },
+    {
+     "id": "ignore",
+     "tag": "ignore",
+     "label": "Say you will look into it",
+     "cost": 0.0,
+     "say": "You do not look into it. They remember.",
+     "mult": 0.92,
+     "days": 10,
+     "rep": -1
+    }
+   ]
+  },
+  {
+   "id": "forecast",
+   "title": "A hard week's weather",
+   "text": "The forecast for the week ahead at {deed} is the sort that gets a name. The wireless sounds pleased about it, which is never a good sign.",
+   "options": [
+    {
+     "id": "prepare",
+     "tag": "safe",
+     "label": "Prepare properly and take it on the chin",
+     "cost": 0.5,
+     "say": "Shutters, sandbags and a flask. It blows, it rains, and the damage is a dent.",
+     "mult": 0.95,
+     "days": 5
+    },
+    {
+     "id": "basics",
+     "tag": "frugal",
+     "label": "Do the basics and hope",
+     "cost": 0.15,
+     "say": "The basics hold for most of it.",
+     "mult": 0.9,
+     "days": 5
+    },
+    {
+     "id": "feature",
+     "tag": "bold",
+     "label": "Open anyway and make a feature of it",
+     "cost": 0.3,
+     "say": "Everyone who braves the weather is rewarded with a free tea and a story.",
+     "mult": 1.15,
+     "days": 5,
+     "risk": {
+      "chance": 0.5,
+      "say": "Nobody comes, and the umbrella goes over the wall.",
+      "mult": 0.8,
+      "days": 5
+     }
+    },
+    {
+     "id": "hope",
+     "tag": "ignore",
+     "label": "Hope for the best",
+     "cost": 0.0,
+     "say": "The forecast was right. It is always right when it is bad.",
+     "mult": 0.8,
+     "days": 6
+    }
+   ]
+  },
+  {
+   "id": "storm_damage",
+   "kinds": [
+    "chippy",
+    "bnb",
+    "stall",
+    "paddock"
+   ],
+   "season": "winter",
+   "title": "Storm damage",
+   "text": "A winter storm has found the weak spot at {deed}. It is wet, mainly.",
+   "options": [
+    {
+     "id": "trades",
+     "tag": "safe",
+     "label": "Get a proper tradesperson in",
+     "cost": 1.2,
+     "say": "Done properly, with a bill that has a sense of occasion."
+    },
+    {
+     "id": "patch",
+     "tag": "frugal",
+     "label": "Patch it with what is to hand",
+     "cost": 0.3,
+     "say": "The patch holds until the next shower.",
+     "risk": {
+      "chance": 0.5,
+      "say": "The patch does not hold. Neither do the takings.",
+      "mult": 0.85,
+      "days": 14
+     }
+    },
+    {
+     "id": "wait",
+     "tag": "ignore",
+     "label": "Hope it dries out",
+     "cost": 0.0,
+     "say": "It does not dry out. Customers notice, and so do the buckets.",
+     "mult": 0.8,
+     "days": 14,
+     "rep": -1
+    }
+   ]
+  }
+ ]
+}
