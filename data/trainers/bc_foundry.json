@@ -1,0 +1,32 @@
+{
+ "id": "bc_foundry",
+ "name": "Foundryman Ken",
+ "class": "Foundryman",
+ "sprite": "steelworker",
+ "party": [
+  {
+   "species": "pigling",
+   "level": 22
+  },
+  {
+   "species": "sootwing",
+   "level": 22
+  },
+  {
+   "species": "rooklet",
+   "level": 21
+  }
+ ],
+ "ai": "trainer",
+ "money": 420,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Foundryman Ken",
+   "text": "Moulds, molten iron and a hard hat. It's a proper job. I used to see the glow of the furnaces from my bedroom window."
+  }
+ ],
+ "win": "Cooled off. Fair play.",
+ "after": "At night the whole sky used to turn orange. My mum said it was the Devil's kitchen.",
+ "scaled_floor": 21
+}

@@ -455,6 +455,14 @@
   "south": {
    "to": "keswick",
    "offset": 23
+  },
+  "east": {
+   "to": "hadrians_wall_path",
+   "offset": 7
+  },
+  "north": {
+   "to": "reivers_road",
+   "offset": -1
   }
  },
  "npcs": [
@@ -819,10 +827,10 @@
   45
  ],
  "rows": [
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TT",
-  "TT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TT~~~~~~~~~~~~~~~~~~~~~~~~~~~~###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TT",
+  "TT~~~~~~~~~~~~~~~~~~~~~~~~~~~~###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TT",
   "TT............................................................TT",
   "TT....................,,,,,,,,,,,,,.fffffffff.,,,,,,,,,,,,,...TT",
   "TT....BBBBBBBBBBBBBB..,,,,,,,,,,,,,.fffffffff.,,,,,,,,,,,,,...TT",
@@ -843,9 +851,9 @@
   "TT...::::::::::::::::::::::::::::::::::::::::::::::::::::::...TT",
   "TT...::::::::::::::::::::::::::::::::::::::::::::::::::::::...TT",
   "TT......................:::::::::::::::.......................TT",
-  "TT.TTTTT................:::::::::::::::...................TTT.TT",
-  "TT.TTTTT................:::::::::::::::...........BBBBBBBBTTT.TT",
-  "TT.TTTTT................:::::::::::::::..BBBBBB...BBBBBBBBTTT.TT",
+  "TT.TTTTT................:::::::::::::::...................TTT.##",
+  "TT.TTTTT................:::::::::::::::...........BBBBBBBBTTT.##",
+  "TT.TTTTT................:::::::::::::::..BBBBBB...BBBBBBBBTTT.##",
   "TT.TTTTTBBBBBB..BBBBBB..:::::::::::::::..BBBBBB...BBBBBBBBTTT.TT",
   "TT.TTTTTBBBBBB..BBBBBB..:::::::::::::::..BBBBBB...BBBBBBBBTTT.TT",
   "TT.TTTTTBBBDBB..BBBDBB..:::::::::::::::..BBBDBB...BBBBDBBBTTT.TT",

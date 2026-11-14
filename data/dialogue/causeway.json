@@ -367,5 +367,28 @@
    "flag": "landsky_basalt",
    "value": true
   }
+ ],
+ "ct_giant_guide": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "giant",
+   "clue": "guide"
+  }
+ ],
+ "ct_giant_warden": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "giant",
+   "clue": "warden"
+  }
+ ],
+ "ct_giant_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "giant"
+  }
  ]
 }

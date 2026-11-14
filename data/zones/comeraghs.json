@@ -717,6 +717,10 @@
   "west": {
    "to": "cork",
    "offset": 0
+  },
+  "east": {
+   "to": "hook_head",
+   "offset": 0
   }
  },
  "npcs": [
@@ -1120,9 +1124,9 @@
   "RRkhhhhhhhhhhhhkkkkkkkkkkkkk####kkkhhhhhhhhkkk^^^kkkRR",
   "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^kkkkkkkkkkkkkk^^^kkkRR",
   "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^kkwwwwwwwwwwkk^^^kkkRR",
-  "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^kkw~~~~~~~~wkk^^^kkkRR",
-  "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^kkw~~~~~~~~wkk^^^kkkRR",
-  "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^kkw~~~~~~~~wkk^^^kkkRR",
+  "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^kkw~~~~~~~~wkk^^^kkk##",
+  "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^kkw~~~~~~~~wkk^^^kkk##",
+  "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^kkw~~~~~~~~wkk^^^kkk##",
   "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^,,w~~~~~~~~w,,^^^kkkRR",
   "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^,,w~~~~~~~~w,,^^^kkkRR",
   "RRkhhhhhhhhhhhhkkkkkkkkkkkkkkk^^,,wwwwwwwwww,,^^^kkkRR",

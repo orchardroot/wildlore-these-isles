@@ -488,6 +488,10 @@
   }
  ],
  "edges": {
+  "north": {
+   "to": "scalloway_road",
+   "offset": 0
+  },
   "south": {
    "to": "shetland_mainland",
    "offset": 0
@@ -883,8 +887,8 @@
   "route": "kirkwall_lerwick"
  },
  "rows": [
-  "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRw$$$$$$$$$$",
-  "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRw$$$$$$$$$$",
+  "RRRRRRRRRRRRRRRRRRR###RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR$$$$$$$$$$",
+  "RRRRRRRRRRRRRRRRRRR###RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRw$$$$$$$$$$",
   "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$$$$",
   "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$$$",
   "RRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkw$$$$$$$$$",

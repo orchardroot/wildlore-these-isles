@@ -2,6 +2,34 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.5.0: Roads and Reasons
+
+- **A choice of road.** Twenty-eight new routes turn the map from one long line into loops, each a real road or
+  path: the Pendle Way, Wainwright's Coast to Coast through Swaledale, the Humber Bridge, Hadrian's Wall Path, the
+  Reivers' road at Gretna, the Black Country canals, Cranborne Chase, the Varsity Line, Romney Marsh and Offa's
+  Dyke; the Southern Upland Way, the West Highland Way, the Devil's Staircase, the Pass of Brander, the Rob Roy
+  Way, the Angus coast, Trotternish, the Uig road, Scalloway and the Machars; Aberglaslyn, Pen-y-Gwryd, Llyn
+  Tegid, the Glamorgan coast, the Healy Pass, the Golden Vale, the Clare road and Hook Head. Each has its own
+  wildlife, trainers, plaques and something off the path. None lets you skip ahead in the story.
+- **Contracts.** Twelve notices pinned over the jobs board by someone with a problem: hens going missing in
+  Manchester, an orchard under water in Devon, the Beast of Bodmin, lights over a Connemara bog, a grey horse at a
+  Highland ford. Take the job (and haggle, if they know you), find the clues, work out what it is before you face
+  it, and then decide what happens to it. Nobody's answer is simply right, and the place stays the way you left
+  it. The Journal keeps the real story behind each.
+- **Side quests with a decision in them.** Six chains about real pressures on real kinds of places: a moor farm
+  with no one to take it on, a village hall and a peat bog, a chapel for sale, the last pub, a post office
+  counter, an island's boat. You hear more than one side, you choose, and the post tells you months later how it
+  went.
+- **Trade with reasons.** News moves prices (a herring glut at Lerwick, a late frost, a rail strike) and you hear
+  it on the wireless and at the stalls before it lands. A Trader's Ledger remembers what you have seen. Market
+  halls post delivery orders that pay for speed and freshness. Trader ranks now open things: early news, a bigger
+  pack, credit, a market-day pitch.
+- **Businesses you run.** Every Deed has upgrades with trade-offs, a monthly matter that wants an answer, and a
+  manager whose character matters.
+- **Town projects.** Fifteen things worth being rich for: Whitby's lifeboat house, the Keswick landing stage, the
+  bandstand at Bath, Penzance's lido, a footbridge over the Ness, the Cliff Railway at Aberystwyth, a boat shed
+  for the Galway hookers. Pay in stages; the town changes for good, and your name goes on the plaque.
+
 ## 5.4.0: Off the Beaten Track
 
 - **The cat.** The bowl in Mum's kitchen finally has an owner. She is small, black and fast, she went up on the moor

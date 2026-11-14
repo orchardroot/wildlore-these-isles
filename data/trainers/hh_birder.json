@@ -1,0 +1,32 @@
+{
+ "id": "hh_birder",
+ "name": "Birdwatcher Maeve",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "hushwing",
+   "level": 51
+  },
+  {
+   "species": "sikawhistle",
+   "level": 50
+  },
+  {
+   "species": "tormane",
+   "level": 51
+  }
+ ],
+ "ai": "trainer",
+ "money": 1680,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Maeve",
+   "text": "There's a rare thing in the field. I've been watching it for an hour. It might be a stick."
+  }
+ ],
+ "win": "Hm. That was a rarer thing than I thought.",
+ "after": "Patience is the whole of birdwatching. And a very good flask.",
+ "scaled_floor": 51
+}

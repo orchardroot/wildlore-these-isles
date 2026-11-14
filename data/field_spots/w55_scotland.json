@@ -1,0 +1,145 @@
+[
+ {
+  "id": "fs_angus_coast_line",
+  "zone": "angus_coast",
+  "x": 46,
+  "y": 26,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the surf. {lead} wades in, makes a few calm passes and fishes it out: a purse, a bit salty.",
+  "reward": {
+   "money": 2240
+  },
+  "flag": "field_angus_coast_line",
+  "at": "angus_coast"
+ },
+ {
+  "id": "fs_devils_staircase_topple",
+  "zone": "devils_staircase",
+  "x": 36,
+  "y": 31,
+  "field": "topple",
+  "prop": "dead_trunk",
+  "text": "{lead} leans into the leaning trunk and it comes down with a thump, right across the burn, which makes a bridge. On the far side, a few coins in a tin.",
+  "reward": {
+   "money": 2304
+  },
+  "flag": "field_devils_staircase_topple",
+  "at": "devils_staircase"
+ },
+ {
+  "id": "fs_pass_of_brander_mend",
+  "zone": "pass_of_brander",
+  "x": 12,
+  "y": 30,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "{lead} nudges the loose stones of the drystone wall back into line, one at a time. The farmer leaves a flask of tea on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_pass_of_brander_mend",
+  "at": "pass_of_brander"
+ },
+ {
+  "id": "fs_rob_roy_way_line",
+  "zone": "rob_roy_way",
+  "x": 15,
+  "y": 17,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the shallows. {lead} wades in, makes a few calm passes and fishes it out: a tin of toffee, a bit damp.",
+  "reward": {
+   "money": 2240
+  },
+  "flag": "field_rob_roy_way_line",
+  "at": "rob_roy_way"
+ },
+ {
+  "id": "fs_scalloway_road_line",
+  "zone": "scalloway_road",
+  "x": 14,
+  "y": 31,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in the harbour water. {lead} wades in, makes a few calm passes and fishes it out: a purse, a bit damp.",
+  "reward": {
+   "money": 2592
+  },
+  "flag": "field_scalloway_road_line",
+  "at": "scalloway_road"
+ },
+ {
+  "id": "fs_southern_upland_way_mend",
+  "zone": "southern_upland_way",
+  "x": 23,
+  "y": 21,
+  "field": "mend",
+  "prop": "wall_gap",
+  "text": "{lead} nudges the loose stones back into the gap in the drystone wall, one at a time, and the sheep, who had been about to leave, change their minds. The shepherd leaves a flask of tea on the post.",
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "field_southern_upland_way_mend",
+  "at": "southern_upland_way"
+ },
+ {
+  "id": "fs_the_machars_loft",
+  "zone": "the_machars",
+  "x": 28,
+  "y": 34,
+  "field": "loft",
+  "prop": "bale",
+  "text": "{lead} takes a run up and lofts the bowl clean over the verge. Where it comes down: a farmer's tip.",
+  "reward": {
+   "money": 2208
+  },
+  "flag": "field_the_machars_loft",
+  "at": "the_machars"
+ },
+ {
+  "id": "fs_trotternish_round_up",
+  "zone": "trotternish",
+  "x": 36,
+  "y": 24,
+  "field": "round_up",
+  "prop": "sheep_gate",
+  "text": "Sheep at the gate, and no sheep will go first. {lead} comes round the back, low and quiet, and the flock files through. The crofter's thanks: a pasty.",
+  "reward": {
+   "item": "pasty",
+   "qty": 1
+  },
+  "flag": "field_trotternish_round_up",
+  "at": "trotternish"
+ },
+ {
+  "id": "fs_uig_road_charm",
+  "zone": "uig_road",
+  "x": 50,
+  "y": 22,
+  "field": "charm",
+  "prop": "molehill",
+  "text": "A fresh molehill, and a hopeful hum. {lead} wriggles on the spot and up come the worms, in their dozens, to a crofter's applause: a few coins in the grass.",
+  "reward": {
+   "money": 2400
+  },
+  "flag": "field_uig_road_charm",
+  "at": "uig_road"
+ },
+ {
+  "id": "fs_west_highland_way_glint",
+  "zone": "west_highland_way",
+  "x": 24,
+  "y": 29,
+  "field": "line",
+  "prop": "glint",
+  "text": "Something glints in a lochan. {lead} wades in, makes a few calm passes and fishes it out: a walker's purse, a bit damp.",
+  "reward": {
+   "money": 2272
+  },
+  "flag": "field_west_highland_way_glint",
+  "at": "west_highland_way"
+ }
+]

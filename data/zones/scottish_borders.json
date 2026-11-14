@@ -325,9 +325,17 @@
   }
  ],
  "edges": {
+  "west": {
+   "to": "southern_upland_way",
+   "offset": 6
+  },
   "north": {
    "to": "edinburgh",
    "offset": -7
+  },
+  "south": {
+   "to": "reivers_road",
+   "offset": -2
   }
  },
  "npcs": [
@@ -694,9 +702,9 @@
   "TTTTT.F.,,,,,...............F.#.....W...................,,,,TTTT",
   "TTTTT.F.,,,,,...............F.#.....W...................,,,,TTTT",
   "TTTTT.F.,,,,,...............F.#.....W...................,,,,TTTT",
-  "TTTTT.F.....................F.#.....W.......................TTTT",
-  "TTTTT.........................#.............................TTTT",
-  "TTTTT.F.......................#.............................TTTT",
+  "#####.F.....................F.#.....W.......................TTTT",
+  "#####.........................#.............................TTTT",
+  "#####.F.......................#.............................TTTT",
   "TTTTT.F.............,,,,,,,.F.#.....W.......................TTTT",
   "TTTTT.F.............,,,,,,,.F.#.....W.......................TTTT",
   "TTTTT.F.............,,,,,,,.F.#.....W.......................TTTT",
@@ -725,8 +733,8 @@
   "TTTTTTTTTTTTTTTTTTTTTTTTT.................................PPPTTT",
   "TTTTTTTTTTTTTTTTTTTTTTTTT...........PPPPPPPPPPPPP.........PPPTTT",
   "TTTTTTTTTTTTTTTTTTTTTTTTT...........PPPPPPPPPPPPP...........TTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
  ],
  "scaled_floor": 69,
  "stage": "valley",

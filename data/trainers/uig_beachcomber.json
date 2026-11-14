@@ -1,0 +1,36 @@
+{
+ "id": "uig_beachcomber",
+ "name": "Beachcomber Iain",
+ "class": "Beachcomber",
+ "sprite": "fisher",
+ "party": [
+  {
+   "species": "selklet",
+   "level": 74
+  },
+  {
+   "species": "dolphlet",
+   "level": 75
+  },
+  {
+   "species": "greyhaul",
+   "level": 75
+  },
+  {
+   "species": "chipgull",
+   "level": 74
+  }
+ ],
+ "ai": "trainer",
+ "money": 2430,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Beachcomber Iain",
+   "text": "I walk the sands every tide. I have found a great many things. None of them are chess pieces. It still counts as a hobby."
+  }
+ ],
+ "win": "That was a fine fight. I will find something to consolation-prize you with.",
+ "after": "The sea gives things up, and eventually takes them back. It is the most honest dealer on the coast.",
+ "scaled_floor": 74
+}

@@ -81,7 +81,8 @@
    "facing": "down",
    "move": "still",
    "script": "gp_barman",
-   "name": "Barman"
+   "name": "Barman",
+   "hide_if": "q_stories_ireland_world"
   },
   {
    "id": "gp_quizmaster",
@@ -112,6 +113,92 @@
    "move": "still",
    "script": "gp_local",
    "name": "Local"
+  },
+  {
+   "id": "w55i_brid",
+   "name": "Bríd",
+   "sprite": "villager_4",
+   "x": 3,
+   "y": 3,
+   "facing": "right",
+   "script": "w55i_brid",
+   "move": "still"
+  },
+  {
+   "id": "w55i_niamh",
+   "name": "Niamh",
+   "sprite": "villager_2",
+   "x": 10,
+   "y": 7,
+   "facing": "left",
+   "script": "w55i_niamh",
+   "move": "still"
+  },
+  {
+   "id": "w55i_orla",
+   "name": "Orla",
+   "sprite": "shopkeeper",
+   "x": 13,
+   "y": 4,
+   "facing": "left",
+   "script": "w55i_orla",
+   "move": "still"
+  },
+  {
+   "id": "w55i_postman",
+   "name": "Postman",
+   "sprite": "rail_guard",
+   "x": 2,
+   "y": 5,
+   "facing": "right",
+   "script": "w55i_postman",
+   "show_if": "q_stories_ireland_decided",
+   "hide_if": "q_stories_ireland_done",
+   "move": "still"
+  },
+  {
+   "id": "w55i_retired",
+   "name": "Pádraig",
+   "sprite": "villager_6",
+   "x": 1,
+   "y": 4,
+   "facing": "right",
+   "script": "w55i_retired",
+   "show_if": "q_stories_ireland_world",
+   "move": "still"
+  },
+  {
+   "id": "w55i_couple",
+   "name": "Ciarán",
+   "sprite": "shopkeeper",
+   "x": 5,
+   "y": 1,
+   "facing": "down",
+   "script": "w55i_couple",
+   "show_if": "q_stories_ireland_world_couple",
+   "move": "still"
+  },
+  {
+   "id": "w55i_coop",
+   "name": "Tadhg",
+   "sprite": "villager_1",
+   "x": 6,
+   "y": 1,
+   "facing": "down",
+   "script": "w55i_coop",
+   "show_if": "q_stories_ireland_world_coop",
+   "move": "still"
+  },
+  {
+   "id": "w55i_hotel",
+   "name": "Sinéad",
+   "sprite": "villager_5",
+   "x": 4,
+   "y": 1,
+   "facing": "down",
+   "script": "w55i_hotel",
+   "show_if": "q_stories_ireland_world_hotel",
+   "move": "still"
   }
  ],
  "encounters": {},

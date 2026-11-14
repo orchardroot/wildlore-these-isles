@@ -103,6 +103,60 @@
    "move": "still",
    "script": "dounreay_retiree",
    "name": "Retired Engineer"
+  },
+  {
+   "id": "w55s_isobel",
+   "name": "Isobel Mackay",
+   "sprite": "villager_5",
+   "x": 4,
+   "y": 3,
+   "facing": "right",
+   "script": "w55s_isobel",
+   "move": "still"
+  },
+  {
+   "id": "w55s_calum",
+   "name": "Calum Ross",
+   "sprite": "farmer",
+   "x": 11,
+   "y": 2,
+   "facing": "down",
+   "script": "w55s_calum",
+   "move": "still"
+  },
+  {
+   "id": "w55s_kirsty",
+   "name": "Kirsty",
+   "sprite": "villager_6",
+   "x": 2,
+   "y": 4,
+   "facing": "right",
+   "script": "w55s_kirsty",
+   "hide_if": "q_stories_scotland_world_object",
+   "move": "still"
+  },
+  {
+   "id": "w55s_postie",
+   "name": "Postie",
+   "sprite": "villager_1",
+   "x": 4,
+   "y": 5,
+   "facing": "right",
+   "script": "w55s_postie",
+   "show_if": "q_stories_scotland_decided",
+   "hide_if": "q_stories_scotland_done",
+   "move": "still"
+  },
+  {
+   "id": "w55s_tech",
+   "name": "Technician",
+   "sprite": "steelworker",
+   "x": 9,
+   "y": 6,
+   "facing": "left",
+   "script": "w55s_tech",
+   "show_if": "q_stories_scotland_world_built",
+   "move": "still"
   }
  ],
  "encounters": {},

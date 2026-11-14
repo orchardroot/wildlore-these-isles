@@ -1,0 +1,32 @@
+{
+ "id": "rr_blacksmith",
+ "name": "Blacksmith Callum",
+ "class": "Blacksmith",
+ "sprite": "steelworker",
+ "party": [
+  {
+   "species": "sailet",
+   "level": 78
+  },
+  {
+   "species": "thistlet",
+   "level": 79
+  },
+  {
+   "species": "tapknock",
+   "level": 78
+  }
+ ],
+ "ai": "trainer",
+ "money": 3000,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Blacksmith Callum",
+   "text": "I run the forge at Gretna. Fifty weddings a week in the summer. Mind the hammer and your credentials."
+  }
+ ],
+ "win": "A pity. I'd have done you a wedding rate.",
+ "after": "A Gretna wedding can be done in about ten minutes. Longer if there's a photographer and a piper.",
+ "scaled_floor": 78
+}

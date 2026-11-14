@@ -3,7 +3,7 @@ extends RefCounted
 ## Checks dialogue scripts, trainers and the NPCs that use them against the rest of the data.
 
 const COMMANDS := ["say", "choice", "if", "set", "give_item", "give_creature", "heal", "battle", "move", "face",
-	"face_player", "wait", "warp", "shop", "starter", "fade_out", "fade_in", "music", "sfx", "badge", "end", "whiteout", "ark", "rail", "ferry", "legend", "gauntlet", "credits", "daily", "when", "relearn", "sachet_worn", "quiz", "craft", "recipe", "fieldbook_news", "rewild", "standing", "overseas", "overseas_home", "tournament", "bureau", "exchange", "market", "crypto", "casino", "society", "deed", "lease", "regular", "darts", "bowls", "skim", "crab_comp", "breed", "evidence", "casebook", "guild", "ring", "wall", "crossword", "games", "sing", "conkers", "lesson", "say_it", "science", "forecast", "wardrobe", "arcade", "fete", "curling", "wrestling", "sheepdog", "worms", "cheese", "pancake", "snorkel", "coracle", "road_bowl", "poohsticks", "gurn", "wang", "league", "family_cat"]
+	"face_player", "wait", "warp", "shop", "starter", "fade_out", "fade_in", "music", "sfx", "badge", "end", "whiteout", "ark", "rail", "ferry", "legend", "gauntlet", "credits", "daily", "when", "relearn", "sachet_worn", "quiz", "craft", "recipe", "fieldbook_news", "rewild", "standing", "overseas", "overseas_home", "tournament", "bureau", "exchange", "market", "crypto", "casino", "society", "deed", "lease", "regular", "darts", "bowls", "skim", "crab_comp", "breed", "evidence", "casebook", "guild", "ring", "wall", "crossword", "games", "sing", "conkers", "lesson", "say_it", "science", "forecast", "wardrobe", "arcade", "fete", "curling", "wrestling", "sheepdog", "worms", "cheese", "pancake", "snorkel", "coracle", "road_bowl", "poohsticks", "gurn", "wang", "league", "contract", "family_cat"]
 const CONDITIONS := ["dawn", "day", "dusk", "night", "rain", "fog", "gale", "frost", "sunshine", "caught_all",
 	"caught_25", "caught_50", "caught_100", "caught_150", "caught_200",
 	"spring", "summer", "autumn", "winter", "halloween", "bonfire_night", "christmas", "st_patricks", "st_davids", "burns_night"]
@@ -170,6 +170,8 @@ static func validate_commands(cmds: Array, tag: String, dex: Dex, items: ItemDB,
 					pass
 				elif (cond.begins_with("guild_") or cond.begins_with("regular_")) and cond.rsplit("_", true, 1)[1].is_valid_int():
 					pass
+				elif cond.begins_with("later_") and cond.rsplit("_", true, 1)[1].is_valid_int():  # w55: later_<flag>_<n> (Quests.later)
+					pass
 				elif cond not in CONDITIONS and not Festivals.is_cond(cond):
 					errors.append("%s: when with unknown cond '%s'" % [tag, c.get("cond", "")])
 				errors.append_array(validate_commands(c.get("then", []), tag, dex, items, zones))
@@ -271,6 +273,11 @@ static func validate_commands(cmds: Array, tag: String, dex: Dex, items: ItemDB,
 			"evidence":
 				if not Casebook.is_evidence(str(c.get("id", ""))):
 					errors.append("%s: evidence '%s' is in no case" % [tag, c.get("id", "")])
+			"contract":
+				if Contracts.get_contract(str(c.get("id", ""))).is_empty() and str(c.get("as", "")) != "board":
+					errors.append("%s: contract with unknown id '%s'" % [tag, c.get("id", "")])
+				if str(c.get("as", "")) not in ["board", "poster", "clue", "lair"]:
+					errors.append("%s: contract with unknown role '%s'" % [tag, c.get("as", "")])
 			"casebook":
 				if Casebook.get_case(str(c.get("id", ""))).is_empty():
 					errors.append("%s: casebook with unknown case '%s'" % [tag, c.get("id", "")])

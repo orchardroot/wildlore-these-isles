@@ -1,0 +1,32 @@
+{
+ "id": "od_farmer",
+ "name": "Hill Farmer Emlyn",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "leveret",
+   "level": 22
+  },
+  {
+   "species": "kitelet",
+   "level": 23
+  },
+  {
+   "species": "flyling",
+   "level": 22
+  }
+ ],
+ "ai": "trainer",
+ "money": 430,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Hill Farmer Emlyn",
+   "text": "Sheep on one side of the Dyke, sheep on the other. They don't know which country they're in. It's a lot less stressful that way."
+  }
+ ],
+ "win": "I'll go and count my sheep. Slowly.",
+ "after": "My grandad got a letter from the council in 1974 telling him which county he lived in. He said he'd always known.",
+ "scaled_floor": 22
+}

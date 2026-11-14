@@ -1,0 +1,536 @@
+{
+ "id": "west_highland_way",
+ "name": "The West Highland Way",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_highlands",
+ "weather": {
+  "fog": 30,
+  "drizzle": 28,
+  "downpour": 12,
+  "clear": 14,
+  "gale": 8,
+  "frost": 4,
+  "sunshine": 4
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 46,
+   "y": 14,
+   "w": 8,
+   "h": 4,
+   "label": "Bridge of Orchy Hotel"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 46,
+   "y": 30,
+   "w": 5,
+   "h": 3
+  },
+  {
+   "type": "bench",
+   "x": 45,
+   "y": 19
+  },
+  {
+   "type": "lamp_post",
+   "x": 54,
+   "y": 19
+  },
+  {
+   "type": "rock",
+   "x": 36,
+   "y": 25,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 4,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 27,
+   "y": 26,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 24,
+   "y": 9,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 3,
+   "y": 12,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 8,
+   "y": 6,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 19,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 54,
+   "y": 27,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 31,
+   "y": 37,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 41,
+   "y": 11,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 37,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 40,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 20,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 31,
+   "y": 8,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 50,
+   "y": 33,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 32,
+   "y": 26,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 38,
+   "y": 24,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 39,
+   "y": 6,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 26,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 9,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 26,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 23,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 13,
+   "y": 24,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 39,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 26,
+   "y": 8,
+   "variant": 1
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "glencoe",
+   "offset": 32
+  },
+  "south": {
+   "to": "loch_lomond",
+   "offset": -32
+  }
+ },
+ "npcs": [
+  {
+   "id": "whw_walker",
+   "sprite": "hiker",
+   "x": 14,
+   "y": 22,
+   "facing": "right",
+   "move": "still",
+   "script": "whw_walker"
+  },
+  {
+   "id": "whw_hotelier",
+   "sprite": "villager_2",
+   "x": 50,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "whw_hotelier"
+  },
+  {
+   "id": "whw_stalker",
+   "sprite": "ghillie",
+   "x": 30,
+   "y": 25,
+   "facing": "left",
+   "move": "still",
+   "script": "whw_stalker"
+  },
+  {
+   "id": "whw_signalman",
+   "sprite": "steelworker",
+   "x": 44,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "whw_signalman"
+  },
+  {
+   "id": "whw_stag",
+   "sprite": "creature:stagmor",
+   "x": 26,
+   "y": 14,
+   "facing": "down",
+   "move": "wander",
+   "script": "whw_stag"
+  },
+  {
+   "id": "whw_hare",
+   "sprite": "creature:snowhare",
+   "x": 18,
+   "y": 36,
+   "facing": "down",
+   "move": "wander",
+   "script": "whw_hare"
+  },
+  {
+   "id": "whw_walker_t",
+   "sprite": "hillwalker",
+   "x": 18,
+   "y": 21,
+   "facing": "down",
+   "move": "still",
+   "trainer": "whw_walker_t"
+  },
+  {
+   "id": "whw_drover",
+   "sprite": "farmer",
+   "x": 32,
+   "y": 20,
+   "facing": "up",
+   "move": "still",
+   "trainer": "whw_drover"
+  },
+  {
+   "id": "whw_guide",
+   "sprite": "tour_guide",
+   "x": 40,
+   "y": 28,
+   "facing": "left",
+   "move": "still",
+   "trainer": "whw_guide"
+  },
+  {
+   "id": "whw_photographer",
+   "sprite": "explorer",
+   "x": 10,
+   "y": 8,
+   "facing": "down",
+   "move": "still",
+   "trainer": "whw_photographer"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "wildkit",
+    "min": 70,
+    "max": 71,
+    "weight": 10
+   },
+   {
+    "species": "eaglet",
+    "min": 70,
+    "max": 71,
+    "weight": 8,
+    "time": [
+     "day",
+     "dawn"
+    ]
+   },
+   {
+    "species": "midgie",
+    "min": 70,
+    "max": 71,
+    "weight": 12,
+    "weather": [
+     "drizzle",
+     "fog",
+     "clear"
+    ]
+   },
+   {
+    "species": "stagmor",
+    "min": 70,
+    "max": 71,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "fawnlet",
+    "min": 70,
+    "max": 71,
+    "weight": 8
+   },
+   {
+    "species": "snowhare",
+    "min": 70,
+    "max": 71,
+    "weight": 10,
+    "weather": [
+     "frost",
+     "fog"
+    ]
+   },
+   {
+    "species": "kidgruff",
+    "min": 70,
+    "max": 71,
+    "weight": 8
+   },
+   {
+    "species": "hootlet",
+    "min": 70,
+    "max": 71,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "sphagnet",
+    "min": 70,
+    "max": 71,
+    "weight": 6,
+    "weather": [
+     "drizzle",
+     "downpour"
+    ]
+   },
+   {
+    "species": "ptarmlet",
+    "min": 70,
+    "max": 71,
+    "weight": 8,
+    "time": [
+     "day",
+     "dawn",
+     "dusk"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "dipling",
+    "min": 70,
+    "max": 71,
+    "weight": 20
+   },
+   {
+    "species": "rillotter",
+    "min": 70,
+    "max": 71,
+    "weight": 16
+   },
+   {
+    "species": "bradan",
+    "min": 70,
+    "max": 71,
+    "weight": 16
+   },
+   {
+    "species": "heronarch",
+    "min": 70,
+    "max": 71,
+    "weight": 10
+   },
+   {
+    "species": "stalklet",
+    "min": 70,
+    "max": 71,
+    "weight": 12
+   },
+   {
+    "species": "spatelord",
+    "min": 70,
+    "max": 71,
+    "weight": 6
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 36,
+   "y": 18,
+   "text": "THE WEST HIGHLAND WAY. Ninety-six miles from Milngavie, on the edge of Glasgow, to Fort William, and the first official long-distance path in Scotland, opened in 1980. It follows drove roads, military roads and old railway ground, so mostly somebody else has already done the hard thinking about where to put your feet.",
+   "plaque": "w55_sc_whw",
+   "title": "The West Highland Way"
+  },
+  {
+   "x": 38,
+   "y": 32,
+   "text": "RANNOCH MOOR. The railway crossed this moor in 1894. The ground was too soft for an ordinary embankment, so the engineers floated the track on mattresses of brushwood, earth and ash, and the trains have been running over a bog ever since. Nobody has been brave enough to ask it to stop.",
+   "plaque": "w55_sc_rannoch",
+   "title": "Rannoch Moor"
+  },
+  {
+   "x": 40,
+   "y": 18,
+   "text": "THE BLACK MOUNT. Heather, rock and a great deal of sky. Red deer come down here in winter. In summer the midges do the same, in greater numbers, and with less dignity."
+  },
+  {
+   "x": 22,
+   "y": 20,
+   "text": "DROVERS' ROAD. Cattle were walked south along this line to the markets for centuries. The drovers' dogs found their own way home, which is more than can be said for most walkers."
+  }
+ ],
+ "spawn": [
+  5,
+  20
+ ],
+ "stage": "mountain",
+ "scaled_floor": 70,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT....................P............R....................TTT",
+  "TTT............................R..R......................TTT",
+  "TPT.......R.wwwwwwwwwwww.........................R..R....TTT",
+  "TTT.......P.w~~~~~~~~~~w...R..R.........................RTTT",
+  "TTT.........w~~~~~~~~~~w......R..........................TTT",
+  "TTP.........w~~~~~~~~~~wR..............R......wwwwwwww...TTT",
+  "TTT.........w~~~~~~~~~~w......................w~~~~~~w...TTT",
+  "TTT.........w~~~~~~~~~~w....,,,,,,,,R.........w~~~~~~w...TTT",
+  "TTT...R.....w~~~~~~~~~~w....,,,,,,,,..........w~~~~~~w...PTT",
+  "TTT.........wwwwwwwwwwww....,,,,,,,,..........w~~~~~~w...TTT",
+  "TTT.........................,,,,,,,,...P......wwwwwwww...TTT",
+  "TTTR..hhhhhhhhhhhh.........P,,,,,,,,..........BBBBBBBB...TTT",
+  "TTT...hhhhhhhhhhhh..........,,,,,,,,..........BBBBBBBB...TTT",
+  "TTT...hhhhhhhhhhhh............................BBBBBBBB...TTT",
+  "TTT...hhhhhhhhhhhh.......R.........R.......P..BBBBBBBB...TTT",
+  "TTT....................P.........R........####::::::::...TTT",
+  "##########################################...R...........TPT",
+  "##########################################.............P.TTT",
+  "##########################################..............RTTT",
+  "TTT....P....R.......,,,,,,,,,,,,.......###..hhhhhhhhhh.R.TTT",
+  "TTT......R..........,,,,,,,,,,,,....R..###R.hhhhhhhhhh...TTT",
+  "TTT.....R...........,,,,,,,,,,,,...R...###..hhhhhhhhhh...TTT",
+  "TPT.................,,,,,,,,,,,,.......###..hhhhhhhhhh...TTT",
+  "TTT....................................###..hhhhhhhhhh...TTT",
+  "TTT..............R.......wwwwwwwwww....###..hhhhhhhhhh...TTT",
+  "TTT...wwwwwwww....R......w~~~~~~~~w...P###..hhhhhhhhhh...TTT",
+  "TTT...w~~~~~~w...........w~~~~~~~~w....###..hhhhhhhhhh...TTT",
+  "PTT...w~~~~~~w...........w~~~~~~~~w....###....BBBBB......TTT",
+  "TTT...w~~~~~~w.R.........w~~~~~~~~w....###....BBBBB......TTT",
+  "TTT...w~~~~~~w...........w~~~~~~~~w....###....BBBBB......TTT",
+  "TTT...wwwwwwww...........w~~~~~~~~w.R..###...........R...TTT",
+  "TTT..R................R..wwwwwwwwww.P..###..hhhhhhhhhh...TTP",
+  "TTTR...........R.......................###P.hhhhhhhhhh...TTT",
+  "TTT.,,,,,,,,,,,,,,.....P.P...........P.###..hhhhhhhhhh...TTT",
+  "TTTR,,,,,,,,,,,,,,.....................###..hhhhhhhhhh...TTT",
+  "TPT.,,,,,,,,,,,,,,.....P,,,,,,,,,,,,...###..hhhhhhhhhh...TTT",
+  "TTT.,,,,,,,,,,,,,,......,,,,,,,,,,,,R..###..hhhhhhhhhh...TTT",
+  "TTT.,,,,,,,,,,,,,,......,,,,,,,,,,,,...###..hhhhhhhhhh...TTT",
+  "TTT.,,,,,,,,,,,,,,......,,,,,,,,,,,,...###..hhhhhhhhhh...TTT",
+  "TTP.,,,,,,,,,,,,,,......,,,,,,,,,,,,...###...............TTT",
+  "TTT..................P..,,,,,,,,,,,,...###...............TTT",
+  "TTT.......P...P..................P.....###...............TTT",
+  "TTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTPTTTPTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTT"
+ ],
+ "legend_extra": {
+  "h": {
+   "tile": "tall_grass",
+   "colour": "#6e5a5c",
+   "prop": "heather"
+  }
+ }
+}

@@ -1,0 +1,639 @@
+{
+ "id": "glamorgan_coast",
+ "name": "Glamorgan Heritage Coast",
+ "region": "south_wales",
+ "kind": "route",
+ "music": "route_coast",
+ "weather": {
+  "clear": 22,
+  "sunshine": 18,
+  "drizzle": 20,
+  "gale": 16,
+  "fog": 10,
+  "downpour": 14
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 21,
+   "y": 15,
+   "w": 6,
+   "h": 3,
+   "label": "Ogmore Castle"
+  },
+  {
+   "type": "building",
+   "style": "chapel",
+   "x": 14,
+   "y": 3,
+   "w": 6,
+   "h": 4,
+   "label": "St Illtud's Church"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 22,
+   "y": 4,
+   "w": 5,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 30,
+   "y": 4,
+   "w": 6,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "lamp_post",
+   "x": 13,
+   "y": 8
+  },
+  {
+   "type": "bench",
+   "x": 20,
+   "y": 8
+  },
+  {
+   "type": "post_box",
+   "x": 29,
+   "y": 8
+  },
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 40,
+   "y": 26,
+   "w": 8,
+   "h": 5,
+   "label": "St Donat's Castle"
+  },
+  {
+   "type": "lighthouse",
+   "x": 34,
+   "y": 32
+  },
+  {
+   "type": "lighthouse",
+   "x": 38,
+   "y": 33
+  },
+  {
+   "type": "bush",
+   "x": 15,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 7,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 28,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 35,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 45,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 46,
+   "y": 14,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 33,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 47,
+   "y": 33,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 6,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 7,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 16,
+   "y": 13,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 13,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 58,
+   "y": 28,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 59,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 35,
+   "y": 8,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 53,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 26,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 50,
+   "y": 27,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 42,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 10,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 50,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 49,
+   "y": 13,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 52,
+   "y": 9,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 51,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 49,
+   "y": 5,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 38,
+   "y": 18,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 4,
+   "y": 31,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 50,
+   "y": 25,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 6,
+   "y": 23,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 48,
+   "y": 6,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 59,
+   "y": 4,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 29,
+   "y": 15,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 57,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 36,
+   "y": 6,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 23,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 55,
+   "y": 20,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 24,
+   "y": 37,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 29,
+   "y": 19,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 44,
+   "y": 13,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 42,
+   "y": 15,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 43,
+   "y": 19,
+   "variant": 0
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "swansea",
+   "offset": 0
+  },
+  "north": {
+   "to": "cardiff",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "gc_guide",
+   "sprite": "tour_guide",
+   "x": 28,
+   "y": 19,
+   "facing": "right",
+   "move": "still",
+   "script": "gc_guide"
+  },
+  {
+   "id": "gc_student",
+   "sprite": "gown_student",
+   "x": 38,
+   "y": 8,
+   "facing": "down",
+   "move": "still",
+   "script": "gc_student"
+  },
+  {
+   "id": "gc_fossil",
+   "sprite": "explorer",
+   "x": 26,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "gc_fossil"
+  },
+  {
+   "id": "gc_surfer",
+   "sprite": "surfer",
+   "x": 50,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "trainer": "gc_surfer"
+  },
+  {
+   "id": "gc_keeper",
+   "sprite": "sailor",
+   "x": 33,
+   "y": 25,
+   "facing": "right",
+   "move": "still",
+   "trainer": "gc_keeper"
+  },
+  {
+   "id": "gc_walker",
+   "sprite": "hiker",
+   "x": 10,
+   "y": 15,
+   "facing": "right",
+   "move": "still",
+   "trainer": "gc_walker"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "chipgull",
+    "min": 34,
+    "max": 36,
+    "weight": 20,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "gannetling",
+    "min": 34,
+    "max": 36,
+    "weight": 12,
+    "weather": [
+     "clear",
+     "sunshine"
+    ]
+   },
+   {
+    "species": "starlet",
+    "min": 34,
+    "max": 36,
+    "weight": 14
+   },
+   {
+    "species": "swiftlet",
+    "min": 35,
+    "max": 36,
+    "weight": 10,
+    "time": [
+     "day",
+     "dawn"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 34,
+    "max": 36,
+    "weight": 10,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "flittermouse",
+    "min": 35,
+    "max": 36,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "ternlet",
+    "min": 34,
+    "max": 36,
+    "weight": 12,
+    "time": [
+     "day",
+     "dawn"
+    ]
+   },
+   {
+    "species": "kitelet",
+    "min": 34,
+    "max": 36,
+    "weight": 10
+   },
+   {
+    "species": "pipkin",
+    "min": 34,
+    "max": 36,
+    "weight": 10
+   },
+   {
+    "species": "binfox",
+    "min": 35,
+    "max": 36,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "pupplash",
+    "min": 34,
+    "max": 36,
+    "weight": 24
+   },
+   {
+    "species": "pinchkin",
+    "min": 34,
+    "max": 36,
+    "weight": 20
+   },
+   {
+    "species": "gannetling",
+    "min": 34,
+    "max": 36,
+    "weight": 16
+   },
+   {
+    "species": "stalklet",
+    "min": 34,
+    "max": 36,
+    "weight": 16
+   },
+   {
+    "species": "selklet",
+    "min": 35,
+    "max": 36,
+    "weight": 12,
+    "time": [
+     "dusk",
+     "night",
+     "dawn"
+    ]
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 5,
+   "y": 18,
+   "text": "WEST: Swansea and Gower. Gorllewin. The Wales Coast Path runs the whole way round the country, and the way round the country is long."
+  },
+  {
+   "x": 11,
+   "y": 5,
+   "text": "NORTH: Cardiff and the Bay. Gogledd. The road runs through the Vale of Glamorgan, which is as gentle as Wales gets."
+  },
+  {
+   "x": 22,
+   "y": 19,
+   "text": "OGMORE STEPPING STONES. A line of big stones across the river, put there by somebody who trusted your balance. Not recommended at high tide, or on the way home from the pub."
+  },
+  {
+   "x": 36,
+   "y": 30,
+   "text": "NASH POINT. A cliff-top lighthouse, a rocky shore, and a tide that goes out a very long way and comes back with an opinion."
+  },
+  {
+   "x": 23,
+   "y": 18,
+   "plaque": "glamorgan_heritage_coast",
+   "title": "The Heritage Coast",
+   "text": "The Glamorgan Heritage Coast runs for fourteen miles from Porthcawl to Aberthaw, and was named a Heritage Coast in 1972. The cliffs are layers of blue-grey limestone and shale called the Blue Lias, laid down about two hundred million years ago, and the rocks are full of fossils. Hunters of ammonites should look down, and also up, for the cliffs fall."
+  },
+  {
+   "x": 35,
+   "y": 31,
+   "plaque": "glamorgan_nash_point",
+   "title": "Nash Point Lighthouses",
+   "text": "There are two lighthouses at Nash Point, both built in 1832 to warn ships off the Nash Sands, a long sandbank offshore that has wrecked a great many of them. Between them they made a pair of lights that sailors could not mistake for any other on the coast. One of them has since been switched off, and the other does the work alone."
+  },
+  {
+   "x": 17,
+   "y": 8,
+   "plaque": "glamorgan_illtud",
+   "title": "St Illtud of Llantwit Major",
+   "text": "At Llanilltud Fawr, now Llantwit Major, tradition places a school and monastery founded by St Illtud around the year 500. It is said to have taught saints and kings, and is counted among the oldest centres of learning in Britain. The church that stands there now has a fine collection of early carved Celtic crosses, which have survived a great deal more than most exam results."
+  },
+  {
+   "x": 41,
+   "y": 31,
+   "plaque": "glamorgan_stdonat",
+   "title": "St Donat's Castle",
+   "text": "St Donat's is a medieval castle on the Vale of Glamorgan coast. In 1925 it was bought by the American newspaper owner William Randolph Hearst, who filled it with furniture and fittings from older buildings across Britain. Since 1962 it has been home to Atlantic College, a school that gathers students from across the world."
+  }
+ ],
+ "spawn": [
+  8,
+  8
+ ],
+ "stage": "coast",
+ "scaled_floor": 35,
+ "rows": [
+  "TTTTTTT===TTTTTTPTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT....===....BBBBBB.........................................TTT",
+  "TTT.,,,,,,....BBBBBB..BBBBB...BBBBBB.........................TTT",
+  "TTT.,,,,,,....BBBBBB..BBBBB...BBBBBB.........................TTT",
+  "TTT.,,,,,,....BBBBBB..BBBBB...BBBBBB.........................TTT",
+  "TTT.,,,,,,...:::::::::::::::::::::::::.......................TTT",
+  "TTT....===..:................................................TTT",
+  "TTT....===..:................................................TTT",
+  "TTT....===============================================.......TTT",
+  "TTT....===============================================.......TTT",
+  "TTT....=======,,,,,,,,================================.......TTT",
+  "PTT...........,,,,,,,,.............................###.......TTT",
+  "TTT.,,,,,,,,,,,,,,~w........................,,,,,,,###.......TTT",
+  "TTT.,,,,,,,,,,,,,,~w.BBBBBB.................,,,,,,,###.......TTT",
+  "TTT.,,,,,,,,,,,,,,~w.BBBBBB.................,,,,,,,###.......TTT",
+  "TTT.,,,,,,,,,,,,,,~w.BBBBBB.................,,,,,,,###.......TTT",
+  "TTT.,,,,,,,,,,,,,,~w........................,,,,,,,###.......TTT",
+  "TTT............w~~~w........................,,,,,,,###.......TTT",
+  "######################################################.......TTT",
+  "######################################################.......TTT",
+  "######################################################.......TTT",
+  "TTT...........w~~~w...............#........#.................TTT",
+  "TTT..........w~~~w............,,,,,,,,.....#............,,,,,TTT",
+  "TTT..........w~~~w............,,,,,,,,.....#............,,,,,TTT",
+  "TTTssssssssssw~~~wsssssss.....,,,,,,,,..BBBBBBBB........,,,,,TTT",
+  "TTTssssssssssw~~~wsssssss.....,,,,,,,,..BBBBBBBB........,,,,,TTT",
+  "TTTss,,,,,,,,w~~~w,,,ssss.....,,,,,,,,..BBBBBBBB........,,,,,TTT",
+  "TTTss,,,,,,,,w~~~w,,,ssss.....,,,,,,,,..BBBBBBBB........,,,,,TTT",
+  "TTTss,,,,,,,,w~~~w,,,ssss.....,,,,,,,,..BBBBBBBB........,,,,,TTT",
+  "TTTss,,,,,,,,w~~~w,,,ssss...............................,,,,,TTT",
+  "TTTssssssssssw~~~wsssssss...............................,,,,,TTT",
+  "TTTsssssssssssw~~~wssssss.....................,,,,,,,,,,,,,,,TTT",
+  "TTT^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^TTT",
+  "TTT^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^TTT",
+  "TTTssssssssssssssssssssssssssssssssssssssssssssssssssssssssssTTT",
+  "TTTssssssssssssssssssssssssssssssssssssssssssssssssssssssssssTTT",
+  "TTTwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwTTT",
+  "TTTwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwTTT",
+  "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
+  "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
+  "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
+  "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
+  "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
+  "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
+  "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
+  "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+ ],
+ "legend_extra": {
+  "g": {
+   "tile": "grass",
+   "colour": "#8a9a52"
+  }
+ }
+}

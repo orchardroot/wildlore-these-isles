@@ -7,6 +7,10 @@
   "south": {
    "offset": 0.0,
    "to": "comeraghs"
+  },
+  "north": {
+   "to": "golden_vale",
+   "offset": 0
   }
  },
  "encounters": {
@@ -787,8 +791,8 @@
  ],
  "region": "ireland",
  "rows": [
-  "TT~~~~~TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TT~~~~~TTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTT",
+  "TT~~~~~TTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TT~~~~~TTTTTTTPTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTPTTTT",
   "TT~~~~~s..................................................TT",
   "TT~~~~~sW.....................................BBBBBBBBBBBBTT",
   "TT~~~~~sW....BBBBBBBBBBB....fffffffffffffBB...BBBBBBBBBBBBTT",

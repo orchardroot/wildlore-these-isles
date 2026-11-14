@@ -512,6 +512,10 @@
   "east": {
    "to": "whitby",
    "offset": 0
+  },
+  "west": {
+   "to": "swaledale",
+   "offset": -11
   }
  },
  "npcs": [
@@ -837,9 +841,9 @@
   "TThhhhhhhhhhhhmmmmmmmmmmmhhmmmhmmmmmmmmmmmmmmmmmmmmm###kkkkkkkmmmmmmmmmmmmmmmmTT",
   "TTmhhhhhhhhhhhmmmmmmmmmhhhhhhhhhhmmmmmmmmmmmmmmmmmmm###mmkkkkmmmmmmmmmmmmmmmmmTT",
   "TTmhhhhhhhhhhhmmmmmmmhhhhhhhhhhhhhmmmmmmmmmmmmmmmmmm###mmmmmmmmmmmmmmmmmmmmmmmTT",
-  "TTmmmhhhhhhhmmmmmmmmmhhhhhhhhhhhhhhhhmmmmmmmmmmmmmmm###mmmmmmmmmmmmmmmmmmmmmmmTT",
-  "TTmmmmmmBBBBBBmmmmmmmhhhhhhhhhhhhhhhhmmmmmmmmmmmmmmm############################",
-  "TTmmmmmmBBBBBBmmmmmmhhhhhhhhhhhhhhhmhmmmmmmmmmmmmmmm############################",
+  "##mmmhhhhhhhmmmmmmmmmhhhhhhhhhhhhhhhhmmmmmmmmmmmmmmm###mmmmmmmmmmmmmmmmmmmmmmmTT",
+  "##mmmmmmBBBBBBmmmmmmmhhhhhhhhhhhhhhhhmmmmmmmmmmmmmmm############################",
+  "##mmmmmmBBBBBBmmmmmmhhhhhhhhhhhhhhhmhmmmmmmmmmmmmmmm############################",
   "TTmmmmmmBBBDBBmmmmmmmmhhhhhhhhhhhhhmmmmmmmmmmmmmmmmm############################",
   "TTmmmmmmmmmmmmmmmmkkmmhhhhhhhhhhhhhmmmkkmmmmmmmmmmmm###mmmmhhhhhhhhhhhmmmmmmmmTT",
   "TTmmmmmmmmmmmmmkkkkkkmmmmhhmhmhmmmmmkkkkkkkkmkmmmmmm###mmhhhhhhhhhhhhhhmmmmmmmTT",

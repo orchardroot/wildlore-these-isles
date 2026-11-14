@@ -1,0 +1,32 @@
+{
+ "id": "pyg_climber",
+ "name": "Climber Gareth",
+ "class": "Climber",
+ "sprite": "hiker",
+ "party": [
+  {
+   "species": "prismite",
+   "level": 28
+  },
+  {
+   "species": "tapknock",
+   "level": 28
+  },
+  {
+   "species": "wispet",
+   "level": 29
+  }
+ ],
+ "ai": "trainer",
+ "money": 540,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Climber Gareth",
+   "text": "I am on my way up Crib Goch. Do not talk about it. I am concentrating on not talking about it."
+  }
+ ],
+ "win": "Well. That was less frightening than the ridge. Barely.",
+ "after": "Three points of contact at all times. Four, if you can find a fourth.",
+ "scaled_floor": 28
+}

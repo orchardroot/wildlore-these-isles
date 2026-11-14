@@ -17,7 +17,8 @@ func test_edges_join_galway_as_a_cul_de_sac() -> void:
 		for side in all[zid].edges:
 			if all[zid].edges[side].has("lease"):
 				continue
-			assert_true(str(all[zid].edges[side].to) in ZONES + ["galway"], "%s only joins its own zones and Galway" % zid)
+			var new_roads: Array = ["golden_vale", "clare_road"] if zid == "limerick" else []
+			assert_true(str(all[zid].edges[side].to) in ZONES + ["galway"] + new_roads, "%s only joins its own zones, Galway and the wave 55 roads" % zid)
 		assert_true(all[zid].validate(all).is_empty(), "%s validates: %s" % [zid, all[zid].validate(all)])
 
 func test_zones_and_trainers_are_scaled_from_galway() -> void:

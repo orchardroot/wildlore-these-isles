@@ -1,0 +1,32 @@
+{
+ "id": "rr_reiver",
+ "name": "Rider Archie",
+ "class": "Rider",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "reivling",
+   "level": 78
+  },
+  {
+   "species": "reiver",
+   "level": 79
+  },
+  {
+   "species": "foalmoor",
+   "level": 78
+  }
+ ],
+ "ai": "trainer",
+ "money": 3000,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Rider Archie",
+   "text": "My name's Elliot, and I can tell you my forebears were great men. Stole a cow once from a man called Elliot. Then gave it back."
+  }
+ ],
+ "win": "Fair enough. A raid I didn't see coming.",
+ "after": "The reivers had their own code. Cattle, yes. Women and children, no. Mostly.",
+ "scaled_floor": 78
+}

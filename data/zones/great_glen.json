@@ -466,6 +466,56 @@
    "move": "still",
    "script": "rewild_warden",
    "name": "Morag"
+  },
+  {
+   "id": "ct_kelpie_ghillie",
+   "sprite": "ghillie",
+   "x": 20,
+   "y": 36,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kelpie_ghillie",
+   "name": "Old Ghillie"
+  },
+  {
+   "id": "ct_kelpie_hydro",
+   "sprite": "student",
+   "x": 36,
+   "y": 44,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kelpie_hydro",
+   "name": "River Surveyor"
+  },
+  {
+   "id": "ct_kelpie_lair",
+   "sprite": "creature:kelpie",
+   "x": 29,
+   "y": 53,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_kelpie_lair",
+   "name": "The Water Horse",
+   "show_if": "ct_kelpie_state",
+   "hide_if": "ct_kelpie_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 28,
+   "y": 37,
+   "text": [
+    "The bank of the burn, grey stone and soft mud, trampled by hillwalkers' boots."
+   ],
+   "clue": "kelpie.hooves"
+  },
+  {
+   "x": 34,
+   "y": 50,
+   "text": [
+    "A broad, shallow, stony ford. In dry weather you could cross it in your socks."
+   ],
+   "clue": "kelpie.spate"
   }
  ],
  "encounters": {

@@ -1,0 +1,32 @@
+{
+ "id": "sca_boatman",
+ "name": "Boatman Magnie",
+ "class": "Boatman",
+ "sprite": "sailor",
+ "party": [
+  {
+   "species": "haarling",
+   "level": 80
+  },
+  {
+   "species": "gannetling",
+   "level": 80
+  },
+  {
+   "species": "polartern",
+   "level": 81
+  }
+ ],
+ "ai": "trainer",
+ "money": 2560,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Boatman Magnie",
+   "text": "I take the boat out when the weather says I should not. That is called knowing the weather."
+  }
+ ],
+ "win": "A good fight. The weather was on your side.",
+ "after": "A boat is always a bit smaller than the sea. The skill is knowing how much.",
+ "scaled_floor": 80
+}

@@ -85,5 +85,28 @@
    "do": "rewild",
    "site": "dundreggan"
   }
+ ],
+ "ct_kelpie_ghillie": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "kelpie",
+   "clue": "ghillie"
+  }
+ ],
+ "ct_kelpie_hydro": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "kelpie",
+   "clue": "hydro"
+  }
+ ],
+ "ct_kelpie_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "kelpie"
+  }
  ]
 }

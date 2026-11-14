@@ -1,0 +1,40 @@
+{
+ "pn_walker": [
+  {
+   "do": "say",
+   "who": "Bront\u00eb Walker",
+   "text": "I walked from Haworth this morning to see Top Withens. It is a ruin and I loved every damp minute."
+  },
+  {
+   "do": "say",
+   "who": "Bront\u00eb Walker",
+   "text": "The Bront\u00ebs walked these moors for miles. Their father kept them out in all weathers, which explains the novels."
+  }
+ ],
+ "pn_guide": [
+  {
+   "do": "say",
+   "who": "Witch Trail Guide",
+   "text": "Welcome to Pendle! There is a witch trail every year on the anniversary and a pub that sells a lot of broomsticks."
+  },
+  {
+   "do": "say",
+   "who": "Witch Trail Guide",
+   "text": "The real story is sadder than the fun. People who were poor, old and a bit too noisy got accused. I try to tell it straight."
+  }
+ ],
+ "pn_ranger": [
+  {
+   "do": "say",
+   "who": "Fell Ranger",
+   "text": "The Quakers still come up here. They sit on the summit in silence. Very peaceful, apart from the wind, which is not a Quaker."
+  }
+ ],
+ "pn_miller": [
+  {
+   "do": "say",
+   "who": "Mill Volunteer",
+   "text": "My great-gran was a weaver here. Four looms at once, the noise so loud they all learned to lip-read. Half this valley can read lips to this day."
+  }
+ ]
+}

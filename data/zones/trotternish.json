@@ -1,0 +1,495 @@
+{
+ "id": "trotternish",
+ "name": "Trotternish",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_highlands",
+ "weather": {
+  "fog": 34,
+  "drizzle": 28,
+  "downpour": 12,
+  "clear": 12,
+  "gale": 8,
+  "frost": 6
+ },
+ "props": [
+  {
+   "type": "standing_stone",
+   "x": 8,
+   "y": 17
+  },
+  {
+   "type": "standing_stone",
+   "x": 11,
+   "y": 18
+  },
+  {
+   "type": "standing_stone",
+   "x": 14,
+   "y": 17
+  },
+  {
+   "type": "standing_stone",
+   "x": 24,
+   "y": 8
+  },
+  {
+   "type": "rock",
+   "x": 25,
+   "y": 9
+  },
+  {
+   "type": "rock",
+   "x": 23,
+   "y": 9
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 8,
+   "y": 30,
+   "w": 6,
+   "h": 4,
+   "label": "Kilmuir Kirkyard"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 22,
+   "y": 34,
+   "w": 8,
+   "h": 4,
+   "label": "Museum of Island Life"
+  },
+  {
+   "type": "headstone",
+   "x": 10,
+   "y": 36
+  },
+  {
+   "type": "headstone",
+   "x": 12,
+   "y": 37
+  },
+  {
+   "type": "headstone",
+   "x": 14,
+   "y": 36
+  },
+  {
+   "type": "headstone",
+   "x": 16,
+   "y": 38
+  },
+  {
+   "type": "standing_stone",
+   "x": 12,
+   "y": 39
+  },
+  {
+   "type": "limestone_pavement",
+   "x": 44,
+   "y": 30
+  },
+  {
+   "type": "limestone_pavement",
+   "x": 45,
+   "y": 31
+  },
+  {
+   "type": "cascade",
+   "x": 50,
+   "y": 17
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 32,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 11,
+   "y": 27,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 6,
+   "y": 44,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 43,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 17,
+   "y": 31,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 32,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 27,
+   "y": 39,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 14,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 23,
+   "y": 31,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 11,
+   "y": 29,
+   "variant": 2
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "north": {
+   "to": "skye",
+   "offset": 30
+  },
+  "east": {
+   "to": "portree",
+   "offset": 12
+  }
+ },
+ "npcs": [
+  {
+   "id": "trt_walker",
+   "sprite": "hiker",
+   "x": 31,
+   "y": 12,
+   "facing": "right",
+   "move": "still",
+   "script": "trt_walker"
+  },
+  {
+   "id": "trt_museum",
+   "sprite": "villager_4",
+   "x": 26,
+   "y": 39,
+   "facing": "up",
+   "move": "still",
+   "script": "trt_museum"
+  },
+  {
+   "id": "trt_cross",
+   "sprite": "pilgrim",
+   "x": 14,
+   "y": 33,
+   "facing": "right",
+   "move": "still",
+   "script": "trt_cross"
+  },
+  {
+   "id": "trt_fossil",
+   "sprite": "student",
+   "x": 44,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "trt_fossil"
+  },
+  {
+   "id": "trt_eagle",
+   "sprite": "creature:goldeneyrie",
+   "x": 22,
+   "y": 16,
+   "facing": "down",
+   "move": "wander",
+   "script": "trt_eagle"
+  },
+  {
+   "id": "trt_crofter",
+   "sprite": "farmer",
+   "x": 32,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "trainer": "trt_crofter"
+  },
+  {
+   "id": "trt_guide",
+   "sprite": "tour_guide",
+   "x": 30,
+   "y": 30,
+   "facing": "left",
+   "move": "still",
+   "trainer": "trt_guide"
+  },
+  {
+   "id": "trt_birdwatcher",
+   "sprite": "birdwatcher",
+   "x": 46,
+   "y": 24,
+   "facing": "up",
+   "move": "still",
+   "trainer": "trt_birdwatcher"
+  },
+  {
+   "id": "trt_piper",
+   "sprite": "piper",
+   "x": 12,
+   "y": 24,
+   "facing": "right",
+   "move": "still",
+   "trainer": "trt_piper"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "highlynx",
+    "min": 74,
+    "max": 75,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "goldeneyrie",
+    "min": 74,
+    "max": 75,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "ptarmigan",
+    "min": 74,
+    "max": 75,
+    "weight": 10,
+    "weather": [
+     "frost",
+     "fog"
+    ]
+   },
+   {
+    "species": "heilan",
+    "min": 74,
+    "max": 75,
+    "weight": 12
+   },
+   {
+    "species": "clownbill",
+    "min": 74,
+    "max": 75,
+    "weight": 8,
+    "time": [
+     "day",
+     "dawn"
+    ]
+   },
+   {
+    "species": "plungebeak",
+    "min": 74,
+    "max": 75,
+    "weight": 8
+   },
+   {
+    "species": "midgeswarm",
+    "min": 74,
+    "max": 75,
+    "weight": 10,
+    "weather": [
+     "drizzle",
+     "fog",
+     "clear"
+    ]
+   },
+   {
+    "species": "cragchough",
+    "min": 74,
+    "max": 75,
+    "weight": 10
+   },
+   {
+    "species": "forkwing",
+    "min": 74,
+    "max": 75,
+    "weight": 8
+   },
+   {
+    "species": "polartern",
+    "min": 74,
+    "max": 75,
+    "weight": 6
+   },
+   {
+    "species": "hushwing",
+    "min": 74,
+    "max": 75,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "skaldling",
+    "min": 74,
+    "max": 75,
+    "weight": 14
+   },
+   {
+    "species": "orcalet",
+    "min": 74,
+    "max": 75,
+    "weight": 10
+   },
+   {
+    "species": "bayrunner",
+    "min": 74,
+    "max": 75,
+    "weight": 12
+   },
+   {
+    "species": "selkie",
+    "min": 74,
+    "max": 75,
+    "weight": 8,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "greyhaul",
+    "min": 74,
+    "max": 75,
+    "weight": 12
+   },
+   {
+    "species": "rillotter",
+    "min": 74,
+    "max": 75,
+    "weight": 12
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 12,
+   "y": 34,
+   "text": "FLORA MACDONALD. In June 1746, after Culloden, the young Flora MacDonald helped Prince Charles Edward Stuart escape from the Outer Hebrides to Skye, with the Prince dressed as her maid, Betty Burke. She was arrested and held in the Tower of London, then freed in 1747, and she is buried in the kirkyard at Kilmuir under a large Celtic cross.",
+   "plaque": "w55_sc_flora",
+   "title": "Flora MacDonald"
+  },
+  {
+   "x": 26,
+   "y": 10,
+   "text": "THE OLD MAN OF STORR. A pinnacle of rock some fifty metres tall, standing in the ruin of a vast landslip. The whole of the Trotternish ridge has been sliding slowly towards the sea for thousands of years, which makes it one of the longest landslips in Britain, and the Old Man is the bit that has stayed upright.",
+   "plaque": "w55_sc_storr",
+   "title": "The Storr"
+  },
+  {
+   "x": 46,
+   "y": 30,
+   "text": "STAFFIN. The rocks of Trotternish are Middle Jurassic, about 170 million years old, and the shore at Staffin Bay holds dinosaur footprints in the slabs. Skye is one of the most important places in Britain for dinosaur remains of that age. The prints are best at low tide, and best of all when you have been told where to look.",
+   "plaque": "w55_sc_staffin",
+   "title": "Skye's Dinosaurs"
+  },
+  {
+   "x": 20,
+   "y": 20,
+   "text": "THE QUIRAING. A hillside that has slipped, leaving a wall of cliff, a flat green table and a scatter of pinnacles. The road over the top is single track and the view is a very good reason to pull in."
+  },
+  {
+   "x": 48,
+   "y": 18,
+   "text": "KILT ROCK. Basalt columns in a cliff above the sea, looking like the pleats of a kilt, with the Mealt Falls pouring off the top. The wind sometimes blows the waterfall back up the hill."
+  }
+ ],
+ "spawn": [
+  30,
+  5
+ ],
+ "stage": "mountain",
+ "scaled_floor": 74,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTPTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTPTTTTTTTTTTTTTTTTTTTTTP###TTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTPTTTTT",
+  "TTT...........R.R............###.......w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..R.............R.......R.###.......w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..^^^^^^^^^^^^^^^^RR......###.......w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..^^^^^^^^^^^^^^^^........###..,,,,,w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..^^^^^^^^^^^^^^^^........###..,,,,,w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..^^^^^^^^^^^^^^^^.R......###..,,,,,w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..^^^^^^^^^^^^^^^^.....R..###..,,,,,w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..^^^^^^^^^^^^^^^^.R..R...###..,,,,,w$$$$$$$$$$$$$$$$$TTT",
+  "TTTR.^^^^^^^^^^^^^^^^........###..,,,,,w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..^^^^^^^^^^^^^^^^.,,,,,..###..,,,,,w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..^^^^^^^^^^^^^^^^.,,,,,..###..,,,,,w$$$$$$$$$$$$$$$$$TTT",
+  "TTT..RRRRRRRRRRRRRRRR.,,,,,..###..,,,,,w$$$$$$$$$$$$$$$$$TPT",
+  "TTT..RRRRRRRRRRRRRRRR.,,,,,..###..,,,,,.wwwwwwwwwwwwwwwwwTTT",
+  "TTT......R............,,,,,..###...............R........RTTT",
+  "TTT...................,,,,,..###R........................TTT",
+  "TTT...,,,,,,,,,,,,........R..###...............R......R..TTT",
+  "TTT...,,,,,,,,,,,,..........R###..............RR.........TTT",
+  "PTT...,,,,,,,,,,,,......R....###.........................TTT",
+  "TTT...,,,,,,,,,,,,...........###.RRR.................R...TTT",
+  "TTT...,,,,,,,,,,,,...........###................R........TTT",
+  "TTT...,,,,,,,,,,,,...........###############################",
+  "TTT....R.....................###############################",
+  "TPT.R.............R...RR.....###############################",
+  "TTT...,,,,,,,,,,.............R....,,,,,,,,ssssssssssssss.TTT",
+  "TTP...,,,,,,,,,,............RR....,,,,,,,,ssssssssssssss.TTT",
+  "TTT.R.,,,,,,,,,,.R................,,,,,,,,ssssssssssssssRTTT",
+  "TTT....R..........................,,,,,,,,ssssssssssssss.TTT",
+  "TTT.....BBBBBB....................,,,,,,,,ssssssssssssss.TTT",
+  "TTT.....BBBBBBR............R......,,,,,,,,ssssssssssssss.TTT",
+  "TTT.....BBBBBB............................ssssssssssssss.TTT",
+  "TTT...R.BBBBBB................R....R......ssssssssssssss.TTT",
+  "TTT.....R.:::.........BBBBBBBB............ssssssssssssss.TTT",
+  "TTT.......:::.........BBBBBBBBR...........ssssssssssssss.TTT",
+  "TTT...R..R............BBBBBBBB.....R,,,,,,,,,,,,,,,,....RTTT",
+  "TTP.R.................BBBBBBBB......,,,,,,,,,,,,,,,,.....TTT",
+  "TTT.......R.............::::........,,,,,,,,,,,,,,,,.....TTT",
+  "TTT.................................,,,,,,,,,,,,,,,,.....TTT",
+  "TTT........................R........,,,,,,,,,,,,,,,,.....TTT",
+  "TTT.................................,,,,,,,,,,,,,,,,.....TTT",
+  "TTT......................R...................R.R........RTTT",
+  "TTT..R..R................................................TTT",
+  "TTT..................R..R..................R.............TTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTPTTTTP",
+  "TTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTPTTTTTTTTTTTTTTTTT"
+ ]
+}

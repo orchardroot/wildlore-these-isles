@@ -1,0 +1,36 @@
+{
+ "id": "dev_ghillie",
+ "name": "Ghillie Alasdair",
+ "class": "Ghillie",
+ "sprite": "ghillie",
+ "party": [
+  {
+   "species": "stagmor",
+   "level": 71
+  },
+  {
+   "species": "fawnlet",
+   "level": 71
+  },
+  {
+   "species": "wildkit",
+   "level": 72
+  },
+  {
+   "species": "martling",
+   "level": 71
+  }
+ ],
+ "ai": "trainer",
+ "money": 2400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Ghillie Alasdair",
+   "text": "The hill belongs to the deer and the weather. I am here to point out which is which."
+  }
+ ],
+ "win": "Aye, that was well played. You can have the hill.",
+ "after": "The Devil's Staircase is the one place on the Way where the Devil gets a vote.",
+ "scaled_floor": 70
+}

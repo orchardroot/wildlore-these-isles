@@ -1,0 +1,32 @@
+{
+ "id": "rrw_angler",
+ "name": "Angler Fiona",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "rillotter",
+   "level": 69
+  },
+  {
+   "species": "heronarch",
+   "level": 69
+  },
+  {
+   "species": "stalklet",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2230,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Fiona",
+   "text": "Fishing on the loch is a quiet business. Do you mind?"
+  }
+ ],
+ "win": "A fair net. I will go and fish elsewhere. Possibly in Fife.",
+ "after": "A good loch is always quiet. A very good loch is quiet and has a decent cafe.",
+ "scaled_floor": 69
+}

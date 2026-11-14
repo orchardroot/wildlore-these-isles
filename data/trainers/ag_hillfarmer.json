@@ -1,0 +1,32 @@
+{
+ "id": "ag_hillfarmer",
+ "name": "Hill Farmer Dafydd",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "kidgruff",
+   "level": 31
+  },
+  {
+   "species": "slatelet",
+   "level": 31
+  },
+  {
+   "species": "tapknock",
+   "level": 32
+  }
+ ],
+ "ai": "trainer",
+ "money": 660,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Hill Farmer Dafydd",
+   "text": "I have had sheep on this hill since before you were born. Please do not take any of them."
+  }
+ ],
+ "win": "Fair play. That was a good one. I will not tell the dog.",
+ "after": "A day on the hill is a day. A day in the pass is a postcard.",
+ "scaled_floor": 31
+}

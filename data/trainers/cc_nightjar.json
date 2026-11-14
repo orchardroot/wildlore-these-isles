@@ -1,0 +1,32 @@
+{
+ "id": "cc_nightjar",
+ "name": "Birdwatcher Phyllis",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "churrjar",
+   "level": 41
+  },
+  {
+   "species": "hushwing",
+   "level": 40
+  },
+  {
+   "species": "kitelet",
+   "level": 40
+  }
+ ],
+ "ai": "trainer",
+ "money": 1400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Phyllis",
+   "text": "Nightjars! Camouflaged like a bit of dead branch, and a call like a distant motorbike. I wait all day to hear it for five minutes."
+  }
+ ],
+ "win": "Oh dear. I hope I haven't put the nightjar off.",
+ "after": "The old name was goatsucker. They think it drank milk from goats. They were wrong, but it's a better name than 'Caprimulgus'.",
+ "scaled_floor": 40
+}

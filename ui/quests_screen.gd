@@ -1,10 +1,11 @@
 extends MenuBase
 ## The Journal (pause menu): three tabs. Active and Done are the Quest Log: each quest's title, town, who asked,
 ## the gist, the steps so far (ticked, the current one picked out, the rest a surprise) and the reward, with
-## "Show on map" ringing where the current step is. Gazetteer is the plaques you've read (ui/gazetteer_tab.gd).
+## "Show on map" ringing where the current step is. Gazetteer is the plaques you've read (ui/gazetteer_tab.gd). Contracts is the
+## notice-board contracts taken (ui/contracts_tab.gd).
 ## setup("done") or setup("gazetteer") opens on that tab, setup("gazetteer:<town>") on that place's plaques. See Quests and Gazetteer.
 
-const TABS := ["active", "done", "gazetteer"]
+const TABS := ["active", "done", "gazetteer", "contracts"]
 const ROW_H := 62
 const OK := Color("a8d08d")
 const PANEL := Color("1d2230f0")
@@ -49,7 +50,7 @@ func setup(arg: String) -> void:
 func _draw_tabs() -> void:
 	UIKit.clear(_tabs_row)
 	_tabs_row.add_child(UIKit.label("<", 26, UIKit.MUTED))
-	var names := ["Active  %d" % Quests.active(Game.data).size(), "Done  %d" % Quests.done(Game.data).size(), "Gazetteer"]
+	var names := ["Active  %d" % Quests.active(Game.data).size(), "Done  %d" % Quests.done(Game.data).size(), "Gazetteer", "Contracts  %d" % Contracts.open_ones(Game.data).size()]
 	for i in TABS.size():
 		var on := i == _tab
 		var p := PanelContainer.new()
@@ -98,7 +99,7 @@ func _show_tab() -> void:
 	_detail.add_theme_constant_override("separation", 10)
 	dsc.add_child(_detail)
 	UIKit.keep_fitted(_detail)  # a long quest steps its words down to fit the panel
-	_quests = Quests.active(Game.data) if _tab == 0 else Quests.done(Game.data)
+	_quests = Quests.active(Game.data) if _tab == 0 else (Quests.done(Game.data) if _tab == 1 else Contracts.listed(Game.data))
 	for i in _quests.size():
 		_list_col.add_child(_row(i))
 	if _quests.is_empty():
@@ -112,10 +113,13 @@ func _show_tab() -> void:
 
 func _empty() -> void:
 	var msg: String = ["No quests on the go. Folk with something on their mind will ask if you stop for a natter.",
-		"Nothing finished yet. Everyone has to start somewhere, usually with somebody's lost cat."][_tab]
+		"Nothing finished yet. Everyone has to start somewhere, usually with somebody's lost cat.", "", "No contracts taken. Look over the notice boards in the towns."][_tab]
 	var l := UIKit.label(msg, 22, UIKit.MUTED)
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_list_col.add_child(l)
+	if _tab == 3:
+		ContractsTab.empty(_detail)
+		return
 	var t := UIKit.label("Quests", 30, UIKit.GOLD)
 	_detail.add_child(t)
 	var h := UIKit.label("Errands, mysteries and favours from the people you meet. When somebody asks, it goes in here, and so does what you've done about it.", 22)
@@ -139,7 +143,7 @@ func _row(i: int) -> Button:
 	h.offset_right = -12
 	h.add_theme_constant_override("separation", 10)
 	var mark := QuestMark.new()
-	mark.done = _tab == 1
+	mark.done = _tab == 1 or (_tab == 3 and Contracts.closed(Game.data, str(q.get("id", ""))))
 	mark.custom_minimum_size = Vector2(26, 26)
 	mark.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	h.add_child(mark)
@@ -169,6 +173,10 @@ func _describe(i: int) -> void:
 	UIKit.clear(_detail)
 	_dsc.scroll_vertical = 0
 	var q: Dictionary = _quests[i]
+	if _tab == 3:
+		ContractsTab.describe(_detail, q)
+		_quest_hints(i)
+		return
 	var title := UIKit.label(str(q.get("title", "")) + _year_tag(q), 34)
 	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_detail.add_child(title)

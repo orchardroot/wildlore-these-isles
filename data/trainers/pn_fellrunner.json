@@ -1,0 +1,32 @@
+{
+ "id": "pn_fellrunner",
+ "name": "Fell Runner Gwen",
+ "class": "Fell Runner",
+ "sprite": "fell_runner",
+ "party": [
+  {
+   "species": "scuttlet",
+   "level": 16
+  },
+  {
+   "species": "snowhare",
+   "level": 17
+  },
+  {
+   "species": "pipkin",
+   "level": 17
+  }
+ ],
+ "ai": "trainer",
+ "money": 520,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Fell Runner Gwen",
+   "text": "Pendle Fell Race: Barley to the summit and back, as fast as you like. I've done it in under an hour!"
+  }
+ ],
+ "win": "Off the pace. I'll walk the downhill.",
+ "after": "The record's mad. They fly down the loose bits. I fall down them.",
+ "scaled_floor": 16
+}

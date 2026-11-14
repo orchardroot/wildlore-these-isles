@@ -53,5 +53,28 @@
    "who": "Hill Farmer",
    "text": "I let them through at the cattle grid. They look at me like I'm the one who's late."
   }
+ ],
+ "ct_puca_seamus": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "puca",
+   "clue": "seamus"
+  }
+ ],
+ "ct_puca_noreen": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "puca",
+   "clue": "noreen"
+  }
+ ],
+ "ct_puca_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "puca"
+  }
  ]
 }

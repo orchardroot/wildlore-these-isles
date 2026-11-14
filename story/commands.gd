@@ -103,7 +103,8 @@ func _exec(c: Dictionary) -> void:
 			var branch: Array = c.get("then", []) if _test(c) else c.get("else", [])
 			await _run_list(branch)
 		"set":
-			_set_flag(str(c.get("flag", "")), c.get("value", true))
+			var sv: Variant = c.get("value", true)
+			_set_flag(str(c.get("flag", "")), Quests.stamp(data) if sv is String and sv == "@now" else sv)  # w55: "@now" stamps the day (Quests.later)
 		"give_item":
 			var id := str(c.get("item", ""))
 			var n := int(c.get("n", 1))
@@ -310,10 +311,14 @@ func _exec(c: Dictionary) -> void:
 				await host.say("", line + ".")
 		"regular":
 			await RegularTalk.run(self, c)  # one of the Regulars (story/regular_talk.gd)
+		"project":
+			await ProjectTalk.run(self, c)  # a town project (story/project_talk.gd)
 		"evidence":
 			await CasebookTalk.evidence(self, c)  # a clue for the Casebook (story/casebook_talk.gd)
 		"casebook":
 			await CasebookTalk.run(self, c)  # the accusation prompt
+		"contract":
+			await ContractTalk.run(self, c)  # a notice-board contract: the notice, the poster, a witness, the lair
 		"breed":
 			await BreedTalk.run(self, c)  # the farm gate and the lab bench (story/breed_talk.gd)
 		"rewild":
@@ -714,6 +719,9 @@ func _when(cond: String) -> bool:
 	var arc := _arc_cond(cond)
 	if arc != "":
 		return arc == "yes"
+	var lat := Quests.later_cond(host.data, cond)  # w55: later_<flag>_<n>, a stamped choice has ripened
+	if lat >= 0:
+		return lat == 1
 	push_warning("Commands: unknown condition '%s'" % cond)
 	return false
 

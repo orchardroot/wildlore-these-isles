@@ -1,0 +1,32 @@
+{
+ "id": "hp_reiver",
+ "name": "Rambler Alec",
+ "class": "Hillwalker",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "reivling",
+   "level": 85
+  },
+  {
+   "species": "brockling",
+   "level": 84
+  },
+  {
+   "species": "starlet",
+   "level": 84
+  }
+ ],
+ "ai": "trainer",
+ "money": 3500,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Rambler Alec",
+   "text": "My family name is Armstrong. Reivers, all of them. Stealing cattle was the family trade for about three hundred years."
+  }
+ ],
+ "win": "Stolen fair and square, you'd say. I've no complaints.",
+ "after": "We went straight, mostly. The sheep still look at us oddly.",
+ "scaled_floor": 84
+}

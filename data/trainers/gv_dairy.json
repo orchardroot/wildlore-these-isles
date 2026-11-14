@@ -1,0 +1,32 @@
+{
+ "id": "gv_dairy",
+ "name": "Dairy Farmer Br\u00edd",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "moolet",
+   "level": 54
+  },
+  {
+   "species": "barnling",
+   "level": 55
+  },
+  {
+   "species": "gealhare",
+   "level": 55
+  }
+ ],
+ "ai": "trainer",
+ "money": 1950,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Dairy Farmer Br\u00edd",
+   "text": "I've a hundred and forty cows and a husband who thinks he's in charge. One of those is accurate."
+  }
+ ],
+ "win": "God, you've a right arm on you. Come in for a cup of tea.",
+ "after": "Milk at five. Milk at five again. A life in the Golden Vale is very regular.",
+ "scaled_floor": 55
+}

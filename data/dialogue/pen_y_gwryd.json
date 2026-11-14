@@ -1,0 +1,38 @@
+{
+ "pyg_landlord": [
+  {
+   "do": "say",
+   "who": "Hotel Landlord",
+   "text": "The ceiling in the smoke room is covered in signatures. Climbers have been signing it since before the war, and the Everest team of 1953 signed it too."
+  },
+  {
+   "do": "say",
+   "who": "Hotel Landlord",
+   "text": "Come in for tea, if the weather turns. In this valley the weather turns about every nine minutes."
+  }
+ ],
+ "pyg_instructor": [
+  {
+   "do": "say",
+   "who": "Mountain Instructor",
+   "text": "I teach people to read a map in a cloud. You are meant to be calm. They are meant to be calm too. That is the difficult bit."
+  },
+  {
+   "do": "say",
+   "who": "Mountain Instructor",
+   "text": "Plas y Brenin is the national mountain centre. Half the people you see on the hills in Britain learned something here."
+  }
+ ],
+ "pyg_photographer": [
+  {
+   "do": "say",
+   "who": "Photographer",
+   "text": "Everyone stands here for the photograph. The lakes, the ridge, the reflection. It is a good photograph."
+  },
+  {
+   "do": "say",
+   "who": "Photographer",
+   "text": "The Horseshoe in the morning is a postcard. By lunchtime it is a cloud. I take my pictures early and eat my sandwiches late."
+  }
+ ]
+}

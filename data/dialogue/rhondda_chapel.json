@@ -2,6 +2,102 @@
  "rhn_conductor": [
   {
    "do": "if",
+   "flag": "q_stories_wales_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_sell",
+     "then": [
+      {
+       "do": "say",
+       "who": "Elwyn",
+       "text": "We rehearse in the Institute now. It is cold, and the acoustic is a wardrobe. We have sung worse, and in worse, and not often."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_keep",
+     "then": [
+      {
+       "do": "say",
+       "who": "Elwyn",
+       "text": "We sang on a scaffold in March. The altos said it was the best acoustic yet, which I did not take as a compliment."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_split",
+     "then": [
+      {
+       "do": "say",
+       "who": "Elwyn",
+       "text": "We stop at nine, and Kieran's tenants send down tea on Thursdays. It is not what I would have chosen, and it is better than I deserve."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_wales_started",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_wales_elwyn",
+       "then": [],
+       "else": [
+        {
+         "do": "if",
+         "flag": "q_stories_wales_kieran",
+         "then": [
+          {
+           "do": "say",
+           "who": "Elwyn",
+           "text": "Eirlys has had you in the vestry, has she? Then I know what you will ask. Sit down. Not on the third pew."
+          },
+          {
+           "do": "say",
+           "who": "Elwyn",
+           "text": "A male voice choir is not a thing you can move into a hall. It is the roof. The sound goes up, comes back and arrives at the back row as a chord. Forty men in a cold hall sing at the floor."
+          },
+          {
+           "do": "say",
+           "who": "Elwyn",
+           "text": "I am not a deacon and I do not decide the sale. I would only say: the choir is the best argument for the chapel, and Kieran is the best argument for the valley, and I like him, and I will not forgive either of you."
+          },
+          {
+           "do": "say",
+           "who": "Elwyn",
+           "text": "We would manage. The hymns survive anything. I would just like it to be said that I minded."
+          },
+          {
+           "do": "set",
+           "flag": "q_stories_wales_elwyn",
+           "value": true
+          },
+          {
+           "do": "end"
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Elwyn",
+           "text": "About the chapel? Hear Kieran at the Institute first. Then come and ask me what a choir loses. I will have a better answer if you have heard what a lad needs."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "_w55": "wales"
+  },
+  {
+   "do": "if",
    "flag": "q_arc_wales_6",
    "then": [
     {
@@ -206,6 +302,300 @@
    "do": "say",
    "who": "Organist",
    "text": "A male voice choir needs four parts: first tenor, second tenor, baritone, bass. Miss any one and you can hear the hole in it, like a missing tooth."
+  }
+ ],
+ "w55w_eirlys": [
+  {
+   "do": "if",
+   "flag": "q_stories_wales_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_sell",
+     "then": [
+      {
+       "do": "say",
+       "who": "Eirlys",
+       "text": "I walked past on Sunday and there were curtains in the windows. Real curtains. It is a strange thing, seeing your chapel have a front door with a number on it."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_keep",
+     "then": [
+      {
+       "do": "say",
+       "who": "Eirlys",
+       "text": "Nine of us and a rota and a hundred and forty pounds a month in the tin. We are not dead. We are not well, either. But we sang on Sunday and the roof held."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_wales_pick_split",
+     "then": [
+      {
+       "do": "say",
+       "who": "Eirlys",
+       "text": "The flats are full and the chapel is still a chapel. I have noticed that nobody is entirely happy, which I have decided to take as a good sign."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_wales_decided",
+     "then": [
+      {
+       "do": "if",
+       "flag": "q_stories_wales_pick",
+       "eq": 0,
+       "then": [
+        {
+         "do": "say",
+         "who": "Eirlys",
+         "text": "Sell it, then. To a lad who sat in the third pew on a Sunday afternoon and complained about the sermon. I will tell the members what you said."
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_wales_pick",
+       "eq": 1,
+       "then": [
+        {
+         "do": "say",
+         "who": "Eirlys",
+         "text": "Keep it. Nine of us and a roof. I will tell the members what you said, and then I will go and look for a ladder."
+        }
+       ]
+      },
+      {
+       "do": "if",
+       "flag": "q_stories_wales_pick",
+       "eq": 2,
+       "then": [
+        {
+         "do": "say",
+         "who": "Eirlys",
+         "text": "Sell the back and keep the front. Well. I would have liked to have thought of it. I will tell the members."
+        }
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Eirlys",
+       "text": "The post for the terrace comes to Bryn Terrace, where the kettle always is. Word will come, one way or another."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_wales_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_wales_kieran",
+         "then": [
+          {
+           "do": "if",
+           "flag": "q_stories_wales_elwyn",
+           "then": [
+            {
+             "do": "say",
+             "who": "Eirlys",
+             "text": "Well? You have heard Kieran and you have heard Elwyn. We are four to four, and I am the ninth, and I cannot say, because I have been secretary for thirty-one years and they would say I only wanted what I wanted."
+            },
+            {
+             "do": "choice",
+             "text": "What do you tell Eirlys?",
+             "options": [
+              "Sell it to Kieran, for flats",
+              "Keep it, and raise the money",
+              "Sell the schoolroom, keep the chapel",
+              "I need to think"
+             ],
+             "set": "q_stories_wales_pick"
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_wales_pick",
+             "eq": 0,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_wales_pick_sell",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_wales_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_wales_when",
+               "value": "@now"
+              },
+              {
+               "do": "say",
+               "who": "Eirlys",
+               "text": "Flats. Six of them, and the front kept as it is. And the choir in a cold hall, and the organ in a van."
+              },
+              {
+               "do": "say",
+               "who": "Eirlys",
+               "text": "I will tell the members. Come to the terrace for the post when it is done."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_wales_pick",
+             "eq": 1,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_wales_pick_keep",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_wales_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_wales_when",
+               "value": "@now"
+              },
+              {
+               "do": "say",
+               "who": "Eirlys",
+               "text": "Keep it. Nine of us, a tin and a roof with a hole in it. And not one person under fifty to hold the ladder."
+              },
+              {
+               "do": "say",
+               "who": "Eirlys",
+               "text": "I will tell the members. Come to the terrace for the post when it is done."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_wales_pick",
+             "eq": 2,
+             "then": [
+              {
+               "do": "set",
+               "flag": "q_stories_wales_pick_split",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_wales_decided",
+               "value": true
+              },
+              {
+               "do": "set",
+               "flag": "q_stories_wales_when",
+               "value": "@now"
+              },
+              {
+               "do": "say",
+               "who": "Eirlys",
+               "text": "The old Sunday school at the back to Kieran, for two flats, and the chapel for the choir. The teas move into the vestry, and the choir stops at nine, or the flats will complain."
+              },
+              {
+               "do": "say",
+               "who": "Eirlys",
+               "text": "I will tell the members. Come to the terrace for the post when it is done."
+              }
+             ]
+            },
+            {
+             "do": "if",
+             "flag": "q_stories_wales_pick",
+             "eq": 3,
+             "then": [
+              {
+               "do": "say",
+               "who": "Eirlys",
+               "text": "Take your time. The roof will not, but you can."
+              }
+             ]
+            }
+           ],
+           "else": [
+            {
+             "do": "say",
+             "who": "Eirlys",
+             "text": "Elwyn Prosser is at the front, when he is not in the pulpit pretending it is a podium. Ask him what the choir would lose."
+            }
+           ]
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Eirlys",
+           "text": "Kieran Rees. He is over at the Institute, in the reading room, with his plans. Hear him out. He is not what you think."
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Eirlys",
+         "text": "Eirlys Bevan, secretary. Mind the third pew, it complains."
+        },
+        {
+         "do": "say",
+         "who": "Eirlys",
+         "text": "There are nine of us on a Sunday now. In my mother's day there were four hundred, and a gallery, and a sermon that went on until the beef burned. The roof needs more than we have, and so does the boiler, and so do I."
+        },
+        {
+         "do": "say",
+         "who": "Eirlys",
+         "text": "A builder has made us an offer. It is a good one, for flats. The members meet on Sunday and we are four against four, and I am the ninth. Would you hear everyone out and tell me what you think? You are nobody's cousin."
+        },
+        {
+         "do": "set",
+         "flag": "q_stories_wales_started",
+         "value": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "w55w_ladder": [
+  {
+   "do": "say",
+   "who": "Volunteer",
+   "text": "Roof. I am the one who holds the ladder. I am sixty-eight, so that tells you where the next generation is."
+  },
+  {
+   "do": "say",
+   "who": "Volunteer",
+   "text": "The thermometer in the porch says forty per cent. I say that is rounding."
+  }
+ ],
+ "w55w_father": [
+  {
+   "do": "say",
+   "who": "Young father",
+   "text": "We have the flat at the back, the old Sunday school. The baby sleeps through the sermon, which I am told is a first for that room."
+  },
+  {
+   "do": "say",
+   "who": "Young father",
+   "text": "The choir stops at nine. I thank them every Thursday. I do not say it out loud."
   }
  ]
 }

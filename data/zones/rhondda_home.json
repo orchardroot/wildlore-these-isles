@@ -107,6 +107,18 @@
    "move": "still",
    "script": "rhn_home_mum",
    "name": "Mrs Pugh's sister"
+  },
+  {
+   "id": "w55w_postman",
+   "name": "Postman",
+   "sprite": "rail_guard",
+   "x": 8,
+   "y": 5,
+   "facing": "up",
+   "script": "w55w_postman",
+   "show_if": "q_stories_wales_decided",
+   "hide_if": "q_stories_wales_done",
+   "move": "still"
   }
  ],
  "encounters": {

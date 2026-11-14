@@ -121,5 +121,28 @@
    "who": "Warden",
    "text": "He's in Merlin's Cave, up the cliff path, at the west end of town. Dress code: smart casual. Hard hat, optional."
   }
+ ],
+ "ct_bodmin_neighbour": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "bodmin",
+   "clue": "neighbour"
+  }
+ ],
+ "ct_bodmin_keeper": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "bodmin",
+   "clue": "keeper"
+  }
+ ],
+ "ct_bodmin_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "bodmin"
+  }
  ]
 }

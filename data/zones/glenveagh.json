@@ -333,6 +333,56 @@
    "move": "still",
    "script": "gv_fiddler",
    "name": "Fiddler"
+  },
+  {
+   "id": "ct_marten_neighbour",
+   "sprite": "villager_2",
+   "x": 19,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_marten_neighbour",
+   "name": "Brendan Boyle"
+  },
+  {
+   "id": "ct_marten_ranger",
+   "sprite": "hiker",
+   "x": 44,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_marten_ranger",
+   "name": "Park Ranger"
+  },
+  {
+   "id": "ct_marten_lair",
+   "sprite": "creature:pinewraith",
+   "x": 38,
+   "y": 36,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_marten_lair",
+   "name": "Gallagher's Ghost",
+   "show_if": "ct_marten_state",
+   "hide_if": "ct_marten_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 29,
+   "y": 14,
+   "text": [
+    "The henhouse, a leaning wooden shed with a tarred roof. Feathers hang from the wire like washing."
+   ],
+   "clue": "marten.scat"
+  },
+  {
+   "x": 24,
+   "y": 34,
+   "text": [
+    "Ferns and old oaks above the henhouse. It's very quiet."
+   ],
+   "clue": "marten.dusk"
   }
  ],
  "signs": [

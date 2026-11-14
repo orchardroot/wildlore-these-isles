@@ -1,0 +1,32 @@
+{
+ "id": "rr_shepherd",
+ "name": "Shepherd Gordon",
+ "class": "Shepherd",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "herdlet",
+   "level": 78
+  },
+  {
+   "species": "tattybogle",
+   "level": 79
+  },
+  {
+   "species": "eildonmare",
+   "level": 79
+  }
+ ],
+ "ai": "trainer",
+ "money": 3100,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Shepherd Gordon",
+   "text": "Blackface sheep, mainly. A Borders shepherd needs three things: a dog, a stick and a very bad memory for the price of lamb."
+  }
+ ],
+ "win": "Right. I'll have to sit down and have a think about this.",
+ "after": "My dog would have beaten you. But you didn't bring a sheep.",
+ "scaled_floor": 78
+}

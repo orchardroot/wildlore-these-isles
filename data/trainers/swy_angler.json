@@ -1,0 +1,32 @@
+{
+ "id": "swy_angler",
+ "name": "Angler Fergus",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "bradan",
+   "level": 69
+  },
+  {
+   "species": "rillotter",
+   "level": 70
+  },
+  {
+   "species": "heronarch",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2260,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Fergus",
+   "text": "Hush now. I have been after a trout since Tuesday, and it is only Thursday."
+  }
+ ],
+ "win": "Caught out. I will go back to the trout. It is not as rude.",
+ "after": "St Mary's Loch is full of fish and empty of anyone who wants to tell you where.",
+ "scaled_floor": 69
+}

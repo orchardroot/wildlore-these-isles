@@ -1,0 +1,32 @@
+{
+ "id": "cc_rider",
+ "name": "Rambler Giles",
+ "class": "Hillwalker",
+ "sprite": "hillwalker",
+ "party": [
+  {
+   "species": "leveret",
+   "level": 40
+  },
+  {
+   "species": "pipkin",
+   "level": 41
+  },
+  {
+   "species": "stoatlet",
+   "level": 40
+  }
+ ],
+ "ai": "trainer",
+ "money": 1400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Rambler Giles",
+   "text": "Drovers took their cattle and sheep along this ridge for hundreds of years. I'm a modern drover. I'm carrying a sandwich."
+  }
+ ],
+ "win": "Well, that's me driven off. I'll go and think about my life.",
+ "after": "A drover could do twenty miles a day. I can do ten and then there's a pub.",
+ "scaled_floor": 40
+}

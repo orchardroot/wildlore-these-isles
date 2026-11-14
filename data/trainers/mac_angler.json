@@ -1,0 +1,32 @@
+{
+ "id": "mac_angler",
+ "name": "Angler Rory",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "chipgull",
+   "level": 67
+  },
+  {
+   "species": "plungebeak",
+   "level": 68
+  },
+  {
+   "species": "baskling",
+   "level": 67
+  }
+ ],
+ "ai": "trainer",
+ "money": 2250,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Rory",
+   "text": "Solway tides come in faster than a horse can run. Please do not stand there."
+  }
+ ],
+ "win": "A fair net. I will keep to the shore.",
+ "after": "The Solway has some of the biggest tides in Britain. It is not a place for the unprepared. Or the optimists.",
+ "scaled_floor": 67
+}

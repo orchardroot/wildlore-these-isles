@@ -19,7 +19,8 @@ func test_joins_chester_south_and_edges_mirror() -> void:
 	assert_eq(str(ZoneData.load_id("ironbridge_gorge").edges.west.to), "shrewsbury")
 	assert_eq(str(ZoneData.load_id("shropshire_hills").edges.north.to), "shrewsbury")
 	# a cul-de-sac: the new routes lead nowhere else
-	assert_eq(ZoneData.load_id("ironbridge_gorge").edges.size(), 1)
+	assert_eq(ZoneData.load_id("ironbridge_gorge").edges.size(), 2, "Shrewsbury and (wave 55) the Black Country")
+	assert_eq(str(ZoneData.load_id("ironbridge_gorge").edges.east.to), "black_country")
 	assert_eq(ZoneData.load_id("shropshire_hills").edges.size(), 1)
 
 func test_zones_are_scaled_and_in_the_midlands() -> void:

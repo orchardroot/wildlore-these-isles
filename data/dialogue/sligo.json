@@ -285,5 +285,46 @@
    "who": "Strandhill Surfer",
    "text": "You wear a thick wetsuit, because the Atlantic hasn't heard of summer. I've never been so cold and so happy."
   }
+ ],
+ "ct_marten_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "marten"
+  }
+ ],
+ "ct_marten_eggs": [
+  {
+   "do": "if",
+   "flag": "ct_marten_is_caught",
+   "then": [
+    {
+     "do": "say",
+     "who": "Egg Seller",
+     "text": "Gallagher's eggs, a dozen a tray. He says there's a marten in somebody's Keeper team that used to be on his roof. He's very quiet about it."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Egg Seller",
+     "text": "Gallagher's eggs, a dozen a tray. Forty miles from here there's a hen keeper with a marten problem. I don't ask."
+    }
+   ]
+  }
+ ],
+ "ct_marten_squirrel": [
+  {
+   "do": "say",
+   "who": "Birdwatcher",
+   "text": "A red squirrel on my bird table, first one in thirty years. They say it's the martens' doing. I'll take it, and I'll put wire on the henhouse."
+  }
+ ],
+ "ct_marten_wood": [
+  {
+   "do": "say",
+   "who": "Neighbour",
+   "text": "The Ghost goes by Gallagher's henhouse every dusk and tries the roof. He swears it sighs. I've heard it myself."
+  }
  ]
 }

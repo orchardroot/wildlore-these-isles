@@ -711,6 +711,10 @@
   }
  ],
  "edges": {
+  "west": {
+   "to": "trotternish",
+   "offset": -12
+  },
   "south": {
    "to": "skye",
    "offset": 0
@@ -874,6 +878,38 @@
    "facing": "down",
    "move": "still",
    "script": "arts_librarian"
+  },
+  {
+   "id": "ct_corncrake_poster",
+   "sprite": "mum",
+   "x": 30,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_poster",
+   "name": "Catriona MacLeod"
+  },
+  {
+   "id": "ct_corncrake_silent",
+   "sprite": "mum",
+   "x": 21,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_silent",
+   "name": "Neighbour",
+   "show_if": "ct_corncrake_silent"
+  },
+  {
+   "id": "ct_corncrake_calls",
+   "sprite": "villager_6",
+   "x": 28,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_corncrake_calls",
+   "name": "Crofter",
+   "show_if": "ct_corncrake_calls"
   }
  ],
  "encounters": {
@@ -1136,9 +1172,9 @@
   "TTkkkkkkkkkkkkkkkBBBBBBkkk===kkkkBBBBBBkkkBBBBBkkkkkkkkkkkTT",
   "TTkkkkkkkkkkkkkkkBBBBBBkkk===kkkkBBDBBBkkkBBBBBkkkkkkkkkkkTT",
   "TTkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkPT",
-  "TTkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
-  "TTkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkk,,,,,,,,kkkkkkTT",
-  "TTkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkk,,,,,,,,kkkkkkTT",
+  "##kkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
+  "##kkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkk,,,,,,,,kkkkkkTT",
+  "##kkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkk,,,,,,,,kkkkkkTT",
   "TTkkkkkkkkkkkkkkkkkkkkkkkk===k,,,,,kkkkkkkkk,,,,,,,,kkkkkkTT",
   "TTkkkkkkkkkkkkkkkkkkkkkkkk===k,,,,,kkkkkkkkk,,,,,,,,kkkkkkTT",
   "TTkkkkkkkkkkkkkkkkkkkkkkkk===k,,,,,kkkkkkkkk,,,,,,,,kkkkkkTT",
@@ -1184,9 +1220,9 @@
   "111222222222221111111110000000000000000000111111111111111100",
   "111222233322221111111110000000000000000000111111111111111110",
   "112222333332222111000000000000000000000000000011111111111110",
-  "112223333333222111000000000000000000000000000111112222211111",
-  "112223333333222111000000000000000000000000000111122222221111",
-  "112223333333222111000000000000000000000000000111122222221111",
+  "222223333333222111000000000000000000000000000111112222211111",
+  "222223333333222111000000000000000000000000000111122222221111",
+  "222223333333222111000000000000000000000000000111122222221111",
   "112222333332222111000000000000000000000000000111122222221111",
   "111222233322221111000000000000000000000000000111122222221111",
   "111222222222221111000000000000000000000000000111122222221111",

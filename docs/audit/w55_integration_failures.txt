@@ -1,0 +1,26 @@
+FAIL test_dex::test_fungi_turn_up_only_in_autumn: flyling in offas_dyke expected <["autumn"]> got <[]>
+FAIL test_dex::test_fungi_turn_up_only_in_autumn: whiffhorn in southern_upland_way expected <["autumn"]> got <[]>
+FAIL test_dex::test_fungi_turn_up_only_in_autumn: whiffhorn in the_machars expected <["autumn"]> got <[]>
+FAIL test_dex::test_fungi_turn_up_only_in_autumn: flyling: its Fieldbook habitat is where it's met expected <["dee_valley", "goyt_valley", "luds_church", "macc_forest", "offas_dyke", "roscoff"]> got <["dee_valley", "goyt_valley", "luds_church", "macc_forest", "roscoff"]>
+FAIL test_dex::test_fungi_turn_up_only_in_autumn: whiffhorn: its Fieldbook habitat is where it's met expected <["galloway", "mendips", "north_york_moors", "ring_of_kerry", "southern_upland_way", "the_machars"]> got <["galloway", "mendips", "north_york_moors", "ring_of_kerry"]>
+FAIL test_w48_monsters::test_habitats_are_exactly_the_zones_that_roll_them: moonbell: its Fieldbook habitat is where it is met expected <["antrim_coast", "cambrian_coast", "llyn_tegid", "northumberland_coast", "pembroke_coast", "sefton_coast"]> got <["antrim_coast", "cambrian_coast", "northumberland_coast", "pembroke_coast", "sefton_coast"]>
+FAIL test_w48_monsters::test_habitats_are_exactly_the_zones_that_roll_them: brammel: its Fieldbook habitat is where it is met expected <["dee_valley", "haworth", "luds_church", "offas_dyke", "shropshire_hills"]> got <["dee_valley", "haworth", "luds_church", "shropshire_hills"]>
+FAIL test_w48_monsters::test_habitats_are_exactly_the_zones_that_roll_them: tattybogle: its Fieldbook habitat is where it is met expected <["cotswolds", "galloway", "humber_bridge", "reivers_road", "scottish_borders", "southern_upland_way", "yorkshire_wolds"]> got <["cotswolds", "galloway", "scottish_borders", "yorkshire_wolds"]>
+FAIL test_w53_visits::test_shipped_data_is_valid_and_every_home_resident_has_an_again_line:  expected <[]> got <["rhondda_home|w55w_postman"]>
+FAIL test_arrivals_clear::test_no_prop_stands_inside_a_building: props inside a building expected <[]> got <["cranborne_chase sheep 10,18"]>
+FAIL test_donegal::test_trainers_are_scaled_and_exist: gv_dairy expected <66> got <55>
+FAIL test_donegal::test_trainers_are_scaled_and_exist: gv_hurler expected <66> got <55>
+FAIL test_donegal::test_trainers_are_scaled_and_exist: gv_pilgrim expected <66> got <55>
+FAIL test_eastanglia::test_joined_to_london_as_a_cul_de_sac: cambridge west edge stays inside East Anglia expected true
+FAIL test_fife::test_zones_join_edinburgh_as_a_cul_de_sac:  expected <["south"]> got <["east", "west", "south"]>
+FAIL test_hebrides::test_ferry_from_portree_and_a_road_to_stornoway:  expected <["north"]> got <["east", "north"]>
+FAIL test_hebrides::test_ferry_from_portree_and_a_road_to_stornoway:  expected <["south"]> got <["west", "south"]>
+FAIL test_hebrides::test_ferry_from_portree_and_a_road_to_stornoway:  expected <2> got <3>
+FAIL test_humber::test_edges_are_mirrored_cul_de_sacs: Hull is a dead end expected <1> got <2>
+FAIL test_humber::test_edges_are_mirrored_cul_de_sacs: Lincoln is a dead end expected <1> got <2>
+FAIL test_limerick::test_edges_join_galway_as_a_cul_de_sac: limerick only joins its own zones and Galway expected true
+FAIL test_limerick::test_edges_join_galway_as_a_cul_de_sac: limerick only joins its own zones and Galway expected true
+FAIL test_shetland::test_ferry_from_kirkwall_and_a_road_south:  expected <["south"]> got <["north", "south"]>
+FAIL test_shetland::test_ferry_from_kirkwall_and_a_road_south: a cul-de-sac expected <["north"]> got <["west", "north"]>
+FAIL test_shropshire::test_joins_chester_south_and_edges_mirror:  expected <1> got <2>
+FAIL test_swansea::test_the_beacons_open_south_on_to_swansea_and_nowhere_else_new: a cul-de-sac: Swansea joins only the Beacons and Gower expected <2> got <3>

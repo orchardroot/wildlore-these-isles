@@ -73,6 +73,8 @@ static func _offer(cmd: Commands, r: Dictionary) -> void:
 	var data: GameStateData = host.data
 	var id := str(r.id)
 	await _say_all(cmd, r, r.get("offer", []))
+	if DeedChoices.character_line(id) != "":
+		await host.say("", DeedChoices.character_line(id))   # w55: what they would be like in charge
 	var deeds := Regulars.eligible_deeds(data)
 	var names := deeds.map(func(d): return str(Deeds.get_deed(str(d)).get("name", d)))
 	names.append(NOT_NOW)
@@ -83,3 +85,5 @@ static func _offer(cmd: Commands, r: Dictionary) -> void:
 	if Regulars.appoint(data, id, str(deeds[pick])):
 		await host.sfx("badge")
 		await host.say("", "%s is now managing %s." % [str(r.name), names[pick]])
+		for l in DeedChoices.manager_lines(DeedChoices.manager_traits(data, str(deeds[pick])), Regulars.short_name(r)).slice(1):
+			await host.say("", str(l))

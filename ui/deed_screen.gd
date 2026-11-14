@@ -1,7 +1,8 @@
 extends MenuBase
 ## A Deed counter (see Deeds): the books on the left (till, store, tier, manager, rates, the last few events), the
 ## counter on the right (buy, collect, stock the store, upgrade, sell back). Opened as "deed:<deed id>" from the
-## counter in the interior by the `deed` story command.
+## counter in the interior by the `deed` story command. Wave 55: "Fit out the place" (upgrades with catches), "A matter
+## needs an answer" (the month's decision) and "Let the manager go" are modes of the same screen (see DeedChoices).
 
 var _id := ""
 var _cur := Wallet.GBP
@@ -10,6 +11,8 @@ var _box: VBoxContainer
 var _say: Label
 var _buttons: Array = []
 var _sell_armed := false
+var _release_armed := false
+var _mode := "books"   # books | fit | ask
 
 func _build() -> void:
 	set_title("The Business")
@@ -29,8 +32,14 @@ func _build() -> void:
 	row.add_child(right)
 	var bp := UIKit.panel(Color("1d2230f0"), 10)
 	right.add_child(bp)
+	var bsc := ScrollContainer.new()   # the counter has more to offer now: it scrolls with the focus
+	bsc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	bsc.follow_focus = true
+	bsc.custom_minimum_size = Vector2(0, 360)
+	bp.add_child(bsc)
 	_box = VBoxContainer.new()
-	bp.add_child(_box)
+	_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	bsc.add_child(_box)
 	right.add_child(UIKit.fill())
 	_say = UIKit.label("", 24, UIKit.GOLD)
 	_say.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -62,22 +71,40 @@ func _line(text: String, size := 22, colour := UIKit.CREAM) -> void:
 
 func _refresh() -> void:
 	var d: GameStateData = Game.data
-	var deed := Deeds.get_deed(_id)
 	UIKit.clear(_stmt)
 	UIKit.clear(_box)
 	_buttons = []
 	header_right.text = UIKit.money_text(Wallet.balance(d, _cur), _cur)
+	if _mode == "fit" and Deeds.is_owned(d, _id):
+		_refresh_fit()
+	elif _mode == "ask" and Deeds.is_owned(d, _id) and not DeedChoices.pending(d, _id).is_empty():
+		_refresh_ask()
+	else:
+		_mode = "books"
+		_refresh_books()
+	UIKit.wrap_focus(_buttons)
+	UIKit.focus_later(_buttons[0])
+
+func _refresh_books() -> void:
+	var d: GameStateData = Game.data
+	var deed := Deeds.get_deed(_id)
 	_stmt.add_child(UIKit.label("The books", 30, UIKit.GOLD))
 	if Deeds.is_owned(d, _id):
 		for t in Deeds.summary(d, _id):
 			_line(str(t))
 		_line("A good day, fully stocked, takes about %s." % _local(Deeds.daily_estimate(d, _id)), 20, UIKit.MUTED)
+		var rep := DeedChoices.reputation(d, _id)
+		if rep != 0:
+			_line("Its name in the town: %s." % _name_word(rep), 20, UIKit.MUTED)
 		var rec := Deeds.recent(d, _id)
 		if not rec.is_empty():
 			_stmt.add_child(UIKit.spacer(6))
 			_line("Lately", 22, UIKit.MUTED)
 			for t in rec:
 				_line(str(t), 18, UIKit.MUTED)
+		var p := DeedChoices.pending(d, _id)
+		if not p.is_empty():
+			_button("A matter needs an answer (%d days)" % int(p.left), _open_ask)
 		_button("Collect the till (%s)" % _local(Deeds.till(d, _id)), _collect)
 		for inp in deed.get("inputs", []):
 			var it := str(inp.item)
@@ -87,6 +114,10 @@ func _refresh() -> void:
 		if up > 0:
 			var nxt: Dictionary = deed.tiers[Deeds.tier_of(d, _id) + 1]
 			_button("Upgrade: %s (%s)" % [str(nxt.name), _local(up)], _upgrade)
+		if not DeedChoices.upgrades(_id).is_empty():
+			_button("Fit out the place", _open_fit)
+		if Deeds.manager(d, _id) != "":
+			_button("Let the manager go", _release)
 		_button("Sell the business", _sell)
 	else:
 		_line(str(deed.get("kind", "")).capitalize() + " in " + str(deed.get("zone", "")).capitalize(), 22, UIKit.MUTED)
@@ -95,8 +126,54 @@ func _refresh() -> void:
 		_line(Deeds.talk("manager"), 18, UIKit.MUTED)
 		_button("Buy it", _buy)
 	_button("Leave", func(): close(null))
-	UIKit.wrap_focus(_buttons)
-	UIKit.focus_later(_buttons[0])
+
+static func _name_word(rep: int) -> String:
+	if rep >= 3:
+		return "the place everyone recommends"
+	if rep > 0:
+		return "well thought of"
+	if rep <= -3:
+		return "you hear about it, and not kindly"
+	return "a bit sniffed at"
+
+func _refresh_fit() -> void:
+	var d: GameStateData = Game.data
+	_stmt.add_child(UIKit.label("Fitting out", 30, UIKit.GOLD))
+	_line("Each of these costs something, and each has a catch. A few shut the door on another.", 18, UIKit.MUTED)
+	for u in DeedChoices.upgrades(_id):
+		var uid := str(u.id)
+		_stmt.add_child(UIKit.spacer(4))
+		var own := DeedChoices.has(d, _id, uid)
+		_line(("%s (fitted)" if own else "%s") % str(u.name), 22, UIKit.GOLD if own else UIKit.CREAM)
+		_line("%s %s" % [str(u.get("text", "")), DeedChoices.describe(u)], 16, UIKit.MUTED)
+		var why := DeedChoices.why_not(d, _id, uid)
+		if why == "" or why.begins_with("You'd"):
+			_button("%s (%s)" % [str(u.name), _local(DeedChoices.cost(d, _id, u))], _fit.bind(uid))
+		elif not own:
+			_line(why, 16, UIKit.MUTED)
+	_button("Back to the books", _back)
+
+func _refresh_ask() -> void:
+	var d: GameStateData = Game.data
+	var p := DeedChoices.pending(d, _id)
+	var ask: Dictionary = p.ask
+	_stmt.add_child(UIKit.label(str(ask.title), 30, UIKit.GOLD))
+	_line(str(ask.text))
+	_line("%d days to answer it, and if you don't, %s." % [int(p.left), _lapse_line(d)], 18, UIKit.MUTED)
+	var n := 0
+	for o in ask.options:
+		n += 1
+		var c := DeedChoices.option_cost(d, _id, o)
+		_stmt.add_child(UIKit.spacer(4))
+		_line("%d. %s" % [n, str(o.label)], 20)
+		_button("Answer %d (%s)" % [n, _local(c) if c > 0 else "free"], _answer.bind(str(o.id)))
+	_button("Back to the books", _back)
+
+func _lapse_line(d: GameStateData) -> String:
+	var t := DeedChoices.manager_traits(d, _id)
+	if t.is_empty():
+		return "it goes the worst way"
+	return "your manager, who is %s, picks" % str(t.label)
 
 func _button(text: String, fn: Callable) -> void:
 	var b := make_button(text, fn)
@@ -150,3 +227,47 @@ func _sell() -> void:
 
 func _paid() -> int:
 	return int(Deeds.state(Game.data, _id).get("paid", 0))
+
+func _open_fit() -> void:
+	_mode = "fit"
+	_say.text = "Nothing here is free, and nothing is all good news."
+	_refresh()
+
+func _open_ask() -> void:
+	_mode = "ask"
+	_say.text = "Take your time. Not too much of it."
+	_refresh()
+
+func _back() -> void:
+	_mode = "books"
+	_refresh()
+
+func _fit(up_id: String) -> void:
+	var why := DeedChoices.buy(Game.data, _id, up_id)
+	_done_sfx(why == "")
+	_say.text = "Done. Time will tell." if why == "" else why
+	_refresh()
+
+func _answer(opt_id: String) -> void:
+	var why := DeedChoices.answer(Game.data, _id, opt_id)
+	_done_sfx(why == "")
+	if why == "":
+		var rec := Deeds.recent(Game.data, _id)
+		_say.text = str(rec[0]).substr(str(rec[0]).find(":") + 2) if not rec.is_empty() else "Done."
+		_mode = "books"
+	else:
+		_say.text = why
+	_refresh()
+
+func _release() -> void:
+	var d: GameStateData = Game.data
+	if not _release_armed:
+		_release_armed = true
+		_say.text = "Sure? They'll be told kindly. The till goes back to stopping a month after you leave. Press again."
+		Audio.sfx("cursor")
+		return
+	Deeds.release_manager(d, _id)
+	_release_armed = false
+	Audio.sfx("item")
+	_say.text = "Done. They took it well. They always do, to your face."
+	_refresh()

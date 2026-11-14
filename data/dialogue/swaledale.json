@@ -1,0 +1,45 @@
+{
+ "sw_walker": [
+  {
+   "do": "say",
+   "who": "Coast to Coast Walker",
+   "text": "I dipped my boots at St Bees on Monday. I am carrying a pebble in my pocket. It has become my best friend, and my lowest back pain."
+  },
+  {
+   "do": "say",
+   "who": "Coast to Coast Walker",
+   "text": "Wainwright said, make up your own route if you like. Many do. Nobody gets a medal, but the B&B owners are very kind."
+  }
+ ],
+ "sw_shepherd": [
+  {
+   "do": "say",
+   "who": "Hay Farmer",
+   "text": "These meadows are cut late, after the flowers have gone to seed. Some of them have not been ploughed or sprayed in centuries."
+  },
+  {
+   "do": "say",
+   "who": "Hay Farmer",
+   "text": "Dozens of different flowers in a field, easy. My granddad could name every one. I can name about nine. The rest I call 'that blue one'."
+  }
+ ],
+ "sw_miner": [
+  {
+   "do": "say",
+   "who": "Dale Historian",
+   "text": "Gunnerside Gill was one of the richest lead mines in the dale. They built the hushes: dammed a beck, let the water go all at once, and the whole hillside washed away to show the ore."
+  },
+  {
+   "do": "say",
+   "who": "Dale Historian",
+   "text": "Brutal, but clever. They called it hushing."
+  }
+ ],
+ "sw_ranger": [
+  {
+   "do": "say",
+   "who": "Dales Ranger",
+   "text": "Mind the becks after rain. They come up fast, and they take hats."
+  }
+ ]
+}

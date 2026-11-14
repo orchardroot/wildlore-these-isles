@@ -30,10 +30,22 @@ const LEASE_BADGES := 10      # the Enclosure sells off its leases after the cre
 const LEASE_BID := 1.25       # a winning bid over the reserve
 const CHARM_CAP := 12         # charms you bother to buy: a party and spares
 const PAYBACK_MAX := 60.0     # days a Deed purchase may take to pay back and still be bought
+const PROJECT_CASH := 1.5       # the purse holds this much of a town project's cost before it is paid for
 const CASINO_BETS := 10       # even-money roulette bets a visit, the limit split between them
+# wave 55, the trader who reads the news and takes orders (all generous: a diligent player, every perk earned)
+const NEWS_SHARE := 0.3       # share of real days the dishes in the bag are what the news says is short somewhere
+const NEWS_BOOST := 1.35      # what a shortage does to the price, before the festival cap
+const ORDER_FILLS := 1        # delivery orders handed in per real day (the cap is three an in-game day)
+const ORDER_UNITS := 4        # dishes in each
 
 static func badges_at(day: int) -> int:
 	return clampi(day / DAYS_PER_BADGE, 0, 10)
+
+## The story's par (ParLevel) a career has reached by `badges` Stones, or the credits' once the story is done.
+static func _par_for(badges: int, day: int) -> int:
+	if day > STORY_END:
+		return 97
+	return [5, 14, 22, 28, 40, 44, 52, 60, 65, 76, 88][clampi(badges, 0, 10)]
 
 static func _state(day: int) -> GameStateData:
 	var d := GameStateData.new()
@@ -153,7 +165,10 @@ static func shop_runs() -> Dictionary:
 
 ## Dishes cooked from forage and sold: DISHES_PER_PLAY units into one town a real day. `haul` sends them to a region
 ## that wants them (a train fare away, with the demand of a season in hand); otherwise wherever you happen to be.
-static func dish_pay(haul := false) -> float:
+## `traded` is the wave 55 trader: news puts the demand up on NEWS_SHARE of days (never past the cap), and the first ORDER_FILLS x
+## ORDER_UNITS dishes of the day are an order's, at the order premium (base, fast and fresh all earned). The order is filled in
+## the same town as the rest, so it shares the glut: the sim does not credit orders with a second outlet the player had anyway.
+static func dish_pay(haul := false, traded := false) -> float:
 	var bases := []
 	for r in Crafting.all():
 		if str(Trade.items().get_item(str(r.out)).get("kind", "")) == "meal":
@@ -167,10 +182,15 @@ static func dish_pay(haul := false) -> float:
 	var step := float(Trade.config().get("glut_step", 0.92))
 	var reg := float(Trade.config().get("wants_factor", 1.8)) if haul else 1.0
 	var dem := 1.15 if haul else 1.0
+	if traded:
+		dem = lerpf(dem, minf(float(Trade.config().get("demand_cap", 1.8)), dem * NEWS_BOOST), NEWS_SHARE)
+	var ordered := mini(DISHES_PER_PLAY, ORDER_FILLS * ORDER_UNITS) if traded else 0
+	var oc := TradeOrders.cfg()
+	var premium := float(oc.get("base", 1.1)) + float(oc.get("fast", 0.15)) + float(oc.get("fresh", 0.1))
 	var glut := 1.0
 	var total := 0.0
 	for i in DISHES_PER_PLAY:
-		total += _sell_unit(base, reg, dem, glut)
+		total += float(_sell_unit(base, reg, dem, glut)) * (premium if i < ordered else 1.0)
 		glut *= step
 	return total
 
@@ -267,12 +287,16 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 	var by := {}
 	var first := {}
 	var at := {}
-	var spent := {"charms": 0.0, "deeds": 0.0, "leases": 0.0, "pannier": 0.0, "upkeep": 0.0}
+	var held := {}
+	var spent := {"charms": 0.0, "deeds": 0.0, "upgrades": 0.0, "projects": 0.0, "leases": 0.0, "pannier": 0.0, "upkeep": 0.0}
 	var tiers := {}     # deed id -> tier
+	var ups := {}       # deed id -> upgrades fitted (DeedChoices)
+	var projects := {}  # town project id -> true once paid for (TownProjects)
 	var leases := 0
 	var charms := 0
 	var pannier := false
 	var lumps_paid := 0.0
+	var contracts_paid := 0.0     # notice-board contracts (wave 55): each fee arrives once, when its badge does
 	var deeds_on := strategy in ["deed_rush", "everything"]
 	var trade_on := strategy in ["trader", "everything"]    # cooks, and hauls the dishes to where they are wanted
 	var cook_on := strategy == "cook"                        # cooks and sells where it stands
@@ -291,12 +315,16 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 		if due > lumps_paid:
 			inc["lumps"] = due - lumps_paid
 			lumps_paid = due
+		var due_contracts := Contracts.fees_through(b)
+		if due_contracts > contracts_paid:
+			inc["contracts"] = due_contracts - contracts_paid
+			contracts_paid = due_contracts
 		if cook_on or trade_on:
-			inc["cooking"] = dish_pay(trade_on)
+			inc["cooking"] = dish_pay(trade_on, trade_on)
 		if deeds_on and not tiers.is_empty():
 			var net := 0.0
 			for id in tiers:
-				net += DeedsSim.net_per_day(d, str(id), int(tiers[id]), b >= BADGES_FOR_MANAGER) * SUPPLY
+				net += DeedsSim.net_per_day(d, str(id), int(tiers[id]), b >= BADGES_FOR_MANAGER, ups.get(id, [])) * SUPPLY
 			inc["deeds"] = net * PLAY_EVERY
 		if casino_on and b >= 0:
 			inc["casino"] = float(casino_visit(Punt.limit(d), rng))
@@ -342,6 +370,39 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 				tiers[pick.id] = int(pick.tier)
 				if not first.has("deed"):
 					first["deed"] = day
+		if deeds_on and not tiers.is_empty():
+			# upgrades on top of the tiers: each bought if it pays back inside PAYBACK_MAX, best first (see DeedChoices)
+			var guard2 := 0
+			while guard2 < 40:
+				guard2 += 1
+				var best := {}
+				var best_pb := INF
+				for id in tiers:
+					var fitted: Array = ups.get(id, [])
+					var t := int(tiers[id])
+					var managed := b >= BADGES_FOR_MANAGER
+					var base_net := DeedsSim.net_per_day(d, str(id), t, managed, fitted)
+					for u in DeedChoices.upgrades(str(id)):
+						var uid := str(u.id)
+						if fitted.has(uid) or int(u.get("tier", 0)) > t:
+							continue
+						var shut := false
+						for o in DeedChoices.upgrades(str(id)):
+							if str(u.get("group", "")) != "" and str(o.get("group", "")) == str(u.get("group", "")) and fitted.has(str(o.id)):
+								shut = true
+						var c := float(DeedChoices.cost(d, str(id), u))
+						if shut or c > money:
+							continue
+						var gain := (DeedsSim.net_per_day(d, str(id), t, managed, fitted + [uid]) - base_net) * SUPPLY
+						if gain > 0.0 and c / gain < best_pb and c / gain <= PAYBACK_MAX:
+							best_pb = c / gain
+							best = {"id": id, "up": uid, "cost": c}
+				if best.is_empty():
+					break
+				money -= float(best.cost)
+				spent.upgrades += float(best.cost)
+				var now: Array = ups.get(best.id, [])
+				ups[best.id] = now + [best.up]
 		var keep := 0.0
 		if not pannier and trade_on and money >= 2000.0 * 1.5:
 			money -= 2000.0
@@ -353,6 +414,24 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 			charms += 1
 			if not first.has("charm"):
 				first["charm"] = day
+		# town projects (TownProjects): the cheapest open one whenever the purse holds it with some to spare
+		var par := _par_for(b, day)
+		for p in TownProjects.all():
+			if projects.has(str(p.id)) or b < int(p.get("badges", 0)):
+				continue
+			var pc := 0.0
+			for s in (p.stages as Array).size():
+				pc += float(TownProjects.cost_at(p, s, clampf((40.0 + float(par)) / 100.0, TownProjects.FACTOR_LO, TownProjects.FACTOR_HI)))
+			if money >= pc * PROJECT_CASH:
+				money -= pc
+				spent.projects += pc
+				projects[str(p.id)] = true
+				if not first.has("project"):
+					first["project"] = day
+				if projects.size() == 5:
+					first["project5"] = day
+				if projects.size() == TownProjects.all().size():
+					first["project_all"] = day
 		if b >= LEASE_BADGES:
 			var ls := lease_average()
 			var cost: float = float(ls.reserve) * (LEASE_BID + float(Leases.STAGE_PCT) * 6.0)   # the bid, then three stages
@@ -375,6 +454,7 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 				first["deeds_t3"] = day
 		if day == 30 or day == 78 or day == STORY_END or day == 180 or day == DAYS:
 			at[day] = money
+			held[day] = money + float(spent.projects)   # plus what went into the towns, so a guard on income is not fooled by a sink
 	# the year's self assessment on passive income (Deeds.TAX_BANDS), settled in April
 	var tax := tax_on(float(by.get("deeds", 0.0)) * 360.0 / float(DAYS))
 	money -= tax
@@ -382,4 +462,5 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 	var shown := []
 	for id in tiers:
 		shown.append("%s:t%d" % [id, int(tiers[id])])
-	return {"wealth": money, "spent": spent, "by_source": by, "first": first, "at": at, "owned": shown, "leases": leases, "charms": charms}
+	return {"wealth": money, "spent": spent, "by_source": by, "first": first, "at": at, "owned": shown, "leases": leases, "charms": charms,
+		"upgrades": ups, "projects": projects.size(), "held": held}

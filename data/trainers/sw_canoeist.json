@@ -1,0 +1,32 @@
+{
+ "id": "sw_canoeist",
+ "name": "Angler Raif",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "volet",
+   "level": 84
+  },
+  {
+   "species": "cranelet",
+   "level": 85
+  },
+  {
+   "species": "dipling",
+   "level": 84
+  }
+ ],
+ "ai": "trainer",
+ "money": 3500,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Raif",
+   "text": "The Swale rises like a lift after heavy rain. I fish it carefully. And with a lifejacket. And a flask."
+  }
+ ],
+ "win": "I'll tell the grayling it wasn't personal.",
+ "after": "Dippers all along here. The only songbird that walks underwater, and does it better than I do.",
+ "scaled_floor": 84
+}

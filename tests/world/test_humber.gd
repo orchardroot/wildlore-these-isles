@@ -24,8 +24,10 @@ func test_edges_are_mirrored_cul_de_sacs() -> void:
 		assert_eq(str(a.edges[p[1]].to), p[2], "%s %s" % [p[0], p[1]])
 		assert_eq(str(b.edges[p[3]].to), p[0], "%s %s" % [p[2], p[3]])
 		assert_eq(int(a.edges[p[1]].get("offset", 0)), -int(b.edges[p[3]].get("offset", 0)), "offsets mirror")
-	assert_eq(_zone("hull").edges.size(), 1, "Hull is a dead end")
-	assert_eq(_zone("lincoln").edges.size(), 1, "Lincoln is a dead end")
+	assert_eq(_zone("hull").edges.size(), 2, "Hull is a dead end bar the wave 55 Humber Bridge")
+	assert_eq(str(_zone("hull").edges.south.to), "humber_bridge")
+	assert_eq(_zone("lincoln").edges.size(), 2, "Lincoln is a dead end bar the wave 55 Humber Bridge")
+	assert_eq(str(_zone("lincoln").edges.north.to), "humber_bridge")
 
 func test_trainers_are_scaled() -> void:
 	var n := 0

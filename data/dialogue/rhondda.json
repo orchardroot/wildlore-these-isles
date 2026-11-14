@@ -56,5 +56,28 @@
    "who": "Walker",
    "text": "On a clear day. In the Rhondda that's a theory more than a forecast."
   }
+ ],
+ "ct_knockers_elwyn": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "knockers",
+   "clue": "elwyn"
+  }
+ ],
+ "ct_knockers_surveyor": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "knockers",
+   "clue": "surveyor"
+  }
+ ],
+ "ct_knockers_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "knockers"
+  }
  ]
 }

@@ -642,5 +642,45 @@
    "who": "Kasia",
    "text": "Then in 2004 Poland joined the EU and lots more of us came, me included. Polish is the second most spoken language in England now. Pierogi next to pasties. Everybody wins."
   }
+ ],
+ "ct_mink_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "mink"
+  }
+ ],
+ "ct_mink_market": [
+  {
+   "do": "if",
+   "flag": "ct_mink_is_caught",
+   "then": [
+    {
+     "do": "say",
+     "who": "Egg Seller",
+     "text": "Maureen's eggs, forty to a tray. She says there's a mink in some Keeper's party who used to be the terror of the Moss. I think she's winding me up."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_mink_is_trap",
+     "then": [
+      {
+       "do": "say",
+       "who": "Egg Seller",
+       "text": "Maureen's eggs, forty to a tray, and not a feather out of place. She won't say what she did about the mink and I'm not asking."
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Egg Seller",
+       "text": "Maureen's eggs, forty to a tray. Her hens are laying, and the shed has a bolt you could use on a bank."
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

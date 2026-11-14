@@ -279,6 +279,49 @@
    "facing": "right",
    "move": "still",
    "script": "landsky_drift"
+  },
+  {
+   "id": "ct_bodmin_poster",
+   "sprite": "farmer",
+   "x": 33,
+   "y": 17,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bodmin_poster",
+   "name": "Jory Tregenza"
+  },
+  {
+   "id": "ct_bodmin_towels",
+   "sprite": "shopkeeper",
+   "x": 30,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bodmin_towels",
+   "name": "Stallholder",
+   "show_if": "ct_bodmin_tourists"
+  },
+  {
+   "id": "ct_bodmin_barns",
+   "sprite": "farmer",
+   "x": 25,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bodmin_barns",
+   "name": "Farmer",
+   "show_if": "ct_bodmin_barns"
+  },
+  {
+   "id": "ct_bodmin_gone",
+   "sprite": "villager_3",
+   "x": 36,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bodmin_gone",
+   "name": "Pub Regular",
+   "show_if": "ct_bodmin_quiet"
   }
  ],
  "props": [

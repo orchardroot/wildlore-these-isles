@@ -575,6 +575,28 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "facing": "down",
+   "hidden": {
+    "reveal": "project_lancaster_mill"
+   },
+   "to": "lancaster",
+   "tx": 57.0,
+   "ty": 42.0,
+   "x": 57.0,
+   "y": 34.0
+  },
+  {
+   "facing": "up",
+   "hidden": {
+    "reveal": "project_lancaster_mill"
+   },
+   "to": "lancaster",
+   "tx": 57.0,
+   "ty": 33.0,
+   "x": 57.0,
+   "y": 41.0
   }
  ],
  "edges": {

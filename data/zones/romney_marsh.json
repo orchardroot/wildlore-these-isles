@@ -1,0 +1,827 @@
+{
+ "id": "romney_marsh",
+ "name": "Romney Marsh",
+ "region": "south_east",
+ "kind": "route",
+ "music": "route_moors",
+ "weather": {
+  "clear": 26,
+  "sunshine": 18,
+  "drizzle": 18,
+  "fog": 14,
+  "gale": 14,
+  "downpour": 10
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "weatherboard",
+   "x": 5,
+   "y": 36,
+   "w": 2,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "weatherboard",
+   "x": 8,
+   "y": 36,
+   "w": 2,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "weatherboard",
+   "x": 11,
+   "y": 36,
+   "w": 2,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "castle",
+   "x": 5,
+   "y": 12,
+   "w": 7,
+   "h": 4,
+   "label": "Hastings Castle (ruin)"
+  },
+  {
+   "type": "building",
+   "style": "tudor",
+   "x": 16,
+   "y": 14,
+   "w": 4,
+   "h": 3,
+   "label": "Old Town",
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 14,
+   "y": 22,
+   "w": 5,
+   "h": 3,
+   "label": "Fishermen's Net Shops"
+  },
+  {
+   "type": "building",
+   "style": "round_tower",
+   "x": 28,
+   "y": 12,
+   "w": 3,
+   "h": 4,
+   "label": "Ypres Tower"
+  },
+  {
+   "type": "building",
+   "style": "tudor",
+   "x": 24,
+   "y": 18,
+   "w": 4,
+   "h": 3,
+   "label": "Mermaid Inn"
+  },
+  {
+   "type": "building",
+   "style": "tudor",
+   "x": 32,
+   "y": 18,
+   "w": 4,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "lighthouse",
+   "x": 58,
+   "y": 33
+  },
+  {
+   "type": "building",
+   "style": "flat_house",
+   "x": 62,
+   "y": 32,
+   "w": 6,
+   "h": 4,
+   "label": "Power Station"
+  },
+  {
+   "type": "building",
+   "style": "weatherboard",
+   "x": 52,
+   "y": 36,
+   "w": 4,
+   "h": 3,
+   "label": "Prospect Cottage"
+  },
+  {
+   "type": "building",
+   "style": "tin_cottage",
+   "x": 48,
+   "y": 33,
+   "w": 4,
+   "h": 2,
+   "label": "RH&DR Halt"
+  },
+  {
+   "type": "building",
+   "style": "round_tower",
+   "x": 50,
+   "y": 14,
+   "w": 4,
+   "h": 4,
+   "label": "Martello Tower"
+  },
+  {
+   "type": "building",
+   "style": "cathedral",
+   "x": 8,
+   "y": 3,
+   "w": 10,
+   "h": 5,
+   "label": "Battle Abbey"
+  },
+  {
+   "type": "sheep",
+   "x": 24,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 38,
+   "y": 14,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 26,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 38,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 60,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 64,
+   "y": 14,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 6,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 20,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 7,
+   "y": 26,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 40,
+   "y": 33,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 19,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 40,
+   "y": 36,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 35,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 16,
+   "y": 20,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 34,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 36,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 58,
+   "y": 14,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 49,
+   "y": 18,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 9,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 4,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 41,
+   "y": 6,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 39,
+   "y": 37,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 10,
+   "y": 19,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 9,
+   "y": 39,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 48,
+   "y": 29,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 23,
+   "y": 12,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 53,
+   "y": 12,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 42,
+   "y": 6,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 10,
+   "y": 36,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 57,
+   "y": 16,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 28,
+   "y": 8,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 39,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 16,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 60,
+   "y": 18,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 49,
+   "y": 11,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 23,
+   "y": 15,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 61,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 12,
+   "y": 19,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 17,
+   "y": 21,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 28,
+   "y": 9,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 16,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 68,
+   "y": 29,
+   "variant": 1
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "brighton",
+   "offset": 0
+  },
+  "east": {
+   "to": "dover",
+   "offset": 7
+  }
+ },
+ "npcs": [
+  {
+   "id": "rm_gate_0",
+   "sprite": "warden_grunt",
+   "x": 56,
+   "y": 19,
+   "facing": "left",
+   "move": "still",
+   "script": "rm_gate",
+   "name": "Warden",
+   "hide_if": "moot_won"
+  },
+  {
+   "id": "rm_gate_1",
+   "sprite": "warden_grunt",
+   "x": 56,
+   "y": 20,
+   "facing": "left",
+   "move": "still",
+   "script": "rm_gate",
+   "name": "Warden",
+   "hide_if": "moot_won"
+  },
+  {
+   "id": "rm_gate_2",
+   "sprite": "warden_grunt",
+   "x": 56,
+   "y": 21,
+   "facing": "left",
+   "move": "still",
+   "script": "rm_gate",
+   "name": "Warden",
+   "hide_if": "moot_won"
+  },
+  {
+   "id": "rm_fisher",
+   "sprite": "fisherman_north",
+   "x": 8,
+   "y": 34,
+   "facing": "right",
+   "move": "still",
+   "script": "rm_fisher"
+  },
+  {
+   "id": "rm_smuggler",
+   "sprite": "villager_4",
+   "x": 26,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "rm_smuggler"
+  },
+  {
+   "id": "rm_railman",
+   "sprite": "rail_guard",
+   "x": 49,
+   "y": 31,
+   "facing": "right",
+   "move": "still",
+   "script": "rm_railman"
+  },
+  {
+   "id": "rm_gardener",
+   "sprite": "jam_maker",
+   "x": 50,
+   "y": 38,
+   "facing": "left",
+   "move": "still",
+   "script": "rm_gardener"
+  },
+  {
+   "id": "rm_fisherman",
+   "sprite": "fisherman_north",
+   "x": 12,
+   "y": 33,
+   "facing": "right",
+   "move": "still",
+   "trainer": "rm_fisherman"
+  },
+  {
+   "id": "rm_smuggler_t",
+   "sprite": "sailor",
+   "x": 24,
+   "y": 30,
+   "facing": "right",
+   "move": "still",
+   "trainer": "rm_smuggler_t"
+  },
+  {
+   "id": "rm_birder",
+   "sprite": "birdwatcher",
+   "x": 60,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "trainer": "rm_birder"
+  },
+  {
+   "id": "rm_railman_t",
+   "sprite": "rail_guard",
+   "x": 46,
+   "y": 30,
+   "facing": "left",
+   "move": "still",
+   "trainer": "rm_railman_t"
+  },
+  {
+   "id": "rm_martello",
+   "sprite": "sailor",
+   "x": 52,
+   "y": 12,
+   "facing": "down",
+   "move": "still",
+   "trainer": "rm_martello"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "flintling",
+    "min": 94,
+    "max": 96,
+    "weight": 10
+   },
+   {
+    "species": "chalkling",
+    "min": 94,
+    "max": 96,
+    "weight": 8
+   },
+   {
+    "species": "leveret",
+    "min": 94,
+    "max": 96,
+    "weight": 10,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "kitelet",
+    "min": 94,
+    "max": 96,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "rooklet",
+    "min": 94,
+    "max": 96,
+    "weight": 8
+   },
+   {
+    "species": "starlet",
+    "min": 94,
+    "max": 96,
+    "weight": 10
+   },
+   {
+    "species": "barnling",
+    "min": 94,
+    "max": 96,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "ternlet",
+    "min": 94,
+    "max": 96,
+    "weight": 8,
+    "time": [
+     "day"
+    ],
+    "season": [
+     "spring",
+     "summer"
+    ]
+   },
+   {
+    "species": "peregrin",
+    "min": 94,
+    "max": 96,
+    "weight": 6,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "bittling",
+    "min": 94,
+    "max": 96,
+    "weight": 5,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "chipgull",
+    "min": 94,
+    "max": 96,
+    "weight": 10
+   },
+   {
+    "species": "petrelash",
+    "min": 94,
+    "max": 96,
+    "weight": 6,
+    "weather": [
+     "gale",
+     "fog"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "chipgull",
+    "min": 94,
+    "max": 96,
+    "weight": 20
+   },
+   {
+    "species": "pupplash",
+    "min": 94,
+    "max": 96,
+    "weight": 16
+   },
+   {
+    "species": "pinchkin",
+    "min": 94,
+    "max": 96,
+    "weight": 20
+   },
+   {
+    "species": "gannetling",
+    "min": 94,
+    "max": 96,
+    "weight": 14
+   },
+   {
+    "species": "dolphlet",
+    "min": 94,
+    "max": 96,
+    "weight": 10
+   },
+   {
+    "species": "stalklet",
+    "min": 94,
+    "max": 96,
+    "weight": 12
+   },
+   {
+    "species": "croakle",
+    "min": 94,
+    "max": 96,
+    "weight": 12
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 3,
+   "y": 26,
+   "text": "WEST: Brighton and the South Downs. EAST: Hastings, Rye, Dungeness and, eventually, Dover. The sea is on your right the whole way, which is a comfort, or a threat."
+  },
+  {
+   "x": 20,
+   "y": 28,
+   "text": "The Battle of Hastings was fought on 14 October 1066, about six miles inland at the place now called Battle. King Harold was killed, and William of Normandy was crowned in London at Christmas. William had Battle Abbey built on the spot, with the high altar said to mark where Harold fell. The town of Hastings gave the battle its name, but the battle was not in Hastings.",
+   "plaque": "w55e_hastings",
+   "title": "1066 Country"
+  },
+  {
+   "x": 30,
+   "y": 22,
+   "text": "Hastings, New Romney, Hythe, Dover and Sandwich, 'the Five Ports', grouped together in the Middle Ages to supply ships and men to the Crown in return for privileges, including their own courts and freedom from some taxes. Rye and Winchelsea joined them as Ancient Towns. For centuries the Barons of the Cinque Ports carried the canopy over the monarch at the coronation.",
+   "plaque": "w55e_cinque_ports",
+   "title": "The Cinque Ports"
+  },
+  {
+   "x": 22,
+   "y": 22,
+   "text": "RYE. Mermaid Street, cobbled and steep. The Mermaid Inn was rebuilt in 1420, and in the 1700s the Hawkhurst Gang drank there, reputedly with pistols on the table. The Owlers moved wool out and brandy in."
+  },
+  {
+   "x": 42,
+   "y": 26,
+   "text": "Begun in 1804, when Napoleon's army was camped at Boulogne, as a barrier across the low ground of Romney Marsh if the French landed. It runs about 28 miles from Seabrook near Hythe to Cliff End near Hastings, with a road on the inland side so that troops and guns could be moved along it. Napoleon never came, and the canal was used for barges and tolls instead. It is a pleasant place to walk, a very long wet ditch with a footpath on both banks.",
+   "plaque": "w55e_military_canal",
+   "title": "The Royal Military Canal"
+  },
+  {
+   "x": 52,
+   "y": 22,
+   "text": "MARTELLO TOWER. One of about a hundred round brick towers built along the south and east coasts from 1805 to look out for Napoleon. They have walls up to thirteen feet thick at the seaward side. Some are now holiday lets."
+  },
+  {
+   "x": 54,
+   "y": 31,
+   "text": "A great headland of shingle, one of the largest of its kind in Europe, still growing slowly into the sea. The film-maker Derek Jarman bought a black fisherman's hut here, Prospect Cottage, in 1986 and made a garden of driftwood, flints and tough plants in the shingle. The little steam trains of the Romney, Hythe and Dymchurch Railway, which opened in 1927, run to the foot of the lighthouse.",
+   "plaque": "w55e_dungeness",
+   "title": "Dungeness"
+  },
+  {
+   "x": 66,
+   "y": 22,
+   "text": "EAST: Hythe, Folkestone and Dover. WEST: Dungeness and Rye. Cars may not park on the shingle, and the shingle may not park on cars."
+  }
+ ],
+ "spawn": [
+  3,
+  30
+ ],
+ "stage": "coast",
+ "scaled_floor": 94,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTmmmmmBBBBBBBBBBmmmmgmmmmmmgmmmmmmgmmmmmmgw~wmmmgmmmmmHgmmmmmmgmmmmTTT",
+  "TTTmmmgmBBBBBBBBBBmmgmmmmmmgmmmmmmgmmmmmmgmmw~wmgmmmmmmgHmmmmmgmmmmmmTTT",
+  "TTTmgmmmBBBBBBBBBBgmmmmmmgmmmmmmgmmmmmmgmmmmw~wmmmmmmgmmHmmmgmmmmmmgmTTT",
+  "TTTmmmmmBBBBBBBBBBmmmmmgmmmmmmgmmmmmmgmmmmmmw~wmmmmgmmmmHmgmmmmmmgmmmTTT",
+  "TTTmmmmgBBBBBBBBBBmmmgmmmmmmgmmmmmmgqmmmmmgmw~wmmgmmmmmmHmmmmqmqmmmmmTTT",
+  "TTTmmgmmmmmmgmmmmmmgmmmmmmgmmmmqqqqqqqqqqqqmw~wgmmmmmmgmHmqqqqqqqqqmgTTT",
+  "TTTgmmmmmmgmmmmqmgmmmmmmgmmmmqqqqqqqqqqqqqqqw~wmmmmmgmmmHqqqqqqqqqqqmTTT",
+  "TTTmmmmmgmqqqqqqqqqmmmgmmmmmqqqqqqqqqqqqqqqqw~wmmmgmmmmmHqqqqqqqqqqqmTTT",
+  "TTTmmmgmqqqqqqqqqqqqqmmmmmmgqqqqqqqqqqqqqqqmw~wmgmmmmmmgHqqqqqqqqqqqmTTT",
+  "TTTmgBBBBBBBqqqqqqqqqmmmmgmmBBBqqqqqqqqqqqmmw~wmmmmmmgmmHmmqqqqqqqmgmTTT",
+  "TTTmmBBBBBBBqqqqqqqqmmmgmmmmBBBmmmmqqqmmmmmmw~wmmmmgmmmmHmgmmqqqmgmmmTTT",
+  "TTTmmBBBBBBBqqqqBBBBmgmmmmmmBBBmmmmgmmmmmmgmw~wmmgBBBBmmHmmmmmmgmmmmmTTT",
+  "TTTmmBBBBBBBgqqqBBBBmmmmmmgmBBBmmgmmmmmmgmmmw~wgmmBBBBgmHmmmmgmmmmmmgTTT",
+  "TTTgmmmmmmgmmmmmBBBBmmmmgmmmmmmgmmmmmmgmmmmmw~wmmmBBBBmmHmmgmmmmmmgmmTTT",
+  "TTTmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgw~wmmmBBBBmmHgmmmmmmgmmmmTTT",
+  "TTTmmmgmmmmmmgmmmmmmgmmmBBBBmmmmBBBBmmmmmgmmw~wmgmmmmmmgHmmmmmgmmmmmmTTT",
+  "TTTmgmmmmmmgmmmmmmgmmmmmBBBBmmmmBBBBmmmgmmmccccccccccccccccccccccccccccc",
+  "TTTmmmmmmgmmmmmmgmmmmmmgBBBBmmgmBBBBmgmmmmmccccccccccccccccccccccccccccc",
+  "TTTmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgccccccccccccccccccccccccccccc",
+  "TTTmmgmmmmmmgmBBBBBgmmmmmmgmmmmmmgmmmmmmgmmmw~wcccmmmmgmHmmmmgmmmmmmgTTT",
+  "TTTgmmmmmmgmmmBBBBBmmmmmgmmmmmmgmcccccccccccccccccmmgmmmHmmgmmmmmmgmmTTT",
+  "TTTmmmmmgmmmmmBBBBBmmmgmmmmmmgmmmcccccccccccccccccgmmmmmHgmmmmmmgmmmmTTT",
+  "TTTmmmgmmmmmmgmmmmmmgmmmmmmgmmmmmcccccccccccccccccmmmmmgHmmmmmgmmmmmmTTT",
+  "TTTmgmmmmmmgmmmmmmgmmmmmmgmmmmmmgcccmmmgmmmmw~wmmmmmmgmmHmmmgmmmmmmgmTTT",
+  "TTTmmmmmmgmmmmmmgmmmmmmgmmmmmmgmmcccmgmmmmmmw~wmmmmgmmmmHmgmmmmmmgmmmTTT",
+  "TTTmmmmgmmmmmmgmmmmmmgmmmmmmgmmmmcccmmmmmmgmw~wmmgmmmmmmHmmmmmmgmmmmmTTT",
+  "ccccccccccccccccccmgmmmmmmqqmqmmmcccmmmmgmmmw~wgmmmmmmgmHmmmmgmmmmmmgTTT",
+  "ccccccccccccccccccmmmmmmqqqqqqqqmcccmmgmmmmmw~wmmmmmgmmmHmmgmmmmmmgmmTTT",
+  "ccccccccccccccccccmmmmgqqqqqqqqqqcccgmmmmmmgw~wmmmgmmmmmHgmmmmmmgmmmmTTT",
+  "TTTmmmgmmmmmmgmcccmmgmqqqqqqqqqqqcccmmmmmgmmw~wmgmmmmmmgHmmmmmBBBBBBmTTT",
+  "TTTmgmmmmmmgmmmcccccccccccccccccccccmmmgmmmmw~wmBBBBppppHpppppBBBBBBmTTT",
+  "TTTmmmmmmgmmmmmcccccccccccccccccccccmgmmmmmmw~wpBBBBppppHpppppBBBBBBmTTT",
+  "TTTmmmmgmmmmmmgcccccccccccccccccccccmmmmmmgmw~wpppppppppHpppppBBBBBBmTTT",
+  "TTTmmBBmBBmBBmmmmmmgmmsssssssssssssmmmmmgmmmw~wpppppBBBBHpppppppppppgTTT",
+  "TTTgmBBmBBgBBmmmmgmsssssssssssssssssssgmmmmmw~wpppppBBBBHppppppppppmmTTT",
+  "TTTmmBBmBBmBBmmgmmsssssssssssssssssssssmmmmgw~wpppppBBBBHpppppppppmmmTTT",
+  "TTTmmmgmmmmmmgmmmmmsssssssssssssssssssmmmgmmw~wmgpppppppHpppppppmmmmmTTT",
+  "TTTsssssssssssssssssssssssssssssssssssssssssssssssssssssHssssssssssssTTT",
+  "TTTsssssssssssssssssssssssssssssssssssssssssssssssssssssHssssssssssssTTT",
+  "TTTwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwHwwwwwwwwwwwwTTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$H$$$$$$$$$$$$TTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$H$$$$$$$$$$$$TTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$H$$$$$$$$$$$$TTT",
+  "TTT$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$H$$$$$$$$$$$$TTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "legend_extra": {
+  "g": {
+   "tile": "grass",
+   "colour": "#7fa053"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#8cb15b"
+  },
+  "q": {
+   "tile": "tall_grass",
+   "colour": "#83a455",
+   "prop": "short"
+  },
+  "p": {
+   "tile": "sand",
+   "colour": "#a39d90"
+  },
+  "s": {
+   "tile": "sand",
+   "colour": "#d7c99a"
+  },
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "c": {
+   "tile": "path",
+   "colour": "#cdc7b2"
+  }
+ }
+}

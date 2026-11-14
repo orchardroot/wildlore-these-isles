@@ -1,0 +1,32 @@
+{
+ "id": "ang_fisher",
+ "name": "Fisherman Dod",
+ "class": "Fisherman",
+ "sprite": "fisherman_north",
+ "party": [
+  {
+   "species": "cooplet",
+   "level": 69
+  },
+  {
+   "species": "chipgull",
+   "level": 70
+  },
+  {
+   "species": "gannetling",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2260,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Fisherman Dod",
+   "text": "I am up at four every day. I thought I would let you know, in case you thought I was awake out of choice."
+  }
+ ],
+ "win": "A fair fight. I will take the boat out and think about it.",
+ "after": "I have been fishing this coast for forty years. The fish still do not tell me where they are.",
+ "scaled_floor": 69
+}

@@ -509,6 +509,10 @@
   }
  ],
  "edges": {
+  "north": {
+   "to": "rob_roy_way",
+   "offset": -16
+  },
   "west": {
    "to": "glasgow",
    "offset": 0
@@ -790,8 +794,8 @@
  ],
  "stage": "grass",
  "rows": [
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTT",
   "TT....................................................................TT",
   "TT........................................................BBBBBBBB....PT",
   "TT..hhhhhhhhhhhh..........................................BBBBBBBB....TT",

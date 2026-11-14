@@ -32,6 +32,8 @@ func _initialize() -> void:
 	errors.append_array(Langs.check(func(zid): return zones.has(zid)))  # data/lang: places are zones, shape, no em-dashes
 	errors.append_array(LangLessons.check(func(zid): return zones.get(zid), ZoneIndex.get_index()))  # data/lang lessons: shape, teachers on free tiles
 	errors.append_array(MarketHall.check_files())  # data/market_halls.json: rooms, stall-holders, plaques
+	errors.append_array(TradeNews.problems())      # data/trade.json "news" and "orders": words, items, factors
+	errors.append_array(TradeOrders.problems())
 	errors.append_array(Knacks.check(dex))  # every line has a knack, legends their own
 	errors.append_array(Forms.check(dex, MoveDB.load_default(), _regions(zones), TypeChart.load_default()))  # data/forms.json: regional forms
 	errors.append_array(Breeding.check(dex))  # data/breeding.json: the conservation goals name real breeding lines
@@ -57,6 +59,9 @@ func _initialize() -> void:
 	errors.append_array(Regulars.problems(zones, items_db))  # w53: every Regular is a real person in a real place
 	errors.append_array(FamilyCat.problems(dex, zones))  # w54: only her own scenes may produce the family cat's line
 	errors.append_array(RideCheck.problems(zones))  # w54: the coracle never skips a story gate (no_ride rects close the leaks)
+	errors.append_array(Contracts.validate(zones, StoryData.all_dialogue(), dex, items_db))  # w55: notice-board contracts (data/contracts)
+	errors.append_array(TownProjects.problems(zones, items_db))  # w55: town projects: real towns, residents, stages, hidden warps
+	errors.append_array(DeedChoices.problems(items_db))  # w55: Deed upgrades, monthly matters and manager temperaments
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
 	errors.append_array(Letters.errors(zones, items_db))  # papers on tables and their treasure trails

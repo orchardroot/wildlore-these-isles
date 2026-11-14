@@ -1,0 +1,32 @@
+{
+ "id": "tg_choir",
+ "name": "Choir Singer Bryn",
+ "class": "Choir Singer",
+ "sprite": "choir_singer",
+ "party": [
+  {
+   "species": "tylwyth",
+   "level": 31
+  },
+  {
+   "species": "gwyllgi",
+   "level": 31
+  },
+  {
+   "species": "martling",
+   "level": 32
+  }
+ ],
+ "ai": "trainer",
+ "money": 660,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Choir Singer Bryn",
+   "text": "I am in the male voice choir. We are rehearsing a hymn in four parts and I am the part that always comes in late."
+  }
+ ],
+ "win": "Well sung. I would give you a round of applause, but I have my hands full of your victory.",
+ "after": "Cwm Rhondda in a lakeside barn. That is how the Welsh like to spend Saturday night.",
+ "scaled_floor": 31
+}
