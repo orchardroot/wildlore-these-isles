@@ -753,6 +753,14 @@
   }
  ],
  "edges": {
+  "south": {
+   "to": "pass_of_brander",
+   "offset": 0
+  },
+  "north": {
+   "to": "west_highland_way",
+   "offset": 32
+  },
   "east": {
    "to": "glasgow",
    "offset": 0
@@ -1139,8 +1147,8 @@
  ],
  "stage": "forest",
  "rows": [
-  "PTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTT",
-  "TTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTT",
+  "PTTTTTT###TPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTT",
+  "TTTTTTT###TTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTT",
   "TT........P...T..............T.....................^^^^/^^^^^^PT",
   "TT.......P.....................w...................^^^^^^^^/^/TT",
   "TT...P.......P.........wwwwwwww~wwwwwwww...P.......^^^^^^^/^^^TT",
@@ -1193,8 +1201,8 @@
   "TT......................,,,,,,,,,,,,,..P......,,,,,,,,,T...P..TP",
   "TT.T..........................,............P......,...........TT",
   "TT..........T....T...P...TP.........PP........................TT",
-  "TTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTT",
-  "PTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTT"
+  "TTPTTTTTTTTTTPTTTTTTTTTTPTTTT###TTTPTTTTTTTTTTPTTTTTTTTTTPTTTTTT",
+  "PTTTTTTTTTTPTTTTTTTTTTPTTTTTT###TPTTTTTTTTTTPTTTTTTTTTTPTTTTTTTT"
  ],
  "scaled_floor": 69
 }

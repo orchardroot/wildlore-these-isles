@@ -1,0 +1,32 @@
+{
+ "id": "brn_angler",
+ "name": "Angler Morag",
+ "class": "Angler",
+ "sprite": "angler",
+ "party": [
+  {
+   "species": "rillotter",
+   "level": 69
+  },
+  {
+   "species": "heronarch",
+   "level": 70
+  },
+  {
+   "species": "ospret",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2270,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Angler Morag",
+   "text": "It is a very long loch. I have been fishing one end of it since breakfast."
+  }
+ ],
+ "win": "That is me beaten. I will be at the other end of the loch.",
+ "after": "A good angler is nine parts patience and one part knowing who is looking at their sandwich.",
+ "scaled_floor": 69
+}

@@ -1,0 +1,32 @@
+{
+ "id": "dev_aluminium",
+ "name": "Foreman Dougie",
+ "class": "Foreman",
+ "sprite": "steelworker",
+ "party": [
+  {
+   "species": "ptarmlet",
+   "level": 71
+  },
+  {
+   "species": "midgie",
+   "level": 71
+  },
+  {
+   "species": "hootlet",
+   "level": 71
+  }
+ ],
+ "ai": "trainer",
+ "money": 2420,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Foreman Dougie",
+   "text": "I worked in the old smelter, thirty years of heat and noise. Now I run the dam tours. It is cooler, and the noise is mostly me."
+  }
+ ],
+ "win": "That was a fair fight. I have had worse in the canteen.",
+ "after": "They made aluminium here by the ton. It went to aeroplanes. Nothing here has gone to an aeroplane since, which suits the hens.",
+ "scaled_floor": 70
+}

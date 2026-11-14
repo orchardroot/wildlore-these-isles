@@ -1,0 +1,36 @@
+{
+ "id": "brn_forester",
+ "name": "Forester Ian",
+ "class": "Forester",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "pinewraith",
+   "level": 70
+  },
+  {
+   "species": "martling",
+   "level": 70
+  },
+  {
+   "species": "caperling",
+   "level": 69
+  },
+  {
+   "species": "hootlet",
+   "level": 69
+  }
+ ],
+ "ai": "trainer",
+ "money": 2280,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Forester Ian",
+   "text": "These are working woods, so mind the lorries. And mind me. Mostly me."
+  }
+ ],
+ "win": "Well, that has felled me. I will plant another of you.",
+ "after": "A tree takes forty years to grow and ten minutes to cut. The maths has always been on the saw's side.",
+ "scaled_floor": 69
+}

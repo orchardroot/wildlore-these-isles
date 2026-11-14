@@ -1,0 +1,36 @@
+{
+ "id": "mac_farmer_t",
+ "name": "Farmer Jock",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "thornsow",
+   "level": 68
+  },
+  {
+   "species": "brockling",
+   "level": 67
+  },
+  {
+   "species": "fawnlet",
+   "level": 68
+  },
+  {
+   "species": "stagmor",
+   "level": 68
+  }
+ ],
+ "ai": "trainer",
+ "money": 2300,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Farmer Jock",
+   "text": "This is my road. And my field. And my gate. And you."
+  }
+ ],
+ "win": "That was a fair fight. You may keep the gate.",
+ "after": "A farmer on the Machars has three jobs: sheep, weather and not saying what they think of the council.",
+ "scaled_floor": 67
+}

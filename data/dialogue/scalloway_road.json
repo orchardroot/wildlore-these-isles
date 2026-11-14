@@ -1,0 +1,57 @@
+{
+ "sca_fisher": [
+  {
+   "do": "say",
+   "who": "Quay Fisherman",
+   "text": "Scalloway has the fish market, and the fish market has the fishermen, and the fishermen have all the opinions. I will not tell you which ones are right."
+  },
+  {
+   "do": "say",
+   "who": "Quay Fisherman",
+   "text": "M\u00f2ran taing, they say in the west. Here we say 'tank you'. It is the same, only more windy."
+  }
+ ],
+ "sca_bus": [
+  {
+   "do": "say",
+   "who": "Memorial Volunteer",
+   "text": "The Shetland Bus is a proper story. Small boats, long nights, men who could have stayed at home. My grandfather said nothing about it. I am told that was the point."
+  },
+  {
+   "do": "say",
+   "who": "Memorial Volunteer",
+   "text": "Ask at the museum if you want the proper telling. I only know the bit I have been allowed to."
+  }
+ ],
+ "sca_castle": [
+  {
+   "do": "say",
+   "who": "Castle Guide",
+   "text": "Patrick Stewart built this castle with forced labour and a lot of timber. He did not get to enjoy it for long. History is not always kind to men with a good eye for a view."
+  },
+  {
+   "do": "say",
+   "who": "Castle Guide",
+   "text": "It was the capital of Shetland until 1708. After that, Lerwick took over, and Scalloway has been getting its own back ever since, mostly at the fish market."
+  }
+ ],
+ "sca_pony": [
+  {
+   "do": "say",
+   "who": "Pony Keeper",
+   "text": "Shetland ponies are small, hardy and thoroughly aware of both. Do not try to tell one what to do. Offer an apple and ask nicely."
+  },
+  {
+   "do": "say",
+   "who": "Pony Keeper",
+   "text": "They were bred to carry peat and children. They are very good at the first and have strong views on the second."
+  }
+ ],
+ "sca_foal": [
+  {
+   "do": "say",
+   "who": "Foalmoor",
+   "text": "A small, very round pony trots up, takes in your pockets, and walks off with its dignity intact."
+  }
+ ]
+}

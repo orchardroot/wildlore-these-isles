@@ -1,0 +1,36 @@
+{
+ "id": "rrw_historian",
+ "name": "Historian Margaret",
+ "class": "Historian",
+ "sprite": "poet",
+ "party": [
+  {
+   "species": "swiftlet",
+   "level": 69
+  },
+  {
+   "species": "starlet",
+   "level": 69
+  },
+  {
+   "species": "bobbin",
+   "level": 70
+  },
+  {
+   "species": "flittermouse",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2290,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Historian Margaret",
+   "text": "I give talks on Rob Roy. Everyone asks if he was a villain or a hero. I say he was a cattle dealer with a very good press agent."
+  }
+ ],
+ "win": "Well done. I shall add you to the footnotes.",
+ "after": "Sir Walter Scott did more for the Trossachs than anyone with a bulldozer ever could. People came for the verse and stayed for the scones.",
+ "scaled_floor": 69
+}

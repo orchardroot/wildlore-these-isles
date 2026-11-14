@@ -1,0 +1,32 @@
+{
+ "id": "uig_warden",
+ "name": "Ranger Fionnghal",
+ "class": "Ranger",
+ "sprite": "warden_grunt",
+ "party": [
+  {
+   "species": "cragchough",
+   "level": 75
+  },
+  {
+   "species": "heilan",
+   "level": 74
+  },
+  {
+   "species": "midgeswarm",
+   "level": 74
+  }
+ ],
+ "ai": "trainer",
+ "money": 2400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Ranger Fionnghal",
+   "text": "This stretch of coast is protected. By me. Please do not take the sand home. A woman tried last week. She was very sorry."
+  }
+ ],
+ "win": "Fair battle. I will take it as a warning.",
+ "after": "A machair is a low meadow of shell sand, flowers and grass, and it is one of the rarest habitats in Europe. We are quite fond of it.",
+ "scaled_floor": 74
+}

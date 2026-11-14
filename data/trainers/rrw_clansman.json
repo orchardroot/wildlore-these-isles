@@ -1,0 +1,32 @@
+{
+ "id": "rrw_clansman",
+ "name": "Clansman Ruairidh",
+ "class": "Clansman",
+ "sprite": "piper",
+ "party": [
+  {
+   "species": "raidtail",
+   "level": 69
+  },
+  {
+   "species": "thistlet",
+   "level": 70
+  },
+  {
+   "species": "grizzlet",
+   "level": 69
+  }
+ ],
+ "ai": "trainer",
+ "money": 2260,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Clansman Ruairidh",
+   "text": "I am a MacGregor. I do not say that lightly. I say it with a very large cattle-raiding grin."
+  }
+ ],
+ "win": "A fair fight. The cattle can stay.",
+ "after": "The MacGregor name was banned, on and off, for generations. We kept it on the inside.",
+ "scaled_floor": 69
+}

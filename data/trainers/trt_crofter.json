@@ -1,0 +1,32 @@
+{
+ "id": "trt_crofter",
+ "name": "Crofter Seonaid",
+ "class": "Crofter",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "heilan",
+   "level": 74
+  },
+  {
+   "species": "cragchough",
+   "level": 74
+  },
+  {
+   "species": "hushwing",
+   "level": 75
+  }
+ ],
+ "ai": "trainer",
+ "money": 2400,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Crofter Seonaid",
+   "text": "A croft is a small farm and a large argument. Fancy joining the argument?"
+  }
+ ],
+ "win": "A good battle. The sheep will have something to say.",
+ "after": "My great-grandmother worked this croft. She said the land owns you. It has never once let me forget it.",
+ "scaled_floor": 74
+}

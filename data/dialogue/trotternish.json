@@ -1,0 +1,57 @@
+{
+ "trt_walker": [
+  {
+   "do": "say",
+   "who": "Ridge Walker",
+   "text": "The Trotternish ridge is one long walk with a view on the one side and a view on the other. In between is a path that is not always there."
+  },
+  {
+   "do": "say",
+   "who": "Ridge Walker",
+   "text": "Everyone takes a photograph of the Old Man. The Old Man does not mind. He has been photographed more than the Queen."
+  }
+ ],
+ "trt_museum": [
+  {
+   "do": "say",
+   "who": "Museum Guide",
+   "text": "The blackhouse here has a peat fire and a bed in the corner for the cow. I would not want to live in one. I would not want it demolished either."
+  },
+  {
+   "do": "say",
+   "who": "Museum Guide",
+   "text": "F\u00e0ilte. That is 'welcome'. The kettle is always on, because the peat is always lit."
+  }
+ ],
+ "trt_cross": [
+  {
+   "do": "say",
+   "who": "Visitor",
+   "text": "Flora MacDonald is buried here. A woman who did something very brave and then was very modest about it. I find that restful."
+  },
+  {
+   "do": "say",
+   "who": "Visitor",
+   "text": "She is said to have said she would have done the same for any man in distress. I notice she did not say it twice."
+  }
+ ],
+ "trt_fossil": [
+  {
+   "do": "say",
+   "who": "Fossil Hunter",
+   "text": "Those are not scratch marks. Those are footprints. A dinosaur walked across this mud about a hundred and seventy million years ago and nobody told it to stop."
+  },
+  {
+   "do": "say",
+   "who": "Fossil Hunter",
+   "text": "The tide comes in fast. If you are looking for the best prints, bring a torch and a good excuse."
+  }
+ ],
+ "trt_eagle": [
+  {
+   "do": "say",
+   "who": "Goldeneyrie",
+   "text": "A golden eagle hangs on the wind above the Quiraing, taking in the whole of Skye as though it had a mortgage on it."
+  }
+ ]
+}

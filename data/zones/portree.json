@@ -711,6 +711,10 @@
   }
  ],
  "edges": {
+  "west": {
+   "to": "trotternish",
+   "offset": -12
+  },
   "south": {
    "to": "skye",
    "offset": 0
@@ -1136,9 +1140,9 @@
   "TTkkkkkkkkkkkkkkkBBBBBBkkk===kkkkBBBBBBkkkBBBBBkkkkkkkkkkkTT",
   "TTkkkkkkkkkkkkkkkBBBBBBkkk===kkkkBBDBBBkkkBBBBBkkkkkkkkkkkTT",
   "TTkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkPT",
-  "TTkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
-  "TTkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkk,,,,,,,,kkkkkkTT",
-  "TTkkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkk,,,,,,,,kkkkkkTT",
+  "##kkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
+  "##kkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkk,,,,,,,,kkkkkkTT",
+  "##kkkkkkkkkkkkkkkkkkkkkkkk===kkkkkkkkkkkkkkk,,,,,,,,kkkkkkTT",
   "TTkkkkkkkkkkkkkkkkkkkkkkkk===k,,,,,kkkkkkkkk,,,,,,,,kkkkkkTT",
   "TTkkkkkkkkkkkkkkkkkkkkkkkk===k,,,,,kkkkkkkkk,,,,,,,,kkkkkkTT",
   "TTkkkkkkkkkkkkkkkkkkkkkkkk===k,,,,,kkkkkkkkk,,,,,,,,kkkkkkTT",
@@ -1184,9 +1188,9 @@
   "111222222222221111111110000000000000000000111111111111111100",
   "111222233322221111111110000000000000000000111111111111111110",
   "112222333332222111000000000000000000000000000011111111111110",
-  "112223333333222111000000000000000000000000000111112222211111",
-  "112223333333222111000000000000000000000000000111122222221111",
-  "112223333333222111000000000000000000000000000111122222221111",
+  "222223333333222111000000000000000000000000000111112222211111",
+  "222223333333222111000000000000000000000000000111122222221111",
+  "222223333333222111000000000000000000000000000111122222221111",
   "112222333332222111000000000000000000000000000111122222221111",
   "111222233322221111000000000000000000000000000111122222221111",
   "111222222222221111000000000000000000000000000111122222221111",

@@ -1,0 +1,32 @@
+{
+ "id": "ang_keeper",
+ "name": "Keeper Andrina",
+ "class": "Lighthouse Keeper",
+ "sprite": "ravenmaster",
+ "party": [
+  {
+   "species": "polartern",
+   "level": 70
+  },
+  {
+   "species": "ternlet",
+   "level": 69
+  },
+  {
+   "species": "haarling",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2290,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Keeper Andrina",
+   "text": "I look after a light. A real one, a long way off. You will not see it from here, but I like to imagine it is watching."
+  }
+ ],
+ "win": "A very good battle. The light is still on. I checked.",
+ "after": "The Bell Rock was lit for the first time in 1811. A hundred and eighty years of keepers have stared at that horizon. Some of them stayed awake.",
+ "scaled_floor": 69
+}

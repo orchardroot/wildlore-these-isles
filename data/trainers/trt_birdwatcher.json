@@ -1,0 +1,32 @@
+{
+ "id": "trt_birdwatcher",
+ "name": "Birdwatcher Rhona",
+ "class": "Birdwatcher",
+ "sprite": "birdwatcher",
+ "party": [
+  {
+   "species": "polartern",
+   "level": 74
+  },
+  {
+   "species": "clownbill",
+   "level": 75
+  },
+  {
+   "species": "plungebeak",
+   "level": 75
+  }
+ ],
+ "ai": "trainer",
+ "money": 2430,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Birdwatcher Rhona",
+   "text": "Sea eagles are back on Skye. Have you seen one? Do not tell me you have seen one. I have been out here since six."
+  }
+ ],
+ "win": "A good battle. I did not see an eagle, but I saw you.",
+ "after": "A white-tailed eagle has a wingspan of about two and a half metres. It is the barn door of the sky.",
+ "scaled_floor": 74
+}

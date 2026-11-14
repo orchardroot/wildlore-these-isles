@@ -1,0 +1,464 @@
+{
+ "id": "devils_staircase",
+ "name": "The Devil's Staircase",
+ "region": "scotland",
+ "kind": "route",
+ "music": "route_highlands",
+ "weather": {
+  "fog": 30,
+  "drizzle": 28,
+  "downpour": 12,
+  "clear": 14,
+  "gale": 8,
+  "frost": 4,
+  "sunshine": 4
+ },
+ "props": [
+  {
+   "type": "bench",
+   "x": 35,
+   "y": 12
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 6,
+   "y": 43,
+   "w": 9,
+   "h": 4,
+   "label": "Ice Factor"
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 18,
+   "y": 44,
+   "w": 5,
+   "h": 3
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 26,
+   "y": 44,
+   "w": 5,
+   "h": 3
+  },
+  {
+   "type": "building",
+   "style": "cream_render",
+   "x": 34,
+   "y": 43,
+   "w": 6,
+   "h": 4,
+   "label": "Village Hall"
+  },
+  {
+   "type": "lamp_post",
+   "x": 17,
+   "y": 42
+  },
+  {
+   "type": "lamp_post",
+   "x": 33,
+   "y": 42
+  },
+  {
+   "type": "post_box",
+   "x": 31,
+   "y": 47
+  },
+  {
+   "type": "rock",
+   "x": 29,
+   "y": 36,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 17,
+   "y": 21,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 17,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 3,
+   "y": 9,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 52,
+   "y": 35,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 43,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 25,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 21,
+   "y": 42,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 10,
+   "y": 35,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 21,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 15,
+   "y": 15,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 19,
+   "y": 18,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 5,
+   "y": 46,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 30,
+   "y": 48,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 50,
+   "y": 48,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 50,
+   "y": 44,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 43,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 37,
+   "y": 12,
+   "variant": 0
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "fort_william",
+   "offset": -32
+  },
+  "east": {
+   "to": "glencoe",
+   "offset": -8
+  }
+ },
+ "npcs": [
+  {
+   "id": "dev_walker",
+   "sprite": "hiker",
+   "x": 24,
+   "y": 36,
+   "facing": "left",
+   "move": "still",
+   "script": "dev_walker"
+  },
+  {
+   "id": "dev_climber",
+   "sprite": "fell_runner",
+   "x": 8,
+   "y": 38,
+   "facing": "right",
+   "move": "still",
+   "script": "dev_climber"
+  },
+  {
+   "id": "dev_hydro",
+   "sprite": "steelworker",
+   "x": 40,
+   "y": 12,
+   "facing": "down",
+   "move": "still",
+   "script": "dev_hydro"
+  },
+  {
+   "id": "dev_cafe",
+   "sprite": "villager_6",
+   "x": 24,
+   "y": 46,
+   "facing": "up",
+   "move": "still",
+   "script": "dev_cafe"
+  },
+  {
+   "id": "dev_rescue",
+   "sprite": "fell_runner",
+   "x": 26,
+   "y": 31,
+   "facing": "up",
+   "move": "still",
+   "trainer": "dev_rescue"
+  },
+  {
+   "id": "dev_ghillie",
+   "sprite": "ghillie",
+   "x": 28,
+   "y": 25,
+   "facing": "left",
+   "move": "still",
+   "trainer": "dev_ghillie"
+  },
+  {
+   "id": "dev_aluminium",
+   "sprite": "steelworker",
+   "x": 44,
+   "y": 10,
+   "facing": "left",
+   "move": "still",
+   "trainer": "dev_aluminium"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "eaglet",
+    "min": 71,
+    "max": 72,
+    "weight": 10,
+    "time": [
+     "day",
+     "dawn"
+    ]
+   },
+   {
+    "species": "snowhare",
+    "min": 71,
+    "max": 72,
+    "weight": 10,
+    "weather": [
+     "frost",
+     "fog"
+    ]
+   },
+   {
+    "species": "kidgruff",
+    "min": 71,
+    "max": 72,
+    "weight": 10
+   },
+   {
+    "species": "wildkit",
+    "min": 71,
+    "max": 72,
+    "weight": 10
+   },
+   {
+    "species": "midgie",
+    "min": 71,
+    "max": 72,
+    "weight": 10,
+    "weather": [
+     "drizzle",
+     "fog",
+     "clear"
+    ]
+   },
+   {
+    "species": "stagmor",
+    "min": 71,
+    "max": 72,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "ptarmlet",
+    "min": 71,
+    "max": 72,
+    "weight": 8,
+    "time": [
+     "day",
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 71,
+    "max": 72,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "fawnlet",
+    "min": 71,
+    "max": 72,
+    "weight": 8
+   },
+   {
+    "species": "martling",
+    "min": 71,
+    "max": 72,
+    "weight": 6
+   }
+  ],
+  "water": [
+   {
+    "species": "dipling",
+    "min": 71,
+    "max": 72,
+    "weight": 20
+   },
+   {
+    "species": "rillotter",
+    "min": 71,
+    "max": 72,
+    "weight": 16
+   },
+   {
+    "species": "bradan",
+    "min": 71,
+    "max": 72,
+    "weight": 16
+   },
+   {
+    "species": "heronarch",
+    "min": 71,
+    "max": 72,
+    "weight": 10
+   },
+   {
+    "species": "spatelord",
+    "min": 71,
+    "max": 72,
+    "weight": 8
+   },
+   {
+    "species": "stalklet",
+    "min": 71,
+    "max": 72,
+    "weight": 10
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 15,
+   "y": 38,
+   "text": "THE DEVIL'S STAIRCASE. At about 550 metres the highest point on the West Highland Way, a zigzag up out of Kinlochleven towards Glencoe. The name is said to come from the soldiers who built the military road over it in the 1750s. They had a view of the Devil's own handiwork and no pension for it.",
+   "plaque": "w55_sc_staircase",
+   "title": "The Devil's Staircase"
+  },
+  {
+   "x": 30,
+   "y": 42,
+   "text": "KINLOCHLEVEN. The village grew up round an aluminium smelter that opened in 1909 and ran on hydro-electric power from the Blackwater Reservoir above it. The smelter closed in the 1990s. The pipes still come down the hill, and the old works now hold an indoor ice-climbing centre.",
+   "plaque": "w55_sc_kinlochleven",
+   "title": "Kinlochleven"
+  },
+  {
+   "x": 24,
+   "y": 20,
+   "text": "THE MAMORES. A long ridge of high hills to the south, a dozen Munros one after another. Hillwalkers do the whole ridge in a day and then tell everyone about it in the pub for a year."
+  }
+ ],
+ "spawn": [
+  5,
+  40
+ ],
+ "stage": "mountain",
+ "scaled_floor": 70,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTPTTTTTTTTTTTPTTTTTTTPTTTTTTTPTTTTTTTTTTPTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTPTTTTTTTTTT",
+  "TTT..............R....,,,,,,,,,,......R.,,,,,,,,,,...TPT",
+  "TTT...................,,,,,,,,,,........,,,,,,,,,,...TTT",
+  "TTT....R.........R....,,,,,,,,,,........,,,,,,,,,,...TTT",
+  "TTT....PR.....P...R...,,,,,,,,,,........,,,,,,,,,,..RPTT",
+  "TTT..............R..R.,,,,,,,,,,........,,,,,,,,,,...TTT",
+  "TTT.R...RR.P...............R........................PTTT",
+  "TTT...P..R.RP.......####################################",
+  "TTT.,,,,,,,,,,,,....####################################",
+  "TTT.,,,,,,,,,,,,.R..####################################",
+  "TTT.,,,,,,,,,,,,....###........................P.....TTT",
+  "TTTR,,,,,,,,,,,,....###........P...........R.......R.TTT",
+  "TTT.,,,,,,,,,,,,....###.....P......R.............P...TTT",
+  "TTT.,,,,,,,,,,,,....###############......R...........TTT",
+  "TTT.,,,,,,,,,,,,....###############..................TTT",
+  "TTT.,,,,,,,,,,,,R.R.###############...R......R.......TTT",
+  "TTT.......RR....................###.wwwwwwwwwwwwww...TTT",
+  "TTTR........RR..................###.w~~~~~~~~~~~~w...TTT",
+  "TTT.R.............R.....R..R....###.w~~~~~~~~~~~~w.R.TTT",
+  "TTT..P.......P......###############.w~~~~~~~~~~~~w..RTTT",
+  "TTT.................###############.w~~~~~~~~~~~~w...TTT",
+  "TTT.................###############.w~~~~~~~~~~~~w..PTTT",
+  "TTT..R..............###.............w~~~~~~~~~~~~w.R.TTT",
+  "TTT.................###..R..........w~~~~~~~~~~~~w...TTT",
+  "TTT.........RR......###.....R...P...wwwwwwwwwwwwww..PTTT",
+  "TTT......RP...P.....###############.................PTTT",
+  "TTT.,,,,,,,,,,......###############.,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,......###############.,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,.......R...R......###P,,,,,,,,,,,,,,.P.TTT",
+  "TTT.,,,,,,,,,,...R..............###.,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,......R........R..###.,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,....R.###############.,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,......###############R,,,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,,,......###############.,,,,,,,,,,,,,,...TTT",
+  "TTT.................###.,,,,,,......,,,,,,,,,,,,,,...TTT",
+  "TTT....R.....R..R...###.,,,,,,......,,,,,,,,,,,,,,...TTT",
+  "TPT.R..P............###.,,,,,,...R......R.P.......R..TTT",
+  "#######################...R..........................TTT",
+  "#######################.......R...................R..TTT",
+  "##########:::##########......P.....RR.........P......TTT",
+  "TTT......P:::.......................P......R.........TTT",
+  "TTT...BBBBBBBBB...................BBBBBB.R...........TTT",
+  "TTT...BBBBBBBBB.R.BBBBB...BBBBB.P.BBBBBB....PRR.....RTTT",
+  "TTT...BBBBBBBBB...BBBBB...BBBBB...BBBBBB.............TTT",
+  "TTT...BBBBBBBBB...BBBBB...BBBBB...BBBBBB.......R.....TTT",
+  "TTT...::::::::::::::::::::::::::::::::::::.RRP.......PTT",
+  "TTT....R.......R.....................................TTP",
+  "PTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTPTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ]
+}

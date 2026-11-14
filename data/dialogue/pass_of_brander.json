@@ -1,0 +1,50 @@
+{
+ "brn_walker": [
+  {
+   "do": "say",
+   "who": "Pass Walker",
+   "text": "Rest and be thankful, it says on the stone. I rested. I am thankful. I would like to be thankful somewhere warmer."
+  },
+  {
+   "do": "say",
+   "who": "Pass Walker",
+   "text": "The old military road goes up the hill in loops. Soldiers built it, and I think they built it that way on purpose to make us suffer less than they did."
+  }
+ ],
+ "brn_ranger": [
+  {
+   "do": "say",
+   "who": "Loch Awe Ranger",
+   "text": "Ospreys nest round the loch in summer. If one drops a fish at your feet, it is a compliment. Do not argue."
+  },
+  {
+   "do": "say",
+   "who": "Loch Awe Ranger",
+   "text": "The loch is about twenty-five miles long, the longest freshwater loch in Scotland, if you do not count the ones with monsters."
+  }
+ ],
+ "brn_hydro": [
+  {
+   "do": "say",
+   "who": "Power Station Guide",
+   "text": "There is a power station inside that mountain. Sixty years in there and it has never once been rained on."
+  },
+  {
+   "do": "say",
+   "who": "Power Station Guide",
+   "text": "Beannachd leibh, that is 'blessings with you', which is what we say when you leave and the lights are still on."
+  }
+ ],
+ "brn_historian": [
+  {
+   "do": "say",
+   "who": "Battle Guide",
+   "text": "Some people say Bruce won the Pass of Brander without ever needing to fight the main force. I say he won it with a good map and a better ambush."
+  },
+  {
+   "do": "say",
+   "who": "Battle Guide",
+   "text": "Nobody built a visitor centre, and I think that is the best compliment a battlefield can get."
+  }
+ ]
+}

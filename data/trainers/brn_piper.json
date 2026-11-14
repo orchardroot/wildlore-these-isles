@@ -1,0 +1,32 @@
+{
+ "id": "brn_piper",
+ "name": "Piper Isla",
+ "class": "Piper",
+ "sprite": "piper",
+ "party": [
+  {
+   "species": "stagmor",
+   "level": 70
+  },
+  {
+   "species": "midgie",
+   "level": 70
+  },
+  {
+   "species": "ospret",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2250,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Piper Isla",
+   "text": "I play the pipes on the old road. The tune is for the deer. They have not complained."
+  }
+ ],
+ "win": "A good battle. A better tune. I will play it for you at the bridge.",
+ "after": "A pipe tune is a story you cannot talk back to. That is its whole appeal.",
+ "scaled_floor": 69
+}

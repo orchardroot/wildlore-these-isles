@@ -1,0 +1,36 @@
+{
+ "id": "rrw_stalker",
+ "name": "Stalker Duncan",
+ "class": "Stalker",
+ "sprite": "ghillie",
+ "party": [
+  {
+   "species": "fawnlet",
+   "level": 69
+  },
+  {
+   "species": "brockling",
+   "level": 70
+  },
+  {
+   "species": "hootlet",
+   "level": 69
+  },
+  {
+   "species": "sootwing",
+   "level": 70
+  }
+ ],
+ "ai": "trainer",
+ "money": 2280,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Stalker Duncan",
+   "text": "Wildlife survey. If I hold still long enough, a squirrel will show up. It has been three hours."
+  }
+ ],
+ "win": "That is me caught. The squirrel is laughing.",
+ "after": "Red squirrels are about the only thing in Scotland smaller than a midge that anyone is happy to see.",
+ "scaled_floor": 69
+}
