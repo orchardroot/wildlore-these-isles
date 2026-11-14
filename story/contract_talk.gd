@@ -128,7 +128,9 @@ static func clue(cmd: Commands, id: String, clue_id: String) -> void:
 		return
 	var who := str(k.get("who", "Local"))
 	var st := Contracts.state(data, id)
-	if st == Contracts.TAKEN:
+	if st == Contracts.TAKEN and not Contracts.clue_open(data, id, k):
+		await _lines(host, who, k.idle)   # they have nothing to tell you yet: you have not found what would make them think of it
+	elif st == Contracts.TAKEN:
 		await _lines(host, who, k.text)
 		if Contracts.note_clue(data, id, clue_id):
 			if host.has_method("sfx"):
