@@ -292,7 +292,10 @@
     "species": "whiffhorn",
     "min": 67,
     "max": 69,
-    "weight": 8
+    "weight": 8,
+    "season": [
+     "autumn"
+    ]
    },
    {
     "species": "zigzlet",

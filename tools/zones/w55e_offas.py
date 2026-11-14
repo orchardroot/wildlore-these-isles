@@ -103,7 +103,7 @@ def build():
              ("martling", 22, 24, 10, {}), ("brockling", 22, 24, 10, {"time": ["dusk", "night"]}), ("flittermouse", 22, 24, 8, {"time": ["dusk", "night"]}),
              ("kitelet", 22, 24, 12, {"time": ["day"]}), ("leveret", 22, 24, 8, {"time": ["dawn", "dusk"]}), ("pipkin", 22, 24, 8, {"time": ["dawn", "day"]}),
              ("wispet", 22, 24, 8, {"weather": ["fog"]}), ("brammel", 22, 24, 6, {"season": ["summer", "autumn"]}), ("gwyllgi", 22, 24, 5, {"time": ["night"]}),
-             ("flyling", 22, 24, 6, {"time": ["dusk"], "weather": ["drizzle", "fog"]})])
+             ("flyling", 22, 24, 6, {"season": ["autumn"], "time": ["dusk"], "weather": ["drizzle", "fog"]})])
     wild(z, [("elverlet", 22, 24, 22, {}), ("afanc", 22, 24, 12, {}), ("minkshade", 22, 24, 14, {"time": ["dusk", "night"]}), ("ratty", 22, 24, 20, {}), ("ductling", 22, 24, 18, {}), ("dipling", 22, 24, 18, {})], "water")
     offE = link("shrewsbury", "west", ZID, 13)
     offN = link("llangollen", "north", ZID, 32)

@@ -473,7 +473,10 @@
     "species": "whiffhorn",
     "min": 69,
     "max": 70,
-    "weight": 6
+    "weight": 6,
+    "season": [
+     "autumn"
+    ]
    },
    {
     "species": "pinewraith",

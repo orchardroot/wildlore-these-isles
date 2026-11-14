@@ -608,6 +608,9 @@
     "min": 22,
     "max": 24,
     "weight": 6,
+    "season": [
+     "autumn"
+    ],
     "time": [
      "dusk"
     ],

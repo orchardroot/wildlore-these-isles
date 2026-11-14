@@ -351,7 +351,7 @@ def the_machars():
         24, 35, "up", ["Solway tides come in faster than a horse can run. Please do not stand there."],
         "A fair net. I will keep to the shore.", "The Solway has some of the biggest tides in Britain. It is not a place for the unprepared. Or the optimists.", 2250)
     wild(z, [("fawnlet", 67, 69, 10, {"time": ["dawn", "dusk", "day"]}), ("stagmor", 68, 69, 6, {"time": ["dawn", "dusk"]}), ("natterjack", 67, 69, 10, {"weather": ["drizzle", "downpour"]}),
-             ("whiffhorn", 67, 69, 8, {}), ("zigzlet", 67, 69, 8, {}), ("thornsow", 67, 69, 8, {}), ("brockling", 67, 69, 8, {"time": ["night", "dusk"]}),
+             ("whiffhorn", 67, 69, 8, {"season": ["autumn"]}), ("zigzlet", 67, 69, 8, {}), ("thornsow", 67, 69, 8, {}), ("brockling", 67, 69, 8, {"time": ["night", "dusk"]}),
              ("martling", 67, 69, 8, {}), ("hootlet", 67, 69, 8, {"time": ["night"]}), ("flittermouse", 67, 69, 6, {"time": ["night"]}), ("chipgull", 67, 68, 8, {"time": ["dawn", "day"]})])
     wild(z, [("greyhaul", 67, 68, 14, {}), ("plungebeak", 67, 68, 12, {}), ("dolphlet", 67, 68, 10, {}), ("selklet", 67, 68, 10, {}),
              ("chipgull", 67, 68, 12, {}), ("baskling", 67, 68, 8, {}), ("rillotter", 67, 69, 12, {})], "water")

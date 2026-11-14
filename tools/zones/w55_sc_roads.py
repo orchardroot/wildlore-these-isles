@@ -80,7 +80,7 @@ def southern_upland_way():
     wild(z, [("leveret", 69, 70, 14, {"time": ["dawn", "dusk", "day"]}), ("herdlet", 69, 70, 12, {}), ("thistlet", 69, 70, 10, {}),
              ("stoatlet", 69, 70, 8, {"time": ["dawn", "dusk"]}), ("hootlet", 69, 70, 8, {"time": ["night"]}), ("ospret", 69, 70, 8, {"time": ["day"]}),
              ("tattybogle", 69, 70, 8, {"weather": ["fog", "drizzle"]}), ("fawnlet", 69, 70, 8, {"time": ["dawn", "dusk"]}),
-             ("whiffhorn", 69, 70, 6, {}), ("pinewraith", 69, 70, 6, {"time": ["dusk", "night"]})])
+             ("whiffhorn", 69, 70, 6, {"season": ["autumn"]}), ("pinewraith", 69, 70, 6, {"time": ["dusk", "night"]})])
     wild(z, [("bradan", 69, 70, 20, {}), ("ratty", 69, 70, 16, {}), ("dipling", 69, 70, 16, {}), ("stalklet", 69, 70, 10, {}),
              ("rillotter", 69, 70, 14, {"time": ["dawn", "dusk"]}), ("heronarch", 69, 70, 8, {})], "water")
     verify(z)
