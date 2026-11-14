@@ -257,32 +257,38 @@
    "flag": "cat_with_you",
    "then": [
     {
-     "do": "daily",
-     "key": "cat_mum_offer",
+     "do": "when",
+     "cond": "cat_tired",
      "then": [
       {
-       "do": "family_cat",
-       "op": "say",
-       "who": "Mum",
-       "text": "Want me to keep {cat} here a while? She does like the window. I'd only talk to her."
-      },
-      {
-       "do": "choice",
-       "text": "Leave her at home?",
-       "options": [
-        "Keep her with me",
-        "Leave her by the bowl"
-       ],
-       "set": "cat_leave"
-      },
-      {
-       "do": "if",
-       "flag": "cat_leave",
-       "eq": 1,
+       "do": "daily",
+       "key": "cat_mum_offer",
        "then": [
         {
          "do": "family_cat",
-         "op": "leave"
+         "op": "say",
+         "who": "Mum",
+         "text": "{cat} looks done in, love. Want me to keep her here a while? She does like the window. I'd only talk to her."
+        },
+        {
+         "do": "choice",
+         "text": "Leave her at home?",
+         "options": [
+          "Keep her with me",
+          "Leave her by the bowl"
+         ],
+         "set": "cat_leave"
+        },
+        {
+         "do": "if",
+         "flag": "cat_leave",
+         "eq": 1,
+         "then": [
+          {
+           "do": "family_cat",
+           "op": "leave"
+          }
+         ]
         }
        ]
       }

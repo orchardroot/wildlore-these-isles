@@ -50,7 +50,10 @@
    "kind": "look",
    "zone": "tintagel",
    "hint": "the edge of the moor, watched after dark",
-   "text": "You wait in the gorse with the wind in your face. A long, low shape slides along the wall in the dark, a tail curved behind it like a question mark, and two green lamps turn toward you. It looks at you for a long time. It is not afraid. It decides you are not worth the effort, and goes.",
+   "text": [
+    "You wait in the gorse with the wind in your face. A long, low shape slides along the wall in the dark, a tail curved behind it like a question mark, and two green lamps turn toward you.",
+    "It looks at you for a long time. It is not afraid. It decides you are not worth the effort, and goes."
+   ],
    "hint_wait": "Sheep, wind and gorse. Whatever hunts here does it after dark. Try again then.",
    "points": ["cat"],
    "when": {"phase": ["night"]}

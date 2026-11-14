@@ -472,7 +472,7 @@
    "else": [
     {
      "do": "when",
-     "cond": "later_q_stories_scotland_when_3",
+     "cond": "later_q_stories_scotland_when_30",
      "then": [
       {
        "do": "say",
@@ -606,7 +606,7 @@
       {
        "do": "say",
        "who": "Postie",
-       "text": "Nothing yet. The committee has to meet, and the post has to come down the strath. Try after a night's sleep."
+       "text": "Nothing yet. The committee has to meet, and the post has to come down the strath. Try again in a month or so."
       }
      ]
     }

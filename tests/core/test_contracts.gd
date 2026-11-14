@@ -138,7 +138,7 @@ func test_look_spots_keep_their_hours() -> void:
 	var night := Contracts.look(d, "mink.dusk", "night", "clear")
 	assert_true(night.new)
 	assert_true(Contracts.clue_found(d, "mink", "dusk"))
-	assert_eq(night.lines, [Contracts.clue_text(Contracts.clue_of(c, "dusk"))])
+	assert_eq(night.lines, Contracts.clue_lines(Contracts.clue_of(c, "dusk")))
 	assert_false(Contracts.look(d, "mink.dusk", "night", "clear").new, "found once")
 	assert_true(Contracts.look(d, "mink.nonsense", "day", "clear").lines.is_empty())
 
@@ -181,6 +181,35 @@ func test_fees_are_modest_and_haggling_needs_a_town_that_knows_you() -> void:
 	for cc in Contracts.all():
 		var jobs := Jobs.money_for({"pay": 1}, int(cc.badges))
 		assert_true(Contracts.base_fee(cc) <= 5 * jobs, "%s pays no more than five jobs" % cc.id)
+
+func test_the_report_fee_reads_the_groups_the_choice_moved() -> void:
+	var ch := {"repute": {"wardens": 3, "miners": 1}}
+	var d := GameStateData.new()
+	assert_near(Contracts.ending_nudge(d, ch), 1.0)
+	d.set_flag("ct_rep_wardens", 4)
+	d.set_flag("ct_rep_miners", 4)
+	assert_near(Contracts.ending_nudge(d, ch), 1.0 + Contracts.REPUTE_STEP * 4.0)
+	d.set_flag("ct_rep_wardens", -4)
+	d.set_flag("ct_rep_miners", -4)
+	assert_near(Contracts.ending_nudge(d, ch), 1.0 - Contracts.REPUTE_STEP * 4.0)
+	assert_near(Contracts.ending_nudge(d, {}), 1.0, 0.0001)
+
+func test_a_clue_says_in_words_when_it_needs_a_time_or_weather() -> void:
+	assert_eq(Contracts.when_words({}), "")
+	assert_eq(Contracts.when_words({"when": {"weather": ["rain"]}}), "in rain")
+	assert_eq(Contracts.when_words({"when": {"phase": ["dusk", "night"]}}), "at dusk or at night")
+	assert_eq(Contracts.when_words({"when": {"phase": ["dawn", "day"], "weather": ["sunshine", "clear"]}}), "at dawn or by day, in sunshine or clear skies")
+
+func test_no_clue_or_decision_runs_to_a_wall_of_text() -> void:
+	for c in Contracts.all():
+		for k in c.clues:
+			for l in Contracts.clue_lines(k):
+				assert_true(str(l).length() <= 270, "%s clue %s: a line of %d characters" % [c.id, k.id, str(l).length()])
+		for ch in c.choices:
+			for l in ch.say:
+				assert_true(str(l).length() <= 300, "%s/%s: a line of %d characters" % [c.id, ch.id, str(l).length()])
+	assert_eq(Contracts.clue_lines({"text": "One."}), ["One."])
+	assert_eq(Contracts.clue_text({"text": ["One.", "Two."]}), "One. Two.")
 
 func test_it_cannot_be_taken_before_the_badges() -> void:
 	var c := Contracts.get_contract("mink")

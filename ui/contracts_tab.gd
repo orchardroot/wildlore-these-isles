@@ -51,7 +51,8 @@ static func describe(detail: VBoxContainer, c: Dictionary) -> void:
 		if Contracts.clue_found(d, id, str(k.id)):
 			_words(detail, Contracts.clue_text(k), 20)
 		else:
-			_words(detail, "Still to find: %s (%s)" % [str(k.hint), _place(str(k.zone))], 20, UIKit.MUTED)
+			var wait := Contracts.when_words(k)
+			_words(detail, "Still to find: %s (%s)%s" % [str(k.hint), _place(str(k.zone)), ". Needs it %s." % wait if wait != "" else ""], 20, UIKit.MUTED)
 	if st >= Contracts.DECIDED:
 		var ch := Contracts.ending(d, c)
 		detail.add_child(UIKit.spacer(2))

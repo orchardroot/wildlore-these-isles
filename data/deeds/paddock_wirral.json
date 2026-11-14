@@ -117,12 +117,13 @@
   {
    "id": "show_yard",
    "name": "A little show yard",
-   "text": "Gymkhanas and clinics bring a better class of visitor. And a worse class of weather.",
+   "text": "Gymkhanas and clinics bring a better class of visitor. And a worse class of weather, and a hungrier class of pony.",
    "cost": 1500,
    "tier": 1,
    "group": "yard",
    "takings": 1.06,
-   "boom": 0.5
+   "boom": 0.5,
+   "use": 1.1
   }
  ],
  "asks": [

@@ -86,7 +86,12 @@
             {
              "do": "say",
              "who": "Flows Warden",
-             "text": "And I will tell you the other thing, because I would want to be told. The fund is real. A village with a leaking roof and a school bus that does not run is not an abstraction. Anyone who tells you the peat is simple is selling something. So is anyone who says the roof is."
+             "text": "And I will tell you the other thing, because I would want to be told. The fund is real. A village with a leaking roof and a school bus that does not run is not an abstraction."
+            },
+            {
+             "do": "say",
+             "who": "Flows Warden",
+             "text": "Anyone who tells you the peat is simple is selling something. So is anyone who says the roof is."
             },
             {
              "do": "set",

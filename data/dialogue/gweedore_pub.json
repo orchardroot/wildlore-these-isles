@@ -542,7 +542,7 @@
    "else": [
     {
      "do": "when",
-     "cond": "later_q_stories_ireland_when_3",
+     "cond": "later_q_stories_ireland_when_30",
      "then": [
       {
        "do": "say",
@@ -671,7 +671,7 @@
       {
        "do": "say",
        "who": "Postman",
-       "text": "Nothing yet. A letter from Pádraig takes a few days, and he writes them twice. Try after a night's sleep."
+       "text": "Nothing yet. Pádraig will not write until he has seen how the place wears the change, and he writes them twice. Try again in a month or so."
       }
      ]
     }

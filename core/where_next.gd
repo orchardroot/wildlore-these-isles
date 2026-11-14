@@ -61,7 +61,7 @@ static func _wander(d: GameStateData, town: String, opts: Dictionary) -> String:
 		if zones.has(to) and str(zones[to].kind) == "route":
 			near.append(to)
 	for id in near.slice(1):  # a road you have never walked, the closest thing to a promise
-		if not Discovery.is_found(d, str(id)):
+		if not Discovery.is_found(d, str(id)) and gates_open(d, zones[id]):
 			return "%s is just down the road, and you have never set foot there." % zones[id].name
 	var poi := 0
 	var spots := 0
@@ -76,6 +76,13 @@ static func _wander(d: GameStateData, town: String, opts: Dictionary) -> String:
 	if spots > 0:
 		bits.append("%d field spot%s" % [spots, "" if spots == 1 else "s"])
 	return "Still to find off the road near %s: %s." % [zones[base].name, " and ".join(bits)]
+
+## Are all of a zone's story gates open for this save? (An absent `gates` list, as in a fixture, is open.)
+static func gates_open(d: GameStateData, zone: Dictionary) -> bool:
+	for f in zone.get("gates", []):
+		if not d.flag(str(f)):
+			return false
+	return true
 
 static func _best_till(d: GameStateData) -> Dictionary:
 	var best := {}

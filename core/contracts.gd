@@ -150,6 +150,17 @@ static func offer_fee(data: GameStateData, c: Dictionary) -> int:
 	var r := clampi(repute(data, str(c.get("group", ""))), -REPUTE_CAP, REPUTE_CAP)
 	return int(round(base_fee(c) * (1.0 + REPUTE_STEP * r) / 10.0)) * 10
 
+## The fee's nudge at the report: the mean repute of the two groups the chosen option moved, so what you did to
+## the wardens or the miners is worth something at the counter, not only a number in the Journal.
+static func ending_nudge(data: GameStateData, ch: Dictionary) -> float:
+	var groups: Dictionary = ch.get("repute", {})
+	if groups.is_empty():
+		return 1.0
+	var sum := 0
+	for g in groups:
+		sum += clampi(repute(data, str(g)), -REPUTE_CAP, REPUTE_CAP)
+	return 1.0 + REPUTE_STEP * float(sum) / float(groups.size())
+
 ## The haggle on offer: a share on top of the fee, 0 until the town (the poster's nation) counts you a Regular.
 static func haggle_share(data: GameStateData, c: Dictionary) -> float:
 	return float(HAGGLE.get(Standing.tier(data, str(c.get("nation", ""))), 0.0))
@@ -186,6 +197,11 @@ static func clue_text(k: Dictionary) -> String:
 	var t: Variant = k.get("text", "")
 	return " ".join((t as Array).map(func(l): return str(l))) if t is Array else str(t)
 
+## A clue's words as the lines it is said in, one box each (a long one is written as two).
+static func clue_lines(k: Dictionary) -> Array:
+	var t: Variant = k.get("text", "")
+	return (t as Array).map(func(l): return str(l)) if t is Array else [str(t)]
+
 static func found(data: GameStateData, c: Dictionary) -> Array:
 	return c.get("clues", []).filter(func(k): return clue_found(data, str(c.id), str(k.id)))
 
@@ -202,6 +218,18 @@ static func clue_ready(clue: Dictionary, phase: String, weather: String) -> bool
 		if weather in Jobs.WEATHER.get(str(kind), [str(kind)]):
 			return true
 	return false
+
+## The hour and weather a clue wants, in words for the Journal ("at dusk or night, in rain or fog"), "" for none.
+static func when_words(clue: Dictionary) -> String:
+	var w: Dictionary = clue.get("when", {})
+	var bits := []
+	var phases: Array = w.get("phase", [])
+	if not phases.is_empty():
+		bits.append(" or ".join(phases.map(func(x): return "by day" if str(x) == "day" else "at " + str(x))))
+	var wants: Array = w.get("weather", [])
+	if not wants.is_empty():
+		bits.append("in " + " or ".join(wants.map(func(x): return "clear skies" if str(x) == "clear" else str(x))))
+	return ", ".join(bits)
 
 ## Notes a clue. True when it is new, which needs the contract taken and not yet decided.
 static func note_clue(data: GameStateData, id: String, clue_id: String) -> bool:
@@ -222,10 +250,10 @@ static func look(data: GameStateData, spec: String, phase: String, weather: Stri
 	if k.is_empty() or state(data, id) != TAKEN:
 		return {"lines": [], "new": false}
 	if clue_found(data, id, str(k.id)):
-		return {"lines": [clue_text(k)], "new": false}
+		return {"lines": clue_lines(k), "new": false}
 	if not clue_ready(k, phase, weather):
 		return {"lines": [str(k.get("hint_wait", "Nothing here yet. Perhaps it is the wrong time to be looking."))], "new": false}
-	return {"lines": [clue_text(k)], "new": note_clue(data, id, str(k.id))}
+	return {"lines": clue_lines(k), "new": note_clue(data, id, str(k.id))}
 
 # --- working it out -----------------------------------------------------------------
 
@@ -330,7 +358,7 @@ static func report(data: GameStateData, id: String, zone_id: String) -> Dictiona
 		return {"ok": false}
 	var ch := ending(data, c)
 	data.set_flag(flag(id, "state"), CLOSED)
-	var amount := int(round(fee(data, id) * float(ch.get("fee", 1.0)) / 10.0)) * 10
+	var amount := int(round(fee(data, id) * float(ch.get("fee", 1.0)) * ending_nudge(data, ch) / 10.0)) * 10
 	var paid := {"amount": 0, "cur": Wallet.GBP}
 	if amount > 0:
 		paid = Wallet.earn_here(data, amount, zone_id)
@@ -353,7 +381,7 @@ static func fees_through(badges: int) -> float:
 		var best := 0.0
 		for ch in c.get("choices", []):
 			best = maxf(best, float(ch.get("fee", 1.0)))
-		t += float(base_fee(c)) * (1.0 + float(HAGGLE[2])) * best
+		t += float(base_fee(c)) * (1.0 + float(HAGGLE[2])) * best * (1.0 + REPUTE_STEP * REPUTE_CAP) * (1.0 + REPUTE_STEP * REPUTE_CAP)
 	return t
 
 static func fees_total() -> float:

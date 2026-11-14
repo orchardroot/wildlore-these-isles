@@ -38,3 +38,17 @@ func test_wander_never_crowds_out_the_story() -> void:
 	if "story" in kinds:
 		assert_eq(kinds[0], "story", "the story always leads")
 	assert_true("wander" in kinds, "a stile is worth a mention")
+
+func test_a_road_behind_a_shut_gate_is_not_advertised() -> void:
+	var d := _d()
+	var z := {"gates": ["badge_storm", "trainer_x"]}
+	assert_false(WhereNext.gates_open(d, z))
+	d.set_flag("badge_storm", true)
+	assert_false(WhereNext.gates_open(d, z), "every gate, not any")
+	d.set_flag("trainer_x", true)
+	assert_true(WhereNext.gates_open(d, z))
+	assert_true(WhereNext.gates_open(d, {}), "no gates, open")
+
+func test_the_index_carries_the_gates_of_a_gated_route() -> void:
+	var idx := ZoneIndex.get_index()
+	assert_has(idx.zones["exe_estuary"].gates, "badge_storm")
