@@ -84,12 +84,7 @@
     {
      "do": "say",
      "who": "Border Farmer",
-     "text": "There's a way in round the back, if you don't mind a bit of mud."
-    },
-    {
-     "do": "set",
-     "flag": "secret_pele_tower_known",
-     "value": true
+     "text": "There's a way in round the back, if you don't mind a bit of mud. Have a look in the bank."
     }
    ]
   }
