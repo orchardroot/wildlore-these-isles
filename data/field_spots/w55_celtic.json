@@ -6,7 +6,7 @@
   "y": 29,
   "field": "mend",
   "prop": "wall_gap",
-  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Bara Brith in the hollow.",
+  "text": "A drystone wall by the Glaslyn with a gap the width of a sheep. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Bara Brith in the hollow.",
   "reward": {
    "item": "bara_brith",
    "qty": 1
@@ -51,7 +51,7 @@
   "y": 24,
   "field": "mend",
   "prop": "wall_gap",
-  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Glamorgan Sausage in the hollow.",
+  "text": "A limestone field wall on the cliff top has lost a few stones to the wind. {lead} puts them back, one by one, and finds Glamorgan Sausage in the hollow.",
   "reward": {
    "item": "glamorgan_sausage",
    "qty": 1
@@ -66,7 +66,7 @@
   "y": 28,
   "field": "mend",
   "prop": "wall_gap",
-  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Barmbrack in the hollow.",
+  "text": "A dry wall on the hairpin has given up on its top row. {lead} rebuilds it, and finds Barmbrack in the hollow.",
   "reward": {
    "item": "barmbrack",
    "qty": 1
@@ -81,7 +81,7 @@
   "y": 25,
   "field": "mend",
   "prop": "wall_gap",
-  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Boxty in the hollow.",
+  "text": "A field wall between two Tipperary paddocks has a hole in it and a cow looking through. {lead} mends it, and finds Boxty in the hollow.",
   "reward": {
    "item": "boxty",
    "qty": 1
@@ -111,7 +111,7 @@
   "y": 34,
   "field": "mend",
   "prop": "wall_gap",
-  "text": "A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Colcannon in the hollow.",
+  "text": "A salt-bitten wall near the lighthouse road has lost its capstones. {lead} sets them back, and finds Colcannon in the hollow.",
   "reward": {
    "item": "colcannon",
    "qty": 1

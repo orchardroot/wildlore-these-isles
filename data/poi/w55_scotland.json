@@ -65,7 +65,7 @@
      "Lamper"
     ],
     [
-     "Poacher Rab",
+     "Poacher Tam",
      "Poacher"
     ]
    ],
@@ -154,7 +154,7 @@
    "at": "rob_roy_way",
    "names": [
     [
-     "Poacher Dilys",
+     "Poacher Senga",
      "Poacher"
     ],
     [
@@ -167,7 +167,7 @@
     "thistlet",
     "brockling"
    ],
-   "line": "This is a private camp. Private as in 'mind your own'.",
+   "line": "Cattle are not what they were. Neither is the paperwork.",
    "money": 3100,
    "item": "cream_tea"
   },
@@ -251,7 +251,7 @@
      "Poacher"
     ],
     [
-     "Poacher Bronwen",
+     "Poacher Eilidh",
      "Poacher"
     ]
    ],
@@ -340,11 +340,11 @@
    "at": "trotternish",
    "names": [
     [
-     "Poacher Rab",
+     "Poacher Hamish",
      "Poacher"
     ],
     [
-     "Poacher Seamus",
+     "Poacher Iain",
      "Poacher"
     ]
    ],
