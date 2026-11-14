@@ -689,6 +689,15 @@
     "The new pond is black and still. The sticks across the stream look almost tidy."
    ],
    "clue": "beavers.dusk"
+  },
+  {
+   "x": 60,
+   "y": 20,
+   "text": [
+    "A buoy bobbing at the edge of the pond. Past it, the water is a long way from anywhere you can walk."
+   ],
+   "clue": "beavers.lodge",
+   "coracle": true
   }
  ],
  "signs": [

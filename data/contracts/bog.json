@@ -80,11 +80,24 @@
    "hint": "ask the park ranger",
    "text": [
     "It's gas, most likely. Rotting peat makes methane and a trace of something that catches light, and it can glow over wet ground. That's the best the scientists have for the will-o'-the-wisp.",
-    "Though I'll say this. Gas doesn't hold a distance. Whatever it is, don't follow it off the old track. People have drowned in less than that."
+    "Whatever anybody tells you, don't follow it off the old track. People have drowned in less than that."
    ],
    "idle": ["Counting bog cotton. It's not as exciting as it sounds, or it is, depending on who you ask."],
    "after": "The old track's marked now. I'd call it progress, whatever it was.",
+   "wrong": true,
    "points": ["gas"]
+  },
+  {
+   "id": "scorch",
+   "kind": "look",
+   "zone": "connemara",
+   "hint": "where the light hung, once you have seen the bog hole",
+   "text": [
+    "The footprints end at a tussock where the light must have hung, a foot over the heather. The heather is green, cool and unmarked: no scorch, and no smell of anything rotten.",
+    "Marsh gas that burned would leave a mark, and a lamp would leave a stub of candle. There is nothing here but the wet and a feeling of being watched, which is not evidence."
+   ],
+   "needs_clue": "trackway",
+   "points": ["wisp"]
   }
  ],
  "lair": {
@@ -172,7 +185,8 @@
   ],
   "looks": [
    {"clue": "trackway", "near": [30, 20], "on": "any", "text": ["Black water, brown moss, and a line of old planks just under the surface. A dead sheep, once."]},
-   {"clue": "light", "near": [36, 30], "on": "any", "text": ["The cutting bank. Open peat, a stacked turf, a lot of sky."]}
+   {"clue": "light", "near": [36, 30], "on": "any", "text": ["The cutting bank. Open peat, a stacked turf, a lot of sky."]},
+   {"clue": "scorch", "near": [32, 26], "on": "any", "text": ["A tussock of heather, green and wet and entirely ordinary."]}
   ],
   "lair": {"near": [48, 34]},
   "folk": [

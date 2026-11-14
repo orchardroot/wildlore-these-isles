@@ -81,7 +81,23 @@
    ],
    "idle": ["Measuring the burn. It's got opinions."],
    "after": "A bridge, a sign or a bridle. Whatever you chose, the river is still a river.",
+   "wrong": true,
    "points": ["spate"]
+  },
+  {
+   "id": "ripple",
+   "kind": "look",
+   "zone": "great_glen",
+   "from": "coracle",
+   "optional": true,
+   "hint": "the shallows where the burn runs into the loch, from a boat",
+   "hint_ashore": "Something stands out in the loch where the burn comes in, too far to make out from the bank. You would need to be out on the water.",
+   "text": [
+    "From the coracle you can watch the mouth of the burn from the water side. A grey shape stands in the shallows, motionless, facing the path. A party of walkers goes by and it does not stir.",
+    "Then one woman comes along on her own, and its head turns, slowly, like a gate. It is not looking at the water. It is looking at her."
+   ],
+   "needs_clue": "hooves",
+   "points": ["kelpie"]
   }
  ],
  "lair": {
@@ -169,7 +185,8 @@
   ],
   "looks": [
    {"clue": "hooves", "near": [28, 40], "on": "any", "text": ["The bank of the burn, grey stone and soft mud, trampled by hillwalkers' boots."]},
-   {"clue": "spate", "near": [34, 50], "on": "any", "text": ["A broad, shallow, stony ford. In dry weather you could cross it in your socks."]}
+   {"clue": "spate", "near": [34, 50], "on": "any", "text": ["A broad, shallow, stony ford. In dry weather you could cross it in your socks."]},
+   {"clue": "ripple", "at": [14, 27], "text": ["A buoy, riding at the end of its chain far out on the loch. Nobody on the bank could read it."]}
   ],
   "lair": {"near": [30, 54]},
   "folk": [

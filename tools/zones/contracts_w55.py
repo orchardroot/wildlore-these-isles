@@ -292,7 +292,7 @@ def place(c, zones):
     for lk in pl.get("looks", []):
         k = next(k for k in c["clues"] if k["id"] == lk["clue"])
         z = zone(k["zone"])
-        x, y = z.find_spot(z.anchor(lk["near"]), lk.get("on", "any"))
+        x, y = tuple(lk["at"]) if "at" in lk else z.find_spot(z.anchor(lk["near"]), lk.get("on", "any"))  # "at": an exact tile (wave 57)
         z.add_examine({"x": x, "y": y, "text": lk["text"], "clue": "%s.%s" % (cid, lk["clue"])})
     lair = c["lair"]
     key = "ct_%s_lair" % cid

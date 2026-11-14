@@ -86,6 +86,21 @@
    "idle": ["Counting pups. They're white and absurd and I should not be allowed to say that."],
    "after": "However it falls out, the real trouble is out at sea, and no net or gun can reach it.",
    "points": ["seal"]
+  },
+  {
+   "id": "net",
+   "kind": "look",
+   "zone": "pentland_coast",
+   "from": "coracle",
+   "optional": true,
+   "hint": "the net buoys off the harbour, from a boat",
+   "hint_ashore": "Out by the net buoys something is moving, too far off to make out from the quay. You would have to be on the water.",
+   "text": [
+    "From the coracle, out by the net buoys, you wait. A big round head comes up beside the net, takes a salmon through the mesh from underneath, and goes down again. The buoy twitches once.",
+    "It does not hurry, and it does not take the whole fish. It has clearly done this before, and has opinions about the mesh."
+   ],
+   "needs_clue": "bites",
+   "points": ["seal"]
   }
  ],
  "lair": {
@@ -173,7 +188,8 @@
   ],
   "looks": [
    {"clue": "bites", "near": [30, 22], "on": "any", "text": ["Salmon nets on the shore, drying. They smell strongly of the sea."]},
-   {"clue": "dawn", "near": [40, 30], "on": "any", "text": ["The river mouth, brown water spreading into green. Quiet, at the moment."]}
+   {"clue": "dawn", "near": [40, 30], "on": "any", "text": ["The river mouth, brown water spreading into green. Quiet, at the moment."]},
+   {"clue": "net", "at": [63, 11], "text": ["A moored boat at the harbour mouth, nets heaped in the stern. Beyond it the buoys bob in a line."]}
   ],
   "lair": {"near": [52, 32]},
   "folk": [

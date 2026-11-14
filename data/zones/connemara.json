@@ -715,6 +715,14 @@
     "The cutting bank. Open peat, a stacked turf, a lot of sky."
    ],
    "clue": "bog.light"
+  },
+  {
+   "x": 31,
+   "y": 30,
+   "text": [
+    "A tussock of heather, green and wet and entirely ordinary."
+   ],
+   "clue": "bog.scorch"
   }
  ],
  "encounters": {

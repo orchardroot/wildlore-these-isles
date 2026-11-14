@@ -128,3 +128,65 @@ func test_the_shape_rules_catch_a_bad_clue() -> void:
 	var c4 := _sample()
 	c4.clues[2]["needs_clue"] = "k4"
 	assert_false(Contracts._validate_shape(c4, c4.clues[2], "s: ", zone).is_empty(), "nor is a plain clue behind an optional one")
+
+func _using(key: String) -> Array:
+	return Contracts.all().filter(func(c): return (c.clues as Array).any(func(k): return k.has(key) and not (k[key] is bool and not k[key]))).map(func(c): return str(c.id))
+
+func test_each_shape_is_used_by_at_least_three_contracts() -> void:
+	assert_true(_using("wrong").size() >= 3, "wrong witnesses: %s" % [_using("wrong")])
+	assert_true(_using("needs_clue").size() >= 3, "a clue that follows another: %s" % [_using("needs_clue")])
+	assert_true(_using("from").size() >= 3, "seen from the coracle: %s" % [_using("from")])
+
+func test_reworked_contracts_keep_every_old_clue_and_ending() -> void:
+	var old := {"mink": ["tracks", "dusk", "ted", "volunteer"], "bog": ["trackway", "light", "mikey", "ranger"],
+		"beavers": ["stumps", "dusk", "pidgeon", "ranger"], "kelpie": ["hooves", "spate", "ghillie", "hydro"], "seal": ["bites", "dawn", "netsman", "biologist"]}
+	for id in old:
+		var c := Contracts.get_contract(id)
+		var ids: Array = (c.clues as Array).map(func(k): return str(k.id))
+		for k in old[id]:
+			assert_has(ids, k, "%s keeps clue %s" % [id, k])
+		assert_eq(c.choices.size(), 4, "%s keeps its four endings" % id)
+		# a save that was part-way: found clues stay found, the new ones are simply not found yet
+		var d := _taken(c)
+		for k in old[id]:
+			Contracts.note_clue(d, id, k)
+		var th := Contracts.theory(d, c)
+		assert_true(str(c.truth) in th.lead or th.lead.size() > 0, "%s: an old save still has a theory" % id)
+		var d2 := GameStateData.from_dict(d.to_dict(), Fixtures.dex())
+		for k in old[id]:
+			assert_true(Contracts.clue_found(d2, id, k))
+
+func test_the_wrong_witness_can_hold_a_player_back_until_struck() -> void:
+	# mink: the tracks point at an otter as well, and Ted says otter: that looks sure, and is wrong
+	var c := Contracts.get_contract("mink")
+	var d := _taken(c)
+	Contracts.note_clue(d, "mink", "tracks")
+	Contracts.note_clue(d, "mink", "ted")
+	var t := Contracts.theory(d, c)
+	assert_eq(t.lead, ["otter"], "a wrong witness can mislead")
+	Contracts.strike(d, "mink", "ted", true)
+	assert_eq(Contracts.theory(d, c).lead.size(), 2, "struck out: the tracks leave mink or otter")
+	Contracts.note_clue(d, "mink", "volunteer")
+	Contracts.note_clue(d, "mink", "dusk")
+	assert_eq(Contracts.theory(d, c).lead, ["mink"])
+
+func test_the_look_spots_are_where_the_shapes_say() -> void:
+	for pair in [["beavers", "lodge", "exe_estuary"], ["kelpie", "ripple", "great_glen"], ["seal", "net", "pentland_coast"]]:
+		var c := Contracts.get_contract(pair[0])
+		var k := Contracts.clue_of(c, pair[1])
+		assert_eq(str(k.from), "coracle")
+		assert_true(bool(k.optional))
+		var z := ZoneData.load_id(pair[2])
+		var spot := {}
+		for e in z.examine:
+			if str(e.get("clue", "")) == "%s.%s" % [pair[0], pair[1]]:
+				spot = e
+		assert_false(spot.is_empty(), "%s has its look-spot" % pair[1])
+	for pair in [["mink", "scat"], ["bog", "scorch"]]:
+		assert_eq(Contracts.clue_needs(Contracts.clue_of(Contracts.get_contract(pair[0]), pair[1])).size(), 1)
+
+func test_a_poster_never_says_a_share_of_the_fee() -> void:
+	for c in Contracts.all():
+		for ch in c.choices:
+			for l in ch.poster:
+				assert_false("per cent" in str(l).to_lower() or "%" in str(l), "%s/%s quotes a number the pay may not match" % [c.id, ch.id])

@@ -524,9 +524,12 @@ func validate(all: Dictionary) -> Array:
 		if not warp_at(ep).is_empty():
 			e.append(tag + "examine spot %d,%d is on a warp" % [ep.x, ep.y])
 		# you face it from a neighbouring tile (or stand on it), so something next to it must be reachable
-		var ok: bool = ex_reach.has(ep)
+		var reach := ex_reach
+		if bool(ex.get("coracle", false)):  # a contract's lead seen from the coracle: you face it from the water
+			reach = reachable(spawn, CORACLE_ABILITIES)
+		var ok: bool = reach.has(ep)
 		for d in [Vector2i(0, 1), Vector2i(0, -1), Vector2i(1, 0), Vector2i(-1, 0)]:
-			ok = ok or ex_reach.has(ep + d)
+			ok = ok or reach.has(ep + d)
 		if not ok:
 			e.append(tag + "examine spot %d,%d is blocked off (nowhere to stand to face it)" % [ep.x, ep.y])
 	var edge_reach_cache := {}

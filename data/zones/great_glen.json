@@ -516,6 +516,15 @@
     "A broad, shallow, stony ford. In dry weather you could cross it in your socks."
    ],
    "clue": "kelpie.spate"
+  },
+  {
+   "x": 14,
+   "y": 27,
+   "text": [
+    "A buoy, riding at the end of its chain far out on the loch. Nobody on the bank could read it."
+   ],
+   "clue": "kelpie.ripple",
+   "coracle": true
   }
  ],
  "encounters": {

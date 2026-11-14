@@ -87,6 +87,21 @@
    "after": "Nobody ever gets it all their own way with a beaver. That's the whole lesson, I think.",
    "points": ["beaver"],
    "rules_out": ["deer"]
+  },
+  {
+   "id": "lodge",
+   "kind": "look",
+   "zone": "exe_estuary",
+   "from": "coracle",
+   "optional": true,
+   "hint": "where the drag trail goes into the water, from a boat",
+   "hint_ashore": "The drag trail runs down into the water and out of sight. Whatever it leads to is out on the pond, and you would need a boat to see it.",
+   "text": [
+    "From the coracle you follow the drag trail out over the new pond. It ends at a heap of sticks and mud against the far bank, plastered smooth and still wet at the top, with a way in under the water.",
+    "An otter might borrow a lodge like this one, but it would never build it. Somebody has been carrying mud up that bank on their forepaws, and tidily."
+   ],
+   "needs_clue": "stumps",
+   "points": ["beaver"]
   }
  ],
  "lair": {
@@ -174,7 +189,8 @@
   ],
   "looks": [
    {"clue": "stumps", "near": [30, 28], "on": "any", "text": ["Apple trees, a few of them down, some of them very green still. Somebody has been busy."]},
-   {"clue": "dusk", "near": [36, 20], "on": "any", "text": ["The new pond is black and still. The sticks across the stream look almost tidy."]}
+   {"clue": "dusk", "near": [36, 20], "on": "any", "text": ["The new pond is black and still. The sticks across the stream look almost tidy."]},
+   {"clue": "lodge", "at": [60, 20], "text": ["A buoy bobbing at the edge of the pond. Past it, the water is a long way from anywhere you can walk."]}
   ],
   "lair": {"near": [32, 22]},
   "folk": [

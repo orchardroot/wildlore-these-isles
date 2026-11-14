@@ -1328,6 +1328,14 @@
     "The bank of the drain. Reeds, quiet water, a feather or two."
    ],
    "clue": "mink.dusk"
+  },
+  {
+   "x": 22,
+   "y": 24,
+   "text": [
+    "A flat stone by the culvert, with something on it."
+   ],
+   "clue": "mink.scat"
   }
  ],
  "encounters": {
