@@ -85,6 +85,18 @@ func test_there_are_about_sixty_in_forty_zones() -> void:
 	for f in Flotsam.all():
 		assert_false(f.reward.has("money"), f.id)
 
+func test_no_two_finds_read_the_same_and_bottles_pay_something_usable() -> void:
+	var seen := {}
+	var items := _items()
+	for f in Flotsam.all():
+		var t := str(f.text[0])
+		assert_false(seen.has(t), "%s repeats %s" % [f.id, seen.get(t, "")])
+		seen[t] = f.id
+		if f.kind == "bottle":
+			var it := items.get_item(str(f.reward.item))
+			assert_true(int(it.get("price", 0)) >= 80 and int(it.get("price", 0)) <= 300, "%s pays something a player can use: %s" % [f.id, f.reward.item])
+			assert_eq(int(f.reward.qty), 1)
+
 func test_found_is_a_flag_and_an_old_save_has_none() -> void:
 	var f: Dictionary = Flotsam.all()[0]
 	var d := GameStateData.new()

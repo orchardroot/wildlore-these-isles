@@ -9,7 +9,7 @@
    "The cliff railway on Constitution Hill is said to be the longest in Britain. It is very slow and I love it."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "welsh_cake",
    "qty": 1
   },
   "flag": "flotsam_aberystwyth_1"
@@ -21,7 +21,7 @@
   "y": 32,
   "kind": "crate",
   "text": [
-   "A wooden crate, adrift and unclaimed. The lid is nailed down, and the stencil says it came from a port nobody can place."
+   "A wooden crate, adrift near Anglesey and unclaimed. The lid is nailed down, and the stencil says it came from a port nobody can place."
   ],
   "reward": {
    "item": "pork_pie",
@@ -39,7 +39,7 @@
    "To whoever finds this: the Romans called this place Aquae Sulis and built a spa. We have a weir and a great many tourists. Please send soap."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "cup_of_tea",
    "qty": 1
   },
   "flag": "flotsam_bath_1"
@@ -51,7 +51,7 @@
   "y": 31,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+   "A crate roped to a plastic float and let go, by the look of it, somewhere near the Brecon Beacons. You decide it counts as a gift from the water."
   ],
   "reward": {
    "item": "parkin",
@@ -69,7 +69,7 @@
    "Built in Belfast: the Titanic, and a great many other ships that stayed afloat. We would like to be known for the second bit."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "soda_farl",
    "qty": 1
   },
   "flag": "flotsam_belfast_1"
@@ -81,7 +81,7 @@
   "y": 40,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+   "A crate roped to a plastic float and let go, by the look of it, somewhere near Birmingham. You decide it counts as a gift from the water."
   ],
   "reward": {
    "item": "cup_of_tea",
@@ -96,7 +96,7 @@
   "y": 53,
   "kind": "crate",
   "text": [
-   "A crate marked THIS WAY UP. It has not been this way up for some time. You fish it out with the paddle."
+   "A crate marked THIS WAY UP. It has not been this way up since somewhere before Brighton. You fish it out with the paddle."
   ],
   "reward": {
    "item": "soda_bread",
@@ -111,7 +111,7 @@
   "y": 32,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+   "A crate lashed under an overhang at the Burren, tied with fisherman's knots you do not know. It opens at the second try."
   ],
   "reward": {
    "item": "hazelnuts",
@@ -126,7 +126,7 @@
   "y": 41,
   "kind": "cache",
   "text": [
-   "Whoever hid this had a boat and a plan. You have a boat, and now the plan has been found."
+   "Whoever hid this at Cardiff had a boat and a plan. You have a boat, and now the plan has been found."
   ],
   "reward": {
    "item": "truffle",
@@ -141,7 +141,7 @@
   "y": 17,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+   "A crate roped to a plastic float and let go, by the look of it, somewhere near the Giant's Causeway. You decide it counts as a gift from the water."
   ],
   "reward": {
    "item": "cup_of_tea",
@@ -159,7 +159,7 @@
    "Chester's Roodee racecourse says it is among the oldest in the world. The horses have yet to confirm."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "deeside_shortbread",
    "qty": 1
   },
   "flag": "flotsam_chester_1"
@@ -174,7 +174,7 @@
    "The middle of Cork is an island, because the Lee splits round it. Ask a Corkonian and you will get a longer answer than you wanted."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "cup_of_tea",
    "qty": 1
   },
   "flag": "flotsam_cork_1"
@@ -186,7 +186,7 @@
   "y": 33,
   "kind": "pot",
   "text": [
-   "A keepnet left out in the water by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
+   "A keepnet left out in the water at Dartmoor by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
   ],
   "reward": {
    "item": "brown_trout",
@@ -204,7 +204,7 @@
    "Fungie the dolphin lived in Dingle harbour for nearly forty years and charged nobody a penny. The boats charged you."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "carrageen_pudding",
    "qty": 1
   },
   "flag": "flotsam_dingle_1"
@@ -216,7 +216,7 @@
   "y": 37,
   "kind": "pot",
   "text": [
-   "A creel bobbing on its own float, with no one's name on it. Inside, a fish with the look of someone who has given up arguing."
+   "A creel bobbing on its own float off Dover, with no one's name on it. Inside, a fish with the look of someone who has given up arguing."
   ],
   "reward": {
    "item": "haddock",
@@ -234,7 +234,7 @@
    "Captain Scott's Discovery was built here in 1901. She is moored at the quay and has never once tried to leave. Lovely lass."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "dundee_cake",
    "qty": 1
   },
   "flag": "flotsam_dundee_1"
@@ -249,7 +249,7 @@
    "Exeter's canal dates from the 1560s, one of the oldest in England. Nobody has told the swans."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "cup_of_tea",
    "qty": 1
   },
   "flag": "flotsam_exeter_1"
@@ -264,7 +264,7 @@
    "Neptune's Staircase is eight locks on the Caledonian Canal and takes about an hour and a half to climb. Be patient. The mountain will wait."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "ceilidh_shortbread",
    "qty": 1
   },
   "flag": "flotsam_fort_william_1"
@@ -276,7 +276,7 @@
   "y": 31,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+   "A crate lashed under an overhang at the Forth Bridges, tied with fisherman's knots you do not know. It opens at the second try."
   ],
   "reward": {
    "item": "heather_honey",
@@ -294,7 +294,7 @@
    "The Spanish Arch is part of the old city wall, put up in 1584, and named for the Spanish trade. It is very good at standing there."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "soda_bread",
    "qty": 1
   },
   "flag": "flotsam_galway_1"
@@ -306,7 +306,7 @@
   "y": 9,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+   "An eel trap, forgotten and half sunk near Glencoe, its owner long gone. One fish in it, sulking."
   ],
   "reward": {
    "item": "rudd",
@@ -324,7 +324,7 @@
    "Worm's Head is not a worm. It is an island with a causeway that vanishes at high tide. Do not be the person on the rocks."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "bara_brith",
    "qty": 1
   },
   "flag": "flotsam_gower_1"
@@ -336,7 +336,7 @@
   "y": 47,
   "kind": "pot",
   "text": [
-   "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it."
+   "A wicker fish trap hanging from a branch in the water at the Goyt Valley. It has caught something and is a little embarrassed about it."
   ],
   "reward": {
    "item": "brown_trout",
@@ -351,7 +351,7 @@
   "y": 37,
   "kind": "pot",
   "text": [
-   "A lobster pot, adrift, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner."
+   "A lobster pot, adrift off Guernsey, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner."
   ],
   "reward": {
    "item": "mackerel",
@@ -366,7 +366,7 @@
   "y": 16,
   "kind": "crate",
   "text": [
-   "A tea chest bobs past like it has somewhere to be. You hook it, and it comes quietly."
+   "A tea chest bobs past in Gweedore like it has somewhere to be. You hook it, and it comes quietly."
   ],
   "reward": {
    "item": "buxton_water",
@@ -381,7 +381,7 @@
   "y": 6,
   "kind": "crate",
   "text": [
-   "A crate marked THIS WAY UP. It has not been this way up for some time. You fish it out with the paddle."
+   "A crate marked THIS WAY UP. It has not been this way up since somewhere before Hafod Cwm. You fish it out with the paddle."
   ],
   "reward": {
    "item": "soda_bread",
@@ -399,7 +399,7 @@
    "Harris and Lewis are the same island. Please don't say so out loud."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "bere_bannock",
    "qty": 1
   },
   "flag": "flotsam_harris_1"
@@ -411,7 +411,7 @@
   "y": 33,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+   "An eel trap, forgotten and half sunk near Holyhead, its owner long gone. One fish in it, sulking."
   ],
   "reward": {
    "item": "chub",
@@ -429,7 +429,7 @@
    "The Humber Bridge was the longest single-span suspension bridge in the world when it opened in 1981. It isn't any more. I am still proud of it. Hull."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "hull_patty",
    "qty": 1
   },
   "flag": "flotsam_hull_1"
@@ -441,7 +441,7 @@
   "y": 33,
   "kind": "pot",
   "text": [
-   "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it."
+   "A wicker fish trap hanging from a branch in the water at Inverness. It has caught something and is a little embarrassed about it."
   ],
   "reward": {
    "item": "rudd",
@@ -459,7 +459,7 @@
    "The Iron Bridge opened in 1781, the first big bridge made of cast iron. It has not given up, which is better than I can say for my knees."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "shrewsbury_cake",
    "qty": 1
   },
   "flag": "flotsam_ironbridge_gorge_1"
@@ -471,7 +471,7 @@
   "y": 46,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+   "A fish box with a crew's initials burned into the lid. Somebody from the Kent Downs is going to be cross about this, but not today."
   ],
   "reward": {
    "item": "pasty",
@@ -486,7 +486,7 @@
   "y": 8,
   "kind": "cache",
   "text": [
-   "A hollow under a thorn bush, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'"
+   "A hollow under a thorn bush at Keswick, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'"
   ],
   "reward": {
    "item": "honeycomb",
@@ -501,7 +501,7 @@
   "y": 36,
   "kind": "crate",
   "text": [
-   "A sealed tin box, tarred at the seams, floating low. Somebody's emergency rations, and somebody's loss."
+   "A sealed tin box, tarred at the seams, floating low off the Lake District. Somebody's emergency rations, and somebody's loss."
   ],
   "reward": {
    "item": "pork_pie",
@@ -519,7 +519,7 @@
    "At Up Helly Aa they build a Viking galley every January, to burn it. I think of this when I think about my own plans."
   ],
   "reward": {
-   "item": "crab_bait",
+   "item": "shetland_bannock",
    "qty": 1
   },
   "flag": "flotsam_lerwick_1"
@@ -531,7 +531,7 @@
   "y": 45,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+   "A crate lashed under an overhang at Lerwick, tied with fisherman's knots you do not know. It opens at the second try."
   ],
   "reward": {
    "item": "wicker_snare",
@@ -549,7 +549,7 @@
    "King John's Castle was built in the early 1200s and has had a lot of visitors since. A few of them brought cannon."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "soda_bread",
    "qty": 1
   },
   "flag": "flotsam_limerick_1"
@@ -561,7 +561,7 @@
   "y": 6,
   "kind": "crate",
   "text": [
-   "A crate marked THIS WAY UP. It has not been this way up for some time. You fish it out with the paddle."
+   "A crate marked THIS WAY UP. It has not been this way up since somewhere before Liverpool. You fish it out with the paddle."
   ],
   "reward": {
    "item": "flask_of_tea",
@@ -576,7 +576,7 @@
   "y": 34,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+   "An eel trap, forgotten and half sunk near Llanberis, its owner long gone. One fish in it, sulking."
   ],
   "reward": {
    "item": "rudd",
@@ -591,7 +591,7 @@
   "y": 5,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+   "A fish box with a crew's initials burned into the lid. Somebody from Llangollen is going to be cross about this, but not today."
   ],
   "reward": {
    "item": "pork_pie",
@@ -606,7 +606,7 @@
   "y": 10,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+   "A fish box with a crew's initials burned into the lid. Somebody from Loch Lomond is going to be cross about this, but not today."
   ],
   "reward": {
    "item": "bara_brith",
@@ -624,7 +624,7 @@
    "The summer of 1858 was so hot the Thames smelled terrible and they called it the Great Stink. Parliament hung curtains soaked in lime. Sincerely, a bottle."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "cup_of_tea",
    "qty": 1
   },
   "flag": "flotsam_london_1"
@@ -639,7 +639,7 @@
    "Seven bridges over the Tyne between Newcastle and Gateshead, and I still managed to end up on the wrong side of it."
   ],
   "reward": {
-   "item": "slate_chip",
+   "item": "havercake",
    "qty": 1
   },
   "flag": "flotsam_newcastle_1"
@@ -651,7 +651,7 @@
   "y": 48,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+   "A crate roped to a plastic float and let go, by the look of it, somewhere near Nottingham. You decide it counts as a gift from the water."
   ],
   "reward": {
    "item": "soda_bread",
@@ -666,7 +666,7 @@
   "y": 18,
   "kind": "cache",
   "text": [
-   "Dry sand above the tide line and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
+   "Dry sand above the tide line near Oban and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
   ],
   "reward": {
    "item": "wicker_snare",
@@ -681,7 +681,7 @@
   "y": 52,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+   "A fish box with a crew's initials burned into the lid. Somebody from Oxford is going to be cross about this, but not today."
   ],
   "reward": {
    "item": "flask_of_tea",
@@ -696,7 +696,7 @@
   "y": 26,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+   "A fish box with a crew's initials burned into the lid. Somebody from the Pembroke Coast is going to be cross about this, but not today."
   ],
   "reward": {
    "item": "cup_of_tea",
@@ -711,7 +711,7 @@
   "y": 7,
   "kind": "cache",
   "text": [
-   "A cairn on the far bank, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it."
+   "A cairn on the far bank at the Pentland Coast, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it."
   ],
   "reward": {
    "item": "heather_honey",
@@ -729,7 +729,7 @@
    "You can walk to St Michael's Mount at low tide. You can swim back at high tide. Check the table. I did not."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "pasty",
    "qty": 1
   },
   "flag": "flotsam_penzance_1"
@@ -741,7 +741,7 @@
   "y": 23,
   "kind": "pot",
   "text": [
-   "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it."
+   "A wicker fish trap hanging from a branch in the water at Plymouth. It has caught something and is a little embarrassed about it."
   ],
   "reward": {
    "item": "tench",
@@ -759,7 +759,7 @@
    "Brownsea Island held the first Scout camp in 1907. They still have red squirrels. The squirrels are not in the Scouts."
   ],
   "reward": {
-   "item": "crab_bait",
+   "item": "ships_biscuit",
    "qty": 1
   },
   "flag": "flotsam_poole_1"
@@ -771,7 +771,7 @@
   "y": 35,
   "kind": "pot",
   "text": [
-   "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it."
+   "A wicker fish trap hanging from a branch in the water at the Scottish Borders. It has caught something and is a little embarrassed about it."
   ],
   "reward": {
    "item": "chub",
@@ -789,7 +789,7 @@
    "The Severn Bore is a wave that runs up the river on the big tides. Surfers love it. The river was not asked."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "glamorgan_sausage",
    "qty": 1
   },
   "flag": "flotsam_severn_crossing_1"
@@ -801,7 +801,7 @@
   "y": 29,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+   "A fish box with a crew's initials burned into the lid. Somebody from Sheffield is going to be cross about this, but not today."
   ],
   "reward": {
    "item": "pork_pie",
@@ -816,7 +816,7 @@
   "y": 25,
   "kind": "cache",
   "text": [
-   "Dry sand above the tide line and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
+   "Dry sand above the tide line near Shetland and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
   ],
   "reward": {
    "item": "heather_honey",
@@ -831,7 +831,7 @@
   "y": 20,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+   "A crate roped to a plastic float and let go, by the look of it, somewhere near Shrewsbury. You decide it counts as a gift from the water."
   ],
   "reward": {
    "item": "cup_of_tea",
@@ -846,7 +846,7 @@
   "y": 43,
   "kind": "cache",
   "text": [
-   "A cairn on the far bank, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it."
+   "A cairn on the far bank at Sligo, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it."
   ],
   "reward": {
    "item": "hazelnuts",
@@ -861,7 +861,7 @@
   "y": 10,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+   "A crate lashed under an overhang at the Somerset Levels, tied with fisherman's knots you do not know. It opens at the second try."
   ],
   "reward": {
    "item": "hazelnuts",
@@ -879,7 +879,7 @@
    "Harris Tweed has to be handwoven by islanders in their own homes. I am not woven. I am glass."
   ],
   "reward": {
-   "item": "sea_glass",
+   "item": "stornoway_black_pudding",
    "qty": 1
   },
   "flag": "flotsam_stornoway_1"
@@ -891,7 +891,7 @@
   "y": 55,
   "kind": "pot",
   "text": [
-   "A lobster pot, adrift, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner."
+   "A lobster pot, adrift off Swansea, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner."
   ],
   "reward": {
    "item": "ballan_wrasse",
@@ -906,7 +906,7 @@
   "y": 17,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+   "An eel trap, forgotten and half sunk near the Norfolk Broads, its owner long gone. One fish in it, sulking."
   ],
   "reward": {
    "item": "roach",
@@ -921,7 +921,7 @@
   "y": 48,
   "kind": "cache",
   "text": [
-   "Dry sand above the tide line and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
+   "Dry sand above the tide line near the Fens and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
   ],
   "reward": {
    "item": "lavender_sachet",
@@ -936,7 +936,7 @@
   "y": 22,
   "kind": "pot",
   "text": [
-   "A keepnet left out in the water by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
+   "A keepnet left out in the water at the Roaches by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
   ],
   "reward": {
    "item": "roach",
@@ -951,7 +951,7 @@
   "y": 4,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+   "A crate roped to a plastic float and let go, by the look of it, somewhere near Whitby. You decide it counts as a gift from the water."
   ],
   "reward": {
    "item": "tablet",
@@ -966,7 +966,7 @@
   "y": 20,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+   "A crate lashed under an overhang at the Wirral Way, tied with fisherman's knots you do not know. It opens at the second try."
   ],
   "reward": {
    "item": "heather_honey",
@@ -981,7 +981,7 @@
   "y": 36,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+   "An eel trap, forgotten and half sunk near the Yorkshire Dales, its owner long gone. One fish in it, sulking."
   ],
   "reward": {
    "item": "tench",
