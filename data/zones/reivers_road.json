@@ -144,12 +144,6 @@
   },
   {
    "type": "bush",
-   "x": 23,
-   "y": 57,
-   "variant": 0
-  },
-  {
-   "type": "bush",
    "x": 38,
    "y": 8,
    "variant": 2
@@ -511,6 +505,39 @@
    "facing": "right",
    "move": "still",
    "trainer": "rr_rider"
+  },
+  {
+   "id": "rr_gate_0",
+   "sprite": "warden_grunt",
+   "x": 29,
+   "y": 57,
+   "facing": "up",
+   "move": "still",
+   "script": "rr_gate",
+   "name": "Warden",
+   "hide_if": "badge_frost"
+  },
+  {
+   "id": "rr_gate_1",
+   "sprite": "warden_grunt",
+   "x": 30,
+   "y": 57,
+   "facing": "up",
+   "move": "still",
+   "script": "rr_gate",
+   "name": "Warden",
+   "hide_if": "badge_frost"
+  },
+  {
+   "id": "rr_gate_2",
+   "sprite": "warden_grunt",
+   "x": 31,
+   "y": 57,
+   "facing": "up",
+   "move": "still",
+   "script": "rr_gate",
+   "name": "Warden",
+   "hide_if": "badge_frost"
   }
  ],
  "encounters": {
@@ -774,7 +801,7 @@
   "TTTwwwwwwwwwwwwmmmmmmmmmmmmmm###qqwwwwwwwwwwwwqmmmmmmmmmmTTT",
   "TTTmmmmmmmmmmmmmmmmmmmmmmmmmm###mmqqqqqqqqqqqqqqmmmmmmmmmTTT",
   "TTTmmmmmmmmmmmmmmmmmmmmmmmmmm###mmmmmmqmqqqmmmmmmmmmmmmmmTTT",
-  "TTTmmmmmmmmmmmmmmmmmmmmmmmmmm###mmmmmmmmmmmmmmmmmmmmmmmmmTTT",
+  "TTTHHHHHHHHHHHHHHHHHHHHHHHHHH###HHHHHHHHHHHHHHHHHHHHHHHHHTTT",
   "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",
   "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",
   "TTTgggggggggggggggggggggggggg###gggggggggggggggggggggggggTTT",

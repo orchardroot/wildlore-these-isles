@@ -14,10 +14,10 @@ const NEW_ZONES := {
 	"swaledale": ["lake_district", "east", "north_york_moors", "west", ""],
 	"humber_bridge": ["hull", "south", "lincoln", "north", ""],
 	"hadrians_wall_path": ["carlisle", "east", "hadrians_wall", "west", ""],
-	"reivers_road": ["carlisle", "north", "scottish_borders", "south", ""],
+	"reivers_road": ["carlisle", "north", "scottish_borders", "south", "badge_frost"],  # integration: the Borders open at ch9, Carlisle not until the Frost Stone
 	"black_country": ["ironbridge_gorge", "east", "birmingham", "west", "badge_spirit"],
 	"cranborne_chase": ["stonehenge", "south", "poole", "north", "badge_spirit"],
-	"varsity_line": ["bletchley_park", "east", "cambridge", "west", ""],
+	"varsity_line": ["bletchley_park", "east", "cambridge", "west", "badge_spirit"],  # integration: Cambridge waits for the Spirit Stone
 	"romney_marsh": ["brighton", "east", "dover", "west", "moot_won"],
 	"offas_dyke": ["shrewsbury", "west", "llangollen", "north", ""],
 }

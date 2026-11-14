@@ -46,5 +46,17 @@
    "who": "Codebreaker's Granddaughter",
    "text": "There were about ten thousand people there at the peak, and three out of four were women."
   }
+ ],
+ "vl_gate": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The line to Cambridge is closed for a signalling fault. It has been a signalling fault since 1967, in one sense."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "See Keeper Hester in the crypt at York about the Spirit Stone, and we'll see about the points."
+  }
  ]
 }

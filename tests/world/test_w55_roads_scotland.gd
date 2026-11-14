@@ -19,6 +19,12 @@ const NEW := {
 	"the_machars": ["galloway", "cairnryan"],
 }
 
+## The other wave 55 roads sessions' new zones (England, and Wales and Ireland): new too, and checked by the loop above
+## through the places they join, which must still open at their old step.
+const SIBLINGS := ["pendle_hill", "swaledale", "humber_bridge", "hadrians_wall_path", "reivers_road", "black_country",
+	"cranborne_chase", "varsity_line", "romney_marsh", "offas_dyke", "aberglaslyn", "pen_y_gwryd", "llyn_tegid",
+	"glamorgan_coast", "healy_pass", "golden_vale", "clare_road", "hook_head"]
+
 func _baseline() -> Dictionary:
 	return JsonUtil.read("res://tests/world/w55_walk_baseline.json")
 
@@ -32,7 +38,7 @@ func test_no_new_road_opens_a_place_early() -> void:
 			continue
 		assert_eq(int(now.get(zid, 999)), int(base[zid]), "%s is reachable at the same story step as before" % zid)
 	for zid in now:
-		if all[zid].kind != "interior" and not NEW.has(zid):
+		if all[zid].kind != "interior" and not NEW.has(zid) and not SIBLINGS.has(zid):
 			assert_true(base.has(zid), "%s was not walkable at all before, so no road may open it" % zid)
 	for zid in NEW:
 		assert_true(all.has(zid), "new zone exists: " + zid)

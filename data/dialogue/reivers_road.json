@@ -46,5 +46,17 @@
    "who": "Railway Volunteer",
    "text": "Part of it came back in 2015. Edinburgh to Tweedbank. Not as far as Hawick, but folk live in hope."
   }
+ ],
+ "rr_gate": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The road south is shut at the border. Nobody has agreed which side of it we are standing on, so we are shutting both."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "England will keep. See Keeper Isla in Inverness about the Frost Stone first, then come back and we'll find the key."
+  }
  ]
 }
