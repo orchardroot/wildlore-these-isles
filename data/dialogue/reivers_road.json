@@ -58,5 +58,40 @@
    "who": "Warden",
    "text": "England will keep. See Keeper Isla in Inverness about the Frost Stone first, then come back and we'll find the key."
   }
+ ],
+ "sec_rr_farmer": [
+  {
+   "do": "if",
+   "flag": "secret_pele_tower_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Border Farmer",
+     "text": "Round the back, and mind the mud. The cattle never minded, but then they were stolen."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Border Farmer",
+     "text": "There's an old tower down the Esk. Johnnie Armstrong of Gilnockie's, they say, the reiver the king hanged in 1530."
+    },
+    {
+     "do": "say",
+     "who": "Border Farmer",
+     "text": "The ground floor is a stone vault with no stair to the rooms above. The cattle went in there at night, and the family slept on top of them."
+    },
+    {
+     "do": "say",
+     "who": "Border Farmer",
+     "text": "There's a way in round the back, if you don't mind a bit of mud."
+    },
+    {
+     "do": "set",
+     "flag": "secret_pele_tower_known",
+     "value": true
+    }
+   ]
+  }
  ]
 }

@@ -117,7 +117,7 @@ class Z:
             if isinstance(v, dict) and "tile" in v:
                 leg[k] = v["tile"]
         self.leg = leg
-        self.spawn = tuple(r["spawn"])
+        self.spawn = tuple(int(v) for v in r["spawn"])
         self.edges = r.get("edges", {})
         self.occ = set()
         for lst in ("warps", "npcs", "signs", "examine"):
@@ -217,7 +217,7 @@ def pick_spots(sp, zone, taken):
                     if (dx or dy) and zone.ok(x + dx, y + dy) and zone.tile(x + dx, y + dy) in feats:
                         score += 1
             opens = [(x + dx, y + dy) for dx, dy in DIRS4 if (x + dx, y + dy) in land and (x + dx, y + dy) not in zone.occ]
-            if score < 2 or len(opens) < 2:
+            if score < sp.get("min_near", 2) or len(opens) < 2:
                 continue
             if any(abs(x - t[0]) < 6 and abs(y - t[1]) < 6 for t in taken):
                 continue
@@ -225,14 +225,15 @@ def pick_spots(sp, zone, taken):
                 continue
             cands.append(((x, y), opens[0], score))
         cands.sort(key=lambda c: (-c[2], h(sp["id"], c[0])))
+        assert cands, "no warp tile for " + sp["id"]
         warp, arrive, _ = cands[(h(sp["id"]) % min(len(cands), 6))]
     out = {"warp": list(warp), "arrive": list(arrive)}
     # the reveal spot: a solid tile you can face from a reachable one, close to the warp
     if sp["how"] in ("examine", "bottle", "dawn"):
         solid = set(sp.get("spot", ["rock", "cliff", "water", "tree_oak", "tree_pine", "drystone_wall", "hedge", "building"]))
         best = None
-        for y in range(max(0, warp[1] - 7), min(zone.h, warp[1] + 8)):
-            for x in range(max(0, warp[0] - 7), min(zone.w, warp[0] + 8)):
+        for y in range(max(0, warp[1] - 12), min(zone.h, warp[1] + 13)):
+            for x in range(max(0, warp[0] - 12), min(zone.w, warp[0] + 13)):
                 if (x, y) in zone.occ or (x, y) in land or zone.tile(x, y) not in solid:
                     continue
                 if zone.border(x, y, 1) or max(abs(x - warp[0]), abs(y - warp[1])) < 2:
@@ -243,6 +244,7 @@ def pick_spots(sp, zone, taken):
                 key = (d, h(sp["id"], "ex", x, y))
                 if best is None or key < best[0]:
                     best = (key, (x, y))
+        assert best, "no spot for " + sp["id"]
         out["spot"] = list(best[1])
     # the resident: an open reachable tile that does not cut the zone in two, a few tiles from the warp
     best = None

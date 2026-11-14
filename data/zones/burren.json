@@ -310,6 +310,17 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 17,
+   "y": 35,
+   "to": "secret_doolin",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_doolin_known"
+   }
   }
  ],
  "edges": {
@@ -489,6 +500,16 @@
    "facing": "left",
    "move": "still",
    "script": "landsky_burren_karst"
+  },
+  {
+   "id": "sec_burren_guide",
+   "sprite": "tour_guide",
+   "x": 20,
+   "y": 40,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_burren_guide",
+   "name": "Cave Guide"
   }
  ],
  "encounters": {
@@ -815,5 +836,16 @@
   "n": {
    "tile": "flowers"
   }
- }
+ },
+ "examine": [
+  {
+   "x": 20,
+   "y": 35,
+   "text": [
+    "Between two slabs of limestone, a gap you could slip through, breathing cold, damp air on your hands. It smells like a cellar and a church.",
+    "Below, a passage goes down into the dark."
+   ],
+   "flag": "secret_doolin_known"
+  }
+ ]
 }

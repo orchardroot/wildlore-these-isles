@@ -58,5 +58,30 @@
    "who": "Old Sailor",
    "text": "The tide runs one way through the strait for six hours, then the other way. Dread to think what the fish make of it."
   }
+ ],
+ "sec_bryn_riser": [
+  {
+   "do": "if",
+   "flag": "secret_bryn_celli_ddu_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Early Riser",
+     "text": "Dawn, remember. At noon it is just a hill with ideas."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Early Riser",
+     "text": "Bryn Celli Ddu, they call the mound over there. The Mound in the Dark Grove. About five thousand years old."
+    },
+    {
+     "do": "say",
+     "who": "Early Riser",
+     "text": "It was built to face the midsummer sunrise. Come at dawn, not at noon, and look hard at the stone."
+    }
+   ]
+  }
  ]
 }

@@ -427,6 +427,18 @@
    "tx": 5,
    "ty": 6,
    "facing": "up"
+  },
+  {
+   "x": 1,
+   "y": 30,
+   "to": "secret_merlins_cave",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_merlins_cave_known"
+   },
+   "coracle": true
   }
  ],
  "edges": {
@@ -585,6 +597,16 @@
    "name": "The Beast",
    "show_if": "ct_bodmin_state",
    "hide_if": "ct_bodmin_end"
+  },
+  {
+   "id": "sec_merlin_beachcomber",
+   "sprite": "villager_5",
+   "x": 9,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_merlin_beachcomber",
+   "name": "Beachcomber"
   }
  ],
  "examine": [
@@ -603,6 +625,16 @@
     "The edge of the moor, where the gorse runs down to the wall. It is very dark out here after dusk."
    ],
    "clue": "bodmin.night"
+  },
+  {
+   "x": 4,
+   "y": 25,
+   "text": [
+    "A bottle, corked, wedged in the rocks. Inside, a scrap of paper in a careful hand.",
+    "MERLIN'S CAVE GOES RIGHT UNDER THE ISLAND. LOW WATER ONLY, AND COME BY THE SEA SIDE. NOT IF THE SWELL IS UP.",
+    "You put the paper back, and keep the information."
+   ],
+   "flag": "secret_merlins_cave_known"
   }
  ],
  "encounters": {

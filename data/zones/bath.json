@@ -276,6 +276,16 @@
    "facing": "up",
    "move": "still",
    "trainer": "bath_rower"
+  },
+  {
+   "id": "sec_bath_stonecutter",
+   "sprite": "tin_miner",
+   "x": 10,
+   "y": 10,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_bath_stonecutter",
+   "name": "Old Stonecutter"
   }
  ],
  "props": [
@@ -1189,6 +1199,17 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 8,
+   "y": 4,
+   "to": "secret_bath_mine",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_bath_mine_known"
+   }
   }
  ],
  "weather": {

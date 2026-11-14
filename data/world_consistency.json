@@ -384,6 +384,84 @@
    "zone": "gower",
    "key": "secret_paviland",
    "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "anglesey",
+   "key": "secret_bryn_celli_ddu",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "tintagel",
+   "key": "secret_merlins_cave",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "bath",
+   "key": "secret_bath_mine",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "nottingham",
+   "key": "secret_mortimers_hole",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "the_fens",
+   "key": "secret_priest_hole",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "london",
+   "key": "secret_ice_well",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "keswick",
+   "key": "secret_herbert_cell",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "skye",
+   "key": "secret_spar_cave",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "rob_roy_way",
+   "key": "secret_crannog",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "reivers_road",
+   "key": "secret_pele_tower",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "boyne_valley",
+   "key": "secret_souterrain",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "burren",
+   "key": "secret_doolin",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "mournes",
+   "key": "secret_brandy_pad",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
   }
  ]
 }

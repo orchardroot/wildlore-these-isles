@@ -540,6 +540,17 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 5,
+   "y": 11,
+   "to": "secret_mortimers_hole",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_mortimers_hole_known"
+   }
   }
  ],
  "edges": {
@@ -675,6 +686,16 @@
    "times": [
     "night"
    ]
+  },
+  {
+   "id": "sec_not_guide",
+   "sprite": "tour_guide",
+   "x": 3,
+   "y": 17,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_not_guide",
+   "name": "Castle Rock Guide"
   }
  ],
  "encounters": {

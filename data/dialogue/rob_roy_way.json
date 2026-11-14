@@ -53,5 +53,40 @@
    "who": "Ospret",
    "text": "An osprey hangs over the water, then drops like a dropped umbrella and comes up with lunch. It looks at you as if you had not seen anything."
   }
+ ],
+ "sec_tay_student": [
+  {
+   "do": "if",
+   "flag": "secret_crannog_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Young Archaeologist",
+     "text": "Careful of the piles. They've been there two and a half thousand years and they won't move for you."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Young Archaeologist",
+     "text": "Loch Tay is full of crannogs. About eighteen: islands built on piles in the water, with a round house on top."
+    },
+    {
+     "do": "say",
+     "who": "Young Archaeologist",
+     "text": "The oldest are about two and a half thousand years old. People lived on them for centuries, which is longer than most mortgages."
+    },
+    {
+     "do": "say",
+     "who": "Young Archaeologist",
+     "text": "There's one out there you can paddle to, if you're careful of the piles."
+    },
+    {
+     "do": "set",
+     "flag": "secret_crannog_known",
+     "value": true
+    }
+   ]
+  }
  ]
 }

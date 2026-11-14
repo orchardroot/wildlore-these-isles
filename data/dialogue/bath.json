@@ -299,5 +299,40 @@
    "who": "Astronomer",
    "text": "His sister Caroline found comets too. Bath's been a starry sort of city for a long time."
   }
+ ],
+ "sec_bath_stonecutter": [
+  {
+   "do": "if",
+   "flag": "secret_bath_mine_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Old Stonecutter",
+     "text": "Mind your head, and don't wake anything. Bats get cross, and they have the ears for it."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Old Stonecutter",
+     "text": "Every honey-coloured house in Bath came out of the hill at Combe Down."
+    },
+    {
+     "do": "say",
+     "who": "Old Stonecutter",
+     "text": "Ralph Allen had the stone dug by hand and sent down to the river on a tramway. The galleries are empty now, and the bats have moved in."
+    },
+    {
+     "do": "say",
+     "who": "Old Stonecutter",
+     "text": "If you know where to look, there's a way down."
+    },
+    {
+     "do": "set",
+     "flag": "secret_bath_mine_known",
+     "value": true
+    }
+   ]
+  }
  ]
 }

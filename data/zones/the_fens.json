@@ -300,6 +300,17 @@
    "tx": 6,
    "ty": 5,
    "facing": "up"
+  },
+  {
+   "x": 61,
+   "y": 41,
+   "to": "secret_priest_hole",
+   "tx": 6,
+   "ty": 6,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_priest_hole_known"
+   }
   }
  ],
  "edges": {
@@ -442,6 +453,16 @@
    "facing": "left",
    "move": "still",
    "trainer": "fen_chorister"
+  },
+  {
+   "id": "sec_fens_guide",
+   "sprite": "villager_4",
+   "x": 54,
+   "y": 40,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_fens_guide",
+   "name": "Hall Guide"
   }
  ],
  "encounters": {

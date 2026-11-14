@@ -225,5 +225,40 @@
    "do": "league",
    "who": "Games Secretary"
   }
+ ],
+ "sec_keswick_angler": [
+  {
+   "do": "if",
+   "flag": "secret_herbert_cell_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Lakeside Angler",
+     "text": "The island, yes. Mind the wind. It comes down off the fells with ideas."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Lakeside Angler",
+     "text": "See that island? Saint Herbert's. A hermit lived on it in the 600s, with a view of the whole lake and not a soul to talk to."
+    },
+    {
+     "do": "say",
+     "who": "Lakeside Angler",
+     "text": "Bede wrote that Herbert asked to die on the same day as his friend Cuthbert, and he did, in 687. Holiness, or very good scheduling."
+    },
+    {
+     "do": "say",
+     "who": "Lakeside Angler",
+     "text": "There's a little room on it still, if you've the paddle for it."
+    },
+    {
+     "do": "set",
+     "flag": "secret_herbert_cell_known",
+     "value": true
+    }
+   ]
+  }
  ]
 }

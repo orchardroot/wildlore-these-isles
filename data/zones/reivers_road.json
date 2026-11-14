@@ -413,7 +413,19 @@
    "variant": 1
   }
  ],
- "warps": [],
+ "warps": [
+  {
+   "x": 56,
+   "y": 58,
+   "to": "secret_pele_tower",
+   "tx": 6,
+   "ty": 6,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_pele_tower_known"
+   }
+  }
+ ],
  "edges": {
   "south": {
    "to": "carlisle",
@@ -538,6 +550,16 @@
    "script": "rr_gate",
    "name": "Warden",
    "hide_if": "badge_frost"
+  },
+  {
+   "id": "sec_rr_farmer",
+   "sprite": "farmer",
+   "x": 52,
+   "y": 54,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_rr_farmer",
+   "name": "Border Farmer"
   }
  ],
  "encounters": {

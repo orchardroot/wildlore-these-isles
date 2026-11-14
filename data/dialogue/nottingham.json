@@ -215,5 +215,40 @@
    "who": "Lamplighter",
    "text": "Quiet streets, warm lamps, and a hedgehog doing his rounds on Old Market Square. Lovely night for it."
   }
+ ],
+ "sec_not_guide": [
+  {
+   "do": "if",
+   "flag": "secret_mortimers_hole_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Castle Rock Guide",
+     "text": "Round the foot of the rock, and look for the draught. Mortimer didn't, and look what happened."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Castle Rock Guide",
+     "text": "Nottingham Castle sits on a rock that is full of passages. In October 1330 the young Edward III crept in by one, in the dark."
+    },
+    {
+     "do": "say",
+     "who": "Castle Rock Guide",
+     "text": "He was seventeen, and he'd come for Roger Mortimer, who had been running the country in his name. Mortimer's Hole, they call it."
+    },
+    {
+     "do": "say",
+     "who": "Castle Rock Guide",
+     "text": "The way in is round the foot of the rock. People generally don't know where. Mortimer didn't either."
+    },
+    {
+     "do": "set",
+     "flag": "secret_mortimers_hole_known",
+     "value": true
+    }
+   ]
+  }
  ]
 }
