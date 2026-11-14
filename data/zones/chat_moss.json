@@ -1310,6 +1310,60 @@
    "script": "ct_mink_fence",
    "name": "Neighbour",
    "show_if": "ct_mink_loose"
+  },
+  {
+   "id": "ct_mink_next_alan",
+   "sprite": "farmer",
+   "x": 52,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_next_alan",
+   "name": "Alan Barlow"
+  },
+  {
+   "id": "ct_mink_next_dev",
+   "sprite": "fox_watcher",
+   "x": 47,
+   "y": 29,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_next_dev",
+   "name": "Dev Anand"
+  },
+  {
+   "id": "ct_mink_next_lair",
+   "sprite": "creature:minkshade",
+   "x": 59,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_next_lair",
+   "name": "Houdini",
+   "show_if": "ct_mink_next_state",
+   "hide_if": "ct_mink_next_end"
+  },
+  {
+   "id": "ct_mink_next_lane",
+   "sprite": "birdwatcher",
+   "x": 49,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_next_lane",
+   "name": "Raft Checker",
+   "show_if": "ct_mink_next_rota"
+  },
+  {
+   "id": "ct_mink_next_harpers",
+   "sprite": "farmer",
+   "x": 63,
+   "y": 23,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_next_harpers",
+   "name": "Harper",
+   "show_if": "ct_mink_next_loose"
   }
  ],
  "examine": [
@@ -1328,6 +1382,30 @@
     "The bank of the drain. Reeds, quiet water, a feather or two."
    ],
    "clue": "mink.dusk"
+  },
+  {
+   "x": 22,
+   "y": 24,
+   "text": [
+    "A flat stone by the culvert, with something on it."
+   ],
+   "clue": "mink.scat"
+  },
+  {
+   "x": 56,
+   "y": 27,
+   "text": [
+    "The back of a henhouse, a water butt and a lot of mud. Ted has painted the door a defiant green."
+   ],
+   "clue": "mink_next.gap"
+  },
+  {
+   "x": 50,
+   "y": 22,
+   "text": [
+    "The lane ditch, brown and slow. It is full of reeds and the occasional shopping trolley."
+   ],
+   "clue": "mink_next.prints"
   }
  ],
  "encounters": {

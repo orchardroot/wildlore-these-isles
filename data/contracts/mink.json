@@ -62,12 +62,13 @@
    "who": "Ted Barlow",
    "hint": "hear what Maureen's neighbour makes of it",
    "text": [
-    "Fox. It's a fox. I've said so from the start. Got in, went berserk, left the lot on the floor. They do that.",
-    "You want a shotgun, not a notebook."
+    "Otter. Maureen's sister had it right for once, and she's read a book. Got in, went berserk, left the lot on the floor. They do that.",
+    "You want a bigger bolt, not a notebook."
    ],
-   "idle": ["Fox. It's always a fox, whatever it is."],
-   "after": "Told you it was something. Still say it was a fox the first time.",
-   "points": ["fox"]
+   "idle": ["Otter, it is. It's always an otter, whatever else it is."],
+   "after": "Told you it was something. Still say it was an otter.",
+   "wrong": true,
+   "points": ["otter"]
   },
   {
    "id": "volunteer",
@@ -83,6 +84,18 @@
    "after": "I check the clay pad on the raft every week now. You can read a ditch like a newspaper, if you know how.",
    "points": ["mink"],
    "rules_out": ["fox"]
+  },
+  {
+   "id": "scat",
+   "kind": "look",
+   "zone": "chat_moss",
+   "hint": "droppings at the culvert, once you know the prints",
+   "text": [
+    "Following the prints along the bank to the culvert, you find droppings on a flat stone: long, thin, twisted, dark, and so foul that you step back.",
+    "An otter's spraint is mostly fish bone and smells faintly sweet, like jasmine tea. This one is full of feathers and smells like something died in a sleeping bag."
+   ],
+   "needs_clue": "tracks",
+   "points": ["mink"]
   }
  ],
  "lair": {
@@ -140,7 +153,7 @@
    "flags": {"ct_mink_raft": true, "ct_mink_hens_safe": true},
    "repute": {"wardens": 2, "farmers": 0},
    "standing": {"england": 1},
-   "poster": ["The Trust? Well. It's slower than I wanted, and cheaper than I feared. I'll give you half now, and the rest in eggs."],
+   "poster": ["The Trust? Well. It's slower than I wanted, and cheaper than I feared. I'll pay you something now, and the rest in eggs."],
    "after": ["The Trust girl comes every Thursday and counts feet. The hens are still alive, so I'm not complaining."],
    "journal": "You gave the problem to the Wildlife Trust's mink raft scheme. It is slower than a trap, and fairer on every ditch it covers, including the ones nobody has complained about."
   },
@@ -169,7 +182,8 @@
   ],
   "looks": [
    {"clue": "tracks", "near": [16, 24], "on": "any", "text": ["Soft black peat under the willows, pocked with prints. Half of them are the dog's."]},
-   {"clue": "dusk", "near": [30, 26], "on": "any", "text": ["The bank of the drain. Reeds, quiet water, a feather or two."]}
+   {"clue": "dusk", "near": [30, 26], "on": "any", "text": ["The bank of the drain. Reeds, quiet water, a feather or two."]},
+   {"clue": "scat", "near": [24, 26], "on": "any", "text": ["A flat stone by the culvert, with something on it."]}
   ],
   "lair": {"near": [20, 25]},
   "folk": [

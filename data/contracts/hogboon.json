@@ -1,0 +1,221 @@
+{
+ "id": "hogboon",
+ "title": "The Milk Has Gone Off the Mound",
+ "town": "kirkwall",
+ "nation": "scotland",
+ "group": "crofters",
+ "badges": 9,
+ "pay": 3,
+ "poster": {
+  "name": "Jessie Linklater",
+  "role": "milk and cheese, out on the Brodgar road",
+  "idle": [
+   "Cheese? Take a bit. I've a worry on at the farm, but you look like somebody who's only just got here. Come back when you've been round the isles a bit."
+  ],
+  "taken": [
+   "Anything? Another bucket of milk down by a third this morning. The vet says the cows are fine. The cows say nothing. My granny says a great deal."
+  ],
+  "decided": [
+   "You've got your thinking face on. Tell me, and tell it plain."
+  ],
+  "closed": "That's the farm sorted, and the milk's coming. Thank you, and don't be a stranger.",
+  "haggle": "You're a hard bargain for an incomer. Fair enough. Done, and a bit of cheese on the house."
+ },
+ "notice": [
+  "Our milk has dropped by a third since we put in the new silage pit, and the butter will not come however long you churn it. The vet has been twice and found nothing the matter with a single cow.",
+  "My granny says it is the hogboon. I say it is something in the parlour. Somebody had better look before we lose the herd."
+ ],
+ "trouble": [
+  "It's the farm past Brodgar, where the mound is, the old one in the corner of the park. We moved the stone off the top of it to put the pit in. Nobody asked the mound.",
+  "I can pay modestly. Cheese, mostly. I'd like to know what I am dealing with before I decide whether I am being daft."
+ ],
+ "hypotheses": [
+  {"id": "hogboon", "name": "The hogboon of the mound, offended", "types": ["fae", "kin"]},
+  {"id": "parlour", "name": "Something wrong in the new parlour", "types": ["bog"]},
+  {"id": "thief", "name": "Somebody milking the cows at night", "types": ["urban"]}
+ ],
+ "truth": "hogboon",
+ "clues": [
+  {
+   "id": "mound",
+   "kind": "look",
+   "zone": "kirkwall",
+   "hint": "the old mound in the corner of the park",
+   "text": [
+    "A low round mound in the corner of the park, grass cropped short, with a flat stone on the south side hollowed like a bowl. The hollow holds a dry skin of old milk, and the stone, you notice, has been moved a yard from where it belongs.",
+    "Nobody sets a bowl in the hollow of a stone by accident. Somebody did it every morning, for a very long time, and has stopped."
+   ],
+   "points": ["hogboon"]
+  },
+  {
+   "id": "byre",
+   "kind": "look",
+   "zone": "kirkwall",
+   "hint": "the cows coming in at first light, once you have seen the mound",
+   "text": [
+    "At first light the cows come in down the track from the park. They walk in a perfect line, and every one of them swings wide round the mound, giving it a long, polite berth, the way you would walk round a neighbour you had wronged.",
+    "Nobody is milking them at night. A cow that has been milked in the dark does not stand at the gate in the morning looking aggrieved."
+   ],
+   "hint_wait": "A quiet field, a gate and an empty track. The cows only come in at first light. Try again at dawn.",
+   "needs_clue": "mound",
+   "when": {"phase": ["dawn"]},
+   "points": ["hogboon"],
+   "rules_out": ["thief"]
+  },
+  {
+   "id": "rep",
+   "kind": "ask",
+   "zone": "kirkwall",
+   "who": "Gavin Drever",
+   "hint": "hear what the dairy rep makes of it",
+   "text": [
+    "It's the parlour. New liners, new pipes, the whole milking system changed in the one month. You get a bug in the line, you lose a third of your yield, and you'll never find it with a pail.",
+    "I'll swab it for you. I'll swab the whole thing. It's got to be the parlour, because it can't be anything else."
+   ],
+   "idle": ["It's the parlour. I'm sure of it. I've an appointment to be sure of it again."],
+   "after": "Swabs came back clean as a whistle. I'll still say it was the parlour. I have a pamphlet.",
+   "wrong": true,
+   "points": ["parlour"]
+  },
+  {
+   "id": "granny",
+   "kind": "ask",
+   "zone": "kirkwall",
+   "who": "Granny Flett",
+   "hint": "ask Jessie's granny",
+   "text": [
+    "There was always a hogboon in that mound. Every farm had one. My mother poured the first of the milk on the stone every morning of her life, and a drop of the ale at the brewing, and not a cow on the place was ever sick.",
+    "Move his stone and stop his milk, and what did you think would happen? He's not wicked. He's offended. It is not at all the same."
+   ],
+   "idle": ["I'm sitting. A body's allowed to sit."],
+   "after": "A hogboon doesn't ask a lot. It asks you to remember that it was there first.",
+   "points": ["hogboon"]
+  }
+ ],
+ "lair": {
+  "zone": "kirkwall",
+  "name": "The Hogboon",
+  "species": "gruagach",
+  "level": 77,
+  "floor_par": 74,
+  "intro": [
+   "The mound at the corner of the park, grass short as a bowling green and a flat stone moved a yard out of place. The air is cool and smells faintly of cream.",
+   "Something sits on top of the mound with its long hair over its face and a bowl in its lap, empty, held out in front of it. It has the dignity of an old tenant who has just been told the lease is up."
+  ],
+  "beaten": [
+   "The Hogboon sinks down on the mound with the empty bowl in both hands, and looks at it, not at you. It is not a thing that shouts. It is a thing that remembers."
+  ]
+ },
+ "choices": [
+  {
+   "id": "milk",
+   "label": "Put the stone back and pour the first of the milk, as it was done",
+   "say": [
+    "You and Jessie roll the stone back to where it belongs. Granny, who has not left her chair in a week, comes down the track on a stick to pour the first of the morning's milk into the hollow.",
+    "By the end of the week the churn gives butter. Jessie says it is coincidence. She goes out every morning at six, all the same."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_hogboon_milk": true, "ct_hogboon_stone": true},
+   "repute": {"crofters": 2, "wardens": 0},
+   "standing": {"scotland": 1},
+   "poster": ["The butter's come. It's coincidence, mind. It's entirely coincidence. I'll be pouring a drop out at six, all the same. Your cheese is on the shelf."],
+   "after": ["Milk on the stone every morning, and the yield's back. I'm a modern woman and I've no explanation. I'm not asking for one."],
+   "journal": "You put the stone back and had the first of the milk poured on the mound, as it was done on every Orkney farm that had a hogboon. The butter came, which Jessie insists is a coincidence."
+  },
+  {
+   "id": "scheduled",
+   "label": "Fence the mound and call Historic Environment Scotland",
+   "say": [
+    "A woman from Historic Environment Scotland arrives with a clipboard, walks once round the mound, and says that it is a burial mound of the Bronze Age at the very latest. It cannot be moved, ploughed or built on.",
+    "The silage pit goes in the next field, a fence goes round the mound, and the flat stone is put carefully back. Nobody mentions the hogboon, which is, as far as Jessie can see, the polite thing to do."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_hogboon_fenced": true, "ct_hogboon_heritage": true},
+   "repute": {"wardens": 2, "crofters": -1},
+   "standing": {"scotland": 1},
+   "poster": ["A fence, a stone back in place, and a woman from the heritage people who looked at my pit as if I'd stolen a crown. It's a proper tomb, she says. Fair enough. It is, I'm told, also a proper tenant."],
+   "after": ["The mound's fenced and the pit's in the next field. The milk's back to normal. The heritage woman says it is a coincidence. Granny says: she would."],
+   "journal": "You had the mound fenced and the heritage people called in: it is an ancient burial mound, and nobody may move or build on it. The pit went in the next field, and the milk recovered, whatever the heritage people think the reason is."
+  },
+  {
+   "id": "move",
+   "label": "Move the pit, and say nothing to anybody",
+   "say": [
+    "You and Jessie hire a digger for a day and fill in the pit by the mound. It goes in the far corner of the next park, beyond sight of the mound, and the stone stays where it was.",
+    "Nobody pours any milk, and nobody says anything about why. The cows go back to their long, polite line, and the milk does not quite come back."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_hogboon_moved": true, "ct_hogboon_quiet": true},
+   "repute": {"crofters": 1, "wardens": 0},
+   "standing": {"scotland": 1},
+   "poster": ["The pit's out of sight of the mound and the milk's a bit better. A bit. Granny says it's not the same, and I'm afraid she's right. I wanted it to be a clean fix. It's only a tidy one."],
+   "after": ["The pit's in the next park, the milk's about three-quarters back, and the mound's looking at me. I'd like to be rid of the feeling. I'm not sure that I am."],
+   "journal": "You moved the pit away from the mound and said nothing to the hogboon. The milk came back by about three quarters. Granny says that is what you get for a tidy fix and no manners."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The Hogboon goes into the charm with its bowl, as if it had been asked to a meal. It sits there looking pleased, which is the most unsettling thing of all."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_hogboon_kept": true, "ct_hogboon_gone": true},
+   "repute": {"crofters": 0, "wardens": 1},
+   "standing": {"scotland": 2},
+   "poster": ["It's in a charm? A hogboon in a charm! Granny will have a fit. Well. The milk's back, so I'll not say anything. Granny might."],
+   "after": ["The milk's fine, the mound's empty and Granny will not speak to me. I think she has more to say about the charm than the milk."],
+   "journal": "You caught the hogboon. The milk came back, the mound is empty, and Granny Flett will not speak to anyone who had a hand in it."
+  }
+ ],
+ "real": "In Orkney, the hogboon (from the Old Norse haugbui, 'mound dweller') was the spirit of a farm, said to live in a prehistoric mound near the steading. A farm that kept on good terms with it left it the first of the milk, and a drop of ale at the brewing, and it looked after the stock. A farm that forgot it was said to find its cows sick and its butter refusing to come. Many of those mounds are real burial mounds thousands of years old, and the tale, in its way, protected them for a very long time. Now Historic Environment Scotland does the same job, with a clipboard.",
+ "places": {
+  "poster": {"sprite": "villager_2", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "rep", "sprite": "farmer", "near": [42, 32]},
+   {"clue": "granny", "sprite": "villager_3", "near": [24, 38]}
+  ],
+  "looks": [
+   {"clue": "mound", "near": [22, 36], "on": "rock", "text": ["A grassy rise in the corner of a field, with a flat stone on the south side. It looks like a perfectly ordinary lump, until you know."]},
+   {"clue": "byre", "near": [46, 40], "on": "any", "text": ["The gate between the park and the farm track. The mud under it is churned, and the cows have been this way many times."]}
+  ],
+  "lair": {"near": [24, 34]},
+  "folk": [
+   {
+    "id": "cheese",
+    "zone": "kirkwall",
+    "near": [34, 28],
+    "sprite": "shopkeeper",
+    "name": "Cheese Stall",
+    "show_if": "ct_hogboon_end",
+    "says": [
+     ["ct_hogboon_is_milk", ["Linklater's cheese. The butter's come back, and so has the first-of-the-milk on the mound, though she says it's a coincidence. I've a granny of my own. I pour."]],
+     ["ct_hogboon_is_scheduled", ["Linklater's cheese. The mound's got a fence and a sign and a woman with a clipboard who visits on Thursdays. The cows still give it a wide berth, I'm told."]],
+     ["ct_hogboon_is_move", ["Linklater's cheese, and a bit less of it than there was. They moved the pit. The old girl says that isn't the same as asking. I'd not argue with her."]],
+     ["ct_hogboon_is_caught", ["Linklater's cheese. The hogboon's in somebody's charm, I hear. The old girl won't speak of it. I'd not bring it up."]]
+    ],
+    "else": ["Linklater's cheese, a bit of everything."]
+   },
+   {
+    "id": "pourer",
+    "zone": "kirkwall",
+    "near": [26, 37],
+    "sprite": "villager_1",
+    "name": "Milk Pourer",
+    "show_if": "ct_hogboon_milk",
+    "says": [],
+    "else": ["Six o'clock, every morning, a drop on the stone. I do it for my granny and I do it for the butter. I don't do it because I believe in it. Obviously."]
+   },
+   {
+    "id": "heritage",
+    "zone": "kirkwall",
+    "near": [24, 41],
+    "sprite": "hiker",
+    "name": "Heritage Visitor",
+    "show_if": "ct_hogboon_heritage",
+    "says": [],
+    "else": ["A scheduled burial mound, Bronze Age at the latest, and nobody may so much as put a spade in it. I'm told the farmer had a hogboon. I'm told a lot of things on this island, and I write them all down."]
+   }
+  ]
+ }
+}

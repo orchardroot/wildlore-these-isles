@@ -102,5 +102,71 @@
    "who": "Birdwatcher",
    "text": "There! On the spire! The peregrine! Oh. That's a pigeon. Hang on. The pigeon is now inside the peregrine. Nature!"
   }
+ ],
+ "ct_hereward_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "hereward"
+  }
+ ],
+ "ct_hereward_board": [
+  {
+   "do": "if",
+   "flag": "ct_hereward_is_bank",
+   "then": [
+    {
+     "do": "say",
+     "who": "Drainage Board Man",
+     "text": "We voted for the bank and the second pump. It's dry, and I'm told the peat is a bit lower this year. I was told that by a man at a post. He looked very serious about it."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_hereward_is_wash",
+     "then": [
+      {
+       "do": "say",
+       "who": "Drainage Board Man",
+       "text": "The Gotobed field is flooded on purpose. The swans came in January, and the ratepayers came in February to look at the swans. I voted against it. I've since been outvoted by a swan."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_hereward_is_reed",
+       "then": [
+        {
+         "do": "say",
+         "who": "Drainage Board Man",
+         "text": "Half fen, half thatch, on the Gotobed field. It pays, just about. We were all against it, and now we are all rather proud of it, which is very Fen."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "flag": "ct_hereward_is_caught",
+         "then": [
+          {
+           "do": "say",
+           "who": "Drainage Board Man",
+           "text": "They say the man in the bottom field is in a Keeper's team. We voted for the bank. We were all rather nervous about it, and I do not know why."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Drainage Board Man",
+           "text": "The Board has met, and it is as quiet as a Fen field at dusk."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

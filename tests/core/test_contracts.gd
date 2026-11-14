@@ -9,7 +9,16 @@ func _host(c: Dictionary) -> FakeStoryHost:
 	h.zone = str(c.town)
 	for i in int(c.badges):
 		h.data.badges.append("b%d" % i)
+	for n in c.get("needs", []):   # a follow-up's notice is up once the earlier one ended that way
+		h.data.set_flag(Contracts.flag(str(n.contract), "end"), str(n.ending))
 	return h
+
+## Everything in the purses: sterling, euros and the island pounds the Isle of Man and the Channel Islands pay in.
+func _wealth(d: GameStateData) -> int:
+	var n := d.money + d.euros
+	for cur in d.purses:
+		n += int(d.purses[cur])
+	return n
 
 func _lair(h: FakeStoryHost, c: Dictionary) -> void:
 	await Commands.new(h).run([{"do": "contract", "as": "lair", "id": str(c.id)}])
@@ -75,14 +84,14 @@ func test_every_branch_of_every_contract_can_be_finished() -> void:
 			assert_eq(h.warps.size(), 1, "the zone is rebuilt so the creature stands or goes")
 			assert_eq(h.last_battle.foes.size(), 1)
 			# the poster pays once, in the town's money, and the standing moves
-			var before := {"money": h.data.money, "euros": h.data.euros}
+			var before := _wealth(h.data)
 			await _poster(h, c)
 			assert_eq(Contracts.state(h.data, id), Contracts.CLOSED, "%s/%s closed" % [id, ch.id])
-			var paid: int = (h.data.money - int(before.money)) + (h.data.euros - int(before.euros))
+			var paid: int = _wealth(h.data) - before
 			assert_true(paid > 0, "%s/%s pays" % [id, ch.id])
-			var again := h.data.money + h.data.euros
+			var again := _wealth(h.data)
 			await _poster(h, c)
-			assert_eq(h.data.money + h.data.euros, again, "paid once")
+			assert_eq(_wealth(h.data), again, "paid once")
 			assert_false(Contracts.report(h.data, id, str(c.town)).ok, "no second report")
 			# the choice is in the save
 			var d2 := GameStateData.from_dict(h.data.to_dict(), h.dex)

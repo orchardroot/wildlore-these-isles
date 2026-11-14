@@ -335,6 +335,78 @@
    "facing": "down",
    "move": "still",
    "trainer": "jer_legend"
+  },
+  {
+   "id": "ct_tchian_colin",
+   "sprite": "farmer",
+   "x": 30,
+   "y": 14,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_tchian_colin",
+   "name": "Colin Mourant"
+  },
+  {
+   "id": "ct_tchian_madeleine",
+   "sprite": "villager_2",
+   "x": 15,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_tchian_madeleine",
+   "name": "Madeleine Renouf"
+  },
+  {
+   "id": "ct_tchian_lair",
+   "sprite": "creature:tchian",
+   "x": 31,
+   "y": 9,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_tchian_lair",
+   "name": "The Tchian",
+   "show_if": "ct_tchian_state",
+   "hide_if": "ct_tchian_end"
+  },
+  {
+   "id": "ct_tchian_card",
+   "sprite": "hillwalker",
+   "x": 28,
+   "y": 10,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_tchian_card",
+   "name": "Evening Walker",
+   "show_if": "ct_tchian_rule"
+  },
+  {
+   "id": "ct_tchian_queue",
+   "sprite": "birdwatcher",
+   "x": 33,
+   "y": 10,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_tchian_queue",
+   "name": "Coach Visitor",
+   "show_if": "ct_tchian_visitors"
+  }
+ ],
+ "examine": [
+  {
+   "x": 22,
+   "y": 16,
+   "text": [
+    "The bay road, dry and white with dust. A hedge on both sides, and a long way down, the sea."
+   ],
+   "clue": "tchian.lane"
+  },
+  {
+   "x": 17,
+   "y": 16,
+   "text": [
+    "The bend in the lane, with a hedge on either side. It looks like any bend."
+   ],
+   "clue": "tchian.eyes"
   }
  ],
  "encounters": {

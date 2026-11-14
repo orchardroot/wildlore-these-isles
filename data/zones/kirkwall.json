@@ -609,6 +609,99 @@
    "facing": "down",
    "move": "still",
    "script": "landsky_hoy"
+  },
+  {
+   "id": "ct_hogboon_poster",
+   "sprite": "villager_2",
+   "x": 28,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hogboon_poster",
+   "name": "Jessie Linklater"
+  },
+  {
+   "id": "ct_hogboon_rep",
+   "sprite": "farmer",
+   "x": 42,
+   "y": 32,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hogboon_rep",
+   "name": "Gavin Drever"
+  },
+  {
+   "id": "ct_hogboon_granny",
+   "sprite": "villager_3",
+   "x": 24,
+   "y": 38,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hogboon_granny",
+   "name": "Granny Flett"
+  },
+  {
+   "id": "ct_hogboon_lair",
+   "sprite": "creature:gruagach",
+   "x": 23,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hogboon_lair",
+   "name": "The Hogboon",
+   "show_if": "ct_hogboon_state",
+   "hide_if": "ct_hogboon_end"
+  },
+  {
+   "id": "ct_hogboon_cheese",
+   "sprite": "shopkeeper",
+   "x": 34,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hogboon_cheese",
+   "name": "Cheese Stall",
+   "show_if": "ct_hogboon_end"
+  },
+  {
+   "id": "ct_hogboon_pourer",
+   "sprite": "villager_1",
+   "x": 26,
+   "y": 37,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hogboon_pourer",
+   "name": "Milk Pourer",
+   "show_if": "ct_hogboon_milk"
+  },
+  {
+   "id": "ct_hogboon_heritage",
+   "sprite": "hiker",
+   "x": 24,
+   "y": 41,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hogboon_heritage",
+   "name": "Heritage Visitor",
+   "show_if": "ct_hogboon_heritage"
+  }
+ ],
+ "examine": [
+  {
+   "x": 22,
+   "y": 36,
+   "text": [
+    "A grassy rise in the corner of a field, with a flat stone on the south side. It looks like a perfectly ordinary lump, until you know."
+   ],
+   "clue": "hogboon.mound"
+  },
+  {
+   "x": 39,
+   "y": 43,
+   "text": [
+    "The gate between the park and the farm track. The mud under it is churned, and the cows have been this way many times."
+   ],
+   "clue": "hogboon.byre"
   }
  ],
  "encounters": {

@@ -492,5 +492,108 @@
    "flag": "landsky_hoy",
    "value": true
   }
+ ],
+ "ct_hogboon_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "hogboon"
+  }
+ ],
+ "ct_hogboon_rep": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "hogboon",
+   "clue": "rep"
+  }
+ ],
+ "ct_hogboon_granny": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "hogboon",
+   "clue": "granny"
+  }
+ ],
+ "ct_hogboon_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "hogboon"
+  }
+ ],
+ "ct_hogboon_cheese": [
+  {
+   "do": "if",
+   "flag": "ct_hogboon_is_milk",
+   "then": [
+    {
+     "do": "say",
+     "who": "Cheese Stall",
+     "text": "Linklater's cheese. The butter's come back, and so has the first-of-the-milk on the mound, though she says it's a coincidence. I've a granny of my own. I pour."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_hogboon_is_scheduled",
+     "then": [
+      {
+       "do": "say",
+       "who": "Cheese Stall",
+       "text": "Linklater's cheese. The mound's got a fence and a sign and a woman with a clipboard who visits on Thursdays. The cows still give it a wide berth, I'm told."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_hogboon_is_move",
+       "then": [
+        {
+         "do": "say",
+         "who": "Cheese Stall",
+         "text": "Linklater's cheese, and a bit less of it than there was. They moved the pit. The old girl says that isn't the same as asking. I'd not argue with her."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "flag": "ct_hogboon_is_caught",
+         "then": [
+          {
+           "do": "say",
+           "who": "Cheese Stall",
+           "text": "Linklater's cheese. The hogboon's in somebody's charm, I hear. The old girl won't speak of it. I'd not bring it up."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Cheese Stall",
+           "text": "Linklater's cheese, a bit of everything."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "ct_hogboon_pourer": [
+  {
+   "do": "say",
+   "who": "Milk Pourer",
+   "text": "Six o'clock, every morning, a drop on the stone. I do it for my granny and I do it for the butter. I don't do it because I believe in it. Obviously."
+  }
+ ],
+ "ct_hogboon_heritage": [
+  {
+   "do": "say",
+   "who": "Heritage Visitor",
+   "text": "A scheduled burial mound, Bronze Age at the latest, and nobody may so much as put a spade in it. I'm told the farmer had a hogboon. I'm told a lot of things on this island, and I write them all down."
+  }
  ]
 }

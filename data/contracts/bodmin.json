@@ -129,7 +129,7 @@
    "flags": {"ct_bodmin_rumour": true, "ct_bodmin_tourists": true},
    "repute": {"townsfolk": 2, "farmers": -2},
    "standing": {"england": 1},
-   "poster": ["You say there's nothing to be done. I can't prove you're wrong. I can count my ewes. Half the fee, and I'll thank you not to come to the market for a bit."],
+   "poster": ["You say there's nothing to be done. I can't prove you're wrong. I can count my ewes. You'll be paid, and I'll thank you not to come to the market for a bit."],
    "after": ["The tea towels sell. I lose a sheep or two. They don't put that on the tea towels."],
    "journal": "You left the Beast a rumour and said nothing. The Cornish tea shops did very well and Jory lost two more ewes. He has not forgiven you."
   },
@@ -144,7 +144,7 @@
    "flags": {"ct_bodmin_sanctuary": true, "ct_bodmin_quiet": true},
    "repute": {"farmers": 1, "townsfolk": -2},
    "standing": {"england": 1},
-   "poster": ["Safe, you say, with a tree, and a vet? And my sheep are safe too. Well, that's about the best that could be said. Eighty per cent. And the pub's furious."],
+   "poster": ["Safe, you say, with a tree, and a vet? And my sheep are safe too. Well, that's about the best that could be said. And the pub's furious."],
    "after": ["They took it off in a lorry. Sheep are safe. Pub is quiet. The tea shops are looking for a new legend."],
    "journal": "You had the Beast taken to a sanctuary. The sheep are safe, the moor is quiet, and Cornwall has lost its famous monster, which several shopkeepers want to discuss with you."
   },

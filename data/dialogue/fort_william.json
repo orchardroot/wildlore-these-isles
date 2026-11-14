@@ -415,5 +415,71 @@
    "who": "Estate Hand",
    "text": "There's a bridle on the estate office wall that's never dry. I try not to look at it. It isn't looking at me, but I have my doubts."
   }
+ ],
+ "ct_bridge_otter_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "bridge_otter"
+  }
+ ],
+ "ct_bridge_otter_walker": [
+  {
+   "do": "if",
+   "flag": "ct_bridge_otter_is_ledge",
+   "then": [
+    {
+     "do": "say",
+     "who": "Walker",
+     "text": "Nothing on the bridge but boots, and the ranger says there are otters underneath on a little plank. I have never once seen one. I am assured they are there. I'm choosing to believe it."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_bridge_otter_is_watch",
+     "then": [
+      {
+       "do": "say",
+       "who": "Walker",
+       "text": "There's a bench at the bridge now, and a sign about being quiet. I went at dusk. I saw an otter. I have never been so happy to be shushed."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_bridge_otter_is_tale",
+       "then": [
+        {
+         "do": "say",
+         "who": "Walker",
+         "text": "Nobody goes down to the burn after dark. They say it's the horse. I say it's probably an otter, but I'm not going to be the one to say so."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "flag": "ct_bridge_otter_is_caught",
+         "then": [
+          {
+           "do": "say",
+           "who": "Walker",
+           "text": "The prints stopped, and they say a ranger caught the thing, and it's in somebody's team. I'd put a lot of money on it being a lot smaller than anyone thinks."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Walker",
+           "text": "The bridge is dry and so are my boots."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

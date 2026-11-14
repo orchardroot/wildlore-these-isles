@@ -682,5 +682,58 @@
     }
    ]
   }
+ ],
+ "ct_mink_next_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "mink_next"
+  }
+ ],
+ "ct_mink_next_eggs": [
+  {
+   "do": "if",
+   "flag": "ct_mink_next_is_rota",
+   "then": [
+    {
+     "do": "say",
+     "who": "Egg Stall",
+     "text": "Eggs, forty to a tray, half of them Maureen's and half of them Ted's, and the two of them split the takings and are quite civil about it. It is deeply suspicious."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_mink_next_is_trap",
+     "then": [
+      {
+       "do": "say",
+       "who": "Egg Stall",
+       "text": "Barlow's eggs, forty to a tray. He had the mink dealt with, properly, and he doesn't enjoy talking about it. Buy a tray and say nothing."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_mink_next_is_caught",
+       "then": [
+        {
+         "do": "say",
+         "who": "Egg Stall",
+         "text": "Barlow's eggs. They say that mink that did two farms in one summer is in some Keeper's party now. I have no idea who. It is probably very polite."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Egg Stall",
+         "text": "Barlow's eggs, forty to a tray, and two bunkers' worth of sheds on the lane. He says the Harpers have lost some. He says it very quietly."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

@@ -15,10 +15,18 @@ extends RefCounted
 ##   ct_<id>_state     1 taken, 2 decided (go and say so), 3 closed (reported, paid). Absent is "not taken"
 ##   ct_<id>_fee       the fee agreed, in sterling
 ##   ct_<id>_clue_<c>  a clue found
+##   ct_<id>_struck_<c>  a clue found and struck out of the Journal (it stops counting towards the working theory)
 ##   ct_<id>_guess     the hypothesis you named at the lair
 ##   ct_<id>_beaten    the creature was beaten and the decision is waiting
 ##   ct_<id>_end       the ending id; ct_<id>_is_<end> is the same as a flag a resident's show_if can read
 ##   ct_rep_<group>    your repute with a group of people (farmers, wardens ...), see REPUTE_STEP
+## Three shapes a clue can ask for beyond a plain look-spot or witness (wave 57):
+##   wrong       a witness who is simply wrong and stays wrong. It points only at something that is not the truth and
+##               nothing ever rules it out: you must see that the other leads outweigh it, and may strike it out
+##   needs_clue  a clue (id, or ids) that has to be found first: the spot reads as ordinary ground until then
+##   from        "coracle": a look-spot that only answers from the water, seen from the boat (the creature's own
+##               behaviour). A clue in a secret_* zone is a hidden place's, which is just a zone like any other
+##   optional    the working theory is sure without this clue; it settles it. The coracle and hidden places are optional
 ## Pure logic (no autoload names): the validator loads this.
 
 const DIR := "res://data/contracts"
@@ -205,6 +213,36 @@ static func clue_lines(k: Dictionary) -> Array:
 static func found(data: GameStateData, c: Dictionary) -> Array:
 	return c.get("clues", []).filter(func(k): return clue_found(data, str(c.id), str(k.id)))
 
+## The clues that must be found before this one can be (a "needs_clue" of one id or several).
+static func clue_needs(k: Dictionary) -> Array:
+	var n: Variant = k.get("needs_clue", [])
+	return (n as Array).map(func(x): return str(x)) if n is Array else ([str(n)] if str(n) != "" else [])
+
+## Is this clue there to be found yet: everything it needs is already found.
+static func clue_open(data: GameStateData, id: String, k: Dictionary) -> bool:
+	for n in clue_needs(k):
+		if not clue_found(data, id, n):
+			return false
+	return true
+
+## A found clue struck out of the Journal. Struck clues do not count towards the working theory.
+static func clue_struck(data: GameStateData, id: String, clue_id: String) -> bool:
+	return _on(data, flag(id, "struck_" + clue_id))
+
+## Strikes a found clue out, or puts it back. Only while the contract is open, and only what you have found.
+static func strike(data: GameStateData, id: String, clue_id: String, out: bool) -> bool:
+	if state(data, id) != TAKEN or not clue_found(data, id, clue_id):
+		return false
+	data.set_flag(flag(id, "struck_" + clue_id), out)
+	return true
+
+## Clues you could still follow now (found ones and ones whose turn has not come are left out).
+static func open_unfound(data: GameStateData, c: Dictionary) -> Array:
+	return c.get("clues", []).filter(func(k): return not clue_found(data, str(c.id), str(k.id)) and clue_open(data, str(c.id), k))
+
+static func from_words(k: Dictionary) -> String:
+	return "seen from the coracle" if str(k.get("from", "")) == "coracle" else ""
+
 ## Is the hour and the weather right for this clue ({} wants nothing special)?
 static func clue_ready(clue: Dictionary, phase: String, weather: String) -> bool:
 	var w: Dictionary = clue.get("when", {})
@@ -233,14 +271,15 @@ static func when_words(clue: Dictionary) -> String:
 
 ## Notes a clue. True when it is new, which needs the contract taken and not yet decided.
 static func note_clue(data: GameStateData, id: String, clue_id: String) -> bool:
-	if state(data, id) != TAKEN or clue_found(data, id, clue_id) or clue_of(get_contract(id), clue_id).is_empty():
+	var k := clue_of(get_contract(id), clue_id)
+	if state(data, id) != TAKEN or clue_found(data, id, clue_id) or k.is_empty() or not clue_open(data, id, k):
 		return false
 	data.set_flag(flag(id, "clue_" + clue_id), true)
 	return true
 
 ## A look-spot (a zone's examine entry with "clue": "<contract>.<clue>") read now: {lines, new}. The lines are what
 ## the clue tells you; empty when it is not yours to find yet (not taken, wrong hour, wrong weather).
-static func look(data: GameStateData, spec: String, phase: String, weather: String) -> Dictionary:
+static func look(data: GameStateData, spec: String, phase: String, weather: String, afloat := false) -> Dictionary:
 	var parts := spec.split(".")
 	if parts.size() != 2:
 		return {"lines": [], "new": false}
@@ -251,6 +290,10 @@ static func look(data: GameStateData, spec: String, phase: String, weather: Stri
 		return {"lines": [], "new": false}
 	if clue_found(data, id, str(k.id)):
 		return {"lines": clue_lines(k), "new": false}
+	if not clue_open(data, id, k):
+		return {"lines": [], "new": false}   # ordinary ground until the clue it follows from is found
+	if str(k.get("from", "")) == "coracle" and not afloat:
+		return {"lines": [str(k.get("hint_ashore", "Something is going on out on the water. You would have to be out there to see it."))], "new": false}
 	if not clue_ready(k, phase, weather):
 		return {"lines": [str(k.get("hint_wait", "Nothing here yet. Perhaps it is the wrong time to be looking."))], "new": false}
 	return {"lines": clue_lines(k), "new": note_clue(data, id, str(k.id))}
@@ -266,11 +309,21 @@ static func hypothesis(c: Dictionary, hid: String) -> Dictionary:
 ## What the clues say so far: {score: {hyp: n}, out: [hyp], lead: [hyp ids still standing with the best score],
 ## sure: true when one is clearly ahead}. A clue can point at a hypothesis (+1) and rule others out.
 static func theory(data: GameStateData, c: Dictionary) -> Dictionary:
+	var ids := []
+	for k in found(data, c):
+		if not clue_struck(data, str(c.id), str(k.id)):
+			ids.append(str(k.id))
+	return theory_of(c, ids)
+
+## The same from a list of clue ids (the validator asks what the plain clues alone would give).
+static func theory_of(c: Dictionary, clue_ids: Array) -> Dictionary:
 	var score := {}
 	var out := {}
 	for h in c.get("hypotheses", []):
 		score[str(h.id)] = 0
-	for k in found(data, c):
+	for k in c.get("clues", []):
+		if str(k.id) not in clue_ids:
+			continue
 		for hid in k.get("points", []):
 			score[str(hid)] = int(score.get(str(hid), 0)) + 1
 		for hid in k.get("rules_out", []):
@@ -493,8 +546,8 @@ static func _validate_clues(c: Dictionary, tag: String, zones: Dictionary, dialo
 	if not hids.has(str(c.get("truth", ""))):
 		errors.append(tag + "truth is not a hypothesis")
 	var clues: Array = c.get("clues", [])
-	if clues.size() < 3 or clues.size() > 4:
-		errors.append(tag + "three or four clues")
+	if clues.size() < 3 or clues.size() > 5:
+		errors.append(tag + "three to five clues")
 	var cids := {}
 	var looks := 0
 	var asks := 0
@@ -537,8 +590,85 @@ static func _validate_clues(c: Dictionary, tag: String, zones: Dictionary, dialo
 					errors.append(tag + "clue %s has no witness in %s" % [kid, k.zone])
 			_:
 				errors.append(tag + "clue %s: kind must be look or ask" % kid)
+		errors.append_array(_validate_shape(c, k, tag, z))
 	if looks < 1 or asks < 1:
 		errors.append(tag + "needs at least one look and one witness")
+	errors.append_array(_validate_theory(c, tag))
+	return errors
+
+## The wave 57 shapes: a wrong witness, a clue that follows another, a clue seen from the coracle, an optional one.
+static func _validate_shape(c: Dictionary, k: Dictionary, tag: String, z: ZoneData) -> Array:
+	var errors := []
+	var kid := str(k.get("id", ""))
+	var cids := (c.get("clues", []) as Array).map(func(x): return str(x.get("id", "")))
+	if bool(k.get("wrong", false)):
+		if (k.get("points", []) as Array).is_empty() or str(c.get("truth", "")) in k.get("points", []):
+			errors.append(tag + "clue %s is wrong, so it must point at something that is not the truth" % kid)
+		if not (k.get("rules_out", []) as Array).is_empty():
+			errors.append(tag + "clue %s is wrong and stays wrong: nothing rules out for it" % kid)
+		var held := false   # it has to matter: something it points at is not already ruled out by the other leads
+		for hid in k.get("points", []):
+			var gone := false
+			for o in c.get("clues", []):
+				if str(o.get("id", "")) != kid and str(hid) in o.get("rules_out", []):
+					gone = true
+			held = held or not gone
+		if not held:
+			errors.append(tag + "clue %s is wrong but every lead it points at is ruled out anyway" % kid)
+	var seen := [kid]
+	var chain: Array = clue_needs(k)
+	while not chain.is_empty():
+		var n := str(chain.pop_back())
+		if n not in cids:
+			errors.append(tag + "clue %s needs clue %s, which does not exist" % [kid, n])
+			continue
+		if n in seen:
+			errors.append(tag + "clue %s needs itself, going round" % kid)
+			break
+		seen.append(n)
+		var nk := clue_of(c, n)
+		if bool(nk.get("optional", false)) and not bool(k.get("optional", false)):
+			errors.append(tag + "clue %s needs the optional clue %s" % [kid, n])
+		chain.append_array(clue_needs(nk))
+	if str(k.get("from", "")) != "":
+		if str(k.from) != "coracle" or str(k.get("kind", "")) != "look":
+			errors.append(tag + "clue %s: from is only 'coracle', on a look-spot" % kid)
+		elif not bool(k.get("optional", false)):
+			errors.append(tag + "clue %s is seen from the coracle, so it must be optional" % kid)
+		elif z != null:
+			var spot := {}
+			for e in z.examine:
+				if str(e.get("clue", "")) == "%s.%s" % [c.get("id", ""), kid]:
+					spot = e
+			var p := Vector2i(int(spot.get("x", -1)), int(spot.get("y", -1)))
+			var wet := false
+			for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+				wet = wet or z.tile_at(p + d) in ZoneData.RIDE_TILES
+			if not wet:
+				errors.append(tag + "clue %s: its look-spot has no water beside it to float up to" % kid)
+	return errors
+
+## Every contract can be worked out from its plain clues (the optional ones only settle it), and a wrong witness
+## can leave the truth tied but never behind.
+static func _validate_theory(c: Dictionary, tag: String) -> Array:
+	var errors := []
+	var plain := []
+	var every := []
+	var right := []
+	for k in c.get("clues", []):
+		every.append(str(k.get("id", "")))
+		if not bool(k.get("optional", false)):
+			plain.append(str(k.get("id", "")))
+		if not bool(k.get("wrong", false)):
+			right.append(str(k.get("id", "")))
+	var truth := str(c.get("truth", ""))
+	for pair in [["its plain clues", plain.filter(func(x): return x in right)], ["all its clues", right]]:
+		var th := theory_of(c, pair[1])
+		if th.lead != [truth] or not th.sure:
+			errors.append(tag + "%s (with a wrong witness struck out) do not make the truth sure" % pair[0])
+	var th2 := theory_of(c, every)
+	if truth not in th2.lead:
+		errors.append(tag + "a wrong witness must never put the truth behind")
 	return errors
 
 static func _validate_lair(c: Dictionary, tag: String, zones: Dictionary, dialogue: Dictionary, dex: Dex) -> Array:

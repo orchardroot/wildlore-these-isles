@@ -108,5 +108,42 @@
    "as": "lair",
    "id": "kelpie"
   }
+ ],
+ "ct_bridge_otter_dugald": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "bridge_otter",
+   "clue": "dugald"
+  }
+ ],
+ "ct_bridge_otter_fiona": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "bridge_otter",
+   "clue": "fiona"
+  }
+ ],
+ "ct_bridge_otter_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "bridge_otter"
+  }
+ ],
+ "ct_bridge_otter_bench": [
+  {
+   "do": "say",
+   "who": "Dusk Watcher",
+   "text": "Shhh. Three of them tonight. Two cubs and a mother, and one of the cubs is doing a sort of headstand. This is the best bench in the Highlands."
+  }
+ ],
+ "ct_bridge_otter_stalker": [
+  {
+   "do": "say",
+   "who": "Stalker",
+   "text": "I said it was the horse, and look. Nobody goes down there after dark. That's a result. I do not need a notebook to tell me I'm right."
+  }
  ]
 }

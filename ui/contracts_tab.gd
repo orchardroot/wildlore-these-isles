@@ -49,10 +49,24 @@ static func describe(detail: VBoxContainer, c: Dictionary) -> void:
 	detail.add_child(UIKit.label("Leads", 24, UIKit.MUTED))
 	for k in c.clues:
 		if Contracts.clue_found(d, id, str(k.id)):
-			_words(detail, Contracts.clue_text(k), 20)
-		else:
+			var struck := Contracts.clue_struck(d, id, str(k.id))
+			var said := Contracts.clue_text(k)
+			if struck:
+				said = "Struck out: " + said
+			elif st >= Contracts.DECIDED and bool(k.get("wrong", false)):
+				said += " (This one was wrong all along.)"
+			_words(detail, said, 20, UIKit.MUTED if struck else UIKit.CREAM)
+		elif Contracts.clue_open(d, id, k):
 			var wait := Contracts.when_words(k)
-			_words(detail, "Still to find: %s (%s)%s" % [str(k.hint), _place(str(k.zone)), ". Needs it %s." % wait if wait != "" else ""], 20, UIKit.MUTED)
+			var how := Contracts.from_words(k)
+			var extra := []
+			if how != "":
+				extra.append("Needs the coracle: it is " + how)
+			if wait != "":
+				extra.append("Needs it " + wait)
+			if bool(k.get("optional", false)):
+				extra.append("Not needed, but it would settle it")
+			_words(detail, "Still to find: %s (%s)%s" % [str(k.hint), _place(str(k.zone)), (". " + ". ".join(extra) + ".") if not extra.is_empty() else ""], 20, UIKit.MUTED)
 	if st >= Contracts.DECIDED:
 		var ch := Contracts.ending(d, c)
 		detail.add_child(UIKit.spacer(2))
@@ -70,3 +84,58 @@ static func describe(detail: VBoxContainer, c: Dictionary) -> void:
 	if not rep.is_empty():
 		detail.add_child(UIKit.spacer(2))
 		_words(detail, "How people see you: " + ", ".join(rep) + ".", 19, UIKit.MUTED)
+
+## The leads you have found, for the strike-out list: [{id, text, struck}]. Only while the contract is open.
+static func strikeable(c: Dictionary) -> Array:
+	var d: GameStateData = Game.data
+	var out := []
+	if Contracts.state(d, str(c.id)) != Contracts.TAKEN:
+		return out
+	for k in Contracts.found(d, c):
+		out.append({"id": str(k.id), "text": str(k.hint), "struck": Contracts.clue_struck(d, str(c.id), str(k.id))})
+	return out
+
+## The strike-out list over the Journal: a button per lead found, to strike it or put it back. Returns the panel and
+## its buttons; `changed` is called after each press so the card behind can redraw.
+static func strike_panel(c: Dictionary, changed: Callable) -> Array:
+	var d: GameStateData = Game.data
+	var id := str(c.id)
+	var p := UIKit.panel(Color("1d2230f8"), 18)
+	var col := VBoxContainer.new()
+	col.add_theme_constant_override("separation", 8)
+	p.add_child(col)
+	col.add_child(UIKit.label("Strike a lead out", 28, UIKit.GOLD))
+	var hint := UIKit.label("A lead you no longer believe stops counting towards what you think it is. You can put it back.", 19, UIKit.MUTED)
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	col.add_child(hint)
+	var s := UIKit.scroll_list(6)
+	s[0].custom_minimum_size = Vector2(0, 260)
+	col.add_child(s[0])
+	var buttons := []
+	for k in Contracts.found(d, c):
+		var b := Button.new()
+		b.custom_minimum_size = Vector2(0, 56)
+		b.focus_neighbor_left = NodePath(".")
+		b.focus_neighbor_right = NodePath(".")
+		var l := UIKit.row_label("", 20, UIKit.CREAM)
+		l.set_anchors_preset(Control.PRESET_FULL_RECT)
+		l.offset_left = 12
+		l.offset_right = -12
+		l.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		b.add_child(l)
+		var kid := str(k.id)
+		var short := str(k.hint)
+		var redraw := func():
+			var out := Contracts.clue_struck(d, id, kid)
+			l.text = ("Put back: " if out else "Strike out: ") + short
+			l.add_theme_color_override("font_color", UIKit.MUTED if out else UIKit.CREAM)
+		redraw.call()
+		b.pressed.connect(func():
+			Audio.sfx("confirm")
+			Contracts.strike(d, id, kid, not Contracts.clue_struck(d, id, kid))
+			redraw.call()
+			changed.call())
+		b.focus_entered.connect(func(): Audio.sfx("cursor"))
+		s[1].add_child(b)
+		buttons.append(b)
+	return [p, buttons]

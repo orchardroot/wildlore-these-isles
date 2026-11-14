@@ -1,0 +1,222 @@
+{
+ "id": "tchian",
+ "title": "The Dog on the Bay Road",
+ "town": "st_helier",
+ "nation": "channel_islands",
+ "group": "townsfolk",
+ "badges": 5,
+ "pay": 3,
+ "poster": {
+  "name": "Sandra Le Quesne",
+  "role": "keeps the kiosk at the top of the Bouley Bay road",
+  "idle": [
+   "Tea? It's on the house, you look worn out. I've a bit of trouble up at the kiosk, but you've not got the miles in yet. Come back when you've seen a bit more of the world."
+  ],
+  "taken": [
+   "Anything? A couple from Guernsey came running up the road last night and ordered two brandies at the kiosk, which is shut. I opened it. What else could I do?"
+  ],
+  "decided": [
+   "You've got the look of somebody who has walked a long way beside something. Go on, then."
+  ],
+  "closed": "That's the road sorted, and thank you. I sleep with the window open again, which is more than I could say a month ago.",
+  "haggle": "You've learnt the Jersey way of bargaining, which is to look very patient. Done."
+ },
+ "notice": [
+  "Walkers coming up the bay road at dusk keep meeting a big black dog. It walks beside them, silent, eyes like lamps, all the way to the top, and never once looks round.",
+  "A lad on a scooter went into the hedge last Friday trying to get away from it. It was not chasing him. That, he says, was the worst of it."
+ ],
+ "trouble": [
+  "Colin Mourant says it is his Labrador, Bruno. Bruno was at the vet in Trinity that night. I need to know what is walking my road before the walkers stop coming, or worse, stop walking it with a friend.",
+  "It's the cliff path above the bay, up the north coast. The fee is modest. I only run a kiosk."
+ ],
+ "hypotheses": [
+  {"id": "tchian", "name": "The Black Dog of Bouley Bay", "types": ["spirit", "night"]},
+  {"id": "dog", "name": "A farm dog off the lead", "types": ["kin"]},
+  {"id": "lights", "name": "Headlights and hedges playing tricks", "types": ["iron"]}
+ ],
+ "truth": "tchian",
+ "clues": [
+  {
+   "id": "lane",
+   "kind": "look",
+   "zone": "jersey_country",
+   "hint": "the dusty bank at the bend of the bay road",
+   "text": [
+    "The dust on the lane is fine as flour, and holds a dozen walkers' boot prints from the last dry day. There is no paw print among them, though the grass at the bank is pressed flat in a long dog-shaped hollow.",
+    "Whatever walks beside people here is heavy enough to flatten grass, and light enough to leave no track at all."
+   ],
+   "points": ["tchian"]
+  },
+  {
+   "id": "eyes",
+   "kind": "look",
+   "zone": "jersey_country",
+   "hint": "the bend after dark, once you have seen the bank",
+   "text": [
+    "At the bend after dark, two points of yellow light come up out of the hedge at knee height, steady, side by side, and fall in beside you. There is no sound of paws, no breath, no jingle of a tag.",
+    "You raise your torch, and the beam goes through the place the dog should be and shows you hedge. The lamps stay where they are. A pair of headlights would have gone round the corner by now."
+   ],
+   "hint_wait": "A quiet lane, with a smell of cut hedge and sea. Whatever walks it keeps strict hours. Try again at dusk or after dark.",
+   "needs_clue": "lane",
+   "when": {"phase": ["dusk", "night"]},
+   "points": ["tchian"],
+   "rules_out": ["lights"]
+  },
+  {
+   "id": "colin",
+   "kind": "ask",
+   "zone": "jersey_country",
+   "who": "Colin Mourant",
+   "hint": "ask the farmer by the road",
+   "text": [
+    "It's a dog. It's Bruno, my Labrador, out for a stroll. He's a great lump. He'd walk with a lamp-post if you let him.",
+    "I know he was at the vet. He gets about. You are not to tell Sandra I said so."
+   ],
+   "idle": ["It's a dog. It's always a dog. It's never been anything but a dog."],
+   "after": "Bruno was home all that week, and I'll tell you what, he wouldn't go up that road for a pie.",
+   "wrong": true,
+   "points": ["dog"]
+  },
+  {
+   "id": "madeleine",
+   "kind": "ask",
+   "zone": "jersey_country",
+   "who": "Madeleine Renouf",
+   "hint": "ask the old lady who knows the stories",
+   "text": [
+    "That's the tchian, the dog. Everybody on the north coast knows him. He's the Black Dog of Bouley Bay, and he's been walking that road since before my grandmother's time.",
+    "He has never hurt a soul. He walks with you, the whole way, and the thing to know is that you must not look round. He does not look round either. That's the arrangement."
+   ],
+   "idle": ["I'm telling the children a story. It's not for the grown-ups. It never is."],
+   "after": "The old dog has been walking that road longer than the road has been a road. Whatever you decided, I hope you were polite.",
+   "points": ["tchian"],
+   "rules_out": ["lights"]
+  }
+ ],
+ "lair": {
+  "zone": "jersey_country",
+  "name": "The Tchian",
+  "species": "tchian",
+  "level": 50,
+  "floor_par": 46,
+  "intro": [
+   "The bend above the bay, the hedge dark on both sides and the sea a pale noise below. The air is cool. Nothing moves in the lane.",
+   "Then two lamps come up at knee height, steady and yellow, and a very large black dog steps out of the hedge and walks beside you. It does not look at you. It has the manner of an escort who has had a long career and has no interest in conversation."
+  ],
+  "beaten": [
+   "The Tchian sits down in the middle of the lane with its great head low, and looks, for the first time, directly at you. It is not a threat. It is a reproach, and a very old one."
+  ]
+ },
+ "choices": [
+  {
+   "id": "lamp",
+   "label": "Put a lamp and a rail on the bend, and leave the dog be",
+   "say": [
+    "The States send a man with a lamp-post and a length of rail, and by the end of the week the bend is lit like a Christmas tree. Sandra paints the post a cheerful green.",
+    "The Tchian stands just outside the pool of light, every night, as if it were waiting for a bus. The scooter lad takes the long way round."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_tchian_lamp": true, "ct_tchian_lit": true},
+   "repute": {"townsfolk": 1, "walkers": 1},
+   "standing": {"channel_islands": 1},
+   "poster": ["A lamp and a rail, and the walkers are back. The dog stands at the edge of the light every night, and nobody minds it any more. I can't quite say why that bothers me."],
+   "after": ["Lamp, rail, a dog at the edge of the light. It's very civilised. I put the kettle on at dusk, in case it's cold."],
+   "journal": "You had a lamp and a rail put at the bend. The bay road is safe for the scooters now, and the Tchian stands just outside the lamp's pool of light every night, as it always did, and as it always will."
+  },
+  {
+   "id": "sign",
+   "label": "Put up a sign at the top, so walkers know what to expect",
+   "say": [
+    "A neat wooden sign goes up at the top of the bay road: THE BLACK DOG OF BOULEY BAY. HE WILL WALK WITH YOU. HE WILL NOT HARM YOU. DO NOT LOOK ROUND. Sandra writes the last line herself.",
+    "Within a fortnight there are coaches at the kiosk, and a queue for the walk at dusk. The dog, so far as anyone can tell, has not read the sign."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_tchian_sign": true, "ct_tchian_visitors": true},
+   "repute": {"townsfolk": 2, "walkers": 0},
+   "standing": {"channel_islands": 2},
+   "poster": ["A sign, and half the island in the car park at dusk. I've never sold so many teas. I'm not sure the dog approves of the notoriety, but it's very good about it."],
+   "after": ["Coaches. Coaches at dusk, and a queue. I've bought a second urn. The dog doesn't read the sign, but I think it knows."],
+   "journal": "You put a sign at the top of the bay road with the dog's name and its one rule: do not look round. It has become something of an attraction, and the Tchian, as far as anyone can tell, remains entirely unmoved."
+  },
+  {
+   "id": "rule",
+   "label": "Give walkers the old rule: walk on, do not look round, say good night at the top",
+   "say": [
+    "Madeleine writes the rule on a card, in French and in English: walk on, do not look round, and say good night at the gate. The kiosk gives out a hundred of them in the first week.",
+    "On the Friday you walk up the road yourself. The dog falls in beside you at the bend, and you do not look round, and at the gate you say good night. When you turn, there is nothing there at all."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_tchian_rule": true, "ct_tchian_goodnight": true},
+   "repute": {"townsfolk": 2, "walkers": 1},
+   "standing": {"channel_islands": 2},
+   "poster": ["A card. The whole thing's a card. Walk on, don't look round, say good night. It's the oldest rule in the world and nobody wrote it down. I'll give you something now, and a cup of tea whenever you're passing."],
+   "after": ["Good night at the gate, every night. The scooter lad does it too. He says it feels daft. He does it anyway."],
+   "journal": "You gave the walkers the old rule: walk on, do not look round, and say good night at the top. It is on a card at the kiosk now, and the dog, so far as anyone knows, has never once broken its end of the arrangement."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The Tchian goes into the charm without a sound, and for a moment the lane is just a lane. Then, very faintly, in the hedge, something that is not a dog says goodnight."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_tchian_kept": true, "ct_tchian_gone": true},
+   "repute": {"townsfolk": 0, "walkers": 1},
+   "standing": {"channel_islands": 2},
+   "poster": ["You've got the dog. In a charm. Well, the road's quiet, and I ought to be pleased. It was company, you know. Of a kind."],
+   "after": ["It's very quiet up the bay road. I walk it at dusk to see if anything falls in beside me. Nothing does. I find I'm rather sorry."],
+   "journal": "You caught the Tchian, and the bay road is quiet. Sandra walks it at dusk sometimes, to see whether anything falls in beside her, and nothing does."
+  }
+ ],
+ "real": "Tchian is Jerriais, the old language of Jersey, for dog, and the Black Dog of Bouley Bay, on the island's north coast, is one of the island's best-known legends: a big black dog with eyes like lamps that appears on the lane to the bay after dark and walks beside people. The tales say it does no harm. Black dogs of the same kind are told of all over the British Isles, as Black Shuck in East Anglia and the Barghest in Yorkshire, and most of them, like this one, walk the lanes at night.",
+ "places": {
+  "poster": {"sprite": "villager_3", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "colin", "sprite": "farmer", "near": [30, 14]},
+   {"clue": "madeleine", "sprite": "villager_2", "near": [14, 32]}
+  ],
+  "looks": [
+   {"clue": "lane", "near": [30, 20], "on": "any", "text": ["The bay road, dry and white with dust. A hedge on both sides, and a long way down, the sea."]},
+   {"clue": "eyes", "near": [32, 10], "on": "any", "text": ["The bend in the lane, with a hedge on either side. It looks like any bend."]}
+  ],
+  "lair": {"near": [31, 9]},
+  "folk": [
+   {
+    "id": "kiosk",
+    "zone": "st_helier",
+    "near": [40, 26],
+    "sprite": "shopkeeper",
+    "name": "Kiosk Regular",
+    "show_if": "ct_tchian_end",
+    "says": [
+     ["ct_tchian_is_lamp", ["The bay road's lit now, a lamp and a rail, and a dog stands at the edge of the light. I've seen it. It looked at me the way my father looks at a bill."]],
+     ["ct_tchian_is_sign", ["There's a sign at the top of the bay road, and coaches. Coaches! The dog hasn't moved, and I'm told it hasn't read the sign. It's very Jersey."]],
+     ["ct_tchian_is_rule", ["I did the rule, on a Friday. Walk on, don't look round, say good night. There was nothing there when I turned. I'll never admit I minded."]],
+     ["ct_tchian_is_caught", ["They say the dog is in somebody's team, and the road's quiet. I took a walk up it. It was too quiet. I came straight down."]]
+    ],
+    "else": ["The bay road's quiet, and so is everybody else."]
+   },
+   {
+    "id": "card",
+    "zone": "jersey_country",
+    "near": [28, 10],
+    "sprite": "hillwalker",
+    "name": "Evening Walker",
+    "show_if": "ct_tchian_rule",
+    "says": [],
+    "else": ["Walk on, don't look round, say good night at the gate. It's on a card. I've got three in my pocket. I don't know why I need three."]
+   },
+   {
+    "id": "queue",
+    "zone": "jersey_country",
+    "near": [34, 9],
+    "sprite": "birdwatcher",
+    "name": "Coach Visitor",
+    "show_if": "ct_tchian_visitors",
+    "says": [],
+    "else": ["We came on the coach. Forty of us, and a flask each. The guide says the dog does not like crowds. I have to say, it is being very good about it."]
+   }
+  ]
+ }
+}

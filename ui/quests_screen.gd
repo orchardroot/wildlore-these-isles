@@ -22,6 +22,7 @@ var _buttons: Array = []
 var _quests: Array = []
 var _last := {}             # tab -> row index
 var _gaz: GazetteerTab
+var _strike: Control          # the strike-a-lead list over a contract's card, while it is open
 
 func _build() -> void:
 	set_title("Journal")
@@ -253,6 +254,9 @@ func _press(i: int) -> void:
 		Audio.sfx("cursor")
 		_quest_hints(i)
 		return
+	if _tab == 3 and i >= 0 and i < _quests.size() and not ContractsTab.strikeable(_quests[i]).is_empty():
+		_open_strike(i)   # a contract under way: strike a lead out, or put it back
+		return
 	if _tab != 0 or i < 0 or i >= _quests.size():
 		return
 	if Quests.current_step(Game.data, _quests[i]).is_empty():
@@ -274,6 +278,8 @@ func _input(event: InputEvent) -> void:
 		d = 1
 	if d != 0:
 		get_viewport().set_input_as_handled()
+		if _strike != null and is_instance_valid(_strike):
+			return   # the strike-out list is open: Back first
 		_tab = MenuLogic.wrap_index(_tab, d, TABS.size())
 		Audio.sfx("cursor")
 		_show_tab()
@@ -298,3 +304,26 @@ class QuestMark:
 			draw_circle(c, r * 0.42, UIKit.GOLD)
 		else:
 			draw_arc(c, r, 0, TAU, 24, UIKit.HEATHER, 3.0, true)
+
+## The strike-out list for contract `i`; Back closes it and puts you back on the contract.
+func _open_strike(i: int) -> void:
+	var made := ContractsTab.strike_panel(_quests[i], func(): _describe(i))
+	_strike = CenterContainer.new()
+	_strike.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_strike.add_child(made[0])
+	(made[0] as Control).custom_minimum_size = Vector2(820, 0)
+	content.add_child(_strike)
+	UIKit.wrap_focus(made[1])
+	UIKit.focus_later(made[1][0])
+	set_hints([["updown", "Leads"], ["confirm", "Strike out or put back"], ["cancel", "Back"]])
+
+func _on_cancel() -> void:
+	if _strike != null and is_instance_valid(_strike):
+		_strike.queue_free()
+		_strike = null
+		Audio.sfx("cancel")
+		if _last.get(_tab, 0) < _buttons.size():
+			UIKit.focus_later(_buttons[int(_last.get(_tab, 0))])
+		_quest_hints(int(_last.get(_tab, 0)))
+		return
+	close(null)

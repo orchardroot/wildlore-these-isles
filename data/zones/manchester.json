@@ -1416,6 +1416,27 @@
    "script": "ct_mink_market",
    "name": "Egg Seller",
    "show_if": "ct_mink_hens_safe"
+  },
+  {
+   "id": "ct_mink_next_poster",
+   "sprite": "farmer",
+   "x": 34,
+   "y": 33,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_next_poster",
+   "name": "Ted Barlow"
+  },
+  {
+   "id": "ct_mink_next_eggs",
+   "sprite": "shopkeeper",
+   "x": 32,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_next_eggs",
+   "name": "Egg Stall",
+   "show_if": "ct_mink_next_end"
   }
  ],
  "encounters": {

@@ -463,6 +463,98 @@
    "move": "still",
    "script": "sec_fens_guide",
    "name": "Hall Guide"
+  },
+  {
+   "id": "ct_hereward_dennis",
+   "sprite": "farmer",
+   "x": 28,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hereward_dennis",
+   "name": "Dennis Rudd"
+  },
+  {
+   "id": "ct_hereward_marian",
+   "sprite": "villager_3",
+   "x": 24,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hereward_marian",
+   "name": "Marian Sayer"
+  },
+  {
+   "id": "ct_hereward_lair",
+   "sprite": "creature:hereward",
+   "x": 34,
+   "y": 38,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hereward_lair",
+   "name": "Hereward",
+   "show_if": "ct_hereward_state",
+   "hide_if": "ct_hereward_end"
+  },
+  {
+   "id": "ct_hereward_swans",
+   "sprite": "birdwatcher",
+   "x": 32,
+   "y": 46,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hereward_swans",
+   "name": "Swan Warden",
+   "show_if": "ct_hereward_wash"
+  },
+  {
+   "id": "ct_hereward_reed",
+   "sprite": "farmer",
+   "x": 26,
+   "y": 40,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hereward_reed",
+   "name": "Reed Cutter",
+   "show_if": "ct_hereward_reed"
+  },
+  {
+   "id": "ct_hereward_pump",
+   "sprite": "farmer",
+   "x": 40,
+   "y": 34,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hereward_pump",
+   "name": "Pump Man",
+   "show_if": "ct_hereward_bank"
+  }
+ ],
+ "examine": [
+  {
+   "x": 30,
+   "y": 36,
+   "text": [
+    "A windpump standing in a low field, with its feet in water and its sails turning very slowly. The water at its foot is as still as a plate."
+   ],
+   "clue": "hereward.edge"
+  },
+  {
+   "x": 50,
+   "y": 38,
+   "text": [
+    "Another windpump at the edge of the low field. The reeds beside it are dark, and very still, and somebody has been standing in them."
+   ],
+   "clue": "hereward.dusk"
+  },
+  {
+   "x": 20,
+   "y": 20,
+   "text": [
+    "A boat moored in the lode, half full of rainwater. Beyond it the far bank is dark, and the sluice stands at the end like a gate."
+   ],
+   "clue": "hereward.lode",
+   "coracle": true
   }
  ],
  "encounters": {

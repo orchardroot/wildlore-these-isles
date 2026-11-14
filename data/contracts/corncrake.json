@@ -132,7 +132,7 @@
    "flags": {"ct_corncrake_late": true, "ct_corncrake_calls": true},
    "repute": {"wardens": 2, "crofters": -1},
    "standing": {"scotland": 1},
-   "poster": ["Late hay, a cheque from the scheme and a township in earplugs. I'm paid for my sleepless nights, which is a funny thing to say. Seventy per cent."],
+   "poster": ["Late hay, a cheque from the scheme and a township in earplugs. I'm paid for my sleepless nights, which is a funny thing to say."],
    "after": ["The crex goes on all night and the baby has learned to sleep through it, God help us. Four chicks in the iris by the end of July."],
    "journal": "You left the hay uncut until August and took the corncrake payment. The calling goes on all night, the hay is thin, and there are four new chicks in the iris."
   },
@@ -147,7 +147,7 @@
    "flags": {"ct_corncrake_centre": true, "ct_corncrake_calls": true},
    "repute": {"crofters": 1, "wardens": 1},
    "standing": {"scotland": 1},
-   "poster": ["Three evenings, a mower at walking pace, and the chicks walked off into the iris like a school trip. I've never worked so hard for so little hay. Eighty per cent."],
+   "poster": ["Three evenings, a mower at walking pace, and the chicks walked off into the iris like a school trip. I've never worked so hard for so little hay."],
    "after": ["We cut from the middle now, and slowly. The chicks get away every year. It adds a day to the hay and it takes a year off my temper."],
    "journal": "You mowed from the middle outwards, slowly, and left the cover. The hay was a little thinner, the chicks ran to safety, and the crofters have copied you ever since."
   },
@@ -162,7 +162,7 @@
    "flags": {"ct_corncrake_kept": true, "ct_corncrake_silent": true},
    "repute": {"crofters": 1, "wardens": -3},
    "standing": {"scotland": 1},
-   "poster": ["You've put it in a charm. It's still calling. I can hear it from here. Well. At least it's in a different parish. Eighty per cent."],
+   "poster": ["You've put it in a charm. It's still calling. I can hear it from here. Well. At least it's in a different parish."],
    "after": ["The field's quiet. The charm in the Keeper's pocket is not. We hear it from the road."],
    "journal": "You caught Crex. It calls inside your charm, all night, and your team has stopped sleeping. The field is quiet."
   }

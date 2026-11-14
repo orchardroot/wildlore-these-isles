@@ -130,7 +130,7 @@
    "flags": {"ct_marten_proofed": true, "ct_marten_wood": true},
    "repute": {"farmers": 1, "wardens": 1},
    "standing": {"ireland": 1},
-   "poster": ["It works! It works, God help us. And I never thought I'd say I was glad to have a pine marten in the parish. Eighty per cent, and a lot of thanks."],
+   "poster": ["It works! It works, God help us. And I never thought I'd say I was glad to have a pine marten in the parish. And a lot of thanks."],
    "after": ["The Ghost goes by the henhouse every evening and tries the roof. Then it sighs, I swear it, and goes off to the wood. We've an understanding."],
    "journal": "You marten-proofed the henhouse. The hens are safe and the Ghost is still in the wood. It tests the roof every evening, and it has never once got in."
   },
@@ -146,7 +146,7 @@
    "flags": {"ct_marten_welcome": true, "ct_marten_squirrels": true},
    "repute": {"wardens": 3, "farmers": -2},
    "standing": {"ireland": 1},
-   "poster": ["You've made me the villain of the parish for being sensible. Well. I'd rather a marten than a mink. Sixty per cent, and I'll see you in the mart."],
+   "poster": ["You've made me the villain of the parish for being sensible. Well. I'd rather a marten than a mink. I'll see you in the mart."],
    "after": ["Red squirrels at the feeder. A marten on the roof. I've wire up and a new view of the world, and I can't say I liked the speech."],
    "journal": "You told the parish what the martens do for the red squirrels. They voted to put up wire, grumbled for a month, and now there is a red squirrel on half the bird tables in the parish."
   },
@@ -161,7 +161,7 @@
    "flags": {"ct_marten_kept": true, "ct_marten_hens_safe": true},
    "repute": {"farmers": 1, "wardens": -2},
    "standing": {"ireland": 2},
-   "poster": ["Is it in there? It's in a charm. Well. Mind it doesn't have a fit of the vapours and eat your team. Eighty per cent."],
+   "poster": ["Is it in there? It's in a charm. Well. Mind it doesn't have a fit of the vapours and eat your team."],
    "after": ["The roof is quiet now. Mind, I'm told there are more martens in the glen. There's always more martens."],
    "journal": "You caught Gallagher's Ghost. It rides in your team and eats the berries you give it. Declan's hens are safe, for the moment."
   }

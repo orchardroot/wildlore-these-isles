@@ -1,0 +1,221 @@
+{
+ "id": "chair",
+ "title": "Somebody Is Sitting in the Chair",
+ "town": "shrewsbury",
+ "nation": "england",
+ "group": "walkers",
+ "badges": 7,
+ "pay": 3,
+ "poster": {
+  "name": "Hilary Bowen",
+  "role": "runs the tea hut below the Stiperstones",
+  "idle": [
+   "Tea, love? It's a worry I've got on the ridge, but you look as if you've only just got to the Marches. Come back when you've been round a bit more."
+  ],
+  "taken": [
+   "Found anything? Two came down off the ridge at dusk yesterday, grey as the rock, and one of them couldn't tell me what day it was. Both said the same: there was someone in the Chair."
+  ],
+  "decided": [
+   "You've been up there. I can tell by the heather on your trousers. Go on."
+  ],
+  "closed": "That's the ridge sorted, one way or the other. Thank you, and mind how you go home.",
+  "haggle": "You've picked up the Shropshire way, which is to say very little very slowly. Done."
+ },
+ "notice": [
+  "When the mist is down on the Stiperstones there is somebody sitting in the Devil's Chair. A big, grey shape with its hands on its knees, looking out at nothing.",
+  "Walkers who see it lose the path. Six this summer have come off the ridge cold and shaken, and one had to be fetched by the rescue team in the dark. Somebody has to find out what is up there."
+ ],
+ "trouble": [
+  "Rob says it's a camper, sheltering from the wind. Rob has said so every year since 2009. I'd like a sensible person to sit in the mist and tell me what it really is.",
+  "The Chair is on the high ridge, in the heather. The fee is modest. The tea is on the house."
+ ],
+ "hypotheses": [
+  {"id": "devil", "name": "The Devil, sitting in his Chair", "types": ["spirit", "stone"]},
+  {"id": "spectre", "name": "A Brocken spectre: your own shadow in the mist", "types": ["frost"]},
+  {"id": "camper", "name": "A camper sheltering in the rocks", "types": ["kin"]}
+ ],
+ "truth": "devil",
+ "clues": [
+  {
+   "id": "seat",
+   "kind": "look",
+   "zone": "shropshire_hills",
+   "hint": "the seat of the Devil's Chair",
+   "text": [
+    "The seat of the Chair is dry as a bone in a wet week, and clean: no ash, no wrapper, no flattened heather, no bivvy bag, none of the things that campers leave behind. The lichen on it has been rubbed away in the shape of somebody sitting.",
+    "It is the shape of somebody much larger than any camper, and who has been sitting there for a very long time."
+   ],
+   "points": ["devil"]
+  },
+  {
+   "id": "mist",
+   "kind": "look",
+   "zone": "shropshire_hills",
+   "hint": "the Chair in the mist, once you have seen the seat",
+   "text": [
+    "The mist comes down, and the shape comes up out of it: a very broad grey figure, seated, hands on its knees, looking out over the heather at nothing at all.",
+    "A Brocken spectre needs a low sun behind you to throw your shadow on the mist, and there is no sun. The sky is a flat grey lid. Whatever that is, it is not you."
+   ],
+   "hint_wait": "Heather, rock and a great deal of clear air. Whatever sits in this Chair only does it when the mist is down. Try again in fog.",
+   "needs_clue": "seat",
+   "when": {"weather": ["fog"]},
+   "points": ["devil"],
+   "rules_out": ["spectre"]
+  },
+  {
+   "id": "rob",
+   "kind": "ask",
+   "zone": "shropshire_hills",
+   "who": "Rob Pugh",
+   "hint": "ask the walker at the foot of the ridge",
+   "text": [
+    "It's a camper. Somebody sitting up there with a bivvy bag over their head to keep out the wet. You get them every summer, and they never clear up after themselves.",
+    "I've seen the bag. Well. I've seen a bag. You can put that down."
+   ],
+   "idle": ["A camper. Honestly. They think they're the only ones up here."],
+   "after": "Camper, I said. Camper it was, whatever your notes say. I'll go on saying so.",
+   "wrong": true,
+   "points": ["camper"]
+  },
+  {
+   "id": "sian",
+   "kind": "ask",
+   "zone": "shropshire_hills",
+   "who": "Sian Corfield",
+   "hint": "ask the warden who looks after the ridge",
+   "text": [
+    "The Chair's the biggest of the Stiperstones tors, and the ridge is frost-shattered quartzite, nearly five hundred million years old. The old tale is that the Devil spilled the rocks from his apron, and that when mist covers the Chair, he is sitting in it.",
+    "I don't say I believe it. I do say that I don't walk the ridge in fog, and I tell everyone else not to. It is the one bit of folklore I have ever found genuinely useful."
+   ],
+   "idle": ["Counting heather beetles. It's an excellent job and nobody wants it."],
+   "after": "Whatever you did, the ridge keeps its own counsel. It has been keeping it for a very long time.",
+   "points": ["devil"]
+  }
+ ],
+ "lair": {
+  "zone": "shropshire_hills",
+  "name": "Old Nick",
+  "species": "diaboulder",
+  "level": 64,
+  "floor_par": 60,
+  "intro": [
+   "The Chair on the ridge, in the mist. Heather and quartzite in every direction, and not a sound but your own breathing. The rock is warm. It should not be.",
+   "A vast grey figure sits in the seat with its hands on its knees, heavy as the hill and twice as patient. It looks at you for a very long time, and then, slowly, as if it hadn't made up its mind, it stands."
+  ],
+  "beaten": [
+   "Old Nick sits back down in the Chair, which takes a long time, and folds its hands on its knees. It does not look beaten. It looks like something that has all the time in the world, and has decided to be gracious about it."
+  ]
+ },
+ "choices": [
+  {
+   "id": "posts",
+   "label": "Mark the ridge path with posts, so nobody loses it in the fog",
+   "say": [
+    "The wardens grumble, and then they do it: a line of low posts along the ridge path, with a white band on each, so you can see the next one in the thickest fog. It takes a long weekend and a lot of heather.",
+    "In the mist that week, a family from Wolverhampton walk the whole ridge post by post, and come down laughing. Old Nick watches from the Chair and does not move."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_chair_posts": true, "ct_chair_marked": true},
+   "repute": {"walkers": 2, "wardens": -1},
+   "standing": {"england": 1},
+   "poster": ["Posts, with a white band on each. Well. I'll be up there in the fog with a flask and a stopwatch. It's ugly, and nobody's lost. I'll take ugly."],
+   "after": ["White-banded posts all along the ridge. Sian hates them. The rescue team loves them. The Devil hasn't said, but he hasn't had one down."],
+   "journal": "You had the ridge path marked with posts that show in the thickest fog. Walkers come off it safely now, the wardens complain about the look of them, and Old Nick sits in the Chair and says nothing."
+  },
+  {
+   "id": "notice",
+   "label": "A notice at the car park about mist, and leave the ridge wild",
+   "say": [
+    "A plain board goes up at the car park: IN FOG, DO NOT GO ON THE RIDGE. TURN BACK, AND HAVE TEA. Hilary writes the second line herself, and the tea hut has its best season in years.",
+    "The ridge stays as it was. In the mist, on the days when the board is ignored, the shape in the Chair is still there, and a good many people go home without the tale."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_chair_notice": true, "ct_chair_wild": true},
+   "repute": {"wardens": 2, "walkers": -1},
+   "standing": {"england": 1},
+   "poster": ["A board, and a line about the tea. It's not a safe ridge, but it's an honest one. I'd rather folk turned back than found out. It is quite hard to make an argument for tea and not sound self-interested, but I've done it."],
+   "after": ["Board at the car park, a ridge that's still wild, and a queue for tea on every foggy day. Sian says it's the best thing that's happened up there in years."],
+   "journal": "You had a notice put at the car park: in fog, do not go on the ridge, have tea. The ridge stays wild, the tea hut does very well, and Old Nick keeps the Chair."
+  },
+  {
+   "id": "room",
+   "label": "Give the Chair room: a bench lower down, and the path moved off the ridge top",
+   "say": [
+    "The wardens and the rescue team walk the ridge together and agree, to everyone's surprise, on a line that skirts the top. A plain bench goes in lower down, with a view of the Chair and the sense not to go any closer.",
+    "That week Old Nick is seen, in the mist, turning his head to look at the bench. It is the nearest thing to approval that anyone has ever recorded."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_chair_room": true, "ct_chair_bench": true},
+   "repute": {"walkers": 1, "wardens": 1},
+   "standing": {"england": 2},
+   "poster": ["A bench, and a path that goes round. The Chair's left to itself. It's a sensible compromise, and I'm a little disappointed, because I'd got the speech ready. I'll give you something now, and tea whenever you like."],
+   "after": ["A bench below the Chair with a view, and not a soul on the top. Nobody's been lost since. I sit on the bench on my afternoons off. Something looks back."],
+   "journal": "You had the path moved off the ridge top and a bench put below the Chair, with a view of it and a good reason not to go closer. It is a compromise that everyone, including the thing in the Chair, seems able to live with."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "Old Nick goes into the charm like a boulder going into a pond: slowly, then all at once, and with a very distinct feeling that he has agreed to this."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_chair_kept": true, "ct_chair_empty": true},
+   "repute": {"walkers": 1, "wardens": 0},
+   "standing": {"england": 2},
+   "poster": ["You've got the Devil in a charm. The Devil. Well, the Chair's empty, and I'll make you a pot of tea, and nobody will ever believe me. Not a word of it to Sian."],
+   "after": ["The Chair's empty in the mist now. I find it unsettling. It's better, in a way, to know who's up there."],
+   "journal": "You caught the thing in the Devil's Chair. The ridge is empty in the mist now, and Hilary finds, to her surprise, that she misses it."
+  }
+ ],
+ "real": "The Stiperstones are a ridge of quartzite, about 480 million years old, shattered into tors by the frost of the Ice Ages, and the Devil's Chair is the biggest of them. The Shropshire tale is that the Devil dropped the rocks from his apron, and that when mist covers the Chair he is sitting in it. A Brocken spectre is a real thing, your own shadow thrown on mist by a low sun, often ringed with a halo, and it has fooled a great many walkers on a great many hills. The ridge itself is the real danger: the mist comes down fast, and the tors are easy to lose.",
+ "places": {
+  "poster": {"sprite": "villager_3", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "rob", "sprite": "hillwalker", "near": [22, 38]},
+   {"clue": "sian", "sprite": "student", "near": [16, 28]}
+  ],
+  "looks": [
+   {"clue": "seat", "at": [11, 30], "text": ["A great grey rock, shaped like a seat, with a view over the heather. It is a place that wants to be sat in."]},
+   {"clue": "mist", "near": [10, 34], "on": "rock", "text": ["A tor of grey quartzite. In clear weather it is only a very big rock."]}
+  ],
+  "lair": {"near": [12, 33]},
+  "folk": [
+   {
+    "id": "teahut",
+    "zone": "shrewsbury",
+    "near": [36, 29],
+    "sprite": "shopkeeper",
+    "name": "Tea Seller",
+    "show_if": "ct_chair_end",
+    "says": [
+     ["ct_chair_is_posts", ["They've put white-banded posts on the Stiperstones, and the rescue lot love them. The wardens can't bear them. I sell tea to both, and I'm paid in opinions."]],
+     ["ct_chair_is_notice", ["There's a board at the Stiperstones car park about the fog, and a queue for tea. I've heard Hilary Bowen's had her best season. I've heard it from Hilary Bowen."]],
+     ["ct_chair_is_room", ["They moved the path off the Stiperstones top and put a bench in. I sat on it. Something sat opposite. I did not stay for the sandwiches."]],
+     ["ct_chair_is_caught", ["The Chair's empty in the mist, they say. Somebody caught what was in it. I'm rather sorry. It's the only Devil I ever felt sorry for."]]
+    ],
+    "else": ["The Stiperstones are quiet, and so is everybody else."]
+   },
+   {
+    "id": "banded",
+    "zone": "shropshire_hills",
+    "near": [18, 36],
+    "sprite": "hiker",
+    "name": "Post Walker",
+    "show_if": "ct_chair_marked",
+    "says": [],
+    "else": ["White band on every post. You can see the next one in the thick of it. It's not what I'd call romantic, but I got home for my tea, and that's the better ending."]
+   },
+   {
+    "id": "bench",
+    "zone": "shropshire_hills",
+    "near": [14, 31],
+    "sprite": "birdwatcher",
+    "name": "Bench Sitter",
+    "show_if": "ct_chair_bench",
+    "says": [],
+    "else": ["Best bench in Shropshire. You can see the Chair from here, and it can see you. I've never felt so thoroughly looked at by a rock."]
+   }
+  ]
+ }
+}

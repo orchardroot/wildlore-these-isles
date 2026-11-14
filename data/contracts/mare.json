@@ -126,7 +126,7 @@
    "flags": {"ct_mare_done": true, "ct_mare_box": true},
    "repute": {"wardens": 2, "townsfolk": -1},
    "standing": {"england": 1},
-   "poster": ["An owl box and a sign. Folk stand at the gate with their phones out at dusk and say nothing. I can't believe how quiet it's got. Eighty per cent."],
+   "poster": ["An owl box and a sign. Folk stand at the gate with their phones out at dusk and say nothing. I can't believe how quiet it's got."],
    "after": ["The owl uses the box. Moss has stopped minding the top field, and the tea money has come back for good. The pub is annoyed with me."],
    "journal": "You fixed up a barn owl box and put a sign on the gate. The owl has a home, the walkers have a pastime, and the pub has lost its ghost."
   },
@@ -141,7 +141,7 @@
    "flags": {"ct_mare_done": true, "ct_mare_alone": true},
    "repute": {"farmers": 1, "wardens": 1},
    "standing": {"england": 1},
-   "poster": ["An owl, and no fuss. Well, it's a relief. I'll go up with the dog and have a look myself. Sixty per cent, and a scone."],
+   "poster": ["An owl, and no fuss. Well, it's a relief. I'll go up with the dog and have a look myself. And a scone."],
    "after": ["The owl and Moss have an understanding. He stays out of its way and it stays out of his. That's more than I can say for the pub."],
    "journal": "You told Sheila it was an owl and left it at that. She faced it herself with her dog, and nobody was hurt."
   },
@@ -156,7 +156,7 @@
    "flags": {"ct_mare_done": true, "ct_mare_kept": true},
    "repute": {"farmers": 1, "wardens": -1},
    "standing": {"england": 1},
-   "poster": ["It's in your team? A silent white owl that screams, in your team. Well, the top field's quiet. Eighty per cent. Don't let it near Moss."],
+   "poster": ["It's in your team? A silent white owl that screams, in your team. Well, the top field's quiet. Don't let it near Moss."],
    "after": ["Moss walks the top field like a lord now. I hear you've a barn owl with you. Does it still scream? I'd pay to see the Wizard's face."],
    "journal": "You caught the Mare and now travel with a barn owl that screams. The top field is quiet, the pub is mournful, and Moss is insufferable."
   }

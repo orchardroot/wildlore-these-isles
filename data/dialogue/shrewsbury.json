@@ -231,5 +231,71 @@
    "who": "Rowing Coach",
    "text": "Rowing on a river with a current is all about the timing. Rather like getting a word in at a Shrewsbury dinner party."
   }
+ ],
+ "ct_chair_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "chair"
+  }
+ ],
+ "ct_chair_teahut": [
+  {
+   "do": "if",
+   "flag": "ct_chair_is_posts",
+   "then": [
+    {
+     "do": "say",
+     "who": "Tea Seller",
+     "text": "They've put white-banded posts on the Stiperstones, and the rescue lot love them. The wardens can't bear them. I sell tea to both, and I'm paid in opinions."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_chair_is_notice",
+     "then": [
+      {
+       "do": "say",
+       "who": "Tea Seller",
+       "text": "There's a board at the Stiperstones car park about the fog, and a queue for tea. I've heard Hilary Bowen's had her best season. I've heard it from Hilary Bowen."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_chair_is_room",
+       "then": [
+        {
+         "do": "say",
+         "who": "Tea Seller",
+         "text": "They moved the path off the Stiperstones top and put a bench in. I sat on it. Something sat opposite. I did not stay for the sandwiches."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "flag": "ct_chair_is_caught",
+         "then": [
+          {
+           "do": "say",
+           "who": "Tea Seller",
+           "text": "The Chair's empty in the mist, they say. Somebody caught what was in it. I'm rather sorry. It's the only Devil I ever felt sorry for."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Tea Seller",
+           "text": "The Stiperstones are quiet, and so is everybody else."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

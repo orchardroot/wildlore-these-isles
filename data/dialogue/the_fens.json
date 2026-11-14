@@ -209,5 +209,49 @@
     }
    ]
   }
+ ],
+ "ct_hereward_dennis": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "hereward",
+   "clue": "dennis"
+  }
+ ],
+ "ct_hereward_marian": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "hereward",
+   "clue": "marian"
+  }
+ ],
+ "ct_hereward_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "hereward"
+  }
+ ],
+ "ct_hereward_swans": [
+  {
+   "do": "say",
+   "who": "Swan Warden",
+   "text": "Eighty whoopers on the Gotobed field this morning, and a man in a helmet standing in the middle of them, looking pleased. I haven't mentioned the man in the report. I've mentioned the swans."
+  }
+ ],
+ "ct_hereward_reed": [
+  {
+   "do": "say",
+   "who": "Reed Cutter",
+   "text": "Cutting reed in January, with a long knife and a bad back. It's about the oldest job in the Fens, and the thatcher says it's the best he's had. A man in a helmet stands and watches. I don't ask him to help."
+  }
+ ],
+ "ct_hereward_pump": [
+  {
+   "do": "say",
+   "who": "Pump Man",
+   "text": "Second pump's running night and day. The field's as dry as a plate. I keep an eye on the post, though, and the post says the land's a bit lower every winter. I don't like what the post says."
+  }
  ]
 }

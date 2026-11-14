@@ -162,5 +162,42 @@
    "who": "Neighbour",
    "text": "Maureen's got a shed like a bunker and I've got a mink. Two hens, then three. I'm not speaking to her. I'm also building a better shed."
   }
+ ],
+ "ct_mink_next_alan": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "mink_next",
+   "clue": "alan"
+  }
+ ],
+ "ct_mink_next_dev": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "mink_next",
+   "clue": "dev"
+  }
+ ],
+ "ct_mink_next_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "mink_next"
+  }
+ ],
+ "ct_mink_next_lane": [
+  {
+   "do": "say",
+   "who": "Raft Checker",
+   "text": "Monday's the raft. Maureen's note says three prints, and a rude word about Ted. Ted's note back says four prints and a ruder one. It is the best system I have ever worked in."
+  }
+ ],
+ "ct_mink_next_harpers": [
+  {
+   "do": "say",
+   "who": "Harper",
+   "text": "Bolted shed on one side, bolted shed on the other, and now it's my turn. I know whose mink it is. I know whose fault it is. I'm going to build a better shed than both of them, and I'm not telling them."
+  }
  ]
 }
