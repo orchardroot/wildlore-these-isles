@@ -7,11 +7,26 @@ const KEY_SCREENS := ["pause", "bag", "settings", "pedia:spikkin", "summary:0", 
 ## The ones that were worst with Large text (and the Readable font, which is wider).
 const LARGE_SCREENS := ["summary:0", "races:dev", "exchange:london", "map:route"]
 
+## Every screen that had a problem at the Largest Text size (wave 50's 144 on 43 screens, 149 on 47 at wave 57's start).
+const LARGEST_SCREENS := [
+	"controls", "accessibility", "pause", "party", "summary:0", "pedia", "pedia:spikkin", "pedia:studbook", "pedia:rumours",
+	"pedia:stamps", "wardrobe", "starter", "relearn:0", "map", "map:post", "map:route", "quests:contracts", "quests:gazetteer",
+	"quests:gazetteer:macclesfield", "typechart:Holtling=brook+kin;Kindlet=hearth", "almanac:pieces", "stats", "stats:standing",
+	"stats:trades", "stats:weekly", "jobs", "jobs:first", "craft", "craft:workbench", "keepers", "economist", "crossword",
+	"crossword:filled", "bureau", "exchange:london", "crypto:london", "market:leeds_kirkgate", "society:manchester_society",
+	"deed:allotment_york", "cards", "trumps:dev", "fruit:dev", "blackjack:dev", "races:dev", "bowls:dev", "skim:dev",
+	"sheepdog:dev", "worms:dev", "wrestling:dev", "forecasting:dev",
+]
+
 func test_key_screens_fit_their_words() -> void:
 	_audit(KEY_SCREENS, [], "the key screens")
 
 func test_worst_screens_fit_with_large_text_and_the_readable_font() -> void:
 	_audit(LARGE_SCREENS, ["--text=large", "--readable"], "Large text")
+
+## Largest text: menus step their words down together (ui/text_squeeze.gd) and the screens that need more do it themselves.
+func test_screens_that_overflowed_fit_at_the_largest_text_size() -> void:
+	_audit(LARGEST_SCREENS, ["--text=largest"], "Largest text")
 
 func _audit(screens: Array, flags: Array, what: String) -> void:
 	var out := []

@@ -44,6 +44,10 @@ static func sized(size: int) -> int:
 static func big_text() -> bool:
 	return Access.scale_of(Settings.text_size) > 1.0
 
+## True only at the Largest Text size (see TextSqueeze).
+static func largest() -> bool:
+	return Settings.text_size == "largest"
+
 ## The font menus draw with: the Readable font when that setting is on (ui/theme.tres), else Godot's default.
 ## Measure with this, never ThemeDB.fallback_font, or the Readable font's wider letters overrun the sums.
 static func font() -> Font:
@@ -133,9 +137,15 @@ static func fit_block(words: Array, box: Control, sizes: Array, sep := 8) -> voi
 			body = size
 			if _block_height(words, w, size, sep, cut) <= box.size.y:
 				break
+	var k := 1.0  # at Largest the nominal sizes stop at 27 px: past them the words scale down together, to 18 px
+	if largest() and _block_height(words, w, body, sep, cut) > box.size.y:
+		for kk in [0.88, 0.78, 0.7, 0.62, 0.55]:
+			k = kk
+			if _block_height(words, w, body, sep, cut, k) <= box.size.y:
+				break
 	for e in words:
 		if is_instance_valid(e[0]):
-			e[0].add_theme_font_size_override("font_size", sized(body + e[1]))
+			e[0].add_theme_font_size_override("font_size", maxi(MIN_TEXT, roundi(sized(body + e[1]) * k)))
 			e[0].visible = _tier(e) < cut or _tier(e) == 0
 	if box is ScrollContainer:
 		_recheck_bar.call_deferred(weakref(box))
@@ -156,13 +166,13 @@ static func _tier(e: Array) -> int:
 		return 0
 	return int(e[2]) if e[2] is int else (1 if e[2] else 0)
 
-static func _block_height(words: Array, w: float, size: int, sep: int, cut: int) -> float:
+static func _block_height(words: Array, w: float, size: int, sep: int, cut: int, k := 1.0) -> float:
 	var f: Font = font()
 	var h := -float(sep)
 	for e in words:
 		if _tier(e) >= cut and _tier(e) > 0:
 			continue
-		var fs: int = sized(size + e[1])
+		var fs: int = maxi(MIN_TEXT, roundi(sized(size + e[1]) * k))
 		var tall := f.get_multiline_string_size(e[0].text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y
 		var lines := maxi(1, roundi(tall / f.get_height(fs)))
 		h += tall + (lines - 1) * 3 + sep + 2  # the theme's line spacing, and a shadow pixel or two
@@ -182,7 +192,7 @@ static func fit_column(col: VBoxContainer, room: float) -> void:
 	if not col.has_meta("sep"):
 		col.set_meta("sep", col.get_theme_constant("separation"))
 	col.add_theme_constant_override("separation", int(col.get_meta("sep")))
-	for k in [1.0, 0.92, 0.85, 0.78, 0.72]:
+	for k in [1.0, 0.92, 0.85, 0.78, 0.72, 0.64, 0.56, 0.5, 0.45, 0.4]:  # the last few are for Largest text
 		for l in labels:
 			l.add_theme_font_size_override("font_size", maxi(MIN_TEXT, roundi(int(l.get_meta("want")) * k)))
 		if _column_height(col) <= room:

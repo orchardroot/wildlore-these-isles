@@ -55,6 +55,7 @@ func _build() -> void:
 	rs.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	rp.add_child(rs)
 	_scroll = rs
+	rs.set_meta("pages", true)  # Left and Right page it (_input); TextFitAudit counts that as reachable
 	_detail = VBoxContainer.new()
 	_detail.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_detail.add_theme_constant_override("separation", 8)

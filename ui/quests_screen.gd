@@ -150,6 +150,8 @@ func _row(i: int) -> Button:
 	h.add_child(UIKit.row_label(str(q.get("title", "")) + _year_tag(q), 25, UIKit.CREAM))
 	var town := UIKit.label(_place(str(q.get("town", ""))), 19, Color("d8cfb4"))
 	town.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	if UIKit.largest():
+		town.add_theme_font_size_override("font_size", 20)  # the title's room is the one that matters
 	h.add_child(town)
 	for c in h.get_children():
 		c.mouse_filter = Control.MOUSE_FILTER_IGNORE
