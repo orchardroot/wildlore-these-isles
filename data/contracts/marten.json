@@ -77,7 +77,7 @@
    "who": "Park Ranger",
    "hint": "ask the park ranger",
    "text": [
-    "Pine marten, so. They were nearly gone from Ireland, and now they're back all over the country, and the foxes and the grey squirrels are having a bad time of it. It's protected by law, you see.",
+    "Pine marten, so. They were nearly gone from Ireland, and now they're back all over the country, and the grey squirrels are having a bad time of it. It's protected by law, you see.",
     "The red squirrels have come back in the places the martens have. Don't tell the hen farmers I said it's a good thing."
    ],
    "idle": ["I'm counting deer. And listening for anyone doing anything I'll have to write a report about."],
@@ -120,7 +120,7 @@
    "id": "proof",
    "label": "Marten-proof the henhouse with wire and a new roof",
    "say": [
-    "You and Declan spend a weekend with a roll of fine wire and a new corrugated roof, closing every gap smaller than a fist. It costs more than a fox ever would. It is the dullest thing you have done in Ireland.",
+    "You and Declan spend a weekend with a roll of fine wire and a new corrugated roof, closing every gap you could post an egg through. It costs more than a fox ever would. It is the dullest thing you have done in Ireland.",
     "The Ghost tries the roof for three nights, then goes back to the berries and the woods."
    ],
    "fee": 0.8,

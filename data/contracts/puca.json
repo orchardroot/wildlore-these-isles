@@ -26,7 +26,7 @@
   "The guards say it's a stray. The old people say something else. I want to know what it is, and I want to know before the next ride."
  ],
  "trouble": [
-  "It's up above the big lake in the Wicklow hills, where the old valley was drowned. The place is called Poll an Phuca on the old maps. I'm told that's the Pooka's Hole.",
+  "It's up above the big lake in the Wicklow hills, where the old valley was drowned. The place is called Poll an Phúca on the old maps. I'm told that's the Pooka's Hole.",
   "I'd rather not be the woman who gives up on a good stable because of a story. I'd rather not be the woman who ignores one either."
  ],
  "hypotheses": [
@@ -141,7 +141,7 @@
    "repute": {"farmers": 1, "townsfolk": -2},
    "standing": {"ireland": 1},
    "poster": ["The lads! I might have known it. I'll have a word with their mothers. Thank you, and here's your full fee."],
-   "after": ["Those Doyle lads are in the stables every Saturday, shovelling. They swear they never touched the horses. Nobody believes them."],
+   "after": ["Those two village lads are in the stables every Saturday, shovelling. They swear they never touched the horses. Nobody believes them."],
    "journal": "You told Eilis it was the village lads. They took the blame and a month of sweeping, and the Pooka was left alone. It is the kind of lie that you will remember."
   },
   {
@@ -160,7 +160,7 @@
    "journal": "You caught the Pooka and now travel with it. It changes shape when it is bored, and it is often bored."
   }
  ],
- "real": "The pooka, or puca, is a shape-shifter in Irish folklore: a dark horse with glowing eyes, a goat, a hare or a dog, mischievous rather than evil, and fond of offering a wild ride. Poll an Phuca, the Pooka's Hole, was a pool and waterfall on the River Liffey in Wicklow. It was drowned in the 1940s when the Liffey was dammed to make the Poulaphouca reservoir, which gives Dublin water and the ESB electricity, and the valley of farms went under with it. The pooka's best known rule is that you must not pick blackberries after the first of November, since the pooka has spat on them.",
+ "real": "The pooka, or púca, is a shape-shifter in Irish folklore: a dark horse with glowing eyes, a goat, a hare or a dog, mischievous rather than evil, and fond of offering a wild ride. Poll an Phúca, the Pooka's Hole, was a pool and waterfall on the River Liffey in Wicklow. It was drowned around 1940 when the Liffey was dammed to make the Poulaphouca reservoir, which gives Dublin water and the ESB electricity, and the valley of farms went under with it. The pooka's best known rule is that you must not pick blackberries after the first of November, since the pooka has spat on them.",
  "places": {
   "poster": {"sprite": "villager_1", "near": "noticeboard"},
   "witnesses": [
@@ -174,7 +174,7 @@
   "lair": {"near": [32, 44]},
   "folk": [
    {"id": "stone", "zone": "dublin", "near": [30, 30], "sprite": "villager_5", "name": "Tour Guide", "show_if": "ct_puca_marked", "says": [],
-    "else": ["There's a stone at the lake now with the old name on it. Poll an Phuca. Tourists take photographs, and the horses won't walk past."]},
+    "else": ["There's a stone at the lake now with the old name on it. Poll an Phúca. Tourists take photographs, and the horses won't walk past."]},
    {"id": "indoors", "zone": "dublin", "near": [40, 30], "sprite": "farmer", "name": "Stable Hand", "show_if": "ct_puca_indoors", "says": [
      ["ct_puca_is_caught", ["Eilis says somebody put the Pooka in a team. I never thought the day would come when I'd miss it."]]
     ], "else": ["Horses in by dusk now, and a fence on the shore. Nobody's been thrown. You can feel it watching from the water, though."]},
