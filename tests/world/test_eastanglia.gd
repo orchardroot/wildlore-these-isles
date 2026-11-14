@@ -28,7 +28,7 @@ func test_joined_to_london_as_a_cul_de_sac() -> void:
 	for id in OUTDOOR:
 		for side in all[id].edges:
 			var to := str(all[id].edges[side].to)
-			assert_true(to in OUTDOOR or (id == "cambridge" and to == "london") or all[id].edges[side].has("lease"), "%s %s edge stays inside East Anglia" % [id, side])
+			assert_true(to in OUTDOOR or (id == "cambridge" and to in ["london", "varsity_line"]) or all[id].edges[side].has("lease"), "%s %s edge stays inside East Anglia" % [id, side])
 
 func test_towns_have_sanctuary_shop_station_and_six_interiors() -> void:
 	var all := _zones()

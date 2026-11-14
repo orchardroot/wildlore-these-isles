@@ -29,14 +29,21 @@ func test_ferry_from_portree_and_a_road_to_stornoway() -> void:
 	assert_true(harris.walkable(Vector2i(int(harris.ferry.x), int(harris.ferry.y))))
 	assert_eq(Travel.ferry_arrival("portree_tarbert", "portree").zone, "harris")
 	assert_eq(Travel.ferry_arrival("portree_tarbert", "harris").zone, "portree")
-	assert_eq(harris.edges.keys(), ["north"])
+	var harris_sides: Array = harris.edges.keys()
+	harris_sides.sort()
+	assert_eq(harris_sides, ["east", "north"], "wave 55 added the Uig road east")
+	assert_eq(harris.edges.east.to, "uig_road")
 	assert_eq(harris.edges.north.to, "stornoway")
 	var sw := ZoneData.load_id("stornoway")
-	assert_eq(sw.edges.keys(), ["south"])
+	var sw_sides: Array = sw.edges.keys()
+	sw_sides.sort()
+	assert_eq(sw_sides, ["south", "west"], "wave 55 added the Uig road west")
+	assert_eq(sw.edges.west.to, "uig_road")
 	assert_eq(sw.edges.south.to, "harris")
 	assert_eq(sw.town_id, "stornoway")
 	# Skye itself is untouched apart from a few Skaldlings in its water
-	assert_eq(ZoneData.load_id("skye").edges.keys().size(), 2)
+	assert_eq(ZoneData.load_id("skye").edges.keys().size(), 3, "Portree, Inverness and (wave 55) Trotternish")
+	assert_eq(ZoneData.load_id("skye").edges.south.to, "trotternish")
 
 func test_scaled_from_skyes_band() -> void:
 	for z in ZONES:

@@ -25,7 +25,8 @@ func test_the_beacons_open_south_on_to_swansea_and_nowhere_else_new() -> void:
 	var s := ZoneData.load_id("swansea")
 	assert_eq(str(s.edges.north.to), "beacons")
 	assert_eq(str(s.edges.west.to), "gower")
-	assert_eq(s.edges.size(), 2, "a cul-de-sac: Swansea joins only the Beacons and Gower")
+	assert_eq(s.edges.size(), 3, "Swansea joins only the Beacons, Gower and (wave 55) the Glamorgan coast")
+	assert_eq(str(s.edges.east.to), "glamorgan_coast")
 	var g := ZoneData.load_id("gower")
 	assert_eq(g.edges.keys(), ["east"], "Gower is the end of the line")
 	# walking down the lane lands on Swansea's road, and back up again

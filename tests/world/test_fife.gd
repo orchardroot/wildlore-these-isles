@@ -17,7 +17,12 @@ func test_zones_join_edinburgh_as_a_cul_de_sac() -> void:
 	var sa := ZoneData.load_id("st_andrews")
 	assert_eq(sa.edges.north.to, "dundee")
 	var du := ZoneData.load_id("dundee")
-	assert_eq(du.edges.keys(), ["south"])
+	var du_sides: Array = du.edges.keys()
+	du_sides.sort()
+	# wave 55 added the Angus coast (east) and Rob Roy Way (west) beside the old St Andrews road
+	assert_eq(du_sides, ["east", "south", "west"])
+	assert_eq(du.edges.east.to, "angus_coast")
+	assert_eq(du.edges.west.to, "rob_roy_way")
 
 func test_scaled_from_edinburgh_band() -> void:
 	for z in ZONES:
