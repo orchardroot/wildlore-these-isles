@@ -49,7 +49,7 @@ def build():
     z.building(8, 10, 5, 3, "flint_cottage", "Keeper's Cottage")
     z.building(46, 42, 6, 3, "field_barn", "Flint Barn", show_label=False)
     z.building(6, 16, 5, 4, "chapel", "Larmer Tree Temple", show_label=True)
-    for (x, y) in [(10, 18), (20, 24), (40, 30), (22, 42), (54, 30), (34, 44)]:
+    for (x, y) in [(12, 18), (20, 24), (40, 30), (22, 42), (54, 30), (34, 44)]:
         z.prop("sheep", x, y, variant=(x + y) % 3)
     # --- the gate: a bank across the zone at y = 14, the Wardens in its gap; Stonehenge lies behind it
     gate_wall(z, "y", 14, 29, 31)

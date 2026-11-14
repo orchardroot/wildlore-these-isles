@@ -153,7 +153,7 @@ static func _good_list(v: Variant) -> bool:
 			return false
 	return true
 
-## Home residents (non-teacher, non-case npcs of a home zone) with no entry or no `again` line.
+## Home residents (non-teacher, non-case, always-there npcs of a home zone) with no entry or no `again` line.
 static func missing_again(zones: Dictionary) -> Array:
 	var out: Array = []
 	for zid in zones:
@@ -164,6 +164,8 @@ static func missing_again(zones: Dictionary) -> Array:
 			var s := str(n.get("script", ""))
 			if s == "" or s.begins_with("teach_") or s.begins_with("case_"):
 				continue
+			if n.has("show_if") or n.has("hide_if"):
+				continue  # a story visitor who comes and goes with a chain, not someone who lives here
 			var e: Variant = all().get(key(z, str(n.get("id", ""))))
 			if not e is Dictionary or _lines(e.get("again", [])).is_empty():
 				out.append(key(z, str(n.get("id", ""))))
