@@ -99,7 +99,8 @@ const BATTLE_LAYER_DB := -14.0
 ## The hours the bells keep (7 to 21), so a town sleeps through the night.
 const BELL_HOURS := Vector2i(7, 21)
 ## Towns whose chapel rings anyway: a peal worth hearing. Great St Mary's in Cambridge first played the chimes that
-## Big Ben made famous (the Westminster Quarters, 1793). Every other chapel is quiet; cathedrals and abbeys still ring.
+## Big Ben made famous (the Westminster Quarters, 1793). Every other chapel is quiet; cathedrals and abbeys still ring
+## (see rings: an abbey is a cathedral-style building or one labelled Abbey, and a ruin has no bell to ring).
 const FAMOUS_PEALS := ["cambridge"]
 
 static func damp(weather: String, indoors: bool) -> Array:
@@ -123,13 +124,24 @@ static func strokes(minutes: int) -> int:
 		return 0
 	return 12 if h % 12 == 0 else h % 12
 
+## Does this building keep a bell? A cathedral, or an abbey that is still standing: its label says Abbey (and a church
+## or chapel, so "Abbey Walk" is only a street), unless it says ruin. Ruins of either kind are quiet.
+static func rings(p: Dictionary) -> bool:
+	if str(p.get("type", "")) != "building":
+		return false
+	var label := str(p.get("label", "")).to_lower()
+	if "ruin" in label:
+		return false
+	var style := str(p.get("style", ""))
+	return style == "cathedral" or ("abbey" in label and (style == "chapel" or str(p.get("kind", "")) == "church"))
+
 ## Occasional town sounds: "bell" (a cathedral or abbey strikes the hour), "bell_small" (a chapel's, only in FAMOUS_PEALS towns), "horn" (ships in the docks).
 static func accents(z: ZoneData) -> Array:
 	var out: Array = []
 	if z.kind != "town":
 		return out
 	for p in z.props:
-		if str(p.get("type", "")) == "building" and str(p.get("style", "")) == "cathedral":
+		if rings(p):
 			out.append("bell")
 			break
 	if "bell" not in out and z.id in FAMOUS_PEALS:

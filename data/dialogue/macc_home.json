@@ -136,22 +136,7 @@
       {
        "do": "say",
        "who": "Mum",
-       "text": "I said you were busy being asleep. She said that was 'not an excuse'."
-      },
-      {
-       "do": "say",
-       "who": "Mum",
        "text": "Off you go to the Field Station, east end of town, past the market."
-      },
-      {
-       "do": "say",
-       "who": "Mum",
-       "text": "And there's a noticeboard by the market stalls. Folk pin odd jobs on it. Do a few and people start to know your face."
-      },
-      {
-       "do": "say",
-       "who": "Mum",
-       "text": "Your garden's out the front, by the way. Plant anything you pick and it grows while you're out. That's how it got all them dandelions."
       },
       {
        "do": "say",
@@ -171,6 +156,53 @@
        "do": "say",
        "who": "Mum",
        "text": "Wrap up. And be nice to any creatures. They're only after a biscuit, same as me."
+      },
+      {
+       "do": "say",
+       "who": "Mum",
+       "text": "Oh, before you go. Come here a minute. No, into the kitchen. Mind the cat's bowl."
+      },
+      {
+       "do": "say",
+       "who": "Mum",
+       "text": "You'll be in and out of them hedges, I know you. You'll come home with bramble in your hair and purple sleeves."
+      },
+      {
+       "do": "say",
+       "who": "Mum",
+       "text": "Well, if you're going to pick things, you might as well know what to do with them. Here. Your gran's recipe book."
+      },
+      {
+       "do": "say",
+       "who": "Mum",
+       "text": "Bakewell tart, nettle tea, a couple of snares. And some rowan business at the back she swore by. Don't laugh."
+      },
+      {
+       "do": "recipe",
+       "id": [
+        "bakewell_tart",
+        "nettle_tea",
+        "flask_of_tea",
+        "smelling_salts",
+        "eccles_cake",
+        "wicker_snare",
+        "hazel_snare",
+        "rowan_sprig"
+       ]
+      },
+      {
+       "do": "say",
+       "who": "Mum",
+       "text": "The bench is by the window. Use it whenever you're home. Wash your hands first. I mean it."
+      },
+      {
+       "do": "say",
+       "who": "Mum",
+       "text": "Folk all over will have their own recipes. Ask nicely, and say thank you. I'll know if you don't."
+      },
+      {
+       "do": "set",
+       "flag": "mum_recipes"
       }
      ]
     }

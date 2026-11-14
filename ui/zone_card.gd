@@ -29,6 +29,7 @@ const OVERRIDES := {
 	"pyla": "The UN buffer zone, Cyprus",
 }
 const GROUP := "zone_card"
+const TALLY_FROM := 5
 const MAX_W := 640.0  # a long name shrinks a little rather than reach across the route chip (top left)  # ParishToast waits for the card before its news takes the top of the screen
 const FADE_IN := 0.5
 const HOLD := 2.4
@@ -129,12 +130,20 @@ func showing() -> bool:
 func rect() -> Rect2:
 	return _panel.get_global_rect() if showing() else Rect2()
 
+## The "NEW PLACE" line. The tally ("5 of 217 found") waits until the fifth place: "1 of 217" is a chore on day one.
+## Hidden places (15 in all) always show theirs.
+static func new_line(found: Dictionary) -> String:
+	var label := str(found.get("label", "NEW PLACE"))
+	if label == "NEW PLACE" and int(found.count) < TALLY_FROM:
+		return label
+	return "%s  ·  %d of %d found" % [label, int(found.count), int(found.total)]
+
 ## `found` (Discovery.note's result) makes it a "New place" card, with a sting and a line for the party.
 func show_card(title: String, sub: String, local := "", found := {}) -> void:
 	_new.visible = not found.is_empty()
 	_gain.visible = not found.is_empty() and str(found.get("gain", "")) != ""
 	if not found.is_empty():
-		_new.text = "%s  ·  %d of %d found" % [str(found.get("label", "NEW PLACE")), int(found.count), int(found.total)]
+		_new.text = new_line(found)
 		_gain.text = str(found.get("gain", ""))
 	_name.text = title
 	_name.add_theme_font_size_override("font_size", UIKit.fit_size(title, MAX_W, Access.scaled(38, Settings.text_size), 28))

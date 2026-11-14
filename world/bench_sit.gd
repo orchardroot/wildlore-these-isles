@@ -3,7 +3,8 @@ extends Node
 ## Sit down (wave 54). Face a bench and press confirm: you settle onto it, the camera eases in, and the clock runs
 ## fast so dusk comes on, the lamps light and the windows glow. Any key stands you up again. The fast clock is
 ## capped: DAY_CAP game minutes a day, never across midnight, so a bench is for watching the evening, not for
-## skipping days. The playtest bot never sits. While you sit the router is busy (you can't walk, the pause menu waits) but the street
+## skipping days. One exception (5.7): a sitting begun after 21:00 may run on through midnight to 05:10, once a night,
+## so a walker can wait for dawn (the Anglesey passage tomb opens only then). The playtest bot never sits. While you sit the router is busy (you can't walk, the pause menu waits) but the street
 ## carries on: Npc.street_stopped() ignores a sitting player, so people still wander and glance about.
 
 const SEAT := 0.17            # how far above the ground you sit
@@ -13,12 +14,15 @@ const BOOST := 15.0           # game minutes per second while the clock is fast
 const SIT_CAP := 240          # game minutes one sitting can speed through
 const DAY_CAP := 360          # game minutes a day can be sped through, all sittings together
 const MIDNIGHT_GUARD := 1425  # no fast clock past 23:45, so the day never turns over faster than it should
+const NIGHT_FROM := 1260      # a sitting begun at or after 21:00 may be a night sitting
+const DAWN_STOP := 310        # and it runs on to 05:10, just into dawn
 const DEAF_SECS := 0.35       # ignore keys this long, so the press that sat you down doesn't stand you straight up
 const MAX_SECS := 300.0       # and a long sit ends by itself
 
 static var sitting := false
 static var _day := -1         # the day_count _used belongs to
 static var _used := 0         # game minutes sped through that day
+static var _night_day := -1   # the day_count whose night sitting has been taken
 
 var _ow: Node
 var _bench: Vector2i
@@ -29,6 +33,7 @@ var _gained_before := 0
 var _hint: CanvasLayer
 var _tween: Tween
 var _standing := false
+var _night := false           # this sitting may run through to dawn
 
 # --- rules (pure, tested) ------------------------------------------------------------
 
@@ -43,8 +48,18 @@ static func bench_at(props: Array, p: Vector2i) -> Dictionary:
 static func boost_left(used_today: int, gained_this_sit: int) -> int:
 	return maxi(0, mini(SIT_CAP - gained_this_sit, DAY_CAP - used_today - gained_this_sit))
 
-## Should the clock still run fast? Not past the allowance, not near midnight.
-static func fast_clock(used_today: int, gained_this_sit: int, minute_of_day: int) -> bool:
+## Is a sitting begun at `start_minute` on day `day` a night sitting (after 21:00, and that night not yet waited out)?
+static func night_sitting(start_minute: int, day: int, night_day: int) -> bool:
+	return start_minute >= NIGHT_FROM and day != night_day
+
+## Game minutes from `start_minute` round to dawn (05:10 next morning), for a night sitting.
+static func night_minutes(start_minute: int) -> int:
+	return GameClock.DAY - start_minute + DAWN_STOP
+
+## Should the clock still run fast? Not past the allowance, not near midnight. A night sitting is only limited by dawn.
+static func fast_clock(used_today: int, gained_this_sit: int, minute_of_day: int, night_start := -1) -> bool:
+	if night_start >= 0:
+		return gained_this_sit < night_minutes(night_start)
 	return boost_left(used_today, gained_this_sit) > 0 and minute_of_day < MIDNIGHT_GUARD
 
 ## Minutes passed between two clock readings in the same day (0 if it wrapped).
@@ -84,6 +99,9 @@ func _sit(ow: Node, p: Vector2i) -> void:
 		_day = Game.data.day_count
 		_used = 0
 	_start_minute = Game.data.clock_minutes
+	_night = night_sitting(_start_minute, Game.data.day_count, _night_day)
+	if _night:
+		_night_day = Game.data.day_count
 	pl.sprite.walking = false
 	pl.face("down")
 	var seat := Vector3(p.x + 0.5, ow.ground_y(p) + SEAT, p.y + 0.5)
@@ -99,7 +117,7 @@ func _make_hint() -> void:
 	_hint = CanvasLayer.new()
 	_hint.layer = 55
 	var l := Label.new()
-	l.text = "Sitting a while. Press any key to get up."
+	l.text = "Sitting a while. Press any key to get up." if not _night else "Sitting a while, and it will run through to dawn. Press any key to get up."
 	l.add_theme_font_size_override("font_size", Access.scaled(22, Settings.text_size))
 	l.add_theme_color_override("font_color", Color(0.949, 0.91, 0.812))
 	l.add_theme_color_override("font_outline_color", Color(0.114, 0.133, 0.188))
@@ -119,11 +137,17 @@ func _process(delta: float) -> void:
 	_t += delta
 	if _standing:
 		return
-	var gained := minutes_between(_start_minute, Game.data.clock_minutes)
-	if Game.time_boost > 1.0 and not fast_clock(_used, gained, Game.data.clock_minutes):
+	var gained := _gained()
+	if Game.time_boost > 1.0 and not fast_clock(_used, gained, Game.data.clock_minutes, _start_minute if _night else -1):
 		Game.time_boost = 1.0  # the evening has played out as far as it may
 	if _t > MAX_SECS or not is_instance_valid(_ow) or _ow.zone == null:
 		stand()
+
+## Game minutes sat so far (a night sitting counts across midnight).
+func _gained() -> int:
+	if _night:
+		return posmod(Game.data.clock_minutes - _start_minute, GameClock.DAY)
+	return minutes_between(_start_minute, Game.data.clock_minutes)
 
 func _input(e: InputEvent) -> void:
 	if _t > DEAF_SECS and not _standing and is_stand_event(e):
@@ -136,7 +160,7 @@ func stand() -> void:
 		return
 	_standing = true
 	Game.time_boost = 1.0
-	_used += minutes_between(_start_minute, Game.data.clock_minutes)
+	_used += _gained()
 	if _hint:
 		_hint.queue_free()
 	if _tween:

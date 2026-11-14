@@ -43,3 +43,15 @@ func test_the_street_carries_on_while_you_sit() -> void:
 	assert_false(Npc.street_stopped(), "a seated player does not")
 	BenchSit.sitting = false
 	Router.busy = was
+
+func test_a_late_sitting_can_run_through_to_dawn_once_a_night() -> void:
+	assert_true(BenchSit.night_sitting(21 * 60, 4, 3))
+	assert_true(BenchSit.night_sitting(23 * 60 + 30, 4, -1))
+	assert_false(BenchSit.night_sitting(20 * 60 + 59, 4, 3), "before nine it is just an evening")
+	assert_false(BenchSit.night_sitting(22 * 60, 4, 4), "once a night")
+	assert_eq(BenchSit.night_minutes(22 * 60), 2 * 60 + BenchSit.DAWN_STOP)
+	assert_true(BenchSit.fast_clock(BenchSit.DAY_CAP, 300, 3 * 60, 22 * 60), "the day's cap and midnight do not stop it")
+	assert_true(BenchSit.fast_clock(0, 0, 23 * 60 + 50, 22 * 60))
+	assert_false(BenchSit.fast_clock(0, BenchSit.night_minutes(22 * 60), 5 * 60 + 10, 22 * 60), "dawn ends it")
+	assert_true(BenchSit.DAWN_STOP >= 5 * 60, "05:10 is inside the dawn window")
+	assert_false(BenchSit.fast_clock(0, 0, 23 * 60 + 50), "an ordinary sitting still stops at 23:45")

@@ -346,6 +346,24 @@ func test_first_morning_mum_mentions_the_cat() -> void:
 	await _run(h, "macc_home", "mum")
 	assert_true(h.texts().any(func(t): return "cat" in str(t) and "breakfast" in str(t)), "the cat hasn't touched her breakfast")
 
+func test_first_morning_ends_with_the_recipe_book_and_is_short() -> void:
+	var d := _data({})
+	var h := _host(d)
+	await _run(h, "macc_home", "mum")
+	assert_eq(d.flag("mum_done"), true)
+	assert_eq(d.flag("mum_recipes"), true, "the book is the end of the first conversation")
+	assert_true(h.texts().any(func(t): return "recipe book" in str(t)))
+	assert_false(h.texts().any(func(t): return "noticeboard" in str(t) or "garden" in str(t)), "only what a new player needs")
+	assert_true(h.texts().any(func(t): return "Field Station" in str(t)))
+	assert_true(h.texts().any(func(t): return "tea" in str(t)))
+
+func test_an_old_save_that_never_got_the_book_gets_it_on_the_next_talk() -> void:
+	var d := _data({"mum_done": true})
+	var h := _host(d)
+	await _run(h, "macc_home", "mum")
+	assert_eq(d.flag("mum_recipes"), true)
+	assert_true(h.texts().any(func(t): return "recipe book" in str(t)))
+
 func test_mum_says_she_has_been_in_the_window() -> void:
 	var d := _data({"starter": "kindlet", "visited_buxton": true, "mum_recipes": true, "mum_done": true})
 	FamilyCat.sync(d, dex)

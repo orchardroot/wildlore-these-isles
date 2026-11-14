@@ -18,12 +18,14 @@ static var _all: Array = []
 static var _by_zone := {}
 static var _by_at := {}
 static var _loaded := false
+static var _water := {}
 
 static func clear_cache() -> void:
 	_all = []
 	_by_zone = {}
 	_by_at = {}
 	_loaded = false
+	_water = {}
 
 static func _load() -> void:
 	if _loaded:
@@ -62,6 +64,24 @@ static func tile(s: Dictionary) -> Vector2i:
 
 static func revealed(d: GameStateData, s: Dictionary) -> bool:
 	return ZoneData.flag_on(d.flag(str(s.reveal)))
+
+## The Stone that crosses the water a coracle place sits on: the Tide Stone for the sea, the Urban Stone for a lake.
+## Until the player has it the way in is a rumour only: no cue, no keyhole (the flag is still set, so it all appears
+## the moment the Stone is won). "" for a place on land.
+static func stone_for(s: Dictionary) -> String:
+	if not bool(s.get("coracle", false)):
+		return ""
+	var id := str(s.id)
+	if not _water.has(id):
+		_water[id] = "tide" if ZoneData.load_id(str(s.at)).tile_at(tile(s)) == "sea" else "urban"
+	return _water[id]
+
+## Revealed, and (for a coracle place) the player can cross to it.
+static func known(d: GameStateData, s: Dictionary) -> bool:
+	if not revealed(d, s):
+		return false
+	var need := stone_for(s)
+	return need == "" or need in d.badges
 
 static func found(d: GameStateData, s: Dictionary) -> bool:
 	return Discovery.is_found(d, str(s.zone))
@@ -106,7 +126,7 @@ static func note(d: GameStateData, zone: ZoneData, idx: Dictionary) -> Dictionar
 static func nearby(zone_id: String, pos: Vector2i, d: GameStateData, reach: int) -> Array:
 	var out := []
 	for s in in_zone(zone_id):
-		if not revealed(d, s) or found(d, s) or d.flag(Discovery.sensed_key(str(s.id))) == true:
+		if not known(d, s) or found(d, s) or d.flag(Discovery.sensed_key(str(s.id))) == true:
 			continue
 		var at := tile(s)
 		if maxi(absi(pos.x - at.x), absi(pos.y - at.y)) <= reach:
@@ -117,7 +137,7 @@ static func nearby(zone_id: String, pos: Vector2i, d: GameStateData, reach: int)
 static func marks(d: GameStateData) -> Array:
 	var out := []
 	for s in all():
-		if revealed(d, s):
+		if known(d, s):
 			out.append({"kind": "secret", "at": str(s.at), "done": found(d, s), "ring": true})
 	return out
 

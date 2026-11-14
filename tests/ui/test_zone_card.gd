@@ -27,3 +27,9 @@ func test_every_outdoor_zone_has_a_subtitle() -> void:
 		if z.kind == "interior" or z.region in ["dev", ""]:
 			continue
 		assert_true(ZoneCard.subtitle(z.id, z.region) != "", "%s (%s) has a region subtitle" % [z.id, z.region])
+
+func test_the_new_place_tally_waits_until_the_fifth_place() -> void:
+	assert_eq(ZoneCard.new_line({"count": 1, "total": 217}), "NEW PLACE")
+	assert_eq(ZoneCard.new_line({"count": 4, "total": 217, "label": "NEW PLACE"}), "NEW PLACE")
+	assert_eq(ZoneCard.new_line({"count": 5, "total": 217}), "NEW PLACE  ·  5 of 217 found")
+	assert_eq(ZoneCard.new_line({"count": 1, "total": 15, "label": "HIDDEN PLACE"}), "HIDDEN PLACE  ·  1 of 15 found")

@@ -6,7 +6,7 @@
   "zone": "dublin_trinity",
   "x": 3,
   "y": 7,
-  "needs": "cat_lead",
+  "needs": "cat_party",
   "plain": [
    "A wicker basket by the radiator with a folded blanket in it. The blanket is still warm. Somebody has just left."
   ],
@@ -27,7 +27,7 @@
    "chester",
    "cat_and_fiddle"
   ],
-  "needs": "cat_lead",
+  "needs": "cat_party",
   "phase": "dusk",
   "steps": 12,
   "lines": [
@@ -87,6 +87,7 @@
   "kind": "phone",
   "flag": "egg_phone",
   "hour": 0,
+  "to": 3,
   "reach": 2,
   "ring": [
    "A phone box nearby rings once, loud in the quiet, and then waits like something that heard you coming."
@@ -157,9 +158,11 @@
   "flag": "egg_bottles",
   "bottle": "fl_severn_crossing_1",
   "needs": "flotsam_bath_1",
+  "give": "w57_bath_soap",
   "lines": [
    "A second slip is folded in behind the first, in a different hand, damp but legible.",
-   "'Re your request for soap: sent. The Avon runs into the Severn, so you may find it. Please do not send it back.'"
+   "'Re your request for soap: sent. It is in the fold of this note. Please do not send it back.'",
+  "And it is: a small bar of soap in waxed paper, a little squashed, tucked into the fold. You keep it."
   ]
  },
  {
