@@ -325,7 +325,11 @@
    "x": 41,
    "y": 18,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "cb_verger"
   },
   {
@@ -343,7 +347,8 @@
    "x": 17,
    "y": 38,
    "facing": "right",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "cb_mudlark"
   },
   {

@@ -98,6 +98,7 @@
  },
  "music": "town_scotland",
  "name": "Inverness",
+ "no_ride": [[47, 0, 1, 4], [53, 0, 1, 4]],
  "examine": [
   {
    "x": 52,

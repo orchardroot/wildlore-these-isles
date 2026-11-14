@@ -719,7 +719,8 @@
    "x": 44,
    "y": 34,
    "facing": "up",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "exe_peregrine",
    "name": "Birdwatcher"
   },
@@ -740,7 +741,11 @@
    "x": 16,
    "y": 16,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "exe_grecian",
    "name": "Exeter City Fan"
   },

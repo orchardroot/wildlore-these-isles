@@ -735,7 +735,8 @@
    "x": 20,
    "y": 6,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "sw_castle_gardener"
   },
   {
@@ -744,7 +745,11 @@
    "x": 60,
    "y": 30,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "sw_sabbath_visitor"
   },
   {

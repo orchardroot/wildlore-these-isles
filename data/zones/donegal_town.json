@@ -381,7 +381,8 @@
    "x": 26,
    "y": 10,
    "facing": "left",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "dt_guide",
    "name": "Castle Guide"
   },
@@ -400,7 +401,11 @@
    "x": 32,
    "y": 40,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "dt_waterbus",
    "name": "Waterbus Skipper"
   },

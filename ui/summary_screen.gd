@@ -9,6 +9,7 @@ var _body: HBoxContainer
 var _move := 0  # the highlighted move row (kept while paging through the team)
 var _move_rows: Array = []
 var _move_info: Label
+var _move_match: Label
 var _moves_of: Creature
 var _swap_from := -1  # the move picked to be swapped, or -1
 var _genome := false  # the genome page instead of the stats and moves
@@ -350,7 +351,15 @@ func _middle(c: Creature) -> Control:
 		vl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		row.add_child(vl)
 		v.add_child(row)
-	v.add_child(UIKit.spacer(6))
+	v.add_child(UIKit.spacer(2))
+	var tr := VBoxContainer.new()  # what beats it, what it shrugs off (w54): shapes on colours, the names on hover and in the Fieldbook
+	tr.add_theme_constant_override("separation", 0)
+	TypeRows.add_rows(tr, c.types(), Game.chart, 26, 19, UIKit.MUTED, true)
+	if tr.get_child_count() > 0:
+		v.add_child(tr)
+	else:
+		tr.free()
+	v.add_child(UIKit.spacer(2))
 	var nl := UIKit.label("%s temper" % c.nature.capitalize(), 26, UIKit.GOLD)
 	v.add_child(nl)
 	if nat.size() == 2:
@@ -413,6 +422,9 @@ func _right(c: Creature) -> Control:
 	_move_info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_move_info.custom_minimum_size = Vector2(0, UIKit.line_height(18) * 2 - 4)  # two lines, so paging moves never shifts the layout
 	mv.add_child(_move_info)
+	_move_match = UIKit.label("", 17, Color("b9c7e6"))  # what the move's type is strong and weak against (w54)
+	_move_match.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	mv.add_child(_move_match)
 	_move = clampi(_move, 0, maxi(0, c.moves.size() - 1))
 	_paint_moves()
 	var fp := UIKit.panel(Color("1d2230f0"), 16)
@@ -463,9 +475,14 @@ func _paint_moves() -> void:
 		return
 	var info: Dictionary = Game.moves.get_move(_moves_of.moves[_move].id)
 	var power := int(info.get("power", 0))
+	if _move_match != null:
+		_move_match.text = ""
+		_move_match.visible = false
 	if _swap_from >= 0:
 		var from_name := str(Game.moves.get_move(_moves_of.moves[_swap_from].id).get("name", ""))
 		_move_info.text = "Swap %s with %s?" % [from_name, info.get("name", "")] if _swap_from != _move else "Pick where %s should go." % from_name
 		return
 	# the move's full name leads, so a long one trimmed in its row ("Bramble La...") can still be read
+	_move_match.text = MoveText.matchup_line(info, Game.chart)
+	_move_match.visible = _move_match.text != ""
 	_move_info.text = "%s  ·  %sAccuracy %d  ·  %s" % [str(info.get("name", _moves_of.moves[_move].id)), ("Power %d  ·  " % power) if power > 0 else "", int(info.get("accuracy", 100)), MoveText.describe(info)]

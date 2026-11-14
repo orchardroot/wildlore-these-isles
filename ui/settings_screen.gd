@@ -26,7 +26,7 @@ func _build() -> void:
 	var v: VBoxContainer = sl[1]
 	p.add_child(sl[0])
 	var buttons := []
-	for def in [["text_speed", "Text speed"], ["battle_speed", "Battle speed"], ["travel_scenes", "Travel scenes"], ["quality", "Graphics quality"], ["music_volume", "Music volume"], ["sfx_volume", "Effects volume"], ["ambience_volume", "Ambience volume"], ["run_mode", "Run key"], ["follower", "Follower"], ["colour_blind", "Colour-blind friendly"], ["damage_numbers", "Damage numbers"], ["local_languages", "Local languages"], ["hints", "Hints"]]:
+	for def in [["text_speed", "Text speed"], ["battle_speed", "Battle speed"], ["travel_scenes", "Travel scenes"], ["quality", "Graphics quality"], ["music_volume", "Music volume"], ["sfx_volume", "Effects volume"], ["ambience_volume", "Ambience volume"], ["run_mode", "Run key"], ["follower", "Follower"], ["colour_blind", "Colour-blind friendly"], ["damage_numbers", "Damage numbers"], ["text_blip", "Text blips"], ["local_languages", "Local languages"], ["hints", "Hints"]]:
 		var b := Button.new()
 		b.custom_minimum_size = Vector2(0, maxi(30, UIKit.line_height(23)))  # snug rows; taller with Large text so they never overlap
 		UIKit.compact(b, 2)
@@ -166,6 +166,8 @@ func _change(key: String, d: int) -> void:
 			Settings.reduce_flashing = not Settings.reduce_flashing
 		"damage_numbers":
 			Settings.damage_numbers = not Settings.damage_numbers
+		"text_blip":
+			Settings.text_blip = not Settings.text_blip
 		"local_languages":
 			Settings.local_languages = "off" if Settings.local_languages == "on" else "on"
 		"hints":
@@ -212,6 +214,8 @@ func _paint_row(r: Dictionary) -> void:
 			l.text = "<  %s  >" % ("On" if Settings.reduce_flashing else "Off")
 		"damage_numbers":
 			l.text = "<  %s  >" % ("On" if Settings.damage_numbers else "Off")
+		"text_blip":
+			l.text = "<  %s  >" % ("On" if Settings.text_blip else "Off")
 		"local_languages":
 			l.text = "<  %s  >" % ("On" if Settings.local_languages == "on" else "Off")
 		"hints":

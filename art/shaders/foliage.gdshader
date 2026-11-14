@@ -11,6 +11,9 @@ uniform float gust = 0.0;
 uniform float spring = 0.0;  // blossom on some trees
 uniform float autumn = 0.0;  // golds, oranges and russets
 uniform float winter = 0.0;  // bare, browned canopy with rime on the tops
+// Low growth (tall grass tufts, flowers) bends away from the player's feet. Footfalls sets these; 0 elsewhere.
+uniform vec3 pusher = vec3(0.0);
+uniform float push = 0.0;
 varying flat float v_tree;   // per tree (instance), 0..1
 varying flat float v_face;   // per facet, 0..1
 varying float v_canopy;      // 0 at the trunk and low tufts, 1 up in the leaves
@@ -42,6 +45,16 @@ void vertex() {
 	}
 	VERTEX.x += sway;
 	VERTEX.z += sway * 0.5;
+	if (push > 0.0) {
+		vec2 away = world.xz - pusher.xz;
+		float dist = length(away);
+		if (dist < 0.85) {
+			float f = (1.0 - smoothstep(0.25, 0.85, dist)) * push * (1.0 - v_canopy) * smoothstep(0.0, 0.3, VERTEX.y);
+			vec3 shove = vec3(away.x, 0.0, away.y) / max(dist, 0.05) * f * 0.32;
+			VERTEX += inverse(mat3(MODEL_MATRIX)) * shove;
+			VERTEX.y *= 1.0 - f * 0.25;
+		}
+	}
 }
 
 vec3 seasonal(vec3 c) {

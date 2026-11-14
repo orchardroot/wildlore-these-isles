@@ -528,7 +528,11 @@
    "x": 53,
    "y": 28,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "tob_birder",
    "name": "Eagle Watcher"
   },
@@ -538,7 +542,8 @@
    "x": 38,
    "y": 28,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "tob_hunter",
    "name": "Galleon Hunter"
   },

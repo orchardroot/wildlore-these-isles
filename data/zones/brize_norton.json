@@ -438,7 +438,11 @@
    "x": 4,
    "y": 47,
    "facing": "right",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "brz_spotter_chat"
   },
   {
@@ -447,7 +451,8 @@
    "x": 36,
    "y": 8,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "brz_vicar"
   },
   {
@@ -456,7 +461,11 @@
    "x": 76,
    "y": 40,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "brz_pjt"
   },
   {

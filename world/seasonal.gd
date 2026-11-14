@@ -27,10 +27,20 @@ static func tint(foliage: ShaderMaterial, region := "") -> void:
 	foliage.set_shader_parameter("autumn", k.y)
 	foliage.set_shader_parameter("winter", k.z)
 
+## The same season on the ground: ochre autumn grass, pale winter, fresh spring (ground.gdshader).
+static func tint_ground(ground: ShaderMaterial, region := "") -> void:
+	var t := Calendar.today()
+	var k := Calendar.foliage_tint_in(region, t.x, t.y)
+	ground.set_shader_parameter("spring", k.x)
+	ground.set_shader_parameter("autumn", k.y)
+	ground.set_shader_parameter("winter", k.z)
+
 ## Dresses a freshly built zone for the date. `follow` is the player (leaves and fireworks stay round them).
 static func dress(z: ZoneData, zone_node: Node3D, follow_node: Node3D) -> void:
 	if Meshes.foliage != null:
 		tint(Meshes.foliage, z.region)
+	if Meshes.ground != null:
+		tint_ground(Meshes.ground, z.region)
 	if z.kind == "interior":
 		return
 	var season := Calendar.season_today()

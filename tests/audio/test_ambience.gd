@@ -36,18 +36,39 @@ func test_bed_indoors() -> void:
 
 func test_night_swaps_birdsong_for_crickets() -> void:
 	assert_eq(_bed("route", "grass", "night"), "amb_night")
-	assert_eq(_bed("town", "town", "night"), "amb_night")
+	assert_eq(_bed("town", "town", "night"), "amb_night_town", "a town after dark has its own night")
 	assert_eq(_bed("route", "grass", "dusk"), "amb_country", "birds still about at dusk")
-	assert_eq(_bed("route", "coast", "night"), "amb_coast", "the sea does not sleep")
-	assert_eq(_bed("town", "city", "night"), "amb_city")
+	assert_eq(_bed("route", "coast", "night"), "amb_night_coast", "the sea does not sleep, but it is a darker sound")
+	assert_eq(_bed("town", "city", "night"), "amb_night_city")
+	assert_eq(_bed("route", "moor", "night"), "amb_moor", "the moor is the same all night")
 	assert_eq(_bed("interior", "", "night"), "amb_interior")
+
+func _room(id: String, extra := {}) -> ZoneData:
+	var d := {"id": id, "name": "R", "kind": "interior", "stage": "", "rows": ["...."], "props": [], "warps": [], "edges": {},
+		"npcs": [], "encounters": {}, "signs": [], "spawn": [0, 0], "weather": {}}
+	d.merge(extra, true)
+	return ZoneData.from_dict(d)
+
+func test_rooms_get_a_bed_for_what_they_are() -> void:
+	var want := {"carlisle_statepub": "amb_pub", "st_helier_pub": "amb_pub", "newgrange_inn": "amb_pub", "galway_cathedral": "amb_church",
+		"guernsey_chapel": "amb_church", "boston_shop": "amb_shop", "cardiff_chippy": "amb_shop", "cambridge_home_a": "amb_home",
+		"bath_home1": "amb_home", "buxton_h2": "amb_home", "stdavids_home_cottage": "amb_home", "knottmill_works": "amb_works",
+		"x_factory": "amb_works", "tristan_hall": "amb_interior", "holyhead_museum": "amb_interior", "leeds_sanctuary": "amb_interior"}
+	for id in want:
+		assert_eq(Ambience.bed_for(_room(id), "day"), want[id], id)
+	assert_eq(Ambience.bed_for(_room("anything", {"music": "pub"}), "day"), "amb_pub", "its tune says so")
+	assert_eq(Ambience.bed_for(_room("x_church", {"dark": true}), "day"), "amb_cave", "a cave stays a cave")
+	assert_eq(Ambience.bed_for(_room("x_pub", {"ambience": "amb_cave"}), "day"), "amb_cave", "an override wins")
+
+func test_the_same_rooms_do_not_change_bed_at_night() -> void:
+	assert_eq(Ambience.bed_for(_room("a_pub"), "night"), "amb_pub")
 
 func test_zone_override() -> void:
 	assert_eq(_bed("route", "grass", "day", {"ambience": "amb_moor"}), "amb_moor")
 	assert_eq(_bed("route", "grass", "day", {"ambience": "none"}), "", "none switches it off")
 
 func test_every_bed_and_layer_has_a_file() -> void:
-	for id in Ambience.BEDS + Ambience.LAYERS + ["train_run", "crossing_alarm"]:
+	for id in Ambience.BEDS + Ambience.LAYERS + Ambience.EMITTERS + ["train_run", "crossing_alarm"]:
 		assert_true(ResourceLoader.exists("res://audio/ambience/%s.wav" % id), id + " rendered")
 
 # --- weather -----------------------------------------------------------------------------------------------------
@@ -88,6 +109,47 @@ func test_town_accents() -> void:
 	assert_eq(Ambience.accents(_zone("town", "town")), [])
 	assert_eq(Ambience.accents(_zone("route", "coast", cath)), [], "only towns")
 	assert_eq(Ambience.accents(_zone("interior", "docks")), [], "not indoors")
+
+func test_a_chapel_has_a_small_bell() -> void:
+	var chapel := {"props": [{"type": "building", "style": "chapel", "x": 0, "y": 0}]}
+	assert_eq(Ambience.accents(_zone("town", "town", chapel)), ["bell_small"])
+	var both := {"props": [{"type": "building", "style": "chapel", "x": 0, "y": 0}, {"type": "building", "style": "cathedral", "x": 4, "y": 0}]}
+	assert_eq(Ambience.accents(_zone("town", "town", both)), ["bell"], "the big bell has it")
+
+func test_the_bell_strikes_the_hour_and_sleeps_at_night() -> void:
+	assert_eq(Ambience.strokes(10 * 60), 10)
+	assert_eq(Ambience.strokes(15 * 60), 3)
+	assert_eq(Ambience.strokes(12 * 60), 12)
+	assert_eq(Ambience.strokes(7 * 60), 7)
+	assert_eq(Ambience.strokes(21 * 60), 9)
+	assert_eq(Ambience.strokes(22 * 60), 0, "quiet after 21:00")
+	assert_eq(Ambience.strokes(0), 0, "and at midnight")
+	assert_eq(Ambience.strokes(6 * 60), 0, "and before seven")
+
+# --- fog, frost, thunder, battle -----------------------------------------------------------------------------------
+
+func test_fog_and_frost_muffle_the_bed_outdoors_only() -> void:
+	assert_true(Ambience.damp("fog", false)[0] < 4000.0)
+	assert_true(Ambience.damp("frost", false)[0] < Ambience.OPEN_HZ)
+	assert_true(Ambience.damp("fog", false)[0] < Ambience.damp("frost", false)[0], "fog closes in more")
+	assert_eq(Ambience.damp("fog", true)[0], Ambience.OPEN_HZ, "not indoors")
+	for w in ["clear", "sunshine", "drizzle", "downpour", "gale"]:
+		assert_eq(Ambience.damp(w, false)[0], Ambience.OPEN_HZ, w)
+	assert_eq(Ambience.pick(_zone("route", "grass"), "fog", "day", "fog").damp[0], Ambience.damp("fog", false)[0])
+
+func test_thunder_only_in_a_downpour_or_gale() -> void:
+	assert_true(Ambience.thunder_gap("downpour", 0.5) > 0.0)
+	assert_true(Ambience.thunder_gap("gale", 0.5) > Ambience.thunder_gap("downpour", 0.5), "rarer in a gale")
+	for w in ["clear", "sunshine", "drizzle", "fog", "frost"]:
+		assert_eq(Ambience.thunder_gap(w, 0.5), -1.0, w)
+	assert_true(Ambience.thunder_gap("downpour", 0.0) >= 20.0, "never a barrage")
+	assert_true(Ambience.thunder_gap("downpour", 2.0) <= 80.0, "a roll is clamped")
+
+func test_rain_carries_into_battle_and_nothing_else_does() -> void:
+	for l in ["amb_rain_light", "amb_rain_heavy", "amb_rain_roof"]:
+		assert_true(Ambience.battle_layer_db(l) > -30.0 and Ambience.battle_layer_db(l) < -6.0, l + " faint")
+	assert_true(Ambience.battle_layer_db("amb_gale") < -50.0 or Ambience.battle_layer_db("amb_gale") == -1.0, "the gale is not kept")
+	assert_eq(Ambience.battle_layer_db(""), -1.0)
 
 func test_bell_tolls_on_the_hour() -> void:
 	assert_true(Ambience.hour_struck(599, 600))
@@ -165,6 +227,29 @@ func test_ambience_volume_defaults_and_round_trips() -> void:
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(TMP))
 	Settings.path = saved_path
 	Settings.ambience_volume = saved
+
+func test_text_blip_is_on_by_default_and_round_trips() -> void:
+	var saved_path := Settings.path
+	var saved := Settings.text_blip
+	Settings.path = TMP
+	var f := FileAccess.open(TMP, FileAccess.WRITE)
+	f.store_string('{"text_speed": "normal"}')  # an old file without the key
+	f.close()
+	Settings.text_blip = true
+	Settings.load_settings()
+	assert_true(Settings.text_blip, "an old file keeps the blips on")
+	Settings.text_blip = false
+	Settings.save_settings()
+	Settings.text_blip = true
+	Settings.load_settings()
+	assert_false(Settings.text_blip, "turned off and read back")
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(TMP))
+	Settings.path = saved_path
+	Settings.text_blip = saved
+
+func test_the_blip_and_thunder_sounds_exist() -> void:
+	for id in ["text_blip", "thunder", "thunder_far"]:
+		assert_true(ResourceLoader.exists("res://audio/sfx/%s.wav" % id), id)
 
 # --- levels -------------------------------------------------------------------------------------------------------
 

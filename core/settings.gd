@@ -24,6 +24,7 @@ var text_size := "normal"   # normal | large | largest: UI text scale (see Acces
 var readable_font := false  # a dyslexia-friendly typeface (Atkinson Hyperlegible) for the interface
 var hints := true          # first-time introductions to each system (see Intros)
 var damage_numbers := true  # battle: the damage taken drifts up beside the plate
+var text_blip := true       # a soft tick for each few letters of speech in the dialogue box
 var bindings := {}        # action -> {"key": [physical keycodes], "pad": [joypad buttons]}, see InputSetup
 var _theme: Theme         # the shared UI theme, kept loaded so apply_access's changes stick
 
@@ -68,6 +69,7 @@ func load_settings() -> void:
 			easy_fishing = bool(d.get("easy_fishing", easy_fishing))
 			easy_darts = bool(d.get("easy_darts", easy_darts))
 			damage_numbers = bool(d.get("damage_numbers", damage_numbers))
+			text_blip = bool(d.get("text_blip", text_blip))
 			local_languages = str(d.get("local_languages", local_languages))
 			if local_languages not in ["on", "off"]:
 				local_languages = "on"
@@ -95,7 +97,7 @@ func save_settings() -> void:
 	if f:
 		f.store_string(JSON.stringify({"text_speed": text_speed, "battle_speed": battle_speed, "quality": quality, "music_volume": music_volume,
 			"sfx_volume": sfx_volume, "ambience_volume": ambience_volume, "run_mode": run_mode, "colour_blind": colour_blind, "reduce_flashing": reduce_flashing,
-			"travel_scenes": travel_scenes, "follower": follower, "damage_numbers": damage_numbers, "local_languages": local_languages, "hints": hints, "easy_fishing": easy_fishing, "easy_darts": easy_darts, "text_size": text_size, "readable_font": readable_font, "bindings": bindings}))
+			"travel_scenes": travel_scenes, "follower": follower, "damage_numbers": damage_numbers, "text_blip": text_blip, "local_languages": local_languages, "hints": hints, "easy_fishing": easy_fishing, "easy_darts": easy_darts, "text_size": text_size, "readable_font": readable_font, "bindings": bindings}))
 	_sync_languages()
 	Bus.settings_changed.emit()
 

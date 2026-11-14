@@ -30,6 +30,7 @@ var _choice_labels: Array = []
 var _choice_index := 0
 var _typed := 0.0
 var _total := 0
+var _blipped := 0   # letters shown when the last text blip played
 var _armed_at := 0
 var _choice_after_typing := false
 var _decline := -1
@@ -275,6 +276,7 @@ func _begin(text: String, who: String) -> void:
 	_label.visible_characters = 0
 	_total = text.length()
 	_typed = 0.0
+	_blipped = 0
 	_tab.visible = who != ""
 	_tab_label.text = who
 	_arrow.visible = false
@@ -354,6 +356,12 @@ func _tick(delta: float, pressed: bool, cancel: bool, held: bool, nav := 0) -> v
 				shown = _total
 			if shown != _label.visible_characters:
 				_label.visible_characters = shown
+				if shown - _blipped >= 3 and shown - _blipped <= 6 and not pressed:  # a tick every few letters, never for a jump
+					_blipped = shown
+					if _label.text.substr(maxi(shown - 1, 0), 1) != " ":
+						Audio.text_blip()
+				elif shown - _blipped > 6:
+					_blipped = shown
 			if shown >= _total:
 				_finish_typing()
 		State.WAIT:

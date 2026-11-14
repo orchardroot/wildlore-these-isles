@@ -14,6 +14,7 @@ static func wrap(zone_id: String, npc_id: String, commands: Array, data: GameSta
 	var trumps: Array = Trumps.hook(zone_id, npc_id, commands, data).slice(n)
 	var gossip: Array = KeeperIntel.hook(zone_id, npc_id, commands, data).slice(n)
 	var place: Array = Poi.hook(zone_id, npc_id, commands, data).slice(n, n + 2)
+	place += Rumours.hook(zone_id, npc_id, commands, data).slice(n)  # w54: a resident's word on a legend (one rumour per resident)
 	var wants: Dictionary = Wants.parts(zone_id, npc_id, data)
 	var errand: Array = _first_errand(Errands.hook(zone_id, npc_id, commands, data).slice(n))
 	if trumps.any(func(c): return c is Dictionary and c.get("give", "") == "starter"):

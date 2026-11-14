@@ -574,7 +574,11 @@
    "x": 13,
    "y": 34,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "hul_bobber"
   },
   {
@@ -583,7 +587,11 @@
    "x": 26,
    "y": 28,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "hul_culture"
   },
   {
@@ -601,7 +609,8 @@
    "x": 18,
    "y": 34,
    "facing": "left",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "hul_patty_fan"
   },
   {

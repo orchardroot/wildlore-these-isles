@@ -7,6 +7,7 @@ extends Node
 
 const SILENT_DB := -60.0
 const MUSIC_BUS := &"Music"
+const AMB_BUS := &"Ambience"  # beds, layers and emitters: fog and frost close a low-pass over it
 const MUFFLE_HZ := 650.0      # the town tune heard through the walls of a house
 const OPEN_HZ := 20000.0
 const MUFFLE_DB := -4.0
@@ -19,6 +20,9 @@ const CRY_DB := -2.0          # a touch under the other effects: it plays over t
 const BELL_DB := -4.0         # tolls on the hour; quiet-ish, it is across town
 const HORN_DB := -12.0        # a ship out in the harbour
 const HORN_GAP := Vector2(70.0, 160.0)
+const BLIP_DB := -15.0        # the tick for each letter of speech: well under the voice of the world
+const TOLL_GAP := 2.1         # seconds between strokes of an hour
+const TOLL_PITCH := {"bell": 1.0, "bell_small": 1.4}
 const POLL := 1.0             # seconds between looks at the clock (night falling, the hour striking)
 
 var _players: Array = []
@@ -42,6 +46,10 @@ var _muffled := false
 var _muffle_tween: Tween
 var _rng := RandomNumberGenerator.new()  # its own dice: the game's rng stays deterministic
 var _last_step_ms := 0
+var _damp_tween: Tween
+var _thunder_token := 0       # bumped to call off thunder already on its way (a new zone, a battle)
+var _tolling := false
+var _blip_n := 0
 
 func _ready() -> void:
 	_ensure_music_bus()
@@ -55,7 +63,9 @@ func _ready() -> void:
 		var p := AudioStreamPlayer.new()
 		add_child(p)
 		_sfx.append(p)
+	_ensure_ambience_bus()
 	_amb = AudioStreamPlayer.new()
+	_amb.bus = AMB_BUS
 	var poly := AudioStreamPolyphonic.new()
 	poly.polyphony = 4  # bed + layer, and the two on their way out during a crossfade
 	_amb.stream = poly
@@ -231,6 +241,7 @@ func _refresh() -> void:
 	play_ambience(pick.bed)
 	play_ambience_layer(pick.layer)
 	set_music_muffled(pick.muffle)
+	_apply_damp(pick.damp)
 
 func _process(delta: float) -> void:
 	if _zone == null or _in_battle:
@@ -245,12 +256,49 @@ func _process(delta: float) -> void:
 		return
 	_poll_t = 0.0
 	var now := Game.data.clock_minutes
-	if "bell" in _accents and Ambience.hour_struck(_minute, now):
-		sfx_at("bell_toll", BELL_DB, 1.0, Settings.ambience_volume)
+	if Ambience.hour_struck(_minute, now):
+		for kind in ["bell", "bell_small"]:
+			if kind in _accents:
+				_toll(Ambience.strokes(now), TOLL_PITCH[kind])
+				break
 	_minute = now
 	_refresh()  # night falls, dawn comes
 
+## The hour: `count` strokes of the bell, TOLL_GAP apart. Stops if you leave the town or a battle starts.
+func _toll(count: int, pitch: float) -> void:
+	if count <= 0 or _tolling:
+		return
+	_tolling = true
+	var zone := _zone
+	for i in count:
+		if _zone != zone or _in_battle or not is_inside_tree():
+			break
+		sfx_at("bell_toll", BELL_DB, pitch, Settings.ambience_volume)
+		await get_tree().create_timer(TOLL_GAP).timeout
+	_tolling = false
+
+## Thunder: heard from out in the open (`indoors` false) or through the roof, either close or over the next hill.
+## It arrives `delay` seconds after the flash (light is quicker).
+func thunder(close: bool, indoors: bool, delay := 0.0) -> void:
+	if _in_battle:
+		return
+	var token := _thunder_token
+	if delay > 0.0 and is_inside_tree():
+		await get_tree().create_timer(delay).timeout
+	if token != _thunder_token or _in_battle:
+		return
+	var id := "thunder" if close and not indoors else "thunder_far"
+	sfx_at(id, -9.0 if indoors else -4.0, 1.0, Settings.ambience_volume)
+
+## One soft tick for a letter of speech (the dialogue box calls this every few letters), if the setting is on.
+func text_blip() -> void:
+	if not Settings.text_blip:
+		return
+	_blip_n += 1
+	sfx_at("text_blip", BLIP_DB, 0.9 + 0.05 * float(_blip_n % 5))
+
 func _on_scene_gone() -> void:
+	_thunder_token += 1
 	_zone = null
 	stop_ambience(0.5)
 	set_music_muffled(false, 0.3)
@@ -259,21 +307,31 @@ func _on_battle_started(kind: String) -> void:
 	_in_battle = true
 	if kind == "wild" and not Engine.has_meta("autopilot"):
 		sfx("encounter")  # something in the grass: the sting plays over the swirl into battle
-	_fade_amb(SILENT_DB, 0.4)
+	_thunder_token += 1
+	_battle_ambience(true)
 	_apply_muffle(false, 0.2)
 
 func _on_battle_ended(_result: Dictionary) -> void:
 	_in_battle = false
-	_fade_amb(_amb_db(), 1.0)
+	_battle_ambience(false)
 	_apply_muffle(_muffled, 0.4)
 
-func _fade_amb(to_db: float, secs: float) -> void:
-	if _amb == null or not is_inside_tree():
+## A battle hushes the bed, but the rain you were standing in carries on, faintly; afterwards it all comes back.
+func _battle_ambience(on: bool) -> void:
+	var pb := _playback()
+	if pb == null:
 		return
-	if _amb_tween and _amb_tween.is_valid():
-		_amb_tween.kill()
-	_amb_tween = create_tween()
-	_amb_tween.tween_property(_amb, "volume_db", to_db, secs)
+	var bed: Dictionary = _slots.bed
+	var layer: Dictionary = _slots.layer
+	if bed.is_empty() or layer.is_empty():
+		return
+	if on:
+		_fade_voice(pb, bed, SILENT_DB, 0.4, false)
+		var keep := Ambience.battle_layer_db(str(layer.get("id", "")))
+		_fade_voice(pb, layer, SILENT_DB if keep < -50.0 else keep, 0.5, false)
+	else:
+		_fade_voice(pb, bed, 0.0, 1.0, false)
+		_fade_voice(pb, layer, 0.0, 1.0, false)
 
 func _playback() -> AudioStreamPlaybackPolyphonic:
 	if _amb == null or not _amb.is_inside_tree():
@@ -318,6 +376,47 @@ func _fade_voice(pb: AudioStreamPlaybackPolyphonic, v: Dictionary, to_db: float,
 	tw.tween_method(set_db, float(v.db), to_db, maxf(secs, 0.01))
 	if stop_after:
 		tw.tween_callback(func(): pb.stop_stream(vid))
+
+func _ensure_ambience_bus() -> void:
+	if AudioServer.get_bus_index(AMB_BUS) < 0:
+		AudioServer.add_bus()
+		var i := AudioServer.bus_count - 1
+		AudioServer.set_bus_name(i, AMB_BUS)
+		AudioServer.set_bus_send(i, &"Master")
+		var lp := AudioEffectLowPassFilter.new()
+		lp.cutoff_hz = Ambience.OPEN_HZ
+		AudioServer.add_bus_effect(i, lp, 0)
+		AudioServer.set_bus_effect_enabled(i, 0, false)
+
+## Closes (or opens) the low-pass over the ambience bus: fog and frost muffle everything outdoors.
+func _apply_damp(damp: Array) -> void:
+	var bi := AudioServer.get_bus_index(AMB_BUS)
+	if bi < 0 or AudioServer.get_bus_effect_count(bi) == 0:
+		return
+	var lp := AudioServer.get_bus_effect(bi, 0) as AudioEffectLowPassFilter
+	if lp == null:
+		return
+	var to_hz: float = damp[0]
+	var to_db: float = damp[1]
+	var from_hz := lp.cutoff_hz if AudioServer.is_bus_effect_enabled(bi, 0) else Ambience.OPEN_HZ
+	if is_equal_approx(from_hz, to_hz) and is_equal_approx(AudioServer.get_bus_volume_db(bi), to_db):
+		return
+	if _damp_tween and _damp_tween.is_valid():
+		_damp_tween.kill()
+	var from_db := AudioServer.get_bus_volume_db(bi)
+	AudioServer.set_bus_effect_enabled(bi, 0, true)
+	if not is_inside_tree():
+		lp.cutoff_hz = to_hz
+		AudioServer.set_bus_volume_db(bi, to_db)
+		AudioServer.set_bus_effect_enabled(bi, 0, to_hz < Ambience.OPEN_HZ)
+		return
+	_damp_tween = create_tween()
+	var step := func(t: float) -> void:
+		lp.cutoff_hz = from_hz * pow(to_hz / from_hz, t)
+		AudioServer.set_bus_volume_db(bi, lerpf(from_db, to_db, t))
+	_damp_tween.tween_method(step, 0.0, 1.0, 2.0)
+	if to_hz >= Ambience.OPEN_HZ:
+		_damp_tween.tween_callback(func(): AudioServer.set_bus_effect_enabled(bi, 0, false))
 
 func _ensure_music_bus() -> void:
 	# default_bus_layout.tres sets this up; this is the fallback if it is missing

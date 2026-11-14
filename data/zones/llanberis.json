@@ -180,7 +180,11 @@
   {
    "facing": "right",
    "id": "lake_angler",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "name": "Angler",
    "script": "lake_angler",
    "sprite": "angler",

@@ -1,0 +1,992 @@
+[
+ {
+  "id": "fl_aberystwyth_1",
+  "zone": "aberystwyth",
+  "x": 40,
+  "y": 41,
+  "kind": "bottle",
+  "text": [
+   "The cliff railway on Constitution Hill is said to be the longest in Britain. It is very slow and I love it."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_aberystwyth_1"
+ },
+ {
+  "id": "fl_anglesey_1",
+  "zone": "anglesey",
+  "x": 42,
+  "y": 32,
+  "kind": "crate",
+  "text": [
+   "A wooden crate, adrift and unclaimed. The lid is nailed down, and the stencil says it came from a port nobody can place."
+  ],
+  "reward": {
+   "item": "pork_pie",
+   "qty": 1
+  },
+  "flag": "flotsam_anglesey_1"
+ },
+ {
+  "id": "fl_bath_1",
+  "zone": "bath",
+  "x": 47,
+  "y": 14,
+  "kind": "bottle",
+  "text": [
+   "To whoever finds this: the Romans called this place Aquae Sulis and built a spa. We have a weir and a great many tourists. Please send soap."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_bath_1"
+ },
+ {
+  "id": "fl_beacons_1",
+  "zone": "beacons",
+  "x": 56,
+  "y": 31,
+  "kind": "crate",
+  "text": [
+   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+  ],
+  "reward": {
+   "item": "parkin",
+   "qty": 1
+  },
+  "flag": "flotsam_beacons_1"
+ },
+ {
+  "id": "fl_belfast_1",
+  "zone": "belfast",
+  "x": 69,
+  "y": 42,
+  "kind": "bottle",
+  "text": [
+   "Built in Belfast: the Titanic, and a great many other ships that stayed afloat. We would like to be known for the second bit."
+  ],
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "flotsam_belfast_1"
+ },
+ {
+  "id": "fl_birmingham_1",
+  "zone": "birmingham",
+  "x": 27,
+  "y": 40,
+  "kind": "crate",
+  "text": [
+   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+  ],
+  "reward": {
+   "item": "cup_of_tea",
+   "qty": 1
+  },
+  "flag": "flotsam_birmingham_1"
+ },
+ {
+  "id": "fl_brighton_1",
+  "zone": "brighton",
+  "x": 46,
+  "y": 53,
+  "kind": "crate",
+  "text": [
+   "A crate marked THIS WAY UP. It has not been this way up for some time. You fish it out with the paddle."
+  ],
+  "reward": {
+   "item": "soda_bread",
+   "qty": 1
+  },
+  "flag": "flotsam_brighton_1"
+ },
+ {
+  "id": "fl_burren_1",
+  "zone": "burren",
+  "x": 51,
+  "y": 32,
+  "kind": "cache",
+  "text": [
+   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+  ],
+  "reward": {
+   "item": "hazelnuts",
+   "qty": 1
+  },
+  "flag": "flotsam_burren_1"
+ },
+ {
+  "id": "fl_cardiff_1",
+  "zone": "cardiff",
+  "x": 57,
+  "y": 41,
+  "kind": "cache",
+  "text": [
+   "Whoever hid this had a boat and a plan. You have a boat, and now the plan has been found."
+  ],
+  "reward": {
+   "item": "truffle",
+   "qty": 1
+  },
+  "flag": "flotsam_cardiff_1"
+ },
+ {
+  "id": "fl_causeway_1",
+  "zone": "causeway",
+  "x": 60,
+  "y": 17,
+  "kind": "crate",
+  "text": [
+   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+  ],
+  "reward": {
+   "item": "cup_of_tea",
+   "qty": 1
+  },
+  "flag": "flotsam_causeway_1"
+ },
+ {
+  "id": "fl_chester_1",
+  "zone": "chester",
+  "x": 34,
+  "y": 46,
+  "kind": "bottle",
+  "text": [
+   "Chester's Roodee racecourse says it is among the oldest in the world. The horses have yet to confirm."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_chester_1"
+ },
+ {
+  "id": "fl_cork_1",
+  "zone": "cork",
+  "x": 47,
+  "y": 16,
+  "kind": "bottle",
+  "text": [
+   "The middle of Cork is an island, because the Lee splits round it. Ask a Corkonian and you will get a longer answer than you wanted."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_cork_1"
+ },
+ {
+  "id": "fl_dartmoor_1",
+  "zone": "dartmoor",
+  "x": 15,
+  "y": 33,
+  "kind": "pot",
+  "text": [
+   "A keepnet left out in the water by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
+  ],
+  "reward": {
+   "item": "brown_trout",
+   "qty": 2
+  },
+  "flag": "flotsam_dartmoor_1"
+ },
+ {
+  "id": "fl_dingle_1",
+  "zone": "dingle",
+  "x": 50,
+  "y": 39,
+  "kind": "bottle",
+  "text": [
+   "Fungie the dolphin lived in Dingle harbour for nearly forty years and charged nobody a penny. The boats charged you."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_dingle_1"
+ },
+ {
+  "id": "fl_dover_1",
+  "zone": "dover",
+  "x": 41,
+  "y": 37,
+  "kind": "pot",
+  "text": [
+   "A creel bobbing on its own float, with no one's name on it. Inside, a fish with the look of someone who has given up arguing."
+  ],
+  "reward": {
+   "item": "haddock",
+   "qty": 1
+  },
+  "flag": "flotsam_dover_1"
+ },
+ {
+  "id": "fl_dundee_1",
+  "zone": "dundee",
+  "x": 8,
+  "y": 48,
+  "kind": "bottle",
+  "text": [
+   "Captain Scott's Discovery was built here in 1901. She is moored at the quay and has never once tried to leave. Lovely lass."
+  ],
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "flotsam_dundee_1"
+ },
+ {
+  "id": "fl_exeter_1",
+  "zone": "exeter",
+  "x": 4,
+  "y": 45,
+  "kind": "bottle",
+  "text": [
+   "Exeter's canal dates from the 1560s, one of the oldest in England. Nobody has told the swans."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_exeter_1"
+ },
+ {
+  "id": "fl_fort_william_1",
+  "zone": "fort_william",
+  "x": 2,
+  "y": 22,
+  "kind": "bottle",
+  "text": [
+   "Neptune's Staircase is eight locks on the Caledonian Canal and takes about an hour and a half to climb. Be patient. The mountain will wait."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_fort_william_1"
+ },
+ {
+  "id": "fl_forth_bridges_1",
+  "zone": "forth_bridges",
+  "x": 41,
+  "y": 31,
+  "kind": "cache",
+  "text": [
+   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+  ],
+  "reward": {
+   "item": "heather_honey",
+   "qty": 1
+  },
+  "flag": "flotsam_forth_bridges_1"
+ },
+ {
+  "id": "fl_galway_1",
+  "zone": "galway",
+  "x": 20,
+  "y": 44,
+  "kind": "bottle",
+  "text": [
+   "The Spanish Arch is part of the old city wall, put up in 1584, and named for the Spanish trade. It is very good at standing there."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_galway_1"
+ },
+ {
+  "id": "fl_glencoe_1",
+  "zone": "glencoe",
+  "x": 18,
+  "y": 9,
+  "kind": "pot",
+  "text": [
+   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+  ],
+  "reward": {
+   "item": "rudd",
+   "qty": 1
+  },
+  "flag": "flotsam_glencoe_1"
+ },
+ {
+  "id": "fl_gower_1",
+  "zone": "gower",
+  "x": 8,
+  "y": 36,
+  "kind": "bottle",
+  "text": [
+   "Worm's Head is not a worm. It is an island with a causeway that vanishes at high tide. Do not be the person on the rocks."
+  ],
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "flotsam_gower_1"
+ },
+ {
+  "id": "fl_goyt_valley_1",
+  "zone": "goyt_valley",
+  "x": 15,
+  "y": 47,
+  "kind": "pot",
+  "text": [
+   "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it."
+  ],
+  "reward": {
+   "item": "brown_trout",
+   "qty": 1
+  },
+  "flag": "flotsam_goyt_valley_1"
+ },
+ {
+  "id": "fl_guernsey_country_1",
+  "zone": "guernsey_country",
+  "x": 2,
+  "y": 37,
+  "kind": "pot",
+  "text": [
+   "A lobster pot, adrift, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner."
+  ],
+  "reward": {
+   "item": "mackerel",
+   "qty": 2
+  },
+  "flag": "flotsam_guernsey_country_1"
+ },
+ {
+  "id": "fl_gweedore_1",
+  "zone": "gweedore",
+  "x": 7,
+  "y": 16,
+  "kind": "crate",
+  "text": [
+   "A tea chest bobs past like it has somewhere to be. You hook it, and it comes quietly."
+  ],
+  "reward": {
+   "item": "buxton_water",
+   "qty": 1
+  },
+  "flag": "flotsam_gweedore_1"
+ },
+ {
+  "id": "fl_hafod_cwm_1",
+  "zone": "hafod_cwm",
+  "x": 33,
+  "y": 6,
+  "kind": "crate",
+  "text": [
+   "A crate marked THIS WAY UP. It has not been this way up for some time. You fish it out with the paddle."
+  ],
+  "reward": {
+   "item": "soda_bread",
+   "qty": 1
+  },
+  "flag": "flotsam_hafod_cwm_1"
+ },
+ {
+  "id": "fl_harris_1",
+  "zone": "harris",
+  "x": 60,
+  "y": 2,
+  "kind": "bottle",
+  "text": [
+   "Harris and Lewis are the same island. Please don't say so out loud."
+  ],
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "flotsam_harris_1"
+ },
+ {
+  "id": "fl_holyhead_1",
+  "zone": "holyhead",
+  "x": 29,
+  "y": 33,
+  "kind": "pot",
+  "text": [
+   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+  ],
+  "reward": {
+   "item": "chub",
+   "qty": 2
+  },
+  "flag": "flotsam_holyhead_1"
+ },
+ {
+  "id": "fl_hull_1",
+  "zone": "hull",
+  "x": 24,
+  "y": 56,
+  "kind": "bottle",
+  "text": [
+   "The Humber Bridge was the longest single-span suspension bridge in the world when it opened in 1981. It isn't any more. I am still proud of it. Hull."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_hull_1"
+ },
+ {
+  "id": "fl_inverness_1",
+  "zone": "inverness",
+  "x": 23,
+  "y": 33,
+  "kind": "pot",
+  "text": [
+   "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it."
+  ],
+  "reward": {
+   "item": "rudd",
+   "qty": 1
+  },
+  "flag": "flotsam_inverness_1"
+ },
+ {
+  "id": "fl_ironbridge_gorge_1",
+  "zone": "ironbridge_gorge",
+  "x": 41,
+  "y": 35,
+  "kind": "bottle",
+  "text": [
+   "The Iron Bridge opened in 1781, the first big bridge made of cast iron. It has not given up, which is better than I can say for my knees."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_ironbridge_gorge_1"
+ },
+ {
+  "id": "fl_kent_downs_1",
+  "zone": "kent_downs",
+  "x": 45,
+  "y": 46,
+  "kind": "crate",
+  "text": [
+   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+  ],
+  "reward": {
+   "item": "pasty",
+   "qty": 1
+  },
+  "flag": "flotsam_kent_downs_1"
+ },
+ {
+  "id": "fl_keswick_1",
+  "zone": "keswick",
+  "x": 20,
+  "y": 8,
+  "kind": "cache",
+  "text": [
+   "A hollow under a thorn bush, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'"
+  ],
+  "reward": {
+   "item": "honeycomb",
+   "qty": 1
+  },
+  "flag": "flotsam_keswick_1"
+ },
+ {
+  "id": "fl_lake_district_1",
+  "zone": "lake_district",
+  "x": 18,
+  "y": 36,
+  "kind": "crate",
+  "text": [
+   "A sealed tin box, tarred at the seams, floating low. Somebody's emergency rations, and somebody's loss."
+  ],
+  "reward": {
+   "item": "pork_pie",
+   "qty": 1
+  },
+  "flag": "flotsam_lake_district_1"
+ },
+ {
+  "id": "fl_lerwick_1",
+  "zone": "lerwick",
+  "x": 64,
+  "y": 25,
+  "kind": "bottle",
+  "text": [
+   "At Up Helly Aa they build a Viking galley every January, to burn it. I think of this when I think about my own plans."
+  ],
+  "reward": {
+   "item": "crab_bait",
+   "qty": 1
+  },
+  "flag": "flotsam_lerwick_1"
+ },
+ {
+  "id": "fl_lerwick_2",
+  "zone": "lerwick",
+  "x": 10,
+  "y": 45,
+  "kind": "cache",
+  "text": [
+   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+  ],
+  "reward": {
+   "item": "wicker_snare",
+   "qty": 1
+  },
+  "flag": "flotsam_lerwick_2"
+ },
+ {
+  "id": "fl_limerick_1",
+  "zone": "limerick",
+  "x": 19,
+  "y": 34,
+  "kind": "bottle",
+  "text": [
+   "King John's Castle was built in the early 1200s and has had a lot of visitors since. A few of them brought cannon."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_limerick_1"
+ },
+ {
+  "id": "fl_liverpool_1",
+  "zone": "liverpool",
+  "x": 3,
+  "y": 6,
+  "kind": "crate",
+  "text": [
+   "A crate marked THIS WAY UP. It has not been this way up for some time. You fish it out with the paddle."
+  ],
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "flotsam_liverpool_1"
+ },
+ {
+  "id": "fl_llanberis_1",
+  "zone": "llanberis",
+  "x": 4,
+  "y": 34,
+  "kind": "pot",
+  "text": [
+   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+  ],
+  "reward": {
+   "item": "rudd",
+   "qty": 2
+  },
+  "flag": "flotsam_llanberis_1"
+ },
+ {
+  "id": "fl_llangollen_1",
+  "zone": "llangollen",
+  "x": 21,
+  "y": 5,
+  "kind": "crate",
+  "text": [
+   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+  ],
+  "reward": {
+   "item": "pork_pie",
+   "qty": 1
+  },
+  "flag": "flotsam_llangollen_1"
+ },
+ {
+  "id": "fl_loch_lomond_1",
+  "zone": "loch_lomond",
+  "x": 35,
+  "y": 10,
+  "kind": "crate",
+  "text": [
+   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+  ],
+  "reward": {
+   "item": "bara_brith",
+   "qty": 1
+  },
+  "flag": "flotsam_loch_lomond_1"
+ },
+ {
+  "id": "fl_london_1",
+  "zone": "london",
+  "x": 62,
+  "y": 34,
+  "kind": "bottle",
+  "text": [
+   "The summer of 1858 was so hot the Thames smelled terrible and they called it the Great Stink. Parliament hung curtains soaked in lime. Sincerely, a bottle."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_london_1"
+ },
+ {
+  "id": "fl_newcastle_1",
+  "zone": "newcastle",
+  "x": 41,
+  "y": 3,
+  "kind": "bottle",
+  "text": [
+   "Seven bridges over the Tyne between Newcastle and Gateshead, and I still managed to end up on the wrong side of it."
+  ],
+  "reward": {
+   "item": "slate_chip",
+   "qty": 1
+  },
+  "flag": "flotsam_newcastle_1"
+ },
+ {
+  "id": "fl_nottingham_1",
+  "zone": "nottingham",
+  "x": 68,
+  "y": 48,
+  "kind": "crate",
+  "text": [
+   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+  ],
+  "reward": {
+   "item": "soda_bread",
+   "qty": 1
+  },
+  "flag": "flotsam_nottingham_1"
+ },
+ {
+  "id": "fl_oban_1",
+  "zone": "oban",
+  "x": 3,
+  "y": 18,
+  "kind": "cache",
+  "text": [
+   "Dry sand above the tide line and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
+  ],
+  "reward": {
+   "item": "wicker_snare",
+   "qty": 1
+  },
+  "flag": "flotsam_oban_1"
+ },
+ {
+  "id": "fl_oxford_1",
+  "zone": "oxford",
+  "x": 37,
+  "y": 52,
+  "kind": "crate",
+  "text": [
+   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+  ],
+  "reward": {
+   "item": "flask_of_tea",
+   "qty": 1
+  },
+  "flag": "flotsam_oxford_1"
+ },
+ {
+  "id": "fl_pembroke_coast_1",
+  "zone": "pembroke_coast",
+  "x": 3,
+  "y": 26,
+  "kind": "crate",
+  "text": [
+   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+  ],
+  "reward": {
+   "item": "cup_of_tea",
+   "qty": 1
+  },
+  "flag": "flotsam_pembroke_coast_1"
+ },
+ {
+  "id": "fl_pentland_coast_1",
+  "zone": "pentland_coast",
+  "x": 51,
+  "y": 7,
+  "kind": "cache",
+  "text": [
+   "A cairn on the far bank, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it."
+  ],
+  "reward": {
+   "item": "heather_honey",
+   "qty": 1
+  },
+  "flag": "flotsam_pentland_coast_1"
+ },
+ {
+  "id": "fl_penzance_1",
+  "zone": "penzance",
+  "x": 49,
+  "y": 43,
+  "kind": "bottle",
+  "text": [
+   "You can walk to St Michael's Mount at low tide. You can swim back at high tide. Check the table. I did not."
+  ],
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "flotsam_penzance_1"
+ },
+ {
+  "id": "fl_plymouth_1",
+  "zone": "plymouth",
+  "x": 2,
+  "y": 23,
+  "kind": "pot",
+  "text": [
+   "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it."
+  ],
+  "reward": {
+   "item": "tench",
+   "qty": 2
+  },
+  "flag": "flotsam_plymouth_1"
+ },
+ {
+  "id": "fl_poole_1",
+  "zone": "poole",
+  "x": 14,
+  "y": 30,
+  "kind": "bottle",
+  "text": [
+   "Brownsea Island held the first Scout camp in 1907. They still have red squirrels. The squirrels are not in the Scouts."
+  ],
+  "reward": {
+   "item": "crab_bait",
+   "qty": 1
+  },
+  "flag": "flotsam_poole_1"
+ },
+ {
+  "id": "fl_scottish_borders_1",
+  "zone": "scottish_borders",
+  "x": 33,
+  "y": 35,
+  "kind": "pot",
+  "text": [
+   "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it."
+  ],
+  "reward": {
+   "item": "chub",
+   "qty": 1
+  },
+  "flag": "flotsam_scottish_borders_1"
+ },
+ {
+  "id": "fl_severn_crossing_1",
+  "zone": "severn_crossing",
+  "x": 23,
+  "y": 35,
+  "kind": "bottle",
+  "text": [
+   "The Severn Bore is a wave that runs up the river on the big tides. Surfers love it. The river was not asked."
+  ],
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "flotsam_severn_crossing_1"
+ },
+ {
+  "id": "fl_sheffield_1",
+  "zone": "sheffield",
+  "x": 22,
+  "y": 29,
+  "kind": "crate",
+  "text": [
+   "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today."
+  ],
+  "reward": {
+   "item": "pork_pie",
+   "qty": 1
+  },
+  "flag": "flotsam_sheffield_1"
+ },
+ {
+  "id": "fl_shetland_mainland_1",
+  "zone": "shetland_mainland",
+  "x": 52,
+  "y": 25,
+  "kind": "cache",
+  "text": [
+   "Dry sand above the tide line and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
+  ],
+  "reward": {
+   "item": "heather_honey",
+   "qty": 1
+  },
+  "flag": "flotsam_shetland_mainland_1"
+ },
+ {
+  "id": "fl_shrewsbury_1",
+  "zone": "shrewsbury",
+  "x": 13,
+  "y": 20,
+  "kind": "crate",
+  "text": [
+   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+  ],
+  "reward": {
+   "item": "cup_of_tea",
+   "qty": 1
+  },
+  "flag": "flotsam_shrewsbury_1"
+ },
+ {
+  "id": "fl_sligo_1",
+  "zone": "sligo",
+  "x": 46,
+  "y": 43,
+  "kind": "cache",
+  "text": [
+   "A cairn on the far bank, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it."
+  ],
+  "reward": {
+   "item": "hazelnuts",
+   "qty": 1
+  },
+  "flag": "flotsam_sligo_1"
+ },
+ {
+  "id": "fl_somerset_levels_1",
+  "zone": "somerset_levels",
+  "x": 23,
+  "y": 10,
+  "kind": "cache",
+  "text": [
+   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+  ],
+  "reward": {
+   "item": "hazelnuts",
+   "qty": 1
+  },
+  "flag": "flotsam_somerset_levels_1"
+ },
+ {
+  "id": "fl_stornoway_1",
+  "zone": "stornoway",
+  "x": 59,
+  "y": 3,
+  "kind": "bottle",
+  "text": [
+   "Harris Tweed has to be handwoven by islanders in their own homes. I am not woven. I am glass."
+  ],
+  "reward": {
+   "item": "sea_glass",
+   "qty": 1
+  },
+  "flag": "flotsam_stornoway_1"
+ },
+ {
+  "id": "fl_swansea_1",
+  "zone": "swansea",
+  "x": 65,
+  "y": 55,
+  "kind": "pot",
+  "text": [
+   "A lobster pot, adrift, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner."
+  ],
+  "reward": {
+   "item": "ballan_wrasse",
+   "qty": 1
+  },
+  "flag": "flotsam_swansea_1"
+ },
+ {
+  "id": "fl_the_broads_1",
+  "zone": "the_broads",
+  "x": 31,
+  "y": 17,
+  "kind": "pot",
+  "text": [
+   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+  ],
+  "reward": {
+   "item": "roach",
+   "qty": 1
+  },
+  "flag": "flotsam_the_broads_1"
+ },
+ {
+  "id": "fl_the_fens_1",
+  "zone": "the_fens",
+  "x": 13,
+  "y": 48,
+  "kind": "cache",
+  "text": [
+   "Dry sand above the tide line and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
+  ],
+  "reward": {
+   "item": "lavender_sachet",
+   "qty": 1
+  },
+  "flag": "flotsam_the_fens_1"
+ },
+ {
+  "id": "fl_the_roaches_1",
+  "zone": "the_roaches",
+  "x": 11,
+  "y": 22,
+  "kind": "pot",
+  "text": [
+   "A keepnet left out in the water by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
+  ],
+  "reward": {
+   "item": "roach",
+   "qty": 2
+  },
+  "flag": "flotsam_the_roaches_1"
+ },
+ {
+  "id": "fl_whitby_1",
+  "zone": "whitby",
+  "x": 31,
+  "y": 4,
+  "kind": "crate",
+  "text": [
+   "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water."
+  ],
+  "reward": {
+   "item": "tablet",
+   "qty": 1
+  },
+  "flag": "flotsam_whitby_1"
+ },
+ {
+  "id": "fl_wirral_way_1",
+  "zone": "wirral_way",
+  "x": 7,
+  "y": 20,
+  "kind": "cache",
+  "text": [
+   "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try."
+  ],
+  "reward": {
+   "item": "heather_honey",
+   "qty": 1
+  },
+  "flag": "flotsam_wirral_way_1"
+ },
+ {
+  "id": "fl_yorkshire_dales_1",
+  "zone": "yorkshire_dales",
+  "x": 32,
+  "y": 36,
+  "kind": "pot",
+  "text": [
+   "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking."
+  ],
+  "reward": {
+   "item": "tench",
+   "qty": 2
+  },
+  "flag": "flotsam_yorkshire_dales_1"
+ }
+]

@@ -125,8 +125,10 @@ func _show_card() -> void:
 	var head := HBoxContainer.new()
 	head.add_theme_constant_override("separation", 16)
 	left.add_child(head)
-	head.add_child(serif(26, UIKit.GOLD, "%s  %s" % [_card.time, _card.name]))
-	head.add_child(UIKit.fill())
+	var title := serif(26, UIKit.GOLD, "%s  %s" % [_card.time, _card.name])
+	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # a long race name wraps rather than widening the card past the betting slip
+	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	head.add_child(title)
 	head.add_child(UIKit.label("%s   Going: %s" % [_card.distance, _card.going.name], 20, UIKit.MUTED))
 	var n: int = _card.runners.size()
 	var terms := UIKit.label("Each-way: %d places at 1/%d the odds.   Form: latest run on the right (F fell, P pulled up)." % [Racing.places_for(n), Racing.place_fraction(n)[1]], 18, UIKit.MUTED)
@@ -192,9 +194,10 @@ func _runner_row(i: int) -> Button:
 	names.add_theme_constant_override("separation", -6)
 	names.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	names.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var nm := UIKit.label(str(r.name) + ("   (yours)" if r.get("yours", false) else ""), 24, UIKit.GOLD if r.get("yours", false) else UIKit.CREAM)
+	# row_label: a long name shrinks before it can push the betting slip off the right of the screen (Large text)
+	var nm := UIKit.row_label(str(r.name) + ("   (yours)" if r.get("yours", false) else ""), 24, UIKit.GOLD if r.get("yours", false) else UIKit.CREAM)
 	names.add_child(nm)
-	names.add_child(UIKit.label(str(Game.dex.get_species(str(r.species)).get("name", r.species)), 17, UIKit.MUTED))
+	names.add_child(UIKit.row_label(str(Game.dex.get_species(str(r.species)).get("name", r.species)), 17, UIKit.MUTED))
 	row.add_child(names)
 	var form := UIKit.label(str(r.form), 22, Color("d8cfb4"))
 	form.custom_minimum_size = Vector2(70, 0)

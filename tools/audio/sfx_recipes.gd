@@ -15,6 +15,7 @@ const LENGTHS := {
 	"step_path": 0.12, "step_stone": 0.1, "step_wood": 0.14, "step_sand": 0.15, "step_soft": 0.12, "step_wet": 0.16, "bike_tyre": 0.2,
 	"talk_blip": 0.08, "sign_creak": 0.5, "shop_bell": 0.9, "sanctuary_chime": 1.4, "brake_squeal": 1.6,
 	"radio_tune": 2.0,
+	"thunder": 6.0, "thunder_far": 6.5, "text_blip": 0.045,
 	# 2.1 battle voices: one attack per type family (AudioIds.ATTACK_VOICE), the wild sting, stat and weather calls.
 	"atk_thud": 0.32, "atk_rustle": 0.4, "atk_splash": 0.45, "atk_crackle": 0.5, "atk_whoosh": 0.45, "atk_zap": 0.4,
 	"atk_ice": 0.5, "atk_crunch": 0.4, "atk_squelch": 0.42, "atk_clang": 0.55, "atk_shimmer": 0.6, "atk_wail": 0.6,
@@ -31,6 +32,7 @@ const PEAKS := {
 	"step_path": 0.6, "step_stone": 0.6, "step_wood": 0.6, "step_sand": 0.5, "step_soft": 0.5, "step_wet": 0.6, "bike_tyre": 0.5,
 	"talk_blip": 0.45, "sign_creak": 0.6, "shop_bell": 0.6, "sanctuary_chime": 0.6, "brake_squeal": 0.6,
 	"radio_tune": 0.6,
+	"thunder": 0.85, "thunder_far": 0.6, "text_blip": 0.3,
 	"atk_thud": 0.75, "atk_rustle": 0.65, "atk_splash": 0.7, "atk_crackle": 0.7, "atk_whoosh": 0.65, "atk_zap": 0.65,
 	"atk_ice": 0.6, "atk_crunch": 0.75, "atk_squelch": 0.5, "atk_clang": 0.8, "atk_shimmer": 0.55, "atk_wail": 0.55,
 	"encounter": 0.75, "stat_up": 0.55, "stat_down": 0.55, "weather_call": 0.85,
@@ -448,6 +450,36 @@ static func render(id: String) -> PackedFloat32Array:
 			Synth.lowpass(rb, 200.0, SR)
 			Synth.adsr(rb, SR, 0.05, 0.04, 0.8, 0.09)
 			Synth.mix_into(out, rb, 0, 1.2)
+		"thunder":
+			# Close thunder: a sharp crack, then a long rolling rumble that swells twice as it dies away.
+			var crack := _noise_burst(0.35, 5000.0, 700.0, 14.0, 301)
+			Synth.mix_into(out, crack, 0, 1.0)
+			var roll := Synth.noise(5.8, SR, 302)
+			Synth.lowpass(roll, 260.0, SR)
+			Synth.lowpass(roll, 260.0, SR)
+			for i in roll.size():
+				var t := float(i) / SR
+				roll[i] *= (0.5 * exp(-t * 0.55) + 0.55 * exp(-pow((t - 1.5) / 0.5, 2.0)) + 0.4 * exp(-pow((t - 2.9) / 0.6, 2.0))) * minf(t / 0.05, 1.0)
+			Synth.normalise(roll, 0.9)
+			Synth.mix_into(out, roll, _at(0.04), 1.0)
+			var mid := Synth.noise(3.0, SR, 303)
+			Synth.bandpass(mid, 450.0, 1.2, SR)
+			Synth.pluck_env(mid, SR, 0.01, 1.3)
+			Synth.mix_into(out, mid, _at(0.05), 0.5)
+		"thunder_far":
+			# Thunder over the next hill: no crack, just a low rumble that comes up slowly and rolls away.
+			var far := Synth.noise(6.4, SR, 311)
+			Synth.lowpass(far, 150.0, SR)
+			Synth.lowpass(far, 150.0, SR)
+			for i in far.size():
+				var t := float(i) / SR
+				far[i] *= (exp(-pow((t - 1.2) / 0.7, 2.0)) + 0.7 * exp(-pow((t - 3.0) / 0.9, 2.0)) + 0.3 * exp(-t * 0.4)) * minf(t / 0.5, 1.0)
+			Synth.normalise(far, 0.9)
+			Synth.mix_into(out, far, 0, 1.0)
+		"text_blip":
+			# The tiniest soft tick for each letter of speech: a sine with a little round edge, quieter than the talk blip.
+			var tb := _tone(Synth.SINE, 520.0, 560.0, 0.04, 0.004, 0.01, 0.5, 0.02, 1800.0)
+			Synth.mix_into(out, tb, 0)
 		"talk_blip":
 			# A soft rounded blip, rising a touch.
 			var bl := _tone(Synth.TRI, 880.0, 990.0, 0.075, 0.006, 0.02, 0.6, 0.04, 2500.0)

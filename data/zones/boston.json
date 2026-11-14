@@ -352,7 +352,8 @@
    "x": 18,
    "y": 26,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "bos_fan"
   },
   {
@@ -361,7 +362,11 @@
    "x": 42,
    "y": 26,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "bos_newcomer"
   },
   {
@@ -370,7 +375,11 @@
    "x": 46,
    "y": 33,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bos_dock"
   },
   {

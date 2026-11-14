@@ -83,7 +83,7 @@ func test_effectiveness_text_singles() -> void:
 	assert_eq(MoveText.versus(mv, [{"name": "A", "types": ["spirit"], "known": true}], chart), "No effect")
 	assert_eq(MoveText.versus(mv, [{"name": "A", "types": ["stone"], "known": true}], chart), "Not very effective")
 	assert_eq(MoveText.versus(mv, [{"name": "A", "types": ["kin"], "known": true}], chart), "", "neutral says nothing")
-	assert_eq(MoveText.versus(mv, [{"name": "A", "types": ["spirit"], "known": false}], chart), "", "never met: no hint")
+	assert_eq(MoveText.versus(mv, [{"name": "A", "types": ["spirit"]}], chart), "No effect", "a first meeting is judged too")
 	var se := _types_where("hedgerow", 2.0)
 	assert_eq(MoveText.versus({"type": "hedgerow", "category": "special", "power": 40}, [{"name": "A", "types": [se], "known": true}], chart), "Super effective")
 	var status := {"type": "kin", "category": "status", "power": 0}
@@ -98,27 +98,82 @@ func test_effectiveness_text_doubles() -> void:
 	assert_eq(MoveText.versus(mv, [ghost, ghost.merged({"name": "Boo"}, true)], chart), "No effect", "same answer for both: said once")
 	assert_eq(MoveText.versus(mv, [ghost, rock], chart), "No effect on Ghosty, not very effective on Rocky")
 	assert_eq(MoveText.versus(mv, [plain, rock], chart), "Not very effective on Rocky")
-	assert_eq(MoveText.versus(mv, [ghost, rock.merged({"known": false}, true)], chart), "No effect on Ghosty")
+	assert_eq(MoveText.versus(mv, [ghost, rock.merged({"name": "Third"}, true)], chart), "No effect on Ghosty, not very effective on Third")
 	assert_eq(MoveText.versus(mv, [plain, plain.merged({"name": "Other"}, true)], chart), "")
 
-func test_flow_hint_only_for_species_met_before_this_battle() -> void:
+func test_flow_hint_covers_a_first_meeting() -> void:
 	var me := Fixtures.creature("kindlet", 10)
 	var foe := Fixtures.creature("spikkin", 5)
 	var slot := 0
 	var mv := Fixtures.moves().get_move(me.moves[slot].id)
-	var expect := MoveText.effectiveness_label(Fixtures.chart().effectiveness(str(mv.type), foe.types()))
-	var fresh := _flow([me], [foe])
-	assert_eq(fresh.move_hint(me, slot), "", "first meeting: no hint")
-	fresh.data.mark_seen("spikkin")  # seeing it in this battle doesn't count
-	assert_eq(fresh.move_hint(me, slot), "")
+	var mult := Fixtures.chart().effectiveness(str(mv.type), foe.types())
+	var fresh := _flow([me], [foe])  # never seen: the cue is there all the same
+	var cues: Array = fresh.move_hint(me, slot)
+	assert_eq(cues.size(), 1)
+	assert_eq(cues[0].kind, MoveText.cue_kind(mult))
+	assert_eq(cues[0].words, MoveText.cue_words(mult))
 	var d := GameStateData.new()
 	d.mark_seen("spikkin")
-	var known := _flow([me], [foe], d)
-	assert_eq(known.move_hint(me, slot), expect)
+	assert_eq(_flow([me], [foe], d).move_hint(me, slot), cues, "seen or not, the same words")
 	var d2 := GameStateData.new()
 	d2.mark_caught("spikkin")
 	assert_true(_flow([me], [foe], d2).is_caught_species("spikkin"))
-	assert_false(known.is_caught_species("spikkin"), "seen is not caught")
+	assert_false(fresh.is_caught_species("spikkin"), "seen is not caught")
+
+func test_cue_kinds_and_words() -> void:
+	assert_eq(MoveText.cue_kind(4.0), "up2")
+	assert_eq(MoveText.cue_kind(2.0), "up1")
+	assert_eq(MoveText.cue_kind(1.0), "even")
+	assert_eq(MoveText.cue_kind(0.5), "dn1")
+	assert_eq(MoveText.cue_kind(0.25), "dn2")
+	assert_eq(MoveText.cue_kind(0.0), "none")
+	assert_eq(MoveText.cue_words(2.0), "Super effective x2")
+	assert_eq(MoveText.cue_words(4.0), "Super effective x4")
+	assert_eq(MoveText.cue_words(1.0), "Normal hit")
+	assert_eq(MoveText.cue_words(0.5), "Not very effective x1/2")
+	assert_eq(MoveText.cue_words(0.25), "Not very effective x1/4")
+	assert_eq(MoveText.cue_words(0.0), "No effect")
+	assert_eq(MoveText.cue_words(0.5, true), "x1/2")
+
+func test_cues_single_double_and_status() -> void:
+	var chart := Fixtures.chart()
+	var mv := {"type": "kin", "category": "physical", "power": 40}
+	var ghost := {"name": "Ghosty", "types": ["spirit"]}
+	var rock := {"name": "Rocky", "types": ["stone"]}
+	var plain := {"name": "Plain", "types": ["kin"]}
+	assert_eq(MoveText.cues(mv, [plain], chart), [{"kind": "even", "words": "Normal hit", "who": ""}], "a plain hit is marked too")
+	assert_eq(MoveText.cues(mv, [ghost, ghost.merged({"name": "Boo"}, true)], chart).size(), 1, "same for both: said once")
+	var two := MoveText.cues(mv, [ghost, rock], chart)
+	assert_eq(two.size(), 2)
+	assert_eq([two[0].kind, two[0].who, two[1].kind, two[1].words], ["none", "Ghosty", "dn1", "x1/2"])
+	assert_eq(MoveText.cues({"type": "kin", "category": "status", "power": 0}, [ghost], chart), [], "status moves say nothing")
+	assert_eq(MoveText.cues(mv, [], chart), [])
+
+func test_matchup_line_for_a_move_description() -> void:
+	var chart := Fixtures.chart()
+	var line := MoveText.matchup_line({"type": "hearth", "category": "special", "power": 40}, chart)
+	assert_true(line.begins_with("Strong against Hedgerow"), line)
+	assert_true(line.contains("Weak against Brook"), line)
+	assert_true(MoveText.matchup_line({"type": "kin", "category": "physical", "power": 40}, chart).contains("No effect on Spirit"))
+	assert_eq(MoveText.matchup_line({"type": "hearth", "category": "status", "power": 0}, chart), "")
+
+func test_move_rows_carry_cues_and_the_footer_the_matchup() -> void:
+	var me := Fixtures.creature("kindlet", 10)
+	var foe := Fixtures.creature("spikkin", 5)
+	var f := _flow([me], [foe])
+	var rows := BattleMenus.move_rows(me, Fixtures.moves(), "clear", func(i: int) -> Array: return f.move_hint(me, i))
+	var damaging := 0
+	for i in me.moves.size():
+		var mv := Fixtures.moves().get_move(me.moves[i].id)
+		if int(mv.get("power", 0)) > 0 and str(mv.get("category", "")) != "status":
+			damaging += 1
+			assert_true(rows[i].has("cues"), "damaging move %d says how it lands" % i)
+		else:
+			assert_false(rows[i].has("cues"), "status move %d says nothing" % i)
+	assert_true(damaging > 0)
+	assert_false(BattleMenus.move_rows(me, Fixtures.moves())[0].has("cues"), "no cue function, no cues")
+	var text := BattleMenus.move_footer(me, 0, Fixtures.moves(), "", "clear", Fixtures.chart())
+	assert_true(text.split("\n").size() >= 2)
 
 # --- catch odds ---------------------------------------------------------------------------------------------
 

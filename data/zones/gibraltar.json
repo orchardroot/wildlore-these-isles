@@ -460,7 +460,8 @@
    "x": 36,
    "y": 20,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "gib_regiment"
   },
   {
@@ -478,7 +479,8 @@
    "x": 17,
    "y": 51,
    "facing": "right",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "gib_dolphin_watcher"
   },
   {
@@ -487,7 +489,11 @@
    "x": 46,
    "y": 18,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "gib_pilot"
   },
   {
@@ -514,7 +520,11 @@
    "x": 44,
    "y": 46,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "gib_scholar"
   },
   {

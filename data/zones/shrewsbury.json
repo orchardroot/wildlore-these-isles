@@ -644,7 +644,11 @@
    "x": 26,
    "y": 27,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "shr_shrews"
   },
   {
@@ -671,7 +675,8 @@
    "x": 62,
    "y": 31,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "shr_cadfael"
   },
   {
@@ -680,7 +685,11 @@
    "x": 30,
    "y": 32,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "up",
+    "up"
+   ],
    "script": "shr_cakes"
   },
   {
@@ -698,7 +707,11 @@
    "x": 48,
    "y": 55,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "up",
+    "up"
+   ],
    "script": "shr_rower"
   },
   {

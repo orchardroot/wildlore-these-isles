@@ -218,6 +218,11 @@ func _show_desc(id: String) -> void:
 		var mt := UIKit.label(MoveText.describe(Game.moves.get_move(Chapbooks.move_of(it))), 22, UIKit.GOLD)
 		mt.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		_desc.add_child(mt)
+		var ml := MoveText.matchup_line(Game.moves.get_move(Chapbooks.move_of(it)), Game.chart)  # what its type is strong and weak against
+		if ml != "":
+			var mm := UIKit.label(ml, 20, Color("b9c7e6"))
+			mm.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			_desc.add_child(mm)
 	if str(it.get("effect_text", "")) != "":
 		var fx := UIKit.label(str(it.effect_text), 22, UIKit.GOLD)
 		fx.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

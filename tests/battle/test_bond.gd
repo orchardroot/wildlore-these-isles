@@ -157,4 +157,4 @@ func test_bond_evolutions_keep_their_level_and_point_at_real_species() -> void:
 			assert_true(Fixtures.dex().has(str(evo.to)), id)
 			assert_true(evo.has("level"), id + " still evolves by level for players who never bond")
 			assert_eq(int(evo.bond), 220)
-	assert_true(n >= 4 and n <= 8, "got %d" % n)
+	assert_true(n >= 4 and n <= 10, "got %d" % n)  # w54: the family cat's two

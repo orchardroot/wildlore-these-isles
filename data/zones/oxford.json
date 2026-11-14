@@ -757,7 +757,11 @@
    "x": 22,
    "y": 29,
    "facing": "right",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "ox_bookseller"
   },
   {
@@ -775,7 +779,8 @@
    "x": 67,
    "y": 29,
    "facing": "left",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "ox_cherwell"
   },
   {

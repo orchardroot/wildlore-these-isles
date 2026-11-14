@@ -85,5 +85,59 @@
     }
    ]
   }
+ ],
+ "cat_scene": [
+  {
+   "do": "say",
+   "who": "",
+   "text": "Something small and black is sat in the road ahead, washing a paw. It stops with one leg in the air and looks at you."
+  },
+  {
+   "do": "say",
+   "who": "",
+   "text": "You know that look. You have been given it across the kitchen every morning since you were small."
+  },
+  {
+   "do": "say",
+   "who": "{player}",
+   "text": "...Is that you? Mum's been putting your breakfast out for days."
+  },
+  {
+   "do": "family_cat",
+   "op": "approach"
+  },
+  {
+   "do": "family_cat",
+   "op": "say",
+   "who": "",
+   "text": "She walks up, sniffs your hand, then {lead}, then your hand again. Her eyes are a green they were not before."
+  },
+  {
+   "do": "say",
+   "who": "",
+   "text": "Whatever she saw up on the moor the night the stones hummed, she has come back a little more than a cat."
+  },
+  {
+   "do": "family_cat",
+   "op": "say",
+   "who": "",
+   "text": "{lead} and the cat look at each other for a long moment. Something is settled without you."
+  },
+  {
+   "do": "say",
+   "who": "{player}",
+   "text": "Mum is going to be unbearable about this."
+  },
+  {
+   "do": "family_cat",
+   "op": "join",
+   "how": "new"
+  },
+  {
+   "do": "family_cat",
+   "op": "say",
+   "who": "",
+   "text": "There is only one of her, and she is yours. If she ever wants a lie-down, Mum will keep her by the bowl at home."
+  }
  ]
 }

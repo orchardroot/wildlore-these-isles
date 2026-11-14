@@ -23,6 +23,8 @@ var _footer: Label
 var _footer_fn := Callable()
 static var _mem := {}  # menu key -> last cursor index; outlives the battle, not the session
 var _panel: PanelContainer
+var chart_arg := ""  # the creatures in front of you as the type chart's argument ("" = no chart from here); set by the scene each turn
+var _footer_panel: PanelContainer  # a picker whose footer sits in a panel of its own (the moves: it takes the message box's place)
 
 ## A new battle: keep every remembered cursor except the command menu's, which opens on Fight.
 static func new_battle() -> void:
@@ -55,6 +57,8 @@ func _input(event: InputEvent) -> void:
 		_step(1, 0)
 	elif event.is_action_pressed("confirm") or event.is_action_pressed("ui_accept"):
 		_choose(_idx)
+	elif event.is_action_pressed("menu") and chart_arg != "":
+		_open_chart.call_deferred()
 	elif event.is_action_pressed("cancel") or event.is_action_pressed("ui_cancel"):
 		if _cancel_ok:
 			Audio.sfx("cancel")
@@ -63,6 +67,15 @@ func _input(event: InputEvent) -> void:
 	else:
 		return
 	get_viewport().set_input_as_handled()
+
+## The type chart over the battle, scoped to the creatures in front of you. The picker waits underneath.
+func _open_chart() -> void:
+	if not _active:
+		return
+	_active = false
+	await Router.open_menu("typechart:" + chart_arg)
+	await get_tree().process_frame
+	_active = true
 
 func _step(dx: int, dy: int) -> void:
 	var n := _rows.size()
@@ -108,7 +121,7 @@ func _highlight() -> void:
 	cursor_moved.emit(_idx)
 
 ## rows: [{"text", "right", "stripe": Color, "chip": String, "chip_colour": Color, "disabled", "sub"}]
-func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, cancel_ok: bool, footer_fn := Callable()) -> int:
+func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, cancel_ok: bool, footer_fn := Callable(), footer_rect := Rect2()) -> int:
 	_clear()
 	_cols = cols
 	_cancel_ok = cancel_ok
@@ -153,7 +166,26 @@ func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, 
 		_footer.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		_footer.custom_minimum_size = Vector2(0, 26)
 		_footer.modulate = Color(1, 1, 1, 0.85)
-		vb.add_child(_footer)
+		if footer_rect.size != Vector2.ZERO:
+			_footer.add_theme_font_size_override("font_size", 18)
+			_footer.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+			_footer_panel = PanelContainer.new()
+			_footer_panel.position = footer_rect.position
+			_footer_panel.size = footer_rect.size
+			_footer_panel.add_theme_stylebox_override("panel", sb)
+			var fv := VBoxContainer.new()
+			fv.add_child(_footer)
+			_footer.size_flags_vertical = Control.SIZE_EXPAND_FILL
+			if chart_arg != "":
+				var hint := Label.new()
+				hint.text = "%s: type chart" % UIKit.key_for("menu")
+				hint.add_theme_font_size_override("font_size", 16)
+				hint.modulate = Color(1, 1, 1, 0.6)
+				fv.add_child(hint)
+			_footer_panel.add_child(fv)
+			add_child(_footer_panel)
+		else:
+			vb.add_child(_footer)
 	_idx = clampi(recall(mem_key), 0, maxi(0, rows.size() - 1))
 	if _disabled.size() > 0 and _disabled[_idx]:
 		for i in rows.size():
@@ -163,6 +195,9 @@ func _pick(rect: Rect2, title: String, rows: Array, cols: int, mem_key: String, 
 	_highlight()
 	_panel.modulate.a = 0.0
 	create_tween().tween_property(_panel, "modulate:a", 1.0, 0.12)
+	if _footer_panel:
+		_footer_panel.modulate.a = 0.0
+		create_tween().tween_property(_footer_panel, "modulate:a", 1.0, 0.12)
 	_active = true
 	var r: int = await _picked
 	_active = false
@@ -175,6 +210,9 @@ func _clear() -> void:
 		_panel.queue_free()
 		closed.emit()
 	_panel = null
+	if _footer_panel and is_instance_valid(_footer_panel):
+		_footer_panel.queue_free()
+	_footer_panel = null
 	_rows = []
 	_footer = null
 
@@ -193,7 +231,15 @@ func _row(d: Dictionary, i: int) -> PanelContainer:
 	var h := HBoxContainer.new()
 	h.add_theme_constant_override("separation", 8)
 	h.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	row.add_child(h)
+	if d.has("cues") and not d.get("cues_inline", false):  # how the move will land sits on a line of its own under the name
+		var v := VBoxContainer.new()
+		v.add_theme_constant_override("separation", 0)
+		v.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		row.add_child(v)
+		v.add_child(h)
+		v.add_child(cue_line(d.cues))
+	else:
+		row.add_child(h)
 	if d.has("stripe"):
 		var s := ColorRect.new()
 		s.color = d.stripe
@@ -237,6 +283,10 @@ func _row(d: Dictionary, i: int) -> PanelContainer:
 		else:
 			chip.add_theme_stylebox_override("normal", sb)
 			h.add_child(chip)
+	if d.get("cues_inline", false):  # the switch menu: how well each member suits this fight, between name and HP
+		var cl := cue_line(d.cues)
+		cl.custom_minimum_size.x = 250
+		h.add_child(cl)
 	if d.has("weather"):  # the sky helps (or hinders) this move today
 		h.add_child(BattleHUD.WeatherIcon.tag(str(d.weather), int(d.get("weather_dir", 1))))
 	if d.has("right") and str(d.right) != "":
@@ -249,6 +299,30 @@ func _row(d: Dictionary, i: int) -> PanelContainer:
 			rl.add_theme_color_override("font_color", Color("ff8a7a"))
 		h.add_child(rl)
 	return row
+
+## The line under a move: shape and words for how it lands, one group per foe when they differ (MoveText.cues).
+static func cue_line(cues: Array) -> HBoxContainer:
+	var line := HBoxContainer.new()
+	line.add_theme_constant_override("separation", 14)
+	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for c in cues:
+		var grp := HBoxContainer.new()
+		grp.add_theme_constant_override("separation", 6)
+		grp.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		grp.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		grp.add_child(EffectMark.make(str(c.kind), 15))
+		var l := Label.new()
+		var who := str(c.get("who", ""))
+		l.text = "%s %s" % [c.words, who] if who != "" else str(c.words)
+		l.add_theme_font_size_override("font_size", 18)
+		l.add_theme_color_override("font_color", EffectMark.colour_of(str(c.kind)) if str(c.kind) != "even" else MUTED)
+		l.clip_text = true
+		l.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		l.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		grp.add_child(l)
+		line.add_child(grp)
+	return line
 
 # --- the pickers ----------------------------------------------------------------
 
@@ -267,22 +341,25 @@ func catch_destination() -> int:
 	var i := await _pick(Rect2(700, 566, 556, 134), "", [{"text": "Swap with a team member"}, {"text": "Send to the Ark"}], 1, "catch_dest", false)
 	return maxi(0, i)
 
-## hint_fn(slot) -> String: the type-effectiveness tag for that move ("" when there's nothing to say).
+## cue_fn(slot) -> Array: how that move lands on each foe standing (MoveText.cues; [] for a status move).
 ## weather: the battle's weather, so moves it helps or hinders carry a little sky glyph and arrow.
-func moves(c: Creature, move_db: MoveDB, hint_fn := Callable(), weather := "clear") -> int:
-	var rows := move_rows(c, move_db, weather)
+## chart: with it, the footer adds what the move's type is strong and weak against. Tab (the menu key) opens the
+## type chart, scoped to `chart_scope` (see `chart_scope_for`).
+func moves(c: Creature, move_db: MoveDB, cue_fn := Callable(), weather := "clear", chart: TypeChart = null) -> int:
+	var rows := move_rows(c, move_db, weather, cue_fn)
 	var footer := func(i: int) -> String:
-		return move_footer(c, i, move_db, hint_fn.call(i) if hint_fn.is_valid() else "", weather)
-	return await _pick(Rect2(470, 528, 786, 176), "", rows, 2, "moves", true, footer)
+		return move_footer(c, i, move_db, "", weather, chart)
+	return await _pick(Rect2(470, 540, 786, 164), "", rows, 2, "moves", true, footer, Rect2(24, 524, 436, 176))
 
 static func _all_out_of_pp(c: Creature) -> bool:
 	return c.moves.all(func(m): return int(m.pp) <= 0)
 
 ## The move picker's rows. A move the weather changes gets "weather" (the kind) and "weather_dir" (1 or -1).
-static func move_rows(c: Creature, move_db: MoveDB, weather := "clear") -> Array:
+static func move_rows(c: Creature, move_db: MoveDB, weather := "clear", cue_fn := Callable()) -> Array:
 	var rows := []
 	var all_empty := _all_out_of_pp(c)
-	for m in c.moves:
+	for i in c.moves.size():
+		var m: Dictionary = c.moves[i]
 		var mv := move_db.get_move(m.id)
 		var t := str(mv.get("type", ""))
 		var row := {"text": mv.get("name", m.id), "stripe": TypeColours.of(t), "chip": t, "glyph": t, "chip_colour": TypeColours.of(t), "chip_text": TypeColours.text_on(t),
@@ -291,12 +368,16 @@ static func move_rows(c: Creature, move_db: MoveDB, weather := "clear") -> Array
 		if not is_equal_approx(wm, 1.0):
 			row["weather"] = weather
 			row["weather_dir"] = 1 if wm > 1.0 else -1
+		if cue_fn.is_valid():
+			var cues: Array = cue_fn.call(i)
+			if not cues.is_empty():
+				row["cues"] = cues
 		rows.append(row)
 	return rows
 
 ## Two lines under the moves: the numbers (with the type hint up front), then what the move does, led by
 ## what today's weather does to it when the description doesn't already say.
-static func move_footer(c: Creature, i: int, move_db: MoveDB, hint := "", weather := "clear") -> String:
+static func move_footer(c: Creature, i: int, move_db: MoveDB, hint := "", weather := "clear", chart: TypeChart = null) -> String:
 	var mv := move_db.get_move(c.moves[i].id)
 	if int(c.moves[i].pp) <= 0:
 		return "No PP left for that one!" if not _all_out_of_pp(c) else "Out of PP: all that's left is a desperate flail."
@@ -306,8 +387,10 @@ static func move_footer(c: Creature, i: int, move_db: MoveDB, hint := "", weathe
 	if tag != "" and not MoveFX.bonus_applies(mv, weather):  # a move's own weather bonus is in its description
 		var pct := int(round((Weather.move_mult(weather, mv) - 1.0) * 100.0))
 		desc = "%s (%s%d%%). %s" % [tag, "+" if pct > 0 else "-", absi(pct), desc]
-	return "%s%s  ·  %s  ·  %s  ·  Accuracy %d\n%s" % [(hint.to_upper() + "  ·  ") if hint != "" else "", str(mv.get("type", "")).capitalize(),
-		str(mv.get("category", "")).capitalize(), ("Power %d" % power) if power > 0 else "No damage", int(mv.get("accuracy", 100)), desc]
+	var line := MoveText.matchup_line(mv, chart) if chart != null else ""
+	return "%s%s  ·  %s  ·  %s  ·  Accuracy %d\n%s%s" % [(hint.to_upper() + "  ·  ") if hint != "" else "", str(mv.get("type", "")).capitalize(),
+		str(mv.get("category", "")).capitalize(), ("Power %d" % power) if power > 0 else "No damage", int(mv.get("accuracy", 100)), desc,
+		("\n" + line) if line != "" else ""]
 
 ## entries from BattleFlow.battle_items(). Returns the index into entries, or -1.
 func bag(entries: Array) -> int:
@@ -332,7 +415,7 @@ static func bag_footer(e: Dictionary) -> String:
 
 ## mode "switch" (fainted and active are greyed), "forced" (as switch but cannot cancel) or "item" (anyone; revive needs fainted).
 ## active: the party index out on the field, or an Array of them (double battles).
-func party(creatures: Array, active: Variant, mode: String, item: Dictionary = {}, move_db: MoveDB = null) -> int:
+func party(creatures: Array, active: Variant, mode: String, item: Dictionary = {}, move_db: MoveDB = null, foes := [], chart: TypeChart = null) -> int:
 	var out_now: Array = active if active is Array else [active]
 	var rows := []
 	for i in creatures.size():
@@ -349,6 +432,11 @@ func party(creatures: Array, active: Variant, mode: String, item: Dictionary = {
 		rows.append({"text": "%s  Lv %d" % [c.display_name(), c.level], "right": right, "right_warn": c.is_fainted(),
 			"stripe": TypeColours.of(str(c.types()[0])), "chip": chip, "chip_colour": HEATHER if chip == "out" else BattleHUD.STATUS_COLOURS.get(chip, MUTED),
 			"chip_text": CREAM if chip == "out" else Color("14161c"), "disabled": dis})
+		if (mode == "switch" or mode == "forced") and not dis and move_db != null and chart != null:  # who suits this fight
+			var suits := MoveText.suits(c, foes, move_db, chart)
+			if not suits.is_empty():
+				rows[-1]["cues"] = suits
+				rows[-1]["cues_inline"] = true
 	var title: String = {"switch": "SEND OUT WHO?", "forced": "SEND OUT WHO?", "item": "USE ON WHOM?", "swap": "SWAP WITH WHO?"}.get(mode, "TEAM")
 	var h := creatures.size() * 46 + 56
 	return await _pick(Rect2(20, 560 - h, 696, h), title, rows, 1, "party_" + mode, mode != "forced")  # left, as the bag

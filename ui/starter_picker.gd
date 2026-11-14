@@ -35,7 +35,7 @@ func _build() -> void:
 		v.add_theme_constant_override("separation", 3)
 		p.add_child(v)
 		var holder := VBoxContainer.new()
-		holder.custom_minimum_size = Vector2(0, 288 if not UIKit.big_text() else 192)  # Large text: smaller, for Garside's words
+		holder.custom_minimum_size = Vector2(0, 276 if not UIKit.big_text() else 192)  # Large text: smaller, for Garside's words
 		holder.alignment = BoxContainer.ALIGNMENT_END
 		v.add_child(holder)
 		_holders.append(holder)
@@ -58,18 +58,33 @@ func _build() -> void:
 	var dlg := UIKit.panel(Color("1d2230f8"), 10)
 	col.add_child(dlg)
 	var dv := VBoxContainer.new()
-	dv.add_theme_constant_override("separation", 4)
+	dv.add_theme_constant_override("separation", 0)
 	dlg.add_child(dv)
 	var dh := HBoxContainer.new()
 	dv.add_child(dh)
 	dh.add_child(UIKit.label("Prof. Garside", 22, UIKit.GOLD))
 	dh.add_child(UIKit.fill())
+	if not UIKit.big_text():  # Large text has no room for it beside Garside's words
+		dh.add_child(_triangle())
+		dh.add_child(UIKit.fill())
 	_prompt = UIKit.label("", 22, UIKit.GOLD)
 	dh.add_child(_prompt)
 	_line = UIKit.label("", 22)
 	_line.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	dv.add_child(_line)
 	_refresh()
+
+## The three starters' types in a ring, so the first thing you learn is that types beat each other (the chart is
+## in the Almanac and the pause menu): each one beats the next and loses to the one before.
+func _triangle() -> Control:
+	var h := HBoxContainer.new()
+	h.add_theme_constant_override("separation", 8)
+	var ring := ["hearth", "hedgerow", "brook", "hearth"]
+	for i in ring.size():
+		if i > 0:
+			h.add_child(UIKit.label("beats", 17, UIKit.MUTED))
+		h.add_child(UIKit.type_chip(ring[i], 15))
+	return h
 
 func _refresh() -> void:
 	for i in STARTERS.size():

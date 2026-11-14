@@ -14,6 +14,7 @@ var autosave_enabled := true
 var skip_next_autosave := false  # set by the title: the first zone after New Game or Load must not overwrite "auto"
 var _in_battle := false
 var _toast: SaveToast
+var _toast_msec := -SaveToast.QUIET_MSEC  # when the autosave note last showed
 var parish: Parish
 var quest_news: QuestNews
 
@@ -67,8 +68,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	data.play_seconds += delta
-	if clock_running and not Router.busy:
-		_minute_acc += delta
+	if clock_running and (not Router.busy or time_boost > 1.0):
+		_minute_acc += delta * time_boost
 		while _minute_acc >= 1.0:
 			_minute_acc -= 1.0
 			data.clock_minutes = GameClock.wrap(data.clock_minutes + 1)
@@ -88,6 +89,7 @@ func _process(delta: float) -> void:
 				Performance.get_monitor(Performance.OBJECT_NODE_COUNT)])
 
 var _minute_acc := 0.0
+var time_boost := 1.0  # game minutes per second while sitting on a bench (see BenchSit); 1 otherwise
 var _fps_acc := 0.0
 
 func new_game() -> void:
@@ -119,6 +121,10 @@ func autosave() -> void:
 func _show_saved_toast() -> void:
 	if DisplayServer.get_name() == "headless":
 		return
+	var now := Time.get_ticks_msec()
+	if not SaveToast.due(_toast_msec, now):  # every door autosaves; say so once a minute at most
+		return
+	_toast_msec = now
 	if _toast == null or not is_instance_valid(_toast):
 		_toast = SaveToast.new()
 		add_child(_toast)
@@ -206,6 +212,9 @@ func _dev_boot() -> void:
 			data.clock_minutes = args.clock
 		data.party = [Creature.create(dex.get_species("kindlet"), 10, rng, moves)]
 		data.party[0].variant = str(args.get("coat", ""))
+		for a in DevArgs.user_args():
+			if a.begins_with("--lead=") and dex.has(a.substr(7)):  # dev: the lead is this species (a swimmer beside the coracle)
+				data.party[0] = Creature.create(dex.get_species(a.substr(7)), 10, rng, moves)
 		HomeBase.dev_setup(data, str(args.get("home", "")), dex)
 		for a in DevArgs.user_args():
 			if a.begins_with("--rewild="):  # dev: every rewilding site at this stage, 0..3 (screenshots)
@@ -230,7 +239,7 @@ func _dev_boot() -> void:
 					data.badges.append("dev_%d" % i)
 		if args.ride != "":
 			data.bag["bike"] = 1
-			data.badges = ["brook", "urban", "stone", "iron"] if args.ride == "lantern" else ["brook", "urban", "stone"]
+			data.badges = ["brook", "urban", "stone", "iron"] if args.ride == "lantern" else (["brook", "urban", "tide"] if args.ride == "coracle" else ["brook", "urban", "stone"])
 		await Router.goto_zone(args.boot_zone, args.boot_pos, "down")
 		if args.ride == "bike":
 			Router.overworld.player.set_bike(true)
@@ -255,6 +264,10 @@ func _dev_cues() -> void:
 			for f in a.substr(6).split(",", false):
 				data.set_flag(f, true)
 				Bus.flag_changed.emit(f, true)
+		elif a == "--sense":  # dev: your creature notices what is near, and the mark stays put (SenseCue, screenshots)
+			SenseCue.dev_hold = true
+			for _i in SenseCue.LOOK_EVERY:
+				SenseCue.on_step(Router.overworld, Router.overworld.player.grid_pos)
 		elif a.begins_with("--read="):
 			var id := a.substr(7)
 			var t := ""
