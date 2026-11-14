@@ -49,6 +49,9 @@ static func _offer(cmd: Commands, c: Dictionary, town: String) -> void:
 	var data: GameStateData = host.data
 	var who := str(c.poster.name)
 	await host.say("", "%s. %s, %s." % [str(c.title), who, str(c.poster.role)])
+	var tip: String = Intros.take(data, "contract", host.has_method("hints_on") and host.hints_on())  # the first notice read
+	if tip != "":
+		await host.say("", tip)
 	await _lines(host, who, c.notice)
 	await _lines(host, who, c.trouble)
 	var fee := Contracts.offer_fee(data, c)

@@ -41,3 +41,24 @@ func test_boat_cards_once_each_and_only_on_water() -> void:
 	assert_eq(Intros.boat_card(d, "water", true), "")
 	assert_true(Intros.boat_card(d, "sea", true).contains("Tide Stone"))
 	assert_eq(Intros.boat_card(d, "sea", true), "")
+
+func test_the_first_contract_notice_read_brings_one_card() -> void:
+	var c := Contracts.get_contract("mink")
+	var h := FakeStoryHost.new()
+	h.data = GameStateData.new()
+	h.data.badges = ["a", "b"]
+	h.choices = [0, 2]   # read it, leave it
+	await Commands.new(h).run([{"do": "contract", "as": "board", "town": str(c.town)}])
+	var cards := h.said.filter(func(l): return str(l[1]) == Intros.TEXT["contract"])
+	assert_eq(cards.size(), 1, "the card, once")
+	h.choices = [0, 2]
+	h.said.clear()
+	await Commands.new(h).run([{"do": "contract", "as": "board", "town": str(c.town)}])
+	assert_eq(h.said.filter(func(l): return str(l[1]) == Intros.TEXT["contract"]).size(), 0, "never again")
+	var off := FakeStoryHost.new()
+	off.data = GameStateData.new()
+	off.data.badges = ["a", "b"]
+	off.hints = false
+	off.choices = [0, 2]
+	await Commands.new(off).run([{"do": "contract", "as": "board", "town": str(c.town)}])
+	assert_eq(off.said.filter(func(l): return str(l[1]) == Intros.TEXT["contract"]).size(), 0, "Hints off: nothing")
