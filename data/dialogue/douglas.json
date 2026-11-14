@@ -580,5 +580,108 @@
     }
    ]
   }
+ ],
+ "ct_buggane_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "buggane"
+  }
+ ],
+ "ct_buggane_corlett": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "buggane",
+   "clue": "corlett"
+  }
+ ],
+ "ct_buggane_nessa": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "buggane",
+   "clue": "nessa"
+  }
+ ],
+ "ct_buggane_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "buggane"
+  }
+ ],
+ "ct_buggane_gate": [
+  {
+   "do": "if",
+   "flag": "ct_buggane_is_roof",
+   "then": [
+    {
+     "do": "say",
+     "who": "Visitor",
+     "text": "They put a roof on St Trinian's and it came off the first night. I've seen the pile of timber. I'd say the buggane is winning, but I can't think what it is winning."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_buggane_is_ruin",
+     "then": [
+      {
+       "do": "say",
+       "who": "Visitor",
+       "text": "The church is fenced and quiet. I walked round it twice in the daylight, and had a very good picnic, and did not once go in after dark."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_buggane_is_tale",
+       "then": [
+        {
+         "do": "say",
+         "who": "Visitor",
+         "text": "There's a story at the gate on the dark nights, with a lantern. I went on Friday. I didn't sleep. I'd go again, though."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "flag": "ct_buggane_is_caught",
+         "then": [
+          {
+           "do": "say",
+           "who": "Visitor",
+           "text": "They say the buggane's gone off in somebody's team, and the church is quiet. I find I'm rather sorry for the walls."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Visitor",
+           "text": "St Trinian's is quiet."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "ct_buggane_timber": [
+  {
+   "do": "say",
+   "who": "Heritage Man",
+   "text": "I'm here to count the timber. The roof lasted exactly one night, which is, I'm told, about what the old people said. I'll be writing it up as a success. It is the only way I can."
+  }
+ ],
+ "ct_buggane_lantern": [
+  {
+   "do": "say",
+   "who": "Lantern Seller",
+   "text": "Lanterns, a pound. Flasks, two. Friday nights at the gate, and the story starts when the last of the light goes. Don't hold the lantern too high. The buggane's heard it all before."
+  }
  ]
 }
