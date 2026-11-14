@@ -372,6 +372,18 @@
    "zone": "limerick",
    "key": "sign 39,34",
    "why": "A A B B A is the limerick's rhyme scheme"
+  },
+  {
+   "rule": "cave",
+   "zone": "beacons",
+   "key": "secret_sgwd_yr_eira",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
+  },
+  {
+   "rule": "cave",
+   "zone": "gower",
+   "key": "secret_paviland",
+   "why": "a hidden place: the way in is hidden until something in the world reveals it"
   }
  ]
 }

@@ -104,7 +104,7 @@ static func _fill_regions_and_rooms(raw: Dictionary, out: Dictionary) -> void:
 		while not stack.is_empty():
 			var c: String = stack.pop_back()
 			for to in _targets(raw[c]):
-				if out.zones.has(to) and out.zones[to].kind == "interior" and to not in rooms and not out.room_town.has(to):
+				if out.zones.has(to) and out.zones[to].kind == "interior" and to not in rooms and not out.room_town.has(to) and not Secrets.is_secret_zone(str(to)):  # a hidden place is no room of the town's
 					rooms.append(to)
 					out.room_town[to] = id
 					stack.append(to)

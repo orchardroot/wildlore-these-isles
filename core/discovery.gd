@@ -6,7 +6,7 @@ extends RefCounted
 ## visited before the tally existed count as found without the reward, and a save well under way is caught up the first
 ## time it is asked (see catch_up), so nobody is paid twice for a road they have walked. Absent flag = not found.
 ## `nearby_unfound` is the list the creature's "sense cue" reads (world/sense_cue.gd): points of interest and field
-## spots close by that you have not dealt with yet; phase 2 adds flotsam and secrets to it.
+## spots close by that you have not dealt with yet, and hidden places you have been told how to open (5.6).
 ## Pure: no autoload names (the validator loads it).
 
 const FOUND := "found_"
@@ -89,6 +89,11 @@ static func catch_up(d: GameStateData, idx: Dictionary) -> void:
 static func note(d: GameStateData, zone: ZoneData, idx: Dictionary) -> Dictionary:
 	if zone == null:
 		return {}
+	if Secrets.is_secret_zone(zone.id):  # a hidden place (5.6): its own card, counted apart
+		var card := Secrets.note(d, zone, idx)
+		if not card.is_empty():
+			_pending[zone.id] = card
+		return card
 	var deep: bool = not zone.deep.is_empty() or bool(idx.get("zones", {}).get(zone.id, {}).get("deep", false))
 	if not findable(zone.kind, deep):
 		return {}
@@ -147,13 +152,16 @@ static func deep_marks(d: GameStateData, idx: Dictionary) -> Array:
 static func sensed_key(id: String) -> String:
 	return SENSED + id
 
-## [{kind ("poi" or "field"), id, at (Vector2i)}] points of interest and field spots within SENSE_RANGE tiles (the
+## [{kind ("poi", "field" or "secret"), id, at (Vector2i)}] points of interest and field spots within SENSE_RANGE tiles (the
 ## way the rest of the game measures, a square) of `pos` that are not dealt with yet and have not been sensed
-## before: once per find. Nothing in towns. `poi_tile` turns a poi's authored spot into the tile it stands on
+## before: once per find. Nothing in towns (but for a hidden place). `poi_tile` turns a poi's authored spot into the tile it stands on
 ## (the zone's landing_near); without one the authored `near` is used.
 static func nearby_unfound(zone: ZoneData, pos: Vector2i, d: GameStateData, poi_tile := Callable()) -> Array:
 	var out := []
-	if zone == null or zone.kind != "route":
+	if zone == null:
+		return out
+	out.append_array(Secrets.nearby(zone.id, pos, d, SENSE_RANGE))  # a revealed hidden place, in a town too
+	if zone.kind != "route":
 		return out
 	for p in Poi.for_zone(zone.id):
 		if Poi.done(d, p) or d.flag(sensed_key(str(p.id))) == true:

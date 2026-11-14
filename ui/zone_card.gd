@@ -118,7 +118,8 @@ func _on_zone_entered(zone_id: String) -> void:
 	var b := Langs.banner(zone_id, z.name, Settings.languages_on(), idx)
 	if str(b[1]) != "":
 		Langs.note_place(Game.data, zone_id, z.name, idx)
-	show_card(z.name, subtitle(zone_id, z.region), str(b[1]), found)
+	var sub := subtitle(zone_id, z.region)
+	show_card(z.name, sub if sub != "" else str(found.get("sub", "")), str(b[1]), found)
 
 ## On screen, or about to be (the card waits for the fade in).
 func showing() -> bool:
@@ -133,7 +134,7 @@ func show_card(title: String, sub: String, local := "", found := {}) -> void:
 	_new.visible = not found.is_empty()
 	_gain.visible = not found.is_empty() and str(found.get("gain", "")) != ""
 	if not found.is_empty():
-		_new.text = "NEW PLACE  ·  %d of %d found" % [int(found.count), int(found.total)]
+		_new.text = "%s  ·  %d of %d found" % [str(found.get("label", "NEW PLACE")), int(found.count), int(found.total)]
 		_gain.text = str(found.get("gain", ""))
 	_name.text = title
 	_name.add_theme_font_size_override("font_size", UIKit.fit_size(title, MAX_W, Access.scaled(38, Settings.text_size), 28))

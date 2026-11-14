@@ -92,5 +92,30 @@
    "venue": "waen_rhydd",
    "who": "Bog Marshal"
   }
+ ],
+ "sec_eira_walker": [
+  {
+   "do": "if",
+   "flag": "secret_sgwd_yr_eira_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Waterfall Walker",
+     "text": "Told you. Mind the drip, and mind your boots. The water has opinions about both."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Waterfall Walker",
+     "text": "Sgwd yr Eira. It means the Fall of the Snow. The stream goes over a lip of rock, and the old path goes in behind it."
+    },
+    {
+     "do": "say",
+     "who": "Waterfall Walker",
+     "text": "People walk through behind the water and come out soaked and grinning. Have a proper look where the water drops into the pool."
+    }
+   ]
+  }
  ]
 }
