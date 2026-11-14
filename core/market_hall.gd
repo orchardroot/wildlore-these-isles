@@ -8,6 +8,8 @@ const PATH := "res://data/market_halls.json"
 ## What a stall-holder will take: produce, dishes and fish. Kit, charms and key items stay in your pocket.
 const GOODS_KINDS := ["material", "meal", "fish", "produce"]
 
+const PITCH_FLAG := "trade_pitch"   # {hall id: [day, units sold on the pitch]}: the Trader 5's market-day pitch
+
 static var _db: Dictionary = {}
 
 static func halls() -> Dictionary:
@@ -39,16 +41,45 @@ static func board(data: GameStateData, store: Dictionary, lookup: Callable, hall
 			"sell": Trade.sell_price(data, id, town), "note": Trade.price_note(data, id, town)})
 	return out
 
+## Market day is the Saturday of the in-game week (the Money Box's Monday is day 0 of the seven).
+static func market_day(data: GameStateData) -> bool:
+	return data.day_count % 7 == int(TradeOrders.cfg().get("market_day", 5))
+
+## How many units the Trader's pitch still covers at this hall today: 0 unless the Trader is level 5 and it is market day.
+static func pitch_left(data: GameStateData, hall_id: String) -> int:
+	if not Trades.has_perk(data, "trader_pitch") or not market_day(data):
+		return 0
+	var used := 0
+	var p = data.flag(PITCH_FLAG)
+	if p is Dictionary and p.has(hall_id) and int(p[hall_id][0]) == data.day_count:
+		used = int(p[hall_id][1])
+	return maxi(0, int(TradeOrders.cfg().get("pitch_units", 12)) - used)
+
 ## What a stall-holder pays for a stack, in sterling: each unit sold makes the next poorer (Trade.sell_total), as at a shop.
+## The first units on a Trader's market-day pitch go at the glut-free price.
 static func payout(data: GameStateData, hall_id: String, item_id: String, qty: int) -> int:
-	return Trade.sell_total(data, item_id, str(hall(hall_id).get("town", hall_id)), maxi(0, qty))
+	return Trade.sell_total(data, item_id, str(hall(hall_id).get("town", hall_id)), maxi(0, qty), mini(maxi(0, qty), pitch_left(data, hall_id)))
 
 ## The payout for a stack, with the sale noted so the glut builds in that town (and fades over in-game days). The caller
 ## takes the stack from the bag and pays the purse. Without this the halls were a tap: every unit at the top price.
+## Units sold on the pitch use it up for the day and build no glut.
 static func settle(data: GameStateData, hall_id: String, item_id: String, qty: int) -> int:
 	var total := payout(data, hall_id, item_id, qty)
-	Trade.record_sale(data, item_id, str(hall(hall_id).get("town", hall_id)), qty)
+	var free := mini(maxi(0, qty), pitch_left(data, hall_id))
+	Trade.record_sale(data, item_id, str(hall(hall_id).get("town", hall_id)), qty - free)
+	if free > 0:
+		var p: Dictionary = data.flag(PITCH_FLAG) if data.flag(PITCH_FLAG) is Dictionary else {}
+		for k in p.keys():   # only today's pitches are worth keeping
+			if int(p[k][0]) != data.day_count:
+				p.erase(k)
+		p[hall_id] = [data.day_count, int(TradeOrders.cfg().get("pitch_units", 12)) - pitch_left(data, hall_id) + free]
+		data.set_flag(PITCH_FLAG, p)
 	return total
+
+## What the stall-holder says as you walk up: the news in their own words, else word of an order at another hall, else "".
+static func talk(data: GameStateData, hall_id: String) -> String:
+	var line := TradeNews.stall_line(data, hall_id)
+	return line if line != "" else TradeOrders.stall_line(data, hall_id)
 
 ## problems() for the files on disk: only the halls' rooms and towns are read.
 static func check_files() -> Array:
