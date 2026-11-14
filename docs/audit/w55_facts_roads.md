@@ -1,0 +1,155 @@
+# w55 facts and language review: new roads
+
+Reading job only (no Godot, tests or validator). All text on the 27 new routes (offas_dyke excluded) read: signs and plaques, NPC dialogue, trainers, points of interest, field spots. Letters, quests and the world map carry no route text.
+
+Read and fixed: Celtic 8 routes, 14 fixes (all edits below); England 9 routes (offas_dyke skipped), 20 fixes; Scotland 10 routes, 20 fixes. No em-dashes or American spellings found.
+
+## Fixes (before -> after)
+
+### celtic
+- `w55_celtic.json`
+  - before: A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Bara Brith in the hollow.
+  - after: A drystone wall by the Glaslyn with a gap the width of a sheep. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Bara Brith in the hollow.
+- `w55_celtic.json`
+  - before: A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Glamorgan Sausage in the hollow.
+  - after: A limestone field wall on the cliff top has lost a few stones to the wind. {lead} puts them back, one by one, and finds Glamorgan Sausage in the hollow.
+- `w55_celtic.json`
+  - before: A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Barmbrack in the hollow.
+  - after: A dry wall on the hairpin has given up on its top row. {lead} rebuilds it, and finds Barmbrack in the hollow.
+- `w55_celtic.json`
+  - before: A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Boxty in the hollow.
+  - after: A field wall between two Tipperary paddocks has a hole in it and a cow looking through. {lead} mends it, and finds Boxty in the hollow.
+- `w55_celtic.json`
+  - before: A wall with a tooth missing. {lead} rebuilds it with no mortar and a great deal of dignity, and finds Colcannon in the hollow.
+  - after: A salt-bitten wall near the lighthouse road has lost its capstones. {lead} sets them back, and finds Colcannon in the hollow.
+- `aberglaslyn.json`
+  - before: The line goes through the gorge and over the bridge, and the engine does the bit nobody can do on foot: it goes up without complaining.
+  - after: The line goes up through the gorge and over the bridge, and the engine does the bit nobody can do on foot: it climbs without complaining.
+- `ag_copper.json`
+  - before: Copper, then slate, then a lot of tourists. Wales has been mined three ways.
+  - after: Copper, then slate, then a lot of walkers. The hills here have paid their way three times.
+- `pen_y_gwryd.json`
+  - before: The Miners' Track and the Pyg Track both start a mile up the road.
+  - after: The Miners' Track and the Pyg Track both start at Pen-y-Pass, a couple of miles up the road.
+- `llyn_tegid.json`
+  - before: Four miles long, a mile wide, and the largest natural lake in Wales.
+  - after: Four miles long, nearly a mile wide, and the largest natural lake in Wales.
+- `tg_walker.json`
+  - before: I am walking to Bala the way Mary Jones did. It is about twenty-five miles. She did it in a day, in 1800, with a bit of bread and a plan.
+  - after: I am walking to Bala the way Mary Jones did. It is about twenty-five miles. She was fifteen, in 1800, and she did it on foot with a plan and no boots to speak of.
+- `llyn_tegid.json`
+  - before: The track was once a main line. Now it is a narrow gauge and a very lovely thing to sit on with a flask.
+  - after: The track was once a Great Western line. Now it is a narrow gauge and a very lovely thing to sit on with a flask.
+- `gc_surfer.json`
+  - before: The waves at Southerndown are small. The ones at Porthcawl are smaller. Wales has a lot of coast and none of it is flat.
+  - after: Check the tide tables before you check the forecast. The sea is the one who decides.
+- `healy_pass.json`
+  - before: The Healy Pass has more hairpins than a hairdresser's. I come up here every Sunday to watch the cars, and the cars to watch the sheep.
+  - after: The Healy Pass has more hairpins than a hairdresser's. I come up here of a Sunday to watch the cars, and the sheep watch me.
+- `healy_pass.json`
+  - before: and now half of Allihies is a Trevithick.
+  - after: and a good few Allihies families still have a Cornish name on the gate.
+- `hp_walker.json`
+  - before: Keep the sea on your left and a sandwich in your pocket. That's the whole route.
+  - after: Keep the sea in sight and a sandwich in your pocket. That's the whole route.
+- `golden_vale.json`
+  - before: The road north is a good one. The Tipperary sheep like it too.
+  - after: The road north is a good one. The Tipperary cows like it too.
+- `clare_road.json`
+  - before: SOUTH: Limerick and the Shannon. Shannon Airport is the other way, out the road. The Atlantic is thirty minutes beyond and a little cross.
+  - after: SOUTH: Limerick and the Shannon. Shannon Airport is just off to the west, so if your plane is late, the road is the better view.
+- `clare_road.json`
+  - before: A Catholic, a Clareman, and a lawyer. The English never saw it coming.
+  - after: A Catholic, a Kerryman, and a lawyer, and it was Clare that sent him to Westminster. They never saw it coming.
+- `clare_road.json`
+  - before: Eight or ten of them, and you could hear them in the next parish.
+  - after: A dozen or so of them, and you could hear them in the next parish.
+- `hook_head.json`
+  - before: and the monks' beacon has become a laser, but the job is the same.
+  - after: and the monks' fire has become an electric lamp, but the job is the same.
+### celtic2
+- `hh_lighthouse.json`
+  - before: Lighthouse Keeper Eamon
+  - after: Lighthouse Keeper Éamon
+- `hh_cyclist.json`
+  - before: Cyclist Roisin
+  - after: Cyclist Róisín
+- `cr_farmer.json`
+  - before: Farmer Padraig
+  - after: Farmer Pádraig
+### eng
+- `w55_england.json`
+  - before: on the orders of Hadrian, 73 miles from the Tyne to the Solway
+  - after: on the orders of Hadrian, about 80 miles from the Tyne to the Solway
+### sc
+- `pendle_hill.json`
+  - before: EAST: Haworth, the Parsonage and a great many Brontë tea towels. WEST: Pendle Hill, Clitheroe and the Fylde coast. Mind the sheep, they have right of way.
+  - after: EAST: Haworth, the Parsonage and a great many Brontë tea towels. Pendle Hill is behind you. Mind the sheep, they have right of way.
+- `southern_upland_way.json`
+  - before: The statue looks across the loch he grew up beside, with a dog at his feet, because of course.
+  - after: The statue looks over the loch from the hills he grew up in, with a dog at his feet, because of course.
+- `devils_staircase.json`
+  - before: A long ridge of high hills to the south, a dozen Munros one after another.
+  - after: A long ridge of high hills to the north, ten Munros one after another.
+- `dev_aluminium.json`
+  - before: It went to aeroplanes. Nothing here has gone to an aeroplane since, which suits the hens.
+  - after: It went off to make pots, pans and aeroplanes. Nothing here has gone to an aeroplane since, which suits the hens.
+- `rrw_stalker.json`
+  - before: Red squirrels are about the only thing in Scotland smaller than a midge that anyone is happy to see.
+  - after: Red squirrels are about the only small thing in Scotland that anyone is happy to see. The midges are the other kind.
+- `angus_coast.json`
+  - before: for it is not for glory, nor riches, nor honours that we are fighting, but for freedom'
+  - after: it is in truth not for glory, nor riches, nor honours that we are fighting, but for freedom alone'
+- `ang_keeper.json`
+  - before: A hundred and eighty years of keepers have stared at that horizon.
+  - after: Nearly a hundred and eighty years of keepers stared at that horizon.
+- `angus_coast.json`
+  - before: In 1651, with Cromwell's army closing in, the Honours of Scotland, the crown, sceptre and sword of state, were smuggled out past the besiegers and hidden in the church at Kinneff.
+  - after: In 1651 and 1652, with Cromwell's army besieging the castle, the Honours of Scotland, the crown, sceptre and sword of state, were smuggled out past the besiegers and hidden in the church at Kinneff.
+- `angus_coast.json`
+  - before: A woman in the kirkyard hid them, they say, in plain sight, with a basket of flax.
+  - after: Two women walked them out past the soldiers, they say, the crown in a lap and the sceptre and sword in a bundle of flax.
+- `angus_coast.json`
+  - before: I am on the crew. Two hours' warning, usually. The pager goes at the worst moment.
+  - after: I am on the crew. The pager gives us no warning at all. It goes at the worst moment.
+- `trotternish.json`
+  - before: He has been photographed more than the Queen.
+  - after: He has been photographed more than most film stars.
+- `trotternish.json`
+  - before: The blackhouse here has a peat fire and a bed in the corner for the cow.
+  - after: The blackhouse here has a peat fire in the middle and the cow at one end.
+- `uig_road.json`
+  - before: If you were an Iron Age family, you lived in the wall, and the cattle lived in the middle.
+  - after: The stairs and galleries are built into the wall itself, and an Iron Age family and their animals shared the middle.
+- `uig_road.json`
+  - before: A thousand years later they were still using it.
+  - after: Centuries later they were still using it.
+- `uig_road.json`
+  - before: A man dug them up in 1831 and took them to Stornoway in a sack. They have not been in the same place since.
+  - after: A man dug them up in 1831 and they have been travelling ever since, to Edinburgh, London and back again.
+- `scalloway_road.json`
+  - before: Mòran taing, they say in the west.
+  - after: Mòran taing, they say in the Hebrides.
+- `the_machars.json`
+  - before: It is farmland, bog and long shore, and it has one road in and out and a great many bookshops.
+  - after: It is farmland, bog and long shore, and for its size it has an unreasonable number of bookshops.
+- `w55_scotland.json`
+  - before: Poacher Bronwen
+  - after: Poacher Eilidh
+- `w55_scotland.json`
+  - before: Poacher Dilys
+  - after: Poacher Senga
+- `w55_scotland.json`
+  - before: Poacher Seamus
+  - after: Poacher Iain
+
+## Left for a human
+- Healy Pass: sign says 'built to give men work' (kept vague, true either way); Tim Healy naming not stated.
+- Dudley Zoo animals changed to 'penguins, lemurs, peacock' because okapis were unverified; confirm.
+- Stone lore on several routes points to a real site elsewhere (Callanish, Brodgar, Machrie Moor, Clava), matching the pattern in older zones; left alone.
+- Identical field-spot text 'Soft ground, a patient creature...' remains on pen_y_gwryd and clare_road, and several 'Something glints' lines repeat across Scottish routes.
+- Hadrian's Wall Path: the Irthing sign sits west of Birdoswald on the map, real order walking east is Birdoswald then the Irthing at Willowford; and zones/hadrians_wall.json still says 'about 73 miles' (old file, not touched).
+- Dun Carloway, Wigtown 'good dozen' bookshops, Lord Gort 1954, Cashel Blue 1984, Kilchurn c.1450, Lanercost 1169 all believed right but not web-checked (no searches run).
+- Uig, Angus, Devil's Staircase and West Highland Way zones have no direction signs for their edges; edge pointing not verifiable by sign.
+- 'Cattle prices' style jokes, 'Wardens only know the one word' and bridge-inspection gate gag repeat across England gates.
+- Gaelic used (Mòran taing, Slàinte mhath, Fàilte, Beannachd leibh) and Welsh (Gorllewin, Dwyrain, Gogledd, Dw i'n dysgu Cymraeg, nain, Bore da) all correct.
