@@ -2,7 +2,7 @@
 
 Reading job only (no Godot, tests or validator). All text on the 27 new routes (offas_dyke excluded) read: signs and plaques, NPC dialogue, trainers, points of interest, field spots. Letters, quests and the world map carry no route text.
 
-Read and fixed: Celtic 8 routes, 14 fixes (all edits below); England 9 routes (offas_dyke skipped), 20 fixes; Scotland 10 routes, 20 fixes. No em-dashes or American spellings found.
+Read and fixed: Celtic 8 routes, England 9 routes (offas_dyke skipped), Scotland 10 routes; 44 edits listed below in total. No em-dashes or American spellings found.
 
 ## Fixes (before -> after)
 
