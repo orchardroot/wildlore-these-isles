@@ -2,6 +2,29 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.6.0: Secrets
+
+- **Fifteen hidden places.** A cave behind a waterfall in the Beacons, the Red Lady's sea cave on Gower, a passage
+  tomb that only opens to the dawn, a priest hole, an ice well, a hermit's island, a crannog, a smugglers' store.
+  Something in the world has to show you each one: a rumour, a stone that looks wrong, a bottle among the rocks.
+  Five can only be reached by coracle. Each holds something that isn't money, and the Atlas and the map keep count.
+- **A contract for beginners.** "The Mare on the Moor Road" is on the Macclesfield board from your first Stone.
+- **Two more roads, in Northern Ireland:** the Lower Bann from Lough Neagh to Bushmills, and the Erne Shore Road
+  from Enniskillen to Donegal Town. Thirty new routes in all.
+- **You are told about your boat.** A card the first time you paddle onto a river or a lake, and again at the sea.
+- **Contracts remember how people see you**: the fee at the end follows your name with the people your decision
+  touched. The Journal says when a clue wants dusk or rain.
+- **Town projects give you something to keep**: a keepsake each for the shelf at home, and the Deed screen shows
+  what a finished project does. The two footbridges take your bike across, which a coracle never will.
+- **Letters that take their time.** The story chains' letters now come a month on, as they always said they did.
+- Deed upgrades that had no catch now have one, and the best-known Regulars manage in character.
+- Things found on the water name where they are, and bottles hold something you can eat.
+- "Where next?" and the map no longer send you up a road the Wardens have shut.
+- A friend waiting at Mum's is no longer also stood in their own town. The street carries on while you sit on a
+  bench. Only cathedrals (and Cambridge) ring the hours. The new-place card says what your team got out of it.
+  Mum only offers to mind the cat when she's hurt. The Relearner shows what a move is strong against.
+- And a few things we are not going to tell you about.
+
 ## 5.5.0: Roads and Reasons
 
 - **A choice of road.** Twenty-eight new routes turn the map from one long line into loops, each a real road or

@@ -16,7 +16,7 @@ func test_joins_derry_once_on_its_west_side() -> void:
 	for zid in OUTDOOR:
 		for side in all[zid].edges:
 			var to := str(all[zid].edges[side].to)
-			assert_true(to in OUTDOOR or (zid == "glenveagh" and to == "derry"), "%s %s edge stays in Donegal" % [zid, side])
+			assert_true(to in OUTDOOR or (zid == "glenveagh" and to == "derry") or (zid == "donegal_town" and to == "erne_shore"), "%s %s edge stays in Donegal" % [zid, side])  # w56: the Erne Shore Road to Enniskillen
 
 func test_zones_validate_and_are_scaled() -> void:
 	var all := _zones()

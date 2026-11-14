@@ -82,10 +82,10 @@ for every timing minigame are under Settings, Accessibility.
 
 ## What's new
 
-5.5 "Roads and Reasons": twenty-eight new routes along real roads and paths, so there is a choice of way; twelve
-notice-board contracts where you investigate, face the creature and decide what becomes of it; six side quests that
-turn on a decision; trade that follows the news; businesses with decisions in them; and fifteen town projects worth
-saving for. It builds on 5.4 "Off the Beaten Track" (the family cat, the coracle, type matchups you can read). The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
+5.6 "Secrets": fifteen hidden places that something in the world has to show you (five only by coracle), a
+contract for beginners on the Macclesfield board, two more roads in Northern Ireland, keepsakes from the town
+projects, and a round of fixes from a critic's read of the last two releases. It builds on 5.5 "Roads and Reasons"
+(thirty new routes, contracts, side quests with a decision in them, trade that follows the news). The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
 
 ## How it's made
 
