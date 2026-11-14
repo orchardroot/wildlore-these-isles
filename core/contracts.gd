@@ -214,6 +214,18 @@ static func clue_ready(clue: Dictionary, phase: String, weather: String) -> bool
 			return true
 	return false
 
+## The hour and weather a clue wants, in words for the Journal ("at dusk or night, in rain or fog"), "" for none.
+static func when_words(clue: Dictionary) -> String:
+	var w: Dictionary = clue.get("when", {})
+	var bits := []
+	var phases: Array = w.get("phase", [])
+	if not phases.is_empty():
+		bits.append(" or ".join(phases.map(func(x): return "by day" if str(x) == "day" else "at " + str(x))))
+	var wants: Array = w.get("weather", [])
+	if not wants.is_empty():
+		bits.append("in " + " or ".join(wants.map(func(x): return "clear skies" if str(x) == "clear" else str(x))))
+	return ", ".join(bits)
+
 ## Notes a clue. True when it is new, which needs the contract taken and not yet decided.
 static func note_clue(data: GameStateData, id: String, clue_id: String) -> bool:
 	if state(data, id) != TAKEN or clue_found(data, id, clue_id) or clue_of(get_contract(id), clue_id).is_empty():

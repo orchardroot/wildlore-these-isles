@@ -194,6 +194,12 @@ func test_the_report_fee_reads_the_groups_the_choice_moved() -> void:
 	assert_near(Contracts.ending_nudge(d, ch), 1.0 - Contracts.REPUTE_STEP * 4.0)
 	assert_near(Contracts.ending_nudge(d, {}), 1.0, 0.0001)
 
+func test_a_clue_says_in_words_when_it_needs_a_time_or_weather() -> void:
+	assert_eq(Contracts.when_words({}), "")
+	assert_eq(Contracts.when_words({"when": {"weather": ["rain"]}}), "in rain")
+	assert_eq(Contracts.when_words({"when": {"phase": ["dusk", "night"]}}), "at dusk or at night")
+	assert_eq(Contracts.when_words({"when": {"phase": ["dawn", "day"], "weather": ["sunshine", "clear"]}}), "at dawn or by day, in sunshine or clear skies")
+
 func test_it_cannot_be_taken_before_the_badges() -> void:
 	var c := Contracts.get_contract("mink")
 	var d := GameStateData.new()
