@@ -52,6 +52,7 @@ func _initialize() -> void:
 	errors.append_array(Rumours.check(zones, dex))  # w54: data/legend_hunts.json, the folklore rumours behind each legend
 	errors.append_array(FieldSpots.check(zones, items_db))  # w48 F: data/field_spots on free tiles beside the path
 	errors.append_array(Flotsam.check(zones, items_db))  # w54: data/flotsam.json finds for the coracle
+	errors.append_array(Eggs.check(zones, items_db, Flotsam.all().map(func(f): return str(f.id))))  # w56: data/eggs.json
 	errors.append_array(FamilyDrawer.check(zones, items_db))  # w53: data/family_drawers.json
 	errors.append_array(Visits.check(zones))  # w53: data/visits return-visit lines for home residents
 	errors.append_array(Wants.check(zones, items_db, dex))  # w47 C: data/trades residents, wants, front-room shops

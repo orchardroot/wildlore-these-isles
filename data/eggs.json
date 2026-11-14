@@ -1,0 +1,169 @@
+[
+ {
+  "id": "box",
+  "kind": "spot",
+  "flag": "egg_box",
+  "zone": "dublin_trinity",
+  "x": 3,
+  "y": 7,
+  "needs": "cat_lead",
+  "plain": [
+   "A wicker basket by the radiator with a folded blanket in it. The blanket is still warm. Somebody has just left."
+  ],
+  "lines": [
+   "{cat} looks at the basket, looks at you, and climbs in. She turns round twice and sits down, perfectly content.",
+   "Erwin Schrödinger lived in Dublin from 1939 to 1956 and worked at the Institute for Advanced Studies.",
+   "His cat in a box was only a thought experiment, from 1935, to show how odd one idea in physics sounds at cat size.",
+   "Is she in the basket until you look? You look. She is. She was always going to be."
+  ]
+ },
+ {
+  "id": "grin",
+  "kind": "step",
+  "flag": "egg_grin",
+  "zones": [
+   "macclesfield",
+   "macc_forest",
+   "chester",
+   "cat_and_fiddle"
+  ],
+  "needs": "cat_lead",
+  "phase": "dusk",
+  "steps": 12,
+  "lines": [
+   "{cat} sits down in the lane and looks at you, and then she is not there. The grin is.",
+   "It hangs at about cat height for as long as it takes to notice. Then it goes too, and she is back, washing a paw.",
+   "Lewis Carroll was born at Daresbury, in Cheshire, in 1832. Grinning like a Cheshire cat is a good deal older than Alice."
+  ]
+ },
+ {
+  "id": "cabinet",
+  "kind": "spot",
+  "flag": "egg_cabinet",
+  "zone": "blackpool_arcade",
+  "x": 11,
+  "y": 2,
+  "lines": [
+   "A dusty cabinet at the back. The marquee says MONSTERQUEST in letters that were once red, and the coin slot is taped over.",
+   "It does not take coins. It is on anyway, glowing faintly, with nobody at the stick.",
+   "HIGH SCORES. 1. JIM ... 999999. The other nine lines are blank, and look like they have been waiting a long time."
+  ]
+ },
+ {
+  "id": "caesar",
+  "kind": "spot",
+  "flag": "egg_caesar",
+  "zone": "bletchley_hut8",
+  "x": 2,
+  "y": 2,
+  "lines": [
+   "A scrap of squared paper under a pencil, in neat capitals: SXW WKH NHWWOH RQ.",
+   "Pinned beside it: 'J. Caesar, three along. Suetonius says he did it for his private letters.' Someone is having fun."
+  ],
+  "choice": {
+   "text": "What does it say?",
+   "options": [
+    "PUT THE KETTLE ON",
+    "SEND MORE PENCILS",
+    "LEAVE THE DOOR OPEN",
+    "Leave it be"
+   ],
+   "right": 0,
+   "right_lines": [
+    "Shift each letter back three: S to P, X to U, W to T. PUT THE KETTLE ON. Best code you have ever broken.",
+    "You pocket the slip. Whoever wrote it wanted to be kind, in a way nobody else could read."
+   ],
+   "wrong_lines": [
+    "That does not fit the letters. S back three is P, not the one you picked. Try again."
+   ],
+   "item": "w56_bp_slip"
+  },
+  "done": [
+   "The slip says PUT THE KETTLE ON, three letters along. The paper on the table has been replaced with a fresh one that says the same."
+  ]
+ },
+ {
+  "id": "phone",
+  "kind": "phone",
+  "flag": "egg_phone",
+  "hour": 0,
+  "reach": 2,
+  "ring": [
+   "A phone box nearby rings once, loud in the quiet, and then waits like something that heard you coming."
+  ],
+  "ask": "Answer it?",
+  "options": [
+   "Pick up",
+   "Walk on"
+  ],
+  "answer": [
+   "A calm recorded voice: 'At the third stroke, it will be {time} precisely.' Pip. Pip. Pip.",
+   "That is an hour fast. The pips are perfect. The hour is between the box and its conscience."
+  ]
+ },
+ {
+  "id": "forty_two",
+  "kind": "spot",
+  "flag": "egg_forty_two",
+  "zone": "cambridge",
+  "x": 39,
+  "y": 30,
+  "lines": [
+   "A phone box on the corner. A card is taped inside the glass: 'Question wanted. Answer already in: 42. Reward: tea.'",
+   "Douglas Adams was born in Cambridge in 1952 and studied at St John's. He said 42 was a joke, an ordinary smallish number he chose.",
+   "You check your pockets, in case a question has been left in one."
+  ]
+ },
+ {
+  "id": "bench",
+  "kind": "bench",
+  "flag": "egg_bench",
+  "zone": "blackpool",
+  "x": 25,
+  "y": 33,
+  "from": 960,
+  "until": 1260,
+  "start_before": 1140,
+  "lines": [
+   "Somebody has sat down at the far end of the bench. You did not see them arrive, which is how benches work.",
+   "'Tower's from 1894,' they say, watching the lamps come on. 'Copied from the one in Paris. Half the height, but it has got a ballroom.'",
+   "They nod, as if that settled it, and get up and go."
+  ]
+ },
+ {
+  "id": "names",
+  "kind": "mum",
+  "flag": "egg_names",
+  "zone": "macc_home",
+  "npc": "mum",
+  "by_name": {
+   "bagpuss": [
+    "{name}, is it? There was a saggy old cloth cat on the telly when I was small, and I cried when it finished.",
+    "She is not saggy, mind. Not a bit. Lovely name."
+   ],
+   "schrodinger": [
+    "{name}? The one with the box, is it? Well, she is not in the box. She is on my good chair.",
+    "That is the only fact I need."
+   ],
+   "macavity": [
+    "{name}? There is a poem about a cat with that name, by T. S. Eliot. Never there when the trouble starts.",
+    "Funny. She will be at the bowl at six, and she will have an alibi."
+   ]
+  }
+ },
+ {
+  "id": "bottles",
+  "kind": "bottle",
+  "flag": "egg_bottles",
+  "bottle": "fl_severn_crossing_1",
+  "needs": "flotsam_bath_1",
+  "lines": [
+   "A second slip is folded in behind the first, in a different hand, damp but legible.",
+   "'Re your request for soap: sent. The Avon runs into the Severn, so you may find it. Please do not send it back.'"
+  ]
+ },
+ {
+  "id": "title_cat",
+  "kind": "title"
+ }
+]

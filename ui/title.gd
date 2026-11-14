@@ -67,6 +67,14 @@ func _subtitle() -> String:
 	return "v%s  ·  %d creatures" % [ProjectSettings.get_setting("application/config/version"), Game.dex.ids().size()]
 
 var _chosen := false
+var _code := 0  # w56: how far into an old key sequence the player is (see Eggs.feed)
+
+func _input(e: InputEvent) -> void:
+	if e is InputEventKey and e.pressed and not e.echo:
+		_code = Eggs.feed(_code, e.keycode)
+		if _code >= Eggs.CODE.size():
+			_code = 0
+			TitleCat.walk(self)
 
 ## Only the first press counts: a quick double-press must not start two games at once.
 func _claim() -> bool:
