@@ -44,6 +44,10 @@ static func sized(size: int) -> int:
 static func big_text() -> bool:
 	return Access.scale_of(Settings.text_size) > 1.0
 
+## True only at the Largest Text size (see TextSqueeze).
+static func largest() -> bool:
+	return Settings.text_size == "largest"
+
 ## The font menus draw with: the Readable font when that setting is on (ui/theme.tres), else Godot's default.
 ## Measure with this, never ThemeDB.fallback_font, or the Readable font's wider letters overrun the sums.
 static func font() -> Font:

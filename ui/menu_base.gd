@@ -4,6 +4,8 @@ extends Control
 ## Subclasses override _build() (once, in _ready), setup(arg) if they take an argument, and _on_cancel().
 ## The Router awaits `closed(result)`.
 
+const Squeeze := preload("res://ui/text_squeeze.gd")
+
 signal closed(result)
 
 var title_text := ""
@@ -25,6 +27,7 @@ func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	_build_frame()
+	Squeeze.watch(self, content)
 	_build()
 
 func _build_frame() -> void:
