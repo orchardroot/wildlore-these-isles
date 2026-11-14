@@ -11,6 +11,11 @@ extends RefCounted
 ##   done          done_flag set
 ## The Quest Log (ui/quests_screen.gd), the toasts (QuestNews) and "Where next?" (MenuLogic) read this.
 ## Pure logic, no autoload names: the validator loads it.
+##
+## Branching (w55, data/quests/w55_*.json): a quest may carry "endings": [{flag, text}], what the Quest Log says
+## once it is done, the first whose flag is on. The choice itself is ordinary dialogue that sets a flag in a branch,
+## and consequences that arrive later are stamped when the choice is made ({"do":"set","flag":k,"value":"@now"})
+## and ripen with the condition later_<k>_<n> (see later()).
 
 const DIR := "res://data/quests"
 const NOT_STARTED := "not_started"
@@ -133,7 +138,40 @@ static func log_steps(d: GameStateData, q: Dictionary) -> Array:
 		if not ticked and i != cur:
 			continue
 		out.append({"text": str(s.get("text", "")), "zone": str(s.get("zone", "")), "done": ticked, "current": i == cur})
+	if st == DONE and outcome(d, q) != "":  # how it turned out, a line after the last step
+		out.append({"text": outcome(d, q), "zone": "", "done": true, "current": false})
 	return out
+
+## How a finished branching quest turned out: the text of the first of its "endings" whose flag is on, else "".
+static func outcome(d: GameStateData, q: Dictionary) -> String:
+	for e in q.get("endings", []):
+		if e is Dictionary and _on(d, str(e.get("flag", ""))):
+			return str(e.get("text", ""))
+	return ""
+
+# --- consequences that arrive later ---------------------------------------------------------
+
+## The value to keep in a flag when a choice is made: "<real date>@<day_count>@<play seconds>" (see DailyKey).
+static func stamp(d: GameStateData) -> String:
+	return DailyKey.stamp(d)
+
+## Has the post come? True once `n` in-game days (a night's sleep is one) have passed since the flag was stamped, or the
+## real date has changed since, so a player who comes back tomorrow always finds it. False for a flag never stamped.
+static func later(d: GameStateData, key: String, n: int) -> bool:
+	var v: Variant = d.flag(key)
+	if typeof(v) != TYPE_STRING:
+		return false
+	var parts: PackedStringArray = str(v).split("@")
+	if parts.size() < 2 or not parts[1].is_valid_int():
+		return false
+	return parts[0] != Calendar.today_key() or d.day_count - int(parts[1]) >= n
+
+## The story condition later_<flag>_<n>: 1 when it has ripened, 0 when not yet, -1 when `cond` is not one.
+static func later_cond(d: GameStateData, cond: String) -> int:
+	var cut := cond.rfind("_")
+	if not cond.begins_with("later_") or cut <= 6 or not cond.substr(cut + 1).is_valid_int():
+		return -1
+	return 1 if later(d, cond.substr(6, cut - 6), int(cond.substr(cut + 1))) else 0
 
 static func active(d: GameStateData, list: Array = []) -> Array:
 	return (list if not list.is_empty() else all()).filter(func(q): return status(d, q) == ACTIVE)
@@ -283,6 +321,11 @@ static func validate(list: Array, zones: Dictionary, settable: Dictionary) -> Ar
 				errors.append(tag + ": no %s" % k)
 		if str(q.get("reward", "")) == "":
 			errors.append(tag + ": no reward")
+		for e in q.get("endings", []):
+			if not (e is Dictionary) or str(e.get("text", "")) == "" or str(e.get("flag", "")) == "":
+				errors.append(tag + ": an ending needs a flag and a text")
+			elif not settable.has(str(e.flag)):
+				errors.append(tag + ": ending flag '%s' is never set by any script" % e.flag)
 		var town := str(q.get("town", ""))
 		if not zones.has(town):
 			errors.append(tag + ": town is unknown zone '%s'" % town)

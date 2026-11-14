@@ -20,5 +20,112 @@
    "who": "Mrs Hartley",
    "text": "Our Joe says it is mardy weather, which means grumpy, when it drizzles all day. He says it a lot. He is a mardy lad."
   }
+ ],
+ "w55e_joe": [
+  {
+   "do": "if",
+   "flag": "q_stories_england_done",
+   "then": [
+    {
+     "do": "if",
+     "flag": "q_stories_england_pick_joe",
+     "then": [
+      {
+       "do": "say",
+       "who": "Joe",
+       "text": "They went back to their own bit of hill without being told. I stood at the gate like a daft lad. Dale's lot, my lot, same flock now."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_england_pick_hannah",
+     "then": [
+      {
+       "do": "say",
+       "who": "Joe",
+       "text": "I lent Hannah the dog for lambing. Dale will not hear a word against his girl, and he is right."
+      }
+     ]
+    },
+    {
+     "do": "if",
+     "flag": "q_stories_england_pick_scheme",
+     "then": [
+      {
+       "do": "say",
+       "who": "Joe",
+       "text": "Dale has gone green, I told him. He said I was welcome to a clipboard. We are still speaking."
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "q_stories_england_decided",
+     "then": [
+      {
+       "do": "say",
+       "who": "Joe",
+       "text": "Whatever Dale decides, I will abide by it. And I will not say a word out of turn at the mart."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "q_stories_england_started",
+       "then": [
+        {
+         "do": "if",
+         "flag": "q_stories_england_joe",
+         "then": [
+          {
+           "do": "say",
+           "who": "Joe",
+           "text": "Tell him what I said, and tell him I would sooner be turned down by Dale than praised by anyone else."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Joe",
+           "text": "You will be the one Dale has sent. He is a proud man and a good farmer, and he would hate me for saying it, but his is the best flock on this moor."
+          },
+          {
+           "do": "say",
+           "who": "Joe",
+           "text": "I would take the tenancy and the ewes together, keep them on their own hill and put my shepherd in the house. It would double my acreage in a year when prices are telling everyone to shrink."
+          },
+          {
+           "do": "say",
+           "who": "Joe",
+           "text": "I will be straight about it: it is good for me. It is also the only way that flock stays a flock. Split it or sell it, and those are just ewes."
+          },
+          {
+           "do": "say",
+           "who": "Joe",
+           "text": "What I cannot give is Hannah's choice. If she wants it, it is hers by every right but the paperwork, and I would not stand in her way."
+          },
+          {
+           "do": "set",
+           "flag": "q_stories_england_joe",
+           "value": true
+          }
+         ]
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Joe",
+         "text": "Morning. Rosedale used to have ironstone kilns smoking all down the dale. Now it has me and a very loud dog."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

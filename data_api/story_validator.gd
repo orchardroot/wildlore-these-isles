@@ -170,6 +170,8 @@ static func validate_commands(cmds: Array, tag: String, dex: Dex, items: ItemDB,
 					pass
 				elif (cond.begins_with("guild_") or cond.begins_with("regular_")) and cond.rsplit("_", true, 1)[1].is_valid_int():
 					pass
+				elif cond.begins_with("later_") and cond.rsplit("_", true, 1)[1].is_valid_int():  # w55: later_<flag>_<n> (Quests.later)
+					pass
 				elif cond not in CONDITIONS and not Festivals.is_cond(cond):
 					errors.append("%s: when with unknown cond '%s'" % [tag, c.get("cond", "")])
 				errors.append_array(validate_commands(c.get("then", []), tag, dex, items, zones))

@@ -74,6 +74,28 @@
    "facing": "down",
    "move": "still",
    "script": "bush_craft_keeper"
+  },
+  {
+   "id": "w55n_joanne",
+   "name": "Joanne Hill",
+   "sprite": "villager_5",
+   "x": 8,
+   "y": 3,
+   "facing": "left",
+   "script": "w55n_joanne",
+   "hide_if": "q_stories_northern_ireland_world",
+   "move": "still"
+  },
+  {
+   "id": "w55n_hatch",
+   "name": "Joanne",
+   "sprite": "villager_5",
+   "x": 9,
+   "y": 3,
+   "facing": "left",
+   "script": "w55n_hatch",
+   "show_if": "q_stories_northern_ireland_world_hosted",
+   "move": "still"
   }
  ],
  "encounters": {},
