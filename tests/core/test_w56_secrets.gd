@@ -311,3 +311,19 @@ func _says(cmds: Array, into: Array) -> void:
 		for k in ["then", "else"]:
 			if c.has(k):
 				_says(c[k], into)
+
+func test_the_three_view_places_hold_one_small_keepsake_each() -> void:
+	var zones := _zones()
+	var items := ItemDB.load_default()
+	for id in ["bryn_celli_ddu", "merlins_cave", "doolin"]:
+		var room: ZoneData = zones["secret_" + id]
+		var finds := room.examine.filter(func(e): return e.has("find"))
+		assert_eq(finds.size(), 1, "%s: one thing to take away" % id)
+		var item := str(finds[0].find.item)
+		assert_true(items.has(item), "%s: %s is a real item" % [id, item])
+		assert_eq(int(finds[0].get("money", 0)), 0, "no money")
+		var d := GameStateData.new()
+		Examine.read(d, "secret_" + id, finds[0], items)
+		assert_eq(int(d.bag.get(item, 0)), 1, "%s: in the bag, once" % id)
+		Examine.read(d, "secret_" + id, finds[0], items)
+		assert_eq(int(d.bag.get(item, 0)), 1, "%s: not twice" % id)

@@ -1,0 +1,32 @@
+[
+ {
+  "id": "w57_spiral_rubbing",
+  "name": "Spiral Rubbing",
+  "one": "a Spiral Rubbing",
+  "kind": "curio",
+  "price": 150,
+  "battle": false,
+  "field": false,
+  "desc": "A pencil rubbing of a spiral carving from the mound at Bryn Celli Ddu, on a page torn from a notebook. The spiral is about five thousand years older than the notebook."
+ },
+ {
+  "id": "w57_cave_shell",
+  "name": "Cave Shell",
+  "one": "a Cave Shell",
+  "kind": "curio",
+  "price": 150,
+  "battle": false,
+  "field": false,
+  "desc": "A blue-black mussel shell from the floor of Merlin's Cave, polished by the swell and left open like a small book. It still smells faintly of the Atlantic."
+ },
+ {
+  "id": "w57_cave_drip",
+  "name": "Bottle of Cave Drip",
+  "one": "a Bottle of Cave Drip",
+  "kind": "curio",
+  "price": 150,
+  "battle": false,
+  "field": false,
+  "desc": "A small bottle of water from the Great Stalactite's drip at Doolin. It is faintly chalky, which is limestone on its way to becoming a stalactite. Leave the real ones alone."
+ }
+]
