@@ -71,3 +71,5 @@ are clean today; the other 78 were clean before and still are.
   complete, but a screen like Standing or the world map card looks busier than at Large. A design pass could trim
   words on those screens instead of shrinking them.
 - The squeeze only watches the menu `Content` area. Popups and the HUD are not covered.
+
+`tools/test.sh text_fit`: `10 passed, 0 failed` (and `validate: 0 error(s)`), about four minutes on a shared machine.
