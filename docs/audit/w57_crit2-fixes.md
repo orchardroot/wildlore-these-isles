@@ -52,3 +52,5 @@ One commit per item, in the order asked. Findings 8 and 12 skipped as instructed
 - The pele-tower, Combe Down and Mortimer's Hole examine tiles are placed from the map rows; I did not look at them in
   game (no screenshots allowed). The validator confirms each can be reached and faced.
 - Flotsam variety is only mildly better, for the reason given above.
+
+Test results: `w56_` 21, `eggs` 16, `intros` 8, `bench` 11, `flotsam` 14, `w55_` 34, all 0 failed with `validate: 0 error(s)`; also `family_cat` 38, `contracts` 24, `ambience` 32, `zone_card` 4. `tools/playtest.sh slice 2`: PLAYTEST PASS.
