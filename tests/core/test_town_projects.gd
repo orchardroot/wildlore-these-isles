@@ -297,3 +297,9 @@ func test_the_daily_deeds_tick_opens_finished_projects() -> void:
 	d.day_count += 60
 	Deeds.tick(d, d.day_count)   # no Deed owned, the projects still open
 	assert_true(TownProjects.is_done(d, "carlisle_library"))
+
+func test_the_footbridges_promise_what_a_coracle_cannot_do() -> void:
+	for id in ["lancaster_mill", "inverness_footbridge"]:
+		var p := TownProjects.get_project(id)
+		assert_true(str(p.change).contains("bike"), id + " says the bike crosses")
+		assert_false(str(p.plaque).contains("long way round"), id + " does not promise a short cut the coracle already gives")

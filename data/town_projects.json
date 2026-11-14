@@ -168,7 +168,7 @@
    "cost": 30000,
    "name": "Lancaster Mill",
    "title": "The old mill by the water",
-   "text": "A big brick mill by the water has stood empty since the last of the looms went quiet. Workshops for makers, a cafe that opens before the walkers do and a long barn for the allotment society would give it a second life, and a footbridge would bring the far bank into the town.",
+   "text": "A big brick mill by the water has stood empty since the last of the looms went quiet. Workshops for makers, a cafe that opens before the walkers do and a long barn for the allotment society would give it a second life, and a footbridge, strong enough to wheel a bike over, would join the two banks.",
    "stages": [
     {
      "name": "Roof and windows",
@@ -186,19 +186,19 @@
      "name": "The footbridge",
      "share": 40,
      "days": 8,
-     "line": "A footbridge over the water at the east end of the town, to save everyone the long way round."
+     "line": "A footbridge over the water at the east end of the town, wide enough to wheel a bike across, which no coracle has ever managed."
     }
    ],
-   "change": "Finished, the mill is full, the allotment society has a barn and a footbridge opens over the water at the east end of the town.",
+   "change": "Finished, the mill is full, the allotment society has a barn and a footbridge opens over the water at the east end of the town. Dry feet, and the bike goes over too.",
    "ask": [
     "See the old mill? Forty years empty, and the council would rather knock it down than argue about it. It's a fine building. It's a roof short of being a very fine one.",
-    "Someone with a bit of money and a bit of vision could turn it into workshops, a cafe and a barn for the allotments. And a footbridge, so you'd not have to go round by the road."
+    "Someone with a bit of money and a bit of vision could turn it into workshops, a cafe and a barn for the allotments. And a footbridge, so you could wheel a bicycle over the water instead of carrying it round."
    ],
    "progress": [
     "The mill's full of builders, and the allotment society is measuring up the barn."
    ],
    "done": [
-    "The mill is open, {player}, and so's the footbridge at the east end of town. I've crossed it six times today just to hear the boards."
+    "The mill is open, {player}, and so's the footbridge at the east end of town. I've wheeled my bike over it six times today just to hear the boards."
    ],
    "opened": "The mill is open, with workshops, a cafe and a barn, and a footbridge at the east end of town.",
    "plaque": "The mill was given back to Lancaster by {player}: workshops, a cafe, a barn and a footbridge.",
@@ -480,7 +480,7 @@
    "cost": 28000,
    "name": "Inverness Footbridge",
    "title": "A footbridge over the Ness",
-   "text": "The river Ness has bridges, but not where the people who walk want them. A new footbridge by the Ness Islands would save the long way round to the far bank and put the islands a few steps from the town.",
+   "text": "The river Ness has bridges, but not where the people who walk want them. A new footbridge by the Ness Islands would put the islands a few dry steps from the town, with room to wheel a bike or a pushchair across.",
    "stages": [
     {
      "name": "The abutments",
@@ -501,10 +501,10 @@
      "line": "The last rail is on. The lamps are lit on a trial basis, and are very pretty."
     }
    ],
-   "change": "Finished, there is a footbridge across the Ness by the Ness Islands sign, and the far bank is a few steps away. Your name goes on the rail.",
+   "change": "Finished, there is a footbridge across the Ness by the Ness Islands sign, and the bike can cross it, which it cannot do in a coracle. Your name goes on the rail.",
    "ask": [
     "The river's a lovely thing, {player}, but if you want to be on the other side you walk for ten minutes up the road to find a bridge, and ten back.",
-    "A footbridge by the Ness Islands would suit me and every dog in the town. There's a man at the council with a plan. He's missing only the money."
+    "A footbridge by the Ness Islands, wide enough for a bike, would suit me and every dog in the town. There's a man at the council with a plan. He's missing only the money."
    ],
    "progress": [
     "The abutments are in on both banks, and the river is behaving, which is not like it."
@@ -513,7 +513,7 @@
     "The new bridge is a joy, {player}. You step across by the Ness Islands sign and you're over before you've made up your mind. Mind the lamps, they're hot."
    ],
    "opened": "The footbridge is open over the Ness, by the Ness Islands sign.",
-   "plaque": "The footbridge was given to Inverness by {player}, so that nobody has to take the long way round.",
+   "plaque": "The footbridge was given to Inverness by {player}, so that the Ness Islands are a stroll away, bike and all.",
    "effects": {
     "standing": 8,
     "item": "tablet",
