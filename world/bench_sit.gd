@@ -150,6 +150,7 @@ func stand() -> void:
 	if _ow.rig:
 		tw.tween_property(_ow.rig, "_zoom", 1.0, 0.6).set_trans(Tween.TRANS_SINE)
 	await tw.finished
+	await EggsScene.bench_stood(_ow, _bench, _start_minute, Game.data.clock_minutes)  # w56
 	_finish()
 
 func _finish() -> void:

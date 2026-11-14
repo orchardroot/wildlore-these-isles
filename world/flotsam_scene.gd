@@ -92,5 +92,5 @@ static func interact(ow: Node, p: Vector2i) -> bool:
 	Game.data.set_flag(str(f.flag), true)
 	ow.zone.blocked.erase(p)
 	ow.zone.get_meta("flotsam_tiles").erase(p)
-	await ow.say(Flotsam.lines(f) + ["You take %s." % name])
+	await ow.say(Flotsam.lines(f) + Eggs.bottle_lines(Game.data, str(f.id)) + ["You take %s." % name])
 	return true
