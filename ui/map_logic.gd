@@ -98,7 +98,7 @@ static func promised_towns(data: GameStateData, idx: Dictionary = {}) -> Array:
 					var far := str(z.get("town", ""))
 					if far != "" and not visited(data, far) and far not in out and FileAccess.file_exists("res://data/zones/%s.json" % far):
 						out.append(far)
-				elif str(z.kind) == "route":
+				elif str(z.kind) == "route" and WhereNext.gates_open(data, z):
 					q.append(to)
 	var fer: Dictionary = Travel.ferries()
 	for route in fer:
