@@ -143,7 +143,7 @@ func _fit_columns() -> void:
 	var least := 999  # the move names share one size: the largest at which the longest fits, before any trimming
 	for row in _move_rows:
 		var mn: Label = row.get_child(0).get_child(1)
-		least = mini(least, UIKit.fit_size(mn.text, mn.size.x, UIKit.sized(24), 20))
+		least = mini(least, UIKit.fit_size(mn.text, mn.size.x, UIKit.sized(24), UIKit.MIN_TEXT if UIKit.largest() else 20))
 	for row in _move_rows:
 		row.get_child(0).get_child(1).add_theme_font_size_override("font_size", least)
 

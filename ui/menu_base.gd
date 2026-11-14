@@ -108,6 +108,10 @@ func set_title(t: String) -> void:
 	var l := find_child("Title", true, false)
 	if l:
 		l.text = t
+		# a long title steps down (never below 26 px) rather than run off the screen; one that fits keeps its size
+		var fs := UIKit.fit_scaled(t, get_viewport_rect().size.x - SIDE * 2 - 170.0, 44, 26)
+		if fs != l.get_theme_font_size("font_size"):
+			l.add_theme_font_size_override("font_size", fs)
 
 func set_hint(text: String) -> void:
 	_hint_entries = []

@@ -137,9 +137,15 @@ static func fit_block(words: Array, box: Control, sizes: Array, sep := 8) -> voi
 			body = size
 			if _block_height(words, w, size, sep, cut) <= box.size.y:
 				break
+	var k := 1.0  # at Largest the nominal sizes stop at 27 px: past them the words scale down together, to 18 px
+	if largest() and _block_height(words, w, body, sep, cut) > box.size.y:
+		for kk in [0.88, 0.78, 0.7, 0.62, 0.55]:
+			k = kk
+			if _block_height(words, w, body, sep, cut, k) <= box.size.y:
+				break
 	for e in words:
 		if is_instance_valid(e[0]):
-			e[0].add_theme_font_size_override("font_size", sized(body + e[1]))
+			e[0].add_theme_font_size_override("font_size", maxi(MIN_TEXT, roundi(sized(body + e[1]) * k)))
 			e[0].visible = _tier(e) < cut or _tier(e) == 0
 	if box is ScrollContainer:
 		_recheck_bar.call_deferred(weakref(box))
@@ -160,13 +166,13 @@ static func _tier(e: Array) -> int:
 		return 0
 	return int(e[2]) if e[2] is int else (1 if e[2] else 0)
 
-static func _block_height(words: Array, w: float, size: int, sep: int, cut: int) -> float:
+static func _block_height(words: Array, w: float, size: int, sep: int, cut: int, k := 1.0) -> float:
 	var f: Font = font()
 	var h := -float(sep)
 	for e in words:
 		if _tier(e) >= cut and _tier(e) > 0:
 			continue
-		var fs: int = sized(size + e[1])
+		var fs: int = maxi(MIN_TEXT, roundi(sized(size + e[1]) * k))
 		var tall := f.get_multiline_string_size(e[0].text, HORIZONTAL_ALIGNMENT_LEFT, w, fs).y
 		var lines := maxi(1, roundi(tall / f.get_height(fs)))
 		h += tall + (lines - 1) * 3 + sep + 2  # the theme's line spacing, and a shadow pixel or two

@@ -156,6 +156,10 @@ func _show_card() -> void:
 	side.add_child(_go_btn)
 	if not _card.get("novice", false):
 		side.add_child(make_button("Skip to the next race", _skip_race, sw))
+	if UIKit.largest():  # the side column's buttons give the slip its room
+		for sb in side.get_children():
+			if sb is Button:
+				sb.add_theme_font_size_override("font_size", 22)
 	_slip_l = UIKit.label("", 20, UIKit.CREAM)
 	_slip_l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	side.add_child(_slip_l)
@@ -245,7 +249,7 @@ func _refresh_card() -> void:
 func _fit_side() -> void:
 	await get_tree().process_frame
 	if is_instance_valid(_detail) and _detail.get_parent() is VBoxContainer:
-		UIKit.fit_column(_detail.get_parent(), content.size.y)
+		UIKit.fit_column(_detail.get_parent(), content.size.y - 14.0)
 
 func _bar(label: String, frac: float) -> Control:
 	var h := HBoxContainer.new()
