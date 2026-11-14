@@ -15,12 +15,12 @@
   {
    "do": "say",
    "who": "Airship Volunteer",
-   "text": "The R101 was the biggest flying thing in the world. It was nearly as long as the Titanic. It carried fifty-odd people out over France in bad weather, and that was the last we ever knew of her."
+   "text": "The R101 was the biggest flying thing in the world, close to the length of the Titanic. She carried fifty-four people out over France in bad weather, and she never got past Beauvais."
   },
   {
    "do": "say",
    "who": "Airship Volunteer",
-   "text": "We were so proud of her. Then, in a field near Beauvais, we had a funeral."
+   "text": "We were so proud of her. The funeral was here at Cardington, and the whole country stood still for it."
   }
  ],
  "vl_pilgrim": [
@@ -32,7 +32,7 @@
   {
    "do": "say",
    "who": "Meeting House Guide",
-   "text": "Pilgrim's Progress. Christian, a heavy pack, a long road. You can see why he'd be a Varsity Line man."
+   "text": "Pilgrim's Progress. Christian, a heavy pack, a long road. He would have known a delayed train when he saw one."
   }
  ],
  "vl_codebreaker": [
