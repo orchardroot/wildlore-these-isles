@@ -611,7 +611,7 @@
   },
   "west": {
    "to": "offas_dyke",
-   "offset": 16
+   "offset": -17
   }
  },
  "npcs": [

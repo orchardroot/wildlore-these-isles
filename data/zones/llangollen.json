@@ -11,6 +11,10 @@
   "south": {
    "to": "llyn_tegid",
    "offset": 0
+  },
+  "north": {
+   "to": "offas_dyke",
+   "offset": 6
   }
  },
  "encounters": {
@@ -890,9 +894,9 @@
  ],
  "region": "north_wales",
  "rows": [
-  "PPPPPPPPPPPPPTPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
-  "PPTPPPPPPPPPPPPPPTPPPPPPPPPPPPPPPPPPTPPPPPPPPPPPPPPPPPPPPPPPPPPP",
-  "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPTPPPPPPPPPPPPPPPPPPPPPPPP",
+  "PPPPPPPPPPPPPTPPPPPPPPPPP###PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+  "PPTPPPPPPPPPPPPPPTPPPPPPP###PPPPPPPPTPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+  "PPPPPPPPPPPPPPPPPPPPPPPPP###PPPPPPPPPPPTPPPPPPPPPPPPPPPPPPPPPPPP",
   "PPPssssssssssssssssssssssssssssssssssssssssssssssssssssssssssPPP",
   "PPP~~~~~~~~~~~~~~~~~~~~W====W~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PPP",
   "PPP~~~~~~~~~~~~~~~~~~~~W====W~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PPP",

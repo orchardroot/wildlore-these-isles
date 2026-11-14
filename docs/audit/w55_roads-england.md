@@ -48,7 +48,7 @@ entries per zone (16 to 20 here), four or five trainers each (50 in all), three 
 | 7 | `cranborne_chase` | Wessex Ridgeway: Badbury Rings, Knowlton, Pitt Rivers | Stonehenge (south) to Poole (north) | Wardens until `badge_spirit` |
 | 8 | `varsity_line` | Varsity Line: Cardington sheds, Bunyan, Sandy | Bletchley Park (east) to Cambridge (west) | none |
 | 9 | `romney_marsh` | Cinque Ports coast: Hastings, Rye, military canal, Dungeness | Brighton (east) to Dover (west) | Wardens until `moot_won` |
-| 10 | `offas_dyke` | Offa's Dyke Path: Welshpool, Chirk, Pontcysyllte | Shrewsbury (west) to Llangollen (south), England to Wales | none, both open at `badge_urban` |
+| 10 | `offas_dyke` | Offa's Dyke Path: Welshpool, Chirk, Pontcysyllte | Shrewsbury (west) to Llangollen (north), England to Wales | none, both open at `badge_urban` |
 
 Gated routes use the same flags as the existing gates between the same places (`sheffield_warden` is the model: still
 `warden_grunt` NPCs with `hide_if`, in a gap in a hedge bank that runs right across the zone, so nothing can walk round).
@@ -57,7 +57,7 @@ The gate NPCs are `bc_gate_*`, `cc_gate_*`, `rm_gate_*`.
 How to reach them in play: walk off the named side of the named town or route. Haworth west, Blackpool east,
 Lake District east, North York Moors west, Hull south, Lincoln north, Carlisle east and north, Hadrian's Wall west,
 Scottish Borders south, Ironbridge Gorge east, Birmingham west, Stonehenge south, Poole north, Bletchley Park east,
-Cambridge west, Brighton east, Dover west, Shrewsbury west, Llangollen south.
+Cambridge west, Brighton east, Dover west, Shrewsbury west, Llangollen north.
 
 ## Proof that nothing opens early
 
@@ -89,7 +89,7 @@ the table, and the zone builds.
 * Three tests asserted that Haworth, Blackpool and Poole were dead ends; each now allows the new edge:
   `tests/world/test_pennines.gd`, `tests/world/test_lancashire.gd`, `tests/world/test_channel_islands.gd`.
 * Border crossings necessarily touch two other nations' zones: the south edge of `scottish_borders` (Scotland) and the
-  south edge of `llangollen` (Wales). Neighbouring sessions should treat those two sides as taken. `beacons` north
+  north edge of `llangollen` (Wales; its south is the Bala road, `llyn_tegid`). Neighbouring sessions should treat those two sides as taken. `beacons` north
   turned out to be a lease edge (`hafod_hill_farm`), so Offa's Dyke does not go there.
 
 Generators: `tools/zones/w55e_<road>.py` each, `w55_lib.py` shared, `w55_plan.py` (dry run of where a gap would go),

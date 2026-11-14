@@ -432,7 +432,7 @@
    "zone": "offas_dyke",
    "near": [
     42,
-    20
+    39
    ],
    "kind": "stone",
    "at": "offas_dyke",
@@ -447,7 +447,7 @@
    "zone": "offas_dyke",
    "near": [
     46,
-    54
+    5
    ],
    "kind": "cache",
    "at": "offas_dyke",
@@ -459,7 +459,7 @@
    "zone": "offas_dyke",
    "near": [
     6,
-    52
+    7
    ],
    "kind": "den",
    "at": "offas_dyke",
