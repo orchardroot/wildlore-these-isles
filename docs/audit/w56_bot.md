@@ -22,3 +22,17 @@
 ## Not a bug
 `no route from liverpool to wirral_way` in `from` runs is a gate: Wardens stand on Liverpool's south edge (26..28, 55)
 until the Liverpool beat is done. The grind-zone picker counts hops ignoring gates, so it soft-fails and picks again.
+
+## Also fixed
+- from-mode saves skipped the Geevor scene that posts the ferry ticket, so `holyhead/hh_sailor` could never sail:
+  `_build_state_at` now sets the flag and gives the item once `ashcombe2_done` is behind it.
+- `_plan` returns no route at once when the goal is across the sea (not in the gate-blind hop graph); proving it used
+  to flood the whole map for about 4 seconds, four times per attempt.
+
+## Proof
+- `tools/playtest.sh from manc_bikes/bev+2 2`: PASS, no `blocked repeatedly`, no `slow route`.
+- `from cardiff/kit+2`, `from holyhead/hh_sailor+2`, `from stonehenge/kit+1`: PASS. (`from edinburgh/kit+2` passes its
+  beats but flags a soft-lock because a from-save has no `station_*` flags, so after a whiteout the bot cannot rail home.)
+- GitHub full story, run 43640277475 on w56-bot: PLAYTEST PASS, 31h53m game time, 699 s wall. Only soft notes remain:
+  gated training zones ("no route", expected) and `blocked repeatedly at (1, 16) in lake_district heading up` (3x).
+- `tools/test.sh poi` 0 failed, `tools/test.sh w55_` 0 failed, `validate: 0 error(s)`.
