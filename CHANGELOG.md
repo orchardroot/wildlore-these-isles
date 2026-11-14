@@ -2,6 +2,36 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.4.0: Off the Beaten Track
+
+- **The cat.** The bowl in Mum's kitchen finally has an owner. She is small, black and fast, she went up on the moor
+  the night the stones hummed, and she joins you on the Cat and Fiddle road with your starter (the family calls her
+  Meadow, unless you say otherwise). Sootkit, then Grimalkin, then Cat-Sìth: a line nobody else in the Isles has.
+  Nine Lives once a battle. She can't be released, and when she isn't with you she is at home by her bowl. If you
+  are already out in the world, there is a note from Mum.
+- **Take the coracle.** With the second Stone every river and lake can be paddled, not only the marked crossings,
+  and the Tide Stone opens the sea near the shore: 179 of the 202 outdoor places now have water you can cross. A
+  proper tarred coracle with a paddle; a water or flying creature at the front of your party swims or flies
+  alongside. Sixty-six things to find out there: crates, lobster pots, caches on islets, and messages in bottles.
+- **What beats what.** Every move says how it will land, in words and arrows, from the first meeting. Both
+  creatures' types are on screen. The switch menu says who suits the fight. The Fieldbook and Summary list what a
+  creature is weak to and resists, and there is a type chart in the Almanac, the pause menu and (Menu) in battle.
+- **New places are a moment.** A card, a harp, a running tally (of 217), and a little something for the whole party.
+  The map names the neighbours you haven't reached and rings what people have told you about.
+- **Legends are hunted.** Twenty-nine legends each have a rumour told by someone local; hear it and the Fieldbook
+  swaps "somewhere secret" for a clue.
+- **The Atlas.** How much of each region you have really seen, with a stamp at half and at all of it.
+- **Your creature notices things**: a gold "!" near something unfound off the road, and it now comes indoors with
+  you and curls up by the fire.
+- **A livelier world.** The creature you see in the grass is the one that leaps out. People walk the streets of
+  nearly every town, put up umbrellas in the rain, and show when they have something for you. Grass parts round
+  your feet, the shallows ripple, sand and frost take prints. Sit on a bench and watch the evening come in.
+- **Things to hear.** Pubs, churches, shops and homes each sound like themselves; fires crackle and clocks tick as
+  you pass; towns have a night; there is thunder; fog and frost hush everything; cathedral bells strike the hour.
+  Four new tunes for rooms that were silent. A soft text blip (Settings, if you'd rather not).
+- **Sky and season.** Stars and the moon in its real phase, and grass that turns with the year.
+- "Saved" no longer flashes at every door. A long race name no longer pushes the betting slip off the screen.
+
 ## 5.3.1: Round at Mum's
 
 - **Friends come to tea.** Win a Regular all the way to favour 5 and, next time you go home, they are sitting in
