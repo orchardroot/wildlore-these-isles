@@ -43,7 +43,7 @@
     "The new lifeboat house is open, {player}. The crew say thank you. The crew's cook says it twice and means it more."
    ],
    "opened": "The new lifeboat house is open on the quay, and the crew have already got the kettle on.",
-   "plaque": "This lifeboat house was rebuilt by {player}, who was not asked to and did anyway.",
+   "plaque": "This lifeboat house was rebuilt by {player}, who was asked nicely and needed no second asking.",
    "effects": {
     "standing": 8,
     "item": "parkin",
@@ -658,7 +658,7 @@
    "change": "Finished, the boats work all year with fresher fish, and a rough week costs them less. Your name goes on the pier.",
    "ask": [
     "The ice machine broke again, {player}, and the fish don't wait for the engineer. We've had it in bits since the spring.",
-    "A new plant and a slipway to haul out on, and we'd have a harbour that's the equal of any. It'd take a few of those pound notes you have."
+    "A new plant and a slipway to haul out on, and we'd have a harbour that's the equal of any. It'd take a few of those notes you have."
    ],
    "progress": [
     "The pier's full of diggers and men with coffee. They tell me the slipway will be a thing of beauty."

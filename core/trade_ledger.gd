@@ -145,10 +145,10 @@ static func _event_what(e: Dictionary) -> String:
 		s = ", ".join(names.slice(0, 2)) + " and more"
 	match str(e.kind):
 		"glut":
-			return "%s cheap" % s
+			return "pays less for %s" % s
 		"widen":
 			return "price gaps wider"
-	return "%s dear" % s
+	return "pays more for %s" % s
 
 ## The page's rows [label, value], never empty. Section headings have an empty value.
 static func rows(data: GameStateData) -> Array:
