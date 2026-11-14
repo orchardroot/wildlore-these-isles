@@ -182,6 +182,18 @@ func test_fees_are_modest_and_haggling_needs_a_town_that_knows_you() -> void:
 		var jobs := Jobs.money_for({"pay": 1}, int(cc.badges))
 		assert_true(Contracts.base_fee(cc) <= 5 * jobs, "%s pays no more than five jobs" % cc.id)
 
+func test_the_report_fee_reads_the_groups_the_choice_moved() -> void:
+	var ch := {"repute": {"wardens": 3, "miners": 1}}
+	var d := GameStateData.new()
+	assert_near(Contracts.ending_nudge(d, ch), 1.0)
+	d.set_flag("ct_rep_wardens", 4)
+	d.set_flag("ct_rep_miners", 4)
+	assert_near(Contracts.ending_nudge(d, ch), 1.0 + Contracts.REPUTE_STEP * 4.0)
+	d.set_flag("ct_rep_wardens", -4)
+	d.set_flag("ct_rep_miners", -4)
+	assert_near(Contracts.ending_nudge(d, ch), 1.0 - Contracts.REPUTE_STEP * 4.0)
+	assert_near(Contracts.ending_nudge(d, {}), 1.0, 0.0001)
+
 func test_it_cannot_be_taken_before_the_badges() -> void:
 	var c := Contracts.get_contract("mink")
 	var d := GameStateData.new()

@@ -150,6 +150,17 @@ static func offer_fee(data: GameStateData, c: Dictionary) -> int:
 	var r := clampi(repute(data, str(c.get("group", ""))), -REPUTE_CAP, REPUTE_CAP)
 	return int(round(base_fee(c) * (1.0 + REPUTE_STEP * r) / 10.0)) * 10
 
+## The fee's nudge at the report: the mean repute of the two groups the chosen option moved, so what you did to
+## the wardens or the miners is worth something at the counter, not only a number in the Journal.
+static func ending_nudge(data: GameStateData, ch: Dictionary) -> float:
+	var groups: Dictionary = ch.get("repute", {})
+	if groups.is_empty():
+		return 1.0
+	var sum := 0
+	for g in groups:
+		sum += clampi(repute(data, str(g)), -REPUTE_CAP, REPUTE_CAP)
+	return 1.0 + REPUTE_STEP * float(sum) / float(groups.size())
+
 ## The haggle on offer: a share on top of the fee, 0 until the town (the poster's nation) counts you a Regular.
 static func haggle_share(data: GameStateData, c: Dictionary) -> float:
 	return float(HAGGLE.get(Standing.tier(data, str(c.get("nation", ""))), 0.0))
@@ -330,7 +341,7 @@ static func report(data: GameStateData, id: String, zone_id: String) -> Dictiona
 		return {"ok": false}
 	var ch := ending(data, c)
 	data.set_flag(flag(id, "state"), CLOSED)
-	var amount := int(round(fee(data, id) * float(ch.get("fee", 1.0)) / 10.0)) * 10
+	var amount := int(round(fee(data, id) * float(ch.get("fee", 1.0)) * ending_nudge(data, ch) / 10.0)) * 10
 	var paid := {"amount": 0, "cur": Wallet.GBP}
 	if amount > 0:
 		paid = Wallet.earn_here(data, amount, zone_id)
@@ -353,7 +364,7 @@ static func fees_through(badges: int) -> float:
 		var best := 0.0
 		for ch in c.get("choices", []):
 			best = maxf(best, float(ch.get("fee", 1.0)))
-		t += float(base_fee(c)) * (1.0 + float(HAGGLE[2])) * best
+		t += float(base_fee(c)) * (1.0 + float(HAGGLE[2])) * best * (1.0 + REPUTE_STEP * REPUTE_CAP) * (1.0 + REPUTE_STEP * REPUTE_CAP)
 	return t
 
 static func fees_total() -> float:
