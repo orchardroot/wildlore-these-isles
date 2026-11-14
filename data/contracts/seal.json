@@ -1,0 +1,185 @@
+{
+ "id": "seal",
+ "title": "Who Is Eating the Salmon",
+ "town": "thurso",
+ "nation": "scotland",
+ "group": "fishers",
+ "badges": 10,
+ "pay": 5,
+ "poster": {
+  "name": "Hamish Sutherland",
+  "role": "runs the salmon fishery at the river mouth",
+  "idle": [
+   "Tides wait for no man, and neither do I. Come back when you've got the full set of Stones in your pocket and I'll talk to you about the fish."
+  ],
+  "taken": [
+   "Well? Eight salmon this week, every one of them eaten from the belly and left in the net like a half-finished sandwich. I know who it is. I just want to hear somebody else say it."
+  ],
+  "decided": [
+   "I can smell the sea on you. Come in. What did you do?"
+  ],
+  "closed": "That's the fishery settled for the season. For this season, mind. The sea doesn't have a calendar.",
+  "haggle": "A haggler from the Lowlands. Or the South. Fair enough. Done."
+ },
+ "notice": [
+  "Salmon coming out of my nets with the bellies bitten out, eight in a week. Last year it was two. The cooperative wants it stopped, and so do I.",
+  "Everybody says seals. The man from the university says not only seals. I'd like somebody who has to climb the rocks to tell me."
+ ],
+ "trouble": [
+  "It's out on the Pentland coast, at the river mouth and along the skerries. Go at dawn on the ebb, when the fish are running and the seals are hauled out.",
+  "They're protected, I know. I'm not asking you to hurt anything. I'm asking you to tell me who to be angry with."
+ ],
+ "hypotheses": [
+  {"id": "seal", "name": "A grey seal, bellying the netted fish", "types": ["tide"]},
+  {"id": "otter", "name": "An otter, up the river", "types": ["brook"]},
+  {"id": "poachers", "name": "Poachers with a better net", "types": ["urban"]}
+ ],
+ "truth": "seal",
+ "clues": [
+  {
+   "id": "bites",
+   "kind": "look",
+   "zone": "pentland_coast",
+   "hint": "the netted fish on the rocks",
+   "text": "The salmon in the net has had a big bite taken out of its belly and nothing else touched. A seal takes only the soft belly of a netted fish and lets the rest hang. An otter would take the head. A poacher would take the lot.",
+   "points": ["seal"],
+   "rules_out": ["poachers"]
+  },
+  {
+   "id": "dawn",
+   "kind": "look",
+   "zone": "pentland_coast",
+   "hint": "the river mouth at dawn",
+   "text": "At first light a big, round, dark head lifts out of the river mouth, whiskered, with large wet eyes and a Roman nose. It looks at you for a very long time, with the calm of an animal that is used to being cursed. Too large for an otter by three times. It dips, and a salmon flips in the net behind you.",
+   "hint_wait": "Grey water and grey sky and nothing coming up. Whoever fishes the nets keeps early hours. Try again at dawn.",
+   "points": ["seal"],
+   "rules_out": ["otter"],
+   "when": {"phase": ["dawn"]}
+  },
+  {
+   "id": "netsman",
+   "kind": "ask",
+   "zone": "pentland_coast",
+   "who": "Net Fisher",
+   "hint": "ask the fisher at the nets",
+   "text": [
+    "Otters. Or poachers. There's always poachers. Maybe both. There's no end to what's after our fish, and none of it pays rates.",
+    "I'll say this. I've never seen a seal in the net, and I've never once seen the thing that bit it. I'm going on what's left."
+   ],
+   "idle": ["Mending. Come back when the net's mended, if it ever is."],
+   "after": "Seals, then. I'd rather it had been poachers. At least you can fine a poacher.",
+   "points": ["otter", "poachers"]
+  },
+  {
+   "id": "biologist",
+   "kind": "ask",
+   "zone": "pentland_coast",
+   "who": "Seal Biologist",
+   "hint": "ask the seal biologist",
+   "text": [
+    "Grey seals, yes. They go after fish in a net because it's easy. A big male eats several kilos a day. But the salmon were in trouble long before the seals got clever.",
+    "Rivers warming, young fish lost at sea, fewer fish coming home every year. I say this at every meeting, and every meeting gives me a look."
+   ],
+   "idle": ["Counting pups. They're white and absurd and I should not be allowed to say that."],
+   "after": "However it falls out, the real trouble is out at sea, and no net or gun can reach it.",
+   "points": ["seal"]
+  }
+ ],
+ "lair": {
+  "zone": "pentland_coast",
+  "name": "Auld Willie",
+  "species": "greyhaul",
+  "level": 91,
+  "floor_par": 88,
+  "intro": [
+   "A flat rock at the river mouth, wet and black, with the tide going out around it. A great bull grey seal lies on it like a dropped sack of coal, scarred across the neck and the muzzle, with a salmon beside him that he is clearly saving for later.",
+   "Hamish calls him Auld Willie. Willie lifts his head as you come, looks you up and down with a long, blank, whiskery stare, and settles again. He has seen more of the world than you have, and does not intend to discuss it."
+  ],
+  "beaten": [
+   "Auld Willie hauls himself half off the rock, flippers splayed, huge and offended, and gives a long, bubbling groan. It is the sound of a very old seal being treated like a nuisance."
+  ]
+ },
+ "choices": [
+  {
+   "id": "scarer",
+   "label": "Fit an acoustic scarer at the nets",
+   "say": [
+    "The scarer goes on a post at the river mouth, a box that sends out a pulse of sound the fish do not seem to mind and a seal cannot stand. The nets come up full. Auld Willie moves along the coast.",
+    "The biologist is silent for a long time. She says a scarer's noise carries a long way under water, and she does not like to think who else is listening."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_seal_scarer": true, "ct_seal_nets_full": true},
+   "repute": {"fishers": 2, "wardens": -2},
+   "standing": {"scotland": 2},
+   "poster": ["Full nets, and a seal that's gone to be somebody else's problem. It works. I know it's not clean. Here's your fee, and the best smoked salmon in Caithness."],
+   "after": ["Nets come up full, and it's quiet in the water. The biologist says it's too quiet. I say she'd say that."],
+   "journal": "You fitted an acoustic scarer at the nets. The salmon are safe, Auld Willie has gone down the coast, and the biologist worries about the dolphins and porpoises that can hear it."
+  },
+  {
+   "id": "truth",
+   "label": "Tell the fishery the seals are not the whole story",
+   "say": [
+    "You stand up in the fishery hut with a flask and a biologist and a chart, and you explain the salmon. It takes an hour. Nobody wants it to be the sea warming, or rivers, or the fish lost out in the ocean, because there is nothing a netsman can do about those.",
+    "Hamish sits through it with his arms folded and says nothing at all, and goes out at the end of the evening to look at the nets."
+   ],
+   "fee": 0.6,
+   "flags": {"ct_seal_truth": true, "ct_seal_willie": true},
+   "repute": {"wardens": 3, "fishers": -2},
+   "standing": {"scotland": 1},
+   "poster": ["So it's the sea, and the rivers, and everything I can't touch. I'd rather it had been the seal. At least I could shout at a seal. Sixty per cent, and I'll thank you in a year."],
+   "after": ["Willie's still at the river mouth. The fish are still scarce. I've stopped shouting at him. I don't know whether that's progress."],
+   "journal": "You told the fishery that the seals were not the whole story. Hamish took it badly, and Auld Willie is still on his rock, and the salmon are as scarce as before."
+  },
+  {
+   "id": "net",
+   "label": "Rebuild the nets so a seal cannot reach them, and share the cost",
+   "say": [
+    "It takes a month and the fishery's last spare money. A tighter mesh, a heavier frame and a hoop over the tail of the net so a seal cannot get its head in. The cooperative grumbles. The biologist pays for half of it with a grant she says she had been saving for something else.",
+    "Auld Willie watches the new nets for a week, tries them twice, and goes off to look for flounders."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_seal_netted": true, "ct_seal_nets_full": true},
+   "repute": {"fishers": 1, "wardens": 1},
+   "standing": {"scotland": 1},
+   "poster": ["A better net, and half of it paid by a woman with a chart. I never thought I'd say I was glad of a university. Seventy per cent."],
+   "after": ["New nets. Heavier, tighter and a bit of an eyesore. Willie's still around, tries them every month. They hold."],
+   "journal": "You rebuilt the nets so a seal cannot reach the fish and shared the cost. It was dear and it was dull and it works. Willie still tries them, once a month, for form's sake."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes over Auld Willie, and for one moment the rock is empty, and the river mouth is a very quiet place. Then a vast, indignant bubbling groan comes up from the charm, and it does not stop for some time."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_seal_kept": true, "ct_seal_nets_full": true},
+   "repute": {"fishers": 1, "wardens": -3},
+   "standing": {"scotland": 1},
+   "poster": ["He's in a charm. Auld Willie is in a charm. Thirty years he was at that rock. I feel a bit odd about it, to be honest. Eighty per cent."],
+   "after": ["The rock's empty. The nets are full. I thought I'd be glad."],
+   "journal": "You caught Auld Willie and he complains in your team. The rock is empty, the nets are full, and Hamish has a feeling he cannot name."
+  }
+ ],
+ "real": "Grey seals take salmon from nets because it is easy. They often bite only the soft belly of a netted fish, which is how a net can fill with half-eaten salmon, and a large male eats several kilos a day. Britain holds a large share of the world's grey seals, and they are protected by law. In recent years Scotland has stopped licensing the shooting of seals to protect fisheries. The wild salmon themselves have been falling for decades, mainly from warming rivers and poor survival at sea, and no net or deterrent can fix that. Acoustic scarers can keep seals away but their sound travels a long way under water, and can disturb porpoises and dolphins.",
+ "places": {
+  "poster": {"sprite": "fisherman_north", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "netsman", "sprite": "fisher", "near": [20, 20]},
+   {"clue": "biologist", "sprite": "student", "near": [44, 28]}
+  ],
+  "looks": [
+   {"clue": "bites", "near": [30, 22], "on": "any", "text": ["Salmon nets on the shore, drying. They smell strongly of the sea."]},
+   {"clue": "dawn", "near": [40, 30], "on": "any", "text": ["The river mouth, brown water spreading into green. Quiet, at the moment."]}
+  ],
+  "lair": {"near": [52, 32]},
+  "folk": [
+   {"id": "nets", "zone": "thurso", "near": [20, 20], "sprite": "fisherman_north", "name": "Netsman", "show_if": "ct_seal_nets_full", "says": [
+     ["ct_seal_is_scarer", ["Nets full and the water quiet. The biologist says the quiet's the trouble. I'm choosing not to hear her."]],
+     ["ct_seal_is_caught", ["Auld Willie's gone off in somebody's team, and the nets are full. I keep looking at the rock. It feels wrong to be glad."]]
+    ], "else": ["New nets, tighter, heavier, and a hoop on the end. Willie tries them every month. They hold."]},
+   {"id": "willie", "zone": "thurso", "near": [32, 24], "sprite": "angler", "name": "Angler", "show_if": "ct_seal_willie", "says": [],
+    "else": ["Willie's still on his rock at the river mouth. The fish are still scarce. Hamish has stopped shouting at him, which I take as the first honest thing anybody's said about it."]}
+  ]
+ }
+}

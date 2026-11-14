@@ -57,6 +57,7 @@ func _initialize() -> void:
 	errors.append_array(Regulars.problems(zones, items_db))  # w53: every Regular is a real person in a real place
 	errors.append_array(FamilyCat.problems(dex, zones))  # w54: only her own scenes may produce the family cat's line
 	errors.append_array(RideCheck.problems(zones))  # w54: the coracle never skips a story gate (no_ride rects close the leaks)
+	errors.append_array(Contracts.validate(zones, StoryData.all_dialogue(), dex, items_db))  # w55: notice-board contracts (data/contracts)
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
 	errors.append_array(Letters.errors(zones, items_db))  # papers on tables and their treasure trails

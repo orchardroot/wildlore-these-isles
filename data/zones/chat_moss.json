@@ -1256,6 +1256,78 @@
    "facing": "down",
    "move": "still",
    "trainer": "moss_warden"
+  },
+  {
+   "id": "ct_mink_ted",
+   "sprite": "farmer",
+   "x": 61,
+   "y": 18,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_ted",
+   "name": "Ted Barlow"
+  },
+  {
+   "id": "ct_mink_volunteer",
+   "sprite": "fox_watcher",
+   "x": 40,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_volunteer",
+   "name": "Priya Shah"
+  },
+  {
+   "id": "ct_mink_lair",
+   "sprite": "creature:minkshade",
+   "x": 19,
+   "y": 27,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_lair",
+   "name": "Houdini",
+   "show_if": "ct_mink_state",
+   "hide_if": "ct_mink_end"
+  },
+  {
+   "id": "ct_mink_voles",
+   "sprite": "birdwatcher",
+   "x": 43,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_voles",
+   "name": "Vole Counter",
+   "show_if": "ct_mink_raft"
+  },
+  {
+   "id": "ct_mink_fence",
+   "sprite": "farmer",
+   "x": 58,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_fence",
+   "name": "Neighbour",
+   "show_if": "ct_mink_loose"
+  }
+ ],
+ "examine": [
+  {
+   "x": 18,
+   "y": 23,
+   "text": [
+    "Soft black peat under the willows, pocked with prints. Half of them are the dog's."
+   ],
+   "clue": "mink.tracks"
+  },
+  {
+   "x": 30,
+   "y": 28,
+   "text": [
+    "The bank of the drain. Reeds, quiet water, a feather or two."
+   ],
+   "clue": "mink.dusk"
   }
  ],
  "encounters": {

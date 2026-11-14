@@ -807,5 +807,46 @@
     }
    ]
   }
+ ],
+ "ct_puca_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "puca"
+  }
+ ],
+ "ct_puca_stone": [
+  {
+   "do": "say",
+   "who": "Tour Guide",
+   "text": "There's a stone at the lake now with the old name on it. Poll an Phuca. Tourists take photographs, and the horses won't walk past."
+  }
+ ],
+ "ct_puca_indoors": [
+  {
+   "do": "if",
+   "flag": "ct_puca_is_caught",
+   "then": [
+    {
+     "do": "say",
+     "who": "Stable Hand",
+     "text": "Eilis says somebody put the Pooka in a team. I never thought the day would come when I'd miss it."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Stable Hand",
+     "text": "Horses in by dusk now, and a fence on the shore. Nobody's been thrown. You can feel it watching from the water, though."
+    }
+   ]
+  }
+ ],
+ "ct_puca_lads": [
+  {
+   "do": "say",
+   "who": "Teenager",
+   "text": "Don't talk to me. I've shovelled out the stables four Saturdays running and I never touched the horses."
+  }
  ]
 }

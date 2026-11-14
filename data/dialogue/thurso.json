@@ -202,5 +202,52 @@
    "flag": "landsky_stacks",
    "value": true
   }
+ ],
+ "ct_seal_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "seal"
+  }
+ ],
+ "ct_seal_nets": [
+  {
+   "do": "if",
+   "flag": "ct_seal_is_scarer",
+   "then": [
+    {
+     "do": "say",
+     "who": "Netsman",
+     "text": "Nets full and the water quiet. The biologist says the quiet's the trouble. I'm choosing not to hear her."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_seal_is_caught",
+     "then": [
+      {
+       "do": "say",
+       "who": "Netsman",
+       "text": "Auld Willie's gone off in somebody's team, and the nets are full. I keep looking at the rock. It feels wrong to be glad."
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "Netsman",
+       "text": "New nets, tighter, heavier, and a hoop on the end. Willie tries them every month. They hold."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "ct_seal_willie": [
+  {
+   "do": "say",
+   "who": "Angler",
+   "text": "Willie's still on his rock at the river mouth. The fish are still scarce. Hamish has stopped shouting at him, which I take as the first honest thing anybody's said about it."
+  }
  ]
 }

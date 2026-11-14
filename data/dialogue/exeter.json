@@ -267,5 +267,65 @@
     }
    ]
   }
+ ],
+ "ct_beavers_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "beavers"
+  }
+ ],
+ "ct_beavers_cider": [
+  {
+   "do": "if",
+   "flag": "ct_beavers_is_wire",
+   "then": [
+    {
+     "do": "say",
+     "who": "Cider Seller",
+     "text": "Hockin's cider. The beavers are still in the orchard, and so are his apples. Hockin calls it a tricky settlement."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_beavers_is_stay",
+     "then": [
+      {
+       "do": "say",
+       "who": "Cider Seller",
+       "text": "Hockin's cider, with a little beaver on the label. Walkers love it. He pretends to hate that."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_beavers_is_caught",
+       "then": [
+        {
+         "do": "say",
+         "who": "Cider Seller",
+         "text": "Hockin's cider. He's got a beaver that moved in on its own and a Keeper with another one. He says that's the family."
+        }
+       ],
+       "else": [
+        {
+         "do": "say",
+         "who": "Cider Seller",
+         "text": "Hockin's cider."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "ct_beavers_empty": [
+  {
+   "do": "say",
+   "who": "Angler",
+   "text": "Quiet stretch on the river these days. No dam, no beavers, no frogs. I'm not sure it was an improvement."
+  }
  ]
 }

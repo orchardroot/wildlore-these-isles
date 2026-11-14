@@ -305,6 +305,38 @@
    "times": [
     "night"
    ]
+  },
+  {
+   "id": "ct_bog_poster",
+   "sprite": "farmer",
+   "x": 34,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bog_poster",
+   "name": "Padraig Joyce"
+  },
+  {
+   "id": "ct_bog_turf",
+   "sprite": "farmer",
+   "x": 26,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bog_turf",
+   "name": "Turf Seller",
+   "show_if": "ct_bog_banks"
+  },
+  {
+   "id": "ct_bog_lights",
+   "sprite": "hiker",
+   "x": 34,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bog_lights",
+   "name": "Walker",
+   "show_if": "ct_bog_lights"
   }
  ],
  "props": [

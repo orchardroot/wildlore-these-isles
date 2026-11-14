@@ -393,5 +393,52 @@
    "who": "Librarian",
    "text": "M\u00e0iri Mh\u00f2r nan \u00d2ran is the other one. Big Mary of the Songs. She could not write, so she sang them, and she sang them at the land meetings until the crofters got their Act in 1886. We keep her near the door so she can keep an eye on things."
   }
+ ],
+ "ct_corncrake_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "corncrake"
+  }
+ ],
+ "ct_corncrake_silent": [
+  {
+   "do": "if",
+   "flag": "ct_corncrake_is_caught",
+   "then": [
+    {
+     "do": "say",
+     "who": "Neighbour",
+     "text": "The field's quiet. The Keeper's charm isn't. You can hear it from the road. Crex, crex, crex."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Neighbour",
+     "text": "Not a peep from the bottom field. I haven't slept so well in years. I'd feel guilty, if I weren't so well rested."
+    }
+   ]
+  }
+ ],
+ "ct_corncrake_calls": [
+  {
+   "do": "if",
+   "flag": "ct_corncrake_is_centre",
+   "then": [
+    {
+     "do": "say",
+     "who": "Crofter",
+     "text": "We cut from the middle now, and slowly. It adds a day to the hay and takes a year off my temper. The chicks get away."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Crofter",
+     "text": "Four chicks in the iris by the end of July. The calling goes on all night, and I've learned to love it. I hope the neighbours have, too."
+    }
+   ]
+  }
  ]
 }

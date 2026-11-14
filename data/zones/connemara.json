@@ -665,6 +665,56 @@
    "facing": "right",
    "move": "still",
    "script": "arts_sean_nos_singer"
+  },
+  {
+   "id": "ct_bog_mikey",
+   "sprite": "villager_2",
+   "x": 20,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bog_mikey",
+   "name": "Mikey Joyce"
+  },
+  {
+   "id": "ct_bog_ranger",
+   "sprite": "hiker",
+   "x": 38,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bog_ranger",
+   "name": "Park Ranger"
+  },
+  {
+   "id": "ct_bog_lair",
+   "sprite": "creature:wispet",
+   "x": 50,
+   "y": 32,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bog_lair",
+   "name": "Jack of the Lantern",
+   "show_if": "ct_bog_state",
+   "hide_if": "ct_bog_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 28,
+   "y": 18,
+   "text": [
+    "Black water, brown moss, and a line of old planks just under the surface. A dead sheep, once."
+   ],
+   "clue": "bog.trackway"
+  },
+  {
+   "x": 37,
+   "y": 33,
+   "text": [
+    "The cutting bank. Open peat, a stacked turf, a lot of sky."
+   ],
+   "clue": "bog.light"
   }
  ],
  "encounters": {

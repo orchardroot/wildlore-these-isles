@@ -1,0 +1,185 @@
+{
+ "id": "puca",
+ "title": "The Black Horse at the Lake",
+ "town": "dublin",
+ "nation": "ireland",
+ "group": "farmers",
+ "badges": 6,
+ "pay": 3,
+ "poster": {
+  "name": "Eilis Kavanagh",
+  "role": "owns a riding stable in west Wicklow",
+  "idle": [
+   "I'd love to tell you about my horses, but I can see you're on your way somewhere. Come back when you've been round a few more of the Stones, and I'll tell you about the one that isn't mine."
+  ],
+  "taken": [
+   "Anything yet? A girl was thrown last night, and she says she was not on a horse that she'd ever seen before. She was in the saddle. Then she was in the lake. I need to know what it is."
+  ],
+  "decided": [
+   "I could see the lake in your face when you came in. Tell me what you did."
+  ],
+  "closed": "The horses are calm, and so am I. That's all anyone can ask of a Wicklow winter.",
+  "haggle": "You've been in Ireland long enough to haggle, God help you. Fair enough. Go on."
+ },
+ "notice": [
+  "A black horse turns up in my paddocks after dark and my mares go mad. Fences down, a girl thrown in the lake, hoofprints in the mud that start at the water and don't go anywhere else.",
+  "The guards say it's a stray. The old people say something else. I want to know what it is, and I want to know before the next ride."
+ ],
+ "trouble": [
+  "It's up above the big lake in the Wicklow hills, where the old valley was drowned. The place is called Poll an Phuca on the old maps. I'm told that's the Pooka's Hole.",
+  "I'd rather not be the woman who gives up on a good stable because of a story. I'd rather not be the woman who ignores one either."
+ ],
+ "hypotheses": [
+  {"id": "puca", "name": "A pooka, out of the old waters", "types": ["night", "fae"]},
+  {"id": "stallion", "name": "A stray stallion", "types": ["kin"]},
+  {"id": "lads", "name": "Lads from the village with a sheet and a torch", "types": ["urban"]}
+ ],
+ "truth": "puca",
+ "clues": [
+  {
+   "id": "prints",
+   "kind": "look",
+   "zone": "wicklow",
+   "hint": "the muddy shore of the lake",
+   "text": "Hoofprints in the mud: a horse's, but unshod, and they begin right at the water's edge as though something walked out of the lake. They go up to the paddock and back again. No droppings. A stray would have left plenty.",
+   "points": ["puca"],
+   "rules_out": ["stallion", "lads"]
+  },
+  {
+   "id": "eyes",
+   "kind": "look",
+   "zone": "wicklow",
+   "hint": "the lake shore, watched on a dark night",
+   "text": "You wait by the water with a flask and no light. Something black comes up out of the shallows without a splash, tall as a hunter, with a mane like wet weed and eyes the colour of gold coins. It lowers its head to you very politely, like a horse that wants a rider and has all night.",
+   "hint_wait": "Still water, a bit of mist, and no horse. Whatever comes here does it in the dark of the night.",
+   "points": ["puca"],
+   "when": {"phase": ["night"]}
+  },
+  {
+   "id": "seamus",
+   "kind": "ask",
+   "zone": "wicklow",
+   "who": "Seamus Doyle",
+   "hint": "ask the old farmer up the road",
+   "text": [
+    "The pooka, of course. Wasn't the pool down below hers, before the lake? She's lost her house, so she comes up to the paddocks for her company. I'd say she's lonely.",
+    "And don't be picking the blackberries after Hallowe'en. She spits on them. Every child in Wicklow knows that."
+   ],
+   "idle": ["I'm resting. I've been resting since 1985."],
+   "after": "She's quieter now, God love her. Quiet's all most of us want in the end.",
+   "points": ["puca"]
+  },
+  {
+   "id": "noreen",
+   "kind": "ask",
+   "zone": "wicklow",
+   "who": "Noreen Byrne",
+   "hint": "ask the woman from the village shop",
+   "text": [
+    "There's no pooka. There's two lads from the village and a white sheet and a torch, and they've been told. It's Halloween, and they're sixteen. I'd ground them myself.",
+    "But the girl was thrown into the lake, and I'll admit that part is odd."
+   ],
+   "idle": ["Will you be wanting a paper, or just to stand there?"],
+   "after": "Well, I did say there was something odd about the girl in the lake.",
+   "points": ["lads"]
+  }
+ ],
+ "lair": {
+  "zone": "wicklow",
+  "name": "The Pooka",
+  "species": "pooka",
+  "level": 55,
+  "floor_par": 52,
+  "intro": [
+   "The shore of the lake at the foot of the paddocks. The water is flat and black and very deep, and somewhere under it is the old valley, with its drowned walls and its roads that go nowhere.",
+   "Something tall and dark stands in the shallows, a horse, or a goat, or a hare the size of a pony, and as you watch it can't make up its mind. It speaks to you in a voice like turf smoke."
+  ],
+  "beaten": [
+   "The Pooka folds down into the shallows, a hare one moment and a horse the next, and lies there looking at the sky as though it has been waiting a long time for somebody to be rude to it properly."
+  ]
+ },
+ "choices": [
+  {
+   "id": "stone",
+   "label": "Mark the drowned pool with a stone and leave it be",
+   "say": [
+    "You and Eilis set a rough stone at the shore, with the old name cut into it, in Irish and in English. Seamus brings a blackberry tart from the first of the autumn and leaves it on top, after Hallowe'en, which is nobody's idea of good judgement.",
+    "In the morning the tart has gone. The paddocks are quiet."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_puca_stone": true, "ct_puca_marked": true},
+   "repute": {"townsfolk": 2, "farmers": -1},
+   "standing": {"ireland": 2},
+   "poster": ["A stone, with a name on it, and a tart on top. It's very odd. It's the best idea anyone's had. Eighty per cent, with my thanks."],
+   "after": ["There's a stone at the shore now with the old name on it. The tourists take photographs. The horses won't walk past it, but that's another matter."],
+   "journal": "You marked the drowned pool with a stone and left the Pooka alone. The paddocks are quiet, the old name is back on the shore, and the horses will not walk past it."
+  },
+  {
+   "id": "fence",
+   "label": "Fence the shore and bring the horses in at dusk",
+   "say": [
+    "It is dull, practical work. You and Eilis put up a stout fence along the lakeshore, bring the horses into the stable yard each evening, and stop riding the shoreline altogether.",
+    "The Pooka watches from the shallows, politely and without any expression, and the girls take their lessons in the school instead."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_puca_fenced": true, "ct_puca_indoors": true},
+   "repute": {"farmers": 2, "townsfolk": -1},
+   "standing": {"ireland": 1},
+   "poster": ["That's the whole of it? A fence? I was expecting something with candles. Well. It works. Here's the full fee, and a good lesson to you."],
+   "after": ["Horses in by dusk, fence on the shore. Nobody's been thrown since. Mind, you can feel it looking at us from the water."],
+   "journal": "You fenced the shore and had the horses brought in at dusk. Nobody has been thrown since. The Pooka is still down in the lake, and it is not pleased."
+  },
+  {
+   "id": "lads",
+   "label": "Tell Eilis it was just the village lads",
+   "say": [
+    "It is a small lie and a kind one, and it is somebody else's name. You tell Eilis it was the lads, and Noreen's lads take the blame, a week of sweeping the stables and a lecture that goes on for an hour.",
+    "The Pooka stays where it is. Nobody is thrown again. The lads do not forgive you, and it takes them until Christmas to stop being sixteen about it."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_puca_lads": true, "ct_puca_blamed": true},
+   "repute": {"farmers": 1, "townsfolk": -2},
+   "standing": {"ireland": 1},
+   "poster": ["The lads! I might have known it. I'll have a word with their mothers. Thank you, and here's your full fee."],
+   "after": ["Those Doyle lads are in the stables every Saturday, shovelling. They swear they never touched the horses. Nobody believes them."],
+   "journal": "You told Eilis it was the village lads. They took the blame and a month of sweeping, and the Pooka was left alone. It is the kind of lie that you will remember."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes on the Pooka, who goes in as a hare, as a goat, then as a horse so big it can hardly fit, before it settles on being a very small and offended cat. It looks at you from inside the glass with golden eyes."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_puca_kept": true, "ct_puca_indoors": true},
+   "repute": {"farmers": 1, "townsfolk": -1},
+   "standing": {"ireland": 2},
+   "poster": ["In a charm? The Pooka's in your team? Heaven preserve us. Don't let it out near my horses. Eighty per cent, and a great deal of respect."],
+   "after": ["The lake's very quiet now. Whatever you do, never let the Pooka off the lead. I'm only saying."],
+   "journal": "You caught the Pooka and now travel with it. It changes shape when it is bored, and it is often bored."
+  }
+ ],
+ "real": "The pooka, or puca, is a shape-shifter in Irish folklore: a dark horse with glowing eyes, a goat, a hare or a dog, mischievous rather than evil, and fond of offering a wild ride. Poll an Phuca, the Pooka's Hole, was a pool and waterfall on the River Liffey in Wicklow. It was drowned in the 1940s when the Liffey was dammed to make the Poulaphouca reservoir, which gives Dublin water and the ESB electricity, and the valley of farms went under with it. The pooka's best known rule is that you must not pick blackberries after the first of November, since the pooka has spat on them.",
+ "places": {
+  "poster": {"sprite": "villager_1", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "seamus", "sprite": "farmer", "near": [20, 20]},
+   {"clue": "noreen", "sprite": "villager_6", "near": [40, 26]}
+  ],
+  "looks": [
+   {"clue": "prints", "near": [30, 40], "on": "any", "text": ["Churned mud on the lake shore, trampled by cows and walkers."]},
+   {"clue": "eyes", "near": [36, 36], "on": "any", "text": ["The lake shore in the evening. The water is dead flat."]}
+  ],
+  "lair": {"near": [32, 44]},
+  "folk": [
+   {"id": "stone", "zone": "dublin", "near": [30, 30], "sprite": "villager_5", "name": "Tour Guide", "show_if": "ct_puca_marked", "says": [],
+    "else": ["There's a stone at the lake now with the old name on it. Poll an Phuca. Tourists take photographs, and the horses won't walk past."]},
+   {"id": "indoors", "zone": "dublin", "near": [40, 30], "sprite": "farmer", "name": "Stable Hand", "show_if": "ct_puca_indoors", "says": [
+     ["ct_puca_is_caught", ["Eilis says somebody put the Pooka in a team. I never thought the day would come when I'd miss it."]]
+    ], "else": ["Horses in by dusk now, and a fence on the shore. Nobody's been thrown. You can feel it watching from the water, though."]},
+   {"id": "lads", "zone": "dublin", "near": [26, 36], "sprite": "festival_goer", "name": "Teenager", "show_if": "ct_puca_blamed", "says": [],
+    "else": ["Don't talk to me. I've shovelled out the stables four Saturdays running and I never touched the horses."]}
+  ]
+ }
+}

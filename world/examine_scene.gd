@@ -13,5 +13,14 @@ static func interact(ow: Node, p: Vector2i) -> bool:
 		Audio.sfx("item")
 	if not before and ZoneData.flag_on(Game.data.flag(key)):
 		Bus.flag_changed.emit(key, true)  # a quest step or the Timeline of Invention may want it
-	await ow.say(res.lines)
+	var lines: Array = res.lines
+	if str(ex.get("clue", "")) != "":  # a contract's look-spot: what you work out, at the right hour and in the right weather
+		var sky = ow.get("sky")
+		var look := Contracts.look(Game.data, str(ex.clue), Game.phase(), str(sky.weather) if sky != null else str(Game.data.weather))
+		lines = lines + look.lines
+		if look.new:
+			Audio.sfx("item")
+			lines.append("Journal: a new lead on %s." % str(Contracts.get_contract(str(ex.clue).get_slice(".", 0)).get("title", "the contract")))
+			Bus.flag_changed.emit(Contracts.flag(str(ex.clue).get_slice(".", 0), "clue_" + str(ex.clue).get_slice(".", 1)), true)
+	await ow.say(lines)
 	return true

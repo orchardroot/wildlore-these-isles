@@ -436,5 +436,28 @@
    "flag": "landsky_beavers",
    "value": true
   }
+ ],
+ "ct_beavers_pidgeon": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "beavers",
+   "clue": "pidgeon"
+  }
+ ],
+ "ct_beavers_ranger": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "beavers",
+   "clue": "ranger"
+  }
+ ],
+ "ct_beavers_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "beavers"
+  }
  ]
 }

@@ -95,5 +95,28 @@
    "who": "Singer",
    "text": "In sean-n\u00f3s you hold the last note and let it go when the story is finished, not before. Most of life is the same. Most people let go too early."
   }
+ ],
+ "ct_bog_mikey": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "bog",
+   "clue": "mikey"
+  }
+ ],
+ "ct_bog_ranger": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "bog",
+   "clue": "ranger"
+  }
+ ],
+ "ct_bog_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "bog"
+  }
  ]
 }

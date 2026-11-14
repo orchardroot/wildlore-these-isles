@@ -314,6 +314,8 @@ func _exec(c: Dictionary) -> void:
 			await CasebookTalk.evidence(self, c)  # a clue for the Casebook (story/casebook_talk.gd)
 		"casebook":
 			await CasebookTalk.run(self, c)  # the accusation prompt
+		"contract":
+			await ContractTalk.run(self, c)  # a notice-board contract: the notice, the poster, a witness, the lair
 		"breed":
 			await BreedTalk.run(self, c)  # the farm gate and the lab bench (story/breed_talk.gd)
 		"rewild":

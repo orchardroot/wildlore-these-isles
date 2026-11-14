@@ -1,0 +1,184 @@
+{
+ "id": "bog",
+ "title": "Lights Over the Cutting",
+ "town": "galway",
+ "nation": "ireland",
+ "group": "farmers",
+ "badges": 7,
+ "pay": 3,
+ "poster": {
+  "name": "Padraig Joyce",
+  "role": "turf cutter, out in Connemara",
+  "idle": [
+   "A fine day for the turf, and I've no time for you. Come back with a few more badges and I'll tell you about the lights on my bank."
+  ],
+  "taken": [
+   "Anything yet? Another light last night. Mikey followed it a hundred yards, so he says, and came back with one boot and a very pale face."
+  ],
+  "decided": [
+   "You've a bit of the bog on you. That's good news or bad. Out with it."
+  ],
+  "closed": "That's the bog settled for another season. A bog is never settled, only waiting.",
+  "haggle": "A haggler, and you've not even a cow. Fair enough. Done."
+ },
+ "notice": [
+  "Lights over my cutting every wet night, and my brother nearly lost in a bog hole following one. The tractor won't start when it's about. The cattle won't graze the bank.",
+  "The Park people say it's gas. The old people say it's Jack. I say come and see it yourself, and I'll pay you for the trouble."
+ ],
+ "trouble": [
+  "It's out on the blanket bog in Connemara, where the family has cut turf for four generations. I'm not allowed to cut half of it any more. Don't tell the Park I said it's a grand place.",
+  "I'd like somebody to tell me whether I'm daft, or the bog is."
+ ],
+ "hypotheses": [
+  {"id": "wisp", "name": "A will-o'-the-wisp, Jack of the lantern", "types": ["fae", "spirit"]},
+  {"id": "gas", "name": "Marsh gas, burning on its own", "types": ["bog", "hearth"]},
+  {"id": "thief", "name": "A turf thief with a lamp", "types": ["urban"]}
+ ],
+ "truth": "wisp",
+ "clues": [
+  {
+   "id": "trackway",
+   "kind": "look",
+   "zone": "connemara",
+   "hint": "the bog hole by the old track",
+   "text": "An old bog road of oak planks lies just under the moss, and beside it a bog hole as black as ink. The sphagnum at the edge is torn where someone has been in after something. The footprints leave the safe line and go straight to the water, as if led.",
+   "points": ["wisp", "gas"]
+  },
+  {
+   "id": "light",
+   "kind": "look",
+   "zone": "connemara",
+   "hint": "the cutting, watched on a wet or foggy night",
+   "text": "You wait on the bank in the rain. A pale light hangs a foot over the heather: cold, steady, no smoke, no smell. It drifts away as you step toward it, and stops at exactly the distance where you would follow it. A lamp would shake. Gas would gutter. This does neither, and it waits.",
+   "hint_wait": "Dark, quiet and dry. If there is a light on this bog, it only comes on a wet, foggy night. Try again then.",
+   "points": ["wisp"],
+   "rules_out": ["thief"],
+   "when": {"phase": ["night", "dusk"], "weather": ["rain", "fog"]}
+  },
+  {
+   "id": "mikey",
+   "kind": "ask",
+   "zone": "connemara",
+   "who": "Mikey Joyce",
+   "hint": "ask Padraig's brother",
+   "text": [
+    "It's Jack, so it is. Stingy Jack, that fooled the devil twice and got turned away from heaven and hell alike. He's been wandering the bogs with a coal in a turnip ever since, looking for a place to rest.",
+    "I followed him a hundred yards. I'm very sorry to have been rude."
+   ],
+   "idle": ["I'm not talking about it. I've the one boot, and I'm taking it home."],
+   "after": "He doesn't come to the bank now, or he does and I'm not looking. Either way, I'm sleeping better.",
+   "points": ["wisp"]
+  },
+  {
+   "id": "ranger",
+   "kind": "ask",
+   "zone": "connemara",
+   "who": "Park Ranger",
+   "hint": "ask the park ranger",
+   "text": [
+    "It's gas, most likely. Rotting peat makes methane and a trace of something that catches light, and it can glow over wet ground. That's the best the scientists have for the will-o'-the-wisp.",
+    "Though I'll say this. Gas doesn't hold a distance. Whatever it is, don't follow it off the old track. People have drowned in less than that."
+   ],
+   "idle": ["Counting bog cotton. It's not as exciting as it sounds, or it is, depending on who you ask."],
+   "after": "The old track's marked now. I'd call it progress, whatever it was.",
+   "points": ["gas"]
+  }
+ ],
+ "lair": {
+  "zone": "connemara",
+  "name": "Jack of the Lantern",
+  "species": "wispet",
+  "level": 63,
+  "floor_par": 60,
+  "intro": [
+   "The far end of the cutting, where the old track gives out into brown water and brown moss. The air is very still. A hundred yards off, the ground is a dark, trembling skin over something deep.",
+   "A little pale flame hangs over it, steady as a held breath, and for a second you see a stooped figure beside it with a turnip lantern. Then there is just the flame, and it turns, politely, to look at you."
+  ],
+  "beaten": [
+   "Jack gutters low over the moss, a small cold light that has lost an argument. It does not go out. It waits, as it has always waited, to find out what you are going to do."
+  ]
+ },
+ "choices": [
+  {
+   "id": "cut",
+   "label": "Side with the turf cutters: find safe banks and keep the cutting going",
+   "say": [
+    "You walk the bog with Padraig and mark the safe banks with white stakes, well clear of the holes and the old trackway. The tractor starts. The cattle graze the bank. The lights are seen less often, and never close.",
+    "The Park people send a letter. Padraig reads it out loud, in a very good voice, and puts it on the fire."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_bog_cutting": true, "ct_bog_banks": true},
+   "repute": {"farmers": 2, "wardens": -2},
+   "standing": {"ireland": 2},
+   "poster": ["Safe banks, marked in white, and the tractor starts. That's a good day's work. Here's your money, and a sod of the best for your fire."],
+   "after": ["Turf, dry as a bone. The Park sent a letter, and I put it in the grate. Thank your friend Jack for the light."],
+   "journal": "You marked safe turf banks for the Joyces and the cutting goes on. The Park has sent a letter that nobody has answered."
+  },
+  {
+   "id": "rewet",
+   "label": "Side with the Park: block the drains and let the bog rewet",
+   "say": [
+    "You help the rangers dam the old drains with peat and plastic sheet. Over the next few months the water rises and the moss greens and a hundred small things come back. The cutting bank goes under.",
+    "The lights are seen more often than ever. The Park puts up a board explaining that they are gas. Mikey takes his cap off to it every time he goes by."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_bog_rewet": true, "ct_bog_lights": true},
+   "repute": {"wardens": 2, "farmers": -2},
+   "standing": {"ireland": 1},
+   "poster": ["The bank's under water, the tractor's in the shed and Jack's more popular than ever. Seventy per cent. I'll come round to it, I suppose. In about ten years."],
+   "after": ["The bank's under water and the bog cotton is out for the first time in my life. The lights come every wet night. The Park says they're gas. I say let them."],
+   "journal": "You helped the Park block the drains, and the bog is rewetting. The cutting bank is under water and the lights are seen more often than ever."
+  },
+  {
+   "id": "walk",
+   "label": "Lay a boardwalk on the old track and keep a few banks for the family",
+   "say": [
+    "It takes three weekends, a lorryload of larch planks and half the parish. The boardwalk follows the old oak trackway over the wettest ground, and a single bank is left to the Joyces for hand-cutting, marked and counted.",
+    "Nobody is entirely happy. Everybody is dry. Jack stays where he is, and a few walkers on the boards report a light over the moss, which is exactly what they came for."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_bog_walk": true, "ct_bog_lights": true},
+   "repute": {"farmers": 1, "wardens": 1},
+   "standing": {"ireland": 1},
+   "poster": ["A boardwalk, and one bank for the family, and the Park's blessing. It's a compromise, and I hate it, and it works. Eighty per cent, and tea."],
+   "after": ["Walkers on the boards, a bank for the family, and a light that comes and goes. I'd call it a good year if I were a man who called things good."],
+   "journal": "You laid a boardwalk on the old trackway and kept a bank for the Joyces. Everyone is dry, nobody is quite happy, and the walkers love the lights."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The charm closes over the little flame, which sits inside it like a held breath. For a moment the whole bog is dark, and in the dark Padraig's tractor starts on the first turn of the key."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_bog_kept": true, "ct_bog_banks": true},
+   "repute": {"farmers": 2, "wardens": -3},
+   "standing": {"ireland": 1},
+   "poster": ["You've pocketed Jack. In a charm. The Keepers have no shame at all. The bog's dark, the tractor starts, and God forgive us. Eighty per cent."],
+   "after": ["The bog's very dark without the light. Mikey says you've stolen a bit of history. He's probably right."],
+   "journal": "You caught Jack of the Lantern. The bog is dark now, the tractor starts, and Mikey says you have stolen a piece of history."
+  }
+ ],
+ "real": "Lights over bogs and marshes, called will-o'-the-wisps or jack-o'-lanterns, were blamed for leading travellers astray for centuries. The best scientific guess is that gas from rotting plants, methane with a little phosphine, can glow or flicker over wet ground. In Irish and Scottish folklore the light is Stingy Jack, who tricked the devil and was turned away from heaven and hell, and wanders the bogs with an ember in a hollowed turnip, which is where the carved pumpkin of Halloween comes from. Peat bogs hold the remains of things for thousands of years, including bog bodies, and they store a great deal of carbon. Since 2011 turf cutting has been banned on many protected bogs, with compensation, and it is still a live argument in the west of Ireland. The old trackways, oak planks laid across the wet, were the safe way over.",
+ "places": {
+  "poster": {"sprite": "farmer", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "mikey", "sprite": "villager_2", "near": [20, 20]},
+   {"clue": "ranger", "sprite": "hiker", "near": [40, 24]}
+  ],
+  "looks": [
+   {"clue": "trackway", "near": [30, 20], "on": "any", "text": ["Black water, brown moss, and a line of old planks just under the surface. A dead sheep, once."]},
+   {"clue": "light", "near": [36, 30], "on": "any", "text": ["The cutting bank. Open peat, a stacked turf, a lot of sky."]}
+  ],
+  "lair": {"near": [48, 34]},
+  "folk": [
+   {"id": "turf", "zone": "galway", "near": [26, 24], "sprite": "farmer", "name": "Turf Seller", "show_if": "ct_bog_banks", "says": [
+     ["ct_bog_is_caught", ["Joyce's turf, dry as a bone. They say Padraig's Jack is in somebody's Keeper team. The bog's very quiet. Mikey is not."]]
+    ], "else": ["Joyce's turf, dry as a bone, cut from a bank with white stakes on it. The Park people sent a letter. It went on the fire."]},
+   {"id": "lights", "zone": "galway", "near": [34, 30], "sprite": "hiker", "name": "Walker", "show_if": "ct_bog_lights", "says": [
+     ["ct_bog_is_walk", ["There's a boardwalk now, and a light on the moss at night. I saw it from the planks. I've never been so glad to be scared."]]
+    ], "else": ["The bog's rewetting and there's a board about the lights. It says gas. I say fine, gas. Then I look again."]}
+  ]
+ }
+}

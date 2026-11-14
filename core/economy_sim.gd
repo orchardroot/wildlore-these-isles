@@ -273,6 +273,7 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 	var charms := 0
 	var pannier := false
 	var lumps_paid := 0.0
+	var contracts_paid := 0.0     # notice-board contracts (wave 55): each fee arrives once, when its badge does
 	var deeds_on := strategy in ["deed_rush", "everything"]
 	var trade_on := strategy in ["trader", "everything"]    # cooks, and hauls the dishes to where they are wanted
 	var cook_on := strategy == "cook"                        # cooks and sells where it stands
@@ -291,6 +292,10 @@ static func run(strategy: String, seed_value: int) -> Dictionary:
 		if due > lumps_paid:
 			inc["lumps"] = due - lumps_paid
 			lumps_paid = due
+		var due_contracts := Contracts.fees_through(b)
+		if due_contracts > contracts_paid:
+			inc["contracts"] = due_contracts - contracts_paid
+			contracts_paid = due_contracts
 		if cook_on or trade_on:
 			inc["cooking"] = dish_pay(trade_on)
 		if deeds_on and not tiers.is_empty():

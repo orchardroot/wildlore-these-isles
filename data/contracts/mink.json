@@ -1,0 +1,211 @@
+{
+ "id": "mink",
+ "title": "Something in the Hen House",
+ "town": "manchester",
+ "nation": "england",
+ "group": "farmers",
+ "badges": 2,
+ "pay": 2,
+ "poster": {
+  "name": "Maureen Hulme",
+  "role": "egg round, out on Chat Moss",
+  "idle": [
+   "Eggs, love? I've a bit of bother at home, but you look as if you've got plenty on. Come back when you've got a few more badges and a few more miles on you."
+  ],
+  "taken": [
+   "Found anything? Seven hens, and I've started counting the rest every night like a prison guard. The Moss is flat as a table and I still can't see a thing."
+  ],
+  "decided": [
+   "You've got that look. Go on, then. Tell me what you did."
+  ],
+  "closed": "That's all done with now. The hens send their regards, or they would if they could talk.",
+  "haggle": "You drive a hard bargain for somebody who's never kept a hen. Go on, then. Done."
+ },
+ "notice": [
+  "Seven hens gone since Easter, and always the same. Shed shut at dusk, door still shut in the morning, and a heap of feathers where a hen used to be.",
+  "Fox, says my husband's cousin. Otters, says my sister, who has read a book. I say come and look."
+ ],
+ "trouble": [
+  "A fox makes a mess and carries the bird off. This leaves the bird. Something gets in and out of a shut shed, and I haven't a notion how.",
+  "It's out on Chat Moss, past the drains, west of town. I can't pay much. I'd rather pay something than lose the lot."
+ ],
+ "hypotheses": [
+  {"id": "fox", "name": "A fox", "types": ["kin"]},
+  {"id": "otter", "name": "An otter", "types": ["brook"]},
+  {"id": "mink", "name": "An American mink", "types": ["brook", "night"]}
+ ],
+ "truth": "mink",
+ "clues": [
+  {
+   "id": "tracks",
+   "kind": "look",
+   "zone": "chat_moss",
+   "hint": "prints in the soft ground by the drain",
+   "text": "Prints in the black peat by the drain: five small toes with the claws showing, each print about the size of a 50p. A fox has four toes. Whatever made these goes in and out of the water as often as it goes anywhere.",
+   "points": ["mink", "otter"],
+   "rules_out": ["fox"]
+  },
+  {
+   "id": "dusk",
+   "kind": "look",
+   "zone": "chat_moss",
+   "hint": "the drain bank, watched at dusk or after dark",
+   "text": "You sit still by the drain until the light goes. Something long and dark pours along the bank, chocolate brown with a white patch under its chin. It stops at the shed run, looks straight at you, and carries on. Not a fox. Not an otter: too small, too quick, too rude.",
+   "hint_wait": "Nothing stirs. Whatever works this bank keeps hours. Try again at dusk or after dark.",
+   "points": ["mink"],
+   "when": {"phase": ["dusk", "night"]}
+  },
+  {
+   "id": "ted",
+   "kind": "ask",
+   "zone": "chat_moss",
+   "who": "Ted Barlow",
+   "hint": "hear what Maureen's neighbour makes of it",
+   "text": [
+    "Fox. It's a fox. I've said so from the start. Got in, went berserk, left the lot on the floor. They do that.",
+    "You want a shotgun, not a notebook."
+   ],
+   "idle": ["Fox. It's always a fox, whatever it is."],
+   "after": "Told you it was something. Still say it was a fox the first time.",
+   "points": ["fox"]
+  },
+  {
+   "id": "volunteer",
+   "kind": "ask",
+   "zone": "chat_moss",
+   "who": "Priya Shah",
+   "hint": "ask someone from the Wildlife Trust",
+   "text": [
+    "Hens killed and left, and the shed shut? That's not a fox. A fox takes one and makes a mess getting in.",
+    "Mink go through gaps you'd swear a cat couldn't, kill the lot and leave them. Look at the prints by the drain. Count the toes."
+   ],
+   "idle": ["I'm counting water voles for the Trust. There used to be hundreds on this drain. Don't ask me how many now."],
+   "after": "I check the clay pad on the raft every week now. You can read a ditch like a newspaper, if you know how.",
+   "points": ["mink"],
+   "rules_out": ["fox"]
+  }
+ ],
+ "lair": {
+  "zone": "chat_moss",
+  "name": "Houdini",
+  "species": "minkshade",
+  "level": 25,
+  "floor_par": 22,
+  "intro": [
+   "The far end of the Moss. A drainage culvert, a heap of grey feathers, and a smell like a wet dog and a fishmonger's.",
+   "Something sleek and dark sits up on the bank, a white patch under its chin, and regards you with total composure. Maureen has been calling it Houdini. It has the manner of an animal that has never once been caught."
+  ],
+  "beaten": [
+   "Houdini lies against the culvert with its sides heaving, and glares as though you cheated. A long way off, a hen says something unforgivable."
+  ]
+ },
+ "choices": [
+  {
+   "id": "trap",
+   "label": "Have it trapped and taken off the Moss",
+   "say": [
+    "You help Maureen set a cage trap at the culvert, baited with a tin of sardines. By morning it has Houdini. The Trust volunteer takes the cage away in a van, and does not say where, and does not look at you."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_mink_hens_safe": true, "ct_mink_trapped": true},
+   "repute": {"farmers": 2, "wardens": -1},
+   "standing": {"england": 2},
+   "poster": ["Gone? Properly gone? Oh, thank goodness. Here. Don't tell me where it went."],
+   "after": ["Forty hens again, and not a feather out of place. I check the shed twice a night anyway. Old habits."],
+   "journal": "You had the mink trapped and taken off the Moss. The hens are safe and Maureen sleeps. The Trust thinks you took the quick answer, because the next one will arrive along the canal within a year."
+  },
+  {
+   "id": "fence",
+   "label": "Mink-proof the shed and leave Houdini alone",
+   "say": [
+    "You and Maureen spend a long weekend burying wire a foot deep and patching every board until there's no gap a mink could pass. The bolt on the door would not shame a bank.",
+    "Houdini watches from the ditch bank. It takes three nights to give up on the shed. Then it goes to try the next farm along."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_mink_fenced": true, "ct_mink_loose": true},
+   "repute": {"wardens": 1, "farmers": -1},
+   "standing": {"england": 1},
+   "poster": ["It works. It works! Though I'll tell you what, Ted's lost two at the other end of the lane. He's not speaking to me."],
+   "after": ["The hens are fine. Ted's are another matter. He says it's my fault for building a better shed. I say he can build his own."],
+   "journal": "You mink-proofed the shed and left the mink alone. Maureen's hens are safe. The mink is not, and neither is anybody downstream who has not built a better shed."
+  },
+  {
+   "id": "trust",
+   "label": "Hand it over to the Wildlife Trust's mink scheme",
+   "say": [
+    "Priya is delighted and a little grim about it. The Trust floats a raft on the drain with a clay pad on top, and within a week it is stamped with five-toed prints. After that it is a proper campaign: traps where the prints are, and nowhere else.",
+    "It will take years. Maureen's hens survive on a promise and a very good bolt."
+   ],
+   "fee": 0.5,
+   "flags": {"ct_mink_raft": true, "ct_mink_hens_safe": true},
+   "repute": {"wardens": 2, "farmers": 0},
+   "standing": {"england": 1},
+   "poster": ["The Trust? Well. It's slower than I wanted, and cheaper than I feared. I'll give you half now, and the rest in eggs."],
+   "after": ["The Trust girl comes every Thursday and counts feet. The hens are still alive, so I'm not complaining."],
+   "journal": "You gave the problem to the Wildlife Trust's mink raft scheme. It is slower than a trap, and fairer on every ditch it covers, including the ones nobody has complained about."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "Houdini goes into the charm like water down a drain, and sits in the dark looking smug. Maureen cannot decide whether to be thanked or insulted."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_mink_hens_safe": true, "ct_mink_kept": true},
+   "repute": {"farmers": 1, "wardens": 0},
+   "standing": {"england": 2},
+   "poster": ["It's in your team? In your team. Well, it can't be worse than a hen-house at midnight. Keep it away from my shed."],
+   "after": ["If it ever gets out of that charm, I'm moving to Cheshire."],
+   "journal": "You caught Houdini and now travel with a mink. Maureen's hens are safe. Nobody in Manchester knows what to say to you."
+  }
+ ],
+ "real": "American mink were brought to Britain in the late 1920s for fur farming. Escapes and releases since then have made wild populations along most of our rivers. They kill more than they eat, which is how a mink can empty a shed and leave every bird behind, and they are a big part of why the water vole has almost gone from many waterways. A fox carries a hen off, an otter eats fish. The Wildlife Trusts and others float mink rafts with a clay pad on top, so the traps go where the prints actually are.",
+ "places": {
+  "poster": {"sprite": "villager_3", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "ted", "sprite": "farmer", "near": [60, 18]},
+   {"clue": "volunteer", "sprite": "fox_watcher", "near": [40, 28]}
+  ],
+  "looks": [
+   {"clue": "tracks", "near": [16, 24], "on": "any", "text": ["Soft black peat under the willows, pocked with prints. Half of them are the dog's."]},
+   {"clue": "dusk", "near": [30, 26], "on": "any", "text": ["The bank of the drain. Reeds, quiet water, a feather or two."]}
+  ],
+  "lair": {"near": [20, 25]},
+  "folk": [
+   {
+    "id": "market",
+    "zone": "manchester",
+    "near": [30, 28],
+    "sprite": "shopkeeper",
+    "name": "Egg Seller",
+    "show_if": "ct_mink_hens_safe",
+    "says": [
+     ["ct_mink_is_caught", ["Maureen's eggs, forty to a tray. She says there's a mink in some Keeper's party who used to be the terror of the Moss. I think she's winding me up."]],
+     ["ct_mink_is_trap", ["Maureen's eggs, forty to a tray, and not a feather out of place. She won't say what she did about the mink and I'm not asking."]]
+    ],
+    "else": ["Maureen's eggs, forty to a tray. Her hens are laying, and the shed has a bolt you could use on a bank."]
+   },
+   {
+    "id": "voles",
+    "zone": "chat_moss",
+    "near": [44, 27],
+    "sprite": "birdwatcher",
+    "name": "Vole Counter",
+    "show_if": "ct_mink_raft",
+    "says": [],
+    "else": ["The raft's pad had prints on it by Thursday. The Trust sets traps by them, not by guesswork. Third week running there's been a vole on the bank. A vole! I nearly cried."]
+   },
+   {
+    "id": "fence",
+    "zone": "chat_moss",
+    "near": [58, 20],
+    "sprite": "farmer",
+    "name": "Neighbour",
+    "show_if": "ct_mink_loose",
+    "says": [],
+    "else": ["Maureen's got a shed like a bunker and I've got a mink. Two hens, then three. I'm not speaking to her. I'm also building a better shed."]
+   }
+  ]
+ }
+}

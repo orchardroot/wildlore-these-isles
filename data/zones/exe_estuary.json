@@ -639,6 +639,56 @@
    "facing": "right",
    "move": "still",
    "script": "landsky_beavers"
+  },
+  {
+   "id": "ct_beavers_pidgeon",
+   "sprite": "angler",
+   "x": 19,
+   "y": 21,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_beavers_pidgeon",
+   "name": "Maureen Pidgeon"
+  },
+  {
+   "id": "ct_beavers_ranger",
+   "sprite": "hiker",
+   "x": 46,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_beavers_ranger",
+   "name": "Trust Ranger"
+  },
+  {
+   "id": "ct_beavers_lair",
+   "sprite": "creature:afanc",
+   "x": 32,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_beavers_lair",
+   "name": "Brunel",
+   "show_if": "ct_beavers_state",
+   "hide_if": "ct_beavers_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 32,
+   "y": 28,
+   "text": [
+    "Apple trees, a few of them down, some of them very green still. Somebody has been busy."
+   ],
+   "clue": "beavers.stumps"
+  },
+  {
+   "x": 37,
+   "y": 24,
+   "text": [
+    "The new pond is black and still. The sticks across the stream look almost tidy."
+   ],
+   "clue": "beavers.dusk"
   }
  ],
  "signs": [

@@ -1395,6 +1395,27 @@
    "move": "still",
    "script": "inv_howells",
    "name": "Dr Howells"
+  },
+  {
+   "id": "ct_mink_poster",
+   "sprite": "villager_3",
+   "x": 32,
+   "y": 31,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_poster",
+   "name": "Maureen Hulme"
+  },
+  {
+   "id": "ct_mink_market",
+   "sprite": "shopkeeper",
+   "x": 28,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mink_market",
+   "name": "Egg Seller",
+   "show_if": "ct_mink_hens_safe"
   }
  ],
  "encounters": {

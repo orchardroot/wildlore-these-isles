@@ -291,5 +291,46 @@
    "flag": "q_landsky_drift",
    "value": true
   }
+ ],
+ "ct_bodmin_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "bodmin"
+  }
+ ],
+ "ct_bodmin_towels": [
+  {
+   "do": "say",
+   "who": "Stallholder",
+   "text": "Beast of Bodmin tea towels, three for a tenner. Nobody's seen it in years, and that's very good for trade. Mind, Jory won't buy one."
+  }
+ ],
+ "ct_bodmin_barns": [
+  {
+   "do": "say",
+   "who": "Farmer",
+   "text": "The flocks come in at dusk now. It's a nuisance, but it works. Whatever it was has gone off to bother Somerset."
+  }
+ ],
+ "ct_bodmin_gone": [
+  {
+   "do": "if",
+   "flag": "ct_bodmin_is_caught",
+   "then": [
+    {
+     "do": "say",
+     "who": "Pub Regular",
+     "text": "Somebody caught the Beast of Bodmin, they say, and put it in a team. I told them it was a hoax. I'm wrong, aren't I?"
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Pub Regular",
+     "text": "They took the Beast off in a lorry with the blinds down. The moor's never been so quiet. The pub's never been so empty."
+    }
+   ]
+  }
  ]
 }

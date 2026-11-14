@@ -467,6 +467,49 @@
    "move": "still",
    "script": "case_gerard",
    "name": "Gerard Mullan"
+  },
+  {
+   "id": "ct_giant_poster",
+   "sprite": "villager_3",
+   "x": 22,
+   "y": 13,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_giant_poster",
+   "name": "Colm McAteer"
+  },
+  {
+   "id": "ct_giant_closed",
+   "sprite": "villager_1",
+   "x": 19,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_giant_closed",
+   "name": "Resident",
+   "show_if": "ct_giant_closed"
+  },
+  {
+   "id": "ct_giant_open",
+   "sprite": "festival_goer",
+   "x": 30,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_giant_open",
+   "name": "Night Walker",
+   "show_if": "ct_giant_open"
+  },
+  {
+   "id": "ct_giant_ferry",
+   "sprite": "sailor",
+   "x": 28,
+   "y": 30,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_giant_ferry",
+   "name": "Ferry Hand",
+   "show_if": "ct_giant_gone"
   }
  ],
  "encounters": {
