@@ -125,8 +125,10 @@ func _show_card() -> void:
 	var head := HBoxContainer.new()
 	head.add_theme_constant_override("separation", 16)
 	left.add_child(head)
-	head.add_child(serif(26, UIKit.GOLD, "%s  %s" % [_card.time, _card.name]))
-	head.add_child(UIKit.fill())
+	var title := serif(26, UIKit.GOLD, "%s  %s" % [_card.time, _card.name])
+	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # a long race name wraps rather than widening the card past the betting slip
+	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	head.add_child(title)
 	head.add_child(UIKit.label("%s   Going: %s" % [_card.distance, _card.going.name], 20, UIKit.MUTED))
 	var n: int = _card.runners.size()
 	var terms := UIKit.label("Each-way: %d places at 1/%d the odds.   Form: latest run on the right (F fell, P pulled up)." % [Racing.places_for(n), Racing.place_fraction(n)[1]], 18, UIKit.MUTED)
