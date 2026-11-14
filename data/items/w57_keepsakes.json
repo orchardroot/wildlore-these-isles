@@ -28,5 +28,15 @@
   "battle": false,
   "field": false,
   "desc": "A small bottle of water from the Great Stalactite's drip at Doolin. It is faintly chalky, which is limestone on its way to becoming a stalactite. Leave the real ones alone."
+ },
+ {
+  "id": "w57_bath_soap",
+  "name": "Bar of Soap",
+  "one": "a Bar of Soap",
+  "kind": "key",
+  "price": 0,
+  "battle": false,
+  "field": true,
+  "desc": "Plain soap in waxed paper, sent back up the Severn on request from a town in Bath that asked for it. Please do not send it back."
  }
 ]

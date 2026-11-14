@@ -8,7 +8,7 @@ extends RefCounted
 ##   phone   a phone box passed between midnight and three (hour, to, reach)
 ##   bench   a bench sat on through a whole evening (zone, x, y, start_before, until)
 ##   mum     what Mum says about the cat's name (zone, npc, by_name)
-##   bottle  a message in a bottle that answers another (bottle id, needs: the flag of the first)
+##   bottle  a message in a bottle that answers another (bottle id, needs: the flag of the first, optional give: an item)
 ##   title   the title screen's old key sequence (see feed)
 ## The scenes come back as Commands lists, so they test without a screen; world/eggs_scene.gd plays them. Pure logic:
 ## no autoload names (the validator loads this).
@@ -172,6 +172,9 @@ static func bottle_lines(data: GameStateData, flotsam_id: String) -> Array:
 	for e in of_kind("bottle"):
 		if str(e.bottle) == flotsam_id and data.flag(str(e.needs)) == true:
 			data.set_flag(str(e.flag), true)
+			var give := str(e.get("give", ""))
+			if give != "":  # what the reply says it enclosed
+				data.bag[give] = mini(Bag.MAX_STACK, int(data.bag.get(give, 0)) + 1)
 			return e.lines.duplicate()
 	return []
 
@@ -208,6 +211,8 @@ static func check(zones: Dictionary, items: ItemDB, flotsam_ids: Array, list := 
 				errs.append("egg %s: tile is out of bounds" % id)
 			elif str(e.kind) == "spot" and not zd.warp_at(_tile(e)).is_empty():
 				errs.append("egg %s: tile is on a warp" % id)
+		if str(e.get("give", "")) != "" and not items.has(str(e.give)):
+			errs.append("egg %s: item '%s' does not exist" % [id, e.give])
 		if str(e.get("kind", "")) == "bottle" and str(e.bottle) not in flotsam_ids:
 			errs.append("egg %s: bottle '%s' is not a flotsam find" % [id, e.bottle])
 		var ch: Variant = e.get("choice")

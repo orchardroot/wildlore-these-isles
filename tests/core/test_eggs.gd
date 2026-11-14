@@ -188,6 +188,8 @@ func test_one_bottle_answers_another() -> void:
 	var lines := Eggs.bottle_lines(d, "fl_severn_crossing_1")
 	assert_true(lines.size() > 0 and "soap" in str(lines))
 	assert_true(Eggs.found(d, Eggs.get_egg("bottles")))
+	assert_eq(int(d.bag.get("w57_bath_soap", 0)), 1, "the soap it says it sent")
+	assert_true(ItemDB.load_default().has("w57_bath_soap"))
 
 func test_no_egg_is_named_in_a_menu() -> void:
 	for path in ["res://ui/atlas_screen.gd", "res://ui/pause_menu.gd", "res://core/atlas.gd"]:

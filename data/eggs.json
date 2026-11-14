@@ -158,9 +158,11 @@
   "flag": "egg_bottles",
   "bottle": "fl_severn_crossing_1",
   "needs": "flotsam_bath_1",
+  "give": "w57_bath_soap",
   "lines": [
    "A second slip is folded in behind the first, in a different hand, damp but legible.",
-   "'Re your request for soap: sent. The Avon runs into the Severn, so you may find it. Please do not send it back.'"
+   "'Re your request for soap: sent. It is in the fold of this note. Please do not send it back.'",
+  "And it is: a small bar of soap in waxed paper, a little squashed, tucked into the fold. You keep it."
   ]
  },
  {
