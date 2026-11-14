@@ -2,10 +2,10 @@ class_name Eggs
 extends RefCounted
 ## Easter eggs (wave 56): a few small things nobody is told about. Each is a flag (absent = not found), none is needed for
 ## anything and none is named in a menu. Data: data/eggs.json, an array of {id, kind, flag, ...}; kinds:
-##   spot    a tile in a zone you face and press confirm on (zone, x, y, lines, optional needs "cat_lead" with plain lines,
+##   spot    a tile in a zone you face and press confirm on (zone, x, y, lines, optional needs "cat_party" (or "cat_lead": first in the party) with plain lines,
 ##           optional choice: a small riddle with an item for the right answer, optional done lines once solved)
-##   step    walking about somewhere (grin: zones, phase, steps, needs "cat_lead")
-##   phone   a phone box passed in the first hour after midnight (hour, reach)
+##   step    walking about somewhere (grin: zones, phase, steps, needs "cat_party")
+##   phone   a phone box passed between midnight and three (hour, to, reach)
 ##   bench   a bench sat on through a whole evening (zone, x, y, start_before, until)
 ##   mum     what Mum says about the cat's name (zone, npc, by_name)
 ##   bottle  a message in a bottle that answers another (bottle id, needs: the flag of the first)
@@ -74,6 +74,15 @@ static func _say(lines: Array, data: GameStateData) -> Array:
 static func _tile(e: Dictionary) -> Vector2i:
 	return Vector2i(int(e.get("x", -1)), int(e.get("y", -1)))
 
+## Does the egg's cat condition hold? "cat_party": she is anywhere in the party (5.7); "cat_lead": she is in front.
+static func cat_ok(data: GameStateData, e: Dictionary) -> bool:
+	match str(e.get("needs", "")):
+		"cat_party":
+			return FamilyCat.in_party(data)
+		"cat_lead":
+			return FamilyCat.is_lead(data)
+	return true
+
 # --- spots -------------------------------------------------------------------------------
 
 ## What facing tile `p` in `zone_id` plays: a Commands list, or [] when it is not one of ours.
@@ -84,7 +93,7 @@ static func spot_script(data: GameStateData, zone_id: String, p: Vector2i) -> Ar
 	return []
 
 static func _spot(data: GameStateData, e: Dictionary) -> Array:
-	if str(e.get("needs", "")) == "cat_lead" and not FamilyCat.is_lead(data):
+	if not cat_ok(data, e):
 		return _say(e.get("plain", []), data)
 	if found(data, e) and e.has("done"):
 		return _say(e.done, data)
@@ -110,10 +119,10 @@ static func _wrong(data: GameStateData, ch: Dictionary) -> Array:
 static func step_script(data: GameStateData, zone_id: String, p: Vector2i, props: Array, minute: int, steps: int) -> Array:
 	for e in of_kind("step"):
 		if not found(data, e) and (e.get("zones", []) as Array).has(zone_id) \
-				and FamilyCat.is_lead(data) and GameClock.phase(minute) == str(e.phase) and steps >= int(e.steps):
+				and cat_ok(data, e) and GameClock.phase(minute) == str(e.phase) and steps >= int(e.steps):
 			return _say(e.lines, data) + [{"do": "set", "flag": str(e.flag)}]
 	for e in of_kind("phone"):
-		if not found(data, e) and minute / 60 == int(e.hour) and near_phone_box(props, p, int(e.reach)):
+		if not found(data, e) and minute / 60 >= int(e.hour) and minute / 60 < int(e.get("to", int(e.hour) + 1)) and near_phone_box(props, p, int(e.reach)):
 			return _phone(data, e, minute)
 	return []
 
