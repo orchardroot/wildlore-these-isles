@@ -8,14 +8,14 @@
   {
    "do": "say",
    "who": "Ridge Walker",
-   "text": "Everyone takes a photograph of the Old Man. The Old Man does not mind. He has been photographed more than the Queen."
+   "text": "Everyone takes a photograph of the Old Man. The Old Man does not mind. He has been photographed more than most film stars."
   }
  ],
  "trt_museum": [
   {
    "do": "say",
    "who": "Museum Guide",
-   "text": "The blackhouse here has a peat fire and a bed in the corner for the cow. I would not want to live in one. I would not want it demolished either."
+   "text": "The blackhouse here has a peat fire in the middle and the cow at one end. I would not want to live in one. I would not want it demolished either."
   },
   {
    "do": "say",

@@ -15,12 +15,12 @@
   {
    "do": "say",
    "who": "Broch Guide",
-   "text": "The wall of the broch is hollow, with stairs inside. If you were an Iron Age family, you lived in the wall, and the cattle lived in the middle."
+   "text": "The wall of the broch is hollow, with stairs inside. The stairs and galleries are built into the wall itself, and an Iron Age family and their animals shared the middle."
   },
   {
    "do": "say",
    "who": "Broch Guide",
-   "text": "A thousand years later they were still using it. I always say that is the highest praise a building can get."
+   "text": "Centuries later they were still using it. I always say that is the highest praise a building can get."
   }
  ],
  "uig_chess": [
@@ -32,7 +32,7 @@
   {
    "do": "say",
    "who": "Chess Player",
-   "text": "The pieces were found in a sand dune. A man dug them up in 1831 and took them to Stornoway in a sack. They have not been in the same place since."
+   "text": "The pieces were found in a sand dune. A man dug them up in 1831 and they have been travelling ever since, to Edinburgh, London and back again."
   }
  ],
  "uig_crofter": [
