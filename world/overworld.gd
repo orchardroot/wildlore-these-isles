@@ -387,6 +387,9 @@ func _on_step(p: Vector2i) -> void:
 	player.set_wading(tile in ZoneData.RIDE_TILES)
 	if player.wading and not was_wading:
 		Audio.sfx("splash")
+		var boat := Intros.boat_card(Game.data, tile, Settings.hints)
+		if boat != "":
+			say([boat])
 	elif player.wading:
 		Audio.sfx_at("splash", -15.0, 1.6 + 0.25 * float((p.x + p.y) % 2))  # the paddle dips, softly, the pitch alternating with each stroke
 	if tile == "tall_grass":

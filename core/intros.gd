@@ -32,6 +32,8 @@ const TEXT := {
 	"poi": "Points of interest sit off the road: a den, a camp, a standing stone or a hidden cache. Walk up and have a look.",
 	"field_spot": "A field spot is a small job for a creature with the right party piece: a gap in a wall, a molehill, a glint in the water.",
 	"plaque": "A plaque tells you what happened here. Read one and it goes in the Gazetteer, and enough of them earn a prize.",
+	"coracle": "That is a coracle under you. It crosses any river or lake. Look out for things floating on the water.",
+	"sea": "The Tide Stone takes the coracle onto the sea, but only within a few tiles of land. Further out, it is not for you.",
 	"visitors_book": "Every room you walk into goes in the Visitor's Book. See every room in a town and the tourist board sends a thank-you.",
 }
 ## Menu name (as the Router knows it) to the card it shows.
@@ -52,6 +54,10 @@ static func take(d: GameStateData, id: String, enabled: bool) -> String:
 		return ""
 	d.set_flag(FLAG + id, true)
 	return str(TEXT[id])
+
+## The card for the first time the player paddles onto `tile` (water: the coracle; sea: the Tide Stone), or "".
+static func boat_card(d: GameStateData, tile: String, enabled: bool) -> String:
+	return take(d, "sea" if tile == "sea" else "coracle", enabled) if tile == "water" or tile == "sea" else ""
 
 static func for_menu(d: GameStateData, menu: String, enabled: bool) -> String:
 	return take(d, str(MENUS[menu]), enabled) if MENUS.has(menu) else ""

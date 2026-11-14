@@ -32,3 +32,12 @@ func test_hints_setting_defaults_on() -> void:
 	s.load_settings()
 	assert_true(s.hints)
 	s.free()
+
+func test_boat_cards_once_each_and_only_on_water() -> void:
+	var d := GameStateData.new()
+	assert_eq(Intros.boat_card(d, "grass", true), "")
+	assert_eq(Intros.boat_card(d, "deep_water", true), "")
+	assert_true(Intros.boat_card(d, "water", true).contains("coracle"))
+	assert_eq(Intros.boat_card(d, "water", true), "")
+	assert_true(Intros.boat_card(d, "sea", true).contains("Tide Stone"))
+	assert_eq(Intros.boat_card(d, "sea", true), "")
