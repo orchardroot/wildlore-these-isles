@@ -149,6 +149,11 @@ func _describe(id: String) -> void:
 	var d := UIKit.label(MoveText.describe(info), 22, Color("d8cfb4"))
 	d.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_side.add_child(d)
+	var beats := MoveText.matchup_line(info, Game.chart)  # "Strong against ...", as the summary and battle menus say it
+	if beats != "":
+		var b := UIKit.label(beats, 20, UIKit.MUTED)
+		b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_side.add_child(b)
 
 func _pick_move(id: String) -> void:
 	_new_move = id
