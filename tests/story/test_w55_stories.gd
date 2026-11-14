@@ -43,7 +43,19 @@ func test_later_ripens_after_days_or_a_new_real_date() -> void:
 	d.day_count += 1
 	assert_true(Quests.later(d, "k", 3), "three nights")
 	d.set_flag("k", "2020-01-01@%d@0" % d.day_count)
-	assert_true(Quests.later(d, "k", 99), "a different real date always counts")
+	assert_true(Quests.later(d, "k", 9), "a different real date counts for a short wait")
+	d.set_flag("k", "%s@%d@0" % [Time.get_date_string_from_unix_time(int(Time.get_unix_time_from_system()) - 2 * 86400), d.day_count])
+	assert_true(Quests.later(d, "k", 9), "yesterday's post is here for a short wait")
+	assert_false(Quests.later(d, "k", 99), "but not for a long one")
+	d.set_flag("k", Quests.stamp(d))
+	d.day_count += 29
+	assert_false(Quests.later(d, "k", 30), "a season's post is not here at twenty-nine nights")
+	d.day_count += 1
+	assert_true(Quests.later(d, "k", 30), "thirty nights")
+	d.set_flag("k", "2020-01-01@%d@0" % d.day_count)
+	assert_true(Quests.later(d, "k", 30), "a stamp from long ago (an old save) ripens by the real calendar")
+	d.set_flag("k", "%s@%d@0" % [Time.get_date_string_from_unix_time(int(Time.get_unix_time_from_system()) - 2 * 86400), d.day_count])
+	assert_false(Quests.later(d, "k", 30), "two real days is not a season")
 	d.set_flag("k", true)
 	assert_false(Quests.later(d, "k", 0), "a plain flag is not a stamp")
 
@@ -118,7 +130,7 @@ func test_england_every_branch_finishes_and_arrives_later() -> void:
 		await _talk(h, "nym_moorcock", "w55e_postie")
 		assert_true(_said(h).contains("Nothing for you yet"), "the same night: nothing")
 		assert_eq(Quests.status(h.data, q), Quests.ACTIVE)
-		_sleep(h, 3)
+		_sleep(h, 30)
 		await _talk(h, "nym_moorcock", "w55e_postie")
 		assert_eq(Quests.status(h.data, q), Quests.DONE, "the letter comes")
 		assert_eq(_bag(h, keepsake[i]), 1)
@@ -247,7 +259,7 @@ func _chain_every_branch(c: Dictionary) -> void:
 		assert_true(_present(c.post[0], c.post[1], h.data), "%s/%d: the post is waiting" % [c.id, i])
 		await _talk(h, c.post[0], c.post[1])
 		assert_eq(Quests.status(h.data, q), Quests.ACTIVE, "%s/%d: the same night, nothing" % [c.id, i])
-		_sleep(h, 3)
+		_sleep(h, 30)
 		await _talk(h, c.post[0], c.post[1])
 		assert_eq(Quests.status(h.data, q), Quests.DONE, "%s/%d: the letter comes" % [c.id, i])
 		assert_eq(_bag(h, c.keep[i]), 1)

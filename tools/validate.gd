@@ -52,6 +52,7 @@ func _initialize() -> void:
 	errors.append_array(Rumours.check(zones, dex))  # w54: data/legend_hunts.json, the folklore rumours behind each legend
 	errors.append_array(FieldSpots.check(zones, items_db))  # w48 F: data/field_spots on free tiles beside the path
 	errors.append_array(Flotsam.check(zones, items_db))  # w54: data/flotsam.json finds for the coracle
+	errors.append_array(Eggs.check(zones, items_db, Flotsam.all().map(func(f): return str(f.id))))  # w56: data/eggs.json
 	errors.append_array(FamilyDrawer.check(zones, items_db))  # w53: data/family_drawers.json
 	errors.append_array(Visits.check(zones))  # w53: data/visits return-visit lines for home residents
 	errors.append_array(Wants.check(zones, items_db, dex))  # w47 C: data/trades residents, wants, front-room shops
@@ -62,6 +63,7 @@ func _initialize() -> void:
 	errors.append_array(Contracts.validate(zones, StoryData.all_dialogue(), dex, items_db))  # w55: notice-board contracts (data/contracts)
 	errors.append_array(TownProjects.problems(zones, items_db))  # w55: town projects: real towns, residents, stages, hidden warps
 	errors.append_array(DeedChoices.problems(items_db))  # w55: Deed upgrades, monthly matters and manager temperaments
+	errors.append_array(Secrets.problems(zones, Quests.all_settable(), items_db, dex))  # w56: the fifteen hidden places
 	errors.append_array(Coverage.check(dex, zones))
 	errors.append_array(Coverage.reachability(zones, JsonUtil.read("res://data/ferries.json"), Coverage.script_warp_targets()))
 	errors.append_array(Letters.errors(zones, items_db))  # papers on tables and their treasure trails

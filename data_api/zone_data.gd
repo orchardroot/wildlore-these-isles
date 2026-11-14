@@ -24,6 +24,7 @@ const GATE_NAMES := ["hedge_lay", "brook_wade", "fell_scramble", "bog_cross"]
 const RIDE_TILES := ["water", "sea", "deep_water"]
 const SEA_REACH := 3
 const NO_RIDE := "no_ride"
+const CORACLE_ABILITIES := ["brook_wade", "tide_ride"]  # a warp marked "coracle": true is on the water, reached with both rides
 const GATE_ABILITIES := ["hedge_lay", "brook_wade", "fell_scramble", "bog_cross", "no_ride"]
 ## Track: a level crossing is rail you can walk over. Every line end needs one of RAIL_CAPS (or the map edge).
 const RAIL_TILES := ["rail", "level_crossing"]
@@ -569,9 +570,10 @@ func validate(all: Dictionary) -> Array:
 			var g: String = str(w.get("gate", ""))
 			if g != "" and g not in GATE_NAMES:
 				e.append(tag + "warp at %d,%d has unknown gate '%s'" % [int(w.x), int(w.y), g])
-			if not cache.has(g):
-				cache[g] = reachable(spawn, _gate_set(g))
-			if not cache[g].has(Vector2i(int(w.x), int(w.y))):
+			var key := "coracle" if bool(w.get("coracle", false)) else g  # a hidden place on the water (5.6): reached afloat
+			if not cache.has(key):
+				cache[key] = reachable(spawn, CORACLE_ABILITIES if key == "coracle" else _gate_set(g))
+			if not cache[key].has(Vector2i(int(w.x), int(w.y))):
 				e.append(tag + "can't reach the warp at %d,%d from the spawn%s" % [int(w.x), int(w.y), "" if g == "" else " even with " + g])
 		for side in edges:
 			var g: String = str(edges[side].get("gate", ""))

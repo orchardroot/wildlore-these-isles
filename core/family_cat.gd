@@ -152,6 +152,11 @@ static func join(data: GameStateData, c: Creature, nickname := DEFAULT_NAME) -> 
 	_mirror(data, WITH_YOU, where == "party")
 	return where
 
+## Is she with you and hurt (or out cold)? The one time Mum's offer to keep her by the bowl is worth making.
+static func wants_rest(data: GameStateData) -> bool:
+	var i := party_index(data)
+	return i >= 0 and data.party[i].hp < data.party[i].max_hp()
+
 ## Sends her home to her bowl. "" on success, else why not. The team always keeps someone able to fight.
 static func leave(data: GameStateData) -> String:
 	var i := party_index(data)

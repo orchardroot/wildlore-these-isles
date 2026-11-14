@@ -747,6 +747,17 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 9,
+   "y": 22,
+   "to": "secret_ice_well",
+   "tx": 6,
+   "ty": 6,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_ice_well_known"
+   }
   }
  ],
  "edges": {
@@ -1090,6 +1101,16 @@
    "script": "lon_commonwealth",
    "facing": "down",
    "move": "still"
+  },
+  {
+   "id": "sec_london_boater",
+   "sprite": "canal_boater",
+   "x": 17,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_london_boater",
+   "name": "Canal Boater"
   }
  ],
  "encounters": {
@@ -1443,5 +1464,16 @@
   "TT.................................................===........................TT",
   "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTT",
   "TTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "examine": [
+  {
+   "x": 8,
+   "y": 24,
+   "text": [
+    "Behind a screen of ivy, a low brick arch breathes out a draught as cold as a larder. The brickwork is far older than anything near it.",
+    "Something big, deep and cold is kept down there. Or used to be."
+   ],
+   "flag": "secret_ice_well_known"
+  }
  ]
 }

@@ -317,15 +317,28 @@ func test_home_script_offers_her_and_collects_her() -> void:
 	await _run(h2, "macc_home", "cat")
 	assert_false(FamilyCat.in_party(h2.data), "she'd have said no anyway")
 
-func test_mum_offers_to_keep_her_once_a_day() -> void:
+func test_mum_offers_to_keep_her_when_she_is_hurt() -> void:
 	var d := _with_cat()
 	d.flags["mum_recipes"] = true
 	d.flags["mum_done"] = true
+	d.party[FamilyCat.party_index(d)].hp = 1
+	assert_true(FamilyCat.wants_rest(d))
 	var h := _host(d)
 	h.choices = [1]
 	await _run(h, "macc_home", "mum")
 	assert_false(FamilyCat.in_party(d), "Mum keeps her by the bowl")
 	assert_true(FamilyCat.at_home(d))
+
+func test_mum_does_not_ask_about_a_cat_in_the_pink() -> void:
+	var d := _with_cat()
+	d.flags["mum_recipes"] = true
+	d.flags["mum_done"] = true
+	assert_false(FamilyCat.wants_rest(d))
+	var h := _host(d)
+	h.choices = [1]
+	await _run(h, "macc_home", "mum")
+	assert_true(FamilyCat.in_party(d), "no offer, so she is still with you")
+	assert_eq(d.flag("cat_leave"), null)
 
 func test_first_morning_mum_mentions_the_cat() -> void:
 	var d := _data({})

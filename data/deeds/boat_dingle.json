@@ -172,13 +172,14 @@
   {
    "id": "ice_hold",
    "name": "An ice hold and a cold store",
-   "text": "The catch arrives fresher, and a rough week costs you less.",
+   "text": "The catch arrives fresher, and a rough week costs you less. The ice machine does not run on hope.",
    "cost": 4500,
    "tier": 1,
    "group": "gear",
    "takings": 1.08,
    "shield": 0.25,
-   "carry": 20
+   "carry": 20,
+   "upkeep": 15
   },
   {
    "id": "pier_berth",

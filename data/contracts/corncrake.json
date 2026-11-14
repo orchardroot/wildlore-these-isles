@@ -41,7 +41,10 @@
    "kind": "look",
    "zone": "harris",
    "hint": "the tangle of iris and nettles at the field edge",
-   "text": "At the bottom of the field a bed of yellow flag iris and tall nettles has been left standing, and in the middle of it the stems are flattened into a little bowl lined with dry grass. A bird that nests on the ground in hay, in cover. An owl nests in a tree. A gate does not nest.",
+   "text": [
+    "At the bottom of the field a bed of yellow flag iris and tall nettles has been left standing, and in the middle of it the stems are flattened into a little bowl lined with dry grass.",
+    "A bird that nests on the ground in hay, in cover. An owl nests in a tree. A gate does not nest."
+   ],
    "points": ["corncrake"],
    "rules_out": ["owl", "gate"]
   },
@@ -50,7 +53,10 @@
    "kind": "look",
    "zone": "harris",
    "hint": "the field edge, listened to after dark",
-   "text": "You sit by the dyke in the dusk. From the long grass comes a rasp like a comb drawn over a matchbox: crex-crex, crex-crex, over and over, just as loud from a hundred yards as from ten. It moves about without any trace of the grass moving. You never see it. You hear it for a long, long time.",
+   "text": [
+    "You sit by the dyke in the dusk. From the long grass comes a rasp like a comb drawn over a matchbox: crex-crex, crex-crex, over and over, just as loud from a hundred yards as from ten.",
+    "It moves about without any trace of the grass moving. You never see it. You hear it for a long, long time."
+   ],
    "hint_wait": "Wind in the hay, sheep, and nothing like a call. Whatever shouts in this field does it in the dusk or the dark.",
    "points": ["corncrake"],
    "when": {"phase": ["dusk", "night"]}

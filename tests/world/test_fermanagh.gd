@@ -26,7 +26,8 @@ func test_the_way_west_from_belfast() -> void:
 	assert_eq(str(ln.edges.west.to), "enniskillen")
 	var en := _zone("enniskillen")
 	assert_eq(str(en.edges.east.to), "lough_neagh")
-	assert_eq(en.edges.size(), 1, "Enniskillen is the end of the line: a cul-de-sac")
+	assert_eq(str(en.edges.west.to), "erne_shore")  # w56: the Erne Shore Road on to Donegal Town, shut until the Iron Stone
+	assert_eq(en.edges.size(), 2, "Enniskillen joins only Lough Neagh and the Erne Shore Road")
 	# Belfast's other edges are untouched
 	assert_eq(str(bel.edges.north.to), "antrim_coast")
 	assert_eq(str(bel.edges.south.to), "mournes")

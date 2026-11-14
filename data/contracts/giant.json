@@ -50,7 +50,10 @@
    "kind": "look",
    "zone": "causeway",
    "hint": "the shore at dusk or after dark",
-   "text": "You wait on the rocks as the light goes. Out in the shallows a vast shape wades slowly, up to the knee in a sea that comes only to the shin of a mountain, carrying a six-sided column the way a man carries a fence post. It sets it down, looks at it, nudges it a hand's breadth to the left, and straightens up to look at Scotland.",
+   "text": [
+    "You wait on the rocks as the light goes. Out in the shallows a vast shape wades slowly, up to the knee in a sea that comes only to the shin of a mountain, carrying a six-sided column the way a man carries a fence post.",
+    "It sets it down, looks at it, nudges it a hand's breadth to the left, and straightens up to look at Scotland."
+   ],
    "hint_wait": "Waves, wind and wet rock. Whatever works on this shore does it in the dusk or the dark. Try again then.",
    "points": ["giant"],
    "rules_out": ["visitors"],

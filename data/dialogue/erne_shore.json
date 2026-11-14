@@ -1,0 +1,50 @@
+{
+ "es_potter": [
+  {
+   "do": "say",
+   "who": "Potter",
+   "text": "Parian china. It's fired thin, so you can see the light through the cup. If you drop it, you'll hear the whole parish sigh."
+  },
+  {
+   "do": "say",
+   "who": "Potter",
+   "text": "The basket-weave's the thing. Every piece is rolled by hand, from strips of clay. It's slow, but it's Belleek."
+  }
+ ],
+ "es_hydro_man": [
+  {
+   "do": "say",
+   "who": "Hydro Engineer",
+   "text": "The falls at Assaroe were a sight. When they built the station, a lot of that was gone. Everyone has views on it. I just keep the turbines turning."
+  },
+  {
+   "do": "say",
+   "who": "Hydro Engineer",
+   "text": "Forty years of electricity from the Erne. A lough that makes your tea. That's a good trade."
+  }
+ ],
+ "es_walker": [
+  {
+   "do": "say",
+   "who": "Boardwalk Walker",
+   "text": "Three kilometres of boardwalk, and not one inch of bog harmed. They've done it right. Well. They've done it as right as a boardwalk can be."
+  },
+  {
+   "do": "say",
+   "who": "Boardwalk Walker",
+   "text": "The summit's a plateau, and the wind up there has a plan. I recommend a good hat."
+  }
+ ],
+ "gate_erne_shore": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "Road's closed. Works on the Erne. Very serious works. We've a cone."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The Keeper at the shipyard in Belfast has the say on this road, and he hasn't said it yet. Ask Ruair\u00ed. Past the cranes, the big shed."
+  }
+ ]
+}

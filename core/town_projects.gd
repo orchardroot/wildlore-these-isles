@@ -22,6 +22,8 @@ const PATH := "res://data/town_projects.json"
 const STATE_PREFIX := "tp_"
 const DONE_PREFIX := "project_"
 const ROUND := 50
+## The shapes the home shelf can draw (world/home_extras_meshes.gd).
+const KEEPSAKE_SHAPES := ["stick", "jug", "helmet", "pencil", "bead", "ball", "badge", "coaster", "figure", "ring", "cloth", "tin", "lamp"]
 const FACTOR_LO := 0.45
 const FACTOR_HI := 1.5
 
@@ -214,6 +216,24 @@ static func deed_fx(data: GameStateData, deed_id: String) -> Dictionary:
 					out[k] = float(out.get(k, 0.0)) + float(v)
 	return out
 
+## What the finished projects give this Deed, in words for the Deed screen: ["Lancaster Mill: takings +5%", ...].
+static func deed_lines(data: GameStateData, deed_id: String) -> Array:
+	var out := []
+	var zone := str(Deeds.get_deed(deed_id).get("zone", ""))
+	for p in in_zone(zone):
+		var fx: Variant = p.get("effects", {}).get("deed", {})
+		if not is_done(data, str(p.id)) or not (fx is Dictionary) or not fx.has(deed_id):
+			continue
+		var bits := []
+		var t := float(fx[deed_id].get("takings", 1.0))
+		if t != 1.0:
+			bits.append("takings %s%d%%" % ["+" if t > 1.0 else "-", roundi(absf(t - 1.0) * 100.0)])
+		if float(fx[deed_id].get("shield", 0.0)) > 0.0:
+			bits.append("bad days bite less")
+		if not bits.is_empty():
+			out.append("%s: %s" % [str(p.name), ", ".join(bits)])
+	return out
+
 ## The plaque, with the name on it.
 static func plaque(data: GameStateData, p: Dictionary) -> String:
 	var who := str(state(data, str(p.id)).name)
@@ -282,6 +302,11 @@ static func problems(zones: Dictionary, items: ItemDB) -> Array:
 		var gift := str(p.get("effects", {}).get("item", ""))
 		if gift != "" and not items.has(gift):
 			errs.append(tag + "item '%s' is not an item" % gift)
+		var kp: Variant = p.get("effects", {}).get("keepsake", null)
+		if not (kp is Dictionary) or str(kp.get("name", "")) == "" or str(kp.get("line", "")).length() < 20 or str(kp.get("line", "")).length() > 200:
+			errs.append(tag + "needs a keepsake with a name and a line of colour")
+		elif str(kp.get("shape", "")) not in KEEPSAKE_SHAPES or not str(kp.get("col", "")).is_valid_html_color() or not str(kp.get("col2", "")).is_valid_html_color():
+			errs.append(tag + "keepsake has a shape or colour the shelf cannot draw")
 		var dd: Variant = p.get("effects", {}).get("deed", {})
 		if dd is Dictionary:
 			for did in dd:

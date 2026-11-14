@@ -1,5 +1,5 @@
 {
- "_doc": "Town projects (core/town_projects.gd). Each: id, zone, npc (the resident who speaks for it, in that zone), who (the name their lines are said under), badges (open from this many Stones), cost (sterling at par 60, shared out by the stages' share), name, title, text, stages [{name, share (adds up to 100), days (building time), line}], change (the screen's promise), ask / progress / done (lines the resident adds to their talk), opened (the wireless), plaque ({player}), effects {standing, item (a keepsake), deed {deed id: {takings, shield, ...}}, warps [{x, y}] (hidden warps in the zone that reveal on project_<id>)}. {player} is the player's name.",
+ "_doc": "Town projects (core/town_projects.gd). Each: id, zone, npc (the resident who speaks for it, in that zone), who (the name their lines are said under), badges (open from this many Stones), cost (sterling at par 60, shared out by the stages' share), name, title, text, stages [{name, share (adds up to 100), days (building time), line}], change (the screen's promise), ask / progress / done (lines the resident adds to their talk), opened (the wireless), plaque ({player}), effects {standing, item (a gift), keepsake {name, shape, col, col2, line} (a piece for the home shelf), deed {deed id: {takings, shield, ...}}, warps [{x, y}] (hidden warps in the zone that reveal on project_<id>)}. {player} is the player's name.",
  "projects": [
   {
    "id": "whitby_lifeboat",
@@ -43,7 +43,7 @@
     "The new lifeboat house is open, {player}. The crew say thank you. The crew's cook says it twice and means it more."
    ],
    "opened": "The new lifeboat house is open on the quay, and the crew have already got the kettle on.",
-   "plaque": "This lifeboat house was rebuilt by {player}, who was not asked to and did anyway.",
+   "plaque": "This lifeboat house was rebuilt by {player}, who was asked nicely and needed no second asking.",
    "effects": {
     "standing": 8,
     "item": "parkin",
@@ -51,6 +51,13 @@
      "boat_whitby": {
       "shield": 0.15
      }
+    },
+    "keepsake": {
+     "name": "Whitby Lifeboat Collection Tin",
+     "shape": "tin",
+     "col": "e07020",
+     "col2": "f4f0e0",
+     "line": "A collection tin in lifeboat orange. Whitby's crews launch from the harbour, and half the town turns out to watch them go."
     }
    }
   },
@@ -104,6 +111,13 @@
      "bnb_keswick": {
       "takings": 1.04
      }
+    },
+    "keepsake": {
+     "name": "Keswick Launch Ticket",
+     "shape": "badge",
+     "col": "2f6a8a",
+     "col2": "f0e8c8",
+     "line": "A ticket for the launch round Derwentwater. It goes both ways, clockwise and anticlockwise, and the regulars have opinions about which."
     }
    }
   },
@@ -156,6 +170,13 @@
      "stall_bath": {
       "takings": 1.04
      }
+    },
+    "keepsake": {
+     "name": "Bandstand Baton",
+     "shape": "pencil",
+     "col": "d8c8a0",
+     "col2": "8a6a3a",
+     "line": "A conductor's baton from the bandstand in Bath's Parade Gardens. It was last waved at a waltz and a very attentive pigeon."
     }
    }
   },
@@ -168,7 +189,7 @@
    "cost": 30000,
    "name": "Lancaster Mill",
    "title": "The old mill by the water",
-   "text": "A big brick mill by the water has stood empty since the last of the looms went quiet. Workshops for makers, a cafe that opens before the walkers do and a long barn for the allotment society would give it a second life, and a footbridge would bring the far bank into the town.",
+   "text": "A big brick mill by the water has stood empty since the last of the looms went quiet. Workshops for makers, a cafe that opens before the walkers do and a long barn for the allotment society would give it a second life, and a footbridge, strong enough to wheel a bike over, would join the two banks.",
    "stages": [
     {
      "name": "Roof and windows",
@@ -186,19 +207,19 @@
      "name": "The footbridge",
      "share": 40,
      "days": 8,
-     "line": "A footbridge over the water at the east end of the town, to save everyone the long way round."
+     "line": "A footbridge over the water at the east end of the town, wide enough to wheel a bike across, which no coracle has ever managed."
     }
    ],
-   "change": "Finished, the mill is full, the allotment society has a barn and a footbridge opens over the water at the east end of the town.",
+   "change": "Finished, the mill is full, the allotment society has a barn and a footbridge opens over the water at the east end of the town. Dry feet, and the bike goes over too.",
    "ask": [
     "See the old mill? Forty years empty, and the council would rather knock it down than argue about it. It's a fine building. It's a roof short of being a very fine one.",
-    "Someone with a bit of money and a bit of vision could turn it into workshops, a cafe and a barn for the allotments. And a footbridge, so you'd not have to go round by the road."
+    "Someone with a bit of money and a bit of vision could turn it into workshops, a cafe and a barn for the allotments. And a footbridge, so you could wheel a bicycle over the water instead of carrying it round."
    ],
    "progress": [
     "The mill's full of builders, and the allotment society is measuring up the barn."
    ],
    "done": [
-    "The mill is open, {player}, and so's the footbridge at the east end of town. I've crossed it six times today just to hear the boards."
+    "The mill is open, {player}, and so's the footbridge at the east end of town. I've wheeled my bike over it six times today just to hear the boards."
    ],
    "opened": "The mill is open, with workshops, a cafe and a barn, and a footbridge at the east end of town.",
    "plaque": "The mill was given back to Lancaster by {player}: workshops, a cafe, a barn and a footbridge.",
@@ -219,7 +240,14 @@
       "x": 57,
       "y": 41
      }
-    ]
+    ],
+    "keepsake": {
+     "name": "Mill Bobbin",
+     "shape": "stick",
+     "col": "b89860",
+     "col2": "d8c088",
+     "line": "A wooden bobbin of the sort Lancashire mills got through by the thousand. Lancaster's big names were oilcloth and lino."
+    }
    }
   },
   {
@@ -272,6 +300,13 @@
      "allotment_york": {
       "shield": 0.2
      }
+    },
+    "keepsake": {
+     "name": "Brass Flood Marker",
+     "shape": "coaster",
+     "col": "b89a40",
+     "col2": "6a5a2a",
+     "line": "A brass flood marker. York's pubs on the Ouse keep their old high-water marks on the wall, like a ruler for bad winters."
     }
    }
   },
@@ -319,7 +354,14 @@
    "opened": "The library is open on Saturdays again, and the first story hour has a queue.",
    "plaque": "The Saturday opening was paid for by {player}, so that the doors are open to everyone who works all week.",
    "effects": {
-    "standing": 4
+    "standing": 4,
+    "keepsake": {
+     "name": "Library Ticket",
+     "shape": "badge",
+     "col": "6a2f3a",
+     "col2": "e8e0c0",
+     "line": "A reader's ticket. The Romans called Carlisle Luguvalium, which you now know, and which will come up."
+    }
    }
   },
   {
@@ -367,7 +409,14 @@
    "plaque": "The pool was mended by {player}, and the sea has been told.",
    "effects": {
     "standing": 7,
-    "item": "pasty"
+    "item": "pasty",
+    "keepsake": {
+     "name": "Jubilee Pool Badge",
+     "shape": "badge",
+     "col": "3a8aa0",
+     "col2": "f0f0e8",
+     "line": "A cloth badge from the Jubilee Pool, Penzance's art deco seawater lido, opened in 1935 and still filled by the sea."
+    }
    }
   },
   {
@@ -420,6 +469,13 @@
      "bnb_portree": {
       "takings": 1.04
      }
+    },
+    "keepsake": {
+     "name": "Painted Harbour Row",
+     "shape": "tin",
+     "col": "d8a020",
+     "col2": "c84a3a",
+     "line": "A tin painted with the coloured houses on Portree's harbour front, which are exactly as cheerful as they look."
     }
    }
   },
@@ -468,7 +524,14 @@
    "plaque": "The winter sailings were paid for by {player}, so that the island is never cut off.",
    "effects": {
     "standing": 8,
-    "item": "tablet"
+    "item": "tablet",
+    "keepsake": {
+     "name": "Orkney Vole",
+     "shape": "figure",
+     "col": "9a8a6a",
+     "col2": "d8c8a0",
+     "line": "A china Orkney vole. It lives on the islands and nowhere else in Britain, and it has no idea how lucky it is."
+    }
    }
   },
   {
@@ -480,7 +543,7 @@
    "cost": 28000,
    "name": "Inverness Footbridge",
    "title": "A footbridge over the Ness",
-   "text": "The river Ness has bridges, but not where the people who walk want them. A new footbridge by the Ness Islands would save the long way round to the far bank and put the islands a few steps from the town.",
+   "text": "The river Ness has bridges, but not where the people who walk want them. A new footbridge by the Ness Islands would put the islands a few dry steps from the town, with room to wheel a bike or a pushchair across.",
    "stages": [
     {
      "name": "The abutments",
@@ -501,10 +564,10 @@
      "line": "The last rail is on. The lamps are lit on a trial basis, and are very pretty."
     }
    ],
-   "change": "Finished, there is a footbridge across the Ness by the Ness Islands sign, and the far bank is a few steps away. Your name goes on the rail.",
+   "change": "Finished, there is a footbridge across the Ness by the Ness Islands sign, and the bike can cross it, which it cannot do in a coracle. Your name goes on the rail.",
    "ask": [
     "The river's a lovely thing, {player}, but if you want to be on the other side you walk for ten minutes up the road to find a bridge, and ten back.",
-    "A footbridge by the Ness Islands would suit me and every dog in the town. There's a man at the council with a plan. He's missing only the money."
+    "A footbridge by the Ness Islands, wide enough for a bike, would suit me and every dog in the town. There's a man at the council with a plan. He's missing only the money."
    ],
    "progress": [
     "The abutments are in on both banks, and the river is behaving, which is not like it."
@@ -513,7 +576,7 @@
     "The new bridge is a joy, {player}. You step across by the Ness Islands sign and you're over before you've made up your mind. Mind the lamps, they're hot."
    ],
    "opened": "The footbridge is open over the Ness, by the Ness Islands sign.",
-   "plaque": "The footbridge was given to Inverness by {player}, so that nobody has to take the long way round.",
+   "plaque": "The footbridge was given to Inverness by {player}, so that the Ness Islands are a stroll away, bike and all.",
    "effects": {
     "standing": 8,
     "item": "tablet",
@@ -526,7 +589,14 @@
       "x": 26,
       "y": 34
      }
-    ]
+    ],
+    "keepsake": {
+     "name": "Ness Islands Walking Stick",
+     "shape": "stick",
+     "col": "7a5a3a",
+     "col2": "c8a850",
+     "line": "A walking stick with a brass band, for the Ness Islands walk. A Victorian idea, and a good one, and the river still has the last word."
+    }
    }
   },
   {
@@ -574,7 +644,14 @@
    "plaque": "The workmen's hall was reopened by {player}, in the spirit of the pennies that built it.",
    "effects": {
     "standing": 7,
-    "item": "bara_brith"
+    "item": "bara_brith",
+    "keepsake": {
+     "name": "Workmen's Hall Programme",
+     "shape": "badge",
+     "col": "6a3a2a",
+     "col2": "e8d8a8",
+     "line": "A programme from a workmen's hall. South Wales miners paid for these out of their own wages: libraries, stages and a good deal of opinion."
+    }
    }
   },
   {
@@ -622,7 +699,14 @@
    "plaque": "The Cliff Railway was overhauled by {player}, so that everyone can get to the top.",
    "effects": {
     "standing": 7,
-    "item": "welsh_cakes"
+    "item": "welsh_cakes",
+    "keepsake": {
+     "name": "Cliff Railway Ticket",
+     "shape": "coaster",
+     "col": "7a2a3a",
+     "col2": "e8d8c0",
+     "line": "A ticket up Constitution Hill on the longest electric cliff railway in Britain. The view from the top has been worth it since Victoria."
+    }
    }
   },
   {
@@ -658,7 +742,7 @@
    "change": "Finished, the boats work all year with fresher fish, and a rough week costs them less. Your name goes on the pier.",
    "ask": [
     "The ice machine broke again, {player}, and the fish don't wait for the engineer. We've had it in bits since the spring.",
-    "A new plant and a slipway to haul out on, and we'd have a harbour that's the equal of any. It'd take a few of those pound notes you have."
+    "A new plant and a slipway to haul out on, and we'd have a harbour that's the equal of any. It'd take a few of those notes you have."
    ],
    "progress": [
     "The pier's full of diggers and men with coffee. They tell me the slipway will be a thing of beauty."
@@ -676,6 +760,13 @@
       "shield": 0.1,
       "takings": 1.04
      }
+    },
+    "keepsake": {
+     "name": "Fungie",
+     "shape": "figure",
+     "col": "6a7a8a",
+     "col2": "d8d8d0",
+     "line": "A little grey dolphin. Fungie lived in Dingle harbour for nearly forty years and was, by common consent, the town's most famous resident."
     }
    }
   },
@@ -724,7 +815,14 @@
    "plaque": "The boat shed was built by {player}, so that the hookers will sail on.",
    "effects": {
     "standing": 7,
-    "item": "barmbrack"
+    "item": "barmbrack",
+    "keepsake": {
+     "name": "Hooker Sail Swatch",
+     "shape": "cloth",
+     "col": "8a3a2a",
+     "col2": "b87a4a",
+     "line": "A scrap of tarred red-brown sail from a Galway hooker. The boats still race each August at Kinvara, and take it very seriously."
+    }
    }
   },
   {
@@ -772,7 +870,14 @@
    "plaque": "The boathouse and the launching ramp were given to Enniskillen by {player}, so that the Erne belongs to everyone.",
    "effects": {
     "standing": 7,
-    "item": "ulster_fry"
+    "item": "ulster_fry",
+    "keepsake": {
+     "name": "Little Oar",
+     "shape": "stick",
+     "col": "3a5a8a",
+     "col2": "e0d0a0",
+     "line": "A small oar in club colours. Enniskillen sits on an island in the river between Upper and Lower Lough Erne, so rowing is not really a hobby."
+    }
    }
   }
  ]

@@ -258,7 +258,7 @@
      "tag": "frugal",
      "label": "Meet them halfway",
      "cost": 0.6,
-     "say": "They think about it for a week. They take the other job.",
+     "say": "They think about it for a week, and stay, a little sulkily.",
      "risk": {
       "chance": 0.3,
       "say": "They take the other job and send a postcard.",

@@ -530,6 +530,11 @@ func _icon(mk: Dictionary, c: Vector2) -> void:
 				arch.append(c + Vector2(-5, -1).lerp(Vector2(5, -1), float(i) / 8.0) + Vector2(0, -4.5 * sin(PI * float(i) / 8.0)))
 			arch.append(c + Vector2(5, 5))
 			draw_colored_polygon(arch, INK if not mk.done else Color("8a6fd1"))
+		"secret":  # a keyhole on a ring: a hidden place you know of; the keyhole goes gold once you have been in
+			draw_circle(c, 9.0, Color(INK, 0.9))
+			draw_circle(c, 7.6, PAPER if not mk.done else Color("d8b45a"))
+			draw_circle(c + Vector2(0, -1.8), 2.5, INK)
+			draw_colored_polygon(PackedVector2Array([c + Vector2(-1.6, 6), c + Vector2(0, -1), c + Vector2(1.6, 6)]), INK)
 		"post":  # an envelope with a red seal
 			var r := Rect2(c - Vector2(9, 6), Vector2(18, 12))
 			draw_rect(r, PAPER)

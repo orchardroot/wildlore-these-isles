@@ -23,7 +23,7 @@ const NEW := {
 ## through the places they join, which must still open at their old step.
 const SIBLINGS := ["pendle_hill", "swaledale", "humber_bridge", "hadrians_wall_path", "reivers_road", "black_country",
 	"cranborne_chase", "varsity_line", "romney_marsh", "offas_dyke", "aberglaslyn", "pen_y_gwryd", "llyn_tegid",
-	"glamorgan_coast", "healy_pass", "golden_vale", "clare_road", "hook_head"]
+	"glamorgan_coast", "healy_pass", "golden_vale", "clare_road", "hook_head", "lower_bann", "erne_shore"]
 
 func _baseline() -> Dictionary:
 	return JsonUtil.read("res://tests/world/w55_walk_baseline.json")

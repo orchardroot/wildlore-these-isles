@@ -15,34 +15,51 @@ CRATE_ITEMS = ["pasty", "flask_of_tea", "tablet", "parkin", "cup_of_tea", "wicke
 SEA_POTS = ["mackerel", "herring", "whiting", "pollack", "plaice", "haddock", "cod", "ballan_wrasse"]
 FRESH_POTS = ["roach", "perch", "rudd", "chub", "tench", "brown_trout", "european_eel"]
 CACHE_ITEMS = ["heather_honey", "honeycomb", "hazelnuts", "truffle", "ammonite", "hawthorn_berry", "rowan_berry", "bakewell_tart", "lavender_sachet", "wicker_snare"]
-BOTTLE_ITEMS = ["sea_glass", "sea_glass", "crab_bait"]  # a bottle at sea
-BOTTLE_RIVER_ITEMS = ["slate_chip"]  # in a river: a pebble of grit the sender enclosed
+# A bottle pays something a player can use, and local to the place: a small food from the heal/cure items, never dearer
+# than the crates' pasty (280), so nothing here is a faucet.
+BOTTLE_ITEM = {"aberystwyth": "welsh_cake", "bath": "cup_of_tea", "belfast": "soda_farl", "chester": "deeside_shortbread",
+    "cork": "cup_of_tea", "dingle": "carrageen_pudding", "dundee": "dundee_cake", "exeter": "cup_of_tea", "fort_william": "ceilidh_shortbread",
+    "galway": "soda_bread", "gower": "bara_brith", "harris": "bere_bannock", "hull": "hull_patty", "ironbridge_gorge": "shrewsbury_cake",
+    "lerwick": "shetland_bannock", "limerick": "soda_bread", "london": "cup_of_tea", "newcastle": "havercake", "penzance": "pasty",
+    "poole": "ships_biscuit", "severn_crossing": "glamorgan_sausage", "stornoway": "stornoway_black_pudding"}
 
+# {place} is the zone's name (see place_name): every find says where it is, so no two zones read the same.
 CRATE_TEXT = [
-    "A wooden crate, adrift and unclaimed. The lid is nailed down, and the stencil says it came from a port nobody can place.",
-    "A crate marked THIS WAY UP. It has not been this way up for some time. You fish it out with the paddle.",
-    "A tea chest bobs past like it has somewhere to be. You hook it, and it comes quietly.",
-    "A sealed tin box, tarred at the seams, floating low. Somebody's emergency rations, and somebody's loss.",
-    "A fish box with a crew's initials burned into the lid. Somebody is going to be cross about this, but not today.",
-    "A crate roped to a plastic float and let go by the look of it. You decide it counts as a gift from the water.",
+    "A wooden crate, adrift near {place} and unclaimed. The lid is nailed down, and the stencil says it came from a port nobody can place.",
+    "A crate marked THIS WAY UP. It has not been this way up since somewhere before {place}. You fish it out with the paddle.",
+    "A tea chest bobs past in {place} like it has somewhere to be. You hook it, and it comes quietly.",
+    "A sealed tin box, tarred at the seams, floating low off {place}. Somebody's emergency rations, and somebody's loss.",
+    "A fish box with a crew's initials burned into the lid. Somebody from {place} is going to be cross about this, but not today.",
+    "A crate roped to a plastic float and let go, by the look of it, somewhere near {place}. You decide it counts as a gift from the water.",
 ]
 POT_SEA_TEXT = [
-    "A lobster pot, adrift, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner.",
-    "A creel bobbing on its own float, with no one's name on it. Inside, a fish with the look of someone who has given up arguing.",
-    "A lobster pot snagged on a ring of weed. No lobster. One surprised fish, which is something.",
+    "A lobster pot, adrift off {place}, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner.",
+    "A creel bobbing on its own float off {place}, with no one's name on it. Inside, a fish with the look of someone who has given up arguing.",
+    "A lobster pot snagged on a ring of weed near {place}. No lobster. One surprised fish, which is something.",
 ]
 POT_FRESH_TEXT = [
-    "An eel trap, forgotten and half sunk, its owner long gone. One fish in it, sulking.",
-    "A wicker fish trap hanging from a branch in the water. It has caught something and is a little embarrassed about it.",
-    "A keepnet left out in the water by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly.",
+    "An eel trap, forgotten and half sunk near {place}, its owner long gone. One fish in it, sulking.",
+    "A wicker fish trap hanging from a branch in the water at {place}. It has caught something and is a little embarrassed about it.",
+    "A keepnet left out in the water at {place} by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly.",
 ]
 CACHE_TEXT = [
-    "A cairn on the far bank, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it.",
-    "A hollow under a thorn bush, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'",
-    "Dry sand above the tide line and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here.",
-    "Whoever hid this had a boat and a plan. You have a boat, and now the plan has been found.",
-    "A crate lashed under an overhang, tied with fisherman's knots you do not know. It opens at the second try.",
+    "A cairn on the far bank at {place}, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it.",
+    "A hollow under a thorn bush at {place}, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'",
+    "Dry sand above the tide line near {place} and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here.",
+    "Whoever hid this at {place} had a boat and a plan. You have a boat, and now the plan has been found.",
+    "A crate lashed under an overhang at {place}, tied with fisherman's knots you do not know. It opens at the second try.",
 ]
+PLACE_NAMES = {"gweedore": "Gweedore", "shetland_mainland": "Shetland", "poole": "Poole", "guernsey_country": "Guernsey"}
+WITH_THE = {"beacons", "causeway", "lake_district", "yorkshire_dales", "pembroke_coast", "pentland_coast", "severn_crossing",
+    "somerset_levels", "goyt_valley", "wirral_way", "kent_downs", "ironbridge_gorge"}
+
+def place_name(zid, name):
+    """The zone's name as a sentence wants it: 'the Burren', 'Gweedore'."""
+    if zid in PLACE_NAMES:
+        return PLACE_NAMES[zid]
+    if zid in WITH_THE:
+        return "the " + name
+    return "the " + name[4:] if name.startswith("The ") else name
 
 # --- messages in bottles: one per place, short and true. Only zones named here get a bottle. ---
 BOTTLES = {
@@ -200,6 +217,7 @@ def main():
     def add(zid, kind, p, text, item, qty=1):
         n_of[zid] = n_of.get(zid, 0) + 1
         k = n_of[zid]
+        text = text.replace("{place}", place_name(zid, str(zones[zid].d.get("name", zid))))
         finds.append({"id": "fl_%s_%d" % (zid, k), "zone": zid, "x": p[0], "y": p[1], "kind": kind, "text": [text],
                       "reward": {"item": item, "qty": qty}, "flag": "flotsam_%s_%d" % (zid, k)})
         used.setdefault(zid, []).append(p)
@@ -213,8 +231,7 @@ def main():
         if zid in BOTTLES and cand[zid]["floats"]:
             p = pick(cand[zid]["floats"], zid, "bottle", used.get(zid, []))
             if p:
-                items = BOTTLE_ITEMS if zones[zid].tile(*p) == "sea" else BOTTLE_RIVER_ITEMS
-                add(zid, "bottle", p, BOTTLES[zid], items[h(zid, "bi") % len(items)])
+                add(zid, "bottle", p, BOTTLES[zid], BOTTLE_ITEM.get(zid, "cup_of_tea"))
     # caches on islets and far banks
     for zid in order:
         if count["cache"] >= TARGET["cache"]:

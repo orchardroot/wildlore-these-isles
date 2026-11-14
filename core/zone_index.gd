@@ -28,6 +28,7 @@ static func get_index() -> Dictionary:
 ## {zones: {id: {name, region, kind, town, pos (Vector2, or (-1, -1)), enc: [{species, table, time, weather, season}], deep (a Deep Place), links (doors and edges out)}},
 ##  adj: {region: [regions next door]}, town_rooms: {town: [interior ids]}, room_town: {interior: town},
 ##  region_species: {region: [species ids]}}
+## (each zone also lists `gates`: the flags that must be set before the story lets you through it)
 static func build(zones: Array, world_map := {}, ferries := {}) -> Dictionary:
 	var raw := {}
 	for z in zones:
@@ -50,7 +51,7 @@ static func build(zones: Array, world_map := {}, ferries := {}) -> Dictionary:
 		var p: Dictionary = towns.get(id, places.get(id, {}))
 		out.zones[id] = {"name": str(z.get("name", id)), "region": str(z.get("region", "")), "kind": str(z.get("kind", "route")),
 			"town": str(z.get("town_id", "")), "pos": Vector2(float(p.x), float(p.y)) if p.has("x") else Vector2(-1, -1), "enc": enc,
-			"deep": z.get("deep") is Dictionary and not (z.deep as Dictionary).is_empty(), "links": _links(z)}
+			"deep": z.get("deep") is Dictionary and not (z.deep as Dictionary).is_empty(), "links": _links(z), "gates": _gates(z)}
 	_fill_regions_and_rooms(raw, out)
 	_fill_positions(raw, out)
 	_fill_adjacency(raw, out, ferries)
@@ -63,6 +64,15 @@ static func build(zones: Array, world_map := {}, ferries := {}) -> Dictionary:
 		for e in zd.enc:
 			if e.species not in out.region_species[zd.region]:
 				out.region_species[zd.region].append(e.species)
+	return out
+
+## The flags that open the zone's story gates (a Warden or Marshal who stands aside once a Stone is won, a trainer
+## beaten): a road with one of these unset is not yet a road you can walk.
+static func _gates(z: Dictionary) -> Array:
+	var out := []
+	for n in z.get("npcs", []):
+		if RideCheck.is_gate(n) and str(n.hide_if) not in out:
+			out.append(str(n.hide_if))
 	return out
 
 ## Every zone a zone leads to, by door or by edge.
@@ -104,7 +114,7 @@ static func _fill_regions_and_rooms(raw: Dictionary, out: Dictionary) -> void:
 		while not stack.is_empty():
 			var c: String = stack.pop_back()
 			for to in _targets(raw[c]):
-				if out.zones.has(to) and out.zones[to].kind == "interior" and to not in rooms and not out.room_town.has(to):
+				if out.zones.has(to) and out.zones[to].kind == "interior" and to not in rooms and not out.room_town.has(to) and not Secrets.is_secret_zone(str(to)):  # a hidden place is no room of the town's
 					rooms.append(to)
 					out.room_town[to] = id
 					stack.append(to)

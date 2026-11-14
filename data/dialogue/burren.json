@@ -115,5 +115,30 @@
    "flag": "landsky_turlough",
    "value": true
   }
+ ],
+ "sec_burren_guide": [
+  {
+   "do": "if",
+   "flag": "secret_doolin_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Cave Guide",
+     "text": "Cold air, from a gap in the rock. Told you. Go on, have a look."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Cave Guide",
+     "text": "The Burren looks like bare grey rock, but it's hollow underneath. Water has been eating the limestone for longer than anyone has kept count."
+    },
+    {
+     "do": "say",
+     "who": "Cave Guide",
+     "text": "Stand on the pavement on a still day and you can feel cold air coming up out of a gap, if you know where to stand. Try the big rocks hereabouts."
+    }
+   ]
+  }
  ]
 }

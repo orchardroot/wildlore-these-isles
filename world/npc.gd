@@ -111,12 +111,16 @@ static func notices(at: Vector2i, player_pos: Vector2i) -> bool:
 	var d := player_pos - at
 	return d != Vector2i.ZERO and maxi(absi(d.x), absi(d.y)) <= NOTICE_RANGE
 
+## Is the street held still? A scene or menu freezes everyone; sitting on a bench (BenchSit) does not, the town carries on.
+static func street_stopped() -> bool:
+	return Router.busy and not BenchSit.sitting
+
 ## The time of day changed: people with `times` go home or come out, each only once the player is far enough
 ## away not to see them pop. Cheap; the overworld calls it now and then. Retries until everyone is settled.
 static func sync_schedule(ow: Node) -> void:
 	var phase := Game.phase()
 	var stamp := phase + Routines.stamp(Calendar.weekday_today(), Calendar.season_today(), Game.local_minutes())
-	if ow.zone == null or Router.busy or str(ow.get_meta("npc_phase", "")) == stamp:
+	if ow.zone == null or street_stopped() or str(ow.get_meta("npc_phase", "")) == stamp:
 		return
 	var settled := true
 	for d in ow.zone.npcs:
@@ -161,7 +165,7 @@ func _process(delta: float) -> void:
 	if _mode == "still":
 		_idle(delta)
 		return
-	if _stepping or _talking or _challenging or Router.busy or ow.player.moving:
+	if _stepping or _talking or _challenging or street_stopped() or ow.player.moving:
 		return
 	_timer -= delta
 	if _timer > 0.0:
@@ -197,7 +201,7 @@ func _react(delta: float) -> void:
 			_umbrella = null
 	var want := ""
 	var pp: Vector2i = ow.player.grid_pos
-	if not (_talking or _challenging or Router.busy) and NpcBubble.in_range(grid_pos, pp):
+	if not (_talking or _challenging or street_stopped()) and NpcBubble.in_range(grid_pos, pp):
 		want = NpcBubble.kind_for(ow.zone.id, def, Game.data)
 		if want == "" and _spotted_follower():
 			want = NpcBubble.SPARK
@@ -243,7 +247,7 @@ func _set_sign(kind: String) -> void:
 ## A still townsperson: look at the player when they come close, glance about now and then, and settle back.
 ## Trainers never do this (their facing is their line of sight).
 func _idle(delta: float) -> void:
-	if is_trainer() or _talking or _challenging or Router.busy:
+	if is_trainer() or _talking or _challenging or street_stopped():
 		return
 	var pp: Vector2i = ow.player.grid_pos
 	if notices(grid_pos, pp):

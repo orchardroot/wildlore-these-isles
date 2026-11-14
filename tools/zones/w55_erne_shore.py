@@ -47,7 +47,7 @@ def build(OUT):
     scatter_props(z, "sheep", 4, 22, 14, 14, 3, 92, avoid=(",",))
     scatter_props(z, "rock", 3, 3, 58, 40, 6, 93, avoid=("g", "h"))
     scatter_props(z, "boat", 14, 4, 40, 7, 0, 94, avoid=("~",))
-    z.d["spawn"] = [12, 20]
+    z.d["spawn"] = [16, 20]  # the Belleek plaque stands on (12, 20)
     finish_borders(z, "=")
     for p_ in list(z.d["props"]):
         if p_["type"] != "building" and z.g[p_["y"]][p_["x"]] in "#=:W~Bwr":

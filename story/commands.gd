@@ -700,6 +700,8 @@ func _when(cond: String) -> bool:
 		return GameClock.phase(Timezones.local_minutes(host.data, host.data.tz_zone)) == cond  # local time abroad
 	if WEATHER_CONDS.has(cond):
 		return _weather() in WEATHER_CONDS[cond]
+	if cond == "cat_tired":  # w56: the family cat is with you and hurt, so Mum's offer to keep her by the bowl is worth making
+		return FamilyCat.wants_rest(host.data)
 	if cond == "caught_all":
 		return FieldbookGoals.caught_count(host.data) >= host.dex.core_ids().size()
 	if cond.begins_with("caught_") and cond.substr(7).is_valid_int():  # a Fieldbook milestone: caught_25 and so on

@@ -66,6 +66,11 @@
    "type": "bench",
    "x": 10,
    "y": 5
+  },
+  {
+   "type": "slot_machine",
+   "x": 11,
+   "y": 2
   }
  ],
  "warps": [

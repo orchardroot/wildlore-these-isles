@@ -90,7 +90,7 @@
     {
      "do": "say",
      "who": "Keeper Ray",
-     "text": "And it'll teach your team Brook-wade. Deep water won't be a problem. Just don't wade the Mersey, mate. It's not that kind of deep."
+     "text": "And it'll teach your team Brook-wade. Walk into any river or lake and you'll find a coracle under you. Just don't paddle the Mersey, mate. It's not that kind of deep."
     },
     {
      "do": "badge",
@@ -112,7 +112,7 @@
     {
      "do": "say",
      "who": "",
-     "text": "{player}'s team learned Brook-wade! Deep water can now be crossed."
+     "text": "{player}'s team learned Brook-wade! Rivers and lakes can now be crossed by coracle: just walk in."
     },
     {
      "do": "sfx",

@@ -133,5 +133,40 @@
    }
   ]
  }
-]
+],
+ "sec_mournes_walker": [
+  {
+   "do": "if",
+   "flag": "secret_brandy_pad_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Hill Walker",
+     "text": "Behind the heather, as I said. Or didn't. Nice day for it, whatever it is."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Hill Walker",
+     "text": "You'll be on the Brandy Pad, then. The old smugglers' track over the Mournes: brandy, wine, tobacco and tea, carried over by night."
+    },
+    {
+     "do": "say",
+     "who": "Hill Walker",
+     "text": "Not all of it left the hills. There's a store off the path here, behind the heather, if you know the turn."
+    },
+    {
+     "do": "say",
+     "who": "Hill Walker",
+     "text": "I'm not saying I know the turn. I'm saying I walk very slowly past it."
+    },
+    {
+     "do": "set",
+     "flag": "secret_brandy_pad_known",
+     "value": true
+    }
+   ]
+  }
+ ]
 }

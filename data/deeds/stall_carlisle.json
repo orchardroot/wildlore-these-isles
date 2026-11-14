@@ -100,12 +100,13 @@
   {
    "id": "standing_orders",
    "name": "Standing orders from the cafes",
-   "text": "A steady order every week, and a bad week stings less.",
+   "text": "A steady order every week, and a bad week stings less. Regulars expect their regular price.",
    "cost": 1500,
    "tier": 1,
    "group": "trade",
    "shield": 0.2,
-   "carry": 30
+   "carry": 30,
+   "takings": 0.97
   },
   {
    "id": "second_day",

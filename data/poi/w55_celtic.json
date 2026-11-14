@@ -280,6 +280,82 @@
    "at": "hook_head",
    "item": "barmbrack",
    "line": "A biscuit tin in the hedge with a slice of barmbrack and a note: 'for whoever needs it'. You needed it."
+  },
+  {
+   "id": "poi_lower_bann_den",
+   "zone": "lower_bann",
+   "near": [
+    8,
+    8
+   ],
+   "kind": "den",
+   "at": "lower_bann",
+   "species": "bittling"
+  },
+  {
+   "id": "poi_lower_bann_stone",
+   "zone": "lower_bann",
+   "near": [
+    56,
+    30
+   ],
+   "kind": "stone",
+   "at": "lower_bann",
+   "stat": "def",
+   "lore": [
+    "It has a groove worn into it, as if a long line of something had been pulled across it for centuries.",
+    "The real thing is a Mesolithic find from the Bann valley: flint tools of the first hunters in Ireland, long before the first farms."
+   ]
+  },
+  {
+   "id": "poi_lower_bann_cache",
+   "zone": "lower_bann",
+   "near": [
+    16,
+    26
+   ],
+   "kind": "cache",
+   "at": "lower_bann",
+   "item": "fermanagh_black_bacon",
+   "line": "A greasy brown-paper packet under a stone. Inside, a rasher of something very good. You feel guilty, and then you don't."
+  },
+  {
+   "id": "poi_erne_shore_den",
+   "zone": "erne_shore",
+   "near": [
+    8,
+    26
+   ],
+   "kind": "den",
+   "at": "erne_shore",
+   "species": "cranelet"
+  },
+  {
+   "id": "poi_erne_shore_stone",
+   "zone": "erne_shore",
+   "near": [
+    58,
+    40
+   ],
+   "kind": "stone",
+   "at": "erne_shore",
+   "stat": "ward",
+   "lore": [
+    "It has a Y-shaped crack down one side and a coat of orange lichen, like a stone that has been signed.",
+    "The real thing is a Fermanagh cross slab: the county's islands and shores are scattered with carved stones of the early monks."
+   ]
+  },
+  {
+   "id": "poi_erne_shore_cache",
+   "zone": "erne_shore",
+   "near": [
+    58,
+    14
+   ],
+   "kind": "cache",
+   "at": "erne_shore",
+   "item": "fermanagh_black_bacon",
+   "line": "A paper bag in the reeds, tied with a bootlace. A rasher of Fermanagh black bacon, wrapped in a cloth. Somebody's dinner and your lucky day."
   }
  ]
 }

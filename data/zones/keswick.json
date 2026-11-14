@@ -721,6 +721,18 @@
    "tx": 6,
    "ty": 6,
    "facing": "up"
+  },
+  {
+   "x": 43,
+   "y": 16,
+   "to": "secret_herbert_cell",
+   "tx": 6,
+   "ty": 6,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_herbert_cell_known"
+   },
+   "coracle": true
   }
  ],
  "edges": {
@@ -865,6 +877,16 @@
    "move": "still",
    "script": "kes_games_secretary",
    "name": "Games Secretary"
+  },
+  {
+   "id": "sec_keswick_angler",
+   "sprite": "fisher",
+   "x": 38,
+   "y": 19,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_keswick_angler",
+   "name": "Lakeside Angler"
   }
  ],
  "encounters": {

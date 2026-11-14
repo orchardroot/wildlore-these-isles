@@ -175,7 +175,7 @@
    "else": [
     {
      "do": "when",
-     "cond": "later_q_stories_islands_when_3",
+     "cond": "later_q_stories_islands_when_30",
      "then": [
       {
        "do": "say",
@@ -299,7 +299,7 @@
       {
        "do": "say",
        "who": "Boat hand",
-       "text": "Nothing off the boat yet. It comes when the boat comes, and the boat comes when it can. Try after a night's sleep."
+       "text": "Nothing off the boat yet. It comes when the boat comes, and the boat comes when it can. Try again in a month or so."
       }
      ]
     }

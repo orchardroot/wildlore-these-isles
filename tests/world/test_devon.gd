@@ -123,3 +123,16 @@ func test_new_creatures_are_appendix_with_art_and_a_home() -> void:
 		assert_true(placed, id + " can be met")
 		var types: Array = dex.get_species(id).types
 		assert_false(types.has("gale") or types.has("kin"), id + " favours an under-represented type")
+
+func test_the_hairy_hands_clue_says_what_must_be_done_first() -> void:
+	var hunt := {}
+	for h in Rumours.hunts():
+		if str(h.id) == "hairyhands":
+			hunt = h
+	assert_false(hunt.is_empty())
+	assert_true(str(hunt.rumours[0].clue).contains("letterbox"), "the clue names the stamp that wakes them")
+	var gate := ""
+	for n in _all()["exe_estuary"].npcs:
+		if str(n.id) == "est_hairyhands":
+			gate = str(n.show_if)
+	assert_eq(gate, "q_devon_letterbox_3")

@@ -18,7 +18,7 @@ func _build() -> void:
 	_regions = Atlas.regions(Game.data, idx)
 	var t := Discovery.tally(Game.data, idx)
 	set_title("Atlas")
-	header_right.text = "%d of %d places found" % [t.x, t.y]
+	header_right.text = "%d of %d places found  ·  %s" % [t.x, t.y, Secrets.line(Game.data)]
 	set_hints([["updown", "Choose"], ["cancel", "Back"]])
 	var row := HBoxContainer.new()
 	row.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -98,7 +98,7 @@ func _show(id: String) -> void:
 	sl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	sl.custom_minimum_size = Vector2(560, 0)
 	_detail.add_child(sl)
-	for m in r.rows:
+	for m in r.rows + Atlas.hidden_rows(Game.data, ZoneIndex.get_index(), id):
 		_detail.add_child(_measure(m))
 
 ## One measure: its name and count, and a bar under it.

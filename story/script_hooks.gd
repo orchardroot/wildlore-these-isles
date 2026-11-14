@@ -11,6 +11,7 @@ static func wrap(zone_id: String, npc_id: String, commands: Array, data: GameSta
 	commands = Visits.hook(zone_id, npc_id, commands, data)  # w53: a resident who notices you've been before
 	commands = Regulars.hook(zone_id, npc_id, commands, data)  # a resident who is a Regular: the scene follows their usual lines
 	commands = TownProjects.hook(zone_id, npc_id, commands, data)  # w55: the resident who speaks for a town project
+	commands = Eggs.hook(zone_id, npc_id, commands, data)  # w56: Mum on the cat's name
 	var n := commands.size()
 	var trumps: Array = Trumps.hook(zone_id, npc_id, commands, data).slice(n)
 	var gossip: Array = KeeperIntel.hook(zone_id, npc_id, commands, data).slice(n)

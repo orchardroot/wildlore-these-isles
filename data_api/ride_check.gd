@@ -79,7 +79,7 @@ static func entries(zones: Dictionary, z: ZoneData, walls: Dictionary) -> Array:
 static func exits(z: ZoneData, seen: Dictionary) -> Dictionary:
 	var out := {}
 	for w in z.warps:
-		if seen.has(Vector2i(int(w.x), int(w.y))):
+		if seen.has(Vector2i(int(w.x), int(w.y))) and not str(w.get("to", "")).begins_with("secret_"):  # a hidden place is a dead end, not a gate
 			out["w:%d,%d" % [int(w.x), int(w.y)]] = true
 	for side in z.edges:
 		if side in ZoneData.OPPOSITE and z._side_reached(side, seen):

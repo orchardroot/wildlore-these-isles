@@ -90,6 +90,56 @@
    "move": "still",
    "script": "macc_trials_steward",
    "name": "Trials Steward"
+  },
+  {
+   "id": "ct_mare_regular",
+   "sprite": "hiker",
+   "x": 30,
+   "y": 22,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mare_regular",
+   "name": "Eric Dunkerley"
+  },
+  {
+   "id": "ct_mare_birder",
+   "sprite": "birdwatcher",
+   "x": 47,
+   "y": 12,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mare_birder",
+   "name": "Marjorie Wilde"
+  },
+  {
+   "id": "ct_mare_lair",
+   "sprite": "creature:barnling",
+   "x": 40,
+   "y": 14,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_mare_lair",
+   "name": "The Mare",
+   "show_if": "ct_mare_state",
+   "hide_if": "ct_mare_end"
+  }
+ ],
+ "examine": [
+  {
+   "x": 33,
+   "y": 29,
+   "text": [
+    "A fence post at the top of the lane, with a scatter of dark pellets at its foot."
+   ],
+   "clue": "mare.pellets"
+  },
+  {
+   "x": 43,
+   "y": 20,
+   "text": [
+    "The drystone wall at the top of the lane. The sheep have moved well away from it."
+   ],
+   "clue": "mare.dusk"
   }
  ],
  "encounters": {

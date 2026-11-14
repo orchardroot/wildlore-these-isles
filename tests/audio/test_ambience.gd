@@ -110,9 +110,12 @@ func test_town_accents() -> void:
 	assert_eq(Ambience.accents(_zone("route", "coast", cath)), [], "only towns")
 	assert_eq(Ambience.accents(_zone("interior", "docks")), [], "not indoors")
 
-func test_a_chapel_has_a_small_bell() -> void:
+func test_only_a_famous_chapel_has_a_small_bell() -> void:
 	var chapel := {"props": [{"type": "building", "style": "chapel", "x": 0, "y": 0}]}
-	assert_eq(Ambience.accents(_zone("town", "town", chapel)), ["bell_small"])
+	assert_eq(Ambience.accents(_zone("town", "town", chapel)), [], "an ordinary chapel is quiet")
+	var famous := chapel.duplicate(true)
+	famous["id"] = "cambridge"
+	assert_eq(Ambience.accents(_zone("town", "town", famous)), ["bell_small"])
 	var both := {"props": [{"type": "building", "style": "chapel", "x": 0, "y": 0}, {"type": "building", "style": "cathedral", "x": 4, "y": 0}]}
 	assert_eq(Ambience.accents(_zone("town", "town", both)), ["bell"], "the big bell has it")
 

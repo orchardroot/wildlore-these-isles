@@ -137,6 +137,7 @@ func load_zone(zone_id: String, pos: Vector2i, facing: String) -> void:
 	Audio.enter_zone(self, zone, weather)  # ambience bed, weather layer, muffled music indoors, town bells
 	_dark.visible = zone.dark
 	FamilyCatScene.arrive(self)  # w54: the family cat's flags, her scene on the Cat and Fiddle road, her note
+	EggsScene.arrive(self)  # w56: the eggs' per-visit counters
 	_dev_radio()
 
 ## Dev switch `--talk=radio[:n]`: the wireless reads Today's Walk as soon as the zone is ready, from line n (screenshots).
@@ -387,6 +388,9 @@ func _on_step(p: Vector2i) -> void:
 	player.set_wading(tile in ZoneData.RIDE_TILES)
 	if player.wading and not was_wading:
 		Audio.sfx("splash")
+		var boat := Intros.boat_card(Game.data, tile, Settings.hints)
+		if boat != "":
+			say([boat])
 	elif player.wading:
 		Audio.sfx_at("splash", -15.0, 1.6 + 0.25 * float((p.x + p.y) % 2))  # the paddle dips, softly, the pitch alternating with each stroke
 	if tile == "tall_grass":
@@ -399,6 +403,7 @@ func _on_step(p: Vector2i) -> void:
 	_check_trainers()
 	if Router.busy:
 		return
+	await EggsScene.on_step(self, p)  # w56: a thing or two nobody is told about
 	if Repel.step(Game.data):  # a Lavender Sachet just ran out
 		await ScriptRunner.start(self, [{"do": "sachet_worn"}])
 		return
@@ -528,6 +533,8 @@ func interact(p: Vector2i) -> void:
 	if await CrabbingScene.interact(self, p):  # a harbour wall and a crabbing kit
 		return
 	if await TrailsScene.interact(self, p):  # a paper on a table, a trail's dig spot
+		return
+	if await EggsScene.interact(self, p):  # w56: a spot nobody is told about
 		return
 	if await ExamineScene.interact(self, p):  # a look-closer spot in a room
 		return

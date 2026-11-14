@@ -98,7 +98,7 @@ static func promised_towns(data: GameStateData, idx: Dictionary = {}) -> Array:
 					var far := str(z.get("town", ""))
 					if far != "" and not visited(data, far) and far not in out and FileAccess.file_exists("res://data/zones/%s.json" % far):
 						out.append(far)
-				elif str(z.kind) == "route":
+				elif str(z.kind) == "route" and WhereNext.gates_open(data, z):
 					q.append(to)
 	var fer: Dictionary = Travel.ferries()
 	for route in fer:
@@ -260,6 +260,7 @@ static func marks(data: GameStateData, show: Dictionary) -> Array:
 	out.append_array(FieldSpots.marks(data))  # field piece nooks you have spotted
 	out.append_array(Rumours.marks(data))  # legends you have heard of, ringed (5.4)
 	out.append_array(Discovery.deep_marks(data, ZoneIndex.get_index()))  # Deep Places whose way in you have seen
+	out.append_array(Secrets.marks(data))  # hidden places you know how to open (5.6)
 	return out
 
 ## Where a mark sits on the map (map units), or (-1, -1) if its town or place isn't drawn.

@@ -563,9 +563,9 @@
   "TTPTTPo~~ogg##gBBBDBBgBBDBBBBB===gBBBDBBgBBBBDBBBBBgggggggggggTP",
   "TPTTPTo~~ogg#::::::::::::::::::::::::::::::::::::::=======g,,gTT",
   "PTTPTTo~~ogg##:::::::::::::::::::::::::::::::::::::=======,,,,TT",
-  "TTPTTPo~~ogg##:::::::::::::::::::::::::::::::::::::ggggg==,,,,PT",
-  "TPTTPo~~oggg##:::::::::::::::::::::::::::::::::::::ggggg==,,,gTT",
-  "PTTPTo~~oggg##:::::::::::::::::::::::::::::::::::::ggggg==,,,gTP",
+  "TTPTTPo~~ogg##:::::::::::::::::::::::::::::::::::::ggggg==,,,,##",
+  "TPTTPo~~oggg##:::::::::::::::::::::::::::::::::::::ggggg==,,,g##",
+  "PTTPTo~~oggg##:::::::::::::::::::::::::::::::::::::ggggg==,,,g##",
   "TTPTTo~~oggg##:::::::::::::::::B:::::::::::::::::::ggggg==g,,,TT",
   "TPTTPo~~oggg##:::::::::::::::::::::::::::::::::::::ggggg==g,,,TT",
   "PTTPTo~~oggg##:::::::::::::::::::::::::::::::::::::ggggg==g,,,PT",
@@ -586,8 +586,8 @@
   "PTTPTTgo~~og:::::::::::::::::::::::::::::::::::gggggggggggggg,PT",
   "TTPTTPgo~~og:::::::::::::::::::::::::::::::::::gggggggggggggggTT",
   "TPTTPTgo~~og:::::::::::::::::::::::::::::::::::gggggggggggggggTP",
-  "ooooooooooosssssBBBBBBBsoooooooooooooooooooooooooooooooooooooooo",
-  "ooooooooooosssssBBBBBBBsoooooooooooooooooooooooooooooooooooooooo",
+  "ooooooooooosssssBBBBBBBsooooooooooooooooooooooooooooooooooooooo$",
+  "ooooooooooosssssBBBBBBBsooooooooooooooooooooooooooooooooooooooo$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
   "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
@@ -597,6 +597,10 @@
   "north": {
    "to": "glenveagh",
    "offset": 27
+  },
+  "east": {
+   "to": "erne_shore",
+   "offset": 0
   }
  },
  "encounters": {

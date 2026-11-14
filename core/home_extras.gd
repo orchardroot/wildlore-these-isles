@@ -12,6 +12,7 @@ extends RefCounted
 const SLOT_PREFIX := "home_souv_"
 const VISIT_PREFIX := "home_visit_"
 const PAL_PREFIX := "home_pal_"
+const PROJECT_PREFIX := "kp_"
 const SLOTS := 12
 const FRIEND_REWARD_AT := 5
 
@@ -56,6 +57,11 @@ static func _build() -> Array:
 	var out := []
 	for s in _S:
 		out.append({"id": s[0], "town": s[1], "name": s[2], "shape": s[3], "col": Color(str(s[4])), "col2": Color(str(s[5])), "line": s[6]})
+	for p in TownProjects.all():  # w56: a finished town project leaves a keepsake for the shelf too
+		var k: Variant = p.get("effects", {}).get("keepsake", null)
+		if k is Dictionary:
+			out.append({"id": PROJECT_PREFIX + str(p.id), "town": "", "project": str(p.id), "name": str(k.name), "shape": str(k.shape),
+				"col": Color(str(k.col)), "col2": Color(str(k.col2)), "line": str(k.line)})
 	return out
 
 static func souvenir(id: String) -> Dictionary:
@@ -66,14 +72,14 @@ static func souvenir(id: String) -> Dictionary:
 
 # --- souvenirs ---------------------------------------------------------------------------------
 
-## Souvenir ids earned: any plaque read in the town.
+## Souvenir ids earned: any plaque read in the town, or the town project finished (w56).
 static func unlocked(d: GameStateData, plaques: Array = []) -> Array:
 	var list: Array = plaques if not plaques.is_empty() else Gazetteer.all()
 	var towns := {}
 	for p in list:
 		if Gazetteer.is_read(d, str(p.id)):
 			towns[str(p.town)] = true
-	return SOUVENIRS.filter(func(s): return towns.has(s.town)).map(func(s): return s.id)
+	return SOUVENIRS.filter(func(s): return towns.has(s.town) or (s.has("project") and TownProjects.is_done(d, str(s.project)))).map(func(s): return s.id)
 
 static func slot(d: GameStateData, n: int) -> String:
 	var v: Variant = d.flag(SLOT_PREFIX + str(n))

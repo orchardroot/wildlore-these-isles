@@ -174,5 +174,40 @@
    "who": "Fenman",
    "text": "I seen it once, the tiger. In the sugar beet. Big as a calf, stripy tail. My wife says it was the neighbour's ginger tom. My wife wasn't there."
   }
+ ],
+ "sec_fens_guide": [
+  {
+   "do": "if",
+   "flag": "secret_priest_hole_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Hall Guide",
+     "text": "Down by the water, and I never said a word. Mind the eels."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Hall Guide",
+     "text": "Out on the Fen edge in Norfolk there's a hall called Oxburgh. When it was against the law to be a Catholic priest, they hid them there."
+    },
+    {
+     "do": "say",
+     "who": "Hall Guide",
+     "text": "The hiding place is in the floor of a very small room. Families kept their walls as full of surprises as the Fens are of eels."
+    },
+    {
+     "do": "say",
+     "who": "Hall Guide",
+     "text": "There's a way in from outside, down by the water. I didn't tell you."
+    },
+    {
+     "do": "set",
+     "flag": "secret_priest_hole_known",
+     "value": true
+    }
+   ]
+  }
  ]
 }

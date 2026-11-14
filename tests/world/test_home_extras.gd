@@ -26,7 +26,7 @@ func test_souvenir_table_is_sound() -> void:
 		towns[str(p.town)] = true
 	var seen := {}
 	for s in HomeExtras.SOUVENIRS:
-		assert_true(towns.has(s.town), "%s: a town with plaques" % s.id)
+		assert_true(towns.has(s.town) or s.has("project"), "%s: a town with plaques, or a town project" % s.id)
 		assert_false(seen.has(s.id), "%s unique" % s.id)
 		seen[s.id] = true
 		assert_true(str(s.name) != "" and str(s.line) != "", "%s has text" % s.id)

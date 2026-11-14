@@ -372,6 +372,17 @@
    "tx": 5,
    "ty": 6,
    "facing": "up"
+  },
+  {
+   "x": 58,
+   "y": 23,
+   "to": "secret_brandy_pad",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_brandy_pad_known"
+   }
   }
  ],
  "edges": {
@@ -574,7 +585,17 @@
  "move": "still",
  "script": "arcni_waller",
  "show_if": "q_arc_ni_started"
-}
+},
+  {
+   "id": "sec_mournes_walker",
+   "sprite": "hiker",
+   "x": 52,
+   "y": 21,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_mournes_walker",
+   "name": "Hill Walker"
+  }
 ],
  "encounters": {
   "grass": [

@@ -6,6 +6,9 @@ static func interact(ow: Node, p: Vector2i) -> bool:
 	var ex: Dictionary = ow.zone.examine_at(p)
 	if ex.is_empty():
 		return false
+	if ex.has("phase") and not (Game.phase() in ex.phase):  # a spot that only gives itself away at a certain hour (5.6)
+		await ow.say(ex.get("off", ["Nothing, for now."]))
+		return true
 	var key := Examine.found_flag(str(ow.zone.id), ex)
 	var before := ZoneData.flag_on(Game.data.flag(key))
 	var res := Examine.read(Game.data, str(ow.zone.id), ex, Game.items)

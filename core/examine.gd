@@ -38,6 +38,11 @@ static func read(data: GameStateData, zone_id: String, ex: Dictionary, items) ->
 		var it: Dictionary = items.get_item(id) if items != null and items.has(id) else {}
 		var nm := str(it.get("name", id))
 		lines.append("You found %d x %s." % [n, nm] if n > 1 else "You found %s." % str(it.get("one", nm)))
+		if str(it.get("kind", "")) == Search.CURIO_KIND:  # a curio found in the field is a curio for the Curios page too
+			if not ZoneData.flag_on(data.flag(Search.FOUND_PREFIX + id)):
+				lines.append("A new one for the Curios page.")
+			data.set_flag(Search.FOUND_PREFIX + id, true)
+			TrainerStats.add(data, "curios_found")
 		gave = true
 	var m := int(ex.get("money", 0))
 	if m > 0:

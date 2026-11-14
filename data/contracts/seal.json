@@ -50,7 +50,10 @@
    "kind": "look",
    "zone": "pentland_coast",
    "hint": "the river mouth at dawn",
-   "text": "At first light a big, round, dark head lifts out of the river mouth, whiskered, with large wet eyes and a Roman nose. It looks at you for a very long time, with the calm of an animal that is used to being cursed. Too large for an otter by three times. It dips, and a salmon flips in the net behind you.",
+   "text": [
+    "At first light a big, round, dark head lifts out of the river mouth, whiskered, with large wet eyes and a Roman nose.",
+    "It looks at you for a very long time, with the calm of an animal that is used to being cursed. Too large for an otter by three times. It dips, and a salmon flips in the net behind you."
+   ],
    "hint_wait": "Grey water and grey sky and nothing coming up. Whoever fishes the nets keeps early hours. Try again at dawn.",
    "points": ["seal"],
    "rules_out": ["otter"],
