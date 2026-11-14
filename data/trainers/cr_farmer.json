@@ -1,6 +1,6 @@
 {
  "id": "cr_farmer",
- "name": "Farmer Padraig",
+ "name": "Farmer P\u00e1draig",
  "class": "Farmer",
  "sprite": "farmer",
  "party": [
@@ -22,7 +22,7 @@
  "intro": [
   {
    "do": "say",
-   "who": "Farmer Padraig",
+   "who": "Farmer P\u00e1draig",
    "text": "Ye can't pass through here without a word with me. It's the law. I made it just now."
   }
  ],

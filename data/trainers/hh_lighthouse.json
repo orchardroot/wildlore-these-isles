@@ -1,6 +1,6 @@
 {
  "id": "hh_lighthouse",
- "name": "Lighthouse Keeper Eamon",
+ "name": "Lighthouse Keeper \u00c9amon",
  "class": "Keeper",
  "sprite": "sailor",
  "party": [
@@ -22,7 +22,7 @@
  "intro": [
   {
    "do": "say",
-   "who": "Lighthouse Keeper Eamon",
+   "who": "Lighthouse Keeper \u00c9amon",
    "text": "Ye can't go up in a gale. And ye can't go in a gale and have an argument either. So I'll have it now."
   }
  ],

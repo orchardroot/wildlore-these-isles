@@ -1,6 +1,6 @@
 {
  "id": "hh_cyclist",
- "name": "Cyclist Roisin",
+ "name": "Cyclist R\u00f3is\u00edn",
  "class": "Cyclist",
  "sprite": "jogger",
  "party": [
@@ -22,7 +22,7 @@
  "intro": [
   {
    "do": "say",
-   "who": "Cyclist Roisin",
+   "who": "Cyclist R\u00f3is\u00edn",
    "text": "I've forty kilometres in my legs and a flapjack in my pocket. Stand aside or race me."
   }
  ],
