@@ -1,0 +1,32 @@
+{
+ "id": "gv_hurler",
+ "name": "Hurler Se\u00e1n",
+ "class": "Hurler",
+ "sprite": "hurler",
+ "party": [
+  {
+   "species": "rooklet",
+   "level": 54
+  },
+  {
+   "species": "strutcoo",
+   "level": 55
+  },
+  {
+   "species": "leveret",
+   "level": 55
+  }
+ ],
+ "ai": "trainer",
+ "money": 1950,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Hurler Se\u00e1n",
+   "text": "Ye wouldn't have a sliotar on you? No? Then we'll have to settle this the old way."
+  }
+ ],
+ "win": "Well hit. A fine clean strike. I'll tell the lads.",
+ "after": "A good touch is worth ten hard ones. My coach says that, and he's never had a bad day.",
+ "scaled_floor": 55
+}

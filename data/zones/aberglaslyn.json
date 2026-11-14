@@ -1,0 +1,776 @@
+{
+ "id": "aberglaslyn",
+ "name": "Beddgelert and Aberglaslyn",
+ "region": "north_wales",
+ "kind": "route",
+ "music": "route_mountain",
+ "weather": {
+  "fog": 22,
+  "drizzle": 26,
+  "clear": 18,
+  "sunshine": 12,
+  "downpour": 14,
+  "gale": 8
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 44,
+   "y": 6,
+   "w": 8,
+   "h": 5,
+   "label": "Royal Goat Hotel"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 53,
+   "y": 6,
+   "w": 6,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 44,
+   "y": 12,
+   "w": 6,
+   "h": 4,
+   "label": "Welsh Highland Station"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 53,
+   "y": 12,
+   "w": 5,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "bench",
+   "x": 46,
+   "y": 17
+  },
+  {
+   "type": "standing_stone",
+   "x": 33,
+   "y": 25,
+   "variant": 1
+  },
+  {
+   "type": "bench",
+   "x": 31,
+   "y": 27
+  },
+  {
+   "type": "bench",
+   "x": 36,
+   "y": 27
+  },
+  {
+   "type": "bush",
+   "x": 9,
+   "y": 14,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 9,
+   "y": 16,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 5,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 11,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 7,
+   "y": 27,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 9,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 33,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 38,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 36,
+   "y": 37,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 48,
+   "y": 25,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 50,
+   "y": 27,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 53,
+   "y": 26,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 31,
+   "y": 39,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 42,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 42,
+   "y": 5,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 35,
+   "y": 39,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 34,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 32,
+   "y": 39,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 41,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 57,
+   "y": 40,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 43,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 43,
+   "y": 8,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 59,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 56,
+   "y": 21,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 60,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 59,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 32,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 50,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 20,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 47,
+   "y": 39,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 50,
+   "y": 13,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 43,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 6,
+   "y": 5,
+   "variant": 0
+  },
+  {
+   "type": "birch",
+   "x": 11,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 13,
+   "y": 4,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 9,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 6,
+   "y": 4,
+   "variant": 2
+  },
+  {
+   "type": "birch",
+   "x": 9,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "birch",
+   "x": 7,
+   "y": 9,
+   "variant": 0
+  },
+  {
+   "type": "birch",
+   "x": 4,
+   "y": 6,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 6,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 13,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "birch",
+   "x": 12,
+   "y": 7,
+   "variant": 2
+  },
+  {
+   "type": "birch",
+   "x": 3,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 20,
+   "y": 11,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 58,
+   "y": 3,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 60,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 13,
+   "y": 31,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 30,
+   "y": 13,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 18,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 58,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 49,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 52,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 28,
+   "y": 20,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 54,
+   "y": 5,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 48,
+   "y": 3,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 57,
+   "y": 34,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 41,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 51,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 60,
+   "y": 15,
+   "variant": 1
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "cambrian_coast",
+   "offset": 0
+  },
+  "east": {
+   "to": "yr_wyddfa",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "ag_guide",
+   "sprite": "tour_guide",
+   "x": 31,
+   "y": 23,
+   "facing": "right",
+   "move": "still",
+   "script": "ag_guide"
+  },
+  {
+   "id": "ag_volunteer",
+   "sprite": "rail_guard",
+   "x": 45,
+   "y": 17,
+   "facing": "down",
+   "move": "still",
+   "script": "ag_volunteer"
+  },
+  {
+   "id": "ag_cafe",
+   "sprite": "villager_3",
+   "x": 51,
+   "y": 17,
+   "facing": "down",
+   "move": "wander",
+   "script": "ag_cafe"
+  },
+  {
+   "id": "ag_gorge_walker",
+   "sprite": "hiker",
+   "x": 18,
+   "y": 32,
+   "facing": "right",
+   "move": "still",
+   "script": "ag_gorge_walker"
+  },
+  {
+   "id": "ag_osprey",
+   "sprite": "birdwatcher",
+   "x": 38,
+   "y": 33,
+   "facing": "up",
+   "move": "still",
+   "trainer": "ag_osprey"
+  },
+  {
+   "id": "ag_hillfarmer",
+   "sprite": "farmer",
+   "x": 47,
+   "y": 25,
+   "facing": "left",
+   "move": "still",
+   "trainer": "ag_hillfarmer"
+  },
+  {
+   "id": "ag_copper",
+   "sprite": "tour_guide",
+   "x": 12,
+   "y": 24,
+   "facing": "right",
+   "move": "still",
+   "trainer": "ag_copper"
+  },
+  {
+   "id": "gate_aberglaslyn_a",
+   "sprite": "warden_grunt",
+   "x": 62,
+   "y": 30,
+   "facing": "right",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_aberglaslyn",
+   "hide_if": "ch3_ddraig_woke"
+  },
+  {
+   "id": "gate_aberglaslyn_b",
+   "sprite": "warden_grunt",
+   "x": 62,
+   "y": 31,
+   "facing": "right",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_aberglaslyn",
+   "hide_if": "ch3_ddraig_woke"
+  },
+  {
+   "id": "gate_aberglaslyn_c",
+   "sprite": "warden_grunt",
+   "x": 62,
+   "y": 32,
+   "facing": "right",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_aberglaslyn",
+   "hide_if": "ch3_ddraig_woke"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "kidgruff",
+    "min": 30,
+    "max": 32,
+    "weight": 22
+   },
+   {
+    "species": "cragchough",
+    "min": 30,
+    "max": 32,
+    "weight": 18
+   },
+   {
+    "species": "tapknock",
+    "min": 31,
+    "max": 33,
+    "weight": 14,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "wispet",
+    "min": 31,
+    "max": 33,
+    "weight": 12,
+    "weather": [
+     "fog",
+     "drizzle"
+    ]
+   },
+   {
+    "species": "kitelet",
+    "min": 30,
+    "max": 32,
+    "weight": 14,
+    "time": [
+     "day",
+     "dawn"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 31,
+    "max": 33,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "slatelet",
+    "min": 30,
+    "max": 32,
+    "weight": 14
+   },
+   {
+    "species": "tylwyth",
+    "min": 31,
+    "max": 33,
+    "weight": 8,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "gwyllgi",
+    "min": 32,
+    "max": 33,
+    "weight": 5,
+    "time": [
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "dipling",
+    "min": 30,
+    "max": 32,
+    "weight": 30
+   },
+   {
+    "species": "ratty",
+    "min": 30,
+    "max": 32,
+    "weight": 30
+   },
+   {
+    "species": "afanc",
+    "min": 31,
+    "max": 33,
+    "weight": 12,
+    "weather": [
+     "drizzle",
+     "downpour"
+    ]
+   },
+   {
+    "species": "elverlet",
+    "min": 30,
+    "max": 32,
+    "weight": 16
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 6,
+   "y": 9,
+   "text": "WEST: the Cambrian Coast, Porthmadog and Harlech. Gorllewin. The road goes through a gorge first, and the gorge is the better bit."
+  },
+  {
+   "x": 59,
+   "y": 33,
+   "text": "EAST: Yr Wyddfa and the Nantgwynant valley. Dwyrain. The mountain is bigger than it looks on the map, and it looks big on the map."
+  },
+  {
+   "x": 26,
+   "y": 14,
+   "text": "PONT ABERGLASLYN. A stone bridge over the Glaslyn where the river drops through a narrow gorge. The road and the old railway squeezed in beside the water, and neither of them has been able to widen it since."
+  },
+  {
+   "x": 46,
+   "y": 18,
+   "text": "BEDDGELERT. Bedd is a grave. Of whom, you can read at the meadow. (Hint: of one dog, and the story that came with him.)"
+  },
+  {
+   "x": 32,
+   "y": 24,
+   "plaque": "aberglaslyn_gelert",
+   "title": "Gelert's Grave",
+   "text": "The tale says Prince Llywelyn came home to find his hound Gelert bloody and the baby's cradle overturned, killed the dog in a rage, and then found the child alive beside a dead wolf. Versions of the story turn up across Europe. The grave in the meadow was set up at the end of the 1700s, and the village has done well out of it ever since."
+  },
+  {
+   "x": 35,
+   "y": 24,
+   "plaque": "aberglaslyn_ospreys",
+   "title": "The Glaslyn Ospreys",
+   "text": "In 2004 a pair of ospreys nested near Pont Croesor, the first in Wales for about four hundred years. They have raised chicks on the Glaslyn almost every summer since, and volunteers with telescopes will show you the nest if you ask nicely."
+  },
+  {
+   "x": 42,
+   "y": 14,
+   "plaque": "aberglaslyn_whr",
+   "title": "The Welsh Highland Railway",
+   "text": "A narrow gauge railway ran through the Aberglaslyn Pass until it closed in the 1930s, and for decades the trackbed was a footpath and a ruin. Volunteers rebuilt it. Steam trains now run again from Caernarfon to Porthmadog through the gorge, and the path beside the river is still one of the best short walks in Wales."
+  },
+  {
+   "x": 48,
+   "y": 29,
+   "text": "A WALL WITH A TOOTH MISSING. The farmer says it was the wind. The wind says it was the sheep."
+  }
+ ],
+ "spawn": [
+  20,
+  17
+ ],
+ "stage": "mountain",
+ "scaled_floor": 31,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT...........RRmmmr~~~~rmRR.................................TTT",
+  "TTT...........RRmmmmr~~~~rRR.................................TTT",
+  "TTT...........RRmmmmr~~~~rRR..,,,,,,,,,,,,...................PTT",
+  "TTT...........RRmmmmmr~~~~rR..,,,,,,,,,,,,..BBBBBBBB.BBBBBB..TTT",
+  "TTT...........RRmmmmmr~~~~rR..,,,,,,,,,,,,..BBBBBBBB.BBBBBB..TTT",
+  "TTT...........RRmmmmmr~~~~rR..,,,,,,,,,,,,..BBBBBBBB.BBBBBB..TTT",
+  "TTT...........RRmmmmmr~~~~rR..,,,,,,,,,,,,..BBBBBBBB.BBBBBB..TTT",
+  "TTT...........RRmmmmmr~~~~rR..,,,,,,,,,,,,..BBBBBBBB.........TTT",
+  "###############Rmmmmmr~~~~rR..,,,,,,,,,,,,.:::::::::::::::::.TTT",
+  "###############Rmmmmr~~~~rRR..,,,,,,,,,,,,..BBBBBB...BBBBB...TTT",
+  "###############Rmmmmr~~~~rRR................BBBBBB...BBBBB...TTP",
+  "TTT.,,,,,,,.###Rmmmr~~~~rmRR................BBBBBB...BBBBB...TTT",
+  "TTT.,,,,,,,.###RmWWWWWWWWWWWW...............BBBBBB...BBBBB...TTT",
+  "TTT.,,,,,,,.###Rm========================..:::::::::.........TTT",
+  "TTT.,,,,,,,.#####=================#========..................TTT",
+  "TTP.,,,,,,,.#####=================#========..................TTT",
+  "TTT.........###R#WWWWWWWWW========#========..................TTT",
+  "TTT...........,R###~~~rmmmRR......#.....===..................TTT",
+  "TTT...........RR###~~~rmmmRR.#########..===..................TTT",
+  "TTT.,,,,,,,,..RR###~~~rmmmRR..ffffffff..===..,,,,,,,,,,,,....TTT",
+  "TTT.,,,,,,,,..RR###~~~~rmmRR..ffffffff..===..,,,,,,,,,,,,....TTT",
+  "TTT.,,,,,,,,..RR###~~~~rmmRR..ffffffff..===..,,,,,,,,,,,,....TTT",
+  "TTT.,,,,,,,,..RR###r~~~~rmRR..ffffffff..===..,,,,,,,,,,,,....TTT",
+  "TTT.,,,,,,,,..RR###mr~~~~rRR..ffffffff..===..,,,,,,,,,,,,....TTT",
+  "TTT.,,,,,,,,..RR###mr~~~~rRR..ffffffff..===..,,,,,,,,,,,,....TTT",
+  "TTT...........RR###mmr~~~~rR..ffffffff..===..WWWWW.WWWWWW....TTT",
+  "TTT...........RR###mmr~~~~rR............===..................TTT",
+  "TPT...........RR###mmr~~~~rR............=====================###",
+  "TTT...........RR###mmr~~~~rR.,,,,,,,,,,.=====================###",
+  "TTT.,,,,,,,,..RR###mmr~~~~rR.,,,,,,,,,,.=====================###",
+  "TTT.,,,,,,,,..RR###mmr~~~~rR.,,,,,,,,,,......................TTT",
+  "TTT.,,,,,,,,..RR###mr~~~~rRR.,,,,,,,,,,......................TTT",
+  "TTT.,,,,,,,,..RR###rr~~~~rRR.,,,,,,,,,,.......,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,..RR###~~~~~~~~R.,,,,,,,,,,.......,,,,,,,,,,,,...TTT",
+  "TTT.,,,,,,,,..RR###~~~~~~~~~.,,,,,,,,,,.......,,,,,,,,,,,,...TTT",
+  "TTT...........RR###~~~~~~~~~..................,,,,,,,,,,,,...TTT",
+  "TTT...........RRr~~~~~~~~~~~.................................TTT",
+  "TTT...........RRrr~~~~~~~~~R.................................PTT",
+  "TTTTTTTTTTTTTPTTTTTTTTT~TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "legend_extra": {
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#7f8a55"
+  }
+ }
+}

@@ -7,6 +7,10 @@
   "west": {
    "offset": 0.0,
    "to": "ring_of_kerry"
+  },
+  "south": {
+   "to": "healy_pass",
+   "offset": 0
   }
  },
  "encounters": {
@@ -943,7 +947,7 @@
   "TT..............::::::::::::::===...............................TT",
   "TT............................===...............................TT",
   "TTTTTTTTTTTTTTTTTTTTTTHHHTTTTT===TTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTFFFTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTT"
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTT"
  ],
  "signs": [
   {

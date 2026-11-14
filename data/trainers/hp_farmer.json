@@ -1,0 +1,32 @@
+{
+ "id": "hp_farmer",
+ "name": "Farmer Mick",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "loaghtan",
+   "level": 53
+  },
+  {
+   "species": "billgruff",
+   "level": 54
+  },
+  {
+   "species": "brockmoor",
+   "level": 54
+  }
+ ],
+ "ai": "trainer",
+ "money": 1880,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Farmer Mick",
+   "text": "Is that my wall you're standing next to? It is. I will let you off. If you win."
+  }
+ ],
+ "win": "Fair play to ye. A good battle is worth a gap in the wall.",
+ "after": "I mind this hill for the sheep. The sheep mind it for themselves.",
+ "scaled_floor": 54
+}

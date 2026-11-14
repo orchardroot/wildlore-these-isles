@@ -1,0 +1,32 @@
+{
+ "id": "hp_walker",
+ "name": "Beara Way Walker Nuala",
+ "class": "Walker",
+ "sprite": "hiker",
+ "party": [
+  {
+   "species": "pooka",
+   "level": 53
+  },
+  {
+   "species": "gealhare",
+   "level": 54
+  },
+  {
+   "species": "snowhare",
+   "level": 54
+  }
+ ],
+ "ai": "trainer",
+ "money": 1880,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Beara Way Walker Nuala",
+   "text": "I'm walking the Beara Way, the whole circuit. I'm on day nine. My feet and I are no longer speaking."
+  }
+ ],
+ "win": "Grand. That was a rest. A good one. Thank you.",
+ "after": "Keep the sea on your left and a sandwich in your pocket. That's the whole route.",
+ "scaled_floor": 54
+}

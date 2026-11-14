@@ -1,0 +1,38 @@
+{
+ "hp_driver": [
+  {
+   "do": "say",
+   "who": "Man at the Lay-by",
+   "text": "The Healy Pass has more hairpins than a hairdresser's. I come up here every Sunday to watch the cars, and the cars to watch the sheep."
+  },
+  {
+   "do": "say",
+   "who": "Man at the Lay-by",
+   "text": "God, it's soft out. That's what we say in this country when it's raining so gently you could mistake it for a mood."
+  }
+ ],
+ "hp_miner_guide": [
+  {
+   "do": "say",
+   "who": "Heritage Guide",
+   "text": "Those engine houses are Cornish. Cornish miners came over with the steam engines. A fair few stayed and married, and now half of Allihies is a Trevithick."
+  },
+  {
+   "do": "say",
+   "who": "Heritage Guide",
+   "text": "Daphne du Maurier wrote a novel about it called Hungry Hill, about a family with a mine and a great many feuds. It is not a quiet book."
+  }
+ ],
+ "hp_cable": [
+  {
+   "do": "say",
+   "who": "Cable Car Attendant",
+   "text": "A handful at a time, and no more. The wind has a say, and when the wind says no, we wait. Sure what's the hurry? It's an island."
+  },
+  {
+   "do": "say",
+   "who": "Cable Car Attendant",
+   "text": "Dursey is a grand place for a walk. Nobody lives there now. The cows, the sheep and the birds do the housekeeping."
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "gv_guide": [
+  {
+   "do": "say",
+   "who": "Rock Guide",
+   "text": "The tower is nearly thirty metres, and they say it is older than the rest of the buildings. It is the tallest thing for miles, and the best seat in the vale."
+  },
+  {
+   "do": "say",
+   "who": "Rock Guide",
+   "text": "Cormac's Chapel is the finest of the lot. Come out of the rain and let your eyes get used to the stone."
+  }
+ ],
+ "gv_cheese": [
+  {
+   "do": "say",
+   "who": "Cheesemaker",
+   "text": "Taste that. It's blue, but it's gentle. It's made from the milk of cows who've never had a bad thought."
+  },
+  {
+   "do": "say",
+   "who": "Cheesemaker",
+   "text": "My own grandmother would've said the Grubbs were soft in the head. And she'd've eaten the cheese. Every time."
+  }
+ ],
+ "gv_gaa_fan": [
+  {
+   "do": "say",
+   "who": "Hurling Fan",
+   "text": "Thurles is the heartland of the game. Every second child here has a hurley before they have a front tooth."
+  },
+  {
+   "do": "say",
+   "who": "Hurling Fan",
+   "text": "The sliotar is the ball. The hurley, we call a cam\u00e1n, is the stick. And you hold it like it owes you money."
+  }
+ ]
+}

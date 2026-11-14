@@ -7,6 +7,10 @@
   "west": {
    "offset": 0.0,
    "to": "ogwen"
+  },
+  "south": {
+   "to": "llyn_tegid",
+   "offset": 0
   }
  },
  "encounters": {
@@ -920,8 +924,8 @@
   "PPP....RP.....#......R..............H.......,,,,,,,,,,,,,,,..PPP",
   "PPP....R............................H.......,,,,,,,,,,,,,,,..PPP",
   "PPPPPPPPPPPPPHHHPPPP,,,,,,PPPP......HPPPPPPPPPPPPPPPPPPPPPPPPPPP",
-  "PPPPPPPPPPPPPPPPPPPP,,,,,,PPPPPPPPPPPPPPPPPPPPPPPPPPPTPPPPPPPPPP",
-  "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPTPPPPPPPPPPPPPPPPPPPPTPPPPTPPPPPP"
+  "PPPPPPPPPPPPPPPPPPPP,,,,,,PPPPP###PPPPPPPPPPPPPPPPPPPTPPPPPPPPPP",
+  "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP###PPPPPPPPPPPPPPPPPPTPPPPTPPPPPP"
  ],
  "signs": [
   {

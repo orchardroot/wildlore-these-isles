@@ -1,0 +1,50 @@
+{
+ "tg_boatman": [
+  {
+   "do": "say",
+   "who": "Boat Hirer",
+   "text": "The lake can go from glass to white horses in the time it takes to eat a Welsh cake. Wear the life jacket. It does not make you look silly. It makes you look alive."
+  },
+  {
+   "do": "say",
+   "who": "Boat Hirer",
+   "text": "Welsh legend puts Ceridwen in a house on this lake. She is the one who kept the cauldron that made the poet Taliesin. I would not leave my sandwiches unattended near her."
+  }
+ ],
+ "tg_learner": [
+  {
+   "do": "say",
+   "who": "Welsh Learner",
+   "text": "Dw i'n dysgu Cymraeg. I am learning Welsh. It is going well, if by well you mean I can order a tea and apologise for not being able to order anything else."
+  },
+  {
+   "do": "say",
+   "who": "Welsh Learner",
+   "text": "Everyone in Bala is lovely about it. They wait. They smile. They answer in English, and then in Welsh, and then in a slower Welsh, which I appreciate."
+  }
+ ],
+ "tg_railwayman": [
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "Our little steam railway runs along the shore of the lake. Four miles of it, at the speed of a good conversation."
+  },
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "The track was once a main line. Now it is a narrow gauge and a very lovely thing to sit on with a flask."
+  }
+ ],
+ "gate_llyn_tegid": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The road to Bala and the coast is closed. Heritage Assessment. Director Pryce has not come back with the results."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "He has been up the mountain for a good while now. I am sure it is all going very well."
+  }
+ ]
+}

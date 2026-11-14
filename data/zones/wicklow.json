@@ -430,6 +430,10 @@
   "west": {
    "to": "kilkenny",
    "offset": 0
+  },
+  "south": {
+   "to": "hook_head",
+   "offset": 0
   }
  },
  "npcs": [
@@ -851,8 +855,8 @@
   "PP...................P.......P................................PP",
   "PP.............................................P..............PP",
   "PP......................P.....................................PP",
-  "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
-  "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
+  "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP###PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+  "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP###PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
  ],
  "heights": [
   "0000000000000000000000000000000000000000000000000000000000000000",

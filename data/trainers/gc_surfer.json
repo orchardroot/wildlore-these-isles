@@ -1,0 +1,32 @@
+{
+ "id": "gc_surfer",
+ "name": "Surfer Dylan",
+ "class": "Surfer",
+ "sprite": "surfer",
+ "party": [
+  {
+   "species": "pupplash",
+   "level": 34
+  },
+  {
+   "species": "selklet",
+   "level": 35
+  },
+  {
+   "species": "gannetling",
+   "level": 35
+  }
+ ],
+ "ai": "trainer",
+ "money": 790,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Surfer Dylan",
+   "text": "The Atlantic swell comes straight up the Channel and ends up here. It is beautiful and it will hold you under."
+  }
+ ],
+ "win": "Wiped out. In the best way.",
+ "after": "The waves at Southerndown are small. The ones at Porthcawl are smaller. Wales has a lot of coast and none of it is flat.",
+ "scaled_floor": 35
+}

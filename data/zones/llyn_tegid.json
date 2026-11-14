@@ -1,0 +1,791 @@
+{
+ "id": "llyn_tegid",
+ "name": "Bala and Llyn Tegid",
+ "region": "north_wales",
+ "kind": "route",
+ "music": "route_lakes",
+ "weather": {
+  "drizzle": 30,
+  "clear": 20,
+  "fog": 14,
+  "sunshine": 14,
+  "downpour": 14,
+  "gale": 8
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 36,
+   "y": 4,
+   "w": 8,
+   "h": 4,
+   "label": "Bala Grammar Hall"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 45,
+   "y": 4,
+   "w": 6,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 52,
+   "y": 5,
+   "w": 5,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "lamp_post",
+   "x": 56,
+   "y": 9
+  },
+  {
+   "type": "bench",
+   "x": 44,
+   "y": 9
+  },
+  {
+   "type": "post_box",
+   "x": 49,
+   "y": 9
+  },
+  {
+   "type": "statue",
+   "x": 28,
+   "y": 9
+  },
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 38,
+   "y": 36,
+   "w": 8,
+   "h": 3,
+   "label": "Bala Lake Railway"
+  },
+  {
+   "type": "bush",
+   "x": 29,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 27,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 30,
+   "y": 5,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 49,
+   "y": 16,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 48,
+   "y": 21,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 50,
+   "y": 20,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 7,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 10,
+   "y": 27,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 8,
+   "y": 25,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 17,
+   "y": 39,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 18,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 24,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 21,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 58,
+   "y": 26,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 27,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 25,
+   "y": 18,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 23,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 9,
+   "y": 42,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 51,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 20,
+   "y": 19,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 22,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 28,
+   "y": 10,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 17,
+   "y": 23,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 26,
+   "y": 36,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 13,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 7,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 8,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 28,
+   "y": 40,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 60,
+   "y": 41,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 58,
+   "y": 10,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 35,
+   "y": 15,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 31,
+   "y": 42,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 9,
+   "y": 10,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 20,
+   "y": 20,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 30,
+   "y": 33,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 27,
+   "y": 32,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 41,
+   "y": 9,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 16,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "birch",
+   "x": 13,
+   "y": 18,
+   "variant": 0
+  },
+  {
+   "type": "birch",
+   "x": 18,
+   "y": 10,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 20,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 25,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "birch",
+   "x": 17,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "birch",
+   "x": 34,
+   "y": 8,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 31,
+   "y": 39,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 47,
+   "y": 31,
+   "variant": 1
+  },
+  {
+   "type": "birch",
+   "x": 34,
+   "y": 4,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 26,
+   "y": 33,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 21,
+   "y": 29,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 18,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 55,
+   "y": 24,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 22,
+   "y": 4,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 54,
+   "y": 41,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 25,
+   "y": 34,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 36,
+   "y": 14,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 8,
+   "y": 3,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 23,
+   "y": 32,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 47,
+   "y": 33,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 57,
+   "y": 3,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 20,
+   "y": 7,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 15,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 21,
+   "y": 9,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 7,
+   "y": 4,
+   "variant": 0
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "north": {
+   "to": "llangollen",
+   "offset": 0
+  },
+  "west": {
+   "to": "aberystwyth",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "tg_boatman",
+   "sprite": "sailor",
+   "x": 22,
+   "y": 26,
+   "facing": "right",
+   "move": "still",
+   "script": "tg_boatman"
+  },
+  {
+   "id": "tg_learner",
+   "sprite": "student",
+   "x": 42,
+   "y": 10,
+   "facing": "down",
+   "move": "still",
+   "script": "tg_learner"
+  },
+  {
+   "id": "tg_railwayman",
+   "sprite": "rail_guard",
+   "x": 34,
+   "y": 35,
+   "facing": "right",
+   "move": "still",
+   "script": "tg_railwayman"
+  },
+  {
+   "id": "tg_angler",
+   "sprite": "angler",
+   "x": 24,
+   "y": 33,
+   "facing": "right",
+   "move": "still",
+   "trainer": "tg_angler"
+  },
+  {
+   "id": "tg_walker",
+   "sprite": "hiker",
+   "x": 20,
+   "y": 22,
+   "facing": "up",
+   "move": "still",
+   "trainer": "tg_walker"
+  },
+  {
+   "id": "tg_choir",
+   "sprite": "choir_singer",
+   "x": 46,
+   "y": 18,
+   "facing": "left",
+   "move": "still",
+   "trainer": "tg_choir"
+  },
+  {
+   "id": "gate_llyn_tegid_a",
+   "sprite": "warden_grunt",
+   "x": 31,
+   "y": 1,
+   "facing": "up",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_llyn_tegid",
+   "hide_if": "ch3_ddraig_woke"
+  },
+  {
+   "id": "gate_llyn_tegid_b",
+   "sprite": "warden_grunt",
+   "x": 32,
+   "y": 1,
+   "facing": "up",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_llyn_tegid",
+   "hide_if": "ch3_ddraig_woke"
+  },
+  {
+   "id": "gate_llyn_tegid_c",
+   "sprite": "warden_grunt",
+   "x": 33,
+   "y": 1,
+   "facing": "up",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_llyn_tegid",
+   "hide_if": "ch3_ddraig_woke"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "tylwyth",
+    "min": 30,
+    "max": 32,
+    "weight": 16,
+    "time": [
+     "dawn",
+     "dusk"
+    ]
+   },
+   {
+    "species": "gwyllgi",
+    "min": 31,
+    "max": 33,
+    "weight": 14,
+    "time": [
+     "night",
+     "dusk"
+    ]
+   },
+   {
+    "species": "martling",
+    "min": 30,
+    "max": 32,
+    "weight": 12,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "brockling",
+    "min": 30,
+    "max": 32,
+    "weight": 16,
+    "time": [
+     "dawn",
+     "day",
+     "dusk"
+    ]
+   },
+   {
+    "species": "wispet",
+    "min": 31,
+    "max": 33,
+    "weight": 10,
+    "weather": [
+     "fog",
+     "drizzle"
+    ]
+   },
+   {
+    "species": "kidgruff",
+    "min": 30,
+    "max": 32,
+    "weight": 18
+   },
+   {
+    "species": "cragchough",
+    "min": 30,
+    "max": 32,
+    "weight": 14
+   },
+   {
+    "species": "kitelet",
+    "min": 30,
+    "max": 32,
+    "weight": 12,
+    "time": [
+     "day",
+     "dawn"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 31,
+    "max": 33,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "afanc",
+    "min": 31,
+    "max": 33,
+    "weight": 18
+   },
+   {
+    "species": "elverlet",
+    "min": 30,
+    "max": 32,
+    "weight": 24
+   },
+   {
+    "species": "ductling",
+    "min": 30,
+    "max": 32,
+    "weight": 22
+   },
+   {
+    "species": "dipling",
+    "min": 30,
+    "max": 32,
+    "weight": 20
+   },
+   {
+    "species": "moonbell",
+    "min": 31,
+    "max": 33,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 29,
+   "y": 2,
+   "text": "NORTH: Corwen, Llangollen and the Dee. Gogledd. Owain Glynd\u0175r was proclaimed Prince of Wales near here in 1400, and the Welsh have not entirely stopped cheering."
+  },
+  {
+   "x": 5,
+   "y": 18,
+   "text": "WEST: Dolgellau, Machynlleth and the Cambrian Coast. Gorllewin. The road climbs, falls, and does it again, as if it were showing off."
+  },
+  {
+   "x": 40,
+   "y": 12,
+   "text": "LLYN TEGID. Four miles long, a mile wide, and the largest natural lake in Wales. The River Dee runs through it from end to end, which is the sort of thing a lake does when it is determined to be useful."
+  },
+  {
+   "x": 14,
+   "y": 16,
+   "text": "Y BALA. The name means the outlet, the place where a lake empties. The lake does not mind. It has been emptying here since the ice left."
+  },
+  {
+   "x": 27,
+   "y": 9,
+   "plaque": "llyn_tegid_glyndwr",
+   "title": "Glynd\u0175r's Proclamation",
+   "text": "On 16 September 1400 Owain Glynd\u0175r was proclaimed Prince of Wales at his manor at Glyndyfrdwy, on the Dee between Llangollen and Corwen. The revolt that followed lasted over a decade. Glynd\u0175r was never captured and no one knows for certain where he died, which has kept the legend in good health."
+  },
+  {
+   "x": 47,
+   "y": 9,
+   "plaque": "llyn_tegid_bible",
+   "title": "Mary Jones and the Bible",
+   "text": "In 1800 a Welsh girl of fifteen, Mary Jones, is said to have walked some twenty-five miles from her home to Bala to buy a Bible from the minister Thomas Charles. He had run out of copies. The story goes that he found her one anyway, and that her journey helped to inspire the founding of the British and Foreign Bible Society in 1804."
+  },
+  {
+   "x": 54,
+   "y": 22,
+   "plaque": "llyn_tegid_gwyniad",
+   "title": "The Gwyniad",
+   "text": "The gwyniad is a whitefish that lives in Llyn Tegid and nowhere else in Wales, a relic of the cold water left behind when the glaciers melted. It is silver, shy and rare, and fishermen who catch one are asked politely to put it back."
+  }
+ ],
+ "spawn": [
+  32,
+  8
+ ],
+ "stage": "valley",
+ "scaled_floor": 31,
+ "rows": [
+  "TTTTTTTTTTTTTTTTPTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT###TTTTPTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT............................===...........................TTT",
+  "TTT.hhhhhhhhhhhhhhhhhh..,,,,,,,,==..BBBBBBBB.BBBBBB..........TTT",
+  "TTT.hhhhhhhhhhhhhhhhhh..,,,,,,,,==..BBBBBBBB.BBBBBB.BBBBB....TTT",
+  "TTT.hhhhhhhhhhhhhhhhhh..,,,,,,,,==..BBBBBBBB.BBBBBB.BBBBB....TTT",
+  "TTT.hhhhhhhhhhhhhhhhhh..,,,,,,,,==..BBBBBBBB.BBBBBB.BBBBB....TTT",
+  "TTT.hhhhhhhhhhhhhhhhhh..,,,,,,,,==.::::::::::::::::::::::....TTT",
+  "TTT.hhhhhhhhhhhhhhhhhh.........===.:.........................TTT",
+  "TTT............................===.:.........................TTT",
+  "TTT====================================================......TTT",
+  "TTT====================================================......TTT",
+  "PTT====================================================......TTT",
+  "TTT===..............................................###......TTT",
+  "TTT===........................................,,,,,,###......TTT",
+  "TTT===........................................,,,,,,###......TTT",
+  "TTT===.........................r...r...r......,,,,,,###......TTT",
+  "TTT===................,,,,,,rr.rrrrrrrrrrrrr..,,,,,,###......TTT",
+  "######................,,,,,,rrrr~rr~r~r~rrrrrr,,,,,,###......TTT",
+  "######................,,,,,,~~~~~~~~~~~~~~~rrr,,,,,,###.,,,,.TTT",
+  "######................,,,,,,~~~~~~~~~~~~~~~~~~,,,,,,###.,,,,.TTT",
+  "TTT..................r,,,,,,~~~~~~~~~~~~~~~~~~,,,,,,###.,,,,.TTT",
+  "TTT..................r,,,,,,~~~~~~~~~~~~~~~~~~~~~~rr###.,,,,.TTT",
+  "TTT...,,,,,,,,,,.....rr~~~~~~~~~~~~~~~~~~~~~~~~~~~~r###.,,,,.TTT",
+  "TTT...,,,,,,,,,,.....r~~~~~~~~~~~~~~~~~~~~~~~~~~~~rr###.,,,,.TTT",
+  "TTT...,,,,,,,,,,....rrr~~~~~~~~~~~~~~~~~~~~~~~~~~~r.###.,,,,.TTT",
+  "TTT...,,,,,,,,,,....rrrr~~~~~~~~~~~~~~~~~~~~~~~~~~rr###.,,,,.TTT",
+  "TPT...,,,,,,,,,,......rrr~~~~~~~~~~~~~~~~~~~~~~~~rr.###.,,,,.TTT",
+  "TTT...,,,,,,,,,,.......rrr~~~~~~~~~~~~~~~~~~~~~rrrr.###.,,,,.TTT",
+  "TTT...,,,,,,,,,,.......rrrrrr~~~~~~~~~~~~~~~rrrrr...###.,,,,.PTT",
+  "TTT...,,,,,,,,,,.........r.rrrrrr~~rrr~~rrrrrrr.....###.,,,,.TTT",
+  "TTT.........................rrrrrrrrrrrrrrrr........###......TTT",
+  "TTT...............................rr..r.............###......TTT",
+  "TTT...................................#################......TTT",
+  "TTP.....................................#....................TTT",
+  "TTT.......,,,,,,,,,,,,,,,,............BBBBBBBB...............TTT",
+  "TTT.......,,,,,,,,,,,,,,,,............BBBBBBBB...............TTT",
+  "PTT.......,,,,,,,,,,,,,,,,............BBBBBBBB...............TTT",
+  "TTT.......,,,,,,,,,,,,,,,,...................................TTT",
+  "TTT.......,,,,,,,,,,,,,,,,...................................TTT",
+  "TTT.......,,,,,,,,,,,,,,,,...................................TTT",
+  "TTT..........................................................TTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "legend_extra": {
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "m": {
+   "tile": "grass",
+   "colour": "#7f8a55"
+  },
+  "h": {
+   "tile": "tall_grass",
+   "colour": "#7a6478",
+   "prop": "heather"
+  }
+ }
+}

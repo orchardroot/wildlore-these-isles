@@ -1,0 +1,32 @@
+{
+ "id": "cr_farmer",
+ "name": "Farmer Padraig",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "gentlet",
+   "level": 56
+  },
+  {
+   "species": "cluricaun",
+   "level": 57
+  },
+  {
+   "species": "corncrake",
+   "level": 57
+  }
+ ],
+ "ai": "trainer",
+ "money": 2100,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Farmer Padraig",
+   "text": "Ye can't pass through here without a word with me. It's the law. I made it just now."
+  }
+ ],
+ "win": "Well. That's me told. Mind the cow on your way out.",
+ "after": "The corncrake's gone from most places. I've two in the top field and I don't tell a soul.",
+ "scaled_floor": 57
+}

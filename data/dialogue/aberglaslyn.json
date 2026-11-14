@@ -1,0 +1,62 @@
+{
+ "ag_guide": [
+  {
+   "do": "say",
+   "who": "Meadow Guide",
+   "text": "That is Gelert's Grave. Don't tell the dog this, but the story is a lot older than the stone."
+  },
+  {
+   "do": "say",
+   "who": "Meadow Guide",
+   "text": "An innkeeper is supposed to have set the stone up to bring in visitors. Two hundred years on, it still works. Good marketing never goes out of style."
+  }
+ ],
+ "ag_volunteer": [
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "I give up my Saturdays to this railway. It is the best bad decision I ever made."
+  },
+  {
+   "do": "say",
+   "who": "Railway Volunteer",
+   "text": "The line goes through the gorge and over the bridge, and the engine does the bit nobody can do on foot: it goes up without complaining."
+  }
+ ],
+ "ag_cafe": [
+  {
+   "do": "say",
+   "who": "Cafe Owner",
+   "text": "Bore da. Tea? Everyone says it is the water. I think it is the fact that I don't let anybody leave until they have had a cup."
+  },
+  {
+   "do": "say",
+   "who": "Cafe Owner",
+   "text": "The bara brith is my nain's recipe. I'm not allowed to say how much butter."
+  }
+ ],
+ "ag_gorge_walker": [
+  {
+   "do": "say",
+   "who": "Gorge Walker",
+   "text": "Keep to the path by the river. The rock is slippery when it is dry and unbelievable when it is wet."
+  },
+  {
+   "do": "say",
+   "who": "Gorge Walker",
+   "text": "The Aberglaslyn is the bit of Eryri people drive through and then say they will come back to. They do."
+  }
+ ],
+ "gate_aberglaslyn": [
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "The road to the Cambrian Coast is closed. Heritage Assessment. Director Pryce has not come back with the results."
+  },
+  {
+   "do": "say",
+   "who": "Warden",
+   "text": "He has been up the mountain for a good while now. I am sure it is all going very well."
+  }
+ ]
+}

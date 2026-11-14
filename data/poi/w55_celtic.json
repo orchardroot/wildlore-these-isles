@@ -1,0 +1,285 @@
+{
+ "pois": [
+  {
+   "id": "poi_aberglaslyn_den",
+   "zone": "aberglaslyn",
+   "near": [
+    8,
+    34
+   ],
+   "kind": "den",
+   "at": "aberglaslyn",
+   "species": "afanc"
+  },
+  {
+   "id": "poi_aberglaslyn_stone",
+   "zone": "aberglaslyn",
+   "near": [
+    33,
+    33
+   ],
+   "kind": "stone",
+   "at": "aberglaslyn",
+   "stat": "ward",
+   "lore": [
+    "It rings faintly when you tap it, like a bell with a cold.",
+    "The real thing is a glacial erratic: Snowdonia has thousands, dropped by the ice."
+   ]
+  },
+  {
+   "id": "poi_pen_y_gwryd_stone",
+   "zone": "pen_y_gwryd",
+   "near": [
+    8,
+    36
+   ],
+   "kind": "stone",
+   "at": "pen_y_gwryd",
+   "stat": "def",
+   "lore": [
+    "It is sharp and cold and has been left exactly where the glacier dropped it.",
+    "The real thing is the glacial erratics of Eryri, boulders the ice carried and dropped across Snowdonia."
+   ]
+  },
+  {
+   "id": "poi_pen_y_gwryd_cache",
+   "zone": "pen_y_gwryd",
+   "near": [
+    52,
+    40
+   ],
+   "kind": "cache",
+   "at": "pen_y_gwryd",
+   "item": "bog_myrtle_sprig",
+   "line": "A flask in a crack in the rock. Someone's emergency tea. They will not be needing it now that you have found it."
+  },
+  {
+   "id": "poi_llyn_tegid_den",
+   "zone": "llyn_tegid",
+   "near": [
+    9,
+    28
+   ],
+   "kind": "den",
+   "at": "llyn_tegid",
+   "species": "afanc"
+  },
+  {
+   "id": "poi_llyn_tegid_stone",
+   "zone": "llyn_tegid",
+   "near": [
+    56,
+    38
+   ],
+   "kind": "stone",
+   "at": "llyn_tegid",
+   "stat": "ward",
+   "lore": [
+    "It is cold, round and quietly smug, like a stone that has been polished by a glacier and knows it.",
+    "The real thing is a Welsh erratic: a boulder the ice carried and left behind in the valley."
+   ]
+  },
+  {
+   "id": "poi_llyn_tegid_cache",
+   "zone": "llyn_tegid",
+   "near": [
+    20,
+    40
+   ],
+   "kind": "cache",
+   "at": "llyn_tegid",
+   "item": "cawl",
+   "line": "A bottle-green flask wedged in a wall. Someone's lunch, kept warm for later. Sorry about that."
+  },
+  {
+   "id": "poi_glamorgan_coast_den",
+   "zone": "glamorgan_coast",
+   "near": [
+    10,
+    29
+   ],
+   "kind": "den",
+   "at": "glamorgan_coast",
+   "species": "pupplash"
+  },
+  {
+   "id": "poi_glamorgan_coast_stone",
+   "zone": "glamorgan_coast",
+   "near": [
+    47,
+    13
+   ],
+   "kind": "stone",
+   "at": "glamorgan_coast",
+   "stat": "def",
+   "lore": [
+    "It is a boulder of grey limestone with a spiral on it, tucked into the grass by the road.",
+    "The real thing is an ammonite fossil: the Blue Lias of the Glamorgan coast is full of them."
+   ]
+  },
+  {
+   "id": "poi_glamorgan_coast_cache",
+   "zone": "glamorgan_coast",
+   "near": [
+    58,
+    30
+   ],
+   "kind": "cache",
+   "at": "glamorgan_coast",
+   "item": "ammonite",
+   "line": "A jam jar under a stone. Inside, a spiral of grey rock, wrapped in a tea towel. Someone's pride and joy."
+  },
+  {
+   "id": "poi_healy_pass_den",
+   "zone": "healy_pass",
+   "near": [
+    8,
+    20
+   ],
+   "kind": "den",
+   "at": "healy_pass",
+   "species": "corncrake"
+  },
+  {
+   "id": "poi_healy_pass_stone",
+   "zone": "healy_pass",
+   "near": [
+    58,
+    32
+   ],
+   "kind": "stone",
+   "at": "healy_pass",
+   "stat": "ward",
+   "lore": [
+    "It is a standing stone, green with lichen, leaning like it has been told a long story.",
+    "The real thing is the standing stones of Beara and west Cork: the peninsula has dozens, many of them older than the roads."
+   ]
+  },
+  {
+   "id": "poi_healy_pass_cache",
+   "zone": "healy_pass",
+   "near": [
+    6,
+    14
+   ],
+   "kind": "cache",
+   "at": "healy_pass",
+   "item": "bunratty_mead",
+   "line": "A hip flask jammed behind a boulder. The label says 'for emergencies'. You have decided this counts."
+  },
+  {
+   "id": "poi_golden_vale_den",
+   "zone": "golden_vale",
+   "near": [
+    10,
+    28
+   ],
+   "kind": "den",
+   "at": "golden_vale",
+   "species": "dextera"
+  },
+  {
+   "id": "poi_golden_vale_stone",
+   "zone": "golden_vale",
+   "near": [
+    54,
+    40
+   ],
+   "kind": "stone",
+   "at": "golden_vale",
+   "stat": "ward",
+   "lore": [
+    "It is a long grey stone in a field, with a ring of cow-parsley round its foot.",
+    "The real thing is the standing stones of Tipperary and Limerick, which turn up in fields as if nobody had told the farmers."
+   ]
+  },
+  {
+   "id": "poi_golden_vale_cache",
+   "zone": "golden_vale",
+   "near": [
+    55,
+    18
+   ],
+   "kind": "cache",
+   "at": "golden_vale",
+   "item": "barmbrack",
+   "line": "A biscuit tin in the ditch with a slice of barmbrack in greaseproof paper. Whoever left it knew the road."
+  },
+  {
+   "id": "poi_clare_road_den",
+   "zone": "clare_road",
+   "near": [
+    6,
+    8
+   ],
+   "kind": "den",
+   "at": "clare_road",
+   "species": "horseshoe"
+  },
+  {
+   "id": "poi_clare_road_stone",
+   "zone": "clare_road",
+   "near": [
+    58,
+    6
+   ],
+   "kind": "stone",
+   "at": "clare_road",
+   "stat": "def",
+   "lore": [
+    "It is a flat grey slab, and when you press your hand against it the cold goes up your arm like an apology.",
+    "The real thing is the Burren limestone: a pavement of bare rock that once lay under a tropical sea."
+   ]
+  },
+  {
+   "id": "poi_clare_road_cache",
+   "zone": "clare_road",
+   "near": [
+    56,
+    40
+   ],
+   "kind": "cache",
+   "at": "clare_road",
+   "item": "bunratty_mead",
+   "line": "A flask in a hollow of the wall. The cork says 'Bunratty' and the smell says 'dangerous'. You decide to carry it carefully."
+  },
+  {
+   "id": "poi_hook_head_den",
+   "zone": "hook_head",
+   "near": [
+    20,
+    24
+   ],
+   "kind": "den",
+   "at": "hook_head",
+   "species": "stagmor"
+  },
+  {
+   "id": "poi_hook_head_stone",
+   "zone": "hook_head",
+   "near": [
+    58,
+    32
+   ],
+   "kind": "stone",
+   "at": "hook_head",
+   "stat": "ward",
+   "lore": [
+    "The salt wind has sanded it smooth, like a pebble the size of a calf.",
+    "The real thing is a Wexford boundary stone, one of many cut to mark the old parish limits."
+   ]
+  },
+  {
+   "id": "poi_hook_head_cache",
+   "zone": "hook_head",
+   "near": [
+    6,
+    28
+   ],
+   "kind": "cache",
+   "at": "hook_head",
+   "item": "barmbrack",
+   "line": "A biscuit tin in the hedge with a slice of barmbrack and a note: 'for whoever needs it'. You needed it."
+  }
+ ]
+}

@@ -472,6 +472,14 @@
   "south": {
    "to": "lough_gur",
    "offset": 0
+  },
+  "east": {
+   "to": "golden_vale",
+   "offset": 0
+  },
+  "north": {
+   "to": "clare_road",
+   "offset": 0
   }
  },
  "npcs": [
@@ -870,8 +878,8 @@
   "y": 48
  },
  "rows": [
-  "TTTTTTTTTTTTTTTTTT~~~~~TTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTT~~~~~TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTT",
+  "TTTTTTTTTTTTTTTTTT~~~~~TTTTTTTTPTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTT~~~~~TTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTTPTTTT",
   "TTkkkkkkkkkkkkkkkq~~~~~qkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
   "TTkBBBBBBBBBBBBkkq~~~~~qBBBBBBBBBBBBkkkkkkkBBBBBBBBBkkkkkkkkkkkkkkkkkkTT",
   "TTkBBBBBBBBBBBBkkq~~~~~qBBBBBBBBBBBBkkkkkkkBBBBBBBBBkkkBBBBBkBBBBBkkkkTT",
@@ -880,9 +888,9 @@
   "TTkBBBBBBBBBBBBkkq~~~~~qBBBBBBBBBBBBkkkkkkkBBBBBBBBBkkkkkkkkkkkkkkkkkkTT",
   "TTkBBBBBBDBBBBBkkq~~~~~qBBBBBBBBBBBBkkkkkkkBBBBDBBBBkkkkkkkkkkkkkkkkkkTT",
   "TT:::::::::::::::q~~~~~qBBBBBBDBBBBBkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkTT",
-  "TTkkkkkkk:kkkkkkkq~~~~~q::::::::::::::::::::::::::::::::::::::::::::::TT",
-  "TTkkkkkkk:kkkkkkkq~~~~~q::::::::::::::::::::::::::::::::::::::::::::::TT",
-  "TTkkkkkkk:kkkkkkkq~~~~~qkkkkkk:kkkkkkkkkkkkkkkk:kkkkkkkkkkkkkkk:kkkkkkTT",
+  "TTkkkkkkk:kkkkkkkq~~~~~q::::::::::::::::::::::::::::::::::::::::::::::##",
+  "TTkkkkkkk:kkkkkkkq~~~~~q::::::::::::::::::::::::::::::::::::::::::::::##",
+  "TTkkkkkkk:kkkkkkkq~~~~~qkkkkkk:kkkkkkkkkkkkkkkk:kkkkkkkkkkkkkkk:kkkkkk##",
   "TTkkkkkkk:kk:::::q~~~~~qfffffk:kkkkkkkkkkkkkkkk:kk,,,,,,,,,kkkk:kkkkkkTT",
   "TTkkkkkkk:kk:::::q~~~~~qfffffk:kkkkkkkkkkkkkkkk:kk,,,,,,,,,kkkk:kkkkkkTT",
   "TTkkkkkkk:kk:::::q~~~~~qfffffk:kkkkkkkkkkkkkkkk:kk,,,,,,,,,kkkk:kkkkkkTT",

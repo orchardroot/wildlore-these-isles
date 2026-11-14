@@ -1,0 +1,32 @@
+{
+ "id": "pyg_runner",
+ "name": "Fell Runner Sioned",
+ "class": "Fell Runner",
+ "sprite": "fell_runner",
+ "party": [
+  {
+   "species": "brockling",
+   "level": 27
+  },
+  {
+   "species": "martling",
+   "level": 28
+  },
+  {
+   "species": "hootlet",
+   "level": 28
+  }
+ ],
+ "ai": "trainer",
+ "money": 510,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Fell Runner Sioned",
+   "text": "I am running the Horseshoe in under four hours. It is a very personal goal. Please do not speak while I lose it."
+  }
+ ],
+ "win": "That cost me a minute. I shall blame you at the finish.",
+ "after": "Run on a clear day, if you can find one. Wear the bright jacket if you cannot.",
+ "scaled_floor": 28
+}

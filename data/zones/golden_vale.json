@@ -1,0 +1,647 @@
+{
+ "id": "golden_vale",
+ "name": "The Golden Vale and Cashel",
+ "region": "ireland",
+ "kind": "route",
+ "music": "route_ireland",
+ "weather": {
+  "drizzle": 32,
+  "clear": 24,
+  "fog": 8,
+  "sunshine": 16,
+  "downpour": 12,
+  "gale": 8
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "cathedral",
+   "x": 39,
+   "y": 4,
+   "w": 10,
+   "h": 4,
+   "label": "Rock of Cashel"
+  },
+  {
+   "type": "building",
+   "style": "round_tower",
+   "x": 50,
+   "y": 5,
+   "w": 2,
+   "h": 5,
+   "label": "Round Tower"
+  },
+  {
+   "type": "lamp_post",
+   "x": 53,
+   "y": 9
+  },
+  {
+   "type": "building",
+   "style": "irish_shopfront",
+   "x": 36,
+   "y": 24,
+   "w": 8,
+   "h": 4,
+   "label": "Cashel Blue Cheese Shop"
+  },
+  {
+   "type": "building",
+   "style": "irish_shopfront",
+   "x": 45,
+   "y": 24,
+   "w": 6,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "building",
+   "style": "ulster_terrace",
+   "x": 52,
+   "y": 24,
+   "w": 5,
+   "h": 4,
+   "show_label": false
+  },
+  {
+   "type": "bench",
+   "x": 44,
+   "y": 30
+  },
+  {
+   "type": "sheep",
+   "x": 25,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 7,
+   "y": 23,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 16,
+   "y": 20,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 46,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 40,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "sheep",
+   "x": 38,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 18,
+   "y": 35,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 55,
+   "y": 17,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 19,
+   "y": 28,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 32,
+   "y": 38,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 28,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 14,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 42,
+   "y": 22,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 38,
+   "y": 32,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 46,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 60,
+   "y": 38,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 51,
+   "y": 31,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 3,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 35,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 54,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 56,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 58,
+   "y": 40,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 40,
+   "y": 33,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 32,
+   "y": 22,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 59,
+   "y": 21,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 33,
+   "y": 12,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 43,
+   "y": 30,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 59,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 26,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 14,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 31,
+   "y": 3,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 13,
+   "y": 13,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 34,
+   "y": 34,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 60,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 26,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 28,
+   "y": 36,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 53,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 45,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 3,
+   "y": 16,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 33,
+   "y": 32,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 51,
+   "y": 14,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 32,
+   "y": 35,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 33,
+   "y": 36,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 49,
+   "y": 32,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 50,
+   "y": 11,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 59,
+   "y": 6,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 25,
+   "y": 35,
+   "variant": 2
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "south": {
+   "to": "kilkenny",
+   "offset": 0
+  },
+  "west": {
+   "to": "limerick",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "gv_guide",
+   "sprite": "tour_guide",
+   "x": 43,
+   "y": 11,
+   "facing": "down",
+   "move": "still",
+   "script": "gv_guide"
+  },
+  {
+   "id": "gv_cheese",
+   "sprite": "jam_maker",
+   "x": 40,
+   "y": 29,
+   "facing": "up",
+   "move": "still",
+   "script": "gv_cheese"
+  },
+  {
+   "id": "gv_gaa_fan",
+   "sprite": "hurler",
+   "x": 24,
+   "y": 32,
+   "facing": "left",
+   "move": "still",
+   "script": "gv_gaa_fan"
+  },
+  {
+   "id": "gv_hurler",
+   "sprite": "hurler",
+   "x": 28,
+   "y": 18,
+   "facing": "right",
+   "move": "still",
+   "trainer": "gv_hurler"
+  },
+  {
+   "id": "gv_dairy",
+   "sprite": "farmer",
+   "x": 12,
+   "y": 20,
+   "facing": "down",
+   "move": "still",
+   "trainer": "gv_dairy"
+  },
+  {
+   "id": "gv_pilgrim",
+   "sprite": "pilgrim",
+   "x": 48,
+   "y": 32,
+   "facing": "left",
+   "move": "still",
+   "trainer": "gv_pilgrim"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "leveret",
+    "min": 54,
+    "max": 56,
+    "weight": 14
+   },
+   {
+    "species": "moolet",
+    "min": 54,
+    "max": 56,
+    "weight": 18
+   },
+   {
+    "species": "rooklet",
+    "min": 54,
+    "max": 56,
+    "weight": 14,
+    "time": [
+     "dawn",
+     "day",
+     "dusk"
+    ]
+   },
+   {
+    "species": "rookery",
+    "min": 55,
+    "max": 56,
+    "weight": 8,
+    "time": [
+     "day"
+    ]
+   },
+   {
+    "species": "strutcoo",
+    "min": 54,
+    "max": 56,
+    "weight": 12
+   },
+   {
+    "species": "barnling",
+    "min": 54,
+    "max": 56,
+    "weight": 10,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   },
+   {
+    "species": "gealhare",
+    "min": 54,
+    "max": 56,
+    "weight": 10
+   },
+   {
+    "species": "hushwing",
+    "min": 55,
+    "max": 56,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "redbreast",
+    "min": 54,
+    "max": 56,
+    "weight": 8
+   },
+   {
+    "species": "cluricaun",
+    "min": 55,
+    "max": 56,
+    "weight": 6,
+    "time": [
+     "dusk",
+     "night"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "stalklet",
+    "min": 54,
+    "max": 56,
+    "weight": 24
+   },
+   {
+    "species": "bradan",
+    "min": 55,
+    "max": 56,
+    "weight": 20
+   },
+   {
+    "species": "rillotter",
+    "min": 54,
+    "max": 56,
+    "weight": 20
+   },
+   {
+    "species": "pierlord",
+    "min": 55,
+    "max": 56,
+    "weight": 14
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 27,
+   "y": 43,
+   "text": "SOUTH: Kilkenny and the Nore. The road north is a good one. The Tipperary sheep like it too."
+  },
+  {
+   "x": 5,
+   "y": 9,
+   "text": "WEST: Limerick and the Shannon. The vale gives out at the river, and Limerick gets going."
+  },
+  {
+   "x": 33,
+   "y": 7,
+   "text": "CAISEAL. The name means a stone fort. The rock above the town was the seat of the kings of Munster long before it was a church, and the hill has never lost its air of knowing who is in charge."
+  },
+  {
+   "x": 28,
+   "y": 33,
+   "text": "THE GOLDEN VALE. A broad belt of rich pasture across Tipperary and Limerick, and the reason the cheese, the butter and the cattle of the region are what they are. It rains here on purpose."
+  },
+  {
+   "x": 45,
+   "y": 11,
+   "plaque": "golden_vale_cashel",
+   "title": "The Rock of Cashel",
+   "text": "Cashel was the seat of the kings of Munster before it became a church site. Brian Boru was crowned king of Munster here in the 970s. The buildings on the rock include Cormac's Chapel, a Romanesque chapel consecrated in 1134, a round tower and a ruined cathedral. Legend says that St Patrick came here and baptised King Aengus, driving the point of his crozier through the king's foot. The king, thinking it part of the ritual, said nothing."
+  },
+  {
+   "x": 25,
+   "y": 30,
+   "plaque": "golden_vale_gaa",
+   "title": "The Birth of the GAA",
+   "text": "On 1 November 1884 a small group of men met in Hayes's Hotel in Thurles and founded the Gaelic Athletic Association, to bring hurling, Gaelic football and other Irish games back under Irish organisation. Hurling, the old game of ash sticks and a small leather ball, is among the fastest field games in the world, and was played in Ireland long before anyone wrote the rules down."
+  },
+  {
+   "x": 57,
+   "y": 26,
+   "plaque": "golden_vale_cheese",
+   "title": "Cashel Blue",
+   "text": "Cashel Blue is a blue cheese first made on a farm near Cashel in the 1980s by Louis and Jane Grubb. It was one of the first Irish farmhouse blue cheeses, and it showed that the grass of the Golden Vale makes milk that can be turned into something more serious than butter, if you give it a long enough wait."
+  }
+ ],
+ "spawn": [
+  30,
+  30
+ ],
+ "stage": "grass",
+ "scaled_floor": 55,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTggggggggggggggggggggggggggggggggRRRRRRRRRRRRRRRRRRRRRRggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,gggggggRRRRBBBBBBBBBBRRRRRRRRggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,gggggggRRRRBBBBBBBBBBRBBRRRRRggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,gggggggRRRRBBBBBBBBBBRBBRRRRRggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,gggggggRRRRBBBBBBBBBBRBBRRRRRggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,gggggggR###gggggggggggBBggRRRggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,gg#########gggggggggggBBggRRRggggTTT",
+  "==============================#########:::::::::::::::RRRggggTTT",
+  "==============================#########gggggggggggggggRRRggggTTT",
+  "================================gggRRRggggggggggggggggRRRggggTTT",
+  "TTTgggggggggggggggggggggggggg===gggRRRRRRRRRRRRRRRRRRRRRRggggTTT",
+  "TTTgHHHHHH..HHHHHHHH..HHHHHHg===gg,,,,,,,,,,,,,,,,gggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gg,,,,,,,,,,,,,,,,gggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gg,,,,,,,,,,,,,,,,gggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gg,,,,,,,,,,,,,,,,gggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gg,,,,,,,,,,,,,,,,gggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gg,,,,,,,,,,,,,,,,gggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gg,,,,,,,,,,,,,,,,gggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gg,,,,,,,,,,,,,,,,gggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gggggggggggggggggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gggggggggggggggggggggggggggggTTT",
+  "TTTgHHHH..HHHHHHHHggggggggggg===ggggBBBBBBBBgBBBBBBgBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggggggg===ggggBBBBBBBBgBBBBBBgBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggggggg===ggggBBBBBBBBgBBBBBBgBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggggggg===ggggBBBBBBBBgBBBBBBgBBBBBggggTTT",
+  "TTTg,,,,,,,,,,,,,,gg:::::::::::###gggggggggggggggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,gg:::::::::::=gg::::::::::::::::::::::::gggTTT",
+  "TTTg,,,,,,,,,,,,,,gg:::::::::::=gggggggggggggggggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggggggg===gggggggggggggggggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggggggg===gggggggggggggggggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggggggg===gggggggggggggggggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggggggg===ggggHHHHHHHH..HHHHHHHHHHHHgggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggggggg===gggg,,,,,,,,,,,,,,,,,,,,,,gggTTT",
+  "TTTgHHHHHHHHHH..HHHHHHHHHHHHg===gggg,,,,,,,,,,,,,,,,,,,,,,gggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gggg,,,,,,,,,,,,,,,,,,,,,,gggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gggg,,,,,,,,,,,,,,,,,,,,,,gggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gggg,,,,,,,,,,,,,,,,,,,,,,gggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gggg,,,,,,,,,,,,,,,,,,,,,,gggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gggg,,,,,,,,,,,,,,,,,,,,,,gggTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,,,g===gggg,,,,,,,,,,,,,,,,,,,,,,gggTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTT===TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "legend_extra": {
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "g": {
+   "tile": "grass",
+   "colour": "#7fa04a"
+  },
+  "f": {
+   "tile": "flowers",
+   "colour": "#e6e0a0"
+  }
+ }
+}

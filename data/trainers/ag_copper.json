@@ -1,0 +1,32 @@
+{
+ "id": "ag_copper",
+ "name": "Copper Guide Meurig",
+ "class": "Guide",
+ "sprite": "tour_guide",
+ "party": [
+  {
+   "species": "tapknock",
+   "level": 32
+  },
+  {
+   "species": "wispet",
+   "level": 31
+  },
+  {
+   "species": "brockling",
+   "level": 32
+  }
+ ],
+ "ai": "trainer",
+ "money": 660,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Copper Guide Meurig",
+   "text": "I show people around the old copper mine up the road. It is the only time anyone is pleased to be underground in Wales and then pleased to be out of it."
+  }
+ ],
+ "win": "Well. I was under the impression I would win. Hmm.",
+ "after": "Copper, then slate, then a lot of tourists. Wales has been mined three ways.",
+ "scaled_floor": 31
+}
