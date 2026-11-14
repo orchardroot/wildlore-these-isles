@@ -98,9 +98,7 @@ func build(parent: Control) -> void:
 	_show(_rows[0])
 
 func _row_text(r: Dictionary) -> String:
-	if not r.beaten:
-		return str(r.route)
-	return "%s: %s" % [str(r.route), str(r.name)]
+	return ("* " if r.beaten else "   ") + str(r.route)  # a star for a champion beaten; the name is beside it
 
 func _show(r: Dictionary) -> void:
 	UIKit.clear(_detail)

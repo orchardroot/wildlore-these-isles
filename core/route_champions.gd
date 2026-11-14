@@ -22,9 +22,9 @@ const TITLES_FLAG := "rc_titles"
 const LEAGUE_SIZE := 30   # the roads of waves 55 and 56
 const SEASONS := ["spring", "summer", "autumn", "winter"]
 const WEATHER_KINDS := ["wet", "rough", "fair"]
-## Sterling a rematch pays per level of par, once a week for each champion: about 600 at the very top. A Keeper's
+## Sterling a rematch pays per level of par, once a week for each champion: about 300 at the very top. A Keeper's
 ## rematch pays 16,500 a day; nothing here comes close.
-const PRIZE_PER_LEVEL := 6
+const PRIZE_PER_LEVEL := 3
 ## Level added to the party slots, over the floor of the road (which ParLevel then lifts to the player's par).
 const LEVEL_STEPS := [0, 0, 0, 1]
 const KEEPSAKE_SHAPES := ["stick", "jug", "helmet", "pencil", "bead", "ball", "badge", "coaster", "figure", "ring", "cloth", "tin", "lamp"]
