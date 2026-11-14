@@ -155,8 +155,14 @@ static func outcome(d: GameStateData, q: Dictionary) -> String:
 static func stamp(d: GameStateData) -> String:
 	return DailyKey.stamp(d)
 
-## Has the post come? True once `n` in-game days (a night's sleep is one) have passed since the flag was stamped, or the
-## real date has changed since, so a player who comes back tomorrow always finds it. False for a flag never stamped.
+## Has the post come? True once `n` in-game days (a night's sleep is one) have passed since the flag was stamped. For a
+## short wait (under LONG_POST days) the real date changing counts too, so a player who comes back tomorrow always
+## finds it; a long one (a season's post, 30 days as Leases.SEASON) goes by in-game days, or a real week away, so nobody waits for ever. A stamp made before
+## the long waits existed still ripens: it is the same stamp, only the number it is compared with has grown.
+## False for a flag never stamped.
+const LONG_POST := 14
+const LONG_POST_REAL_DAYS := 7   # a long wait is also over after a real week away, whatever the in-game days say
+
 static func later(d: GameStateData, key: String, n: int) -> bool:
 	var v: Variant = d.flag(key)
 	if typeof(v) != TYPE_STRING:
@@ -164,7 +170,15 @@ static func later(d: GameStateData, key: String, n: int) -> bool:
 	var parts: PackedStringArray = str(v).split("@")
 	if parts.size() < 2 or not parts[1].is_valid_int():
 		return false
-	return parts[0] != Calendar.today_key() or d.day_count - int(parts[1]) >= n
+	if d.day_count - int(parts[1]) >= n:
+		return true
+	if parts[0] == Calendar.today_key():
+		return false
+	if n < LONG_POST:
+		return true
+	var then := Time.get_unix_time_from_datetime_string(parts[0] + "T00:00:00")
+	var now := Time.get_unix_time_from_datetime_string(Calendar.today_key() + "T00:00:00")
+	return then > 0 and float(now - then) >= LONG_POST_REAL_DAYS * 86400.0
 
 ## The story condition later_<flag>_<n>: 1 when it has ripened, 0 when not yet, -1 when `cond` is not one.
 static func later_cond(d: GameStateData, cond: String) -> int:

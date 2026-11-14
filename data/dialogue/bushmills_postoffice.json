@@ -374,7 +374,7 @@
    "else": [
     {
      "do": "when",
-     "cond": "later_q_stories_northern_ireland_when_3",
+     "cond": "later_q_stories_northern_ireland_when_30",
      "then": [
       {
        "do": "say",
@@ -503,7 +503,7 @@
       {
        "do": "say",
        "who": "Postman",
-       "text": "Nothing yet. Maeve writes by hand, and she writes it twice. Try after a night's sleep."
+       "text": "Nothing yet. Maeve writes by hand, and she writes it twice, and the season has to turn before she is satisfied. Try again in a month or so."
       }
      ]
     }

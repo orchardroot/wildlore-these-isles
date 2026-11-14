@@ -30,7 +30,7 @@
    "else": [
     {
      "do": "when",
-     "cond": "later_q_stories_wales_when_3",
+     "cond": "later_q_stories_wales_when_30",
      "then": [
       {
        "do": "say",
@@ -169,7 +169,7 @@
       {
        "do": "say",
        "who": "Postman",
-       "text": "Nothing yet. These things take a few days to get down the valley, and the members have to meet. Try after a night's sleep."
+       "text": "Nothing yet. These things take a good while to get down the valley, and the members have to meet. Try again in a month or so."
       }
      ]
     }
