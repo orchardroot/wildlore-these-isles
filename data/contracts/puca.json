@@ -50,7 +50,10 @@
    "kind": "look",
    "zone": "wicklow",
    "hint": "the lake shore, watched on a dark night",
-   "text": "You wait by the water with a flask and no light. Something black comes up out of the shallows without a splash, tall as a hunter, with a mane like wet weed and eyes the colour of gold coins. It lowers its head to you very politely, like a horse that wants a rider and has all night.",
+   "text": [
+    "You wait by the water with a flask and no light. Something black comes up out of the shallows without a splash, tall as a hunter, with a mane like wet weed and eyes the colour of gold coins.",
+    "It lowers its head to you very politely, like a horse that wants a rider and has all night."
+   ],
    "hint_wait": "Still water, a bit of mist, and no horse. Whatever comes here does it in the dark of the night.",
    "points": ["puca"],
    "when": {"phase": ["night"]}

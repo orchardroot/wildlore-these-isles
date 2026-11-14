@@ -49,7 +49,10 @@
    "kind": "look",
    "zone": "connemara",
    "hint": "the cutting, watched on a wet or foggy night",
-   "text": "You wait on the bank in the rain. A pale light hangs a foot over the heather: cold, steady, no smoke, no smell. It drifts away as you step toward it, and stops at exactly the distance where you would follow it. A lamp would shake. Gas would gutter. This does neither, and it waits.",
+   "text": [
+    "You wait on the bank in the rain. A pale light hangs a foot over the heather: cold, steady, no smoke, no smell.",
+    "It drifts away as you step toward it, and stops at exactly the distance where you would follow it. A lamp would shake. Gas would gutter. This does neither, and it waits."
+   ],
    "hint_wait": "Dark, quiet and dry. If there is a light on this bog, it only comes on a wet, foggy night. Try again then.",
    "points": ["wisp"],
    "rules_out": ["thief"],

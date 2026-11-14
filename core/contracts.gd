@@ -197,6 +197,11 @@ static func clue_text(k: Dictionary) -> String:
 	var t: Variant = k.get("text", "")
 	return " ".join((t as Array).map(func(l): return str(l))) if t is Array else str(t)
 
+## A clue's words as the lines it is said in, one box each (a long one is written as two).
+static func clue_lines(k: Dictionary) -> Array:
+	var t: Variant = k.get("text", "")
+	return (t as Array).map(func(l): return str(l)) if t is Array else [str(t)]
+
 static func found(data: GameStateData, c: Dictionary) -> Array:
 	return c.get("clues", []).filter(func(k): return clue_found(data, str(c.id), str(k.id)))
 
@@ -245,10 +250,10 @@ static func look(data: GameStateData, spec: String, phase: String, weather: Stri
 	if k.is_empty() or state(data, id) != TAKEN:
 		return {"lines": [], "new": false}
 	if clue_found(data, id, str(k.id)):
-		return {"lines": [clue_text(k)], "new": false}
+		return {"lines": clue_lines(k), "new": false}
 	if not clue_ready(k, phase, weather):
 		return {"lines": [str(k.get("hint_wait", "Nothing here yet. Perhaps it is the wrong time to be looking."))], "new": false}
-	return {"lines": [clue_text(k)], "new": note_clue(data, id, str(k.id))}
+	return {"lines": clue_lines(k), "new": note_clue(data, id, str(k.id))}
 
 # --- working it out -----------------------------------------------------------------
 

@@ -51,7 +51,10 @@
    "kind": "look",
    "zone": "exe_estuary",
    "hint": "the dam on the stream, watched at dusk or after dark",
-   "text": "You sit on the bank as the light goes. A broad dark head slides along the new pond, trailing a V of ripples. It reaches the dam, hauls up a branch, shoves it in place with its forepaws, and slaps a flat tail on the water that goes off like a gunshot. It does not hurry, and it does not look at you.",
+   "text": [
+    "You sit on the bank as the light goes. A broad dark head slides along the new pond, trailing a V of ripples.",
+    "It reaches the dam, hauls up a branch, shoves it in place with its forepaws, and slaps a flat tail on the water that goes off like a gunshot. It does not hurry, and it does not look at you."
+   ],
    "hint_wait": "Still water and a lot of sticks. Whoever built this is not working now. Beavers keep to the dusk and the dark.",
    "points": ["beaver"],
    "when": {"phase": ["dusk", "night"]}

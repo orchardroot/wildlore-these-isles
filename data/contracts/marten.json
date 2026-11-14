@@ -50,7 +50,10 @@
    "kind": "look",
    "zone": "glenveagh",
    "hint": "the henhouse roof, watched at dusk or after dark",
-   "text": "You wait in the ferns with a flask. At dusk something glides along a branch above the henhouse: a chocolate brown body as long as a cat, a bushy tail, and a creamy bib under its chin. It lowers itself to the roof like a drop of oil, and takes the roof apart with its teeth.",
+   "text": [
+    "You wait in the ferns with a flask. At dusk something glides along a branch above the henhouse: a chocolate brown body as long as a cat, a bushy tail, and a creamy bib under its chin.",
+    "It lowers itself to the roof like a drop of oil, and takes the roof apart with its teeth."
+   ],
    "hint_wait": "Wind in the ferns, and nothing on the roof. Whatever works here keeps to the dusk and the dark.",
    "points": ["marten"],
    "rules_out": ["hawk"],
@@ -135,7 +138,8 @@
    "id": "squirrels",
    "label": "Leave it, and tell the parish what the martens do for the squirrels",
    "say": [
-    "You stand up at the parish hall and tell forty hen keepers that the creature on their roofs is also the reason the red squirrels are back and the grey ones are going. It is not a popular speech. A man at the back mutters about his hens. A woman in the front row says she has seen a red squirrel on her bird table for the first time in thirty years.",
+    "You stand up at the parish hall and tell forty hen keepers that the creature on their roofs is also the reason the red squirrels are back and the grey ones are going. It is not a popular speech.",
+    "A man at the back mutters about his hens. A woman in the front row says she has seen a red squirrel on her bird table for the first time in thirty years.",
     "It ends in a long, cross, honest argument, and a vote to put up wire."
    ],
    "fee": 0.6,
