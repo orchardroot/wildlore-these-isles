@@ -16,13 +16,11 @@ func _warp(zones: Dictionary, s: Dictionary) -> Dictionary:
 	return (zones[str(s.at)] as ZoneData).warp_at(Secrets.tile(s))
 
 func test_there_are_fifteen_and_the_data_lines_up() -> void:
-	assert_true(Secrets.all().size() >= 2, "the hidden places are listed")  # 15 when the wave is whole
+	assert_eq(Secrets.all().size(), 15, "fifteen hidden places")
 	var zones := _zones()
 	assert_eq(Secrets.problems(zones, Quests.all_settable(), ItemDB.load_default(), Fixtures.dex()), [])
 
 func test_they_are_spread_and_some_need_the_coracle() -> void:
-	if Secrets.all().size() < 15:
-		return
 	var coracle := 0
 	var sea := 0
 	var nations := {}
@@ -245,8 +243,6 @@ func test_each_place_holds_something_that_is_not_money() -> void:
 				assert_true(Letters.prop_for(room) != Letters.NONE, "a table to lay it on")
 			"view":
 				assert_eq(room.examine.filter(func(e): return str(e.get("flag", "")) == str(s.zone) + "_viewed").size(), 1, "%s: a view" % s.id)
-	if Secrets.all().size() < 15:
-		return
 	assert_true(kinds.has("creature") and kinds.has("chapbook") and kinds.has("curio") and kinds.has("view") and kinds.has("letter"), "a mix of rewards: %s" % str(kinds.keys()))
 
 func test_a_curio_found_in_the_field_goes_on_the_curios_page() -> void:
