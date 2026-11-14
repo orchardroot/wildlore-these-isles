@@ -20,14 +20,14 @@
   {
    "do": "say",
    "who": "Hydro Engineer",
-   "text": "Forty years of electricity from the Erne. A lough that makes your tea. That's a good trade."
+   "text": "Seventy years of electricity from the Erne. A lough that makes your tea. That's a good trade."
   }
  ],
  "es_walker": [
   {
    "do": "say",
    "who": "Boardwalk Walker",
-   "text": "Three kilometres of boardwalk, and not one inch of bog harmed. They've done it right. Well. They've done it as right as a boardwalk can be."
+   "text": "Miles of boardwalk, and not one inch of bog harmed. They've done it right. Well. They've done it as right as a boardwalk can be."
   },
   {
    "do": "say",
