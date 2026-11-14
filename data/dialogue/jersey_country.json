@@ -180,5 +180,42 @@
    "who": "",
    "text": "Nothing."
   }
+ ],
+ "ct_tchian_colin": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "tchian",
+   "clue": "colin"
+  }
+ ],
+ "ct_tchian_madeleine": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "tchian",
+   "clue": "madeleine"
+  }
+ ],
+ "ct_tchian_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "tchian"
+  }
+ ],
+ "ct_tchian_card": [
+  {
+   "do": "say",
+   "who": "Evening Walker",
+   "text": "Walk on, don't look round, say good night at the gate. It's on a card. I've got three in my pocket. I don't know why I need three."
+  }
+ ],
+ "ct_tchian_queue": [
+  {
+   "do": "say",
+   "who": "Coach Visitor",
+   "text": "We came on the coach. Forty of us, and a flask each. The guide says the dog does not like crowds. I have to say, it is being very good about it."
+  }
  ]
 }

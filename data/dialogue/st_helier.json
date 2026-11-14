@@ -56,5 +56,71 @@
    "who": "Liberation Flag-Bearer",
    "text": "We say it plainly: five years, ordinary people, not all of them heroes, most of them hungry. The Roll says it that way too."
   }
+ ],
+ "ct_tchian_poster": [
+  {
+   "do": "contract",
+   "as": "poster",
+   "id": "tchian"
+  }
+ ],
+ "ct_tchian_kiosk": [
+  {
+   "do": "if",
+   "flag": "ct_tchian_is_lamp",
+   "then": [
+    {
+     "do": "say",
+     "who": "Kiosk Regular",
+     "text": "The bay road's lit now, a lamp and a rail, and a dog stands at the edge of the light. I've seen it. It looked at me the way my father looks at a bill."
+    }
+   ],
+   "else": [
+    {
+     "do": "if",
+     "flag": "ct_tchian_is_sign",
+     "then": [
+      {
+       "do": "say",
+       "who": "Kiosk Regular",
+       "text": "There's a sign at the top of the bay road, and coaches. Coaches! The dog hasn't moved, and I'm told it hasn't read the sign. It's very Jersey."
+      }
+     ],
+     "else": [
+      {
+       "do": "if",
+       "flag": "ct_tchian_is_rule",
+       "then": [
+        {
+         "do": "say",
+         "who": "Kiosk Regular",
+         "text": "I did the rule, on a Friday. Walk on, don't look round, say good night. There was nothing there when I turned. I'll never admit I minded."
+        }
+       ],
+       "else": [
+        {
+         "do": "if",
+         "flag": "ct_tchian_is_caught",
+         "then": [
+          {
+           "do": "say",
+           "who": "Kiosk Regular",
+           "text": "They say the dog is in somebody's team, and the road's quiet. I took a walk up it. It was too quiet. I came straight down."
+          }
+         ],
+         "else": [
+          {
+           "do": "say",
+           "who": "Kiosk Regular",
+           "text": "The bay road's quiet, and so is everybody else."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

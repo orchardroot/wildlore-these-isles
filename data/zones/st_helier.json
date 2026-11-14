@@ -454,6 +454,11 @@
    "x": 58,
    "y": 3,
    "variant": 2
+  },
+  {
+   "type": "noticeboard",
+   "x": 44,
+   "y": 25
   }
  ],
  "warps": [
@@ -637,6 +642,27 @@
    "script": "arc_flagbearer",
    "name": "Liberation Flag-Bearer",
    "show_if": "q_arc_islands_done"
+  },
+  {
+   "id": "ct_tchian_poster",
+   "sprite": "villager_3",
+   "x": 42,
+   "y": 23,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_tchian_poster",
+   "name": "Sandra Le Quesne"
+  },
+  {
+   "id": "ct_tchian_kiosk",
+   "sprite": "shopkeeper",
+   "x": 40,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_tchian_kiosk",
+   "name": "Kiosk Regular",
+   "show_if": "ct_tchian_end"
   }
  ],
  "encounters": {
