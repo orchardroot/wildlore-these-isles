@@ -54,6 +54,18 @@ func test_every_upgrade_has_a_catch_or_a_rival() -> void:
 			trade = trade or float(u.get("use", 1.0)) > 1.0 or float(u.get("upkeep", 0.0)) > 0.0 or float(u.get("shield", 0.0)) < 0.0 or str(u.get("group", "")) != ""
 		assert_true(trade, str(deed.id) + " has a trade-off")
 
+func test_no_upgrade_is_all_upside() -> void:
+	for deed in Deeds.all():
+		for u in DeedChoices.upgrades(str(deed.id)):
+			var rival := str(u.get("group", "")) != ""   # one of a pair shuts out the other: that is its catch
+			assert_true(rival or not DeedChoices.describe(u).ends_with("The catch: the price."), "%s %s has a catch beyond the price" % [deed.id, u.id])
+
+func test_the_best_known_regulars_are_given_a_temper_that_suits_them() -> void:
+	var want := {"ned": "steady", "mervyn": "steady", "gwenllian": "careful", "hilda": "careful", "dessie": "thrifty",
+		"morag": "thrifty", "pauline": "charmer", "tamsin": "charmer", "fiona": "showman", "dot": "showman"}
+	for id in want:
+		assert_eq(DeedChoices.temper_of(id), want[id], id)
+
 # --- upgrades ----------------------------------------------------------------------------------------
 
 func test_buying_an_upgrade_pays_and_records_it() -> void:

@@ -1,7 +1,10 @@
 {
- "_doc": "What a Regular is like as a manager (core/deed_choices.gd). `order` is the list a Regular is dealt from by the letters of their id, unless `assign` names them. Keys: bonus (takings multiplier; the five average about the old flat 1.15), use (stock a day), shield (share of a bad day's loss they avoid, negative makes it worse), boom (extra from a good day), carry (days the till keeps filling when you are away), style (which answer they give when the monthly matter is left to them: safe, bold, frugal), cost (what their answers cost, as a share), rep (reputation they build a month). Knowing the town (+0.03), the goods (+0.02) and favour 5 (+0.02) come on top, in the code.",
+ "_doc": "What a Regular is like as a manager (core/deed_choices.gd). `order` is the list a Regular is dealt from by the letters of their id, unless `assign` names them (the ten best-known Regulars are named, to suit who they are: Ned and Mervyn steady, Gwenllian and Hilda careful, Dessie and Morag thrifty, Pauline and Tamsin charmers, Fiona and Dot showmen). Keys: bonus (takings multiplier; the five average about the old flat 1.15), use (stock a day), shield (share of a bad day's loss they avoid, negative makes it worse), boom (extra from a good day), carry (days the till keeps filling when you are away), style (which answer they give when the monthly matter is left to them: safe, bold, frugal), cost (what their answers cost, as a share), rep (reputation they build a month). Knowing the town (+0.03), the goods (+0.02) and favour 5 (+0.02) come on top, in the code.",
  "order": ["careful", "showman", "thrifty", "charmer", "steady"],
- "assign": {},
+ "assign": {
+  "ned": "steady", "mervyn": "steady", "gwenllian": "careful", "hilda": "careful", "dessie": "thrifty",
+  "morag": "thrifty", "pauline": "charmer", "tamsin": "charmer", "fiona": "showman", "dot": "showman"
+ },
  "temperaments": {
   "careful": {
    "label": "careful",

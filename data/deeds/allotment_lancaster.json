@@ -190,9 +190,10 @@
   {
    "id": "water_butts",
    "name": "A row of water butts",
-   "text": "A dry spell does less harm when you have kept the rain.",
+   "text": "A dry spell does less harm when you have kept the rain. The butts need emptying, scrubbing and a bit of a mind.",
    "cost": 500,
-   "shield": 0.3
+   "shield": 0.3,
+   "upkeep": 4
   },
   {
    "id": "raised_beds",

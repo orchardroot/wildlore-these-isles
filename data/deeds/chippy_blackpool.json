@@ -114,7 +114,8 @@
    "group": "terms",
    "rates": -0.03,
    "shield": 0.15,
-   "carry": 15
+   "carry": 15,
+   "upkeep": 10
   },
   {
    "id": "neon_sign",
