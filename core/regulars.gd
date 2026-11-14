@@ -171,9 +171,10 @@ static func npcs_for(zone_id: String, data: GameStateData, list: Array = []) -> 
 			out.append({"id": "reg_" + str(v.id) + "_mums", "sprite": str(v.get("sprite", "villager_1")), "name": str(v.get("name", "")),
 				"x": MUMS_SPOT.x, "y": MUMS_SPOT.y, "facing": "left", "move": "still", "script": "regular_" + str(v.id), "script_file": SCRIPT_FILE})
 		return out
+	var at_mums := mums_visitor(data, list)  # waiting at Mum's: not also standing at home
 	for r in (list if not list.is_empty() else all()):
 		var id := str(r.id)
-		var here: bool = str(r.get("home", "")) == zone_id and not is_bound(r)  # a bound Regular is already standing there
+		var here: bool = str(r.get("home", "")) == zone_id and not is_bound(r) and id != at_mums  # a bound Regular is already standing there
 		var away: bool = str(r.get("away", "")) == zone_id and favour(data, id) >= 2 and _peek(data, id).get("meet") != true
 		if not (here or away):
 			continue
