@@ -379,6 +379,10 @@
   "west": {
    "to": "derry",
    "offset": 0
+  },
+  "south": {
+   "to": "lower_bann",
+   "offset": 0
   }
  },
  "npcs": [
@@ -730,7 +734,7 @@
   "TT#.BBBDBBB...................wooow.......TT",
   "TT##_______...................wooow.......TT",
   "!!!!!!!!!!!!..................wooow.......TT",
-  "TTT...........TPTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+  "TTT...........TPTTTTT###TTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTT###TTTTTTTTTTTTTTTTTTTT"
  ]
 }

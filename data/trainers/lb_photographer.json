@@ -1,0 +1,32 @@
+{
+ "id": "lb_photographer",
+ "name": "Photographer Orla",
+ "class": "Photographer",
+ "sprite": "tour_guide",
+ "party": [
+  {
+   "species": "hootlet",
+   "level": 65
+  },
+  {
+   "species": "stagmor",
+   "level": 66
+  },
+  {
+   "species": "hushwing",
+   "level": 66
+  }
+ ],
+ "ai": "trainer",
+ "money": 2810,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Photographer Orla",
+   "text": "Don't walk in the shot. Don't walk near the shot. Actually, don't walk."
+  }
+ ],
+ "win": "Right. Well. You were in the shot. I'll call it art.",
+ "after": "It's all about the light. And patience. And bribing the sun with a flask of tea.",
+ "scaled_floor": 65
+}

@@ -1,0 +1,644 @@
+{
+ "id": "erne_shore",
+ "name": "The Erne Shore Road",
+ "region": "ireland",
+ "kind": "route",
+ "music": "route_lakes",
+ "weather": {
+  "drizzle": 32,
+  "clear": 20,
+  "fog": 12,
+  "sunshine": 12,
+  "downpour": 16,
+  "gale": 8
+ },
+ "props": [
+  {
+   "type": "building",
+   "style": "white_render",
+   "x": 8,
+   "y": 15,
+   "w": 8,
+   "h": 4,
+   "label": "Belleek Pottery"
+  },
+  {
+   "type": "building",
+   "style": "slate_cottage",
+   "x": 18,
+   "y": 15,
+   "w": 5,
+   "h": 3,
+   "show_label": false
+  },
+  {
+   "type": "lamp_post",
+   "x": 7,
+   "y": 18
+  },
+  {
+   "type": "bench",
+   "x": 20,
+   "y": 18
+  },
+  {
+   "type": "building",
+   "style": "stone",
+   "x": 34,
+   "y": 14,
+   "w": 6,
+   "h": 3,
+   "label": "Hydro Station"
+  },
+  {
+   "type": "building",
+   "style": "chapel",
+   "x": 46,
+   "y": 15,
+   "w": 5,
+   "h": 3,
+   "label": "Shore Chapel"
+  },
+  {
+   "type": "bush",
+   "x": 12,
+   "y": 27,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 35,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 4,
+   "y": 28,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 35,
+   "y": 37,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 32,
+   "y": 35,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 40,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 30,
+   "y": 18,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 30,
+   "y": 17,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 31,
+   "y": 16,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 41,
+   "y": 20,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 40,
+   "y": 20,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 51,
+   "y": 21,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 19,
+   "y": 40,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 24,
+   "y": 39,
+   "variant": 2
+  },
+  {
+   "type": "bush",
+   "x": 6,
+   "y": 40,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 54,
+   "y": 30,
+   "variant": 1
+  },
+  {
+   "type": "bush",
+   "x": 56,
+   "y": 31,
+   "variant": 0
+  },
+  {
+   "type": "bush",
+   "x": 57,
+   "y": 34,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 55,
+   "y": 19,
+   "variant": 0
+  },
+  {
+   "type": "oak",
+   "x": 16,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 27,
+   "y": 38,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 24,
+   "y": 14,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 56,
+   "y": 16,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 36,
+   "y": 6,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 7,
+   "y": 37,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 29,
+   "y": 21,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 41,
+   "y": 39,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 46,
+   "y": 24,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 55,
+   "y": 15,
+   "variant": 2
+  },
+  {
+   "type": "oak",
+   "x": 25,
+   "y": 31,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 6,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "oak",
+   "x": 59,
+   "y": 22,
+   "variant": 0
+  },
+  {
+   "type": "sheep",
+   "x": 10,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 12,
+   "y": 30,
+   "variant": 2
+  },
+  {
+   "type": "sheep",
+   "x": 8,
+   "y": 34,
+   "variant": 2
+  },
+  {
+   "type": "rock",
+   "x": 12,
+   "y": 14,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 42,
+   "y": 38,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 46,
+   "y": 42,
+   "variant": 1
+  },
+  {
+   "type": "rock",
+   "x": 52,
+   "y": 16,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 44,
+   "y": 33,
+   "variant": 0
+  },
+  {
+   "type": "rock",
+   "x": 24,
+   "y": 16,
+   "variant": 1
+  }
+ ],
+ "warps": [],
+ "edges": {
+  "west": {
+   "to": "donegal_town",
+   "offset": 0
+  },
+  "east": {
+   "to": "enniskillen",
+   "offset": 0
+  }
+ },
+ "npcs": [
+  {
+   "id": "es_potter",
+   "sprite": "shopkeeper",
+   "x": 13,
+   "y": 20,
+   "facing": "up",
+   "move": "still",
+   "script": "es_potter"
+  },
+  {
+   "id": "es_hydro_man",
+   "sprite": "steelworker",
+   "x": 36,
+   "y": 20,
+   "facing": "up",
+   "move": "still",
+   "script": "es_hydro_man"
+  },
+  {
+   "id": "es_walker",
+   "sprite": "hillwalker",
+   "x": 50,
+   "y": 36,
+   "facing": "left",
+   "move": "still",
+   "script": "es_walker"
+  },
+  {
+   "id": "es_angler",
+   "sprite": "angler",
+   "x": 28,
+   "y": 13,
+   "facing": "down",
+   "move": "still",
+   "trainer": "es_angler"
+  },
+  {
+   "id": "es_farmer",
+   "sprite": "farmer",
+   "x": 38,
+   "y": 30,
+   "facing": "up",
+   "move": "still",
+   "trainer": "es_farmer"
+  },
+  {
+   "id": "es_boatman",
+   "sprite": "sailor",
+   "x": 28,
+   "y": 18,
+   "facing": "right",
+   "move": "still",
+   "trainer": "es_boatman"
+  },
+  {
+   "id": "gate_erne_shore_a",
+   "sprite": "warden_grunt",
+   "x": 62,
+   "y": 25,
+   "facing": "right",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_erne_shore",
+   "hide_if": "badge_iron"
+  },
+  {
+   "id": "gate_erne_shore_b",
+   "sprite": "warden_grunt",
+   "x": 62,
+   "y": 26,
+   "facing": "right",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_erne_shore",
+   "hide_if": "badge_iron"
+  },
+  {
+   "id": "gate_erne_shore_c",
+   "sprite": "warden_grunt",
+   "x": 62,
+   "y": 27,
+   "facing": "right",
+   "move": "still",
+   "name": "Warden",
+   "script": "gate_erne_shore",
+   "hide_if": "badge_iron"
+  }
+ ],
+ "encounters": {
+  "grass": [
+   {
+    "species": "pipkin",
+    "min": 65,
+    "max": 67,
+    "weight": 12
+   },
+   {
+    "species": "rooklet",
+    "min": 65,
+    "max": 67,
+    "weight": 12,
+    "time": [
+     "dawn",
+     "day",
+     "dusk"
+    ]
+   },
+   {
+    "species": "starlet",
+    "min": 65,
+    "max": 67,
+    "weight": 12
+   },
+   {
+    "species": "leveret",
+    "min": 65,
+    "max": 67,
+    "weight": 12
+   },
+   {
+    "species": "stoatlet",
+    "min": 65,
+    "max": 67,
+    "weight": 10
+   },
+   {
+    "species": "dozelet",
+    "min": 65,
+    "max": 67,
+    "weight": 8,
+    "time": [
+     "night",
+     "dusk"
+    ]
+   },
+   {
+    "species": "hootlet",
+    "min": 66,
+    "max": 67,
+    "weight": 8,
+    "time": [
+     "night"
+    ]
+   },
+   {
+    "species": "flaxling",
+    "min": 65,
+    "max": 67,
+    "weight": 8
+   },
+   {
+    "species": "moolet",
+    "min": 65,
+    "max": 67,
+    "weight": 10
+   },
+   {
+    "species": "chipgull",
+    "min": 65,
+    "max": 67,
+    "weight": 10,
+    "time": [
+     "day"
+    ]
+   }
+  ],
+  "water": [
+   {
+    "species": "neagheen",
+    "min": 65,
+    "max": 67,
+    "weight": 22
+   },
+   {
+    "species": "pollanet",
+    "min": 65,
+    "max": 67,
+    "weight": 16
+   },
+   {
+    "species": "parrlet",
+    "min": 65,
+    "max": 67,
+    "weight": 14
+   },
+   {
+    "species": "elverlet",
+    "min": 65,
+    "max": 67,
+    "weight": 14
+   },
+   {
+    "species": "cranelet",
+    "min": 66,
+    "max": 67,
+    "weight": 10
+   },
+   {
+    "species": "stalklet",
+    "min": 65,
+    "max": 67,
+    "weight": 14
+   },
+   {
+    "species": "bradan",
+    "min": 66,
+    "max": 67,
+    "weight": 10
+   }
+  ]
+ },
+ "signs": [
+  {
+   "x": 4,
+   "y": 17,
+   "text": "WEST: Ballyshannon and Donegal Town. The road goes by the river mouth and the old falls, and on to the castle of the O'Donnells."
+  },
+  {
+   "x": 59,
+   "y": 29,
+   "text": "EAST: Enniskillen. The county town sits on an island in the lough, and has done since before the bridges."
+  },
+  {
+   "x": 13,
+   "y": 21,
+   "text": "BELLEEK. A village on the River Erne, split in two by the border on the old maps and joined together by a shared interest in good china."
+  },
+  {
+   "x": 50,
+   "y": 40,
+   "text": "CUILCAGH. A bog on a mountain, with a boardwalk across it known as the Stairway to Heaven. It was built to protect the bog, and the walkers were told it was for the walkers."
+  },
+  {
+   "x": 12,
+   "y": 20,
+   "plaque": "erne_belleek",
+   "title": "Belleek Pottery",
+   "text": "Belleek Pottery was founded in 1857 beside the River Erne, and is among the oldest working potteries in Ireland. It makes a very thin, glowing china called parian, and is best known for its basket-weave pieces, which look as if they were woven out of white shells. The potters work in the same village their grandparents did, and the kiln smoke is almost nostalgic."
+  },
+  {
+   "x": 36,
+   "y": 18,
+   "plaque": "erne_hydro",
+   "title": "The Erne Hydro Scheme",
+   "text": "The Erne was dammed for hydroelectric power in the 1940s and 1950s, with stations at Cliff and at Cathaleen's Fall near Ballyshannon. It was one of the first big schemes of the new Irish state. The falls at Assaroe had been famous for centuries and were much reduced by the project, and the stations still work."
+  },
+  {
+   "x": 48,
+   "y": 38,
+   "plaque": "erne_cuilcagh",
+   "title": "The Cuilcagh Boardwalk",
+   "text": "Cuilcagh Mountain, on the Fermanagh and Cavan border, is covered in a blanket of peat that has been forming for thousands of years. A boardwalk, opened in 2015, carries walkers across the bog to the foot of the summit, so that the bog can go on being a bog under their feet. It is nicknamed the Stairway to Heaven. It is all good, plain timber, and the view at the top is a lot of Ireland at once."
+  }
+ ],
+ "spawn": [
+  16,
+  20
+ ],
+ "stage": "valley",
+ "scaled_floor": 65,
+ "rows": [
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gggggg~~~~~~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~gggggg~~~~~~~~ggg~~~~~~~~~gg~~~~~~~~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~~g~~~~~~~~ggggggg~~~~~~~~~~~~~~~~~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ggggggggg~~~~~~~~~~~~~~~~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ggggggg~~~~~~~~~~~~gggg~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrTTT",
+  "TTT~~~~~~~~~~~~~~~~~~~~ggggggggggggggggggggggggggggggggggggggTTT",
+  "TTTggggggggggggggggggggggggg,,,,ggBBBBBBgggggggggggggggggggggTTT",
+  "TTTgggggBBBBBBBBggBBBBBggggg,,,,ggBBBBBBggggggBBBBBggggggggggTTT",
+  "TTTgggggBBBBBBBBggBBBBBggggg,,,,ggBBBBBBggggggBBBBBggggggggggTTT",
+  "TTTgggggBBBBBBBBggBBBBBggggg,,,,ggg#ggggggggggBBBBBggggggggggTTT",
+  "TTTgggggBBBBBBBBgggggggggggg,,,,ggg#ggggggggggg#gggggggggggggTTT",
+  "=======:::::::::::::::::====ggggggg#ggggggggggg#gggggggggggggTTT",
+  "============================gggggggggggg,,,,,,,,,,,,gggggggggTTT",
+  "============================gggggggggggg,,,,,,,,,,,,gggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggg===gggggggggggg,,,,,,,,,,,,gggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggg===gggggggggggg,,,,,,,,,,,,gggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggg===gggggggggggggggggggggggggggggggggTTT",
+  "TTTg,,,,,,,,,,,,,,ggggggg=====================================#=",
+  "TTTg,,,,,,,,,,,,,,ggggggg=====================================#=",
+  "TTTg,,,,,,,,,,,,,,ggggggg=====================================#=",
+  "TTTg,,,,,,,,,,,,,,gggggggggg,,,,,,,,,,,,,,gggggggggggg,,,,,,gTTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggg,,,,,,,,,,,,,,gggggggggggg,,,,,,gTTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggg,,,,,,,,,,,,,,gggggggggggg,,,,,,gTTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggg,,,,,,,,,,,,,,gggggggggggg,,,,,,gTTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggg,,,,,,,,,,,,,,gggggggggggg,,,,,,gTTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggg,,,,,,,,,,,,,,gghhhhhhhhhh,,,,,,hTTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggg,,,,,,,,,,,,,,gghhhhhhhh#h,,,,,,hTTT",
+  "TTTg,,,,,,,,,,,,,,gggggggggg,,,,,,,,,,,,,,gghhhhhhhh#h,,,,,,hTTT",
+  "TTTgHHHHHHHH..HHHHHHHHHHHHgg,,,,,,,,,,,,,,gghhhhhhhh#h,,,,,,hTTT",
+  "TTTggggggggggggggggggggggggg,,,,,,,,,,,,,,gghhhhhhhh#h,,,,,,hTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,gggggggggggggggggghhhhhhhh#hhhhhhhhTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,gggggggggggggggggghhhhhhhh#hhhhhhhhTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,gggggggggggggggggghhhhhhhh#hhhhhhhhTTT",
+  "TTTg,,,,,,,,,,,,,,,,,,,,,,gggggggggggggggggghhhhhhhh#hhhhhhhhTTT",
+  "TTTggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+  "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+ ],
+ "legend_extra": {
+  "r": {
+   "tile": "shallow",
+   "prop": "reeds"
+  },
+  "g": {
+   "tile": "grass",
+   "colour": "#7fa04a"
+  },
+  "h": {
+   "tile": "tall_grass",
+   "colour": "#7a5c6a",
+   "prop": "heather"
+  }
+ }
+}

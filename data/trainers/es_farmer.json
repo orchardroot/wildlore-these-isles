@@ -1,0 +1,32 @@
+{
+ "id": "es_farmer",
+ "name": "Farmer Bernie",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "moolet",
+   "level": 65
+  },
+  {
+   "species": "leveret",
+   "level": 66
+  },
+  {
+   "species": "dozelet",
+   "level": 66
+  }
+ ],
+ "ai": "trainer",
+ "money": 2810,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Farmer Bernie",
+   "text": "I've a hundred acres by the lough. The lough's got most of them. It's a sharing arrangement."
+  }
+ ],
+ "win": "Good luck to ye. And mind my reeds.",
+ "after": "I'd a cow once that swam the Erne for pleasure. Never saw her again. She'd a great life.",
+ "scaled_floor": 65
+}

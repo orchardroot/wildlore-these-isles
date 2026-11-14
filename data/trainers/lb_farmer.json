@@ -1,0 +1,32 @@
+{
+ "id": "lb_farmer",
+ "name": "Farmer Seamus",
+ "class": "Farmer",
+ "sprite": "farmer",
+ "party": [
+  {
+   "species": "leveret",
+   "level": 65
+  },
+  {
+   "species": "flaxling",
+   "level": 66
+  },
+  {
+   "species": "crexling",
+   "level": 66
+  }
+ ],
+ "ai": "trainer",
+ "money": 2810,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Farmer Seamus",
+   "text": "Ye can see the Bann from the top field. It's the finest river in Ulster, and I'll say so to anyone who'll stand still."
+  }
+ ],
+ "win": "Ye've a fair hand. Mind my sheep on the way out.",
+ "after": "A man doesn't own a river. He just gets to look at it every morning.",
+ "scaled_floor": 65
+}

@@ -1,0 +1,32 @@
+{
+ "id": "es_boatman",
+ "name": "Boatman Colm",
+ "class": "Boatman",
+ "sprite": "sailor",
+ "party": [
+  {
+   "species": "neagheen",
+   "level": 65
+  },
+  {
+   "species": "stalklet",
+   "level": 66
+  },
+  {
+   "species": "parrlet",
+   "level": 66
+  }
+ ],
+ "ai": "trainer",
+ "money": 2810,
+ "intro": [
+  {
+   "do": "say",
+   "who": "Boatman Colm",
+   "text": "There's a hundred islands out there, give or take, and I know every one of them by its mood."
+  }
+ ],
+ "win": "You've a great pair of hands on you. Come out for a spin.",
+ "after": "The Erne's two lakes, joined by a town. An odd way to organise a county, but it works.",
+ "scaled_floor": 65
+}

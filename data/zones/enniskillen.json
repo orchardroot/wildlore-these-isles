@@ -16,6 +16,10 @@
   "east": {
    "to": "lough_neagh",
    "offset": 0
+  },
+  "west": {
+   "to": "erne_shore",
+   "offset": 0
   }
  },
  "spawn": [
@@ -61,9 +65,9 @@
   "TTggBBBBBDBBBBBggg~~~gggggBBBBBBBBBBg:BBBBBBBgff##ff~~~ggBBBBBDBBBBBggTT",
   "TTggggggg#gggggggg~~~gggggBBBBBBBBBBg:BBBBBBBgff##ff~~~ggggggg#gggggggTT",
   "TT################===gggggggggggggggg:gggggggggg##gg~~~gllllll#llllllgTT",
-  "TTgggg#ggggggggggg===:::::::::::::::::::::::::::::::~~~gllllll#llllllgTT",
-  "TTgggg#ggggggggggg~~~gggggggggggggggg:gggggggggggggg~~~gllllll#llllllgTT",
-  "TTg,,g#gg,,,,,,,,g~~~gBBBBBBBBggggggg:gggggggggggggg~~~gllllll#llllllgTT",
+  "##gggg#ggggggggggg===:::::::::::::::::::::::::::::::~~~gllllll#llllllgTT",
+  "##gggg#ggggggggggg~~~gggggggggggggggg:gggggggggggggg~~~gllllll#llllllgTT",
+  "##g,,g#gg,,,,,,,,g~~~gBBBBBBBBggggggg:gggggggggggggg~~~gllllll#llllllgTT",
   "TTg,,g#gg,,,,,,,,g~~~gBBBBBBBBgBBBBBg:gggggggggggggg~~~gllllll#llllllgTT",
   "TTg,,g#gg,,,,,,,,g~~~gBBBBBBBBgBBBBBg:BBBBBgBBBBBBgg~~~gllllll#llllllgTT",
   "TTg,,g#gg,,,,,,,,g~~~gBBBBBBBBgBBBBBg:BBBBBgBBBBBBgg~~~ggggggg#ggggggggg",
