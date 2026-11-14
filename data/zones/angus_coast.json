@@ -314,7 +314,8 @@
    "y": 33,
    "facing": "up",
    "move": "still",
-   "trainer": "ang_birder_t"
+   "trainer": "ang_birder_t",
+   "champion": "ang_birder_t"
   }
  ],
  "encounters": {

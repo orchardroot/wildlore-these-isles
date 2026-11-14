@@ -498,7 +498,8 @@
    "y": 33,
    "facing": "up",
    "move": "still",
-   "trainer": "ag_osprey"
+   "trainer": "ag_osprey",
+   "champion": "ag_osprey"
   },
   {
    "id": "ag_hillfarmer",

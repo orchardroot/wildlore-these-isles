@@ -531,7 +531,8 @@
    "y": 19,
    "facing": "down",
    "move": "still",
-   "trainer": "hp_warden"
+   "trainer": "hp_warden",
+   "champion": "hp_warden"
   }
  ],
  "encounters": {

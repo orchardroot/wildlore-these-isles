@@ -534,7 +534,8 @@
    "y": 12,
    "facing": "down",
    "move": "still",
-   "trainer": "rm_martello"
+   "trainer": "rm_martello",
+   "champion": "rm_martello"
   }
  ],
  "encounters": {

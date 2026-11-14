@@ -53,5 +53,22 @@
    "who": "Selklet",
    "text": "A selkie pup, or something very like one, lolls at the edge of the tide. It gives you a very long look, then a short one, then a yawn."
   }
+ ],
+ "champ_uig_beachcomber": [
+  {
+   "do": "say",
+   "who": "Beachcomber Iain",
+   "text": "Hello again. Have you seen a small walrus-ivory bishop? No? It was worth asking."
+  },
+  {
+   "do": "rchamp",
+   "id": "uig_beachcomber",
+   "intro": [
+    "A battle, then. I'll set down the bag. The tide'll keep.",
+    "The weather's been generous. So have I, in the team."
+   ],
+   "win": "Well played. A good move, and nothing missing from the board.",
+   "tired": "Once a week, and the beach will be there on Monday. So will I."
+  }
  ]
 }

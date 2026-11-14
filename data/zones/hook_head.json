@@ -365,7 +365,8 @@
    "y": 36,
    "facing": "down",
    "move": "still",
-   "trainer": "hh_lighthouse"
+   "trainer": "hh_lighthouse",
+   "champion": "hh_lighthouse"
   },
   {
    "id": "hh_cyclist",
@@ -384,6 +385,18 @@
    "facing": "right",
    "move": "still",
    "trainer": "hh_birder"
+  },
+  {
+   "id": "kit_hook",
+   "sprite": "kit",
+   "x": 46,
+   "y": 32,
+   "facing": "down",
+   "move": "still",
+   "script": "kit_hook",
+   "name": "Kit",
+   "show_if": "badge_kin",
+   "hide_if": "badge_tide"
   }
  ],
  "encounters": {

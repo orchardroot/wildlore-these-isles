@@ -1,0 +1,30 @@
+{
+ "id": "kit_road_hook",
+ "name": "Kit",
+ "class": "Rival",
+ "sprite": "kit",
+ "party": [
+  {
+   "species": "redbreast",
+   "level": 50
+  },
+  {
+   "species": "warrender",
+   "level": 51
+  },
+  {
+   "species": "bramblehog",
+   "level": 51
+  },
+  {
+   "species": "kitelet",
+   "level": 52
+  }
+ ],
+ "ai": "trainer",
+ "money": 1300,
+ "intro": [],
+ "win": "Oh, come on. The lighthouse saw all of that.",
+ "after": "The lighthouse has been there for centuries. It's seen worse losses than mine. Probably.",
+ "scaled_floor": 51
+}

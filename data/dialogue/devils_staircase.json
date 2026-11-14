@@ -46,5 +46,22 @@
    "who": "Cafe Owner",
    "text": "The Staircase is not as bad as it sounds. It is worse. But it is over quickly, and the cake is good."
   }
+ ],
+ "champ_dev_aluminium": [
+  {
+   "do": "say",
+   "who": "Foreman Dougie",
+   "text": "Alright. It's a long climb, and a longer one for a man who worked indoors. Hello again."
+  },
+  {
+   "do": "rchamp",
+   "id": "dev_aluminium",
+   "intro": [
+    "The smelter's gone but the hills aren't. Let's use them.",
+    "I've a team for the day and a flask for the afterwards."
+   ],
+   "win": "That's hot work. I'd say the works would've been proud, but the works never said anything.",
+   "tired": "A foreman works to a schedule, and mine says once a week. Monday."
+  }
  ]
 }

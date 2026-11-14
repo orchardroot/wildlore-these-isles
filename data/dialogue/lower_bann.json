@@ -46,5 +46,22 @@
    "who": "Warden",
    "text": "The Keeper at the shipyard in Belfast has the say on this road, and he hasn't said it yet. Ask Ruair\u00ed. Past the cranes, the big shed."
   }
+ ],
+ "champ_lb_eelfisher": [
+  {
+   "do": "say",
+   "who": "Eel Fisher Brendan",
+   "text": "Mind the nets. The eel is a patient beast, born in the Sargasso Sea and washed up here. I know the feeling."
+  },
+  {
+   "do": "rchamp",
+   "id": "lb_eelfisher",
+   "intro": [
+    "You want another go? It's a long way to come for a bruise.",
+    "Nets down. Let's see what I've landed today."
+   ],
+   "win": "You swim well. For a land creature, I mean. Fair play.",
+   "tired": "I don't fish the same water twice in a week, and I don't fight the same walker either. Monday."
+  }
  ]
 }

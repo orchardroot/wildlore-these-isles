@@ -36,5 +36,22 @@
    "who": "Mill Volunteer",
    "text": "My great-gran was a weaver here. Four looms at once, the noise so loud they all learned to lip-read. Half this valley can read lips to this day."
   }
+ ],
+ "champ_pn_fellrunner": [
+  {
+   "do": "say",
+   "who": "Fell Runner Gwen",
+   "text": "Morning! Well, afternoon. I ran up it twice before you'd had your tea. Don't tell the witches."
+  },
+  {
+   "do": "rchamp",
+   "id": "pn_fellrunner",
+   "intro": [
+    "Race you? No, a battle. I need the rest.",
+    "Hang on, I'm just stretching. And choosing the team of the day."
+   ],
+   "win": "Good run. You nearly got my breath, but I held on to it.",
+   "tired": "Once a week, or my legs would take offence. Come back Monday."
+  }
  ]
 }

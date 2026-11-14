@@ -343,7 +343,8 @@
    "y": 12,
    "facing": "left",
    "move": "still",
-   "trainer": "rrw_historian"
+   "trainer": "rrw_historian",
+   "champion": "rrw_historian"
   },
   {
    "id": "sec_tay_student",

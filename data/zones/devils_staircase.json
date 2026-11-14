@@ -250,7 +250,8 @@
    "y": 10,
    "facing": "left",
    "move": "still",
-   "trainer": "dev_aluminium"
+   "trainer": "dev_aluminium",
+   "champion": "dev_aluminium"
   }
  ],
  "encounters": {

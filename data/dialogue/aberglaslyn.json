@@ -58,5 +58,22 @@
    "who": "Warden",
    "text": "He has been up the mountain for a good while now. I am sure it is all going very well."
   }
+ ],
+ "champ_ag_osprey": [
+  {
+   "do": "say",
+   "who": "Osprey Watcher Bethan",
+   "text": "Shh. Oh, it's you. The female is off the nest and the male is pretending he hasn't noticed. I can talk, so long as it's quiet."
+  },
+  {
+   "do": "rchamp",
+   "id": "ag_osprey",
+   "intro": [
+    "I've been staring at a nest since breakfast and my hands have gone stiff. A scrap would do me good.",
+    "Let's see what the day has put in my pockets."
+   ],
+   "win": "Well fought. That was louder than the ospreys, and I include the arguments.",
+   "tired": "Not twice in a week, or the ospreys will think I've been seeing someone else. Come back on Monday."
+  }
  ]
 }

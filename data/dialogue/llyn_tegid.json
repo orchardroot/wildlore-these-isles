@@ -46,5 +46,22 @@
    "who": "Warden",
    "text": "He has been up the mountain for a good while now. I am sure it is all going very well."
   }
+ ],
+ "champ_tg_angler": [
+  {
+   "do": "say",
+   "who": "Angler Elis",
+   "text": "Keep your voice down. The gwyniad are very sensitive, and so, I'm told, am I."
+  },
+  {
+   "do": "rchamp",
+   "id": "tg_angler",
+   "intro": [
+    "Nothing's biting. A battle will pass the time.",
+    "I know this lake and it knows me. Mostly it ignores me."
+   ],
+   "win": "Well fought. That's the biggest thing I've landed all year, and you're not even a fish.",
+   "tired": "Once a week, or I'll never get any fishing done. Not that I do. Monday."
+  }
  ]
 }

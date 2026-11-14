@@ -58,5 +58,22 @@
    "who": "Lifeboat Volunteer",
    "text": "The sea off Angus has taken ships for a very long time. We have been taking them back out, a little more often, ever since."
   }
+ ],
+ "champ_ang_birder_t": [
+  {
+   "do": "say",
+   "who": "Warden Isobel",
+   "text": "Mind the cliff edge. And the birds. The birds will mind you, they've plenty of opinions."
+  },
+  {
+   "do": "rchamp",
+   "id": "ang_birder_t",
+   "intro": [
+    "Right, a battle. Let me put my binoculars down. Carefully.",
+    "The wind's in the west and I've a team that likes it."
+   ],
+   "win": "That was a fine bit of flying. I'd put it in the logbook, but the gulls would argue.",
+   "tired": "Once a week, the counts are done. Monday, and I'll have a new tally."
+  }
  ]
 }

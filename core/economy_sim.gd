@@ -111,7 +111,13 @@ static func stud_pay(badges: int) -> float:
 static func dailies(badges: int) -> Dictionary:
 	return {"jobs": jobs_pay(badges), "quiz": quiz_pay(), "crossword": float(Crossword.PRIZE), "novice_race": novice_pay(badges),
 		"stud": stud_pay(badges), "shows": show_pay(), "darts": float(DARTS_PUBS * Darts.DAILY_PURSE),
-		"bowls": float(Bowls.DAILY_PURSE), "skims": float(Skimming.DAILY_PURSE)}
+		"bowls": float(Bowls.DAILY_PURSE), "skims": float(Skimming.DAILY_PURSE),
+		"champions": champions_pay(badges)}
+
+## Walkers' League rematches (wave 57): every champion whose road is open at this par, beaten and rematched each week,
+## as sterling per real day of play (one a week each, and a real day of play comes every PLAY_EVERY in-game days).
+static func champions_pay(badges: int) -> float:
+	return float(RouteChampions.weekly_pay(_par_for(badges, 0))) / 7.0
 
 ## Once-only lumps: the Gazetteer's milestones, the Visitors' Book, the quiz league. Paid as the badges come in.
 static func lump_total() -> float:

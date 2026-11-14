@@ -53,5 +53,22 @@
    "who": "Goldeneyrie",
    "text": "A golden eagle hangs on the wind above the Quiraing, taking in the whole of Skye as though it had a mortgage on it."
   }
+ ],
+ "champ_trt_guide": [
+  {
+   "do": "say",
+   "who": "Guide Calum",
+   "text": "Another day, another photographer standing on something they shouldn't. Hello again."
+  },
+  {
+   "do": "rchamp",
+   "id": "trt_guide",
+   "intro": [
+    "The Storr's in cloud, the Quiraing's on the move and I've a team that likes both. Ready?",
+    "Mind the edge. I mean that for the battle as well."
+   ],
+   "win": "That's me beaten and the path still there. Fair play.",
+   "tired": "Once a week, and you've had yours. The Quiraing moves a few inches at a time and so will I. Monday."
+  }
  ]
 }

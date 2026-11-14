@@ -423,7 +423,8 @@
    "y": 20,
    "facing": "right",
    "move": "still",
-   "trainer": "cr_musician"
+   "trainer": "cr_musician",
+   "champion": "cr_musician"
   },
   {
    "id": "cr_farmer",

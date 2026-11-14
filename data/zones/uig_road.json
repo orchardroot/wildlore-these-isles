@@ -218,7 +218,8 @@
    "y": 24,
    "facing": "left",
    "move": "still",
-   "trainer": "uig_beachcomber"
+   "trainer": "uig_beachcomber",
+   "champion": "uig_beachcomber"
   },
   {
    "id": "uig_warden",

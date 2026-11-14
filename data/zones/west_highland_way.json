@@ -301,7 +301,8 @@
    "y": 28,
    "facing": "left",
    "move": "still",
-   "trainer": "whw_guide"
+   "trainer": "whw_guide",
+   "champion": "whw_guide"
   },
   {
    "id": "whw_photographer",
@@ -311,6 +312,18 @@
    "facing": "down",
    "move": "still",
    "trainer": "whw_photographer"
+  },
+  {
+   "id": "kit_whw",
+   "sprite": "kit",
+   "x": 24,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "kit_whw",
+   "name": "Kit",
+   "show_if": "strachan1_done",
+   "hide_if": "badge_frost"
   }
  ],
  "encounters": {

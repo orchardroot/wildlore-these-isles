@@ -34,5 +34,22 @@
    "who": "Fiddler",
    "text": "A reel is a reel and a jig is a jig. But a Clare reel has a lift in it you won't get elsewhere. I'm not biased. I'm from Clare."
   }
+ ],
+ "champ_cr_musician": [
+  {
+   "do": "say",
+   "who": "Musician Aoife",
+   "text": "Ah, hello. I'm only out for the air. The fiddle just came along. She's very clingy."
+  },
+  {
+   "do": "rchamp",
+   "id": "cr_musician",
+   "intro": [
+    "A tune and a battle. Which first? Ah, never mind, the battle.",
+    "I've the team for the day, and the mood to go with it."
+   ],
+   "win": "That was a good bit of playing. Not a note wasted, and I'm including mine.",
+   "tired": "A week between tunes, no more. Monday, and I'll have a set ready."
+  }
  ]
 }

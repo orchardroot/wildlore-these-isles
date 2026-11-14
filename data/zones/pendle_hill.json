@@ -585,7 +585,8 @@
    "y": 31,
    "facing": "left",
    "move": "still",
-   "trainer": "pn_fellrunner"
+   "trainer": "pn_fellrunner",
+   "champion": "pn_fellrunner"
   },
   {
    "id": "pn_witch_guide",

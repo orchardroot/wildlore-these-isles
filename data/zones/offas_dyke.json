@@ -453,7 +453,8 @@
    "y": 21,
    "facing": "right",
    "move": "still",
-   "trainer": "od_walker_t"
+   "trainer": "od_walker_t",
+   "champion": "od_walker_t"
   },
   {
    "id": "od_castle",

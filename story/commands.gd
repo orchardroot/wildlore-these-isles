@@ -283,6 +283,8 @@ func _exec(c: Dictionary) -> void:
 			await _rail()
 		"gauntlet":
 			await _gauntlet(c)
+		"rchamp":
+			await ChampionRun.new(self).run(c)  # w57: a road champion's weekly rematch (Walkers' League)
 		"tournament":
 			await TournamentRun.new(self).run(c)  # County Shows, the Open Moot and the rosette stall
 		"credits":
@@ -467,6 +469,8 @@ func _battle(trainer_id: String) -> void:
 			_set_flag("trainer_" + trainer_id, true)
 			if def.win != "":
 				await host.say(def.name, _sub(def.win))
+			if RouteChampions.is_champion(trainer_id):  # w57: a road's champion: the date, and any League title
+				await ChampionRun.new(self).first_win(trainer_id)
 		"lose":
 			await whiteout()
 			_ended = true
