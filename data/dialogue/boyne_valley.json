@@ -91,5 +91,30 @@
    "who": "Warden",
    "text": "Newgrange is just east of here. Go and see what all the fuss is about. Then the Mournes are all yours."
   }
+ ],
+ "sec_boyne_farmer": [
+  {
+   "do": "if",
+   "flag": "secret_souterrain_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Local Farmer",
+     "text": "Hollow, I said. Go on, tap the stone by the hedge. It won't mind. It's had worse from the plough."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Local Farmer",
+     "text": "My father always ploughed round the one stretch of hedge in the top field. Never said why. Mind, the ground sounds hollow by it."
+    },
+    {
+     "do": "say",
+     "who": "Local Farmer",
+     "text": "The old people dug passages under their forts. Souterrains. For storing food, or hiding when the raiders came."
+    }
+   ]
+  }
  ]
 }

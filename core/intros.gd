@@ -31,6 +31,7 @@ const TEXT := {
 	"atlas": "The Atlas shows how much of each region you have seen, with a stamp at half and another at all of it.",
 	"poi": "Points of interest sit off the road: a den, a camp, a standing stone or a hidden cache. Walk up and have a look.",
 	"field_spot": "A field spot is a small job for a creature with the right party piece: a gap in a wall, a molehill, a glint in the water.",
+	"secret": "Your creature has noticed a way in that you were told about. It is hidden no longer. Walk up and have a look.",
 	"plaque": "A plaque tells you what happened here. Read one and it goes in the Gazetteer, and enough of them earn a prize.",
 	"visitors_book": "Every room you walk into goes in the Visitor's Book. See every room in a town and the tourist board sends a thank-you.",
 }

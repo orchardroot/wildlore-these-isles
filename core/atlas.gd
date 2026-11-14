@@ -35,7 +35,7 @@ static func contents(idx: Dictionary) -> Dictionary:
 			var r := str(z.region)
 			if r == "":
 				continue
-			if str(z.kind) == "interior":
+			if str(z.kind) == "interior" and not Secrets.is_secret_zone(str(id)):  # hidden places are counted on their own
 				open.call(r).rooms.append(str(id))
 			if Discovery.findable(str(z.kind), bool(z.get("deep", false))):
 				open.call(r).places.append(str(id))
@@ -158,6 +158,11 @@ static func collect(d: GameStateData, idx: Dictionary) -> Array:
 				d.set_flag(key, true)
 				paid.append({"region": str(reg.region), "name": str(reg.name), "tier": tier, "items": items})
 	return paid
+
+## The region's hidden places as a row beside the bars (not part of the percentage, so no stamp waits on one): [] if it has none.
+static func hidden_rows(d: GameStateData, idx: Dictionary, region: String) -> Array:
+	var t := Secrets.tally_in(d, idx, region)
+	return [{"key": "hidden", "label": "Hidden places", "got": t.x, "total": t.y}] if t.y > 0 else []
 
 ## Places found and places in all, for the Almanac's one-line blurb.
 static func blurb(d: GameStateData, idx: Dictionary) -> String:

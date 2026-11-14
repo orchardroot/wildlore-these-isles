@@ -260,6 +260,7 @@ static func marks(data: GameStateData, show: Dictionary) -> Array:
 	out.append_array(FieldSpots.marks(data))  # field piece nooks you have spotted
 	out.append_array(Rumours.marks(data))  # legends you have heard of, ringed (5.4)
 	out.append_array(Discovery.deep_marks(data, ZoneIndex.get_index()))  # Deep Places whose way in you have seen
+	out.append_array(Secrets.marks(data))  # hidden places you know how to open (5.6)
 	return out
 
 ## Where a mark sits on the map (map units), or (-1, -1) if its town or place isn't drawn.

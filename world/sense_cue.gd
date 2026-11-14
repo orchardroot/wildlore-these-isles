@@ -40,7 +40,7 @@ func _look(ow: Node, p: Vector2i) -> void:
 		if text != "":
 			ow.say([text])
 			return
-	if ow.zone.kind != "route":
+	if ow.zone.kind != "route" and Secrets.in_zone(ow.zone.id).is_empty():
 		return
 	if ow.zone.id != _zone_id:
 		_zone_id = ow.zone.id
@@ -51,7 +51,7 @@ func _look(ow: Node, p: Vector2i) -> void:
 	Game.data.set_flag(Discovery.sensed_key(str(found[0].id)), true)
 	var carrier: Node3D = ow.follower if ow.follower != null and ow.follower.visible else ow.player
 	_show(carrier)
-	var first := "poi" if found[0].kind == "poi" else "field_spot"  # the first of each says what it is, once
+	var first: String = {"poi": "poi", "secret": "secret"}.get(str(found[0].kind), "field_spot")  # the first of each says what it is, once
 	var intro := Intros.take(Game.data, first, true) if not dev_hold else ""
 	if intro != "":
 		await ow.get_tree().create_timer(1.2).timeout

@@ -144,5 +144,30 @@
    "as": "lair",
    "id": "bodmin"
   }
+ ],
+ "sec_merlin_beachcomber": [
+  {
+   "do": "if",
+   "flag": "secret_merlins_cave_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Beachcomber",
+     "text": "Look in the rocks. A bottle does like a crack to wedge in."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Beachcomber",
+     "text": "Things wash up on this beach. Mostly crisp packets. Sometimes bottles with notes in, and I do read them, I'm not made of stone."
+    },
+    {
+     "do": "say",
+     "who": "Beachcomber",
+     "text": "The best one I ever found had directions in it. Have a look among the rocks, down on the shore."
+    }
+   ]
+  }
  ]
 }

@@ -326,6 +326,18 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 65,
+   "y": 45,
+   "to": "secret_paviland",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_paviland_known"
+   },
+   "coracle": true
   }
  ],
  "edges": {
@@ -474,6 +486,16 @@
    "facing": "right",
    "move": "still",
    "trainer": "gow_kiter"
+  },
+  {
+   "id": "sec_paviland_fisher",
+   "sprite": "fisher",
+   "x": 71,
+   "y": 43,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_paviland_fisher",
+   "name": "Old Fisherman"
   }
  ],
  "encounters": {

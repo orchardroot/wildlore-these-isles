@@ -762,6 +762,17 @@
    "tx": 6,
    "ty": 6,
    "facing": "up"
+  },
+  {
+   "x": 6,
+   "y": 27,
+   "to": "secret_bryn_celli_ddu",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_bryn_celli_ddu_known"
+   }
   }
  ],
  "edges": {
@@ -864,6 +875,16 @@
    "facing": "right",
    "move": "still",
    "trainer": "ang_birder"
+  },
+  {
+   "id": "sec_bryn_riser",
+   "sprite": "druid",
+   "x": 11,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_bryn_riser",
+   "name": "Early Riser"
   }
  ],
  "encounters": {
@@ -1128,5 +1149,22 @@
    "tile": "tall_grass",
    "colour": "#b0a43a"
   }
- }
+ },
+ "examine": [
+  {
+   "x": 8,
+   "y": 28,
+   "text": [
+    "At first light the low sun lines up with a gap in the mound, and a stone-lined passage shows, running in to the dark.",
+    "It was built to catch the midsummer sunrise. Near enough, today."
+   ],
+   "flag": "secret_bryn_celli_ddu_known",
+   "phase": [
+    "dawn"
+   ],
+   "off": [
+    "A grassy mound and a standing stone. It looks as if it is waiting for something, and the something is probably the morning."
+   ]
+  }
+ ]
 }

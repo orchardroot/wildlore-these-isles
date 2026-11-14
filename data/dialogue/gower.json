@@ -683,5 +683,40 @@
    "who": "Grey Seal",
    "text": "A grey seal hauled out on the rock. It regards you the way a duchess regards a draught."
   }
+ ],
+ "sec_paviland_fisher": [
+  {
+   "do": "if",
+   "flag": "secret_paviland_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Old Fisherman",
+     "text": "Mind the swell. And be polite to the seals, they were there first."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Old Fisherman",
+     "text": "On the south side of Gower there's a cave you can only reach from the water, if the sea allows it. Paviland, they call it."
+    },
+    {
+     "do": "say",
+     "who": "Old Fisherman",
+     "text": "In 1823 a clergyman geologist dug up a skeleton there, stained red, and called it a lady. It was a young man, over thirty thousand years old."
+    },
+    {
+     "do": "say",
+     "who": "Old Fisherman",
+     "text": "Paddle in under the cliff, mind the swell, and be polite to the seals."
+    },
+    {
+     "do": "set",
+     "flag": "secret_paviland_known",
+     "value": true
+    }
+   ]
+  }
  ]
 }

@@ -425,6 +425,17 @@
    "tx": 7,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 47,
+   "y": 32,
+   "to": "secret_souterrain",
+   "tx": 6,
+   "ty": 6,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_souterrain_known"
+   }
   }
  ],
  "edges": {
@@ -605,6 +616,16 @@
    "facing": "right",
    "move": "still",
    "trainer": "boyne_rambler"
+  },
+  {
+   "id": "sec_boyne_farmer",
+   "sprite": "farmer",
+   "x": 49,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_boyne_farmer",
+   "name": "Local Farmer"
   }
  ],
  "encounters": {
@@ -882,5 +903,16 @@
    "colour": "#6f7f4a",
    "prop": "reeds"
   }
- }
+ },
+ "examine": [
+  {
+   "x": 48,
+   "y": 34,
+   "text": [
+    "At the foot of the old hedge, a flat stone, slightly too neat. Tap it and it answers with a hollow note.",
+    "Beneath the turf there is a lintel, and beyond it a narrow stone-lined passage going down. A souterrain."
+   ],
+   "flag": "secret_souterrain_known"
+  }
+ ]
 }

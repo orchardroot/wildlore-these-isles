@@ -573,5 +573,30 @@
     }
    ]
   }
+ ],
+ "sec_london_boater": [
+  {
+   "do": "if",
+   "flag": "secret_ice_well_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Canal Boater",
+     "text": "Old brick, by the water. Bring a coat. It's a larder down there."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Canal Boater",
+     "text": "Regent's Canal, near King's Cross. Ice used to come up here from Norway, by ship and barge, to keep London's fish fresh and its ices cold."
+    },
+    {
+     "do": "say",
+     "who": "Canal Boater",
+     "text": "The wells are still in the ground. Have a look at the old brick by the water."
+    }
+   ]
+  }
  ]
 }

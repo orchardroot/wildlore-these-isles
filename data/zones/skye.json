@@ -645,6 +645,18 @@
     "needs": "q_arc_scotland_done",
     "line": "A padlock the size of a fist, and a notice: ESTATE PROPERTY. UNSAFE. KEEP OUT. The notice is older than the padlock, and the padlock is not young."
    }
+  },
+  {
+   "x": 2,
+   "y": 36,
+   "to": "secret_spar_cave",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_spar_cave_known"
+   },
+   "coracle": true
   }
  ],
  "edges": {
@@ -763,6 +775,16 @@
    "move": "still",
    "script": "arc_scot_piper",
    "show_if": "q_arc_scotland_done"
+  },
+  {
+   "id": "sec_skye_crofter",
+   "sprite": "farmer",
+   "x": 4,
+   "y": 42,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_skye_crofter",
+   "name": "Strathaird Crofter"
   }
  ],
  "encounters": {

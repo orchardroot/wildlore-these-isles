@@ -316,6 +316,17 @@
    "tx": 6,
    "ty": 7,
    "facing": "up"
+  },
+  {
+   "x": 59,
+   "y": 28,
+   "to": "secret_sgwd_yr_eira",
+   "tx": 6,
+   "ty": 8,
+   "facing": "up",
+   "hidden": {
+    "reveal": "secret_sgwd_yr_eira_known"
+   }
   }
  ],
  "edges": {
@@ -442,6 +453,16 @@
    "facing": "left",
    "move": "still",
    "script": "g3_bog_marshal"
+  },
+  {
+   "id": "sec_eira_walker",
+   "sprite": "hiker",
+   "x": 66,
+   "y": 29,
+   "facing": "down",
+   "move": "still",
+   "script": "sec_eira_walker",
+   "name": "Waterfall Walker"
   }
  ],
  "encounters": {
@@ -723,5 +744,16 @@
    "tile": "grass",
    "colour": "#8a8a4d"
   }
- }
+ },
+ "examine": [
+  {
+   "x": 57,
+   "y": 29,
+   "text": [
+    "Where the water drops into the pool, the stone behind the sheet is hollowed into a ledge, dry and wide enough for a person. That is the way in.",
+    "You could walk behind the fall without getting much wetter than a dog."
+   ],
+   "flag": "secret_sgwd_yr_eira_known"
+  }
+ ]
 }

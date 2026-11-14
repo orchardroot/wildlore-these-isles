@@ -201,5 +201,40 @@
    "who": "Piper",
    "text": "The Hall opened tonight and I'm to play until somebody tells me to stop. Nobody has. It's been three hours. I'm fine. Carry on."
   }
+ ],
+ "sec_skye_crofter": [
+  {
+   "do": "if",
+   "flag": "secret_spar_cave_known",
+   "then": [
+    {
+     "do": "say",
+     "who": "Strathaird Crofter",
+     "text": "Low water, remember. The cave doesn't care how good a story you've got."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "Strathaird Crofter",
+     "text": "South on the Strathaird shore there's a cave they call the Spar Cave. The floor is flowstone, like a waterfall that stopped to think."
+    },
+    {
+     "do": "say",
+     "who": "Strathaird Crofter",
+     "text": "Walter Scott came in 1814 and put it in a poem. The sea fills the mouth at high water, so go at low and come out before you're stuck."
+    },
+    {
+     "do": "say",
+     "who": "Strathaird Crofter",
+     "text": "From the shore it's only by the water. Mind the swell."
+    },
+    {
+     "do": "set",
+     "flag": "secret_spar_cave_known",
+     "value": true
+    }
+   ]
+  }
  ]
 }
