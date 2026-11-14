@@ -799,6 +799,27 @@
    "facing": "left",
    "move": "still",
    "trainer": "nor_falconer"
+  },
+  {
+   "id": "ct_hereward_poster",
+   "sprite": "farmer",
+   "x": 25,
+   "y": 27,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hereward_poster",
+   "name": "Brenda Gotobed"
+  },
+  {
+   "id": "ct_hereward_board",
+   "sprite": "farmer",
+   "x": 37,
+   "y": 25,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_hereward_board",
+   "name": "Drainage Board Man",
+   "show_if": "ct_hereward_end"
   }
  ],
  "encounters": {
