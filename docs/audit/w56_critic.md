@@ -88,8 +88,7 @@ twelve contracts' "real story" fields and the 22 flotsam bottles were re-checked
 Smaller: the block hint names "Keeper Ray in Liverpool" and "Keeper Nuala in Galway" before they are met (fine as a
 signpost, but "Brook-wade" names an ability while the tile needs a coracle; say "Brook-wade (the coracle)"); Aberglaslyn
 and Llyn Tegid wardens share one line verbatim; `Deed` allotment files for Lancaster and York are word-for-word
-duplicates; the Lancaster mill project's footbridge and the three Stones' routes were never run through the story-order
-tests by their text.
+duplicates.
 
 ## Contradicting the release notes
 - 5.5.0 "the post tells you months later how it went": it arrives after three in-game days or the next real day.
