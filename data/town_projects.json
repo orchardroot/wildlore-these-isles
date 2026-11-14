@@ -284,7 +284,7 @@
    "cost": 5500,
    "name": "Carlisle Library",
    "title": "The library, open on Saturdays again",
-   "text": "The library has been shut on Saturdays since the cuts, which is the one day the people who work all week can get there. Paying for a librarian's Saturdays, a story hour and a good heater would put the doors open again.",
+   "text": "The library has been shut on Saturdays for a good while now, which is the one day the people who work all week can get there. Paying for a librarian's Saturdays, a story hour and a good heater would put the doors open again.",
    "stages": [
     {
      "name": "A librarian for the Saturdays",
@@ -432,7 +432,7 @@
    "cost": 23500,
    "name": "Kirkwall Winter Ferry",
    "title": "A winter ferry to the island across the bay",
-   "text": "The little ferry across the bay stops sailing in the winter, which is when the island has the most need of the mainland and the least way of getting there. A second, smaller vessel and a crew's wages for the dark months would keep the island's bread, post and hospital appointments running all year.",
+   "text": "The little ferry across the bay sails only a day or two a week in the winter, which is when the island has the most need of the mainland and the least way of getting there. A second, smaller vessel and a crew's wages for the dark months would keep the island's bread, post and hospital appointments running all year.",
    "stages": [
     {
      "name": "The boat",
@@ -455,7 +455,7 @@
    ],
    "change": "Finished, the ferry sails every day of the year and the island is no longer an island in winter. Your name goes in the wheelhouse.",
    "ask": [
-    "The ferry's off for the winter, {player}, and the island's left with the post by the Saturday boat and a dentist it can't get to.",
+    "The ferry's down to a day or two a week for the winter, {player}, and the island's left with the post by the Saturday boat and a dentist it can't get to.",
     "A second boat and a crew for the dark months would see them through. It's not a fortune, not on the scale of what they pay for what they lose."
    ],
    "progress": [
@@ -536,7 +536,7 @@
    "who": "Old Resident",
    "badges": 5,
    "cost": 22500,
-   "name": "Blaenavon Workmen's Hall",
+   "name": "Blaenavon Old Miners' Hall",
    "title": "The workmen's hall, open again",
    "text": "The workmen's hall was built from pennies out of the miners' wages: a library, a reading room, a hall for the choir and a cinema. It has been shut for years. Reopened, it would be a library and a cinema and a place for the choir again.",
    "stages": [

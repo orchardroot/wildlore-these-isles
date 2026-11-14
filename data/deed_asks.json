@@ -34,7 +34,7 @@
      "tag": "safe",
      "label": "Close for a day and scrub it from top to bottom",
      "cost": 1.0,
-     "say": "Five out of five on the door by teatime. You can see your face in the counter, which is not entirely a compliment to your face.",
+     "say": "Top marks on the door by teatime. You can see your face in the counter, which is not entirely a compliment to your face.",
      "rep": 1
     },
     {
@@ -42,7 +42,7 @@
      "tag": "frugal",
      "label": "Tidy up while the inspector looks round",
      "cost": 0.2,
-     "say": "A four, and a useful word about the drain.",
+     "say": "Good marks, and a useful word about the drain.",
      "risk": {
       "chance": 0.4,
       "say": "He finds the thing behind the fridge. A three on the door, a follow-up visit and a regular who reads such things.",
