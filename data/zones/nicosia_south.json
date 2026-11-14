@@ -416,7 +416,11 @@
    "x": 16,
    "y": 23,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "ns_yiayia",
    "name": "Yiayia Androulla"
   },

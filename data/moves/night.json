@@ -8,5 +8,6 @@
   {"id": "dark_of_the_moon", "name": "Dark of the Moon", "type": "night", "category": "special", "power": 90, "accuracy": 85, "pp": 10, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 20}, "fx": {"shape": "beam"}},
   {"id": "pitch_black", "name": "Pitch Black", "type": "night", "category": "status", "power": 0, "accuracy": 90, "pp": 20, "priority": 0, "effect": {"id": "stat", "target": "foe", "stat": "acc", "stages": -1}, "fx": {"shape": "cloud"}},
   {"id": "battle_crow", "name": "Battle Crow", "type": "night", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 20}, "fx": {"shape": "wing"}},
-  {"id": "hellhound_howl", "name": "Hellhound Howl", "type": "night", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 30}, "fx": {"shape": "song"}}
+  {"id": "hellhound_howl", "name": "Hellhound Howl", "type": "night", "category": "special", "power": 110, "accuracy": 85, "pp": 5, "priority": 0, "effect": {"id": "status", "status": "hexed", "chance": 30}, "fx": {"shape": "song"}},
+  {"id": "black_cat_crossing", "name": "Black Cat Crossing", "type": "night", "category": "physical", "power": 55, "accuracy": 100, "pp": 15, "priority": 1, "effect": {"id": "none"}, "fx": {"shape": "pounce"}}
 ]

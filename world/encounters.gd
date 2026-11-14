@@ -13,7 +13,7 @@ var _grace := 0
 ## `featured_species`: Today's Walk species for this zone ("" for none, see TodaysWalk.featured_in).
 ## `flags`: the save's flags, for entries gated on one (see candidates).
 static func roll(zone: ZoneData, tile: String, phase: String, weather: String, rng: Rng, featured_species := "", flags := {}) -> Dictionary:
-	var kind: String = {"tall_grass": "grass", "deep_water": "water", "bog": "grass"}.get(tile, "")
+	var kind: String = {"tall_grass": "grass", "deep_water": "water", "water": "water", "sea": "water", "bog": "grass"}.get(tile, "")
 	if kind == "":
 		return {}
 	if not rng.chance(step_chance(tile) * Meals.lure_mult(flags)):
@@ -34,8 +34,8 @@ static func step_chance(tile: String) -> float:
 	match tile:
 		"tall_grass", "bog":
 			return STEP_CHANCE
-		"deep_water":
-			return WATER_STEP_CHANCE
+		"deep_water", "water", "sea":
+			return WATER_STEP_CHANCE  # afloat in the coracle: the player is only ever on `~` or `$` in one
 	return 0.0
 
 ## A catch is worth banking straight away (the battle is over and nothing is half-done).

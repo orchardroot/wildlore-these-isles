@@ -3,7 +3,7 @@ extends MenuBase
 ## with the Keeper card, the time and weather, and "Where next?" beside it.
 
 const ROW_GAP := 4
-const ROW_MIN := 42  # eleven rows (Wardrobe and Ark both in) still fit the panel; the text steps down to suit
+const ROW_MIN := 38  # twelve rows (Wardrobe and Ark both in) still fit the panel; the text steps down to suit
 const ROW_MAX := 66
 const PANEL_EDGE := 16  # the list panel's margin and border, each side
 
@@ -29,7 +29,7 @@ func _build() -> void:
 	var menu := VBoxContainer.new()
 	menu.add_theme_constant_override("separation", ROW_GAP)
 	left.add_child(menu)
-	var actions := {"Team": _open_team, "Fieldbook": _open_pedia, "Bag": _open_bag, "Wardrobe": _open_wardrobe, "Ark": _open_ark, "Journal": _open_journal, "Almanac": _open_almanac, "Map": _open_map,
+	var actions := {"Team": _open_team, "Fieldbook": _open_pedia, "Bag": _open_bag, "Wardrobe": _open_wardrobe, "Ark": _open_ark, "Journal": _open_journal, "Almanac": _open_almanac, "Types": _open_types, "Map": _open_map,
 		"Save": _save, "Settings": _open_settings, "Close": func(): close(null)}
 	for nm in MenuLogic.pause_entries(MenuLogic.ark_unlocked(Game.data)):
 		var b := make_button(nm, actions[nm])
@@ -223,6 +223,10 @@ func _open_ark() -> void:
 func _open_journal() -> void:
 	await open_child("quests")
 	_after_child("Journal")
+
+func _open_types() -> void:
+	await open_child("typechart")
+	_after_child("Types")
 
 func _open_almanac() -> void:
 	await open_child("almanac")

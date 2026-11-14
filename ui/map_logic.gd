@@ -74,6 +74,45 @@ static func start_town(data: GameStateData) -> String:
 static func named_unvisited(data: GameStateData, objective_town: String) -> Array:
 	return [objective_town] if objective_town != "" and not visited(data, objective_town) else []
 
+## The towns the map promises, named with a question mark though you have never been ("Buxton?"): the town at the far
+## end of the roads out of any town you have visited (through routes only, so one hop of the map), the other end of a
+## ferry from one, and a town where a legend you have heard of stands. `idx` is the ZoneIndex.
+static func promised_towns(data: GameStateData, idx: Dictionary = {}) -> Array:
+	if idx.is_empty():
+		idx = ZoneIndex.get_index()
+	var zones: Dictionary = idx.get("zones", {})
+	var out := []
+	for t in real_towns():
+		if not visited(data, t) or not zones.has(t):
+			continue
+		var seen := {t: true}
+		var q := [t]
+		while not q.is_empty():
+			var c: String = q.pop_front()
+			for to in zones[c].get("links", []):
+				var z: Dictionary = zones.get(to, {})
+				if z.is_empty() or seen.has(to):
+					continue
+				seen[to] = true
+				if str(z.kind) == "town":
+					var far := str(z.get("town", ""))
+					if far != "" and not visited(data, far) and far not in out and FileAccess.file_exists("res://data/zones/%s.json" % far):
+						out.append(far)
+				elif str(z.kind) == "route":
+					q.append(to)
+	var fer: Dictionary = Travel.ferries()
+	for route in fer:
+		var a := str(fer[route].get("a", ""))
+		var b := str(fer[route].get("b", ""))
+		for pair in [[a, b], [b, a]]:
+			if visited(data, pair[0]) and not visited(data, pair[1]) and pair[1] not in out and pair[1] in real_towns():
+				out.append(pair[1])
+	for m in Rumours.marks(data):
+		var at := str(m.at)
+		if at in real_towns() and not visited(data, at) and at not in out:
+			out.append(at)
+	return out
+
 ## Species that live on the wild routes next to a town, in first-seen order.
 static func nearby_species(town: String) -> Array:
 	var out := []
@@ -211,12 +250,16 @@ static func marks(data: GameStateData, show: Dictionary) -> Array:
 	for s in SideStories.sides():
 		if SideStories.waiting(data, s):
 			out.append({"kind": "side", "at": str(s.zone), "who": str(s.get("who", ""))})
-	out.append_array(Letters.marks(data))  # "?" where a treasure trail ends
+	for m in Letters.marks(data):  # "?" where a treasure trail ends; a trail is a place you were told about, so it is ringed
+		m["ring"] = true
+		out.append(m)
 	var here = data.flag("last_town")
 	if here and not Postcards.waiting(data).is_empty():
 		out.append({"kind": "post", "at": str(here)})
 	out.append_array(Poi.marks(data))  # the question marks on the routes
 	out.append_array(FieldSpots.marks(data))  # field piece nooks you have spotted
+	out.append_array(Rumours.marks(data))  # legends you have heard of, ringed (5.4)
+	out.append_array(Discovery.deep_marks(data, ZoneIndex.get_index()))  # Deep Places whose way in you have seen
 	return out
 
 ## Where a mark sits on the map (map units), or (-1, -1) if its town or place isn't drawn.
@@ -224,7 +267,9 @@ static func mark_point(mark: Dictionary) -> Vector2:
 	var m := Travel.world_map()
 	var at := str(mark.get("at", ""))
 	var src: Dictionary = m.get("towns", {}).get(at, m.get("places", {}).get(at, {}))
-	return Vector2(float(src.x), float(src.y)) if not src.is_empty() else Vector2(-1, -1)
+	if src.is_empty():  # a cave or route with no spot of its own borrows its neighbours' (ZoneIndex)
+		return ZoneIndex.pos_of(ZoneIndex.get_index(), at)
+	return Vector2(float(src.x), float(src.y))
 
 ## The map points a route passes through (zones with a spot on the map, in order, repeats dropped).
 static func route_points(path: Array, zones: Dictionary) -> PackedVector2Array:

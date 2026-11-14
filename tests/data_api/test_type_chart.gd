@@ -46,3 +46,32 @@ func test_xp_curves() -> void:
 	assert_eq(Rules.xp_for_level("medium", 10), 1000)
 	assert_eq(Rules.xp_for_level("fast", 10), 800)
 	assert_eq(Rules.xp_for_level("slow", 10), 1250)
+
+func test_weak_to_resists_immune_for_one_type() -> void:
+	var weak := chart.weak_to(["hedgerow"])
+	var ids: Array = weak.map(func(w): return w.type)
+	for t in ["hearth", "frost", "gale"]:
+		assert_true(t in ids, "%s beats hedgerow" % t)
+	assert_true(weak.all(func(w): return w.mult == 2.0))
+	assert_true(chart.resists(["hedgerow"]).any(func(w): return w.type == "brook"))
+	assert_true(chart.immune(["spirit"]).any(func(w): return w.type == "kin"))
+
+func test_dual_types_stack_and_cancel() -> void:
+	var weak := chart.weak_to(["fae", "frost"])
+	assert_eq(weak[0].type, "iron", "x4 comes first")
+	assert_eq(weak[0].mult, 4.0)
+	assert_false(chart.weak_to(["hedgerow", "brook"]).any(func(w): return w.type == "hearth"), "weak and resistant cancel out")
+	assert_true(chart.immune(["brook", "stone"]).any(func(w): return w.type == "storm"), "an immunity beats the other type")
+	assert_false(chart.resists(["brook", "stone"]).any(func(w): return w.type == "storm"), "and is not also a resist")
+
+func test_move_type_rows_and_words() -> void:
+	assert_eq(chart.strong_against("hearth"), ["hedgerow", "frost", "iron"].filter(func(t): return t in chart.strong_against("hearth")))
+	assert_true("hedgerow" in chart.strong_against("hearth"))
+	assert_true("brook" in chart.weak_against("hearth"))
+	assert_true("spirit" in chart.no_effect_on("kin"))
+	assert_eq(TypeChart.mult_words(4.0), "x4")
+	assert_eq(TypeChart.mult_words(2.0), "x2")
+	assert_eq(TypeChart.mult_words(0.5), "x1/2")
+	assert_eq(TypeChart.mult_words(0.25), "x1/4")
+	assert_eq(TypeChart.mult_words(0.0), "No effect")
+	assert_eq(TypeChart.mult_words(1.0), "x1")

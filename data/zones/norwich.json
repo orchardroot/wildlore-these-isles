@@ -756,7 +756,11 @@
    "x": 50,
    "y": 20,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "nor_peregrine_kid",
    "name": "Birdwatcher"
   },

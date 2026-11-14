@@ -354,7 +354,8 @@
    "x": 52,
    "y": 30,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "bad_eagle_watcher"
   },
   {
@@ -363,7 +364,11 @@
    "x": 33,
    "y": 30,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "bad_lobster"
   },
   {

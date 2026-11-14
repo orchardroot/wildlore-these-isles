@@ -812,7 +812,11 @@
    "x": 20,
    "y": 46,
    "facing": "right",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "obn_porter",
    "name": "Pier Porter"
   },
@@ -822,7 +826,8 @@
    "x": 40,
    "y": 21,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "obn_walker",
    "name": "Visitor"
   },
@@ -832,7 +837,11 @@
    "x": 62,
    "y": 41,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "obn_shinty_fan",
    "name": "Shinty Player"
   },

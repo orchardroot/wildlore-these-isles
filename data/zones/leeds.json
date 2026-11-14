@@ -990,7 +990,11 @@
    "x": 16,
    "y": 19,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "leeds_cricket",
    "name": "Cricket Fan"
   },
@@ -1010,7 +1014,8 @@
    "x": 53,
    "y": 32,
    "facing": "up",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "leeds_temple",
    "name": "Old Millhand"
   },
@@ -1049,7 +1054,11 @@
    "x": 13,
    "y": 43,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "leeds_utd_fan",
    "name": "Leeds Fan"
   },

@@ -377,11 +377,14 @@ func _draw_towns(m: Dictionary, xf: Array, d: GameStateData, here: String, boats
 		blockers.append(Rect2(pin_at + Vector2(-10, -30), Vector2(20, 32)))
 	# marks sit in a little row up and right of their place
 	var icons: Array = []  # [kind, centre, mark]
+	var rings: Array = []  # places you were told about: a dashed heather ring round the spot
 	var per_place := {}
 	for mk in marks:
 		var mp := MapLogic.mark_point(mk)
 		if mp.x < 0:
 			continue
+		if mk.get("ring", false):
+			rings.append(_p(mp.x, mp.y, xf))
 		var n: int = per_place.get(mk.at, 0)
 		per_place[mk.at] = n + 1
 		var c := _p(mp.x, mp.y, xf) + Vector2(14 + n * 20, -16)
@@ -408,6 +411,10 @@ func _draw_towns(m: Dictionary, xf: Array, d: GameStateData, here: String, boats
 				items.push_front(item)  # these get first pick of the spots
 			else:
 				items.append(item)
+	for r in rings:
+		for i in 6:  # six dashes, as the map dashes its borders
+			draw_arc(r, 12.0, TAU * i / 6.0, TAU * (i + 0.6) / 6.0, 6, Color(INK, 0.5), 5.0, true)
+			draw_arc(r, 12.0, TAU * i / 6.0, TAU * (i + 0.6) / 6.0, 6, Color("8a6fd1"), 2.6, true)
 	for dot in dots:
 		if dot[1]:
 			draw_circle(dot[0], 6.0, Color(INK, 0.85))
@@ -508,6 +515,21 @@ func _icon(mk: Dictionary, c: Vector2) -> void:
 				draw_polyline(PackedVector2Array([c + Vector2(-3.5, 0.5), c + Vector2(-1, 3.5), c + Vector2(4, -3)]), INK, 1.8, true)
 			else:
 				draw_circle(c, 2.0, INK)
+		"legend":  # a four-point star on a ring: a legend you have heard of; ticked once it is yours
+			draw_circle(c, 9.0, Color(INK, 0.9))
+			draw_circle(c, 7.6, PAPER if not mk.done else Color("a9c98a"))
+			var star := PackedVector2Array()
+			for i in 8:
+				star.append(c + Vector2(0, -6.0 if i % 2 == 0 else -2.2).rotated(TAU * i / 8.0))
+			draw_colored_polygon(star, INK)
+		"deep":  # a cave mouth: an arch on a ring, dark inside until you have been in
+			draw_circle(c, 9.0, Color(INK, 0.9))
+			draw_circle(c, 7.6, PAPER)
+			var arch := PackedVector2Array([c + Vector2(-5, 5)])
+			for i in 9:
+				arch.append(c + Vector2(-5, -1).lerp(Vector2(5, -1), float(i) / 8.0) + Vector2(0, -4.5 * sin(PI * float(i) / 8.0)))
+			arch.append(c + Vector2(5, 5))
+			draw_colored_polygon(arch, INK if not mk.done else Color("8a6fd1"))
 		"post":  # an envelope with a red seal
 			var r := Rect2(c - Vector2(9, 6), Vector2(18, 12))
 			draw_rect(r, PAPER)

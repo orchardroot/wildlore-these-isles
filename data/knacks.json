@@ -96,7 +96,8 @@
     "not_quite_extinct": {"name": "Not Quite Extinct", "desc": "At full HP, a knockout blow leaves it hanging on with 1 HP.", "msg": "{name} is not quite extinct yet!", "endure_full": true},
     "thick_rind": {"name": "Thick Rind", "desc": "A good waxed rind: foes can't lower its stats, and brook and tide moves hurt it a quarter less.", "msg_drop": "{name}'s rind is far too thick to dent!", "no_drops": true, "resist": {"types": ["brook", "tide"], "mult": 0.75}},
     "cwm_mizzle": {"name": "Cwm Mizzle", "desc": "Valley drizzle puts a song in the rock: its stone and fae moves hit harder in drizzle, fog or a downpour.", "msg": "{name} knocks, and the mizzle sings back!", "power_weather": {"weather": ["drizzle", "downpour", "fog"], "mult": 1.3, "types": ["stone", "fae"]}},
-    "full_head": {"name": "Full Head of Steam", "desc": "Comes out with the pressure up: its Attack rises as it arrives.", "msg": "{name} arrives with a full head of steam!", "entry_stage": {"to": "self", "stat": "atk", "stages": 1}}
+    "full_head": {"name": "Full Head of Steam", "desc": "Comes out with the pressure up: its Attack rises as it arrives.", "msg": "{name} arrives with a full head of steam!", "entry_stage": {"to": "self", "stat": "atk", "stages": 1}},
+    "nine_lives": {"name": "Nine Lives", "desc": "Once a battle, a knockout blow leaves it hanging on with 1 HP.", "msg": "{name} lands on her feet, one life down!", "endure_once": true}
   },
   "species": {
     "sulphurhen": "shelf_life",
@@ -558,6 +559,9 @@
     "longlegs": "tough_old_boots",
     "clocklet": "early_riser",
     "dandylion": "early_riser",
-    "clockmaster": "early_riser"
+    "clockmaster": "early_riser",
+    "sootkit": "nine_lives",
+    "grimalkin": "nine_lives",
+    "catsith": "nine_lives"
   }
 }

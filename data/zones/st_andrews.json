@@ -372,7 +372,11 @@
    "x": 50,
    "y": 50,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "sta_gown"
   },
   {
@@ -390,7 +394,11 @@
    "x": 34,
    "y": 22,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "sta_greenkeeper"
   },
   {

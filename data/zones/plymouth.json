@@ -921,7 +921,8 @@
    "x": 8,
    "y": 17,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 1,
    "script": "ply_matey",
    "name": "Dockyard Matey"
   },
@@ -955,7 +956,11 @@
    "x": 26,
    "y": 24,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "ply_scott",
    "name": "Student"
   },
@@ -965,7 +970,11 @@
    "x": 31,
    "y": 31,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "ply_blitz",
    "name": "Old Plymothian"
   },

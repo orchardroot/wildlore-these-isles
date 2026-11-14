@@ -64,6 +64,8 @@ func deposit(i: int) -> String:
 		return "Nobody there."
 	if party.size() <= 1:
 		return "You can't travel without a single companion."
+	if FamilyCat.is_family(party[i]):
+		return FamilyCat.ARK_REASON  # the family cat is never boxed
 	var able := party.filter(func(c): return not c.is_fainted())
 	if not party[i].is_fainted() and able.size() <= 1:
 		return "That's your last creature fit to battle. Keep them with you."
@@ -89,6 +91,8 @@ func add_creature_swapping(c: Creature, slot: int) -> String:
 	mark_seen(c.species.id)
 	mark_caught(c.species.id)
 	Sexes.record_seen(self, c)
+	while FamilyCat.is_family(party[slot]):  # the family cat is never boxed: someone else makes room
+		slot = (slot + 1) % party.size()
 	ark.append(party[slot])
 	party[slot] = c
 	return "party"
@@ -97,6 +101,8 @@ func add_creature_swapping(c: Creature, slot: int) -> String:
 func swap_with_ark(pi: int, aj: int) -> String:
 	if pi < 0 or pi >= party.size() or aj < 0 or aj >= ark.size():
 		return "Nobody there."
+	if FamilyCat.is_family(party[pi]):
+		return FamilyCat.ARK_REASON
 	if not party[pi].is_fainted() and ark[aj].is_fainted():
 		var able := party.filter(func(c): return not c.is_fainted())
 		if able.size() <= 1:

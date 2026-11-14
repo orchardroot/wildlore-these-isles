@@ -424,7 +424,11 @@
    "x": 45,
    "y": 29,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "up",
+    "up"
+   ],
    "script": "sg_departure",
    "name": "Boatman",
    "departure": true
@@ -435,7 +439,11 @@
    "x": 26,
    "y": 25,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "sg_wanderer",
    "name": "Cruise Passenger"
   },

@@ -41,6 +41,8 @@ static func release_rule(data: GameStateData, from_party: bool, i: int) -> Dicti
 	if i < 0 or i >= list.size():
 		return {"ok": false, "why": "Nobody there.", "confirms": 0}
 	var c: Creature = list[i]
+	if FamilyCat.is_family(c):
+		return {"ok": false, "why": FamilyCat.keep_reason(c), "confirms": 0}  # family is for keeps
 	if from_party:
 		if data.party.size() <= 1:
 			return {"ok": false, "why": "You can't travel without a single companion.", "confirms": 0}

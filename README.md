@@ -56,7 +56,8 @@ update; they always have.
 
 | | |
 |---|---|
-| ![Herschel's Uranus, in a house in Bath](docs/screens/r53-bath-herschel.png) | ![A quarryman's home in Llanberis](docs/screens/r53-llanberis-home.png) |
+| ![The family cat, on the Cat and Fiddle road](docs/screens/r54-cat.png) | ![By coracle on Derwentwater](docs/screens/r54-coracle.png) |
+| ![Every move says how it will land](docs/screens/r54-types.png) | ![Herschel's Uranus, in a house in Bath](docs/screens/r53-bath-herschel.png) |
 | ![Cheese rolling on Cooper's Hill](docs/screens/w48-g2-cheese-1.png) | ![The gurning contest](docs/screens/w48-g5-gurning.png) |
 | ![Trumps in a front room](docs/screens/r50-trumps.png) | ![Know your Keeper](docs/screens/r50-keepers.png) |
 | ![Who's setting off?](docs/screens/r46-creator.png) | ![Grassmarket Outfitters, Edinburgh](docs/screens/r46-boutique.png) |
@@ -81,10 +82,10 @@ for every timing minigame are under Settings, Accessibility.
 
 ## What's new
 
-5.3 "Houses": going indoors is worth it now. Residents remember you and say something new when you come back, a
-Regular in nearly every town, homes that look like where they are and who lives there, one thing in each to look at,
-the family drawer, folklore that visits at night, and asks for Fieldbook pages, photographs and home cooking. It
-builds on 5.2 "Lucky Strikes" (critical hits, moving portraits, water crossings). The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
+5.4 "Off the Beaten Track": the family cat joins you on the Cat and Fiddle road, a coracle takes you across every
+river and lake (and later the sea near shore), every move says how it will land, new places are a moment, legends
+have clues to hunt by, and the world answers back: walkers in the streets, grass that parts, fires you can hear. It
+builds on 5.3 "Houses", where going indoors became worth it. The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
 
 ## How it's made
 

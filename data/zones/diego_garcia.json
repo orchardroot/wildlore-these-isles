@@ -315,7 +315,8 @@
    "x": 38,
    "y": 32,
    "facing": "down",
-   "move": "still",
+   "move": "wander",
+   "radius": 2,
    "script": "biot_sailor",
    "name": "Sailor"
   },
@@ -325,7 +326,11 @@
    "x": 20,
    "y": 16,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "biot_guide",
    "name": "Duty Officer"
   },

@@ -466,7 +466,11 @@
    "x": 14,
    "y": 29,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "tri_knitter"
   },
   {
@@ -475,7 +479,11 @@
    "x": 40,
    "y": 12,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "tri_birder"
   },
   {
@@ -484,7 +492,11 @@
    "x": 41,
    "y": 12,
    "facing": "down",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "tristan_da_cunha_return",
    "name": "Harbour Master"
   },

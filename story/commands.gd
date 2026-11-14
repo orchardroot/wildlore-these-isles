@@ -324,6 +324,8 @@ func _exec(c: Dictionary) -> void:
 			await LessonTalk.say_it(self, c)  # one quick word after a won battle
 		"science":
 			await InventionTalk.run(self, c)  # a science fair puzzle (story/invention_talk.gd)
+		"family_cat":
+			await CatTalk.run(self, c)  # the family cat joins, comes home or goes out (story/cat_talk.gd)
 		_:
 			push_warning("Commands: unknown command '%s'" % c.get("do", ""))
 

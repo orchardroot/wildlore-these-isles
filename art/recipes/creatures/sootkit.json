@@ -1,0 +1,23 @@
+{"id": "sootkit",
+ "palette": {"blk": "#2e2d3a", "blk2": "#1f1e29", "pink": "#c98494", "inner": "#6c4658", "eye": "#d4e44c", "ink": "#12111a", "wh": "#e8e4f0", "soot": "#46445a"},
+ "layers": [
+  {"shape": "line", "points": [[62, 90], [80, 90], [86, 76], [78, 62]], "width": 6, "colour": "blk", "pattern": "stripes", "pcolour": "blk2", "period": 6, "pangle": 40},
+  {"shape": "circle", "at": [78, 62], "r": 3.2, "colour": "blk2", "rim": false},
+  {"shape": "ellipse", "at": [36, 91], "size": [14, 7], "colour": "blk2", "mirror": true},
+  {"shape": "ellipse", "at": [48, 72], "size": [38, 34], "colour": "blk", "pattern": "stripes", "pcolour": "blk2", "period": 7, "pangle": 80},
+  {"shape": "ellipse", "at": [48, 80], "size": [18, 18], "colour": "soot", "front_only": true, "rim": false},
+  {"shape": "ellipse", "at": [30, 80], "size": [8, 14], "colour": "blk", "angle": 8, "mirror": true},
+  {"shape": "poly", "points": [[26, 44], [22, 24], [39, 35]], "colour": "blk", "mirror": true},
+  {"shape": "poly", "points": [[29, 40], [27, 30], [36, 36]], "colour": "inner", "mirror": true, "front_only": true, "rim": false},
+  {"shape": "ellipse", "at": [48, 52], "size": [44, 34], "colour": "blk", "pattern": "stripes", "pcolour": "blk2", "period": 7, "pangle": 80},
+  {"shape": "ellipse", "at": [48, 58], "size": [20, 14], "colour": "soot", "front_only": true, "rim": false}
+ ],
+ "face_layers": [
+  {"shape": "poly", "points": [[45, 54], [51, 54], [48, 57]], "colour": "pink", "shade": false, "rim": false},
+  {"shape": "line", "points": [[48, 57], [48, 59]], "width": 1, "colour": "ink", "shade": false},
+  {"shape": "line", "points": [[44, 61], [48, 59], [52, 61]], "width": 1.1, "colour": "ink", "shade": false},
+  {"shape": "line", "points": [[30, 57], [20, 55]], "width": 0.8, "colour": "wh", "shade": false, "rim": false, "mirror": true},
+  {"shape": "line", "points": [[30, 60], [20, 61]], "width": 0.8, "colour": "wh", "shade": false, "rim": false, "mirror": true}
+ ],
+ "eyes": [{"at": [38, 50], "r": 5.4, "colour": "eye", "pupil": [1.3, 4.4], "mirror": true}]
+}

@@ -324,7 +324,11 @@
    "x": 58,
    "y": 32,
    "facing": "left",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "left",
+    "left"
+   ],
    "script": "gw_granny",
    "name": "Máire Bheag"
   },
@@ -370,7 +374,11 @@
    "x": 61,
    "y": 22,
    "facing": "up",
-   "move": "still",
+   "move": "pace",
+   "path": [
+    "right",
+    "right"
+   ],
    "script": "gw_errigal_view",
    "name": "Walker"
   }
