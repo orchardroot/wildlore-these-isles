@@ -54,9 +54,51 @@ static func by_id(id: String) -> Dictionary:
 			return p
 	return {}
 
-## Where it stands: the authored tile, or the nearest tile the player can stand on.
+const OPEN_TILES := ["grass", "tall_grass", "flowers", "sand"]  # a poi stands on open ground, never a path, road, cobbles, door or crossing
+static var _tiles: Dictionary = {}
+
+## Where it stands: the tile nearest the authored `near` that is open ground (grass, tall grass, flowers, sand),
+## not a doorstep, the station or ferry quay, the zone's border or a one-tile gap, and not a tile whose being solid
+## would cut part of the zone off. Falls back to the nearest standable tile if the zone has no such place.
 static func tile(z: ZoneData, p: Dictionary) -> Vector2i:
-	return z.landing_near(Vector2i(int(p.near[0]), int(p.near[1])))
+	var key := "%s|%s|%s" % [z.id, p.get("id", ""), p.get("near", [])]
+	if _tiles.has(key):
+		return _tiles[key]
+	var want := Vector2i(int(p.near[0]), int(p.near[1]))
+	var out := z.landing_near(want)
+	if not placeable(z, out):
+		var reach := z.reachable(z.spawn)
+		for r in range(0, 9):
+			var found := false
+			for dy in range(-r, r + 1):
+				for dx in range(-r, r + 1):
+					if maxi(absi(dx), absi(dy)) != r:
+						continue
+					var q := want + Vector2i(dx, dy)
+					if placeable(z, q) and (not reach.has(q) or z.reachable(z.spawn, [], {q: true}).size() >= reach.size() - 1):
+						out = q
+						found = true
+						break
+				if found:
+					break
+			if found:
+				break
+	_tiles[key] = out
+	return out
+
+## Fit to stand a poi on: open ground, away from doors, the station, the ferry, the border and any one-tile gap.
+static func placeable(z: ZoneData, t: Vector2i) -> bool:
+	if not z.in_bounds(t) or z.tile_at(t) not in OPEN_TILES or not z.walkable(t):
+		return false
+	if t.x == 0 or t.y == 0 or t.x == z.width - 1 or t.y == z.height - 1:
+		return false
+	if t == z.station or t == Vector2i(int(z.ferry.get("x", -1)), int(z.ferry.get("y", -1))):
+		return false
+	for w in z.warps:
+		var wp := Vector2i(int(w.x), int(w.y))
+		if absi(wp.x - t.x) + absi(wp.y - t.y) <= 1:
+			return false
+	return not z.is_gap(t)
 
 # --- state ---------------------------------------------------------------------
 
@@ -235,6 +277,8 @@ static func check(zones: Dictionary, dex: Dex, items: ItemDB) -> Array:
 			errs.append("poi %s: near is out of bounds in %s" % [id, z.id])
 		elif not z.walkable(tile(z, p)):
 			errs.append("poi %s: no standable tile near it in %s" % [id, z.id])
+		elif not placeable(z, tile(z, p)):
+			errs.append("poi %s: no open ground near %s in %s (a poi must stand on grass, never a path, road, door-front or bridge)" % [id, near, z.id])
 		var at := str(p.get("at", ""))
 		if at != "" and not world_map.towns.has(at) and not world_map.places.has(at):
 			errs.append("poi %s: map place '%s' is not on the map" % [id, at])

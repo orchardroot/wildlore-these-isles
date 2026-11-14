@@ -83,14 +83,24 @@ static func route(zones: Dictionary, from_zone: String, from: Vector2i, to_zone:
 	var came := {start_key: null}
 	var queue := [[from_zone, from]]
 	var found := ""
+	var covered := {}  # zone -> every tile an earlier flood there reached (not the start zone, which has `blocked`)
 	var i := 0
 	while i < queue.size() and found == "":
 		var zid: String = queue[i][0]
 		var pos: Vector2i = queue[i][1]
 		i += 1
 		var z: ZoneData = zones[zid]
+		# Arriving on a tile an earlier flood of this zone already reached adds nothing: whatever is reachable from
+		# here was reachable from there. (Without this every edge tile is its own arrival, and a loop of zones
+		# floods each zone dozens of times.) A door tile is the exception, a flood does not leave from one.
+		if zid != from_zone and covered.has(zid) and covered[zid].has(pos) and z.warp_at(pos).is_empty():
+			continue
 		# `blocked` holds NPC tiles of the zone you're standing in; they mean nothing in other zones
 		var parent := _flood(z, pos, blocked if zid == from_zone else {})
+		if zid != from_zone:
+			if not covered.has(zid):
+				covered[zid] = {}
+			covered[zid].merge(parent)
 		var key := "%s|%d,%d" % [zid, pos.x, pos.y]
 		if zid == to_zone and parent.has(to):
 			found = key

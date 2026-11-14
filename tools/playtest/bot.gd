@@ -532,6 +532,8 @@ func _routing_zones() -> Dictionary:
 			for fl in Flotsam.for_zone(id):  # flotsam stands solid on its tile until it's taken (see FlotsamScene.dress)
 				if not Flotsam.found(Game.data, fl):
 					z.blocked[Flotsam.tile(fl)] = true
+			for pp in Poi.for_zone(id):  # a den, camp, stone or cache is solid for good (see PoiScene.dress), done or not
+				z.blocked[Poi.tile(z, pp)] = true
 	return _rz
 
 ## Legs from here to a tile: first over only the zones near the shortest zone-hop path (fast), then the whole map.
@@ -906,10 +908,11 @@ func _find_grass(zone_id: String) -> Vector2i:
 	var z := ZoneData.load_id(zone_id)
 	FieldMoves.apply_cuts(Game.data, z)
 	var reach := z.reachable(z.spawn, FieldMoves.abilities(Game.data))  # only grass you can actually walk to
+	var solid: Dictionary = _routing_zones()[zone_id].blocked if _routing_zones().has(zone_id) else {}  # not a stone, spot or flotsam
 	for y in z.height:
 		for x in range(1, z.width - 1):
 			var p := Vector2i(x, y)
-			if z.tile_at(p) == "tall_grass" and reach.has(p) and reach.has(p + Vector2i(-1, 0)) and reach.has(p + Vector2i(1, 0)):
+			if z.tile_at(p) == "tall_grass" and not solid.has(p) and reach.has(p) and reach.has(p + Vector2i(-1, 0)) and reach.has(p + Vector2i(1, 0)):
 				return p
 	return z.spawn
 
