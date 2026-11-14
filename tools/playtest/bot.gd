@@ -241,6 +241,9 @@ func _build_state_at(idx: int) -> void:
 		d.set_flag(f)
 		if f.begins_with("badge_") and not d.badges.has(f.substr(6)):
 			d.badges.append(f.substr(6))
+	if d.flag("ashcombe2_done") == true:  # the Geevor scene posts the ferry ticket; a built save skips that scene
+		d.set_flag("ferry_ticket")
+		Bag.new(d.bag).add("ferry_ticket", 1)
 	var lv := ParLevel.par(d.flags)
 	d.party.clear()
 	for sp in ["kindlet", "spikkin", "holtling", "binfox", "hootlet"]:
@@ -553,6 +556,8 @@ func _plan(zone_id: String, target: Vector2i, blocked: Dictionary) -> Array:
 			var legs := Pathfinder.route(sub, here, pos, zone_id, target, blocked)
 			if not legs.is_empty():
 				return legs
+	if here != zone_id and not _hops_from(here).has(zone_id):
+		return []  # across the sea: no walk-off edge or door gets there, and proving it floods the whole map
 	var t0 := Time.get_ticks_msec()
 	var full := Pathfinder.route(zones, here, pos, zone_id, target, blocked)
 	if Time.get_ticks_msec() - t0 > 3000:
