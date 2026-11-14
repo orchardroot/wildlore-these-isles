@@ -504,6 +504,11 @@
    "type": "planter",
    "x": 33,
    "y": 26
+  },
+  {
+   "type": "noticeboard",
+   "x": 40,
+   "y": 28
   }
  ],
  "warps": [
@@ -762,6 +767,27 @@
    "facing": "down",
    "move": "still",
    "trainer": "shr_actor"
+  },
+  {
+   "id": "ct_chair_poster",
+   "sprite": "villager_3",
+   "x": 38,
+   "y": 27,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_chair_poster",
+   "name": "Hilary Bowen"
+  },
+  {
+   "id": "ct_chair_teahut",
+   "sprite": "shopkeeper",
+   "x": 36,
+   "y": 26,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_chair_teahut",
+   "name": "Tea Seller",
+   "show_if": "ct_chair_end"
   }
  ],
  "encounters": {

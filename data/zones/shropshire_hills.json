@@ -252,6 +252,78 @@
    "facing": "left",
    "move": "still",
    "script": "arts_housman_walker"
+  },
+  {
+   "id": "ct_chair_rob",
+   "sprite": "hillwalker",
+   "x": 22,
+   "y": 38,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_chair_rob",
+   "name": "Rob Pugh"
+  },
+  {
+   "id": "ct_chair_sian",
+   "sprite": "student",
+   "x": 16,
+   "y": 28,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_chair_sian",
+   "name": "Sian Corfield"
+  },
+  {
+   "id": "ct_chair_lair",
+   "sprite": "creature:diaboulder",
+   "x": 11,
+   "y": 34,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_chair_lair",
+   "name": "Old Nick",
+   "show_if": "ct_chair_state",
+   "hide_if": "ct_chair_end"
+  },
+  {
+   "id": "ct_chair_banded",
+   "sprite": "hiker",
+   "x": 18,
+   "y": 36,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_chair_banded",
+   "name": "Post Walker",
+   "show_if": "ct_chair_marked"
+  },
+  {
+   "id": "ct_chair_bench",
+   "sprite": "birdwatcher",
+   "x": 14,
+   "y": 31,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_chair_bench",
+   "name": "Bench Sitter",
+   "show_if": "ct_chair_bench"
+  }
+ ],
+ "examine": [
+  {
+   "x": 11,
+   "y": 30,
+   "text": [
+    "A great grey rock, shaped like a seat, with a view over the heather. It is a place that wants to be sat in."
+   ],
+   "clue": "chair.seat"
+  },
+  {
+   "x": 9,
+   "y": 31,
+   "text": [
+    "A tor of grey quartzite. In clear weather it is only a very big rock."
+   ],
+   "clue": "chair.mist"
   }
  ],
  "encounters": {
