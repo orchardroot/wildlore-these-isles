@@ -537,6 +537,15 @@ func _routing_zones() -> Dictionary:
 					z.blocked[Flotsam.tile(fl)] = true
 			for pp in Poi.for_zone(id):  # a den, camp, stone or cache is solid for good (see PoiScene.dress), done or not
 				z.blocked[Poi.tile(z, pp)] = true
+			for l in Leases.anchored(id):  # unowned lease land is fenced across its gap, with a sign in front (see Leases.apply)
+				if Leases.is_owned(Game.data, str(l.id)) or not z.edges.has(str(l.get("side", ""))):
+					continue
+				var lane := Leases.border_tiles(z, l)
+				if lane.is_empty():
+					continue
+				for t in lane:
+					z.blocked[t] = true
+				z.blocked[lane[lane.size() / 2] + Leases._inward(str(l.side))] = true
 	return _rz
 
 ## Legs from here to a tile: first over only the zones near the shortest zone-hop path (fast), then the whole map.
