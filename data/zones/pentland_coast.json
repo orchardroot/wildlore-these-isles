@@ -613,6 +613,15 @@
     "The river mouth, brown water spreading into green. Quiet, at the moment."
    ],
    "clue": "seal.dawn"
+  },
+  {
+   "x": 63,
+   "y": 11,
+   "text": [
+    "A moored boat at the harbour mouth, nets heaped in the stern. Beyond it the buoys bob in a line."
+   ],
+   "clue": "seal.net",
+   "coracle": true
   }
  ],
  "signs": [

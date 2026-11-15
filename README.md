@@ -82,10 +82,9 @@ for every timing minigame are under Settings, Accessibility.
 
 ## What's new
 
-5.6 "Secrets": fifteen hidden places that something in the world has to show you (five only by coracle), a
-contract for beginners on the Macclesfield board, two more roads in Northern Ireland, keepsakes from the town
-projects, and a round of fixes from a critic's read of the last two releases. It builds on 5.5 "Roads and Reasons"
-(thirty new routes, contracts, side quests with a decision in them, trade that follows the news). The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
+5.7 "Second Helpings": a Walkers' League of thirty route champions you can challenge again each week, contracts
+that play differently from one another (and seven more of them), the Largest text size fitted on every screen, and
+a gentler first morning. It builds on 5.6 "Secrets" (fifteen hidden places, a few of them only by coracle). The full story of every release is in [CHANGELOG.md](CHANGELOG.md).
 
 ## How it's made
 

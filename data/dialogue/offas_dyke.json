@@ -46,5 +46,22 @@
    "who": "Railway Volunteer",
    "text": "It runs through the border country at a walking pace. It's the only way to see the Dyke without getting your boots dirty."
   }
+ ],
+ "champ_od_walker_t": [
+  {
+   "do": "say",
+   "who": "Walker Haf",
+   "text": "Over the dyke, or along it? Mind the bank. It's been here since long before you, and it's less forgiving."
+  },
+  {
+   "do": "rchamp",
+   "id": "od_walker_t",
+   "intro": [
+    "England on one side, Wales on the other, and me on the top. Let's go.",
+    "Weather's what it is. I've chosen a team to suit."
+   ],
+   "win": "Well fought. You've crossed the border so many times you ought to get a passport.",
+   "tired": "A walker needs her rest. Once a week, and I've done mine. Monday."
+  }
  ]
 }

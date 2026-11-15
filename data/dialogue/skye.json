@@ -210,7 +210,7 @@
     {
      "do": "say",
      "who": "Strathaird Crofter",
-     "text": "Low water, remember. The cave doesn't care how good a story you've got."
+     "text": "Mind the tide, remember. The cave doesn't care how good a story you've got."
     }
    ],
    "else": [
@@ -222,7 +222,7 @@
     {
      "do": "say",
      "who": "Strathaird Crofter",
-     "text": "Walter Scott came in 1814 and put it in a poem. The sea fills the mouth at high water, so go at low and come out before you're stuck."
+     "text": "Walter Scott came in 1814 and put it in a poem. The sea fills the mouth at high water, so real walkers go at low water."
     },
     {
      "do": "say",

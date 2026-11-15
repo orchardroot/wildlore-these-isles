@@ -13,6 +13,7 @@ var _rows: Array = []      # [{"kind": "offer"|"held", "job": Dictionary, "slot"
 var _buttons: Array = []
 var _list_col: VBoxContainer
 var _desc: VBoxContainer
+var _dsc: ScrollContainer
 var _standing: VBoxContainer
 var _say: Label
 var _last := 0
@@ -49,6 +50,10 @@ func _build() -> void:
 	var dsc := ScrollContainer.new()  # whatever the standing card and the landlord's words leave
 	dsc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	dp.add_child(dsc)
+	_dsc = dsc
+	if UIKit.largest():  # a long job at the biggest text runs on past the card: Right reads down it, Back returns to the list
+		UIKit.key_scroll(dsc)
+		dsc.focus_entered.connect(func(): dsc.set_meta("back_to", weakref(_buttons[_last])) if _last < _buttons.size() else null)
 	_desc = VBoxContainer.new()
 	_desc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_desc.add_theme_constant_override("separation", 8)
@@ -181,6 +186,9 @@ func _row_button(i: int) -> Button:
 	if tag[0] != "":
 		var chip := UIKit.chip(tag[0], tag[1], UIKit.CREAM, 17)
 		chip.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		if UIKit.largest():  # the title's room is the one that matters
+			for cl in chip.find_children("*", "Label", true, false):
+				cl.add_theme_font_size_override("font_size", UIKit.MIN_TEXT)
 		h.add_child(chip)
 	for c in h.get_children():
 		c.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -229,6 +237,15 @@ func _describe(i: int) -> void:
 	hl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_desc.add_child(hl)
 	_set_row_hint(r)
+	if UIKit.largest():
+		_link_reading.call_deferred()
+
+## Right from a job row goes to the card's words when they run on (Largest text only).
+func _link_reading() -> void:
+	await get_tree().process_frame
+	for b in _buttons:
+		if is_instance_valid(b):
+			b.focus_neighbor_right = b.get_path_to(_dsc) if UIKit.reads_on(_dsc) else NodePath(".")
 
 func _line(k: String, v: String, col: Color) -> HBoxContainer:
 	var h := HBoxContainer.new()

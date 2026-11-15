@@ -1,0 +1,30 @@
+{
+ "id": "kit_road_whw",
+ "name": "Kit",
+ "class": "Rival",
+ "sprite": "kit",
+ "party": [
+  {
+   "species": "redbreast",
+   "level": 69
+  },
+  {
+   "species": "warrender",
+   "level": 70
+  },
+  {
+   "species": "bramblehog",
+   "level": 70
+  },
+  {
+   "species": "kitelet",
+   "level": 71
+  }
+ ],
+ "ai": "trainer",
+ "money": 1750,
+ "intro": [],
+ "win": "Nearly there. Nearly there. I keep saying it and it's never true.",
+ "after": "Ninety-six miles, apparently. I'm on mile nine and I've named a rock.",
+ "scaled_floor": 70
+}

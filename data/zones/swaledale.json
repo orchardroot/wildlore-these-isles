@@ -600,7 +600,8 @@
    "y": 21,
    "facing": "down",
    "move": "still",
-   "trainer": "sw_historian"
+   "trainer": "sw_historian",
+   "champion": "sw_historian"
   }
  ],
  "encounters": {

@@ -241,12 +241,7 @@
     {
      "do": "say",
      "who": "Castle Rock Guide",
-     "text": "The way in is round the foot of the rock. People generally don't know where. Mortimer didn't either."
-    },
-    {
-     "do": "set",
-     "flag": "secret_mortimers_hole_known",
-     "value": true
+     "text": "The way in is round the foot of the rock. People generally don't know where, so have a look along it. Mortimer didn't either."
     }
    ]
   }

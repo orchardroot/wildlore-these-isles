@@ -34,5 +34,22 @@
    "who": "Cable Car Attendant",
    "text": "Dursey is a grand place for a walk. Nobody lives there now. The cows, the sheep and the birds do the housekeeping."
   }
+ ],
+ "champ_hp_cornish": [
+  {
+   "do": "say",
+   "who": "Heritage Volunteer Jago",
+   "text": "Hello again. Mind the hairpins; they're the only thing on this road with a sense of humour. I came to look at the view and somebody has parked in it."
+  },
+  {
+   "do": "rchamp",
+   "id": "hp_cornish",
+   "intro": [
+    "The Cornish brought the know-how to the copper here, and I brought myself. A rematch, is it? Go on, then.",
+    "I've a fair idea what the weather's done to my team, mind."
+   ],
+   "win": "Well, that's me told. Come back next week and I'll have thought of something.",
+   "tired": "Not this week. The sheep complained about the noise last time. Monday, and I'll be ready."
+  }
  ]
 }

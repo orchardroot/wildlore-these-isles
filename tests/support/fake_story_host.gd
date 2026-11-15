@@ -17,6 +17,11 @@ var last_battle: Dictionary = {}
 var warps: Array = []
 var autosave_flags: Array = []   # game_complete as seen at each autosave
 
+var hints := true
+
+func hints_on() -> bool:
+	return hints
+
 func zone_id() -> String:
 	return zone
 

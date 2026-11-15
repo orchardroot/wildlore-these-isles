@@ -84,14 +84,26 @@
     {
      "do": "say",
      "who": "Border Farmer",
-     "text": "There's a way in round the back, if you don't mind a bit of mud."
-    },
-    {
-     "do": "set",
-     "flag": "secret_pele_tower_known",
-     "value": true
+     "text": "There's a way in round the back, if you don't mind a bit of mud. Have a look in the bank."
     }
    ]
+  }
+ ],
+ "champ_rr_rider": [
+  {
+   "do": "say",
+   "who": "Rider Joanne",
+   "text": "Good. You've come the right way. This used to be the wrong way, for everyone, from both sides."
+  },
+  {
+   "do": "rchamp",
+   "id": "rr_rider",
+   "intro": [
+    "A reiver never refuses a challenge. They only refuse to pay for things.",
+    "The weather's turned my way, so I've picked my side."
+   ],
+   "win": "Well ridden. I'd give you a cow, but it'd come with a feud.",
+   "tired": "I'll fight you once a week, like any honest raider. Monday, and bring your own horse."
   }
  ]
 }

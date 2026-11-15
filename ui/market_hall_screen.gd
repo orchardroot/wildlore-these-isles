@@ -99,7 +99,9 @@ func _refresh() -> void:
 	UIKit.clear(_list_col)
 	_item_buttons.clear()
 	if _rows.is_empty():
-		_list_col.add_child(UIKit.label("Nothing here for the stalls. They buy produce, dishes and fish.", 26, UIKit.MUTED))
+		var none := UIKit.label("Nothing here for the stalls. They buy produce, dishes and fish.", 26, UIKit.MUTED)
+		none.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART  # wraps rather than widen the list past the card beside it
+		_list_col.add_child(none)
 		UIKit.clear(_desc)
 		return
 	for r in _rows:

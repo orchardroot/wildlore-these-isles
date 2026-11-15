@@ -1,0 +1,221 @@
+{
+ "id": "buggane",
+ "title": "The Roof That Will Not Stay On",
+ "town": "douglas",
+ "nation": "mann",
+ "group": "townsfolk",
+ "badges": 5,
+ "pay": 3,
+ "poster": {
+  "name": "Gwen Kewley",
+  "role": "keeps the key to the old keeill past Crosby",
+  "idle": [
+   "Come back when you've seen a bit more of the world, my love. The ruin has kept for eight hundred years. It can keep another few weeks."
+  ],
+  "taken": [
+   "Found anything? I went up at dusk with a flask and a torch and I'd have sworn the walls were breathing. I came home and did the crossword with all the lights on."
+  ],
+  "decided": [
+   "You've been up there, haven't you? I can see it in your boots. Go on."
+  ],
+  "closed": "That's the keeill dealt with. Thank you for going up. I know it wasn't a job anybody asked for.",
+  "haggle": "You've learnt to talk like a Manxman. Fine. Done, and the kettle's on."
+ },
+ "notice": [
+  "Stones coming down off the old walls at night, and a noise like a roof being torn off. There has been no roof on that church for longer than anyone alive can say.",
+  "Visitors say there is a shape inside after dark. I say visitors say things. But I'd like somebody to go and look."
+ ],
+ "trouble": [
+  "Corlett swears it's the wind, and he has a farm that has seen some wind. The Heritage people want me to say something helpful and I have not got a thing.",
+  "It's the ruined church of St Trinian's, in the fields on the way to Crosby. Do be careful. If it is what the old people say, it is not a thing for a quick visit."
+ ],
+ "hypotheses": [
+  {"id": "buggane", "name": "The Buggane of St Trinian's", "types": ["spirit", "hearth"]},
+  {"id": "wind", "name": "The wind, in a roofless nave", "types": ["gale"]},
+  {"id": "lads", "name": "Lads with a torch and a bottle", "types": ["urban"]}
+ ],
+ "truth": "buggane",
+ "clues": [
+  {
+   "id": "stones",
+   "kind": "look",
+   "zone": "douglas",
+   "hint": "the fallen stones inside the old walls",
+   "text": [
+    "Stones from the top of the wall lie in a ring round the middle of the nave, each of them heavier than you would care to lift. They have not fallen outwards, the way wind would drop them. They look as if something threw them up and in.",
+    "No lad with a torch and a bottle ever lifted those."
+   ],
+   "points": ["buggane", "wind"],
+   "rules_out": ["lads"]
+  },
+  {
+   "id": "floor",
+   "kind": "look",
+   "zone": "douglas",
+   "hint": "the floor of the nave after dark, once you have seen the stones",
+   "text": [
+    "After dark the flagstones at the east end are warm under your hand, in a cold church, in the cold. The grass will not grow there, and there is a smell of soot and something like a wet dog.",
+    "The old people said the buggane came up through the floor. The floor, at least, would like you to think so."
+   ],
+   "hint_wait": "A cold floor, and a church full of moss. Whatever lives under it only seems to bother with the nights. Try again at dusk or after dark.",
+   "needs_clue": "stones",
+   "when": {"phase": ["dusk", "night"]},
+   "points": ["buggane"]
+  },
+  {
+   "id": "corlett",
+   "kind": "ask",
+   "zone": "douglas",
+   "who": "Harold Corlett",
+   "hint": "ask the farmer whose field the church is in",
+   "text": [
+    "Wind. It comes straight off the Irish Sea with nothing between us and Ireland to slow it. A church without a roof is a drum, and a gale is a drumstick.",
+    "You can write that down. A stone falls, a stone falls. I've lost a gate to it. Nobody thinks it was a buggane that took my gate."
+   ],
+   "idle": ["Wind. It's always the wind. Ask me again in a gale and I'll say it louder."],
+   "after": "Wind, I said, and wind it was, I don't care what the Heritage people put on their plaque.",
+   "wrong": true,
+   "points": ["wind"]
+  },
+  {
+   "id": "nessa",
+   "kind": "ask",
+   "zone": "douglas",
+   "who": "Nessa Cannell",
+   "hint": "ask the storyteller at the fairy bridge",
+   "text": [
+    "The buggane's real, in the way the old stories are. They say it tore the roof off St Trinian's every time the builders got it on, and the church has stood open to the sky ever since.",
+    "There was a tailor, Timothy, who took a bet to sew a pair of trousers in there overnight. He finished his seam and ran. The buggane, they say, did not take it well."
+   ],
+   "idle": ["I'm telling a story about a harp. It's a good one. Ask me later and I'll tell you the one about the roof."],
+   "after": "A good story outlives its roof. Whatever you decided, you'll be in the telling by Christmas.",
+   "points": ["buggane"]
+  }
+ ],
+ "lair": {
+  "zone": "douglas",
+  "name": "The Buggane",
+  "species": "cloughgart",
+  "level": 48,
+  "floor_par": 44,
+  "intro": [
+   "The roofless church, the grass long between the walls, and a patch of floor at the east end that is the wrong shade of black. The air is warm, and it smells of soot.",
+   "Something sits up in the corner with its long arms folded and its chin on its knees. It looks at the sky where a roof ought to be, and then at you, with the patient dislike of a creature that has had this argument before."
+  ],
+  "beaten": [
+   "The Buggane slumps against the wall and glares at the open sky as if it were the sky's fault. It clearly has one more roof in it, and it is not going to be this one."
+  ]
+ },
+ "choices": [
+  {
+   "id": "roof",
+   "label": "Put a proper roof on the keeill, at last",
+   "say": [
+    "The Heritage people send a lorry, a lot of timber and a man with a clipboard. The roof goes on in a week of fine weather, and the walls look very strange in it, like a man in a hat he has not asked for.",
+    "On the first dark night there is a noise from the field like a ship coming apart. In the morning the roof is lying in the nave in several pieces, and the Buggane is smiling for the first time in centuries."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_buggane_roofed": true, "ct_buggane_torn": true},
+   "repute": {"townsfolk": 2, "walkers": -1},
+   "standing": {"mann": 1},
+   "poster": ["It was off the first night. I should have known. I rang the Heritage people and they said they were not in the least surprised. I think they wanted me to find out."],
+   "after": ["There's a pile of good timber in the nave. People take pictures. Everyone says the Buggane was right and nobody says it to me."],
+   "journal": "You had a roof put on St Trinian's, and the Buggane tore it off on the first night, as the old story says it always does. The timber is still in the nave. Nobody has been quite able to say who won."
+  },
+  {
+   "id": "ruin",
+   "label": "Fence the walls and leave it as it is",
+   "say": [
+    "You and Gwen put a low rail round the loose stones and a notice at the gate, and nothing at all over the nave. The stones stop coming down in the night. The Buggane, for its part, settles on its patch of floor with the look of someone who has been left alone at last.",
+    "Gwen puts the key back on its nail. It is the first time in months she has not looked at it."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_buggane_ruin": true, "ct_buggane_fenced": true},
+   "repute": {"walkers": 1, "townsfolk": 1},
+   "standing": {"mann": 2},
+   "poster": ["A rail and a notice. That's all it took? It's still roofless. It's still a ruin. I think I'm going to be able to sleep."],
+   "after": ["Rail, notice, no roof. The stones stay put now. I don't go in after dark, and I don't ask the Buggane to either."],
+   "journal": "You fenced the loose stones and left St Trinian's roofless, as it has been for as long as anyone remembers. The Buggane is, as far as anybody can tell, content."
+  },
+  {
+   "id": "tale",
+   "label": "Keep the tale: a story at the gate on the dark nights",
+   "say": [
+    "Nessa takes it on. On the first Friday there is a lantern at the gate, a dozen people with flasks, and the story of the tailor told in the dark with the right pauses. The walls stay quiet. The Buggane, if it is listening, makes no objection.",
+    "By the end of the month there is a list of people waiting to be frightened, and a flask stall run by Corlett's wife."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_buggane_tale": true, "ct_buggane_gate": true},
+   "repute": {"townsfolk": 2, "walkers": 1},
+   "standing": {"mann": 2},
+   "poster": ["A story, a lantern and a flask stall. Well. It is a better use of the dark than listening to it. I'll give you something now, and I'll tell Nessa she's earned a pie."],
+   "after": ["A dozen folk at the gate on the dark nights, a lantern and a flask. The Buggane doesn't charge. I've thought about asking it to."],
+   "journal": "You turned the Buggane into a story told at the gate on dark nights, the way it was meant to be told. People come from all over the island to be frightened, and nothing comes down off the walls."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch it",
+   "say": [
+    "The Buggane folds itself into the charm like a very old coat, with a look that says: a roof, a roof, you could at least have offered a roof."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_buggane_kept": true, "ct_buggane_gone": true},
+   "repute": {"townsfolk": 1, "walkers": 0},
+   "standing": {"mann": 2},
+   "poster": ["It's in a charm? The Buggane is in a charm. Well, you'd best keep it away from roofs. And thatch. And, to be safe, ceilings."],
+   "after": ["The church is quiet, and I keep going up to check. Nessa says the story doesn't end like this. I say it's only a chapter."],
+   "journal": "You caught the Buggane of St Trinian's. The church is quiet, and the old story, as Nessa points out, will have to be told with a different ending."
+  }
+ ],
+ "real": "St Trinian's is a roofless ruined church near Crosby, in the parish of Marown on the Isle of Man, and the Manx have long said that a buggane tore off its roof every time the builders put it back. A buggane is a Manx supernatural creature, usually an ogre or a troll, and the tales of it are tied to particular places, like the one at St Trinian's and the one on Ballaugh Curragh. The tailor who sewed a pair of trousers in the ruin to win a bet is the best known part of the tale. It is the kind of story people tell to explain a ruin, and it has done its job for a very long time.",
+ "places": {
+  "poster": {"sprite": "villager_2", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "corlett", "sprite": "farmer", "near": [12, 43]},
+   {"clue": "nessa", "sprite": "villager_3", "near": [28, 37]}
+  ],
+  "looks": [
+   {"clue": "stones", "near": [14, 40], "on": "rock", "text": ["Grey stones in long grass, half of them furred with moss. Whatever the church was, it has been open to the weather for a long time."]},
+   {"clue": "floor", "near": [30, 44], "on": "rock", "text": ["The east end of the church, and a patch of floor where the grass gives up. The flagstones are only stone, as far as you can tell."]}
+  ],
+  "lair": {"near": [34, 43]},
+  "folk": [
+   {
+    "id": "gate",
+    "zone": "douglas",
+    "near": [10, 42],
+    "sprite": "hillwalker",
+    "name": "Visitor",
+    "show_if": "ct_buggane_end",
+    "says": [
+     ["ct_buggane_is_roof", ["They put a roof on St Trinian's and it came off the first night. I've seen the pile of timber. I'd say the buggane is winning, but I can't think what it is winning."]],
+     ["ct_buggane_is_ruin", ["The church is fenced and quiet. I walked round it twice in the daylight, and had a very good picnic, and did not once go in after dark."]],
+     ["ct_buggane_is_tale", ["There's a story at the gate on the dark nights, with a lantern. I went on Friday. I didn't sleep. I'd go again, though."]],
+     ["ct_buggane_is_caught", ["They say the buggane's gone off in somebody's team, and the church is quiet. I find I'm rather sorry for the walls."]]
+    ],
+    "else": ["St Trinian's is quiet."]
+   },
+   {
+    "id": "timber",
+    "zone": "douglas",
+    "near": [32, 40],
+    "sprite": "farmer",
+    "name": "Heritage Man",
+    "show_if": "ct_buggane_torn",
+    "says": [],
+    "else": ["I'm here to count the timber. The roof lasted exactly one night, which is, I'm told, about what the old people said. I'll be writing it up as a success. It is the only way I can."]
+   },
+   {
+    "id": "lantern",
+    "zone": "douglas",
+    "near": [20, 44],
+    "sprite": "villager_1",
+    "name": "Lantern Seller",
+    "show_if": "ct_buggane_gate",
+    "says": [],
+    "else": ["Lanterns, a pound. Flasks, two. Friday nights at the gate, and the story starts when the last of the light goes. Don't hold the lantern too high. The buggane's heard it all before."]
+   }
+  ]
+ }
+}

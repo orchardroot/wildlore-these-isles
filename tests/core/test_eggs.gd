@@ -50,6 +50,20 @@ func test_schrodinger_box_needs_the_cat_at_the_front() -> void:
 	assert_true(Eggs.found(d, Eggs.get_egg("box")))
 	assert_eq(Eggs.spot_script(d, "dublin", p), [], "only in that room")
 
+func test_the_cat_eggs_work_with_her_anywhere_in_the_party() -> void:
+	var d := _data(true)
+	var kind: Creature = d.party[0]
+	d.party.erase(kind)
+	d.party.push_back(kind)  # she is now at the back
+	assert_false(FamilyCat.is_lead(d))
+	var h := _run(d, Eggs.spot_script(d, "dublin_trinity", Vector2i(3, 7)))
+	assert_true("Schrödinger" in _said(h), "the basket, with her at the back")
+	var d2 := _data(true)
+	var c: Creature = d2.party[0]
+	d2.party.erase(c)
+	d2.party.push_back(c)
+	assert_true(Eggs.step_script(d2, "chester", Vector2i(5, 5), [], 19 * 60, 30).size() > 0, "the grin, with her at the back")
+
 func test_the_grin_is_dusk_in_cheshire_with_the_cat_in_front() -> void:
 	var dusk := 19 * 60
 	var d := _data(true)
@@ -97,6 +111,8 @@ func test_the_phone_rings_at_midnight_beside_a_phone_box_and_is_an_hour_fast() -
 	assert_eq(Eggs.step_script(d, "cambridge", Vector2i(10, 12), props, 12, 5).size() > 0, true, "two tiles away is passing")
 	assert_eq(Eggs.step_script(d, "cambridge", Vector2i(10, 14), props, 12, 5), [], "too far")
 	assert_eq(Eggs.step_script(d, "cambridge", Vector2i(10, 12), props, 13 * 60, 5), [], "only after midnight")
+	assert_true(Eggs.step_script(d, "cambridge", Vector2i(10, 12), props, 2 * 60 + 40, 5).size() > 0, "and until three")
+	assert_eq(Eggs.step_script(d, "cambridge", Vector2i(10, 12), props, 3 * 60, 5), [], "not at three")
 	assert_eq(Eggs.step_script(d, "cambridge", Vector2i(10, 12), [], 12, 5), [], "needs a box")
 	assert_eq(Eggs.clock_reading(12), "1:12")
 	assert_eq(Eggs.clock_reading(23 * 60 + 30), "0:30")
@@ -172,6 +188,8 @@ func test_one_bottle_answers_another() -> void:
 	var lines := Eggs.bottle_lines(d, "fl_severn_crossing_1")
 	assert_true(lines.size() > 0 and "soap" in str(lines))
 	assert_true(Eggs.found(d, Eggs.get_egg("bottles")))
+	assert_eq(int(d.bag.get("w57_bath_soap", 0)), 1, "the soap it says it sent")
+	assert_true(ItemDB.load_default().has("w57_bath_soap"))
 
 func test_no_egg_is_named_in_a_menu() -> void:
 	for path in ["res://ui/atlas_screen.gd", "res://ui/pause_menu.gd", "res://core/atlas.gd"]:

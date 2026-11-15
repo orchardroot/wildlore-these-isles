@@ -1,0 +1,250 @@
+{
+ "id": "hereward",
+ "title": "The Man in the Bottom Field",
+ "town": "norwich",
+ "nation": "england",
+ "group": "farmers",
+ "badges": 6,
+ "pay": 3,
+ "poster": {
+  "name": "Brenda Gotobed",
+  "role": "farms a low field in the Fens, and sits on the drainage board",
+  "idle": [
+   "Come back when you've seen a bit more of England, my duck. The Fens aren't going anywhere. That's rather the whole difficulty."
+  ],
+  "taken": [
+   "Found anything? He was there again at dusk. Tall, helmeted, up to his knees in my bottom field, looking toward Ely. I stood at the gate with the dog and the dog sat on my foot."
+  ],
+  "decided": [
+   "You've been standing in the wet, I can see. Go on. Tell me what the Fens said."
+  ],
+  "closed": "That's the field sorted, one way or another. Thank you. It's always a bit of a shock when the Fens answer back.",
+  "haggle": "Well. You've got the Fen way of bargaining, which is to say nothing until I give in. Done."
+ },
+ "notice": [
+  "Somebody stands at the edge of the water in my bottom field at dusk. A big man, in a helmet with a long nose-guard, mud to the knees, grinning. He walks off into the reeds when you get close and leaves no prints.",
+  "The Board meets next week to decide whether to let the river into that field to ease the pressure on the bank. Half the Board has seen him. Nobody will say so in the minutes."
+ ],
+ "trouble": [
+  "Dennis says it's mist on the water. Dennis has said it's mist since 1987. I want somebody sensible to stand in my field and tell me what it is before we vote.",
+  "It's the low fields out on the Fens, past the windpumps. The fee is modest. The Board is not a rich body."
+ ],
+ "hypotheses": [
+  {"id": "hereward", "name": "Hereward, risen for the Isle", "types": ["bog", "iron"]},
+  {"id": "reenactor", "name": "A re-enactor from Ely, in the wrong field", "types": ["urban"]},
+  {"id": "mist", "name": "Fen mist on the water", "types": ["frost"]}
+ ],
+ "truth": "hereward",
+ "clues": [
+  {
+   "id": "edge",
+   "kind": "look",
+   "zone": "the_fens",
+   "hint": "the soft mud at the edge of the bottom field",
+   "text": [
+    "The mud at the water's edge is as soft as butter, and holds every mark: a heron's feet as sharp as a printed page, a vole's, a swan's. Where the man stood there is nothing at all.",
+    "The air has a smell of wet iron, and a living man in boots would have left a trail you could follow to the pub."
+   ],
+   "points": ["hereward"],
+   "rules_out": ["reenactor"]
+  },
+  {
+   "id": "dusk",
+   "kind": "look",
+   "zone": "the_fens",
+   "hint": "the bottom field at dusk, once you have seen the mud",
+   "text": [
+    "At dusk a tall figure comes up out of the reeds and stands in the shallows: a long helmet, a coat of rusted mail, mud to the knees. He looks across the water toward Ely, not at you, and he grins like a man who has waited a long time for the right argument.",
+    "When you take a step, the reeds close over the place he was standing. Mist does not wear a helmet."
+   ],
+   "hint_wait": "Flat water, flat fields, and a sky the size of a county. Whatever stands in this field keeps to the evenings. Try again at dusk.",
+   "needs_clue": "edge",
+   "when": {"phase": ["dusk"]},
+   "points": ["hereward"]
+  },
+  {
+   "id": "dennis",
+   "kind": "ask",
+   "zone": "the_fens",
+   "who": "Dennis Rudd",
+   "hint": "ask Dennis, who farms the next field",
+   "text": [
+    "Mist. Fen mist, off the water at dusk. It takes any shape you like. I've seen a man, a horse and a bishop in it, and not one of them was real.",
+    "I've said so since 1987. It's mist, and a post, and a bit of imagination. You can put that in your notebook."
+   ],
+   "idle": ["Mist. It's always mist. Come back in the evening and I'll show you."],
+   "after": "Mist, I said, and mist it was, and I'll go to my grave with it.",
+   "wrong": true,
+   "points": ["mist"]
+  },
+  {
+   "id": "marian",
+   "kind": "ask",
+   "zone": "the_fens",
+   "who": "Marian Sayer",
+   "hint": "ask the woman who knows the old Fen stories",
+   "text": [
+    "That's Hereward. They say he rises whenever the Isle is threatened. He held out at Ely against the Normans in 1070, and when the Isle fell he got away through the reeds and was never found.",
+    "The fenmen fought the drainers for the same reason, three hundred years on. They called themselves Fen Tigers. Take care what you vote for, my duck. He's listening."
+   ],
+   "idle": ["I'm mending a net. It's a long story, and it's about the net."],
+   "after": "Whatever you decided, he'll know. The Fens remember everything. Mostly they say nothing about it.",
+   "points": ["hereward"],
+   "rules_out": ["reenactor"]
+  },
+  {
+   "id": "lode",
+   "kind": "look",
+   "zone": "the_fens",
+   "from": "coracle",
+   "optional": true,
+   "when": {"phase": ["dusk", "night"]},
+   "hint": "the sluice by the lode, at dusk, from a boat",
+   "hint_ashore": "Something stands on the far bank of the lode, too far off to make out from here. You would need to be out on the water, and it would need to be getting dark.",
+   "hint_wait": "Flat water, flat light, and a sky that goes on for ever. This is a job for dusk.",
+   "text": [
+    "From the coracle on the lode, the figure on the far bank is easy to see. He is not looking at the water. He is looking at the sluice gate, and every time the keeper turns the wheel, he lifts his head, slowly, like a hound.",
+    "It is not a ghost's idea of a haunt. It is a watcher's, and he has a very precise idea of which field he is watching."
+   ],
+   "needs_clue": "edge",
+   "points": ["hereward"]
+  }
+ ],
+ "lair": {
+  "zone": "the_fens",
+  "name": "Hereward",
+  "species": "hereward",
+  "level": 56,
+  "floor_par": 52,
+  "intro": [
+   "The bottom field at dusk, the water flat and bright, the reeds black against it. The air smells of wet iron. A line of old posts runs out into the field and ends, for no reason you can see, in the dark.",
+   "A tall man stands in the shallows with his helmet pulled low and mud up to his knees. He has the grin of somebody who has never once been caught, and who has no plans to start."
+  ],
+  "beaten": [
+   "Hereward goes down on one knee in the shallows, mud to the thigh, and laughs. It is not a mean laugh. It is the laugh of a man who has been in tighter places and meant to lose this one, a little."
+  ]
+ },
+ "choices": [
+  {
+   "id": "bank",
+   "label": "Raise the bank and pump harder, and keep the field dry",
+   "say": [
+    "The Board votes for a higher bank and a second pump. The contractors dig for a fortnight, and by the end of it the bottom field is as dry as a plate.",
+    "Hereward stands on the new bank at dusk, with his arms folded, looking at the pump. It does not look as if he approves, but he does not argue."
+   ],
+   "fee": 1.0,
+   "flags": {"ct_hereward_bank": true, "ct_hereward_pumped": true},
+   "repute": {"farmers": 2, "wardens": -1},
+   "standing": {"england": 1},
+   "poster": ["A bank and a pump. The field's dry. It's the sensible thing and I'll say so at the Board. I'll also say the peat is a bit lower every year, and I'm quite aware that I'm not saying it loud enough."],
+   "after": ["The pump's running day and night, and the field's as dry as a plate. The peat's lower than it was. I measured against the post. I haven't told the Board."],
+   "journal": "You had the bank raised and a second pump fitted, and the bottom field stays dry. The peat, as the Fens always say, goes down a little more every year, and Hereward stands on the new bank and watches the pump."
+  },
+  {
+   "id": "wash",
+   "label": "Let the field flood on purpose, as a washland, and pay the farmer for it",
+   "say": [
+    "The Board votes, narrowly, to let the river in. The field floods to the knees by December, and by January there are whooper swans on it, and Brenda is paid for every acre under water.",
+    "Hereward wades in at dusk and stands in the middle of the flood with a faint, grim smile. It is the first time anyone has seen him look pleased."
+   ],
+   "fee": 0.7,
+   "flags": {"ct_hereward_wash": true, "ct_hereward_flooded": true},
+   "repute": {"wardens": 2, "farmers": -1},
+   "standing": {"england": 2},
+   "poster": ["A field of swans, and money for the privilege. The Board's very cross with me. The bank's holding, and I'm told that's the point. It's still a very odd thing to be paid for losing your land."],
+   "after": ["Swans on the bottom field every winter, and I've never been so popular with strangers. They stand at the gate and say 'ooh'. Hereward comes out at dusk and says nothing."],
+   "journal": "You let the bottom field flood on purpose, as a washland, and Brenda is paid for it. Whooper swans now winter on it. Hereward is said to stand in the middle of the water at dusk, looking pleased."
+  },
+  {
+   "id": "reed",
+   "label": "Rewet it as a fen, and cut the reed for thatch",
+   "say": [
+    "It takes two winters and a good many arguments. Part of the field is allowed to go back to fen, wet and reedy, and part is kept for the cutting. The first reed goes to a thatcher in Cambridgeshire, who says it is the best he has had in years.",
+    "Hereward stands among the reeds at dusk and, for the first time, does not look toward Ely. He looks at the cut reed, stacked in the dry, and grins."
+   ],
+   "fee": 0.8,
+   "flags": {"ct_hereward_reed": true, "ct_hereward_fen": true},
+   "repute": {"wardens": 1, "farmers": 1},
+   "standing": {"england": 2},
+   "poster": ["Half fen, half thatch, and the Board hasn't thrown me out. It pays for itself, just about. I never thought I'd farm reed. I'm told a Wicken man has been looking at my stack with envy."],
+   "after": ["Reed for the thatcher, a bit of fen for the birds, and a bank that nobody's afraid of. It's an odd sort of farming. It suits me better than the old one."],
+   "journal": "You had the bottom field rewetted as a fen, part of it cut for reed and sold to thatchers. It is a way of farming the Fens that the Fens themselves would recognise, and Hereward, at dusk, grins at the stacks."
+  },
+  {
+   "id": "caught",
+   "via": "catch",
+   "label": "Catch him",
+   "say": [
+    "Hereward goes into the charm with a bow and a grin, and a faint smell of wet iron. The reeds go quiet. For the first time in months nobody is watching the sluice."
+   ],
+   "fee": 0.9,
+   "flags": {"ct_hereward_kept": true, "ct_hereward_gone": true},
+   "repute": {"farmers": 1, "wardens": 0},
+   "standing": {"england": 2},
+   "poster": ["He's in a charm. Hereward the Wake is in a charm. I'll thank you not to say that at the Board. They'll vote to flood the field out of sheer nerves."],
+   "after": ["The field's empty at dusk. The Board voted for the bank. I keep looking at the reeds. The dog sits on my foot, as before."],
+   "journal": "You caught Hereward, and the bottom field is empty at dusk. The Board voted for the bank without much argument, and Brenda keeps looking at the reeds."
+  }
+ ],
+ "real": "Hereward the Wake led the English holding the Isle of Ely against William the Conqueror in 1070 and 1071, and when the Isle fell he escaped, and nobody knows what became of him. The Fens were drained from the 1600s, and the fenmen who fought the drainers were called Fen Tigers. Drained peat shrinks as it dries: at Holme Fen an iron post was driven in so that its top was level with the ground in 1851, and it now stands about four metres out of it, on the lowest land in Great Britain. The Ouse Washes were designed to flood every winter so the fields behind them stay dry, and now hold wintering swans. At Wicken Fen the National Trust still lets the sedge be cut for thatch.",
+ "places": {
+  "poster": {"sprite": "farmer", "near": "noticeboard"},
+  "witnesses": [
+   {"clue": "dennis", "sprite": "farmer", "near": [30, 22]},
+   {"clue": "marian", "sprite": "villager_3", "near": [24, 30]}
+  ],
+  "looks": [
+   {"clue": "edge", "at": [30, 36], "text": ["A windpump standing in a low field, with its feet in water and its sails turning very slowly. The water at its foot is as still as a plate."]},
+   {"clue": "dusk", "at": [50, 38], "text": ["Another windpump at the edge of the low field. The reeds beside it are dark, and very still, and somebody has been standing in them."]},
+   {"clue": "lode", "at": [20, 20], "text": ["A boat moored in the lode, half full of rainwater. Beyond it the far bank is dark, and the sluice stands at the end like a gate."]}
+  ],
+  "lair": {"near": [34, 38]},
+  "folk": [
+   {
+    "id": "board",
+    "zone": "norwich",
+    "near": [36, 26],
+    "sprite": "farmer",
+    "name": "Drainage Board Man",
+    "show_if": "ct_hereward_end",
+    "says": [
+     ["ct_hereward_is_bank", ["We voted for the bank and the second pump. It's dry, and I'm told the peat is a bit lower this year. I was told that by a man at a post. He looked very serious about it."]],
+     ["ct_hereward_is_wash", ["The Gotobed field is flooded on purpose. The swans came in January, and the ratepayers came in February to look at the swans. I voted against it. I've since been outvoted by a swan."]],
+     ["ct_hereward_is_reed", ["Half fen, half thatch, on the Gotobed field. It pays, just about. We were all against it, and now we are all rather proud of it, which is very Fen."]],
+     ["ct_hereward_is_caught", ["They say the man in the bottom field is in a Keeper's team. We voted for the bank. We were all rather nervous about it, and I do not know why."]]
+    ],
+    "else": ["The Board has met, and it is as quiet as a Fen field at dusk."]
+   },
+   {
+    "id": "swans",
+    "zone": "the_fens",
+    "near": [32, 46],
+    "sprite": "birdwatcher",
+    "name": "Swan Warden",
+    "show_if": "ct_hereward_wash",
+    "says": [],
+    "else": ["Eighty whoopers on the Gotobed field this morning, and a man in a helmet standing in the middle of them, looking pleased. I haven't mentioned the man in the report. I've mentioned the swans."]
+   },
+   {
+    "id": "reed",
+    "zone": "the_fens",
+    "near": [26, 40],
+    "sprite": "farmer",
+    "name": "Reed Cutter",
+    "show_if": "ct_hereward_reed",
+    "says": [],
+    "else": ["Cutting reed in January, with a long knife and a bad back. It's about the oldest job in the Fens, and the thatcher says it's the best he's had. A man in a helmet stands and watches. I don't ask him to help."]
+   },
+   {
+    "id": "pump",
+    "zone": "the_fens",
+    "near": [40, 34],
+    "sprite": "farmer",
+    "name": "Pump Man",
+    "show_if": "ct_hereward_bank",
+    "says": [],
+    "else": ["Second pump's running night and day. The field's as dry as a plate. I keep an eye on the post, though, and the post says the land's a bit lower every winter. I don't like what the post says."]
+   }
+  ]
+ }
+}

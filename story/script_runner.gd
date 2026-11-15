@@ -80,6 +80,9 @@ class Host extends RefCounted:
 		Router.busy = true
 		return result
 
+	func hints_on() -> bool:  # the Intros cards (Settings > Hints)
+		return Settings.hints
+
 	func easy_trial() -> bool:
 		return Settings.easy_fishing  # one "easier timing" option covers fishing and the sheepdog trials
 

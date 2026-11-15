@@ -46,5 +46,22 @@
    "who": "Battle Guide",
    "text": "Nobody built a visitor centre, and I think that is the best compliment a battlefield can get."
   }
+ ],
+ "champ_brn_forester": [
+  {
+   "do": "say",
+   "who": "Forester Ian",
+   "text": "Hello again. Mind the trunks. They don't move, but they have opinions."
+  },
+  {
+   "do": "rchamp",
+   "id": "brn_forester",
+   "intro": [
+    "The mountain's hollow and I'm not. Let's see who's tougher.",
+    "I've picked the team to suit the weather. A forester can read a sky."
+   ],
+   "win": "A good strong grain, that. Cut clean through.",
+   "tired": "Once a week. The trees can wait, but they don't like it. Monday."
+  }
  ]
 }

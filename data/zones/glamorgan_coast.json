@@ -385,7 +385,8 @@
    "y": 25,
    "facing": "right",
    "move": "still",
-   "trainer": "gc_keeper"
+   "trainer": "gc_keeper",
+   "champion": "gc_keeper"
   },
   {
    "id": "gc_walker",

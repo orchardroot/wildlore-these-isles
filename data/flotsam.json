@@ -51,7 +51,7 @@
   "y": 31,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go, by the look of it, somewhere near the Brecon Beacons. You decide it counts as a gift from the water."
+   "A lidded box wedged against the reeds near the Brecon Beacons. Whoever lost it has had a long week already."
   ],
   "reward": {
    "item": "parkin",
@@ -81,7 +81,7 @@
   "y": 40,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go, by the look of it, somewhere near Birmingham. You decide it counts as a gift from the water."
+   "A lidded box wedged against the reeds near Birmingham. Whoever lost it has had a long week already."
   ],
   "reward": {
    "item": "cup_of_tea",
@@ -96,7 +96,7 @@
   "y": 53,
   "kind": "crate",
   "text": [
-   "A crate marked THIS WAY UP. It has not been this way up since somewhere before Brighton. You fish it out with the paddle."
+   "A fish box with a crew's initials burned into the lid. Somebody from Brighton is going to be cross about this, but not today."
   ],
   "reward": {
    "item": "soda_bread",
@@ -111,7 +111,7 @@
   "y": 32,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang at the Burren, tied with fisherman's knots you do not know. It opens at the second try."
+   "A biscuit tin wedged under a root at the Burren, where nobody on foot would think to look. The lid says DO NOT OPEN, in the hand of someone who did."
   ],
   "reward": {
    "item": "hazelnuts",
@@ -126,7 +126,7 @@
   "y": 41,
   "kind": "cache",
   "text": [
-   "Whoever hid this at Cardiff had a boat and a plan. You have a boat, and now the plan has been found."
+   "Dry sand above the tide line near Cardiff and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
   ],
   "reward": {
    "item": "truffle",
@@ -141,7 +141,7 @@
   "y": 17,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go, by the look of it, somewhere near the Giant's Causeway. You decide it counts as a gift from the water."
+   "A tea chest bobs past in the Giant's Causeway like it has somewhere to be. You hook it, and it comes quietly."
   ],
   "reward": {
    "item": "cup_of_tea",
@@ -216,7 +216,7 @@
   "y": 37,
   "kind": "pot",
   "text": [
-   "A creel bobbing on its own float off Dover, with no one's name on it. Inside, a fish with the look of someone who has given up arguing."
+   "A lobster pot snagged on a ring of weed near Dover. No lobster. One surprised fish, which is something."
   ],
   "reward": {
    "item": "haddock",
@@ -276,7 +276,7 @@
   "y": 31,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang at the Forth Bridges, tied with fisherman's knots you do not know. It opens at the second try."
+   "A hollow under a thorn bush at the Forth Bridges, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'"
   ],
   "reward": {
    "item": "heather_honey",
@@ -306,7 +306,7 @@
   "y": 9,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk near Glencoe, its owner long gone. One fish in it, sulking."
+   "A drowned keep-sack tied to a post at Glencoe. There is still a fish in it, and an opinion."
   ],
   "reward": {
    "item": "rudd",
@@ -336,7 +336,7 @@
   "y": 47,
   "kind": "pot",
   "text": [
-   "A wicker fish trap hanging from a branch in the water at the Goyt Valley. It has caught something and is a little embarrassed about it."
+   "A keepnet left out in the water at the Goyt Valley by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
   ],
   "reward": {
    "item": "brown_trout",
@@ -351,7 +351,7 @@
   "y": 37,
   "kind": "pot",
   "text": [
-   "A lobster pot, adrift off Guernsey, its rope chewed through. Whatever was in it has been in there a while, and you are now the legal owner."
+   "A lobster pot snagged on a ring of weed near Guernsey. No lobster. One surprised fish, which is something."
   ],
   "reward": {
    "item": "mackerel",
@@ -366,7 +366,7 @@
   "y": 16,
   "kind": "crate",
   "text": [
-   "A tea chest bobs past in Gweedore like it has somewhere to be. You hook it, and it comes quietly."
+   "A lidded box wedged against the reeds near Gweedore. Whoever lost it has had a long week already."
   ],
   "reward": {
    "item": "buxton_water",
@@ -381,7 +381,7 @@
   "y": 6,
   "kind": "crate",
   "text": [
-   "A crate marked THIS WAY UP. It has not been this way up since somewhere before Hafod Cwm. You fish it out with the paddle."
+   "A crate swollen with water and good intentions, drifting at Hafod Cwm. It opens with a sound like a sigh."
   ],
   "reward": {
    "item": "soda_bread",
@@ -411,7 +411,7 @@
   "y": 33,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk near Holyhead, its owner long gone. One fish in it, sulking."
+   "A keepnet left out in the water at Holyhead by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
   ],
   "reward": {
    "item": "chub",
@@ -471,7 +471,7 @@
   "y": 46,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody from the Kent Downs is going to be cross about this, but not today."
+   "A crate marked THIS WAY UP. It has not been this way up since somewhere before the Kent Downs. You fish it out with the paddle."
   ],
   "reward": {
    "item": "pasty",
@@ -486,7 +486,7 @@
   "y": 8,
   "kind": "cache",
   "text": [
-   "A hollow under a thorn bush at Keswick, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'"
+   "Under a flat stone near Keswick, a dry bag and a pencilled note: 'For the next one, from the last one.'"
   ],
   "reward": {
    "item": "honeycomb",
@@ -501,7 +501,7 @@
   "y": 36,
   "kind": "crate",
   "text": [
-   "A sealed tin box, tarred at the seams, floating low off the Lake District. Somebody's emergency rations, and somebody's loss."
+   "A packing case with a stranger's name stencilled on it and a lid held on by one ambitious nail. It floats better than it has any right to, near the Lake District."
   ],
   "reward": {
    "item": "pork_pie",
@@ -531,7 +531,7 @@
   "y": 45,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang at Lerwick, tied with fisherman's knots you do not know. It opens at the second try."
+   "Dry sand above the tide line near Lerwick and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
   ],
   "reward": {
    "item": "wicker_snare",
@@ -561,7 +561,7 @@
   "y": 6,
   "kind": "crate",
   "text": [
-   "A crate marked THIS WAY UP. It has not been this way up since somewhere before Liverpool. You fish it out with the paddle."
+   "A fish box with a crew's initials burned into the lid. Somebody from Liverpool is going to be cross about this, but not today."
   ],
   "reward": {
    "item": "flask_of_tea",
@@ -591,7 +591,7 @@
   "y": 5,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody from Llangollen is going to be cross about this, but not today."
+   "A crate swollen with water and good intentions, drifting at Llangollen. It opens with a sound like a sigh."
   ],
   "reward": {
    "item": "pork_pie",
@@ -666,7 +666,7 @@
   "y": 18,
   "kind": "cache",
   "text": [
-   "Dry sand above the tide line near Oban and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
+   "A hollow under a thorn bush at Oban, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'"
   ],
   "reward": {
    "item": "wicker_snare",
@@ -711,7 +711,7 @@
   "y": 7,
   "kind": "cache",
   "text": [
-   "A cairn on the far bank at the Pentland Coast, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it."
+   "Under a flat stone near the Pentland Coast, a dry bag and a pencilled note: 'For the next one, from the last one.'"
   ],
   "reward": {
    "item": "heather_honey",
@@ -741,7 +741,7 @@
   "y": 23,
   "kind": "pot",
   "text": [
-   "A wicker fish trap hanging from a branch in the water at Plymouth. It has caught something and is a little embarrassed about it."
+   "A keepnet left out in the water at Plymouth by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
   ],
   "reward": {
    "item": "tench",
@@ -771,7 +771,7 @@
   "y": 35,
   "kind": "pot",
   "text": [
-   "A wicker fish trap hanging from a branch in the water at the Scottish Borders. It has caught something and is a little embarrassed about it."
+   "A drowned keep-sack tied to a post at the Scottish Borders. There is still a fish in it, and an opinion."
   ],
   "reward": {
    "item": "chub",
@@ -801,7 +801,7 @@
   "y": 29,
   "kind": "crate",
   "text": [
-   "A fish box with a crew's initials burned into the lid. Somebody from Sheffield is going to be cross about this, but not today."
+   "A crate swollen with water and good intentions, drifting at Sheffield. It opens with a sound like a sigh."
   ],
   "reward": {
    "item": "pork_pie",
@@ -831,7 +831,7 @@
   "y": 20,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go, by the look of it, somewhere near Shrewsbury. You decide it counts as a gift from the water."
+   "A tea chest bobs past in Shrewsbury like it has somewhere to be. You hook it, and it comes quietly."
   ],
   "reward": {
    "item": "cup_of_tea",
@@ -846,7 +846,7 @@
   "y": 43,
   "kind": "cache",
   "text": [
-   "A cairn on the far bank at Sligo, a flat stone, a tin underneath. Somebody else paddled out here once and hoped to come back for it."
+   "A hollow under a thorn bush at Sligo, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'"
   ],
   "reward": {
    "item": "hazelnuts",
@@ -861,7 +861,7 @@
   "y": 10,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang at the Somerset Levels, tied with fisherman's knots you do not know. It opens at the second try."
+   "Under a flat stone near the Somerset Levels, a dry bag and a pencilled note: 'For the next one, from the last one.'"
   ],
   "reward": {
    "item": "hazelnuts",
@@ -906,7 +906,7 @@
   "y": 17,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk near the Norfolk Broads, its owner long gone. One fish in it, sulking."
+   "A drowned keep-sack tied to a post at the Norfolk Broads. There is still a fish in it, and an opinion."
   ],
   "reward": {
    "item": "roach",
@@ -921,7 +921,7 @@
   "y": 48,
   "kind": "cache",
   "text": [
-   "Dry sand above the tide line near the Fens and a tin wedged in the rocks. Not a pirate's, but somebody's, and they are not here."
+   "Whoever hid this at the Fens had a boat and a plan. You have a boat, and now the plan has been found."
   ],
   "reward": {
    "item": "lavender_sachet",
@@ -936,7 +936,7 @@
   "y": 22,
   "kind": "pot",
   "text": [
-   "A keepnet left out in the water at the Roaches by an angler who clearly went home for his tea. One fish still in it. You do the decent thing, mostly."
+   "A creel hooked on a root at the Roaches, with one fish in it and a look of mild disbelief."
   ],
   "reward": {
    "item": "roach",
@@ -951,7 +951,7 @@
   "y": 4,
   "kind": "crate",
   "text": [
-   "A crate roped to a plastic float and let go, by the look of it, somewhere near Whitby. You decide it counts as a gift from the water."
+   "A lidded box wedged against the reeds near Whitby. Whoever lost it has had a long week already."
   ],
   "reward": {
    "item": "tablet",
@@ -966,7 +966,7 @@
   "y": 20,
   "kind": "cache",
   "text": [
-   "A crate lashed under an overhang at the Wirral Way, tied with fisherman's knots you do not know. It opens at the second try."
+   "A hollow under a thorn bush at the Wirral Way, out of reach of anyone on foot. Inside, wrapped in oilcloth: provisions, and a note that just says 'Told you.'"
   ],
   "reward": {
    "item": "heather_honey",
@@ -981,7 +981,7 @@
   "y": 36,
   "kind": "pot",
   "text": [
-   "An eel trap, forgotten and half sunk near the Yorkshire Dales, its owner long gone. One fish in it, sulking."
+   "A wicker fish trap hanging from a branch in the water at the Yorkshire Dales. It has caught something and is a little embarrassed about it."
   ],
   "reward": {
    "item": "tench",

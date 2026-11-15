@@ -264,7 +264,10 @@ func _draw_list() -> void:
 			nm.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 			UIKit.fit_width(nm)  # a long name steps down before it trims
 			h.add_child(nm)
-			h.add_child(_row_label("*" if _held(id) > 0 else "", 21, _accent, 12.0))
+			var star := _row_label("*" if _held(id) > 0 else "", 21, _accent, 12.0)
+			if UIKit.largest():  # a smaller mark, so the name keeps its room
+				star.add_theme_font_size_override("font_size", UIKit.MIN_TEXT)
+			h.add_child(star)
 			h.add_child(_row_label(_price_text(_price(id)), 21, UIKit.CREAM, price_w, true))
 			h.add_child(_row_label(_pct(m), 17, _move_colour(m), pct_w, true))
 		for c in h.get_children():

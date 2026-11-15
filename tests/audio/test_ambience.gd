@@ -110,6 +110,14 @@ func test_town_accents() -> void:
 	assert_eq(Ambience.accents(_zone("route", "coast", cath)), [], "only towns")
 	assert_eq(Ambience.accents(_zone("interior", "docks")), [], "not indoors")
 
+func test_abbeys_ring_but_ruins_and_streets_do_not() -> void:
+	var abbey := {"props": [{"type": "building", "style": "chapel", "x": 0, "y": 0, "label": "Mellifont Abbey", "kind": "church"}]}
+	assert_eq(Ambience.accents(_zone("town", "town", abbey)), ["bell"], "a standing abbey rings")
+	var ruin := {"props": [{"type": "building", "style": "cathedral", "x": 0, "y": 0, "label": "Whitby Abbey (ruins)", "kind": "church"}]}
+	assert_eq(Ambience.accents(_zone("town", "town", ruin)), [], "a ruin has no bell")
+	var street := {"props": [{"type": "building", "style": "crow_step", "x": 0, "y": 0, "label": "Abbey Walk"}]}
+	assert_eq(Ambience.accents(_zone("town", "town", street)), [], "a street is only a name")
+
 func test_only_a_famous_chapel_has_a_small_bell() -> void:
 	var chapel := {"props": [{"type": "building", "style": "chapel", "x": 0, "y": 0}]}
 	assert_eq(Ambience.accents(_zone("town", "town", chapel)), [], "an ordinary chapel is quiet")

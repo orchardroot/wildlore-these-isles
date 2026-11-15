@@ -393,7 +393,8 @@
    "y": 38,
    "facing": "up",
    "move": "still",
-   "trainer": "swy_stalker"
+   "trainer": "swy_stalker",
+   "champion": "swy_stalker"
   }
  ],
  "encounters": {

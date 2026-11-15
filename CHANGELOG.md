@@ -2,6 +2,29 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.7.0: Second Helpings
+
+- **The Walkers' League.** Every one of the thirty new roads has a champion: an osprey watcher at Aberglaslyn, a
+  centurion on Ermine Street, a beachcomber on Lewis still looking for the rest of the chessmen. Beat one and they
+  will have you back once a week, at your own level, with a team that changes with the season and the day's
+  weather. Titles at ten, twenty and all thirty, each with something for the shelf at home. Kit turns up on three
+  of the roads.
+- **Contracts that don't all go the same way.** Some witnesses are simply wrong, and the Journal lets you strike a
+  lead out. Some clues only show once you have found another. A few can only be seen from the coracle.
+- **Two contracts that follow from how you ended an earlier one**, and **five new ones**: the Buggane of St
+  Trinian's on the Isle of Man, a hogboon's mound in Orkney, the Black Dog of Bouley Bay in Jersey, a man in a
+  Fenland field, and somebody sitting in the Devil's Chair on the Stiperstones. Twenty in all.
+- **The Largest text size fits.** Every menu and screen was measured at Largest and fixed until nothing spilled:
+  149 problems on 49 screens, now none. The job card, Party Pieces and the type chart can be read on with the keys.
+- **A gentler first morning.** Mum says less before you reach the door, and gives you the recipe book there and
+  then (if you never got it, she has it for you now).
+- **Hidden places behave.** The ones across water keep quiet until you have the Stone to reach them. Three are now
+  found by looking rather than by being told. The three that only had a view have something to take away. And if
+  you sit down on a bench late in the evening, you can wait for the dawn.
+- A card the first time you read a contract notice. Posters no longer promise a share they might not pay.
+- The new-place card keeps its running total to itself until your fifth place.
+- Standing abbeys ring the hours with the cathedrals.
+
 ## 5.6.0: Secrets
 
 - **Fifteen hidden places.** A cave behind a waterfall in the Beacons, the Red Lady's sea cave on Gower, a passage

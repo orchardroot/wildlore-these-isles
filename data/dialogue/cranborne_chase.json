@@ -58,5 +58,22 @@
    "who": "Down Warden",
    "text": "Nightjars come in May. You can hear them at dusk, a long churring like a very small tractor."
   }
+ ],
+ "champ_cc_hillfort": [
+  {
+   "do": "say",
+   "who": "Digger Rhiannon",
+   "text": "Careful where you step. That could be a Bronze Age burial, or it could be a mole. We've not decided."
+  },
+  {
+   "do": "rchamp",
+   "id": "cc_hillfort",
+   "intro": [
+    "Right. Trowel down, team out.",
+    "The soil is damp, the sky is what it is, and I've chosen my team accordingly."
+   ],
+   "win": "A cracking find, you. I'll put it in the notebook under 'unexpectedly good'.",
+   "tired": "Once a week, or I'd never get any digging done. Come on Monday, and bring a trowel."
+  }
  ]
 }

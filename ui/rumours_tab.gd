@@ -34,6 +34,8 @@ static func row(r: Dictionary, h: HBoxContainer) -> void:
 	pl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	pl.custom_minimum_size = Vector2(60, 0)
 	pl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	pl.clip_text = true
+	UIKit.fit_width(pl)  # a long place steps down before it trims
 	h.add_child(pl)
 
 ## The detail panel for a row.

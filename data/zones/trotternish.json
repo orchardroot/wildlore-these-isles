@@ -247,7 +247,8 @@
    "y": 30,
    "facing": "left",
    "move": "still",
-   "trainer": "trt_guide"
+   "trainer": "trt_guide",
+   "champion": "trt_guide"
   },
   {
    "id": "trt_birdwatcher",

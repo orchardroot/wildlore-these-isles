@@ -234,7 +234,8 @@
    "y": 34,
    "facing": "left",
    "move": "still",
-   "trainer": "mac_farmer_t"
+   "trainer": "mac_farmer_t",
+   "champion": "mac_farmer_t"
   },
   {
    "id": "mac_pilgrim",

@@ -86,6 +86,21 @@
    "idle": ["Counting pups. They're white and absurd and I should not be allowed to say that."],
    "after": "However it falls out, the real trouble is out at sea, and no net or gun can reach it.",
    "points": ["seal"]
+  },
+  {
+   "id": "net",
+   "kind": "look",
+   "zone": "pentland_coast",
+   "from": "coracle",
+   "optional": true,
+   "hint": "the net buoys off the harbour, from a boat",
+   "hint_ashore": "Out by the net buoys something is moving, too far off to make out from the quay. You would have to be on the water.",
+   "text": [
+    "From the coracle, out by the net buoys, you wait. A big round head comes up beside the net, takes a salmon through the mesh from underneath, and goes down again. The buoy twitches once.",
+    "It does not hurry, and it does not take the whole fish. It has clearly done this before, and has opinions about the mesh."
+   ],
+   "needs_clue": "bites",
+   "points": ["seal"]
   }
  ],
  "lair": {
@@ -129,7 +144,7 @@
    "flags": {"ct_seal_truth": true, "ct_seal_willie": true},
    "repute": {"wardens": 3, "fishers": -2},
    "standing": {"scotland": 1},
-   "poster": ["So it's the sea, and the rivers, and everything I can't touch. I'd rather it had been the seal. At least I could shout at a seal. Sixty per cent, and I'll thank you in a year."],
+   "poster": ["So it's the sea, and the rivers, and everything I can't touch. I'd rather it had been the seal. At least I could shout at a seal. I'll thank you in a year."],
    "after": ["Willie's still at the river mouth. The fish are still scarce. I've stopped shouting at him. I don't know whether that's progress."],
    "journal": "You told the fishery that the seals were not the whole story. Hamish took it badly, and Auld Willie is still on his rock, and the salmon are as scarce as before."
   },
@@ -144,7 +159,7 @@
    "flags": {"ct_seal_netted": true, "ct_seal_nets_full": true},
    "repute": {"fishers": 1, "wardens": 1},
    "standing": {"scotland": 1},
-   "poster": ["A better net, and half of it paid by a woman with a chart. I never thought I'd say I was glad of a university. Seventy per cent."],
+   "poster": ["A better net, and half of it paid by a woman with a chart. I never thought I'd say I was glad of a university."],
    "after": ["New nets. Heavier, tighter and a bit of an eyesore. Willie's still around, tries them every month. They hold."],
    "journal": "You rebuilt the nets so a seal cannot reach the fish and shared the cost. It was dear and it was dull and it works. Willie still tries them, once a month, for form's sake."
   },
@@ -159,7 +174,7 @@
    "flags": {"ct_seal_kept": true, "ct_seal_nets_full": true},
    "repute": {"fishers": 1, "wardens": -3},
    "standing": {"scotland": 1},
-   "poster": ["He's in a charm. Auld Willie is in a charm. Thirty years he was at that rock. I feel a bit odd about it, to be honest. Eighty per cent."],
+   "poster": ["He's in a charm. Auld Willie is in a charm. Thirty years he was at that rock. I feel a bit odd about it, to be honest."],
    "after": ["The rock's empty. The nets are full. I thought I'd be glad."],
    "journal": "You caught Auld Willie and he complains in your team. The rock is empty, the nets are full, and Hamish has a feeling he cannot name."
   }
@@ -173,7 +188,8 @@
   ],
   "looks": [
    {"clue": "bites", "near": [30, 22], "on": "any", "text": ["Salmon nets on the shore, drying. They smell strongly of the sea."]},
-   {"clue": "dawn", "near": [40, 30], "on": "any", "text": ["The river mouth, brown water spreading into green. Quiet, at the moment."]}
+   {"clue": "dawn", "near": [40, 30], "on": "any", "text": ["The river mouth, brown water spreading into green. Quiet, at the moment."]},
+   {"clue": "net", "at": [63, 11], "text": ["A moored boat at the harbour mouth, nets heaped in the stern. Beyond it the buoys bob in a line."]}
   ],
   "lair": {"near": [52, 32]},
   "folk": [

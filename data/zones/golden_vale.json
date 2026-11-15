@@ -403,7 +403,8 @@
    "y": 18,
    "facing": "right",
    "move": "still",
-   "trainer": "gv_hurler"
+   "trainer": "gv_hurler",
+   "champion": "gv_hurler"
   },
   {
    "id": "gv_dairy",

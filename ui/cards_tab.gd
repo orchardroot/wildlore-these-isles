@@ -127,7 +127,10 @@ func _list() -> void:
 		var tag := "%d / %d" % [g.have, g.total]
 		if full and not g.claimed:
 			tag = "PRIZE"
-		h.add_child(UIKit.label(tag, 19, UIKit.GOLD if full else UIKit.MUTED))
+		var tl := UIKit.label(tag, 19, UIKit.GOLD if full else UIKit.MUTED)
+		if UIKit.largest():  # the list is a narrow column: the group's name keeps its room
+			tl.add_theme_font_size_override("font_size", 22)
+		h.add_child(tl)
 		b.add_child(h)
 		_list_col.add_child(b)
 		_buttons.append(b)

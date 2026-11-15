@@ -19,7 +19,8 @@ static func interact(ow: Node, p: Vector2i) -> bool:
 	var lines: Array = res.lines
 	if str(ex.get("clue", "")) != "":  # a contract's look-spot: what you work out, at the right hour and in the right weather
 		var sky = ow.get("sky")
-		var look := Contracts.look(Game.data, str(ex.clue), Game.phase(), str(sky.weather) if sky != null else str(Game.data.weather))
+		var afloat: bool = ow.get("player") != null and bool(ow.player.wading)  # some leads are only seen from the coracle
+		var look := Contracts.look(Game.data, str(ex.clue), Game.phase(), str(sky.weather) if sky != null else str(Game.data.weather), afloat)
 		lines = lines + look.lines
 		if look.new:
 			Audio.sfx("item")

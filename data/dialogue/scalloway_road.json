@@ -53,5 +53,22 @@
    "who": "Foalmoor",
    "text": "A small, very round pony trots up, takes in your pockets, and walks off with its dignity intact."
   }
+ ],
+ "champ_sca_knitter": [
+  {
+   "do": "say",
+   "who": "Knitter Ina",
+   "text": "Hello again, my dear. Don't mind the needles. I've not lost an eye yet."
+  },
+  {
+   "do": "rchamp",
+   "id": "sca_knitter",
+   "intro": [
+    "A battle? Let me finish this row. And this one. Alright, now.",
+    "I've a team for the day, and I knitted them a jumper each. Not true. Almost."
+   ],
+   "win": "Well played, dear. You've dropped no stitches.",
+   "tired": "Once a week, my dear. Even needles need a rest. Monday."
+  }
  ]
 }

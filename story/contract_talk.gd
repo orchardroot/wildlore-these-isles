@@ -49,6 +49,9 @@ static func _offer(cmd: Commands, c: Dictionary, town: String) -> void:
 	var data: GameStateData = host.data
 	var who := str(c.poster.name)
 	await host.say("", "%s. %s, %s." % [str(c.title), who, str(c.poster.role)])
+	var tip: String = Intros.take(data, "contract", host.has_method("hints_on") and host.hints_on())  # the first notice read
+	if tip != "":
+		await host.say("", tip)
 	await _lines(host, who, c.notice)
 	await _lines(host, who, c.trouble)
 	var fee := Contracts.offer_fee(data, c)
@@ -128,7 +131,9 @@ static func clue(cmd: Commands, id: String, clue_id: String) -> void:
 		return
 	var who := str(k.get("who", "Local"))
 	var st := Contracts.state(data, id)
-	if st == Contracts.TAKEN:
+	if st == Contracts.TAKEN and not Contracts.clue_open(data, id, k):
+		await _lines(host, who, k.idle)   # they have nothing to tell you yet: you have not found what would make them think of it
+	elif st == Contracts.TAKEN:
 		await _lines(host, who, k.text)
 		if Contracts.note_clue(data, id, clue_id):
 			if host.has_method("sfx"):
@@ -150,7 +155,7 @@ static func theory_line(data: GameStateData, c: Dictionary) -> String:
 	if not t.sure:
 		return "You think it is one of these: %s." % " or ".join(names)
 	var h := Contracts.hypothesis(c, str(t.lead[0]))
-	return "You have worked it out: %s. %s. Moves of these types hit it hardest: %s." % [str(h.name), _types_text(h.types), _types_text(Contracts.weak_to(h.types), true)]
+	return "Everything you have points one way: %s. %s. Moves of these types hit it hardest: %s." % [str(h.name), _types_text(h.types), _types_text(Contracts.weak_to(h.types), true)]
 
 static func _types_text(types: Array, plain := false) -> String:
 	var names: Array = types.map(func(t): return str(t).capitalize())

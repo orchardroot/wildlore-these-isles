@@ -127,7 +127,7 @@
    "flags": {"ct_kites_truth": true, "ct_kites_stay": true},
    "repute": {"farmers": -1, "wardens": 3},
    "standing": {"wales": 1},
-   "poster": ["So it was the weather. The weather, and a bird that eats what it's given. Well. I'll pay you the half, and I'll thank you when I've stopped being cross."],
+   "poster": ["So it was the weather. The weather, and a bird that eats what it's given. Well. I'll pay you, and I'll thank you when I've stopped being cross."],
    "after": ["There's a kite on my gate most mornings now. It knows I know. We've come to an understanding."],
    "journal": "You told Gwilym Rees the truth and he took it badly and kept his gun in the cupboard. A kite sits on his gate now. The warden says you are all right."
   },
@@ -142,7 +142,7 @@
    "flags": {"ct_kites_post": true, "ct_kites_shed": true},
    "repute": {"farmers": 1, "wardens": 1},
    "standing": {"wales": 1},
-   "poster": ["A shed. A shed, and a car park for kites. I've gone from a farmer to a tourist attraction. Seventy per cent of your fee, and not a penny more."],
+   "poster": ["A shed. A shed, and a car park for kites. I've gone from a farmer to a tourist attraction. You'll be paid, and not a penny more."],
    "after": ["Walkers stop on the road to watch the kites at the post. I've sold six thermos flasks of tea this month. I've no complaints, which is a new feeling."],
    "journal": "You got the Trust to pay for a lambing shed and a feeding post for the kites. Both sides came out a little ahead, a neighbour came out behind, and the kites are now a tourist attraction."
   },

@@ -869,6 +869,99 @@
    "move": "still",
    "script": "rewild_warden",
    "name": "Juan"
+  },
+  {
+   "id": "ct_buggane_poster",
+   "sprite": "villager_2",
+   "x": 24,
+   "y": 29,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_buggane_poster",
+   "name": "Gwen Kewley"
+  },
+  {
+   "id": "ct_buggane_corlett",
+   "sprite": "farmer",
+   "x": 12,
+   "y": 43,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_buggane_corlett",
+   "name": "Harold Corlett"
+  },
+  {
+   "id": "ct_buggane_nessa",
+   "sprite": "villager_3",
+   "x": 28,
+   "y": 37,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_buggane_nessa",
+   "name": "Nessa Cannell"
+  },
+  {
+   "id": "ct_buggane_lair",
+   "sprite": "creature:cloughgart",
+   "x": 34,
+   "y": 43,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_buggane_lair",
+   "name": "The Buggane",
+   "show_if": "ct_buggane_state",
+   "hide_if": "ct_buggane_end"
+  },
+  {
+   "id": "ct_buggane_gate",
+   "sprite": "hillwalker",
+   "x": 10,
+   "y": 42,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_buggane_gate",
+   "name": "Visitor",
+   "show_if": "ct_buggane_end"
+  },
+  {
+   "id": "ct_buggane_timber",
+   "sprite": "farmer",
+   "x": 32,
+   "y": 40,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_buggane_timber",
+   "name": "Heritage Man",
+   "show_if": "ct_buggane_torn"
+  },
+  {
+   "id": "ct_buggane_lantern",
+   "sprite": "villager_1",
+   "x": 20,
+   "y": 44,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_buggane_lantern",
+   "name": "Lantern Seller",
+   "show_if": "ct_buggane_gate"
+  }
+ ],
+ "examine": [
+  {
+   "x": 14,
+   "y": 40,
+   "text": [
+    "Grey stones in long grass, half of them furred with moss. Whatever the church was, it has been open to the weather for a long time."
+   ],
+   "clue": "buggane.stones"
+  },
+  {
+   "x": 30,
+   "y": 44,
+   "text": [
+    "The east end of the church, and a patch of floor where the grass gives up. The flagstones are only stone, as far as you can tell."
+   ],
+   "clue": "buggane.floor"
   }
  ],
  "encounters": {

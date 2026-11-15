@@ -1023,5 +1023,16 @@
   "000000000000000000000000000000000000000000000000000000000000000000000000",
   "000000000000000000000000000000000000000000000000000000000000000000000000",
   "000000000000000000000000000000000000000000000000000000000000000000000000"
+ ],
+ "examine": [
+  {
+   "x": 6,
+   "y": 11,
+   "text": [
+    "At the foot of the rock a narrow gap breathes out a cold draught, and a passage runs back into the sandstone. A passage like this took Edward's men up under the castle in 1330.",
+    "This is the way in. Mind your head, and keep your voice down."
+   ],
+   "flag": "secret_mortimers_hole_known"
+  }
  ]
 }

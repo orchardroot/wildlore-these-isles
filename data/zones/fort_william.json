@@ -404,6 +404,27 @@
    "script": "ct_kelpie_bridled",
    "name": "Estate Hand",
    "show_if": "ct_kelpie_bridled"
+  },
+  {
+   "id": "ct_bridge_otter_poster",
+   "sprite": "hillwalker",
+   "x": 36,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bridge_otter_poster",
+   "name": "Callum Rennie"
+  },
+  {
+   "id": "ct_bridge_otter_walker",
+   "sprite": "hillwalker",
+   "x": 22,
+   "y": 24,
+   "facing": "down",
+   "move": "still",
+   "script": "ct_bridge_otter_walker",
+   "name": "Walker",
+   "show_if": "ct_bridge_otter_end"
   }
  ],
  "props": [

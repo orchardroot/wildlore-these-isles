@@ -516,7 +516,8 @@
    "y": 14,
    "facing": "right",
    "move": "still",
-   "trainer": "rr_rider"
+   "trainer": "rr_rider",
+   "champion": "rr_rider"
   },
   {
    "id": "rr_gate_0",
@@ -924,5 +925,16 @@
    "tile": "drystone_wall",
    "colour": "#8a8470"
   }
- }
+ },
+ "examine": [
+  {
+   "x": 55,
+   "y": 58,
+   "text": [
+    "In the bank, behind a screen of nettles, there is a low stone doorway. The wall round it is very thick.",
+    "The ground floor of a pele tower is a stone vault with no stair to the rooms above, built to keep the cattle in. This is the way in."
+   ],
+   "flag": "secret_pele_tower_known"
+  }
+ ]
 }

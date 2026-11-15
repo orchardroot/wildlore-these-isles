@@ -154,6 +154,7 @@ func test_the_sense_cue_calls_you_over_once_it_is_revealed() -> void:
 		var list := Discovery.nearby_unfound(outer, at, d).filter(func(n): return n.kind == "secret")
 		assert_eq(list.size(), 0, "%s: nothing to sense before the reveal" % s.id)
 		d.set_flag(str(s.reveal))
+		d.badges = ["brook", "urban", "tide"]
 		list = Discovery.nearby_unfound(outer, at, d).filter(func(n): return n.kind == "secret")
 		assert_eq(list.size(), 1, "%s: sensed once revealed" % s.id)
 		assert_eq(list[0].id, str(s.id))
@@ -163,9 +164,30 @@ func test_the_sense_cue_calls_you_over_once_it_is_revealed() -> void:
 		d.set_flag(Discovery.sensed_key(str(s.id)))
 		assert_eq(Discovery.nearby_unfound(outer, at, d).filter(func(n): return n.kind == "secret").size(), 0, "once per find")
 		var d2 := GameStateData.new()
+		d2.badges = ["brook", "urban", "tide"]
 		d2.set_flag(str(s.reveal))
 		d2.set_flag(Discovery.found_key(str(s.zone)))
 		assert_eq(Discovery.nearby_unfound(outer, at, d2).filter(func(n): return n.kind == "secret").size(), 0, "been in: no more calling")
+
+func test_a_coracle_place_stays_quiet_until_the_stone_that_crosses_its_water() -> void:
+	var zones := _zones()
+	for s in Secrets.all():
+		if not bool(s.get("coracle", false)):
+			continue
+		var sea: bool = (zones[str(s.at)] as ZoneData).tile_at(Secrets.tile(s)) == "sea"
+		var need := "tide" if sea else "urban"
+		assert_eq(Secrets.stone_for(s), need, "%s: which Stone" % s.id)
+		var d := GameStateData.new()
+		d.set_flag(str(s.reveal))
+		d.badges = ["brook"]
+		assert_true(Secrets.revealed(d, s), "%s: the rumour is recorded" % s.id)
+		assert_eq(Discovery.nearby_unfound(zones[str(s.at)], Secrets.tile(s), d).filter(func(n): return n.kind == "secret").size(), 0, "%s: no cue yet" % s.id)
+		assert_eq(Secrets.marks(d), [], "%s: no keyhole yet" % s.id)
+		d.badges = ["brook", "urban"] if not sea else ["brook", "urban", "stone", "iron", "frost"]
+		assert_eq(Secrets.marks(d).size(), 0 if sea else 1, "%s: the wrong Stone does not do" % s.id)
+		d.badges.append(need)
+		assert_eq(Secrets.marks(d).size(), 1, "%s: the right Stone shows it" % s.id)
+		assert_eq(Discovery.nearby_unfound(zones[str(s.at)], Secrets.tile(s), d).filter(func(n): return n.kind == "secret").size(), 1, "%s: and calls you over" % s.id)
 
 func test_the_map_marks_it_once_known_and_ticks_it_once_found() -> void:
 	var s: Dictionary = Secrets.all()[0]
@@ -289,3 +311,19 @@ func _says(cmds: Array, into: Array) -> void:
 		for k in ["then", "else"]:
 			if c.has(k):
 				_says(c[k], into)
+
+func test_the_three_view_places_hold_one_small_keepsake_each() -> void:
+	var zones := _zones()
+	var items := ItemDB.load_default()
+	for id in ["bryn_celli_ddu", "merlins_cave", "doolin"]:
+		var room: ZoneData = zones["secret_" + id]
+		var finds := room.examine.filter(func(e): return e.has("find"))
+		assert_eq(finds.size(), 1, "%s: one thing to take away" % id)
+		var item := str(finds[0].find.item)
+		assert_true(items.has(item), "%s: %s is a real item" % [id, item])
+		assert_eq(int(finds[0].get("money", 0)), 0, "no money")
+		var d := GameStateData.new()
+		Examine.read(d, "secret_" + id, finds[0], items)
+		assert_eq(int(d.bag.get(item, 0)), 1, "%s: in the bag, once" % id)
+		Examine.read(d, "secret_" + id, finds[0], items)
+		assert_eq(int(d.bag.get(item, 0)), 1, "%s: not twice" % id)

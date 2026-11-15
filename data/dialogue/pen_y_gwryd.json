@@ -34,5 +34,79 @@
    "who": "Photographer",
    "text": "The Horseshoe in the morning is a postcard. By lunchtime it is a cloud. I take my pictures early and eat my sandwiches late."
   }
+ ],
+ "champ_pyg_climber": [
+  {
+   "do": "say",
+   "who": "Climber Gareth",
+   "text": "Back again? Good. Hillary's lot trained on this very hill, you know. Nobody asked, but there it is."
+  },
+  {
+   "do": "rchamp",
+   "id": "pyg_climber",
+   "intro": [
+    "Right, rope up. Metaphorically. I'll not have you tangled in mine.",
+    "The mountain doesn't care how I feel about it, so I've brought a team that doesn't either."
+   ],
+   "win": "Solid. If you'd been on the Everest team, you'd have carried the tea.",
+   "tired": "You've had your week's climb. Come back on Monday and bring a flask."
+  }
+ ],
+ "kit_pyg": [
+  {
+   "do": "if",
+   "flag": "trainer_kit_road_pyg",
+   "then": [
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "Episode two will be a lot more dignified. I've promised the camera. Go and be brilliant somewhere."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "{player}! Do you know who trained round here? The 1953 Everest team. I'm doing a series called Training Like Hillary. Episode one is me falling over."
+    },
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "I've been thinking about what the Enclosure did, up on the summit. Don't tell the algorithm. It likes me confident."
+    },
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "Fancy a quick battle? Entirely optional. It won't go on the channel. Probably."
+    },
+    {
+     "do": "choice",
+     "text": "A battle with Kit?",
+     "options": [
+      "Go on, then",
+      "Not now"
+     ],
+     "set": "kit_road_pick"
+    },
+    {
+     "do": "if",
+     "flag": "kit_road_pick",
+     "eq": 0,
+     "then": [
+      {
+       "do": "battle",
+       "trainer": "kit_road_pyg"
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "{rival}",
+       "text": "Fair enough. Save it for when I'm less sweaty."
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

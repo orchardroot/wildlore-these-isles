@@ -1219,5 +1219,16 @@
   "fog": 12.0,
   "frost": 4.0,
   "sunshine": 20.0
- }
+ },
+ "examine": [
+  {
+   "x": 9,
+   "y": 4,
+   "text": [
+    "Just along the slope, half hidden by bramble, a low arch is cut into the hillside, with the old tramway grooves running in to the dark. That is the way down.",
+    "The stone is the same warm colour as the Crescent. It has only gone a good deal further in."
+   ],
+   "flag": "secret_bath_mine_known"
+  }
+ ]
 }

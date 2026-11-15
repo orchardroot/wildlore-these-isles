@@ -13,6 +13,7 @@ var _detail: VBoxContainer
 var _buttons: Array = []
 var _ids: Array = []
 var _note: Label
+var _last_row := 0
 
 func _init(menu: MenuBase) -> void:
 	_menu = menu
@@ -54,6 +55,10 @@ func build(parent: Control) -> void:
 	_detail.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_detail.add_theme_constant_override("separation", 8)
 	dsc.add_child(_detail)
+	if UIKit.largest():  # the words step down, and a piece that still runs on is read down with Right (Back returns)
+		UIKit.keep_fitted(_detail)
+		UIKit.key_scroll(dsc)
+		dsc.focus_entered.connect(func(): dsc.set_meta("back_to", weakref(_buttons[_last_row])) if _last_row < _buttons.size() else null)
 	var got := _ids.filter(func(i): return PartyPieces.unlocked(Game.data, str(i))).size()
 	var intro := UIKit.label("%d of %d pieces learnt. A silver rosette at a game and your lead creature picks up its piece." % [got, _ids.size()], 18, UIKit.GOLD)
 	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -77,6 +82,10 @@ func build(parent: Control) -> void:
 	if _buttons.is_empty():
 		return
 	UIKit.wrap_focus(_buttons)
+	if UIKit.largest():
+		for i in _buttons.size():
+			_buttons[i].focus_entered.connect(func(): _last_row = i)
+			_buttons[i].focus_neighbor_right = _buttons[i].get_path_to(dsc)
 	# focus once the list has its size, or follow_focus scrolls it to the bottom on opening
 	var first: Button = _buttons[1] if _buttons.size() > 1 else _buttons[0]
 	_menu.get_tree().process_frame.connect(func(): UIKit.focus_later(first), CONNECT_ONE_SHOT)

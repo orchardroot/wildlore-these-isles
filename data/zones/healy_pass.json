@@ -422,7 +422,8 @@
    "y": 23,
    "facing": "left",
    "move": "still",
-   "trainer": "hp_cornish"
+   "trainer": "hp_cornish",
+   "champion": "hp_cornish"
   }
  ],
  "encounters": {

@@ -126,5 +126,42 @@
    "who": "Walker",
    "text": "'Into my heart an air that kills, from yon far country blows.' That is the Clee Hills, seen from a schoolboy's window. Cheerful chap. Lovely poems."
   }
+ ],
+ "ct_chair_rob": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "chair",
+   "clue": "rob"
+  }
+ ],
+ "ct_chair_sian": [
+  {
+   "do": "contract",
+   "as": "clue",
+   "id": "chair",
+   "clue": "sian"
+  }
+ ],
+ "ct_chair_lair": [
+  {
+   "do": "contract",
+   "as": "lair",
+   "id": "chair"
+  }
+ ],
+ "ct_chair_banded": [
+  {
+   "do": "say",
+   "who": "Post Walker",
+   "text": "White band on every post. You can see the next one in the thick of it. It's not what I'd call romantic, but I got home for my tea, and that's the better ending."
+  }
+ ],
+ "ct_chair_bench": [
+  {
+   "do": "say",
+   "who": "Bench Sitter",
+   "text": "Best bench in Shropshire. You can see the Chair from here, and it can see you. I've never felt so thoroughly looked at by a rock."
+  }
  ]
 }

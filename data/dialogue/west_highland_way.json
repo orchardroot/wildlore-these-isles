@@ -60,5 +60,79 @@
    "who": "Snowhare",
    "text": "A mountain hare sits up, considers you, and decides the nearest rock is the safest place in Scotland."
   }
+ ],
+ "champ_whw_guide": [
+  {
+   "do": "say",
+   "who": "Guide Eilidh",
+   "text": "Hello again. We're on the right path, and the bit you can't see is the one that's wet."
+  },
+  {
+   "do": "rchamp",
+   "id": "whw_guide",
+   "intro": [
+    "Come on then. It's only another mile or so. That's what I tell everyone.",
+    "I've the weather's measure and the team's measure. Let's go."
+   ],
+   "win": "Well done. You'd make a fine guide, but you'd have to lie more.",
+   "tired": "Once a week for the same walker, that's the rule. Monday, and bring a waterproof."
+  }
+ ],
+ "kit_whw": [
+  {
+   "do": "if",
+   "flag": "trainer_kit_road_whw",
+   "then": [
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "Nine miles in, and I've named a rock. Go on, I'll catch you up. Eventually."
+    }
+   ],
+   "else": [
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "{player}! Ninety-six miles, they said. I have eight hours of footage of me saying 'nearly there'. The midges have more followers than I do."
+    },
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "Mum rang. She wants to know if I've eaten. I've eaten a flapjack. It's a start."
+    },
+    {
+     "do": "say",
+     "who": "{rival}",
+     "text": "Fancy a battle? It's optional, and it's the only exercise I've had since Glasgow."
+    },
+    {
+     "do": "choice",
+     "text": "A battle with Kit?",
+     "options": [
+      "Go on, then",
+      "Not now"
+     ],
+     "set": "kit_road_pick"
+    },
+    {
+     "do": "if",
+     "flag": "kit_road_pick",
+     "eq": 0,
+     "then": [
+      {
+       "do": "battle",
+       "trainer": "kit_road_whw"
+      }
+     ],
+     "else": [
+      {
+       "do": "say",
+       "who": "{rival}",
+       "text": "Fair enough. Save it for when I'm less sweaty."
+      }
+     ]
+    }
+   ]
+  }
  ]
 }

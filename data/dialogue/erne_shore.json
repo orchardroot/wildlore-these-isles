@@ -20,14 +20,14 @@
   {
    "do": "say",
    "who": "Hydro Engineer",
-   "text": "Forty years of electricity from the Erne. A lough that makes your tea. That's a good trade."
+   "text": "Seventy years of electricity from the Erne. A lough that makes your tea. That's a good trade."
   }
  ],
  "es_walker": [
   {
    "do": "say",
    "who": "Boardwalk Walker",
-   "text": "Three kilometres of boardwalk, and not one inch of bog harmed. They've done it right. Well. They've done it as right as a boardwalk can be."
+   "text": "Miles of boardwalk, and not one inch of bog harmed. They've done it right. Well. They've done it as right as a boardwalk can be."
   },
   {
    "do": "say",
@@ -45,6 +45,23 @@
    "do": "say",
    "who": "Warden",
    "text": "The Keeper at the shipyard in Belfast has the say on this road, and he hasn't said it yet. Ask Ruair\u00ed. Past the cranes, the big shed."
+  }
+ ],
+ "champ_es_boatman": [
+  {
+   "do": "say",
+   "who": "Boatman Colm",
+   "text": "Well, here you are again. I've the boat tied up and nothing better to do. Which islands have you been to?"
+  },
+  {
+   "do": "rchamp",
+   "id": "es_boatman",
+   "intro": [
+    "Hop in. No, hop in the battle. The boat's for the ones who lose.",
+    "I've the weather's measure and I've picked accordingly."
+   ],
+   "win": "You've the knack of it. Steady hands, and no splashing.",
+   "tired": "Once a week, and you've had yours. The lake isn't going anywhere. Monday."
   }
  ]
 }
