@@ -353,7 +353,9 @@ func test_first_morning_ends_with_the_recipe_book_and_is_short() -> void:
 	assert_eq(d.flag("mum_done"), true)
 	assert_eq(d.flag("mum_recipes"), true, "the book is the end of the first conversation")
 	assert_true(h.texts().any(func(t): return "recipe book" in str(t)))
-	assert_false(h.texts().any(func(t): return "noticeboard" in str(t) or "garden" in str(t)), "only what a new player needs")
+	assert_false(h.texts().any(func(t): return "noticeboard" in str(t)), "only what a new player needs")
+	# 5.7.1: one line about the garden stays (with the book): nobody else ever introduces it
+	assert_eq(h.texts().filter(func(t): return "garden" in str(t)).size(), 1, "the garden gets one line, no more")
 	assert_true(h.texts().any(func(t): return "Field Station" in str(t)))
 	assert_true(h.texts().any(func(t): return "tea" in str(t)))
 
