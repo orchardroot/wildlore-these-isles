@@ -66,7 +66,7 @@ func refresh_header() -> void:
 	if with_chips:
 		parts.append("Chips " + Purse.text(Punt.chips(d)))
 	parts.append("Purse " + Purse.text(Purse.balance(d)))
-	parts.append("Today's limit " + Purse.text(Punt.left_today(d)) + " left")
+	parts.append(("Limit " if UIKit.largest() else "Today's limit ") + Purse.text(Punt.left_today(d)) + " left")
 	header_right.text = "   ".join(parts)
 
 ## A side column of words and buttons that steps its words down together (UIKit.fit_column) if it is taller than the

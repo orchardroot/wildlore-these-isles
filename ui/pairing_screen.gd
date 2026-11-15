@@ -106,7 +106,7 @@ func _fill_list() -> void:
 		UIKit.fit_width(nm)
 		h.add_child(nm)
 		var tag := "Ark" if _cands[i].where == "ark" else "Team"
-		var note := UIKit.label("%s, %s%s" % [UIKit.sex_word(c).to_lower() if c.sex != "" else "no sex", tag.to_lower(), "  fond" if PairingLogic.is_fond(c) else ""], 18, UIKit.MUTED if not PairingLogic.is_fond(c) else Color("8fd48f"))
+		var note := UIKit.label(("%s, %s%s" % [UIKit.sex_word(c).to_lower() if c.sex != "" else "no sex", tag.to_lower(), "  fond" if PairingLogic.is_fond(c) else ""]) if not UIKit.largest() else ("%s%s" % [tag.to_lower(), "  fond" if PairingLogic.is_fond(c) else ""]), 18, UIKit.MUTED if not PairingLogic.is_fond(c) else Color("8fd48f"))
 		note.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		h.add_child(note)
 		b.add_child(h)
