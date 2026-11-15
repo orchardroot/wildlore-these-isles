@@ -203,6 +203,11 @@
       {
        "do": "say",
        "who": "Mum",
+       "text": "And your garden's out the front. Plant anything you pick and it grows while you're out. That's how it works. I don't make the rules."
+      },
+      {
+       "do": "say",
+       "who": "Mum",
        "text": "Folk all over will have their own recipes. Ask nicely, and say thank you. I'll know if you don't."
       },
       {

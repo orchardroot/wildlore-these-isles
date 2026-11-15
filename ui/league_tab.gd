@@ -30,7 +30,7 @@ static func standing_lines(d: GameStateData) -> Array:
 	var nx := RouteChampions.next_title(d)
 	var lines := ["%d of %d champions beaten. %s" % [n, RouteChampions.total(), ("Title: %s." % str(t.name)) if not t.is_empty() else "No title yet."]]
 	if not nx.is_empty():
-		lines.append("Next: %s at %d, with a %s for the shelf at home." % [str(nx.name), int(nx.at), str(nx.keepsake.name).to_lower()])
+		lines.append("Next: %s at %d, with this for the shelf at home: %s." % [str(nx.name), int(nx.at), str(nx.keepsake.name)])
 	else:
 		lines.append("Every road has a champion who has lost to you. Mum has run out of shelf.")
 	return lines

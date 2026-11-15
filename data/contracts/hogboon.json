@@ -126,7 +126,7 @@
    "id": "scheduled",
    "label": "Fence the mound and call Historic Environment Scotland",
    "say": [
-    "A woman from Historic Environment Scotland arrives with a clipboard, walks once round the mound, and says that it is a burial mound of the Bronze Age at the very latest. It cannot be moved, ploughed or built on.",
+    "A woman from Historic Environment Scotland arrives with a clipboard, walks once round the mound, and says that it is a burial mound of the Bronze Age at the very latest. It may not be moved, ploughed or built on without consent.",
     "The silage pit goes in the next field, a fence goes round the mound, and the flat stone is put carefully back. Nobody mentions the hogboon, which is, as far as Jessie can see, the polite thing to do."
    ],
    "fee": 1.0,

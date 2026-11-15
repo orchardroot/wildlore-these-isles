@@ -323,7 +323,7 @@ func _open_picker(focus := 0) -> void:
 		var pm := Chapbooks.move_of(Game.items.get_item(_pending))
 		if pm != "":  # a chapbook is pending: say who can be taught it
 			var st := Chapbooks.status(c, pm, Game.moves)
-			h.add_child(UIKit.label(Chapbooks.label(st), 22, {Chapbooks.CAN: UIKit.GOLD, Chapbooks.KNOWS: UIKit.CREAM}.get(st, UIKit.MUTED)))
+			h.add_child(UIKit.label(Chapbooks.label(st), 18 if UIKit.largest() else 22, {Chapbooks.CAN: UIKit.GOLD, Chapbooks.KNOWS: UIKit.CREAM}.get(st, UIKit.MUTED)))
 		var hv := VBoxContainer.new()  # the bar over its numbers, leaving a long nickname the room to show in full
 		hv.add_theme_constant_override("separation", -2)
 		hv.size_flags_vertical = Control.SIZE_SHRINK_CENTER

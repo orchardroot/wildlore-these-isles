@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""Wildlore 1.5 crafting: puts the benches in Mum's kitchen and the Field Station, Mum's recipe scene, and the
-recipe teachers in interiors around the isles. Safe to re-run (it replaces what it added before).
+"""Wildlore 1.5 crafting: puts the benches in Mum's kitchen and the Field Station, and the recipe teachers in
+interiors around the isles. Safe to re-run (it replaces what it added before).
+
+RETIRED PART: this used to write Mum's recipe-book scene into data/dialogue/macc_home.json. Since 5.7.0 that scene is
+hand-edited there (it ends Mum's first morning and sets `mum_recipes`), so this script no longer touches Mum's
+dialogue. Re-running the rest has not been checked since the zones last changed (the teachers are placed by
+free_tile on today's rooms), so read the git diff before keeping a run.
 
     python3 tools/zones/recipes.py
 """
@@ -162,19 +167,6 @@ TEACHERS = [
      "Back for another story? Or the table? Both are free."),
 ]
 
-MUM_SCENE = [
-    {"do": "say", "who": "Mum", "text": "Oh, before you go. Come here a minute. No, into the kitchen. Mind the cat's bowl."},
-    {"do": "say", "who": "Mum", "text": "You'll be in and out of them hedges, I know you. You'll come home with bramble in your hair and purple sleeves."},
-    {"do": "say", "who": "Mum", "text": "Well, if you're going to pick things, you might as well know what to do with them. Here. Your gran's recipe book."},
-    {"do": "say", "who": "Mum", "text": "Bakewell tart, nettle tea, a couple of snares. And some rowan business at the back she swore by. Don't laugh."},
-    {"do": "recipe", "id": ["bakewell_tart", "nettle_tea", "flask_of_tea", "smelling_salts", "eccles_cake", "wicker_snare", "hazel_snare", "rowan_sprig"]},
-    {"do": "say", "who": "Mum", "text": "The bench is by the window. Use it whenever you're home. Wash your hands first. I mean it."},
-    {"do": "say", "who": "Mum", "text": "Folk all over will have their own recipes. Ask nicely, and say thank you. I'll know if you don't."},
-    {"do": "set", "flag": "mum_recipes"},
-    {"do": "end"},
-]
-
-
 def add_prop(zid, prop):
     path = os.path.join(ZONES, zid + ".json")
     z = load(path)
@@ -185,13 +177,6 @@ def add_prop(zid, prop):
 def main():
     add_prop("macc_home", {"type": "craft_bench", "bench": "kitchen", "x": 6, "y": 2})
     add_prop("macc_fieldstation", {"type": "craft_bench", "bench": "workbench", "x": 2, "y": 5})
-    # Mum: the recipe scene the first time you talk to her after the morning you set off
-    path = os.path.join(DIALOGUE, "macc_home.json")
-    d = load(path)
-    d["mum"] = [c for c in d["mum"] if c.get("flag") != "mum_recipes"]
-    d["mum"].insert(0, {"do": "if", "flag": "mum_recipes", "then": [],
-                        "else": [{"do": "if", "flag": "mum_done", "then": MUM_SCENE}]})
-    save(path, d)
     for zid, nid, name, sprite, ids, intro, after in TEACHERS:
         zpath = os.path.join(ZONES, zid + ".json")
         z = load(zpath)

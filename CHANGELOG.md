@@ -2,6 +2,16 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.7.1: tidying up
+
+- Mum mentions the garden on the first morning again (one line, with the recipe book).
+- The Largest text size also fits with very long nicknames: the pairing screens, the chapbook picker and the casino
+  header.
+- A Walkers' League keepsake is announced by its proper name. The contract Journal reminds you that a lead can be
+  struck out when everything points one way.
+- A few facts put right in the new contracts and on the Angus coast (kittiwakes, not gannets; the wind at St
+  Trinian's comes off Greeba; what the Bouley Bay legend really says).
+
 ## 5.7.0: Second Helpings
 
 - **The Walkers' League.** Every one of the thirty new roads has a champion: an osprey watcher at Aberglaslyn, a

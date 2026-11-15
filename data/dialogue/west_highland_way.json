@@ -98,7 +98,7 @@
     {
      "do": "say",
      "who": "{rival}",
-     "text": "Mum rang. She wants to know if I've eaten. I've eaten a flapjack. It's a start."
+     "text": "My mum rang. She wants to know if I've eaten. I've eaten a flapjack. It's a start."
     },
     {
      "do": "say",
