@@ -73,7 +73,7 @@
     "I know he was at the vet. He gets about. You are not to tell Sandra I said so."
    ],
    "idle": ["It's a dog. It's always a dog. It's never been anything but a dog."],
-   "after": "Bruno was home all that week, and I'll tell you what, he wouldn't go up that road for a pie.",
+   "after": "Bruno is home and snoring, and I'll tell you what, he wouldn't go up that road for a pie.",
    "wrong": true,
    "points": ["dog"]
   },
@@ -169,7 +169,7 @@
    "journal": "You caught the Tchian, and the bay road is quiet. Sandra walks it at dusk sometimes, to see whether anything falls in beside her, and nothing does."
   }
  ],
- "real": "Tchian is Jerriais, the old language of Jersey, for dog, and the Black Dog of Bouley Bay, on the island's north coast, is one of the island's best-known legends: a big black dog with eyes like lamps that appears on the lane to the bay after dark and walks beside people. The tales say it does no harm. Black dogs of the same kind are told of all over the British Isles, as Black Shuck in East Anglia and the Barghest in Yorkshire, and most of them, like this one, walk the lanes at night.",
+ "real": "Tchian is Jerriais, the old language of Jersey, for dog, and the Black Dog of Bouley Bay, on the island's north coast, is one of the island's best-known legends: a huge black dog with eyes like saucers, said to roam the cliff paths dragging a chain, and to turn up before a storm. Some say smugglers kept the tale going to keep people away from the bay at night. In this game it walks beside you and never looks round, which is the game's own touch, as is the rule about saying good night. Black dogs of the same kind are told of all over the British Isles, as Black Shuck in East Anglia and the Barghest in Yorkshire, and most of them, like this one, walk the lanes at night.",
  "places": {
   "poster": {"sprite": "villager_3", "near": "noticeboard"},
   "witnesses": [
