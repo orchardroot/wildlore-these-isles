@@ -97,7 +97,7 @@ func test_menu_line_says_where_the_bounty_is_collected_and_skips_a_missing_pub()
 
 func test_mum_mentions_the_noticeboard_and_the_garden() -> void:
 	var t := _texts(_script("macc_home", "mum")).to_lower()
-	assert_true(t.contains("noticeboard"), "the board")
+	# w57: Mum's first morning says less; the board is Garside's and the Pigeon Lady's to mention (next test)
 	assert_true(t.contains("garden"), "the garden")
 
 func test_someone_in_town_points_at_the_noticeboard() -> void:
