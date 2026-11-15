@@ -29,6 +29,7 @@ var _grind_time := {}
 var _keeper_teams: Array = []
 var _chapter := ""
 var _bad_grind := {}
+var _bad_grind_sig := -1  # the flags the list was built under: a gate that opens (any flag change) clears it
 var _rail_dest := ""
 var _in_rail := false
 var _bag_opened := false
@@ -537,6 +538,15 @@ func _routing_zones() -> Dictionary:
 					z.blocked[Flotsam.tile(fl)] = true
 			for pp in Poi.for_zone(id):  # a den, camp, stone or cache is solid for good (see PoiScene.dress), done or not
 				z.blocked[Poi.tile(z, pp)] = true
+			for l in Leases.anchored(id):  # unowned lease land is fenced across its gap, with a sign in front (see Leases.apply)
+				if Leases.is_owned(Game.data, str(l.id)) or not z.edges.has(str(l.get("side", ""))):
+					continue
+				var lane := Leases.border_tiles(z, l)
+				if lane.is_empty():
+					continue
+				for t in lane:
+					z.blocked[t] = true
+				z.blocked[lane[lane.size() / 2] + Leases._inward(str(l.side))] = true
 	return _rz
 
 ## Legs from here to a tile: first over only the zones near the shortest zone-hop path (fast), then the whole map.
@@ -833,6 +843,10 @@ func _area_level(zid: String) -> int:
 ## The best place to train from here: tall grass within a few zones, as strong as the team can take.
 func _pick_grind_zone() -> String:
 	var here := Game.data.zone_id
+	var sig := Game.data.flags.hash()
+	if sig != _bad_grind_sig:
+		_bad_grind_sig = sig
+		_bad_grind.clear()
 	var dist := _hops_from(here)
 	var cap := _strongest().level + 2
 	var best := ""
