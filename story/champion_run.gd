@@ -31,7 +31,7 @@ func titles() -> void:
 		var k: Dictionary = t.get("keepsake", {})
 		await host.sfx("item")
 		await host.say("", "%d champions of the roads beaten. The Walkers' League makes you a %s." % [int(t.at), str(t.name)])
-		await host.say("", "A %s has been put by for you, and Mum will have it on the shelf at home before you can say \"signposted\"." % str(k.get("name", "keepsake")).to_lower())
+		await host.say("", "Put by for you: %s. Mum will have it on the shelf at home before you can say \"signposted\"." % str(k.get("name", "a keepsake")))
 
 func run(c: Dictionary) -> void:
 	var data: GameStateData = host.data

@@ -265,7 +265,7 @@ func test_the_win_that_makes_ten_announces_a_title() -> void:
 	h.data.set_flag(RouteChampions.TITLES_FLAG, 0)
 	await _first(h, str(ids[9]))
 	assert_true(_said_has(h, "Waymarker"))
-	assert_true(_said_has(h, "Walking Stick Badge".to_lower()), "the keepsake is mentioned")
+	assert_true(_said_has(h, "Walking Stick Badge"), "the keepsake is mentioned, by its proper name")
 
 func test_each_title_leaves_a_keepsake_for_the_shelf() -> void:
 	for t in RouteChampions.titles():
