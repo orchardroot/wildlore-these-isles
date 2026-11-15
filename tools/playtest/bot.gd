@@ -29,6 +29,7 @@ var _grind_time := {}
 var _keeper_teams: Array = []
 var _chapter := ""
 var _bad_grind := {}
+var _bad_grind_sig := -1  # the flags the list was built under: a gate that opens (any flag change) clears it
 var _rail_dest := ""
 var _in_rail := false
 var _bag_opened := false
@@ -842,6 +843,10 @@ func _area_level(zid: String) -> int:
 ## The best place to train from here: tall grass within a few zones, as strong as the team can take.
 func _pick_grind_zone() -> String:
 	var here := Game.data.zone_id
+	var sig := Game.data.flags.hash()
+	if sig != _bad_grind_sig:
+		_bad_grind_sig = sig
+		_bad_grind.clear()
 	var dist := _hops_from(here)
 	var cap := _strongest().level + 2
 	var best := ""
