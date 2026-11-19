@@ -75,3 +75,25 @@ func test_starter_triangle_is_the_real_chart() -> void:
 	assert_eq(chart.multiplier("hearth", "hedgerow"), 2.0)
 	assert_eq(chart.multiplier("hedgerow", "brook"), 2.0)
 	assert_eq(chart.multiplier("brook", "hearth"), 2.0)
+
+## 5.7.2: the chart took `_input` for Left and Right and never passed the rest on, so Back did nothing and the
+## screen could not be left. A menu that takes `_input` must hand what it doesn't use to MenuBase.
+func test_menus_that_take_input_still_pass_back_on() -> void:
+	const NO_BACK := ["starter_picker.gd"]  # you can't back out of choosing a starter
+	var dir := DirAccess.open("res://ui")
+	assert_true(dir != null)
+	var seen := 0
+	for f in dir.get_files():
+		if not f.ends_with(".gd") or f in NO_BACK:
+			continue
+		var src := "\n" + FileAccess.get_file_as_string("res://ui/" + f)
+		if not (src.contains("\nextends MenuBase\n") or src.contains("\nextends CasinoBase\n")):
+			continue
+		var at := src.find("\nfunc _input(")
+		if at < 0:
+			continue
+		var end := src.find("\nfunc ", at + 1)
+		var body := src.substr(at, (end if end > 0 else src.length()) - at)
+		seen += 1
+		assert_true(body.contains("super._input(") or body.contains("super("), "%s: _input passes on to the menu base, so Back works" % f)
+	assert_true(seen >= 5, "the check found the screens (%d)" % seen)

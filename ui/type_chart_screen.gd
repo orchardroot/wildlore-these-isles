@@ -94,14 +94,16 @@ func _start() -> void:
 	_show(_ids[first])
 
 func _input(event: InputEvent) -> void:
-	if _locked or _scroll == null or not UIKit.reads_on(_scroll) and _scroll.scroll_vertical == 0:
-		return
-	if event.is_action_pressed("move_right", true):
-		_scroll.scroll_vertical += int(_scroll.size.y * 0.7)
-		get_viewport().set_input_as_handled()
-	elif event.is_action_pressed("move_left", true):
-		_scroll.scroll_vertical -= int(_scroll.size.y * 0.7)
-		get_viewport().set_input_as_handled()
+	if not _locked and _scroll != null and (UIKit.reads_on(_scroll) or _scroll.scroll_vertical != 0):
+		if event.is_action_pressed("move_right", true):
+			_scroll.scroll_vertical += int(_scroll.size.y * 0.7)
+			get_viewport().set_input_as_handled()
+			return
+		if event.is_action_pressed("move_left", true):
+			_scroll.scroll_vertical -= int(_scroll.size.y * 0.7)
+			get_viewport().set_input_as_handled()
+			return
+	super._input(event)  # Back: without this the screen could never be left
 
 func _show(id: String) -> void:
 	UIKit.clear(_detail)

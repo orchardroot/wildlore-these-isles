@@ -2,6 +2,12 @@
 
 Newest first. The README is the front page; this is the long memory.
 
+## 5.7.2: the way out of the type chart
+
+- Back now closes the type chart. Since 5.7.0 the screen read Left and Right to scroll and ignored everything
+  else, so once it was open (from the pause menu, the Almanac or a battle) there was no way to leave it.
+- A test now checks that every menu which reads its own keys still passes Back on.
+
 ## 5.7.1: tidying up
 
 - Mum mentions the garden on the first morning again (one line, with the recipe book).
